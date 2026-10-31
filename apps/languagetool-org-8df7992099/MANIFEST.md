@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_languagetoolorg_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `605e501ea85cd60c20324aded7f5f70166b15edcd921dc8504d8c20eadafb242` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,10 +32,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_languagetoolorg_pro
 
 ## Operations (5)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/check` | post /check | Check a text |
-| GET | `/languages` | get /languages | Get a list of supported languages. |
-| GET | `/words` | get /words | List words in dictionaries |
-| POST | `/words/add` | post /words/add | Add word to a dictionary |
-| POST | `/words/delete` | post /words/delete | Remove word from a dictionary |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/check` | post /check | `text`, `data`, `language`*, `username`, `apiKey`, `dicts`, `motherTongue`, `preferredVariants`, `enabledRules`, `disabledRules`, `enabledCategories`, `disabledCategories`, `enabledOnly`, `level` | object |  | Check a text |
+| GET | `/languages` | get /languages | — | object[] | yes | Get a list of supported languages. |
+| GET | `/words` | get /words | `offset`, `limit`, `username`*, `apiKey`*, `dicts` | object | yes | List words in dictionaries |
+| POST | `/words/add` | post /words/add | `word`*, `username`*, `apiKey`*, `dict` | object |  | Add word to a dictionary |
+| POST | `/words/delete` | post /words/delete | `word`*, `username`*, `apiKey`*, `dict` | object |  | Remove word from a dictionary |

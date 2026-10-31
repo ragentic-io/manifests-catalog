@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_static.tumblr.com_wvuzcz9_LlKncf
 
 | | |
 | --- | --- |
-| Signed bundle | `46d4fed4dc38340714b5ff99e1b04be0e16db93ec3c08e853fe2bc4d9f1b4e12` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,179 +34,181 @@ logo: "https://api.apis.guru/v2/cache/logo/http_static.tumblr.com_wvuzcz9_LlKncf
 
 48 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/admin.apps.approve` | admin_apps_approve | — |
-| GET | `/admin.apps.approved.list` | admin_apps_approved_list | — |
-| GET | `/admin.apps.requests.list` | admin_apps_requests_list | — |
-| POST | `/admin.apps.restrict` | admin_apps_restrict | — |
-| GET | `/admin.apps.restricted.list` | admin_apps_restricted_list | — |
-| POST | `/admin.conversations.archive` | admin_conversations_archive | — |
-| POST | `/admin.conversations.convertToPrivate` | admin_conversations_convertToPrivate | — |
-| POST | `/admin.conversations.create` | admin_conversations_create | — |
-| POST | `/admin.conversations.delete` | admin_conversations_delete | — |
-| POST | `/admin.conversations.disconnectShared` | admin_conversations_disconnectShared | — |
-| GET | `/admin.conversations.ekm.listOriginalConnectedChannelInfo` | admin_conversations_ekm_listOriginalConnectedChannelInfo | — |
-| GET | `/admin.conversations.getConversationPrefs` | admin_conversations_getConversationPrefs | — |
-| GET | `/admin.conversations.getTeams` | admin_conversations_getTeams | — |
-| POST | `/admin.conversations.invite` | admin_conversations_invite | — |
-| POST | `/admin.conversations.rename` | admin_conversations_rename | — |
-| POST | `/admin.conversations.restrictAccess.addGroup` | admin_conversations_restrictAccess_addGroup | — |
-| GET | `/admin.conversations.restrictAccess.listGroups` | admin_conversations_restrictAccess_listGroups | — |
-| POST | `/admin.conversations.restrictAccess.removeGroup` | admin_conversations_restrictAccess_removeGroup | — |
-| GET | `/admin.conversations.search` | admin_conversations_search | — |
-| POST | `/admin.conversations.setConversationPrefs` | admin_conversations_setConversationPrefs | — |
-| POST | `/admin.conversations.setTeams` | admin_conversations_setTeams | — |
-| POST | `/admin.conversations.unarchive` | admin_conversations_unarchive | — |
-| POST | `/admin.emoji.add` | admin_emoji_add | — |
-| POST | `/admin.emoji.addAlias` | admin_emoji_addAlias | — |
-| GET | `/admin.emoji.list` | admin_emoji_list | — |
-| POST | `/admin.emoji.remove` | admin_emoji_remove | — |
-| POST | `/admin.emoji.rename` | admin_emoji_rename | — |
-| POST | `/admin.inviteRequests.approve` | admin_inviteRequests_approve | — |
-| GET | `/admin.inviteRequests.approved.list` | admin_inviteRequests_approved_list | — |
-| GET | `/admin.inviteRequests.denied.list` | admin_inviteRequests_denied_list | — |
-| POST | `/admin.inviteRequests.deny` | admin_inviteRequests_deny | — |
-| GET | `/admin.inviteRequests.list` | admin_inviteRequests_list | — |
-| GET | `/admin.teams.admins.list` | admin_teams_admins_list | — |
-| POST | `/admin.teams.create` | admin_teams_create | — |
-| GET | `/admin.teams.list` | admin_teams_list | — |
-| GET | `/admin.teams.owners.list` | admin_teams_owners_list | — |
-| GET | `/admin.teams.settings.info` | admin_teams_settings_info | — |
-| POST | `/admin.teams.settings.setDefaultChannels` | admin_teams_settings_setDefaultChannels | — |
-| POST | `/admin.teams.settings.setDescription` | admin_teams_settings_setDescription | — |
-| POST | `/admin.teams.settings.setDiscoverability` | admin_teams_settings_setDiscoverability | — |
-| POST | `/admin.teams.settings.setIcon` | admin_teams_settings_setIcon | — |
-| POST | `/admin.teams.settings.setName` | admin_teams_settings_setName | — |
-| POST | `/admin.usergroups.addChannels` | admin_usergroups_addChannels | — |
-| POST | `/admin.usergroups.addTeams` | admin_usergroups_addTeams | — |
-| GET | `/admin.usergroups.listChannels` | admin_usergroups_listChannels | — |
-| POST | `/admin.usergroups.removeChannels` | admin_usergroups_removeChannels | — |
-| POST | `/admin.users.assign` | admin_users_assign | — |
-| POST | `/admin.users.invite` | admin_users_invite | — |
-| GET | `/admin.users.list` | admin_users_list | — |
-| POST | `/admin.users.remove` | admin_users_remove | — |
-| POST | `/admin.users.session.invalidate` | admin_users_session_invalidate | — |
-| POST | `/admin.users.session.reset` | admin_users_session_reset | — |
-| POST | `/admin.users.setAdmin` | admin_users_setAdmin | — |
-| POST | `/admin.users.setExpiration` | admin_users_setExpiration | — |
-| POST | `/admin.users.setOwner` | admin_users_setOwner | — |
-| POST | `/admin.users.setRegular` | admin_users_setRegular | — |
-| GET | `/api.test` | api_test | — |
-| GET | `/apps.event.authorizations.list` | apps_event_authorizations_list | — |
-| GET | `/apps.permissions.info` | apps_permissions_info | — |
-| GET | `/apps.permissions.request` | apps_permissions_request | — |
-| GET | `/apps.permissions.resources.list` | apps_permissions_resources_list | — |
-| GET | `/apps.permissions.scopes.list` | apps_permissions_scopes_list | — |
-| GET | `/apps.permissions.users.list` | apps_permissions_users_list | — |
-| GET | `/apps.permissions.users.request` | apps_permissions_users_request | — |
-| GET | `/apps.uninstall` | apps_uninstall | — |
-| GET | `/auth.revoke` | auth_revoke | — |
-| GET | `/auth.test` | auth_test | — |
-| GET | `/bots.info` | bots_info | — |
-| POST | `/calls.add` | calls_add | — |
-| POST | `/calls.end` | calls_end | — |
-| GET | `/calls.info` | calls_info | — |
-| POST | `/calls.participants.add` | calls_participants_add | — |
-| POST | `/calls.participants.remove` | calls_participants_remove | — |
-| POST | `/calls.update` | calls_update | — |
-| POST | `/chat.delete` | chat_delete | — |
-| POST | `/chat.deleteScheduledMessage` | chat_deleteScheduledMessage | — |
-| GET | `/chat.getPermalink` | chat_getPermalink | — |
-| POST | `/chat.meMessage` | chat_meMessage | — |
-| POST | `/chat.postEphemeral` | chat_postEphemeral | — |
-| POST | `/chat.postMessage` | chat_postMessage | — |
-| POST | `/chat.scheduleMessage` | chat_scheduleMessage | — |
-| GET | `/chat.scheduledMessages.list` | chat_scheduledMessages_list | — |
-| POST | `/chat.unfurl` | chat_unfurl | — |
-| POST | `/chat.update` | chat_update | — |
-| POST | `/conversations.archive` | conversations_archive | — |
-| POST | `/conversations.close` | conversations_close | — |
-| POST | `/conversations.create` | conversations_create | — |
-| GET | `/conversations.history` | conversations_history | — |
-| GET | `/conversations.info` | conversations_info | — |
-| POST | `/conversations.invite` | conversations_invite | — |
-| POST | `/conversations.join` | conversations_join | — |
-| POST | `/conversations.kick` | conversations_kick | — |
-| POST | `/conversations.leave` | conversations_leave | — |
-| GET | `/conversations.list` | conversations_list | — |
-| POST | `/conversations.mark` | conversations_mark | — |
-| GET | `/conversations.members` | conversations_members | — |
-| POST | `/conversations.open` | conversations_open | — |
-| POST | `/conversations.rename` | conversations_rename | — |
-| GET | `/conversations.replies` | conversations_replies | — |
-| POST | `/conversations.setPurpose` | conversations_setPurpose | — |
-| POST | `/conversations.setTopic` | conversations_setTopic | — |
-| POST | `/conversations.unarchive` | conversations_unarchive | — |
-| GET | `/dialog.open` | dialog_open | — |
-| POST | `/dnd.endDnd` | dnd_endDnd | — |
-| POST | `/dnd.endSnooze` | dnd_endSnooze | — |
-| GET | `/dnd.info` | dnd_info | — |
-| POST | `/dnd.setSnooze` | dnd_setSnooze | — |
-| GET | `/dnd.teamInfo` | dnd_teamInfo | — |
-| GET | `/emoji.list` | emoji_list | — |
-| POST | `/files.comments.delete` | files_comments_delete | — |
-| POST | `/files.delete` | files_delete | — |
-| GET | `/files.info` | files_info | — |
-| GET | `/files.list` | files_list | — |
-| POST | `/files.remote.add` | files_remote_add | — |
-| GET | `/files.remote.info` | files_remote_info | — |
-| GET | `/files.remote.list` | files_remote_list | — |
-| POST | `/files.remote.remove` | files_remote_remove | — |
-| GET | `/files.remote.share` | files_remote_share | — |
-| POST | `/files.remote.update` | files_remote_update | — |
-| POST | `/files.revokePublicURL` | files_revokePublicURL | — |
-| POST | `/files.sharedPublicURL` | files_sharedPublicURL | — |
-| POST | `/files.upload` | files_upload | — |
-| GET | `/migration.exchange` | migration_exchange | — |
-| GET | `/oauth.access` | oauth_access | — |
-| GET | `/oauth.token` | oauth_token | — |
-| GET | `/oauth.v2.access` | oauth_v2_access | — |
-| POST | `/pins.add` | pins_add | — |
-| GET | `/pins.list` | pins_list | — |
-| POST | `/pins.remove` | pins_remove | — |
-| POST | `/reactions.add` | reactions_add | — |
-| GET | `/reactions.get` | reactions_get | — |
-| GET | `/reactions.list` | reactions_list | — |
-| POST | `/reactions.remove` | reactions_remove | — |
-| POST | `/reminders.add` | reminders_add | — |
-| POST | `/reminders.complete` | reminders_complete | — |
-| POST | `/reminders.delete` | reminders_delete | — |
-| GET | `/reminders.info` | reminders_info | — |
-| GET | `/reminders.list` | reminders_list | — |
-| GET | `/rtm.connect` | rtm_connect | — |
-| GET | `/search.messages` | search_messages | — |
-| POST | `/stars.add` | stars_add | — |
-| GET | `/stars.list` | stars_list | — |
-| POST | `/stars.remove` | stars_remove | — |
-| GET | `/team.accessLogs` | team_accessLogs | — |
-| GET | `/team.billableInfo` | team_billableInfo | — |
-| GET | `/team.info` | team_info | — |
-| GET | `/team.integrationLogs` | team_integrationLogs | — |
-| GET | `/team.profile.get` | team_profile_get | — |
-| POST | `/usergroups.create` | usergroups_create | — |
-| POST | `/usergroups.disable` | usergroups_disable | — |
-| POST | `/usergroups.enable` | usergroups_enable | — |
-| GET | `/usergroups.list` | usergroups_list | — |
-| POST | `/usergroups.update` | usergroups_update | — |
-| GET | `/usergroups.users.list` | usergroups_users_list | — |
-| POST | `/usergroups.users.update` | usergroups_users_update | — |
-| GET | `/users.conversations` | users_conversations | — |
-| POST | `/users.deletePhoto` | users_deletePhoto | — |
-| GET | `/users.getPresence` | users_getPresence | — |
-| GET | `/users.identity` | users_identity | — |
-| GET | `/users.info` | users_info | — |
-| GET | `/users.list` | users_list | — |
-| GET | `/users.lookupByEmail` | users_lookupByEmail | — |
-| GET | `/users.profile.get` | users_profile_get | — |
-| POST | `/users.profile.set` | users_profile_set | — |
-| POST | `/users.setActive` | users_setActive | — |
-| POST | `/users.setPhoto` | users_setPhoto | — |
-| POST | `/users.setPresence` | users_setPresence | — |
-| GET | `/views.open` | views_open | — |
-| GET | `/views.publish` | views_publish | — |
-| GET | `/views.push` | views_push | — |
-| GET | `/views.update` | views_update | — |
-| GET | `/workflows.stepCompleted` | workflows_stepCompleted | — |
-| GET | `/workflows.stepFailed` | workflows_stepFailed | — |
-| GET | `/workflows.updateStep` | workflows_updateStep | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/admin.apps.approve` | admin_apps_approve | `token`*, body: object | object |  | — |
+| GET | `/admin.apps.approved.list` | admin_apps_approved_list | `token`*, `limit`, `cursor`, `team_id`, `enterprise_id` | object | yes | — |
+| GET | `/admin.apps.requests.list` | admin_apps_requests_list | `token`*, `limit`, `cursor`, `team_id` | object | yes | — |
+| POST | `/admin.apps.restrict` | admin_apps_restrict | `token`*, body: object | object |  | — |
+| GET | `/admin.apps.restricted.list` | admin_apps_restricted_list | `token`*, `limit`, `cursor`, `team_id`, `enterprise_id` | object | yes | — |
+| POST | `/admin.conversations.archive` | admin_conversations_archive | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.convertToPrivate` | admin_conversations_convertToPrivate | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.create` | admin_conversations_create | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.delete` | admin_conversations_delete | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.disconnectShared` | admin_conversations_disconnectShared | `token`*, body*: object | object |  | — |
+| GET | `/admin.conversations.ekm.listOriginalConnectedChannelInfo` | admin_conversations_ekm_listOriginalConnectedChannelInfo | `token`*, `channel_ids`, `team_ids`, `limit`, `cursor` | object | yes | — |
+| GET | `/admin.conversations.getConversationPrefs` | admin_conversations_getConversationPrefs | `token`*, `channel_id`* | object | yes | — |
+| GET | `/admin.conversations.getTeams` | admin_conversations_getTeams | `token`*, `channel_id`*, `cursor`, `limit` | object | yes | — |
+| POST | `/admin.conversations.invite` | admin_conversations_invite | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.rename` | admin_conversations_rename | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.restrictAccess.addGroup` | admin_conversations_restrictAccess_addGroup | body*: object | object |  | — |
+| GET | `/admin.conversations.restrictAccess.listGroups` | admin_conversations_restrictAccess_listGroups | `token`*, `channel_id`*, `team_id` | object | yes | — |
+| POST | `/admin.conversations.restrictAccess.removeGroup` | admin_conversations_restrictAccess_removeGroup | body*: object | object |  | — |
+| GET | `/admin.conversations.search` | admin_conversations_search | `token`*, `team_ids`, `query`, `limit`, `cursor`, `search_channel_types`, `sort`, `sort_dir` | object | yes | — |
+| POST | `/admin.conversations.setConversationPrefs` | admin_conversations_setConversationPrefs | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.setTeams` | admin_conversations_setTeams | `token`*, body*: object | object |  | — |
+| POST | `/admin.conversations.unarchive` | admin_conversations_unarchive | `token`*, body*: object | object |  | — |
+| POST | `/admin.emoji.add` | admin_emoji_add | body*: object | object |  | — |
+| POST | `/admin.emoji.addAlias` | admin_emoji_addAlias | body*: object | object |  | — |
+| GET | `/admin.emoji.list` | admin_emoji_list | `token`*, `cursor`, `limit` | object | yes | — |
+| POST | `/admin.emoji.remove` | admin_emoji_remove | body*: object | object |  | — |
+| POST | `/admin.emoji.rename` | admin_emoji_rename | body*: object | object |  | — |
+| POST | `/admin.inviteRequests.approve` | admin_inviteRequests_approve | `token`*, body: object | object |  | — |
+| GET | `/admin.inviteRequests.approved.list` | admin_inviteRequests_approved_list | `token`*, `team_id`, `cursor`, `limit` | object | yes | — |
+| GET | `/admin.inviteRequests.denied.list` | admin_inviteRequests_denied_list | `token`*, `team_id`, `cursor`, `limit` | object | yes | — |
+| POST | `/admin.inviteRequests.deny` | admin_inviteRequests_deny | `token`*, body: object | object |  | — |
+| GET | `/admin.inviteRequests.list` | admin_inviteRequests_list | `token`*, `team_id`, `cursor`, `limit` | object | yes | — |
+| GET | `/admin.teams.admins.list` | admin_teams_admins_list | `token`*, `limit`, `cursor`, `team_id`* | object | yes | — |
+| POST | `/admin.teams.create` | admin_teams_create | `token`*, body*: object | object |  | — |
+| GET | `/admin.teams.list` | admin_teams_list | `token`*, `limit`, `cursor` | object | yes | — |
+| GET | `/admin.teams.owners.list` | admin_teams_owners_list | `token`*, `team_id`*, `limit`, `cursor` | object | yes | — |
+| GET | `/admin.teams.settings.info` | admin_teams_settings_info | `token`*, `team_id`* | object | yes | — |
+| POST | `/admin.teams.settings.setDefaultChannels` | admin_teams_settings_setDefaultChannels | body*: object | object |  | — |
+| POST | `/admin.teams.settings.setDescription` | admin_teams_settings_setDescription | `token`*, body*: object | object |  | — |
+| POST | `/admin.teams.settings.setDiscoverability` | admin_teams_settings_setDiscoverability | `token`*, body*: object | object |  | — |
+| POST | `/admin.teams.settings.setIcon` | admin_teams_settings_setIcon | body*: object | object |  | — |
+| POST | `/admin.teams.settings.setName` | admin_teams_settings_setName | `token`*, body*: object | object |  | — |
+| POST | `/admin.usergroups.addChannels` | admin_usergroups_addChannels | `token`*, body*: object | object |  | — |
+| POST | `/admin.usergroups.addTeams` | admin_usergroups_addTeams | `token`*, body*: object | object |  | — |
+| GET | `/admin.usergroups.listChannels` | admin_usergroups_listChannels | `token`*, `usergroup_id`*, `team_id`, `include_num_members` | object | yes | — |
+| POST | `/admin.usergroups.removeChannels` | admin_usergroups_removeChannels | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.assign` | admin_users_assign | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.invite` | admin_users_invite | `token`*, body*: object | object |  | — |
+| GET | `/admin.users.list` | admin_users_list | `token`*, `team_id`*, `cursor`, `limit` | object | yes | — |
+| POST | `/admin.users.remove` | admin_users_remove | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.session.invalidate` | admin_users_session_invalidate | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.session.reset` | admin_users_session_reset | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.setAdmin` | admin_users_setAdmin | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.setExpiration` | admin_users_setExpiration | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.setOwner` | admin_users_setOwner | `token`*, body*: object | object |  | — |
+| POST | `/admin.users.setRegular` | admin_users_setRegular | `token`*, body*: object | object |  | — |
+| GET | `/api.test` | api_test | `error`, `foo` | object | yes | — |
+| GET | `/apps.event.authorizations.list` | apps_event_authorizations_list | `token`*, `event_context`*, `cursor`, `limit` | object | yes | — |
+| GET | `/apps.permissions.info` | apps_permissions_info | `token` | object | yes | — |
+| GET | `/apps.permissions.request` | apps_permissions_request | `token`*, `scopes`*, `trigger_id`* | object | yes | — |
+| GET | `/apps.permissions.resources.list` | apps_permissions_resources_list | `token`*, `cursor`, `limit` | object | yes | — |
+| GET | `/apps.permissions.scopes.list` | apps_permissions_scopes_list | `token`* | object | yes | — |
+| GET | `/apps.permissions.users.list` | apps_permissions_users_list | `token`*, `cursor`, `limit` | object | yes | — |
+| GET | `/apps.permissions.users.request` | apps_permissions_users_request | `token`*, `scopes`*, `trigger_id`*, `user`* | object | yes | — |
+| GET | `/apps.uninstall` | apps_uninstall | `token`, `client_id`, `client_secret` | object | yes | — |
+| GET | `/auth.revoke` | auth_revoke | `token`*, `test` | object | yes | — |
+| GET | `/auth.test` | auth_test | `token`* | object | yes | — |
+| GET | `/bots.info` | bots_info | `token`*, `bot` | object | yes | — |
+| POST | `/calls.add` | calls_add | `token`*, body*: object | object |  | — |
+| POST | `/calls.end` | calls_end | `token`*, body*: object | object |  | — |
+| GET | `/calls.info` | calls_info | `token`*, `id`* | object | yes | — |
+| POST | `/calls.participants.add` | calls_participants_add | `token`*, body*: object | object |  | — |
+| POST | `/calls.participants.remove` | calls_participants_remove | `token`*, body*: object | object |  | — |
+| POST | `/calls.update` | calls_update | `token`*, body*: object | object |  | — |
+| POST | `/chat.delete` | chat_delete | `token`, body: object | object |  | — |
+| POST | `/chat.deleteScheduledMessage` | chat_deleteScheduledMessage | `token`*, body: object | object |  | — |
+| GET | `/chat.getPermalink` | chat_getPermalink | `token`*, `channel`*, `message_ts`* | object | yes | — |
+| POST | `/chat.meMessage` | chat_meMessage | `token`, body: object | object |  | — |
+| POST | `/chat.postEphemeral` | chat_postEphemeral | `token`*, body: object | object |  | — |
+| POST | `/chat.postMessage` | chat_postMessage | `token`*, body: object | object |  | — |
+| POST | `/chat.scheduleMessage` | chat_scheduleMessage | `token`, body: object | object |  | — |
+| GET | `/chat.scheduledMessages.list` | chat_scheduledMessages_list | `token`, `channel`, `latest`, `oldest`, `limit`, `cursor` | object | yes | — |
+| POST | `/chat.unfurl` | chat_unfurl | `token`*, body*: object | object |  | — |
+| POST | `/chat.update` | chat_update | `token`*, body: object | object |  | — |
+| POST | `/conversations.archive` | conversations_archive | `token`, body: object | object |  | — |
+| POST | `/conversations.close` | conversations_close | `token`, body: object | object |  | — |
+| POST | `/conversations.create` | conversations_create | `token`, body: object | object |  | — |
+| GET | `/conversations.history` | conversations_history | `token`, `channel`, `latest`, `oldest`, `inclusive`, `limit`, `cursor` | object | yes | — |
+| GET | `/conversations.info` | conversations_info | `token`, `channel`, `include_locale`, `include_num_members` | object | yes | — |
+| POST | `/conversations.invite` | conversations_invite | `token`, body: object | object |  | — |
+| POST | `/conversations.join` | conversations_join | `token`, body: object | object |  | — |
+| POST | `/conversations.kick` | conversations_kick | `token`, body: object | object |  | — |
+| POST | `/conversations.leave` | conversations_leave | `token`, body: object | object |  | — |
+| GET | `/conversations.list` | conversations_list | `token`, `exclude_archived`, `types`, `limit`, `cursor` | object | yes | — |
+| POST | `/conversations.mark` | conversations_mark | `token`, body: object | object |  | — |
+| GET | `/conversations.members` | conversations_members | `token`, `channel`, `limit`, `cursor` | object | yes | — |
+| POST | `/conversations.open` | conversations_open | `token`, body: object | object |  | — |
+| POST | `/conversations.rename` | conversations_rename | `token`, body: object | object |  | — |
+| GET | `/conversations.replies` | conversations_replies | `token`, `channel`, `ts`, `latest`, `oldest`, `inclusive`, `limit`, `cursor` | object | yes | — |
+| POST | `/conversations.setPurpose` | conversations_setPurpose | `token`, body: object | object |  | — |
+| POST | `/conversations.setTopic` | conversations_setTopic | `token`, body: object | object |  | — |
+| POST | `/conversations.unarchive` | conversations_unarchive | `token`, body: object | object |  | — |
+| GET | `/dialog.open` | dialog_open | `token`*, `dialog`*, `trigger_id`* | object | yes | — |
+| POST | `/dnd.endDnd` | dnd_endDnd | `token`* | object |  | — |
+| POST | `/dnd.endSnooze` | dnd_endSnooze | `token`* | object |  | — |
+| GET | `/dnd.info` | dnd_info | `token`, `user` | object | yes | — |
+| POST | `/dnd.setSnooze` | dnd_setSnooze | body*: object | object |  | — |
+| GET | `/dnd.teamInfo` | dnd_teamInfo | `token`, `users` | object | yes | — |
+| GET | `/emoji.list` | emoji_list | `token`* | object | yes | — |
+| POST | `/files.comments.delete` | files_comments_delete | `token`, body: object | object |  | — |
+| POST | `/files.delete` | files_delete | `token`, body: object | object |  | — |
+| GET | `/files.info` | files_info | `token`, `file`, `count`, `page`, `limit`, `cursor` | object | yes | — |
+| GET | `/files.list` | files_list | `token`, `user`, `channel`, `ts_from`, `ts_to`, `types`, `count`, `page`, `show_files_hidden_by_limit` | object | yes | — |
+| POST | `/files.remote.add` | files_remote_add | body: object | object |  | — |
+| GET | `/files.remote.info` | files_remote_info | `token`, `file`, `external_id` | object | yes | — |
+| GET | `/files.remote.list` | files_remote_list | `token`, `channel`, `ts_from`, `ts_to`, `limit`, `cursor` | object | yes | — |
+| POST | `/files.remote.remove` | files_remote_remove | body: object | object |  | — |
+| GET | `/files.remote.share` | files_remote_share | `token`, `file`, `external_id`, `channels` | object | yes | — |
+| POST | `/files.remote.update` | files_remote_update | body: object | object |  | — |
+| POST | `/files.revokePublicURL` | files_revokePublicURL | `token`, body: object | object |  | — |
+| POST | `/files.sharedPublicURL` | files_sharedPublicURL | `token`, body: object | object |  | — |
+| POST | `/files.upload` | files_upload | body: object | object |  | — |
+| GET | `/migration.exchange` | migration_exchange | `token`*, `users`*, `team_id`, `to_old` | object | yes | — |
+| GET | `/oauth.access` | oauth_access | `client_id`, `client_secret`, `code`, `redirect_uri`, `single_channel` | object | yes | — |
+| GET | `/oauth.token` | oauth_token | `client_id`, `client_secret`, `code`, `redirect_uri`, `single_channel` | object | yes | — |
+| GET | `/oauth.v2.access` | oauth_v2_access | `client_id`, `client_secret`, `code`*, `redirect_uri` | object | yes | — |
+| POST | `/pins.add` | pins_add | `token`*, body*: object | object |  | — |
+| GET | `/pins.list` | pins_list | `token`*, `channel`* | — | yes | — |
+| POST | `/pins.remove` | pins_remove | `token`*, body*: object | object |  | — |
+| POST | `/reactions.add` | reactions_add | `token`*, body*: object | object |  | — |
+| GET | `/reactions.get` | reactions_get | `token`*, `channel`, `file`, `file_comment`, `full`, `timestamp` | object | yes | — |
+| GET | `/reactions.list` | reactions_list | `token`*, `user`, `full`, `count`, `page`, `cursor`, `limit` | object | yes | — |
+| POST | `/reactions.remove` | reactions_remove | `token`*, body*: object | object |  | — |
+| POST | `/reminders.add` | reminders_add | `token`*, body*: object | object |  | — |
+| POST | `/reminders.complete` | reminders_complete | `token`, body: object | object |  | — |
+| POST | `/reminders.delete` | reminders_delete | `token`, body: object | object |  | — |
+| GET | `/reminders.info` | reminders_info | `token`, `reminder` | object | yes | — |
+| GET | `/reminders.list` | reminders_list | `token` | object | yes | — |
+| GET | `/rtm.connect` | rtm_connect | `token`*, `batch_presence_aware`, `presence_sub` | object | yes | — |
+| GET | `/search.messages` | search_messages | `token`*, `count`, `highlight`, `page`, `query`*, `sort`, `sort_dir` | object | yes | — |
+| POST | `/stars.add` | stars_add | `token`*, body: object | object |  | — |
+| GET | `/stars.list` | stars_list | `token`, `count`, `page`, `cursor`, `limit` | object | yes | — |
+| POST | `/stars.remove` | stars_remove | `token`*, body: object | object |  | — |
+| GET | `/team.accessLogs` | team_accessLogs | `token`*, `before`, `count`, `page` | object | yes | — |
+| GET | `/team.billableInfo` | team_billableInfo | `token`*, `user` | object | yes | — |
+| GET | `/team.info` | team_info | `token`*, `team` | object | yes | — |
+| GET | `/team.integrationLogs` | team_integrationLogs | `token`*, `app_id`, `change_type`, `count`, `page`, `service_id`, `user` | object | yes | — |
+| GET | `/team.profile.get` | team_profile_get | `token`*, `visibility` | object | yes | — |
+| POST | `/usergroups.create` | usergroups_create | `token`*, body: object | object |  | — |
+| POST | `/usergroups.disable` | usergroups_disable | `token`*, body: object | object |  | — |
+| POST | `/usergroups.enable` | usergroups_enable | `token`*, body: object | object |  | — |
+| GET | `/usergroups.list` | usergroups_list | `include_users`, `token`*, `include_count`, `include_disabled` | object | yes | — |
+| POST | `/usergroups.update` | usergroups_update | `token`*, body: object | object |  | — |
+| GET | `/usergroups.users.list` | usergroups_users_list | `token`*, `include_disabled`, `usergroup`* | object | yes | — |
+| POST | `/usergroups.users.update` | usergroups_users_update | `token`*, body: object | object |  | — |
+| GET | `/users.conversations` | users_conversations | `token`, `user`, `types`, `exclude_archived`, `limit`, `cursor` | object | yes | — |
+| POST | `/users.deletePhoto` | users_deletePhoto | body*: object | object |  | — |
+| GET | `/users.getPresence` | users_getPresence | `token`*, `user` | object | yes | — |
+| GET | `/users.identity` | users_identity | `token` | — | yes | — |
+| GET | `/users.info` | users_info | `token`*, `include_locale`, `user` | object | yes | — |
+| GET | `/users.list` | users_list | `token`, `limit`, `cursor`, `include_locale` | object | yes | — |
+| GET | `/users.lookupByEmail` | users_lookupByEmail | `token`*, `email`* | object | yes | — |
+| GET | `/users.profile.get` | users_profile_get | `token`*, `include_labels`, `user` | object | yes | — |
+| POST | `/users.profile.set` | users_profile_set | `token`*, body: object | object |  | — |
+| POST | `/users.setActive` | users_setActive | `token`* | object |  | — |
+| POST | `/users.setPhoto` | users_setPhoto | body*: object | object |  | — |
+| POST | `/users.setPresence` | users_setPresence | `token`*, body*: object | object |  | — |
+| GET | `/views.open` | views_open | `token`*, `trigger_id`*, `view`* | object | yes | — |
+| GET | `/views.publish` | views_publish | `token`*, `user_id`*, `view`*, `hash` | object | yes | — |
+| GET | `/views.push` | views_push | `token`*, `trigger_id`*, `view`* | object | yes | — |
+| GET | `/views.update` | views_update | `token`*, `view_id`, `external_id`, `view`, `hash` | object | yes | — |
+| GET | `/workflows.stepCompleted` | workflows_stepCompleted | `token`*, `workflow_step_execute_id`*, `outputs` | object | yes | — |
+| GET | `/workflows.stepFailed` | workflows_stepFailed | `token`*, `workflow_step_execute_id`*, `error`* | object | yes | — |
+| GET | `/workflows.updateStep` | workflows_updateStep | `token`*, `workflow_step_edit_id`*, `inputs`, `outputs`, `step_name`, `step_image_url` | object | yes | — |

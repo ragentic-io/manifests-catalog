@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_DocuSign_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `b3ae627df6ae499a9e772629042069b728fd04ca46bda075bb6e015a22f1c8c8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,398 +34,400 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_DocuSign_profile_im
 
 565 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/service_information` | ServiceInformation_GetServiceInformation | Retrieves the available REST API versions. |
-| GET | `/v2.1` | ServiceInformation_GetResourceInformation | Lists resources for REST version specified |
-| POST | `/v2.1/accounts` | Accounts_PostAccounts | Creates new accounts. |
-| GET | `/v2.1/accounts/provisioning` | Accounts_GetProvisioning | Retrieves the account provisioning information for the account. |
-| DELETE | `/v2.1/accounts/{accountId}` | Accounts_DeleteAccount | Deletes the specified account. |
-| GET | `/v2.1/accounts/{accountId}` | Accounts_GetAccount | Retrieves the account information for the specified account. |
-| GET | `/v2.1/accounts/{accountId}/billing_charges` | BillingCharges_GetAccountBillingCharges | Gets list of recurring and usage charges for the account. |
-| GET | `/v2.1/accounts/{accountId}/billing_invoices` | BillingInvoices_GetBillingInvoices | Get a List of Billing Invoices |
-| GET | `/v2.1/accounts/{accountId}/billing_invoices/{invoiceId}` | BillingInvoices_GetBillingInvoice | Retrieves a billing invoice. |
-| GET | `/v2.1/accounts/{accountId}/billing_invoices_past_due` | BillingInvoices_GetBillingInvoicesPastDue | Get a list of past due invoices. |
-| GET | `/v2.1/accounts/{accountId}/billing_payments` | BillingPayments_GetPaymentList | Gets payment information for one or more payments. |
-| POST | `/v2.1/accounts/{accountId}/billing_payments` | BillingPayments_PostPayment | Posts a payment to a past due invoice. |
-| GET | `/v2.1/accounts/{accountId}/billing_payments/{paymentId}` | BillingPayments_GetPayment | Gets billing payment information for a specific payment. |
-| GET | `/v2.1/accounts/{accountId}/billing_plan` | BillingPlan_GetBillingPlan | Get Account Billing Plan |
-| PUT | `/v2.1/accounts/{accountId}/billing_plan` | BillingPlan_PutBillingPlan | Updates an account billing plan. |
-| GET | `/v2.1/accounts/{accountId}/billing_plan/credit_card` | BillingPlan_GetCreditCardInfo | Get credit card information |
-| GET | `/v2.1/accounts/{accountId}/billing_plan/downgrade` | BillingPlan_GetDowngradeRequestBillingInfo | Returns downgrade plan information for the specified account. |
-| PUT | `/v2.1/accounts/{accountId}/billing_plan/downgrade` | BillingPlan_PutDowngradeAccountBillingPlan | Queues downgrade billing plan request for an account. |
-| PUT | `/v2.1/accounts/{accountId}/billing_plan/purchased_envelopes` | PurchasedEnvelopes_PutPurchasedEnvelopes | Reserved: Purchase additional envelopes. |
-| DELETE | `/v2.1/accounts/{accountId}/brands` | Brands_DeleteBrands | Deletes one or more brand profiles. |
-| GET | `/v2.1/accounts/{accountId}/brands` | Brands_GetBrands | Gets a list of brands. |
-| POST | `/v2.1/accounts/{accountId}/brands` | Brands_PostBrands | Creates one or more brand profiles for an account. |
-| DELETE | `/v2.1/accounts/{accountId}/brands/{brandId}` | Brand_DeleteBrand | Deletes a brand. |
-| GET | `/v2.1/accounts/{accountId}/brands/{brandId}` | Brand_GetBrand | Gets information about a brand. |
-| PUT | `/v2.1/accounts/{accountId}/brands/{brandId}` | Brand_PutBrand | Updates an existing brand. |
-| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/file` | BrandExport_GetBrandExportFile | Exports a brand. |
-| DELETE | `/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}` | BrandLogo_DeleteBrandLogo | Deletes a brand logo. |
-| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}` | BrandLogo_GetBrandLogo | Gets a brand logo. |
-| PUT | `/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}` | BrandLogo_PutBrandLogo | Updates a brand logo. |
-| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/resources` | BrandResources_GetBrandResourcesList | Returns metadata about the branding resources for an account. |
-| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}` | BrandResources_GetBrandResources | Returns a branding resource file. |
-| PUT | `/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}` | BrandResources_PutBrandResources | Updates a branding resource file. |
-| GET | `/v2.1/accounts/{accountId}/bulk_send_batch` | BulkSendV2Batch_GetBulkSendBatches | Returns a list of bulk send batch summaries. |
-| GET | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}` | BulkSendV2Batch_GetBulkSendBatchStatus | Gets the status of a specific bulk send batch. |
-| PUT | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}` | BulkSendV2Batch_PutBulkSendBatchStatus | Updates the name of a bulk send batch. |
-| GET | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/envelopes` | BulkSendV2Envelopes_GetBulkSendBatchEnvelopes | Gets envelopes from a specific bulk send batch. |
-| PUT | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}` | BulkSendV2Batch_PutBulkSendBatchAction | Applies a bulk action to all envelopes from a specified bulk send. |
-| GET | `/v2.1/accounts/{accountId}/bulk_send_lists` | BulkSendV2CRUD_GetBulkSendLists | Gets bulk send lists. |
-| POST | `/v2.1/accounts/{accountId}/bulk_send_lists` | BulkSendV2CRUD_PostBulkSendList | Creates a bulk send list. |
-| DELETE | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}` | BulkSendV2CRUD_DeleteBulkSendList | Deletes a bulk send list. |
-| GET | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}` | BulkSendV2CRUD_GetBulkSendList | Gets a specific bulk send list. |
-| PUT | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}` | BulkSendV2CRUD_PutBulkSendList | Updates a bulk send list. |
-| POST | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/send` | BulkSendV2Send_PostBulkSendRequest | Creates a bulk send request. |
-| POST | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/test` | BulkSendV2Test_PostBulkSendTestRequest | Creates a bulk send test. |
-| DELETE | `/v2.1/accounts/{accountId}/captive_recipients/{recipientPart}` | CaptiveRecipients_DeleteCaptiveRecipientsPart | Deletes the signature for one or more captive recipient records. |
-| POST | `/v2.1/accounts/{accountId}/chunked_uploads` | ChunkedUploads_PostChunkedUploads | Initiate a new chunked upload. |
-| DELETE | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}` | ChunkedUploads_DeleteChunkedUpload | Deletes a chunked upload. |
-| GET | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}` | ChunkedUploads_GetChunkedUpload | Retrieves metadata about a chunked upload. |
-| PUT | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}` | ChunkedUploads_PutChunkedUploads | Commit a chunked upload. |
-| PUT | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/{chunkedUploadPartSeq}` | ChunkedUploads_PutChunkedUploadPart | Add a chunk to an existing chunked upload. |
-| GET | `/v2.1/accounts/{accountId}/connect` | Connect_GetConnectConfigs | Get Connect configuration information. |
-| POST | `/v2.1/accounts/{accountId}/connect` | Connect_PostConnectConfiguration | Creates a Connect configuration. |
-| PUT | `/v2.1/accounts/{accountId}/connect` | Connect_PutConnectConfiguration | Updates a specified Connect configuration. |
-| POST | `/v2.1/accounts/{accountId}/connect/envelopes/publish/historical` | HistoricalEnvelopePublish_PostHistoricalEnvelopePublishTransaction | Submits a batch of historical envelopes for republish to a webhook. |
-| PUT | `/v2.1/accounts/{accountId}/connect/envelopes/retry_queue` | ConnectPublish_PutConnectRetry | Republishes Connect information for multiple envelopes. |
-| PUT | `/v2.1/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue` | ConnectPublish_PutConnectRetryByEnvelope | Republishes Connect information for the specified envelope. |
-| GET | `/v2.1/accounts/{accountId}/connect/failures` | ConnectFailures_GetConnectLogs | Gets the Connect failure log information. |
-| DELETE | `/v2.1/accounts/{accountId}/connect/failures/{failureId}` | ConnectFailures_DeleteConnectFailureLog | Deletes a Connect failure log entry. |
-| DELETE | `/v2.1/accounts/{accountId}/connect/logs` | ConnectLog_DeleteConnectLogs | Deletes a list of Connect log entries. |
-| GET | `/v2.1/accounts/{accountId}/connect/logs` | ConnectLog_GetConnectLogs | Gets the Connect log. |
-| DELETE | `/v2.1/accounts/{accountId}/connect/logs/{logId}` | ConnectLog_DeleteConnectLog | Deletes a specified Connect log entry. |
-| GET | `/v2.1/accounts/{accountId}/connect/logs/{logId}` | ConnectLog_GetConnectLog | Gets a Connect log entry. |
-| DELETE | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_DeleteConnectOAuthConfig | Delete the Connect OAuth configuration. |
-| GET | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_GetConnectOAuthConfig | Retrieves the Connect OAuth information for the account. |
-| POST | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_PostConnectOAuthConfig | Set up Connect OAuth for the specified account. |
-| PUT | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_PutConnectOAuthConfig | Updates the existing Connect OAuth configuration for the account. |
-| DELETE | `/v2.1/accounts/{accountId}/connect/{connectId}` | Connect_DeleteConnectConfig | Deletes the specified Connect configuration. |
-| GET | `/v2.1/accounts/{accountId}/connect/{connectId}` | Connect_GetConnectConfig | Gets the details about a Connect configuration. |
-| GET | `/v2.1/accounts/{accountId}/connect/{connectId}/all/users` | Connect_GetConnectAllUsers | Returns all users from the configured Connect service. |
-| GET | `/v2.1/accounts/{accountId}/connect/{connectId}/users` | Connect_GetConnectUsers | Returns users from the configured Connect service. |
-| GET | `/v2.1/accounts/{accountId}/consumer_disclosure` | ConsumerDisclosure_GetConsumerDisclosure | Gets the default Electronic Record and Signature Disclosure for an account. |
-| GET | `/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}` | ConsumerDisclosure_GetConsumerDisclosureLangCode | Gets the Electronic Record and Signature Disclosure for an account. |
-| PUT | `/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}` | ConsumerDisclosure_PutConsumerDisclosure | Updates the Electronic Record and Signature Disclosure for an account. |
-| DELETE | `/v2.1/accounts/{accountId}/contacts` | Contacts_DeleteContacts | Deletes multiple contacts from an account. |
-| POST | `/v2.1/accounts/{accountId}/contacts` | Contacts_PostContacts | Add contacts to a contacts list. |
-| PUT | `/v2.1/accounts/{accountId}/contacts` | Contacts_PutContacts | Updates one or more contacts. |
-| DELETE | `/v2.1/accounts/{accountId}/contacts/{contactId}` | Contacts_DeleteContactWithId | Deletes a contact. |
-| GET | `/v2.1/accounts/{accountId}/contacts/{contactId}` | Contacts_GetContactById | Gets one or more contacts. |
-| GET | `/v2.1/accounts/{accountId}/custom_fields` | AccountCustomFields_GetAccountCustomFields | Gets a list of custom fields. |
-| POST | `/v2.1/accounts/{accountId}/custom_fields` | AccountCustomFields_PostAccountCustomFields | Creates an account custom field. |
-| DELETE | `/v2.1/accounts/{accountId}/custom_fields/{customFieldId}` | AccountCustomFields_DeleteAccountCustomFields | Deletes an account custom field. |
-| PUT | `/v2.1/accounts/{accountId}/custom_fields/{customFieldId}` | AccountCustomFields_PutAccountCustomFields | Updates an account custom field. |
-| GET | `/v2.1/accounts/{accountId}/envelopes` | Envelopes_GetEnvelopes | Search for specific sets of envelopes by using search filters. |
-| POST | `/v2.1/accounts/{accountId}/envelopes` | Envelopes_PostEnvelopes | Creates an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/status` | Envelopes_PutStatus | Gets envelope statuses for a set of envelopes. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/transfer_rules` | EnvelopeTransferRules_GetEnvelopeTransferRules | Gets envelope transfer rules. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/transfer_rules` | EnvelopeTransferRules_PostEnvelopeTransferRules | Creates an envelope transfer rule. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/transfer_rules` | EnvelopeTransferRules_PutEnvelopeTransferRules | Changes the status of multiple envelope transfer rules. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/transfer_rules/{envelopeTransferRuleId}` | EnvelopeTransferRules_DeleteEnvelopeTransferRules | Deletes an envelope transfer rule. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/transfer_rules/{envelopeTransferRuleId}` | EnvelopeTransferRules_PutEnvelopeTransferRule | Changes the status of an envelope transfer rule. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}` | Envelopes_GetEnvelope | Gets the status of a single envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}` | Envelopes_PutEnvelope | Send, void, or modify a draft envelope. Purge documents from a completed envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments` | Attachments_DeleteAttachments | Deletes one or more attachments from a draft envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments` | Attachments_GetAttachments | Returns a list of attachments associated with a specified envelope |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments` | Attachments_PutAttachments | Adds one or more attachments to a draft or in-process envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}` | Attachments_GetAttachment | Retrieves an attachment from an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}` | Attachments_PutAttachment | Adds an attachment to a draft or in-process envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/audit_events` | AuditEvents_GetAuditEvents | Gets the envelope audit events for an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/comments/transcript` | Comments_GetCommentsTranscript | Gets a PDF transcript of all of the comments in an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_DeleteCustomFields | Deletes envelope custom fields for draft and in-process envelopes. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_GetCustomFields | Gets the custom field information for the specified envelope. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_PostCustomFields | Creates envelope custom fields for an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_PutCustomFields | Updates envelope custom fields in an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents` | Documents_DeleteDocuments | Deletes documents from a draft envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents` | Documents_GetDocuments | Gets a list of documents in an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents` | Documents_PutDocuments | Adds one or more documents to an existing envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}` | Documents_GetDocument | Retrieves a single document or all documents from an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}` | Documents_PutDocument | Adds or replaces a document in an existing envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_DeleteDocumentFields | Deletes custom document fields from an existing envelope document. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_GetDocumentFields | Gets the custom document fields from an existing envelope document. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_PostDocumentFields | Creates custom document fields in an existing envelope document. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_PutDocumentFields | Updates existing custom document fields in an existing envelope document. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/html_definitions` | ResponsiveHtml_GetEnvelopeDocumentHtmlDefinitions | Retrieves the HTML definition used to generate a dynamically sized responsive document. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages` | Pages_GetPageImages | Returns document page images based on input. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}` | Pages_DeletePage | Deletes a page from a document in an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_GetPageImage | Gets a page image from an envelope for display. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_PutPageImage | Rotates page image from an envelope for display. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/tabs` | Tabs_GetPageTabs | Returns tabs on the specified page. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html_preview` | ResponsiveHtml_PostDocumentResponsiveHtmlPreview | Creates a preview of the responsive version of a document. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_DeleteDocumentTabs | Deletes tabs from a document in an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_GetDocumentTabs | Returns the tabs on a document. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_PostDocumentTabs | Adds tabs to a document in an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_PutDocumentTabs | Updates the tabs for document. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates` | Templates_GetDocumentTemplates | Gets the templates associated with a document in an existing envelope. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates` | Templates_PostDocumentTemplates | Adds templates to a document in an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates/{templateId}` | Templates_DeleteDocumentTemplates | Deletes a template from a document in an existing envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_DeleteEmailSettings | Deletes the email setting overrides for an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_GetEmailSettings | Gets the email setting overrides for an envelope. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_PostEmailSettings | Adds email setting overrides to an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_PutEmailSettings | Updates the email setting overrides for an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/form_data` | FormData_GetFormData | Returns envelope tab data for an existing envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/html_definitions` | ResponsiveHtml_GetEnvelopeHtmlDefinitions | Gets the Original HTML Definition used to generate the Responsive HTML for the envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_DeleteEnvelopeLock | Deletes an envelope lock. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_GetEnvelopeLock | Gets envelope lock information. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_PostEnvelopeLock | Locks an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_PutEnvelopeLock | Updates an envelope lock. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/notification` | Notification_GetEnvelopesEnvelopeIdNotification | Gets envelope notification information. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/notification` | Notification_PutEnvelopesEnvelopeIdNotification | Sets envelope notifications for an existing envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_DeleteRecipients | Deletes recipients from an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_GetRecipients | Gets the status of recipients for an envelope. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_PostRecipients | Adds one or more recipients to an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_PutRecipients | Updates recipients in a draft envelope or corrects recipient information for an in-process envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/document_visibility` | Recipients_PutRecipientsDocumentVisibility | Updates document visibility for recipients |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}` | Recipients_DeleteRecipient | Deletes a recipient from an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure` | ConsumerDisclosure_GetConsumerDisclosureEnvelopeIdRecipientId | Gets the default Electronic Record and Signature Disclosure for an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure/{langCode}` | ConsumerDisclosure_GetConsumerDisclosureEnvelopeIdRecipientIdLangCode | Gets the Electronic Record and Signature Disclosure for a specific envelope recipient. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility` | Recipients_GetRecipientDocumentVisibility | Returns document visibility for a recipient |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility` | Recipients_PutRecipientDocumentVisibility | Updates document visibility for a recipient |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof_token` | Recipients_PostRecipientProofFileResourceToken | Creates a resource token for a sender to request ID Evidence data. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image` | Recipients_GetRecipientInitialsImage | Gets the initials image for a user. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image` | Recipients_PutRecipientInitialsImage | Sets the initials image for an accountless signer. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature` | Recipients_GetRecipientSignature | Gets signature information for a signer or sign-in-person recipient. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image` | Recipients_GetRecipientSignatureImage | Retrieve signature image information for a signer/sign-in-person recipient. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image` | Recipients_PutRecipientSignatureImage | Sets the signature image for an accountless signer. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_DeleteRecipientTabs | Deletes the tabs associated with a recipient. **Note:** It is an error to delete a tab that has the `templateLocked` property set to true. This property corresponds to the **Restrict changes** option in the web app. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_GetRecipientTabs | Gets the tabs information for a signer or sign-in-person recipient in an envelope. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_PostRecipientTabs | Adds tabs for a recipient. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_PutRecipientTabs | Updates the tabs for a recipient. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/views/identity_manual_review` | Views_PostRecipientManualReviewView | Create the link to the page for manually reviewing IDs. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html_preview` | ResponsiveHtml_PostResponsiveHtmlPreview | Creates a preview of the responsive versions of all of the documents in an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/tabs_blob` | TabsBlob_GetTabsBlob | Reserved for DocuSign. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/tabs_blob` | TabsBlob_PutTabsBlob | Reserved for DocuSign. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/templates` | Templates_GetEnvelopeTemplates | Get List of Templates used in an Envelope |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/templates` | Templates_PostEnvelopeTemplates | Adds templates to an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/correct` | Views_DeleteEnvelopeCorrectView | Revokes the correction view URL to the Envelope UI. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/correct` | Views_PostEnvelopeCorrectView | Returns a URL to the envelope correction UI. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/edit` | Views_PostEnvelopeEditView | Returns a URL to the edit view UI. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/recipient` | Views_PostEnvelopeRecipientView | Returns a URL to the recipient view UI. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/recipient_preview` | Views_PostEnvelopeRecipientPreview | Creates an envelope recipient preview. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/sender` | Views_PostEnvelopeSenderView | Returns a URL to the sender view UI. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/shared` | Views_PostEnvelopeRecipientSharedView | Returns a URL to the shared recipient view UI for an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow` | EnvelopeWorkflowDefinitionV2_DeleteEnvelopeWorkflowDefinition | Delete the workflow definition for an envelope. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow` | EnvelopeWorkflowDefinitionV2_GetEnvelopeWorkflowDefinition | Returns the workflow definition for an envelope. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow` | EnvelopeWorkflowDefinitionV2_PutEnvelopeWorkflowDefinition | Updates the workflow definition for an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending` | EnvelopeWorkflowScheduledSending_DeleteEnvelopeScheduledSendingDefinition | Deletes the scheduled sending rules for the envelope's workflow. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending` | EnvelopeWorkflowScheduledSending_GetEnvelopeScheduledSendingDefinition | Returns the scheduled sending rules for an envelope's workflow definition. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending` | EnvelopeWorkflowScheduledSending_PutEnvelopeScheduledSendingDefinition | Updates the scheduled sending rules for an envelope's workflow. |
-| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps` | EnvelopeWorkflowStep_PostEnvelopeWorkflowStepDefinition | Adds a new step to an envelope's workflow. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}` | EnvelopeWorkflowStep_DeleteEnvelopeWorkflowStepDefinition | Deletes a workflow step from an envelope's workflow definition. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}` | EnvelopeWorkflowStep_GetEnvelopeWorkflowStepDefinition | Returns a specified workflow step for a specified template. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}` | EnvelopeWorkflowStep_PutEnvelopeWorkflowStepDefinition | Updates the specified workflow step for an envelope. |
-| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting` | EnvelopeWorkflowDelayedRouting_DeleteEnvelopeDelayedRoutingDefinition | Deletes the delayed routing rules for the specified envelope workflow step. |
-| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting` | EnvelopeWorkflowDelayedRouting_GetEnvelopeDelayedRoutingDefinition | Returns the delayed routing rules for an envelope's workflow step definition. |
-| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting` | EnvelopeWorkflowDelayedRouting_PutEnvelopeDelayedRoutingDefinition | Updates the delayed routing rules for an envelope's workflow step definition. |
-| DELETE | `/v2.1/accounts/{accountId}/favorite_templates` | FavoriteTemplates_UnFavoriteTemplate | Remove one or more templates from the account favorites. |
-| GET | `/v2.1/accounts/{accountId}/favorite_templates` | FavoriteTemplates_GetFavoriteTemplates | Retrieves the list of favorite templates for the account. |
-| PUT | `/v2.1/accounts/{accountId}/favorite_templates` | FavoriteTemplates_PutFavoriteTemplate | Set one or more templates as account favorites. |
-| GET | `/v2.1/accounts/{accountId}/folders` | Folders_GetFolders | Gets a list of the folders for the account. |
-| GET | `/v2.1/accounts/{accountId}/folders/{folderId}` | Folders_GetFolderItems | Gets information about the specified folder. |
-| PUT | `/v2.1/accounts/{accountId}/folders/{folderId}` | Folders_PutFolderById | Moves an envelope from its current folder to the specified folder. |
-| DELETE | `/v2.1/accounts/{accountId}/groups` | Groups_DeleteGroups | Deletes an existing user group. |
-| GET | `/v2.1/accounts/{accountId}/groups` | Groups_GetGroups | Gets information about groups associated with the account. |
-| POST | `/v2.1/accounts/{accountId}/groups` | Groups_PostGroups | Creates one or more groups for the account. |
-| PUT | `/v2.1/accounts/{accountId}/groups` | Groups_PutGroups | Updates the group information for a group. |
-| DELETE | `/v2.1/accounts/{accountId}/groups/{groupId}/brands` | Brands_DeleteGroupBrands | Deletes brand information from a group. |
-| GET | `/v2.1/accounts/{accountId}/groups/{groupId}/brands` | Brands_GetGroupBrands | Gets the brand information for a group. |
-| PUT | `/v2.1/accounts/{accountId}/groups/{groupId}/brands` | Brands_PutGroupBrands | Adds an existing brand to a group. |
-| DELETE | `/v2.1/accounts/{accountId}/groups/{groupId}/users` | Groups_DeleteGroupUsers | Deletes one or more users from a group |
-| GET | `/v2.1/accounts/{accountId}/groups/{groupId}/users` | Groups_GetGroupUsers | Gets a list of users in a group. |
-| PUT | `/v2.1/accounts/{accountId}/groups/{groupId}/users` | Groups_PutGroupUsers | Adds one or more users to an existing group. |
-| GET | `/v2.1/accounts/{accountId}/identity_verification` | AccountIdentityVerification_GetAccountIdentityVerification | Retrieves the Identity Verification workflows available to an account. |
-| GET | `/v2.1/accounts/{accountId}/payment_gateway_accounts` | PaymentGatewayAccounts_GetAllPaymentGatewayAccounts | List payment gateway accounts |
-| GET | `/v2.1/accounts/{accountId}/permission_profiles` | PermissionProfiles_GetPermissionProfiles | Gets a list of permission profiles. |
-| POST | `/v2.1/accounts/{accountId}/permission_profiles` | PermissionProfiles_PostPermissionProfiles | Creates a new permission profile for an account. |
-| DELETE | `/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}` | PermissionProfiles_DeletePermissionProfiles | Deletes a permission profile from an account. |
-| GET | `/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}` | PermissionProfiles_GetPermissionProfile | Returns a permission profile for an account. |
-| PUT | `/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}` | PermissionProfiles_PutPermissionProfiles | Updates a permission profile. |
-| DELETE | `/v2.1/accounts/{accountId}/powerforms` | PowerForms_DeletePowerFormsList | Deletes one or more PowerForms. |
-| GET | `/v2.1/accounts/{accountId}/powerforms` | PowerForms_GetPowerFormsList | Returns a list of PowerForms. |
-| POST | `/v2.1/accounts/{accountId}/powerforms` | PowerForms_PostPowerForm | Creates a new PowerForm |
-| GET | `/v2.1/accounts/{accountId}/powerforms/senders` | PowerForms_GetPowerFormsSenders | Gets PowerForm senders. |
-| DELETE | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}` | PowerForms_DeletePowerForm | Deletes a PowerForm. |
-| GET | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}` | PowerForms_GetPowerForm | Returns a single PowerForm. |
-| PUT | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}` | PowerForms_PutPowerForm | Updates an existing PowerForm. |
-| GET | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}/form_data` | PowerForms_GetPowerFormFormData | Returns the data that users entered in a PowerForm. |
-| GET | `/v2.1/accounts/{accountId}/recipient_names` | RecipientNames_GetRecipientNames | Gets the recipient names associated with an email address. |
-| GET | `/v2.1/accounts/{accountId}/seals` | AccountSignatureProviders_GetSealProviders | Returns available seals for specified account. |
-| GET | `/v2.1/accounts/{accountId}/search_folders/{searchFolderId}` | SearchFolders_GetSearchFolderContents | Gets a list of envelopes in folders matching the specified criteria. |
-| GET | `/v2.1/accounts/{accountId}/settings` | Settings_GetSettings | Gets account settings information. |
-| PUT | `/v2.1/accounts/{accountId}/settings` | Settings_PutSettings | Updates the account settings for an account. |
-| GET | `/v2.1/accounts/{accountId}/settings/bcc_email_archives` | BCCEmailArchive_GetBCCEmailArchiveList | Gets the BCC email archive configurations for an account. |
-| POST | `/v2.1/accounts/{accountId}/settings/bcc_email_archives` | BCCEmailArchive_PostBCCEmailArchive | Creates a BCC email archive configuration. |
-| DELETE | `/v2.1/accounts/{accountId}/settings/bcc_email_archives/{bccEmailArchiveId}` | BCCEmailArchive_DeleteBCCEmailArchive | Deletes a BCC email archive configuration. |
-| GET | `/v2.1/accounts/{accountId}/settings/bcc_email_archives/{bccEmailArchiveId}` | BCCEmailArchive_GetBCCEmailArchiveHistoryList | Gets a BCC email archive configuration and its history. |
-| DELETE | `/v2.1/accounts/{accountId}/settings/enote_configuration` | ENoteConfiguration_DeleteENoteConfiguration | Deletes configuration information for the eNote eOriginal integration. |
-| GET | `/v2.1/accounts/{accountId}/settings/enote_configuration` | ENoteConfiguration_GetENoteConfiguration | Returns the configuration information for the eNote eOriginal integration. |
-| PUT | `/v2.1/accounts/{accountId}/settings/enote_configuration` | ENoteConfiguration_PutENoteConfiguration | Updates configuration information for the eNote eOriginal integration. |
-| GET | `/v2.1/accounts/{accountId}/settings/envelope_purge_configuration` | EnvelopePurgeConfiguration_GetEnvelopePurgeConfiguration | Gets the envelope purge configuration for an account. |
-| PUT | `/v2.1/accounts/{accountId}/settings/envelope_purge_configuration` | EnvelopePurgeConfiguration_PutEnvelopePurgeConfiguration | Sets the envelope purge configuration for an account. |
-| GET | `/v2.1/accounts/{accountId}/settings/notification_defaults` | NotificationDefaults_GetNotificationDefaults | Gets envelope notification defaults. |
-| PUT | `/v2.1/accounts/{accountId}/settings/notification_defaults` | NotificationDefaults_PutNotificationDefaults | Updates envelope notification default settings. |
-| GET | `/v2.1/accounts/{accountId}/settings/password_rules` | AccountPasswordRules_GetAccountPasswordRules | Gets the password rules for an account. |
-| PUT | `/v2.1/accounts/{accountId}/settings/password_rules` | AccountPasswordRules_PutAccountPasswordRules | Updates the password rules for an account. |
-| GET | `/v2.1/accounts/{accountId}/settings/tabs` | TabSettings_GetTabSettings | Returns tab settings list for specified account |
-| PUT | `/v2.1/accounts/{accountId}/settings/tabs` | TabSettings_PutSettings | Modifies tab settings for specified account |
-| GET | `/v2.1/accounts/{accountId}/shared_access` | SharedAccess_GetSharedAccess | Reserved: Gets the shared item status for one or more users. |
-| PUT | `/v2.1/accounts/{accountId}/shared_access` | SharedAccess_PutSharedAccess | Reserved: Sets the shared access information for users. |
-| GET | `/v2.1/accounts/{accountId}/signatureProviders` | AccountSignatureProviders_GetSignatureProviders | Gets the available signature providers for an account. |
-| GET | `/v2.1/accounts/{accountId}/signatures` | AccountSignatures_GetAccountSignatures | Returns a list of stamps available in the account. |
-| POST | `/v2.1/accounts/{accountId}/signatures` | AccountSignatures_PostAccountSignatures | Adds or updates one or more account stamps. |
-| PUT | `/v2.1/accounts/{accountId}/signatures` | AccountSignatures_PutAccountSignature | Updates an account stamp. |
-| DELETE | `/v2.1/accounts/{accountId}/signatures/{signatureId}` | AccountSignatures_DeleteAccountSignature | Deletes an account stamp. |
-| GET | `/v2.1/accounts/{accountId}/signatures/{signatureId}` | AccountSignatures_GetAccountSignature | Returns information about the specified stamp. |
-| PUT | `/v2.1/accounts/{accountId}/signatures/{signatureId}` | AccountSignatures_PutAccountSignatureById | Updates an account stamp by ID. |
-| DELETE | `/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}` | AccountSignatures_DeleteAccountSignatureImage | Deletes the image for a stamp. |
-| GET | `/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}` | AccountSignatures_GetAccountSignatureImage | Returns the image for an account stamp. |
-| PUT | `/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}` | AccountSignatures_PutAccountSignatureImage | Sets a signature image, initials, or stamp. |
-| DELETE | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_DeleteSigningGroups | Deletes one or more signing groups. |
-| GET | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_GetSigningGroups | Gets a list of the Signing Groups in an account. |
-| POST | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_PostSigningGroups | Creates a signing group. |
-| PUT | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_PutSigningGroups | Updates signing group names. |
-| GET | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}` | SigningGroups_GetSigningGroup | Gets information about a signing group. |
-| PUT | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}` | SigningGroups_PutSigningGroup | Updates a signing group. |
-| DELETE | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users` | SigningGroups_DeleteSigningGroupUsers | Deletes one or more members from a signing group. |
-| GET | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users` | SigningGroups_GetSigningGroupUsers | Gets a list of members in a Signing Group. |
-| PUT | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users` | SigningGroups_PutSigningGroupUsers | Adds members to a signing group. |
-| GET | `/v2.1/accounts/{accountId}/supported_languages` | SupportedLanguages_GetSupportedLanguages | Gets the supported languages for envelope recipients. |
-| GET | `/v2.1/accounts/{accountId}/tab_definitions` | Tabs_GetTabDefinitions | Gets a list of all account tabs. |
-| POST | `/v2.1/accounts/{accountId}/tab_definitions` | Tabs_PostTabDefinitions | Creates a custom tab. |
-| DELETE | `/v2.1/accounts/{accountId}/tab_definitions/{customTabId}` | Tab_DeleteCustomTab | Deletes custom tab information. |
-| GET | `/v2.1/accounts/{accountId}/tab_definitions/{customTabId}` | Tab_GetCustomTab | Gets custom tab information. |
-| PUT | `/v2.1/accounts/{accountId}/tab_definitions/{customTabId}` | Tab_PutCustomTab | Updates custom tab information. |
-| GET | `/v2.1/accounts/{accountId}/templates` | Templates_GetTemplates | Gets the list of templates. |
-| POST | `/v2.1/accounts/{accountId}/templates` | Templates_PostTemplates | Creates one or more templates. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}` | Templates_GetTemplate | Gets a specific template associated with a specified account. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}` | Templates_PutTemplate | Updates an existing template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_DeleteTemplateCustomFields | Deletes envelope custom fields in a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_GetTemplateCustomFields | Gets the custom document fields from a template. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_PostTemplateCustomFields | Creates custom document fields in an existing template document. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_PutTemplateCustomFields | Updates envelope custom fields in a template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents` | Documents_DeleteTemplateDocuments | Deletes documents from a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents` | Documents_GetTemplateDocuments | Gets a list of documents associated with a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents` | Documents_PutTemplateDocuments | Adds documents to a template document. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}` | Documents_GetTemplateDocument | Gets PDF documents from a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}` | Documents_PutTemplateDocument | Updates a template document. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_DeleteTemplateDocumentFields | Deletes custom document fields from an existing template document. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_GetTemplateDocumentFields | Gets the custom document fields for a an existing template document. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_PostTemplateDocumentFields | Creates custom document fields in an existing template document. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_PutTemplateDocumentFields | Updates existing custom document fields in an existing template document. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions` | ResponsiveHtml_GetTemplateDocumentHtmlDefinitions | Gets the Original HTML Definition used to generate the Responsive HTML for a given document in a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages` | Pages_GetTemplatePageImages | Returns document page images based on input. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}` | Pages_DeleteTemplatePage | Deletes a page from a document in an template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_GetTemplatePageImage | Gets a page image from a template for display. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_PutTemplatePageImage | Rotates page image from a template for display. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs` | Tabs_GetTemplatePageTabs | Returns tabs on the specified page. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview` | ResponsiveHtml_PostTemplateDocumentResponsiveHtmlPreview | Creates a preview of the responsive version of a template document. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_DeleteTemplateDocumentTabs | Deletes tabs from a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_GetTemplateDocumentTabs | Returns tabs on a template. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_PostTemplateDocumentTabs | Adds tabs to a document in a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_PutTemplateDocumentTabs | Updates the tabs for a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/html_definitions` | ResponsiveHtml_GetTemplateHtmlDefinitions | Gets the Original HTML Definition used to generate the Responsive HTML for the template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_DeleteTemplateLock | Deletes a template lock. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_GetTemplateLock | Gets template lock information. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_PostTemplateLock | Locks a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_PutTemplateLock | Updates a template lock. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/notification` | Notification_GetTemplatesTemplateIdNotification | Gets template notification information. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/notification` | Notification_PutTemplatesTemplateIdNotification | Updates the notification structure for an existing template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_DeleteTemplateRecipients | Deletes recipients from a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_GetTemplateRecipients | Gets recipient information from a template. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_PostTemplateRecipients | Adds tabs for a recipient. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_PutTemplateRecipients | Updates recipients in a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/document_visibility` | Recipients_PutTemplateRecipientsDocumentVisibility | Updates document visibility for template recipients |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}` | Recipients_DeleteTemplateRecipient | Deletes the specified recipient file from a template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients` | Recipients_DeleteTemplateBulkRecipientsFile | Deletes the bulk recipient list on a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/document_visibility` | Recipients_GetTemplateRecipientDocumentVisibility | Returns document visibility for a template recipient |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/document_visibility` | Recipients_PutTemplateRecipientDocumentVisibility | Updates document visibility for a template recipient |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_DeleteTemplateRecipientTabs | Deletes the tabs associated with a recipient in a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_GetTemplateRecipientTabs | Gets the tabs information for a signer or sign-in-person recipient in a template. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_PostTemplateRecipientTabs | Adds tabs for a recipient. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_PutTemplateRecipientTabs | Updates the tabs for a recipient. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/responsive_html_preview` | ResponsiveHtml_PostTemplateResponsiveHtmlPreview | Creates a preview of the responsive versions of all of the documents associated with a template. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/views/edit` | Views_PostTemplateEditView | Gets a URL for a template edit view. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/views/recipient_preview` | Views_PostTemplateRecipientPreview | Creates a template recipient preview. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow` | TemplateWorkflowDefinition_DeleteTemplateWorkflowDefinition | Delete the workflow definition for a template. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow` | TemplateWorkflowDefinition_GetTemplateWorkflowDefinition | Returns the workflow definition for a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow` | TemplateWorkflowDefinition_PutTemplateWorkflowDefinition | Updates the workflow definition for a template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending` | TemplateWorkflowScheduledSending_DeleteTemplateScheduledSendingDefinition | Deletes the scheduled sending rules for the template's workflow. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending` | TemplateWorkflowScheduledSending_GetTemplateScheduledSendingDefinition | Returns the scheduled sending rules for a template's workflow definition. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending` | TemplateWorkflowScheduledSending_PutTemplateScheduledSendingDefinition | Updates the scheduled sending rules for a template's workflow definition. |
-| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps` | TemplateWorkflowStep_PostTemplateWorkflowStepDefinition | Adds a new step to a template's workflow. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}` | TemplateWorkflowStep_DeleteTemplateWorkflowStepDefinition | Deletes a workflow step from an template's workflow definition. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}` | TemplateWorkflowStep_GetTemplateWorkflowStepDefinition | Returns a specified workflow step for a specified envelope. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}` | TemplateWorkflowStep_PutTemplateWorkflowStepDefinition | Updates a specified workflow step for a template. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting` | TemplateWorkflowDelayedRouting_DeleteTemplateDelayedRoutingDefinition | Deletes the delayed routing rules for the specified template workflow step. |
-| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting` | TemplateWorkflowDelayedRouting_GetTemplateDelayedRoutingDefinition | Returns the delayed routing rules for a template's workflow step definition. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting` | TemplateWorkflowDelayedRouting_PutTemplateDelayedRoutingDefinition | Updates the delayed routing rules for a template's workflow step. |
-| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}` | Templates_DeleteTemplatePart | Removes a member group's sharing permissions for a template. |
-| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}` | Templates_PutTemplatePart | Shares a template with a group. |
-| GET | `/v2.1/accounts/{accountId}/unsupported_file_types` | UnsupportedFileTypes_GetUnsupportedFileTypes | Gets a list of unsupported file types. |
-| DELETE | `/v2.1/accounts/{accountId}/users` | Users_DeleteUsers | Closes one or more users in the account. |
-| GET | `/v2.1/accounts/{accountId}/users` | Users_GetUsers | Retrieves the list of users for the specified account. |
-| POST | `/v2.1/accounts/{accountId}/users` | Users_PostUsers | Adds new users to the specified account. |
-| PUT | `/v2.1/accounts/{accountId}/users` | Users_PutUsers | Changes one or more users in the specified account. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}` | User_GetUser | Gets the user information for a specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}` | User_PutUser | Updates user information for the specified user. |
-| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage` | CloudStorage_DeleteCloudStorageProviders | Deletes the user authentication information for one or more cloud storage providers. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage` | CloudStorage_GetCloudStorageProviders | Get the Cloud Storage Provider configuration for the specified user. |
-| POST | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage` | CloudStorage_PostCloudStorage | Configures the redirect URL information for one or more cloud storage providers for the specified user. |
-| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}` | CloudStorage_DeleteCloudStorage | Deletes the user authentication information for the specified cloud storage provider. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}` | CloudStorage_GetCloudStorage | Gets the specified Cloud Storage Provider configuration for the User. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders` | CloudStorageFolder_GetCloudStorageFolderAll | Retrieves a list of all the items in a specified folder from the specified cloud storage provider. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}` | CloudStorageFolder_GetCloudStorageFolder | Gets a list of items from a cloud storage provider. |
-| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/custom_settings` | UserCustomSettings_DeleteCustomSettings | Deletes custom user settings for a specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/custom_settings` | UserCustomSettings_GetCustomSettings | Retrieves the custom user settings for a specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/custom_settings` | UserCustomSettings_PutCustomSettings | Adds or updates custom user settings for the specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/profile` | UserProfile_GetProfile | Retrieves the user profile for a specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/profile` | UserProfile_PutProfile | Updates the user profile information for the specified user. |
-| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/profile/image` | UserProfileImage_DeleteUserProfileImage | Deletes the user profile image for the specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/profile/image` | UserProfileImage_GetUserProfileImage | Retrieves the user profile image for the specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/profile/image` | UserProfileImage_PutUserProfileImage | Updates the user profile image for a specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/settings` | UserSettings_GetUserSettings | Gets the user account settings for a specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/settings` | UserSettings_PutUserSettings | Updates the user account settings for a specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/signatures` | UserSignatures_GetUserSignatures | Retrieves a list of signature definitions for a user. |
-| POST | `/v2.1/accounts/{accountId}/users/{userId}/signatures` | UserSignatures_PostUserSignatures | Adds user Signature and initials images to a Signature. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/signatures` | UserSignatures_PutUserSignature | Adds/updates a user signature. |
-| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}` | UserSignatures_DeleteUserSignature | Removes removes signature information for the specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}` | UserSignatures_GetUserSignature | Gets the user signature information for the specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}` | UserSignatures_PutUserSignatureById | Updates the user signature for a specified user. |
-| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}` | UserSignatures_DeleteUserSignatureImage | Deletes the user initials image or the user signature image for the specified user. |
-| GET | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}` | UserSignatures_GetUserSignatureImage | Retrieves the user initials image or the user signature image for the specified user. |
-| PUT | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}` | UserSignatures_PutUserSignatureImage | Updates the user signature image or user initials image for the specified user. |
-| POST | `/v2.1/accounts/{accountId}/views/console` | Views_PostAccountConsoleView | Returns a URL to the DocuSign UI. |
-| GET | `/v2.1/accounts/{accountId}/watermark` | Watermark_GetWatermark | Get watermark information. |
-| PUT | `/v2.1/accounts/{accountId}/watermark` | Watermark_PutWatermark | Update watermark information. |
-| PUT | `/v2.1/accounts/{accountId}/watermark/preview` | WatermarkPreview_PutWatermarkPreview | Get watermark preview. |
-| GET | `/v2.1/accounts/{accountId}/workspaces` | Workspace_GetWorkspaces | List Workspaces |
-| POST | `/v2.1/accounts/{accountId}/workspaces` | Workspace_PostWorkspace | Create a Workspace |
-| DELETE | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}` | Workspace_DeleteWorkspace | Delete Workspace |
-| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}` | Workspace_GetWorkspace | Get Workspace |
-| PUT | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}` | Workspace_PutWorkspace | Update Workspace |
-| DELETE | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}` | WorkspaceFolder_DeleteWorkspaceItems | Deletes files or sub-folders from a workspace. |
-| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}` | WorkspaceFolder_GetWorkspaceFolder | List workspace folder contents |
-| POST | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files` | WorkspaceFile_PostWorkspaceFiles | Creates a workspace file. |
-| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}` | WorkspaceFile_GetWorkspaceFile | Gets a workspace file |
-| PUT | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}` | WorkspaceFile_PutWorkspaceFile | Update workspace file or folder metadata |
-| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}/pages` | WorkspaceFilePages_GetWorkspaceFilePages | List File Pages |
-| GET | `/v2.1/billing_plans` | BillingPlans_GetBillingPlans | Gets a list of available billing plans. |
-| GET | `/v2.1/billing_plans/{billingPlanId}` | BillingPlans_GetBillingPlan | Gets billing plan details. |
-| GET | `/v2.1/current_user/notary` | Notary_GetNotary | Gets settings for a notary user. |
-| POST | `/v2.1/current_user/notary` | Notary_PostNotary | Registers the current user as a notary. |
-| PUT | `/v2.1/current_user/notary` | Notary_PutNotary | Updates notary information for the current user. |
-| GET | `/v2.1/current_user/notary/journals` | NotaryJournals_GetNotaryJournals | Gets notary jurisdictions for a user. |
-| GET | `/v2.1/current_user/notary/jurisdictions` | NotaryJurisdictions_GetNotaryJurisdictions | Returns a list of jurisdictions that the notary is registered in. |
-| POST | `/v2.1/current_user/notary/jurisdictions` | NotaryJurisdictions_PostNotaryJurisdictions | Creates a jurisdiction object. |
-| DELETE | `/v2.1/current_user/notary/jurisdictions/{jurisdictionId}` | NotaryJurisdictions_DeleteNotaryJurisdiction | Deletes the specified jurisdiction. |
-| GET | `/v2.1/current_user/notary/jurisdictions/{jurisdictionId}` | NotaryJurisdictions_GetNotaryJurisdiction | Gets a jurisdiction object for the current user. The user must be a notary. |
-| PUT | `/v2.1/current_user/notary/jurisdictions/{jurisdictionId}` | NotaryJurisdictions_PutNotaryJurisdiction | Updates the jurisdiction information about a notary. |
-| GET | `/v2.1/current_user/password_rules` | PasswordRules_GetPasswordRules | Gets membership account password rules. |
-| DELETE | `/v2.1/diagnostics/request_logs` | APIRequestLog_DeleteRequestLogs | Deletes the request log files. |
-| GET | `/v2.1/diagnostics/request_logs` | APIRequestLog_GetRequestLogs | Gets the API request logging log files. |
-| GET | `/v2.1/diagnostics/request_logs/{requestLogId}` | APIRequestLog_GetRequestLog | Gets a request logging log file. |
-| GET | `/v2.1/diagnostics/settings` | APIRequestLog_GetRequestLogSettings | Gets the API request logging settings. |
-| PUT | `/v2.1/diagnostics/settings` | APIRequestLog_PutRequestLogSettings | Enables or disables API request logging for troubleshooting. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/service_information` | ServiceInformation_GetServiceInformation | — | serviceInformation | yes | Retrieves the available REST API versions. |
+| GET | `/v2.1` | ServiceInformation_GetResourceInformation | — | resourceInformation | yes | Lists resources for REST version specified |
+| POST | `/v2.1/accounts` | Accounts_PostAccounts | body: newAccountDefinition | newAccountSummary |  | Creates new accounts. |
+| GET | `/v2.1/accounts/provisioning` | Accounts_GetProvisioning | — | provisioningInformation | yes | Retrieves the account provisioning information for the account. |
+| GET | `/v2.1/accounts/{accountId}` | Accounts_GetAccount | `accountId`*, `include_account_settings` | accountInformation | yes | Retrieves the account information for the specified account. |
+| DELETE | `/v2.1/accounts/{accountId}` | Accounts_DeleteAccount | `accountId`* | — |  | Deletes the specified account. |
+| GET | `/v2.1/accounts/{accountId}/billing_charges` | BillingCharges_GetAccountBillingCharges | `accountId`*, `include_charges` | billingChargeResponse | yes | Gets list of recurring and usage charges for the account. |
+| GET | `/v2.1/accounts/{accountId}/billing_invoices` | BillingInvoices_GetBillingInvoices | `accountId`*, `from_date`, `to_date` | billingInvoicesResponse | yes | Get a List of Billing Invoices |
+| GET | `/v2.1/accounts/{accountId}/billing_invoices/{invoiceId}` | BillingInvoices_GetBillingInvoice | `accountId`*, `invoiceId`* | billingInvoice | yes | Retrieves a billing invoice. |
+| GET | `/v2.1/accounts/{accountId}/billing_invoices_past_due` | BillingInvoices_GetBillingInvoicesPastDue | `accountId`* | billingInvoicesSummary | yes | Get a list of past due invoices. |
+| GET | `/v2.1/accounts/{accountId}/billing_payments` | BillingPayments_GetPaymentList | `accountId`*, `from_date`, `to_date` | billingPaymentsResponse | yes | Gets payment information for one or more payments. |
+| POST | `/v2.1/accounts/{accountId}/billing_payments` | BillingPayments_PostPayment | `accountId`*, body: billingPaymentRequest | billingPaymentResponse |  | Posts a payment to a past due invoice. |
+| GET | `/v2.1/accounts/{accountId}/billing_payments/{paymentId}` | BillingPayments_GetPayment | `accountId`*, `paymentId`* | billingPaymentItem | yes | Gets billing payment information for a specific payment. |
+| GET | `/v2.1/accounts/{accountId}/billing_plan` | BillingPlan_GetBillingPlan | `accountId`*, `include_credit_card_information`, `include_downgrade_information`, `include_metadata`, `include_successor_plans`, `include_tax_exempt_id` | accountBillingPlanResponse | yes | Get Account Billing Plan |
+| PUT | `/v2.1/accounts/{accountId}/billing_plan` | BillingPlan_PutBillingPlan | `accountId`*, `preview_billing_plan`, body: billingPlanInformation | billingPlanUpdateResponse |  | Updates an account billing plan. |
+| GET | `/v2.1/accounts/{accountId}/billing_plan/credit_card` | BillingPlan_GetCreditCardInfo | `accountId`* | creditCardInformation | yes | Get credit card information |
+| GET | `/v2.1/accounts/{accountId}/billing_plan/downgrade` | BillingPlan_GetDowngradeRequestBillingInfo | `accountId`* | downgradRequestBillingInfoResponse | yes | Returns downgrade plan information for the specified account. |
+| PUT | `/v2.1/accounts/{accountId}/billing_plan/downgrade` | BillingPlan_PutDowngradeAccountBillingPlan | `accountId`*, body: downgradeBillingPlanInformation | downgradePlanUpdateResponse |  | Queues downgrade billing plan request for an account. |
+| PUT | `/v2.1/accounts/{accountId}/billing_plan/purchased_envelopes` | PurchasedEnvelopes_PutPurchasedEnvelopes | `accountId`*, body: purchasedEnvelopesInformation | — |  | Reserved: Purchase additional envelopes. |
+| GET | `/v2.1/accounts/{accountId}/brands` | Brands_GetBrands | `accountId`*, `exclude_distributor_brand`, `include_logos` | AccountBrands | yes | Gets a list of brands. |
+| POST | `/v2.1/accounts/{accountId}/brands` | Brands_PostBrands | `accountId`*, body: brand | AccountBrands |  | Creates one or more brand profiles for an account. |
+| DELETE | `/v2.1/accounts/{accountId}/brands` | Brands_DeleteBrands | `accountId`*, body: brandsRequest | AccountBrands |  | Deletes one or more brand profiles. |
+| GET | `/v2.1/accounts/{accountId}/brands/{brandId}` | Brand_GetBrand | `accountId`*, `brandId`*, `include_external_references`, `include_logos` | brand | yes | Gets information about a brand. |
+| PUT | `/v2.1/accounts/{accountId}/brands/{brandId}` | Brand_PutBrand | `accountId`*, `brandId`*, `replace_brand`, body: brand | brand |  | Updates an existing brand. |
+| DELETE | `/v2.1/accounts/{accountId}/brands/{brandId}` | Brand_DeleteBrand | `accountId`*, `brandId`* | — |  | Deletes a brand. |
+| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/file` | BrandExport_GetBrandExportFile | `accountId`*, `brandId`* | — | yes | Exports a brand. |
+| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}` | BrandLogo_GetBrandLogo | `accountId`*, `brandId`*, `logoType`* | string:binary | yes | Gets a brand logo. |
+| PUT | `/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}` | BrandLogo_PutBrandLogo | `accountId`*, `brandId`*, `logoType`*, body*: string:binary | — |  | Updates a brand logo. |
+| DELETE | `/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}` | BrandLogo_DeleteBrandLogo | `accountId`*, `brandId`*, `logoType`* | — |  | Deletes a brand logo. |
+| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/resources` | BrandResources_GetBrandResourcesList | `accountId`*, `brandId`* | brandResourcesList | yes | Returns metadata about the branding resources for an account. |
+| GET | `/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}` | BrandResources_GetBrandResources | `accountId`*, `brandId`*, `resourceContentType`*, `langcode`, `return_master` | — | yes | Returns a branding resource file. |
+| PUT | `/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}` | BrandResources_PutBrandResources | `accountId`*, `brandId`*, `resourceContentType`*, body*: object | brandResources |  | Updates a branding resource file. |
+| GET | `/v2.1/accounts/{accountId}/bulk_send_batch` | BulkSendV2Batch_GetBulkSendBatches | `accountId`*, `batch_ids`, `count`, `from_date`, `search_text`, `start_position`, `status`, `to_date`, `user_id` | bulkSendBatchSummaries | yes | Returns a list of bulk send batch summaries. |
+| GET | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}` | BulkSendV2Batch_GetBulkSendBatchStatus | `accountId`*, `bulkSendBatchId`* | bulkSendBatchStatus | yes | Gets the status of a specific bulk send batch. |
+| PUT | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}` | BulkSendV2Batch_PutBulkSendBatchStatus | `accountId`*, `bulkSendBatchId`*, body: bulkSendBatchRequest | bulkSendBatchStatus |  | Updates the name of a bulk send batch. |
+| GET | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/envelopes` | BulkSendV2Envelopes_GetBulkSendBatchEnvelopes | `accountId`*, `bulkSendBatchId`*, `count`, `include`, `order`, `order_by`, `search_text`, `start_position`, `status` | envelopesInformation | yes | Gets envelopes from a specific bulk send batch. |
+| PUT | `/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}` | BulkSendV2Batch_PutBulkSendBatchAction | `accountId`*, `bulkAction`*, `bulkSendBatchId`*, body: bulkSendBatchActionRequest | bulkSendBatchStatus |  | Applies a bulk action to all envelopes from a specified bulk send. |
+| GET | `/v2.1/accounts/{accountId}/bulk_send_lists` | BulkSendV2CRUD_GetBulkSendLists | `accountId`* | bulkSendingListSummaries | yes | Gets bulk send lists. |
+| POST | `/v2.1/accounts/{accountId}/bulk_send_lists` | BulkSendV2CRUD_PostBulkSendList | `accountId`*, body: bulkSendingList | bulkSendingList |  | Creates a bulk send list. |
+| GET | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}` | BulkSendV2CRUD_GetBulkSendList | `accountId`*, `bulkSendListId`* | bulkSendingList | yes | Gets a specific bulk send list. |
+| PUT | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}` | BulkSendV2CRUD_PutBulkSendList | `accountId`*, `bulkSendListId`*, body: bulkSendingList | bulkSendingList |  | Updates a bulk send list. |
+| DELETE | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}` | BulkSendV2CRUD_DeleteBulkSendList | `accountId`*, `bulkSendListId`* | bulkSendingListSummaries |  | Deletes a bulk send list. |
+| POST | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/send` | BulkSendV2Send_PostBulkSendRequest | `accountId`*, `bulkSendListId`*, body: bulkSendRequest | bulkSendResponse |  | Creates a bulk send request. |
+| POST | `/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/test` | BulkSendV2Test_PostBulkSendTestRequest | `accountId`*, `bulkSendListId`*, body: bulkSendRequest | bulkSendTestResponse |  | Creates a bulk send test. |
+| DELETE | `/v2.1/accounts/{accountId}/captive_recipients/{recipientPart}` | CaptiveRecipients_DeleteCaptiveRecipientsPart | `accountId`*, `recipientPart`*, body: captiveRecipientInformation | captiveRecipientInformation |  | Deletes the signature for one or more captive recipient records. |
+| POST | `/v2.1/accounts/{accountId}/chunked_uploads` | ChunkedUploads_PostChunkedUploads | `accountId`*, body: chunkedUploadRequest | chunkedUploadResponse |  | Initiate a new chunked upload. |
+| GET | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}` | ChunkedUploads_GetChunkedUpload | `accountId`*, `chunkedUploadId`*, `include` | chunkedUploadResponse | yes | Retrieves metadata about a chunked upload. |
+| PUT | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}` | ChunkedUploads_PutChunkedUploads | `accountId`*, `chunkedUploadId`*, `action` | chunkedUploadResponse |  | Commit a chunked upload. |
+| DELETE | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}` | ChunkedUploads_DeleteChunkedUpload | `accountId`*, `chunkedUploadId`* | chunkedUploadResponse |  | Deletes a chunked upload. |
+| PUT | `/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/{chunkedUploadPartSeq}` | ChunkedUploads_PutChunkedUploadPart | `accountId`*, `chunkedUploadId`*, `chunkedUploadPartSeq`*, body: chunkedUploadRequest | chunkedUploadResponse |  | Add a chunk to an existing chunked upload. |
+| GET | `/v2.1/accounts/{accountId}/connect` | Connect_GetConnectConfigs | `accountId`* | connectConfigResults | yes | Get Connect configuration information. |
+| PUT | `/v2.1/accounts/{accountId}/connect` | Connect_PutConnectConfiguration | `accountId`*, body: connectCustomConfiguration | connectCustomConfiguration |  | Updates a specified Connect configuration. |
+| POST | `/v2.1/accounts/{accountId}/connect` | Connect_PostConnectConfiguration | `accountId`*, body: connectCustomConfiguration | connectCustomConfiguration |  | Creates a Connect configuration. |
+| POST | `/v2.1/accounts/{accountId}/connect/envelopes/publish/historical` | HistoricalEnvelopePublish_PostHistoricalEnvelopePublishTransaction | `accountId`*, body: connectHistoricalEnvelopeRepublish | envelopePublishTransaction |  | Submits a batch of historical envelopes for republish to a webhook. |
+| PUT | `/v2.1/accounts/{accountId}/connect/envelopes/retry_queue` | ConnectPublish_PutConnectRetry | `accountId`*, body: connectFailureFilter | connectFailureResults |  | Republishes Connect information for multiple envelopes. |
+| PUT | `/v2.1/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue` | ConnectPublish_PutConnectRetryByEnvelope | `accountId`*, `envelopeId`* | connectFailureResults |  | Republishes Connect information for the specified envelope. |
+| GET | `/v2.1/accounts/{accountId}/connect/failures` | ConnectFailures_GetConnectLogs | `accountId`*, `from_date`, `to_date` | connectLogs | yes | Gets the Connect failure log information. |
+| DELETE | `/v2.1/accounts/{accountId}/connect/failures/{failureId}` | ConnectFailures_DeleteConnectFailureLog | `accountId`*, `failureId`* | connectDeleteFailureResult |  | Deletes a Connect failure log entry. |
+| GET | `/v2.1/accounts/{accountId}/connect/logs` | ConnectLog_GetConnectLogs | `accountId`*, `from_date`, `to_date` | connectLogs | yes | Gets the Connect log. |
+| DELETE | `/v2.1/accounts/{accountId}/connect/logs` | ConnectLog_DeleteConnectLogs | `accountId`* | — |  | Deletes a list of Connect log entries. |
+| GET | `/v2.1/accounts/{accountId}/connect/logs/{logId}` | ConnectLog_GetConnectLog | `accountId`*, `logId`*, `additional_info` | connectLog | yes | Gets a Connect log entry. |
+| DELETE | `/v2.1/accounts/{accountId}/connect/logs/{logId}` | ConnectLog_DeleteConnectLog | `accountId`*, `logId`* | — |  | Deletes a specified Connect log entry. |
+| GET | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_GetConnectOAuthConfig | `accountId`* | connectOAuthConfig | yes | Retrieves the Connect OAuth information for the account. |
+| PUT | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_PutConnectOAuthConfig | `accountId`*, body: connectOAuthConfig | connectOAuthConfig |  | Updates the existing Connect OAuth configuration for the account. |
+| POST | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_PostConnectOAuthConfig | `accountId`*, body: connectOAuthConfig | connectOAuthConfig |  | Set up Connect OAuth for the specified account. |
+| DELETE | `/v2.1/accounts/{accountId}/connect/oauth` | ConnectOAuthConfig_DeleteConnectOAuthConfig | `accountId`* | — |  | Delete the Connect OAuth configuration. |
+| GET | `/v2.1/accounts/{accountId}/connect/{connectId}` | Connect_GetConnectConfig | `accountId`*, `connectId`* | connectConfigResults | yes | Gets the details about a Connect configuration. |
+| DELETE | `/v2.1/accounts/{accountId}/connect/{connectId}` | Connect_DeleteConnectConfig | `accountId`*, `connectId`* | — |  | Deletes the specified Connect configuration. |
+| GET | `/v2.1/accounts/{accountId}/connect/{connectId}/all/users` | Connect_GetConnectAllUsers | `accountId`*, `connectId`*, `count`, `domain_users_only`, `email_substring`, `start_position`, `status`, `user_name_substring` | integratedConnectUserInfoList | yes | Returns all users from the configured Connect service. |
+| GET | `/v2.1/accounts/{accountId}/connect/{connectId}/users` | Connect_GetConnectUsers | `accountId`*, `connectId`*, `count`, `email_substring`, `list_included_users`, `start_position`, `status`, `user_name_substring` | integratedUserInfoList | yes | Returns users from the configured Connect service. |
+| GET | `/v2.1/accounts/{accountId}/consumer_disclosure` | ConsumerDisclosure_GetConsumerDisclosure | `accountId`*, `langCode` | AccountConsumerDisclosures | yes | Gets the default Electronic Record and Signature Disclosure for an account. |
+| GET | `/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}` | ConsumerDisclosure_GetConsumerDisclosureLangCode | `accountId`*, `langCode`* | AccountConsumerDisclosures | yes | Gets the Electronic Record and Signature Disclosure for an account. |
+| PUT | `/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}` | ConsumerDisclosure_PutConsumerDisclosure | `accountId`*, `langCode`*, `include_metadata`, body: consumerDisclosure | consumerDisclosure |  | Updates the Electronic Record and Signature Disclosure for an account. |
+| PUT | `/v2.1/accounts/{accountId}/contacts` | Contacts_PutContacts | `accountId`*, body: contactModRequest | contactUpdateResponse |  | Updates one or more contacts. |
+| POST | `/v2.1/accounts/{accountId}/contacts` | Contacts_PostContacts | `accountId`*, body: contactModRequest | contactUpdateResponse |  | Add contacts to a contacts list. |
+| DELETE | `/v2.1/accounts/{accountId}/contacts` | Contacts_DeleteContacts | `accountId`*, body: contactModRequest | contactUpdateResponse |  | Deletes multiple contacts from an account. |
+| GET | `/v2.1/accounts/{accountId}/contacts/{contactId}` | Contacts_GetContactById | `accountId`*, `contactId`*, `cloud_provider` | contactGetResponse | yes | Gets one or more contacts. |
+| DELETE | `/v2.1/accounts/{accountId}/contacts/{contactId}` | Contacts_DeleteContactWithId | `accountId`*, `contactId`* | contactUpdateResponse |  | Deletes a contact. |
+| GET | `/v2.1/accounts/{accountId}/custom_fields` | AccountCustomFields_GetAccountCustomFields | `accountId`* | AccountCustomFields | yes | Gets a list of custom fields. |
+| POST | `/v2.1/accounts/{accountId}/custom_fields` | AccountCustomFields_PostAccountCustomFields | `accountId`*, `apply_to_templates`, body: customField | AccountCustomFields |  | Creates an account custom field. |
+| PUT | `/v2.1/accounts/{accountId}/custom_fields/{customFieldId}` | AccountCustomFields_PutAccountCustomFields | `accountId`*, `customFieldId`*, `apply_to_templates`, body: customField | AccountCustomFields |  | Updates an account custom field. |
+| DELETE | `/v2.1/accounts/{accountId}/custom_fields/{customFieldId}` | AccountCustomFields_DeleteAccountCustomFields | `accountId`*, `customFieldId`*, `apply_to_templates` | — |  | Deletes an account custom field. |
+| GET | `/v2.1/accounts/{accountId}/envelopes` | Envelopes_GetEnvelopes | `accountId`*, `ac_status`, `block`, `cdse_mode`, `continuation_token`, `count`, `custom_field`, `email`, `envelope_ids`, `exclude`, `folder_ids`, `folder_types`, `from_date`, `from_to_status`, `include`, `include_purge_information`, `intersecting_folder_ids`, `last_queried_date`, `order`, `order_by`, `powerformids`, `query_budget`, `requester_date_format`, `search_text`, `start_position`, `status`, `to_date`, `transaction_ids`, `user_filter`, `user_id`, `user_name` | envelopesInformation | yes | Search for specific sets of envelopes by using search filters. |
+| POST | `/v2.1/accounts/{accountId}/envelopes` | Envelopes_PostEnvelopes | `accountId`*, `cdse_mode`, `change_routing_order`, `completed_documents_only`, `merge_roles_on_draft`, body: envelopeDefinition | envelopeSummary |  | Creates an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/status` | Envelopes_PutStatus | `accountId`*, `ac_status`, `block`, `count`, `email`, `envelope_ids`, `from_date`, `from_to_status`, `start_position`, `status`, `to_date`, `transaction_ids`, `user_name`, body: envelopeIdsRequest | envelopesInformation |  | Gets envelope statuses for a set of envelopes. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/transfer_rules` | EnvelopeTransferRules_GetEnvelopeTransferRules | `accountId`*, `count`, `start_position` | envelopeTransferRuleInformation | yes | Gets envelope transfer rules. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/transfer_rules` | EnvelopeTransferRules_PutEnvelopeTransferRules | `accountId`*, body: envelopeTransferRuleInformation | envelopeTransferRuleInformation |  | Changes the status of multiple envelope transfer rules. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/transfer_rules` | EnvelopeTransferRules_PostEnvelopeTransferRules | `accountId`*, body: envelopeTransferRuleRequest | envelopeTransferRuleInformation |  | Creates an envelope transfer rule. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/transfer_rules/{envelopeTransferRuleId}` | EnvelopeTransferRules_PutEnvelopeTransferRule | `accountId`*, `envelopeTransferRuleId`*, body: envelopeTransferRule | envelopeTransferRule |  | Changes the status of an envelope transfer rule. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/transfer_rules/{envelopeTransferRuleId}` | EnvelopeTransferRules_DeleteEnvelopeTransferRules | `accountId`*, `envelopeTransferRuleId`* | — |  | Deletes an envelope transfer rule. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}` | Envelopes_GetEnvelope | `accountId`*, `envelopeId`*, `advanced_update`, `include` | envelope | yes | Gets the status of a single envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}` | Envelopes_PutEnvelope | `accountId`*, `envelopeId`*, `advanced_update`, `resend_envelope`, body: envelope | envelopeUpdateSummary |  | Send, void, or modify a draft envelope. Purge documents from a completed envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments` | Attachments_GetAttachments | `accountId`*, `envelopeId`* | envelopeAttachmentsResult | yes | Returns a list of attachments associated with a specified envelope |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments` | Attachments_PutAttachments | `accountId`*, `envelopeId`*, body: envelopeAttachmentsRequest | envelopeAttachmentsResult |  | Adds one or more attachments to a draft or in-process envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments` | Attachments_DeleteAttachments | `accountId`*, `envelopeId`*, body: envelopeAttachmentsRequest | envelopeAttachmentsResult |  | Deletes one or more attachments from a draft envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}` | Attachments_GetAttachment | `accountId`*, `attachmentId`*, `envelopeId`* | — | yes | Retrieves an attachment from an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}` | Attachments_PutAttachment | `accountId`*, `attachmentId`*, `envelopeId`*, body: attachment | envelopeAttachmentsResult |  | Adds an attachment to a draft or in-process envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/audit_events` | AuditEvents_GetAuditEvents | `accountId`*, `envelopeId`* | envelopeAuditEventResponse | yes | Gets the envelope audit events for an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/comments/transcript` | Comments_GetCommentsTranscript | `accountId`*, `envelopeId`*, `encoding` | string:binary | yes | Gets a PDF transcript of all of the comments in an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_GetCustomFields | `accountId`*, `envelopeId`* | customFieldsEnvelope | yes | Gets the custom field information for the specified envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_PutCustomFields | `accountId`*, `envelopeId`*, body: EnvelopeCustomFields | EnvelopeCustomFields |  | Updates envelope custom fields in an envelope. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_PostCustomFields | `accountId`*, `envelopeId`*, body: EnvelopeCustomFields | EnvelopeCustomFields |  | Creates envelope custom fields for an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields` | CustomFields_DeleteCustomFields | `accountId`*, `envelopeId`*, body: EnvelopeCustomFields | EnvelopeCustomFields |  | Deletes envelope custom fields for draft and in-process envelopes. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents` | Documents_GetDocuments | `accountId`*, `envelopeId`*, `documents_by_userid`, `include_docgen_formfields`, `include_metadata`, `include_tabs`, `recipient_id`, `shared_user_id` | envelopeDocumentsResult | yes | Gets a list of documents in an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents` | Documents_PutDocuments | `accountId`*, `envelopeId`*, body: envelopeDefinition | envelopeDocumentsResult |  | Adds one or more documents to an existing envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents` | Documents_DeleteDocuments | `accountId`*, `envelopeId`*, body: envelopeDefinition | envelopeDocumentsResult |  | Deletes documents from a draft envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}` | Documents_GetDocument | `accountId`*, `documentId`*, `envelopeId`*, `certificate`, `documents_by_userid`, `encoding`, `encrypt`, `language`, `recipient_id`, `shared_user_id`, `show_changes`, `watermark` | string:binary | yes | Retrieves a single document or all documents from an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}` | Documents_PutDocument | `accountId`*, `documentId`*, `envelopeId`*, body*: string:binary | envelopeDocument |  | Adds or replaces a document in an existing envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_GetDocumentFields | `accountId`*, `documentId`*, `envelopeId`* | EnvelopeDocumentFields | yes | Gets the custom document fields from an existing envelope document. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_PutDocumentFields | `accountId`*, `documentId`*, `envelopeId`*, body: EnvelopeDocumentFields | EnvelopeDocumentFields |  | Updates existing custom document fields in an existing envelope document. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_PostDocumentFields | `accountId`*, `documentId`*, `envelopeId`*, body: EnvelopeDocumentFields | EnvelopeDocumentFields |  | Creates custom document fields in an existing envelope document. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields` | DocumentFields_DeleteDocumentFields | `accountId`*, `documentId`*, `envelopeId`*, body: EnvelopeDocumentFields | EnvelopeDocumentFields |  | Deletes custom document fields from an existing envelope document. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/html_definitions` | ResponsiveHtml_GetEnvelopeDocumentHtmlDefinitions | `accountId`*, `documentId`*, `envelopeId`* | documentHtmlDefinitionOriginals | yes | Retrieves the HTML definition used to generate a dynamically sized responsive document. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages` | Pages_GetPageImages | `accountId`*, `documentId`*, `envelopeId`*, `count`, `dpi`, `max_height`, `max_width`, `nocache`, `show_changes`, `start_position` | pageImages | yes | Returns document page images based on input. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}` | Pages_DeletePage | `accountId`*, `documentId`*, `envelopeId`*, `pageNumber`* | — |  | Deletes a page from a document in an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_GetPageImage | `accountId`*, `documentId`*, `envelopeId`*, `pageNumber`*, `dpi`, `max_height`, `max_width`, `show_changes` | string:binary | yes | Gets a page image from an envelope for display. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_PutPageImage | `accountId`*, `documentId`*, `envelopeId`*, `pageNumber`*, body: pageRequest | — |  | Rotates page image from an envelope for display. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/tabs` | Tabs_GetPageTabs | `accountId`*, `documentId`*, `envelopeId`*, `pageNumber`* | EnvelopeDocumentTabs | yes | Returns tabs on the specified page. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html_preview` | ResponsiveHtml_PostDocumentResponsiveHtmlPreview | `accountId`*, `documentId`*, `envelopeId`*, body: documentHtmlDefinition | documentHtmlDefinitions |  | Creates a preview of the responsive version of a document. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_GetDocumentTabs | `accountId`*, `documentId`*, `envelopeId`*, `include_metadata`, `page_numbers` | EnvelopeDocumentTabs | yes | Returns the tabs on a document. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_PutDocumentTabs | `accountId`*, `documentId`*, `envelopeId`*, body: tabs | tabs |  | Updates the tabs for document. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_PostDocumentTabs | `accountId`*, `documentId`*, `envelopeId`*, body: tabs | tabs |  | Adds tabs to a document in an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs` | Tabs_DeleteDocumentTabs | `accountId`*, `documentId`*, `envelopeId`*, body: tabs | tabs |  | Deletes tabs from a document in an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates` | Templates_GetDocumentTemplates | `accountId`*, `documentId`*, `envelopeId`*, `include` | templateInformation | yes | Gets the templates associated with a document in an existing envelope. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates` | Templates_PostDocumentTemplates | `accountId`*, `documentId`*, `envelopeId`*, `preserve_template_recipient`, body: documentTemplateList | documentTemplateList |  | Adds templates to a document in an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates/{templateId}` | Templates_DeleteDocumentTemplates | `accountId`*, `documentId`*, `envelopeId`*, `templateId`* | — |  | Deletes a template from a document in an existing envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_GetEmailSettings | `accountId`*, `envelopeId`* | emailSettings | yes | Gets the email setting overrides for an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_PutEmailSettings | `accountId`*, `envelopeId`*, body: emailSettings | emailSettings |  | Updates the email setting overrides for an envelope. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_PostEmailSettings | `accountId`*, `envelopeId`*, body: emailSettings | emailSettings |  | Adds email setting overrides to an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings` | EmailSettings_DeleteEmailSettings | `accountId`*, `envelopeId`* | emailSettings |  | Deletes the email setting overrides for an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/form_data` | FormData_GetFormData | `accountId`*, `envelopeId`* | envelopeFormData | yes | Returns envelope tab data for an existing envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/html_definitions` | ResponsiveHtml_GetEnvelopeHtmlDefinitions | `accountId`*, `envelopeId`* | documentHtmlDefinitionOriginals | yes | Gets the Original HTML Definition used to generate the Responsive HTML for the envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_GetEnvelopeLock | `accountId`*, `envelopeId`* | EnvelopeLocks | yes | Gets envelope lock information. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_PutEnvelopeLock | `accountId`*, `envelopeId`*, body: lockRequest | EnvelopeLocks |  | Updates an envelope lock. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_PostEnvelopeLock | `accountId`*, `envelopeId`*, body: lockRequest | EnvelopeLocks |  | Locks an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock` | Lock_DeleteEnvelopeLock | `accountId`*, `envelopeId`* | EnvelopeLocks |  | Deletes an envelope lock. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/notification` | Notification_GetEnvelopesEnvelopeIdNotification | `accountId`*, `envelopeId`* | notification | yes | Gets envelope notification information. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/notification` | Notification_PutEnvelopesEnvelopeIdNotification | `accountId`*, `envelopeId`*, body: envelopeNotificationRequest | notification |  | Sets envelope notifications for an existing envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_GetRecipients | `accountId`*, `envelopeId`*, `include_anchor_tab_locations`, `include_extended`, `include_metadata`, `include_tabs` | EnvelopeRecipients | yes | Gets the status of recipients for an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_PutRecipients | `accountId`*, `envelopeId`*, `combine_same_order_recipients`, `offline_signing`, `resend_envelope`, body: EnvelopeRecipients | recipientsUpdateSummary |  | Updates recipients in a draft envelope or corrects recipient information for an in-process envelope. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_PostRecipients | `accountId`*, `envelopeId`*, `resend_envelope`, body: EnvelopeRecipients | EnvelopeRecipients |  | Adds one or more recipients to an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients` | Recipients_DeleteRecipients | `accountId`*, `envelopeId`*, body: EnvelopeRecipients | EnvelopeRecipients |  | Deletes recipients from an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/document_visibility` | Recipients_PutRecipientsDocumentVisibility | `accountId`*, `envelopeId`*, body: documentVisibilityList | documentVisibilityList |  | Updates document visibility for recipients |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}` | Recipients_DeleteRecipient | `accountId`*, `envelopeId`*, `recipientId`* | EnvelopeRecipients |  | Deletes a recipient from an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure` | ConsumerDisclosure_GetConsumerDisclosureEnvelopeIdRecipientId | `accountId`*, `envelopeId`*, `recipientId`*, `langCode` | consumerDisclosure | yes | Gets the default Electronic Record and Signature Disclosure for an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure/{langCode}` | ConsumerDisclosure_GetConsumerDisclosureEnvelopeIdRecipientIdLangCode | `accountId`*, `envelopeId`*, `langCode`*, `recipientId`*, `langCode` | consumerDisclosure | yes | Gets the Electronic Record and Signature Disclosure for a specific envelope recipient. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility` | Recipients_GetRecipientDocumentVisibility | `accountId`*, `envelopeId`*, `recipientId`* | documentVisibilityList | yes | Returns document visibility for a recipient |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility` | Recipients_PutRecipientDocumentVisibility | `accountId`*, `envelopeId`*, `recipientId`*, body: documentVisibilityList | documentVisibilityList |  | Updates document visibility for a recipient |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof_token` | Recipients_PostRecipientProofFileResourceToken | `accountId`*, `envelopeId`*, `recipientId`* | idEvidenceResourceToken |  | Creates a resource token for a sender to request ID Evidence data. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image` | Recipients_GetRecipientInitialsImage | `accountId`*, `envelopeId`*, `recipientId`*, `include_chrome` | string:binary | yes | Gets the initials image for a user. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image` | Recipients_PutRecipientInitialsImage | `accountId`*, `envelopeId`*, `recipientId`* | — |  | Sets the initials image for an accountless signer. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature` | Recipients_GetRecipientSignature | `accountId`*, `envelopeId`*, `recipientId`* | userSignature | yes | Gets signature information for a signer or sign-in-person recipient. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image` | Recipients_GetRecipientSignatureImage | `accountId`*, `envelopeId`*, `recipientId`*, `include_chrome` | string:binary | yes | Retrieve signature image information for a signer/sign-in-person recipient. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image` | Recipients_PutRecipientSignatureImage | `accountId`*, `envelopeId`*, `recipientId`* | — |  | Sets the signature image for an accountless signer. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_GetRecipientTabs | `accountId`*, `envelopeId`*, `recipientId`*, `include_anchor_tab_locations`, `include_metadata` | EnvelopeRecipientTabs | yes | Gets the tabs information for a signer or sign-in-person recipient in an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_PutRecipientTabs | `accountId`*, `envelopeId`*, `recipientId`*, body: EnvelopeRecipientTabs | EnvelopeRecipientTabs |  | Updates the tabs for a recipient. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_PostRecipientTabs | `accountId`*, `envelopeId`*, `recipientId`*, body: EnvelopeRecipientTabs | EnvelopeRecipientTabs |  | Adds tabs for a recipient. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs` | Recipients_DeleteRecipientTabs | `accountId`*, `envelopeId`*, `recipientId`*, body: EnvelopeRecipientTabs | EnvelopeRecipientTabs |  | Deletes the tabs associated with a recipient. **Note:** It is an error to delete a tab that has the `templateLocked` property set to true. This property corresponds to the **Restrict changes** option in the web app. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/views/identity_manual_review` | Views_PostRecipientManualReviewView | `accountId`*, `envelopeId`*, `recipientId`* | viewUrl |  | Create the link to the page for manually reviewing IDs. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html_preview` | ResponsiveHtml_PostResponsiveHtmlPreview | `accountId`*, `envelopeId`*, body: documentHtmlDefinition | documentHtmlDefinitions |  | Creates a preview of the responsive versions of all of the documents in an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/tabs_blob` | TabsBlob_GetTabsBlob | `accountId`*, `envelopeId`* | — | yes | Reserved for DocuSign. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/tabs_blob` | TabsBlob_PutTabsBlob | `accountId`*, `envelopeId`* | — |  | Reserved for DocuSign. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/templates` | Templates_GetEnvelopeTemplates | `accountId`*, `envelopeId`*, `include` | templateInformation | yes | Get List of Templates used in an Envelope |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/templates` | Templates_PostEnvelopeTemplates | `accountId`*, `envelopeId`*, `preserve_template_recipient`, body: documentTemplateList | documentTemplateList |  | Adds templates to an envelope. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/correct` | Views_PostEnvelopeCorrectView | `accountId`*, `envelopeId`*, body: correctViewRequest | EnvelopeViews |  | Returns a URL to the envelope correction UI. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/correct` | Views_DeleteEnvelopeCorrectView | `accountId`*, `envelopeId`*, body: correctViewRequest | — |  | Revokes the correction view URL to the Envelope UI. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/edit` | Views_PostEnvelopeEditView | `accountId`*, `envelopeId`*, body: returnUrlRequest | EnvelopeViews |  | Returns a URL to the edit view UI. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/recipient` | Views_PostEnvelopeRecipientView | `accountId`*, `envelopeId`*, body: recipientViewRequest | EnvelopeViews |  | Returns a URL to the recipient view UI. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/recipient_preview` | Views_PostEnvelopeRecipientPreview | `accountId`*, `envelopeId`*, body: recipientPreviewRequest | viewUrl |  | Creates an envelope recipient preview. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/sender` | Views_PostEnvelopeSenderView | `accountId`*, `envelopeId`*, body: returnUrlRequest | EnvelopeViews |  | Returns a URL to the sender view UI. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/shared` | Views_PostEnvelopeRecipientSharedView | `accountId`*, `envelopeId`*, body: recipientViewRequest | viewUrl |  | Returns a URL to the shared recipient view UI for an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow` | EnvelopeWorkflowDefinitionV2_GetEnvelopeWorkflowDefinition | `accountId`*, `envelopeId`* | workflow | yes | Returns the workflow definition for an envelope. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow` | EnvelopeWorkflowDefinitionV2_PutEnvelopeWorkflowDefinition | `accountId`*, `envelopeId`*, body: workflow | workflow |  | Updates the workflow definition for an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow` | EnvelopeWorkflowDefinitionV2_DeleteEnvelopeWorkflowDefinition | `accountId`*, `envelopeId`* | — |  | Delete the workflow definition for an envelope. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending` | EnvelopeWorkflowScheduledSending_GetEnvelopeScheduledSendingDefinition | `accountId`*, `envelopeId`* | scheduledSending | yes | Returns the scheduled sending rules for an envelope's workflow definition. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending` | EnvelopeWorkflowScheduledSending_PutEnvelopeScheduledSendingDefinition | `accountId`*, `envelopeId`*, body: scheduledSending | scheduledSending |  | Updates the scheduled sending rules for an envelope's workflow. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending` | EnvelopeWorkflowScheduledSending_DeleteEnvelopeScheduledSendingDefinition | `accountId`*, `envelopeId`* | — |  | Deletes the scheduled sending rules for the envelope's workflow. |
+| POST | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps` | EnvelopeWorkflowStep_PostEnvelopeWorkflowStepDefinition | `accountId`*, `envelopeId`*, body: workflowStep | workflowStep |  | Adds a new step to an envelope's workflow. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}` | EnvelopeWorkflowStep_GetEnvelopeWorkflowStepDefinition | `accountId`*, `envelopeId`*, `workflowStepId`* | workflowStep | yes | Returns a specified workflow step for a specified template. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}` | EnvelopeWorkflowStep_PutEnvelopeWorkflowStepDefinition | `accountId`*, `envelopeId`*, `workflowStepId`*, body: workflowStep | workflowStep |  | Updates the specified workflow step for an envelope. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}` | EnvelopeWorkflowStep_DeleteEnvelopeWorkflowStepDefinition | `accountId`*, `envelopeId`*, `workflowStepId`* | — |  | Deletes a workflow step from an envelope's workflow definition. |
+| GET | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting` | EnvelopeWorkflowDelayedRouting_GetEnvelopeDelayedRoutingDefinition | `accountId`*, `envelopeId`*, `workflowStepId`* | delayedRouting | yes | Returns the delayed routing rules for an envelope's workflow step definition. |
+| PUT | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting` | EnvelopeWorkflowDelayedRouting_PutEnvelopeDelayedRoutingDefinition | `accountId`*, `envelopeId`*, `workflowStepId`*, body: delayedRouting | delayedRouting |  | Updates the delayed routing rules for an envelope's workflow step definition. |
+| DELETE | `/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting` | EnvelopeWorkflowDelayedRouting_DeleteEnvelopeDelayedRoutingDefinition | `accountId`*, `envelopeId`*, `workflowStepId`* | — |  | Deletes the delayed routing rules for the specified envelope workflow step. |
+| GET | `/v2.1/accounts/{accountId}/favorite_templates` | FavoriteTemplates_GetFavoriteTemplates | `accountId`* | favoriteTemplatesInfo | yes | Retrieves the list of favorite templates for the account. |
+| PUT | `/v2.1/accounts/{accountId}/favorite_templates` | FavoriteTemplates_PutFavoriteTemplate | `accountId`*, body: favoriteTemplatesInfo | favoriteTemplatesInfo |  | Set one or more templates as account favorites. |
+| DELETE | `/v2.1/accounts/{accountId}/favorite_templates` | FavoriteTemplates_UnFavoriteTemplate | `accountId`*, body: favoriteTemplatesInfo | favoriteTemplatesInfo |  | Remove one or more templates from the account favorites. |
+| GET | `/v2.1/accounts/{accountId}/folders` | Folders_GetFolders | `accountId`*, `count`, `include`, `include_items`, `start_position`, `sub_folder_depth`, `template`, `user_filter` | foldersResponse | yes | Gets a list of the folders for the account. |
+| GET | `/v2.1/accounts/{accountId}/folders/{folderId}` | Folders_GetFolderItems | `accountId`*, `folderId`*, `from_date`, `include_items`, `owner_email`, `owner_name`, `search_text`, `start_position`, `status`, `to_date` | folderItemsResponse | yes | Gets information about the specified folder. |
+| PUT | `/v2.1/accounts/{accountId}/folders/{folderId}` | Folders_PutFolderById | `accountId`*, `folderId`*, body: foldersRequest | foldersResponse |  | Moves an envelope from its current folder to the specified folder. |
+| GET | `/v2.1/accounts/{accountId}/groups` | Groups_GetGroups | `accountId`*, `count`, `group_type`, `include_usercount`, `search_text`, `start_position` | groupInformation | yes | Gets information about groups associated with the account. |
+| PUT | `/v2.1/accounts/{accountId}/groups` | Groups_PutGroups | `accountId`*, body: groupInformation | groupInformation |  | Updates the group information for a group. |
+| POST | `/v2.1/accounts/{accountId}/groups` | Groups_PostGroups | `accountId`*, body: groupInformation | groupInformation |  | Creates one or more groups for the account. |
+| DELETE | `/v2.1/accounts/{accountId}/groups` | Groups_DeleteGroups | `accountId`*, body: groupInformation | groupInformation |  | Deletes an existing user group. |
+| GET | `/v2.1/accounts/{accountId}/groups/{groupId}/brands` | Brands_GetGroupBrands | `accountId`*, `groupId`* | GroupBrands | yes | Gets the brand information for a group. |
+| PUT | `/v2.1/accounts/{accountId}/groups/{groupId}/brands` | Brands_PutGroupBrands | `accountId`*, `groupId`*, body: brandsRequest | GroupBrands |  | Adds an existing brand to a group. |
+| DELETE | `/v2.1/accounts/{accountId}/groups/{groupId}/brands` | Brands_DeleteGroupBrands | `accountId`*, `groupId`*, body: brandsRequest | GroupBrands |  | Deletes brand information from a group. |
+| GET | `/v2.1/accounts/{accountId}/groups/{groupId}/users` | Groups_GetGroupUsers | `accountId`*, `groupId`*, `count`, `start_position` | usersResponse | yes | Gets a list of users in a group. |
+| PUT | `/v2.1/accounts/{accountId}/groups/{groupId}/users` | Groups_PutGroupUsers | `accountId`*, `groupId`*, body: userInfoList | usersResponse |  | Adds one or more users to an existing group. |
+| DELETE | `/v2.1/accounts/{accountId}/groups/{groupId}/users` | Groups_DeleteGroupUsers | `accountId`*, `groupId`*, body: userInfoList | usersResponse |  | Deletes one or more users from a group |
+| GET | `/v2.1/accounts/{accountId}/identity_verification` | AccountIdentityVerification_GetAccountIdentityVerification | `accountId`* | accountIdentityVerificationResponse | yes | Retrieves the Identity Verification workflows available to an account. |
+| GET | `/v2.1/accounts/{accountId}/payment_gateway_accounts` | PaymentGatewayAccounts_GetAllPaymentGatewayAccounts | `accountId`* | paymentGatewayAccountsInfo | yes | List payment gateway accounts |
+| GET | `/v2.1/accounts/{accountId}/permission_profiles` | PermissionProfiles_GetPermissionProfiles | `accountId`*, `include` | permissionProfileInformation | yes | Gets a list of permission profiles. |
+| POST | `/v2.1/accounts/{accountId}/permission_profiles` | PermissionProfiles_PostPermissionProfiles | `accountId`*, `include`, body: permissionProfile | permissionProfile |  | Creates a new permission profile for an account. |
+| GET | `/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}` | PermissionProfiles_GetPermissionProfile | `accountId`*, `permissionProfileId`*, `include` | permissionProfile | yes | Returns a permission profile for an account. |
+| PUT | `/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}` | PermissionProfiles_PutPermissionProfiles | `accountId`*, `permissionProfileId`*, `include`, body: permissionProfile | permissionProfile |  | Updates a permission profile. |
+| DELETE | `/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}` | PermissionProfiles_DeletePermissionProfiles | `accountId`*, `permissionProfileId`*, `move_users_to` | — |  | Deletes a permission profile from an account. |
+| GET | `/v2.1/accounts/{accountId}/powerforms` | PowerForms_GetPowerFormsList | `accountId`*, `from_date`, `order`, `order_by`, `search_fields`, `search_text`, `to_date` | powerFormsResponse | yes | Returns a list of PowerForms. |
+| POST | `/v2.1/accounts/{accountId}/powerforms` | PowerForms_PostPowerForm | `accountId`*, body: powerForm | powerForm |  | Creates a new PowerForm |
+| DELETE | `/v2.1/accounts/{accountId}/powerforms` | PowerForms_DeletePowerFormsList | `accountId`*, body: powerFormsRequest | powerFormsResponse |  | Deletes one or more PowerForms. |
+| GET | `/v2.1/accounts/{accountId}/powerforms/senders` | PowerForms_GetPowerFormsSenders | `accountId`*, `start_position` | powerFormSendersResponse | yes | Gets PowerForm senders. |
+| GET | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}` | PowerForms_GetPowerForm | `accountId`*, `powerFormId`* | powerForm | yes | Returns a single PowerForm. |
+| PUT | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}` | PowerForms_PutPowerForm | `accountId`*, `powerFormId`*, body: powerForm | powerForm |  | Updates an existing PowerForm. |
+| DELETE | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}` | PowerForms_DeletePowerForm | `accountId`*, `powerFormId`* | — |  | Deletes a PowerForm. |
+| GET | `/v2.1/accounts/{accountId}/powerforms/{powerFormId}/form_data` | PowerForms_GetPowerFormFormData | `accountId`*, `powerFormId`*, `data_layout`, `from_date`, `to_date` | powerFormsFormDataResponse | yes | Returns the data that users entered in a PowerForm. |
+| GET | `/v2.1/accounts/{accountId}/recipient_names` | RecipientNames_GetRecipientNames | `accountId`*, `email` | recipientNamesResponse | yes | Gets the recipient names associated with an email address. |
+| GET | `/v2.1/accounts/{accountId}/seals` | AccountSignatureProviders_GetSealProviders | `accountId`* | AccountSealProviders | yes | Returns available seals for specified account. |
+| GET | `/v2.1/accounts/{accountId}/search_folders/{searchFolderId}` | SearchFolders_GetSearchFolderContents | `accountId`*, `searchFolderId`*, `all`, `count`, `from_date`, `include_recipients`, `order`, `order_by`, `start_position`, `to_date` | folderItemResponse | yes | Gets a list of envelopes in folders matching the specified criteria. |
+| GET | `/v2.1/accounts/{accountId}/settings` | Settings_GetSettings | `accountId`* | accountSettingsInformation | yes | Gets account settings information. |
+| PUT | `/v2.1/accounts/{accountId}/settings` | Settings_PutSettings | `accountId`*, body: accountSettingsInformation | — |  | Updates the account settings for an account. |
+| GET | `/v2.1/accounts/{accountId}/settings/bcc_email_archives` | BCCEmailArchive_GetBCCEmailArchiveList | `accountId`*, `count`, `start_position` | bccEmailArchiveList | yes | Gets the BCC email archive configurations for an account. |
+| POST | `/v2.1/accounts/{accountId}/settings/bcc_email_archives` | BCCEmailArchive_PostBCCEmailArchive | `accountId`*, body: bccEmailArchive | bccEmailArchive |  | Creates a BCC email archive configuration. |
+| GET | `/v2.1/accounts/{accountId}/settings/bcc_email_archives/{bccEmailArchiveId}` | BCCEmailArchive_GetBCCEmailArchiveHistoryList | `accountId`*, `bccEmailArchiveId`*, `count`, `start_position` | bccEmailArchiveHistoryList | yes | Gets a BCC email archive configuration and its history. |
+| DELETE | `/v2.1/accounts/{accountId}/settings/bcc_email_archives/{bccEmailArchiveId}` | BCCEmailArchive_DeleteBCCEmailArchive | `accountId`*, `bccEmailArchiveId`* | — |  | Deletes a BCC email archive configuration. |
+| GET | `/v2.1/accounts/{accountId}/settings/enote_configuration` | ENoteConfiguration_GetENoteConfiguration | `accountId`* | eNoteConfiguration | yes | Returns the configuration information for the eNote eOriginal integration. |
+| PUT | `/v2.1/accounts/{accountId}/settings/enote_configuration` | ENoteConfiguration_PutENoteConfiguration | `accountId`*, body: eNoteConfiguration | eNoteConfiguration |  | Updates configuration information for the eNote eOriginal integration. |
+| DELETE | `/v2.1/accounts/{accountId}/settings/enote_configuration` | ENoteConfiguration_DeleteENoteConfiguration | `accountId`* | — |  | Deletes configuration information for the eNote eOriginal integration. |
+| GET | `/v2.1/accounts/{accountId}/settings/envelope_purge_configuration` | EnvelopePurgeConfiguration_GetEnvelopePurgeConfiguration | `accountId`* | envelopePurgeConfiguration | yes | Gets the envelope purge configuration for an account. |
+| PUT | `/v2.1/accounts/{accountId}/settings/envelope_purge_configuration` | EnvelopePurgeConfiguration_PutEnvelopePurgeConfiguration | `accountId`*, body: envelopePurgeConfiguration | envelopePurgeConfiguration |  | Sets the envelope purge configuration for an account. |
+| GET | `/v2.1/accounts/{accountId}/settings/notification_defaults` | NotificationDefaults_GetNotificationDefaults | `accountId`* | notificationDefaults | yes | Gets envelope notification defaults. |
+| PUT | `/v2.1/accounts/{accountId}/settings/notification_defaults` | NotificationDefaults_PutNotificationDefaults | `accountId`*, body: notificationDefaults | notificationDefaults |  | Updates envelope notification default settings. |
+| GET | `/v2.1/accounts/{accountId}/settings/password_rules` | AccountPasswordRules_GetAccountPasswordRules | `accountId`* | accountPasswordRules | yes | Gets the password rules for an account. |
+| PUT | `/v2.1/accounts/{accountId}/settings/password_rules` | AccountPasswordRules_PutAccountPasswordRules | `accountId`*, body: accountPasswordRules | accountPasswordRules |  | Updates the password rules for an account. |
+| GET | `/v2.1/accounts/{accountId}/settings/tabs` | TabSettings_GetTabSettings | `accountId`* | tabAccountSettings | yes | Returns tab settings list for specified account |
+| PUT | `/v2.1/accounts/{accountId}/settings/tabs` | TabSettings_PutSettings | `accountId`*, body: tabAccountSettings | tabAccountSettings |  | Modifies tab settings for specified account |
+| GET | `/v2.1/accounts/{accountId}/shared_access` | SharedAccess_GetSharedAccess | `accountId`*, `count`, `envelopes_not_shared_user_status`, `folder_ids`, `item_type`, `search_text`, `shared`, `start_position`, `user_ids` | accountSharedAccess | yes | Reserved: Gets the shared item status for one or more users. |
+| PUT | `/v2.1/accounts/{accountId}/shared_access` | SharedAccess_PutSharedAccess | `accountId`*, `item_type`, `preserve_existing_shared_access`, `user_ids`, body: accountSharedAccess | accountSharedAccess |  | Reserved: Sets the shared access information for users. |
+| GET | `/v2.1/accounts/{accountId}/signatureProviders` | AccountSignatureProviders_GetSignatureProviders | `accountId`* | accountSignatureProviders | yes | Gets the available signature providers for an account. |
+| GET | `/v2.1/accounts/{accountId}/signatures` | AccountSignatures_GetAccountSignatures | `accountId`*, `stamp_format`, `stamp_name`, `stamp_type` | accountSignaturesInformation | yes | Returns a list of stamps available in the account. |
+| PUT | `/v2.1/accounts/{accountId}/signatures` | AccountSignatures_PutAccountSignature | `accountId`*, body: accountSignaturesInformation | accountSignaturesInformation |  | Updates an account stamp. |
+| POST | `/v2.1/accounts/{accountId}/signatures` | AccountSignatures_PostAccountSignatures | `accountId`*, `decode_only`, body: accountSignaturesInformation | accountSignaturesInformation |  | Adds or updates one or more account stamps. |
+| GET | `/v2.1/accounts/{accountId}/signatures/{signatureId}` | AccountSignatures_GetAccountSignature | `accountId`*, `signatureId`* | accountSignature | yes | Returns information about the specified stamp. |
+| PUT | `/v2.1/accounts/{accountId}/signatures/{signatureId}` | AccountSignatures_PutAccountSignatureById | `accountId`*, `signatureId`*, `close_existing_signature`, body: accountSignatureDefinition | accountSignature |  | Updates an account stamp by ID. |
+| DELETE | `/v2.1/accounts/{accountId}/signatures/{signatureId}` | AccountSignatures_DeleteAccountSignature | `accountId`*, `signatureId`* | — |  | Deletes an account stamp. |
+| GET | `/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}` | AccountSignatures_GetAccountSignatureImage | `accountId`*, `imageType`*, `signatureId`*, `include_chrome` | string:binary | yes | Returns the image for an account stamp. |
+| PUT | `/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}` | AccountSignatures_PutAccountSignatureImage | `accountId`*, `imageType`*, `signatureId`*, `transparent_png` | accountSignature |  | Sets a signature image, initials, or stamp. |
+| DELETE | `/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}` | AccountSignatures_DeleteAccountSignatureImage | `accountId`*, `imageType`*, `signatureId`* | accountSignature |  | Deletes the image for a stamp. |
+| GET | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_GetSigningGroups | `accountId`*, `group_type`, `include_users` | signingGroupInformation | yes | Gets a list of the Signing Groups in an account. |
+| PUT | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_PutSigningGroups | `accountId`*, body: signingGroupInformation | signingGroupInformation |  | Updates signing group names. |
+| POST | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_PostSigningGroups | `accountId`*, body: signingGroupInformation | signingGroupInformation |  | Creates a signing group. |
+| DELETE | `/v2.1/accounts/{accountId}/signing_groups` | SigningGroups_DeleteSigningGroups | `accountId`*, body: signingGroupInformation | signingGroupInformation |  | Deletes one or more signing groups. |
+| GET | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}` | SigningGroups_GetSigningGroup | `accountId`*, `signingGroupId`* | signingGroup | yes | Gets information about a signing group. |
+| PUT | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}` | SigningGroups_PutSigningGroup | `accountId`*, `signingGroupId`*, body: signingGroup | signingGroup |  | Updates a signing group. |
+| GET | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users` | SigningGroups_GetSigningGroupUsers | `accountId`*, `signingGroupId`* | signingGroupUsers | yes | Gets a list of members in a Signing Group. |
+| PUT | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users` | SigningGroups_PutSigningGroupUsers | `accountId`*, `signingGroupId`*, body: signingGroupUsers | signingGroupUsers |  | Adds members to a signing group. |
+| DELETE | `/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users` | SigningGroups_DeleteSigningGroupUsers | `accountId`*, `signingGroupId`*, body: signingGroupUsers | signingGroupUsers |  | Deletes one or more members from a signing group. |
+| GET | `/v2.1/accounts/{accountId}/supported_languages` | SupportedLanguages_GetSupportedLanguages | `accountId`* | supportedLanguages | yes | Gets the supported languages for envelope recipients. |
+| GET | `/v2.1/accounts/{accountId}/tab_definitions` | Tabs_GetTabDefinitions | `accountId`*, `custom_tab_only` | tabMetadataList | yes | Gets a list of all account tabs. |
+| POST | `/v2.1/accounts/{accountId}/tab_definitions` | Tabs_PostTabDefinitions | `accountId`*, body: tabMetadata | tabMetadata |  | Creates a custom tab. |
+| GET | `/v2.1/accounts/{accountId}/tab_definitions/{customTabId}` | Tab_GetCustomTab | `accountId`*, `customTabId`* | tabMetadata | yes | Gets custom tab information. |
+| PUT | `/v2.1/accounts/{accountId}/tab_definitions/{customTabId}` | Tab_PutCustomTab | `accountId`*, `customTabId`*, body: tabMetadata | tabMetadata |  | Updates custom tab information. |
+| DELETE | `/v2.1/accounts/{accountId}/tab_definitions/{customTabId}` | Tab_DeleteCustomTab | `accountId`*, `customTabId`* | — |  | Deletes custom tab information. |
+| GET | `/v2.1/accounts/{accountId}/templates` | Templates_GetTemplates | `accountId`*, `count`, `created_from_date`, `created_to_date`, `folder_ids`, `folder_types`, `from_date`, `include`, `is_deleted_template_only`, `is_download`, `modified_from_date`, `modified_to_date`, `order`, `order_by`, `search_fields`, `search_text`, `shared_by_me`, `start_position`, `template_ids`, `to_date`, `used_from_date`, `used_to_date`, `user_filter`, `user_id` | envelopeTemplateResults | yes | Gets the list of templates. |
+| POST | `/v2.1/accounts/{accountId}/templates` | Templates_PostTemplates | `accountId`*, body: envelopeTemplate | templateSummary |  | Creates one or more templates. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}` | Templates_GetTemplate | `accountId`*, `templateId`*, `include` | envelopeTemplate | yes | Gets a specific template associated with a specified account. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}` | Templates_PutTemplate | `accountId`*, `templateId`*, body: envelopeTemplate | templateUpdateSummary |  | Updates an existing template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_GetTemplateCustomFields | `accountId`*, `templateId`* | customFields | yes | Gets the custom document fields from a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_PutTemplateCustomFields | `accountId`*, `templateId`*, body: templateCustomFields | customFields |  | Updates envelope custom fields in a template. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_PostTemplateCustomFields | `accountId`*, `templateId`*, body: templateCustomFields | customFields |  | Creates custom document fields in an existing template document. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields` | CustomFields_DeleteTemplateCustomFields | `accountId`*, `templateId`*, body: templateCustomFields | customFields |  | Deletes envelope custom fields in a template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents` | Documents_GetTemplateDocuments | `accountId`*, `templateId`*, `include_tabs` | templateDocumentsResult | yes | Gets a list of documents associated with a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents` | Documents_PutTemplateDocuments | `accountId`*, `templateId`*, body: envelopeDefinition | templateDocumentsResult |  | Adds documents to a template document. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents` | Documents_DeleteTemplateDocuments | `accountId`*, `templateId`*, body: envelopeDefinition | templateDocumentsResult |  | Deletes documents from a template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}` | Documents_GetTemplateDocument | `accountId`*, `documentId`*, `templateId`*, `encrypt`, `show_changes` | string:binary | yes | Gets PDF documents from a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}` | Documents_PutTemplateDocument | `accountId`*, `documentId`*, `templateId`*, `is_envelope_definition`, body: envelopeDefinition | envelopeDocument |  | Updates a template document. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_GetTemplateDocumentFields | `accountId`*, `documentId`*, `templateId`* | documentFieldsInformation | yes | Gets the custom document fields for a an existing template document. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_PutTemplateDocumentFields | `accountId`*, `documentId`*, `templateId`*, body: documentFieldsInformation | documentFieldsInformation |  | Updates existing custom document fields in an existing template document. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_PostTemplateDocumentFields | `accountId`*, `documentId`*, `templateId`*, body: documentFieldsInformation | documentFieldsInformation |  | Creates custom document fields in an existing template document. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields` | DocumentFields_DeleteTemplateDocumentFields | `accountId`*, `documentId`*, `templateId`*, body: documentFieldsInformation | documentFieldsInformation |  | Deletes custom document fields from an existing template document. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions` | ResponsiveHtml_GetTemplateDocumentHtmlDefinitions | `accountId`*, `documentId`*, `templateId`* | documentHtmlDefinitionOriginals | yes | Gets the Original HTML Definition used to generate the Responsive HTML for a given document in a template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages` | Pages_GetTemplatePageImages | `accountId`*, `documentId`*, `templateId`*, `count`, `dpi`, `max_height`, `max_width`, `nocache`, `show_changes`, `start_position` | pageImages | yes | Returns document page images based on input. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}` | Pages_DeleteTemplatePage | `accountId`*, `documentId`*, `pageNumber`*, `templateId`*, body: pageRequest | — |  | Deletes a page from a document in an template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_GetTemplatePageImage | `accountId`*, `documentId`*, `pageNumber`*, `templateId`*, `dpi`, `max_height`, `max_width`, `show_changes` | string:binary | yes | Gets a page image from a template for display. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image` | Pages_PutTemplatePageImage | `accountId`*, `documentId`*, `pageNumber`*, `templateId`*, body: pageRequest | — |  | Rotates page image from a template for display. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs` | Tabs_GetTemplatePageTabs | `accountId`*, `documentId`*, `pageNumber`*, `templateId`* | TemplateDocumentTabs | yes | Returns tabs on the specified page. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview` | ResponsiveHtml_PostTemplateDocumentResponsiveHtmlPreview | `accountId`*, `documentId`*, `templateId`*, body: documentHtmlDefinition | documentHtmlDefinitions |  | Creates a preview of the responsive version of a template document. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_GetTemplateDocumentTabs | `accountId`*, `documentId`*, `templateId`*, `page_numbers` | TemplateDocumentTabs | yes | Returns tabs on a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_PutTemplateDocumentTabs | `accountId`*, `documentId`*, `templateId`*, body: templateTabs | tabs |  | Updates the tabs for a template. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_PostTemplateDocumentTabs | `accountId`*, `documentId`*, `templateId`*, body: templateTabs | tabs |  | Adds tabs to a document in a template. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs` | Tabs_DeleteTemplateDocumentTabs | `accountId`*, `documentId`*, `templateId`*, body: templateTabs | tabs |  | Deletes tabs from a template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/html_definitions` | ResponsiveHtml_GetTemplateHtmlDefinitions | `accountId`*, `templateId`* | documentHtmlDefinitionOriginals | yes | Gets the Original HTML Definition used to generate the Responsive HTML for the template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_GetTemplateLock | `accountId`*, `templateId`* | lockInformation | yes | Gets template lock information. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_PutTemplateLock | `accountId`*, `templateId`*, body: lockRequest | lockInformation |  | Updates a template lock. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_PostTemplateLock | `accountId`*, `templateId`*, body: lockRequest | lockInformation |  | Locks a template. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/lock` | Lock_DeleteTemplateLock | `accountId`*, `templateId`*, body: lockRequest | lockInformation |  | Deletes a template lock. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/notification` | Notification_GetTemplatesTemplateIdNotification | `accountId`*, `templateId`* | notification | yes | Gets template notification information. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/notification` | Notification_PutTemplatesTemplateIdNotification | `accountId`*, `templateId`*, body: templateNotificationRequest | notification |  | Updates the notification structure for an existing template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_GetTemplateRecipients | `accountId`*, `templateId`*, `include_anchor_tab_locations`, `include_extended`, `include_tabs` | recipients | yes | Gets recipient information from a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_PutTemplateRecipients | `accountId`*, `templateId`*, `resend_envelope`, body: templateRecipients | recipientsUpdateSummary |  | Updates recipients in a template. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_PostTemplateRecipients | `accountId`*, `templateId`*, `resend_envelope`, body: templateRecipients | recipients |  | Adds tabs for a recipient. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients` | Recipients_DeleteTemplateRecipients | `accountId`*, `templateId`*, body: templateRecipients | recipients |  | Deletes recipients from a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/document_visibility` | Recipients_PutTemplateRecipientsDocumentVisibility | `accountId`*, `templateId`*, body: templateDocumentVisibilityList | templateDocumentVisibilityList |  | Updates document visibility for template recipients |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}` | Recipients_DeleteTemplateRecipient | `accountId`*, `recipientId`*, `templateId`*, body: templateRecipients | recipients |  | Deletes the specified recipient file from a template. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients` | Recipients_DeleteTemplateBulkRecipientsFile | `accountId`*, `recipientId`*, `templateId`* | bulkRecipientsUpdateResponse |  | Deletes the bulk recipient list on a template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/document_visibility` | Recipients_GetTemplateRecipientDocumentVisibility | `accountId`*, `recipientId`*, `templateId`* | documentVisibilityList | yes | Returns document visibility for a template recipient |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/document_visibility` | Recipients_PutTemplateRecipientDocumentVisibility | `accountId`*, `recipientId`*, `templateId`*, body: templateDocumentVisibilityList | templateDocumentVisibilityList |  | Updates document visibility for a template recipient |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_GetTemplateRecipientTabs | `accountId`*, `recipientId`*, `templateId`*, `include_anchor_tab_locations`, `include_metadata` | tabs | yes | Gets the tabs information for a signer or sign-in-person recipient in a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_PutTemplateRecipientTabs | `accountId`*, `recipientId`*, `templateId`*, body: templateTabs | tabs |  | Updates the tabs for a recipient. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_PostTemplateRecipientTabs | `accountId`*, `recipientId`*, `templateId`*, body: templateTabs | tabs |  | Adds tabs for a recipient. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs` | Recipients_DeleteTemplateRecipientTabs | `accountId`*, `recipientId`*, `templateId`*, body: templateTabs | tabs |  | Deletes the tabs associated with a recipient in a template. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/responsive_html_preview` | ResponsiveHtml_PostTemplateResponsiveHtmlPreview | `accountId`*, `templateId`*, body: documentHtmlDefinition | documentHtmlDefinitions |  | Creates a preview of the responsive versions of all of the documents associated with a template. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/views/edit` | Views_PostTemplateEditView | `accountId`*, `templateId`*, body: returnUrlRequest | viewUrl |  | Gets a URL for a template edit view. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/views/recipient_preview` | Views_PostTemplateRecipientPreview | `accountId`*, `templateId`*, body: recipientPreviewRequest | viewUrl |  | Creates a template recipient preview. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow` | TemplateWorkflowDefinition_GetTemplateWorkflowDefinition | `accountId`*, `templateId`* | workflow | yes | Returns the workflow definition for a template. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow` | TemplateWorkflowDefinition_PutTemplateWorkflowDefinition | `accountId`*, `templateId`*, body: workflow | workflow |  | Updates the workflow definition for a template. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow` | TemplateWorkflowDefinition_DeleteTemplateWorkflowDefinition | `accountId`*, `templateId`* | — |  | Delete the workflow definition for a template. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending` | TemplateWorkflowScheduledSending_GetTemplateScheduledSendingDefinition | `accountId`*, `templateId`* | scheduledSending | yes | Returns the scheduled sending rules for a template's workflow definition. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending` | TemplateWorkflowScheduledSending_PutTemplateScheduledSendingDefinition | `accountId`*, `templateId`*, body: scheduledSending | scheduledSending |  | Updates the scheduled sending rules for a template's workflow definition. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending` | TemplateWorkflowScheduledSending_DeleteTemplateScheduledSendingDefinition | `accountId`*, `templateId`* | — |  | Deletes the scheduled sending rules for the template's workflow. |
+| POST | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps` | TemplateWorkflowStep_PostTemplateWorkflowStepDefinition | `accountId`*, `templateId`*, body: workflowStep | workflowStep |  | Adds a new step to a template's workflow. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}` | TemplateWorkflowStep_GetTemplateWorkflowStepDefinition | `accountId`*, `templateId`*, `workflowStepId`* | workflowStep | yes | Returns a specified workflow step for a specified envelope. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}` | TemplateWorkflowStep_PutTemplateWorkflowStepDefinition | `accountId`*, `templateId`*, `workflowStepId`*, body: workflowStep | workflowStep |  | Updates a specified workflow step for a template. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}` | TemplateWorkflowStep_DeleteTemplateWorkflowStepDefinition | `accountId`*, `templateId`*, `workflowStepId`* | — |  | Deletes a workflow step from an template's workflow definition. |
+| GET | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting` | TemplateWorkflowDelayedRouting_GetTemplateDelayedRoutingDefinition | `accountId`*, `templateId`*, `workflowStepId`* | delayedRouting | yes | Returns the delayed routing rules for a template's workflow step definition. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting` | TemplateWorkflowDelayedRouting_PutTemplateDelayedRoutingDefinition | `accountId`*, `templateId`*, `workflowStepId`*, body: delayedRouting | delayedRouting |  | Updates the delayed routing rules for a template's workflow step. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting` | TemplateWorkflowDelayedRouting_DeleteTemplateDelayedRoutingDefinition | `accountId`*, `templateId`*, `workflowStepId`* | — |  | Deletes the delayed routing rules for the specified template workflow step. |
+| PUT | `/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}` | Templates_PutTemplatePart | `accountId`*, `templateId`*, `templatePart`*, body: groupInformation | groupInformation |  | Shares a template with a group. |
+| DELETE | `/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}` | Templates_DeleteTemplatePart | `accountId`*, `templateId`*, `templatePart`*, body: groupInformation | groupInformation |  | Removes a member group's sharing permissions for a template. |
+| GET | `/v2.1/accounts/{accountId}/unsupported_file_types` | UnsupportedFileTypes_GetUnsupportedFileTypes | `accountId`* | fileTypeList | yes | Gets a list of unsupported file types. |
+| GET | `/v2.1/accounts/{accountId}/users` | Users_GetUsers | `accountId`*, `additional_info`, `alternate_admins_only`, `count`, `domain_users_only`, `email`, `email_substring`, `group_id`, `include_usersettings_for_csv`, `login_status`, `not_group_id`, `start_position`, `status`, `user_name_substring` | userInformationList | yes | Retrieves the list of users for the specified account. |
+| PUT | `/v2.1/accounts/{accountId}/users` | Users_PutUsers | `accountId`*, `allow_all_languages`, body: userInformationList | userInformationList |  | Changes one or more users in the specified account. |
+| POST | `/v2.1/accounts/{accountId}/users` | Users_PostUsers | `accountId`*, body: newUsersDefinition | newUsersSummary |  | Adds new users to the specified account. |
+| DELETE | `/v2.1/accounts/{accountId}/users` | Users_DeleteUsers | `accountId`*, `delete`, body: userInfoList | usersResponse |  | Closes one or more users in the account. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}` | User_GetUser | `accountId`*, `userId`*, `additional_info`, `email` | userInformation | yes | Gets the user information for a specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}` | User_PutUser | `accountId`*, `userId`*, `allow_all_languages`, body: userInformation | userInformation |  | Updates user information for the specified user. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage` | CloudStorage_GetCloudStorageProviders | `accountId`*, `userId`*, `redirectUrl` | cloudStorageProviders | yes | Get the Cloud Storage Provider configuration for the specified user. |
+| POST | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage` | CloudStorage_PostCloudStorage | `accountId`*, `userId`*, body: cloudStorageProviders | cloudStorageProviders |  | Configures the redirect URL information for one or more cloud storage providers for the specified user. |
+| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage` | CloudStorage_DeleteCloudStorageProviders | `accountId`*, `userId`*, body: cloudStorageProviders | cloudStorageProviders |  | Deletes the user authentication information for one or more cloud storage providers. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}` | CloudStorage_GetCloudStorage | `accountId`*, `serviceId`*, `userId`*, `redirectUrl` | cloudStorageProviders | yes | Gets the specified Cloud Storage Provider configuration for the User. |
+| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}` | CloudStorage_DeleteCloudStorage | `accountId`*, `serviceId`*, `userId`* | cloudStorageProviders |  | Deletes the user authentication information for the specified cloud storage provider. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders` | CloudStorageFolder_GetCloudStorageFolderAll | `accountId`*, `serviceId`*, `userId`*, `cloud_storage_folder_path`, `count`, `order`, `order_by`, `search_text`, `start_position` | externalFolder | yes | Retrieves a list of all the items in a specified folder from the specified cloud storage provider. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}` | CloudStorageFolder_GetCloudStorageFolder | `accountId`*, `folderId`*, `serviceId`*, `userId`*, `cloud_storage_folder_path`, `cloud_storage_folderid_plain`, `count`, `order`, `order_by`, `search_text`, `start_position` | externalFolder | yes | Gets a list of items from a cloud storage provider. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/custom_settings` | UserCustomSettings_GetCustomSettings | `accountId`*, `userId`* | customSettingsInformation | yes | Retrieves the custom user settings for a specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/custom_settings` | UserCustomSettings_PutCustomSettings | `accountId`*, `userId`*, body: customSettingsInformation | customSettingsInformation |  | Adds or updates custom user settings for the specified user. |
+| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/custom_settings` | UserCustomSettings_DeleteCustomSettings | `accountId`*, `userId`*, body: customSettingsInformation | customSettingsInformation |  | Deletes custom user settings for a specified user. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/profile` | UserProfile_GetProfile | `accountId`*, `userId`* | userProfile | yes | Retrieves the user profile for a specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/profile` | UserProfile_PutProfile | `accountId`*, `userId`*, body: userProfile | — |  | Updates the user profile information for the specified user. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/profile/image` | UserProfileImage_GetUserProfileImage | `accountId`*, `userId`*, `encoding` | string:binary | yes | Retrieves the user profile image for the specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/profile/image` | UserProfileImage_PutUserProfileImage | `accountId`*, `userId`* | — |  | Updates the user profile image for a specified user. |
+| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/profile/image` | UserProfileImage_DeleteUserProfileImage | `accountId`*, `userId`* | — |  | Deletes the user profile image for the specified user. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/settings` | UserSettings_GetUserSettings | `accountId`*, `userId`* | userSettingsInformation | yes | Gets the user account settings for a specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/settings` | UserSettings_PutUserSettings | `accountId`*, `userId`*, `allow_all_languages`, body: userSettingsInformation | — |  | Updates the user account settings for a specified user. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/signatures` | UserSignatures_GetUserSignatures | `accountId`*, `userId`*, `stamp_type` | userSignaturesInformation | yes | Retrieves a list of signature definitions for a user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/signatures` | UserSignatures_PutUserSignature | `accountId`*, `userId`*, body: userSignaturesInformation | userSignaturesInformation |  | Adds/updates a user signature. |
+| POST | `/v2.1/accounts/{accountId}/users/{userId}/signatures` | UserSignatures_PostUserSignatures | `accountId`*, `userId`*, body: userSignaturesInformation | userSignaturesInformation |  | Adds user Signature and initials images to a Signature. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}` | UserSignatures_GetUserSignature | `accountId`*, `signatureId`*, `userId`* | userSignature | yes | Gets the user signature information for the specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}` | UserSignatures_PutUserSignatureById | `accountId`*, `signatureId`*, `userId`*, `close_existing_signature`, body: userSignatureDefinition | userSignature |  | Updates the user signature for a specified user. |
+| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}` | UserSignatures_DeleteUserSignature | `accountId`*, `signatureId`*, `userId`* | — |  | Removes removes signature information for the specified user. |
+| GET | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}` | UserSignatures_GetUserSignatureImage | `accountId`*, `imageType`*, `signatureId`*, `userId`*, `include_chrome` | string:binary | yes | Retrieves the user initials image or the user signature image for the specified user. |
+| PUT | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}` | UserSignatures_PutUserSignatureImage | `accountId`*, `imageType`*, `signatureId`*, `userId`*, `transparent_png` | userSignature |  | Updates the user signature image or user initials image for the specified user. |
+| DELETE | `/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}` | UserSignatures_DeleteUserSignatureImage | `accountId`*, `imageType`*, `signatureId`*, `userId`* | userSignature |  | Deletes the user initials image or the user signature image for the specified user. |
+| POST | `/v2.1/accounts/{accountId}/views/console` | Views_PostAccountConsoleView | `accountId`*, body: consoleViewRequest | EnvelopeViews |  | Returns a URL to the DocuSign UI. |
+| GET | `/v2.1/accounts/{accountId}/watermark` | Watermark_GetWatermark | `accountId`* | watermark | yes | Get watermark information. |
+| PUT | `/v2.1/accounts/{accountId}/watermark` | Watermark_PutWatermark | `accountId`*, body: watermark | watermark |  | Update watermark information. |
+| PUT | `/v2.1/accounts/{accountId}/watermark/preview` | WatermarkPreview_PutWatermarkPreview | `accountId`*, body: watermark | watermark |  | Get watermark preview. |
+| GET | `/v2.1/accounts/{accountId}/workspaces` | Workspace_GetWorkspaces | `accountId`* | workspaceList | yes | List Workspaces |
+| POST | `/v2.1/accounts/{accountId}/workspaces` | Workspace_PostWorkspace | `accountId`*, body: workspace | workspace |  | Create a Workspace |
+| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}` | Workspace_GetWorkspace | `accountId`*, `workspaceId`* | workspace | yes | Get Workspace |
+| PUT | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}` | Workspace_PutWorkspace | `accountId`*, `workspaceId`*, body: workspace | workspace |  | Update Workspace |
+| DELETE | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}` | Workspace_DeleteWorkspace | `accountId`*, `workspaceId`* | workspace |  | Delete Workspace |
+| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}` | WorkspaceFolder_GetWorkspaceFolder | `accountId`*, `folderId`*, `workspaceId`*, `count`, `include_files`, `include_sub_folders`, `include_thumbnails`, `include_user_detail`, `start_position`, `workspace_user_id` | workspaceFolderContents | yes | List workspace folder contents |
+| DELETE | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}` | WorkspaceFolder_DeleteWorkspaceItems | `accountId`*, `folderId`*, `workspaceId`*, body: workspaceItemList | — |  | Deletes files or sub-folders from a workspace. |
+| POST | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files` | WorkspaceFile_PostWorkspaceFiles | `accountId`*, `folderId`*, `workspaceId`* | workspaceItem |  | Creates a workspace file. |
+| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}` | WorkspaceFile_GetWorkspaceFile | `accountId`*, `fileId`*, `folderId`*, `workspaceId`*, `is_download`, `pdf_version` | — | yes | Gets a workspace file |
+| PUT | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}` | WorkspaceFile_PutWorkspaceFile | `accountId`*, `fileId`*, `folderId`*, `workspaceId`* | workspaceItem |  | Update workspace file or folder metadata |
+| GET | `/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}/pages` | WorkspaceFilePages_GetWorkspaceFilePages | `accountId`*, `fileId`*, `folderId`*, `workspaceId`*, `count`, `dpi`, `max_height`, `max_width`, `start_position` | pageImages | yes | List File Pages |
+| GET | `/v2.1/billing_plans` | BillingPlans_GetBillingPlans | — | billingPlansResponse | yes | Gets a list of available billing plans. |
+| GET | `/v2.1/billing_plans/{billingPlanId}` | BillingPlans_GetBillingPlan | `billingPlanId`* | billingPlanResponse | yes | Gets billing plan details. |
+| GET | `/v2.1/current_user/notary` | Notary_GetNotary | `include_jurisdictions` | notaryResult | yes | Gets settings for a notary user. |
+| PUT | `/v2.1/current_user/notary` | Notary_PutNotary | body: notary | notary |  | Updates notary information for the current user. |
+| POST | `/v2.1/current_user/notary` | Notary_PostNotary | body: notary | notary |  | Registers the current user as a notary. |
+| GET | `/v2.1/current_user/notary/journals` | NotaryJournals_GetNotaryJournals | `count`, `search_text`, `start_position` | notaryJournalList | yes | Gets notary jurisdictions for a user. |
+| GET | `/v2.1/current_user/notary/jurisdictions` | NotaryJurisdictions_GetNotaryJurisdictions | — | notaryJurisdictionList | yes | Returns a list of jurisdictions that the notary is registered in. |
+| POST | `/v2.1/current_user/notary/jurisdictions` | NotaryJurisdictions_PostNotaryJurisdictions | body: notaryJurisdiction | notaryJurisdiction |  | Creates a jurisdiction object. |
+| GET | `/v2.1/current_user/notary/jurisdictions/{jurisdictionId}` | NotaryJurisdictions_GetNotaryJurisdiction | `jurisdictionId`* | notaryJurisdiction | yes | Gets a jurisdiction object for the current user. The user must be a notary. |
+| PUT | `/v2.1/current_user/notary/jurisdictions/{jurisdictionId}` | NotaryJurisdictions_PutNotaryJurisdiction | `jurisdictionId`*, body: notaryJurisdiction | notaryJurisdiction |  | Updates the jurisdiction information about a notary. |
+| DELETE | `/v2.1/current_user/notary/jurisdictions/{jurisdictionId}` | NotaryJurisdictions_DeleteNotaryJurisdiction | `jurisdictionId`* | — |  | Deletes the specified jurisdiction. |
+| GET | `/v2.1/current_user/password_rules` | PasswordRules_GetPasswordRules | — | userPasswordRules | yes | Gets membership account password rules. |
+| GET | `/v2.1/diagnostics/request_logs` | APIRequestLog_GetRequestLogs | `encoding` | apiRequestLogsResult | yes | Gets the API request logging log files. |
+| DELETE | `/v2.1/diagnostics/request_logs` | APIRequestLog_DeleteRequestLogs | — | — |  | Deletes the request log files. |
+| GET | `/v2.1/diagnostics/request_logs/{requestLogId}` | APIRequestLog_GetRequestLog | `requestLogId`* | string:binary | yes | Gets a request logging log file. |
+| GET | `/v2.1/diagnostics/settings` | APIRequestLog_GetRequestLogSettings | — | diagnosticsSettingsInformation | yes | Gets the API request logging settings. |
+| PUT | `/v2.1/diagnostics/settings` | APIRequestLog_PutRequestLogSettings | body: diagnosticsSettingsInformation | diagnosticsSettingsInformation |  | Enables or disables API request logging for troubleshooting. |

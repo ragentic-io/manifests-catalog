@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Musixmatch_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `5f1073d9e2cda4922eba7a5ffde8dab9fd836f7254701ea667390bdc702d3a16` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Musixmatch_profile_
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/album.get` | get /album.get | — |
-| GET | `/album.tracks.get` | get /album.tracks.get | — |
-| GET | `/artist.albums.get` | get /artist.albums.get | — |
-| GET | `/artist.get` | get /artist.get | — |
-| GET | `/artist.related.get` | get /artist.related.get | — |
-| GET | `/artist.search` | get /artist.search | — |
-| GET | `/chart.artists.get` | get /chart.artists.get | — |
-| GET | `/chart.tracks.get` | get /chart.tracks.get | — |
-| GET | `/matcher.lyrics.get` | get /matcher.lyrics.get | — |
-| GET | `/matcher.subtitle.get` | get /matcher.subtitle.get | — |
-| GET | `/matcher.track.get` | get /matcher.track.get | — |
-| GET | `/track.get` | get /track.get | — |
-| GET | `/track.lyrics.get` | get /track.lyrics.get | — |
-| GET | `/track.search` | get /track.search | — |
-| GET | `/track.snippet.get` | get /track.snippet.get | — |
-| GET | `/track.subtitle.get` | get /track.subtitle.get | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/album.get` | get /album.get | `format`, `callback`, `album_id`* | object | yes | — |
+| GET | `/album.tracks.get` | get /album.tracks.get | `format`, `callback`, `album_id`*, `f_has_lyrics`, `page`, `page_size` | object | yes | — |
+| GET | `/artist.albums.get` | get /artist.albums.get | `format`, `callback`, `artist_id`*, `s_release_date`, `g_album_name`, `page_size`, `page` | object | yes | — |
+| GET | `/artist.get` | get /artist.get | `format`, `callback`, `artist_id`* | object | yes | — |
+| GET | `/artist.related.get` | get /artist.related.get | `format`, `callback`, `artist_id`*, `page_size`, `page` | object | yes | — |
+| GET | `/artist.search` | get /artist.search | `format`, `callback`, `q_artist`, `f_artist_id`, `page`, `page_size` | object | yes | — |
+| GET | `/chart.artists.get` | get /chart.artists.get | `format`, `callback`, `page`, `page_size`, `country` | object | yes | — |
+| GET | `/chart.tracks.get` | get /chart.tracks.get | `format`, `callback`, `page`, `page_size`, `country`, `f_has_lyrics` | object | yes | — |
+| GET | `/matcher.lyrics.get` | get /matcher.lyrics.get | `format`, `callback`, `q_track`, `q_artist` | object | yes | — |
+| GET | `/matcher.subtitle.get` | get /matcher.subtitle.get | `format`, `callback`, `q_track`, `q_artist`, `f_subtitle_length`, `f_subtitle_length_max_deviation` | object | yes | — |
+| GET | `/matcher.track.get` | get /matcher.track.get | `format`, `callback`, `q_artist`, `q_track`, `f_has_lyrics`, `f_has_subtitle` | object | yes | — |
+| GET | `/track.get` | get /track.get | `format`, `callback`, `track_id`* | object | yes | — |
+| GET | `/track.lyrics.get` | get /track.lyrics.get | `format`, `callback`, `track_id`* | object | yes | — |
+| GET | `/track.search` | get /track.search | `format`, `callback`, `q_track`, `q_artist`, `q_lyrics`, `f_artist_id`, `f_music_genre_id`, `f_lyrics_language`, `f_has_lyrics`, `s_artist_rating`, `s_track_rating`, `quorum_factor`, `page_size`, `page` | object | yes | — |
+| GET | `/track.snippet.get` | get /track.snippet.get | `format`, `callback`, `track_id`* | object | yes | — |
+| GET | `/track.subtitle.get` | get /track.subtitle.get | `format`, `callback`, `track_id`* | object | yes | — |

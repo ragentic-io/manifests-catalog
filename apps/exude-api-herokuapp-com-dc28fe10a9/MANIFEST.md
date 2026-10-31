@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2e528d20193ba875252e1000f7e148da66e5897ecc301afca7e792d663da6a1d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/exude/{type}/data` | filterStoppings | Filter the stopping words from the provided input data or links |
-| POST | `/exude/{type}/file` | filterFileDataStoppings | Filter the stopping words from the provided input file |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/exude/{type}/data` | filterStoppings | `type`*, body*: ExudeBean | ExudeResponseBean |  | Filter the stopping words from the provided input data or links |
+| POST | `/exude/{type}/file` | filterFileDataStoppings | `type`*, body*: object | ExudeResponseBean |  | Filter the stopping words from the provided input file |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_remove.bg_apple-touch-icon.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `0bb98239ed03045aa0f71ed18481ac3866e66b6be6791d1cec727533b4a958e7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_remove.bg_apple-touch-icon.png"
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | get /account | Fetch credit balance and free API calls. |
-| POST | `/improve` | post /improve | — |
-| POST | `/removebg` | post /removebg | Remove the background of an image |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | get /account | — | object | yes | Fetch credit balance and free API calls. |
+| POST | `/improve` | post /improve | body*: ImprovementProgramJson | ImprovementProgramJsonResponse |  | — |
+| POST | `/removebg` | post /removebg | body*: RemoveBgJson | RemoveBgJsonResponse |  | Remove the background of an image |

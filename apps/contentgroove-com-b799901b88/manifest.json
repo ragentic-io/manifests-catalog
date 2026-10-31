@@ -17,17 +17,17 @@
       {
         "from": "contentgroove-com-b799901b88",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/clips/{id}"
-      },
-      {
-        "from": "contentgroove-com-b799901b88",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/clips/{id}"
       },
       {
         "from": "contentgroove-com-b799901b88",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/clips/{id}"
+      },
+      {
+        "from": "contentgroove-com-b799901b88",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/clips/{id}"
       },
       {
         "from": "contentgroove-com-b799901b88",
@@ -47,17 +47,17 @@
       {
         "from": "contentgroove-com-b799901b88",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/medias/{id}"
-      },
-      {
-        "from": "contentgroove-com-b799901b88",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/medias/{id}"
       },
       {
         "from": "contentgroove-com-b799901b88",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/medias/{id}"
+      },
+      {
+        "from": "contentgroove-com-b799901b88",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/medias/{id}"
       },
       {
         "from": "contentgroove-com-b799901b88",
@@ -72,12 +72,12 @@
       {
         "from": "contentgroove-com-b799901b88",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/webhook_subscriptions/{id}"
+        "to": "operation:get:/api/v1/webhook_subscriptions/{id}"
       },
       {
         "from": "contentgroove-com-b799901b88",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/webhook_subscriptions/{id}"
+        "to": "operation:delete:/api/v1/webhook_subscriptions/{id}"
       }
     ],
     "nodes": [
@@ -91,8 +91,51 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/clips",
+        "parameters": [
+          {
+            "description": "Filters to be applied to the query.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Specify page number and page size for the query",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Sorting to be applied to the query.",
+            "enum": [
+              "created_at",
+              "-created_at",
+              "original_created_at",
+              "-original_created_at",
+              "name",
+              "-name"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/clips",
         "pointer": "#/paths/~1api~1v1~1clips/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
@@ -108,6 +151,28 @@
         "name": "post /api/v1/clips",
         "path": "/api/v1/clips",
         "pointer": "#/paths/~1api~1v1~1clips/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerHeader": []
@@ -117,27 +182,36 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/clips/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/clips/{id}",
-        "path": "/api/v1/clips/{id}",
-        "pointer": "#/paths/~1api~1v1~1clips~1{id}/delete",
-        "security": [
-          {
-            "BearerHeader": []
-          }
-        ],
-        "summary": "delete clip"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/api/v1/clips/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/clips/{id}",
+        "parameters": [
+          {
+            "description": "The id of the clip to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/clips/{id}",
         "pointer": "#/paths/~1api~1v1~1clips~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
@@ -151,8 +225,36 @@
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/clips/{id}",
+        "parameters": [
+          {
+            "description": "The id of the clip to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/clips/{id}",
         "pointer": "#/paths/~1api~1v1~1clips~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerHeader": []
@@ -162,12 +264,63 @@
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/v1/clips/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/clips/{id}",
+        "parameters": [
+          {
+            "description": "The id of the clip to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/clips/{id}",
+        "pointer": "#/paths/~1api~1v1~1clips~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "summary": "delete clip"
+      },
+      {
+        "deprecated": false,
         "id": "operation:get:/api/v1/direct_uploads",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/direct_uploads",
         "path": "/api/v1/direct_uploads",
         "pointer": "#/paths/~1api~1v1~1direct_uploads/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
@@ -181,8 +334,51 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/medias",
+        "parameters": [
+          {
+            "description": "Filters to be applied to the query.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Specify page number and page size for the query",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Sorting to be applied to the query.",
+            "enum": [
+              "created_at",
+              "-created_at",
+              "original_created_at",
+              "-original_created_at",
+              "name",
+              "-name"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/medias",
         "pointer": "#/paths/~1api~1v1~1medias/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
@@ -198,6 +394,28 @@
         "name": "post /api/v1/medias",
         "path": "/api/v1/medias",
         "pointer": "#/paths/~1api~1v1~1medias/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerHeader": []
@@ -207,27 +425,36 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/medias/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/medias/{id}",
-        "path": "/api/v1/medias/{id}",
-        "pointer": "#/paths/~1api~1v1~1medias~1{id}/delete",
-        "security": [
-          {
-            "BearerHeader": []
-          }
-        ],
-        "summary": "delete media"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/api/v1/medias/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/medias/{id}",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/medias/{id}",
         "pointer": "#/paths/~1api~1v1~1medias~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
@@ -241,8 +468,36 @@
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/medias/{id}",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/medias/{id}",
         "pointer": "#/paths/~1api~1v1~1medias~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerHeader": []
@@ -252,12 +507,87 @@
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/v1/medias/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/medias/{id}",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/medias/{id}",
+        "pointer": "#/paths/~1api~1v1~1medias~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "summary": "delete media"
+      },
+      {
+        "deprecated": false,
         "id": "operation:get:/api/v1/webhook_subscriptions",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/webhook_subscriptions",
+        "parameters": [
+          {
+            "description": "Filters to be applied to the query.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "Sorting to be applied to the query.",
+            "enum": [
+              "created_at",
+              "-created_at",
+              "original_created_at",
+              "-original_created_at",
+              "name",
+              "-name"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/webhook_subscriptions",
         "pointer": "#/paths/~1api~1v1~1webhook_subscriptions/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
@@ -273,6 +603,25 @@
         "name": "post /api/v1/webhook_subscriptions",
         "path": "/api/v1/webhook_subscriptions",
         "pointer": "#/paths/~1api~1v1~1webhook_subscriptions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerHeader": []
@@ -282,33 +631,81 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/webhook_subscriptions/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/webhook_subscriptions/{id}",
-        "path": "/api/v1/webhook_subscriptions/{id}",
-        "pointer": "#/paths/~1api~1v1~1webhook_subscriptions~1{id}/delete",
-        "security": [
-          {
-            "BearerHeader": []
-          }
-        ],
-        "summary": "delete webhook subscription"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/api/v1/webhook_subscriptions/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/webhook_subscriptions/{id}",
+        "parameters": [
+          {
+            "description": "The id of the webhook subscription to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/webhook_subscriptions/{id}",
         "pointer": "#/paths/~1api~1v1~1webhook_subscriptions~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerHeader": []
           }
         ],
         "summary": "show webhook subscription"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v1/webhook_subscriptions/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/webhook_subscriptions/{id}",
+        "parameters": [
+          {
+            "description": "The id of the webhook subscription to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/webhook_subscriptions/{id}",
+        "pointer": "#/paths/~1api~1v1~1webhook_subscriptions~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "BearerHeader": []
+          }
+        ],
+        "summary": "delete webhook subscription"
       }
     ]
   },

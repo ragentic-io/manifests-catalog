@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2b14bdd4511773d64798cda102817603cc46a2eb3e48e069a8274978906cc0dc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,26 +34,28 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 36 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/patch/v1/advisories` | listAdvisories | Show me all applicable advisories for all my systems |
-| GET | `/api/patch/v1/advisories/{advisory_id}` | detailAdvisory | Show me details an advisory by given advisory name |
-| GET | `/api/patch/v1/advisories/{advisory_id}/systems` | listAdvisorySystems | Show me systems on which the given advisory is applicable |
-| GET | `/api/patch/v1/export/advisories` | exportAdvisories | Export applicable advisories for all my systems |
-| GET | `/api/patch/v1/export/advisories/{advisory_id}/systems` | exportAdvisorySystems | Export systems for my account |
-| GET | `/api/patch/v1/export/packages` | exportPackages | Show me all installed packages across my systems |
-| GET | `/api/patch/v1/export/packages/{package_name}/systems` | exportPackageSystems | Show me all my systems which have a package installed |
-| GET | `/api/patch/v1/export/systems` | exportSystems | Export systems for my account |
-| GET | `/api/patch/v1/export/systems/{inventory_id}/advisories` | exportSystemAdvisories | Export applicable advisories for all my systems |
-| GET | `/api/patch/v1/export/systems/{inventory_id}/packages` | exportSystemPackages | Show me details about a system packages by given inventory id |
-| GET | `/api/patch/v1/packages/` | listPackages | Show me all installed packages across my systems |
-| GET | `/api/patch/v1/packages/{package_name}` | LatestPackage | Show me metadata of selected package |
-| GET | `/api/patch/v1/packages/{package_name}/systems` | packageSystems | Show me all my systems which have a package installed |
-| GET | `/api/patch/v1/packages/{package_name}/versions` | packageVersions | Show me all package versions installed on some system |
-| GET | `/api/patch/v1/systems` | listSystems | Show me all my systems |
-| DELETE | `/api/patch/v1/systems/{inventory_id}` | deletesystem | Delete system by inventory id |
-| GET | `/api/patch/v1/systems/{inventory_id}` | detailSystem | Show me details about a system by given inventory id |
-| GET | `/api/patch/v1/systems/{inventory_id}/advisories` | listSystemAdvisories | Show me advisories for a system by given inventory id |
-| GET | `/api/patch/v1/systems/{inventory_id}/packages` | systemPackages | Show me details about a system packages by given inventory id |
-| POST | `/api/patch/v1/views/advisories/systems` | viewAdvisoriesSystems | View advisory-system pairs for selected systems and advisories |
-| POST | `/api/patch/v1/views/systems/advisories` | viewSystemsAdvisories | View system-advisory pairs for selected systems and advisories |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/patch/v1/advisories` | listAdvisories | `limit`, `offset`, `sort`, `search`, `filter[id]`, `filter[description]`, `filter[public_date]`, `filter[synopsis]`, `filter[advisory_type]`, `filter[severity]`, `filter[applicable_systems]`, `tags`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]` | controllers.AdvisoriesResponse | yes | Show me all applicable advisories for all my systems |
+| GET | `/api/patch/v1/advisories/{advisory_id}` | detailAdvisory | `advisory_id`* | controllers.AdvisoryDetailResponse | yes | Show me details an advisory by given advisory name |
+| GET | `/api/patch/v1/advisories/{advisory_id}/systems` | listAdvisorySystems | `advisory_id`*, `limit`, `offset`, `sort`, `search`, `filter[id]`, `filter[insights_id]`, `filter[display_name]`, `filter[last_evaluation]`, `filter[last_upload]`, `filter[rhsa_count]`, `filter[rhba_count]`, `filter[rhea_count]`, `filter[other_count]`, `filter[stale]`, `filter[stale_timestamp]`, `filter[stale_warning_timestamp]`, `filter[culled_timestamp]`, `filter[created]`, `tags`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]` | controllers.AdvisorySystemsResponse | yes | Show me systems on which the given advisory is applicable |
+| GET | `/api/patch/v1/export/advisories` | exportAdvisories | `search`, `filter[id]`, `filter[description]`, `filter[public_date]`, `filter[synopsis]`, `filter[advisory_type]`, `filter[severity]`, `filter[applicable_systems]` | controllers.AdvisoryInlineItem[] | yes | Export applicable advisories for all my systems |
+| GET | `/api/patch/v1/export/advisories/{advisory_id}/systems` | exportAdvisorySystems | `advisory_id`*, `search`, `filter[id]`, `filter[display_name]`, `filter[last_evaluation]`, `filter[last_upload]`, `filter[rhsa_count]`, `filter[rhba_count]`, `filter[rhea_count]`, `filter[other_count]`, `filter[stale]`, `filter[packages_installed]`, `filter[packages_updatable]`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]`, `tags` | controllers.SystemInlineItem[] | yes | Export systems for my account |
+| GET | `/api/patch/v1/export/packages` | exportPackages | `sort`, `search`, `filter[name]`, `filter[systems_installed]`, `filter[systems_updatable]`, `filter[summary]` | controllers.PackageItem[] | yes | Show me all installed packages across my systems |
+| GET | `/api/patch/v1/export/packages/{package_name}/systems` | exportPackageSystems | `package_name`*, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]`, `tags` | controllers.PackageSystemItem[] | yes | Show me all my systems which have a package installed |
+| GET | `/api/patch/v1/export/systems` | exportSystems | `search`, `filter[id]`, `filter[display_name]`, `filter[last_evaluation]`, `filter[last_upload]`, `filter[rhsa_count]`, `filter[rhba_count]`, `filter[rhea_count]`, `filter[other_count]`, `filter[stale]`, `filter[packages_installed]`, `filter[packages_updatable]`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]`, `tags` | controllers.SystemInlineItem[] | yes | Export systems for my account |
+| GET | `/api/patch/v1/export/systems/{inventory_id}/advisories` | exportSystemAdvisories | `inventory_id`*, `search`, `filter[id]`, `filter[description]`, `filter[public_date]`, `filter[synopsis]`, `filter[advisory_type]`, `filter[severity]` | controllers.SystemAdvisoriesDBLookup[] | yes | Export applicable advisories for all my systems |
+| GET | `/api/patch/v1/export/systems/{inventory_id}/packages` | exportSystemPackages | `inventory_id`*, `search`, `filter[name]`, `filter[description]`, `filter[evra]`, `filter[summary]`, `filter[updatable]` | controllers.SystemPackageInline[] | yes | Show me details about a system packages by given inventory id |
+| GET | `/api/patch/v1/packages/` | listPackages | `limit`, `offset`, `sort`, `search`, `filter[name]`, `filter[systems_installed]`, `filter[systems_updatable]`, `filter[summary]`, `tags`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]` | controllers.PackagesResponse | yes | Show me all installed packages across my systems |
+| GET | `/api/patch/v1/packages/{package_name}` | LatestPackage | `package_name`* | controllers.PackageDetailResponse | yes | Show me metadata of selected package |
+| GET | `/api/patch/v1/packages/{package_name}/systems` | packageSystems | `limit`, `offset`, `package_name`*, `tags`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]` | controllers.PackageSystemsResponse | yes | Show me all my systems which have a package installed |
+| GET | `/api/patch/v1/packages/{package_name}/versions` | packageVersions | `limit`, `offset`, `package_name`* | controllers.PackageVersionsResponse | yes | Show me all package versions installed on some system |
+| GET | `/api/patch/v1/systems` | listSystems | `limit`, `offset`, `sort`, `search`, `filter[insights_id]`, `filter[id]`, `filter[display_name]`, `filter[last_evaluation]`, `filter[last_upload]`, `filter[rhsa_count]`, `filter[rhba_count]`, `filter[rhea_count]`, `filter[other_count]`, `filter[stale]`, `filter[packages_installed]`, `filter[packages_updatable]`, `filter[stale_timestamp]`, `filter[stale_warning_timestamp]`, `filter[culled_timestamp]`, `filter[created]`, `tags`, `filter[system_profile][sap_system]`, `filter[system_profile][sap_sids][in]` | controllers.SystemsResponse | yes | Show me all my systems |
+| GET | `/api/patch/v1/systems/{inventory_id}` | detailSystem | `inventory_id`* | controllers.SystemDetailResponse | yes | Show me details about a system by given inventory id |
+| DELETE | `/api/patch/v1/systems/{inventory_id}` | deletesystem | `inventory_id`* | — |  | Delete system by inventory id |
+| GET | `/api/patch/v1/systems/{inventory_id}/advisories` | listSystemAdvisories | `inventory_id`*, `limit`, `offset`, `sort`, `search`, `filter[id]`, `filter[description]`, `filter[public_date]`, `filter[synopsis]`, `filter[advisory_type]`, `filter[severity]` | controllers.SystemAdvisoriesResponse | yes | Show me advisories for a system by given inventory id |
+| GET | `/api/patch/v1/systems/{inventory_id}/packages` | systemPackages | `inventory_id`*, `limit`, `offset`, `search`, `filter[name]`, `filter[description]`, `filter[evra]`, `filter[summary]`, `filter[updatable]` | controllers.SystemPackageResponse | yes | Show me details about a system packages by given inventory id |
+| POST | `/api/patch/v1/views/advisories/systems` | viewAdvisoriesSystems | body*: controllers.SystemsAdvisoriesRequest | controllers.AdvisoriesSystemsResponse |  | View advisory-system pairs for selected systems and advisories |
+| POST | `/api/patch/v1/views/systems/advisories` | viewSystemsAdvisories | body*: controllers.SystemsAdvisoriesRequest | controllers.SystemsAdvisoriesResponse |  | View system-advisory pairs for selected systems and advisories |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `42b0dd09df1ac813e8d56cce7d7f293c7e17f5c9e4c5f617e73f2bd147cd982c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,40 +34,42 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 31 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/daysSupply` | daysSupply_daysSupply_get | Days worth of supply left on dealer lots |
-| GET | `/daysToSell` | daysToSell_daysToSell_get | Days a vehicle takes to sell |
-| GET | `/getBrands` | getBrandNames_getBrands_get | Get a list of brand names |
-| GET | `/getDealers` | getDealers_getDealers_get | Premium. Dealers in a zip code. |
-| GET | `/getDealersByID` | getDealers_getDealersByID_get | Premium. Dealers by ID |
-| GET | `/getDealersByRegion` | getDealers_getDealersByRegion_get | Premium. Dealers in a region. |
-| GET | `/getInactiveModels` | getModelNamesAll_getInactiveModels_get | Get a list of model names including discontinued models |
-| GET | `/getModels` | getModelNames_getModels_get | Get a list of model names |
-| GET | `/getRegionBrandMarketShare` | getRegionBrandMarketShare_getRegionBrandMarketShare_get | Market share of a brand in region |
-| GET | `/getRegionMarketShare` | getRegionMarketShare_getRegionMarketShare_get | Market share of all brands in region |
-| GET | `/getRegions` | getRegions_getRegions_get | Get a list of region names |
-| GET | `/getSubUserKeys` | getSubUserKeys_getSubUserKeys_get | Get all Sub User Keys associated with your account. |
-| GET | `/getToken` | makeToken_getToken_get | Get a JWT from your API credentials |
-| POST | `/getToken` | makeToken_getToken_post | Get a JWT from your API credentials |
-| GET | `/listPrice` | getAvgListPrice_listPrice_get | Stats on ask price of new vehicles |
-| GET | `/listings` | getListingsByDealer_listings_get | Listings by Dealer ID |
-| GET | `/listings2` | getListings2_listings2_get | Flexible Listing Search |
-| GET | `/listingsByDate` | getListingsByDealer_listingsByDate_get | Listings by Dealer ID and Date |
-| GET | `/listingsByRegion` | getListingsByRegion_listingsByRegion_get | Listings by Region |
-| GET | `/listingsByRegionAndDate` | getListingsByRegionAndDate_listingsByRegionAndDate_get | Listings by Region and Date |
-| GET | `/listingsByZipCode` | listingsByZipCode_listingsByZipCode_get | Listings by ZipCode |
-| GET | `/listingsByZipCodeAndDate` | listingsByZipCodeAndDate_listingsByZipCodeAndDate_get | Listings by ZipCode and Date |
-| POST | `/makeSubUserKey` | makeSubUserKey_makeSubUserKey_post | Generate a Sub User Key that can be used by your users to make API calls in frontend applications. |
-| GET | `/modelYearDist` | getModelUsedDist_modelYearDist_get | Used market share of model year by model |
-| GET | `/regionDailySales` | getDealerSales_regionDailySales_get | Brand sales by region and Day |
-| GET | `/regionSales` | getDealerSales_regionSales_get | Premium. Brand sales by region and month |
-| PUT | `/revokeSubUserKey` | revokeSubUserKey_revokeSubUserKey_put | Revoke a Sub User Key associated with your account. |
-| GET | `/salePrice` | getAvgSalePrice_salePrice_get | Stats on sale price of new vehicles |
-| GET | `/salePriceHistogram` | getModelSaleBuckets_salePriceHistogram_get | Histogram of sales price of new vehicles by model |
-| GET | `/similarSalePrice` | getMarket3_similarSalePrice_get | Premium. Simple Vehicle Market Report |
-| GET | `/topModels` | getTopModels_topModels_get | Top models in a given region |
-| GET | `/valuation` | getMarket4_valuation_get | Premium. Simple Vehicle Market Report Over Arbitrary Locations and Vehicles. |
-| GET | `/vehicleHistory` | getHistory2_vehicleHistory_get | Premium. Simple Vehicle History Report |
-| GET | `/vehicleSeen` | getVehicleSeen_vehicleSeen_get | Checks if a VIN appeared on the market on or after a given date. |
-| GET | `/vinDecode` | vinDecode_vinDecode_get | Vin decoder and Recall Info |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/daysSupply` | daysSupply_daysSupply_get | `jwt`*, `brandName`*, `regionName` | GenericResponse | yes | Days worth of supply left on dealer lots |
+| GET | `/daysToSell` | daysToSell_daysToSell_get | `jwt`*, `brandName`*, `regionName` | GenericResponse | yes | Days a vehicle takes to sell |
+| GET | `/getBrands` | getBrandNames_getBrands_get | `jwt`* | BrandResp | yes | Get a list of brand names |
+| GET | `/getDealers` | getDealers_getDealers_get | `jwt`*, `zipCode`* | DealershipDataResp | yes | Premium. Dealers in a zip code. |
+| GET | `/getDealersByID` | getDealers_getDealersByID_get | `jwt`*, `dealerID`* | DealershipDataResp | yes | Premium. Dealers by ID |
+| GET | `/getDealersByRegion` | getDealers_getDealersByRegion_get | `jwt`*, `regionName`, `page` | DealershipDataPaginatedResp | yes | Premium. Dealers in a region. |
+| GET | `/getInactiveModels` | getModelNamesAll_getInactiveModels_get | `jwt`*, `brandName`* | ModelResp | yes | Get a list of model names including discontinued models |
+| GET | `/getModels` | getModelNames_getModels_get | `jwt`*, `brandName`* | ModelResp | yes | Get a list of model names |
+| GET | `/getRegionBrandMarketShare` | getRegionBrandMarketShare_getRegionBrandMarketShare_get | `jwt`*, `brandName`*, `regionName` | GenericResponse | yes | Market share of a brand in region |
+| GET | `/getRegionMarketShare` | getRegionMarketShare_getRegionMarketShare_get | `jwt`*, `regionName` | GenericResponse | yes | Market share of all brands in region |
+| GET | `/getRegions` | getRegions_getRegions_get | `jwt`* | RegionResp | yes | Get a list of region names |
+| GET | `/getSubUserKeys` | getSubUserKeys_getSubUserKeys_get | `apiID`*, `apiKey`* | GenericResponse | yes | Get all Sub User Keys associated with your account. |
+| GET | `/getToken` | makeToken_getToken_get | `apiID`*, `apiKey`* | JSONWebToken | yes | Get a JWT from your API credentials |
+| POST | `/getToken` | makeToken_getToken_post | `apiID`*, `apiKey`* | JSONWebToken |  | Get a JWT from your API credentials |
+| GET | `/listPrice` | getAvgListPrice_listPrice_get | `jwt`*, `brandName`*, `regionName` | BasicModelStatsResp | yes | Stats on ask price of new vehicles |
+| GET | `/listings` | getListingsByDealer_listings_get | `jwt`*, `dealerID`*, `page`, `newCars` | ListingResp | yes | Listings by Dealer ID |
+| GET | `/listings2` | getListings2_listings2_get | `jwt`*, `dealerID`, `zipCode`, `latitude`, `longitude`, `radius`, `regionName`, `brandName`, `modelName`, `modelYear`, `mileageLow`, `mileageHigh`, `startDate`, `endDate`, `daysBack`, `page`, `newCars`, `extendedSearch` | ListingResp | yes | Flexible Listing Search |
+| GET | `/listingsByDate` | getListingsByDealer_listingsByDate_get | `jwt`*, `dealerID`*, `startDate`*, `endDate`*, `page`, `newCars` | ListingResp | yes | Listings by Dealer ID and Date |
+| GET | `/listingsByRegion` | getListingsByRegion_listingsByRegion_get | `jwt`*, `regionName`*, `modelName`*, `daysBack`, `page`, `newCars` | ListingResp | yes | Listings by Region |
+| GET | `/listingsByRegionAndDate` | getListingsByRegionAndDate_listingsByRegionAndDate_get | `jwt`*, `regionName`*, `modelName`*, `startDate`*, `endDate`*, `page`, `newCars` | ListingResp | yes | Listings by Region and Date |
+| GET | `/listingsByZipCode` | listingsByZipCode_listingsByZipCode_get | `jwt`*, `zipCode`*, `page`, `newCars`, `modelName` | ListingResp | yes | Listings by ZipCode |
+| GET | `/listingsByZipCodeAndDate` | listingsByZipCodeAndDate_listingsByZipCodeAndDate_get | `jwt`*, `zipCode`*, `startDate`*, `endDate`*, `page`, `newCars`, `modelName` | ListingResp | yes | Listings by ZipCode and Date |
+| POST | `/makeSubUserKey` | makeSubUserKey_makeSubUserKey_post | `apiID`*, `apiKey`*, `siteName`, body*: EndpointList | SubUserJSONWebToken |  | Generate a Sub User Key that can be used by your users to make API calls in frontend applications. |
+| GET | `/modelYearDist` | getModelUsedDist_modelYearDist_get | `jwt`*, `modelName`*, `brandName`*, `regionName` | ModelYearDistResp | yes | Used market share of model year by model |
+| GET | `/regionDailySales` | getDealerSales_regionDailySales_get | `jwt`*, `brandName`*, `regionName`*, `day`* | GenericResponse | yes | Brand sales by region and Day |
+| GET | `/regionSales` | getDealerSales_regionSales_get | `jwt`*, `brandName`*, `regionName`*, `month`* | GenericResponse | yes | Premium. Brand sales by region and month |
+| PUT | `/revokeSubUserKey` | revokeSubUserKey_revokeSubUserKey_put | `apiID`*, `apiKey`*, `subUserKeyUUID`* | GenericResponse |  | Revoke a Sub User Key associated with your account. |
+| GET | `/salePrice` | getAvgSalePrice_salePrice_get | `jwt`*, `brandName`*, `regionName` | BasicModelStatsResp | yes | Stats on sale price of new vehicles |
+| GET | `/salePriceHistogram` | getModelSaleBuckets_salePriceHistogram_get | `jwt`*, `modelName`*, `brandName`*, `regionName` | BucketResp | yes | Histogram of sales price of new vehicles by model |
+| GET | `/similarSalePrice` | getMarket3_similarSalePrice_get | `jwt`*, `vin`*, `regionName`, `daysBack`, `sameYear` | SimilarSalePriceResp | yes | Premium. Simple Vehicle Market Report |
+| GET | `/topModels` | getTopModels_topModels_get | `jwt`*, `regionName` | TopModelResp | yes | Top models in a given region |
+| GET | `/valuation` | getMarket4_valuation_get | `jwt`*, `vin`*, `dealerID`, `zipCode`, `latitude`, `longitude`, `radius`, `regionName`, `mileageLow`, `mileageHigh`, `startDate`, `endDate`, `daysBack`, `newCars`, `extendedSearch`, `sameYear` | SimilarSalePriceResp | yes | Premium. Simple Vehicle Market Report Over Arbitrary Locations and Vehicles. |
+| GET | `/vehicleHistory` | getHistory2_vehicleHistory_get | `jwt`*, `vin`* | HistoryResp | yes | Premium. Simple Vehicle History Report |
+| GET | `/vehicleSeen` | getVehicleSeen_vehicleSeen_get | `jwt`*, `vin`*, `afterDate`* | BooleanResp | yes | Checks if a VIN appeared on the market on or after a given date. |
+| GET | `/vinDecode` | vinDecode_vinDecode_get | `jwt`*, `vin`*, `passEmpty`, `includeRecall` | GenericResponse | yes | Vin decoder and Recall Info |

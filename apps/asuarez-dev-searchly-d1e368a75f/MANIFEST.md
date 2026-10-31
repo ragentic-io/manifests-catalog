@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `159359d7cdf16aec34a4cfba1186cf3945ca1b8d20b959474690d5420f12ad7c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/similarity/by_content` | src.searchly.api.v1.controllers.similarity.by_content | API endpoint to search similarity using content |
-| GET | `/similarity/by_song` | src.searchly.api.v1.controllers.similarity.by_song | API endpoint to search similarity using a song identifier |
-| GET | `/song/search` | src.searchly.api.v1.controllers.song.search | API endpoint to search songs from the database given a query |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/similarity/by_content` | src.searchly.api.v1.controllers.similarity.by_content | body*: object | APIResponseSimilarity |  | API endpoint to search similarity using content |
+| GET | `/similarity/by_song` | src.searchly.api.v1.controllers.similarity.by_song | `song_id`* | APIResponseSimilarity | yes | API endpoint to search similarity using a song identifier |
+| GET | `/song/search` | src.searchly.api.v1.controllers.song.search | `query`* | APIResponseSong | yes | API endpoint to search songs from the database given a query |

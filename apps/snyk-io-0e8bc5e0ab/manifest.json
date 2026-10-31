@@ -167,12 +167,12 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/org/{orgId}/members/{userId}"
+        "to": "operation:put:/org/{orgId}/members/{userId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:put:/org/{orgId}/members/{userId}"
+        "to": "operation:delete:/org/{orgId}/members/{userId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -187,17 +187,17 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/org/{orgId}/project/{projectId}"
-      },
-      {
-        "from": "snyk-io-0e8bc5e0ab",
-        "kind": "EXPOSES",
         "to": "operation:get:/org/{orgId}/project/{projectId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
         "to": "operation:put:/org/{orgId}/project/{projectId}"
+      },
+      {
+        "from": "snyk-io-0e8bc5e0ab",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/org/{orgId}/project/{projectId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -242,12 +242,12 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/org/{orgId}/project/{projectId}/ignore/{issueId}"
+        "to": "operation:get:/org/{orgId}/project/{projectId}/ignore/{issueId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:get:/org/{orgId}/project/{projectId}/ignore/{issueId}"
+        "to": "operation:put:/org/{orgId}/project/{projectId}/ignore/{issueId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -257,7 +257,7 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:put:/org/{orgId}/project/{projectId}/ignore/{issueId}"
+        "to": "operation:delete:/org/{orgId}/project/{projectId}/ignore/{issueId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -287,17 +287,17 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/org/{orgId}/project/{projectId}/settings"
-      },
-      {
-        "from": "snyk-io-0e8bc5e0ab",
-        "kind": "EXPOSES",
         "to": "operation:get:/org/{orgId}/project/{projectId}/settings"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
         "to": "operation:put:/org/{orgId}/project/{projectId}/settings"
+      },
+      {
+        "from": "snyk-io-0e8bc5e0ab",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/org/{orgId}/project/{projectId}/settings"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -317,17 +317,17 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/org/{orgId}/provision"
-      },
-      {
-        "from": "snyk-io-0e8bc5e0ab",
-        "kind": "EXPOSES",
         "to": "operation:get:/org/{orgId}/provision"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
         "to": "operation:post:/org/{orgId}/provision"
+      },
+      {
+        "from": "snyk-io-0e8bc5e0ab",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/org/{orgId}/provision"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -352,12 +352,12 @@
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:delete:/org/{orgId}/webhooks/{webhookId}"
+        "to": "operation:get:/org/{orgId}/webhooks/{webhookId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
-        "to": "operation:get:/org/{orgId}/webhooks/{webhookId}"
+        "to": "operation:delete:/org/{orgId}/webhooks/{webhookId}"
       },
       {
         "from": "snyk-io-0e8bc5e0ab",
@@ -518,6 +518,176 @@
         "from": "snyk-io-0e8bc5e0ab",
         "kind": "EXPOSES",
         "to": "operation:get:/user/{userId}"
+      },
+      {
+        "from": "operation:get:/org/{orgId}/project/{projectId}/ignore/{issueId}",
+        "kind": "RETURNS",
+        "to": "schema:ignorePath"
+      },
+      {
+        "from": "operation:post:/org/{orgId}/project/{projectId}/ignore/{issueId}",
+        "kind": "RETURNS",
+        "to": "schema:ignorePath"
+      },
+      {
+        "from": "operation:get:/org/{orgId}/project/{projectId}/ignores",
+        "kind": "RETURNS",
+        "to": "schema:issueId"
+      },
+      {
+        "from": "operation:get:/org/{orgId}/project/{projectId}/jira-issues",
+        "kind": "RETURNS",
+        "to": "schema:issueId"
+      },
+      {
+        "from": "schema:DepGraphData",
+        "kind": "REFERENCES",
+        "to": "schema:Graph"
+      },
+      {
+        "from": "schema:DepGraphData",
+        "kind": "REFERENCES",
+        "to": "schema:PkgManager"
+      },
+      {
+        "from": "schema:Function",
+        "kind": "REFERENCES",
+        "to": "schema:FunctionId"
+      },
+      {
+        "from": "schema:Gradle_request_payload",
+        "kind": "REFERENCES",
+        "to": "schema:GradleFile"
+      },
+      {
+        "from": "schema:Integration_settings",
+        "kind": "REFERENCES",
+        "to": "schema:PullRequestAssignment"
+      },
+      {
+        "from": "schema:Issue_Counts_Filters",
+        "kind": "REFERENCES",
+        "to": "schema:PriorityScore"
+      },
+      {
+        "from": "schema:Issues_Filters",
+        "kind": "REFERENCES",
+        "to": "schema:PriorityScore"
+      },
+      {
+        "from": "schema:List_all_projects",
+        "kind": "REFERENCES",
+        "to": "schema:Project_without_remediation"
+      },
+      {
+        "from": "schema:Maven_request_payload",
+        "kind": "REFERENCES",
+        "to": "schema:MavenFile"
+      },
+      {
+        "from": "schema:MonitorDepGraphData",
+        "kind": "REFERENCES",
+        "to": "schema:MonitorGraph"
+      },
+      {
+        "from": "schema:MonitorDepGraphData",
+        "kind": "REFERENCES",
+        "to": "schema:MonitorPkgManager"
+      },
+      {
+        "from": "schema:MonitorPackage",
+        "kind": "REFERENCES",
+        "to": "schema:MonitorPackageInfo"
+      },
+      {
+        "from": "schema:Notification_setting_response",
+        "kind": "REFERENCES",
+        "to": "schema:New_issues_notification_setting_request"
+      },
+      {
+        "from": "schema:Notification_settings_request",
+        "kind": "REFERENCES",
+        "to": "schema:New_issues_notification_setting_request"
+      },
+      {
+        "from": "schema:Notification_settings_request",
+        "kind": "REFERENCES",
+        "to": "schema:Simple_notification_setting_request"
+      },
+      {
+        "from": "schema:Notification_settings_response",
+        "kind": "REFERENCES",
+        "to": "schema:Notification_setting_response"
+      },
+      {
+        "from": "schema:Notification_settings_response",
+        "kind": "REFERENCES",
+        "to": "schema:Simple_notification_setting_response"
+      },
+      {
+        "from": "schema:Package",
+        "kind": "REFERENCES",
+        "to": "schema:PackageInfo"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:Project_attributes"
+      },
+      {
+        "from": "schema:Project_settings",
+        "kind": "REFERENCES",
+        "to": "schema:AutoRemediationPrs"
+      },
+      {
+        "from": "schema:Project_settings",
+        "kind": "REFERENCES",
+        "to": "schema:PullRequestAssignment"
+      },
+      {
+        "from": "schema:Project_without_remediation",
+        "kind": "REFERENCES",
+        "to": "schema:Project_attributes"
+      },
+      {
+        "from": "schema:Projects_filters",
+        "kind": "REFERENCES",
+        "to": "schema:Project_attributes"
+      },
+      {
+        "from": "schema:PullRequestAssignment",
+        "kind": "REFERENCES",
+        "to": "schema:AssignmentType"
+      },
+      {
+        "from": "schema:Simple_notification_setting_response",
+        "kind": "REFERENCES",
+        "to": "schema:Simple_notification_setting_request"
+      },
+      {
+        "from": "schema:Vulnerability",
+        "kind": "REFERENCES",
+        "to": "schema:SemverObject"
+      },
+      {
+        "from": "schema:graph_request_payload",
+        "kind": "REFERENCES",
+        "to": "schema:DepGraphData"
+      },
+      {
+        "from": "schema:monitor_graph_payload",
+        "kind": "REFERENCES",
+        "to": "schema:MonitorDepGraphData"
+      },
+      {
+        "from": "schema:monitor_graph_payload",
+        "kind": "REFERENCES",
+        "to": "schema:MonitorMetaData"
+      },
+      {
+        "from": "schema:sbt_request_payload",
+        "kind": "REFERENCES",
+        "to": "schema:SBTFile"
       }
     ],
     "nodes": [
@@ -531,10 +701,63 @@
         "kind": "operation",
         "method": "post",
         "name": "Get group level audit logs",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results from, in the format YYYY-MM-DD.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results until, in the format YYYY-MM-DD.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The page of results to request.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The sort order of the returned audit logs by date.",
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/audit",
         "pointer": "#/paths/~1group~1{groupId}~1audit/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get group level audit logs"
+        "summary": "Get group level audit logs",
+        "tags": [
+          "Audit logs"
+        ]
       },
       {
         "deprecated": false,
@@ -542,10 +765,29 @@
         "kind": "operation",
         "method": "get",
         "name": "List all members in a group",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/members",
         "pointer": "#/paths/~1group~1{groupId}~1members/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all members in a group"
+        "summary": "List all members in a group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -553,10 +795,42 @@
         "kind": "operation",
         "method": "post",
         "name": "Add a member to an organization within a group",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization ID we want to add the member to.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/org/{orgId}/members",
         "pointer": "#/paths/~1group~1{groupId}~1org~1{orgId}~1members/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a member to an organization within a group"
+        "summary": "Add a member to an organization within a group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -564,10 +838,50 @@
         "kind": "operation",
         "method": "get",
         "name": "List all organizations in a group",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The number of results to return (maximum is 100).",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "For pagination - offset (from which to start returning results).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only organizations that have a name that **starts with** this value (case insensitive) will be returned.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/orgs",
         "pointer": "#/paths/~1group~1{groupId}~1orgs/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all organizations in a group"
+        "summary": "List all organizations in a group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -575,10 +889,28 @@
         "kind": "operation",
         "method": "get",
         "name": "List all roles in a group",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/roles",
         "pointer": "#/paths/~1group~1{groupId}~1roles/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all roles in a group"
+        "summary": "List all roles in a group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -586,10 +918,29 @@
         "kind": "operation",
         "method": "get",
         "name": "View group settings",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/settings",
         "pointer": "#/paths/~1group~1{groupId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View group settings"
+        "summary": "View group settings",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -597,10 +948,29 @@
         "kind": "operation",
         "method": "put",
         "name": "Update group settings",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/settings",
         "pointer": "#/paths/~1group~1{groupId}~1settings/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update group settings"
+        "summary": "Update group settings",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -608,10 +978,43 @@
         "kind": "operation",
         "method": "get",
         "name": "List all tags in a group",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of results to return (the default is 1000).",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The offset from which to start returning results from.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/group/{groupId}/tags",
         "pointer": "#/paths/~1group~1{groupId}~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all tags in a group"
+        "summary": "List all tags in a group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -619,21 +1022,73 @@
         "kind": "operation",
         "method": "post",
         "name": "Delete tag from group",
+        "parameters": [
+          {
+            "description": "The group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{groupId}/tags/delete",
         "pointer": "#/paths/~1group~1{groupId}~1tags~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete tag from group"
+        "summary": "Delete tag from group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to monitor a [DepGraph data object](https://github.com/snyk/dep-graph#depgraphdata).",
         "id": "operation:post:/monitor/dep-graph",
         "kind": "operation",
         "method": "post",
         "name": "Monitor Dep Graph",
+        "parameters": [
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/monitor/dep-graph",
         "pointer": "#/paths/~1monitor~1dep-graph/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Monitor Dep Graph"
+        "summary": "Monitor Dep Graph",
+        "tags": [
+          "Monitor"
+        ]
       },
       {
         "deprecated": false,
@@ -643,8 +1098,36 @@
         "name": "Create a new organization",
         "path": "/org",
         "pointer": "#/paths/~1org/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new organization"
+        "summary": "Create a new organization",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -652,10 +1135,28 @@
         "kind": "operation",
         "method": "delete",
         "name": "Remove organization",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}",
         "pointer": "#/paths/~1org~1{orgId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Remove organization"
+        "summary": "Remove organization",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -663,10 +1164,63 @@
         "kind": "operation",
         "method": "post",
         "name": "Get organization level audit logs",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results from, in the format YYYY-MM-DD.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results until, in the format YYYY-MM-DD.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The page of results to request.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The sort order of the returned audit logs by date.",
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/audit",
         "pointer": "#/paths/~1org~1{orgId}~1audit/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get organization level audit logs"
+        "summary": "Get organization level audit logs",
+        "tags": [
+          "Audit logs"
+        ]
       },
       {
         "deprecated": false,
@@ -674,10 +1228,78 @@
         "kind": "operation",
         "method": "post",
         "name": "List all dependencies",
+        "parameters": [
+          {
+            "description": "The organization ID to list projects for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "dependency",
+            "description": "The field to sort results by.",
+            "enum": [
+              "projects",
+              "dependency",
+              "severity",
+              "dependenciesWithIssues"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "asc",
+            "description": "The direction to sort results by.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page of results to fetch.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 20,
+            "description": "The number of results to fetch per page (maximum is 1000).",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/org/{orgId}/dependencies",
         "pointer": "#/paths/~1org~1{orgId}~1dependencies/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List all dependencies"
+        "summary": "List all dependencies",
+        "tags": [
+          "Dependencies"
+        ]
       },
       {
         "deprecated": false,
@@ -685,10 +1307,40 @@
         "kind": "operation",
         "method": "get",
         "name": "Get an organization's entitlement value",
+        "parameters": [
+          {
+            "description": "The organization ID to query the entitlement for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The entitlement to query.",
+            "enum": [
+              "licenses",
+              "reports",
+              "fullVulnDB"
+            ],
+            "in": "path",
+            "name": "entitlementKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/entitlement/{entitlementKey}",
         "pointer": "#/paths/~1org~1{orgId}~1entitlement~1{entitlementKey}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an organization's entitlement value"
+        "summary": "Get an organization's entitlement value",
+        "tags": [
+          "Entitlements"
+        ]
       },
       {
         "deprecated": false,
@@ -696,10 +1348,28 @@
         "kind": "operation",
         "method": "get",
         "name": "List all entitlements",
+        "parameters": [
+          {
+            "description": "The organization ID to list entitlements for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/entitlements",
         "pointer": "#/paths/~1org~1{orgId}~1entitlements/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all entitlements"
+        "summary": "List all entitlements",
+        "tags": [
+          "Entitlements"
+        ]
       },
       {
         "deprecated": false,
@@ -707,76 +1377,263 @@
         "kind": "operation",
         "method": "get",
         "name": "List",
+        "parameters": [
+          {
+            "description": "The organization public ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations",
         "pointer": "#/paths/~1org~1{orgId}~1integrations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List"
+        "summary": "List",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add new integration for given organization.",
         "id": "operation:post:/org/{orgId}/integrations",
         "kind": "operation",
         "method": "post",
         "name": "Add new integration",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations",
         "pointer": "#/paths/~1org~1{orgId}~1integrations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add new integration"
+        "summary": "Add new integration",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "+ Update integration's credentials for given organization.",
         "id": "operation:put:/org/{orgId}/integrations/{integrationId}",
         "kind": "operation",
         "method": "put",
         "name": "Update existing integration",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier for the configured integration.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update existing integration"
+        "summary": "Update existing integration",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes any credentials set for this integration.",
         "id": "operation:delete:/org/{orgId}/integrations/{integrationId}/authentication",
         "kind": "operation",
         "method": "delete",
         "name": "Delete credentials",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The integration ID.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/authentication",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1authentication/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete credentials"
+        "summary": "Delete credentials",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Issue a new and unique provisional broker token for the brokered integration.",
         "id": "operation:post:/org/{orgId}/integrations/{integrationId}/authentication/provision-token",
         "kind": "operation",
         "method": "post",
         "name": "Provision new broker token",
+        "parameters": [
+          {
+            "description": "The `API_KEY` must have access to this organization.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/authentication/provision-token",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1authentication~1provision-token/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Provision new broker token"
+        "summary": "Provision new broker token",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Switch the existing broker token with the provisioned token for this integration and any other in the same group.",
         "id": "operation:post:/org/{orgId}/integrations/{integrationId}/authentication/switch-token",
         "kind": "operation",
         "method": "post",
         "name": "Switch between broker tokens",
+        "parameters": [
+          {
+            "description": "The `API_KEY` must have access to this organization.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/authentication/switch-token",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1authentication~1switch-token/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Switch between broker tokens"
+        "summary": "Switch between broker tokens",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Clone an integration, including all of its settings and credentials from one organization to another organization in the same group.",
         "id": "operation:post:/org/{orgId}/integrations/{integrationId}/clone",
         "kind": "operation",
         "method": "post",
         "name": "Clone an integration (with settings and credentials)",
+        "parameters": [
+          {
+            "description": "Source organization public ID to clone integration settings from.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Source integration public ID to clone.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/clone",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1clone/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clone an integration (with settings and credentials)"
+        "summary": "Clone an integration (with settings and credentials)",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -784,10 +1641,42 @@
         "kind": "operation",
         "method": "post",
         "name": "Import targets",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier for the configured integration.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/import",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1import/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Import targets"
+        "summary": "Import targets",
+        "tags": [
+          "Import Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -795,10 +1684,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Get import job details",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier for the configured integration.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the job.",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/import/{jobId}",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1import~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get import job details"
+        "summary": "Get import job details",
+        "tags": [
+          "Import Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -806,10 +1728,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Retrieve",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier for the configured integration.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/settings",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve"
+        "summary": "Retrieve",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -817,10 +1765,43 @@
         "kind": "operation",
         "method": "put",
         "name": "Update",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier for the configured integration.",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{integrationId}/settings",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{integrationId}~1settings/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update"
+        "summary": "Update",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -828,10 +1809,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Get existing integration by type",
+        "parameters": [
+          {
+            "description": "The `API_KEY` must have admin access to this organization.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Integration type.",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/integrations/{type}",
         "pointer": "#/paths/~1org~1{orgId}~1integrations~1{type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get existing integration by type"
+        "summary": "Get existing integration by type",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -839,10 +1846,35 @@
         "kind": "operation",
         "method": "post",
         "name": "Invite users",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/invite",
         "pointer": "#/paths/~1org~1{orgId}~1invite/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Invite users"
+        "summary": "Invite users",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -850,10 +1882,62 @@
         "kind": "operation",
         "method": "post",
         "name": "List all licenses",
+        "parameters": [
+          {
+            "description": "The organization ID to list projects for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "license",
+            "description": "The field to sort results by.",
+            "enum": [
+              "license",
+              "dependencies",
+              "projects",
+              "severity"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "asc",
+            "description": "The direction to sort results by.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/licenses",
         "pointer": "#/paths/~1org~1{orgId}~1licenses/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List all licenses"
+        "summary": "List all licenses",
+        "tags": [
+          "Licenses"
+        ]
       },
       {
         "deprecated": false,
@@ -861,10 +1945,37 @@
         "kind": "operation",
         "method": "get",
         "name": "List Members",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Include group administrators who also have access to this organization.",
+            "in": "query",
+            "name": "includeGroupAdmins",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/org/{orgId}/members",
         "pointer": "#/paths/~1org~1{orgId}~1members/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List Members"
+        "summary": "List Members",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -872,21 +1983,42 @@
         "kind": "operation",
         "method": "put",
         "name": "Update a member's role in the organization",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The user ID.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/members/update/{userId}",
         "pointer": "#/paths/~1org~1{orgId}~1members~1update~1{userId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a member's role in the organization"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/org/{orgId}/members/{userId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Remove a member from the organization",
-        "path": "/org/{orgId}/members/{userId}",
-        "pointer": "#/paths/~1org~1{orgId}~1members~1{userId}/delete",
-        "security": [],
-        "summary": "Remove a member from the organization"
+        "summary": "Update a member's role in the organization",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -894,10 +2026,78 @@
         "kind": "operation",
         "method": "put",
         "name": "Update a member in the organization",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The user ID.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/members/{userId}",
         "pointer": "#/paths/~1org~1{orgId}~1members~1{userId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a member in the organization"
+        "summary": "Update a member in the organization",
+        "tags": [
+          "Organizations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/org/{orgId}/members/{userId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Remove a member from the organization",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The user ID we want to remove.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/members/{userId}",
+        "pointer": "#/paths/~1org~1{orgId}~1members~1{userId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Remove a member from the organization",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -905,10 +2105,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get /org/{orgId}/notification-settings",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/notification-settings",
         "pointer": "#/paths/~1org~1{orgId}~1notification-settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get organization notification settings"
+        "summary": "Get organization notification settings",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -916,21 +2135,36 @@
         "kind": "operation",
         "method": "put",
         "name": "Set notification settings",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/notification-settings",
         "pointer": "#/paths/~1org~1{orgId}~1notification-settings/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set notification settings"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/org/{orgId}/project/{projectId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Delete a project",
-        "path": "/org/{orgId}/project/{projectId}",
-        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}/delete",
-        "security": [],
-        "summary": "Delete a project"
+        "summary": "Set notification settings",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -938,10 +2172,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Retrieve a single project",
+        "parameters": [
+          {
+            "description": "The organization ID the project belongs to.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a single project"
+        "summary": "Retrieve a single project",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -949,21 +2209,116 @@
         "kind": "operation",
         "method": "put",
         "name": "Update a project",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a project"
+        "summary": "Update a project",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/org/{orgId}/project/{projectId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Delete a project",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/project/{projectId}",
+        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a project",
+        "tags": [
+          "Projects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Activating a project will: - Add a repository webhook for supported integrations.",
         "id": "operation:post:/org/{orgId}/project/{projectId}/activate",
         "kind": "operation",
         "method": "post",
         "name": "Activate",
+        "parameters": [
+          {
+            "description": "The organization ID the project belongs to.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/activate",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1activate/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Activate"
+        "summary": "Activate",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -971,32 +2326,125 @@
         "kind": "operation",
         "method": "post",
         "name": "List all Aggregated issues",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to return issues for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/aggregated-issues",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1aggregated-issues/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List all Aggregated issues"
+        "summary": "List all Aggregated issues",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Applies an attribute to the provided project.",
         "id": "operation:post:/org/{orgId}/project/{projectId}/attributes",
         "kind": "operation",
         "method": "post",
         "name": "Applying attributes",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to remove a tag from",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/attributes",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1attributes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Applying attributes"
+        "summary": "Applying attributes",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deactivating a project will: - Disable pull request tests for new vulnerabilities.",
         "id": "operation:post:/org/{orgId}/project/{projectId}/deactivate",
         "kind": "operation",
         "method": "post",
         "name": "Deactivate",
+        "parameters": [
+          {
+            "description": "The organization ID the project belongs to.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/deactivate",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1deactivate/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Deactivate"
+        "summary": "Deactivate",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1004,10 +2452,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Get Project dependency graph",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to return issues for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/dep-graph",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1dep-graph/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Project dependency graph"
+        "summary": "Get Project dependency graph",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1015,10 +2489,57 @@
         "kind": "operation",
         "method": "post",
         "name": "List all project snapshots",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to return snapshots for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of results to return (the default is 10, the maximum is 100).",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The offset from which to start returning results from.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/history",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1history/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List all project snapshots"
+        "summary": "List all project snapshots",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1026,10 +2547,50 @@
         "kind": "operation",
         "method": "post",
         "name": "List all project snapshot aggregated issues",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The snapshot ID.",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/history/{snapshotId}/aggregated-issues",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1history~1{snapshotId}~1aggregated-issues/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List all project snapshot aggregated issues"
+        "summary": "List all project snapshot aggregated issues",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1037,21 +2598,66 @@
         "kind": "operation",
         "method": "get",
         "name": "List all project snapshot issue paths",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID for which to return issue paths.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project snapshot ID for which to return issue paths.",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The issue ID for which to return issue paths.",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The number of results to return per page (1 - 1000, inclusive).",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 1,
+            "description": "The page of results to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/history/{snapshotId}/issue/{issueId}/paths",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1history~1{snapshotId}~1issue~1{issueId}~1paths/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all project snapshot issue paths"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/org/{orgId}/project/{projectId}/ignore/{issueId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Delete ignores",
-        "path": "/org/{orgId}/project/{projectId}/ignore/{issueId}",
-        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignore~1{issueId}/delete",
-        "security": [],
-        "summary": "Delete ignores"
+        "summary": "List all project snapshot issue paths",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1059,21 +2665,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Retrieve ignore",
+        "parameters": [
+          {
+            "description": "The organization ID to modify ignores for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to modify ignores for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The issue ID to modify ignores for.",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/ignore/{issueId}",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignore~1{issueId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ignorePath"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve ignore"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/org/{orgId}/project/{projectId}/ignore/{issueId}",
-        "kind": "operation",
-        "method": "post",
-        "name": "Add ignore",
-        "path": "/org/{orgId}/project/{projectId}/ignore/{issueId}",
-        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignore~1{issueId}/post",
-        "security": [],
-        "summary": "Add ignore"
+        "summary": "Retrieve ignore",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1081,21 +2709,175 @@
         "kind": "operation",
         "method": "put",
         "name": "Replace ignores",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/ignore/{issueId}",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignore~1{issueId}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Replace ignores"
+        "summary": "Replace ignores",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:post:/org/{orgId}/project/{projectId}/ignore/{issueId}",
+        "kind": "operation",
+        "method": "post",
+        "name": "Add ignore",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/project/{projectId}/ignore/{issueId}",
+        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignore~1{issueId}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ignorePath"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Add ignore",
+        "tags": [
+          "Projects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/org/{orgId}/project/{projectId}/ignore/{issueId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Delete ignores",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/project/{projectId}/ignore/{issueId}",
+        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignore~1{issueId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete ignores",
+        "tags": [
+          "Projects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Temporary ignores include an `expires` attribute, while permanent ignores do not.",
         "id": "operation:get:/org/{orgId}/project/{projectId}/ignores",
         "kind": "operation",
         "method": "get",
         "name": "List all ignores",
+        "parameters": [
+          {
+            "description": "The organization ID to list ignores for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to list ignores for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/ignores",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1ignores/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "issueId"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all ignores"
+        "summary": "List all ignores",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1103,10 +2885,50 @@
         "kind": "operation",
         "method": "post",
         "name": "Create jira issue",
+        "parameters": [
+          {
+            "description": "The issue ID to create Jira issue for.",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/issue/{issueId}/jira-issue",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1issue~1{issueId}~1jira-issue/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create jira issue"
+        "summary": "Create jira issue",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1114,10 +2936,67 @@
         "kind": "operation",
         "method": "get",
         "name": "List all project issue paths",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID for which to return issue paths.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The issue ID for which to return issue paths.",
+            "in": "path",
+            "name": "issueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "latest",
+            "description": "The project snapshot ID for which to return issue paths.",
+            "in": "query",
+            "name": "snapshotId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The number of results to return per page (1 - 1000, inclusive).",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 1,
+            "description": "The page of results to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/issue/{issueId}/paths",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1issue~1{issueId}~1paths/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all project issue paths"
+        "summary": "List all project issue paths",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1125,32 +3004,80 @@
         "kind": "operation",
         "method": "get",
         "name": "List all jira issues",
+        "parameters": [
+          {
+            "description": "The organization ID to list Jira issues for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to list Jira issues for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/jira-issues",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1jira-issues/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "issueId"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all jira issues"
+        "summary": "List all jira issues",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Note: when moving a project to a new organization, the historical data used for reporting does not move with it.",
         "id": "operation:put:/org/{orgId}/project/{projectId}/move",
         "kind": "operation",
         "method": "put",
         "name": "Move project to a different organization",
+        "parameters": [
+          {
+            "description": "The organization ID to which the project belongs.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/move",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1move/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Move project to a different organization"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/org/{orgId}/project/{projectId}/settings",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Delete project settings",
-        "path": "/org/{orgId}/project/{projectId}/settings",
-        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1settings/delete",
-        "security": [],
-        "summary": "Delete project settings"
+        "summary": "Move project to a different organization",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1158,10 +3085,36 @@
         "kind": "operation",
         "method": "get",
         "name": "List project settings",
+        "parameters": [
+          {
+            "description": "The organization ID to which the project belongs.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/settings",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List project settings"
+        "summary": "List project settings",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1169,21 +3122,125 @@
         "kind": "operation",
         "method": "put",
         "name": "Update project settings",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/settings",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1settings/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update project settings"
+        "summary": "Update project settings",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deleting project settings will set the project to inherit default settings from its integration.",
+        "id": "operation:delete:/org/{orgId}/project/{projectId}/settings",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Delete project settings",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/project/{projectId}/settings",
+        "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1settings/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete project settings",
+        "tags": [
+          "Projects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "​",
         "id": "operation:post:/org/{orgId}/project/{projectId}/tags",
         "kind": "operation",
         "method": "post",
         "name": "Add a tag to a project",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to apply the tag to",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/tags",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a tag to a project"
+        "summary": "Add a tag to a project",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1191,10 +3248,43 @@
         "kind": "operation",
         "method": "post",
         "name": "Remove a tag from a project",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to remove a tag from",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/project/{projectId}/tags/remove",
         "pointer": "#/paths/~1org~1{orgId}~1project~1{projectId}~1tags~1remove/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Remove a tag from a project"
+        "summary": "Remove a tag from a project",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1202,21 +3292,36 @@
         "kind": "operation",
         "method": "post",
         "name": "List all projects",
+        "parameters": [
+          {
+            "description": "The organization ID to list projects for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/projects",
         "pointer": "#/paths/~1org~1{orgId}~1projects/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List all projects"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/org/{orgId}/provision",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Delete pending user provision",
-        "path": "/org/{orgId}/provision",
-        "pointer": "#/paths/~1org~1{orgId}~1provision/delete",
-        "security": [],
-        "summary": "Delete pending user provision"
+        "summary": "List all projects",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1224,10 +3329,32 @@
         "kind": "operation",
         "method": "get",
         "name": "List pending user provisions",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/provision",
         "pointer": "#/paths/~1org~1{orgId}~1provision/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List pending user provisions"
+        "summary": "List pending user provisions",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -1235,10 +3362,72 @@
         "kind": "operation",
         "method": "post",
         "name": "Provision a user to the organization",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/provision",
         "pointer": "#/paths/~1org~1{orgId}~1provision/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Provision a user to the organization"
+        "summary": "Provision a user to the organization",
+        "tags": [
+          "Organizations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/org/{orgId}/provision",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Delete pending user provision",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/provision",
+        "pointer": "#/paths/~1org~1{orgId}~1provision/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete pending user provision",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -1246,21 +3435,70 @@
         "kind": "operation",
         "method": "get",
         "name": "View organization settings",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/settings",
         "pointer": "#/paths/~1org~1{orgId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View organization settings"
+        "summary": "View organization settings",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Settings that are not provided will not be modified.",
         "id": "operation:put:/org/{orgId}/settings",
         "kind": "operation",
         "method": "put",
         "name": "Update organization settings",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/settings",
         "pointer": "#/paths/~1org~1{orgId}~1settings/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update organization settings"
+        "summary": "Update organization settings",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -1268,10 +3506,28 @@
         "kind": "operation",
         "method": "get",
         "name": "List webhooks",
+        "parameters": [
+          {
+            "description": "The organization ID to list projects for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/webhooks",
         "pointer": "#/paths/~1org~1{orgId}~1webhooks/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List webhooks"
+        "summary": "List webhooks",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1279,21 +3535,35 @@
         "kind": "operation",
         "method": "post",
         "name": "Create a webhook",
+        "parameters": [
+          {
+            "description": "The organization ID to list projects for.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/webhooks",
         "pointer": "#/paths/~1org~1{orgId}~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a webhook"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/org/{orgId}/webhooks/{webhookId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Delete a webhook",
-        "path": "/org/{orgId}/webhooks/{webhookId}",
-        "pointer": "#/paths/~1org~1{orgId}~1webhooks~1{webhookId}/delete",
-        "security": [],
-        "summary": "Delete a webhook"
+        "summary": "Create a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1301,10 +3571,71 @@
         "kind": "operation",
         "method": "get",
         "name": "Retrieve a webhook",
+        "parameters": [
+          {
+            "description": "The organization ID the project belongs to.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The webhook ID.",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/webhooks/{webhookId}",
         "pointer": "#/paths/~1org~1{orgId}~1webhooks~1{webhookId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a webhook"
+        "summary": "Retrieve a webhook",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/org/{orgId}/webhooks/{webhookId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Delete a webhook",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/org/{orgId}/webhooks/{webhookId}",
+        "pointer": "#/paths/~1org~1{orgId}~1webhooks~1{webhookId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1312,10 +3643,35 @@
         "kind": "operation",
         "method": "post",
         "name": "Ping a webhook",
+        "parameters": [
+          {
+            "description": "The organization ID the project belongs to.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The webhook ID.",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/org/{orgId}/webhooks/{webhookId}/ping",
         "pointer": "#/paths/~1org~1{orgId}~1webhooks~1{webhookId}~1ping/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Ping a webhook"
+        "summary": "Ping a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -1325,8 +3681,17 @@
         "name": "List all the organizations a user belongs to",
         "path": "/orgs",
         "pointer": "#/paths/~1orgs/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all the organizations a user belongs to"
+        "summary": "List all the organizations a user belongs to",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -1334,10 +3699,59 @@
         "kind": "operation",
         "method": "post",
         "name": "Get issue counts",
+        "parameters": [
+          {
+            "description": "The date you wish to fetch results from, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results until, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The field to group results by",
+            "enum": [
+              "severity",
+              "fixable",
+              "project,[severity|fixable]"
+            ],
+            "in": "query",
+            "name": "groupBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reporting/counts/issues",
         "pointer": "#/paths/~1reporting~1counts~1issues/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get issue counts"
+        "summary": "Get issue counts",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
@@ -1345,10 +3759,45 @@
         "kind": "operation",
         "method": "post",
         "name": "Get latest issue counts",
+        "parameters": [
+          {
+            "description": "The field to group results by",
+            "enum": [
+              "severity",
+              "fixable",
+              "project,[severity|fixable]"
+            ],
+            "in": "query",
+            "name": "groupBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reporting/counts/issues/latest",
         "pointer": "#/paths/~1reporting~1counts~1issues~1latest/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get latest issue counts"
+        "summary": "Get latest issue counts",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
@@ -1356,10 +3805,47 @@
         "kind": "operation",
         "method": "post",
         "name": "Get project counts",
+        "parameters": [
+          {
+            "description": "The date you wish to fetch results from, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results until, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reporting/counts/projects",
         "pointer": "#/paths/~1reporting~1counts~1projects/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get project counts"
+        "summary": "Get project counts",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
@@ -1369,8 +3855,29 @@
         "name": "Get latest project counts",
         "path": "/reporting/counts/projects/latest",
         "pointer": "#/paths/~1reporting~1counts~1projects~1latest/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get latest project counts"
+        "summary": "Get latest project counts",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
@@ -1378,10 +3885,58 @@
         "kind": "operation",
         "method": "post",
         "name": "Get test counts",
+        "parameters": [
+          {
+            "description": "The date you wish to count tests from, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to count tests until, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The field to group results by",
+            "enum": [
+              "isPrivate",
+              "issuesPrevented"
+            ],
+            "in": "query",
+            "name": "groupBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reporting/counts/tests",
         "pointer": "#/paths/~1reporting~1counts~1tests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get test counts"
+        "summary": "Get test counts",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
@@ -1389,10 +3944,97 @@
         "kind": "operation",
         "method": "post",
         "name": "Get list of issues",
+        "parameters": [
+          {
+            "description": "The date you wish to fetch results from, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date you wish to fetch results until, in the format `YYYY-MM-DD`",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page of results to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The number of results to return per page (Maximum: 1000)",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The key to sort results by",
+            "enum": [
+              "severity",
+              "issueTitle",
+              "projectName",
+              "isFixed",
+              "isPatched",
+              "isIgnored",
+              "introducedDate",
+              "isUpgradable",
+              "isPatchable",
+              "priorityScore"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The direction to sort results.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set to issue to group the same issue in multiple projects",
+            "enum": [
+              "issue"
+            ],
+            "in": "query",
+            "name": "groupBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reporting/issues/",
         "pointer": "#/paths/~1reporting~1issues~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get list of issues"
+        "summary": "Get list of issues",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
@@ -1400,197 +4042,731 @@
         "kind": "operation",
         "method": "post",
         "name": "Get list of latest issues",
+        "parameters": [
+          {
+            "description": "The page of results to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The number of results to return per page (Maximum: 1000)",
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The key to sort results by",
+            "enum": [
+              "severity",
+              "issueTitle",
+              "projectName",
+              "isFixed",
+              "isPatched",
+              "isIgnored",
+              "introducedDate",
+              "isUpgradable",
+              "isPatchable",
+              "priorityScore"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The direction to sort results.",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set to issue to group the same issue in multiple projects",
+            "enum": [
+              "issue"
+            ],
+            "in": "query",
+            "name": "groupBy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reporting/issues/latest",
         "pointer": "#/paths/~1reporting~1issues~1latest/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get list of latest issues"
+        "summary": "Get list of latest issues",
+        "tags": [
+          "Reporting API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your Composer packages for issues according to their manifest file & lockfile using this action.",
         "id": "operation:post:/test/composer",
         "kind": "operation",
         "method": "post",
         "name": "Test composer.json & composer.lock file",
         "path": "/test/composer",
         "pointer": "#/paths/~1test~1composer/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test composer.json & composer.lock file"
+        "summary": "Test composer.json & composer.lock file",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to find issues in a [DepGraph data object](https://github.com/snyk/dep-graph#depgraphdata).",
         "id": "operation:post:/test/dep-graph",
         "kind": "operation",
         "method": "post",
         "name": "Test Dep Graph",
+        "parameters": [
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/dep-graph",
         "pointer": "#/paths/~1test~1dep-graph/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test Dep Graph"
+        "summary": "Test Dep Graph",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your Go dep packages for issues according to their manifest file & lockfile using this action.",
         "id": "operation:post:/test/golangdep",
         "kind": "operation",
         "method": "post",
         "name": "Test Gopkg.toml & Gopkg.lock File",
+        "parameters": [
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/golangdep",
         "pointer": "#/paths/~1test~1golangdep/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test Gopkg.toml & Gopkg.lock File"
+        "summary": "Test Gopkg.toml & Gopkg.lock File",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your Go vendor packages for issues according to their manifest file using this action.",
         "id": "operation:post:/test/govendor",
         "kind": "operation",
         "method": "post",
         "name": "Test vendor.json File",
         "path": "/test/govendor",
         "pointer": "#/paths/~1test~1govendor/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test vendor.json File"
+        "summary": "Test vendor.json File",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your Gradle packages for issues according to their manifest file using this action.",
         "id": "operation:post:/test/gradle",
         "kind": "operation",
         "method": "post",
         "name": "Test gradle file",
         "path": "/test/gradle",
         "pointer": "#/paths/~1test~1gradle/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test gradle file"
+        "summary": "Test gradle file",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test `gradle` packages for issues according to their group, name and version.",
         "id": "operation:get:/test/gradle/{group}/{name}/{version}",
         "kind": "operation",
         "method": "get",
         "name": "Test for issues in a public package by group, name and version",
+        "parameters": [
+          {
+            "description": "The package's group ID.",
+            "in": "path",
+            "name": "group",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The package's artifact ID.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The package version to test.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The repository hosting this package.",
+            "in": "query",
+            "name": "repository",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/gradle/{group}/{name}/{version}",
         "pointer": "#/paths/~1test~1gradle~1{group}~1{name}~1{version}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test for issues in a public package by group, name and version"
+        "summary": "Test for issues in a public package by group, name and version",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your Maven packages for issues according to their manifest file using this action.",
         "id": "operation:post:/test/maven",
         "kind": "operation",
         "method": "post",
         "name": "Test maven file",
+        "parameters": [
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The Maven repository hosting this package.",
+            "in": "query",
+            "name": "repository",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/maven",
         "pointer": "#/paths/~1test~1maven/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test maven file"
+        "summary": "Test maven file",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test `maven` packages for issues according to their [coordinates](https://maven.apache.org/pom.html#Maven_Coordinates): group ID, artifact ID and versi…",
         "id": "operation:get:/test/maven/{groupId}/{artifactId}/{version}",
         "kind": "operation",
         "method": "get",
         "name": "Test for issues in a public package by group id, artifact id and version",
+        "parameters": [
+          {
+            "description": "The package's group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The package's artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The package version to test.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The Maven repository hosting this package.",
+            "in": "query",
+            "name": "repository",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/maven/{groupId}/{artifactId}/{version}",
         "pointer": "#/paths/~1test~1maven~1{groupId}~1{artifactId}~1{version}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test for issues in a public package by group id, artifact id and version"
+        "summary": "Test for issues in a public package by group id, artifact id and version",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your npm packages for issues according to their manifest file & optional lockfile using this action.",
         "id": "operation:post:/test/npm",
         "kind": "operation",
         "method": "post",
         "name": "Test package.json & package-lock.json File",
         "path": "/test/npm",
         "pointer": "#/paths/~1test~1npm/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test package.json & package-lock.json File"
+        "summary": "Test package.json & package-lock.json File",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test `npm` packages for issues according to their name and version.",
         "id": "operation:get:/test/npm/{packageName}/{version}",
         "kind": "operation",
         "method": "get",
         "name": "Test for issues in a public package by name and version",
+        "parameters": [
+          {
+            "description": "The package name.",
+            "in": "path",
+            "name": "packageName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Package version to test.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/npm/{packageName}/{version}",
         "pointer": "#/paths/~1test~1npm~1{packageName}~1{version}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test for issues in a public package by name and version"
+        "summary": "Test for issues in a public package by name and version",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your pip packages for issues according to their manifest file using this action.",
         "id": "operation:post:/test/pip",
         "kind": "operation",
         "method": "post",
         "name": "Test requirements.txt file",
         "path": "/test/pip",
         "pointer": "#/paths/~1test~1pip/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test requirements.txt file"
+        "summary": "Test requirements.txt file",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test `pip` packages for issues according to their name and version.",
         "id": "operation:get:/test/pip/{packageName}/{version}",
         "kind": "operation",
         "method": "get",
         "name": "get /test/pip/{packageName}/{version}",
+        "parameters": [
+          {
+            "description": "The package name.",
+            "in": "path",
+            "name": "packageName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Package version to test.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/pip/{packageName}/{version}",
         "pointer": "#/paths/~1test~1pip~1{packageName}~1{version}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test for issues in a public package by name and version"
+        "summary": "Test for issues in a public package by name and version",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your rubygems applications for issues according to their lockfile using this action.",
         "id": "operation:post:/test/rubygems",
         "kind": "operation",
         "method": "post",
         "name": "Test gemfile.lock file",
         "path": "/test/rubygems",
         "pointer": "#/paths/~1test~1rubygems/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test gemfile.lock file"
+        "summary": "Test gemfile.lock file",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test `rubygems` packages for issues according to their name and version.",
         "id": "operation:get:/test/rubygems/{gemName}/{version}",
         "kind": "operation",
         "method": "get",
         "name": "Test for issues in a public gem by name and version",
+        "parameters": [
+          {
+            "description": "The gem name.",
+            "in": "path",
+            "name": "gemName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The gem version to test.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/rubygems/{gemName}/{version}",
         "pointer": "#/paths/~1test~1rubygems~1{gemName}~1{version}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test for issues in a public gem by name and version"
+        "summary": "Test for issues in a public gem by name and version",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your `sbt` packages for issues according to their manifest file using this action.",
         "id": "operation:post:/test/sbt",
         "kind": "operation",
         "method": "post",
         "name": "Test sbt file",
         "path": "/test/sbt",
         "pointer": "#/paths/~1test~1sbt/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test sbt file"
+        "summary": "Test sbt file",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test `sbt` packages for issues according to their group ID, artifact ID and version.",
         "id": "operation:get:/test/sbt/{groupId}/{artifactId}/{version}",
         "kind": "operation",
         "method": "get",
         "name": "get /test/sbt/{groupId}/{artifactId}/{version}",
+        "parameters": [
+          {
+            "description": "The package's group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The package's artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The package version to test.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization to test the package with.",
+            "in": "query",
+            "name": "org",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The repository hosting this package.",
+            "in": "query",
+            "name": "repository",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/test/sbt/{groupId}/{artifactId}/{version}",
         "pointer": "#/paths/~1test~1sbt~1{groupId}~1{artifactId}~1{version}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test for issues in a public package by group id, artifact id and version"
+        "summary": "Test for issues in a public package by group id, artifact id and version",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can test your yarn packages for issues according to their manifest file & lockfile using this action.",
         "id": "operation:post:/test/yarn",
         "kind": "operation",
         "method": "post",
         "name": "Test package.json & yarn.lock File",
         "path": "/test/yarn",
         "pointer": "#/paths/~1test~1yarn/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test package.json & yarn.lock File"
+        "summary": "Test package.json & yarn.lock File",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
@@ -1600,8 +4776,21 @@
         "name": "Get My Details",
         "path": "/user/me",
         "pointer": "#/paths/~1user~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get My Details"
+        "summary": "Get My Details",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1609,10 +4798,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Get organization notification settings",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/me/notification-settings/org/{orgId}",
         "pointer": "#/paths/~1user~1me~1notification-settings~1org~1{orgId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get organization notification settings"
+        "summary": "Get organization notification settings",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1620,10 +4828,36 @@
         "kind": "operation",
         "method": "put",
         "name": "Modify organization notification settings",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/me/notification-settings/org/{orgId}",
         "pointer": "#/paths/~1user~1me~1notification-settings~1org~1{orgId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Modify organization notification settings"
+        "summary": "Modify organization notification settings",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1631,10 +4865,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Get project notification settings",
+        "parameters": [
+          {
+            "description": "The organization ID.",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The project ID to return notification settings for.",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/me/notification-settings/org/{orgId}/project/{projectId}",
         "pointer": "#/paths/~1user~1me~1notification-settings~1org~1{orgId}~1project~1{projectId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get project notification settings"
+        "summary": "Get project notification settings",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1642,10 +4902,42 @@
         "kind": "operation",
         "method": "put",
         "name": "Modify project notification settings",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "orgId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/me/notification-settings/org/{orgId}/project/{projectId}",
         "pointer": "#/paths/~1user~1me~1notification-settings~1org~1{orgId}~1project~1{projectId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Modify project notification settings"
+        "summary": "Modify project notification settings",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1653,10 +4945,38 @@
         "kind": "operation",
         "method": "get",
         "name": "Get User Details",
+        "parameters": [
+          {
+            "description": "The users ID.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{userId}",
         "pointer": "#/paths/~1user~1{userId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User Details"
+        "summary": "Get User Details",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "id": "schema:A_specific_entitlement_by_organization",
@@ -1671,7 +4991,8 @@
       {
         "id": "schema:Add_member_body",
         "kind": "schema",
-        "name": "Add_member_body"
+        "name": "Add_member_body",
+        "type": "object"
       },
       {
         "id": "schema:Aggregated_Project_Snapshot_Issues",
@@ -1686,22 +5007,26 @@
       {
         "id": "schema:Aggregated_project_issues",
         "kind": "schema",
-        "name": "Aggregated_project_issues"
+        "name": "Aggregated_project_issues",
+        "type": "object"
       },
       {
         "id": "schema:Aggregated_project_issues_filters",
         "kind": "schema",
-        "name": "Aggregated_project_issues_filters"
+        "name": "Aggregated_project_issues_filters",
+        "type": "object"
       },
       {
         "id": "schema:All_ignores",
         "kind": "schema",
-        "name": "All_ignores"
+        "name": "All_ignores",
+        "type": "object"
       },
       {
         "id": "schema:All_jira_issues",
         "kind": "schema",
-        "name": "All_jira_issues"
+        "name": "All_jira_issues",
+        "type": "object"
       },
       {
         "id": "schema:All_projects",
@@ -1711,22 +5036,26 @@
       {
         "id": "schema:AssignmentType",
         "kind": "schema",
-        "name": "AssignmentType"
+        "name": "AssignmentType",
+        "type": "string"
       },
       {
         "id": "schema:AutoRemediationPrs",
         "kind": "schema",
-        "name": "AutoRemediationPrs"
+        "name": "AutoRemediationPrs",
+        "type": "object"
       },
       {
         "id": "schema:BrokerSettings",
         "kind": "schema",
-        "name": "BrokerSettings"
+        "name": "BrokerSettings",
+        "type": "object"
       },
       {
         "id": "schema:ComposerLock",
         "kind": "schema",
-        "name": "ComposerLock"
+        "name": "ComposerLock",
+        "type": "object"
       },
       {
         "id": "schema:Create_organization",
@@ -1736,7 +5065,8 @@
       {
         "id": "schema:Create_organizations_body",
         "kind": "schema",
-        "name": "Create_organizations_body"
+        "name": "Create_organizations_body",
+        "type": "object"
       },
       {
         "id": "schema:Deactivate_an_individual_project",
@@ -1751,7 +5081,8 @@
       {
         "id": "schema:Delete_tag_body",
         "kind": "schema",
-        "name": "Delete_tag_body"
+        "name": "Delete_tag_body",
+        "type": "object"
       },
       {
         "id": "schema:DepGraph",
@@ -1761,7 +5092,8 @@
       {
         "id": "schema:DepGraphData",
         "kind": "schema",
-        "name": "DepGraphData"
+        "name": "DepGraphData",
+        "type": "object"
       },
       {
         "id": "schema:Dep_Graph",
@@ -1771,7 +5103,8 @@
       {
         "id": "schema:Dependencies",
         "kind": "schema",
-        "name": "Dependencies"
+        "name": "Dependencies",
+        "type": "object"
       },
       {
         "id": "schema:Dependencies_by_organization",
@@ -1781,7 +5114,8 @@
       {
         "id": "schema:Dependencies_filters",
         "kind": "schema",
-        "name": "Dependencies_filters"
+        "name": "Dependencies_filters",
+        "type": "object"
       },
       {
         "id": "schema:Entitlements_by_organization",
@@ -1791,22 +5125,26 @@
       {
         "id": "schema:Error_Response",
         "kind": "schema",
-        "name": "Error_Response"
+        "name": "Error_Response",
+        "type": "object"
       },
       {
         "id": "schema:Function",
         "kind": "schema",
-        "name": "Function"
+        "name": "Function",
+        "type": "object"
       },
       {
         "id": "schema:FunctionId",
         "kind": "schema",
-        "name": "FunctionId"
+        "name": "FunctionId",
+        "type": "object"
       },
       {
         "id": "schema:GoPkgLock",
         "kind": "schema",
-        "name": "GoPkgLock"
+        "name": "GoPkgLock",
+        "type": "object"
       },
       {
         "id": "schema:Gradle",
@@ -1816,22 +5154,26 @@
       {
         "id": "schema:GradleFile",
         "kind": "schema",
-        "name": "GradleFile"
+        "name": "GradleFile",
+        "type": "object"
       },
       {
         "id": "schema:Gradle_request_payload",
         "kind": "schema",
-        "name": "Gradle_request_payload"
+        "name": "Gradle_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:Graph",
         "kind": "schema",
-        "name": "Graph"
+        "name": "Graph",
+        "type": "object"
       },
       {
         "id": "schema:GraphDependency",
         "kind": "schema",
-        "name": "GraphDependency"
+        "name": "GraphDependency",
+        "type": "object"
       },
       {
         "id": "schema:Group_level_audit_logs",
@@ -1841,27 +5183,32 @@
       {
         "id": "schema:Group_settings",
         "kind": "schema",
-        "name": "Group_settings"
+        "name": "Group_settings",
+        "type": "object"
       },
       {
         "id": "schema:Groups_Audit_logs_filters",
         "kind": "schema",
-        "name": "Groups_Audit_logs_filters"
+        "name": "Groups_Audit_logs_filters",
+        "type": "object"
       },
       {
         "id": "schema:Ignore",
         "kind": "schema",
-        "name": "Ignore"
+        "name": "Ignore",
+        "type": "object"
       },
       {
         "id": "schema:Ignore_rule",
         "kind": "schema",
-        "name": "Ignore_rule"
+        "name": "Ignore_rule",
+        "type": "object"
       },
       {
         "id": "schema:Ignore_rules",
         "kind": "schema",
-        "name": "Ignore_rules"
+        "name": "Ignore_rules",
+        "type": "array"
       },
       {
         "id": "schema:Ignored_issues",
@@ -1871,7 +5218,8 @@
       {
         "id": "schema:Ignores",
         "kind": "schema",
-        "name": "Ignores"
+        "name": "Ignores",
+        "type": "array"
       },
       {
         "id": "schema:Import",
@@ -1896,12 +5244,14 @@
       {
         "id": "schema:IntegrationCredentials",
         "kind": "schema",
-        "name": "IntegrationCredentials"
+        "name": "IntegrationCredentials",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationType",
         "kind": "schema",
-        "name": "IntegrationType"
+        "name": "IntegrationType",
+        "type": "string"
       },
       {
         "id": "schema:Integration_authentication",
@@ -1931,27 +5281,32 @@
       {
         "id": "schema:Integration_settings",
         "kind": "schema",
-        "name": "Integration_settings"
+        "name": "Integration_settings",
+        "type": "object"
       },
       {
         "id": "schema:Integrations",
         "kind": "schema",
-        "name": "Integrations"
+        "name": "Integrations",
+        "type": "object"
       },
       {
         "id": "schema:Integrations_body",
         "kind": "schema",
-        "name": "Integrations_body"
+        "name": "Integrations_body",
+        "type": "object"
       },
       {
         "id": "schema:Issue_Counts",
         "kind": "schema",
-        "name": "Issue_Counts"
+        "name": "Issue_Counts",
+        "type": "object"
       },
       {
         "id": "schema:Issue_Counts_Filters",
         "kind": "schema",
-        "name": "Issue_Counts_Filters"
+        "name": "Issue_Counts_Filters",
+        "type": "object"
       },
       {
         "id": "schema:Issue_counts_over_time",
@@ -1961,27 +5316,32 @@
       {
         "id": "schema:Issue_paths",
         "kind": "schema",
-        "name": "Issue_paths"
+        "name": "Issue_paths",
+        "type": "object"
       },
       {
         "id": "schema:Issues",
         "kind": "schema",
-        "name": "Issues"
+        "name": "Issues",
+        "type": "object"
       },
       {
         "id": "schema:Issues_Filters",
         "kind": "schema",
-        "name": "Issues_Filters"
+        "name": "Issues_Filters",
+        "type": "object"
       },
       {
         "id": "schema:Jira_issue",
         "kind": "schema",
-        "name": "Jira_issue"
+        "name": "Jira_issue",
+        "type": "object"
       },
       {
         "id": "schema:Jira_issue_request",
         "kind": "schema",
-        "name": "Jira_issue_request"
+        "name": "Jira_issue_request",
+        "type": "object"
       },
       {
         "id": "schema:Latest_Issues",
@@ -2001,7 +5361,8 @@
       {
         "id": "schema:Licenses",
         "kind": "schema",
-        "name": "Licenses"
+        "name": "Licenses",
+        "type": "object"
       },
       {
         "id": "schema:Licenses_by_organization",
@@ -2011,7 +5372,8 @@
       {
         "id": "schema:Licenses_filters",
         "kind": "schema",
-        "name": "Licenses_filters"
+        "name": "Licenses_filters",
+        "type": "object"
       },
       {
         "id": "schema:List_all_organizations_in_a_group",
@@ -2021,7 +5383,8 @@
       {
         "id": "schema:List_all_projects",
         "kind": "schema",
-        "name": "List_all_projects"
+        "name": "List_all_projects",
+        "type": "object"
       },
       {
         "id": "schema:List_all_roles_in_a_group",
@@ -2056,17 +5419,20 @@
       {
         "id": "schema:MavenAdditionalFile",
         "kind": "schema",
-        "name": "MavenAdditionalFile"
+        "name": "MavenAdditionalFile",
+        "type": "object"
       },
       {
         "id": "schema:MavenFile",
         "kind": "schema",
-        "name": "MavenFile"
+        "name": "MavenFile",
+        "type": "object"
       },
       {
         "id": "schema:Maven_request_payload",
         "kind": "schema",
-        "name": "Maven_request_payload"
+        "name": "Maven_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:Members_in_an_organization_of_a_group",
@@ -2081,47 +5447,56 @@
       {
         "id": "schema:MonitorDepGraphData",
         "kind": "schema",
-        "name": "MonitorDepGraphData"
+        "name": "MonitorDepGraphData",
+        "type": "object"
       },
       {
         "id": "schema:MonitorGraph",
         "kind": "schema",
-        "name": "MonitorGraph"
+        "name": "MonitorGraph",
+        "type": "object"
       },
       {
         "id": "schema:MonitorGraphDependency",
         "kind": "schema",
-        "name": "MonitorGraphDependency"
+        "name": "MonitorGraphDependency",
+        "type": "object"
       },
       {
         "id": "schema:MonitorMetaData",
         "kind": "schema",
-        "name": "MonitorMetaData"
+        "name": "MonitorMetaData",
+        "type": "object"
       },
       {
         "id": "schema:MonitorNode",
         "kind": "schema",
-        "name": "MonitorNode"
+        "name": "MonitorNode",
+        "type": "object"
       },
       {
         "id": "schema:MonitorPackage",
         "kind": "schema",
-        "name": "MonitorPackage"
+        "name": "MonitorPackage",
+        "type": "object"
       },
       {
         "id": "schema:MonitorPackageInfo",
         "kind": "schema",
-        "name": "MonitorPackageInfo"
+        "name": "MonitorPackageInfo",
+        "type": "object"
       },
       {
         "id": "schema:MonitorPkgManager",
         "kind": "schema",
-        "name": "MonitorPkgManager"
+        "name": "MonitorPkgManager",
+        "type": "object"
       },
       {
         "id": "schema:MonitorRepository",
         "kind": "schema",
-        "name": "MonitorRepository"
+        "name": "MonitorRepository",
+        "type": "object"
       },
       {
         "id": "schema:Move_project",
@@ -2136,17 +5511,20 @@
       {
         "id": "schema:New_issues_notification_setting_request",
         "kind": "schema",
-        "name": "New_issues_notification_setting_request"
+        "name": "New_issues_notification_setting_request",
+        "type": "object"
       },
       {
         "id": "schema:Node",
         "kind": "schema",
-        "name": "Node"
+        "name": "Node",
+        "type": "object"
       },
       {
         "id": "schema:Notification_setting_response",
         "kind": "schema",
-        "name": "Notification_setting_response"
+        "name": "Notification_setting_response",
+        "type": "New_issues_notification_setting_request|object"
       },
       {
         "id": "schema:Notification_settings",
@@ -2156,27 +5534,32 @@
       {
         "id": "schema:Notification_settings_request",
         "kind": "schema",
-        "name": "Notification_settings_request"
+        "name": "Notification_settings_request",
+        "type": "object"
       },
       {
         "id": "schema:Notification_settings_response",
         "kind": "schema",
-        "name": "Notification_settings_response"
+        "name": "Notification_settings_response",
+        "type": "object"
       },
       {
         "id": "schema:Org_Audit_logs_filters",
         "kind": "schema",
-        "name": "Org_Audit_logs_filters"
+        "name": "Org_Audit_logs_filters",
+        "type": "object"
       },
       {
         "id": "schema:Org_settings_request",
         "kind": "schema",
-        "name": "Org_settings_request"
+        "name": "Org_settings_request",
+        "type": "object"
       },
       {
         "id": "schema:Org_settings_response",
         "kind": "schema",
-        "name": "Org_settings_response"
+        "name": "Org_settings_response",
+        "type": "object"
       },
       {
         "id": "schema:Organization_level_audit_logs",
@@ -2196,22 +5579,26 @@
       {
         "id": "schema:Package",
         "kind": "schema",
-        "name": "Package"
+        "name": "Package",
+        "type": "object"
       },
       {
         "id": "schema:PackageInfo",
         "kind": "schema",
-        "name": "PackageInfo"
+        "name": "PackageInfo",
+        "type": "object"
       },
       {
         "id": "schema:PackageLockJsonFile",
         "kind": "schema",
-        "name": "PackageLockJsonFile"
+        "name": "PackageLockJsonFile",
+        "type": "object"
       },
       {
         "id": "schema:Patch",
         "kind": "schema",
-        "name": "Patch"
+        "name": "Patch",
+        "type": "object"
       },
       {
         "id": "schema:Ping",
@@ -2221,17 +5608,20 @@
       {
         "id": "schema:PkgManager",
         "kind": "schema",
-        "name": "PkgManager"
+        "name": "PkgManager",
+        "type": "object"
       },
       {
         "id": "schema:PriorityScore",
         "kind": "schema",
-        "name": "PriorityScore"
+        "name": "PriorityScore",
+        "type": "object"
       },
       {
         "id": "schema:Project",
         "kind": "schema",
-        "name": "Project"
+        "name": "Project",
+        "type": "object"
       },
       {
         "id": "schema:Project_Attributes",
@@ -2241,12 +5631,14 @@
       {
         "id": "schema:Project_Counts",
         "kind": "schema",
-        "name": "Project_Counts"
+        "name": "Project_Counts",
+        "type": "object"
       },
       {
         "id": "schema:Project_Counts_Filters",
         "kind": "schema",
-        "name": "Project_Counts_Filters"
+        "name": "Project_Counts_Filters",
+        "type": "object"
       },
       {
         "id": "schema:Project_History",
@@ -2266,7 +5658,8 @@
       {
         "id": "schema:Project_attributes",
         "kind": "schema",
-        "name": "Project_attributes"
+        "name": "Project_attributes",
+        "type": "object"
       },
       {
         "id": "schema:Project_counts_over_time",
@@ -2276,7 +5669,8 @@
       {
         "id": "schema:Project_dependency_graph",
         "kind": "schema",
-        "name": "Project_dependency_graph"
+        "name": "Project_dependency_graph",
+        "type": "object"
       },
       {
         "id": "schema:Project_ignores",
@@ -2286,7 +5680,8 @@
       {
         "id": "schema:Project_issues_filters",
         "kind": "schema",
-        "name": "Project_issues_filters"
+        "name": "Project_issues_filters",
+        "type": "object"
       },
       {
         "id": "schema:Project_jira_issues",
@@ -2296,22 +5691,26 @@
       {
         "id": "schema:Project_move",
         "kind": "schema",
-        "name": "Project_move"
+        "name": "Project_move",
+        "type": "object"
       },
       {
         "id": "schema:Project_settings",
         "kind": "schema",
-        "name": "Project_settings"
+        "name": "Project_settings",
+        "type": "object"
       },
       {
         "id": "schema:Project_snapshots",
         "kind": "schema",
-        "name": "Project_snapshots"
+        "name": "Project_snapshots",
+        "type": "object"
       },
       {
         "id": "schema:Project_snapshots_filters",
         "kind": "schema",
-        "name": "Project_snapshots_filters"
+        "name": "Project_snapshots_filters",
+        "type": "object"
       },
       {
         "id": "schema:Project_tags",
@@ -2321,12 +5720,14 @@
       {
         "id": "schema:Project_without_remediation",
         "kind": "schema",
-        "name": "Project_without_remediation"
+        "name": "Project_without_remediation",
+        "type": "object"
       },
       {
         "id": "schema:Projects_filters",
         "kind": "schema",
-        "name": "Projects_filters"
+        "name": "Projects_filters",
+        "type": "object"
       },
       {
         "id": "schema:Provision_user",
@@ -2336,7 +5737,8 @@
       {
         "id": "schema:PullRequestAssignment",
         "kind": "schema",
-        "name": "PullRequestAssignment"
+        "name": "PullRequestAssignment",
+        "type": "object"
       },
       {
         "id": "schema:Remove_project_tag",
@@ -2346,42 +5748,50 @@
       {
         "id": "schema:Repository",
         "kind": "schema",
-        "name": "Repository"
+        "name": "Repository",
+        "type": "object"
       },
       {
         "id": "schema:SBTFile",
         "kind": "schema",
-        "name": "SBTFile"
+        "name": "SBTFile",
+        "type": "object"
       },
       {
         "id": "schema:SemverObject",
         "kind": "schema",
-        "name": "SemverObject"
+        "name": "SemverObject",
+        "type": "object"
       },
       {
         "id": "schema:Simple_notification_setting_request",
         "kind": "schema",
-        "name": "Simple_notification_setting_request"
+        "name": "Simple_notification_setting_request",
+        "type": "object"
       },
       {
         "id": "schema:Simple_notification_setting_response",
         "kind": "schema",
-        "name": "Simple_notification_setting_response"
+        "name": "Simple_notification_setting_response",
+        "type": "Simple_notification_setting_request|object"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:Tag_body",
         "kind": "schema",
-        "name": "Tag_body"
+        "name": "Tag_body",
+        "type": "object"
       },
       {
         "id": "schema:Test_Counts",
         "kind": "schema",
-        "name": "Test_Counts"
+        "name": "Test_Counts",
+        "type": "object"
       },
       {
         "id": "schema:Test_counts",
@@ -2391,7 +5801,8 @@
       {
         "id": "schema:Tests_Filters",
         "kind": "schema",
-        "name": "Tests_Filters"
+        "name": "Tests_Filters",
+        "type": "object"
       },
       {
         "id": "schema:The_Snyk_organization_for_a_request",
@@ -2426,7 +5837,8 @@
       {
         "id": "schema:Vulnerability",
         "kind": "schema",
-        "name": "Vulnerability"
+        "name": "Vulnerability",
+        "type": "object"
       },
       {
         "id": "schema:Webhook",
@@ -2441,7 +5853,8 @@
       {
         "id": "schema:YarnLockFile",
         "kind": "schema",
-        "name": "YarnLockFile"
+        "name": "YarnLockFile",
+        "type": "object"
       },
       {
         "id": "schema:composer",
@@ -2451,7 +5864,8 @@
       {
         "id": "schema:composer_request_payload",
         "kind": "schema",
-        "name": "composer_request_payload"
+        "name": "composer_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:dep",
@@ -2461,17 +5875,20 @@
       {
         "id": "schema:golangdep_request_payload",
         "kind": "schema",
-        "name": "golangdep_request_payload"
+        "name": "golangdep_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:govendor_request_payload",
         "kind": "schema",
-        "name": "govendor_request_payload"
+        "name": "govendor_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:graph_request_payload",
         "kind": "schema",
-        "name": "graph_request_payload"
+        "name": "graph_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:ignorePath",
@@ -2486,7 +5903,8 @@
       {
         "id": "schema:monitor_graph_payload",
         "kind": "schema",
-        "name": "monitor_graph_payload"
+        "name": "monitor_graph_payload",
+        "type": "object"
       },
       {
         "id": "schema:npm",
@@ -2496,7 +5914,8 @@
       {
         "id": "schema:npm_request_payload",
         "kind": "schema",
-        "name": "npm_request_payload"
+        "name": "npm_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:pip",
@@ -2506,7 +5925,8 @@
       {
         "id": "schema:pip_request_payload",
         "kind": "schema",
-        "name": "pip_request_payload"
+        "name": "pip_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:rubygems",
@@ -2516,7 +5936,8 @@
       {
         "id": "schema:rubygems_request_payload",
         "kind": "schema",
-        "name": "rubygems_request_payload"
+        "name": "rubygems_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:sbt",
@@ -2526,7 +5947,8 @@
       {
         "id": "schema:sbt_request_payload",
         "kind": "schema",
-        "name": "sbt_request_payload"
+        "name": "sbt_request_payload",
+        "type": "object"
       },
       {
         "id": "schema:vendor",
@@ -2541,7 +5963,8 @@
       {
         "id": "schema:yarn_request_payload",
         "kind": "schema",
-        "name": "yarn_request_payload"
+        "name": "yarn_request_payload",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `39c8e778e686c4446c1e351ea37db6f68ee56bac90c5d84851cf430d55593a9c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,32 +34,34 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/ageusd/info` | getAgeUsdInfo | Returns state of AgeUSD at this moment |
-| GET | `/cancelbabel/{boxId}` | ergoPayCreateBabelBox_1 | — |
-| GET | `/createbabel/{address}` | ergoPayCreateBabelBox | — |
-| GET | `/mosaik/babelfee/` | getBabelFeeOverview | — |
-| GET | `/mosaik/babelfee/newoffer` | getBabelFeeNewOffer | — |
-| POST | `/mosaik/babelfee/newoffer/doit` | doCreateBabelBox | — |
-| POST | `/mosaik/babelfee/newoffer/new-input` | replaceTokenAmountInputFields | — |
-| GET | `/mosaik/babelfee/notificationcheck` | checkForNotifications | — |
-| GET | `/mosaik/boxconsolidation/` | mainApp_1 | — |
-| GET | `/mosaik/boxconsolidation/consolidate/{p2pkaddress}` | epConsolidate | — |
-| GET | `/mosaik/tokenburn` | mainApp | — |
-| GET | `/mosaik/tokenburn/get/{uuid}` | getBurningTransaction | — |
-| POST | `/mosaik/tokenburn/prepare` | prepareTransaction | — |
-| POST | `/payment/addrequest` | addPaymentRequest | Creates a new payment request. Will return request id to check for transaction state and ergopay url to show the user as QR code |
-| GET | `/payment/state/{requestId}` | getPaymentState | Returns the state of a payment request. Please note that payment requests are purged after some time, so persist the state at your side when needed |
-| GET | `/peers/list` | getPeersList | Lists known peers sorted by block height |
-| GET | `/sigrsv/exchange/` | doSigmaRsvExchange | Builds ErgoPayRequest for SigRSV exchange |
-| GET | `/sigrsv/exchange/{amount}/info` | calcSigmaRsvExchange | Calculates SigRSV exchange |
-| GET | `/sigrsv/price` | getSigmaRsvPrice | Lists price and available volume for SigmaRSV |
-| GET | `/sigusd/exchange/` | doSigmaUsdExchange | Builds ErgoPayRequest for SigUSD exchange |
-| GET | `/sigusd/exchange/{amount}/info` | calcSigmaUsdExchange | Calculates SigUSD exchange |
-| GET | `/sigusd/price` | getSigmaUsdPrice | Lists price and available volume for SigmaUSD |
-| GET | `/tokens/check/{tokenId}/{tokenName}` | checkToken | Check a token verification |
-| GET | `/tokens/listBlocked` | listBlocked | Lists all blocked tokens |
-| GET | `/tokens/listGenuine` | listGenuine | Lists all genuine tokens known |
-| GET | `/tokens/prices/all` | getTokenPrices | Lists all token prices and available volume |
-| GET | `/tokens/prices/{tokenId}` | getTokenPrice | Lists price and available volume for a certain token |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/ageusd/info` | getAgeUsdInfo | — | AgeUsdInfo | yes | Returns state of AgeUSD at this moment |
+| GET | `/cancelbabel/{boxId}` | ergoPayCreateBabelBox_1 | `boxId`* | ErgoPayResponse | yes | — |
+| GET | `/createbabel/{address}` | ergoPayCreateBabelBox | `address`*, `tokenId`*, `ergAmount`*, `tokenAmount`* | ErgoPayResponse | yes | — |
+| GET | `/mosaik/babelfee/` | getBabelFeeOverview | — | MosaikApp | yes | — |
+| GET | `/mosaik/babelfee/newoffer` | getBabelFeeNewOffer | — | MosaikApp | yes | — |
+| POST | `/mosaik/babelfee/newoffer/doit` | doCreateBabelBox | body*: object | FetchActionResponse |  | — |
+| POST | `/mosaik/babelfee/newoffer/new-input` | replaceTokenAmountInputFields | body*: object | FetchActionResponse |  | — |
+| GET | `/mosaik/babelfee/notificationcheck` | checkForNotifications | — | NotificationCheckResponse | yes | — |
+| GET | `/mosaik/boxconsolidation/` | mainApp_1 | — | MosaikApp | yes | — |
+| GET | `/mosaik/boxconsolidation/consolidate/{p2pkaddress}` | epConsolidate | `p2pkaddress`* | ErgoPayResponse | yes | — |
+| GET | `/mosaik/tokenburn` | mainApp | — | MosaikApp | yes | — |
+| GET | `/mosaik/tokenburn/get/{uuid}` | getBurningTransaction | `uuid`* | ErgoPayResponse | yes | — |
+| POST | `/mosaik/tokenburn/prepare` | prepareTransaction | body*: object | FetchActionResponse |  | — |
+| POST | `/payment/addrequest` | addPaymentRequest | body*: CreatePaymentRequest | AddRequestResponse |  | Creates a new payment request. Will return request id to check for transaction state and ergopay url to show the user as QR code |
+| GET | `/payment/state/{requestId}` | getPaymentState | `requestId`* | PaymentRequestStateResponse | yes | Returns the state of a payment request. Please note that payment requests are purged after some time, so persist the state at your side when needed |
+| GET | `/peers/list` | getPeersList | `unreachable`, `closedApi`, `limit` | NodePeer[] | yes | Lists known peers sorted by block height |
+| GET | `/sigrsv/exchange/` | doSigmaRsvExchange | `amount`*, `address`*, `checkRate`, `executionFee` | ErgoPayResponse | yes | Builds ErgoPayRequest for SigRSV exchange |
+| GET | `/sigrsv/exchange/{amount}/info` | calcSigmaRsvExchange | `amount`* | AgeUsdExchangeInfo | yes | Calculates SigRSV exchange |
+| GET | `/sigrsv/price` | getSigmaRsvPrice | — | TokenPrice | yes | Lists price and available volume for SigmaRSV |
+| GET | `/sigusd/exchange/` | doSigmaUsdExchange | `amount`*, `address`*, `checkRate`, `executionFee` | ErgoPayResponse | yes | Builds ErgoPayRequest for SigUSD exchange |
+| GET | `/sigusd/exchange/{amount}/info` | calcSigmaUsdExchange | `amount`* | AgeUsdExchangeInfo | yes | Calculates SigUSD exchange |
+| GET | `/sigusd/price` | getSigmaUsdPrice | — | TokenPrice | yes | Lists price and available volume for SigmaUSD |
+| GET | `/tokens/check/{tokenId}/{tokenName}` | checkToken | `tokenId`*, `tokenName`* | CheckResponse | yes | Check a token verification |
+| GET | `/tokens/listBlocked` | listBlocked | — | string[] | yes | Lists all blocked tokens |
+| GET | `/tokens/listGenuine` | listGenuine | — | GenuineToken[] | yes | Lists all genuine tokens known |
+| GET | `/tokens/prices/all` | getTokenPrices | — | TokenPrice[] | yes | Lists all token prices and available volume |
+| GET | `/tokens/prices/{tokenId}` | getTokenPrice | `tokenId`* | TokenPrice | yes | Lists price and available volume for a certain token |

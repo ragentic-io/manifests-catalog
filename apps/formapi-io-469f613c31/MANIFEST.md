@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_getdocspring_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `bfefb3f42cf57b1b83588534d3dc4146b42e53f20f5d9a9f07511a54620c4504` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,40 +34,42 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_getdocspring_profil
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/authentication` | testAuthentication | Test Authentication |
-| GET | `/combined_submissions` | listCombinedSubmissions | Get a list of all combined submissions |
-| POST | `/combined_submissions` | combineSubmissions | Merge generated PDFs together |
-| DELETE | `/combined_submissions/{combined_submission_id}` | expireCombinedSubmission | Expire a combined submission |
-| GET | `/combined_submissions/{combined_submission_id}` | getCombinedSubmission | Check the status of a combined submission (merged PDFs) |
-| POST | `/combined_submissions?v=2` | combinePdfs | Merge submission PDFs, template PDFs, or custom files |
-| POST | `/custom_files` | createCustomFileFromUpload | Create a new custom file from a cached presign upload |
-| GET | `/data_requests/{data_request_id}` | getDataRequest | Look up a submission data request |
-| PUT | `/data_requests/{data_request_id}` | updateDataRequest | Update a submission data request |
-| POST | `/data_requests/{data_request_id}/tokens` | createDataRequestToken | Creates a new data request token for form authentication |
-| GET | `/folders/` | listFolders | Get a list of all folders |
-| POST | `/folders/` | createFolder | Create a folder |
-| DELETE | `/folders/{folder_id}` | deleteFolder | Delete a folder |
-| POST | `/folders/{folder_id}/move` | moveFolderToFolder | Move a folder |
-| POST | `/folders/{folder_id}/rename` | renameFolder | Rename a folder |
-| GET | `/submissions` | listSubmissions | List all submissions |
-| POST | `/submissions/batches` | batchGeneratePdfs | Generates multiple PDFs |
-| GET | `/submissions/batches/{submission_batch_id}` | getSubmissionBatch | Check the status of a submission batch job |
-| DELETE | `/submissions/{submission_id}` | expireSubmission | Expire a PDF submission |
-| GET | `/submissions/{submission_id}` | getSubmission | Check the status of a PDF |
-| GET | `/templates` | listTemplates | Get a list of all templates |
-| POST | `/templates` | createPDFTemplate | Create a new PDF template with a form POST file upload |
-| GET | `/templates/{template_id}` | getTemplate | Check the status of an uploaded template |
-| PUT | `/templates/{template_id}` | updateTemplate | Update a Template |
-| PUT | `/templates/{template_id}/add_fields` | addFieldsToTemplate | Add new fields to a Template |
-| POST | `/templates/{template_id}/copy` | copyTemplate | Copy a Template |
-| POST | `/templates/{template_id}/move` | moveTemplateToFolder | Move Template to folder |
-| GET | `/templates/{template_id}/schema` | getTemplateSchema | Fetch the JSON schema for a template |
-| GET | `/templates/{template_id}/submissions` | get /templates/{template_id}/submissions | List all submissions for a given template |
-| POST | `/templates/{template_id}/submissions` | generatePDF | Generates a new PDF |
-| POST | `/templates/{template_id}/submissions/batch` | batchGeneratePdfV1 | Generates multiple PDFs |
-| GET | `/templates/{template_id}?full=true` | getFullTemplate | Fetch the full template attributes |
-| POST | `/templates?desc=cached_upload` | createPDFTemplateFromUpload | Create a new PDF template from a cached presign upload |
-| POST | `/templates?desc=html` | createHTMLTemplate | Create a new HTML template |
-| GET | `/uploads/presign` | getPresignUrl | Get a presigned URL so that you can upload a file to our AWS S3 bucket |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/authentication` | testAuthentication | — | object | yes | Test Authentication |
+| GET | `/combined_submissions` | listCombinedSubmissions | `page`, `per_page` | object[] | yes | Get a list of all combined submissions |
+| POST | `/combined_submissions` | combineSubmissions | body*: object | object |  | Merge generated PDFs together |
+| GET | `/combined_submissions/{combined_submission_id}` | getCombinedSubmission | `combined_submission_id`* | object | yes | Check the status of a combined submission (merged PDFs) |
+| DELETE | `/combined_submissions/{combined_submission_id}` | expireCombinedSubmission | `combined_submission_id`* | object |  | Expire a combined submission |
+| POST | `/combined_submissions?v=2` | combinePdfs | body*: object | object |  | Merge submission PDFs, template PDFs, or custom files |
+| POST | `/custom_files` | createCustomFileFromUpload | body*: object | object |  | Create a new custom file from a cached presign upload |
+| GET | `/data_requests/{data_request_id}` | getDataRequest | `data_request_id`* | submission_data_request | yes | Look up a submission data request |
+| PUT | `/data_requests/{data_request_id}` | updateDataRequest | `data_request_id`*, body*: object | object |  | Update a submission data request |
+| POST | `/data_requests/{data_request_id}/tokens` | createDataRequestToken | `data_request_id`* | object |  | Creates a new data request token for form authentication |
+| GET | `/folders/` | listFolders | `parent_folder_id` | object[] | yes | Get a list of all folders |
+| POST | `/folders/` | createFolder | body*: object | object |  | Create a folder |
+| DELETE | `/folders/{folder_id}` | deleteFolder | `folder_id`* | object |  | Delete a folder |
+| POST | `/folders/{folder_id}/move` | moveFolderToFolder | `folder_id`*, body*: object | object |  | Move a folder |
+| POST | `/folders/{folder_id}/rename` | renameFolder | `folder_id`*, body*: object | — |  | Rename a folder |
+| GET | `/submissions` | listSubmissions | `cursor`, `limit`, `created_after`, `created_before`, `type`, `include_data` | object | yes | List all submissions |
+| POST | `/submissions/batches` | batchGeneratePdfs | body*: object | object |  | Generates multiple PDFs |
+| GET | `/submissions/batches/{submission_batch_id}` | getSubmissionBatch | `submission_batch_id`*, `include_submissions` | object | yes | Check the status of a submission batch job |
+| GET | `/submissions/{submission_id}` | getSubmission | `submission_id`*, `include_data` | submission | yes | Check the status of a PDF |
+| DELETE | `/submissions/{submission_id}` | expireSubmission | `submission_id`* | submission |  | Expire a PDF submission |
+| GET | `/templates` | listTemplates | `query`, `parent_folder_id`, `page`, `per_page` | object[] | yes | Get a list of all templates |
+| POST | `/templates` | createPDFTemplate | body*: object | object |  | Create a new PDF template with a form POST file upload |
+| GET | `/templates/{template_id}` | getTemplate | `template_id`* | object | yes | Check the status of an uploaded template |
+| PUT | `/templates/{template_id}` | updateTemplate | `template_id`*, body*: object | object |  | Update a Template |
+| PUT | `/templates/{template_id}/add_fields` | addFieldsToTemplate | `template_id`*, body*: object | object |  | Add new fields to a Template |
+| POST | `/templates/{template_id}/copy` | copyTemplate | `template_id`*, body: object | object |  | Copy a Template |
+| POST | `/templates/{template_id}/move` | moveTemplateToFolder | `template_id`*, body*: object | object |  | Move Template to folder |
+| GET | `/templates/{template_id}/schema` | getTemplateSchema | `template_id`* | object | yes | Fetch the JSON schema for a template |
+| GET | `/templates/{template_id}/submissions` | get /templates/{template_id}/submissions | `template_id`*, `cursor`, `limit`, `created_after`, `created_before`, `type`, `include_data` | object | yes | List all submissions for a given template |
+| POST | `/templates/{template_id}/submissions` | generatePDF | `template_id`*, body*: object | object |  | Generates a new PDF |
+| POST | `/templates/{template_id}/submissions/batch` | batchGeneratePdfV1 | `template_id`*, body*: object[] | object[] |  | Generates multiple PDFs |
+| GET | `/templates/{template_id}?full=true` | getFullTemplate | `template_id`* | object | yes | Fetch the full template attributes |
+| POST | `/templates?desc=cached_upload` | createPDFTemplateFromUpload | body*: object | object |  | Create a new PDF template from a cached presign upload |
+| POST | `/templates?desc=html` | createHTMLTemplate | body*: object | object |  | Create a new HTML template |
+| GET | `/uploads/presign` | getPresignUrl | — | object | yes | Get a presigned URL so that you can upload a file to our AWS S3 bucket |

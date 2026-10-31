@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ac3d594c2c8413bcffd61b9966cf29b86bd003a3126f8b771413496515160c16` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 53 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/account/1/pushuri` | Push URI to Account id | Push URI to Account |
-| POST | `/account/2/verify` | Verify Account id | Verify Account |
-| GET | `/oauth2/1/authorize` | Get Authorization Code id | Get Authorization Code |
-| POST | `/oauth2/1/code` | Get Device Code id | Get Device Code |
-| POST | `/oauth2/1/file/upload` | Upload File to Locker id | Upload file to locker |
-| GET | `/oauth2/1/file/{uri}` | Get File from URI id | Get File from URI |
-| GET | `/oauth2/1/files/` | Get List of Self Uploaded Documents | Get List of Self Uploaded Documents |
-| GET | `/oauth2/1/files/issued` | Get List of issued Documents Version1 id | Issued Documents |
-| GET | `/oauth2/1/files/{id}` | Get List of Self Uploaded Documents id | Get List of Self Uploaded Documents |
-| POST | `/oauth2/1/pull/doctype` | Get List of Documents Provided by an Issuer id | Get List of Documents Provided by an Issuer |
-| POST | `/oauth2/1/pull/issuers` | Get List of Issuers id | Get List of Issuers |
-| POST | `/oauth2/1/pull/parameters` | Get Search Parameters for a Document id | Get Search Parameters for a Document |
-| POST | `/oauth2/1/pull/pulldocument` | Pull Document id | Pull Document |
-| POST | `/oauth2/1/revoke` | get token revocation id | Revoke Token. |
-| POST | `/oauth2/1/token` | getaccesstoken id | Get Access Token |
-| GET | `/oauth2/1/user` | Account Detail API id | Get User Details |
-| GET | `/oauth2/1/xml/{uri}` | Get Certificate Data in XML Format from URI id | Get Certificate Data in XML Format from URI |
-| GET | `/oauth2/2/files/issued` | Get List of issued Documents id | Issued Documents |
-| GET | `/oauth2/2/xml/eaadhaar` | Get e-Aadhaar Data in XML Format id | Get e-Aadhaar Data in XML Format |
-| POST | `/signup/1/demoauthverify` | Verify OTP id | Verify OTP |
-| POST | `/signup/2/demoauth` | SIGN UP id | SIGN UP |
-| POST | `/statistics/1/counts` | Get Statistics id | Get Statistics |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/account/1/pushuri` | Push URI to Account id | body: PushUri | — |  | Push URI to Account |
+| POST | `/account/2/verify` | Verify Account id | body: VerifyAccount | VerifyAccountResponse |  | Verify Account |
+| GET | `/oauth2/1/authorize` | Get Authorization Code id | `client_id`, `response_type`*, `redirect_uri`*, `state`*, `Code_challenge`, `Code_challenge_method`, `dl_flow`, `Verified_mobile` | object | yes | Get Authorization Code |
+| POST | `/oauth2/1/code` | Get Device Code id | body: DeviceAuthorizationCode | DeviceAuthorizationCodeResponse |  | Get Device Code |
+| POST | `/oauth2/1/file/upload` | Upload File to Locker id | `path`, `hmac`, body: FileUpload | FileUploadResponse |  | Upload file to locker |
+| GET | `/oauth2/1/file/{uri}` | Get File from URI id | `uri`* | string | yes | Get File from URI |
+| GET | `/oauth2/1/files/` | Get List of Self Uploaded Documents | — | object | yes | Get List of Self Uploaded Documents |
+| GET | `/oauth2/1/files/issued` | Get List of issued Documents Version1 id | — | object | yes | Issued Documents |
+| GET | `/oauth2/1/files/{id}` | Get List of Self Uploaded Documents id | `id`* | object | yes | Get List of Self Uploaded Documents |
+| POST | `/oauth2/1/pull/doctype` | Get List of Documents Provided by an Issuer id | body: DocType | DocTypeResponse |  | Get List of Documents Provided by an Issuer |
+| POST | `/oauth2/1/pull/issuers` | Get List of Issuers id | body: Issuer | IssuerResponse |  | Get List of Issuers |
+| POST | `/oauth2/1/pull/parameters` | Get Search Parameters for a Document id | body: SearchParameters | SearchParametersResponse |  | Get Search Parameters for a Document |
+| POST | `/oauth2/1/pull/pulldocument` | Pull Document id | body: PullDocumentSchema | object |  | Pull Document |
+| POST | `/oauth2/1/revoke` | get token revocation id | body: object | — |  | Revoke Token. |
+| POST | `/oauth2/1/token` | getaccesstoken id | body*: object | AccessResponse |  | Get Access Token |
+| GET | `/oauth2/1/user` | Account Detail API id | — | object | yes | Get User Details |
+| GET | `/oauth2/1/xml/{uri}` | Get Certificate Data in XML Format from URI id | `uri`* | XMLFormatSchema | yes | Get Certificate Data in XML Format from URI |
+| GET | `/oauth2/2/files/issued` | Get List of issued Documents id | — | object | yes | Issued Documents |
+| GET | `/oauth2/2/xml/eaadhaar` | Get e-Aadhaar Data in XML Format id | — | EaadharXamlSchema | yes | Get e-Aadhaar Data in XML Format |
+| POST | `/signup/1/demoauthverify` | Verify OTP id | body: DemoAuthVerify | DemoAuthVerifyResponse |  | Verify OTP |
+| POST | `/signup/2/demoauth` | SIGN UP id | body: DemoAuth | DemoAuthResponse |  | SIGN UP |
+| POST | `/statistics/1/counts` | Get Statistics id | body: GetStatistics | GetStatisticsResponse |  | Get Statistics |

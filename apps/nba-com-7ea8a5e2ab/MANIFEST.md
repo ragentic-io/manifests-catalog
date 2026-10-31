@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload.wikimedia.org_wikipedia_
 
 | | |
 | --- | --- |
-| Signed bundle | `fb1014839b2f8df0ba0e8c3d496c00b9ddd22d6052d5e64bf7db1d23d525d769` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,96 +32,98 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload.wikimedia.org_wikipedia_
 
 ## Operations (91)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/allstarballotpredictor` | get /allstarballotpredictor | — |
-| GET | `/boxscore` | get /boxscore | — |
-| GET | `/boxscoreadvanced` | get /boxscoreadvanced | — |
-| GET | `/boxscoreadvancedv2` | get /boxscoreadvancedv2 | — |
-| GET | `/boxscorefourfactors` | get /boxscorefourfactors | — |
-| GET | `/boxscorefourfactorsv2` | get /boxscorefourfactorsv2 | — |
-| GET | `/boxscoremisc` | get /boxscoremisc | — |
-| GET | `/boxscoremiscv2` | get /boxscoremiscv2 | — |
-| GET | `/boxscoreplayertrackv2` | get /boxscoreplayertrackv2 | — |
-| GET | `/boxscorescoring` | get /boxscorescoring | — |
-| GET | `/boxscorescoringv2` | get /boxscorescoringv2 | — |
-| GET | `/boxscoresummaryv2` | get /boxscoresummaryv2 | — |
-| GET | `/boxscoretraditionalv2` | get /boxscoretraditionalv2 | — |
-| GET | `/boxscoreusage` | get /boxscoreusage | — |
-| GET | `/boxscoreusagev2` | get /boxscoreusagev2 | — |
-| GET | `/commonTeamYears` | get /commonTeamYears | — |
-| GET | `/commonallplayers` | get /commonallplayers | — |
-| GET | `/commonplayerinfo` | get /commonplayerinfo | — |
-| GET | `/commonplayoffseries` | get /commonplayoffseries | — |
-| GET | `/commonteamroster` | get /commonteamroster | — |
-| GET | `/draftcombinedrillresults` | get /draftcombinedrillresults | — |
-| GET | `/draftcombinenonstationaryshooting` | get /draftcombinenonstationaryshooting | — |
-| GET | `/draftcombineplayeranthro` | get /draftcombineplayeranthro | — |
-| GET | `/draftcombinespotshooting` | get /draftcombinespotshooting | — |
-| GET | `/draftcombinestats` | get /draftcombinestats | — |
-| GET | `/drafthistory` | get /drafthistory | — |
-| GET | `/franchisehistory` | get /franchisehistory | — |
-| GET | `/homepageleaders` | get /homepageleaders | — |
-| GET | `/homepagev2` | get /homepagev2 | — |
-| GET | `/leaderstiles` | get /leaderstiles | — |
-| GET | `/leaguedashlineups` | get /leaguedashlineups | — |
-| GET | `/leaguedashplayerbiostats` | get /leaguedashplayerbiostats | — |
-| GET | `/leaguedashplayerclutch` | get /leaguedashplayerclutch | — |
-| GET | `/leaguedashplayerptshot` | get /leaguedashplayerptshot | — |
-| GET | `/leaguedashplayershotlocations` | get /leaguedashplayershotlocations | — |
-| GET | `/leaguedashplayerstats` | get /leaguedashplayerstats | — |
-| GET | `/leaguedashptdefend` | get /leaguedashptdefend | — |
-| GET | `/leaguedashptteamdefend` | get /leaguedashptteamdefend | — |
-| GET | `/leaguedashteamclutch` | get /leaguedashteamclutch | — |
-| GET | `/leaguedashteamptshot` | get /leaguedashteamptshot | — |
-| GET | `/leaguedashteamshotlocations` | get /leaguedashteamshotlocations | — |
-| GET | `/leaguedashteamstats` | get /leaguedashteamstats | — |
-| GET | `/leagueleaders` | get /leagueleaders | — |
-| GET | `/playbyplay` | get /playbyplay | — |
-| GET | `/playbyplayv2` | get /playbyplayv2 | — |
-| GET | `/playercareerstats` | get /playercareerstats | — |
-| GET | `/playercompare` | get /playercompare | — |
-| GET | `/playerdashboardbyclutch` | get /playerdashboardbyclutch | — |
-| GET | `/playerdashboardbygamesplits` | get /playerdashboardbygamesplits | — |
-| GET | `/playerdashboardbygeneralsplits` | get /playerdashboardbygeneralsplits | — |
-| GET | `/playerdashboardbylastngames` | get /playerdashboardbylastngames | — |
-| GET | `/playerdashboardbyopponent` | get /playerdashboardbyopponent | — |
-| GET | `/playerdashboardbyshootingsplits` | get /playerdashboardbyshootingsplits | — |
-| GET | `/playerdashboardbyteamperformance` | get /playerdashboardbyteamperformance | — |
-| GET | `/playerdashboardbyyearoveryear` | get /playerdashboardbyyearoveryear | — |
-| GET | `/playerdashptpass` | get /playerdashptpass | — |
-| GET | `/playerdashptreb` | get /playerdashptreb | — |
-| GET | `/playerdashptreboundlogs` | get /playerdashptreboundlogs | — |
-| GET | `/playerdashptshotdefend` | get /playerdashptshotdefend | — |
-| GET | `/playerdashptshotlog` | get /playerdashptshotlog | — |
-| GET | `/playerdashptshots` | get /playerdashptshots | — |
-| GET | `/playergamelog` | get /playergamelog | — |
-| GET | `/playerprofile` | get /playerprofile | — |
-| GET | `/playerprofilev2` | get /playerprofilev2 | — |
-| GET | `/playersvsplayers` | get /playersvsplayers | — |
-| GET | `/playervsplayer` | get /playervsplayer | — |
-| GET | `/playoffpicture` | get /playoffpicture | — |
-| GET | `/scoreboard` | get /scoreboard | — |
-| GET | `/scoreboardV2` | get /scoreboardV2 | — |
-| GET | `/shotchartdetail` | get /shotchartdetail | — |
-| GET | `/shotchartlineupdetail` | get /shotchartlineupdetail | — |
-| GET | `/teamdashboardbyclutch` | get /teamdashboardbyclutch | — |
-| GET | `/teamdashboardbygamesplits` | get /teamdashboardbygamesplits | — |
-| GET | `/teamdashboardbygeneralsplits` | get /teamdashboardbygeneralsplits | — |
-| GET | `/teamdashboardbylastngames` | get /teamdashboardbylastngames | — |
-| GET | `/teamdashboardbyopponent` | get /teamdashboardbyopponent | — |
-| GET | `/teamdashboardbyshootingsplits` | get /teamdashboardbyshootingsplits | — |
-| GET | `/teamdashboardbyteamperformance` | get /teamdashboardbyteamperformance | — |
-| GET | `/teamdashboardbyyearoveryear` | get /teamdashboardbyyearoveryear | — |
-| GET | `/teamdashlineups` | get /teamdashlineups | — |
-| GET | `/teamdashptpass` | get /teamdashptpass | — |
-| GET | `/teamdashptreb` | get /teamdashptreb | — |
-| GET | `/teamdashptshots` | get /teamdashptshots | — |
-| GET | `/teamgamelog` | get /teamgamelog | — |
-| GET | `/teaminfocommon` | get /teaminfocommon | — |
-| GET | `/teamplayerdashboard` | get /teamplayerdashboard | — |
-| GET | `/teamplayeronoffdetails` | get /teamplayeronoffdetails | — |
-| GET | `/teamplayeronoffsummary` | get /teamplayeronoffsummary | — |
-| GET | `/teamvsplayer` | get /teamvsplayer | — |
-| GET | `/teamyearbyyearstats` | get /teamyearbyyearstats | — |
-| GET | `/videoStatus` | get /videoStatus | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/allstarballotpredictor` | get /allstarballotpredictor | `PointCap`, `WestPlayer1`*, `WestPlayer2`*, `WestPlayer3`*, `WestPlayer4`*, `WestPlayer5`*, `EastPlayer1`*, `EastPlayer2`*, `EastPlayer3`*, `EastPlayer4`*, `EastPlayer5`* | — | yes | — |
+| GET | `/boxscore` | get /boxscore | `GameID`, `StartPeriod`, `EndPeriod`, `StartRange`, `EndRange`, `RangeType` | — | yes | — |
+| GET | `/boxscoreadvanced` | get /boxscoreadvanced | `GameID`, `StartPeriod`, `EndPeriod`, `StartRange`, `EndRange`, `RangeType` | — | yes | — |
+| GET | `/boxscoreadvancedv2` | get /boxscoreadvancedv2 | `GameID`*, `StartPeriod`*, `EndPeriod`*, `StartRange`*, `EndRange`*, `RangeType`* | — | yes | — |
+| GET | `/boxscorefourfactors` | get /boxscorefourfactors | `GameID`, `StartPeriod`, `EndPeriod`, `StartRange`, `EndRange`, `RangeType` | — | yes | — |
+| GET | `/boxscorefourfactorsv2` | get /boxscorefourfactorsv2 | `GameID`*, `StartPeriod`*, `EndPeriod`*, `StartRange`*, `EndRange`*, `RangeType`* | — | yes | — |
+| GET | `/boxscoremisc` | get /boxscoremisc | `GameID`, `StartPeriod`, `EndPeriod`, `StartRange`, `EndRange`, `RangeType` | — | yes | — |
+| GET | `/boxscoremiscv2` | get /boxscoremiscv2 | `GameID`*, `StartPeriod`*, `EndPeriod`*, `StartRange`*, `EndRange`*, `RangeType`* | — | yes | — |
+| GET | `/boxscoreplayertrackv2` | get /boxscoreplayertrackv2 | `GameID`* | — | yes | — |
+| GET | `/boxscorescoring` | get /boxscorescoring | `GameID`, `StartPeriod`, `EndPeriod`, `StartRange`, `EndRange`, `RangeType` | — | yes | — |
+| GET | `/boxscorescoringv2` | get /boxscorescoringv2 | `GameID`*, `StartPeriod`*, `EndPeriod`*, `StartRange`*, `EndRange`*, `RangeType`* | — | yes | — |
+| GET | `/boxscoresummaryv2` | get /boxscoresummaryv2 | `GameID`* | — | yes | — |
+| GET | `/boxscoretraditionalv2` | get /boxscoretraditionalv2 | `GameID`*, `StartPeriod`*, `EndPeriod`*, `StartRange`*, `EndRange`*, `RangeType`* | — | yes | — |
+| GET | `/boxscoreusage` | get /boxscoreusage | `GameID`, `StartPeriod`, `EndPeriod`, `StartRange`, `EndRange`, `RangeType` | — | yes | — |
+| GET | `/boxscoreusagev2` | get /boxscoreusagev2 | `GameID`*, `StartPeriod`*, `EndPeriod`*, `StartRange`*, `EndRange`*, `RangeType`* | — | yes | — |
+| GET | `/commonTeamYears` | get /commonTeamYears | `LeagueID`* | — | yes | — |
+| GET | `/commonallplayers` | get /commonallplayers | `LeagueID`*, `Season`*, `IsOnlyCurrentSeason`* | — | yes | — |
+| GET | `/commonplayerinfo` | get /commonplayerinfo | `PlayerID`* | — | yes | — |
+| GET | `/commonplayoffseries` | get /commonplayoffseries | `LeagueID`*, `Season`* | — | yes | — |
+| GET | `/commonteamroster` | get /commonteamroster | `Season`*, `TeamID`* | — | yes | — |
+| GET | `/draftcombinedrillresults` | get /draftcombinedrillresults | `LeagueID`*, `SeasonYear`* | — | yes | — |
+| GET | `/draftcombinenonstationaryshooting` | get /draftcombinenonstationaryshooting | `LeagueID`*, `SeasonYear`* | — | yes | — |
+| GET | `/draftcombineplayeranthro` | get /draftcombineplayeranthro | `LeagueID`*, `SeasonYear`* | — | yes | — |
+| GET | `/draftcombinespotshooting` | get /draftcombinespotshooting | `LeagueID`*, `SeasonYear`* | — | yes | — |
+| GET | `/draftcombinestats` | get /draftcombinestats | `LeagueID`*, `SeasonYear`* | — | yes | — |
+| GET | `/drafthistory` | get /drafthistory | `LeagueID`* | — | yes | — |
+| GET | `/franchisehistory` | get /franchisehistory | `LeagueID`* | — | yes | — |
+| GET | `/homepageleaders` | get /homepageleaders | `StatCategory`*, `LeagueID`*, `Season`*, `SeasonType`*, `PlayerOrTeam`*, `Game`, `Player`, `PlayerScope`*, `GameScope`* | — | yes | — |
+| GET | `/homepagev2` | get /homepagev2 | `StatType`*, `LeagueID`*, `Season`*, `SeasonType`*, `PlayerOrTeam`*, `Game`, `Player`, `PlayerScope`*, `GameScope`* | — | yes | — |
+| GET | `/leaderstiles` | get /leaderstiles | `Stat`*, `LeagueID`*, `Season`*, `SeasonType`*, `PlayerOrTeam`*, `Game`, `Player`, `PlayerScope`*, `GameScope`* | — | yes | — |
+| GET | `/leaguedashlineups` | get /leaguedashlineups | `GroupQuantity`*, `SeasonType`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/leaguedashplayerbiostats` | get /leaguedashplayerbiostats | `PerMode`*, `LeagueID`*, `Season`*, `SeasonType`* | — | yes | — |
+| GET | `/leaguedashplayerclutch` | get /leaguedashplayerclutch | `ClutchTime`*, `AheadBehind`*, `PointDiff`*, `GameScope`*, `PlayerExperience`*, `PlayerPosition`*, `StarterBench`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/leaguedashplayerptshot` | get /leaguedashplayerptshot | `LeagueID`*, `PerMode`*, `Season`*, `SeasonType`* | — | yes | — |
+| GET | `/leaguedashplayershotlocations` | get /leaguedashplayershotlocations | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`*, `DistanceRange`*, `GameScope`*, `PlayerExperience`*, `PlayerPosition`*, `StarterBench`* | — | yes | — |
+| GET | `/leaguedashplayerstats` | get /leaguedashplayerstats | `GameScope`*, `PlayerExperience`*, `PlayerPosition`*, `StarterBench`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/leaguedashptdefend` | get /leaguedashptdefend | `LeagueID`*, `PerMode`*, `Season`*, `SeasonType`*, `DefenseCategory`* | — | yes | — |
+| GET | `/leaguedashptteamdefend` | get /leaguedashptteamdefend | `LeagueID`*, `PerMode`*, `Season`*, `SeasonType`*, `DefenseCategory`* | — | yes | — |
+| GET | `/leaguedashteamclutch` | get /leaguedashteamclutch | `ClutchTime`*, `AheadBehind`*, `PointDiff`*, `GameScope`*, `PlayerExperience`*, `PlayerPosition`*, `StarterBench`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/leaguedashteamptshot` | get /leaguedashteamptshot | `LeagueID`*, `PerMode`*, `Season`*, `SeasonType`* | — | yes | — |
+| GET | `/leaguedashteamshotlocations` | get /leaguedashteamshotlocations | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`*, `DistanceRange`*, `GameScope`*, `PlayerExperience`*, `PlayerPosition`*, `StarterBench`* | — | yes | — |
+| GET | `/leaguedashteamstats` | get /leaguedashteamstats | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/leagueleaders` | get /leagueleaders | `LeagueID`*, `PerMode`*, `StatCategory`, `Season`*, `SeasonType`*, `Scope`* | — | yes | — |
+| GET | `/playbyplay` | get /playbyplay | `GameID`*, `StartPeriod`*, `EndPeriod`* | — | yes | — |
+| GET | `/playbyplayv2` | get /playbyplayv2 | `GameID`*, `StartPeriod`*, `EndPeriod`* | — | yes | — |
+| GET | `/playercareerstats` | get /playercareerstats | `PerMode`*, `PlayerID`* | — | yes | — |
+| GET | `/playercompare` | get /playercompare | `PlayerIDList`*, `VsPlayerIDList`*, `SeasonType`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbyclutch` | get /playerdashboardbyclutch | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbygamesplits` | get /playerdashboardbygamesplits | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbygeneralsplits` | get /playerdashboardbygeneralsplits | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbylastngames` | get /playerdashboardbylastngames | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbyopponent` | get /playerdashboardbyopponent | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbyshootingsplits` | get /playerdashboardbyshootingsplits | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbyteamperformance` | get /playerdashboardbyteamperformance | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashboardbyyearoveryear` | get /playerdashboardbyyearoveryear | `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `PlayerID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashptpass` | get /playerdashptpass | `PerMode`*, `Season`*, `SeasonType`*, `PlayerID`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashptreb` | get /playerdashptreb | `PerMode`*, `Season`*, `SeasonType`*, `PlayerID`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashptreboundlogs` | get /playerdashptreboundlogs | `Season`, `SeasonType`, `PlayerID`, `TeamID`, `Outcome`, `Location`, `Month`, `SeasonSegment`, `DateFrom`, `DateTo`, `OpponentTeamID`, `VsConference`, `VsDivision`, `GameSegment`, `Period`, `LastNGames` | — | yes | — |
+| GET | `/playerdashptshotdefend` | get /playerdashptshotdefend | `PerMode`*, `Season`*, `SeasonType`*, `PlayerID`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playerdashptshotlog` | get /playerdashptshotlog | `LeagueID`, `Season`, `SeasonType`, `PlayerID`, `TeamID` | — | yes | — |
+| GET | `/playerdashptshots` | get /playerdashptshots | `PerMode`*, `Season`*, `SeasonType`*, `PlayerID`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playergamelog` | get /playergamelog | `PlayerID`*, `Season`*, `SeasonType`* | — | yes | — |
+| GET | `/playerprofile` | get /playerprofile | `LeagueID`*, `PlayerID`*, `Season`*, `SeasonType`*, `GraphStartSeason`*, `GraphEndSeason`*, `GraphStat`* | — | yes | — |
+| GET | `/playerprofilev2` | get /playerprofilev2 | `PerMode`*, `PlayerID`* | — | yes | — |
+| GET | `/playersvsplayers` | get /playersvsplayers | `PlayerTeamID`*, `PlayerID1`*, `PlayerID2`*, `PlayerID3`*, `PlayerID4`*, `PlayerID5`*, `VsTeamID`*, `VsPlayerID1`*, `VsPlayerID2`*, `VsPlayerID3`*, `VsPlayerID4`*, `VsPlayerID5`*, `SeasonType`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playervsplayer` | get /playervsplayer | `PlayerID`*, `VsPlayerID`*, `SeasonType`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/playoffpicture` | get /playoffpicture | `LeagueID`*, `SeasonID`* | — | yes | — |
+| GET | `/scoreboard` | get /scoreboard | `GameDate`*, `LeagueID`*, `DayOffset`* | — | yes | — |
+| GET | `/scoreboardV2` | get /scoreboardV2 | `GameDate`*, `LeagueID`*, `DayOffset`* | — | yes | — |
+| GET | `/shotchartdetail` | get /shotchartdetail | `SeasonType`*, `TeamID`*, `PlayerID`*, `GameID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `Position`*, `RookieYear`*, `GameSegment`*, `Period`*, `LastNGames`*, `ContextMeasure`* | — | yes | — |
+| GET | `/shotchartlineupdetail` | get /shotchartlineupdetail | `LeagueID`*, `Season`*, `SeasonType`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`*, `GameID`*, `GROUP_ID`*, `ContextMeasure`*, `ContextFilter`* | — | yes | — |
+| GET | `/teamdashboardbyclutch` | get /teamdashboardbyclutch | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbygamesplits` | get /teamdashboardbygamesplits | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbygeneralsplits` | get /teamdashboardbygeneralsplits | `SeasonType`*, `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbylastngames` | get /teamdashboardbylastngames | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbyopponent` | get /teamdashboardbyopponent | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbyshootingsplits` | get /teamdashboardbyshootingsplits | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbyteamperformance` | get /teamdashboardbyteamperformance | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashboardbyyearoveryear` | get /teamdashboardbyyearoveryear | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashlineups` | get /teamdashlineups | `GroupQuantity`*, `GameID`*, `SeasonType`*, `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashptpass` | get /teamdashptpass | `PerMode`*, `Season`*, `SeasonType`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashptreb` | get /teamdashptreb | `PerMode`*, `Season`*, `SeasonType`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamdashptshots` | get /teamdashptshots | `PerMode`*, `Season`*, `SeasonType`*, `TeamID`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamgamelog` | get /teamgamelog | `TeamID`*, `Season`*, `SeasonType`* | — | yes | — |
+| GET | `/teaminfocommon` | get /teaminfocommon | `Season`*, `TeamID`*, `LeagueID`*, `SeasonType`* | — | yes | — |
+| GET | `/teamplayerdashboard` | get /teamplayerdashboard | `SeasonType`*, `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamplayeronoffdetails` | get /teamplayeronoffdetails | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamplayeronoffsummary` | get /teamplayeronoffsummary | `TeamID`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `SeasonType`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamvsplayer` | get /teamvsplayer | `TeamID`*, `VsPlayerID`*, `SeasonType`*, `MeasureType`*, `PerMode`*, `PlusMinus`*, `PaceAdjust`*, `Rank`*, `Season`*, `Outcome`*, `Location`*, `Month`*, `SeasonSegment`*, `DateFrom`*, `DateTo`*, `OpponentTeamID`*, `VsConference`*, `VsDivision`*, `GameSegment`*, `Period`*, `LastNGames`* | — | yes | — |
+| GET | `/teamyearbyyearstats` | get /teamyearbyyearstats | `LeagueID`*, `SeasonType`*, `PerMode`*, `TeamID`* | — | yes | — |
+| GET | `/videoStatus` | get /videoStatus | `LeagueID`*, `GameDate`* | — | yes | — |

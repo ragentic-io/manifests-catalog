@@ -133,6 +133,191 @@
         "from": "botify-com-f89164fc79",
         "kind": "EXPOSES",
         "to": "operation:post:/projects/{username}/{project_slug}/urls/aggs"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}",
+        "kind": "RETURNS",
+        "to": "schema:AnalysisDetail"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics",
+        "kind": "RETURNS",
+        "to": "schema:CrawlStatistics"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time",
+        "kind": "RETURNS",
+        "to": "schema:CrawlStatisticsTime"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/links/percentiles",
+        "kind": "RETURNS",
+        "to": "schema:LinksPercentiles"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/pagerank/lost",
+        "kind": "RETURNS",
+        "to": "schema:PageRankLost"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/report",
+        "kind": "RETURNS",
+        "to": "schema:SitemapsReport"
+      },
+      {
+        "from": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls",
+        "kind": "ACCEPTS",
+        "to": "schema:UrlsQuery"
+      },
+      {
+        "from": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs",
+        "kind": "ACCEPTS",
+        "to": "schema:UrlsAggsQueries"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel",
+        "kind": "RETURNS",
+        "to": "schema:CrawlDatamodel"
+      },
+      {
+        "from": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/export",
+        "kind": "ACCEPTS",
+        "to": "schema:UrlsQuery"
+      },
+      {
+        "from": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/export",
+        "kind": "RETURNS",
+        "to": "schema:CsvExportStatus"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/urls/export/{url_export_id}",
+        "kind": "RETURNS",
+        "to": "schema:CsvExportStatus"
+      },
+      {
+        "from": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/suggested_filters",
+        "kind": "ACCEPTS",
+        "to": "schema:UrlsAggsQuery"
+      },
+      {
+        "from": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/suggested_filters",
+        "kind": "RETURNS",
+        "to": "schema:UrlsAggsQuery"
+      },
+      {
+        "from": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/urls/{url}",
+        "kind": "RETURNS",
+        "to": "schema:UrlDetail"
+      },
+      {
+        "from": "operation:post:/projects/{username}/{project_slug}/features/url_rewriting/rules_validator",
+        "kind": "RETURNS",
+        "to": "schema:URLRewritingRulesSerializer"
+      },
+      {
+        "from": "operation:get:/projects/{username}/{project_slug}/filters/{identifier}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectSavedFilter"
+      },
+      {
+        "from": "operation:post:/projects/{username}/{project_slug}/urls/aggs",
+        "kind": "ACCEPTS",
+        "to": "schema:UrlsAggsQueries"
+      },
+      {
+        "from": "operation:post:/projects/{username}/{project_slug}/urls/aggs",
+        "kind": "RETURNS",
+        "to": "schema:Default"
+      },
+      {
+        "from": "schema:Analysis",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:AnalysisDetail",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:CrawlDatamodel",
+        "kind": "REFERENCES",
+        "to": "schema:CrawlDatamodelField"
+      },
+      {
+        "from": "schema:CrawlDatamodel",
+        "kind": "REFERENCES",
+        "to": "schema:CrawlDatamodelGroup"
+      },
+      {
+        "from": "schema:CrawlStatisticsTime",
+        "kind": "REFERENCES",
+        "to": "schema:CrawlStatisticsTimePoint"
+      },
+      {
+        "from": "schema:CsvExportStatus",
+        "kind": "REFERENCES",
+        "to": "schema:UrlsQuery"
+      },
+      {
+        "from": "schema:FieldValues",
+        "kind": "REFERENCES",
+        "to": "schema:FieldValuesResult"
+      },
+      {
+        "from": "schema:LinksPercentiles",
+        "kind": "REFERENCES",
+        "to": "schema:LinksPercentilesItem"
+      },
+      {
+        "from": "schema:LinksTopDomains",
+        "kind": "REFERENCES",
+        "to": "schema:LinksTopDomainsSamples"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectSettingsSerializer"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:SitemapsReport",
+        "kind": "REFERENCES",
+        "to": "schema:SitemapsReportOnly"
+      },
+      {
+        "from": "schema:SitemapsReport",
+        "kind": "REFERENCES",
+        "to": "schema:SitemapsReportSitemap"
+      },
+      {
+        "from": "schema:SitemapsReportSitemap",
+        "kind": "REFERENCES",
+        "to": "schema:SitemapsReportSitemapError"
+      },
+      {
+        "from": "schema:URLRewritingRulesSerializer",
+        "kind": "REFERENCES",
+        "to": "schema:RewritingRuleSerializer"
+      },
+      {
+        "from": "schema:UrlsAggs",
+        "kind": "REFERENCES",
+        "to": "schema:UrlsAgg"
+      },
+      {
+        "from": "schema:UrlsAggs",
+        "kind": "REFERENCES",
+        "to": "schema:UrlsErrorAgg"
+      },
+      {
+        "from": "schema:UrlsAggsQueries",
+        "kind": "REFERENCES",
+        "to": "schema:UrlsAggsQuery"
       }
     ],
     "nodes": [
@@ -146,14 +331,58 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectAnalyses",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "List all analyses for a project"
+        "summary": "List all analyses for a project",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -161,14 +390,51 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnalysisSummary",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AnalysisDetail"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Get an Analysis detail"
+        "summary": "Get an Analysis detail",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -176,29 +442,123 @@
         "kind": "operation",
         "method": "get",
         "name": "getCrawlStatistics",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1crawl_statistics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CrawlStatistics"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Return global statistics for an analysis"
+        "summary": "Return global statistics for an analysis",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min) for an analysis",
         "id": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time",
         "kind": "operation",
         "method": "get",
         "name": "getCrawlStatisticsByFrequency",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "max number of elements to retrieve",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Aggregation frequency",
+            "enum": [
+              "1mn",
+              "5mn",
+              "60mn"
+            ],
+            "in": "query",
+            "name": "frequency",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1crawl_statistics~1time/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CrawlStatisticsTime"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min)"
+        "summary": "Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min)",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -206,29 +566,165 @@
         "kind": "operation",
         "method": "get",
         "name": "getCrawlStatisticsUrls",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "URLs list type (crawled URLs or error URLs)",
+            "enum": [
+              "crawled",
+              "errors"
+            ],
+            "in": "path",
+            "name": "list_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/urls/{list_type}",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1crawl_statistics~1urls~1{list_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors)"
+        "summary": "Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors)",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of Orphan URLs.",
         "id": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/ganalytics/orphan_urls/{medium}/{source}",
         "kind": "operation",
         "method": "get",
         "name": "getGanalyticsOrphanURLs",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of traffic, value: 'organic' (from search engine)or 'social' (from a social network)",
+            "enum": [
+              "organic",
+              "social"
+            ],
+            "in": "path",
+            "name": "medium",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Traffic source, value: name of the search engine or social network",
+            "enum": [
+              "all",
+              "aol",
+              "ask",
+              "baidu",
+              "bing",
+              "facebook",
+              "google",
+              "google+",
+              "linkedin",
+              "naver",
+              "pinterest",
+              "reddit",
+              "tumblr",
+              "twitter",
+              "yahoo",
+              "yandex"
+            ],
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/ganalytics/orphan_urls/{medium}/{source}",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1ganalytics~1orphan_urls~1{medium}~1{source}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "List of Orphan URLs"
+        "summary": "List of Orphan URLs",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -236,14 +732,51 @@
         "kind": "operation",
         "method": "get",
         "name": "getLinksPercentiles",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/links/percentiles",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1links~1percentiles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinksPercentiles"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Get inlinks percentiles"
+        "summary": "Get inlinks percentiles",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -251,59 +784,238 @@
         "kind": "operation",
         "method": "get",
         "name": "getPageRankLost",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/pagerank/lost",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1pagerank~1lost/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PageRankLost"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Lost pagerank"
+        "summary": "Lost pagerank",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc.)",
         "id": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/report",
         "kind": "operation",
         "method": "get",
         "name": "getSitemapsReport",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/report",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1sitemaps~1report/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SitemapsReport"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc"
+        "summary": "Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sample list of URLs which were found in your sitemaps but outside of the crawl perimeter defined for the project, for instance domain/subdomain or protocol (HT…",
         "id": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config",
         "kind": "operation",
         "method": "get",
         "name": "getSitemapsSamplesOutOfConfig",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1sitemaps~1samples~1out_of_config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Sample list of URLs which were found in your sitemaps but outside of the"
+        "summary": "Sample list of URLs which were found in your sitemaps but outside of the",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sample list of URLs which were found in your sitemaps, within the project allowed scope (allowed domains/subdomains/protocols), but not found by the Botify cra…",
         "id": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/sitemap_only",
         "kind": "operation",
         "method": "get",
         "name": "getSitemapsSamplesSitemapsOnly",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/sitemap_only",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1sitemaps~1samples~1sitemap_only/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Sample list of URLs which were found in your sitemaps, within the project"
+        "summary": "Sample list of URLs which were found in your sitemaps, within the project",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -311,14 +1023,65 @@
         "kind": "operation",
         "method": "get",
         "name": "getLinksTopDomains",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/domains",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1top_domains~1domains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Top domains"
+        "summary": "Top domains",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -326,14 +1089,65 @@
         "kind": "operation",
         "method": "get",
         "name": "getLinksTopSubdomains",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/subdomains",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1features~1top_domains~1subdomains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Top subddomains"
+        "summary": "Top subddomains",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -341,29 +1155,159 @@
         "kind": "operation",
         "method": "post",
         "name": "getUrls",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "current",
+            "description": "Analysis context to execute the query",
+            "enum": [
+              "current",
+              "disappeared",
+              "new",
+              "search_engines_orphans"
+            ],
+            "in": "query",
+            "name": "area",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UrlsQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Executes a query and returns a paginated response"
+        "summary": "Executes a query and returns a paginated response",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query aggregator.",
         "id": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs",
         "kind": "operation",
         "method": "post",
         "name": "getUrlsAggs",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "current",
+            "enum": [
+              "current",
+              "disappeared",
+              "new",
+              "search_engines_orphans"
+            ],
+            "in": "query",
+            "name": "area",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1aggs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UrlsAggsQueries"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Query aggregator"
+        "summary": "Query aggregator",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -371,14 +1315,64 @@
         "kind": "operation",
         "method": "get",
         "name": "getUrlsDatamodel",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "current",
+            "enum": [
+              "current",
+              "disappeared",
+              "new",
+              "search_engines_orphans"
+            ],
+            "in": "query",
+            "name": "area",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1datamodel/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CrawlDatamodel"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Gets an Analysis datamodel"
+        "summary": "Gets an Analysis datamodel",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -386,59 +1380,269 @@
         "kind": "operation",
         "method": "get",
         "name": "getUrlsExports",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/export",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1export/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "A list of the CSV Exports requests and their current status"
+        "summary": "A list of the CSV Exports requests and their current status",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new UrlExport object and starts a task that will export the results into a csv.",
         "id": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/export",
         "kind": "operation",
         "method": "post",
         "name": "createUrlsExport",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "current",
+            "enum": [
+              "current",
+              "disappeared",
+              "new",
+              "search_engines_orphans"
+            ],
+            "in": "query",
+            "name": "area",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/export",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1export/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UrlsQuery"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CsvExportStatus"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Creates a new UrlExport object and starts a task that will export the results into a csv"
+        "summary": "Creates a new UrlExport object and starts a task that will export the results into a csv",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Checks the status of an CSVUrlExportJob object.",
         "id": "operation:get:/analyses/{username}/{project_slug}/{analysis_slug}/urls/export/{url_export_id}",
         "kind": "operation",
         "method": "get",
         "name": "getUrlsExportStatus",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Url Export ID",
+            "in": "path",
+            "name": "url_export_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/export/{url_export_id}",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1export~1{url_export_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CsvExportStatus"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Checks the status of an CSVUrlExportJob object"
+        "summary": "Checks the status of an CSVUrlExportJob object",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return most frequent segments (= suggested patterns in the previous version) for a Botify Query.",
         "id": "operation:post:/analyses/{username}/{project_slug}/{analysis_slug}/urls/suggested_filters",
         "kind": "operation",
         "method": "post",
         "name": "getUrlsSuggestedFilters",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "current",
+            "enum": [
+              "current",
+              "new"
+            ],
+            "in": "query",
+            "name": "area",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/suggested_filters",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1suggested_filters/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UrlsAggsQuery"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "UrlsAggsQuery"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Return most frequent segments (= suggested patterns in the previous version)"
+        "summary": "Return most frequent segments (= suggested patterns in the previous version)",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -446,14 +1650,65 @@
         "kind": "operation",
         "method": "get",
         "name": "getUrlDetail",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Analysis' identifier",
+            "in": "path",
+            "name": "analysis_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "(Urlencoded) Searched URL",
+            "in": "path",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "comma separated list of fields to return (c.f.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/analyses/{username}/{project_slug}/{analysis_slug}/urls/{url}",
         "pointer": "#/paths/~1analyses~1{username}~1{project_slug}~1{analysis_slug}~1urls~1{url}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UrlDetail"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Gets the detail of an URL for an analysis"
+        "summary": "Gets the detail of an URL for an analysis",
+        "tags": [
+          "Analysis"
+        ]
       },
       {
         "deprecated": false,
@@ -461,29 +1716,97 @@
         "kind": "operation",
         "method": "get",
         "name": "getUserProjects",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/projects/{username}",
         "pointer": "#/paths/~1projects~1{username}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "List all active projects for the user"
+        "summary": "List all active projects for the user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Match and replace parts of a URL based on rules passed in POST data.",
         "id": "operation:post:/projects/{username}/{project_slug}/features/url_rewriting/rules_validator",
         "kind": "operation",
         "method": "post",
         "name": "testUrlRewritingRules",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{username}/{project_slug}/features/url_rewriting/rules_validator",
         "pointer": "#/paths/~1projects~1{username}~1{project_slug}~1features~1url_rewriting~1rules_validator/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "URLRewritingRulesSerializer"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Match and replace parts of a URL based on rules passed in POST data"
+        "summary": "Match and replace parts of a URL based on rules passed in POST data",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -491,14 +1814,58 @@
         "kind": "operation",
         "method": "get",
         "name": "getSavedFilters",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Page Number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page Size",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/projects/{username}/{project_slug}/filters",
         "pointer": "#/paths/~1projects~1{username}~1{project_slug}~1filters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "List all the project's saved filters (each filter's name, ID and filter value)"
+        "summary": "List all the project's saved filters (each filter's name, ID and filter value)",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -506,219 +1873,361 @@
         "kind": "operation",
         "method": "get",
         "name": "getSavedFilter",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Saved Filter's identifier",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{username}/{project_slug}/filters/{identifier}",
         "pointer": "#/paths/~1projects~1{username}~1{project_slug}~1filters~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectSavedFilter"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Retrieves a specific saved filter's name, ID and filter value"
+        "summary": "Retrieves a specific saved filter's name, ID and filter value",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Project Query aggregator.",
         "id": "operation:post:/projects/{username}/{project_slug}/urls/aggs",
         "kind": "operation",
         "method": "post",
         "name": "getProjectUrlsAggs",
+        "parameters": [
+          {
+            "description": "User's identifier",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project's identifier",
+            "in": "path",
+            "name": "project_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "current",
+            "description": "Analysis context to execute the queries",
+            "enum": [
+              "current",
+              "disappeared",
+              "new"
+            ],
+            "in": "query",
+            "name": "area",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last analysis on the trend",
+            "in": "query",
+            "name": "last_analysis_slug",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Max number of analysis to return",
+            "in": "query",
+            "name": "nb_analyses",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/projects/{username}/{project_slug}/urls/aggs",
         "pointer": "#/paths/~1projects~1{username}~1{project_slug}~1urls~1aggs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UrlsAggsQueries"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Default"
+          },
+          {
+            "status": "default",
+            "type": "DefaultPayload"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "DjangoRestToken": []
           }
         ],
-        "summary": "Project Query aggregator"
+        "summary": "Project Query aggregator",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "id": "schema:Analysis",
         "kind": "schema",
-        "name": "Analysis"
+        "name": "Analysis",
+        "type": "object"
       },
       {
         "id": "schema:AnalysisDetail",
         "kind": "schema",
-        "name": "AnalysisDetail"
+        "name": "AnalysisDetail",
+        "type": "object"
       },
       {
         "id": "schema:CrawlDatamodel",
         "kind": "schema",
-        "name": "CrawlDatamodel"
+        "name": "CrawlDatamodel",
+        "type": "object"
       },
       {
         "id": "schema:CrawlDatamodelField",
         "kind": "schema",
-        "name": "CrawlDatamodelField"
+        "name": "CrawlDatamodelField",
+        "type": "object"
       },
       {
         "id": "schema:CrawlDatamodelGroup",
         "kind": "schema",
-        "name": "CrawlDatamodelGroup"
+        "name": "CrawlDatamodelGroup",
+        "type": "object"
       },
       {
         "id": "schema:CrawlOrphanURLs",
         "kind": "schema",
-        "name": "CrawlOrphanURLs"
+        "name": "CrawlOrphanURLs",
+        "type": "object"
       },
       {
         "id": "schema:CrawlStatistics",
         "kind": "schema",
-        "name": "CrawlStatistics"
+        "name": "CrawlStatistics",
+        "type": "object"
       },
       {
         "id": "schema:CrawlStatisticsTime",
         "kind": "schema",
-        "name": "CrawlStatisticsTime"
+        "name": "CrawlStatisticsTime",
+        "type": "object"
       },
       {
         "id": "schema:CrawlStatisticsTimePoint",
         "kind": "schema",
-        "name": "CrawlStatisticsTimePoint"
+        "name": "CrawlStatisticsTimePoint",
+        "type": "object"
       },
       {
         "id": "schema:CrawlStatisticsUrls",
         "kind": "schema",
-        "name": "CrawlStatisticsUrls"
+        "name": "CrawlStatisticsUrls",
+        "type": "object"
       },
       {
         "id": "schema:CsvExportStatus",
         "kind": "schema",
-        "name": "CsvExportStatus"
+        "name": "CsvExportStatus",
+        "type": "object"
       },
       {
         "id": "schema:Default",
         "kind": "schema",
-        "name": "Default"
+        "name": "Default",
+        "type": "object"
       },
       {
+        "description": "default payload for object for all HTTP codes that are not covered individually",
         "id": "schema:DefaultPayload",
         "kind": "schema",
-        "name": "DefaultPayload"
+        "name": "DefaultPayload",
+        "type": "object"
       },
       {
         "id": "schema:FieldValues",
         "kind": "schema",
-        "name": "FieldValues"
+        "name": "FieldValues",
+        "type": "object"
       },
       {
         "id": "schema:FieldValuesResult",
         "kind": "schema",
-        "name": "FieldValuesResult"
+        "name": "FieldValuesResult",
+        "type": "object"
       },
       {
         "id": "schema:LinksPercentiles",
         "kind": "schema",
-        "name": "LinksPercentiles"
+        "name": "LinksPercentiles",
+        "type": "object"
       },
       {
         "id": "schema:LinksPercentilesItem",
         "kind": "schema",
-        "name": "LinksPercentilesItem"
+        "name": "LinksPercentilesItem",
+        "type": "object"
       },
       {
         "id": "schema:LinksTopDomains",
         "kind": "schema",
-        "name": "LinksTopDomains"
+        "name": "LinksTopDomains",
+        "type": "object"
       },
       {
         "id": "schema:LinksTopDomainsSamples",
         "kind": "schema",
-        "name": "LinksTopDomainsSamples"
+        "name": "LinksTopDomainsSamples",
+        "type": "object"
       },
       {
         "id": "schema:PageRankLost",
         "kind": "schema",
-        "name": "PageRankLost"
+        "name": "PageRankLost",
+        "type": "object"
       },
       {
         "id": "schema:Project",
         "kind": "schema",
-        "name": "Project"
+        "name": "Project",
+        "type": "object"
       },
       {
         "id": "schema:ProjectSavedFilter",
         "kind": "schema",
-        "name": "ProjectSavedFilter"
+        "name": "ProjectSavedFilter",
+        "type": "object"
       },
       {
         "id": "schema:ProjectSettingsSerializer",
         "kind": "schema",
-        "name": "ProjectSettingsSerializer"
+        "name": "ProjectSettingsSerializer",
+        "type": "object"
       },
       {
         "id": "schema:RewritingRuleSerializer",
         "kind": "schema",
-        "name": "RewritingRuleSerializer"
+        "name": "RewritingRuleSerializer",
+        "type": "object"
       },
       {
         "id": "schema:SitemapsReport",
         "kind": "schema",
-        "name": "SitemapsReport"
+        "name": "SitemapsReport",
+        "type": "object"
       },
       {
         "id": "schema:SitemapsReportOnly",
         "kind": "schema",
-        "name": "SitemapsReportOnly"
+        "name": "SitemapsReportOnly",
+        "type": "object"
       },
       {
         "id": "schema:SitemapsReportSitemap",
         "kind": "schema",
-        "name": "SitemapsReportSitemap"
+        "name": "SitemapsReportSitemap",
+        "type": "object"
       },
       {
         "id": "schema:SitemapsReportSitemapError",
         "kind": "schema",
-        "name": "SitemapsReportSitemapError"
+        "name": "SitemapsReportSitemapError",
+        "type": "object"
       },
       {
         "id": "schema:URLRewritingRulesSerializer",
         "kind": "schema",
-        "name": "URLRewritingRulesSerializer"
+        "name": "URLRewritingRulesSerializer",
+        "type": "object"
       },
       {
         "id": "schema:UrlDetail",
         "kind": "schema",
-        "name": "UrlDetail"
+        "name": "UrlDetail",
+        "type": "object"
       },
       {
         "id": "schema:UrlsAgg",
         "kind": "schema",
-        "name": "UrlsAgg"
+        "name": "UrlsAgg",
+        "type": "object"
       },
       {
         "id": "schema:UrlsAggs",
         "kind": "schema",
-        "name": "UrlsAggs"
+        "name": "UrlsAggs",
+        "type": "object"
       },
       {
         "id": "schema:UrlsAggsQueries",
         "kind": "schema",
-        "name": "UrlsAggsQueries"
+        "name": "UrlsAggsQueries",
+        "type": "UrlsAggsQuery[]"
       },
       {
         "id": "schema:UrlsAggsQuery",
         "kind": "schema",
-        "name": "UrlsAggsQuery"
+        "name": "UrlsAggsQuery",
+        "type": "object"
       },
       {
         "id": "schema:UrlsErrorAgg",
         "kind": "schema",
-        "name": "UrlsErrorAgg"
+        "name": "UrlsErrorAgg",
+        "type": "object"
       },
       {
         "id": "schema:UrlsQuery",
         "kind": "schema",
-        "name": "UrlsQuery"
+        "name": "UrlsQuery",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:string",
         "kind": "schema",
-        "name": "string"
+        "name": "string",
+        "type": "object"
       }
     ]
   },

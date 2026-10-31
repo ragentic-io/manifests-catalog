@@ -13,6 +13,51 @@
         "from": "openfigi-com-b83b2ae1c2",
         "kind": "EXPOSES",
         "to": "operation:get:/mapping/values/{key}"
+      },
+      {
+        "from": "operation:post:/mapping",
+        "kind": "ACCEPTS",
+        "to": "schema:BulkMappingJob"
+      },
+      {
+        "from": "operation:post:/mapping",
+        "kind": "RETURNS",
+        "to": "schema:BulkMappingJobResult"
+      },
+      {
+        "from": "schema:BulkMappingJob",
+        "kind": "REFERENCES",
+        "to": "schema:MappingJob"
+      },
+      {
+        "from": "schema:BulkMappingJobResult",
+        "kind": "REFERENCES",
+        "to": "schema:MappingJobResult"
+      },
+      {
+        "from": "schema:MappingJob",
+        "kind": "REFERENCES",
+        "to": "schema:NullableDateInterval"
+      },
+      {
+        "from": "schema:MappingJob",
+        "kind": "REFERENCES",
+        "to": "schema:NullableNumberInterval"
+      },
+      {
+        "from": "schema:MappingJobResult",
+        "kind": "REFERENCES",
+        "to": "schema:MappingJobResultFigiList"
+      },
+      {
+        "from": "schema:MappingJobResult",
+        "kind": "REFERENCES",
+        "to": "schema:MappingJobResultFigiNotFound"
+      },
+      {
+        "from": "schema:MappingJobResultFigiList",
+        "kind": "REFERENCES",
+        "to": "schema:FigiResult"
       }
     ],
     "nodes": [
@@ -22,12 +67,47 @@
       },
       {
         "deprecated": false,
+        "description": "Allows mapping from third-party identifiers to FIGIs.",
         "id": "operation:post:/mapping",
         "kind": "operation",
         "method": "post",
         "name": "post /mapping",
         "path": "/mapping",
         "pointer": "#/paths/~1mapping/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BulkMappingJob"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BulkMappingJobResult"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "401",
+            "type": "string"
+          },
+          {
+            "status": "406",
+            "type": "string"
+          },
+          {
+            "status": "413",
+            "type": "string"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {},
           {
@@ -38,12 +118,46 @@
       },
       {
         "deprecated": false,
+        "description": "Get values for enum-like fields.",
         "id": "operation:get:/mapping/values/{key}",
         "kind": "operation",
         "method": "get",
         "name": "get /mapping/values/{key}",
+        "parameters": [
+          {
+            "description": "Key of MappingJob for which to get possible values.",
+            "enum": [
+              "idType",
+              "exchCode",
+              "micCode",
+              "currency",
+              "marketSecDes",
+              "securityType",
+              "securityType2"
+            ],
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mapping/values/{key}",
         "pointer": "#/paths/~1mapping~1values~1{key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "string"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {},
           {
@@ -55,47 +169,59 @@
       {
         "id": "schema:BulkMappingJob",
         "kind": "schema",
-        "name": "BulkMappingJob"
+        "name": "BulkMappingJob",
+        "type": "MappingJob[]"
       },
       {
         "id": "schema:BulkMappingJobResult",
         "kind": "schema",
-        "name": "BulkMappingJobResult"
+        "name": "BulkMappingJobResult",
+        "type": "MappingJobResult[]"
       },
       {
         "id": "schema:FigiResult",
         "kind": "schema",
-        "name": "FigiResult"
+        "name": "FigiResult",
+        "type": "object"
       },
       {
+        "description": "For V3: securityType2 is required when idType is BASE_TICKER or ID_EXCH_SYMBOL.",
         "id": "schema:MappingJob",
         "kind": "schema",
-        "name": "MappingJob"
+        "name": "MappingJob",
+        "type": "object"
       },
       {
         "id": "schema:MappingJobResult",
         "kind": "schema",
-        "name": "MappingJobResult"
+        "name": "MappingJobResult",
+        "type": "MappingJobResultFigiList|MappingJobResultFigiNotFound"
       },
       {
         "id": "schema:MappingJobResultFigiList",
         "kind": "schema",
-        "name": "MappingJobResultFigiList"
+        "name": "MappingJobResultFigiList",
+        "type": "object"
       },
       {
         "id": "schema:MappingJobResultFigiNotFound",
         "kind": "schema",
-        "name": "MappingJobResultFigiNotFound"
+        "name": "MappingJobResultFigiNotFound",
+        "type": "object"
       },
       {
+        "description": "At least one entry should be non-null.",
         "id": "schema:NullableDateInterval",
         "kind": "schema",
-        "name": "NullableDateInterval"
+        "name": "NullableDateInterval",
+        "type": "string:date[]"
       },
       {
+        "description": "At least one entry should be non-null.",
         "id": "schema:NullableNumberInterval",
         "kind": "schema",
-        "name": "NullableNumberInterval"
+        "name": "NullableNumberInterval",
+        "type": "number[]"
       }
     ]
   },

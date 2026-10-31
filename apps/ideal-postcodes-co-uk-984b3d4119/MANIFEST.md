@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ideal-postcodes_co_uk_apple-ico
 
 | | |
 | --- | --- |
-| Signed bundle | `7cf6389af02cd727bbb4c519884a538b58aa83cfdbe50b313955592cc8af2938` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ideal-postcodes_co_uk_apple-ico
 
 192 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/addresses` | Addresses | Extract Addresses |
-| GET | `/autocomplete/addresses` | AddressAutocomplete | Find Address |
-| GET | `/autocomplete/addresses/{address}/gbr` | Resolve | Resolve Address (GBR) |
-| GET | `/autocomplete/addresses/{address}/usa` | ResolveUsa | Resolve Address (USA) |
-| POST | `/cleanse/addresses` | AddressCleanse | Cleanse |
-| GET | `/emails` | EmailValidation | Email Validation |
-| GET | `/keys/{key}` | KeyAvailability | Availability |
-| GET | `/keys/{key}/configs` | ListConfigs | List |
-| POST | `/keys/{key}/configs` | CreateConfig | Create |
-| DELETE | `/keys/{key}/configs/{config}` | DeleteConfig | Delete |
-| GET | `/keys/{key}/configs/{config}` | RetrieveConfig | Retrieve |
-| POST | `/keys/{key}/configs/{config}` | UpdateConfig | Update |
-| GET | `/keys/{key}/details` | KeyDetails | Details |
-| GET | `/keys/{key}/licensees` | ListLicensees | List |
-| POST | `/keys/{key}/licensees` | CreateLicensee | Create |
-| DELETE | `/keys/{key}/licensees/{licensee}` | DeleteLicensee | Cancel |
-| GET | `/keys/{key}/licensees/{licensee}` | RetrieveLicensee | Retrieve |
-| PUT | `/keys/{key}/licensees/{licensee}` | UpdateLicensee | Update |
-| GET | `/keys/{key}/lookups` | KeyLogs | Logs (CSV) |
-| GET | `/keys/{key}/usage` | KeyUsage | Usage Stats |
-| GET | `/phone_numbers` | PhoneNumberValidation | Phone Number Validation |
-| GET | `/places` | FindPlace | Find Place |
-| GET | `/places/${place}` | ResolvePlace | Resolve Place |
-| GET | `/postcodes/{postcode}` | Postcodes | Lookup Postcode |
-| GET | `/udprn/{udprn}` | UDPRN | Retrieve by UDPRN |
-| GET | `/umprn/{umprn}` | UMPRN | Retrieve by UMPRN |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/addresses` | Addresses | `api_key`*, `query`, `limit`, `page`, `filter`, `lon`, `lat`, `postcode_outward`, `postcode`, `postcode_area`, `postcode_sector`, `post_town`, `uprn`, `country`, `postcode_type`, `su_organisation_indicator`, `box`, `bias_postcode_outward`, `bias_postcode`, `bias_postcode_area`, `bias_postcode_sector`, `bias_post_town`, `bias_thoroughfare`, `bias_country`, `bias_lonlat` | AddressResponse | yes | Extract Addresses |
+| GET | `/autocomplete/addresses` | AddressAutocomplete | `api_key`, `query`, `context`, `limit`, `postcode_outward`, `postcode`, `postcode_area`, `postcode_sector`, `post_town`, `uprn`, `country`, `postcode_type`, `su_organisation_indicator`, `box`, `bias_postcode_outward`, `bias_postcode`, `bias_postcode_area`, `bias_postcode_sector`, `bias_post_town`, `bias_thoroughfare`, `bias_country`, `bias_lonlat`, `bias_ip` | AutocompleteResponse | yes | Find Address |
+| GET | `/autocomplete/addresses/{address}/gbr` | Resolve | `address`*, `api_key` | GbrResolveAddressResponse | yes | Resolve Address (GBR) |
+| GET | `/autocomplete/addresses/{address}/usa` | ResolveUsa | `address`*, `api_key` | UsaResolveAddressResponse | yes | Resolve Address (USA) |
+| POST | `/cleanse/addresses` | AddressCleanse | `api_key`, body*: object | CleanseResponse |  | Cleanse |
+| GET | `/emails` | EmailValidation | `api_key`*, `query`* | EmailResponse | yes | Email Validation |
+| GET | `/keys/{key}` | KeyAvailability | `key`* | ApiKeyResponse | yes | Availability |
+| GET | `/keys/{key}/configs` | ListConfigs | `key`*, `user_token` | ConfigsResponse | yes | List |
+| POST | `/keys/{key}/configs` | CreateConfig | `key`*, `user_token`, body*: ConfigNewParam | ConfigResponse |  | Create |
+| GET | `/keys/{key}/configs/{config}` | RetrieveConfig | `key`*, `config`* | ConfigResponse | yes | Retrieve |
+| POST | `/keys/{key}/configs/{config}` | UpdateConfig | `key`*, `config`*, `user_token`, body*: ConfigUpdateParam | ConfigResponse |  | Update |
+| DELETE | `/keys/{key}/configs/{config}` | DeleteConfig | `key`*, `config`*, `user_token` | object |  | Delete |
+| GET | `/keys/{key}/details` | KeyDetails | `key`*, `user_token` | ApiKeyDetailsResponse | yes | Details |
+| GET | `/keys/{key}/licensees` | ListLicensees | `key`*, `starting_after`, `user_token`, `limit`, `query` | LicenseesResponse | yes | List |
+| POST | `/keys/{key}/licensees` | CreateLicensee | `key`*, `user_token`, body*: LicenseeEditable | LicenseeResponse |  | Create |
+| GET | `/keys/{key}/licensees/{licensee}` | RetrieveLicensee | `key`*, `licensee`*, `user_token` | LicenseeResponse | yes | Retrieve |
+| PUT | `/keys/{key}/licensees/{licensee}` | UpdateLicensee | `key`*, `licensee`*, `user_token`, body*: LicenseeEditable | LicenseeResponse |  | Update |
+| DELETE | `/keys/{key}/licensees/{licensee}` | DeleteLicensee | `key`*, `licensee`*, `user_token` | object |  | Cancel |
+| GET | `/keys/{key}/lookups` | KeyLogs | `key`*, `start`, `end`, `licensee` | string | yes | Logs (CSV) |
+| GET | `/keys/{key}/usage` | KeyUsage | `key`*, `start`, `end`, `tags`, `licensee` | ApiKeyUsageResponse | yes | Usage Stats |
+| GET | `/phone_numbers` | PhoneNumberValidation | `api_key`*, `query`* | PhoneNumberResponse | yes | Phone Number Validation |
+| GET | `/places` | FindPlace | `api_key`*, `query`, `country_iso`, `bias_country_iso`, `bias_lonlat`, `bias_ip` | PlaceResponse | yes | Find Place |
+| GET | `/places/${place}` | ResolvePlace | `place`*, `api_key` | ResolvePlaceResponse | yes | Resolve Place |
+| GET | `/postcodes/{postcode}` | Postcodes | `postcode`*, `api_key`, `filter`, `page` | PostcodeResponse | yes | Lookup Postcode |
+| GET | `/udprn/{udprn}` | UDPRN | `udprn`*, `api_key`, `filter` | UDPRNResponse | yes | Retrieve by UDPRN |
+| GET | `/umprn/{umprn}` | UMPRN | `umprn`*, `api_key`, `filter` | UMPRNResponse | yes | Retrieve by UMPRN |

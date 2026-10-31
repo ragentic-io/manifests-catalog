@@ -48,6 +48,91 @@
         "from": "lambdatest-com-9a395c4957",
         "kind": "EXPOSES",
         "to": "operation:get:/{test_id}/zip"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "ACCEPTS",
+        "to": "schema:screenshot-payload"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "RETURNS",
+        "to": "schema:start-screenshot-success"
+      },
+      {
+        "from": "operation:get:/devices",
+        "kind": "RETURNS",
+        "to": "schema:os-devices"
+      },
+      {
+        "from": "operation:get:/locations",
+        "kind": "RETURNS",
+        "to": "schema:locations"
+      },
+      {
+        "from": "operation:get:/os-browsers",
+        "kind": "RETURNS",
+        "to": "schema:os-browsers"
+      },
+      {
+        "from": "operation:get:/profiles",
+        "kind": "RETURNS",
+        "to": "schema:profiles"
+      },
+      {
+        "from": "operation:get:/resolutions",
+        "kind": "RETURNS",
+        "to": "schema:resolutions"
+      },
+      {
+        "from": "operation:put:/stop/{test_id}",
+        "kind": "RETURNS",
+        "to": "schema:stop-screenshot-success"
+      },
+      {
+        "from": "operation:get:/{test_id}",
+        "kind": "RETURNS",
+        "to": "schema:screenshot-details"
+      },
+      {
+        "from": "operation:get:/{test_id}/zip",
+        "kind": "RETURNS",
+        "to": "schema:zipped-screenshots-success"
+      },
+      {
+        "from": "schema:os-browsers",
+        "kind": "REFERENCES",
+        "to": "schema:browsers"
+      },
+      {
+        "from": "schema:os-devices",
+        "kind": "REFERENCES",
+        "to": "schema:android-7.0"
+      },
+      {
+        "from": "schema:os-devices",
+        "kind": "REFERENCES",
+        "to": "schema:ios-12.0"
+      },
+      {
+        "from": "schema:resolutions",
+        "kind": "REFERENCES",
+        "to": "schema:res_list"
+      },
+      {
+        "from": "schema:screenshot-details",
+        "kind": "REFERENCES",
+        "to": "schema:screenshot-test-response"
+      },
+      {
+        "from": "schema:screenshot-payload",
+        "kind": "REFERENCES",
+        "to": "schema:browsers"
+      },
+      {
+        "from": "schema:screenshot-test-response",
+        "kind": "REFERENCES",
+        "to": "schema:screenshot-type"
       }
     ],
     "nodes": [
@@ -63,57 +148,149 @@
         "name": "Start Screenshot Test",
         "path": "/",
         "pointer": "#/paths/~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "screenshot-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "start-screenshot-success"
+          },
+          {
+            "status": "400",
+            "type": "start-screenshot-bad-request"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          },
+          {
+            "status": "403",
+            "type": "Forbidden"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Start Screenshot Test"
+        "summary": "Start Screenshot Test",
+        "tags": [
+          "Start Screenshot Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch all os devices combinations available on lambdatest platform.",
         "id": "operation:get:/devices",
         "kind": "operation",
         "method": "get",
         "name": "devices",
+        "parameters": [
+          {
+            "description": "Fetch details for a particular OS",
+            "in": "query",
+            "name": "os",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/devices",
         "pointer": "#/paths/~1devices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "os-devices"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch all available device combinations."
+        "summary": "Fetch all available device combinations.",
+        "tags": [
+          "Get Devices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch list of available Geolocations",
         "id": "operation:get:/locations",
         "kind": "operation",
         "method": "get",
         "name": "Locations",
         "path": "/locations",
         "pointer": "#/paths/~1locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "locations"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch Locations"
+        "summary": "Fetch Locations",
+        "tags": [
+          "Get Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch all os browsers combinations available on lambdatest platform.",
         "id": "operation:get:/os-browsers",
         "kind": "operation",
         "method": "get",
         "name": "os-browsers",
+        "parameters": [
+          {
+            "description": "Fetch details for a particular OS",
+            "in": "query",
+            "name": "os",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/os-browsers",
         "pointer": "#/paths/~1os-browsers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "os-browsers"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch all available os-browser combinations."
+        "summary": "Fetch all available os-browser combinations.",
+        "tags": [
+          "Get OS-Browsers"
+        ]
       },
       {
         "deprecated": false,
@@ -123,12 +300,26 @@
         "name": "Profiles",
         "path": "/profiles",
         "pointer": "#/paths/~1profiles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "profiles"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch login profiles"
+        "summary": "Fetch login profiles",
+        "tags": [
+          "Get Profiles"
+        ]
       },
       {
         "deprecated": false,
@@ -138,12 +329,26 @@
         "name": "Resolutions",
         "path": "/resolutions",
         "pointer": "#/paths/~1resolutions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "resolutions"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch all available resolution on different OS"
+        "summary": "Fetch all available resolution on different OS",
+        "tags": [
+          "Get Resolutions"
+        ]
       },
       {
         "deprecated": false,
@@ -151,29 +356,92 @@
         "kind": "operation",
         "method": "put",
         "name": "stop screenshots test",
+        "parameters": [
+          {
+            "description": "Test ID that details you want to stop",
+            "in": "path",
+            "name": "test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stop/{test_id}",
         "pointer": "#/paths/~1stop~1{test_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "stop-screenshot-success"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          },
+          {
+            "status": "403",
+            "type": "Forbidden"
+          },
+          {
+            "status": "404",
+            "type": "stop-screenshot-not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Stop specified screenshot test"
+        "summary": "Stop specified screenshot test",
+        "tags": [
+          "Stop Screenshot Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To fetch specified screenshot details",
         "id": "operation:get:/{test_id}",
         "kind": "operation",
         "method": "get",
         "name": "screenshots",
+        "parameters": [
+          {
+            "description": "Test ID that details you want to fetch",
+            "in": "path",
+            "name": "test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{test_id}",
         "pointer": "#/paths/~1{test_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "screenshot-details"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          },
+          {
+            "status": "403",
+            "type": "Forbidden"
+          },
+          {
+            "status": "404",
+            "type": "screenshot-not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch specified screenshot details"
+        "summary": "Fetch specified screenshot details",
+        "tags": [
+          "Get Screenshots"
+        ]
       },
       {
         "deprecated": false,
@@ -181,74 +449,117 @@
         "kind": "operation",
         "method": "get",
         "name": "ZippedScreenshots",
+        "parameters": [
+          {
+            "description": "Test ID that Zipped Screenshots you want to fetch",
+            "in": "path",
+            "name": "test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{test_id}/zip",
         "pointer": "#/paths/~1{test_id}~1zip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "zipped-screenshots-success"
+          },
+          {
+            "status": "401",
+            "type": "AccessDenied"
+          },
+          {
+            "status": "403",
+            "type": "Forbidden"
+          },
+          {
+            "status": "404",
+            "type": "screenshot-not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch Zipped Screenshots"
+        "summary": "Fetch Zipped Screenshots",
+        "tags": [
+          "Get Zipped Screenshots"
+        ]
       },
       {
         "id": "schema:AccessDenied",
         "kind": "schema",
-        "name": "AccessDenied"
+        "name": "AccessDenied",
+        "type": "object"
       },
       {
         "id": "schema:Forbidden",
         "kind": "schema",
-        "name": "Forbidden"
+        "name": "Forbidden",
+        "type": "object"
       },
       {
         "id": "schema:android-7.0",
         "kind": "schema",
-        "name": "android-7.0"
+        "name": "android-7.0",
+        "type": "object"
       },
       {
         "id": "schema:android-9.0",
         "kind": "schema",
-        "name": "android-9.0"
+        "name": "android-9.0",
+        "type": "object"
       },
       {
         "id": "schema:browsers",
         "kind": "schema",
-        "name": "browsers"
+        "name": "browsers",
+        "type": "object"
       },
       {
         "id": "schema:ios-12.0",
         "kind": "schema",
-        "name": "ios-12.0"
+        "name": "ios-12.0",
+        "type": "object"
       },
       {
         "id": "schema:locations",
         "kind": "schema",
-        "name": "locations"
+        "name": "locations",
+        "type": "object"
       },
       {
         "id": "schema:os-browsers",
         "kind": "schema",
-        "name": "os-browsers"
+        "name": "os-browsers",
+        "type": "object"
       },
       {
         "id": "schema:os-devices",
         "kind": "schema",
-        "name": "os-devices"
+        "name": "os-devices",
+        "type": "object"
       },
       {
         "id": "schema:profiles",
         "kind": "schema",
-        "name": "profiles"
+        "name": "profiles",
+        "type": "object"
       },
       {
         "id": "schema:res_list",
         "kind": "schema",
-        "name": "res_list"
+        "name": "res_list",
+        "type": "string[]"
       },
       {
         "id": "schema:resolutions",
         "kind": "schema",
-        "name": "resolutions"
+        "name": "resolutions",
+        "type": "object"
       },
       {
         "id": "schema:screenshot-details",
@@ -258,47 +569,56 @@
       {
         "id": "schema:screenshot-not-found",
         "kind": "schema",
-        "name": "screenshot-not-found"
+        "name": "screenshot-not-found",
+        "type": "object"
       },
       {
         "id": "schema:screenshot-payload",
         "kind": "schema",
-        "name": "screenshot-payload"
+        "name": "screenshot-payload",
+        "type": "object"
       },
       {
         "id": "schema:screenshot-test-response",
         "kind": "schema",
-        "name": "screenshot-test-response"
+        "name": "screenshot-test-response",
+        "type": "object"
       },
       {
         "id": "schema:screenshot-type",
         "kind": "schema",
-        "name": "screenshot-type"
+        "name": "screenshot-type",
+        "type": "object"
       },
       {
         "id": "schema:start-screenshot-bad-request",
         "kind": "schema",
-        "name": "start-screenshot-bad-request"
+        "name": "start-screenshot-bad-request",
+        "type": "object"
       },
       {
         "id": "schema:start-screenshot-success",
         "kind": "schema",
-        "name": "start-screenshot-success"
+        "name": "start-screenshot-success",
+        "type": "object"
       },
       {
         "id": "schema:stop-screenshot-not-found",
         "kind": "schema",
-        "name": "stop-screenshot-not-found"
+        "name": "stop-screenshot-not-found",
+        "type": "object"
       },
       {
         "id": "schema:stop-screenshot-success",
         "kind": "schema",
-        "name": "stop-screenshot-success"
+        "name": "stop-screenshot-success",
+        "type": "object"
       },
       {
         "id": "schema:zipped-screenshots-success",
         "kind": "schema",
-        "name": "zipped-screenshots-success"
+        "name": "zipped-screenshots-success",
+        "type": "object"
       }
     ]
   },

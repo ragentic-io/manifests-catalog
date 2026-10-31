@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud.githubusercontent.com_ass
 
 | | |
 | --- | --- |
-| Signed bundle | `39390c75b8caa0d6268ee2379c57be2f5a51fc8a8ac8130f84dde9824004dfb2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,24 +32,26 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud.githubusercontent.com_ass
 
 ## Operations (19)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | server_info | — |
-| GET | `/__api__` | get_openapi_spec | — |
-| GET | `/__heartbeat__` | __heartbeat__ | — |
-| GET | `/__lbheartbeat__` | __lbheartbeat__ | — |
-| GET | `/__version__` | __version__ | — |
-| POST | `/batch` | batch | — |
-| GET | `/buckets` | get_buckets | — |
-| GET | `/buckets/monitor/collections/changes/records` | get_changess | — |
-| GET | `/buckets/{bid}/collections/{cid}/changeset` | get_collection-changeset | — |
-| GET | `/buckets/{bucket_id}/collections` | get_collections | — |
-| GET | `/buckets/{bucket_id}/collections/{collection_id}/records` | get_records | — |
-| GET | `/buckets/{bucket_id}/collections/{collection_id}/records/{id}` | get_record | — |
-| DELETE | `/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment` | delete_attachment | — |
-| POST | `/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment` | create_attachment | — |
-| GET | `/buckets/{bucket_id}/collections/{id}` | get_collection | — |
-| GET | `/buckets/{bucket_id}/groups` | get_groups | — |
-| GET | `/buckets/{bucket_id}/groups/{id}` | get_group | — |
-| GET | `/buckets/{id}` | get_bucket | — |
-| GET | `/contribute.json` | contribute | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | server_info | — | object | yes | — |
+| GET | `/__api__` | get_openapi_spec | — | object | yes | — |
+| GET | `/__heartbeat__` | __heartbeat__ | — | object | yes | — |
+| GET | `/__lbheartbeat__` | __lbheartbeat__ | — | object | yes | — |
+| GET | `/__version__` | __version__ | — | object | yes | — |
+| POST | `/batch` | batch | body*: object | object |  | — |
+| GET | `/buckets` | get_buckets | `_limit`, `_sort`, `_token`, `_since`, `_to`, `_before`, `id`, `last_modified`, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/monitor/collections/changes/records` | get_changess | `_limit`, `_sort`, `_token`, `_since`, `_to`, `_before`, `id`, `last_modified`, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/{bid}/collections/{cid}/changeset` | get_collection-changeset | `bid`*, `cid`*, `_since`, `_expected`*, `_limit`, `bucket`, `collection` | — | yes | — |
+| GET | `/buckets/{bucket_id}/collections` | get_collections | `bucket_id`*, `_limit`, `_sort`, `_token`, `_since`, `_to`, `_before`, `id`, `last_modified`, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/{bucket_id}/collections/{collection_id}/records` | get_records | `bucket_id`*, `collection_id`*, `_limit`, `_sort`, `_token`, `_since`, `_to`, `_before`, `id`, `last_modified`, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/{bucket_id}/collections/{collection_id}/records/{id}` | get_record | `bucket_id`*, `collection_id`*, `id`*, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| POST | `/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment` | create_attachment | `bucket_id`*, `collection_id`*, `id`* | — |  | — |
+| DELETE | `/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment` | delete_attachment | `bucket_id`*, `collection_id`*, `id`* | — |  | — |
+| GET | `/buckets/{bucket_id}/collections/{id}` | get_collection | `bucket_id`*, `id`*, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/{bucket_id}/groups` | get_groups | `bucket_id`*, `_limit`, `_sort`, `_token`, `_since`, `_to`, `_before`, `id`, `last_modified`, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/{bucket_id}/groups/{id}` | get_group | `bucket_id`*, `id`*, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/buckets/{id}` | get_bucket | `id`*, `_fields`, `If-Match`, `If-None-Match` | object | yes | — |
+| GET | `/contribute.json` | contribute | — | object | yes | — |

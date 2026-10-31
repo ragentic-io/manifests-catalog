@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HMLandRegistry_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `ab0e645fbcfa9015c441f64e9b17ff0324965ea2fd6273abc22e7a73231e6cc3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HMLandRegistry_prof
 
 10 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/deed/` | addDeed | Deed |
-| GET | `/deed/{deed_reference}` | get /deed/{deed_reference} | Deed |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/deed/` | addDeed | body*: Deed_Application | string |  | Deed |
+| GET | `/deed/{deed_reference}` | get /deed/{deed_reference} | `deed_reference`* | Operative_Deed | yes | Deed |

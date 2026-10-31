@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars0.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `cd13cb683670d94cfa40d647a8e497ae8d19a3a3577a964ec579738253607732` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars0.githubusercontent.com_
 
 28 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/me` | get /me | — |
-| GET | `/project/{username}/{project}` | get /project/{username}/{project} | — |
-| POST | `/project/{username}/{project}` | post /project/{username}/{project} | — |
-| DELETE | `/project/{username}/{project}/build-cache` | delete /project/{username}/{project}/build-cache | — |
-| GET | `/project/{username}/{project}/checkout-key` | get /project/{username}/{project}/checkout-key | — |
-| POST | `/project/{username}/{project}/checkout-key` | post /project/{username}/{project}/checkout-key | — |
-| DELETE | `/project/{username}/{project}/checkout-key/{fingerprint}` | delete /project/{username}/{project}/checkout-key/{fingerprint} | — |
-| GET | `/project/{username}/{project}/checkout-key/{fingerprint}` | get /project/{username}/{project}/checkout-key/{fingerprint} | — |
-| GET | `/project/{username}/{project}/envvar` | get /project/{username}/{project}/envvar | — |
-| POST | `/project/{username}/{project}/envvar` | post /project/{username}/{project}/envvar | — |
-| DELETE | `/project/{username}/{project}/envvar/{name}` | delete /project/{username}/{project}/envvar/{name} | — |
-| GET | `/project/{username}/{project}/envvar/{name}` | get /project/{username}/{project}/envvar/{name} | — |
-| POST | `/project/{username}/{project}/ssh-key` | post /project/{username}/{project}/ssh-key | — |
-| POST | `/project/{username}/{project}/tree/{branch}` | post /project/{username}/{project}/tree/{branch} | — |
-| GET | `/project/{username}/{project}/{build_num}` | get /project/{username}/{project}/{build_num} | — |
-| GET | `/project/{username}/{project}/{build_num}/artifacts` | get /project/{username}/{project}/{build_num}/artifacts | — |
-| POST | `/project/{username}/{project}/{build_num}/cancel` | post /project/{username}/{project}/{build_num}/cancel | — |
-| POST | `/project/{username}/{project}/{build_num}/retry` | post /project/{username}/{project}/{build_num}/retry | — |
-| GET | `/project/{username}/{project}/{build_num}/tests` | get /project/{username}/{project}/{build_num}/tests | — |
-| GET | `/projects` | get /projects | — |
-| GET | `/recent-builds` | get /recent-builds | — |
-| POST | `/user/heroku-key` | post /user/heroku-key | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/me` | get /me | — | User | yes | — |
+| GET | `/project/{username}/{project}` | get /project/{username}/{project} | `username`*, `project`*, `limit`, `offset`, `filter` | Builds | yes | — |
+| POST | `/project/{username}/{project}` | post /project/{username}/{project} | `username`*, `project`*, body: object | BuildSummary |  | — |
+| DELETE | `/project/{username}/{project}/build-cache` | delete /project/{username}/{project}/build-cache | `username`*, `project`* | object |  | — |
+| GET | `/project/{username}/{project}/checkout-key` | get /project/{username}/{project}/checkout-key | `username`*, `project`* | Keys | yes | — |
+| POST | `/project/{username}/{project}/checkout-key` | post /project/{username}/{project}/checkout-key | `username`*, `project`*, body: string | Key |  | — |
+| GET | `/project/{username}/{project}/checkout-key/{fingerprint}` | get /project/{username}/{project}/checkout-key/{fingerprint} | `username`*, `project`*, `fingerprint`* | Key | yes | — |
+| DELETE | `/project/{username}/{project}/checkout-key/{fingerprint}` | delete /project/{username}/{project}/checkout-key/{fingerprint} | `username`*, `project`*, `fingerprint`* | object |  | — |
+| GET | `/project/{username}/{project}/envvar` | get /project/{username}/{project}/envvar | `username`*, `project`* | Envvars | yes | — |
+| POST | `/project/{username}/{project}/envvar` | post /project/{username}/{project}/envvar | `username`*, `project`* | Envvar |  | — |
+| GET | `/project/{username}/{project}/envvar/{name}` | get /project/{username}/{project}/envvar/{name} | `username`*, `project`*, `name`* | Envvar | yes | — |
+| DELETE | `/project/{username}/{project}/envvar/{name}` | delete /project/{username}/{project}/envvar/{name} | `username`*, `project`*, `name`* | object |  | — |
+| POST | `/project/{username}/{project}/ssh-key` | post /project/{username}/{project}/ssh-key | `username`*, `project`*, `Content-Type`*, body*: object | — |  | — |
+| POST | `/project/{username}/{project}/tree/{branch}` | post /project/{username}/{project}/tree/{branch} | `username`*, `project`*, `branch`*, body: object | Build |  | — |
+| GET | `/project/{username}/{project}/{build_num}` | get /project/{username}/{project}/{build_num} | `username`*, `project`*, `build_num`* | BuildDetail | yes | — |
+| GET | `/project/{username}/{project}/{build_num}/artifacts` | get /project/{username}/{project}/{build_num}/artifacts | `username`*, `project`*, `build_num`* | Artifacts | yes | — |
+| POST | `/project/{username}/{project}/{build_num}/cancel` | post /project/{username}/{project}/{build_num}/cancel | `username`*, `project`*, `build_num`* | Build |  | — |
+| POST | `/project/{username}/{project}/{build_num}/retry` | post /project/{username}/{project}/{build_num}/retry | `username`*, `project`*, `build_num`* | Build |  | — |
+| GET | `/project/{username}/{project}/{build_num}/tests` | get /project/{username}/{project}/{build_num}/tests | `username`*, `project`*, `build_num`* | Tests | yes | — |
+| GET | `/projects` | get /projects | — | Projects | yes | — |
+| GET | `/recent-builds` | get /recent-builds | `limit`, `offset` | Builds | yes | — |
+| POST | `/user/heroku-key` | post /user/heroku-key | — | — |  | — |

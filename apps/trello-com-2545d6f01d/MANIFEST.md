@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d2k1ftgv7pobq7.cloudfront.net_m
 
 | | |
 | --- | --- |
-| Signed bundle | `1db86a42de816f6bd5fd4bf959552f42e5730ebc86182d49e645579d22a7a5c1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,329 +34,331 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d2k1ftgv7pobq7.cloudfront.net_m
 
 122 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/actions/{idAction}` | deleteActionsByIdAction | deleteActionsByIdAction() |
-| GET | `/actions/{idAction}` | getActionsByIdAction | getActionsByIdAction() |
-| PUT | `/actions/{idAction}` | updateActionsByIdAction | updateActionsByIdAction() |
-| GET | `/actions/{idAction}/board` | getActionsBoardByIdAction | getActionsBoardByIdAction() |
-| GET | `/actions/{idAction}/board/{field}` | getActionsBoardByIdActionByField | getActionsBoardByIdActionByField() |
-| GET | `/actions/{idAction}/card` | getActionsCardByIdAction | getActionsCardByIdAction() |
-| GET | `/actions/{idAction}/card/{field}` | getActionsCardByIdActionByField | getActionsCardByIdActionByField() |
-| GET | `/actions/{idAction}/display` | getActionsDisplayByIdAction | getActionsDisplayByIdAction() |
-| GET | `/actions/{idAction}/entities` | getActionsEntitiesByIdAction | getActionsEntitiesByIdAction() |
-| GET | `/actions/{idAction}/list` | getActionsListByIdAction | getActionsListByIdAction() |
-| GET | `/actions/{idAction}/list/{field}` | getActionsListByIdActionByField | getActionsListByIdActionByField() |
-| GET | `/actions/{idAction}/member` | getActionsMemberByIdAction | getActionsMemberByIdAction() |
-| GET | `/actions/{idAction}/member/{field}` | getActionsMemberByIdActionByField | getActionsMemberByIdActionByField() |
-| GET | `/actions/{idAction}/memberCreator` | getActionsMemberCreatorByIdAction | getActionsMemberCreatorByIdAction() |
-| GET | `/actions/{idAction}/memberCreator/{field}` | getActionsMemberCreatorByIdActionByField | getActionsMemberCreatorByIdActionByField() |
-| GET | `/actions/{idAction}/organization` | getActionsOrganizationByIdAction | getActionsOrganizationByIdAction() |
-| GET | `/actions/{idAction}/organization/{field}` | getActionsOrganizationByIdActionByField | getActionsOrganizationByIdActionByField() |
-| PUT | `/actions/{idAction}/text` | updateActionsTextByIdAction | updateActionsTextByIdAction() |
-| GET | `/actions/{idAction}/{field}` | getActionsByIdActionByField | getActionsByIdActionByField() |
-| GET | `/batch` | getBatch | getBatch() |
-| POST | `/boards` | addBoards | addBoards() |
-| GET | `/boards/{idBoard}` | getBoardsByIdBoard | getBoardsByIdBoard() |
-| PUT | `/boards/{idBoard}` | updateBoardsByIdBoard | updateBoardsByIdBoard() |
-| GET | `/boards/{idBoard}/actions` | getBoardsActionsByIdBoard | getBoardsActionsByIdBoard() |
-| GET | `/boards/{idBoard}/boardStars` | getBoardsBoardStarsByIdBoard | getBoardsBoardStarsByIdBoard() |
-| POST | `/boards/{idBoard}/calendarKey/generate` | addBoardsCalendarKeyGenerateByIdBoard | addBoardsCalendarKeyGenerateByIdBoard() |
-| GET | `/boards/{idBoard}/cards` | getBoardsCardsByIdBoard | getBoardsCardsByIdBoard() |
-| GET | `/boards/{idBoard}/cards/{filter}` | getBoardsCardsByIdBoardByFilter | getBoardsCardsByIdBoardByFilter() |
-| GET | `/boards/{idBoard}/cards/{idCard}` | getBoardsCardsByIdBoardByIdCard | getBoardsCardsByIdBoardByIdCard() |
-| GET | `/boards/{idBoard}/checklists` | getBoardsChecklistsByIdBoard | getBoardsChecklistsByIdBoard() |
-| POST | `/boards/{idBoard}/checklists` | addBoardsChecklistsByIdBoard | addBoardsChecklistsByIdBoard() |
-| PUT | `/boards/{idBoard}/closed` | updateBoardsClosedByIdBoard | updateBoardsClosedByIdBoard() |
-| GET | `/boards/{idBoard}/deltas` | getBoardsDeltasByIdBoard | getBoardsDeltasByIdBoard() |
-| PUT | `/boards/{idBoard}/desc` | updateBoardsDescByIdBoard | updateBoardsDescByIdBoard() |
-| POST | `/boards/{idBoard}/emailKey/generate` | addBoardsEmailKeyGenerateByIdBoard | addBoardsEmailKeyGenerateByIdBoard() |
-| PUT | `/boards/{idBoard}/idOrganization` | updateBoardsIdOrganizationByIdBoard | updateBoardsIdOrganizationByIdBoard() |
-| PUT | `/boards/{idBoard}/labelNames/blue` | updateBoardsLabelNamesBlueByIdBoard | updateBoardsLabelNamesBlueByIdBoard() |
-| PUT | `/boards/{idBoard}/labelNames/green` | updateBoardsLabelNamesGreenByIdBoard | updateBoardsLabelNamesGreenByIdBoard() |
-| PUT | `/boards/{idBoard}/labelNames/orange` | updateBoardsLabelNamesOrangeByIdBoard | updateBoardsLabelNamesOrangeByIdBoard() |
-| PUT | `/boards/{idBoard}/labelNames/purple` | updateBoardsLabelNamesPurpleByIdBoard | updateBoardsLabelNamesPurpleByIdBoard() |
-| PUT | `/boards/{idBoard}/labelNames/red` | updateBoardsLabelNamesRedByIdBoard | updateBoardsLabelNamesRedByIdBoard() |
-| PUT | `/boards/{idBoard}/labelNames/yellow` | updateBoardsLabelNamesYellowByIdBoard | updateBoardsLabelNamesYellowByIdBoard() |
-| GET | `/boards/{idBoard}/labels` | getBoardsLabelsByIdBoard | getBoardsLabelsByIdBoard() |
-| POST | `/boards/{idBoard}/labels` | addBoardsLabelsByIdBoard | addBoardsLabelsByIdBoard() |
-| GET | `/boards/{idBoard}/labels/{idLabel}` | getBoardsLabelsByIdBoardByIdLabel | getBoardsLabelsByIdBoardByIdLabel() |
-| GET | `/boards/{idBoard}/lists` | getBoardsListsByIdBoard | getBoardsListsByIdBoard() |
-| POST | `/boards/{idBoard}/lists` | addBoardsListsByIdBoard | addBoardsListsByIdBoard() |
-| GET | `/boards/{idBoard}/lists/{filter}` | getBoardsListsByIdBoardByFilter | getBoardsListsByIdBoardByFilter() |
-| POST | `/boards/{idBoard}/markAsViewed` | addBoardsMarkAsViewedByIdBoard | addBoardsMarkAsViewedByIdBoard() |
-| GET | `/boards/{idBoard}/members` | getBoardsMembersByIdBoard | getBoardsMembersByIdBoard() |
-| PUT | `/boards/{idBoard}/members` | updateBoardsMembersByIdBoard | updateBoardsMembersByIdBoard() |
-| GET | `/boards/{idBoard}/members/{filter}` | getBoardsMembersByIdBoardByFilter | getBoardsMembersByIdBoardByFilter() |
-| DELETE | `/boards/{idBoard}/members/{idMember}` | deleteBoardsMembersByIdBoardByIdMember | deleteBoardsMembersByIdBoardByIdMember() |
-| PUT | `/boards/{idBoard}/members/{idMember}` | updateBoardsMembersByIdBoardByIdMember | updateBoardsMembersByIdBoardByIdMember() |
-| GET | `/boards/{idBoard}/members/{idMember}/cards` | getBoardsMembersCardsByIdBoardByIdMember | getBoardsMembersCardsByIdBoardByIdMember() |
-| GET | `/boards/{idBoard}/membersInvited` | getBoardsMembersInvitedByIdBoard | getBoardsMembersInvitedByIdBoard() |
-| GET | `/boards/{idBoard}/membersInvited/{field}` | getBoardsMembersInvitedByIdBoardByField | getBoardsMembersInvitedByIdBoardByField() |
-| GET | `/boards/{idBoard}/memberships` | getBoardsMembershipsByIdBoard | getBoardsMembershipsByIdBoard() |
-| GET | `/boards/{idBoard}/memberships/{idMembership}` | getBoardsMembershipsByIdBoardByIdMembership | getBoardsMembershipsByIdBoardByIdMembership() |
-| PUT | `/boards/{idBoard}/memberships/{idMembership}` | updateBoardsMembershipsByIdBoardByIdMembership | updateBoardsMembershipsByIdBoardByIdMembership() |
-| GET | `/boards/{idBoard}/myPrefs` | getBoardsMyPrefsByIdBoard | getBoardsMyPrefsByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/emailPosition` | updateBoardsMyPrefsEmailPositionByIdBoard | updateBoardsMyPrefsEmailPositionByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/idEmailList` | updateBoardsMyPrefsIdEmailListByIdBoard | updateBoardsMyPrefsIdEmailListByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/showListGuide` | updateBoardsMyPrefsShowListGuideByIdBoard | updateBoardsMyPrefsShowListGuideByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/showSidebar` | updateBoardsMyPrefsShowSidebarByIdBoard | updateBoardsMyPrefsShowSidebarByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/showSidebarActivity` | updateBoardsMyPrefsShowSidebarActivityByIdBoard | updateBoardsMyPrefsShowSidebarActivityByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/showSidebarBoardActions` | updateBoardsMyPrefsShowSidebarBoardActionsByIdBoard | updateBoardsMyPrefsShowSidebarBoardActionsByIdBoard() |
-| PUT | `/boards/{idBoard}/myPrefs/showSidebarMembers` | updateBoardsMyPrefsShowSidebarMembersByIdBoard | updateBoardsMyPrefsShowSidebarMembersByIdBoard() |
-| PUT | `/boards/{idBoard}/name` | updateBoardsNameByIdBoard | updateBoardsNameByIdBoard() |
-| GET | `/boards/{idBoard}/organization` | getBoardsOrganizationByIdBoard | getBoardsOrganizationByIdBoard() |
-| GET | `/boards/{idBoard}/organization/{field}` | getBoardsOrganizationByIdBoardByField | getBoardsOrganizationByIdBoardByField() |
-| POST | `/boards/{idBoard}/powerUps` | addBoardsPowerUpsByIdBoard | addBoardsPowerUpsByIdBoard() |
-| DELETE | `/boards/{idBoard}/powerUps/{powerUp}` | deleteBoardsPowerUpsByIdBoardByPowerUp | deleteBoardsPowerUpsByIdBoardByPowerUp() |
-| PUT | `/boards/{idBoard}/prefs/background` | updateBoardsPrefsBackgroundByIdBoard | updateBoardsPrefsBackgroundByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/calendarFeedEnabled` | updateBoardsPrefsCalendarFeedEnabledByIdBoard | updateBoardsPrefsCalendarFeedEnabledByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/cardAging` | updateBoardsPrefsCardAgingByIdBoard | updateBoardsPrefsCardAgingByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/cardCovers` | updateBoardsPrefsCardCoversByIdBoard | updateBoardsPrefsCardCoversByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/comments` | updateBoardsPrefsCommentsByIdBoard | updateBoardsPrefsCommentsByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/invitations` | updateBoardsPrefsInvitationsByIdBoard | updateBoardsPrefsInvitationsByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/permissionLevel` | updateBoardsPrefsPermissionLevelByIdBoard | updateBoardsPrefsPermissionLevelByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/selfJoin` | updateBoardsPrefsSelfJoinByIdBoard | updateBoardsPrefsSelfJoinByIdBoard() |
-| PUT | `/boards/{idBoard}/prefs/voting` | updateBoardsPrefsVotingByIdBoard | updateBoardsPrefsVotingByIdBoard() |
-| PUT | `/boards/{idBoard}/subscribed` | updateBoardsSubscribedByIdBoard | updateBoardsSubscribedByIdBoard() |
-| GET | `/boards/{idBoard}/{field}` | getBoardsByIdBoardByField | getBoardsByIdBoardByField() |
-| POST | `/cards` | addCards | addCards() |
-| DELETE | `/cards/{idCard}` | deleteCardsByIdCard | deleteCardsByIdCard() |
-| GET | `/cards/{idCard}` | getCardsByIdCard | getCardsByIdCard() |
-| PUT | `/cards/{idCard}` | updateCardsByIdCard | updateCardsByIdCard() |
-| GET | `/cards/{idCard}/actions` | getCardsActionsByIdCard | getCardsActionsByIdCard() |
-| POST | `/cards/{idCard}/actions/comments` | addCardsActionsCommentsByIdCard | addCardsActionsCommentsByIdCard() |
-| DELETE | `/cards/{idCard}/actions/{idAction}/comments` | deleteCardsActionsCommentsByIdCardByIdAction | deleteCardsActionsCommentsByIdCardByIdAction() |
-| PUT | `/cards/{idCard}/actions/{idAction}/comments` | updateCardsActionsCommentsByIdCardByIdAction | updateCardsActionsCommentsByIdCardByIdAction() |
-| GET | `/cards/{idCard}/attachments` | getCardsAttachmentsByIdCard | getCardsAttachmentsByIdCard() |
-| POST | `/cards/{idCard}/attachments` | addCardsAttachmentsByIdCard | addCardsAttachmentsByIdCard() |
-| DELETE | `/cards/{idCard}/attachments/{idAttachment}` | deleteCardsAttachmentsByIdCardByIdAttachment | deleteCardsAttachmentsByIdCardByIdAttachment() |
-| GET | `/cards/{idCard}/attachments/{idAttachment}` | getCardsAttachmentsByIdCardByIdAttachment | getCardsAttachmentsByIdCardByIdAttachment() |
-| GET | `/cards/{idCard}/board` | getCardsBoardByIdCard | getCardsBoardByIdCard() |
-| GET | `/cards/{idCard}/board/{field}` | getCardsBoardByIdCardByField | getCardsBoardByIdCardByField() |
-| GET | `/cards/{idCard}/checkItemStates` | getCardsCheckItemStatesByIdCard | getCardsCheckItemStatesByIdCard() |
-| PUT | `/cards/{idCard}/checklist/{idChecklistCurrent}/checkItem/{idCheckItem}` | updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem | updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem() |
-| POST | `/cards/{idCard}/checklist/{idChecklist}/checkItem` | addCardsChecklistCheckItemByIdCardByIdChecklist | addCardsChecklistCheckItemByIdCardByIdChecklist() |
-| DELETE | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}` | deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem | deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem() |
-| POST | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/convertToCard` | addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem | addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem() |
-| PUT | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/name` | updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem | updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem() |
-| PUT | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/pos` | updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem | updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem() |
-| PUT | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/state` | updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem | updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem() |
-| GET | `/cards/{idCard}/checklists` | getCardsChecklistsByIdCard | getCardsChecklistsByIdCard() |
-| POST | `/cards/{idCard}/checklists` | addCardsChecklistsByIdCard | addCardsChecklistsByIdCard() |
-| DELETE | `/cards/{idCard}/checklists/{idChecklist}` | deleteCardsChecklistsByIdCardByIdChecklist | deleteCardsChecklistsByIdCardByIdChecklist() |
-| PUT | `/cards/{idCard}/closed` | updateCardsClosedByIdCard | updateCardsClosedByIdCard() |
-| PUT | `/cards/{idCard}/desc` | updateCardsDescByIdCard | updateCardsDescByIdCard() |
-| PUT | `/cards/{idCard}/due` | updateCardsDueByIdCard | updateCardsDueByIdCard() |
-| PUT | `/cards/{idCard}/idAttachmentCover` | updateCardsIdAttachmentCoverByIdCard | updateCardsIdAttachmentCoverByIdCard() |
-| PUT | `/cards/{idCard}/idBoard` | updateCardsIdBoardByIdCard | updateCardsIdBoardByIdCard() |
-| POST | `/cards/{idCard}/idLabels` | addCardsIdLabelsByIdCard | addCardsIdLabelsByIdCard() |
-| DELETE | `/cards/{idCard}/idLabels/{idLabel}` | deleteCardsIdLabelsByIdCardByIdLabel | deleteCardsIdLabelsByIdCardByIdLabel() |
-| PUT | `/cards/{idCard}/idList` | updateCardsIdListByIdCard | updateCardsIdListByIdCard() |
-| POST | `/cards/{idCard}/idMembers` | addCardsIdMembersByIdCard | addCardsIdMembersByIdCard() |
-| PUT | `/cards/{idCard}/idMembers` | updateCardsIdMembersByIdCard | updateCardsIdMembersByIdCard() |
-| DELETE | `/cards/{idCard}/idMembers/{idMember}` | deleteCardsIdMembersByIdCardByIdMember | deleteCardsIdMembersByIdCardByIdMember() |
-| POST | `/cards/{idCard}/labels` | addCardsLabelsByIdCard | addCardsLabelsByIdCard() |
-| PUT | `/cards/{idCard}/labels` | updateCardsLabelsByIdCard | updateCardsLabelsByIdCard() |
-| DELETE | `/cards/{idCard}/labels/{color}` | deleteCardsLabelsByIdCardByColor | deleteCardsLabelsByIdCardByColor() |
-| GET | `/cards/{idCard}/list` | getCardsListByIdCard | getCardsListByIdCard() |
-| GET | `/cards/{idCard}/list/{field}` | getCardsListByIdCardByField | getCardsListByIdCardByField() |
-| POST | `/cards/{idCard}/markAssociatedNotificationsRead` | addCardsMarkAssociatedNotificationsReadByIdCard | addCardsMarkAssociatedNotificationsReadByIdCard() |
-| GET | `/cards/{idCard}/members` | getCardsMembersByIdCard | getCardsMembersByIdCard() |
-| GET | `/cards/{idCard}/membersVoted` | getCardsMembersVotedByIdCard | getCardsMembersVotedByIdCard() |
-| POST | `/cards/{idCard}/membersVoted` | addCardsMembersVotedByIdCard | addCardsMembersVotedByIdCard() |
-| DELETE | `/cards/{idCard}/membersVoted/{idMember}` | deleteCardsMembersVotedByIdCardByIdMember | deleteCardsMembersVotedByIdCardByIdMember() |
-| PUT | `/cards/{idCard}/name` | updateCardsNameByIdCard | updateCardsNameByIdCard() |
-| PUT | `/cards/{idCard}/pos` | updateCardsPosByIdCard | updateCardsPosByIdCard() |
-| GET | `/cards/{idCard}/stickers` | getCardsStickersByIdCard | getCardsStickersByIdCard() |
-| POST | `/cards/{idCard}/stickers` | addCardsStickersByIdCard | addCardsStickersByIdCard() |
-| DELETE | `/cards/{idCard}/stickers/{idSticker}` | deleteCardsStickersByIdCardByIdSticker | deleteCardsStickersByIdCardByIdSticker() |
-| GET | `/cards/{idCard}/stickers/{idSticker}` | getCardsStickersByIdCardByIdSticker | getCardsStickersByIdCardByIdSticker() |
-| PUT | `/cards/{idCard}/stickers/{idSticker}` | updateCardsStickersByIdCardByIdSticker | updateCardsStickersByIdCardByIdSticker() |
-| PUT | `/cards/{idCard}/subscribed` | updateCardsSubscribedByIdCard | updateCardsSubscribedByIdCard() |
-| GET | `/cards/{idCard}/{field}` | getCardsByIdCardByField | getCardsByIdCardByField() |
-| POST | `/checklists` | addChecklists | addChecklists() |
-| DELETE | `/checklists/{idChecklist}` | deleteChecklistsByIdChecklist | deleteChecklistsByIdChecklist() |
-| GET | `/checklists/{idChecklist}` | getChecklistsByIdChecklist | getChecklistsByIdChecklist() |
-| PUT | `/checklists/{idChecklist}` | updateChecklistsByIdChecklist | updateChecklistsByIdChecklist() |
-| GET | `/checklists/{idChecklist}/board` | getChecklistsBoardByIdChecklist | getChecklistsBoardByIdChecklist() |
-| GET | `/checklists/{idChecklist}/board/{field}` | getChecklistsBoardByIdChecklistByField | getChecklistsBoardByIdChecklistByField() |
-| GET | `/checklists/{idChecklist}/cards` | getChecklistsCardsByIdChecklist | getChecklistsCardsByIdChecklist() |
-| GET | `/checklists/{idChecklist}/cards/{filter}` | getChecklistsCardsByIdChecklistByFilter | getChecklistsCardsByIdChecklistByFilter() |
-| GET | `/checklists/{idChecklist}/checkItems` | getChecklistsCheckItemsByIdChecklist | getChecklistsCheckItemsByIdChecklist() |
-| POST | `/checklists/{idChecklist}/checkItems` | addChecklistsCheckItemsByIdChecklist | addChecklistsCheckItemsByIdChecklist() |
-| DELETE | `/checklists/{idChecklist}/checkItems/{idCheckItem}` | deleteChecklistsCheckItemsByIdChecklistByIdCheckItem | deleteChecklistsCheckItemsByIdChecklistByIdCheckItem() |
-| GET | `/checklists/{idChecklist}/checkItems/{idCheckItem}` | getChecklistsCheckItemsByIdChecklistByIdCheckItem | getChecklistsCheckItemsByIdChecklistByIdCheckItem() |
-| PUT | `/checklists/{idChecklist}/idCard` | updateChecklistsIdCardByIdChecklist | updateChecklistsIdCardByIdChecklist() |
-| PUT | `/checklists/{idChecklist}/name` | updateChecklistsNameByIdChecklist | updateChecklistsNameByIdChecklist() |
-| PUT | `/checklists/{idChecklist}/pos` | updateChecklistsPosByIdChecklist | updateChecklistsPosByIdChecklist() |
-| GET | `/checklists/{idChecklist}/{field}` | getChecklistsByIdChecklistByField | getChecklistsByIdChecklistByField() |
-| POST | `/labels` | addLabels | addLabels() |
-| DELETE | `/labels/{idLabel}` | deleteLabelsByIdLabel | deleteLabelsByIdLabel() |
-| GET | `/labels/{idLabel}` | getLabelsByIdLabel | getLabelsByIdLabel() |
-| PUT | `/labels/{idLabel}` | updateLabelsByIdLabel | updateLabelsByIdLabel() |
-| GET | `/labels/{idLabel}/board` | getLabelsBoardByIdLabel | getLabelsBoardByIdLabel() |
-| GET | `/labels/{idLabel}/board/{field}` | getLabelsBoardByIdLabelByField | getLabelsBoardByIdLabelByField() |
-| PUT | `/labels/{idLabel}/color` | updateLabelsColorByIdLabel | updateLabelsColorByIdLabel() |
-| PUT | `/labels/{idLabel}/name` | updateLabelsNameByIdLabel | updateLabelsNameByIdLabel() |
-| POST | `/lists` | addLists | addLists() |
-| GET | `/lists/{idList}` | getListsByIdList | getListsByIdList() |
-| PUT | `/lists/{idList}` | updateListsByIdList | updateListsByIdList() |
-| GET | `/lists/{idList}/actions` | getListsActionsByIdList | getListsActionsByIdList() |
-| POST | `/lists/{idList}/archiveAllCards` | addListsArchiveAllCardsByIdList | addListsArchiveAllCardsByIdList() |
-| GET | `/lists/{idList}/board` | getListsBoardByIdList | getListsBoardByIdList() |
-| GET | `/lists/{idList}/board/{field}` | getListsBoardByIdListByField | getListsBoardByIdListByField() |
-| GET | `/lists/{idList}/cards` | getListsCardsByIdList | getListsCardsByIdList() |
-| POST | `/lists/{idList}/cards` | addListsCardsByIdList | addListsCardsByIdList() |
-| GET | `/lists/{idList}/cards/{filter}` | getListsCardsByIdListByFilter | getListsCardsByIdListByFilter() |
-| PUT | `/lists/{idList}/closed` | updateListsClosedByIdList | updateListsClosedByIdList() |
-| PUT | `/lists/{idList}/idBoard` | updateListsIdBoardByIdList | updateListsIdBoardByIdList() |
-| POST | `/lists/{idList}/moveAllCards` | addListsMoveAllCardsByIdList | addListsMoveAllCardsByIdList() |
-| PUT | `/lists/{idList}/name` | updateListsNameByIdList | updateListsNameByIdList() |
-| PUT | `/lists/{idList}/pos` | updateListsPosByIdList | updateListsPosByIdList() |
-| PUT | `/lists/{idList}/subscribed` | updateListsSubscribedByIdList | updateListsSubscribedByIdList() |
-| GET | `/lists/{idList}/{field}` | getListsByIdListByField | getListsByIdListByField() |
-| GET | `/members/{idMember}` | getMembersByIdMember | getMembersByIdMember() |
-| PUT | `/members/{idMember}` | updateMembersByIdMember | updateMembersByIdMember() |
-| GET | `/members/{idMember}/actions` | getMembersActionsByIdMember | getMembersActionsByIdMember() |
-| POST | `/members/{idMember}/avatar` | addMembersAvatarByIdMember | addMembersAvatarByIdMember() |
-| PUT | `/members/{idMember}/avatarSource` | updateMembersAvatarSourceByIdMember | updateMembersAvatarSourceByIdMember() |
-| PUT | `/members/{idMember}/bio` | updateMembersBioByIdMember | updateMembersBioByIdMember() |
-| GET | `/members/{idMember}/boardBackgrounds` | getMembersBoardBackgroundsByIdMember | getMembersBoardBackgroundsByIdMember() |
-| POST | `/members/{idMember}/boardBackgrounds` | addMembersBoardBackgroundsByIdMember | addMembersBoardBackgroundsByIdMember() |
-| DELETE | `/members/{idMember}/boardBackgrounds/{idBoardBackground}` | deleteMembersBoardBackgroundsByIdMemberByIdBoardBackground | deleteMembersBoardBackgroundsByIdMemberByIdBoardBackground() |
-| GET | `/members/{idMember}/boardBackgrounds/{idBoardBackground}` | getMembersBoardBackgroundsByIdMemberByIdBoardBackground | getMembersBoardBackgroundsByIdMemberByIdBoardBackground() |
-| PUT | `/members/{idMember}/boardBackgrounds/{idBoardBackground}` | updateMembersBoardBackgroundsByIdMemberByIdBoardBackground | updateMembersBoardBackgroundsByIdMemberByIdBoardBackground() |
-| GET | `/members/{idMember}/boardStars` | getMembersBoardStarsByIdMember | getMembersBoardStarsByIdMember() |
-| POST | `/members/{idMember}/boardStars` | addMembersBoardStarsByIdMember | addMembersBoardStarsByIdMember() |
-| DELETE | `/members/{idMember}/boardStars/{idBoardStar}` | deleteMembersBoardStarsByIdMemberByIdBoardStar | deleteMembersBoardStarsByIdMemberByIdBoardStar() |
-| GET | `/members/{idMember}/boardStars/{idBoardStar}` | getMembersBoardStarsByIdMemberByIdBoardStar | getMembersBoardStarsByIdMemberByIdBoardStar() |
-| PUT | `/members/{idMember}/boardStars/{idBoardStar}` | updateMembersBoardStarsByIdMemberByIdBoardStar | updateMembersBoardStarsByIdMemberByIdBoardStar() |
-| PUT | `/members/{idMember}/boardStars/{idBoardStar}/idBoard` | updateMembersBoardStarsIdBoardByIdMemberByIdBoardStar | updateMembersBoardStarsIdBoardByIdMemberByIdBoardStar() |
-| PUT | `/members/{idMember}/boardStars/{idBoardStar}/pos` | updateMembersBoardStarsPosByIdMemberByIdBoardStar | updateMembersBoardStarsPosByIdMemberByIdBoardStar() |
-| GET | `/members/{idMember}/boards` | getMembersBoardsByIdMember | getMembersBoardsByIdMember() |
-| GET | `/members/{idMember}/boards/{filter}` | getMembersBoardsByIdMemberByFilter | getMembersBoardsByIdMemberByFilter() |
-| GET | `/members/{idMember}/boardsInvited` | getMembersBoardsInvitedByIdMember | getMembersBoardsInvitedByIdMember() |
-| GET | `/members/{idMember}/boardsInvited/{field}` | getMembersBoardsInvitedByIdMemberByField | getMembersBoardsInvitedByIdMemberByField() |
-| GET | `/members/{idMember}/cards` | getMembersCardsByIdMember | getMembersCardsByIdMember() |
-| GET | `/members/{idMember}/cards/{filter}` | getMembersCardsByIdMemberByFilter | getMembersCardsByIdMemberByFilter() |
-| GET | `/members/{idMember}/customBoardBackgrounds` | getMembersCustomBoardBackgroundsByIdMember | getMembersCustomBoardBackgroundsByIdMember() |
-| POST | `/members/{idMember}/customBoardBackgrounds` | addMembersCustomBoardBackgroundsByIdMember | addMembersCustomBoardBackgroundsByIdMember() |
-| DELETE | `/members/{idMember}/customBoardBackgrounds/{idBoardBackground}` | deleteMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground | deleteMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground() |
-| GET | `/members/{idMember}/customBoardBackgrounds/{idBoardBackground}` | getMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground | getMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground() |
-| PUT | `/members/{idMember}/customBoardBackgrounds/{idBoardBackground}` | updateMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground | updateMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground() |
-| GET | `/members/{idMember}/customEmoji` | getMembersCustomEmojiByIdMember | getMembersCustomEmojiByIdMember() |
-| POST | `/members/{idMember}/customEmoji` | addMembersCustomEmojiByIdMember | addMembersCustomEmojiByIdMember() |
-| GET | `/members/{idMember}/customEmoji/{idCustomEmoji}` | getMembersCustomEmojiByIdMemberByIdCustomEmoji | getMembersCustomEmojiByIdMemberByIdCustomEmoji() |
-| GET | `/members/{idMember}/customStickers` | getMembersCustomStickersByIdMember | getMembersCustomStickersByIdMember() |
-| POST | `/members/{idMember}/customStickers` | addMembersCustomStickersByIdMember | addMembersCustomStickersByIdMember() |
-| DELETE | `/members/{idMember}/customStickers/{idCustomSticker}` | deleteMembersCustomStickersByIdMemberByIdCustomSticker | deleteMembersCustomStickersByIdMemberByIdCustomSticker() |
-| GET | `/members/{idMember}/customStickers/{idCustomSticker}` | getMembersCustomStickersByIdMemberByIdCustomSticker | getMembersCustomStickersByIdMemberByIdCustomSticker() |
-| GET | `/members/{idMember}/deltas` | getMembersDeltasByIdMember | getMembersDeltasByIdMember() |
-| PUT | `/members/{idMember}/fullName` | updateMembersFullNameByIdMember | updateMembersFullNameByIdMember() |
-| PUT | `/members/{idMember}/initials` | updateMembersInitialsByIdMember | updateMembersInitialsByIdMember() |
-| GET | `/members/{idMember}/notifications` | getMembersNotificationsByIdMember | getMembersNotificationsByIdMember() |
-| GET | `/members/{idMember}/notifications/{filter}` | getMembersNotificationsByIdMemberByFilter | getMembersNotificationsByIdMemberByFilter() |
-| POST | `/members/{idMember}/oneTimeMessagesDismissed` | addMembersOneTimeMessagesDismissedByIdMember | addMembersOneTimeMessagesDismissedByIdMember() |
-| GET | `/members/{idMember}/organizations` | getMembersOrganizationsByIdMember | getMembersOrganizationsByIdMember() |
-| GET | `/members/{idMember}/organizations/{filter}` | getMembersOrganizationsByIdMemberByFilter | getMembersOrganizationsByIdMemberByFilter() |
-| GET | `/members/{idMember}/organizationsInvited` | getMembersOrganizationsInvitedByIdMember | getMembersOrganizationsInvitedByIdMember() |
-| GET | `/members/{idMember}/organizationsInvited/{field}` | getMembersOrganizationsInvitedByIdMemberByField | getMembersOrganizationsInvitedByIdMemberByField() |
-| PUT | `/members/{idMember}/prefs/colorBlind` | updateMembersPrefsColorBlindByIdMember | updateMembersPrefsColorBlindByIdMember() |
-| PUT | `/members/{idMember}/prefs/locale` | updateMembersPrefsLocaleByIdMember | updateMembersPrefsLocaleByIdMember() |
-| PUT | `/members/{idMember}/prefs/minutesBetweenSummaries` | updateMembersPrefsMinutesBetweenSummariesByIdMember | updateMembersPrefsMinutesBetweenSummariesByIdMember() |
-| GET | `/members/{idMember}/savedSearches` | getMembersSavedSearchesByIdMember | getMembersSavedSearchesByIdMember() |
-| POST | `/members/{idMember}/savedSearches` | addMembersSavedSearchesByIdMember | addMembersSavedSearchesByIdMember() |
-| DELETE | `/members/{idMember}/savedSearches/{idSavedSearch}` | deleteMembersSavedSearchesByIdMemberByIdSavedSearch | deleteMembersSavedSearchesByIdMemberByIdSavedSearch() |
-| GET | `/members/{idMember}/savedSearches/{idSavedSearch}` | getMembersSavedSearchesByIdMemberByIdSavedSearch | getMembersSavedSearchesByIdMemberByIdSavedSearch() |
-| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}` | updateMembersSavedSearchesByIdMemberByIdSavedSearch | updateMembersSavedSearchesByIdMemberByIdSavedSearch() |
-| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}/name` | updateMembersSavedSearchesNameByIdMemberByIdSavedSearch | updateMembersSavedSearchesNameByIdMemberByIdSavedSearch() |
-| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}/pos` | updateMembersSavedSearchesPosByIdMemberByIdSavedSearch | updateMembersSavedSearchesPosByIdMemberByIdSavedSearch() |
-| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}/query` | updateMembersSavedSearchesQueryByIdMemberByIdSavedSearch | updateMembersSavedSearchesQueryByIdMemberByIdSavedSearch() |
-| GET | `/members/{idMember}/tokens` | getMembersTokensByIdMember | getMembersTokensByIdMember() |
-| PUT | `/members/{idMember}/username` | updateMembersUsernameByIdMember | updateMembersUsernameByIdMember() |
-| GET | `/members/{idMember}/{field}` | getMembersByIdMemberByField | getMembersByIdMemberByField() |
-| POST | `/notifications/all/read` | addNotificationsAllRead | addNotificationsAllRead() |
-| GET | `/notifications/{idNotification}` | getNotificationsByIdNotification | getNotificationsByIdNotification() |
-| PUT | `/notifications/{idNotification}` | updateNotificationsByIdNotification | updateNotificationsByIdNotification() |
-| GET | `/notifications/{idNotification}/board` | getNotificationsBoardByIdNotification | getNotificationsBoardByIdNotification() |
-| GET | `/notifications/{idNotification}/board/{field}` | getNotificationsBoardByIdNotificationByField | getNotificationsBoardByIdNotificationByField() |
-| GET | `/notifications/{idNotification}/card` | getNotificationsCardByIdNotification | getNotificationsCardByIdNotification() |
-| GET | `/notifications/{idNotification}/card/{field}` | getNotificationsCardByIdNotificationByField | getNotificationsCardByIdNotificationByField() |
-| GET | `/notifications/{idNotification}/display` | getNotificationsDisplayByIdNotification | getNotificationsDisplayByIdNotification() |
-| GET | `/notifications/{idNotification}/entities` | getNotificationsEntitiesByIdNotification | getNotificationsEntitiesByIdNotification() |
-| GET | `/notifications/{idNotification}/list` | getNotificationsListByIdNotification | getNotificationsListByIdNotification() |
-| GET | `/notifications/{idNotification}/list/{field}` | getNotificationsListByIdNotificationByField | getNotificationsListByIdNotificationByField() |
-| GET | `/notifications/{idNotification}/member` | getNotificationsMemberByIdNotification | getNotificationsMemberByIdNotification() |
-| GET | `/notifications/{idNotification}/member/{field}` | getNotificationsMemberByIdNotificationByField | getNotificationsMemberByIdNotificationByField() |
-| GET | `/notifications/{idNotification}/memberCreator` | getNotificationsMemberCreatorByIdNotification | getNotificationsMemberCreatorByIdNotification() |
-| GET | `/notifications/{idNotification}/memberCreator/{field}` | getNotificationsMemberCreatorByIdNotificationByField | getNotificationsMemberCreatorByIdNotificationByField() |
-| GET | `/notifications/{idNotification}/organization` | getNotificationsOrganizationByIdNotification | getNotificationsOrganizationByIdNotification() |
-| GET | `/notifications/{idNotification}/organization/{field}` | getNotificationsOrganizationByIdNotificationByField | getNotificationsOrganizationByIdNotificationByField() |
-| PUT | `/notifications/{idNotification}/unread` | updateNotificationsUnreadByIdNotification | updateNotificationsUnreadByIdNotification() |
-| GET | `/notifications/{idNotification}/{field}` | getNotificationsByIdNotificationByField | getNotificationsByIdNotificationByField() |
-| POST | `/organizations` | addOrganizations | addOrganizations() |
-| DELETE | `/organizations/{idOrg}` | deleteOrganizationsByIdOrg | deleteOrganizationsByIdOrg() |
-| GET | `/organizations/{idOrg}` | getOrganizationsByIdOrg | getOrganizationsByIdOrg() |
-| PUT | `/organizations/{idOrg}` | updateOrganizationsByIdOrg | updateOrganizationsByIdOrg() |
-| GET | `/organizations/{idOrg}/actions` | getOrganizationsActionsByIdOrg | getOrganizationsActionsByIdOrg() |
-| GET | `/organizations/{idOrg}/boards` | getOrganizationsBoardsByIdOrg | getOrganizationsBoardsByIdOrg() |
-| GET | `/organizations/{idOrg}/boards/{filter}` | getOrganizationsBoardsByIdOrgByFilter | getOrganizationsBoardsByIdOrgByFilter() |
-| GET | `/organizations/{idOrg}/deltas` | getOrganizationsDeltasByIdOrg | getOrganizationsDeltasByIdOrg() |
-| PUT | `/organizations/{idOrg}/desc` | updateOrganizationsDescByIdOrg | updateOrganizationsDescByIdOrg() |
-| PUT | `/organizations/{idOrg}/displayName` | updateOrganizationsDisplayNameByIdOrg | updateOrganizationsDisplayNameByIdOrg() |
-| DELETE | `/organizations/{idOrg}/logo` | deleteOrganizationsLogoByIdOrg | deleteOrganizationsLogoByIdOrg() |
-| POST | `/organizations/{idOrg}/logo` | addOrganizationsLogoByIdOrg | addOrganizationsLogoByIdOrg() |
-| GET | `/organizations/{idOrg}/members` | getOrganizationsMembersByIdOrg | getOrganizationsMembersByIdOrg() |
-| PUT | `/organizations/{idOrg}/members` | updateOrganizationsMembersByIdOrg | updateOrganizationsMembersByIdOrg() |
-| GET | `/organizations/{idOrg}/members/{filter}` | getOrganizationsMembersByIdOrgByFilter | getOrganizationsMembersByIdOrgByFilter() |
-| DELETE | `/organizations/{idOrg}/members/{idMember}` | deleteOrganizationsMembersByIdOrgByIdMember | deleteOrganizationsMembersByIdOrgByIdMember() |
-| PUT | `/organizations/{idOrg}/members/{idMember}` | updateOrganizationsMembersByIdOrgByIdMember | updateOrganizationsMembersByIdOrgByIdMember() |
-| DELETE | `/organizations/{idOrg}/members/{idMember}/all` | deleteOrganizationsMembersAllByIdOrgByIdMember | deleteOrganizationsMembersAllByIdOrgByIdMember() |
-| GET | `/organizations/{idOrg}/members/{idMember}/cards` | getOrganizationsMembersCardsByIdOrgByIdMember | getOrganizationsMembersCardsByIdOrgByIdMember() |
-| PUT | `/organizations/{idOrg}/members/{idMember}/deactivated` | updateOrganizationsMembersDeactivatedByIdOrgByIdMember | updateOrganizationsMembersDeactivatedByIdOrgByIdMember() |
-| GET | `/organizations/{idOrg}/membersInvited` | getOrganizationsMembersInvitedByIdOrg | getOrganizationsMembersInvitedByIdOrg() |
-| GET | `/organizations/{idOrg}/membersInvited/{field}` | getOrganizationsMembersInvitedByIdOrgByField | getOrganizationsMembersInvitedByIdOrgByField() |
-| GET | `/organizations/{idOrg}/memberships` | getOrganizationsMembershipsByIdOrg | getOrganizationsMembershipsByIdOrg() |
-| GET | `/organizations/{idOrg}/memberships/{idMembership}` | getOrganizationsMembershipsByIdOrgByIdMembership | getOrganizationsMembershipsByIdOrgByIdMembership() |
-| PUT | `/organizations/{idOrg}/memberships/{idMembership}` | updateOrganizationsMembershipsByIdOrgByIdMembership | updateOrganizationsMembershipsByIdOrgByIdMembership() |
-| PUT | `/organizations/{idOrg}/name` | updateOrganizationsNameByIdOrg | updateOrganizationsNameByIdOrg() |
-| DELETE | `/organizations/{idOrg}/prefs/associatedDomain` | deleteOrganizationsPrefsAssociatedDomainByIdOrg | deleteOrganizationsPrefsAssociatedDomainByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/associatedDomain` | updateOrganizationsPrefsAssociatedDomainByIdOrg | updateOrganizationsPrefsAssociatedDomainByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/boardVisibilityRestrict/org` | updateOrganizationsPrefsBoardVisibilityRestrictOrgByIdOrg | updateOrganizationsPrefsBoardVisibilityRestrictOrgByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/boardVisibilityRestrict/private` | updateOrganizationsPrefsBoardVisibilityRestrictPrivateByIdOrg | updateOrganizationsPrefsBoardVisibilityRestrictPrivateByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/boardVisibilityRestrict/public` | updateOrganizationsPrefsBoardVisibilityRestrictPublicByIdOrg | updateOrganizationsPrefsBoardVisibilityRestrictPublicByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/externalMembersDisabled` | updateOrganizationsPrefsExternalMembersDisabledByIdOrg | updateOrganizationsPrefsExternalMembersDisabledByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/googleAppsVersion` | updateOrganizationsPrefsGoogleAppsVersionByIdOrg | updateOrganizationsPrefsGoogleAppsVersionByIdOrg() |
-| DELETE | `/organizations/{idOrg}/prefs/orgInviteRestrict` | deleteOrganizationsPrefsOrgInviteRestrictByIdOrg | deleteOrganizationsPrefsOrgInviteRestrictByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/orgInviteRestrict` | updateOrganizationsPrefsOrgInviteRestrictByIdOrg | updateOrganizationsPrefsOrgInviteRestrictByIdOrg() |
-| PUT | `/organizations/{idOrg}/prefs/permissionLevel` | updateOrganizationsPrefsPermissionLevelByIdOrg | updateOrganizationsPrefsPermissionLevelByIdOrg() |
-| PUT | `/organizations/{idOrg}/website` | updateOrganizationsWebsiteByIdOrg | updateOrganizationsWebsiteByIdOrg() |
-| GET | `/organizations/{idOrg}/{field}` | getOrganizationsByIdOrgByField | getOrganizationsByIdOrgByField() |
-| GET | `/search` | getSearch | getSearch() |
-| GET | `/search/members` | getSearchMembers | getSearchMembers() |
-| POST | `/sessions` | addSessions | addSessions() |
-| GET | `/sessions/socket` | getSessionsSocket | getSessionsSocket() |
-| PUT | `/sessions/{idSession}` | updateSessionsByIdSession | updateSessionsByIdSession() |
-| PUT | `/sessions/{idSession}/status` | updateSessionsStatusByIdSession | updateSessionsStatusByIdSession() |
-| DELETE | `/tokens/{token}` | deleteTokensByToken | deleteTokensByToken() |
-| GET | `/tokens/{token}` | getTokensByToken | getTokensByToken() |
-| GET | `/tokens/{token}/member` | getTokensMemberByToken | getTokensMemberByToken() |
-| GET | `/tokens/{token}/member/{field}` | getTokensMemberByTokenByField | getTokensMemberByTokenByField() |
-| GET | `/tokens/{token}/webhooks` | getTokensWebhooksByToken | getTokensWebhooksByToken() |
-| POST | `/tokens/{token}/webhooks` | addTokensWebhooksByToken | addTokensWebhooksByToken() |
-| PUT | `/tokens/{token}/webhooks` | updateTokensWebhooksByToken | updateTokensWebhooksByToken() |
-| DELETE | `/tokens/{token}/webhooks/{idWebhook}` | deleteTokensWebhooksByTokenByIdWebhook | deleteTokensWebhooksByTokenByIdWebhook() |
-| GET | `/tokens/{token}/webhooks/{idWebhook}` | getTokensWebhooksByTokenByIdWebhook | getTokensWebhooksByTokenByIdWebhook() |
-| GET | `/tokens/{token}/{field}` | getTokensByTokenByField | getTokensByTokenByField() |
-| GET | `/types/{id}` | getTypesById | getTypesById() |
-| POST | `/webhooks` | addWebhooks | addWebhooks() |
-| PUT | `/webhooks/` | updateWebhooks | updateWebhooks() |
-| DELETE | `/webhooks/{idWebhook}` | deleteWebhooksByIdWebhook | deleteWebhooksByIdWebhook() |
-| GET | `/webhooks/{idWebhook}` | getWebhooksByIdWebhook | getWebhooksByIdWebhook() |
-| PUT | `/webhooks/{idWebhook}` | updateWebhooksByIdWebhook | updateWebhooksByIdWebhook() |
-| PUT | `/webhooks/{idWebhook}/active` | updateWebhooksActiveByIdWebhook | updateWebhooksActiveByIdWebhook() |
-| PUT | `/webhooks/{idWebhook}/callbackURL` | updateWebhooksCallbackURLByIdWebhook | updateWebhooksCallbackURLByIdWebhook() |
-| PUT | `/webhooks/{idWebhook}/description` | updateWebhooksDescriptionByIdWebhook | updateWebhooksDescriptionByIdWebhook() |
-| PUT | `/webhooks/{idWebhook}/idModel` | updateWebhooksIdModelByIdWebhook | updateWebhooksIdModelByIdWebhook() |
-| GET | `/webhooks/{idWebhook}/{field}` | getWebhooksByIdWebhookByField | getWebhooksByIdWebhookByField() |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/actions/{idAction}` | getActionsByIdAction | `idAction`*, `display`, `entities`, `fields`, `member`, `member_fields`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getActionsByIdAction() |
+| PUT | `/actions/{idAction}` | updateActionsByIdAction | `idAction`*, `key`*, `token`*, body*: actions | — |  | updateActionsByIdAction() |
+| DELETE | `/actions/{idAction}` | deleteActionsByIdAction | `idAction`*, `key`*, `token`* | — |  | deleteActionsByIdAction() |
+| GET | `/actions/{idAction}/board` | getActionsBoardByIdAction | `idAction`*, `fields`, `key`*, `token`* | — | yes | getActionsBoardByIdAction() |
+| GET | `/actions/{idAction}/board/{field}` | getActionsBoardByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsBoardByIdActionByField() |
+| GET | `/actions/{idAction}/card` | getActionsCardByIdAction | `idAction`*, `fields`, `key`*, `token`* | — | yes | getActionsCardByIdAction() |
+| GET | `/actions/{idAction}/card/{field}` | getActionsCardByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsCardByIdActionByField() |
+| GET | `/actions/{idAction}/display` | getActionsDisplayByIdAction | `idAction`*, `key`*, `token`* | — | yes | getActionsDisplayByIdAction() |
+| GET | `/actions/{idAction}/entities` | getActionsEntitiesByIdAction | `idAction`*, `key`*, `token`* | — | yes | getActionsEntitiesByIdAction() |
+| GET | `/actions/{idAction}/list` | getActionsListByIdAction | `idAction`*, `fields`, `key`*, `token`* | — | yes | getActionsListByIdAction() |
+| GET | `/actions/{idAction}/list/{field}` | getActionsListByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsListByIdActionByField() |
+| GET | `/actions/{idAction}/member` | getActionsMemberByIdAction | `idAction`*, `fields`, `key`*, `token`* | — | yes | getActionsMemberByIdAction() |
+| GET | `/actions/{idAction}/member/{field}` | getActionsMemberByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsMemberByIdActionByField() |
+| GET | `/actions/{idAction}/memberCreator` | getActionsMemberCreatorByIdAction | `idAction`*, `fields`, `key`*, `token`* | — | yes | getActionsMemberCreatorByIdAction() |
+| GET | `/actions/{idAction}/memberCreator/{field}` | getActionsMemberCreatorByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsMemberCreatorByIdActionByField() |
+| GET | `/actions/{idAction}/organization` | getActionsOrganizationByIdAction | `idAction`*, `fields`, `key`*, `token`* | — | yes | getActionsOrganizationByIdAction() |
+| GET | `/actions/{idAction}/organization/{field}` | getActionsOrganizationByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsOrganizationByIdActionByField() |
+| PUT | `/actions/{idAction}/text` | updateActionsTextByIdAction | `idAction`*, `key`*, `token`*, body*: actions_text | — |  | updateActionsTextByIdAction() |
+| GET | `/actions/{idAction}/{field}` | getActionsByIdActionByField | `idAction`*, `field`*, `key`*, `token`* | — | yes | getActionsByIdActionByField() |
+| GET | `/batch` | getBatch | `urls`*, `key`*, `token`* | — | yes | getBatch() |
+| POST | `/boards` | addBoards | `key`*, `token`*, body*: boards | — |  | addBoards() |
+| GET | `/boards/{idBoard}` | getBoardsByIdBoard | `idBoard`*, `actions`, `actions_entities`, `actions_display`, `actions_format`, `actions_since`, `actions_limit`, `action_fields`, `action_member`, `action_member_fields`, `action_memberCreator`, `action_memberCreator_fields`, `cards`, `card_fields`, `card_attachments`, `card_attachment_fields`, `card_checklists`, `card_stickers`, `boardStars`, `labels`, `label_fields`, `labels_limit`, `lists`, `list_fields`, `memberships`, `memberships_member`, `memberships_member_fields`, `members`, `member_fields`, `membersInvited`, `membersInvited_fields`, `checklists`, `checklist_fields`, `organization`, `organization_fields`, `organization_memberships`, `myPrefs`, `fields`, `key`*, `token`* | — | yes | getBoardsByIdBoard() |
+| PUT | `/boards/{idBoard}` | updateBoardsByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards | — |  | updateBoardsByIdBoard() |
+| GET | `/boards/{idBoard}/actions` | getBoardsActionsByIdBoard | `idBoard`*, `entities`, `display`, `filter`, `fields`, `limit`, `format`, `since`, `before`, `page`, `idModels`, `member`, `member_fields`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getBoardsActionsByIdBoard() |
+| GET | `/boards/{idBoard}/boardStars` | getBoardsBoardStarsByIdBoard | `idBoard`*, `filter`, `key`*, `token`* | — | yes | getBoardsBoardStarsByIdBoard() |
+| POST | `/boards/{idBoard}/calendarKey/generate` | addBoardsCalendarKeyGenerateByIdBoard | `idBoard`*, `key`*, `token`* | — |  | addBoardsCalendarKeyGenerateByIdBoard() |
+| GET | `/boards/{idBoard}/cards` | getBoardsCardsByIdBoard | `idBoard`*, `actions`, `attachments`, `attachment_fields`, `stickers`, `members`, `member_fields`, `checkItemStates`, `checklists`, `limit`, `since`, `before`, `filter`, `fields`, `key`*, `token`* | — | yes | getBoardsCardsByIdBoard() |
+| GET | `/boards/{idBoard}/cards/{filter}` | getBoardsCardsByIdBoardByFilter | `idBoard`*, `filter`*, `key`*, `token`* | — | yes | getBoardsCardsByIdBoardByFilter() |
+| GET | `/boards/{idBoard}/cards/{idCard}` | getBoardsCardsByIdBoardByIdCard | `idBoard`*, `idCard`*, `attachments`, `attachment_fields`, `actions`, `actions_entities`, `actions_display`, `actions_limit`, `action_fields`, `action_memberCreator_fields`, `members`, `member_fields`, `checkItemStates`, `checkItemState_fields`, `labels`, `checklists`, `checklist_fields`, `fields`, `key`*, `token`* | — | yes | getBoardsCardsByIdBoardByIdCard() |
+| GET | `/boards/{idBoard}/checklists` | getBoardsChecklistsByIdBoard | `idBoard`*, `cards`, `card_fields`, `checkItems`, `checkItem_fields`, `filter`, `fields`, `key`*, `token`* | — | yes | getBoardsChecklistsByIdBoard() |
+| POST | `/boards/{idBoard}/checklists` | addBoardsChecklistsByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_checklists | — |  | addBoardsChecklistsByIdBoard() |
+| PUT | `/boards/{idBoard}/closed` | updateBoardsClosedByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_closed | — |  | updateBoardsClosedByIdBoard() |
+| GET | `/boards/{idBoard}/deltas` | getBoardsDeltasByIdBoard | `idBoard`*, `tags`*, `ixLastUpdate`*, `key`*, `token`* | — | yes | getBoardsDeltasByIdBoard() |
+| PUT | `/boards/{idBoard}/desc` | updateBoardsDescByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_desc | — |  | updateBoardsDescByIdBoard() |
+| POST | `/boards/{idBoard}/emailKey/generate` | addBoardsEmailKeyGenerateByIdBoard | `idBoard`*, `key`*, `token`* | — |  | addBoardsEmailKeyGenerateByIdBoard() |
+| PUT | `/boards/{idBoard}/idOrganization` | updateBoardsIdOrganizationByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_idOrganization | — |  | updateBoardsIdOrganizationByIdBoard() |
+| PUT | `/boards/{idBoard}/labelNames/blue` | updateBoardsLabelNamesBlueByIdBoard | `idBoard`*, `key`*, `token`*, body*: labelNames_blue | — |  | updateBoardsLabelNamesBlueByIdBoard() |
+| PUT | `/boards/{idBoard}/labelNames/green` | updateBoardsLabelNamesGreenByIdBoard | `idBoard`*, `key`*, `token`*, body*: labelNames_green | — |  | updateBoardsLabelNamesGreenByIdBoard() |
+| PUT | `/boards/{idBoard}/labelNames/orange` | updateBoardsLabelNamesOrangeByIdBoard | `idBoard`*, `key`*, `token`*, body*: labelNames_orange | — |  | updateBoardsLabelNamesOrangeByIdBoard() |
+| PUT | `/boards/{idBoard}/labelNames/purple` | updateBoardsLabelNamesPurpleByIdBoard | `idBoard`*, `key`*, `token`*, body*: labelNames_purple | — |  | updateBoardsLabelNamesPurpleByIdBoard() |
+| PUT | `/boards/{idBoard}/labelNames/red` | updateBoardsLabelNamesRedByIdBoard | `idBoard`*, `key`*, `token`*, body*: labelNames_red | — |  | updateBoardsLabelNamesRedByIdBoard() |
+| PUT | `/boards/{idBoard}/labelNames/yellow` | updateBoardsLabelNamesYellowByIdBoard | `idBoard`*, `key`*, `token`*, body*: labelNames_yellow | — |  | updateBoardsLabelNamesYellowByIdBoard() |
+| GET | `/boards/{idBoard}/labels` | getBoardsLabelsByIdBoard | `idBoard`*, `fields`, `limit`, `key`*, `token`* | — | yes | getBoardsLabelsByIdBoard() |
+| POST | `/boards/{idBoard}/labels` | addBoardsLabelsByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_labels | — |  | addBoardsLabelsByIdBoard() |
+| GET | `/boards/{idBoard}/labels/{idLabel}` | getBoardsLabelsByIdBoardByIdLabel | `idBoard`*, `idLabel`*, `fields`, `key`*, `token`* | — | yes | getBoardsLabelsByIdBoardByIdLabel() |
+| GET | `/boards/{idBoard}/lists` | getBoardsListsByIdBoard | `idBoard`*, `cards`, `card_fields`, `filter`, `fields`, `key`*, `token`* | — | yes | getBoardsListsByIdBoard() |
+| POST | `/boards/{idBoard}/lists` | addBoardsListsByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_lists | — |  | addBoardsListsByIdBoard() |
+| GET | `/boards/{idBoard}/lists/{filter}` | getBoardsListsByIdBoardByFilter | `idBoard`*, `filter`*, `key`*, `token`* | — | yes | getBoardsListsByIdBoardByFilter() |
+| POST | `/boards/{idBoard}/markAsViewed` | addBoardsMarkAsViewedByIdBoard | `idBoard`*, `key`*, `token`* | — |  | addBoardsMarkAsViewedByIdBoard() |
+| GET | `/boards/{idBoard}/members` | getBoardsMembersByIdBoard | `idBoard`*, `filter`, `fields`, `activity`, `key`*, `token`* | — | yes | getBoardsMembersByIdBoard() |
+| PUT | `/boards/{idBoard}/members` | updateBoardsMembersByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_members | — |  | updateBoardsMembersByIdBoard() |
+| GET | `/boards/{idBoard}/members/{filter}` | getBoardsMembersByIdBoardByFilter | `idBoard`*, `filter`*, `key`*, `token`* | — | yes | getBoardsMembersByIdBoardByFilter() |
+| PUT | `/boards/{idBoard}/members/{idMember}` | updateBoardsMembersByIdBoardByIdMember | `idBoard`*, `idMember`*, `key`*, `token`*, body*: boards_members | — |  | updateBoardsMembersByIdBoardByIdMember() |
+| DELETE | `/boards/{idBoard}/members/{idMember}` | deleteBoardsMembersByIdBoardByIdMember | `idBoard`*, `idMember`*, `key`*, `token`* | — |  | deleteBoardsMembersByIdBoardByIdMember() |
+| GET | `/boards/{idBoard}/members/{idMember}/cards` | getBoardsMembersCardsByIdBoardByIdMember | `idBoard`*, `idMember`*, `actions`, `attachments`, `attachment_fields`, `members`, `member_fields`, `checkItemStates`, `checklists`, `board`, `board_fields`, `list`, `list_fields`, `filter`, `fields`, `key`*, `token`* | — | yes | getBoardsMembersCardsByIdBoardByIdMember() |
+| GET | `/boards/{idBoard}/membersInvited` | getBoardsMembersInvitedByIdBoard | `idBoard`*, `fields`, `key`*, `token`* | — | yes | getBoardsMembersInvitedByIdBoard() |
+| GET | `/boards/{idBoard}/membersInvited/{field}` | getBoardsMembersInvitedByIdBoardByField | `idBoard`*, `field`*, `key`*, `token`* | — | yes | getBoardsMembersInvitedByIdBoardByField() |
+| GET | `/boards/{idBoard}/memberships` | getBoardsMembershipsByIdBoard | `idBoard`*, `filter`, `member`, `member_fields`, `key`*, `token`* | — | yes | getBoardsMembershipsByIdBoard() |
+| GET | `/boards/{idBoard}/memberships/{idMembership}` | getBoardsMembershipsByIdBoardByIdMembership | `idBoard`*, `idMembership`*, `member`, `member_fields`, `key`*, `token`* | — | yes | getBoardsMembershipsByIdBoardByIdMembership() |
+| PUT | `/boards/{idBoard}/memberships/{idMembership}` | updateBoardsMembershipsByIdBoardByIdMembership | `idBoard`*, `idMembership`*, `key`*, `token`*, body*: boards_memberships | — |  | updateBoardsMembershipsByIdBoardByIdMembership() |
+| GET | `/boards/{idBoard}/myPrefs` | getBoardsMyPrefsByIdBoard | `idBoard`*, `key`*, `token`* | — | yes | getBoardsMyPrefsByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/emailPosition` | updateBoardsMyPrefsEmailPositionByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_emailPosition | — |  | updateBoardsMyPrefsEmailPositionByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/idEmailList` | updateBoardsMyPrefsIdEmailListByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_idEmailList | — |  | updateBoardsMyPrefsIdEmailListByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/showListGuide` | updateBoardsMyPrefsShowListGuideByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_showListGuide | — |  | updateBoardsMyPrefsShowListGuideByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/showSidebar` | updateBoardsMyPrefsShowSidebarByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_showSidebar | — |  | updateBoardsMyPrefsShowSidebarByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/showSidebarActivity` | updateBoardsMyPrefsShowSidebarActivityByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_showSidebarActivity | — |  | updateBoardsMyPrefsShowSidebarActivityByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/showSidebarBoardActions` | updateBoardsMyPrefsShowSidebarBoardActionsByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_showSidebarBoardActions | — |  | updateBoardsMyPrefsShowSidebarBoardActionsByIdBoard() |
+| PUT | `/boards/{idBoard}/myPrefs/showSidebarMembers` | updateBoardsMyPrefsShowSidebarMembersByIdBoard | `idBoard`*, `key`*, `token`*, body*: myPrefs_showSidebarMembers | — |  | updateBoardsMyPrefsShowSidebarMembersByIdBoard() |
+| PUT | `/boards/{idBoard}/name` | updateBoardsNameByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_name | — |  | updateBoardsNameByIdBoard() |
+| GET | `/boards/{idBoard}/organization` | getBoardsOrganizationByIdBoard | `idBoard`*, `fields`, `key`*, `token`* | — | yes | getBoardsOrganizationByIdBoard() |
+| GET | `/boards/{idBoard}/organization/{field}` | getBoardsOrganizationByIdBoardByField | `idBoard`*, `field`*, `key`*, `token`* | — | yes | getBoardsOrganizationByIdBoardByField() |
+| POST | `/boards/{idBoard}/powerUps` | addBoardsPowerUpsByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_powerUps | — |  | addBoardsPowerUpsByIdBoard() |
+| DELETE | `/boards/{idBoard}/powerUps/{powerUp}` | deleteBoardsPowerUpsByIdBoardByPowerUp | `idBoard`*, `powerUp`*, `key`*, `token`* | — |  | deleteBoardsPowerUpsByIdBoardByPowerUp() |
+| PUT | `/boards/{idBoard}/prefs/background` | updateBoardsPrefsBackgroundByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_background | — |  | updateBoardsPrefsBackgroundByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/calendarFeedEnabled` | updateBoardsPrefsCalendarFeedEnabledByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_calendarFeedEnabled | — |  | updateBoardsPrefsCalendarFeedEnabledByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/cardAging` | updateBoardsPrefsCardAgingByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_cardAging | — |  | updateBoardsPrefsCardAgingByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/cardCovers` | updateBoardsPrefsCardCoversByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_cardCovers | — |  | updateBoardsPrefsCardCoversByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/comments` | updateBoardsPrefsCommentsByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_comments | — |  | updateBoardsPrefsCommentsByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/invitations` | updateBoardsPrefsInvitationsByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_invitations | — |  | updateBoardsPrefsInvitationsByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/permissionLevel` | updateBoardsPrefsPermissionLevelByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_permissionLevel | — |  | updateBoardsPrefsPermissionLevelByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/selfJoin` | updateBoardsPrefsSelfJoinByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_selfJoin | — |  | updateBoardsPrefsSelfJoinByIdBoard() |
+| PUT | `/boards/{idBoard}/prefs/voting` | updateBoardsPrefsVotingByIdBoard | `idBoard`*, `key`*, `token`*, body*: prefs_voting | — |  | updateBoardsPrefsVotingByIdBoard() |
+| PUT | `/boards/{idBoard}/subscribed` | updateBoardsSubscribedByIdBoard | `idBoard`*, `key`*, `token`*, body*: boards_subscribed | — |  | updateBoardsSubscribedByIdBoard() |
+| GET | `/boards/{idBoard}/{field}` | getBoardsByIdBoardByField | `idBoard`*, `field`*, `key`*, `token`* | — | yes | getBoardsByIdBoardByField() |
+| POST | `/cards` | addCards | `key`*, `token`*, body*: cards | — |  | addCards() |
+| GET | `/cards/{idCard}` | getCardsByIdCard | `idCard`*, `actions`, `actions_entities`, `actions_display`, `actions_limit`, `action_fields`, `action_memberCreator_fields`, `attachments`, `attachment_fields`, `members`, `member_fields`, `membersVoted`, `memberVoted_fields`, `checkItemStates`, `checkItemState_fields`, `checklists`, `checklist_fields`, `board`, `board_fields`, `list`, `list_fields`, `stickers`, `sticker_fields`, `fields`, `key`*, `token`* | — | yes | getCardsByIdCard() |
+| PUT | `/cards/{idCard}` | updateCardsByIdCard | `idCard`*, `key`*, `token`*, body*: cards | — |  | updateCardsByIdCard() |
+| DELETE | `/cards/{idCard}` | deleteCardsByIdCard | `idCard`*, `key`*, `token`* | — |  | deleteCardsByIdCard() |
+| GET | `/cards/{idCard}/actions` | getCardsActionsByIdCard | `idCard`*, `entities`, `display`, `filter`, `fields`, `limit`, `format`, `since`, `before`, `page`, `idModels`, `member`, `member_fields`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getCardsActionsByIdCard() |
+| POST | `/cards/{idCard}/actions/comments` | addCardsActionsCommentsByIdCard | `idCard`*, `key`*, `token`*, body*: actions_comments | — |  | addCardsActionsCommentsByIdCard() |
+| PUT | `/cards/{idCard}/actions/{idAction}/comments` | updateCardsActionsCommentsByIdCardByIdAction | `idCard`*, `idAction`*, `key`*, `token`*, body*: cards_actions_comments | — |  | updateCardsActionsCommentsByIdCardByIdAction() |
+| DELETE | `/cards/{idCard}/actions/{idAction}/comments` | deleteCardsActionsCommentsByIdCardByIdAction | `idCard`*, `idAction`*, `key`*, `token`* | — |  | deleteCardsActionsCommentsByIdCardByIdAction() |
+| GET | `/cards/{idCard}/attachments` | getCardsAttachmentsByIdCard | `idCard`*, `fields`, `filter`, `key`*, `token`* | — | yes | getCardsAttachmentsByIdCard() |
+| POST | `/cards/{idCard}/attachments` | addCardsAttachmentsByIdCard | `idCard`*, `key`*, `token`*, body*: cards_attachments | — |  | addCardsAttachmentsByIdCard() |
+| GET | `/cards/{idCard}/attachments/{idAttachment}` | getCardsAttachmentsByIdCardByIdAttachment | `idCard`*, `idAttachment`*, `fields`, `key`*, `token`* | — | yes | getCardsAttachmentsByIdCardByIdAttachment() |
+| DELETE | `/cards/{idCard}/attachments/{idAttachment}` | deleteCardsAttachmentsByIdCardByIdAttachment | `idCard`*, `idAttachment`*, `key`*, `token`* | — |  | deleteCardsAttachmentsByIdCardByIdAttachment() |
+| GET | `/cards/{idCard}/board` | getCardsBoardByIdCard | `idCard`*, `fields`, `key`*, `token`* | — | yes | getCardsBoardByIdCard() |
+| GET | `/cards/{idCard}/board/{field}` | getCardsBoardByIdCardByField | `idCard`*, `field`*, `key`*, `token`* | — | yes | getCardsBoardByIdCardByField() |
+| GET | `/cards/{idCard}/checkItemStates` | getCardsCheckItemStatesByIdCard | `idCard`*, `fields`, `key`*, `token`* | — | yes | getCardsCheckItemStatesByIdCard() |
+| PUT | `/cards/{idCard}/checklist/{idChecklistCurrent}/checkItem/{idCheckItem}` | updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem | `idCard`*, `idChecklistCurrent`*, `idCheckItem`*, `key`*, `token`*, body*: cards_checklist_idChecklistCurrent_checkItem | — |  | updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem() |
+| POST | `/cards/{idCard}/checklist/{idChecklist}/checkItem` | addCardsChecklistCheckItemByIdCardByIdChecklist | `idCard`*, `idChecklist`*, `key`*, `token`*, body*: cards_checklist_checkItem | — |  | addCardsChecklistCheckItemByIdCardByIdChecklist() |
+| DELETE | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}` | deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem | `idCard`*, `idChecklist`*, `idCheckItem`*, `key`*, `token`* | — |  | deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem() |
+| POST | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/convertToCard` | addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem | `idCard`*, `idChecklist`*, `idCheckItem`*, `key`*, `token`* | — |  | addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem() |
+| PUT | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/name` | updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem | `idCard`*, `idChecklist`*, `idCheckItem`*, `key`*, `token`*, body*: cards_checklist_checkItem_name | — |  | updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem() |
+| PUT | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/pos` | updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem | `idCard`*, `idChecklist`*, `idCheckItem`*, `key`*, `token`*, body*: cards_checklist_checkItem_pos | — |  | updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem() |
+| PUT | `/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/state` | updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem | `idCard`*, `idChecklist`*, `idCheckItem`*, `key`*, `token`*, body*: cards_checklist_checkItem_state | — |  | updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem() |
+| GET | `/cards/{idCard}/checklists` | getCardsChecklistsByIdCard | `idCard`*, `cards`, `card_fields`, `checkItems`, `checkItem_fields`, `filter`, `fields`, `key`*, `token`* | — | yes | getCardsChecklistsByIdCard() |
+| POST | `/cards/{idCard}/checklists` | addCardsChecklistsByIdCard | `idCard`*, `key`*, `token`*, body*: cards_checklists | — |  | addCardsChecklistsByIdCard() |
+| DELETE | `/cards/{idCard}/checklists/{idChecklist}` | deleteCardsChecklistsByIdCardByIdChecklist | `idCard`*, `idChecklist`*, `key`*, `token`* | — |  | deleteCardsChecklistsByIdCardByIdChecklist() |
+| PUT | `/cards/{idCard}/closed` | updateCardsClosedByIdCard | `idCard`*, `key`*, `token`*, body*: cards_closed | — |  | updateCardsClosedByIdCard() |
+| PUT | `/cards/{idCard}/desc` | updateCardsDescByIdCard | `idCard`*, `key`*, `token`*, body*: cards_desc | — |  | updateCardsDescByIdCard() |
+| PUT | `/cards/{idCard}/due` | updateCardsDueByIdCard | `idCard`*, `key`*, `token`*, body*: cards_due | — |  | updateCardsDueByIdCard() |
+| PUT | `/cards/{idCard}/idAttachmentCover` | updateCardsIdAttachmentCoverByIdCard | `idCard`*, `key`*, `token`*, body*: cards_idAttachmentCover | — |  | updateCardsIdAttachmentCoverByIdCard() |
+| PUT | `/cards/{idCard}/idBoard` | updateCardsIdBoardByIdCard | `idCard`*, `key`*, `token`*, body*: cards_idBoard | — |  | updateCardsIdBoardByIdCard() |
+| POST | `/cards/{idCard}/idLabels` | addCardsIdLabelsByIdCard | `idCard`*, `key`*, `token`*, body*: cards_idLabels | — |  | addCardsIdLabelsByIdCard() |
+| DELETE | `/cards/{idCard}/idLabels/{idLabel}` | deleteCardsIdLabelsByIdCardByIdLabel | `idCard`*, `idLabel`*, `key`*, `token`* | — |  | deleteCardsIdLabelsByIdCardByIdLabel() |
+| PUT | `/cards/{idCard}/idList` | updateCardsIdListByIdCard | `idCard`*, `key`*, `token`*, body*: cards_idList | — |  | updateCardsIdListByIdCard() |
+| PUT | `/cards/{idCard}/idMembers` | updateCardsIdMembersByIdCard | `idCard`*, `key`*, `token`*, body*: cards_idMembers | — |  | updateCardsIdMembersByIdCard() |
+| POST | `/cards/{idCard}/idMembers` | addCardsIdMembersByIdCard | `idCard`*, `key`*, `token`*, body*: cards_idMembers | — |  | addCardsIdMembersByIdCard() |
+| DELETE | `/cards/{idCard}/idMembers/{idMember}` | deleteCardsIdMembersByIdCardByIdMember | `idCard`*, `idMember`*, `key`*, `token`* | — |  | deleteCardsIdMembersByIdCardByIdMember() |
+| PUT | `/cards/{idCard}/labels` | updateCardsLabelsByIdCard | `idCard`*, `key`*, `token`*, body*: cards_labels | — |  | updateCardsLabelsByIdCard() |
+| POST | `/cards/{idCard}/labels` | addCardsLabelsByIdCard | `idCard`*, `key`*, `token`*, body*: cards_labels | — |  | addCardsLabelsByIdCard() |
+| DELETE | `/cards/{idCard}/labels/{color}` | deleteCardsLabelsByIdCardByColor | `idCard`*, `color`*, `key`*, `token`* | — |  | deleteCardsLabelsByIdCardByColor() |
+| GET | `/cards/{idCard}/list` | getCardsListByIdCard | `idCard`*, `fields`, `key`*, `token`* | — | yes | getCardsListByIdCard() |
+| GET | `/cards/{idCard}/list/{field}` | getCardsListByIdCardByField | `idCard`*, `field`*, `key`*, `token`* | — | yes | getCardsListByIdCardByField() |
+| POST | `/cards/{idCard}/markAssociatedNotificationsRead` | addCardsMarkAssociatedNotificationsReadByIdCard | `idCard`*, `key`*, `token`* | — |  | addCardsMarkAssociatedNotificationsReadByIdCard() |
+| GET | `/cards/{idCard}/members` | getCardsMembersByIdCard | `idCard`*, `fields`, `key`*, `token`* | — | yes | getCardsMembersByIdCard() |
+| GET | `/cards/{idCard}/membersVoted` | getCardsMembersVotedByIdCard | `idCard`*, `fields`, `key`*, `token`* | — | yes | getCardsMembersVotedByIdCard() |
+| POST | `/cards/{idCard}/membersVoted` | addCardsMembersVotedByIdCard | `idCard`*, `key`*, `token`*, body*: cards_membersVoted | — |  | addCardsMembersVotedByIdCard() |
+| DELETE | `/cards/{idCard}/membersVoted/{idMember}` | deleteCardsMembersVotedByIdCardByIdMember | `idCard`*, `idMember`*, `key`*, `token`* | — |  | deleteCardsMembersVotedByIdCardByIdMember() |
+| PUT | `/cards/{idCard}/name` | updateCardsNameByIdCard | `idCard`*, `key`*, `token`*, body*: cards_name | — |  | updateCardsNameByIdCard() |
+| PUT | `/cards/{idCard}/pos` | updateCardsPosByIdCard | `idCard`*, `key`*, `token`*, body*: cards_pos | — |  | updateCardsPosByIdCard() |
+| GET | `/cards/{idCard}/stickers` | getCardsStickersByIdCard | `idCard`*, `fields`, `key`*, `token`* | — | yes | getCardsStickersByIdCard() |
+| POST | `/cards/{idCard}/stickers` | addCardsStickersByIdCard | `idCard`*, `key`*, `token`*, body*: cards_stickers | — |  | addCardsStickersByIdCard() |
+| GET | `/cards/{idCard}/stickers/{idSticker}` | getCardsStickersByIdCardByIdSticker | `idCard`*, `idSticker`*, `fields`, `key`*, `token`* | — | yes | getCardsStickersByIdCardByIdSticker() |
+| PUT | `/cards/{idCard}/stickers/{idSticker}` | updateCardsStickersByIdCardByIdSticker | `idCard`*, `idSticker`*, `key`*, `token`*, body*: cards_stickers | — |  | updateCardsStickersByIdCardByIdSticker() |
+| DELETE | `/cards/{idCard}/stickers/{idSticker}` | deleteCardsStickersByIdCardByIdSticker | `idCard`*, `idSticker`*, `key`*, `token`* | — |  | deleteCardsStickersByIdCardByIdSticker() |
+| PUT | `/cards/{idCard}/subscribed` | updateCardsSubscribedByIdCard | `idCard`*, `key`*, `token`*, body*: cards_subscribed | — |  | updateCardsSubscribedByIdCard() |
+| GET | `/cards/{idCard}/{field}` | getCardsByIdCardByField | `idCard`*, `field`*, `key`*, `token`* | — | yes | getCardsByIdCardByField() |
+| POST | `/checklists` | addChecklists | `key`*, `token`*, body*: checklists | — |  | addChecklists() |
+| GET | `/checklists/{idChecklist}` | getChecklistsByIdChecklist | `idChecklist`*, `cards`, `card_fields`, `checkItems`, `checkItem_fields`, `fields`, `key`*, `token`* | — | yes | getChecklistsByIdChecklist() |
+| PUT | `/checklists/{idChecklist}` | updateChecklistsByIdChecklist | `idChecklist`*, `key`*, `token`*, body*: checklists | — |  | updateChecklistsByIdChecklist() |
+| DELETE | `/checklists/{idChecklist}` | deleteChecklistsByIdChecklist | `idChecklist`*, `key`*, `token`* | — |  | deleteChecklistsByIdChecklist() |
+| GET | `/checklists/{idChecklist}/board` | getChecklistsBoardByIdChecklist | `idChecklist`*, `fields`, `key`*, `token`* | — | yes | getChecklistsBoardByIdChecklist() |
+| GET | `/checklists/{idChecklist}/board/{field}` | getChecklistsBoardByIdChecklistByField | `idChecklist`*, `field`*, `key`*, `token`* | — | yes | getChecklistsBoardByIdChecklistByField() |
+| GET | `/checklists/{idChecklist}/cards` | getChecklistsCardsByIdChecklist | `idChecklist`*, `actions`, `attachments`, `attachment_fields`, `stickers`, `members`, `member_fields`, `checkItemStates`, `checklists`, `limit`, `since`, `before`, `filter`, `fields`, `key`*, `token`* | — | yes | getChecklistsCardsByIdChecklist() |
+| GET | `/checklists/{idChecklist}/cards/{filter}` | getChecklistsCardsByIdChecklistByFilter | `idChecklist`*, `filter`*, `key`*, `token`* | — | yes | getChecklistsCardsByIdChecklistByFilter() |
+| GET | `/checklists/{idChecklist}/checkItems` | getChecklistsCheckItemsByIdChecklist | `idChecklist`*, `filter`, `fields`, `key`*, `token`* | — | yes | getChecklistsCheckItemsByIdChecklist() |
+| POST | `/checklists/{idChecklist}/checkItems` | addChecklistsCheckItemsByIdChecklist | `idChecklist`*, `key`*, `token`*, body*: checklists_checkItems | — |  | addChecklistsCheckItemsByIdChecklist() |
+| GET | `/checklists/{idChecklist}/checkItems/{idCheckItem}` | getChecklistsCheckItemsByIdChecklistByIdCheckItem | `idChecklist`*, `idCheckItem`*, `fields`, `key`*, `token`* | — | yes | getChecklistsCheckItemsByIdChecklistByIdCheckItem() |
+| DELETE | `/checklists/{idChecklist}/checkItems/{idCheckItem}` | deleteChecklistsCheckItemsByIdChecklistByIdCheckItem | `idChecklist`*, `idCheckItem`*, `key`*, `token`* | — |  | deleteChecklistsCheckItemsByIdChecklistByIdCheckItem() |
+| PUT | `/checklists/{idChecklist}/idCard` | updateChecklistsIdCardByIdChecklist | `idChecklist`*, `key`*, `token`*, body*: checklists_idCard | — |  | updateChecklistsIdCardByIdChecklist() |
+| PUT | `/checklists/{idChecklist}/name` | updateChecklistsNameByIdChecklist | `idChecklist`*, `key`*, `token`*, body*: checklists_name | — |  | updateChecklistsNameByIdChecklist() |
+| PUT | `/checklists/{idChecklist}/pos` | updateChecklistsPosByIdChecklist | `idChecklist`*, `key`*, `token`*, body*: checklists_pos | — |  | updateChecklistsPosByIdChecklist() |
+| GET | `/checklists/{idChecklist}/{field}` | getChecklistsByIdChecklistByField | `idChecklist`*, `field`*, `key`*, `token`* | — | yes | getChecklistsByIdChecklistByField() |
+| POST | `/labels` | addLabels | `key`*, `token`*, body*: labels | — |  | addLabels() |
+| GET | `/labels/{idLabel}` | getLabelsByIdLabel | `idLabel`*, `fields`, `key`*, `token`* | — | yes | getLabelsByIdLabel() |
+| PUT | `/labels/{idLabel}` | updateLabelsByIdLabel | `idLabel`*, `key`*, `token`*, body*: labels | — |  | updateLabelsByIdLabel() |
+| DELETE | `/labels/{idLabel}` | deleteLabelsByIdLabel | `idLabel`*, `key`*, `token`* | — |  | deleteLabelsByIdLabel() |
+| GET | `/labels/{idLabel}/board` | getLabelsBoardByIdLabel | `idLabel`*, `fields`, `key`*, `token`* | — | yes | getLabelsBoardByIdLabel() |
+| GET | `/labels/{idLabel}/board/{field}` | getLabelsBoardByIdLabelByField | `idLabel`*, `field`*, `key`*, `token`* | — | yes | getLabelsBoardByIdLabelByField() |
+| PUT | `/labels/{idLabel}/color` | updateLabelsColorByIdLabel | `idLabel`*, `key`*, `token`*, body*: labels_color | — |  | updateLabelsColorByIdLabel() |
+| PUT | `/labels/{idLabel}/name` | updateLabelsNameByIdLabel | `idLabel`*, `key`*, `token`*, body*: labels_name | — |  | updateLabelsNameByIdLabel() |
+| POST | `/lists` | addLists | `key`*, `token`*, body*: lists | — |  | addLists() |
+| GET | `/lists/{idList}` | getListsByIdList | `idList`*, `cards`, `card_fields`, `board`, `board_fields`, `fields`, `key`*, `token`* | — | yes | getListsByIdList() |
+| PUT | `/lists/{idList}` | updateListsByIdList | `idList`*, `key`*, `token`*, body*: lists | — |  | updateListsByIdList() |
+| GET | `/lists/{idList}/actions` | getListsActionsByIdList | `idList`*, `entities`, `display`, `filter`, `fields`, `limit`, `format`, `since`, `before`, `page`, `idModels`, `member`, `member_fields`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getListsActionsByIdList() |
+| POST | `/lists/{idList}/archiveAllCards` | addListsArchiveAllCardsByIdList | `idList`*, `key`*, `token`* | — |  | addListsArchiveAllCardsByIdList() |
+| GET | `/lists/{idList}/board` | getListsBoardByIdList | `idList`*, `fields`, `key`*, `token`* | — | yes | getListsBoardByIdList() |
+| GET | `/lists/{idList}/board/{field}` | getListsBoardByIdListByField | `idList`*, `field`*, `key`*, `token`* | — | yes | getListsBoardByIdListByField() |
+| GET | `/lists/{idList}/cards` | getListsCardsByIdList | `idList`*, `actions`, `attachments`, `attachment_fields`, `stickers`, `members`, `member_fields`, `checkItemStates`, `checklists`, `limit`, `since`, `before`, `filter`, `fields`, `key`*, `token`* | — | yes | getListsCardsByIdList() |
+| POST | `/lists/{idList}/cards` | addListsCardsByIdList | `idList`*, `key`*, `token`*, body*: lists_cards | — |  | addListsCardsByIdList() |
+| GET | `/lists/{idList}/cards/{filter}` | getListsCardsByIdListByFilter | `idList`*, `filter`*, `key`*, `token`* | — | yes | getListsCardsByIdListByFilter() |
+| PUT | `/lists/{idList}/closed` | updateListsClosedByIdList | `idList`*, `key`*, `token`*, body*: lists_closed | — |  | updateListsClosedByIdList() |
+| PUT | `/lists/{idList}/idBoard` | updateListsIdBoardByIdList | `idList`*, `key`*, `token`*, body*: lists_idBoard | — |  | updateListsIdBoardByIdList() |
+| POST | `/lists/{idList}/moveAllCards` | addListsMoveAllCardsByIdList | `idList`*, `key`*, `token`*, body*: lists_moveAllCards | — |  | addListsMoveAllCardsByIdList() |
+| PUT | `/lists/{idList}/name` | updateListsNameByIdList | `idList`*, `key`*, `token`*, body*: lists_name | — |  | updateListsNameByIdList() |
+| PUT | `/lists/{idList}/pos` | updateListsPosByIdList | `idList`*, `key`*, `token`*, body*: lists_pos | — |  | updateListsPosByIdList() |
+| PUT | `/lists/{idList}/subscribed` | updateListsSubscribedByIdList | `idList`*, `key`*, `token`*, body*: lists_subscribed | — |  | updateListsSubscribedByIdList() |
+| GET | `/lists/{idList}/{field}` | getListsByIdListByField | `idList`*, `field`*, `key`*, `token`* | — | yes | getListsByIdListByField() |
+| GET | `/members/{idMember}` | getMembersByIdMember | `idMember`*, `actions`, `actions_entities`, `actions_display`, `actions_limit`, `action_fields`, `action_since`, `action_before`, `cards`, `card_fields`, `card_members`, `card_member_fields`, `card_attachments`, `card_attachment_fields`, `card_stickers`, `boards`, `board_fields`, `board_actions`, `board_actions_entities`, `board_actions_display`, `board_actions_format`, `board_actions_since`, `board_actions_limit`, `board_action_fields`, `board_lists`, `board_memberships`, `board_organization`, `board_organization_fields`, `boardsInvited`, `boardsInvited_fields`, `boardStars`, `savedSearches`, `organizations`, `organization_fields`, `organization_paid_account`, `organizationsInvited`, `organizationsInvited_fields`, `notifications`, `notifications_entities`, `notifications_display`, `notifications_limit`, `notification_fields`, `notification_memberCreator`, `notification_memberCreator_fields`, `notification_before`, `notification_since`, `tokens`, `paid_account`, `boardBackgrounds`, `customBoardBackgrounds`, `customStickers`, `customEmoji`, `fields`, `key`*, `token`* | — | yes | getMembersByIdMember() |
+| PUT | `/members/{idMember}` | updateMembersByIdMember | `idMember`*, `key`*, `token`*, body*: members | — |  | updateMembersByIdMember() |
+| GET | `/members/{idMember}/actions` | getMembersActionsByIdMember | `idMember`*, `entities`, `display`, `filter`, `fields`, `limit`, `format`, `since`, `before`, `page`, `idModels`, `member`, `member_fields`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getMembersActionsByIdMember() |
+| POST | `/members/{idMember}/avatar` | addMembersAvatarByIdMember | `idMember`*, `key`*, `token`*, body*: members_avatar | — |  | addMembersAvatarByIdMember() |
+| PUT | `/members/{idMember}/avatarSource` | updateMembersAvatarSourceByIdMember | `idMember`*, `key`*, `token`*, body*: members_avatarSource | — |  | updateMembersAvatarSourceByIdMember() |
+| PUT | `/members/{idMember}/bio` | updateMembersBioByIdMember | `idMember`*, `key`*, `token`*, body*: members_bio | — |  | updateMembersBioByIdMember() |
+| GET | `/members/{idMember}/boardBackgrounds` | getMembersBoardBackgroundsByIdMember | `idMember`*, `filter`, `key`*, `token`* | — | yes | getMembersBoardBackgroundsByIdMember() |
+| POST | `/members/{idMember}/boardBackgrounds` | addMembersBoardBackgroundsByIdMember | `idMember`*, `key`*, `token`*, body*: members_boardBackgrounds | — |  | addMembersBoardBackgroundsByIdMember() |
+| GET | `/members/{idMember}/boardBackgrounds/{idBoardBackground}` | getMembersBoardBackgroundsByIdMemberByIdBoardBackground | `idMember`*, `idBoardBackground`*, `fields`, `key`*, `token`* | — | yes | getMembersBoardBackgroundsByIdMemberByIdBoardBackground() |
+| PUT | `/members/{idMember}/boardBackgrounds/{idBoardBackground}` | updateMembersBoardBackgroundsByIdMemberByIdBoardBackground | `idMember`*, `idBoardBackground`*, `key`*, `token`*, body*: members_boardBackgrounds | — |  | updateMembersBoardBackgroundsByIdMemberByIdBoardBackground() |
+| DELETE | `/members/{idMember}/boardBackgrounds/{idBoardBackground}` | deleteMembersBoardBackgroundsByIdMemberByIdBoardBackground | `idMember`*, `idBoardBackground`*, `key`*, `token`* | — |  | deleteMembersBoardBackgroundsByIdMemberByIdBoardBackground() |
+| GET | `/members/{idMember}/boardStars` | getMembersBoardStarsByIdMember | `idMember`*, `key`*, `token`* | — | yes | getMembersBoardStarsByIdMember() |
+| POST | `/members/{idMember}/boardStars` | addMembersBoardStarsByIdMember | `idMember`*, `key`*, `token`*, body*: members_boardStars | — |  | addMembersBoardStarsByIdMember() |
+| GET | `/members/{idMember}/boardStars/{idBoardStar}` | getMembersBoardStarsByIdMemberByIdBoardStar | `idMember`*, `idBoardStar`*, `key`*, `token`* | — | yes | getMembersBoardStarsByIdMemberByIdBoardStar() |
+| PUT | `/members/{idMember}/boardStars/{idBoardStar}` | updateMembersBoardStarsByIdMemberByIdBoardStar | `idMember`*, `idBoardStar`*, `key`*, `token`*, body*: members_boardStars | — |  | updateMembersBoardStarsByIdMemberByIdBoardStar() |
+| DELETE | `/members/{idMember}/boardStars/{idBoardStar}` | deleteMembersBoardStarsByIdMemberByIdBoardStar | `idMember`*, `idBoardStar`*, `key`*, `token`* | — |  | deleteMembersBoardStarsByIdMemberByIdBoardStar() |
+| PUT | `/members/{idMember}/boardStars/{idBoardStar}/idBoard` | updateMembersBoardStarsIdBoardByIdMemberByIdBoardStar | `idMember`*, `idBoardStar`*, `key`*, `token`*, body*: members_boardStars_idBoard | — |  | updateMembersBoardStarsIdBoardByIdMemberByIdBoardStar() |
+| PUT | `/members/{idMember}/boardStars/{idBoardStar}/pos` | updateMembersBoardStarsPosByIdMemberByIdBoardStar | `idMember`*, `idBoardStar`*, `key`*, `token`*, body*: members_boardStars_pos | — |  | updateMembersBoardStarsPosByIdMemberByIdBoardStar() |
+| GET | `/members/{idMember}/boards` | getMembersBoardsByIdMember | `idMember`*, `filter`, `fields`, `actions`, `actions_entities`, `actions_limit`, `actions_format`, `actions_since`, `action_fields`, `memberships`, `organization`, `organization_fields`, `lists`, `key`*, `token`* | — | yes | getMembersBoardsByIdMember() |
+| GET | `/members/{idMember}/boards/{filter}` | getMembersBoardsByIdMemberByFilter | `idMember`*, `filter`*, `key`*, `token`* | — | yes | getMembersBoardsByIdMemberByFilter() |
+| GET | `/members/{idMember}/boardsInvited` | getMembersBoardsInvitedByIdMember | `idMember`*, `fields`, `key`*, `token`* | — | yes | getMembersBoardsInvitedByIdMember() |
+| GET | `/members/{idMember}/boardsInvited/{field}` | getMembersBoardsInvitedByIdMemberByField | `idMember`*, `field`*, `key`*, `token`* | — | yes | getMembersBoardsInvitedByIdMemberByField() |
+| GET | `/members/{idMember}/cards` | getMembersCardsByIdMember | `idMember`*, `actions`, `attachments`, `attachment_fields`, `stickers`, `members`, `member_fields`, `checkItemStates`, `checklists`, `limit`, `since`, `before`, `filter`, `fields`, `key`*, `token`* | — | yes | getMembersCardsByIdMember() |
+| GET | `/members/{idMember}/cards/{filter}` | getMembersCardsByIdMemberByFilter | `idMember`*, `filter`*, `key`*, `token`* | — | yes | getMembersCardsByIdMemberByFilter() |
+| GET | `/members/{idMember}/customBoardBackgrounds` | getMembersCustomBoardBackgroundsByIdMember | `idMember`*, `filter`, `key`*, `token`* | — | yes | getMembersCustomBoardBackgroundsByIdMember() |
+| POST | `/members/{idMember}/customBoardBackgrounds` | addMembersCustomBoardBackgroundsByIdMember | `idMember`*, `key`*, `token`*, body*: members_customBoardBackgrounds | — |  | addMembersCustomBoardBackgroundsByIdMember() |
+| GET | `/members/{idMember}/customBoardBackgrounds/{idBoardBackground}` | getMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground | `idMember`*, `idBoardBackground`*, `fields`, `key`*, `token`* | — | yes | getMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground() |
+| PUT | `/members/{idMember}/customBoardBackgrounds/{idBoardBackground}` | updateMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground | `idMember`*, `idBoardBackground`*, `key`*, `token`*, body*: members_customBoardBackgrounds | — |  | updateMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground() |
+| DELETE | `/members/{idMember}/customBoardBackgrounds/{idBoardBackground}` | deleteMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground | `idMember`*, `idBoardBackground`*, `key`*, `token`* | — |  | deleteMembersCustomBoardBackgroundsByIdMemberByIdBoardBackground() |
+| GET | `/members/{idMember}/customEmoji` | getMembersCustomEmojiByIdMember | `idMember`*, `filter`, `key`*, `token`* | — | yes | getMembersCustomEmojiByIdMember() |
+| POST | `/members/{idMember}/customEmoji` | addMembersCustomEmojiByIdMember | `idMember`*, `key`*, `token`*, body*: members_customEmoji | — |  | addMembersCustomEmojiByIdMember() |
+| GET | `/members/{idMember}/customEmoji/{idCustomEmoji}` | getMembersCustomEmojiByIdMemberByIdCustomEmoji | `idMember`*, `idCustomEmoji`*, `fields`, `key`*, `token`* | — | yes | getMembersCustomEmojiByIdMemberByIdCustomEmoji() |
+| GET | `/members/{idMember}/customStickers` | getMembersCustomStickersByIdMember | `idMember`*, `filter`, `key`*, `token`* | — | yes | getMembersCustomStickersByIdMember() |
+| POST | `/members/{idMember}/customStickers` | addMembersCustomStickersByIdMember | `idMember`*, `key`*, `token`*, body*: members_customStickers | — |  | addMembersCustomStickersByIdMember() |
+| GET | `/members/{idMember}/customStickers/{idCustomSticker}` | getMembersCustomStickersByIdMemberByIdCustomSticker | `idMember`*, `idCustomSticker`*, `fields`, `key`*, `token`* | — | yes | getMembersCustomStickersByIdMemberByIdCustomSticker() |
+| DELETE | `/members/{idMember}/customStickers/{idCustomSticker}` | deleteMembersCustomStickersByIdMemberByIdCustomSticker | `idMember`*, `idCustomSticker`*, `key`*, `token`* | — |  | deleteMembersCustomStickersByIdMemberByIdCustomSticker() |
+| GET | `/members/{idMember}/deltas` | getMembersDeltasByIdMember | `idMember`*, `tags`*, `ixLastUpdate`*, `key`*, `token`* | — | yes | getMembersDeltasByIdMember() |
+| PUT | `/members/{idMember}/fullName` | updateMembersFullNameByIdMember | `idMember`*, `key`*, `token`*, body*: members_fullName | — |  | updateMembersFullNameByIdMember() |
+| PUT | `/members/{idMember}/initials` | updateMembersInitialsByIdMember | `idMember`*, `key`*, `token`*, body*: members_initials | — |  | updateMembersInitialsByIdMember() |
+| GET | `/members/{idMember}/notifications` | getMembersNotificationsByIdMember | `idMember`*, `entities`, `display`, `filter`, `read_filter`, `fields`, `limit`, `page`, `before`, `since`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getMembersNotificationsByIdMember() |
+| GET | `/members/{idMember}/notifications/{filter}` | getMembersNotificationsByIdMemberByFilter | `idMember`*, `filter`*, `key`*, `token`* | — | yes | getMembersNotificationsByIdMemberByFilter() |
+| POST | `/members/{idMember}/oneTimeMessagesDismissed` | addMembersOneTimeMessagesDismissedByIdMember | `idMember`*, `key`*, `token`*, body*: members_oneTimeMessagesDismissed | — |  | addMembersOneTimeMessagesDismissedByIdMember() |
+| GET | `/members/{idMember}/organizations` | getMembersOrganizationsByIdMember | `idMember`*, `filter`, `fields`, `paid_account`, `key`*, `token`* | — | yes | getMembersOrganizationsByIdMember() |
+| GET | `/members/{idMember}/organizations/{filter}` | getMembersOrganizationsByIdMemberByFilter | `idMember`*, `filter`*, `key`*, `token`* | — | yes | getMembersOrganizationsByIdMemberByFilter() |
+| GET | `/members/{idMember}/organizationsInvited` | getMembersOrganizationsInvitedByIdMember | `idMember`*, `fields`, `key`*, `token`* | — | yes | getMembersOrganizationsInvitedByIdMember() |
+| GET | `/members/{idMember}/organizationsInvited/{field}` | getMembersOrganizationsInvitedByIdMemberByField | `idMember`*, `field`*, `key`*, `token`* | — | yes | getMembersOrganizationsInvitedByIdMemberByField() |
+| PUT | `/members/{idMember}/prefs/colorBlind` | updateMembersPrefsColorBlindByIdMember | `idMember`*, `key`*, `token`*, body*: prefs_colorBlind | — |  | updateMembersPrefsColorBlindByIdMember() |
+| PUT | `/members/{idMember}/prefs/locale` | updateMembersPrefsLocaleByIdMember | `idMember`*, `key`*, `token`*, body*: prefs_locale | — |  | updateMembersPrefsLocaleByIdMember() |
+| PUT | `/members/{idMember}/prefs/minutesBetweenSummaries` | updateMembersPrefsMinutesBetweenSummariesByIdMember | `idMember`*, `key`*, `token`*, body*: prefs_minutesBetweenSummaries | — |  | updateMembersPrefsMinutesBetweenSummariesByIdMember() |
+| GET | `/members/{idMember}/savedSearches` | getMembersSavedSearchesByIdMember | `idMember`*, `key`*, `token`* | — | yes | getMembersSavedSearchesByIdMember() |
+| POST | `/members/{idMember}/savedSearches` | addMembersSavedSearchesByIdMember | `idMember`*, `key`*, `token`*, body*: members_savedSearches | — |  | addMembersSavedSearchesByIdMember() |
+| GET | `/members/{idMember}/savedSearches/{idSavedSearch}` | getMembersSavedSearchesByIdMemberByIdSavedSearch | `idMember`*, `idSavedSearch`*, `key`*, `token`* | — | yes | getMembersSavedSearchesByIdMemberByIdSavedSearch() |
+| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}` | updateMembersSavedSearchesByIdMemberByIdSavedSearch | `idMember`*, `idSavedSearch`*, `key`*, `token`*, body*: members_savedSearches | — |  | updateMembersSavedSearchesByIdMemberByIdSavedSearch() |
+| DELETE | `/members/{idMember}/savedSearches/{idSavedSearch}` | deleteMembersSavedSearchesByIdMemberByIdSavedSearch | `idMember`*, `idSavedSearch`*, `key`*, `token`* | — |  | deleteMembersSavedSearchesByIdMemberByIdSavedSearch() |
+| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}/name` | updateMembersSavedSearchesNameByIdMemberByIdSavedSearch | `idMember`*, `idSavedSearch`*, `key`*, `token`*, body*: members_savedSearches_name | — |  | updateMembersSavedSearchesNameByIdMemberByIdSavedSearch() |
+| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}/pos` | updateMembersSavedSearchesPosByIdMemberByIdSavedSearch | `idMember`*, `idSavedSearch`*, `key`*, `token`*, body*: members_savedSearches_pos | — |  | updateMembersSavedSearchesPosByIdMemberByIdSavedSearch() |
+| PUT | `/members/{idMember}/savedSearches/{idSavedSearch}/query` | updateMembersSavedSearchesQueryByIdMemberByIdSavedSearch | `idMember`*, `idSavedSearch`*, `key`*, `token`*, body*: members_savedSearches_query | — |  | updateMembersSavedSearchesQueryByIdMemberByIdSavedSearch() |
+| GET | `/members/{idMember}/tokens` | getMembersTokensByIdMember | `idMember`*, `filter`, `key`*, `token`* | — | yes | getMembersTokensByIdMember() |
+| PUT | `/members/{idMember}/username` | updateMembersUsernameByIdMember | `idMember`*, `key`*, `token`*, body*: members_username | — |  | updateMembersUsernameByIdMember() |
+| GET | `/members/{idMember}/{field}` | getMembersByIdMemberByField | `idMember`*, `field`*, `key`*, `token`* | — | yes | getMembersByIdMemberByField() |
+| POST | `/notifications/all/read` | addNotificationsAllRead | `key`*, `token`* | — |  | addNotificationsAllRead() |
+| GET | `/notifications/{idNotification}` | getNotificationsByIdNotification | `idNotification`*, `display`, `entities`, `fields`, `memberCreator`, `memberCreator_fields`, `board`, `board_fields`, `list`, `card`, `card_fields`, `organization`, `organization_fields`, `member`, `member_fields`, `key`*, `token`* | — | yes | getNotificationsByIdNotification() |
+| PUT | `/notifications/{idNotification}` | updateNotificationsByIdNotification | `idNotification`*, `key`*, `token`*, body*: notifications | — |  | updateNotificationsByIdNotification() |
+| GET | `/notifications/{idNotification}/board` | getNotificationsBoardByIdNotification | `idNotification`*, `fields`, `key`*, `token`* | — | yes | getNotificationsBoardByIdNotification() |
+| GET | `/notifications/{idNotification}/board/{field}` | getNotificationsBoardByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsBoardByIdNotificationByField() |
+| GET | `/notifications/{idNotification}/card` | getNotificationsCardByIdNotification | `idNotification`*, `fields`, `key`*, `token`* | — | yes | getNotificationsCardByIdNotification() |
+| GET | `/notifications/{idNotification}/card/{field}` | getNotificationsCardByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsCardByIdNotificationByField() |
+| GET | `/notifications/{idNotification}/display` | getNotificationsDisplayByIdNotification | `idNotification`*, `key`*, `token`* | — | yes | getNotificationsDisplayByIdNotification() |
+| GET | `/notifications/{idNotification}/entities` | getNotificationsEntitiesByIdNotification | `idNotification`*, `key`*, `token`* | — | yes | getNotificationsEntitiesByIdNotification() |
+| GET | `/notifications/{idNotification}/list` | getNotificationsListByIdNotification | `idNotification`*, `fields`, `key`*, `token`* | — | yes | getNotificationsListByIdNotification() |
+| GET | `/notifications/{idNotification}/list/{field}` | getNotificationsListByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsListByIdNotificationByField() |
+| GET | `/notifications/{idNotification}/member` | getNotificationsMemberByIdNotification | `idNotification`*, `fields`, `key`*, `token`* | — | yes | getNotificationsMemberByIdNotification() |
+| GET | `/notifications/{idNotification}/member/{field}` | getNotificationsMemberByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsMemberByIdNotificationByField() |
+| GET | `/notifications/{idNotification}/memberCreator` | getNotificationsMemberCreatorByIdNotification | `idNotification`*, `fields`, `key`*, `token`* | — | yes | getNotificationsMemberCreatorByIdNotification() |
+| GET | `/notifications/{idNotification}/memberCreator/{field}` | getNotificationsMemberCreatorByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsMemberCreatorByIdNotificationByField() |
+| GET | `/notifications/{idNotification}/organization` | getNotificationsOrganizationByIdNotification | `idNotification`*, `fields`, `key`*, `token`* | — | yes | getNotificationsOrganizationByIdNotification() |
+| GET | `/notifications/{idNotification}/organization/{field}` | getNotificationsOrganizationByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsOrganizationByIdNotificationByField() |
+| PUT | `/notifications/{idNotification}/unread` | updateNotificationsUnreadByIdNotification | `idNotification`*, `key`*, `token`*, body*: notifications_unread | — |  | updateNotificationsUnreadByIdNotification() |
+| GET | `/notifications/{idNotification}/{field}` | getNotificationsByIdNotificationByField | `idNotification`*, `field`*, `key`*, `token`* | — | yes | getNotificationsByIdNotificationByField() |
+| POST | `/organizations` | addOrganizations | `key`*, `token`*, body*: organizations | — |  | addOrganizations() |
+| GET | `/organizations/{idOrg}` | getOrganizationsByIdOrg | `idOrg`*, `actions`, `actions_entities`, `actions_display`, `actions_limit`, `action_fields`, `memberships`, `memberships_member`, `memberships_member_fields`, `members`, `member_fields`, `member_activity`, `membersInvited`, `membersInvited_fields`, `boards`, `board_fields`, `board_actions`, `board_actions_entities`, `board_actions_display`, `board_actions_format`, `board_actions_since`, `board_actions_limit`, `board_action_fields`, `board_lists`, `paid_account`, `fields`, `key`*, `token`* | — | yes | getOrganizationsByIdOrg() |
+| PUT | `/organizations/{idOrg}` | updateOrganizationsByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations | — |  | updateOrganizationsByIdOrg() |
+| DELETE | `/organizations/{idOrg}` | deleteOrganizationsByIdOrg | `idOrg`*, `key`*, `token`* | — |  | deleteOrganizationsByIdOrg() |
+| GET | `/organizations/{idOrg}/actions` | getOrganizationsActionsByIdOrg | `idOrg`*, `entities`, `display`, `filter`, `fields`, `limit`, `format`, `since`, `before`, `page`, `idModels`, `member`, `member_fields`, `memberCreator`, `memberCreator_fields`, `key`*, `token`* | — | yes | getOrganizationsActionsByIdOrg() |
+| GET | `/organizations/{idOrg}/boards` | getOrganizationsBoardsByIdOrg | `idOrg`*, `filter`, `fields`, `actions`, `actions_entities`, `actions_limit`, `actions_format`, `actions_since`, `action_fields`, `memberships`, `organization`, `organization_fields`, `lists`, `key`*, `token`* | — | yes | getOrganizationsBoardsByIdOrg() |
+| GET | `/organizations/{idOrg}/boards/{filter}` | getOrganizationsBoardsByIdOrgByFilter | `idOrg`*, `filter`*, `key`*, `token`* | — | yes | getOrganizationsBoardsByIdOrgByFilter() |
+| GET | `/organizations/{idOrg}/deltas` | getOrganizationsDeltasByIdOrg | `idOrg`*, `tags`*, `ixLastUpdate`*, `key`*, `token`* | — | yes | getOrganizationsDeltasByIdOrg() |
+| PUT | `/organizations/{idOrg}/desc` | updateOrganizationsDescByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations_desc | — |  | updateOrganizationsDescByIdOrg() |
+| PUT | `/organizations/{idOrg}/displayName` | updateOrganizationsDisplayNameByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations_displayName | — |  | updateOrganizationsDisplayNameByIdOrg() |
+| POST | `/organizations/{idOrg}/logo` | addOrganizationsLogoByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations_logo | — |  | addOrganizationsLogoByIdOrg() |
+| DELETE | `/organizations/{idOrg}/logo` | deleteOrganizationsLogoByIdOrg | `idOrg`*, `key`*, `token`* | — |  | deleteOrganizationsLogoByIdOrg() |
+| GET | `/organizations/{idOrg}/members` | getOrganizationsMembersByIdOrg | `idOrg`*, `filter`, `fields`, `activity`, `key`*, `token`* | — | yes | getOrganizationsMembersByIdOrg() |
+| PUT | `/organizations/{idOrg}/members` | updateOrganizationsMembersByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations_members | — |  | updateOrganizationsMembersByIdOrg() |
+| GET | `/organizations/{idOrg}/members/{filter}` | getOrganizationsMembersByIdOrgByFilter | `idOrg`*, `filter`*, `key`*, `token`* | — | yes | getOrganizationsMembersByIdOrgByFilter() |
+| PUT | `/organizations/{idOrg}/members/{idMember}` | updateOrganizationsMembersByIdOrgByIdMember | `idOrg`*, `idMember`*, `key`*, `token`*, body*: organizations_members | — |  | updateOrganizationsMembersByIdOrgByIdMember() |
+| DELETE | `/organizations/{idOrg}/members/{idMember}` | deleteOrganizationsMembersByIdOrgByIdMember | `idOrg`*, `idMember`*, `key`*, `token`* | — |  | deleteOrganizationsMembersByIdOrgByIdMember() |
+| DELETE | `/organizations/{idOrg}/members/{idMember}/all` | deleteOrganizationsMembersAllByIdOrgByIdMember | `idOrg`*, `idMember`*, `key`*, `token`* | — |  | deleteOrganizationsMembersAllByIdOrgByIdMember() |
+| GET | `/organizations/{idOrg}/members/{idMember}/cards` | getOrganizationsMembersCardsByIdOrgByIdMember | `idOrg`*, `idMember`*, `actions`, `attachments`, `attachment_fields`, `members`, `member_fields`, `checkItemStates`, `checklists`, `board`, `board_fields`, `list`, `list_fields`, `filter`, `fields`, `key`*, `token`* | — | yes | getOrganizationsMembersCardsByIdOrgByIdMember() |
+| PUT | `/organizations/{idOrg}/members/{idMember}/deactivated` | updateOrganizationsMembersDeactivatedByIdOrgByIdMember | `idOrg`*, `idMember`*, `key`*, `token`*, body*: organizations_members_deactivated | — |  | updateOrganizationsMembersDeactivatedByIdOrgByIdMember() |
+| GET | `/organizations/{idOrg}/membersInvited` | getOrganizationsMembersInvitedByIdOrg | `idOrg`*, `fields`, `key`*, `token`* | — | yes | getOrganizationsMembersInvitedByIdOrg() |
+| GET | `/organizations/{idOrg}/membersInvited/{field}` | getOrganizationsMembersInvitedByIdOrgByField | `idOrg`*, `field`*, `key`*, `token`* | — | yes | getOrganizationsMembersInvitedByIdOrgByField() |
+| GET | `/organizations/{idOrg}/memberships` | getOrganizationsMembershipsByIdOrg | `idOrg`*, `filter`, `member`, `member_fields`, `key`*, `token`* | — | yes | getOrganizationsMembershipsByIdOrg() |
+| GET | `/organizations/{idOrg}/memberships/{idMembership}` | getOrganizationsMembershipsByIdOrgByIdMembership | `idOrg`*, `idMembership`*, `member`, `member_fields`, `key`*, `token`* | — | yes | getOrganizationsMembershipsByIdOrgByIdMembership() |
+| PUT | `/organizations/{idOrg}/memberships/{idMembership}` | updateOrganizationsMembershipsByIdOrgByIdMembership | `idOrg`*, `idMembership`*, `key`*, `token`*, body*: organizations_memberships | — |  | updateOrganizationsMembershipsByIdOrgByIdMembership() |
+| PUT | `/organizations/{idOrg}/name` | updateOrganizationsNameByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations_name | — |  | updateOrganizationsNameByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/associatedDomain` | updateOrganizationsPrefsAssociatedDomainByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_associatedDomain | — |  | updateOrganizationsPrefsAssociatedDomainByIdOrg() |
+| DELETE | `/organizations/{idOrg}/prefs/associatedDomain` | deleteOrganizationsPrefsAssociatedDomainByIdOrg | `idOrg`*, `key`*, `token`* | — |  | deleteOrganizationsPrefsAssociatedDomainByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/boardVisibilityRestrict/org` | updateOrganizationsPrefsBoardVisibilityRestrictOrgByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_boardVisibilityRestrict | — |  | updateOrganizationsPrefsBoardVisibilityRestrictOrgByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/boardVisibilityRestrict/private` | updateOrganizationsPrefsBoardVisibilityRestrictPrivateByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_boardVisibilityRestrict | — |  | updateOrganizationsPrefsBoardVisibilityRestrictPrivateByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/boardVisibilityRestrict/public` | updateOrganizationsPrefsBoardVisibilityRestrictPublicByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_boardVisibilityRestrict | — |  | updateOrganizationsPrefsBoardVisibilityRestrictPublicByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/externalMembersDisabled` | updateOrganizationsPrefsExternalMembersDisabledByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_externalMembersDisabled | — |  | updateOrganizationsPrefsExternalMembersDisabledByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/googleAppsVersion` | updateOrganizationsPrefsGoogleAppsVersionByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_googleAppsVersion | — |  | updateOrganizationsPrefsGoogleAppsVersionByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/orgInviteRestrict` | updateOrganizationsPrefsOrgInviteRestrictByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_orgInviteRestrict | — |  | updateOrganizationsPrefsOrgInviteRestrictByIdOrg() |
+| DELETE | `/organizations/{idOrg}/prefs/orgInviteRestrict` | deleteOrganizationsPrefsOrgInviteRestrictByIdOrg | `idOrg`*, `value`*, `key`*, `token`* | — |  | deleteOrganizationsPrefsOrgInviteRestrictByIdOrg() |
+| PUT | `/organizations/{idOrg}/prefs/permissionLevel` | updateOrganizationsPrefsPermissionLevelByIdOrg | `idOrg`*, `key`*, `token`*, body*: prefs_permissionLevel | — |  | updateOrganizationsPrefsPermissionLevelByIdOrg() |
+| PUT | `/organizations/{idOrg}/website` | updateOrganizationsWebsiteByIdOrg | `idOrg`*, `key`*, `token`*, body*: organizations_website | — |  | updateOrganizationsWebsiteByIdOrg() |
+| GET | `/organizations/{idOrg}/{field}` | getOrganizationsByIdOrgByField | `idOrg`*, `field`*, `key`*, `token`* | — | yes | getOrganizationsByIdOrgByField() |
+| GET | `/search` | getSearch | `query`*, `idBoards`, `idOrganizations`*, `idCards`, `modelTypes`, `board_fields`, `boards_limit`, `card_fields`, `cards_limit`, `cards_page`, `card_board`, `card_list`, `card_members`, `card_stickers`, `card_attachments`, `organization_fields`, `organizations_limit`, `member_fields`, `members_limit`, `partial`, `key`*, `token`* | — | yes | getSearch() |
+| GET | `/search/members` | getSearchMembers | `query`*, `limit`, `idBoard`, `idOrganization`, `onlyOrgMembers`, `key`*, `token`* | — | yes | getSearchMembers() |
+| POST | `/sessions` | addSessions | `key`*, `token`*, body*: sessions | — |  | addSessions() |
+| GET | `/sessions/socket` | getSessionsSocket | `key`*, `token`* | — | yes | getSessionsSocket() |
+| PUT | `/sessions/{idSession}` | updateSessionsByIdSession | `idSession`*, `key`*, `token`*, body*: sessions | — |  | updateSessionsByIdSession() |
+| PUT | `/sessions/{idSession}/status` | updateSessionsStatusByIdSession | `idSession`*, `key`*, `token`*, body*: sessions_status | — |  | updateSessionsStatusByIdSession() |
+| GET | `/tokens/{token}` | getTokensByToken | `token`*, `fields`, `webhooks`, `key`*, `token`* | — | yes | getTokensByToken() |
+| DELETE | `/tokens/{token}` | deleteTokensByToken | `token`*, `key`*, `token`* | — |  | deleteTokensByToken() |
+| GET | `/tokens/{token}/member` | getTokensMemberByToken | `token`*, `fields`, `key`*, `token`* | — | yes | getTokensMemberByToken() |
+| GET | `/tokens/{token}/member/{field}` | getTokensMemberByTokenByField | `token`*, `field`*, `key`*, `token`* | — | yes | getTokensMemberByTokenByField() |
+| GET | `/tokens/{token}/webhooks` | getTokensWebhooksByToken | `token`*, `key`*, `token`* | — | yes | getTokensWebhooksByToken() |
+| PUT | `/tokens/{token}/webhooks` | updateTokensWebhooksByToken | `token`*, `key`*, `token`*, body*: tokens_webhooks | — |  | updateTokensWebhooksByToken() |
+| POST | `/tokens/{token}/webhooks` | addTokensWebhooksByToken | `token`*, `key`*, `token`*, body*: tokens_webhooks | — |  | addTokensWebhooksByToken() |
+| GET | `/tokens/{token}/webhooks/{idWebhook}` | getTokensWebhooksByTokenByIdWebhook | `token`*, `idWebhook`*, `key`*, `token`* | — | yes | getTokensWebhooksByTokenByIdWebhook() |
+| DELETE | `/tokens/{token}/webhooks/{idWebhook}` | deleteTokensWebhooksByTokenByIdWebhook | `token`*, `idWebhook`*, `key`*, `token`* | — |  | deleteTokensWebhooksByTokenByIdWebhook() |
+| GET | `/tokens/{token}/{field}` | getTokensByTokenByField | `token`*, `field`*, `key`*, `token`* | — | yes | getTokensByTokenByField() |
+| GET | `/types/{id}` | getTypesById | `id`*, `key`*, `token`* | — | yes | getTypesById() |
+| POST | `/webhooks` | addWebhooks | `key`*, `token`*, body*: webhooks | — |  | addWebhooks() |
+| PUT | `/webhooks/` | updateWebhooks | `key`*, `token`*, body*: webhooks | — |  | updateWebhooks() |
+| GET | `/webhooks/{idWebhook}` | getWebhooksByIdWebhook | `idWebhook`*, `key`*, `token`* | — | yes | getWebhooksByIdWebhook() |
+| PUT | `/webhooks/{idWebhook}` | updateWebhooksByIdWebhook | `idWebhook`*, `key`*, `token`*, body*: webhooks | — |  | updateWebhooksByIdWebhook() |
+| DELETE | `/webhooks/{idWebhook}` | deleteWebhooksByIdWebhook | `idWebhook`*, `key`*, `token`* | — |  | deleteWebhooksByIdWebhook() |
+| PUT | `/webhooks/{idWebhook}/active` | updateWebhooksActiveByIdWebhook | `idWebhook`*, `key`*, `token`*, body*: webhooks_active | — |  | updateWebhooksActiveByIdWebhook() |
+| PUT | `/webhooks/{idWebhook}/callbackURL` | updateWebhooksCallbackURLByIdWebhook | `idWebhook`*, `key`*, `token`*, body*: webhooks_callbackURL | — |  | updateWebhooksCallbackURLByIdWebhook() |
+| PUT | `/webhooks/{idWebhook}/description` | updateWebhooksDescriptionByIdWebhook | `idWebhook`*, `key`*, `token`*, body*: webhooks_description | — |  | updateWebhooksDescriptionByIdWebhook() |
+| PUT | `/webhooks/{idWebhook}/idModel` | updateWebhooksIdModelByIdWebhook | `idWebhook`*, `key`*, `token`*, body*: webhooks_idModel | — |  | updateWebhooksIdModelByIdWebhook() |
+| GET | `/webhooks/{idWebhook}/{field}` | getWebhooksByIdWebhookByField | `idWebhook`*, `field`*, `key`*, `token`* | — | yes | getWebhooksByIdWebhookByField() |

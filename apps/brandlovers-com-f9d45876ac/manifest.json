@@ -183,6 +183,526 @@
         "from": "brandlovers-com-f9d45876ac",
         "kind": "EXPOSES",
         "to": "operation:get:/tickets"
+      },
+      {
+        "from": "operation:get:/order/{orderId}",
+        "kind": "RETURNS",
+        "to": "schema:Order"
+      },
+      {
+        "from": "operation:post:/order/{orderId}/shipment/cancel",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTrackingRefund"
+      },
+      {
+        "from": "operation:post:/order/{orderId}/shipment/delivered",
+        "kind": "ACCEPTS",
+        "to": "schema:Newshipmentstatus"
+      },
+      {
+        "from": "operation:post:/order/{orderId}/shipment/exchange",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTrackingRefund"
+      },
+      {
+        "from": "operation:post:/order/{orderId}/shipment/return",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTrackingRefund"
+      },
+      {
+        "from": "operation:post:/order/{orderId}/shipment/sent",
+        "kind": "ACCEPTS",
+        "to": "schema:Newshipmentstatus"
+      },
+      {
+        "from": "operation:get:/orders",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/shipments/delivered",
+        "kind": "RETURNS",
+        "to": "schema:GetOrdersShipments"
+      },
+      {
+        "from": "operation:post:/orders/shipments/delivered",
+        "kind": "ACCEPTS",
+        "to": "schema:OrdersShipments"
+      },
+      {
+        "from": "operation:get:/orders/shipments/shipped",
+        "kind": "RETURNS",
+        "to": "schema:GetOrdersShipments"
+      },
+      {
+        "from": "operation:post:/orders/shipments/shipped",
+        "kind": "ACCEPTS",
+        "to": "schema:OrdersShipments"
+      },
+      {
+        "from": "operation:get:/orders/status/approved",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/status/canceled",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/status/delivered",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/status/new",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/status/partiallyDelivered",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/status/partiallySent",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:get:/orders/status/sent",
+        "kind": "RETURNS",
+        "to": "schema:GetOrders"
+      },
+      {
+        "from": "operation:post:/product",
+        "kind": "ACCEPTS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:get:/product/{skuSellerId}",
+        "kind": "RETURNS",
+        "to": "schema:GetProduct"
+      },
+      {
+        "from": "operation:put:/product/{skuSellerId}",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductUpdate"
+      },
+      {
+        "from": "operation:put:/product/{skuSellerId}/prices",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "operation:put:/product/{skuSellerId}/status",
+        "kind": "ACCEPTS",
+        "to": "schema:SellerItemStatus"
+      },
+      {
+        "from": "operation:put:/product/{skuSellerId}/stock",
+        "kind": "ACCEPTS",
+        "to": "schema:Stock"
+      },
+      {
+        "from": "operation:get:/products",
+        "kind": "RETURNS",
+        "to": "schema:GetProductsResponse"
+      },
+      {
+        "from": "operation:post:/products",
+        "kind": "ACCEPTS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:put:/products/prices",
+        "kind": "ACCEPTS",
+        "to": "schema:SellerItemPrices"
+      },
+      {
+        "from": "operation:get:/products/status",
+        "kind": "RETURNS",
+        "to": "schema:GetSellerProductsStatus"
+      },
+      {
+        "from": "operation:put:/products/status",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductStatusUpdate"
+      },
+      {
+        "from": "operation:get:/products/status/selling",
+        "kind": "RETURNS",
+        "to": "schema:GetProductsStatusSelling"
+      },
+      {
+        "from": "operation:put:/products/stocks",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductStock"
+      },
+      {
+        "from": "operation:post:/ticket",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTicket"
+      },
+      {
+        "from": "operation:post:/ticket/{ticketId}/message",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTicketMessage"
+      },
+      {
+        "from": "operation:get:/ticket/{ticketId}/messages",
+        "kind": "RETURNS",
+        "to": "schema:GetTicketMessages"
+      },
+      {
+        "from": "operation:put:/ticket/{ticketId}/status",
+        "kind": "ACCEPTS",
+        "to": "schema:TicketStatus"
+      },
+      {
+        "from": "operation:get:/tickets",
+        "kind": "RETURNS",
+        "to": "schema:GetTickets"
+      },
+      {
+        "from": "schema:Customer",
+        "kind": "REFERENCES",
+        "to": "schema:Phone"
+      },
+      {
+        "from": "schema:GetOrders",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetOrders",
+        "kind": "REFERENCES",
+        "to": "schema:Order"
+      },
+      {
+        "from": "schema:GetOrdersShipments",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetOrdersShipments",
+        "kind": "REFERENCES",
+        "to": "schema:OrderShippmentStatus"
+      },
+      {
+        "from": "schema:GetProduct",
+        "kind": "REFERENCES",
+        "to": "schema:Dimensions"
+      },
+      {
+        "from": "schema:GetProduct",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:GetProduct",
+        "kind": "REFERENCES",
+        "to": "schema:GiftWrap"
+      },
+      {
+        "from": "schema:GetProduct",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttribute"
+      },
+      {
+        "from": "schema:GetProduct",
+        "kind": "REFERENCES",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "schema:GetProductsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GetProduct"
+      },
+      {
+        "from": "schema:GetProductsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetProductsStatusSelling",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetProductsStatusSelling",
+        "kind": "REFERENCES",
+        "to": "schema:SellerItem"
+      },
+      {
+        "from": "schema:GetSellerProductStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:GetSellerProductStatus",
+        "kind": "REFERENCES",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "schema:GetSellerProductsStatus",
+        "kind": "REFERENCES",
+        "to": "schema:GetSellerProductStatus"
+      },
+      {
+        "from": "schema:GetSellerProductsStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetTicketMessages",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetTicketMessages",
+        "kind": "REFERENCES",
+        "to": "schema:TicketMessage"
+      },
+      {
+        "from": "schema:GetTickets",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:GetTickets",
+        "kind": "REFERENCES",
+        "to": "schema:Ticket"
+      },
+      {
+        "from": "schema:NewTicket",
+        "kind": "REFERENCES",
+        "to": "schema:CustomerReference"
+      },
+      {
+        "from": "schema:NewTicket",
+        "kind": "REFERENCES",
+        "to": "schema:NewTicketMessage"
+      },
+      {
+        "from": "schema:NewTrackingRefund",
+        "kind": "REFERENCES",
+        "to": "schema:Courier"
+      },
+      {
+        "from": "schema:NewTrackingRefund",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItemReference"
+      },
+      {
+        "from": "schema:Newshipmentstatus",
+        "kind": "REFERENCES",
+        "to": "schema:Courier"
+      },
+      {
+        "from": "schema:Newshipmentstatus",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Customer"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Freight"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItem"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Seller"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Shippment"
+      },
+      {
+        "from": "schema:OrderGiftWrap",
+        "kind": "REFERENCES",
+        "to": "schema:GiftCard"
+      },
+      {
+        "from": "schema:OrderItem",
+        "kind": "REFERENCES",
+        "to": "schema:Freight"
+      },
+      {
+        "from": "schema:OrderItem",
+        "kind": "REFERENCES",
+        "to": "schema:OrderGiftWrap"
+      },
+      {
+        "from": "schema:OrderItem",
+        "kind": "REFERENCES",
+        "to": "schema:Promotion"
+      },
+      {
+        "from": "schema:OrderShippment",
+        "kind": "REFERENCES",
+        "to": "schema:Courier"
+      },
+      {
+        "from": "schema:OrderShippment",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:OrderShippment",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItemReference"
+      },
+      {
+        "from": "schema:OrderShippmentStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:OrderShippmentStatus",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItemReference"
+      },
+      {
+        "from": "schema:OrdersShipments",
+        "kind": "REFERENCES",
+        "to": "schema:OrderShippment"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:Dimensions"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:GiftWrap"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttribute"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "schema:ProductStock",
+        "kind": "REFERENCES",
+        "to": "schema:Stock"
+      },
+      {
+        "from": "schema:ProductUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:Dimensions"
+      },
+      {
+        "from": "schema:ProductUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:GiftWrap"
+      },
+      {
+        "from": "schema:ProductUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttribute"
+      },
+      {
+        "from": "schema:ProductUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:ControlledStock"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:Dimensions"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:GiftWrap"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:Image"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:ProductAttribute"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:ProductReference"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:ProductSiteReference"
+      },
+      {
+        "from": "schema:SellerItem",
+        "kind": "REFERENCES",
+        "to": "schema:SellerItemStatus"
+      },
+      {
+        "from": "schema:SellerItemPrices",
+        "kind": "REFERENCES",
+        "to": "schema:ProductPrice"
+      },
+      {
+        "from": "schema:Shippment",
+        "kind": "REFERENCES",
+        "to": "schema:Courier"
+      },
+      {
+        "from": "schema:Shippment",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:Shippment",
+        "kind": "REFERENCES",
+        "to": "schema:OrderItemReference"
+      },
+      {
+        "from": "schema:Ticket",
+        "kind": "REFERENCES",
+        "to": "schema:CustomerReference"
+      },
+      {
+        "from": "schema:Ticket",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
       }
     ],
     "nodes": [
@@ -192,146 +712,692 @@
       },
       {
         "deprecated": false,
+        "description": "Returns all details of a single order, including last status, items shipped or not.",
         "id": "operation:get:/order/{orderId}",
         "kind": "operation",
         "method": "get",
         "name": "get /order/{orderId}",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Id of this order.",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/order/{orderId}",
         "pointer": "#/paths/~1order~1{orderId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Order"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all details of a order"
+        "summary": "Returns all details of a order",
+        "tags": [
+          "order"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Confirm shipment canceletion (when requested by the customer) or failure to deliver one shipment",
         "id": "operation:post:/order/{orderId}/shipment/cancel",
         "kind": "operation",
         "method": "post",
         "name": "post /order/{orderId}/shipment/cancel",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Order Id",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/order/{orderId}/shipment/cancel",
         "pointer": "#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewTrackingRefund"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Confirm shipment canceletion (when requested by the customer) or failure to deliver"
+        "summary": "Confirm shipment canceletion (when requested by the customer) or failure to deliver",
+        "tags": [
+          "order"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Confirms that a shipment was delivered.",
         "id": "operation:post:/order/{orderId}/shipment/delivered",
         "kind": "operation",
         "method": "post",
         "name": "post /order/{orderId}/shipment/delivered",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Order Id",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/order/{orderId}/shipment/delivered",
         "pointer": "#/paths/~1order~1{orderId}~1shipment~1delivered/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Newshipmentstatus"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Confirms that a shipment was delivered"
+        "summary": "Confirms that a shipment was delivered",
+        "tags": [
+          "order"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This enpoint to confirm item exchange when failure to deliver or requested by the customer.",
         "id": "operation:post:/order/{orderId}/shipment/exchange",
         "kind": "operation",
         "method": "post",
         "name": "post /order/{orderId}/shipment/exchange",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Order Id",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/order/{orderId}/shipment/exchange",
         "pointer": "#/paths/~1order~1{orderId}~1shipment~1exchange/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewTrackingRefund"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Confirm item exchange"
+        "summary": "Confirm item exchange",
+        "tags": [
+          "order"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to return and refund items froma a order.",
         "id": "operation:post:/order/{orderId}/shipment/return",
         "kind": "operation",
         "method": "post",
         "name": "post /order/{orderId}/shipment/return",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Order unique Id",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/order/{orderId}/shipment/return",
         "pointer": "#/paths/~1order~1{orderId}~1shipment~1return/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewTrackingRefund"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Confirm order item return and refund"
+        "summary": "Confirm order item return and refund",
+        "tags": [
+          "order"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates order to include shipment shiped information.",
         "id": "operation:post:/order/{orderId}/shipment/sent",
         "kind": "operation",
         "method": "post",
         "name": "post /order/{orderId}/shipment/sent",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Order Id",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/order/{orderId}/shipment/sent",
         "pointer": "#/paths/~1order~1{orderId}~1shipment~1sent/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Newshipmentstatus"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update new order to include shipment information"
+        "summary": "Update new order to include shipment information",
+        "tags": [
+          "order"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retuns a list of orders associated with this seller.",
         "id": "operation:get:/orders",
         "kind": "operation",
         "method": "get",
         "name": "get /orders",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders",
         "pointer": "#/paths/~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns orders details"
+        "summary": "Returns orders details",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns list of shipments.",
         "id": "operation:get:/orders/shipments/delivered",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/shipments/delivered",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Query by shippment status.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/shipments/delivered",
         "pointer": "#/paths/~1orders~1shipments~1delivered/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrdersShipments"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns list of shipments"
+        "summary": "Returns list of shipments",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Bulk update of order shipments status.",
         "id": "operation:post:/orders/shipments/delivered",
         "kind": "operation",
         "method": "post",
         "name": "post /orders/shipments/delivered",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/orders/shipments/delivered",
         "pointer": "#/paths/~1orders~1shipments~1delivered/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OrdersShipments"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bulk update of order shipments"
+        "summary": "Bulk update of order shipments",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of shipments shipped.",
         "id": "operation:get:/orders/shipments/shipped",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/shipments/shipped",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Product status.",
+            "enum": [
+              "NEW",
+              "APPROVED",
+              "DECLINED",
+              "PENDING"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/shipments/shipped",
         "pointer": "#/paths/~1orders~1shipments~1shipped/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrdersShipments"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of shipments shipped"
+        "summary": "Returns a list of shipments shipped",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows bulk updates of orders shippments.",
         "id": "operation:post:/orders/shipments/shipped",
         "kind": "operation",
         "method": "post",
         "name": "post /orders/shipments/shipped",
         "path": "/orders/shipments/shipped",
         "pointer": "#/paths/~1orders~1shipments~1shipped/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OrdersShipments"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bulk update of order shipments"
+        "summary": "Bulk update of order shipments",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of approved orders.",
         "id": "operation:get:/orders/status/approved",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/approved",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/approved",
         "pointer": "#/paths/~1orders~1status~1approved/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return list of approved orders"
+        "summary": "Return list of approved orders",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list with canceled orders.",
         "id": "operation:get:/orders/status/canceled",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/canceled",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/canceled",
         "pointer": "#/paths/~1orders~1status~1canceled/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns lists of canceled orders"
+        "summary": "Returns lists of canceled orders",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
@@ -339,10 +1405,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/delivered",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/delivered",
         "pointer": "#/paths/~1orders~1status~1delivered/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of orders successfully delivered associated with this seller."
+        "summary": "Returns a list of orders successfully delivered associated with this seller.",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
@@ -350,143 +1458,621 @@
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/new",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/new",
         "pointer": "#/paths/~1orders~1status~1new/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of orders flagged as new."
+        "summary": "Returns a list of orders flagged as new.",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of partially deliverd orders.",
         "id": "operation:get:/orders/status/partiallyDelivered",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/partiallyDelivered",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/partiallyDelivered",
         "pointer": "#/paths/~1orders~1status~1partiallyDelivered/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of partially deliverd orders"
+        "summary": "Returns a list of partially deliverd orders",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of orders that contain one (or more) items that where not shipped.",
         "id": "operation:get:/orders/status/partiallySent",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/partiallySent",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/partiallySent",
         "pointer": "#/paths/~1orders~1status~1partiallySent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of orders partially fullfiled"
+        "summary": "Returns a list of orders partially fullfiled",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list with orders completely fullfiled, this means orders with all items sent.",
         "id": "operation:get:/orders/status/sent",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/status/sent",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/orders/status/sent",
         "pointer": "#/paths/~1orders~1status~1sent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrders"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list with orders fully sent"
+        "summary": "Returns a list with orders fully sent",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this enpoint to create a single new product to the Marketplace.",
         "id": "operation:post:/product",
         "kind": "operation",
         "method": "post",
         "name": "post /product",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product",
         "pointer": "#/paths/~1product/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Product"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new product to the marketplace"
+        "summary": "Create a new product to the marketplace",
+        "tags": [
+          "product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns detailed information of a single product with the seller `skuSellerId`.",
         "id": "operation:get:/product/{skuSellerId}",
         "kind": "operation",
         "method": "get",
         "name": "get /product/{skuSellerId}",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "SKU ID do Lojista.",
+            "in": "path",
+            "name": "skuSellerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{skuSellerId}",
         "pointer": "#/paths/~1product~1{skuSellerId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetProduct"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "authorization": []
           }
         ],
-        "summary": "Returns details of a single product using the seller `skuSellerId`"
+        "summary": "Returns details of a single product using the seller `skuSellerId`",
+        "tags": [
+          "product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a single product information such as name, brand, attribute, dimension, etc.",
         "id": "operation:put:/product/{skuSellerId}",
         "kind": "operation",
         "method": "put",
         "name": "put /product/{skuSellerId}",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Product Id (SKU) in the seller system that will be updated.",
+            "in": "path",
+            "name": "skuSellerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{skuSellerId}",
         "pointer": "#/paths/~1product~1{skuSellerId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductUpdate"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "authorization": []
           }
         ],
-        "summary": "Update product details"
+        "summary": "Update product details",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows seller to set the SKU prices (MSRP and/or offer price).",
         "id": "operation:put:/product/{skuSellerId}/prices",
         "kind": "operation",
         "method": "put",
         "name": "put /product/{skuSellerId}/prices",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Product SKU",
+            "in": "path",
+            "name": "skuSellerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{skuSellerId}/prices",
         "pointer": "#/paths/~1product~1{skuSellerId}~1prices/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductPrice"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Allows seller to update prices of a single SKU"
+        "summary": "Allows seller to update prices of a single SKU",
+        "tags": [
+          "product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update product status in the Marketplace.",
         "id": "operation:put:/product/{skuSellerId}/status",
         "kind": "operation",
         "method": "put",
         "name": "put /product/{skuSellerId}/status",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Product Id (SKU) in the seller system",
+            "in": "path",
+            "name": "skuSellerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{skuSellerId}/status",
         "pointer": "#/paths/~1product~1{skuSellerId}~1status/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SellerItemStatus"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Enable/disable a single product in the Marketplace"
+        "summary": "Enable/disable a single product in the Marketplace",
+        "tags": [
+          "product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a single product inventory information.",
         "id": "operation:put:/product/{skuSellerId}/stock",
         "kind": "operation",
         "method": "put",
         "name": "put /product/{skuSellerId}/stock",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique Product Id (SKU) in the seller system that will be updated",
+            "in": "path",
+            "name": "skuSellerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/product/{skuSellerId}/stock",
         "pointer": "#/paths/~1product~1{skuSellerId}~1stock/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Stock"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a single product stock"
+        "summary": "Update a single product stock",
+        "tags": [
+          "product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of my products loaded into the Marketplace.",
         "id": "operation:get:/products",
         "kind": "operation",
         "method": "get",
         "name": "get /products",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of items to retun.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/products",
         "pointer": "#/paths/~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetProductsResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "authorization": []
           }
         ],
-        "summary": "Returns a list of products loaded into BrandLovers Marketplace"
+        "summary": "Returns a list of products loaded into BrandLovers Marketplace",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This enpoint to creates new products in the Marketplace using `skuSellerId` as a primary key.",
         "id": "operation:post:/products",
         "kind": "operation",
         "method": "post",
         "name": "post /products",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/products",
         "pointer": "#/paths/~1products/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Product[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Allows new products from the seller to be loaded into the marketplace"
+        "summary": "Allows new products from the seller to be loaded into the marketplace",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -494,32 +2080,132 @@
         "kind": "operation",
         "method": "put",
         "name": "put /products/prices",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/products/prices",
         "pointer": "#/paths/~1products~1prices/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SellerItemPrices[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Allows bulk update of product prices."
+        "summary": "Allows bulk update of product prices.",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list with seller products status.",
         "id": "operation:get:/products/status",
         "kind": "operation",
         "method": "get",
         "name": "get /products/status",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of items to return in this query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/products/status",
         "pointer": "#/paths/~1products~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetSellerProductsStatus"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns seller products status in the marketplace"
+        "summary": "Returns seller products status in the marketplace",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Bulk enable/disable products in the marketplace.",
         "id": "operation:put:/products/status",
         "kind": "operation",
         "method": "put",
         "name": "put /products/status",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/products/status",
         "pointer": "#/paths/~1products~1status/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductStatusUpdate[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bulk enable/disable products in the marketplace"
+        "summary": "Bulk enable/disable products in the marketplace",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -527,336 +2213,674 @@
         "kind": "operation",
         "method": "get",
         "name": "get /products/status/selling",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/products/status/selling",
         "pointer": "#/paths/~1products~1status~1selling/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetProductsStatusSelling"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns products that are successfully listed for sale."
+        "summary": "Returns products that are successfully listed for sale.",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Bulk product stock update.",
         "id": "operation:put:/products/stocks",
         "kind": "operation",
         "method": "put",
         "name": "put /products/stocks",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/products/stocks",
         "pointer": "#/paths/~1products~1stocks/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductStock[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bulk product stock update"
+        "summary": "Bulk product stock update",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this service to create a new trouble ticket.",
         "id": "operation:post:/ticket",
         "kind": "operation",
         "method": "post",
         "name": "post /ticket",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ticket",
         "pointer": "#/paths/~1ticket/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewTicket"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new trouble ticket"
+        "summary": "Creates a new trouble ticket",
+        "tags": [
+          "tickets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a new message to this trouble ticket.",
         "id": "operation:post:/ticket/{ticketId}/message",
         "kind": "operation",
         "method": "post",
         "name": "post /ticket/{ticketId}/message",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Trouble ticket ID.",
+            "in": "path",
+            "name": "ticketId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ticket/{ticketId}/message",
         "pointer": "#/paths/~1ticket~1{ticketId}~1message/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewTicketMessage"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add new message to trouble ticket"
+        "summary": "Add new message to trouble ticket",
+        "tags": [
+          "tickets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns trouble ticket history with all messages exchanged.",
         "id": "operation:get:/ticket/{ticketId}/messages",
         "kind": "operation",
         "method": "get",
         "name": "get /ticket/{ticketId}/messages",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Trouble ticket ID.",
+            "in": "path",
+            "name": "ticketId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/ticket/{ticketId}/messages",
         "pointer": "#/paths/~1ticket~1{ticketId}~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetTicketMessages"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get trouble ticket messages"
+        "summary": "Get trouble ticket messages",
+        "tags": [
+          "tickets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Alows the seller to update the status of a trouble ticket",
         "id": "operation:put:/ticket/{ticketId}/status",
         "kind": "operation",
         "method": "put",
         "name": "put /ticket/{ticketId}/status",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Trouble ticket unique identification",
+            "in": "path",
+            "name": "ticketId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ticket/{ticketId}/status",
         "pointer": "#/paths/~1ticket~1{ticketId}~1status/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TicketStatus"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update trouble ticket status"
+        "summary": "Update trouble ticket status",
+        "tags": [
+          "tickets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows seller to receive and status, queries, requests and complaints from customers.",
         "id": "operation:get:/tickets",
         "kind": "operation",
         "method": "get",
         "name": "get /tickets",
+        "parameters": [
+          {
+            "description": "Authorization token.",
+            "in": "header",
+            "name": "authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Query by trouble ticket status",
+            "enum": [
+              "OPEN",
+              "REOPENED",
+              "CLOSED"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number or items to skip when executing query.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number or items to return when executing query.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/tickets",
         "pointer": "#/paths/~1tickets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetTickets"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get customers trouble tickets"
+        "summary": "Get customers trouble tickets",
+        "tags": [
+          "tickets"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:ControlledStock",
         "kind": "schema",
-        "name": "ControlledStock"
+        "name": "ControlledStock",
+        "type": "object"
       },
       {
         "id": "schema:Courier",
         "kind": "schema",
-        "name": "Courier"
+        "name": "Courier",
+        "type": "object"
       },
       {
         "id": "schema:Customer",
         "kind": "schema",
-        "name": "Customer"
+        "name": "Customer",
+        "type": "object"
       },
       {
         "id": "schema:CustomerReference",
         "kind": "schema",
-        "name": "CustomerReference"
+        "name": "CustomerReference",
+        "type": "object"
       },
       {
         "id": "schema:Dimensions",
         "kind": "schema",
-        "name": "Dimensions"
+        "name": "Dimensions",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Freight",
         "kind": "schema",
-        "name": "Freight"
+        "name": "Freight",
+        "type": "object"
       },
       {
         "id": "schema:GetOrders",
         "kind": "schema",
-        "name": "GetOrders"
+        "name": "GetOrders",
+        "type": "object"
       },
       {
         "id": "schema:GetOrdersShipments",
         "kind": "schema",
-        "name": "GetOrdersShipments"
+        "name": "GetOrdersShipments",
+        "type": "object"
       },
       {
         "id": "schema:GetProduct",
         "kind": "schema",
-        "name": "GetProduct"
+        "name": "GetProduct",
+        "type": "object"
       },
       {
         "id": "schema:GetProductsResponse",
         "kind": "schema",
-        "name": "GetProductsResponse"
+        "name": "GetProductsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetProductsStatusSelling",
         "kind": "schema",
-        "name": "GetProductsStatusSelling"
+        "name": "GetProductsStatusSelling",
+        "type": "object"
       },
       {
         "id": "schema:GetSellerProductStatus",
         "kind": "schema",
-        "name": "GetSellerProductStatus"
+        "name": "GetSellerProductStatus",
+        "type": "object"
       },
       {
         "id": "schema:GetSellerProductsStatus",
         "kind": "schema",
-        "name": "GetSellerProductsStatus"
+        "name": "GetSellerProductsStatus",
+        "type": "object"
       },
       {
         "id": "schema:GetTicketMessages",
         "kind": "schema",
-        "name": "GetTicketMessages"
+        "name": "GetTicketMessages",
+        "type": "object"
       },
       {
         "id": "schema:GetTickets",
         "kind": "schema",
-        "name": "GetTickets"
+        "name": "GetTickets",
+        "type": "object"
       },
       {
         "id": "schema:GiftCard",
         "kind": "schema",
-        "name": "GiftCard"
+        "name": "GiftCard",
+        "type": "object"
       },
       {
         "id": "schema:GiftWrap",
         "kind": "schema",
-        "name": "GiftWrap"
+        "name": "GiftWrap",
+        "type": "object"
       },
       {
         "id": "schema:Image",
         "kind": "schema",
-        "name": "Image"
+        "name": "Image",
+        "type": "object"
       },
       {
         "id": "schema:Invoice",
         "kind": "schema",
-        "name": "Invoice"
+        "name": "Invoice",
+        "type": "object"
       },
       {
         "id": "schema:Metadata",
         "kind": "schema",
-        "name": "Metadata"
+        "name": "Metadata",
+        "type": "object"
       },
       {
         "id": "schema:NewTicket",
         "kind": "schema",
-        "name": "NewTicket"
+        "name": "NewTicket",
+        "type": "object"
       },
       {
         "id": "schema:NewTicketMessage",
         "kind": "schema",
-        "name": "NewTicketMessage"
+        "name": "NewTicketMessage",
+        "type": "object"
       },
       {
         "id": "schema:NewTrackingRefund",
         "kind": "schema",
-        "name": "NewTrackingRefund"
+        "name": "NewTrackingRefund",
+        "type": "object"
       },
       {
         "id": "schema:Newshipmentstatus",
         "kind": "schema",
-        "name": "Newshipmentstatus"
+        "name": "Newshipmentstatus",
+        "type": "object"
       },
       {
         "id": "schema:Order",
         "kind": "schema",
-        "name": "Order"
+        "name": "Order",
+        "type": "object"
       },
       {
         "id": "schema:OrderGiftWrap",
         "kind": "schema",
-        "name": "OrderGiftWrap"
+        "name": "OrderGiftWrap",
+        "type": "object"
       },
       {
         "id": "schema:OrderItem",
         "kind": "schema",
-        "name": "OrderItem"
+        "name": "OrderItem",
+        "type": "object"
       },
       {
         "id": "schema:OrderItemReference",
         "kind": "schema",
-        "name": "OrderItemReference"
+        "name": "OrderItemReference",
+        "type": "object"
       },
       {
         "id": "schema:OrderShippment",
         "kind": "schema",
-        "name": "OrderShippment"
+        "name": "OrderShippment",
+        "type": "object"
       },
       {
         "id": "schema:OrderShippmentStatus",
         "kind": "schema",
-        "name": "OrderShippmentStatus"
+        "name": "OrderShippmentStatus",
+        "type": "object"
       },
       {
         "id": "schema:OrdersShipments",
         "kind": "schema",
-        "name": "OrdersShipments"
+        "name": "OrdersShipments",
+        "type": "object"
       },
       {
         "id": "schema:Phone",
         "kind": "schema",
-        "name": "Phone"
+        "name": "Phone",
+        "type": "object"
       },
       {
         "id": "schema:Product",
         "kind": "schema",
-        "name": "Product"
+        "name": "Product",
+        "type": "object"
       },
       {
         "id": "schema:ProductAttribute",
         "kind": "schema",
-        "name": "ProductAttribute"
+        "name": "ProductAttribute",
+        "type": "object"
       },
       {
         "id": "schema:ProductPrice",
         "kind": "schema",
-        "name": "ProductPrice"
+        "name": "ProductPrice",
+        "type": "object"
       },
       {
         "id": "schema:ProductReference",
         "kind": "schema",
-        "name": "ProductReference"
+        "name": "ProductReference",
+        "type": "object"
       },
       {
         "id": "schema:ProductSiteReference",
         "kind": "schema",
-        "name": "ProductSiteReference"
+        "name": "ProductSiteReference",
+        "type": "object"
       },
       {
         "id": "schema:ProductStatusUpdate",
         "kind": "schema",
-        "name": "ProductStatusUpdate"
+        "name": "ProductStatusUpdate",
+        "type": "object"
       },
       {
         "id": "schema:ProductStock",
         "kind": "schema",
-        "name": "ProductStock"
+        "name": "ProductStock",
+        "type": "object"
       },
       {
         "id": "schema:ProductUpdate",
         "kind": "schema",
-        "name": "ProductUpdate"
+        "name": "ProductUpdate",
+        "type": "object"
       },
       {
         "id": "schema:Promotion",
         "kind": "schema",
-        "name": "Promotion"
+        "name": "Promotion",
+        "type": "object"
       },
       {
         "id": "schema:Seller",
         "kind": "schema",
-        "name": "Seller"
+        "name": "Seller",
+        "type": "object"
       },
       {
         "id": "schema:SellerItem",
         "kind": "schema",
-        "name": "SellerItem"
+        "name": "SellerItem",
+        "type": "object"
       },
       {
         "id": "schema:SellerItemPrices",
         "kind": "schema",
-        "name": "SellerItemPrices"
+        "name": "SellerItemPrices",
+        "type": "object"
       },
       {
         "id": "schema:SellerItemStatus",
         "kind": "schema",
-        "name": "SellerItemStatus"
+        "name": "SellerItemStatus",
+        "type": "object"
       },
       {
         "id": "schema:Shippment",
         "kind": "schema",
-        "name": "Shippment"
+        "name": "Shippment",
+        "type": "object"
       },
       {
         "id": "schema:Stock",
         "kind": "schema",
-        "name": "Stock"
+        "name": "Stock",
+        "type": "object"
       },
       {
         "id": "schema:Ticket",
         "kind": "schema",
-        "name": "Ticket"
+        "name": "Ticket",
+        "type": "object"
       },
       {
         "id": "schema:TicketMessage",
         "kind": "schema",
-        "name": "TicketMessage"
+        "name": "TicketMessage",
+        "type": "object"
       },
       {
         "id": "schema:TicketStatus",
         "kind": "schema",
-        "name": "TicketStatus"
+        "name": "TicketStatus",
+        "type": "object"
       }
     ]
   },

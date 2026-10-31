@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `d38312f425322229c61937514c7d759ee8d30af3fdab3af852c48b9fccde5c8b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/convert/url/pdf` | url-to-pdf | Save web page as PDF |
-| POST | `/convert/url/screenshot` | url-to-screenshot | Capture web page Screenshots. |
-| POST | `/fetch` | fetch | Download web page content |
-| POST | `/parse` | parse | Extract structured data from web pages |
-| POST | `/serp` | serp | Collect search results from search engines |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/convert/url/pdf` | url-to-pdf | body*: url2pdfrequest | string:binary |  | Save web page as PDF |
+| POST | `/convert/url/screenshot` | url-to-screenshot | body*: url2screenshotrequest | string:binary |  | Capture web page Screenshots. |
+| POST | `/fetch` | fetch | body*: fetchrequest | — |  | Download web page content |
+| POST | `/parse` | parse | body*: parserequest | object |  | Extract structured data from web pages |
+| POST | `/serp` | serp | body*: serprequest | object |  | Collect search results from search engines |

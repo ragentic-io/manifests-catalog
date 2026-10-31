@@ -27,36 +27,206 @@
       },
       {
         "deprecated": false,
+        "description": "Get request.",
         "id": "operation:get:/v1/tax/countrycode",
         "kind": "operation",
         "method": "get",
         "name": "taxRatesByCountryCode",
+        "parameters": [
+          {
+            "description": "Domain name: api.taxrates.io",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Country code alpha 2",
+            "in": "query",
+            "name": "country_code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "You can filter your taxes by one of following types: 'standard', 'reduced', 'second reduced', 'third reduced' and 'super reduced'.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "You must provide a zip code if one of your selected countries is United States and you've had selected a state on your Taxrates.io member's dashboard.",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Use one or many product code/s.",
+            "in": "query",
+            "name": "product_codes[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Use for Canada",
+            "in": "query",
+            "name": "province ",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/tax/countrycode",
         "pointer": "#/paths/~1v1~1tax~1countrycode/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Tax rates by Country Code"
+        "summary": "Tax rates by Country Code",
+        "tags": [
+          "v1/tax"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get request.",
         "id": "operation:get:/v1/tax/ip",
         "kind": "operation",
         "method": "get",
         "name": "taxRatesByIpAddress",
+        "parameters": [
+          {
+            "description": "Domain name: api.taxrates.io",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Customer's IP address",
+            "in": "query",
+            "name": "ip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For US sales tax you can filter the tax type",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For US sales tax a Zipcode must be proivded",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your can filter your taxes by product code",
+            "in": "query",
+            "name": "product_code",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/tax/ip",
         "pointer": "#/paths/~1v1~1tax~1ip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Tax rates by IP address"
+        "summary": "Tax rates by IP address",
+        "tags": [
+          "v1/tax"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Get request.",
         "id": "operation:get:/v3/tax/rates",
         "kind": "operation",
         "method": "get",
         "name": "allTaxRates",
+        "parameters": [
+          {
+            "description": "Domain name: api.taxrates.io",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "You can filter your taxes by one of following types: 'standard', 'CombinedRate', 'CountyRate', 'CityRate', 'SPDRate' and 'MTARate'.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Cursor shows from which record you want to get information.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Product_code",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/tax/rates",
         "pointer": "#/paths/~1v3~1tax~1rates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "All tax rates"
+        "summary": "All tax rates",
+        "tags": [
+          "v3/tax"
+        ]
       }
     ]
   },

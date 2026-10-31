@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.authentiq.com_theme_images_
 
 | | |
 | --- | --- |
-| Signed bundle | `b737ed84251bb0be4b11c91bd2bacc589cdfe79ccc400a49fd99816efb4920e5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.authentiq.com_theme_images_
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/authorize` | authorize | Authenticate a user |
-| GET | `/client` | client | List clients |
-| POST | `/client` | createClient | Register a client |
-| DELETE | `/client/{client_id}` | clientClient_id | Delete a client |
-| GET | `/client/{client_id}` | getClient | View a client |
-| PUT | `/client/{client_id}` | updateClient | Update a client |
-| POST | `/token` | token | Obtain an ID Token |
-| GET | `/userinfo` | userInfo | Retrieve a user profile |
-| GET | `/{client_id}/iframe` | authorizeIframe | Include a session iframe |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/authorize` | authorize | `client_id`*, `response_type`*, `scope`*, `redirect_uri`*, `state`*, `response_mode`, `nonce`, `display`, `prompt`, `max_age`, `ui_locales` | — | yes | Authenticate a user |
+| GET | `/client` | client | — | Client[] | yes | List clients |
+| POST | `/client` | createClient | body*: Client | — |  | Register a client |
+| GET | `/client/{client_id}` | getClient | `client_id`* | Client | yes | View a client |
+| PUT | `/client/{client_id}` | updateClient | `client_id`*, body*: Client | Client |  | Update a client |
+| DELETE | `/client/{client_id}` | clientClient_id | `client_id`* | — |  | Delete a client |
+| POST | `/token` | token | `Authorization`, body*: object | Token |  | Obtain an ID Token |
+| GET | `/userinfo` | userInfo | — | UserInfo | yes | Retrieve a user profile |
+| GET | `/{client_id}/iframe` | authorizeIframe | `client_id`* | — | yes | Include a session iframe |

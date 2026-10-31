@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.wolframcdn.com_images_icons
 
 | | |
 | --- | --- |
-| Signed bundle | `fb1d5b7bdf5b03468961f990228b944f28c701bc2cfb8fac37e33c5dcf8bbf93` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.wolframcdn.com_images_icons
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/cloud-plugin` | getWolframCloudResults | Evaluate Wolfram Language code |
-| GET | `/api/v1/llm-api` | getWolframAlphaResults | Get Wolfram\|Alpha results |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/cloud-plugin` | getWolframCloudResults | `input`* | — | yes | Evaluate Wolfram Language code |
+| GET | `/api/v1/llm-api` | getWolframAlphaResults | `input`* | — | yes | Get Wolfram\|Alpha results |

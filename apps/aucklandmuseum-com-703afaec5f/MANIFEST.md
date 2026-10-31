@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_aucklandmuseum_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `f202b8896e38d42d2d2dc1cdaca6cabd3a72b935c3dcdf697d2a42e2a0530f91` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,11 +32,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_aucklandmuseum_prof
 
 ## Operations (6)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/id/media/{path}` | get media | Retrieve media associated with Collections and Cenotaph subjects in Auckland Museum |
-| GET | `/id/{identifier}` | get subject | Explore details about a given subject node |
-| GET | `/search/{index}/{operation}` | get search | Perform simple search queries over Auckland Museum Collections and Cenotaph data |
-| POST | `/search/{index}/{operation}` | post search | Perform complex search queries over Auckland Museum Collections and Cenotaph data |
-| GET | `/sparql` | get sparql | Auckland Museum SPARQL endpoint |
-| POST | `/sparql` | post sparql | Auckland Museum SPARQL endpoint |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/id/media/{path}` | get media | `path`*, `rendering` | — | yes | Retrieve media associated with Collections and Cenotaph subjects in Auckland Museum |
+| GET | `/id/{identifier}` | get subject | `identifier`* | — | yes | Explore details about a given subject node |
+| GET | `/search/{index}/{operation}` | get search | `index`*, `operation`*, `q` | — | yes | Perform simple search queries over Auckland Museum Collections and Cenotaph data |
+| POST | `/search/{index}/{operation}` | post search | `index`*, `operation`*, body: object:application/json | — |  | Perform complex search queries over Auckland Museum Collections and Cenotaph data |
+| GET | `/sparql` | get sparql | `query`*, `callback`, `infer` | object | yes | Auckland Museum SPARQL endpoint |
+| POST | `/sparql` | post sparql | `query`*, `infer` | — |  | Auckland Museum SPARQL endpoint |

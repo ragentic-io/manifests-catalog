@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.website-files.com_60478d
 
 | | |
 | --- | --- |
-| Signed bundle | `ff76bb8ce13f6287a2b4b43d6114603f2fc71d0fee41c2ca077438eb5ae5113a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.website-files.com_60478d
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/classifier/business/batch/{id}` | getABatchOfBusinessTransactionClassificationResults | Get a batch of business transaction classification results. |
-| GET | `/classifier/consumer/batch/{id}` | getABatchOfConsumerTransactionClassificationResults | Get a batch of consumer transaction classification results. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/classifier/business/batch/{id}` | getABatchOfBusinessTransactionClassificationResults | `id`* | object | yes | Get a batch of business transaction classification results. |
+| GET | `/classifier/consumer/batch/{id}` | getABatchOfConsumerTransactionClassificationResults | `id`* | object | yes | Get a batch of consumer transaction classification results. |

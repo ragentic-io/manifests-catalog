@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `b0abea3a12508366368ed22b6f27fc004fe7c63ded4fa91a1853ebf73ebacb4f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,108 +34,110 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 177 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/group/{groupId}/audit` | Get group level audit logs | Get group level audit logs |
-| GET | `/group/{groupId}/members` | List all members in a group | List all members in a group |
-| POST | `/group/{groupId}/org/{orgId}/members` | Add a member to an organization within a group | Add a member to an organization within a group |
-| GET | `/group/{groupId}/orgs` | List all organizations in a group | List all organizations in a group |
-| GET | `/group/{groupId}/roles` | List all roles in a group | List all roles in a group |
-| GET | `/group/{groupId}/settings` | View group settings | View group settings |
-| PUT | `/group/{groupId}/settings` | Update group settings | Update group settings |
-| GET | `/group/{groupId}/tags` | List all tags in a group | List all tags in a group |
-| POST | `/group/{groupId}/tags/delete` | Delete tag from group | Delete tag from group |
-| POST | `/monitor/dep-graph` | Monitor Dep Graph | Monitor Dep Graph |
-| POST | `/org` | Create a new organization | Create a new organization |
-| DELETE | `/org/{orgId}` | Remove organization | Remove organization |
-| POST | `/org/{orgId}/audit` | Get organization level audit logs | Get organization level audit logs |
-| POST | `/org/{orgId}/dependencies` | List all dependencies | List all dependencies |
-| GET | `/org/{orgId}/entitlement/{entitlementKey}` | Get an organization's entitlement value | Get an organization's entitlement value |
-| GET | `/org/{orgId}/entitlements` | List all entitlements | List all entitlements |
-| GET | `/org/{orgId}/integrations` | List | List |
-| POST | `/org/{orgId}/integrations` | Add new integration | Add new integration |
-| PUT | `/org/{orgId}/integrations/{integrationId}` | Update existing integration | Update existing integration |
-| DELETE | `/org/{orgId}/integrations/{integrationId}/authentication` | Delete credentials | Delete credentials |
-| POST | `/org/{orgId}/integrations/{integrationId}/authentication/provision-token` | Provision new broker token | Provision new broker token |
-| POST | `/org/{orgId}/integrations/{integrationId}/authentication/switch-token` | Switch between broker tokens | Switch between broker tokens |
-| POST | `/org/{orgId}/integrations/{integrationId}/clone` | Clone an integration (with settings and credentials) | Clone an integration (with settings and credentials) |
-| POST | `/org/{orgId}/integrations/{integrationId}/import` | Import targets | Import targets |
-| GET | `/org/{orgId}/integrations/{integrationId}/import/{jobId}` | Get import job details | Get import job details |
-| GET | `/org/{orgId}/integrations/{integrationId}/settings` | Retrieve | Retrieve |
-| PUT | `/org/{orgId}/integrations/{integrationId}/settings` | Update | Update |
-| GET | `/org/{orgId}/integrations/{type}` | Get existing integration by type | Get existing integration by type |
-| POST | `/org/{orgId}/invite` | Invite users | Invite users |
-| POST | `/org/{orgId}/licenses` | List all licenses | List all licenses |
-| GET | `/org/{orgId}/members` | List Members | List Members |
-| PUT | `/org/{orgId}/members/update/{userId}` | Update a member's role in the organization | Update a member's role in the organization |
-| DELETE | `/org/{orgId}/members/{userId}` | Remove a member from the organization | Remove a member from the organization |
-| PUT | `/org/{orgId}/members/{userId}` | Update a member in the organization | Update a member in the organization |
-| GET | `/org/{orgId}/notification-settings` | get /org/{orgId}/notification-settings | Get organization notification settings |
-| PUT | `/org/{orgId}/notification-settings` | Set notification settings | Set notification settings |
-| DELETE | `/org/{orgId}/project/{projectId}` | Delete a project | Delete a project |
-| GET | `/org/{orgId}/project/{projectId}` | Retrieve a single project | Retrieve a single project |
-| PUT | `/org/{orgId}/project/{projectId}` | Update a project | Update a project |
-| POST | `/org/{orgId}/project/{projectId}/activate` | Activate | Activate |
-| POST | `/org/{orgId}/project/{projectId}/aggregated-issues` | List all Aggregated issues | List all Aggregated issues |
-| POST | `/org/{orgId}/project/{projectId}/attributes` | Applying attributes | Applying attributes |
-| POST | `/org/{orgId}/project/{projectId}/deactivate` | Deactivate | Deactivate |
-| GET | `/org/{orgId}/project/{projectId}/dep-graph` | Get Project dependency graph | Get Project dependency graph |
-| POST | `/org/{orgId}/project/{projectId}/history` | List all project snapshots | List all project snapshots |
-| POST | `/org/{orgId}/project/{projectId}/history/{snapshotId}/aggregated-issues` | List all project snapshot aggregated issues | List all project snapshot aggregated issues |
-| GET | `/org/{orgId}/project/{projectId}/history/{snapshotId}/issue/{issueId}/paths` | List all project snapshot issue paths | List all project snapshot issue paths |
-| DELETE | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Delete ignores | Delete ignores |
-| GET | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Retrieve ignore | Retrieve ignore |
-| POST | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Add ignore | Add ignore |
-| PUT | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Replace ignores | Replace ignores |
-| GET | `/org/{orgId}/project/{projectId}/ignores` | List all ignores | List all ignores |
-| POST | `/org/{orgId}/project/{projectId}/issue/{issueId}/jira-issue` | Create jira issue | Create jira issue |
-| GET | `/org/{orgId}/project/{projectId}/issue/{issueId}/paths` | List all project issue paths | List all project issue paths |
-| GET | `/org/{orgId}/project/{projectId}/jira-issues` | List all jira issues | List all jira issues |
-| PUT | `/org/{orgId}/project/{projectId}/move` | Move project to a different organization | Move project to a different organization |
-| DELETE | `/org/{orgId}/project/{projectId}/settings` | Delete project settings | Delete project settings |
-| GET | `/org/{orgId}/project/{projectId}/settings` | List project settings | List project settings |
-| PUT | `/org/{orgId}/project/{projectId}/settings` | Update project settings | Update project settings |
-| POST | `/org/{orgId}/project/{projectId}/tags` | Add a tag to a project | Add a tag to a project |
-| POST | `/org/{orgId}/project/{projectId}/tags/remove` | Remove a tag from a project | Remove a tag from a project |
-| POST | `/org/{orgId}/projects` | List all projects | List all projects |
-| DELETE | `/org/{orgId}/provision` | Delete pending user provision | Delete pending user provision |
-| GET | `/org/{orgId}/provision` | List pending user provisions | List pending user provisions |
-| POST | `/org/{orgId}/provision` | Provision a user to the organization | Provision a user to the organization |
-| GET | `/org/{orgId}/settings` | View organization settings | View organization settings |
-| PUT | `/org/{orgId}/settings` | Update organization settings | Update organization settings |
-| GET | `/org/{orgId}/webhooks` | List webhooks | List webhooks |
-| POST | `/org/{orgId}/webhooks` | Create a webhook | Create a webhook |
-| DELETE | `/org/{orgId}/webhooks/{webhookId}` | Delete a webhook | Delete a webhook |
-| GET | `/org/{orgId}/webhooks/{webhookId}` | Retrieve a webhook | Retrieve a webhook |
-| POST | `/org/{orgId}/webhooks/{webhookId}/ping` | Ping a webhook | Ping a webhook |
-| GET | `/orgs` | List all the organizations a user belongs to | List all the organizations a user belongs to |
-| POST | `/reporting/counts/issues` | Get issue counts | Get issue counts |
-| POST | `/reporting/counts/issues/latest` | Get latest issue counts | Get latest issue counts |
-| POST | `/reporting/counts/projects` | Get project counts | Get project counts |
-| POST | `/reporting/counts/projects/latest` | Get latest project counts | Get latest project counts |
-| POST | `/reporting/counts/tests` | Get test counts | Get test counts |
-| POST | `/reporting/issues/` | Get list of issues | Get list of issues |
-| POST | `/reporting/issues/latest` | Get list of latest issues | Get list of latest issues |
-| POST | `/test/composer` | Test composer.json & composer.lock file | Test composer.json & composer.lock file |
-| POST | `/test/dep-graph` | Test Dep Graph | Test Dep Graph |
-| POST | `/test/golangdep` | Test Gopkg.toml & Gopkg.lock File | Test Gopkg.toml & Gopkg.lock File |
-| POST | `/test/govendor` | Test vendor.json File | Test vendor.json File |
-| POST | `/test/gradle` | Test gradle file | Test gradle file |
-| GET | `/test/gradle/{group}/{name}/{version}` | Test for issues in a public package by group, name and version | Test for issues in a public package by group, name and version |
-| POST | `/test/maven` | Test maven file | Test maven file |
-| GET | `/test/maven/{groupId}/{artifactId}/{version}` | Test for issues in a public package by group id, artifact id and version | Test for issues in a public package by group id, artifact id and version |
-| POST | `/test/npm` | Test package.json & package-lock.json File | Test package.json & package-lock.json File |
-| GET | `/test/npm/{packageName}/{version}` | Test for issues in a public package by name and version | Test for issues in a public package by name and version |
-| POST | `/test/pip` | Test requirements.txt file | Test requirements.txt file |
-| GET | `/test/pip/{packageName}/{version}` | get /test/pip/{packageName}/{version} | Test for issues in a public package by name and version |
-| POST | `/test/rubygems` | Test gemfile.lock file | Test gemfile.lock file |
-| GET | `/test/rubygems/{gemName}/{version}` | Test for issues in a public gem by name and version | Test for issues in a public gem by name and version |
-| POST | `/test/sbt` | Test sbt file | Test sbt file |
-| GET | `/test/sbt/{groupId}/{artifactId}/{version}` | get /test/sbt/{groupId}/{artifactId}/{version} | Test for issues in a public package by group id, artifact id and version |
-| POST | `/test/yarn` | Test package.json & yarn.lock File | Test package.json & yarn.lock File |
-| GET | `/user/me` | Get My Details | Get My Details |
-| GET | `/user/me/notification-settings/org/{orgId}` | Get organization notification settings | Get organization notification settings |
-| PUT | `/user/me/notification-settings/org/{orgId}` | Modify organization notification settings | Modify organization notification settings |
-| GET | `/user/me/notification-settings/org/{orgId}/project/{projectId}` | Get project notification settings | Get project notification settings |
-| PUT | `/user/me/notification-settings/org/{orgId}/project/{projectId}` | Modify project notification settings | Modify project notification settings |
-| GET | `/user/{userId}` | Get User Details | Get User Details |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/group/{groupId}/audit` | Get group level audit logs | `groupId`*, `from`, `to`, `page`, `sortOrder`, body: object | — |  | Get group level audit logs |
+| GET | `/group/{groupId}/members` | List all members in a group | `groupId`* | array | yes | List all members in a group |
+| POST | `/group/{groupId}/org/{orgId}/members` | Add a member to an organization within a group | `groupId`*, `orgId`*, body: object | — |  | Add a member to an organization within a group |
+| GET | `/group/{groupId}/orgs` | List all organizations in a group | `groupId`*, `perPage`, `page`, `name` | — | yes | List all organizations in a group |
+| GET | `/group/{groupId}/roles` | List all roles in a group | `groupId`* | — | yes | List all roles in a group |
+| GET | `/group/{groupId}/settings` | View group settings | `groupId`* | object | yes | View group settings |
+| PUT | `/group/{groupId}/settings` | Update group settings | `groupId`* | object |  | Update group settings |
+| GET | `/group/{groupId}/tags` | List all tags in a group | `groupId`*, `perPage`, `page` | object | yes | List all tags in a group |
+| POST | `/group/{groupId}/tags/delete` | Delete tag from group | `groupId`*, body: object | object |  | Delete tag from group |
+| POST | `/monitor/dep-graph` | Monitor Dep Graph | `org`, body: object | — |  | Monitor Dep Graph |
+| POST | `/org` | Create a new organization | body: object | — |  | Create a new organization |
+| DELETE | `/org/{orgId}` | Remove organization | `orgId`* | — |  | Remove organization |
+| POST | `/org/{orgId}/audit` | Get organization level audit logs | `orgId`*, `from`, `to`, `page`, `sortOrder`, body: object | — |  | Get organization level audit logs |
+| POST | `/org/{orgId}/dependencies` | List all dependencies | `orgId`*, `sortBy`, `order`, `page`, `perPage`, body: object | object |  | List all dependencies |
+| GET | `/org/{orgId}/entitlement/{entitlementKey}` | Get an organization's entitlement value | `orgId`*, `entitlementKey`* | — | yes | Get an organization's entitlement value |
+| GET | `/org/{orgId}/entitlements` | List all entitlements | `orgId`* | — | yes | List all entitlements |
+| GET | `/org/{orgId}/integrations` | List | `orgId`* | object | yes | List |
+| POST | `/org/{orgId}/integrations` | Add new integration | `orgId`*, body: object | — |  | Add new integration |
+| PUT | `/org/{orgId}/integrations/{integrationId}` | Update existing integration | `orgId`*, `integrationId`*, body: object | — |  | Update existing integration |
+| DELETE | `/org/{orgId}/integrations/{integrationId}/authentication` | Delete credentials | `orgId`*, `integrationId`* | — |  | Delete credentials |
+| POST | `/org/{orgId}/integrations/{integrationId}/authentication/provision-token` | Provision new broker token | `orgId`*, `integrationId`* | — |  | Provision new broker token |
+| POST | `/org/{orgId}/integrations/{integrationId}/authentication/switch-token` | Switch between broker tokens | `orgId`*, `integrationId`* | — |  | Switch between broker tokens |
+| POST | `/org/{orgId}/integrations/{integrationId}/clone` | Clone an integration (with settings and credentials) | `orgId`*, `integrationId`*, body: object | — |  | Clone an integration (with settings and credentials) |
+| POST | `/org/{orgId}/integrations/{integrationId}/import` | Import targets | `orgId`*, `integrationId`*, body: object | — |  | Import targets |
+| GET | `/org/{orgId}/integrations/{integrationId}/import/{jobId}` | Get import job details | `orgId`*, `integrationId`*, `jobId`* | object | yes | Get import job details |
+| GET | `/org/{orgId}/integrations/{integrationId}/settings` | Retrieve | `orgId`*, `integrationId`* | object | yes | Retrieve |
+| PUT | `/org/{orgId}/integrations/{integrationId}/settings` | Update | `orgId`*, `integrationId`*, body: object | object |  | Update |
+| GET | `/org/{orgId}/integrations/{type}` | Get existing integration by type | `orgId`*, `type`* | object | yes | Get existing integration by type |
+| POST | `/org/{orgId}/invite` | Invite users | `orgId`*, body: object | — |  | Invite users |
+| POST | `/org/{orgId}/licenses` | List all licenses | `orgId`*, `sortBy`, `order`, body: object | object |  | List all licenses |
+| GET | `/org/{orgId}/members` | List Members | `orgId`*, `includeGroupAdmins` | array | yes | List Members |
+| PUT | `/org/{orgId}/members/update/{userId}` | Update a member's role in the organization | `orgId`*, `userId`*, body: object | — |  | Update a member's role in the organization |
+| PUT | `/org/{orgId}/members/{userId}` | Update a member in the organization | `orgId`*, `userId`*, body: object | — |  | Update a member in the organization |
+| DELETE | `/org/{orgId}/members/{userId}` | Remove a member from the organization | `orgId`*, `userId`* | — |  | Remove a member from the organization |
+| GET | `/org/{orgId}/notification-settings` | get /org/{orgId}/notification-settings | `orgId`* | object | yes | Get organization notification settings |
+| PUT | `/org/{orgId}/notification-settings` | Set notification settings | `orgId`*, body: object | object |  | Set notification settings |
+| GET | `/org/{orgId}/project/{projectId}` | Retrieve a single project | `orgId`*, `projectId`* | object | yes | Retrieve a single project |
+| PUT | `/org/{orgId}/project/{projectId}` | Update a project | `orgId`*, `projectId`*, body: object | object |  | Update a project |
+| DELETE | `/org/{orgId}/project/{projectId}` | Delete a project | `orgId`*, `projectId`* | — |  | Delete a project |
+| POST | `/org/{orgId}/project/{projectId}/activate` | Activate | `orgId`*, `projectId`* | — |  | Activate |
+| POST | `/org/{orgId}/project/{projectId}/aggregated-issues` | List all Aggregated issues | `orgId`*, `projectId`*, body: object | object |  | List all Aggregated issues |
+| POST | `/org/{orgId}/project/{projectId}/attributes` | Applying attributes | `orgId`*, `projectId`*, body: object | object |  | Applying attributes |
+| POST | `/org/{orgId}/project/{projectId}/deactivate` | Deactivate | `orgId`*, `projectId`* | — |  | Deactivate |
+| GET | `/org/{orgId}/project/{projectId}/dep-graph` | Get Project dependency graph | `orgId`*, `projectId`* | object | yes | Get Project dependency graph |
+| POST | `/org/{orgId}/project/{projectId}/history` | List all project snapshots | `orgId`*, `projectId`*, `perPage`, `page`, body: object | object |  | List all project snapshots |
+| POST | `/org/{orgId}/project/{projectId}/history/{snapshotId}/aggregated-issues` | List all project snapshot aggregated issues | `orgId`*, `projectId`*, `snapshotId`*, body: object | object |  | List all project snapshot aggregated issues |
+| GET | `/org/{orgId}/project/{projectId}/history/{snapshotId}/issue/{issueId}/paths` | List all project snapshot issue paths | `orgId`*, `projectId`*, `snapshotId`*, `issueId`*, `perPage`, `page` | object | yes | List all project snapshot issue paths |
+| GET | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Retrieve ignore | `orgId`*, `projectId`*, `issueId`* | ignorePath | yes | Retrieve ignore |
+| PUT | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Replace ignores | `orgId`*, `projectId`*, `issueId`* | array |  | Replace ignores |
+| POST | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Add ignore | `orgId`*, `projectId`*, `issueId`*, body: object | ignorePath |  | Add ignore |
+| DELETE | `/org/{orgId}/project/{projectId}/ignore/{issueId}` | Delete ignores | `orgId`*, `projectId`*, `issueId`* | — |  | Delete ignores |
+| GET | `/org/{orgId}/project/{projectId}/ignores` | List all ignores | `orgId`*, `projectId`* | issueId | yes | List all ignores |
+| POST | `/org/{orgId}/project/{projectId}/issue/{issueId}/jira-issue` | Create jira issue | `issueId`*, `orgId`*, `projectId`*, body: object | object |  | Create jira issue |
+| GET | `/org/{orgId}/project/{projectId}/issue/{issueId}/paths` | List all project issue paths | `orgId`*, `projectId`*, `issueId`*, `snapshotId`, `perPage`, `page` | object | yes | List all project issue paths |
+| GET | `/org/{orgId}/project/{projectId}/jira-issues` | List all jira issues | `orgId`*, `projectId`* | issueId | yes | List all jira issues |
+| PUT | `/org/{orgId}/project/{projectId}/move` | Move project to a different organization | `orgId`*, `projectId`*, body: object | — |  | Move project to a different organization |
+| GET | `/org/{orgId}/project/{projectId}/settings` | List project settings | `orgId`*, `projectId`* | object | yes | List project settings |
+| PUT | `/org/{orgId}/project/{projectId}/settings` | Update project settings | `orgId`*, `projectId`*, body: object | object |  | Update project settings |
+| DELETE | `/org/{orgId}/project/{projectId}/settings` | Delete project settings | `orgId`*, `projectId`* | — |  | Delete project settings |
+| POST | `/org/{orgId}/project/{projectId}/tags` | Add a tag to a project | `orgId`*, `projectId`*, body: object | object |  | Add a tag to a project |
+| POST | `/org/{orgId}/project/{projectId}/tags/remove` | Remove a tag from a project | `orgId`*, `projectId`*, body: object | object |  | Remove a tag from a project |
+| POST | `/org/{orgId}/projects` | List all projects | `orgId`*, body: object | object |  | List all projects |
+| GET | `/org/{orgId}/provision` | List pending user provisions | `orgId`* | array | yes | List pending user provisions |
+| POST | `/org/{orgId}/provision` | Provision a user to the organization | `orgId`*, body: object | object |  | Provision a user to the organization |
+| DELETE | `/org/{orgId}/provision` | Delete pending user provision | `orgId`* | object |  | Delete pending user provision |
+| GET | `/org/{orgId}/settings` | View organization settings | `orgId`* | object | yes | View organization settings |
+| PUT | `/org/{orgId}/settings` | Update organization settings | `orgId`*, body: object | object |  | Update organization settings |
+| GET | `/org/{orgId}/webhooks` | List webhooks | `orgId`* | — | yes | List webhooks |
+| POST | `/org/{orgId}/webhooks` | Create a webhook | `orgId`*, body: object | — |  | Create a webhook |
+| GET | `/org/{orgId}/webhooks/{webhookId}` | Retrieve a webhook | `orgId`*, `webhookId`* | — | yes | Retrieve a webhook |
+| DELETE | `/org/{orgId}/webhooks/{webhookId}` | Delete a webhook | `orgId`*, `webhookId`* | — |  | Delete a webhook |
+| POST | `/org/{orgId}/webhooks/{webhookId}/ping` | Ping a webhook | `orgId`*, `webhookId`* | — |  | Ping a webhook |
+| GET | `/orgs` | List all the organizations a user belongs to | — | — | yes | List all the organizations a user belongs to |
+| POST | `/reporting/counts/issues` | Get issue counts | `from`*, `to`*, `groupBy`, body: object | object |  | Get issue counts |
+| POST | `/reporting/counts/issues/latest` | Get latest issue counts | `groupBy`, body: object | object |  | Get latest issue counts |
+| POST | `/reporting/counts/projects` | Get project counts | `from`*, `to`*, body: object | object |  | Get project counts |
+| POST | `/reporting/counts/projects/latest` | Get latest project counts | body: object | object |  | Get latest project counts |
+| POST | `/reporting/counts/tests` | Get test counts | `from`*, `to`*, `groupBy`, body: object | object |  | Get test counts |
+| POST | `/reporting/issues/` | Get list of issues | `from`*, `to`*, `page`, `perPage`, `sortBy`, `order`, `groupBy`, body: object | object |  | Get list of issues |
+| POST | `/reporting/issues/latest` | Get list of latest issues | `page`, `perPage`, `sortBy`, `order`, `groupBy`, body: object | object |  | Get list of latest issues |
+| POST | `/test/composer` | Test composer.json & composer.lock file | body: object | — |  | Test composer.json & composer.lock file |
+| POST | `/test/dep-graph` | Test Dep Graph | `org`, body: object | — |  | Test Dep Graph |
+| POST | `/test/golangdep` | Test Gopkg.toml & Gopkg.lock File | `org`, body: object | — |  | Test Gopkg.toml & Gopkg.lock File |
+| POST | `/test/govendor` | Test vendor.json File | body: object | — |  | Test vendor.json File |
+| POST | `/test/gradle` | Test gradle file | body: object | — |  | Test gradle file |
+| GET | `/test/gradle/{group}/{name}/{version}` | Test for issues in a public package by group, name and version | `group`*, `name`*, `version`*, `org`, `repository` | — | yes | Test for issues in a public package by group, name and version |
+| POST | `/test/maven` | Test maven file | `org`, `repository`, body: object | — |  | Test maven file |
+| GET | `/test/maven/{groupId}/{artifactId}/{version}` | Test for issues in a public package by group id, artifact id and version | `groupId`*, `artifactId`*, `version`*, `org`, `repository` | — | yes | Test for issues in a public package by group id, artifact id and version |
+| POST | `/test/npm` | Test package.json & package-lock.json File | body: object | — |  | Test package.json & package-lock.json File |
+| GET | `/test/npm/{packageName}/{version}` | Test for issues in a public package by name and version | `packageName`*, `version`*, `org` | — | yes | Test for issues in a public package by name and version |
+| POST | `/test/pip` | Test requirements.txt file | body: object | — |  | Test requirements.txt file |
+| GET | `/test/pip/{packageName}/{version}` | get /test/pip/{packageName}/{version} | `packageName`*, `version`*, `org` | — | yes | Test for issues in a public package by name and version |
+| POST | `/test/rubygems` | Test gemfile.lock file | body: object | — |  | Test gemfile.lock file |
+| GET | `/test/rubygems/{gemName}/{version}` | Test for issues in a public gem by name and version | `gemName`*, `version`*, `org` | — | yes | Test for issues in a public gem by name and version |
+| POST | `/test/sbt` | Test sbt file | body: object | — |  | Test sbt file |
+| GET | `/test/sbt/{groupId}/{artifactId}/{version}` | get /test/sbt/{groupId}/{artifactId}/{version} | `groupId`*, `artifactId`*, `version`*, `org`, `repository` | — | yes | Test for issues in a public package by group id, artifact id and version |
+| POST | `/test/yarn` | Test package.json & yarn.lock File | body: object | — |  | Test package.json & yarn.lock File |
+| GET | `/user/me` | Get My Details | — | object | yes | Get My Details |
+| GET | `/user/me/notification-settings/org/{orgId}` | Get organization notification settings | `orgId`* | object | yes | Get organization notification settings |
+| PUT | `/user/me/notification-settings/org/{orgId}` | Modify organization notification settings | `orgId`*, body: object | object |  | Modify organization notification settings |
+| GET | `/user/me/notification-settings/org/{orgId}/project/{projectId}` | Get project notification settings | `orgId`*, `projectId`* | object | yes | Get project notification settings |
+| PUT | `/user/me/notification-settings/org/{orgId}/project/{projectId}` | Modify project notification settings | `orgId`*, `projectId`*, body: object | — |  | Modify project notification settings |
+| GET | `/user/{userId}` | Get User Details | `userId`* | object | yes | Get User Details |

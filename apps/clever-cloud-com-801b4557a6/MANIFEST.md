@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_clever_cloud_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `fec7d126961f4b008eee179a5db9dd880b3ed436fd84125e086ec95120535ec9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,329 +34,331 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_clever_cloud_profil
 
 71 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `//openapi` | get //openapi | — |
-| GET | `/application/{appId}/environment` | get /application/{appId}/environment | — |
-| PUT | `/application/{appId}/environment` | put /application/{appId}/environment | — |
-| POST | `/authorize` | postAuthorize | — |
-| GET | `/events/event-socket` | get /events/event-socket | — |
-| GET | `/github` | getGithub | — |
-| GET | `/github/applications` | getGithubApplications | — |
-| GET | `/github/callback` | getGithubCallback | — |
-| GET | `/github/emails` | getGithubEmails | — |
-| GET | `/github/keys` | getGithubKeys | — |
-| DELETE | `/github/link` | deleteGithubLink | — |
-| GET | `/github/link` | getGithubLink | — |
-| GET | `/github/login` | getGithubLogin | — |
-| POST | `/github/redeploy` | postGithubRedeploy | — |
-| GET | `/github/signup` | getGithubSignup | — |
-| POST | `/github/signup` | postGithubSignup | — |
-| GET | `/github/username` | getGithubUsername | — |
-| GET | `/logs-socket/{appId}` | get /logs-socket/{appId} | — |
-| GET | `/logs/drains` | get /logs/drains | — |
-| PUT | `/logs/drains/{drainId}` | put /logs/drains/{drainId} | — |
-| GET | `/logs/logs-chunked/{appId}` | get /logs/logs-chunked/{appId} | — |
-| GET | `/logs/logs-socket/{appId}` | get /logs/logs-socket/{appId} | — |
-| GET | `/logs/{appId}` | get /logs/{appId} | — |
-| GET | `/logs/{appId}/drains` | get /logs/{appId}/drains | — |
-| POST | `/logs/{appId}/drains` | post /logs/{appId}/drains | — |
-| DELETE | `/logs/{appId}/drains/:idOrUrl` | delete /logs/{appId}/drains/:idOrUrl | — |
-| GET | `/logs/{appId}/drains/:idOrUrl` | get /logs/{appId}/drains/:idOrUrl | — |
-| GET | `/logs/{appId}/sse` | get /logs/{appId}/sse | — |
-| GET | `/newsfeeds/blog` | getNewsfeedsBlog | — |
-| GET | `/newsfeeds/engineering` | getNewsfeedEngineering | — |
-| GET | `/notifications/emailhooks/{ownerId}` | get /notifications/emailhooks/{ownerId} | — |
-| POST | `/notifications/emailhooks/{ownerId}` | post /notifications/emailhooks/{ownerId} | — |
-| DELETE | `/notifications/emailhooks/{ownerId}/:id` | delete /notifications/emailhooks/{ownerId}/:id | — |
-| PUT | `/notifications/emailhooks/{ownerId}/:id` | put /notifications/emailhooks/{ownerId}/:id | — |
-| GET | `/notifications/info/events` | get /notifications/info/events | — |
-| GET | `/notifications/info/webhookformats` | get /notifications/info/webhookformats | — |
-| GET | `/notifications/webhooks/{ownerId}` | get /notifications/webhooks/{ownerId} | — |
-| POST | `/notifications/webhooks/{ownerId}` | post /notifications/webhooks/{ownerId} | — |
-| DELETE | `/notifications/webhooks/{ownerId}/:id` | delete /notifications/webhooks/{ownerId}/:id | — |
-| PUT | `/notifications/webhooks/{ownerId}/:id` | put /notifications/webhooks/{ownerId}/:id | — |
-| POST | `/oauth/access_token` | postOauthAccessToken | — |
-| POST | `/oauth/access_token_query` | post /oauth/access_token_query | — |
-| GET | `/oauth/authorize` | getOauthAuthorize | — |
-| POST | `/oauth/authorize` | postOauthAuthorize | — |
-| POST | `/oauth/request_token` | postOauthRequestToken | — |
-| POST | `/oauth/request_token_query` | post /oauth/request_token_query | — |
-| GET | `/oauth/rights` | getOauthRights | — |
-| GET | `/openapi.{type}` | get /openapi.{type} | Get the swagger for this API as {type} |
-| GET | `/organisations` | getOrganisations | — |
-| POST | `/organisations` | postOrganisations | — |
-| DELETE | `/organisations/{id}` | deleteOrganisationsId | — |
-| GET | `/organisations/{id}` | getOrganisationsId | — |
-| PUT | `/organisations/{id}` | putOrganisationsId | — |
-| GET | `/organisations/{id}/addonproviders` | getOrganisationsIdAddonproviders | — |
-| POST | `/organisations/{id}/addonproviders` | postOrganisationsIdAddonproviders | — |
-| DELETE | `/organisations/{id}/addonproviders/{providerId}` | delete /organisations/{id}/addonproviders/{providerId} | Remove an add-on provider |
-| GET | `/organisations/{id}/addonproviders/{providerId}` | getOrganisationsIdAddonprovidersProviderId | — |
-| PUT | `/organisations/{id}/addonproviders/{providerId}` | putOrganisationsIdAddonprovidersProviderId | — |
-| GET | `/organisations/{id}/addonproviders/{providerId}/features` | getOrganisationsIdAddonprovidersProviderIdFeatures | — |
-| POST | `/organisations/{id}/addonproviders/{providerId}/features` | postOrganisationsIdAddonprovidersProviderIdFeatures | — |
-| DELETE | `/organisations/{id}/addonproviders/{providerId}/features/{featureId}` | deleteOrganisationsIdAddonprovidersProviderIdFeaturesFeatureId | — |
-| GET | `/organisations/{id}/addonproviders/{providerId}/plans` | getOrganisationsIdAddonprovidersProviderIdPlans | — |
-| POST | `/organisations/{id}/addonproviders/{providerId}/plans` | postOrganisationsIdAddonprovidersProviderIdPlans | — |
-| DELETE | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}` | deleteOrganisationsIdAddonprovidersProviderIdPlansPlanId | — |
-| GET | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}` | getOrganisationsIdAddonprovidersProviderIdPlansPlanId | — |
-| PUT | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}` | putOrganisationsIdAddonprovidersProviderIdPlansPlanId | — |
-| DELETE | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}/features/{featureName}` | deleteOrganisationsIdAddonprovidersProviderIdPlansPlanIdFeaturesFeatureName | — |
-| PUT | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}/features/{featureName}` | putOrganisationsIdAddonprovidersProviderIdPlansPlanIdFeaturesFeatureName | — |
-| GET | `/organisations/{id}/addonproviders/{providerId}/sso` | getOrganisationsIdAddonsAddonIdSso | — |
-| GET | `/organisations/{id}/addonproviders/{providerId}/tags` | getOrganisationsIdAddonprovidersProviderIdTags | — |
-| POST | `/organisations/{id}/addonproviders/{providerId}/testers` | postOrganisationsIdAddonprovidersProviderIdTesters | — |
-| GET | `/organisations/{id}/addons` | getOrganisationsIdAddons | — |
-| POST | `/organisations/{id}/addons` | postOrganisationsIdAddons | — |
-| POST | `/organisations/{id}/addons/preorders` | post /organisations/{id}/addons/preorders | — |
-| DELETE | `/organisations/{id}/addons/{addonId}` | deleteOrganisationsIdAddonsAddonId | — |
-| GET | `/organisations/{id}/addons/{addonId}` | getOrganisationsIdAddonsAddonId | — |
-| PUT | `/organisations/{id}/addons/{addonId}` | putOrganisationsIdAddonsAddonId | — |
-| GET | `/organisations/{id}/addons/{addonId}/applications` | getOrganisationsIdAddonsAddonIdApplications | — |
-| GET | `/organisations/{id}/addons/{addonId}/env` | getOrganisationsIdAddonsAddonIdEnv | — |
-| GET | `/organisations/{id}/addons/{addonId}/instances` | get /organisations/{id}/addons/{addonId}/instances | List instances for this add-on. |
-| GET | `/organisations/{id}/addons/{addonId}/instances/{instanceId}` | get /organisations/{id}/addons/{addonId}/instances/{instanceId} | Get a specific instance for {addonId} |
-| GET | `/organisations/{id}/addons/{addonId}/migrations` | get /organisations/{id}/addons/{addonId}/migrations | Get past migrations from add-on. |
-| POST | `/organisations/{id}/addons/{addonId}/migrations` | post /organisations/{id}/addons/{addonId}/migrations | Start a new add-on migration |
-| GET | `/organisations/{id}/addons/{addonId}/migrations/{migrationId}` | get /organisations/{id}/addons/{addonId}/migrations/{migrationId} | Get a given migration |
-| GET | `/organisations/{id}/addons/{addonId}/sso` | get /organisations/{id}/addons/{addonId}/sso | — |
-| GET | `/organisations/{id}/addons/{addonId}/tags` | getOrganisationsIdAddonsAddonIdTags | — |
-| DELETE | `/organisations/{id}/addons/{addonId}/tags/{tag}` | deleteOrganisationsIdAddonsAddonIdTagsTag | — |
-| PUT | `/organisations/{id}/addons/{addonId}/tags/{tag}` | putOrganisationsIdAddonsAddonIdTagsTag | — |
-| GET | `/organisations/{id}/applications` | getOrganisationsIdApplications | — |
-| POST | `/organisations/{id}/applications` | postOrganisationsIdApplications | — |
-| DELETE | `/organisations/{id}/applications/{appId}` | deleteOrganisationsIdApplicationsAppId | — |
-| GET | `/organisations/{id}/applications/{appId}` | getOrganisationsIdApplicationsAppId | — |
-| PUT | `/organisations/{id}/applications/{appId}` | putOrganisationsIdApplicationsAppId | — |
-| GET | `/organisations/{id}/applications/{appId}/addons` | getOrganisationsIdApplicationsAppIdAddons | — |
-| POST | `/organisations/{id}/applications/{appId}/addons` | postOrganisationsIdApplicationsAppIdAddons | — |
-| GET | `/organisations/{id}/applications/{appId}/addons/env` | getOrganisationsIdApplicationsAppIdAddonsEnv | — |
-| DELETE | `/organisations/{id}/applications/{appId}/addons/{addonId}` | deleteOrganisationsIdApplicationsAppIdAddonsAddonId | — |
-| PUT | `/organisations/{id}/applications/{appId}/branch` | put /organisations/{id}/applications/{appId}/branch | — |
-| GET | `/organisations/{id}/applications/{appId}/branches` | get /organisations/{id}/applications/{appId}/branches | — |
-| PUT | `/organisations/{id}/applications/{appId}/buildflavor` | put /organisations/{id}/applications/{appId}/buildflavor | — |
-| GET | `/organisations/{id}/applications/{appId}/dependencies` | getOrganisationsIdApplicationsAppIdDependencies | — |
-| GET | `/organisations/{id}/applications/{appId}/dependencies/env` | get /organisations/{id}/applications/{appId}/dependencies/env | — |
-| DELETE | `/organisations/{id}/applications/{appId}/dependencies/{dependencyId}` | deleteOrganisationsIdApplicationsAppIdDependenciesDependencyId | — |
-| PUT | `/organisations/{id}/applications/{appId}/dependencies/{dependencyId}` | putOrganisationsIdApplicationsAppIdDependenciesDependencyId | — |
-| GET | `/organisations/{id}/applications/{appId}/dependents` | getOrganisationsIdApplicationsAppIdDependents | — |
-| GET | `/organisations/{id}/applications/{appId}/deployments` | getOrganisationsIdApplicationsAppIdDeployments | — |
-| GET | `/organisations/{id}/applications/{appId}/deployments/{deploymentId}` | get /organisations/{id}/applications/{appId}/deployments/{deploymentId} | — |
-| DELETE | `/organisations/{id}/applications/{appId}/deployments/{deploymentId}/instances` | deleteOrganisationsIdApplicationsAppIdDeploymentsDeploymentIdInstances | — |
-| GET | `/organisations/{id}/applications/{appId}/env` | getOrganisationsIdApplicationsAppIdEnv | — |
-| PUT | `/organisations/{id}/applications/{appId}/env` | putOrganisationsIdApplicationsAppIdEnv | — |
-| DELETE | `/organisations/{id}/applications/{appId}/env/{envName}` | deleteOrganisationsIdApplicationsAppIdEnvEnvName | — |
-| PUT | `/organisations/{id}/applications/{appId}/env/{envName}` | putOrganisationsIdApplicationsAppIdEnvEnvName | — |
-| GET | `/organisations/{id}/applications/{appId}/exposed_env` | get /organisations/{id}/applications/{appId}/exposed_env | — |
-| PUT | `/organisations/{id}/applications/{appId}/exposed_env` | put /organisations/{id}/applications/{appId}/exposed_env | — |
-| DELETE | `/organisations/{id}/applications/{appId}/instances` | deleteOrganisationsIdApplicationsAppIdInstances | — |
-| GET | `/organisations/{id}/applications/{appId}/instances` | getOrganisationsIdApplicationsAppIdInstances | — |
-| POST | `/organisations/{id}/applications/{appId}/instances` | postOrganisationsIdApplicationsAppIdInstances | — |
-| GET | `/organisations/{id}/applications/{appId}/instances/{instanceId}` | get /organisations/{id}/applications/{appId}/instances/{instanceId} | — |
-| GET | `/organisations/{id}/applications/{appId}/tags` | getOrganisationsIdApplicationsAppIdTags | — |
-| DELETE | `/organisations/{id}/applications/{appId}/tags/{tag}` | deleteOrganisationsIdApplicationsAppIdTagsTag | — |
-| PUT | `/organisations/{id}/applications/{appId}/tags/{tag}` | putOrganisationsIdApplicationsAppIdTagsTag | — |
-| GET | `/organisations/{id}/applications/{appId}/vhosts` | getOrganisationsIdApplicationsAppIdVhosts | — |
-| DELETE | `/organisations/{id}/applications/{appId}/vhosts/favourite` | deleteOrganisationsIdApplicationsAppIdVhostsFavourite | — |
-| GET | `/organisations/{id}/applications/{appId}/vhosts/favourite` | getOrganisationsIdApplicationsAppIdVhostsFavourite | — |
-| PUT | `/organisations/{id}/applications/{appId}/vhosts/favourite` | putOrganisationsIdApplicationsAppIdVhostsFavourite | — |
-| DELETE | `/organisations/{id}/applications/{appId}/vhosts/{domain}` | deleteOrganisationsIdApplicationsAppIdVhostsDomain | — |
-| PUT | `/organisations/{id}/applications/{appId}/vhosts/{domain}` | putOrganisationsIdApplicationsAppIdVhostsDomain | — |
-| PUT | `/organisations/{id}/avatar` | putOrganisationsIdAvatar | — |
-| GET | `/organisations/{id}/consumers` | getOrganisationsIdConsumers | — |
-| POST | `/organisations/{id}/consumers` | postOrganisationsIdConsumers | — |
-| DELETE | `/organisations/{id}/consumers/{key}` | deleteOrganisationsIdConsumersKey | — |
-| GET | `/organisations/{id}/consumers/{key}` | getOrganisationsIdConsumersKey | — |
-| PUT | `/organisations/{id}/consumers/{key}` | putOrganisationsIdConsumersKey | — |
-| GET | `/organisations/{id}/consumers/{key}/secret` | getOrganisationsIdConsumersKeySecret | — |
-| GET | `/organisations/{id}/consumptions` | getOrganisationsIdConsumptions | — |
-| GET | `/organisations/{id}/credits` | getOrganisationsIdCredits | — |
-| GET | `/organisations/{id}/deployments` | getOrganisationsIdDeployments | — |
-| GET | `/organisations/{id}/instances` | getOrganisationsIdInstances | — |
-| GET | `/organisations/{id}/members` | getOrganisationsIdMembers | — |
-| POST | `/organisations/{id}/members` | postOrganisationsIdMembers | — |
-| DELETE | `/organisations/{id}/members/{userId}` | deleteOrganisationsIdMembersUserId | — |
-| PUT | `/organisations/{id}/members/{userId}` | putOrganisationsIdMembersUserId | — |
-| GET | `/organisations/{id}/payment-info` | getOrganisationsIdPaymentInfo | — |
-| GET | `/organisations/{id}/payments/billings` | getOrganisationsIdPaymentsBillings | — |
-| POST | `/organisations/{id}/payments/billings` | postOrganisationsIdPaymentsBillings | — |
-| GET | `/organisations/{id}/payments/billings/unpaid` | get /organisations/{id}/payments/billings/unpaid | — |
-| DELETE | `/organisations/{id}/payments/billings/{bid}` | deleteOrganisationsIdPaymentsBillingsBid | — |
-| GET | `/organisations/{id}/payments/billings/{bid}` | getOrganisationsIdPaymentsBillingsBid | — |
-| PUT | `/organisations/{id}/payments/billings/{bid}` | putOrganisationsIdPaymentsBillingsBid | — |
-| GET | `/organisations/{id}/payments/billings/{bid}.pdf` | getOrganisationsIdPaymentsBillingsBidPdf | — |
-| GET | `/organisations/{id}/payments/fullprice/{price}` | getOrganisationsIdPaymentsFullPricePrice | — |
-| GET | `/organisations/{id}/payments/methods` | get /organisations/{id}/payments/methods | — |
-| POST | `/organisations/{id}/payments/methods` | post /organisations/{id}/payments/methods | — |
-| GET | `/organisations/{id}/payments/methods/default` | get /organisations/{id}/payments/methods/default | — |
-| PUT | `/organisations/{id}/payments/methods/default` | put /organisations/{id}/payments/methods/default | — |
-| DELETE | `/organisations/{id}/payments/methods/{mId}` | delete /organisations/{id}/payments/methods/{mId} | — |
-| GET | `/organisations/{id}/payments/monthlyinvoice` | get /organisations/{id}/payments/monthlyinvoice | — |
-| PUT | `/organisations/{id}/payments/monthlyinvoice/maxcredit` | put /organisations/{id}/payments/monthlyinvoice/maxcredit | — |
-| DELETE | `/organisations/{id}/payments/recurring` | deleteOrganisationsIdPaymentsRecurring | — |
-| GET | `/organisations/{id}/payments/recurring` | get /organisations/{id}/payments/recurring | — |
-| GET | `/password_forgotten` | getPasswordForgotten | — |
-| POST | `/password_forgotten` | postPasswordForgotten | — |
-| GET | `/password_forgotten/{key}` | getPasswordForgottenKey | — |
-| POST | `/password_forgotten/{key}` | postPasswordForgottenKey | — |
-| GET | `/payments/assets/pay_button/{token}/button.png` | get /payments/assets/pay_button/{token}/button.png | — |
-| GET | `/payments/coupons/{name}` | getPaymentsCouponsName | — |
-| GET | `/payments/providers` | getPaymentsProviders | — |
-| GET | `/payments/tokens/stripe` | getPaymentsTokensStripe | — |
-| POST | `/payments/{bid}/end/stripe` | post /payments/{bid}/end/stripe | — |
-| GET | `/products/addonproviders` | getProductsAddonProviders | — |
-| GET | `/products/addonproviders/{provider_id}` | getProductsAddonProvidersProviderId | — |
-| GET | `/products/addonproviders/{provider_id}/versions` | get /products/addonproviders/{provider_id}/versions | — |
-| GET | `/products/countries` | getProductsCountries | — |
-| GET | `/products/countrycodes` | getProductsCountrycodes | — |
-| GET | `/products/instances` | getProductsInstances | — |
-| GET | `/products/instances/{type}-{version}` | getProductsInstancesTypeVersion | — |
-| GET | `/products/mfa_kinds` | get /products/mfa_kinds | — |
-| GET | `/products/packages` | getProductsPackages | — |
-| GET | `/products/prices` | getProductsPrices | — |
-| GET | `/products/zones` | getProductsZones | — |
-| DELETE | `/self` | deleteSelf | — |
-| GET | `/self` | getSelf | — |
-| PUT | `/self` | putSelf | — |
-| GET | `/self/addons` | getSelfAddons | Addon |
-| POST | `/self/addons` | postSelfAddons | — |
-| POST | `/self/addons/preorders` | post /self/addons/preorders | — |
-| DELETE | `/self/addons/{addonId}` | deleteSelfAddonsAddonId | — |
-| GET | `/self/addons/{addonId}` | getSelfAddonsAddonId | Specific addon |
-| PUT | `/self/addons/{addonId}` | putSelfAddonsAddonId | — |
-| GET | `/self/addons/{addonId}/applications` | getSelfAddonsAddonIdApplications | — |
-| GET | `/self/addons/{addonId}/env` | getSelfAddonsAddonIdEnv | — |
-| PUT | `/self/addons/{addonId}/plan` | putSelfAddonsAddonIdPlan | — |
-| GET | `/self/addons/{addonId}/sso` | getSelfAddonsAddonIdSso | — |
-| GET | `/self/addons/{addonId}/tags` | getSelfAddonsAddonIdTags | — |
-| DELETE | `/self/addons/{addonId}/tags/{tag}` | deleteSelfAddonsAddonIdTagsTag | — |
-| PUT | `/self/addons/{addonId}/tags/{tag}` | putSelfAddonsAddonIdTagsTag | — |
-| GET | `/self/applications` | getSelfApplications | — |
-| POST | `/self/applications` | postSelfApplications | — |
-| DELETE | `/self/applications/{appId}` | deleteSelfApplicationsAppId | — |
-| GET | `/self/applications/{appId}` | getSelfApplicationsAppId | — |
-| PUT | `/self/applications/{appId}` | putSelfApplicationsAppId | — |
-| GET | `/self/applications/{appId}/addons` | getSelfApplicationsAppIdAddons | — |
-| POST | `/self/applications/{appId}/addons` | postSelfApplicationsAppIdAddons | — |
-| GET | `/self/applications/{appId}/addons/env` | getSelfApplicationsAppIdAddonsEnv | — |
-| DELETE | `/self/applications/{appId}/addons/{addonId}` | deleteSelfApplicationsAppIdAddonsAddonId | — |
-| PUT | `/self/applications/{appId}/branch` | put /self/applications/{appId}/branch | — |
-| GET | `/self/applications/{appId}/branches` | get /self/applications/{appId}/branches | — |
-| PUT | `/self/applications/{appId}/buildflavor` | put /self/applications/{appId}/buildflavor | — |
-| GET | `/self/applications/{appId}/dependencies` | getSelfApplicationsAppIdDependencies | — |
-| GET | `/self/applications/{appId}/dependencies/env` | get /self/applications/{appId}/dependencies/env | — |
-| DELETE | `/self/applications/{appId}/dependencies/{dependencyId}` | deleteSelfApplicationsAppIdDependenciesDependencyId | — |
-| PUT | `/self/applications/{appId}/dependencies/{dependencyId}` | getSelfApplicationsAppIdDependenciesDependencyId | — |
-| GET | `/self/applications/{appId}/dependents` | getSelfApplicationsAppIdDependents | — |
-| GET | `/self/applications/{appId}/deployments` | getSelfApplicationsAppIdDeployments | — |
-| GET | `/self/applications/{appId}/deployments/{deploymentId}` | get /self/applications/{appId}/deployments/{deploymentId} | — |
-| DELETE | `/self/applications/{appId}/deployments/{deploymentId}/instances` | deleteSelfApplicationsAppIdDeploymentsDeploymentIdInstances | — |
-| GET | `/self/applications/{appId}/env` | getSelfApplicationsAppIdEnv | — |
-| PUT | `/self/applications/{appId}/env` | putSelfApplicationsAppIdEnv | — |
-| DELETE | `/self/applications/{appId}/env/{envName}` | deleteSelfApplicationsAppIdEnvEnvName | — |
-| PUT | `/self/applications/{appId}/env/{envName}` | putSelfApplicationsAppIdEnvEnvName | — |
-| GET | `/self/applications/{appId}/exposed_env` | get /self/applications/{appId}/exposed_env | — |
-| PUT | `/self/applications/{appId}/exposed_env` | put /self/applications/{appId}/exposed_env | — |
-| DELETE | `/self/applications/{appId}/instances` | deleteSelfApplicationsAppIdInstances | — |
-| GET | `/self/applications/{appId}/instances` | getSelfApplicationsAppIdInstances | — |
-| POST | `/self/applications/{appId}/instances` | postSelfApplicationsAppIdInstances | — |
-| GET | `/self/applications/{appId}/instances/{instanceId}` | get /self/applications/{appId}/instances/{instanceId} | — |
-| GET | `/self/applications/{appId}/tags` | getSelfApplicationsAppIdTags | — |
-| DELETE | `/self/applications/{appId}/tags/{tag}` | deleteSelfApplicationsAppIdTagsTag | — |
-| PUT | `/self/applications/{appId}/tags/{tag}` | putSelfApplicationsAppIdTagsTag | — |
-| GET | `/self/applications/{appId}/vhosts` | getSelfApplicationsAppIdVhosts | — |
-| DELETE | `/self/applications/{appId}/vhosts/favourite` | deleteSelfApplicationsAppIdVhostsFavourite | — |
-| GET | `/self/applications/{appId}/vhosts/favourite` | getSelfApplicationsAppIdVhostsFavourite | — |
-| PUT | `/self/applications/{appId}/vhosts/favourite` | putSelfApplicationsAppIdVhostsFavourite | — |
-| DELETE | `/self/applications/{appId}/vhosts/{domain}` | deleteSelfApplicationsAppIdVhostsDomain | — |
-| PUT | `/self/applications/{appId}/vhosts/{domain}` | putSelfApplicationsAppIdVhostsDomain | — |
-| PUT | `/self/avatar` | putSelfAvatar | — |
-| PUT | `/self/change_password` | putSelfChangePassword | — |
-| GET | `/self/cli_tokens` | get /self/cli_tokens | — |
-| GET | `/self/confirmation_email` | getSelfConfirmationEmail | — |
-| GET | `/self/consumers` | getSelfConsumers | — |
-| POST | `/self/consumers` | postSelfConsumers | — |
-| DELETE | `/self/consumers/{key}` | deleteSelfConsumersKey | — |
-| GET | `/self/consumers/{key}` | getSelfConsumersKey | — |
-| PUT | `/self/consumers/{key}` | putSelfConsumersKey | — |
-| GET | `/self/consumers/{key}/secret` | getSelfConsumersKeySecret | — |
-| GET | `/self/consumptions` | getSelfConsumptions | — |
-| GET | `/self/credits` | getSelfCredits | — |
-| GET | `/self/emails` | getSelfEmails | — |
-| DELETE | `/self/emails/{email}` | deleteSelfEmailsEmail | — |
-| PUT | `/self/emails/{email}` | putSelfEmailsEmail | — |
-| GET | `/self/id` | getSelfId | — |
-| GET | `/self/instances` | getSelfInstances | — |
-| GET | `/self/keys` | getSelfKeys | — |
-| DELETE | `/self/keys/{key}` | deleteSelfKeysKey | — |
-| PUT | `/self/keys/{key}` | putSelfKeysKey | — |
-| DELETE | `/self/mfa/{kind}` | delete /self/mfa/{kind} | — |
-| POST | `/self/mfa/{kind}` | post /self/mfa/{kind} | — |
-| PUT | `/self/mfa/{kind}` | put /self/mfa/{kind} | — |
-| GET | `/self/mfa/{kind}/backupcodes` | get /self/mfa/{kind}/backupcodes | — |
-| POST | `/self/mfa/{kind}/confirmation` | post /self/mfa/{kind}/confirmation | — |
-| GET | `/self/payment-info` | getSelfPaymentInfo | — |
-| GET | `/self/payments/billings` | getSelfPaymentsBillings | — |
-| POST | `/self/payments/billings` | postSelfPaymentsBillings | — |
-| DELETE | `/self/payments/billings/{bid}` | deleteSelfPaymentsBillingsBid | — |
-| GET | `/self/payments/billings/{bid}` | getSelfPaymentsBillingsBid | — |
-| PUT | `/self/payments/billings/{bid}` | putSelfPaymentsBillingsBid | — |
-| GET | `/self/payments/billings/{bid}.pdf` | getSelfPaymentsBillingsBidPdf | — |
-| GET | `/self/payments/fullprice/{price}` | getSelfPaymentsFullpricePrice | — |
-| GET | `/self/payments/methods` | getSelfPaymentsMethods | — |
-| POST | `/self/payments/methods` | postSelfPaymentsMethods | — |
-| GET | `/self/payments/methods/default` | get /self/payments/methods/default | — |
-| PUT | `/self/payments/methods/default` | put /self/payments/methods/default | — |
-| DELETE | `/self/payments/methods/{mId}` | deleteSelfPaymentsMethodsMId | — |
-| GET | `/self/payments/monthlyinvoice` | get /self/payments/monthlyinvoice | — |
-| PUT | `/self/payments/monthlyinvoice/maxcredit` | put /self/payments/monthlyinvoice/maxcredit | — |
-| DELETE | `/self/payments/recurring` | deleteSelfPaymentsRecurring | — |
-| GET | `/self/payments/recurring` | get /self/payments/recurring | — |
-| GET | `/self/payments/tokens/stripe` | get /self/payments/tokens/stripe | — |
-| DELETE | `/self/tokens` | deleteSelfTokens | — |
-| GET | `/self/tokens` | getSelfTokens | — |
-| DELETE | `/self/tokens/{token}` | deleteSelfTokensToken | — |
-| GET | `/self/validate_email` | getSelfValidateEmail | — |
-| GET | `/summary` | getSummary | — |
-| POST | `/users` | postUsers | — |
-| GET | `/users/{id}` | getUsersId | — |
-| GET | `/users/{id}/applications` | getUsersIdApplications | — |
-| GET | `/users/{userId}/git-info` | getUsersUserIdGitInfo | — |
-| POST | `/v2/providers/addon-matomo/resources` | createMatomo | Create Matomo addon |
-| DELETE | `/v2/providers/addon-matomo/resources/{matomoId}` | deleteMatomo | Delete Matomo addon |
-| GET | `/v3/logs/{appId}` | get /v3/logs/{appId} | — |
-| GET | `/v3/logs/{appId}/drains` | get /v3/logs/{appId}/drains | — |
-| POST | `/v3/logs/{appId}/drains` | post /v3/logs/{appId}/drains | — |
-| DELETE | `/v3/logs/{appId}/drains/:idOrUrl` | delete /v3/logs/{appId}/drains/:idOrUrl | — |
-| GET | `/v3/logs/{appId}/drains/:idOrUrl` | get /v3/logs/{appId}/drains/:idOrUrl | — |
-| GET | `/v3/logs/{appId}/logs-chunked` | get /v3/logs/{appId}/logs-chunked | — |
-| GET | `/v3/logs/{appId}/logs-socket` | get /v3/logs/{appId}/logs-socket | — |
-| GET | `/v4/addon-providers/addon-matomo/addons/{matomoId}` | getMatomo | Get Matomo addon |
-| GET | `/v4/addon-providers/addon-matomo/token/validate` | getMatomoKTokenValidation | Validate a keycloak token |
-| GET | `/v4/addon-providers/config-provider/addons/{configurationProviderId}` | getConfigProvider | Get Addon provider configuration |
-| GET | `/v4/addon-providers/config-provider/addons/{configurationProviderId}/env` | getConfigProviderEnv | Get provider's addon environment |
-| PUT | `/v4/addon-providers/config-provider/addons/{configurationProviderId}/env` | updateConfigProviderEnv | Update provider's addon environment |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups` | listNetworkGroups | List Network Groups |
-| POST | `/v4/networkgroups/organisations/{ownerId}/networkgroups` | createNetworkGroup | Create Network Group |
-| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}` | deleteNetworkGroup | Delete Network Group |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}` | getNetworkGroup | Get Network Group |
-| POST | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/external-peers` | createNetworkGroupExternalPeer | Add external peer |
-| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/external-peers/{peerId}` | deleteNetworkGroupExternalPeer | Remove external peer |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members` | listNetworkGroupMembers | List members |
-| POST | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members` | createNetworkGroupMember | Add member |
-| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members/{memberId}` | deleteNetworkGroupMember | Remove member |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members/{memberId}` | getNetworkGroupMember | Get member |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers` | listNetworkGroupPeers | List peers |
-| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}` | deleteNetworkGroupPeer | Remove peer |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}` | getNetworkGroupPeer | Get peer |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}/wireguard/configuration` | getNetworkGroupWireGuardConfiguration | Get WireGuard® configuration |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}/wireguard/configuration/stream` | getNetworkGroupWireGuardConfigurationStream | Get WireGuard® configuration |
-| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/stream` | getNetworkGroupStream | Network Group SSE |
-| POST | `/vendor//addons` | post /vendor//addons | — |
-| GET | `/vendor//apps/{addonId}/logscollector` | get /vendor//apps/{addonId}/logscollector | — |
-| GET | `/vendor/apps` | getVendorApps | — |
-| GET | `/vendor/apps/{addonId}` | getVendorAppsAddonId | — |
-| PUT | `/vendor/apps/{addonId}` | putVendorAppsAddonId | — |
-| POST | `/vendor/apps/{addonId}/consumptions` | postVendorBillingOwnerId | — |
-| PUT | `/vendor/apps/{addonId}/migration_callback` | put /vendor/apps/{addonId}/migration_callback | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `//openapi` | get //openapi | — | — | yes | — |
+| GET | `/application/{appId}/environment` | get /application/{appId}/environment | `appId`*, `token` | — | yes | — |
+| PUT | `/application/{appId}/environment` | put /application/{appId}/environment | `appId`*, `token` | — |  | — |
+| POST | `/authorize` | postAuthorize | — | — |  | — |
+| GET | `/events/event-socket` | get /events/event-socket | — | — | yes | — |
+| GET | `/github` | getGithub | — | Transaction_Id | yes | — |
+| GET | `/github/applications` | getGithubApplications | — | Application[] | yes | — |
+| GET | `/github/callback` | getGithubCallback | `code`, `state`, `error`, `error_description`, `error_uri`, `Cookie` | — | yes | — |
+| GET | `/github/emails` | getGithubEmails | — | string[] | yes | — |
+| GET | `/github/keys` | getGithubKeys | — | Key[] | yes | — |
+| GET | `/github/link` | getGithubLink | `transactionId`, `redirectUrl` | — | yes | — |
+| DELETE | `/github/link` | deleteGithubLink | — | — |  | — |
+| GET | `/github/login` | getGithubLogin | `redirectUrl`, `fromAuthorize` | — | yes | — |
+| POST | `/github/redeploy` | postGithubRedeploy | `User-Agent`, `X-Github-Event`, `X-Hub-Signature` | — |  | — |
+| GET | `/github/signup` | getGithubSignup | `redirectUrl`, `fromAuthorize` | — | yes | — |
+| POST | `/github/signup` | postGithubSignup | `transactionId`, `name`, `otherId`, `otherEmail`, `password`, `autoLink`, `terms` | — |  | — |
+| GET | `/github/username` | getGithubUsername | — | string | yes | — |
+| GET | `/logs-socket/{appId}` | get /logs-socket/{appId} | `appId`* | — | yes | — |
+| GET | `/logs/drains` | get /logs/drains | — | — | yes | — |
+| PUT | `/logs/drains/{drainId}` | put /logs/drains/{drainId} | `drainId`* | — |  | — |
+| GET | `/logs/logs-chunked/{appId}` | get /logs/logs-chunked/{appId} | `appId`*, `download` | — | yes | — |
+| GET | `/logs/logs-socket/{appId}` | get /logs/logs-socket/{appId} | `appId`*, `since`, `filter`, `deployment_id` | — | yes | — |
+| GET | `/logs/{appId}` | get /logs/{appId} | `appId`*, `limit`, `order`, `after`, `before`, `filter`, `deployment_id` | — | yes | — |
+| GET | `/logs/{appId}/drains` | get /logs/{appId}/drains | `appId`* | — | yes | — |
+| POST | `/logs/{appId}/drains` | post /logs/{appId}/drains | `appId`* | — |  | — |
+| GET | `/logs/{appId}/drains/:idOrUrl` | get /logs/{appId}/drains/:idOrUrl | `appId`* | — | yes | — |
+| DELETE | `/logs/{appId}/drains/:idOrUrl` | delete /logs/{appId}/drains/:idOrUrl | `appId`* | — |  | — |
+| GET | `/logs/{appId}/sse` | get /logs/{appId}/sse | `appId`* | — | yes | — |
+| GET | `/newsfeeds/blog` | getNewsfeedsBlog | — | — | yes | — |
+| GET | `/newsfeeds/engineering` | getNewsfeedEngineering | — | — | yes | — |
+| GET | `/notifications/emailhooks/{ownerId}` | get /notifications/emailhooks/{ownerId} | `ownerId`* | — | yes | — |
+| POST | `/notifications/emailhooks/{ownerId}` | post /notifications/emailhooks/{ownerId} | `ownerId`* | — |  | — |
+| PUT | `/notifications/emailhooks/{ownerId}/:id` | put /notifications/emailhooks/{ownerId}/:id | `ownerId`* | — |  | — |
+| DELETE | `/notifications/emailhooks/{ownerId}/:id` | delete /notifications/emailhooks/{ownerId}/:id | `ownerId`* | — |  | — |
+| GET | `/notifications/info/events` | get /notifications/info/events | — | — | yes | — |
+| GET | `/notifications/info/webhookformats` | get /notifications/info/webhookformats | — | — | yes | — |
+| GET | `/notifications/webhooks/{ownerId}` | get /notifications/webhooks/{ownerId} | `ownerId`* | — | yes | — |
+| POST | `/notifications/webhooks/{ownerId}` | post /notifications/webhooks/{ownerId} | `ownerId`* | — |  | — |
+| PUT | `/notifications/webhooks/{ownerId}/:id` | put /notifications/webhooks/{ownerId}/:id | `ownerId`* | — |  | — |
+| DELETE | `/notifications/webhooks/{ownerId}/:id` | delete /notifications/webhooks/{ownerId}/:id | `ownerId`* | — |  | — |
+| POST | `/oauth/access_token` | postOauthAccessToken | `oauth_consumer_key`, `oauth_token`, `oauth_signature_method`, `oauth_signature`, `oauth_timestamp`, `oauth_nonce`, `oauth_version`, `oauth_verifier`, `oauth_callback`, `oauth_token_secret`, `oauth_callback_confirmed` | — |  | — |
+| POST | `/oauth/access_token_query` | post /oauth/access_token_query | `oauth_consumer_key`, `oauth_token`, `oauth_signature_method`, `oauth_signature`, `oauth_timestamp`, `oauth_nonce`, `oauth_version`, `oauth_verifier`, `oauth_callback`, `oauth_token_secret`, `oauth_callback_confirmed` | — |  | — |
+| GET | `/oauth/authorize` | getOauthAuthorize | `oauth_token`, `Cookie` | — | yes | — |
+| POST | `/oauth/authorize` | postOauthAuthorize | `almighty`, `access_organisations`, `manage_organisations`, `manage_organisations_services`, `manage_organisations_applications`, `manage_organisations_members`, `access_organisations_bills`, `access_organisations_credit_count`, `access_organisations_consumption_statistics`, `access_personal_information`, `manage_personal_information`, `manage_ssh_keys`, `manage_services`, `manage_applications`, `access_bills`, `access_credit_count`, `access_consumption_statistics`, `Cookie` | — |  | — |
+| POST | `/oauth/request_token` | postOauthRequestToken | `oauth_consumer_key`, `oauth_token`, `oauth_signature_method`, `oauth_signature`, `oauth_timestamp`, `oauth_nonce`, `oauth_version`, `oauth_verifier`, `oauth_callback`, `oauth_token_secret`, `oauth_callback_confirmed` | — |  | — |
+| POST | `/oauth/request_token_query` | post /oauth/request_token_query | `oauth_consumer_key`, `oauth_token`, `oauth_signature_method`, `oauth_signature`, `oauth_timestamp`, `oauth_nonce`, `oauth_version`, `oauth_verifier`, `oauth_callback`, `oauth_token_secret`, `oauth_callback_confirmed` | — |  | — |
+| GET | `/oauth/rights` | getOauthRights | — | Rights | yes | — |
+| GET | `/openapi.{type}` | get /openapi.{type} | `type`* | — | yes | Get the swagger for this API as {type} |
+| GET | `/organisations` | getOrganisations | `user` | Organisation[] | yes | — |
+| POST | `/organisations` | postOrganisations | body*: WannabeOrganisation | Organisation |  | — |
+| GET | `/organisations/{id}` | getOrganisationsId | `id`* | Organisation | yes | — |
+| PUT | `/organisations/{id}` | putOrganisationsId | `id`*, body*: WannabeOrganisation | Organisation |  | — |
+| DELETE | `/organisations/{id}` | deleteOrganisationsId | `id`* | — |  | — |
+| GET | `/organisations/{id}/addonproviders` | getOrganisationsIdAddonproviders | `id`* | Provider[] | yes | — |
+| POST | `/organisations/{id}/addonproviders` | postOrganisationsIdAddonproviders | `id`*, body*: WannabeAddonProvider | Provider |  | — |
+| GET | `/organisations/{id}/addonproviders/{providerId}` | getOrganisationsIdAddonprovidersProviderId | `id`*, `providerId`* | Provider | yes | — |
+| PUT | `/organisations/{id}/addonproviders/{providerId}` | putOrganisationsIdAddonprovidersProviderId | `id`*, `providerId`*, body*: WannabeAddonProvider | Provider |  | — |
+| DELETE | `/organisations/{id}/addonproviders/{providerId}` | delete /organisations/{id}/addonproviders/{providerId} | `id`*, `providerId`* | — |  | Remove an add-on provider |
+| GET | `/organisations/{id}/addonproviders/{providerId}/features` | getOrganisationsIdAddonprovidersProviderIdFeatures | `id`*, `providerId`* | Feature[] | yes | — |
+| POST | `/organisations/{id}/addonproviders/{providerId}/features` | postOrganisationsIdAddonprovidersProviderIdFeatures | `id`*, `providerId`*, body*: WannabeFeature | Feature |  | — |
+| DELETE | `/organisations/{id}/addonproviders/{providerId}/features/{featureId}` | deleteOrganisationsIdAddonprovidersProviderIdFeaturesFeatureId | `id`*, `featureId`*, `providerId`* | — |  | — |
+| GET | `/organisations/{id}/addonproviders/{providerId}/plans` | getOrganisationsIdAddonprovidersProviderIdPlans | `id`*, `providerId`* | Plan[] | yes | — |
+| POST | `/organisations/{id}/addonproviders/{providerId}/plans` | postOrganisationsIdAddonprovidersProviderIdPlans | `id`*, `providerId`*, body*: WannabePlan | Plan |  | — |
+| GET | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}` | getOrganisationsIdAddonprovidersProviderIdPlansPlanId | `id`*, `providerId`*, `planId`* | Plan | yes | — |
+| PUT | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}` | putOrganisationsIdAddonprovidersProviderIdPlansPlanId | `id`*, `providerId`*, `planId`*, body*: WannabePlan | Plan |  | — |
+| DELETE | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}` | deleteOrganisationsIdAddonprovidersProviderIdPlansPlanId | `id`*, `providerId`*, `planId`* | — |  | — |
+| PUT | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}/features/{featureName}` | putOrganisationsIdAddonprovidersProviderIdPlansPlanIdFeaturesFeatureName | `id`*, `featureName`*, `providerId`*, `planId`*, body*: WannabePlanFeature | — |  | — |
+| DELETE | `/organisations/{id}/addonproviders/{providerId}/plans/{planId}/features/{featureName}` | deleteOrganisationsIdAddonprovidersProviderIdPlansPlanIdFeaturesFeatureName | `id`*, `featureName`*, `providerId`*, `planId`* | — |  | — |
+| GET | `/organisations/{id}/addonproviders/{providerId}/sso` | getOrganisationsIdAddonsAddonIdSso | `providerId`*, `id`* | AddonProviderSso | yes | — |
+| GET | `/organisations/{id}/addonproviders/{providerId}/tags` | getOrganisationsIdAddonprovidersProviderIdTags | `id`*, `providerId`* | string[] | yes | — |
+| POST | `/organisations/{id}/addonproviders/{providerId}/testers` | postOrganisationsIdAddonprovidersProviderIdTesters | `id`*, `providerId`* | — |  | — |
+| GET | `/organisations/{id}/addons` | getOrganisationsIdAddons | `id`* | Addon[] | yes | — |
+| POST | `/organisations/{id}/addons` | postOrganisationsIdAddons | `id`*, body*: WannabeAddon | Addon |  | — |
+| POST | `/organisations/{id}/addons/preorders` | post /organisations/{id}/addons/preorders | `id`*, body*: WannabeAddon | — |  | — |
+| GET | `/organisations/{id}/addons/{addonId}` | getOrganisationsIdAddonsAddonId | `id`*, `addonId`* | Addon | yes | — |
+| PUT | `/organisations/{id}/addons/{addonId}` | putOrganisationsIdAddonsAddonId | `id`*, `addonId`*, body*: WannabeAddon | Addon |  | — |
+| DELETE | `/organisations/{id}/addons/{addonId}` | deleteOrganisationsIdAddonsAddonId | `id`*, `addonId`* | — |  | — |
+| GET | `/organisations/{id}/addons/{addonId}/applications` | getOrganisationsIdAddonsAddonIdApplications | `id`*, `addonId`* | Application[] | yes | — |
+| GET | `/organisations/{id}/addons/{addonId}/env` | getOrganisationsIdAddonsAddonIdEnv | `id`*, `addonId`* | ListEnv[] | yes | — |
+| GET | `/organisations/{id}/addons/{addonId}/instances` | get /organisations/{id}/addons/{addonId}/instances | `id`*, `addonId`*, `deploymentId`, `withDeleted` | SupernovaInstanceView[] | yes | List instances for this add-on. |
+| GET | `/organisations/{id}/addons/{addonId}/instances/{instanceId}` | get /organisations/{id}/addons/{addonId}/instances/{instanceId} | `instanceId`*, `id`*, `addonId`* | SupernovaInstanceView | yes | Get a specific instance for {addonId} |
+| GET | `/organisations/{id}/addons/{addonId}/migrations` | get /organisations/{id}/addons/{addonId}/migrations | `id`*, `addonId`* | AddonMigration[] | yes | Get past migrations from add-on. |
+| POST | `/organisations/{id}/addons/{addonId}/migrations` | post /organisations/{id}/addons/{addonId}/migrations | `id`*, `addonId`*, body*: object | object |  | Start a new add-on migration |
+| GET | `/organisations/{id}/addons/{addonId}/migrations/{migrationId}` | get /organisations/{id}/addons/{addonId}/migrations/{migrationId} | `migrationId`*, `id`*, `addonId`* | AddonMigration | yes | Get a given migration |
+| GET | `/organisations/{id}/addons/{addonId}/sso` | get /organisations/{id}/addons/{addonId}/sso | `id`*, `addonId`* | Sso | yes | — |
+| GET | `/organisations/{id}/addons/{addonId}/tags` | getOrganisationsIdAddonsAddonIdTags | `id`*, `addonId`* | string[] | yes | — |
+| PUT | `/organisations/{id}/addons/{addonId}/tags/{tag}` | putOrganisationsIdAddonsAddonIdTagsTag | `id`*, `tag`*, `addonId`*, body*: Body | — |  | — |
+| DELETE | `/organisations/{id}/addons/{addonId}/tags/{tag}` | deleteOrganisationsIdAddonsAddonIdTagsTag | `id`*, `tag`*, `addonId`* | — |  | — |
+| GET | `/organisations/{id}/applications` | getOrganisationsIdApplications | `id`* | Application[] | yes | — |
+| POST | `/organisations/{id}/applications` | postOrganisationsIdApplications | `id`*, body*: WannabeApplication | Application |  | — |
+| GET | `/organisations/{id}/applications/{appId}` | getOrganisationsIdApplicationsAppId | `id`*, `appId`* | Application | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}` | putOrganisationsIdApplicationsAppId | `id`*, `appId`*, body*: WannabeApplication | Application |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}` | deleteOrganisationsIdApplicationsAppId | `id`*, `appId`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/addons` | getOrganisationsIdApplicationsAppIdAddons | `id`*, `appId`* | Addon[] | yes | — |
+| POST | `/organisations/{id}/applications/{appId}/addons` | postOrganisationsIdApplicationsAppIdAddons | `id`*, `appId`*, body*: Body | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/addons/env` | getOrganisationsIdApplicationsAppIdAddonsEnv | `id`*, `appId`* | Env[] | yes | — |
+| DELETE | `/organisations/{id}/applications/{appId}/addons/{addonId}` | deleteOrganisationsIdApplicationsAppIdAddonsAddonId | `id`*, `appId`*, `addonId`* | — |  | — |
+| PUT | `/organisations/{id}/applications/{appId}/branch` | put /organisations/{id}/applications/{appId}/branch | `appId`*, `id`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/branches` | get /organisations/{id}/applications/{appId}/branches | `appId`*, `id`* | — | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}/buildflavor` | put /organisations/{id}/applications/{appId}/buildflavor | `appId`*, `id`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/dependencies` | getOrganisationsIdApplicationsAppIdDependencies | `appId`*, `id`* | Application[] | yes | — |
+| GET | `/organisations/{id}/applications/{appId}/dependencies/env` | get /organisations/{id}/applications/{appId}/dependencies/env | `appId`*, `id`* | LinkedAppEnv[] | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}/dependencies/{dependencyId}` | putOrganisationsIdApplicationsAppIdDependenciesDependencyId | `dependencyId`*, `appId`*, `id`*, body*: Body | — |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}/dependencies/{dependencyId}` | deleteOrganisationsIdApplicationsAppIdDependenciesDependencyId | `dependencyId`*, `appId`*, `id`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/dependents` | getOrganisationsIdApplicationsAppIdDependents | `appId`*, `id`* | Application[] | yes | — |
+| GET | `/organisations/{id}/applications/{appId}/deployments` | getOrganisationsIdApplicationsAppIdDeployments | `id`*, `appId`*, `limit`, `offset`, `action` | Deployment[] | yes | — |
+| GET | `/organisations/{id}/applications/{appId}/deployments/{deploymentId}` | get /organisations/{id}/applications/{appId}/deployments/{deploymentId} | `appId`*, `deploymentId`*, `id`* | — | yes | — |
+| DELETE | `/organisations/{id}/applications/{appId}/deployments/{deploymentId}/instances` | deleteOrganisationsIdApplicationsAppIdDeploymentsDeploymentIdInstances | `id`*, `appId`*, `deploymentId`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/env` | getOrganisationsIdApplicationsAppIdEnv | `id`*, `appId`* | ListEnv[] | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}/env` | putOrganisationsIdApplicationsAppIdEnv | `id`*, `appId`*, body*: WannabeEnv | ListEnv |  | — |
+| PUT | `/organisations/{id}/applications/{appId}/env/{envName}` | putOrganisationsIdApplicationsAppIdEnvEnvName | `id`*, `appId`*, `envName`*, body*: WannabeEnv | ListEnv |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}/env/{envName}` | deleteOrganisationsIdApplicationsAppIdEnvEnvName | `id`*, `appId`*, `envName`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/exposed_env` | get /organisations/{id}/applications/{appId}/exposed_env | `appId`*, `id`* | — | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}/exposed_env` | put /organisations/{id}/applications/{appId}/exposed_env | `appId`*, `id`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/instances` | getOrganisationsIdApplicationsAppIdInstances | `id`*, `appId`* | AppInstance[] | yes | — |
+| POST | `/organisations/{id}/applications/{appId}/instances` | postOrganisationsIdApplicationsAppIdInstances | `id`*, `appId`*, `commit` | — |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}/instances` | deleteOrganisationsIdApplicationsAppIdInstances | `id`*, `appId`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/instances/{instanceId}` | get /organisations/{id}/applications/{appId}/instances/{instanceId} | `instanceId`*, `appId`*, `id`* | — | yes | — |
+| GET | `/organisations/{id}/applications/{appId}/tags` | getOrganisationsIdApplicationsAppIdTags | `id`*, `appId`* | string[] | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}/tags/{tag}` | putOrganisationsIdApplicationsAppIdTagsTag | `id`*, `appId`*, `tag`*, body*: Body | — |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}/tags/{tag}` | deleteOrganisationsIdApplicationsAppIdTagsTag | `id`*, `appId`*, `tag`* | — |  | — |
+| GET | `/organisations/{id}/applications/{appId}/vhosts` | getOrganisationsIdApplicationsAppIdVhosts | `id`*, `appId`* | Vhost[] | yes | — |
+| GET | `/organisations/{id}/applications/{appId}/vhosts/favourite` | getOrganisationsIdApplicationsAppIdVhostsFavourite | `id`*, `appId`* | Vhost | yes | — |
+| PUT | `/organisations/{id}/applications/{appId}/vhosts/favourite` | putOrganisationsIdApplicationsAppIdVhostsFavourite | `id`*, `appId`*, body*: Vhost | — |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}/vhosts/favourite` | deleteOrganisationsIdApplicationsAppIdVhostsFavourite | `id`*, `appId`* | — |  | — |
+| PUT | `/organisations/{id}/applications/{appId}/vhosts/{domain}` | putOrganisationsIdApplicationsAppIdVhostsDomain | `id`*, `appId`*, `domain`*, body*: Vhost | — |  | — |
+| DELETE | `/organisations/{id}/applications/{appId}/vhosts/{domain}` | deleteOrganisationsIdApplicationsAppIdVhostsDomain | `id`*, `appId`*, `domain`* | — |  | — |
+| PUT | `/organisations/{id}/avatar` | putOrganisationsIdAvatar | `id`* | — |  | — |
+| GET | `/organisations/{id}/consumers` | getOrganisationsIdConsumers | `id`* | Consumer[] | yes | — |
+| POST | `/organisations/{id}/consumers` | postOrganisationsIdConsumers | `id`*, body*: WannabeConsumer | — |  | — |
+| GET | `/organisations/{id}/consumers/{key}` | getOrganisationsIdConsumersKey | `id`*, `key`* | Consumer | yes | — |
+| PUT | `/organisations/{id}/consumers/{key}` | putOrganisationsIdConsumersKey | `id`*, `key`*, body*: WannabeConsumer | — |  | — |
+| DELETE | `/organisations/{id}/consumers/{key}` | deleteOrganisationsIdConsumersKey | `id`*, `key`* | — |  | — |
+| GET | `/organisations/{id}/consumers/{key}/secret` | getOrganisationsIdConsumersKeySecret | `id`*, `key`* | Secret | yes | — |
+| GET | `/organisations/{id}/consumptions` | getOrganisationsIdConsumptions | `id`*, `appId`, `from`, `to` | Conso | yes | — |
+| GET | `/organisations/{id}/credits` | getOrganisationsIdCredits | `id`* | Credits | yes | — |
+| GET | `/organisations/{id}/deployments` | getOrganisationsIdDeployments | `id`* | DeploymentSummary | yes | — |
+| GET | `/organisations/{id}/instances` | getOrganisationsIdInstances | `id`* | object | yes | — |
+| GET | `/organisations/{id}/members` | getOrganisationsIdMembers | `id`* | Member[] | yes | — |
+| POST | `/organisations/{id}/members` | postOrganisationsIdMembers | `id`*, `invitationKey`, body*: WannabeMember | — |  | — |
+| PUT | `/organisations/{id}/members/{userId}` | putOrganisationsIdMembersUserId | `id`*, `userId`*, body*: WannabeMember | — |  | — |
+| DELETE | `/organisations/{id}/members/{userId}` | deleteOrganisationsIdMembersUserId | `id`*, `userId`* | — |  | — |
+| GET | `/organisations/{id}/payment-info` | getOrganisationsIdPaymentInfo | `id`* | — | yes | — |
+| GET | `/organisations/{id}/payments/billings` | getOrganisationsIdPaymentsBillings | `id`* | — | yes | — |
+| POST | `/organisations/{id}/payments/billings` | postOrganisationsIdPaymentsBillings | `id`* | — |  | — |
+| GET | `/organisations/{id}/payments/billings/unpaid` | get /organisations/{id}/payments/billings/unpaid | `id`* | — | yes | — |
+| GET | `/organisations/{id}/payments/billings/{bid}` | getOrganisationsIdPaymentsBillingsBid | `id`*, `bid`* | — | yes | — |
+| PUT | `/organisations/{id}/payments/billings/{bid}` | putOrganisationsIdPaymentsBillingsBid | `id`*, `bid`* | — |  | — |
+| DELETE | `/organisations/{id}/payments/billings/{bid}` | deleteOrganisationsIdPaymentsBillingsBid | `id`*, `bid`* | — |  | — |
+| GET | `/organisations/{id}/payments/billings/{bid}.pdf` | getOrganisationsIdPaymentsBillingsBidPdf | `id`*, `bid`*, `token` | — | yes | — |
+| GET | `/organisations/{id}/payments/fullprice/{price}` | getOrganisationsIdPaymentsFullPricePrice | `id`*, `price`* | — | yes | — |
+| GET | `/organisations/{id}/payments/methods` | get /organisations/{id}/payments/methods | `id`* | — | yes | — |
+| POST | `/organisations/{id}/payments/methods` | post /organisations/{id}/payments/methods | `id`*, body*: Body | — |  | — |
+| GET | `/organisations/{id}/payments/methods/default` | get /organisations/{id}/payments/methods/default | `id`* | — | yes | — |
+| PUT | `/organisations/{id}/payments/methods/default` | put /organisations/{id}/payments/methods/default | `id`*, body*: PaymentData | — |  | — |
+| DELETE | `/organisations/{id}/payments/methods/{mId}` | delete /organisations/{id}/payments/methods/{mId} | `mId`*, `id`* | — |  | — |
+| GET | `/organisations/{id}/payments/monthlyinvoice` | get /organisations/{id}/payments/monthlyinvoice | `id`* | — | yes | — |
+| PUT | `/organisations/{id}/payments/monthlyinvoice/maxcredit` | put /organisations/{id}/payments/monthlyinvoice/maxcredit | `id`* | — |  | — |
+| GET | `/organisations/{id}/payments/recurring` | get /organisations/{id}/payments/recurring | `id`* | — | yes | — |
+| DELETE | `/organisations/{id}/payments/recurring` | deleteOrganisationsIdPaymentsRecurring | `id`* | — |  | — |
+| GET | `/password_forgotten` | getPasswordForgotten | — | — | yes | — |
+| POST | `/password_forgotten` | postPasswordForgotten | `login`, `drop_tokens`, `TesterPass` | — |  | — |
+| GET | `/password_forgotten/{key}` | getPasswordForgottenKey | `key`* | — | yes | — |
+| POST | `/password_forgotten/{key}` | postPasswordForgottenKey | `key`*, `pass`, `pass2` | — |  | — |
+| GET | `/payments/assets/pay_button/{token}/button.png` | get /payments/assets/pay_button/{token}/button.png | `token`* | — | yes | — |
+| GET | `/payments/coupons/{name}` | getPaymentsCouponsName | `name`* | — | yes | — |
+| GET | `/payments/providers` | getPaymentsProviders | — | Payment_Provider[] | yes | — |
+| GET | `/payments/tokens/stripe` | getPaymentsTokensStripe | — | — | yes | — |
+| POST | `/payments/{bid}/end/stripe` | post /payments/{bid}/end/stripe | `bid`* | — |  | — |
+| GET | `/products/addonproviders` | getProductsAddonProviders | — | Provider[] | yes | — |
+| GET | `/products/addonproviders/{provider_id}` | getProductsAddonProvidersProviderId | `provider_id`* | Provider | yes | — |
+| GET | `/products/addonproviders/{provider_id}/versions` | get /products/addonproviders/{provider_id}/versions | `provider_id`* | — | yes | — |
+| GET | `/products/countries` | getProductsCountries | — | Country | yes | — |
+| GET | `/products/countrycodes` | getProductsCountrycodes | — | Country | yes | — |
+| GET | `/products/instances` | getProductsInstances | `for` | Instance[] | yes | — |
+| GET | `/products/instances/{type}-{version}` | getProductsInstancesTypeVersion | `type`*, `version`*, `for`, `app` | Instance | yes | — |
+| GET | `/products/mfa_kinds` | get /products/mfa_kinds | — | — | yes | — |
+| GET | `/products/packages` | getProductsPackages | `coupon`, `orgaId`, `currency` | — | yes | — |
+| GET | `/products/prices` | getProductsPrices | — | — | yes | — |
+| GET | `/products/zones` | getProductsZones | — | Zone[] | yes | — |
+| GET | `/self` | getSelf | — | User | yes | — |
+| PUT | `/self` | putSelf | body*: WannabeUser | — |  | — |
+| DELETE | `/self` | deleteSelf | — | — |  | — |
+| GET | `/self/addons` | getSelfAddons | — | Addon[] | yes | Addon |
+| POST | `/self/addons` | postSelfAddons | body*: WannabeAddon | — |  | — |
+| POST | `/self/addons/preorders` | post /self/addons/preorders | body*: WannabeAddon | — |  | — |
+| GET | `/self/addons/{addonId}` | getSelfAddonsAddonId | `addonId`* | Addon | yes | Specific addon |
+| PUT | `/self/addons/{addonId}` | putSelfAddonsAddonId | `addonId`*, body*: WannabeAddon | — |  | — |
+| DELETE | `/self/addons/{addonId}` | deleteSelfAddonsAddonId | `addonId`* | — |  | — |
+| GET | `/self/addons/{addonId}/applications` | getSelfAddonsAddonIdApplications | `addonId`* | Application[] | yes | — |
+| GET | `/self/addons/{addonId}/env` | getSelfAddonsAddonIdEnv | `addonId`* | ListEnv[] | yes | — |
+| PUT | `/self/addons/{addonId}/plan` | putSelfAddonsAddonIdPlan | `addonId`*, body*: WannabePlan | — |  | — |
+| GET | `/self/addons/{addonId}/sso` | getSelfAddonsAddonIdSso | `addonId`* | Sso | yes | — |
+| GET | `/self/addons/{addonId}/tags` | getSelfAddonsAddonIdTags | `addonId`* | string[] | yes | — |
+| PUT | `/self/addons/{addonId}/tags/{tag}` | putSelfAddonsAddonIdTagsTag | `tag`*, `addonId`*, body*: Body | — |  | — |
+| DELETE | `/self/addons/{addonId}/tags/{tag}` | deleteSelfAddonsAddonIdTagsTag | `tag`*, `addonId`* | — |  | — |
+| GET | `/self/applications` | getSelfApplications | — | Application[] | yes | — |
+| POST | `/self/applications` | postSelfApplications | body*: WannabeApplication | — |  | — |
+| GET | `/self/applications/{appId}` | getSelfApplicationsAppId | `appId`* | Application | yes | — |
+| PUT | `/self/applications/{appId}` | putSelfApplicationsAppId | `appId`*, body*: WannabeApplication | — |  | — |
+| DELETE | `/self/applications/{appId}` | deleteSelfApplicationsAppId | `appId`* | — |  | — |
+| GET | `/self/applications/{appId}/addons` | getSelfApplicationsAppIdAddons | `appId`* | Addon[] | yes | — |
+| POST | `/self/applications/{appId}/addons` | postSelfApplicationsAppIdAddons | `appId`*, body*: Body | — |  | — |
+| GET | `/self/applications/{appId}/addons/env` | getSelfApplicationsAppIdAddonsEnv | `appId`* | Env[] | yes | — |
+| DELETE | `/self/applications/{appId}/addons/{addonId}` | deleteSelfApplicationsAppIdAddonsAddonId | `appId`*, `addonId`* | — |  | — |
+| PUT | `/self/applications/{appId}/branch` | put /self/applications/{appId}/branch | `appId`* | — |  | — |
+| GET | `/self/applications/{appId}/branches` | get /self/applications/{appId}/branches | `appId`* | — | yes | — |
+| PUT | `/self/applications/{appId}/buildflavor` | put /self/applications/{appId}/buildflavor | `appId`* | — |  | — |
+| GET | `/self/applications/{appId}/dependencies` | getSelfApplicationsAppIdDependencies | `appId`* | Application[] | yes | — |
+| GET | `/self/applications/{appId}/dependencies/env` | get /self/applications/{appId}/dependencies/env | `appId`* | LinkedAppEnv[] | yes | — |
+| PUT | `/self/applications/{appId}/dependencies/{dependencyId}` | getSelfApplicationsAppIdDependenciesDependencyId | `dependencyId`*, `appId`*, body*: WannabeApplication | — |  | — |
+| DELETE | `/self/applications/{appId}/dependencies/{dependencyId}` | deleteSelfApplicationsAppIdDependenciesDependencyId | `dependencyId`*, `appId`* | — |  | — |
+| GET | `/self/applications/{appId}/dependents` | getSelfApplicationsAppIdDependents | `appId`* | Application[] | yes | — |
+| GET | `/self/applications/{appId}/deployments` | getSelfApplicationsAppIdDeployments | `appId`*, `limit`, `offset`, `action` | Deployment[] | yes | — |
+| GET | `/self/applications/{appId}/deployments/{deploymentId}` | get /self/applications/{appId}/deployments/{deploymentId} | `appId`*, `deploymentId`* | — | yes | — |
+| DELETE | `/self/applications/{appId}/deployments/{deploymentId}/instances` | deleteSelfApplicationsAppIdDeploymentsDeploymentIdInstances | `appId`*, `deploymentId`* | — |  | — |
+| GET | `/self/applications/{appId}/env` | getSelfApplicationsAppIdEnv | `appId`* | ListEnv[] | yes | — |
+| PUT | `/self/applications/{appId}/env` | putSelfApplicationsAppIdEnv | `appId`*, body*: WannabeEnv | — |  | — |
+| PUT | `/self/applications/{appId}/env/{envName}` | putSelfApplicationsAppIdEnvEnvName | `appId`*, `envName`*, body*: WannabeEnv | — |  | — |
+| DELETE | `/self/applications/{appId}/env/{envName}` | deleteSelfApplicationsAppIdEnvEnvName | `appId`*, `envName`* | — |  | — |
+| GET | `/self/applications/{appId}/exposed_env` | get /self/applications/{appId}/exposed_env | `appId`* | — | yes | — |
+| PUT | `/self/applications/{appId}/exposed_env` | put /self/applications/{appId}/exposed_env | `appId`* | — |  | — |
+| GET | `/self/applications/{appId}/instances` | getSelfApplicationsAppIdInstances | `appId`* | Instance[] | yes | — |
+| POST | `/self/applications/{appId}/instances` | postSelfApplicationsAppIdInstances | `appId`*, `commit` | — |  | — |
+| DELETE | `/self/applications/{appId}/instances` | deleteSelfApplicationsAppIdInstances | `appId`* | — |  | — |
+| GET | `/self/applications/{appId}/instances/{instanceId}` | get /self/applications/{appId}/instances/{instanceId} | `instanceId`*, `appId`* | — | yes | — |
+| GET | `/self/applications/{appId}/tags` | getSelfApplicationsAppIdTags | `appId`* | string[] | yes | — |
+| PUT | `/self/applications/{appId}/tags/{tag}` | putSelfApplicationsAppIdTagsTag | `appId`*, `tag`*, body*: Body | — |  | — |
+| DELETE | `/self/applications/{appId}/tags/{tag}` | deleteSelfApplicationsAppIdTagsTag | `appId`*, `tag`* | — |  | — |
+| GET | `/self/applications/{appId}/vhosts` | getSelfApplicationsAppIdVhosts | `appId`* | Vhost[] | yes | — |
+| GET | `/self/applications/{appId}/vhosts/favourite` | getSelfApplicationsAppIdVhostsFavourite | `appId`* | Vhost | yes | — |
+| PUT | `/self/applications/{appId}/vhosts/favourite` | putSelfApplicationsAppIdVhostsFavourite | `appId`*, body*: Vhost | — |  | — |
+| DELETE | `/self/applications/{appId}/vhosts/favourite` | deleteSelfApplicationsAppIdVhostsFavourite | `appId`* | — |  | — |
+| PUT | `/self/applications/{appId}/vhosts/{domain}` | putSelfApplicationsAppIdVhostsDomain | `appId`*, `domain`*, body*: Vhost | — |  | — |
+| DELETE | `/self/applications/{appId}/vhosts/{domain}` | deleteSelfApplicationsAppIdVhostsDomain | `appId`*, `domain`* | — |  | — |
+| PUT | `/self/avatar` | putSelfAvatar | body*: Avatar | — |  | — |
+| PUT | `/self/change_password` | putSelfChangePassword | — | Change_Password |  | — |
+| GET | `/self/cli_tokens` | get /self/cli_tokens | `cli_token` | — | yes | — |
+| GET | `/self/confirmation_email` | getSelfConfirmationEmail | — | — | yes | — |
+| GET | `/self/consumers` | getSelfConsumers | — | Consumer[] | yes | — |
+| POST | `/self/consumers` | postSelfConsumers | body*: WannabeConsumer | — |  | — |
+| GET | `/self/consumers/{key}` | getSelfConsumersKey | `key`* | Consumer | yes | — |
+| PUT | `/self/consumers/{key}` | putSelfConsumersKey | `key`*, body*: WannabeConsumer | — |  | — |
+| DELETE | `/self/consumers/{key}` | deleteSelfConsumersKey | `key`* | — |  | — |
+| GET | `/self/consumers/{key}/secret` | getSelfConsumersKeySecret | `key`* | Secret | yes | — |
+| GET | `/self/consumptions` | getSelfConsumptions | `appId`, `from`, `to` | Conso | yes | — |
+| GET | `/self/credits` | getSelfCredits | — | Credits | yes | — |
+| GET | `/self/emails` | getSelfEmails | — | string[] | yes | — |
+| PUT | `/self/emails/{email}` | putSelfEmailsEmail | `email`*, body*: Body | — |  | — |
+| DELETE | `/self/emails/{email}` | deleteSelfEmailsEmail | `email`* | — |  | — |
+| GET | `/self/id` | getSelfId | — | string | yes | — |
+| GET | `/self/instances` | getSelfInstances | — | Instance[] | yes | — |
+| GET | `/self/keys` | getSelfKeys | — | Key[] | yes | — |
+| PUT | `/self/keys/{key}` | putSelfKeysKey | `key`*, body*: Body | — |  | — |
+| DELETE | `/self/keys/{key}` | deleteSelfKeysKey | `key`* | — |  | — |
+| PUT | `/self/mfa/{kind}` | put /self/mfa/{kind} | `kind`* | — |  | — |
+| POST | `/self/mfa/{kind}` | post /self/mfa/{kind} | `kind`* | — |  | — |
+| DELETE | `/self/mfa/{kind}` | delete /self/mfa/{kind} | `kind`* | — |  | — |
+| GET | `/self/mfa/{kind}/backupcodes` | get /self/mfa/{kind}/backupcodes | `kind`* | — | yes | — |
+| POST | `/self/mfa/{kind}/confirmation` | post /self/mfa/{kind}/confirmation | `kind`* | — |  | — |
+| GET | `/self/payment-info` | getSelfPaymentInfo | — | — | yes | — |
+| GET | `/self/payments/billings` | getSelfPaymentsBillings | — | — | yes | — |
+| POST | `/self/payments/billings` | postSelfPaymentsBillings | — | — |  | — |
+| GET | `/self/payments/billings/{bid}` | getSelfPaymentsBillingsBid | `bid`* | — | yes | — |
+| PUT | `/self/payments/billings/{bid}` | putSelfPaymentsBillingsBid | `bid`* | — |  | — |
+| DELETE | `/self/payments/billings/{bid}` | deleteSelfPaymentsBillingsBid | `bid`* | — |  | — |
+| GET | `/self/payments/billings/{bid}.pdf` | getSelfPaymentsBillingsBidPdf | `bid`*, `token` | — | yes | — |
+| GET | `/self/payments/fullprice/{price}` | getSelfPaymentsFullpricePrice | `price`* | — | yes | — |
+| GET | `/self/payments/methods` | getSelfPaymentsMethods | — | — | yes | — |
+| POST | `/self/payments/methods` | postSelfPaymentsMethods | — | — |  | — |
+| GET | `/self/payments/methods/default` | get /self/payments/methods/default | — | — | yes | — |
+| PUT | `/self/payments/methods/default` | put /self/payments/methods/default | — | — |  | — |
+| DELETE | `/self/payments/methods/{mId}` | deleteSelfPaymentsMethodsMId | `mId`* | — |  | — |
+| GET | `/self/payments/monthlyinvoice` | get /self/payments/monthlyinvoice | — | — | yes | — |
+| PUT | `/self/payments/monthlyinvoice/maxcredit` | put /self/payments/monthlyinvoice/maxcredit | — | — |  | — |
+| GET | `/self/payments/recurring` | get /self/payments/recurring | — | — | yes | — |
+| DELETE | `/self/payments/recurring` | deleteSelfPaymentsRecurring | — | — |  | — |
+| GET | `/self/payments/tokens/stripe` | get /self/payments/tokens/stripe | — | — | yes | — |
+| GET | `/self/tokens` | getSelfTokens | — | Token[] | yes | — |
+| DELETE | `/self/tokens` | deleteSelfTokens | — | — |  | — |
+| DELETE | `/self/tokens/{token}` | deleteSelfTokensToken | `token`* | — |  | — |
+| GET | `/self/validate_email` | getSelfValidateEmail | `validationKey` | — | yes | — |
+| GET | `/summary` | getSummary | — | Summary | yes | — |
+| POST | `/users` | postUsers | `invitationKey`, `addonBetaInvitationKey`, `email`, `pass`, `url_next`, `terms`, body*: WannabeUser | — |  | — |
+| GET | `/users/{id}` | getUsersId | `id`* | User | yes | — |
+| GET | `/users/{id}/applications` | getUsersIdApplications | `id`* | Application[] | yes | — |
+| GET | `/users/{userId}/git-info` | getUsersUserIdGitInfo | `userId`* | — | yes | — |
+| POST | `/v2/providers/addon-matomo/resources` | createMatomo | body: ProvisionRequest | — |  | Create Matomo addon |
+| DELETE | `/v2/providers/addon-matomo/resources/{matomoId}` | deleteMatomo | `matomoId`*, body: string | — |  | Delete Matomo addon |
+| GET | `/v3/logs/{appId}` | get /v3/logs/{appId} | `appId`* | — | yes | — |
+| GET | `/v3/logs/{appId}/drains` | get /v3/logs/{appId}/drains | `appId`* | — | yes | — |
+| POST | `/v3/logs/{appId}/drains` | post /v3/logs/{appId}/drains | `appId`* | — |  | — |
+| GET | `/v3/logs/{appId}/drains/:idOrUrl` | get /v3/logs/{appId}/drains/:idOrUrl | `appId`* | — | yes | — |
+| DELETE | `/v3/logs/{appId}/drains/:idOrUrl` | delete /v3/logs/{appId}/drains/:idOrUrl | `appId`* | — |  | — |
+| GET | `/v3/logs/{appId}/logs-chunked` | get /v3/logs/{appId}/logs-chunked | `appId`* | — | yes | — |
+| GET | `/v3/logs/{appId}/logs-socket` | get /v3/logs/{appId}/logs-socket | `appId`* | — | yes | — |
+| GET | `/v4/addon-providers/addon-matomo/addons/{matomoId}` | getMatomo | `matomoId`*, body: string | — | yes | Get Matomo addon |
+| GET | `/v4/addon-providers/addon-matomo/token/validate` | getMatomoKTokenValidation | `keycloakToken`, body: string | — | yes | Validate a keycloak token |
+| GET | `/v4/addon-providers/config-provider/addons/{configurationProviderId}` | getConfigProvider | `configurationProviderId`*, body: string | AddonConfigProviderView | yes | Get Addon provider configuration |
+| GET | `/v4/addon-providers/config-provider/addons/{configurationProviderId}/env` | getConfigProviderEnv | `configurationProviderId`*, body: string | EnvVar[] | yes | Get provider's addon environment |
+| PUT | `/v4/addon-providers/config-provider/addons/{configurationProviderId}/env` | updateConfigProviderEnv | `configurationProviderId`*, body*: WannabeEnvVar[] | EnvVar[] |  | Update provider's addon environment |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups` | listNetworkGroups | `ownerId`*, body: OVDHttpRequestContext | NetworkGroup[] | yes | List Network Groups |
+| POST | `/v4/networkgroups/organisations/{ownerId}/networkgroups` | createNetworkGroup | `ownerId`*, body: WannabeNetworkGroup | NetworkGroup |  | Create Network Group |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}` | getNetworkGroup | `ownerId`*, `networkGroupId`*, body: OVDHttpRequestContext | NetworkGroup | yes | Get Network Group |
+| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}` | deleteNetworkGroup | `ownerId`*, `networkGroupId`*, body: OVDHttpRequestContext | — |  | Delete Network Group |
+| POST | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/external-peers` | createNetworkGroupExternalPeer | `ownerId`*, `networkGroupId`*, body: WannabeExternalPeer | Peer |  | Add external peer |
+| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/external-peers/{peerId}` | deleteNetworkGroupExternalPeer | `ownerId`*, `networkGroupId`*, `peerId`*, body: OVDHttpRequestContext | — |  | Remove external peer |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members` | listNetworkGroupMembers | `ownerId`*, `networkGroupId`*, body: OVDHttpRequestContext | schema1[] | yes | List members |
+| POST | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members` | createNetworkGroupMember | `ownerId`*, `networkGroupId`*, body: schema2 | — |  | Add member |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members/{memberId}` | getNetworkGroupMember | `ownerId`*, `networkGroupId`*, `memberId`*, body: OVDHttpRequestContext | schema1 | yes | Get member |
+| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/members/{memberId}` | deleteNetworkGroupMember | `ownerId`*, `networkGroupId`*, `memberId`*, body: OVDHttpRequestContext | — |  | Remove member |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers` | listNetworkGroupPeers | `ownerId`*, `networkGroupId`*, body: OVDHttpRequestContext | Peer[] | yes | List peers |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}` | getNetworkGroupPeer | `ownerId`*, `networkGroupId`*, `peerId`*, body: OVDHttpRequestContext | Peer | yes | Get peer |
+| DELETE | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}` | deleteNetworkGroupPeer | `ownerId`*, `networkGroupId`*, `peerId`*, body: OVDHttpRequestContext | — |  | Remove peer |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}/wireguard/configuration` | getNetworkGroupWireGuardConfiguration | `ownerId`*, `networkGroupId`*, `peerId`*, body: OVDHttpRequestContext | WireGuardConfiguration | yes | Get WireGuard® configuration |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/peers/{peerId}/wireguard/configuration/stream` | getNetworkGroupWireGuardConfigurationStream | `ownerId`*, `networkGroupId`*, `peerId`*, body: OVDHttpRequestContext | WireGuardConfiguration | yes | Get WireGuard® configuration |
+| GET | `/v4/networkgroups/organisations/{ownerId}/networkgroups/{networkGroupId}/stream` | getNetworkGroupStream | `ownerId`*, `networkGroupId`*, body: OVDHttpRequestContext | NetworkGroup | yes | Network Group SSE |
+| POST | `/vendor//addons` | post /vendor//addons | — | — |  | — |
+| GET | `/vendor//apps/{addonId}/logscollector` | get /vendor//apps/{addonId}/logscollector | `addonId`* | — | yes | — |
+| GET | `/vendor/apps` | getVendorApps | `offset` | Application[] | yes | — |
+| GET | `/vendor/apps/{addonId}` | getVendorAppsAddonId | `addonId`* | — | yes | — |
+| PUT | `/vendor/apps/{addonId}` | putVendorAppsAddonId | `addonId`* | — |  | — |
+| POST | `/vendor/apps/{addonId}/consumptions` | postVendorBillingOwnerId | `addonId`*, body*: WannabeAddonBilling | — |  | — |
+| PUT | `/vendor/apps/{addonId}/migration_callback` | put /vendor/apps/{addonId}/migration_callback | `addonId`*, `plan_id`, `region` | — |  | — |

@@ -17,12 +17,12 @@
       {
         "from": "apispot-io-whois-9c5a8b22f5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/batch/{id}"
+        "to": "operation:get:/batch/{id}"
       },
       {
         "from": "apispot-io-whois-9c5a8b22f5",
         "kind": "EXPOSES",
-        "to": "operation:get:/batch/{id}"
+        "to": "operation:delete:/batch/{id}"
       },
       {
         "from": "apispot-io-whois-9c5a8b22f5",
@@ -43,6 +43,26 @@
         "from": "apispot-io-whois-9c5a8b22f5",
         "kind": "EXPOSES",
         "to": "operation:get:/domains/{domain}/whois"
+      },
+      {
+        "from": "operation:get:/batch",
+        "kind": "RETURNS",
+        "to": "schema:ArrayOfBatch"
+      },
+      {
+        "from": "operation:post:/batch",
+        "kind": "RETURNS",
+        "to": "schema:Batch"
+      },
+      {
+        "from": "operation:get:/batch/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Batch"
+      },
+      {
+        "from": "schema:ArrayOfBatch",
+        "kind": "REFERENCES",
+        "to": "schema:Batch"
       }
     ],
     "nodes": [
@@ -52,12 +72,20 @@
       },
       {
         "deprecated": false,
+        "description": "Get your batches",
         "id": "operation:get:/batch",
         "kind": "operation",
         "method": "get",
         "name": "getBatches",
         "path": "/batch",
         "pointer": "#/paths/~1batch/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArrayOfBatch"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -67,12 +95,27 @@
       },
       {
         "deprecated": false,
+        "description": "Create batch.",
         "id": "operation:post:/batch",
         "kind": "operation",
         "method": "post",
         "name": "createBatch",
         "path": "/batch",
         "pointer": "#/paths/~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Batch"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -82,27 +125,29 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/batch/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteBatch",
-        "path": "/batch/{id}",
-        "pointer": "#/paths/~1batch~1{id}/delete",
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get batch",
         "id": "operation:get:/batch/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getBatch",
+        "parameters": [
+          {
+            "description": "Batch ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/batch/{id}",
         "pointer": "#/paths/~1batch~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Batch"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -112,12 +157,60 @@
       },
       {
         "deprecated": false,
+        "description": "Delete batch",
+        "id": "operation:delete:/batch/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteBatch",
+        "parameters": [
+          {
+            "description": "Batch ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/batch/{id}",
+        "pointer": "#/paths/~1batch~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Query domain database",
         "id": "operation:get:/db",
         "kind": "operation",
         "method": "get",
         "name": "queryDb",
+        "parameters": [
+          {
+            "description": "Query (contact name, dns, domain etc)",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/db",
         "pointer": "#/paths/~1db/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -127,12 +220,29 @@
       },
       {
         "deprecated": false,
+        "description": "Check domain availability",
         "id": "operation:get:/domains/{domain}/check",
         "kind": "operation",
         "method": "get",
         "name": "checkDomain",
+        "parameters": [
+          {
+            "description": "Domain",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domain}/check",
         "pointer": "#/paths/~1domains~1{domain}~1check/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -142,12 +252,29 @@
       },
       {
         "deprecated": false,
+        "description": "Check domain rank (authority).",
         "id": "operation:get:/domains/{domain}/rank",
         "kind": "operation",
         "method": "get",
         "name": "domainRank",
+        "parameters": [
+          {
+            "description": "Domain",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domain}/rank",
         "pointer": "#/paths/~1domains~1{domain}~1rank/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -157,12 +284,39 @@
       },
       {
         "deprecated": false,
+        "description": "WHOIS query for a domain",
         "id": "operation:get:/domains/{domain}/whois",
         "kind": "operation",
         "method": "get",
         "name": "whois",
+        "parameters": [
+          {
+            "description": "Domain",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "raw",
+              "formatted",
+              "json"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domain}/whois",
         "pointer": "#/paths/~1domains~1{domain}~1whois/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -173,12 +327,14 @@
       {
         "id": "schema:ArrayOfBatch",
         "kind": "schema",
-        "name": "ArrayOfBatch"
+        "name": "ArrayOfBatch",
+        "type": "object"
       },
       {
         "id": "schema:Batch",
         "kind": "schema",
-        "name": "Batch"
+        "name": "Batch",
+        "type": "object"
       }
     ]
   },

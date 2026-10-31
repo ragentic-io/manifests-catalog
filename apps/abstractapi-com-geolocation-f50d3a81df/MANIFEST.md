@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_global-uploads.webflow.com_5ebb
 
 | | |
 | --- | --- |
-| Signed bundle | `f9d2f6b43a72a746af719902821a082d13bed1234b6fd7c8f4b1b550fe810b38` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_global-uploads.webflow.com_5ebb
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/` | get /v1/ | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/` | get /v1/ | `api_key`*, `ip_address`, `fields` | inline_response_200 | yes | — |

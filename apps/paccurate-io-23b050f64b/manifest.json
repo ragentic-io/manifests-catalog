@@ -8,6 +8,81 @@
         "from": "paccurate-io-23b050f64b",
         "kind": "EXPOSES",
         "to": "operation:post:/"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "ACCEPTS",
+        "to": "schema:Pack"
+      },
+      {
+        "from": "schema:Box",
+        "kind": "REFERENCES",
+        "to": "schema:BoxProperties"
+      },
+      {
+        "from": "schema:Box",
+        "kind": "REFERENCES",
+        "to": "schema:Item"
+      },
+      {
+        "from": "schema:BoxProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Point"
+      },
+      {
+        "from": "schema:BoxProperties",
+        "kind": "REFERENCES",
+        "to": "schema:RateTable"
+      },
+      {
+        "from": "schema:BoxType",
+        "kind": "REFERENCES",
+        "to": "schema:BoxProperties"
+      },
+      {
+        "from": "schema:Item",
+        "kind": "REFERENCES",
+        "to": "schema:ItemProperties"
+      },
+      {
+        "from": "schema:Item",
+        "kind": "REFERENCES",
+        "to": "schema:Point"
+      },
+      {
+        "from": "schema:ItemProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Point"
+      },
+      {
+        "from": "schema:ItemSet",
+        "kind": "REFERENCES",
+        "to": "schema:ItemProperties"
+      },
+      {
+        "from": "schema:Pack",
+        "kind": "REFERENCES",
+        "to": "schema:BoxType"
+      },
+      {
+        "from": "schema:Pack",
+        "kind": "REFERENCES",
+        "to": "schema:BoxTypeSet"
+      },
+      {
+        "from": "schema:Pack",
+        "kind": "REFERENCES",
+        "to": "schema:ItemSet"
+      },
+      {
+        "from": "schema:Pack",
+        "kind": "REFERENCES",
+        "to": "schema:Point"
+      },
+      {
+        "from": "schema:Pack",
+        "kind": "REFERENCES",
+        "to": "schema:Rule"
       }
     ],
     "nodes": [
@@ -17,74 +92,125 @@
       },
       {
         "deprecated": false,
+        "description": "a pure-JSON endpoint for packing requests.",
         "id": "operation:post:/",
         "kind": "operation",
         "method": "post",
         "name": "post /",
         "path": "/",
         "pointer": "#/paths/~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Pack"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
+        "description": "A completed, packed box.",
         "id": "schema:Box",
         "kind": "schema",
-        "name": "Box"
+        "name": "Box",
+        "type": "BoxProperties|object"
       },
       {
         "id": "schema:BoxProperties",
         "kind": "schema",
-        "name": "BoxProperties"
+        "name": "BoxProperties",
+        "type": "object"
       },
       {
+        "description": "box types to be used for packing.",
         "id": "schema:BoxType",
         "kind": "schema",
-        "name": "BoxType"
+        "name": "BoxType",
+        "type": "BoxProperties"
       },
       {
+        "description": "box type sets for useful defaults.",
         "id": "schema:BoxTypeSet",
         "kind": "schema",
-        "name": "BoxTypeSet"
+        "name": "BoxTypeSet",
+        "type": "string"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "a specific, packed item.",
         "id": "schema:Item",
         "kind": "schema",
-        "name": "Item"
+        "name": "Item",
+        "type": "ItemProperties|object"
       },
       {
+        "description": "general properties of an item",
         "id": "schema:ItemProperties",
         "kind": "schema",
-        "name": "ItemProperties"
+        "name": "ItemProperties",
+        "type": "object"
       },
       {
+        "description": "set of items sharing a common type.",
         "id": "schema:ItemSet",
         "kind": "schema",
-        "name": "ItemSet"
+        "name": "ItemSet",
+        "type": "ItemProperties|object"
       },
       {
         "id": "schema:Pack",
         "kind": "schema",
-        "name": "Pack"
+        "name": "Pack",
+        "type": "object"
       },
       {
+        "description": "vector definition used for points, dimensions, and other spacial purposes.",
         "id": "schema:Point",
         "kind": "schema",
-        "name": "Point"
+        "name": "Point",
+        "type": "object"
       },
       {
         "id": "schema:RateTable",
         "kind": "schema",
-        "name": "RateTable"
+        "name": "RateTable",
+        "type": "object"
       },
       {
+        "description": "Rule definition for packing constraints.",
         "id": "schema:Rule",
         "kind": "schema",
-        "name": "Rule"
+        "name": "Rule",
+        "type": "object"
       }
     ]
   },

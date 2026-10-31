@@ -52,12 +52,12 @@
       {
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
-        "to": "operation:delete:/legal_entities/{id}"
+        "to": "operation:get:/legal_entities/{id}"
       },
       {
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
-        "to": "operation:get:/legal_entities/{id}"
+        "to": "operation:delete:/legal_entities/{id}"
       },
       {
         "from": "storecove-com-afe802be92",
@@ -72,12 +72,12 @@
       {
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
-        "to": "operation:delete:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}"
+        "to": "operation:get:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}"
       },
       {
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
-        "to": "operation:get:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}"
+        "to": "operation:delete:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}"
       },
       {
         "from": "storecove-com-afe802be92",
@@ -92,12 +92,12 @@
       {
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
-        "to": "operation:delete:/legal_entities/{legal_entity_id}/administrations/{id}"
+        "to": "operation:get:/legal_entities/{legal_entity_id}/administrations/{id}"
       },
       {
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
-        "to": "operation:get:/legal_entities/{legal_entity_id}/administrations/{id}"
+        "to": "operation:delete:/legal_entities/{legal_entity_id}/administrations/{id}"
       },
       {
         "from": "storecove-com-afe802be92",
@@ -153,6 +153,696 @@
         "from": "storecove-com-afe802be92",
         "kind": "EXPOSES",
         "to": "operation:delete:/webhook_instances/{guid}"
+      },
+      {
+        "from": "operation:post:/discovery/exists",
+        "kind": "ACCEPTS",
+        "to": "schema:DiscoverableParticipant"
+      },
+      {
+        "from": "operation:post:/discovery/exists",
+        "kind": "RETURNS",
+        "to": "schema:DiscoveredParticipant"
+      },
+      {
+        "from": "operation:get:/discovery/identifiers",
+        "kind": "RETURNS",
+        "to": "schema:CountrySpecifications"
+      },
+      {
+        "from": "operation:post:/discovery/receives",
+        "kind": "ACCEPTS",
+        "to": "schema:DiscoverableParticipant"
+      },
+      {
+        "from": "operation:post:/discovery/receives",
+        "kind": "RETURNS",
+        "to": "schema:DiscoveredParticipant"
+      },
+      {
+        "from": "operation:post:/document_submissions",
+        "kind": "ACCEPTS",
+        "to": "schema:DocumentSubmission"
+      },
+      {
+        "from": "operation:post:/document_submissions",
+        "kind": "RETURNS",
+        "to": "schema:DocumentSubmissionResult"
+      },
+      {
+        "from": "operation:get:/document_submissions/{guid}/evidence/{evidence_type}",
+        "kind": "RETURNS",
+        "to": "schema:DocumentSubmissionEvidence"
+      },
+      {
+        "from": "operation:post:/invoice_submissions",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceSubmission"
+      },
+      {
+        "from": "operation:post:/invoice_submissions",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceSubmissionResult"
+      },
+      {
+        "from": "operation:post:/invoice_submissions/preflight",
+        "kind": "ACCEPTS",
+        "to": "schema:InvoiceRecipientPreflight"
+      },
+      {
+        "from": "operation:post:/invoice_submissions/preflight",
+        "kind": "RETURNS",
+        "to": "schema:PreflightInvoiceRecipientResult"
+      },
+      {
+        "from": "operation:get:/invoice_submissions/{guid}/evidence",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceSubmissionEvidence"
+      },
+      {
+        "from": "operation:post:/legal_entities",
+        "kind": "ACCEPTS",
+        "to": "schema:LegalEntityCreate"
+      },
+      {
+        "from": "operation:post:/legal_entities",
+        "kind": "RETURNS",
+        "to": "schema:LegalEntity"
+      },
+      {
+        "from": "operation:get:/legal_entities/{id}",
+        "kind": "RETURNS",
+        "to": "schema:LegalEntity"
+      },
+      {
+        "from": "operation:patch:/legal_entities/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:LegalEntityUpdate"
+      },
+      {
+        "from": "operation:patch:/legal_entities/{id}",
+        "kind": "RETURNS",
+        "to": "schema:LegalEntity"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/additional_tax_identifiers",
+        "kind": "ACCEPTS",
+        "to": "schema:AdditionalTaxIdentifierCreate"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/additional_tax_identifiers",
+        "kind": "RETURNS",
+        "to": "schema:AdditionalTaxIdentifier"
+      },
+      {
+        "from": "operation:get:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AdditionalTaxIdentifier"
+      },
+      {
+        "from": "operation:patch:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:AdditionalTaxIdentifierUpdate"
+      },
+      {
+        "from": "operation:patch:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AdditionalTaxIdentifier"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/administrations",
+        "kind": "ACCEPTS",
+        "to": "schema:AdministrationCreate"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/administrations",
+        "kind": "RETURNS",
+        "to": "schema:Administration"
+      },
+      {
+        "from": "operation:get:/legal_entities/{legal_entity_id}/administrations/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Administration"
+      },
+      {
+        "from": "operation:patch:/legal_entities/{legal_entity_id}/administrations/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:AdministrationUpdate"
+      },
+      {
+        "from": "operation:patch:/legal_entities/{legal_entity_id}/administrations/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Administration"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/peppol_identifiers",
+        "kind": "ACCEPTS",
+        "to": "schema:PeppolIdentifierCreate"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/peppol_identifiers",
+        "kind": "RETURNS",
+        "to": "schema:PeppolIdentifier"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/received_documents",
+        "kind": "ACCEPTS",
+        "to": "schema:ReceivedDocumentCreate"
+      },
+      {
+        "from": "operation:post:/legal_entities/{legal_entity_id}/received_documents",
+        "kind": "RETURNS",
+        "to": "schema:ReceivedDocument"
+      },
+      {
+        "from": "operation:get:/purchase_invoices/{guid}",
+        "kind": "RETURNS",
+        "to": "schema:PurchaseInvoice"
+      },
+      {
+        "from": "operation:get:/purchase_invoices/{guid}/{packaging}",
+        "kind": "RETURNS",
+        "to": "schema:PurchaseInvoiceUbl"
+      },
+      {
+        "from": "operation:get:/purchase_invoices/{guid}/{packaging}/{package_version}",
+        "kind": "RETURNS",
+        "to": "schema:PurchaseInvoiceUbl"
+      },
+      {
+        "from": "operation:post:/received_documents",
+        "kind": "ACCEPTS",
+        "to": "schema:ReceivedDocumentCreate"
+      },
+      {
+        "from": "operation:post:/received_documents",
+        "kind": "RETURNS",
+        "to": "schema:ReceivedDocument"
+      },
+      {
+        "from": "operation:get:/received_documents/{guid}/{format}",
+        "kind": "RETURNS",
+        "to": "schema:ReceivedDocument"
+      },
+      {
+        "from": "operation:get:/webhook_instances/",
+        "kind": "RETURNS",
+        "to": "schema:WebhookInstance"
+      },
+      {
+        "from": "schema:AccountingCustomerParty",
+        "kind": "REFERENCES",
+        "to": "schema:PublicIdentifier"
+      },
+      {
+        "from": "schema:AccountingCustomerParty",
+        "kind": "REFERENCES",
+        "to": "schema:ReceiverParty"
+      },
+      {
+        "from": "schema:AccountingSupplierParty",
+        "kind": "REFERENCES",
+        "to": "schema:SenderParty"
+      },
+      {
+        "from": "schema:Address",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:AllowanceCharge",
+        "kind": "REFERENCES",
+        "to": "schema:Tax"
+      },
+      {
+        "from": "schema:CountrySpecification",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:CountrySpecification",
+        "kind": "REFERENCES",
+        "to": "schema:CountrySpecificationIdentifier"
+      },
+      {
+        "from": "schema:CountrySpecifications",
+        "kind": "REFERENCES",
+        "to": "schema:CountrySpecification"
+      },
+      {
+        "from": "schema:Delivery",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Delivery",
+        "kind": "REFERENCES",
+        "to": "schema:DeliveryParty"
+      },
+      {
+        "from": "schema:DeliveryParty",
+        "kind": "REFERENCES",
+        "to": "schema:ReceiverParty"
+      },
+      {
+        "from": "schema:DocumentInvoiceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceResponseClarification"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:AllowanceCharge"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyCode"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:Delivery"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:DeliveryTerms"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:OrderLine"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentTerms"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:Reference"
+      },
+      {
+        "from": "schema:DocumentOrder",
+        "kind": "REFERENCES",
+        "to": "schema:SellerSupplierParty"
+      },
+      {
+        "from": "schema:DocumentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:DocumentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Routing"
+      },
+      {
+        "from": "schema:DocumentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:SendableDocument"
+      },
+      {
+        "from": "schema:DocumentSubmissionEvidence",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSubmissionEvidenceDocument"
+      },
+      {
+        "from": "schema:DocumentSubmissionEvidence",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSubmissionEvidenceEvidence"
+      },
+      {
+        "from": "schema:EIdentifiers",
+        "kind": "REFERENCES",
+        "to": "schema:RoutingIdentifier"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:AccountingCustomerParty"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:AccountingSupplierParty"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:AllowanceCharge"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyCode"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:Delivery"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceLine"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMeans"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentTerms"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:Reference"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:Tax"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:TaxSubtotal"
+      },
+      {
+        "from": "schema:InvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalItemProperty"
+      },
+      {
+        "from": "schema:InvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:LineAllowanceCharge"
+      },
+      {
+        "from": "schema:InvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:Reference"
+      },
+      {
+        "from": "schema:InvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:Tax"
+      },
+      {
+        "from": "schema:InvoiceRecipient",
+        "kind": "REFERENCES",
+        "to": "schema:PublicIdentifiers"
+      },
+      {
+        "from": "schema:InvoiceRecipientPreflight",
+        "kind": "REFERENCES",
+        "to": "schema:PublicIdentifiers"
+      },
+      {
+        "from": "schema:InvoiceSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:InvoiceSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:InvoiceSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceData"
+      },
+      {
+        "from": "schema:InvoiceSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceRecipient"
+      },
+      {
+        "from": "schema:InvoiceSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Routing"
+      },
+      {
+        "from": "schema:InvoiceSubmissionEvidence",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceSubmissionActionEvidence"
+      },
+      {
+        "from": "schema:LegalEntity",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalTaxIdentifier"
+      },
+      {
+        "from": "schema:LegalEntity",
+        "kind": "REFERENCES",
+        "to": "schema:LegalEntityUpdate"
+      },
+      {
+        "from": "schema:LegalEntity",
+        "kind": "REFERENCES",
+        "to": "schema:PeppolIdentifier"
+      },
+      {
+        "from": "schema:LegalEntityCreate",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:LegalEntityCreate",
+        "kind": "REFERENCES",
+        "to": "schema:Rea"
+      },
+      {
+        "from": "schema:LegalEntityUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:LegalEntityUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:Rea"
+      },
+      {
+        "from": "schema:OrderLine",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalItemProperty"
+      },
+      {
+        "from": "schema:OrderLine",
+        "kind": "REFERENCES",
+        "to": "schema:LineAllowanceCharge"
+      },
+      {
+        "from": "schema:OrderLine",
+        "kind": "REFERENCES",
+        "to": "schema:LineDelivery"
+      },
+      {
+        "from": "schema:OrderLine",
+        "kind": "REFERENCES",
+        "to": "schema:Reference"
+      },
+      {
+        "from": "schema:OrderLine",
+        "kind": "REFERENCES",
+        "to": "schema:Tax"
+      },
+      {
+        "from": "schema:OriginatorCustomerParty",
+        "kind": "REFERENCES",
+        "to": "schema:Party"
+      },
+      {
+        "from": "schema:Party",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Party",
+        "kind": "REFERENCES",
+        "to": "schema:Contact"
+      },
+      {
+        "from": "schema:PeppolIdentifier",
+        "kind": "REFERENCES",
+        "to": "schema:CorpPass"
+      },
+      {
+        "from": "schema:PeppolIdentifierCreate",
+        "kind": "REFERENCES",
+        "to": "schema:CorpPassCreate"
+      },
+      {
+        "from": "schema:PublicIdentifiers",
+        "kind": "REFERENCES",
+        "to": "schema:PublicIdentifier"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceAccountingDetails"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceAllowanceCharge"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceAttachment"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceDocumentTotals"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceInvoiceLine"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoicePaymentMeans"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceSender"
+      },
+      {
+        "from": "schema:PurchaseInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceTaxSubtotal"
+      },
+      {
+        "from": "schema:PurchaseInvoiceAllowanceCharge",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceTax"
+      },
+      {
+        "from": "schema:PurchaseInvoiceAllowanceCharge",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceVat"
+      },
+      {
+        "from": "schema:PurchaseInvoiceInvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceAccountingDetails"
+      },
+      {
+        "from": "schema:PurchaseInvoiceInvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceInvoiceLineAllowanceCharge"
+      },
+      {
+        "from": "schema:PurchaseInvoiceInvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceInvoiceLineItem"
+      },
+      {
+        "from": "schema:PurchaseInvoiceInvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceInvoiceLinePrice"
+      },
+      {
+        "from": "schema:PurchaseInvoiceInvoiceLine",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceTax"
+      },
+      {
+        "from": "schema:PurchaseInvoiceSender",
+        "kind": "REFERENCES",
+        "to": "schema:PeppolIdentifier"
+      },
+      {
+        "from": "schema:PurchaseInvoiceSender",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceSenderBillingContact"
+      },
+      {
+        "from": "schema:PurchaseInvoiceTaxSubtotal",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceTax"
+      },
+      {
+        "from": "schema:PurchaseInvoiceTaxSubtotal",
+        "kind": "REFERENCES",
+        "to": "schema:PurchaseInvoiceVat"
+      },
+      {
+        "from": "schema:ReceiverParty",
+        "kind": "REFERENCES",
+        "to": "schema:Party"
+      },
+      {
+        "from": "schema:Routing",
+        "kind": "REFERENCES",
+        "to": "schema:EIdentifiers"
+      },
+      {
+        "from": "schema:SellerSupplierParty",
+        "kind": "REFERENCES",
+        "to": "schema:PublicIdentifier"
+      },
+      {
+        "from": "schema:SellerSupplierParty",
+        "kind": "REFERENCES",
+        "to": "schema:SenderParty"
+      },
+      {
+        "from": "schema:SendableDocument",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentInvoiceResponse"
+      },
+      {
+        "from": "schema:SendableDocument",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentOrder"
+      },
+      {
+        "from": "schema:SendableDocument",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:SendableDocument",
+        "kind": "REFERENCES",
+        "to": "schema:RawDocumentData"
+      },
+      {
+        "from": "schema:SenderParty",
+        "kind": "REFERENCES",
+        "to": "schema:Contact"
+      },
+      {
+        "from": "schema:Tax",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:TaxSubtotal",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
       }
     ],
     "nodes": [
@@ -162,853 +852,2030 @@
       },
       {
         "deprecated": false,
+        "description": "Discover if a network participant exists.",
         "id": "operation:post:/discovery/exists",
         "kind": "operation",
         "method": "post",
         "name": "discovery_exists",
         "path": "/discovery/exists",
         "pointer": "#/paths/~1discovery~1exists/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DiscoverableParticipant"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DiscoveredParticipant"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Discover Network Participant Existence"
+        "summary": "Discover Network Participant Existence",
+        "tags": [
+          "Discovery"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Discover the identifiers used in each country, for routing, for legal identification as well as for tax identification purposes.",
         "id": "operation:get:/discovery/identifiers",
         "kind": "operation",
         "method": "get",
         "name": "discovery_identifiers",
         "path": "/discovery/identifiers",
         "pointer": "#/paths/~1discovery~1identifiers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountrySpecifications"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Discover Country Identifiers ** EXPERIMENTAL"
+        "summary": "Discover Country Identifiers ** EXPERIMENTAL",
+        "tags": [
+          "Discovery"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Discover a network participant and capabilities.",
         "id": "operation:post:/discovery/receives",
         "kind": "operation",
         "method": "post",
         "name": "discovery_receives",
         "path": "/discovery/receives",
         "pointer": "#/paths/~1discovery~1receives/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DiscoverableParticipant"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DiscoveredParticipant"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Disover Network Participant"
+        "summary": "Disover Network Participant",
+        "tags": [
+          "Discovery"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submit a document for delivery.",
         "id": "operation:post:/document_submissions",
         "kind": "operation",
         "method": "post",
         "name": "create_document_submission",
         "path": "/document_submissions",
         "pointer": "#/paths/~1document_submissions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DocumentSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentSubmissionResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Submit a new document."
+        "summary": "Submit a new document.",
+        "tags": [
+          "DocumentSubmissions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get evidence for a DocumentSubmission by GUID with corresponding status",
         "id": "operation:get:/document_submissions/{guid}/evidence/{evidence_type}",
         "kind": "operation",
         "method": "get",
         "name": "show_document_submission_evidence",
+        "parameters": [
+          {
+            "description": "DocumentSubmission GUID",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "default": "sending",
+            "description": "Type of evidence requested",
+            "enum": [
+              "sending",
+              "clearing"
+            ],
+            "in": "path",
+            "name": "evidence_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/document_submissions/{guid}/evidence/{evidence_type}",
         "pointer": "#/paths/~1document_submissions~1{guid}~1evidence~1{evidence_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentSubmissionEvidence"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get DocumentSubmission Evidence"
+        "summary": "Get DocumentSubmission Evidence",
+        "tags": [
+          "DocumentSubmissions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DEPRECATED.",
         "id": "operation:post:/invoice_submissions",
         "kind": "operation",
         "method": "post",
         "name": "create_invoice_submission",
         "path": "/invoice_submissions",
         "pointer": "#/paths/~1invoice_submissions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "InvoiceSubmission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceSubmissionResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Submit a new invoice"
+        "summary": "Submit a new invoice",
+        "tags": [
+          "InvoiceSubmissions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deprecated.",
         "id": "operation:post:/invoice_submissions/preflight",
         "kind": "operation",
         "method": "post",
         "name": "preflight_invoice_recipient",
         "path": "/invoice_submissions/preflight",
         "pointer": "#/paths/~1invoice_submissions~1preflight/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "InvoiceRecipientPreflight"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PreflightInvoiceRecipientResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "DEPRECATED. Preflight an invoice recipient"
+        "summary": "DEPRECATED. Preflight an invoice recipient",
+        "tags": [
+          "InvoiceSubmissions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deprecated.",
         "id": "operation:get:/invoice_submissions/{guid}/evidence",
         "kind": "operation",
         "method": "get",
         "name": "show_invoice_submission_evidence",
+        "parameters": [
+          {
+            "description": "InvoiceSubmission GUID",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/invoice_submissions/{guid}/evidence",
         "pointer": "#/paths/~1invoice_submissions~1{guid}~1evidence/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceSubmissionEvidence"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "DEPRECATED. Get InvoiceSubmission Evidence"
+        "summary": "DEPRECATED. Get InvoiceSubmission Evidence",
+        "tags": [
+          "InvoiceSubmissions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new LegalEntity.",
         "id": "operation:post:/legal_entities",
         "kind": "operation",
         "method": "post",
         "name": "create_legal_entity",
         "path": "/legal_entities",
         "pointer": "#/paths/~1legal_entities/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LegalEntityCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LegalEntity"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Create a new LegalEntity"
+        "summary": "Create a new LegalEntity",
+        "tags": [
+          "LegalEntities"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/legal_entities/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_legal_entity",
-        "path": "/legal_entities/{id}",
-        "pointer": "#/paths/~1legal_entities~1{id}/delete",
-        "security": [
-          {
-            "Bearer": []
-          }
-        ],
-        "summary": "Delete LegalEntity"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a specific LegalEntity.",
         "id": "operation:get:/legal_entities/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get_legal_entity",
+        "parameters": [
+          {
+            "description": "legal_entity id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{id}",
         "pointer": "#/paths/~1legal_entities~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LegalEntity"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get LegalEntity"
+        "summary": "Get LegalEntity",
+        "tags": [
+          "LegalEntities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a specific LegalEntity.",
+        "id": "operation:delete:/legal_entities/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_legal_entity",
+        "parameters": [
+          {
+            "description": "legal_entity id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/legal_entities/{id}",
+        "pointer": "#/paths/~1legal_entities~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete LegalEntity",
+        "tags": [
+          "LegalEntities"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a specific LegalEntity.",
         "id": "operation:patch:/legal_entities/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "update_legal_entity",
+        "parameters": [
+          {
+            "description": "legal_entity id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{id}",
         "pointer": "#/paths/~1legal_entities~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LegalEntityUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LegalEntity"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Update LegalEntity"
+        "summary": "Update LegalEntity",
+        "tags": [
+          "LegalEntities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new AdditionalTaxIdentifier.",
         "id": "operation:post:/legal_entities/{legal_entity_id}/additional_tax_identifiers",
         "kind": "operation",
         "method": "post",
         "name": "create_additional_tax_identifier",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity for which to create the AdditionalTaxIdentifier",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/additional_tax_identifiers",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1additional_tax_identifiers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AdditionalTaxIdentifierCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdditionalTaxIdentifier"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Create a new AdditionalTaxIdentifier"
+        "summary": "Create a new AdditionalTaxIdentifier",
+        "tags": [
+          "AdditionalTaxIdentifiers"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_additional_tax_identifier",
-        "path": "/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
-        "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1additional_tax_identifiers~1{id}/delete",
-        "security": [
-          {
-            "Bearer": []
-          }
-        ],
-        "summary": "Delete AdditionalTaxIdentifier"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an AdditionalTaxIdentifier",
         "id": "operation:get:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get_additional_tax_identifier",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity the AdditionalTaxIdentifier belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The id of the AdditionalTaxIdentifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1additional_tax_identifiers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdditionalTaxIdentifier"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get AdditionalTaxIdentifier"
+        "summary": "Get AdditionalTaxIdentifier",
+        "tags": [
+          "AdditionalTaxIdentifiers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an AdditionalTaxIdentifier",
+        "id": "operation:delete:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_additional_tax_identifier",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity the AdditionalTaxIdentifier belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The id of the AdditionalTaxIdentifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
+        "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1additional_tax_identifiers~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete AdditionalTaxIdentifier",
+        "tags": [
+          "AdditionalTaxIdentifiers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update an AdditionalTaxIdentifier",
         "id": "operation:patch:/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "update_additional_tax_identifier",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity the AdditionalTaxIdentifier belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The id of the AdditionalTaxIdentifier to be updated",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1additional_tax_identifiers~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AdditionalTaxIdentifierUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdditionalTaxIdentifier"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Update AdditionalTaxIdentifier"
+        "summary": "Update AdditionalTaxIdentifier",
+        "tags": [
+          "AdditionalTaxIdentifiers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deprecated.",
         "id": "operation:post:/legal_entities/{legal_entity_id}/administrations",
         "kind": "operation",
         "method": "post",
         "name": "create_administration",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity for which to create the Administration",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/administrations",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1administrations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AdministrationCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Administration"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Create a new Administration"
+        "summary": "Create a new Administration",
+        "tags": [
+          "Administrations"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/legal_entities/{legal_entity_id}/administrations/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_administration",
-        "path": "/legal_entities/{legal_entity_id}/administrations/{id}",
-        "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1administrations~1{id}/delete",
-        "security": [
-          {
-            "Bearer": []
-          }
-        ],
-        "summary": "Delete Administration"
-      },
-      {
-        "deprecated": false,
+        "description": "Deprecated.",
         "id": "operation:get:/legal_entities/{legal_entity_id}/administrations/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get_administration",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity the Administration belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The id of the Administration",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/administrations/{id}",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1administrations~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Administration"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get Administration"
+        "summary": "Get Administration",
+        "tags": [
+          "Administrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deprecated.",
+        "id": "operation:delete:/legal_entities/{legal_entity_id}/administrations/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_administration",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity the Administration belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The id of the Administration",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/legal_entities/{legal_entity_id}/administrations/{id}",
+        "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1administrations~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete Administration",
+        "tags": [
+          "Administrations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Deprecated.",
         "id": "operation:patch:/legal_entities/{legal_entity_id}/administrations/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "update_administration",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity the Administration belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The id of the Administration to be updated",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/administrations/{id}",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1administrations~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AdministrationUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Administration"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Update Administration"
+        "summary": "Update Administration",
+        "tags": [
+          "Administrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a brand new new PeppolIdentifier.",
         "id": "operation:post:/legal_entities/{legal_entity_id}/peppol_identifiers",
         "kind": "operation",
         "method": "post",
         "name": "create_peppol_identifier",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity for which to create the PeppolIdentifier",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/peppol_identifiers",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1peppol_identifiers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PeppolIdentifierCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PeppolIdentifier"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Create a new PeppolIdentifier"
+        "summary": "Create a new PeppolIdentifier",
+        "tags": [
+          "PeppolIdentifiers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a PeppolIdentifier.",
         "id": "operation:delete:/legal_entities/{legal_entity_id}/peppol_identifiers/{superscheme}/{scheme}/{identifier}",
         "kind": "operation",
         "method": "delete",
         "name": "delete_peppol_identifier",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity this PeppolIdentifier belongs to",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The superscheme of the identifier.",
+            "in": "path",
+            "name": "superscheme",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "PEPPOL identifier scheme id, e.g.",
+            "in": "path",
+            "name": "scheme",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "PEPPOL identifier",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/peppol_identifiers/{superscheme}/{scheme}/{identifier}",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1peppol_identifiers~1{superscheme}~1{scheme}~1{identifier}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Delete PeppolIdentifier"
+        "summary": "Delete PeppolIdentifier",
+        "tags": [
+          "PeppolIdentifiers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DEPRECATED - use new path /received_documents.",
         "id": "operation:post:/legal_entities/{legal_entity_id}/received_documents",
         "kind": "operation",
         "method": "post",
         "name": "receive_documenht",
+        "parameters": [
+          {
+            "description": "The id of the LegalEntity for which the document was received.",
+            "in": "path",
+            "name": "legal_entity_id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/legal_entities/{legal_entity_id}/received_documents",
         "pointer": "#/paths/~1legal_entities~1{legal_entity_id}~1received_documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReceivedDocumentCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReceivedDocument"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Receive a new Document"
+        "summary": "Receive a new Document",
+        "tags": [
+          "ReceivedDocuments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a specific PurchaseInvoice, in JSON format.",
         "id": "operation:get:/purchase_invoices/{guid}",
         "kind": "operation",
         "method": "get",
         "name": "get_invoice_json",
+        "parameters": [
+          {
+            "description": "The guid of the purchase invoice, from the webhook.",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "default": "1.0",
+            "description": "The PaymentMeans version.",
+            "in": "query",
+            "name": "pmv",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/purchase_invoices/{guid}",
         "pointer": "#/paths/~1purchase_invoices~1{guid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PurchaseInvoice"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get Purchase invoice data as JSON"
+        "summary": "Get Purchase invoice data as JSON",
+        "tags": [
+          "PurchaseInvoices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a specific PurchaseInvoice.",
         "id": "operation:get:/purchase_invoices/{guid}/{packaging}",
         "kind": "operation",
         "method": "get",
         "name": "get_invoice_ubl",
+        "parameters": [
+          {
+            "description": "purchase invoice guid",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "default": "json",
+            "description": "How to package the purchase invoice.",
+            "enum": [
+              "json",
+              "ubl",
+              "original"
+            ],
+            "in": "path",
+            "name": "packaging",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "1.0",
+            "description": "The PaymentMeans version.",
+            "in": "query",
+            "name": "pmv",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/purchase_invoices/{guid}/{packaging}",
         "pointer": "#/paths/~1purchase_invoices~1{guid}~1{packaging}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PurchaseInvoiceUbl"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get Purchase invoice data in a selectable format"
+        "summary": "Get Purchase invoice data in a selectable format",
+        "tags": [
+          "PurchaseInvoices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a specific PurchaseInvoice in UBL format",
         "id": "operation:get:/purchase_invoices/{guid}/{packaging}/{package_version}",
         "kind": "operation",
         "method": "get",
         "name": "get_invoice_ubl_versioned",
+        "parameters": [
+          {
+            "description": "purchase invoice guid",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "default": "ubl",
+            "description": "How to package the purchase invoice.",
+            "enum": [
+              "ubl"
+            ],
+            "in": "path",
+            "name": "packaging",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "si11",
+            "description": "The version of the package.",
+            "enum": [
+              "si11",
+              "si12",
+              "si20",
+              "aunz",
+              "sg",
+              "jp",
+              "en16931",
+              "original"
+            ],
+            "in": "path",
+            "name": "package_version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/purchase_invoices/{guid}/{packaging}/{package_version}",
         "pointer": "#/paths/~1purchase_invoices~1{guid}~1{packaging}~1{package_version}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PurchaseInvoiceUbl"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version"
+        "summary": "Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version",
+        "tags": [
+          "PurchaseInvoices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new received document.",
         "id": "operation:post:/received_documents",
         "kind": "operation",
         "method": "post",
         "name": "create_received_document",
         "path": "/received_documents",
         "pointer": "#/paths/~1received_documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReceivedDocumentCreate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReceivedDocument"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "ErrorModel[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Create a new received document"
+        "summary": "Create a new received document",
+        "tags": [
+          "ReceivedDocuments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "EXPERIMENTAL: use only for orders.",
         "id": "operation:get:/received_documents/{guid}/{format}",
         "kind": "operation",
         "method": "get",
         "name": "get_received_document",
+        "parameters": [
+          {
+            "description": "The guid of the document that was received.",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "default": "json",
+            "description": "The syntax in which to receive the received document.",
+            "enum": [
+              "json",
+              "original"
+            ],
+            "in": "query",
+            "name": "syntax",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/received_documents/{guid}/{format}",
         "pointer": "#/paths/~1received_documents~1{guid}~1{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReceivedDocument"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get a new ReceivedDocument"
+        "summary": "Get a new ReceivedDocument",
+        "tags": [
+          "ReceivedDocuments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "GET a WebhookInstance from the queue.",
         "id": "operation:get:/webhook_instances/",
         "kind": "operation",
         "method": "get",
         "name": "get_webhook_instances",
         "path": "/webhook_instances/",
         "pointer": "#/paths/~1webhook_instances~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookInstance"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "GET a WebhookInstance"
+        "summary": "GET a WebhookInstance",
+        "tags": [
+          "WebhookInstances"
+        ]
       },
       {
         "deprecated": false,
+        "description": "DELETE a specific WebhookInstance",
         "id": "operation:delete:/webhook_instances/{guid}",
         "kind": "operation",
         "method": "delete",
         "name": "delete_webhook_instance",
+        "parameters": [
+          {
+            "description": "WebhookInstance guid",
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/webhook_instances/{guid}",
         "pointer": "#/paths/~1webhook_instances~1{guid}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "DELETE a WebhookInstance"
+        "summary": "DELETE a WebhookInstance",
+        "tags": [
+          "WebhookInstances"
+        ]
       },
       {
+        "description": "The customer receiving the document.",
         "id": "schema:AccountingCustomerParty",
         "kind": "schema",
-        "name": "AccountingCustomerParty"
+        "name": "AccountingCustomerParty",
+        "type": "object"
       },
       {
+        "description": "The party sending the invoice.",
         "id": "schema:AccountingSupplierParty",
         "kind": "schema",
-        "name": "AccountingSupplierParty"
+        "name": "AccountingSupplierParty",
+        "type": "object"
       },
       {
+        "description": "An additional property for the item",
         "id": "schema:AdditionalItemProperty",
         "kind": "schema",
-        "name": "AdditionalItemProperty"
+        "name": "AdditionalItemProperty",
+        "type": "object"
       },
       {
         "id": "schema:AdditionalTaxIdentifier",
         "kind": "schema",
-        "name": "AdditionalTaxIdentifier"
+        "name": "AdditionalTaxIdentifier",
+        "type": "object"
       },
       {
         "id": "schema:AdditionalTaxIdentifierCreate",
         "kind": "schema",
-        "name": "AdditionalTaxIdentifierCreate"
+        "name": "AdditionalTaxIdentifierCreate",
+        "type": "object"
       },
       {
         "id": "schema:AdditionalTaxIdentifierUpdate",
         "kind": "schema",
-        "name": "AdditionalTaxIdentifierUpdate"
+        "name": "AdditionalTaxIdentifierUpdate",
+        "type": "object"
       },
       {
+        "description": "The address",
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:Administration",
         "kind": "schema",
-        "name": "Administration"
+        "name": "Administration",
+        "type": "object"
       },
       {
         "id": "schema:AdministrationCreate",
         "kind": "schema",
-        "name": "AdministrationCreate"
+        "name": "AdministrationCreate",
+        "type": "object"
       },
       {
         "id": "schema:AdministrationUpdate",
         "kind": "schema",
-        "name": "AdministrationUpdate"
+        "name": "AdministrationUpdate",
+        "type": "object"
       },
       {
         "id": "schema:AllowanceCharge",
         "kind": "schema",
-        "name": "AllowanceCharge"
+        "name": "AllowanceCharge",
+        "type": "object"
       },
       {
+        "description": "A document attachment to the invoice.",
         "id": "schema:Attachment",
         "kind": "schema",
-        "name": "Attachment"
+        "name": "Attachment",
+        "type": "object"
       },
       {
+        "description": "Contact details for the invoice",
         "id": "schema:Contact",
         "kind": "schema",
-        "name": "Contact"
+        "name": "Contact",
+        "type": "object"
       },
       {
         "id": "schema:CorpPass",
         "kind": "schema",
-        "name": "CorpPass"
+        "name": "CorpPass",
+        "type": "object"
       },
       {
         "id": "schema:CorpPassCreate",
         "kind": "schema",
-        "name": "CorpPassCreate"
+        "name": "CorpPassCreate",
+        "type": "object"
       },
       {
+        "description": "An ISO 3166-1 alpha-2 country code.",
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "string"
       },
       {
         "id": "schema:CountrySpecification",
         "kind": "schema",
-        "name": "CountrySpecification"
+        "name": "CountrySpecification",
+        "type": "object"
       },
       {
         "id": "schema:CountrySpecificationIdentifier",
         "kind": "schema",
-        "name": "CountrySpecificationIdentifier"
+        "name": "CountrySpecificationIdentifier",
+        "type": "object"
       },
       {
         "id": "schema:CountrySpecifications",
         "kind": "schema",
-        "name": "CountrySpecifications"
+        "name": "CountrySpecifications",
+        "type": "object"
       },
       {
+        "description": "The ISO 4217 currency code.",
         "id": "schema:CurrencyCode",
         "kind": "schema",
-        "name": "CurrencyCode"
+        "name": "CurrencyCode",
+        "type": "string"
       },
       {
         "id": "schema:Delivery",
         "kind": "schema",
-        "name": "Delivery"
+        "name": "Delivery",
+        "type": "object"
       },
       {
+        "description": "The party receiving the shipment.",
         "id": "schema:DeliveryParty",
         "kind": "schema",
-        "name": "DeliveryParty"
+        "name": "DeliveryParty",
+        "type": "object"
       },
       {
         "id": "schema:DeliveryTerms",
         "kind": "schema",
-        "name": "DeliveryTerms"
+        "name": "DeliveryTerms",
+        "type": "object"
       },
       {
+        "description": "A participant to be discovered.",
         "id": "schema:DiscoverableParticipant",
         "kind": "schema",
-        "name": "DiscoverableParticipant"
+        "name": "DiscoverableParticipant",
+        "type": "object"
       },
       {
+        "description": "A public identifier for this customer.",
         "id": "schema:DiscoveredParticipant",
         "kind": "schema",
-        "name": "DiscoveredParticipant"
+        "name": "DiscoveredParticipant",
+        "type": "object"
       },
       {
+        "description": "The invoice response to send.",
         "id": "schema:DocumentInvoiceResponse",
         "kind": "schema",
-        "name": "DocumentInvoiceResponse"
+        "name": "DocumentInvoiceResponse",
+        "type": "object"
       },
       {
+        "description": "The order to send.",
         "id": "schema:DocumentOrder",
         "kind": "schema",
-        "name": "DocumentOrder"
+        "name": "DocumentOrder",
+        "type": "object"
       },
       {
+        "description": "The document you want Storecove to send, with some meta-data.",
         "id": "schema:DocumentSubmission",
         "kind": "schema",
-        "name": "DocumentSubmission"
+        "name": "DocumentSubmission",
+        "type": "object"
       },
       {
         "id": "schema:DocumentSubmissionEvidence",
         "kind": "schema",
-        "name": "DocumentSubmissionEvidence"
+        "name": "DocumentSubmissionEvidence",
+        "type": "object"
       },
       {
         "id": "schema:DocumentSubmissionEvidenceDocument",
         "kind": "schema",
-        "name": "DocumentSubmissionEvidenceDocument"
+        "name": "DocumentSubmissionEvidenceDocument",
+        "type": "object"
       },
       {
         "id": "schema:DocumentSubmissionEvidenceEvidence",
         "kind": "schema",
-        "name": "DocumentSubmissionEvidenceEvidence"
+        "name": "DocumentSubmissionEvidenceEvidence",
+        "type": "object"
       },
       {
+        "description": "The result of a document submission",
         "id": "schema:DocumentSubmissionResult",
         "kind": "schema",
-        "name": "DocumentSubmissionResult"
+        "name": "DocumentSubmissionResult",
+        "type": "object"
       },
       {
+        "description": "A list of electronic routing identifiers.",
         "id": "schema:EIdentifiers",
         "kind": "schema",
-        "name": "EIdentifiers"
+        "name": "EIdentifiers",
+        "type": "RoutingIdentifier[]"
       },
       {
         "id": "schema:ErrorModel",
         "kind": "schema",
-        "name": "ErrorModel"
+        "name": "ErrorModel",
+        "type": "object"
       },
       {
+        "description": "The invoice to send.",
         "id": "schema:Invoice",
         "kind": "schema",
-        "name": "Invoice"
+        "name": "Invoice",
+        "type": "object"
       },
       {
+        "description": "The invoice to send, in base64 encoded format.",
         "id": "schema:InvoiceData",
         "kind": "schema",
-        "name": "InvoiceData"
+        "name": "InvoiceData",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceLine",
         "kind": "schema",
-        "name": "InvoiceLine"
+        "name": "InvoiceLine",
+        "type": "object"
       },
       {
+        "description": "The different ways to send the invoice to the recipient.",
         "id": "schema:InvoiceRecipient",
         "kind": "schema",
-        "name": "InvoiceRecipient"
+        "name": "InvoiceRecipient",
+        "type": "object"
       },
       {
+        "description": "Identifies the invoice recipient to preflight",
         "id": "schema:InvoiceRecipientPreflight",
         "kind": "schema",
-        "name": "InvoiceRecipientPreflight"
+        "name": "InvoiceRecipientPreflight",
+        "type": "object"
       },
       {
+        "description": "A clarification for why a received invoice was rejected (RE) or under query (UQ) and what action to take.",
         "id": "schema:InvoiceResponseClarification",
         "kind": "schema",
-        "name": "InvoiceResponseClarification"
+        "name": "InvoiceResponseClarification",
+        "type": "object"
       },
       {
+        "description": "DEPRECATED.",
         "id": "schema:InvoiceSubmission",
         "kind": "schema",
-        "name": "InvoiceSubmission"
+        "name": "InvoiceSubmission",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceSubmissionActionEvidence",
         "kind": "schema",
-        "name": "InvoiceSubmissionActionEvidence"
+        "name": "InvoiceSubmissionActionEvidence",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceSubmissionEvidence",
         "kind": "schema",
-        "name": "InvoiceSubmissionEvidence"
+        "name": "InvoiceSubmissionEvidence",
+        "type": "object"
       },
       {
+        "description": "The result of an invoice submission",
         "id": "schema:InvoiceSubmissionResult",
         "kind": "schema",
-        "name": "InvoiceSubmissionResult"
+        "name": "InvoiceSubmissionResult",
+        "type": "object"
       },
       {
         "id": "schema:LegalEntity",
         "kind": "schema",
-        "name": "LegalEntity"
+        "name": "LegalEntity",
+        "type": "LegalEntityUpdate|object"
       },
       {
         "id": "schema:LegalEntityCreate",
         "kind": "schema",
-        "name": "LegalEntityCreate"
+        "name": "LegalEntityCreate",
+        "type": "object"
       },
       {
         "id": "schema:LegalEntityUpdate",
         "kind": "schema",
-        "name": "LegalEntityUpdate"
+        "name": "LegalEntityUpdate",
+        "type": "object"
       },
       {
         "id": "schema:LineAllowanceCharge",
         "kind": "schema",
-        "name": "LineAllowanceCharge"
+        "name": "LineAllowanceCharge",
+        "type": "object"
       },
       {
         "id": "schema:LineDelivery",
         "kind": "schema",
-        "name": "LineDelivery"
+        "name": "LineDelivery",
+        "type": "object"
       },
       {
         "id": "schema:OrderLine",
         "kind": "schema",
-        "name": "OrderLine"
+        "name": "OrderLine",
+        "type": "object"
       },
       {
+        "description": "The originator of the document.",
         "id": "schema:OriginatorCustomerParty",
         "kind": "schema",
-        "name": "OriginatorCustomerParty"
+        "name": "OriginatorCustomerParty",
+        "type": "object"
       },
       {
+        "description": "The originator of the line.",
         "id": "schema:OriginatorParty",
         "kind": "schema",
-        "name": "OriginatorParty"
+        "name": "OriginatorParty",
+        "type": "object"
       },
       {
+        "description": "A party that can receive or send invoices",
         "id": "schema:Party",
         "kind": "schema",
-        "name": "Party"
+        "name": "Party",
+        "type": "object"
       },
       {
+        "description": "A PaymentMeans is a way to pay the invoice.",
         "id": "schema:PaymentMeans",
         "kind": "schema",
-        "name": "PaymentMeans"
+        "name": "PaymentMeans",
+        "type": "object"
       },
       {
+        "description": "The payment terms of the document.",
         "id": "schema:PaymentTerms",
         "kind": "schema",
-        "name": "PaymentTerms"
+        "name": "PaymentTerms",
+        "type": "object"
       },
       {
         "id": "schema:PeppolIdentifier",
         "kind": "schema",
-        "name": "PeppolIdentifier"
+        "name": "PeppolIdentifier",
+        "type": "object"
       },
       {
         "id": "schema:PeppolIdentifierCreate",
         "kind": "schema",
-        "name": "PeppolIdentifierCreate"
+        "name": "PeppolIdentifierCreate",
+        "type": "object"
       },
       {
+        "description": "The result of preflighting an invoice recipient",
         "id": "schema:PreflightInvoiceRecipientResult",
         "kind": "schema",
-        "name": "PreflightInvoiceRecipientResult"
+        "name": "PreflightInvoiceRecipientResult",
+        "type": "object"
       },
       {
+        "description": "A public identifier for this customer.",
         "id": "schema:PublicIdentifier",
         "kind": "schema",
-        "name": "PublicIdentifier"
+        "name": "PublicIdentifier",
+        "type": "object"
       },
       {
+        "description": "A list of public identifiers that uniquely identify this customer.",
         "id": "schema:PublicIdentifiers",
         "kind": "schema",
-        "name": "PublicIdentifiers"
+        "name": "PublicIdentifiers",
+        "type": "PublicIdentifier[]"
       },
       {
         "id": "schema:PurchaseInvoice",
         "kind": "schema",
-        "name": "PurchaseInvoice"
+        "name": "PurchaseInvoice",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceAccountingDetails",
         "kind": "schema",
-        "name": "PurchaseInvoiceAccountingDetails"
+        "name": "PurchaseInvoiceAccountingDetails",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceAllowanceCharge",
         "kind": "schema",
-        "name": "PurchaseInvoiceAllowanceCharge"
+        "name": "PurchaseInvoiceAllowanceCharge",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceAttachment",
         "kind": "schema",
-        "name": "PurchaseInvoiceAttachment"
+        "name": "PurchaseInvoiceAttachment",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceDocumentTotals",
         "kind": "schema",
-        "name": "PurchaseInvoiceDocumentTotals"
+        "name": "PurchaseInvoiceDocumentTotals",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceInvoiceLine",
         "kind": "schema",
-        "name": "PurchaseInvoiceInvoiceLine"
+        "name": "PurchaseInvoiceInvoiceLine",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceInvoiceLineAllowanceCharge",
         "kind": "schema",
-        "name": "PurchaseInvoiceInvoiceLineAllowanceCharge"
+        "name": "PurchaseInvoiceInvoiceLineAllowanceCharge",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceInvoiceLineItem",
         "kind": "schema",
-        "name": "PurchaseInvoiceInvoiceLineItem"
+        "name": "PurchaseInvoiceInvoiceLineItem",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceInvoiceLinePrice",
         "kind": "schema",
-        "name": "PurchaseInvoiceInvoiceLinePrice"
+        "name": "PurchaseInvoiceInvoiceLinePrice",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoicePaymentMeans",
         "kind": "schema",
-        "name": "PurchaseInvoicePaymentMeans"
+        "name": "PurchaseInvoicePaymentMeans",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceSender",
         "kind": "schema",
-        "name": "PurchaseInvoiceSender"
+        "name": "PurchaseInvoiceSender",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceSenderBillingContact",
         "kind": "schema",
-        "name": "PurchaseInvoiceSenderBillingContact"
+        "name": "PurchaseInvoiceSenderBillingContact",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceTax",
         "kind": "schema",
-        "name": "PurchaseInvoiceTax"
+        "name": "PurchaseInvoiceTax",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceTaxSubtotal",
         "kind": "schema",
-        "name": "PurchaseInvoiceTaxSubtotal"
+        "name": "PurchaseInvoiceTaxSubtotal",
+        "type": "object"
       },
       {
         "id": "schema:PurchaseInvoiceUbl",
         "kind": "schema",
-        "name": "PurchaseInvoiceUbl"
+        "name": "PurchaseInvoiceUbl",
+        "type": "object"
       },
       {
+        "description": "DEPRECATED - Use tax.",
         "id": "schema:PurchaseInvoiceVat",
         "kind": "schema",
-        "name": "PurchaseInvoiceVat"
+        "name": "PurchaseInvoiceVat",
+        "type": "object"
       },
       {
+        "description": "A document to send, in base64 encoded format.",
         "id": "schema:RawDocumentData",
         "kind": "schema",
-        "name": "RawDocumentData"
+        "name": "RawDocumentData",
+        "type": "object"
       },
       {
         "id": "schema:Rea",
         "kind": "schema",
-        "name": "Rea"
+        "name": "Rea",
+        "type": "object"
       },
       {
         "id": "schema:ReceivedDocument",
         "kind": "schema",
-        "name": "ReceivedDocument"
+        "name": "ReceivedDocument",
+        "type": "object"
       },
       {
         "id": "schema:ReceivedDocumentCreate",
         "kind": "schema",
-        "name": "ReceivedDocumentCreate"
+        "name": "ReceivedDocumentCreate",
+        "type": "object"
       },
       {
         "id": "schema:ReceiverParty",
@@ -1016,49 +2883,65 @@
         "name": "ReceiverParty"
       },
       {
+        "description": "A reference to a document.",
         "id": "schema:Reference",
         "kind": "schema",
-        "name": "Reference"
+        "name": "Reference",
+        "type": "object"
       },
       {
+        "description": "The different ways to send the invoice to the recipient.",
         "id": "schema:Routing",
         "kind": "schema",
-        "name": "Routing"
+        "name": "Routing",
+        "type": "object"
       },
       {
+        "description": "An electronic routing identifier.",
         "id": "schema:RoutingIdentifier",
         "kind": "schema",
-        "name": "RoutingIdentifier"
+        "name": "RoutingIdentifier",
+        "type": "object"
       },
       {
+        "description": "The party sending the order.",
         "id": "schema:SellerSupplierParty",
         "kind": "schema",
-        "name": "SellerSupplierParty"
+        "name": "SellerSupplierParty",
+        "type": "object"
       },
       {
+        "description": "The document to send.",
         "id": "schema:SendableDocument",
         "kind": "schema",
-        "name": "SendableDocument"
+        "name": "SendableDocument",
+        "type": "object"
       },
       {
+        "description": "A party that can send documents",
         "id": "schema:SenderParty",
         "kind": "schema",
-        "name": "SenderParty"
+        "name": "SenderParty",
+        "type": "object"
       },
       {
         "id": "schema:Tax",
         "kind": "schema",
-        "name": "Tax"
+        "name": "Tax",
+        "type": "object"
       },
       {
+        "description": "The total amount of tax of this type in the invoice.",
         "id": "schema:TaxSubtotal",
         "kind": "schema",
-        "name": "TaxSubtotal"
+        "name": "TaxSubtotal",
+        "type": "object"
       },
       {
         "id": "schema:WebhookInstance",
         "kind": "schema",
-        "name": "WebhookInstance"
+        "name": "WebhookInstance",
+        "type": "object"
       }
     ]
   },

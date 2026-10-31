@@ -32,45 +32,305 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a csv or json of the requested data to local machine",
         "id": "operation:get:/api/data",
         "kind": "operation",
         "method": "get",
         "name": "get /api/data",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Daymet Daily weather estimates.",
+            "in": "query",
+            "name": "vars",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on years [1980..2019].",
+            "in": "query",
+            "name": "years",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on dates (start date).",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Subset on dates (end date).",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Specify a format for data retrieval.",
+            "enum": [
+              "csv",
+              "json"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/data",
         "pointer": "#/paths/~1api~1data/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Download Daymet Data"
       },
       {
         "deprecated": false,
+        "description": "Returns a table to the browser displaying requested data",
         "id": "operation:get:/preview",
         "kind": "operation",
         "method": "get",
         "name": "get /preview",
+        "parameters": [
+          {
+            "description": "Latitude component of location",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Daymet Daily weather estimates.",
+            "in": "query",
+            "name": "vars",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on years [1980..2019].",
+            "in": "query",
+            "name": "years",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on dates (start date).",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Subset on dates (end date).",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Specify a format for data retrieval.",
+            "enum": [
+              "csv",
+              "json"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/preview",
         "pointer": "#/paths/~1preview/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Preview Daymet Data in a web browser"
       },
       {
         "deprecated": false,
+        "description": "Returns a csv or json of the requested data to local machine",
         "id": "operation:get:/send/saveData",
         "kind": "operation",
         "method": "get",
         "name": "get /send/saveData",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Daymet Daily weather estimates.",
+            "in": "query",
+            "name": "vars",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on years [1980..2019].",
+            "in": "query",
+            "name": "years",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on dates (start date).",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Subset on dates (end date).",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Specify a format for data retrieval.",
+            "enum": [
+              "csv",
+              "json"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/send/saveData",
         "pointer": "#/paths/~1send~1saveData/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Download Daymet Data"
       },
       {
         "deprecated": false,
+        "description": "Returns plots to a web browser of requested data using Plotly",
         "id": "operation:get:/visualize",
         "kind": "operation",
         "method": "get",
         "name": "get /visualize",
+        "parameters": [
+          {
+            "description": "Latitude component of location.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude component of location.",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Daymet Daily weather estimates.",
+            "in": "query",
+            "name": "vars",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on years [1980..2019].",
+            "in": "query",
+            "name": "years",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Subset on dates (start date).",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Subset on dates (end date).",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Specify a format for data retrieval.",
+            "enum": [
+              "csv",
+              "json"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/visualize",
         "pointer": "#/paths/~1visualize/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Visualize Daymet Data in a web browser"
       }

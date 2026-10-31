@@ -22,11 +22,6 @@
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/settings/organizations/{organizationName}"
-      },
-      {
-        "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
-        "kind": "EXPOSES",
         "to": "operation:get:/settings/organizations/{organizationName}"
       },
       {
@@ -37,12 +32,12 @@
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
         "kind": "EXPOSES",
-        "to": "operation:get:/settings/organizations/{organizationName}/receivers"
+        "to": "operation:delete:/settings/organizations/{organizationName}"
       },
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/settings/organizations/{organizationName}/receivers/{receiverName}"
+        "to": "operation:get:/settings/organizations/{organizationName}/receivers"
       },
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
@@ -57,12 +52,12 @@
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
         "kind": "EXPOSES",
-        "to": "operation:get:/settings/organizations/{organizationName}/senders"
+        "to": "operation:delete:/settings/organizations/{organizationName}/receivers/{receiverName}"
       },
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/settings/organizations/{organizationName}/senders/{senderName}"
+        "to": "operation:get:/settings/organizations/{organizationName}/senders"
       },
       {
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
@@ -73,6 +68,176 @@
         "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
         "kind": "EXPOSES",
         "to": "operation:put:/settings/organizations/{organizationName}/senders/{senderName}"
+      },
+      {
+        "from": "cdcgov-local-prime-data-hub-2c85ef0e0b",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/settings/organizations/{organizationName}/senders/{senderName}"
+      },
+      {
+        "from": "operation:post:/reports",
+        "kind": "RETURNS",
+        "to": "schema:Report"
+      },
+      {
+        "from": "operation:get:/settings/organizations",
+        "kind": "RETURNS",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "operation:get:/settings/organizations/{organizationName}",
+        "kind": "RETURNS",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "operation:put:/settings/organizations/{organizationName}",
+        "kind": "ACCEPTS",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "operation:put:/settings/organizations/{organizationName}",
+        "kind": "RETURNS",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "operation:delete:/settings/organizations/{organizationName}",
+        "kind": "RETURNS",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "operation:get:/settings/organizations/{organizationName}/receivers",
+        "kind": "RETURNS",
+        "to": "schema:Receiver"
+      },
+      {
+        "from": "operation:get:/settings/organizations/{organizationName}/receivers/{receiverName}",
+        "kind": "RETURNS",
+        "to": "schema:Receiver"
+      },
+      {
+        "from": "operation:put:/settings/organizations/{organizationName}/receivers/{receiverName}",
+        "kind": "ACCEPTS",
+        "to": "schema:Receiver"
+      },
+      {
+        "from": "operation:put:/settings/organizations/{organizationName}/receivers/{receiverName}",
+        "kind": "RETURNS",
+        "to": "schema:Receiver"
+      },
+      {
+        "from": "operation:delete:/settings/organizations/{organizationName}/receivers/{receiverName}",
+        "kind": "RETURNS",
+        "to": "schema:Receiver"
+      },
+      {
+        "from": "operation:get:/settings/organizations/{organizationName}/senders",
+        "kind": "RETURNS",
+        "to": "schema:Sender"
+      },
+      {
+        "from": "operation:get:/settings/organizations/{organizationName}/senders/{senderName}",
+        "kind": "RETURNS",
+        "to": "schema:Sender"
+      },
+      {
+        "from": "operation:put:/settings/organizations/{organizationName}/senders/{senderName}",
+        "kind": "ACCEPTS",
+        "to": "schema:Sender"
+      },
+      {
+        "from": "operation:put:/settings/organizations/{organizationName}/senders/{senderName}",
+        "kind": "RETURNS",
+        "to": "schema:Sender"
+      },
+      {
+        "from": "operation:delete:/settings/organizations/{organizationName}/senders/{senderName}",
+        "kind": "RETURNS",
+        "to": "schema:Sender"
+      },
+      {
+        "from": "schema:CustomConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:AS2Transport"
+      },
+      {
+        "from": "schema:CustomConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:BlobStoreTransport"
+      },
+      {
+        "from": "schema:CustomConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:NullTransport"
+      },
+      {
+        "from": "schema:CustomConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:SFTPTransport"
+      },
+      {
+        "from": "schema:Organization",
+        "kind": "REFERENCES",
+        "to": "schema:SettingMetadata"
+      },
+      {
+        "from": "schema:Receiver",
+        "kind": "REFERENCES",
+        "to": "schema:CustomConfiguration"
+      },
+      {
+        "from": "schema:Receiver",
+        "kind": "REFERENCES",
+        "to": "schema:RedoxConfiguration"
+      },
+      {
+        "from": "schema:Receiver",
+        "kind": "REFERENCES",
+        "to": "schema:SettingMetadata"
+      },
+      {
+        "from": "schema:Receiver",
+        "kind": "REFERENCES",
+        "to": "schema:StandardHL7Configuration"
+      },
+      {
+        "from": "schema:Report",
+        "kind": "REFERENCES",
+        "to": "schema:Destination"
+      },
+      {
+        "from": "schema:Report",
+        "kind": "REFERENCES",
+        "to": "schema:Detail"
+      },
+      {
+        "from": "schema:Report",
+        "kind": "REFERENCES",
+        "to": "schema:ItemRouting"
+      },
+      {
+        "from": "schema:Sender",
+        "kind": "REFERENCES",
+        "to": "schema:SettingMetadata"
+      },
+      {
+        "from": "schema:StandardHL7Configuration",
+        "kind": "REFERENCES",
+        "to": "schema:AS2Transport"
+      },
+      {
+        "from": "schema:StandardHL7Configuration",
+        "kind": "REFERENCES",
+        "to": "schema:BlobStoreTransport"
+      },
+      {
+        "from": "schema:StandardHL7Configuration",
+        "kind": "REFERENCES",
+        "to": "schema:NullTransport"
+      },
+      {
+        "from": "schema:StandardHL7Configuration",
+        "kind": "REFERENCES",
+        "to": "schema:SFTPTransport"
       }
     ],
     "nodes": [
@@ -86,8 +251,70 @@
         "kind": "operation",
         "method": "post",
         "name": "post /reports",
+        "parameters": [
+          {
+            "description": "The client's name that matches the client name in metadata",
+            "in": "query",
+            "name": "client",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional ways to process the request",
+            "enum": [
+              "ValidatePayload",
+              "CheckConnections",
+              "SendImmediately",
+              "SkipSend",
+              "SkipInvalidItems"
+            ],
+            "in": "query",
+            "name": "option",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Dynamic default values for an element.",
+            "in": "query",
+            "name": "default",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma speparated list of receiver names.",
+            "in": "query",
+            "name": "routeTo",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/reports",
         "pointer": "#/paths/~1reports/post",
+        "request": {
+          "content_types": [
+            "text/csv"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report"
+          },
+          {
+            "status": "201",
+            "type": "Report"
+          },
+          {
+            "status": "400",
+            "type": "Report"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -97,12 +324,20 @@
       },
       {
         "deprecated": false,
+        "description": "The settings for all organizations of the system.",
         "id": "operation:get:/settings/organizations",
         "kind": "operation",
         "method": "get",
         "name": "get /settings/organizations",
         "path": "/settings/organizations",
         "pointer": "#/paths/~1settings~1organizations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Organization[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -114,12 +349,19 @@
       },
       {
         "deprecated": false,
+        "description": "Retrived the last modified for all settings of the system.",
         "id": "operation:head:/settings/organizations",
         "kind": "operation",
         "method": "head",
         "name": "head /settings/organizations",
         "path": "/settings/organizations",
         "pointer": "#/paths/~1settings~1organizations/head",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -131,29 +373,29 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/settings/organizations/{organizationName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /settings/organizations/{organizationName}",
-        "path": "/settings/organizations/{organizationName}",
-        "pointer": "#/paths/~1settings~1organizations~1{organizationName}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "system_admin"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "A single organization settings",
         "id": "operation:get:/settings/organizations/{organizationName}",
         "kind": "operation",
         "method": "get",
         "name": "get /settings/organizations/{organizationName}",
+        "parameters": [
+          {
+            "description": "The name of the organization",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Organization"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -165,12 +407,46 @@
       },
       {
         "deprecated": false,
+        "description": "Create or update the direct settings associated with an organization",
         "id": "operation:put:/settings/organizations/{organizationName}",
         "kind": "operation",
         "method": "put",
         "name": "put /settings/organizations/{organizationName}",
+        "parameters": [
+          {
+            "description": "The name of the organization",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Organization"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Organization"
+          },
+          {
+            "status": "201",
+            "type": "Organization"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -182,12 +458,75 @@
       },
       {
         "deprecated": false,
+        "description": "Delete an organization (and the associated receivers and senders)",
+        "id": "operation:delete:/settings/organizations/{organizationName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /settings/organizations/{organizationName}",
+        "parameters": [
+          {
+            "description": "The name of the organization",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/settings/organizations/{organizationName}",
+        "pointer": "#/paths/~1settings~1organizations~1{organizationName}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Organization"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "system_admin"
+            ]
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "A list of receivers and their current settings",
         "id": "operation:get:/settings/organizations/{organizationName}/receivers",
         "kind": "operation",
         "method": "get",
         "name": "get /settings/organizations/{organizationName}/receivers",
+        "parameters": [
+          {
+            "description": "Fetch receivers with this organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}/receivers",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1receivers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Receiver[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -199,29 +538,42 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/settings/organizations/{organizationName}/receivers/{receiverName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /settings/organizations/{organizationName}/receivers/{receiverName}",
-        "path": "/settings/organizations/{organizationName}/receivers/{receiverName}",
-        "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1receivers~1{receiverName}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "org_admin"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "The settings of a single of receiver",
         "id": "operation:get:/settings/organizations/{organizationName}/receivers/{receiverName}",
         "kind": "operation",
         "method": "get",
         "name": "get /settings/organizations/{organizationName}/receivers/{receiverName}",
+        "parameters": [
+          {
+            "description": "Create receivers under this organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the receiver",
+            "in": "path",
+            "name": "receiverName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}/receivers/{receiverName}",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1receivers~1{receiverName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Receiver"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -233,12 +585,53 @@
       },
       {
         "deprecated": false,
+        "description": "Update a single reciever",
         "id": "operation:put:/settings/organizations/{organizationName}/receivers/{receiverName}",
         "kind": "operation",
         "method": "put",
         "name": "put /settings/organizations/{organizationName}/receivers/{receiverName}",
+        "parameters": [
+          {
+            "description": "Create receivers under this organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the receiver",
+            "in": "path",
+            "name": "receiverName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}/receivers/{receiverName}",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1receivers~1{receiverName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Receiver"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Receiver"
+          },
+          {
+            "status": "201",
+            "type": "Receiver"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -250,12 +643,82 @@
       },
       {
         "deprecated": false,
+        "description": "Delete a receiver",
+        "id": "operation:delete:/settings/organizations/{organizationName}/receivers/{receiverName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /settings/organizations/{organizationName}/receivers/{receiverName}",
+        "parameters": [
+          {
+            "description": "the organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the receiver",
+            "in": "path",
+            "name": "receiverName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/settings/organizations/{organizationName}/receivers/{receiverName}",
+        "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1receivers~1{receiverName}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Receiver"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "org_admin"
+            ]
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "A list of senders",
         "id": "operation:get:/settings/organizations/{organizationName}/senders",
         "kind": "operation",
         "method": "get",
         "name": "get /settings/organizations/{organizationName}/senders",
+        "parameters": [
+          {
+            "description": "Fetch senders with this organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}/senders",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1senders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sender[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -267,29 +730,42 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/settings/organizations/{organizationName}/senders/{senderName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /settings/organizations/{organizationName}/senders/{senderName}",
-        "path": "/settings/organizations/{organizationName}/senders/{senderName}",
-        "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1senders~1{senderName}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "org_admin"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "The settings of a single of sender",
         "id": "operation:get:/settings/organizations/{organizationName}/senders/{senderName}",
         "kind": "operation",
         "method": "get",
         "name": "get /settings/organizations/{organizationName}/senders/{senderName}",
+        "parameters": [
+          {
+            "description": "Fetch senders with this organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of a sender to the data hub",
+            "in": "path",
+            "name": "senderName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}/senders/{senderName}",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1senders~1{senderName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sender"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -301,12 +777,53 @@
       },
       {
         "deprecated": false,
+        "description": "Update a single sender",
         "id": "operation:put:/settings/organizations/{organizationName}/senders/{senderName}",
         "kind": "operation",
         "method": "put",
         "name": "put /settings/organizations/{organizationName}/senders/{senderName}",
+        "parameters": [
+          {
+            "description": "Fetch senders with this organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of a sender to the data hub",
+            "in": "path",
+            "name": "senderName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/settings/organizations/{organizationName}/senders/{senderName}",
         "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1senders~1{senderName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Sender"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sender[]"
+          },
+          {
+            "status": "201",
+            "type": "Sender[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -317,49 +834,111 @@
         "summary": null
       },
       {
+        "deprecated": false,
+        "description": "Delete a sender",
+        "id": "operation:delete:/settings/organizations/{organizationName}/senders/{senderName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /settings/organizations/{organizationName}/senders/{senderName}",
+        "parameters": [
+          {
+            "description": "the organization name",
+            "in": "path",
+            "name": "organizationName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of a sender to the data hub",
+            "in": "path",
+            "name": "senderName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/settings/organizations/{organizationName}/senders/{senderName}",
+        "pointer": "#/paths/~1settings~1organizations~1{organizationName}~1senders~1{senderName}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sender"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "org_admin"
+            ]
+          }
+        ],
+        "summary": null
+      },
+      {
+        "description": "Describes a single AS2 connection in all of it variations",
         "id": "schema:AS2Transport",
         "kind": "schema",
-        "name": "AS2Transport"
+        "name": "AS2Transport",
+        "type": "object"
       },
       {
+        "description": "Moves results to a Azure Blob Store.",
         "id": "schema:BlobStoreTransport",
         "kind": "schema",
-        "name": "BlobStoreTransport"
+        "name": "BlobStoreTransport",
+        "type": "object"
       },
       {
+        "description": "A custom configuration for a custom schema",
         "id": "schema:CustomConfiguration",
         "kind": "schema",
-        "name": "CustomConfiguration"
+        "name": "CustomConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:Destination",
         "kind": "schema",
-        "name": "Destination"
+        "name": "Destination",
+        "type": "object"
       },
       {
         "id": "schema:Detail",
         "kind": "schema",
-        "name": "Detail"
+        "name": "Detail",
+        "type": "object"
       },
       {
         "id": "schema:ItemRouting",
         "kind": "schema",
-        "name": "ItemRouting"
+        "name": "ItemRouting",
+        "type": "object"
       },
       {
+        "description": "A transport type that does not do anything",
         "id": "schema:NullTransport",
         "kind": "schema",
-        "name": "NullTransport"
+        "name": "NullTransport",
+        "type": "object"
       },
       {
+        "description": "An organization connected to data hub",
         "id": "schema:Organization",
         "kind": "schema",
-        "name": "Organization"
+        "name": "Organization",
+        "type": "object"
       },
       {
+        "description": "A receiver of reports from the data hub",
         "id": "schema:Receiver",
         "kind": "schema",
-        "name": "Receiver"
+        "name": "Receiver",
+        "type": "object"
       },
       {
         "id": "schema:RedoxConfiguration",
@@ -367,34 +946,45 @@
         "name": "RedoxConfiguration"
       },
       {
+        "description": "Describe the Redox transport",
         "id": "schema:RedoxTransport",
         "kind": "schema",
-        "name": "RedoxTransport"
+        "name": "RedoxTransport",
+        "type": "object"
       },
       {
         "id": "schema:Report",
         "kind": "schema",
-        "name": "Report"
+        "name": "Report",
+        "type": "object"
       },
       {
+        "description": "Describes a single SFTP connection in all of it variations",
         "id": "schema:SFTPTransport",
         "kind": "schema",
-        "name": "SFTPTransport"
+        "name": "SFTPTransport",
+        "type": "object"
       },
       {
+        "description": "An sender of reports to the data hub",
         "id": "schema:Sender",
         "kind": "schema",
-        "name": "Sender"
+        "name": "Sender",
+        "type": "object"
       },
       {
+        "description": "The metadata associated with an setting",
         "id": "schema:SettingMetadata",
         "kind": "schema",
-        "name": "SettingMetadata"
+        "name": "SettingMetadata",
+        "type": "object"
       },
       {
+        "description": "A standard HL7 configuration",
         "id": "schema:StandardHL7Configuration",
         "kind": "schema",
-        "name": "StandardHL7Configuration"
+        "name": "StandardHL7Configuration",
+        "type": "object"
       }
     ]
   },

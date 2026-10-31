@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Greenpeace_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `673b5fa0fbef1da6750d067b3c1ea2e28f51f4ddb29f246b6832359543a4c87f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Greenpeace_profile_
 
 21 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/events` | get /events | — |
-| GET | `/events/{UUID}` | get /events/{UUID} | — |
-| GET | `/groups` | get /groups | — |
-| GET | `/groups/{UUID}` | get /groups/{UUID} | — |
-| GET | `/volunteers` | get /volunteers | — |
-| GET | `/volunteers/{UUID}` | get /volunteers/{UUID} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/events` | get /events | `domain`*, `limit` | object | yes | — |
+| GET | `/events/{UUID}` | get /events/{UUID} | `UUID`* | object | yes | — |
+| GET | `/groups` | get /groups | `domain`*, `limit` | object | yes | — |
+| GET | `/groups/{UUID}` | get /groups/{UUID} | `UUID`* | object | yes | — |
+| GET | `/volunteers` | get /volunteers | `domain`*, `limit`, `must_have_default_avatar` | object | yes | — |
+| GET | `/volunteers/{UUID}` | get /volunteers/{UUID} | `UUID`* | object | yes | — |

@@ -37,12 +37,12 @@
       {
         "from": "isendpro-com-879010763d",
         "kind": "EXPOSES",
-        "to": "operation:post:/repertoire"
+        "to": "operation:put:/repertoire"
       },
       {
         "from": "isendpro-com-879010763d",
         "kind": "EXPOSES",
-        "to": "operation:put:/repertoire"
+        "to": "operation:post:/repertoire"
       },
       {
         "from": "isendpro-com-879010763d",
@@ -67,12 +67,192 @@
       {
         "from": "isendpro-com-879010763d",
         "kind": "EXPOSES",
-        "to": "operation:post:/subaccount"
+        "to": "operation:put:/subaccount"
       },
       {
         "from": "isendpro-com-879010763d",
         "kind": "EXPOSES",
-        "to": "operation:put:/subaccount"
+        "to": "operation:post:/subaccount"
+      },
+      {
+        "from": "operation:post:/comptage",
+        "kind": "ACCEPTS",
+        "to": "schema:ComptageRequest"
+      },
+      {
+        "from": "operation:post:/comptage",
+        "kind": "RETURNS",
+        "to": "schema:ComptageReponse"
+      },
+      {
+        "from": "operation:get:/credit",
+        "kind": "RETURNS",
+        "to": "schema:CreditResponse"
+      },
+      {
+        "from": "operation:post:/dellistenoire",
+        "kind": "RETURNS",
+        "to": "schema:LISTENOIREReponse"
+      },
+      {
+        "from": "operation:post:/hlr",
+        "kind": "ACCEPTS",
+        "to": "schema:HLRrequest"
+      },
+      {
+        "from": "operation:post:/hlr",
+        "kind": "RETURNS",
+        "to": "schema:HLRReponse"
+      },
+      {
+        "from": "operation:put:/repertoire",
+        "kind": "ACCEPTS",
+        "to": "schema:REPERTOIREmodifrequest"
+      },
+      {
+        "from": "operation:put:/repertoire",
+        "kind": "RETURNS",
+        "to": "schema:REPERTOIREmodifreponse"
+      },
+      {
+        "from": "operation:post:/repertoire",
+        "kind": "ACCEPTS",
+        "to": "schema:REPERTOIREcreaterequest"
+      },
+      {
+        "from": "operation:post:/repertoire",
+        "kind": "RETURNS",
+        "to": "schema:REPERTOIREcreatereponse"
+      },
+      {
+        "from": "operation:post:/setlistenoire",
+        "kind": "RETURNS",
+        "to": "schema:LISTENOIREReponse"
+      },
+      {
+        "from": "operation:post:/shortlink",
+        "kind": "ACCEPTS",
+        "to": "schema:ShortlinkRequest"
+      },
+      {
+        "from": "operation:post:/shortlink",
+        "kind": "RETURNS",
+        "to": "schema:ShortlinkResponse"
+      },
+      {
+        "from": "operation:post:/sms",
+        "kind": "ACCEPTS",
+        "to": "schema:SmsUniqueRequest"
+      },
+      {
+        "from": "operation:post:/sms",
+        "kind": "RETURNS",
+        "to": "schema:SMSReponse"
+      },
+      {
+        "from": "operation:post:/smsmulti",
+        "kind": "ACCEPTS",
+        "to": "schema:SMSRequest"
+      },
+      {
+        "from": "operation:post:/smsmulti",
+        "kind": "RETURNS",
+        "to": "schema:SMSReponse"
+      },
+      {
+        "from": "operation:put:/subaccount",
+        "kind": "ACCEPTS",
+        "to": "schema:SubaccountRequest"
+      },
+      {
+        "from": "operation:put:/subaccount",
+        "kind": "RETURNS",
+        "to": "schema:SubaccountResponse"
+      },
+      {
+        "from": "operation:post:/subaccount",
+        "kind": "ACCEPTS",
+        "to": "schema:SubaccountAddRequest"
+      },
+      {
+        "from": "operation:post:/subaccount",
+        "kind": "RETURNS",
+        "to": "schema:SubaccountAddResponse"
+      },
+      {
+        "from": "schema:ComptageReponse",
+        "kind": "REFERENCES",
+        "to": "schema:ComptageReponse_etat"
+      },
+      {
+        "from": "schema:ComptageReponse_etat",
+        "kind": "REFERENCES",
+        "to": "schema:ComptageReponse_etat_etat"
+      },
+      {
+        "from": "schema:CreditResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreditResponse_etat"
+      },
+      {
+        "from": "schema:Erreur",
+        "kind": "REFERENCES",
+        "to": "schema:Erreur_etat"
+      },
+      {
+        "from": "schema:Erreur_etat",
+        "kind": "REFERENCES",
+        "to": "schema:Erreur_etat_etat"
+      },
+      {
+        "from": "schema:HLRReponse",
+        "kind": "REFERENCES",
+        "to": "schema:HLRReponse_etat"
+      },
+      {
+        "from": "schema:HLRReponse_etat",
+        "kind": "REFERENCES",
+        "to": "schema:HLRReponse_etat_etat"
+      },
+      {
+        "from": "schema:LISTENOIREReponse",
+        "kind": "REFERENCES",
+        "to": "schema:LISTENOIREReponse_etat"
+      },
+      {
+        "from": "schema:LISTENOIREReponse_etat",
+        "kind": "REFERENCES",
+        "to": "schema:LISTENOIREReponse_etat_etat"
+      },
+      {
+        "from": "schema:REPERTOIREcreatereponse",
+        "kind": "REFERENCES",
+        "to": "schema:REPERTOIREcreatereponse_etat"
+      },
+      {
+        "from": "schema:REPERTOIREcreatereponse_etat",
+        "kind": "REFERENCES",
+        "to": "schema:REPERTOIREcreatereponse_etat_etat"
+      },
+      {
+        "from": "schema:REPERTOIREmodifreponse",
+        "kind": "REFERENCES",
+        "to": "schema:REPERTOIREmodifreponse_etat"
+      },
+      {
+        "from": "schema:REPERTOIREmodifreponse_etat",
+        "kind": "REFERENCES",
+        "to": "schema:REPERTOIREmodifreponse_etat_etat"
+      },
+      {
+        "from": "schema:SMSReponse",
+        "kind": "REFERENCES",
+        "to": "schema:SMSReponse_etat"
+      },
+      {
+        "from": "schema:SMSReponse_etat",
+        "kind": "REFERENCES",
+        "to": "schema:SMSReponse_etat_etat"
       }
     ],
     "nodes": [
@@ -82,102 +262,389 @@
       },
       {
         "deprecated": false,
+        "description": "Retourne les SMS envoyés sur une période donnée en fonction d'une date de début et d'une date de fin.",
         "id": "operation:get:/campagne",
         "kind": "operation",
         "method": "get",
         "name": "getCampagne",
+        "parameters": [
+          {
+            "description": "Clé API",
+            "in": "query",
+            "name": "keyid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Doit valoir \"1\"",
+            "enum": [
+              "1"
+            ],
+            "in": "query",
+            "name": "rapportCampagne",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "date de debut au format YYYY-MM-DD hh:mm",
+            "in": "query",
+            "name": "date_deb",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "date de fin au format YYYY-MM-DD hh:mm",
+            "in": "query",
+            "name": "date_fin",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/campagne",
         "pointer": "#/paths/~1campagne/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retourne les SMS envoyés sur une période donnée"
+        "summary": "Retourne les SMS envoyés sur une période donnée",
+        "tags": [
+          "campagne"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compte le nombre de SMS necessaire à un envoi",
         "id": "operation:post:/comptage",
         "kind": "operation",
         "method": "post",
         "name": "comptage",
         "path": "/comptage",
         "pointer": "#/paths/~1comptage/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ComptageRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ComptageReponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Compter le nombre de caractère "
+        "summary": "Compter le nombre de caractère ",
+        "tags": [
+          "comptage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retourne le credit existant associe au compte.",
         "id": "operation:get:/credit",
         "kind": "operation",
         "method": "get",
         "name": "getCredit",
+        "parameters": [
+          {
+            "description": "Clé API",
+            "in": "query",
+            "name": "keyid",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Type de reponse demandée, 1 pour euro, 2 pour euro + estimation quantité",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "credit",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/credit",
         "pointer": "#/paths/~1credit/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreditResponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Interrogation credit"
+        "summary": "Interrogation credit",
+        "tags": [
+          "credit"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Supprime un numero en liste noire",
         "id": "operation:post:/dellistenoire",
         "kind": "operation",
         "method": "post",
         "name": "delListeNoire",
+        "parameters": [
+          {
+            "description": "Clé API",
+            "in": "query",
+            "name": "keyid",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Doit valoir \"1\"",
+            "enum": [
+              "1"
+            ],
+            "in": "query",
+            "name": "delListeNoire",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "numéro de mobile à supprimer",
+            "in": "query",
+            "name": "num",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/dellistenoire",
         "pointer": "#/paths/~1dellistenoire/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LISTENOIREReponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Ajoute un numero en liste noire"
+        "summary": "Ajoute un numero en liste noire",
+        "tags": [
+          "delListeNoire"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retourne un fichier csv zippé contenant la liste noire",
         "id": "operation:post:/getlistenoire",
         "kind": "operation",
         "method": "post",
         "name": "getListeNoire",
+        "parameters": [
+          {
+            "description": "Clé API",
+            "in": "query",
+            "name": "keyid",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Doit valoir \"1\"",
+            "enum": [
+              "1"
+            ],
+            "in": "query",
+            "name": "getListeNoire",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getlistenoire",
         "pointer": "#/paths/~1getlistenoire/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retourne le liste noire"
+        "summary": "Retourne le liste noire",
+        "tags": [
+          "getListeNoire"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Réalise un lookup HLR sur les numéros",
         "id": "operation:post:/hlr",
         "kind": "operation",
         "method": "post",
         "name": "getHlr",
         "path": "/hlr",
         "pointer": "#/paths/~1hlr/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "HLRrequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "HLRReponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Vérifier la validité d'un numéro"
+        "summary": "Vérifier la validité d'un numéro",
+        "tags": [
+          "hlr"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/repertoire",
-        "kind": "operation",
-        "method": "post",
-        "name": "repertoireCrea",
-        "path": "/repertoire",
-        "pointer": "#/paths/~1repertoire/post",
-        "security": [],
-        "summary": "Gestion repertoire (creation)"
-      },
-      {
-        "deprecated": false,
+        "description": "Ajoute ou supprime une liste de numéros à un répertoire existant.",
         "id": "operation:put:/repertoire",
         "kind": "operation",
         "method": "put",
         "name": "repertoire",
         "path": "/repertoire",
         "pointer": "#/paths/~1repertoire/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "REPERTOIREmodifrequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "REPERTOIREmodifreponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gestion repertoire (modification)"
+        "summary": "Gestion repertoire (modification)",
+        "tags": [
+          "repertoire"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cree un nouveau répertoire et retourne son identifiant.",
+        "id": "operation:post:/repertoire",
+        "kind": "operation",
+        "method": "post",
+        "name": "repertoireCrea",
+        "path": "/repertoire",
+        "pointer": "#/paths/~1repertoire/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "REPERTOIREcreaterequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "REPERTOIREcreatereponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Gestion repertoire (creation)",
+        "tags": [
+          "repertoire"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Ajoute un numero en liste noire.",
         "id": "operation:post:/setlistenoire",
         "kind": "operation",
         "method": "post",
         "name": "setListeNoire",
+        "parameters": [
+          {
+            "description": "Clé API",
+            "in": "query",
+            "name": "keyid",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Doit valoir \"1\"",
+            "enum": [
+              "1"
+            ],
+            "in": "query",
+            "name": "setlisteNoire",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "numéro de mobile à insérer en liste noire",
+            "in": "query",
+            "name": "num",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/setlistenoire",
         "pointer": "#/paths/~1setlistenoire/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LISTENOIREReponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Ajoute un numero en liste noire"
+        "summary": "Ajoute un numero en liste noire",
+        "tags": [
+          "setListeNoire"
+        ]
       },
       {
         "deprecated": false,
@@ -187,41 +654,95 @@
         "name": "addShortlink",
         "path": "/shortlink",
         "pointer": "#/paths/~1shortlink/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ShortlinkRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShortlinkResponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "add a shortlink"
+        "summary": "add a shortlink",
+        "tags": [
+          "add shortlink"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Envoi un sms vers un unique destinataire",
         "id": "operation:post:/sms",
         "kind": "operation",
         "method": "post",
         "name": "sendSms",
         "path": "/sms",
         "pointer": "#/paths/~1sms/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SmsUniqueRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SMSReponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Envoyer un sms"
+        "summary": "Envoyer un sms",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Envoi de SMS vers 1 ou plusieurs destinataires",
         "id": "operation:post:/smsmulti",
         "kind": "operation",
         "method": "post",
         "name": "sendSmsMulti",
         "path": "/smsmulti",
         "pointer": "#/paths/~1smsmulti/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SMSRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SMSReponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Envoyer des SMS"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/subaccount",
-        "kind": "operation",
-        "method": "post",
-        "name": "subaccountAdd",
-        "path": "/subaccount",
-        "pointer": "#/paths/~1subaccount/post",
-        "security": [],
-        "summary": "Ajoute un sous compte"
+        "summary": "Envoyer des SMS",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
@@ -231,183 +752,272 @@
         "name": "subaccountEdit",
         "path": "/subaccount",
         "pointer": "#/paths/~1subaccount/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubaccountRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubaccountResponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit a subaccount"
+        "summary": "Edit a subaccount",
+        "tags": [
+          "edit subaccount"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/subaccount",
+        "kind": "operation",
+        "method": "post",
+        "name": "subaccountAdd",
+        "path": "/subaccount",
+        "pointer": "#/paths/~1subaccount/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubaccountAddRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubaccountAddResponse"
+          },
+          {
+            "status": "400",
+            "type": "Erreur"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Ajoute un sous compte",
+        "tags": [
+          "add subaccount"
+        ]
       },
       {
         "id": "schema:ComptageReponse",
         "kind": "schema",
-        "name": "ComptageReponse"
+        "name": "ComptageReponse",
+        "type": "object"
       },
       {
         "id": "schema:ComptageReponse_etat",
         "kind": "schema",
-        "name": "ComptageReponse_etat"
+        "name": "ComptageReponse_etat",
+        "type": "object"
       },
       {
         "id": "schema:ComptageReponse_etat_etat",
         "kind": "schema",
-        "name": "ComptageReponse_etat_etat"
+        "name": "ComptageReponse_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:ComptageRequest",
         "kind": "schema",
-        "name": "ComptageRequest"
+        "name": "ComptageRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreditResponse",
         "kind": "schema",
-        "name": "CreditResponse"
+        "name": "CreditResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreditResponse_etat",
         "kind": "schema",
-        "name": "CreditResponse_etat"
+        "name": "CreditResponse_etat",
+        "type": "object"
       },
       {
         "id": "schema:Erreur",
         "kind": "schema",
-        "name": "Erreur"
+        "name": "Erreur",
+        "type": "object"
       },
       {
         "id": "schema:Erreur_etat",
         "kind": "schema",
-        "name": "Erreur_etat"
+        "name": "Erreur_etat",
+        "type": "object"
       },
       {
         "id": "schema:Erreur_etat_etat",
         "kind": "schema",
-        "name": "Erreur_etat_etat"
+        "name": "Erreur_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:HLRReponse",
         "kind": "schema",
-        "name": "HLRReponse"
+        "name": "HLRReponse",
+        "type": "object"
       },
       {
         "id": "schema:HLRReponse_etat",
         "kind": "schema",
-        "name": "HLRReponse_etat"
+        "name": "HLRReponse_etat",
+        "type": "object"
       },
       {
         "id": "schema:HLRReponse_etat_etat",
         "kind": "schema",
-        "name": "HLRReponse_etat_etat"
+        "name": "HLRReponse_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:HLRrequest",
         "kind": "schema",
-        "name": "HLRrequest"
+        "name": "HLRrequest",
+        "type": "object"
       },
       {
         "id": "schema:LISTENOIREReponse",
         "kind": "schema",
-        "name": "LISTENOIREReponse"
+        "name": "LISTENOIREReponse",
+        "type": "object"
       },
       {
         "id": "schema:LISTENOIREReponse_etat",
         "kind": "schema",
-        "name": "LISTENOIREReponse_etat"
+        "name": "LISTENOIREReponse_etat",
+        "type": "object"
       },
       {
         "id": "schema:LISTENOIREReponse_etat_etat",
         "kind": "schema",
-        "name": "LISTENOIREReponse_etat_etat"
+        "name": "LISTENOIREReponse_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREcreatereponse",
         "kind": "schema",
-        "name": "REPERTOIREcreatereponse"
+        "name": "REPERTOIREcreatereponse",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREcreatereponse_etat",
         "kind": "schema",
-        "name": "REPERTOIREcreatereponse_etat"
+        "name": "REPERTOIREcreatereponse_etat",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREcreatereponse_etat_etat",
         "kind": "schema",
-        "name": "REPERTOIREcreatereponse_etat_etat"
+        "name": "REPERTOIREcreatereponse_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREcreaterequest",
         "kind": "schema",
-        "name": "REPERTOIREcreaterequest"
+        "name": "REPERTOIREcreaterequest",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREmodifreponse",
         "kind": "schema",
-        "name": "REPERTOIREmodifreponse"
+        "name": "REPERTOIREmodifreponse",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREmodifreponse_etat",
         "kind": "schema",
-        "name": "REPERTOIREmodifreponse_etat"
+        "name": "REPERTOIREmodifreponse_etat",
+        "type": "object"
       },
       {
+        "description": "Tableau de code retour.",
         "id": "schema:REPERTOIREmodifreponse_etat_etat",
         "kind": "schema",
-        "name": "REPERTOIREmodifreponse_etat_etat"
+        "name": "REPERTOIREmodifreponse_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:REPERTOIREmodifrequest",
         "kind": "schema",
-        "name": "REPERTOIREmodifrequest"
+        "name": "REPERTOIREmodifrequest",
+        "type": "object"
       },
       {
         "id": "schema:SMSReponse",
         "kind": "schema",
-        "name": "SMSReponse"
+        "name": "SMSReponse",
+        "type": "object"
       },
       {
         "id": "schema:SMSReponse_etat",
         "kind": "schema",
-        "name": "SMSReponse_etat"
+        "name": "SMSReponse_etat",
+        "type": "object"
       },
       {
         "id": "schema:SMSReponse_etat_etat",
         "kind": "schema",
-        "name": "SMSReponse_etat_etat"
+        "name": "SMSReponse_etat_etat",
+        "type": "object"
       },
       {
         "id": "schema:SMSRequest",
         "kind": "schema",
-        "name": "SMSRequest"
+        "name": "SMSRequest",
+        "type": "object"
       },
       {
         "id": "schema:ShortlinkRequest",
         "kind": "schema",
-        "name": "ShortlinkRequest"
+        "name": "ShortlinkRequest",
+        "type": "object"
       },
       {
         "id": "schema:ShortlinkResponse",
         "kind": "schema",
-        "name": "ShortlinkResponse"
+        "name": "ShortlinkResponse",
+        "type": "object"
       },
       {
         "id": "schema:SmsUniqueRequest",
         "kind": "schema",
-        "name": "SmsUniqueRequest"
+        "name": "SmsUniqueRequest",
+        "type": "object"
       },
       {
         "id": "schema:SubaccountAddRequest",
         "kind": "schema",
-        "name": "SubaccountAddRequest"
+        "name": "SubaccountAddRequest",
+        "type": "object"
       },
       {
         "id": "schema:SubaccountAddResponse",
         "kind": "schema",
-        "name": "SubaccountAddResponse"
+        "name": "SubaccountAddResponse",
+        "type": "object"
       },
       {
         "id": "schema:SubaccountRequest",
         "kind": "schema",
-        "name": "SubaccountRequest"
+        "name": "SubaccountRequest",
+        "type": "object"
       },
       {
         "id": "schema:SubaccountResponse",
         "kind": "schema",
-        "name": "SubaccountResponse"
+        "name": "SubaccountResponse",
+        "type": "object"
       }
     ]
   },

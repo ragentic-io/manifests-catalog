@@ -22,12 +22,19 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of Wellknown ai-plugins json objects from the Wellknown ai-plugins registry.",
         "id": "operation:get:/api/plugins",
         "kind": "operation",
         "method": "get",
         "name": "get /api/plugins",
         "path": "/api/plugins",
         "pointer": "#/paths/~1api~1plugins/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -39,8 +46,17 @@
         "name": "getProvider",
         "path": "/plugins",
         "pointer": "#/paths/~1plugins/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all the Wellknown AI Plugins."
+        "summary": "List all the Wellknown AI Plugins.",
+        "tags": [
+          "Plugins"
+        ]
       }
     ]
   },

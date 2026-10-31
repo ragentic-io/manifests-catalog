@@ -27,11 +27,6 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/allowlist/private/{allowlist_id}"
-      },
-      {
-        "from": "threatjammer-com-d1cf944e09",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/allowlist/private/{allowlist_id}"
       },
       {
@@ -42,7 +37,7 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/allowlist/private/{allowlist_id}/content"
+        "to": "operation:delete:/v1/allowlist/private/{allowlist_id}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -53,6 +48,11 @@
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/allowlist/private/{allowlist_id}/content"
+      },
+      {
+        "from": "threatjammer-com-d1cf944e09",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/allowlist/private/{allowlist_id}/content"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -87,17 +87,17 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/allowlist/public/{allowlist_id}"
-      },
-      {
-        "from": "threatjammer-com-d1cf944e09",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/allowlist/public/{allowlist_id}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/allowlist/public/{allowlist_id}"
+      },
+      {
+        "from": "threatjammer-com-d1cf944e09",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/allowlist/public/{allowlist_id}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -212,11 +212,6 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/denylist/private/{denylist_id}"
-      },
-      {
-        "from": "threatjammer-com-d1cf944e09",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/denylist/private/{denylist_id}"
       },
       {
@@ -227,7 +222,7 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/denylist/private/{denylist_id}/content"
+        "to": "operation:delete:/v1/denylist/private/{denylist_id}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -238,6 +233,11 @@
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/denylist/private/{denylist_id}/content"
+      },
+      {
+        "from": "threatjammer-com-d1cf944e09",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/denylist/private/{denylist_id}/content"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -272,17 +272,17 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/denylist/public/{denylist_id}"
-      },
-      {
-        "from": "threatjammer-com-d1cf944e09",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/denylist/public/{denylist_id}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/denylist/public/{denylist_id}"
+      },
+      {
+        "from": "threatjammer-com-d1cf944e09",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/denylist/public/{denylist_id}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -302,12 +302,12 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/denylist/reported/ip/{ip_address}"
+        "to": "operation:get:/v1/denylist/reported/ip/{ip_address}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/denylist/reported/ip/{ip_address}"
+        "to": "operation:delete:/v1/denylist/reported/ip/{ip_address}"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -392,12 +392,12 @@
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/origin_token"
+        "to": "operation:post:/v1/origin_token"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
-        "to": "operation:post:/v1/origin_token"
+        "to": "operation:delete:/v1/origin_token"
       },
       {
         "from": "threatjammer-com-d1cf944e09",
@@ -483,6 +483,626 @@
         "from": "threatjammer-com-d1cf944e09",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/ua/{user_agent_urlencoded}"
+      },
+      {
+        "from": "operation:post:/v1/allowlist/private",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_create_private_allowlist_of_the_user_v1_allowlist_private_post"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/private/all",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/private/all/{resource_type}",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/private/ip/{address}",
+        "kind": "RETURNS",
+        "to": "schema:AclListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/private/{allowlist_id}",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclGroupListOutput"
+      },
+      {
+        "from": "operation:put:/v1/allowlist/private/{allowlist_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/private/{allowlist_id}/content",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclListCollectionOutput"
+      },
+      {
+        "from": "operation:put:/v1/allowlist/private/{allowlist_id}/content",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put"
+      },
+      {
+        "from": "operation:put:/v1/allowlist/private/{allowlist_id}/origin",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/public/all",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/public/all/{resource_type}",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/public/ip/{address}",
+        "kind": "RETURNS",
+        "to": "schema:AclListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/public/owned",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/public/owned/{resource_type}",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/allowlist/public/{allowlist_id}",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListOutput"
+      },
+      {
+        "from": "operation:put:/v1/allowlist/public/{allowlist_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put"
+      },
+      {
+        "from": "operation:put:/v1/allowlist/public/{allowlist_id}/origin",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put"
+      },
+      {
+        "from": "operation:get:/v1/asn/ip/{ip_address}",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemPrefixOutput"
+      },
+      {
+        "from": "operation:post:/v1/asn/prefix",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_query_asn_prefix_information_v1_asn_prefix_post"
+      },
+      {
+        "from": "operation:post:/v1/asn/prefix",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemPrefixOutput"
+      },
+      {
+        "from": "operation:get:/v1/asn/registry/all",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemRegistryOutput"
+      },
+      {
+        "from": "operation:get:/v1/asn/registry/{code}",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemRegistryOutput"
+      },
+      {
+        "from": "operation:get:/v1/asn/status/all",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemStatusOutput"
+      },
+      {
+        "from": "operation:get:/v1/asn/status/{code}",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemStatusOutput"
+      },
+      {
+        "from": "operation:get:/v1/asn/{number}",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemOutput"
+      },
+      {
+        "from": "operation:get:/v1/asn/{number}/prefixes",
+        "kind": "RETURNS",
+        "to": "schema:AutonomousSystemPrefixesOutput"
+      },
+      {
+        "from": "operation:post:/v1/assess/ip",
+        "kind": "RETURNS",
+        "to": "schema:IPAssessmentCollectionOutput"
+      },
+      {
+        "from": "operation:post:/v1/assess/ip/csv",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_assess_ip_set_csv_v1_assess_ip_csv_post"
+      },
+      {
+        "from": "operation:post:/v1/assess/ip/csv",
+        "kind": "RETURNS",
+        "to": "schema:IPAssessmentCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/assess/ip/{ip_address}",
+        "kind": "RETURNS",
+        "to": "schema:IPAssessmentOutput"
+      },
+      {
+        "from": "operation:get:/v1/datacenter/ip/{ip_address}",
+        "kind": "RETURNS",
+        "to": "schema:DatacenterPrefixOutput"
+      },
+      {
+        "from": "operation:post:/v1/datacenter/prefix",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_query_datacenter_prefix_information_v1_datacenter_prefix_post"
+      },
+      {
+        "from": "operation:post:/v1/datacenter/prefix",
+        "kind": "RETURNS",
+        "to": "schema:DatacenterPrefixOutput"
+      },
+      {
+        "from": "operation:get:/v1/datacenter/{datacenter_id}",
+        "kind": "RETURNS",
+        "to": "schema:DatacenterOutput"
+      },
+      {
+        "from": "operation:get:/v1/datacenter/{datacenter_id}/prefixes",
+        "kind": "RETURNS",
+        "to": "schema:DatacenterPrefixesOutput"
+      },
+      {
+        "from": "operation:get:/v1/dataset/ip",
+        "kind": "RETURNS",
+        "to": "schema:DatasetTypeCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/dataset/ip/{name}",
+        "kind": "RETURNS",
+        "to": "schema:DatasetTypeOutput"
+      },
+      {
+        "from": "operation:post:/v1/denylist/private",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_create_private_denylist_of_the_user_v1_denylist_private_post"
+      },
+      {
+        "from": "operation:get:/v1/denylist/private/all",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/private/all/{resource_type}",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/private/ip/{address}",
+        "kind": "RETURNS",
+        "to": "schema:AclListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/private/{denylist_id}",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclGroupListOutput"
+      },
+      {
+        "from": "operation:put:/v1/denylist/private/{denylist_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put"
+      },
+      {
+        "from": "operation:get:/v1/denylist/private/{denylist_id}/content",
+        "kind": "RETURNS",
+        "to": "schema:PrivateAclListCollectionOutput"
+      },
+      {
+        "from": "operation:put:/v1/denylist/private/{denylist_id}/content",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put"
+      },
+      {
+        "from": "operation:put:/v1/denylist/private/{denylist_id}/origin",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put"
+      },
+      {
+        "from": "operation:get:/v1/denylist/public/all",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/public/all/{resource_type}",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/public/ip/{address}",
+        "kind": "RETURNS",
+        "to": "schema:AclListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/public/owned",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/public/owned/{resource_type}",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/public/{denylist_id}",
+        "kind": "RETURNS",
+        "to": "schema:PublicAclGroupListOutput"
+      },
+      {
+        "from": "operation:put:/v1/denylist/public/{denylist_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put"
+      },
+      {
+        "from": "operation:put:/v1/denylist/public/{denylist_id}/origin",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put"
+      },
+      {
+        "from": "operation:get:/v1/denylist/reported/ip",
+        "kind": "RETURNS",
+        "to": "schema:IPListCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/denylist/reported/ip/{ip_address}",
+        "kind": "RETURNS",
+        "to": "schema:IPListOutput"
+      },
+      {
+        "from": "operation:post:/v1/geo",
+        "kind": "RETURNS",
+        "to": "schema:GeoIPCollectionOutput"
+      },
+      {
+        "from": "operation:post:/v1/geo/csv",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_assess_ip_set_csv_v1_geo_csv_post"
+      },
+      {
+        "from": "operation:post:/v1/geo/csv",
+        "kind": "RETURNS",
+        "to": "schema:GeoIPCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/geo/{ip_address}",
+        "kind": "RETURNS",
+        "to": "schema:GeoIPOutput"
+      },
+      {
+        "from": "operation:get:/v1/log/ip/id/{logchange_id}",
+        "kind": "RETURNS",
+        "to": "schema:IPLogOutput"
+      },
+      {
+        "from": "operation:get:/v1/log/ip/{ip_address}",
+        "kind": "RETURNS",
+        "to": "schema:IPLogCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin",
+        "kind": "RETURNS",
+        "to": "schema:OriginOutput"
+      },
+      {
+        "from": "operation:put:/v1/origin",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_update_configuration_origin_v1_origin_put"
+      },
+      {
+        "from": "operation:get:/v1/origin/addresses",
+        "kind": "RETURNS",
+        "to": "schema:OriginAddressStatusCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/all",
+        "kind": "RETURNS",
+        "to": "schema:OriginCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/client/analysis",
+        "kind": "RETURNS",
+        "to": "schema:OriginClientAnalysisCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/cookies",
+        "kind": "RETURNS",
+        "to": "schema:OriginCookieIdStatusCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/scripts",
+        "kind": "RETURNS",
+        "to": "schema:OriginScriptsOutput"
+      },
+      {
+        "from": "operation:post:/v1/origin/status",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_query_origin_status_v1_origin_status_post"
+      },
+      {
+        "from": "operation:post:/v1/origin/status",
+        "kind": "RETURNS",
+        "to": "schema:OriginStatusOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/status/detail/{status_id}",
+        "kind": "RETURNS",
+        "to": "schema:OriginStatusDetailsOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/status/details",
+        "kind": "RETURNS",
+        "to": "schema:OriginStatusDetailsCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/origin/traffic/analysis",
+        "kind": "RETURNS",
+        "to": "schema:OriginTrafficAnalysisCollectionOutput"
+      },
+      {
+        "from": "operation:post:/v1/origin_token",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_query_origin_token_info_v1_origin_token_post"
+      },
+      {
+        "from": "operation:post:/v1/origin_token",
+        "kind": "RETURNS",
+        "to": "schema:OriginTokenOutput"
+      },
+      {
+        "from": "operation:delete:/v1/origin_token",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_delete_token_v1_origin_token_delete"
+      },
+      {
+        "from": "operation:get:/v1/origin_token/all",
+        "kind": "RETURNS",
+        "to": "schema:OriginTokenCollectionOutput"
+      },
+      {
+        "from": "operation:put:/v1/origin_token/disable",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_disable_origin_token_v1_origin_token_disable_put"
+      },
+      {
+        "from": "operation:put:/v1/origin_token/enable",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_enable_origin_token_v1_origin_token_enable_put"
+      },
+      {
+        "from": "operation:post:/v1/origin_token/new",
+        "kind": "ACCEPTS",
+        "to": "schema:OriginTokenInput"
+      },
+      {
+        "from": "operation:post:/v1/origin_token/new",
+        "kind": "RETURNS",
+        "to": "schema:OriginTokenOutput"
+      },
+      {
+        "from": "operation:get:/v1/source/ip",
+        "kind": "RETURNS",
+        "to": "schema:SourceCollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/source/ip/{source}",
+        "kind": "RETURNS",
+        "to": "schema:v1__models__source__SourceOutput"
+      },
+      {
+        "from": "operation:get:/v1/source/ip/{source}/range/{time_range}",
+        "kind": "RETURNS",
+        "to": "schema:SourceTimeRangeOutput"
+      },
+      {
+        "from": "operation:get:/v1/token",
+        "kind": "RETURNS",
+        "to": "schema:TokenOutput"
+      },
+      {
+        "from": "operation:get:/v1/token/activity",
+        "kind": "RETURNS",
+        "to": "schema:ActivityCollectionOutput"
+      },
+      {
+        "from": "operation:post:/v1/ua",
+        "kind": "RETURNS",
+        "to": "schema:UACollectionOutput"
+      },
+      {
+        "from": "operation:post:/v1/ua/csv",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_parse_user_agents_csv_v1_ua_csv_post"
+      },
+      {
+        "from": "operation:post:/v1/ua/csv",
+        "kind": "RETURNS",
+        "to": "schema:UACollectionOutput"
+      },
+      {
+        "from": "operation:get:/v1/ua/device/{code}",
+        "kind": "RETURNS",
+        "to": "schema:DeviceOutput"
+      },
+      {
+        "from": "operation:get:/v1/ua/family/{code}",
+        "kind": "RETURNS",
+        "to": "schema:FamilyOutput"
+      },
+      {
+        "from": "operation:get:/v1/ua/os/{code}",
+        "kind": "RETURNS",
+        "to": "schema:OSOutput"
+      },
+      {
+        "from": "operation:get:/v1/ua/type/{code}",
+        "kind": "RETURNS",
+        "to": "schema:TypeOutput"
+      },
+      {
+        "from": "operation:get:/v1/ua/vendor/{code}",
+        "kind": "RETURNS",
+        "to": "schema:VendorOutput"
+      },
+      {
+        "from": "operation:get:/v1/ua/{user_agent_urlencoded}",
+        "kind": "RETURNS",
+        "to": "schema:UAOutput"
+      },
+      {
+        "from": "schema:AclGroupOriginCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:AclGroupOriginOutput"
+      },
+      {
+        "from": "schema:ActivityCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:ActivityOutput"
+      },
+      {
+        "from": "schema:ActivityOutput",
+        "kind": "REFERENCES",
+        "to": "schema:v1__models__token__SourceOutput"
+      },
+      {
+        "from": "schema:AutonomousSystemPrefixesOutput",
+        "kind": "REFERENCES",
+        "to": "schema:AutonomousSystemPrefixOutput"
+      },
+      {
+        "from": "schema:Body_create_private_allowlist_of_the_user_v1_allowlist_private_post",
+        "kind": "REFERENCES",
+        "to": "schema:PrivateAclGroupListInput"
+      },
+      {
+        "from": "schema:Body_create_private_denylist_of_the_user_v1_denylist_private_post",
+        "kind": "REFERENCES",
+        "to": "schema:PrivateAclGroupListInput"
+      },
+      {
+        "from": "schema:DatacenterPrefixesOutput",
+        "kind": "REFERENCES",
+        "to": "schema:DatacenterPrefixOutput"
+      },
+      {
+        "from": "schema:DatasetTypeCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:DatasetTypeOutput"
+      },
+      {
+        "from": "schema:GeoIPCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:GeoIPOutput"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:IPAssessmentCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:IPAssessmentOutput"
+      },
+      {
+        "from": "schema:IPListCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:IPListOutput"
+      },
+      {
+        "from": "schema:IPLogCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:IPLogOutput"
+      },
+      {
+        "from": "schema:OriginAddressStatusCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginAddressStatusOutput"
+      },
+      {
+        "from": "schema:OriginClientAnalysisCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginClientAnalysisOutput"
+      },
+      {
+        "from": "schema:OriginCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginOutput"
+      },
+      {
+        "from": "schema:OriginCookieIdStatusCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginCookieIdStatusOutput"
+      },
+      {
+        "from": "schema:OriginStatusDetailsCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginStatusDetailsOutput"
+      },
+      {
+        "from": "schema:OriginStatusOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginAddressStatusOutput"
+      },
+      {
+        "from": "schema:OriginStatusOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginCookieIdStatusOutput"
+      },
+      {
+        "from": "schema:OriginTokenCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginTokenOutput"
+      },
+      {
+        "from": "schema:OriginTrafficAnalysisCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:OriginTrafficAnalysisOutput"
+      },
+      {
+        "from": "schema:PrivateAclGroupListCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:PrivateAclGroupListOutput"
+      },
+      {
+        "from": "schema:PrivateAclGroupListOutput",
+        "kind": "REFERENCES",
+        "to": "schema:AclGroupOriginCollectionOutput"
+      },
+      {
+        "from": "schema:PublicAclGroupListCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:PublicAclGroupListOutput"
+      },
+      {
+        "from": "schema:PublicAclGroupListOutput",
+        "kind": "REFERENCES",
+        "to": "schema:AclGroupOriginCollectionOutput"
+      },
+      {
+        "from": "schema:SourceCollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:v1__models__source__SourceOutput"
+      },
+      {
+        "from": "schema:UACollectionOutput",
+        "kind": "REFERENCES",
+        "to": "schema:UAOutput"
       }
     ],
     "nodes": [
@@ -492,1858 +1112,4301 @@
       },
       {
         "deprecated": false,
+        "description": "### What Creates a new allowlist with the information given and binded to the current user.",
         "id": "operation:post:/v1/allowlist/private",
         "kind": "operation",
         "method": "post",
         "name": "create_private_allowlist_of_the_user_v1_allowlist_private_post",
         "path": "/v1/allowlist/private",
         "pointer": "#/paths/~1v1~1allowlist~1private/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_create_private_allowlist_of_the_user_v1_allowlist_private_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:uuid"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Creates a new private allowlist binded to the user."
+        "summary": "Creates a new private allowlist binded to the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of private allow lists of the user available in the service.",
         "id": "operation:get:/v1/allowlist/private/all",
         "kind": "operation",
         "method": "get",
         "name": "get_all_private_allowlists_v1_allowlist_private_all_get",
         "path": "/v1/allowlist/private/all",
         "pointer": "#/paths/~1v1~1allowlist~1private~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclGroupListCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of private allowlists of the user."
+        "summary": "Get the set of private allowlists of the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of private allow lists of the user available in the service filtering by resource type.",
         "id": "operation:get:/v1/allowlist/private/all/{resource_type}",
         "kind": "operation",
         "method": "get",
         "name": "get_all_private_allowlists_by_resource_type_v1_allowlist_private_all__resource_type__get",
+        "parameters": [
+          {
+            "enum": [
+              "cidr",
+              "country",
+              "continent",
+              "as",
+              "datacenter",
+              "useragent"
+            ],
+            "in": "path",
+            "name": "resource_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/allowlist/private/all/{resource_type}",
         "pointer": "#/paths/~1v1~1allowlist~1private~1all~1{resource_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclGroupListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of private allowlists of the user by resource type."
+        "summary": "Get the set of private allowlists of the user by resource type.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the different private allowlists where the IP address entered by the user.",
         "id": "operation:get:/v1/allowlist/private/ip/{address}",
         "kind": "operation",
         "method": "get",
         "name": "query_resource_denylists_v1_allowlist_private_ip__address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string:ipv4|string:ipv6"
+          }
+        ],
         "path": "/v1/allowlist/private/ip/{address}",
         "pointer": "#/paths/~1v1~1allowlist~1private~1ip~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AclListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the different private allowlists where the IP address was found."
+        "summary": "Get the different private allowlists where the IP address was found.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/allowlist/private/{allowlist_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_the_allowlist_v1_allowlist_private__allowlist_id__delete",
-        "path": "/v1/allowlist/private/{allowlist_id}",
-        "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete all the bindings between a user and a private allowlist."
-      },
-      {
-        "deprecated": false,
+        "description": "### What Obtain the details of the private allow list of the user available in the service.",
         "id": "operation:get:/v1/allowlist/private/{allowlist_id}",
         "kind": "operation",
         "method": "get",
         "name": "get_single_allowlist_v1_allowlist_private__allowlist_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/private/{allowlist_id}",
         "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclGroupListOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the details of a specific private allowlist of the user."
+        "summary": "Get the details of a specific private allowlist of the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Updates the information that describes the allowlist of the user in the system.",
         "id": "operation:put:/v1/allowlist/private/{allowlist_id}",
         "kind": "operation",
         "method": "put",
         "name": "update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/private/{allowlist_id}",
         "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update the information of an existing private allowlist of the user."
+        "summary": "Update the information of an existing private allowlist of the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/allowlist/private/{allowlist_id}/content",
+        "description": "### What Delete all the bindings between a user and a private allowlist.",
+        "id": "operation:delete:/v1/allowlist/private/{allowlist_id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete_the_allowlist_content_v1_allowlist_private__allowlist_id__content_delete",
-        "path": "/v1/allowlist/private/{allowlist_id}/content",
-        "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}~1content/delete",
+        "name": "delete_the_allowlist_v1_allowlist_private__allowlist_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/allowlist/private/{allowlist_id}",
+        "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Delete all the content of a private allowlist of the user."
+        "summary": "Delete all the bindings between a user and a private allowlist.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Returns the content of the private allowlist of the user.",
         "id": "operation:get:/v1/allowlist/private/{allowlist_id}/content",
         "kind": "operation",
         "method": "get",
         "name": "get_allowlist_content_v1_allowlist_private__allowlist_id__content_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/private/{allowlist_id}/content",
         "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the content of a private allowlist of the user."
+        "summary": "Get the content of a private allowlist of the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Add or remove content of a private allowlist of the user.",
         "id": "operation:put:/v1/allowlist/private/{allowlist_id}/content",
         "kind": "operation",
         "method": "put",
         "name": "update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/private/{allowlist_id}/content",
         "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}~1content/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Body_update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Add or remove content of a private allowlist of the user."
+        "summary": "Add or remove content of a private allowlist of the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Delete all the content of a private allowlist of the user.",
+        "id": "operation:delete:/v1/allowlist/private/{allowlist_id}/content",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_the_allowlist_content_v1_allowlist_private__allowlist_id__content_delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/allowlist/private/{allowlist_id}/content",
+        "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}~1content/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete all the content of a private allowlist of the user.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "### What Change the status of the origin of an allow list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.",
         "id": "operation:put:/v1/allowlist/private/{allowlist_id}/origin",
         "kind": "operation",
         "method": "put",
         "name": "change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/private/{allowlist_id}/origin",
         "pointer": "#/paths/~1v1~1allowlist~1private~1{allowlist_id}~1origin/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Toogle the status of the origin in an allow list."
+        "summary": "Toogle the status of the origin in an allow list.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public allow lists available in the service and also which ones are already selected by the user and wich ones are not.",
         "id": "operation:get:/v1/allowlist/public/all",
         "kind": "operation",
         "method": "get",
         "name": "get_all_public_allowlists_v1_allowlist_public_all_get",
         "path": "/v1/allowlist/public/all",
         "pointer": "#/paths/~1v1~1allowlist~1public~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of public allowlists."
+        "summary": "Get the set of public allowlists.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public allow lists available in the service and also which ones are already selected by the user and wich ones are not filtering by…",
         "id": "operation:get:/v1/allowlist/public/all/{resource_type}",
         "kind": "operation",
         "method": "get",
         "name": "get_all_public_allowlists_by_resource_type_v1_allowlist_public_all__resource_type__get",
+        "parameters": [
+          {
+            "enum": [
+              "cidr",
+              "country",
+              "continent",
+              "as",
+              "datacenter",
+              "useragent"
+            ],
+            "in": "path",
+            "name": "resource_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/allowlist/public/all/{resource_type}",
         "pointer": "#/paths/~1v1~1allowlist~1public~1all~1{resource_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of public allowlists by resource type."
+        "summary": "Get the set of public allowlists by resource type.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the different public allowlists where the IP address entered by the user is.",
         "id": "operation:get:/v1/allowlist/public/ip/{address}",
         "kind": "operation",
         "method": "get",
         "name": "query_resource_allowlists_v1_allowlist_public_ip__address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string:ipv4|string:ipv6"
+          }
+        ],
         "path": "/v1/allowlist/public/ip/{address}",
         "pointer": "#/paths/~1v1~1allowlist~1public~1ip~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AclListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the different public allowlists where the IP address was found."
+        "summary": "Get the different public allowlists where the IP address was found.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public allow lists available in the service selected by the user.",
         "id": "operation:get:/v1/allowlist/public/owned",
         "kind": "operation",
         "method": "get",
         "name": "get_public_allowlists_owned_by_the_user_v1_allowlist_public_owned_get",
         "path": "/v1/allowlist/public/owned",
         "pointer": "#/paths/~1v1~1allowlist~1public~1owned/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of owned allowlists."
+        "summary": "Get the set of owned allowlists.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public allow lists selected by the user and wich ones are not filtering by the resource type.",
         "id": "operation:get:/v1/allowlist/public/owned/{resource_type}",
         "kind": "operation",
         "method": "get",
         "name": "get_all_owned_allowlists_by_resource_type_v1_allowlist_public_owned__resource_type__get",
+        "parameters": [
+          {
+            "enum": [
+              "cidr",
+              "country",
+              "continent",
+              "as",
+              "datacenter",
+              "useragent"
+            ],
+            "in": "path",
+            "name": "resource_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/allowlist/public/owned/{resource_type}",
         "pointer": "#/paths/~1v1~1allowlist~1public~1owned~1{resource_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of public allowlists of a user by resource type."
+        "summary": "Get the set of public allowlists of a user by resource type.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/allowlist/public/{allowlist_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_the_allowlist_v1_allowlist_public__allowlist_id__delete",
-        "path": "/v1/allowlist/public/{allowlist_id}",
-        "pointer": "#/paths/~1v1~1allowlist~1public~1{allowlist_id}/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete all the bindings between a user and an allowlist."
-      },
-      {
-        "deprecated": false,
+        "description": "### What Obtain the details of an allow list available in the service.",
         "id": "operation:get:/v1/allowlist/public/{allowlist_id}",
         "kind": "operation",
         "method": "get",
         "name": "get_single_allowlist_v1_allowlist_public__allowlist_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/public/{allowlist_id}",
         "pointer": "#/paths/~1v1~1allowlist~1public~1{allowlist_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the details of the allowlist."
+        "summary": "Get the details of the allowlist.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Change the status of an allow list to ``ACTIVE`` or ``INACTIVE``.",
         "id": "operation:put:/v1/allowlist/public/{allowlist_id}",
         "kind": "operation",
         "method": "put",
         "name": "change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/public/{allowlist_id}",
         "pointer": "#/paths/~1v1~1allowlist~1public~1{allowlist_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Toogle the status of an allow list."
+        "summary": "Toogle the status of an allow list.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Delete all the bindings between a user and an allowlist.",
+        "id": "operation:delete:/v1/allowlist/public/{allowlist_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_the_allowlist_v1_allowlist_public__allowlist_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/allowlist/public/{allowlist_id}",
+        "pointer": "#/paths/~1v1~1allowlist~1public~1{allowlist_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete all the bindings between a user and an allowlist.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "### What Change the status of the origin of an allow list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.",
         "id": "operation:put:/v1/allowlist/public/{allowlist_id}/origin",
         "kind": "operation",
         "method": "put",
         "name": "change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allowlist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/allowlist/public/{allowlist_id}/origin",
         "pointer": "#/paths/~1v1~1allowlist~1public~1{allowlist_id}~1origin/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Toogle the status of the origin in an allow list."
+        "summary": "Toogle the status of the origin in an allow list.",
+        "tags": [
+          "Allowlist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the IPv4 or IPv6 prefix and the Autonomous System information of the IP address passed as a parameter.",
         "id": "operation:get:/v1/asn/ip/{ip_address}",
         "kind": "operation",
         "method": "get",
         "name": "query_IP_address_network_information_v1_asn_ip__ip_address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          }
+        ],
         "path": "/v1/asn/ip/{ip_address}",
         "pointer": "#/paths/~1v1~1asn~1ip~1{ip_address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemPrefixOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the IPv4 or IPv6 prefix of the IP address given."
+        "summary": "Get the IPv4 or IPv6 prefix of the IP address given.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the IPv4 or IPv6 prefix and the Autonomous System information of the CIDR passed in the body as a POST method.",
         "id": "operation:post:/v1/asn/prefix",
         "kind": "operation",
         "method": "post",
         "name": "query_asn_prefix_information_v1_asn_prefix_post",
         "path": "/v1/asn/prefix",
         "pointer": "#/paths/~1v1~1asn~1prefix/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_query_asn_prefix_information_v1_asn_prefix_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemPrefixOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the IPv4 or IPv6 prefix of the CIDR given."
+        "summary": "Get the IPv4 or IPv6 prefix of the CIDR given.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of Regional Internet Registries (RIRs) entities worldwide.",
         "id": "operation:get:/v1/asn/registry/all",
         "kind": "operation",
         "method": "get",
         "name": "query_registry_names_v1_asn_registry_all_get",
         "path": "/v1/asn/registry/all",
         "pointer": "#/paths/~1v1~1asn~1registry~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemRegistryOutput[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of the Regional Internet Registries (RIRs) entities worldwide."
+        "summary": "Get the list of the Regional Internet Registries (RIRs) entities worldwide.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the information about the Regional Internet Registries (RIRs) given as a parameter.",
         "id": "operation:get:/v1/asn/registry/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_registry_by_the_name_v1_asn_registry__code__get",
+        "parameters": [
+          {
+            "enum": [
+              "iana",
+              "arin",
+              "ripencc",
+              "afrinic",
+              "apnic",
+              "lacnic"
+            ],
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/asn/registry/{code}",
         "pointer": "#/paths/~1v1~1asn~1registry~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemRegistryOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of a Regional Internet Registries (RIRs) given."
+        "summary": "Get the information of a Regional Internet Registries (RIRs) given.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of status of an object can be in a registry.",
         "id": "operation:get:/v1/asn/status/all",
         "kind": "operation",
         "method": "get",
         "name": "query_status_names_v1_asn_status_all_get",
         "path": "/v1/asn/status/all",
         "pointer": "#/paths/~1v1~1asn~1status~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemStatusOutput[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of status of an object in a registry."
+        "summary": "Get the list of status of an object in a registry.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the information about the status of an object in the registry as a parameter.",
         "id": "operation:get:/v1/asn/status/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_status_by_the_name_v1_asn_status__code__get",
+        "parameters": [
+          {
+            "enum": [
+              "assigned",
+              "reserved",
+              "available",
+              "allocated"
+            ],
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/asn/status/{code}",
         "pointer": "#/paths/~1v1~1asn~1status~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemStatusOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of a status given."
+        "summary": "Get the information of a status given.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full details of the Autonomous System Number (ASN) passed as a parameter.",
         "id": "operation:get:/v1/asn/{number}",
         "kind": "operation",
         "method": "get",
         "name": "query_asn_v1_asn__number__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/asn/{number}",
         "pointer": "#/paths/~1v1~1asn~1{number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the Autonomous System details of the AS number given."
+        "summary": "Get the Autonomous System details of the AS number given.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full list of IPv4 and IPv6 prefixes of the Autonomous System Number (ASN) passed as a parameter.",
         "id": "operation:get:/v1/asn/{number}/prefixes",
         "kind": "operation",
         "method": "get",
         "name": "query_asn_prefixes_list_v1_asn__number__prefixes_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/asn/{number}/prefixes",
         "pointer": "#/paths/~1v1~1asn~1{number}~1prefixes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AutonomousSystemPrefixesOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of IPv4 and IPv6 prefixes of the AS number given."
+        "summary": "Get the list of IPv4 and IPv6 prefixes of the AS number given.",
+        "tags": [
+          "Autonomous Systems information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain a numerical score and a risk assessment of all the IP addresses passed as argument.",
         "id": "operation:post:/v1/assess/ip",
         "kind": "operation",
         "method": "post",
         "name": "assess_ip_set_v1_assess_ip_post",
         "path": "/v1/assess/ip",
         "pointer": "#/paths/~1v1~1assess~1ip/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string:ipvanyaddress[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPAssessmentCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the risk score of all IP address passed in the body and other data signals."
+        "summary": "Get the risk score of all IP address passed in the body and other data signals.",
+        "tags": [
+          "Data assessment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain a numerical score and a risk assessment of all the IP addresses uploaded with a text file.",
         "id": "operation:post:/v1/assess/ip/csv",
         "kind": "operation",
         "method": "post",
         "name": "assess_ip_set_csv_v1_assess_ip_csv_post",
+        "parameters": [
+          {
+            "default": false,
+            "description": "When `true`, if any IP address entry in the file is malformed, the assessment is canceled.",
+            "in": "query",
+            "name": "strict_parse",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/assess/ip/csv",
         "pointer": "#/paths/~1v1~1assess~1ip~1csv/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Body_assess_ip_set_csv_v1_assess_ip_csv_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPAssessmentCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the risk score of all IP address uploaded and other data signals."
+        "summary": "Get the risk score of all IP address uploaded and other data signals.",
+        "tags": [
+          "Data assessment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain a numerical score and a risk assessment of the IP address passed as argument.",
         "id": "operation:get:/v1/assess/ip/{ip_address}",
         "kind": "operation",
         "method": "get",
         "name": "assess_ip_v1_assess_ip__ip_address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          }
+        ],
         "path": "/v1/assess/ip/{ip_address}",
         "pointer": "#/paths/~1v1~1assess~1ip~1{ip_address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPAssessmentOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get a risk score of the IP address and different data signals."
+        "summary": "Get a risk score of the IP address and different data signals.",
+        "tags": [
+          "Data assessment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the IPv4 or IPv6 prefix and the Datacenter information of the IP address passed as a parameter.",
         "id": "operation:get:/v1/datacenter/ip/{ip_address}",
         "kind": "operation",
         "method": "get",
         "name": "query_IP_address_network_information_v1_datacenter_ip__ip_address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          }
+        ],
         "path": "/v1/datacenter/ip/{ip_address}",
         "pointer": "#/paths/~1v1~1datacenter~1ip~1{ip_address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatacenterPrefixOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the IPv4 or IPv6 prefix of the IP address given."
+        "summary": "Get the IPv4 or IPv6 prefix of the IP address given.",
+        "tags": [
+          "Datacenter information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the IPv4 or IPv6 prefix and the Datacenter information of the CIDR passed in the body as a POST method.",
         "id": "operation:post:/v1/datacenter/prefix",
         "kind": "operation",
         "method": "post",
         "name": "query_datacenter_prefix_information_v1_datacenter_prefix_post",
         "path": "/v1/datacenter/prefix",
         "pointer": "#/paths/~1v1~1datacenter~1prefix/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_query_datacenter_prefix_information_v1_datacenter_prefix_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatacenterPrefixOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the IPv4 or IPv6 prefix of the CIDR given."
+        "summary": "Get the IPv4 or IPv6 prefix of the CIDR given.",
+        "tags": [
+          "Datacenter information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the details of the Datacenter ID passed as a parameter.",
         "id": "operation:get:/v1/datacenter/{datacenter_id}",
         "kind": "operation",
         "method": "get",
         "name": "query_datacenter_v1_datacenter__datacenter_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "datacenter_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/datacenter/{datacenter_id}",
         "pointer": "#/paths/~1v1~1datacenter~1{datacenter_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatacenterOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the Datacenter details of datacente given."
+        "summary": "Get the Datacenter details of datacente given.",
+        "tags": [
+          "Datacenter information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full list of IPv4 and IPv6 prefixes of the Datacenter passed as a parameter.",
         "id": "operation:get:/v1/datacenter/{datacenter_id}/prefixes",
         "kind": "operation",
         "method": "get",
         "name": "query_datacenter_prefixes_list_v1_datacenter__datacenter_id__prefixes_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "datacenter_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/datacenter/{datacenter_id}/prefixes",
         "pointer": "#/paths/~1v1~1datacenter~1{datacenter_id}~1prefixes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatacenterPrefixesOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of IPv4 and IPv6 prefixes of the Datacenter given."
+        "summary": "Get the list of IPv4 and IPv6 prefixes of the Datacenter given.",
+        "tags": [
+          "Datacenter information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the datasets available in the platform.",
         "id": "operation:get:/v1/dataset/ip",
         "kind": "operation",
         "method": "get",
         "name": "query_datataset_information_of_all_the_resource_types_v1_dataset_ip_get",
         "path": "/v1/dataset/ip",
         "pointer": "#/paths/~1v1~1dataset~1ip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatasetTypeCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of all the datasets available in the platform."
+        "summary": "Get the list of all the datasets available in the platform.",
+        "tags": [
+          "Platform datasets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Get the detailed information of the dataset queried by the name.",
         "id": "operation:get:/v1/dataset/ip/{name}",
         "kind": "operation",
         "method": "get",
         "name": "query_datataset_information_of_the_resource_type_v1_dataset_ip__name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/dataset/ip/{name}",
         "pointer": "#/paths/~1v1~1dataset~1ip~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DatasetTypeOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the detailed information of the dataset queried."
+        "summary": "Get the detailed information of the dataset queried.",
+        "tags": [
+          "Platform datasets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Creates a new denylist with the information given and binded to the current user.",
         "id": "operation:post:/v1/denylist/private",
         "kind": "operation",
         "method": "post",
         "name": "create_private_denylist_of_the_user_v1_denylist_private_post",
         "path": "/v1/denylist/private",
         "pointer": "#/paths/~1v1~1denylist~1private/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_create_private_denylist_of_the_user_v1_denylist_private_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:uuid"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Creates a new private denylist binded to the user."
+        "summary": "Creates a new private denylist binded to the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of private deny lists of the user available in the service.",
         "id": "operation:get:/v1/denylist/private/all",
         "kind": "operation",
         "method": "get",
         "name": "get_all_private_denylists_v1_denylist_private_all_get",
         "path": "/v1/denylist/private/all",
         "pointer": "#/paths/~1v1~1denylist~1private~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclGroupListCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of private denylists of the user."
+        "summary": "Get the set of private denylists of the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of private deny lists of the user available in the service filtering by resource type.",
         "id": "operation:get:/v1/denylist/private/all/{resource_type}",
         "kind": "operation",
         "method": "get",
         "name": "get_all_private_denylists_by_resource_type_v1_denylist_private_all__resource_type__get",
+        "parameters": [
+          {
+            "enum": [
+              "cidr",
+              "country",
+              "continent",
+              "as",
+              "datacenter",
+              "useragent"
+            ],
+            "in": "path",
+            "name": "resource_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/denylist/private/all/{resource_type}",
         "pointer": "#/paths/~1v1~1denylist~1private~1all~1{resource_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclGroupListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of private denylists of the user by resource type."
+        "summary": "Get the set of private denylists of the user by resource type.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the different denylists where the IP address entered by the user.",
         "id": "operation:get:/v1/denylist/private/ip/{address}",
         "kind": "operation",
         "method": "get",
         "name": "query_resource_denylists_v1_denylist_private_ip__address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string:ipv4|string:ipv6"
+          }
+        ],
         "path": "/v1/denylist/private/ip/{address}",
         "pointer": "#/paths/~1v1~1denylist~1private~1ip~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AclListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the different denylists where the IP address was found."
+        "summary": "Get the different denylists where the IP address was found.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/denylist/private/{denylist_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_the_denylist_v1_denylist_private__denylist_id__delete",
-        "path": "/v1/denylist/private/{denylist_id}",
-        "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete all the bindings between a user and a private denylist."
-      },
-      {
-        "deprecated": false,
+        "description": "### What Obtain the details of the private deny list of the user available in the service.",
         "id": "operation:get:/v1/denylist/private/{denylist_id}",
         "kind": "operation",
         "method": "get",
         "name": "get_single_denylist_v1_denylist_private__denylist_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/private/{denylist_id}",
         "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclGroupListOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the details of a specific private denylist of the user."
+        "summary": "Get the details of a specific private denylist of the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Updates the information that describes the denylist of the user in the system.",
         "id": "operation:put:/v1/denylist/private/{denylist_id}",
         "kind": "operation",
         "method": "put",
         "name": "update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/private/{denylist_id}",
         "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update the information of an existing private denylist of the user."
+        "summary": "Update the information of an existing private denylist of the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/denylist/private/{denylist_id}/content",
+        "description": "### What Delete all the bindings between a user and a private denylist.",
+        "id": "operation:delete:/v1/denylist/private/{denylist_id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete_the_denylist_content_v1_denylist_private__denylist_id__content_delete",
-        "path": "/v1/denylist/private/{denylist_id}/content",
-        "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}~1content/delete",
+        "name": "delete_the_denylist_v1_denylist_private__denylist_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/denylist/private/{denylist_id}",
+        "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Delete all the content of a private denylist of the user."
+        "summary": "Delete all the bindings between a user and a private denylist.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Returns the content of the private denylist of the user.",
         "id": "operation:get:/v1/denylist/private/{denylist_id}/content",
         "kind": "operation",
         "method": "get",
         "name": "get_denylist_content_v1_denylist_private__denylist_id__content_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/private/{denylist_id}/content",
         "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateAclListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the content of a private denylist of the user."
+        "summary": "Get the content of a private denylist of the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Add or remove content of a private denylist of the user.",
         "id": "operation:put:/v1/denylist/private/{denylist_id}/content",
         "kind": "operation",
         "method": "put",
         "name": "update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/private/{denylist_id}/content",
         "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}~1content/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Body_update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Add or remove content of a private denylist of the user."
+        "summary": "Add or remove content of a private denylist of the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Delete all the content of a private denylist of the user.",
+        "id": "operation:delete:/v1/denylist/private/{denylist_id}/content",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_the_denylist_content_v1_denylist_private__denylist_id__content_delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/denylist/private/{denylist_id}/content",
+        "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}~1content/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete all the content of a private denylist of the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "### What Change the status of the origin of a deny list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.",
         "id": "operation:put:/v1/denylist/private/{denylist_id}/origin",
         "kind": "operation",
         "method": "put",
         "name": "change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/private/{denylist_id}/origin",
         "pointer": "#/paths/~1v1~1denylist~1private~1{denylist_id}~1origin/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Toogle the status of the origin in a deny list."
+        "summary": "Toogle the status of the origin in a deny list.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public deny lists available in the service and also which ones are already selected by the user and wich ones are not.",
         "id": "operation:get:/v1/denylist/public/all",
         "kind": "operation",
         "method": "get",
         "name": "get_all_public_denylists_v1_denylist_public_all_get",
         "path": "/v1/denylist/public/all",
         "pointer": "#/paths/~1v1~1denylist~1public~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of public denylists."
+        "summary": "Get the set of public denylists.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public deny lists available in the service and also which ones are already selected by the user and wich ones are not filtering by t…",
         "id": "operation:get:/v1/denylist/public/all/{resource_type}",
         "kind": "operation",
         "method": "get",
         "name": "get_all_public_denylists_by_resource_type_v1_denylist_public_all__resource_type__get",
+        "parameters": [
+          {
+            "enum": [
+              "cidr",
+              "country",
+              "continent",
+              "as",
+              "datacenter",
+              "useragent"
+            ],
+            "in": "path",
+            "name": "resource_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/denylist/public/all/{resource_type}",
         "pointer": "#/paths/~1v1~1denylist~1public~1all~1{resource_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of public denylists by resource type."
+        "summary": "Get the set of public denylists by resource type.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the different public denylists where the IP address entered by the user is.",
         "id": "operation:get:/v1/denylist/public/ip/{address}",
         "kind": "operation",
         "method": "get",
         "name": "query_resource_denylists_v1_denylist_public_ip__address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string:ipv4|string:ipv6"
+          }
+        ],
         "path": "/v1/denylist/public/ip/{address}",
         "pointer": "#/paths/~1v1~1denylist~1public~1ip~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AclListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the different public denylists where the IP address was found."
+        "summary": "Get the different public denylists where the IP address was found.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public deny lists available in the service selected by the user.",
         "id": "operation:get:/v1/denylist/public/owned",
         "kind": "operation",
         "method": "get",
         "name": "get_public_denylists_owned_by_the_user_v1_denylist_public_owned_get",
         "path": "/v1/denylist/public/owned",
         "pointer": "#/paths/~1v1~1denylist~1public~1owned/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of owned denylists."
+        "summary": "Get the set of owned denylists.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the set of public deny lists selected by the user and wich ones are not filtering by the resource type.",
         "id": "operation:get:/v1/denylist/public/owned/{resource_type}",
         "kind": "operation",
         "method": "get",
         "name": "get_all_owned_denylists_by_resource_type_v1_denylist_public_owned__resource_type__get",
+        "parameters": [
+          {
+            "enum": [
+              "cidr",
+              "country",
+              "continent",
+              "as",
+              "datacenter",
+              "useragent"
+            ],
+            "in": "path",
+            "name": "resource_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/denylist/public/owned/{resource_type}",
         "pointer": "#/paths/~1v1~1denylist~1public~1owned~1{resource_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the set of public denylists of a user by resource type."
+        "summary": "Get the set of public denylists of a user by resource type.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/denylist/public/{denylist_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_the_denylist_v1_denylist_public__denylist_id__delete",
-        "path": "/v1/denylist/public/{denylist_id}",
-        "pointer": "#/paths/~1v1~1denylist~1public~1{denylist_id}/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete all the bindings between a user and an denylist."
-      },
-      {
-        "deprecated": false,
+        "description": "### What Obtain the details of an deny list available in the service.",
         "id": "operation:get:/v1/denylist/public/{denylist_id}",
         "kind": "operation",
         "method": "get",
         "name": "get_single_denylist_v1_denylist_public__denylist_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/public/{denylist_id}",
         "pointer": "#/paths/~1v1~1denylist~1public~1{denylist_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicAclGroupListOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the details of the denylist."
+        "summary": "Get the details of the denylist.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Change the status of an deny list to ``ACTIVE`` or ``INACTIVE``.",
         "id": "operation:put:/v1/denylist/public/{denylist_id}",
         "kind": "operation",
         "method": "put",
         "name": "change_status_of_the_denylist_v1_denylist_public__denylist_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/public/{denylist_id}",
         "pointer": "#/paths/~1v1~1denylist~1public~1{denylist_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Toogle the status of an deny list."
+        "summary": "Toogle the status of an deny list.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Delete all the bindings between a user and an denylist.",
+        "id": "operation:delete:/v1/denylist/public/{denylist_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_the_denylist_v1_denylist_public__denylist_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/denylist/public/{denylist_id}",
+        "pointer": "#/paths/~1v1~1denylist~1public~1{denylist_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete all the bindings between a user and an denylist.",
+        "tags": [
+          "Denylist data query and management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "### What Change the status of the origin of a deny list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.",
         "id": "operation:put:/v1/denylist/public/{denylist_id}/origin",
         "kind": "operation",
         "method": "put",
         "name": "change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "denylist_id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/denylist/public/{denylist_id}/origin",
         "pointer": "#/paths/~1v1~1denylist~1public~1{denylist_id}~1origin/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Toogle the status of the origin in a deny list."
+        "summary": "Toogle the status of the origin in a deny list.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the IPv4 or IPv6 addresses that have been automatically reported by the user.",
         "id": "operation:get:/v1/denylist/reported/ip",
         "kind": "operation",
         "method": "get",
         "name": "query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_get",
+        "parameters": [
+          {
+            "description": "The dataset list type to filter for.",
+            "in": "query",
+            "name": "dataset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restricts the result displaying only the IP addresses reported before `reported_before`.",
+            "in": "query",
+            "name": "reported_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restricts the result displaying only the IP addresses reported after `reported_after`.",
+            "in": "query",
+            "name": "reported_after",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restricts the result displaying only the IP addresses that will expire before `expires_before`.",
+            "in": "query",
+            "name": "expires_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restricts the result displaying only the IP addresses that will expire after `expires_after`.",
+            "in": "query",
+            "name": "expires_after",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restricts the result displaying only the IP addresses reported more times than `greater_than`.",
+            "in": "query",
+            "name": "greater_than",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Restricts the result displaying only the IP addresses reported less times than `less_than`.",
+            "in": "query",
+            "name": "less_than",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "ALL",
+            "description": "Restrict the result displaying the IP protocol version requested (IPV4 or IPV6) or both (ALL).",
+            "enum": [
+              "ALL",
+              "IPV4",
+              "IPV6"
+            ],
+            "in": "query",
+            "name": "ip_protocol_version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "JSON",
+            "description": "The output format of the datasets.",
+            "enum": [
+              "JSON",
+              "CSV",
+              "AWS-WAF"
+            ],
+            "in": "query",
+            "name": "output_format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/denylist/reported/ip",
         "pointer": "#/paths/~1v1~1denylist~1reported~1ip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPListCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of automatically reported IP addresses by the user."
+        "summary": "Get the list of automatically reported IP addresses by the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Delete all the IP addresses that have been automatically reported by the user.",
         "id": "operation:delete:/v1/denylist/reported/ip/all",
         "kind": "operation",
         "method": "delete",
         "name": "delete_all_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_all_delete",
         "path": "/v1/denylist/reported/ip/all",
         "pointer": "#/paths/~1v1~1denylist~1reported~1ip~1all/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Delete all the automatically reported IP addresses by the user."
+        "summary": "Delete all the automatically reported IP addresses by the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/denylist/reported/ip/{ip_address}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_an_ip_address_reported_by_the_user_v1_denylist_reported_ip__ip_address__delete",
-        "path": "/v1/denylist/reported/ip/{ip_address}",
-        "pointer": "#/paths/~1v1~1denylist~1reported~1ip~1{ip_address}/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete the automatically reported IP address by the user."
-      },
-      {
-        "deprecated": false,
+        "description": "### What Obtain the details of an IPv4 or IPv6 addresses that have been automatically reported by the user.",
         "id": "operation:get:/v1/denylist/reported/ip/{ip_address}",
         "kind": "operation",
         "method": "get",
         "name": "query_an_ip_addresses_reported_by_the_user_v1_denylist_reported_ip__ip_address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          }
+        ],
         "path": "/v1/denylist/reported/ip/{ip_address}",
         "pointer": "#/paths/~1v1~1denylist~1reported~1ip~1{ip_address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPListOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the details of an automatically reported IP addresses by the user."
+        "summary": "Get the details of an automatically reported IP addresses by the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Delete an IP address that was automatically reported by the user.",
+        "id": "operation:delete:/v1/denylist/reported/ip/{ip_address}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_an_ip_address_reported_by_the_user_v1_denylist_reported_ip__ip_address__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          }
+        ],
+        "path": "/v1/denylist/reported/ip/{ip_address}",
+        "pointer": "#/paths/~1v1~1denylist~1reported~1ip~1{ip_address}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete the automatically reported IP address by the user.",
+        "tags": [
+          "Denylist data query and management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "### What Get the geo location data of all the IP addresses passed as argument.",
         "id": "operation:post:/v1/geo",
         "kind": "operation",
         "method": "post",
         "name": "geolocate_ip_set_v1_geo_post",
         "path": "/v1/geo",
         "pointer": "#/paths/~1v1~1geo/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string:ipvanyaddress[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeoIPCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the geolocation data of the IP addresses set."
+        "summary": "Get the geolocation data of the IP addresses set.",
+        "tags": [
+          "Geolocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Get the geo location data of all the IP addresses uploaded in a text file.",
         "id": "operation:post:/v1/geo/csv",
         "kind": "operation",
         "method": "post",
         "name": "assess_ip_set_csv_v1_geo_csv_post",
+        "parameters": [
+          {
+            "default": false,
+            "description": "When `true`, if any IP address entry in the file is malformed, the assessment is canceled.",
+            "in": "query",
+            "name": "strict_parse",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/geo/csv",
         "pointer": "#/paths/~1v1~1geo~1csv/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Body_assess_ip_set_csv_v1_geo_csv_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeoIPCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the geolocation data of all the IP addresses uploaded."
+        "summary": "Get the geolocation data of all the IP addresses uploaded.",
+        "tags": [
+          "Geolocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Get the geo location data of the IP address passed as argument.",
         "id": "operation:get:/v1/geo/{ip_address}",
         "kind": "operation",
         "method": "get",
         "name": "geolocate_ip_v1_geo__ip_address__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          }
+        ],
         "path": "/v1/geo/{ip_address}",
         "pointer": "#/paths/~1v1~1geo~1{ip_address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeoIPOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the geo location data of the IP address."
+        "summary": "Get the geo location data of the IP address.",
+        "tags": [
+          "Geolocation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full detail of a specific log change.",
         "id": "operation:get:/v1/log/ip/id/{logchange_id}",
         "kind": "operation",
         "method": "get",
         "name": "log_change_id_v1_log_ip_id__logchange_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "logchange_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/log/ip/id/{logchange_id}",
         "pointer": "#/paths/~1v1~1log~1ip~1id~1{logchange_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPLogOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get a log event."
+        "summary": "Get a log event.",
+        "tags": [
+          "Data logging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain a list of changes logged in the different datasets of the IP address given.",
         "id": "operation:get:/v1/log/ip/{ip_address}",
         "kind": "operation",
         "method": "get",
         "name": "logchanges_ip_v1_log_ip__ip_address__get",
+        "parameters": [
+          {
+            "description": "The IPv4 or IPv6 address to asses the risk",
+            "in": "path",
+            "name": "ip_address",
+            "required": true,
+            "type": "string:ipvanyaddress"
+          },
+          {
+            "description": "The name of the dataset to restrict the query",
+            "in": "query",
+            "name": "dataset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A UNIX timestamp in milliseconds to restrict the results of the query to entries logged after this value.",
+            "in": "query",
+            "name": "logged_after",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/log/ip/{ip_address}",
         "pointer": "#/paths/~1v1~1log~1ip~1{ip_address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IPLogCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the changes logged in the different datasets of an IP address."
+        "summary": "Get the changes logged in the different datasets of an IP address.",
+        "tags": [
+          "Data logging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the attributes of the origin of the user passed as argument in the selected region.",
         "id": "operation:get:/v1/origin",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_information_v1_origin_get",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/origin",
         "pointer": "#/paths/~1v1~1origin/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of an origin of the user in the region."
+        "summary": "Get the information of an origin of the user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Modify the configuration metadata of the origin of the user in the selected region.",
         "id": "operation:put:/v1/origin",
         "kind": "operation",
         "method": "put",
         "name": "update_configuration_origin_v1_origin_put",
         "path": "/v1/origin",
         "pointer": "#/paths/~1v1~1origin/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_update_configuration_origin_v1_origin_put"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update the configuration of an origin of the user in the region."
+        "summary": "Update the configuration of an origin of the user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the status that trigger the change in the status of the origin of a specific IP address.",
         "id": "operation:get:/v1/origin/addresses",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_address_status_information_v1_origin_addresses_get",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page to be returned",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of items per page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/origin/addresses",
         "pointer": "#/paths/~1v1~1origin~1addresses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginAddressStatusCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the address status of the origin of the user in the region."
+        "summary": "Get the address status of the origin of the user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the attributes of all the origins of the user in the selected region.",
         "id": "operation:get:/v1/origin/all",
         "kind": "operation",
         "method": "get",
         "name": "query_all_origin_information_v1_origin_all_get",
         "path": "/v1/origin/all",
         "pointer": "#/paths/~1v1~1origin~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the origins of the user in the region."
+        "summary": "Get the information of the origins of the user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the type of clients of trhe traffic in the specified time range and interval.",
         "id": "operation:get:/v1/origin/client/analysis",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_traffic_client_v1_origin_client_analysis_get",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The data inteval to aggregate the result dataset",
+            "enum": [
+              "HOURLY"
+            ],
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A UNIX timestamp in milliseconds to restrict the results of the query to entries logged after or equal to this value.",
+            "in": "query",
+            "name": "from_timestamp",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "A UNIX timestamp in milliseconds to restrict the results of the query to entries logged before this value.",
+            "in": "query",
+            "name": "to_timestamp",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/origin/client/analysis",
         "pointer": "#/paths/~1v1~1origin~1client~1analysis/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginClientAnalysisCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the type of clients of the trafffic of the origin."
+        "summary": "Get the type of clients of the trafffic of the origin.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the status that trigger the change in the status of the origin of the cookie ID used to track the users.",
         "id": "operation:get:/v1/origin/cookies",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_cookie_id_status_information_v1_origin_cookies_get",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page to be returned",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of items per page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/origin/cookies",
         "pointer": "#/paths/~1v1~1origin~1cookies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginCookieIdStatusCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the tracking cookie ID status of the origin of the user in the region."
+        "summary": "Get the tracking cookie ID status of the origin of the user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the code snippets of the origin of the user passed as argument in the selected region.",
         "id": "operation:get:/v1/origin/scripts",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_scripts_v1_origin_scripts_get",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/origin/scripts",
         "pointer": "#/paths/~1v1~1origin~1scripts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginScriptsOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the code snippets of an origin of the user in the region."
+        "summary": "Get the code snippets of an origin of the user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the current status of the origin for a given IP address and/or cookie ID.",
         "id": "operation:post:/v1/origin/status",
         "kind": "operation",
         "method": "post",
         "name": "query_origin_status_v1_origin_status_post",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/origin/status",
         "pointer": "#/paths/~1v1~1origin~1status/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Body_query_origin_status_v1_origin_status_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginStatusOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the current cookie ID and IP address status of the origin of user in the region."
+        "summary": "Get the current cookie ID and IP address status of the origin of user in the region.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the description of a status available in the platform.",
         "id": "operation:get:/v1/origin/status/detail/{status_id}",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_status_detail_v1_origin_status_detail__status_id__get",
+        "parameters": [
+          {
+            "description": "The status id to query the details",
+            "enum": [
+              "pass",
+              "block",
+              "challenge",
+              "bypass",
+              "ignore"
+            ],
+            "in": "path",
+            "name": "status_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/origin/status/detail/{status_id}",
         "pointer": "#/paths/~1v1~1origin~1status~1detail~1{status_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginStatusDetailsOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get detail of a status available in the platform."
+        "summary": "Get detail of a status available in the platform.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full list and description of the different status available in the platform.",
         "id": "operation:get:/v1/origin/status/details",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_status_details_v1_origin_status_details_get",
         "path": "/v1/origin/status/details",
         "pointer": "#/paths/~1v1~1origin~1status~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginStatusDetailsCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the list of different status available in the platform."
+        "summary": "Get the list of different status available in the platform.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the traffic analysis of the origin in the specified time range and interval.",
         "id": "operation:get:/v1/origin/traffic/analysis",
         "kind": "operation",
         "method": "get",
         "name": "query_origin_traffic_analysis_v1_origin_traffic_analysis_get",
+        "parameters": [
+          {
+            "description": "The origin site to query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The data inteval to aggregate the result dataset",
+            "enum": [
+              "HOURLY"
+            ],
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A UNIX timestamp in milliseconds to restrict the results of the query to entries logged after or equal to this value.",
+            "in": "query",
+            "name": "from_timestamp",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "A UNIX timestamp in milliseconds to restrict the results of the query to entries logged before this value.",
+            "in": "query",
+            "name": "to_timestamp",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/origin/traffic/analysis",
         "pointer": "#/paths/~1v1~1origin~1traffic~1analysis/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginTrafficAnalysisCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the traffic analysis of the origin."
+        "summary": "Get the traffic analysis of the origin.",
+        "tags": [
+          "Origin management in this region"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/origin_token",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_token_v1_origin_token_delete",
-        "path": "/v1/origin_token",
-        "pointer": "#/paths/~1v1~1origin_token/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete an origin token of the user in the region."
-      },
-      {
-        "deprecated": false,
+        "description": "### What Obtain the attributes of the given origin token of the user in the selected region.",
         "id": "operation:post:/v1/origin_token",
         "kind": "operation",
         "method": "post",
         "name": "query_origin_token_info_v1_origin_token_post",
         "path": "/v1/origin_token",
         "pointer": "#/paths/~1v1~1origin_token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_query_origin_token_info_v1_origin_token_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginTokenOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of an origin token of the user in the region."
+        "summary": "Get the information of an origin token of the user in the region.",
+        "tags": [
+          "Origin Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Deletes the origin token passed as argument of the user in the selected region.",
+        "id": "operation:delete:/v1/origin_token",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_token_v1_origin_token_delete",
+        "path": "/v1/origin_token",
+        "pointer": "#/paths/~1v1~1origin_token/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_delete_token_v1_origin_token_delete"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete an origin token of the user in the region.",
+        "tags": [
+          "Origin Token management in this region"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "### What Obtain the attributes of all the origin tokens of the user in the selected region.",
         "id": "operation:get:/v1/origin_token/all",
         "kind": "operation",
         "method": "get",
         "name": "query_all_origin_tokens_in_the_region_v1_origin_token_all_get",
         "path": "/v1/origin_token/all",
         "pointer": "#/paths/~1v1~1origin_token~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginTokenCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the origin tokens of the user in the region."
+        "summary": "Get the information of the origin tokens of the user in the region.",
+        "tags": [
+          "Origin Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Disable an enabled origin token passed as argument of the user in the selected region.",
         "id": "operation:put:/v1/origin_token/disable",
         "kind": "operation",
         "method": "put",
         "name": "disable_origin_token_v1_origin_token_disable_put",
         "path": "/v1/origin_token/disable",
         "pointer": "#/paths/~1v1~1origin_token~1disable/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_disable_origin_token_v1_origin_token_disable_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Disable a enabled origin token of the user in the region."
+        "summary": "Disable a enabled origin token of the user in the region.",
+        "tags": [
+          "Origin Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Enable a disabled origin token passed as argument of the user in the selected region.",
         "id": "operation:put:/v1/origin_token/enable",
         "kind": "operation",
         "method": "put",
         "name": "enable_origin_token_v1_origin_token_enable_put",
         "path": "/v1/origin_token/enable",
         "pointer": "#/paths/~1v1~1origin_token~1enable/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_enable_origin_token_v1_origin_token_enable_put"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Enable a disabled origin token of the user in the region."
+        "summary": "Enable a disabled origin token of the user in the region.",
+        "tags": [
+          "Origin Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Creates a new origin token for the user passing as argument the origin.",
         "id": "operation:post:/v1/origin_token/new",
         "kind": "operation",
         "method": "post",
         "name": "create_a_new_origin_token_v1_origin_token_new_post",
         "path": "/v1/origin_token/new",
         "pointer": "#/paths/~1v1~1origin_token~1new/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OriginTokenInput"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OriginTokenOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Create an origin token of the user in the region."
+        "summary": "Create an origin token of the user in the region.",
+        "tags": [
+          "Origin Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full meta information of all the source lists available for the subscription level of the user.",
         "id": "operation:get:/v1/source/ip",
         "kind": "operation",
         "method": "get",
         "name": "get_all_sources_v1_source_ip_get",
         "path": "/v1/source/ip",
         "pointer": "#/paths/~1v1~1source~1ip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SourceCollectionOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the full information of all the source lists for the subscription level given."
+        "summary": "Get the full information of all the source lists for the subscription level given.",
+        "tags": [
+          "Data sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the full meta information of the source list given as argument.",
         "id": "operation:get:/v1/source/ip/{source}",
         "kind": "operation",
         "method": "get",
         "name": "get_source_info_v1_source_ip__source__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/source/ip/{source}",
         "pointer": "#/paths/~1v1~1source~1ip~1{source}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "v1__models__source__SourceOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the full information of the source list given as argument."
+        "summary": "Get the full information of the source list given as argument.",
+        "tags": [
+          "Data sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the meta information of the source list and the time range given as arguments.",
         "id": "operation:get:/v1/source/ip/{source}/range/{time_range}",
         "kind": "operation",
         "method": "get",
         "name": "get_source_and_timerange_info_v1_source_ip__source__range__time_range__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "1H",
+              "6H",
+              "12H",
+              "1D",
+              "7D",
+              "30D",
+              "90D",
+              "180D",
+              "365D"
+            ],
+            "in": "path",
+            "name": "time_range",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/source/ip/{source}/range/{time_range}",
         "pointer": "#/paths/~1v1~1source~1ip~1{source}~1range~1{time_range}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SourceTimeRangeOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the source list given for a specific time range."
+        "summary": "Get the information of the source list given for a specific time range.",
+        "tags": [
+          "Data sources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the token attributes of the current user in the selected region.",
         "id": "operation:get:/v1/token",
         "kind": "operation",
         "method": "get",
         "name": "query_token_info_v1_token_get",
         "path": "/v1/token",
         "pointer": "#/paths/~1v1~1token/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TokenOutput"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the user's token in the region."
+        "summary": "Get the information of the user's token in the region.",
+        "tags": [
+          "Authentication Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the list of all the activity events of the current user in the selected region.",
         "id": "operation:get:/v1/token/activity",
         "kind": "operation",
         "method": "get",
         "name": "query_token_activity_v1_token_activity_get",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "The page to be returned",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of items per page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/token/activity",
         "pointer": "#/paths/~1v1~1token~1activity/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActivityCollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the activity information of the token in the region."
+        "summary": "Get the activity information of the token in the region.",
+        "tags": [
+          "Authentication Token management in this region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Get the information found in the list of User Agents passed as argument.",
         "id": "operation:post:/v1/ua",
         "kind": "operation",
         "method": "post",
         "name": "parse_user_agents_v1_ua_post",
         "path": "/v1/ua",
         "pointer": "#/paths/~1v1~1ua/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UACollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information found in a set of User Agents."
+        "summary": "Get the information found in a set of User Agents.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Get the information found in the list of User Agents uploaded as a CSV file.",
         "id": "operation:post:/v1/ua/csv",
         "kind": "operation",
         "method": "post",
         "name": "parse_user_agents_csv_v1_ua_csv_post",
         "path": "/v1/ua/csv",
         "pointer": "#/paths/~1v1~1ua~1csv/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Body_parse_user_agents_csv_v1_ua_csv_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UACollectionOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information found in the set of User Agents uploaded."
+        "summary": "Get the information found in the set of User Agents uploaded.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the details of a device of a User Agent.",
         "id": "operation:get:/v1/ua/device/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_device_by_code_v1_ua_device__code__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/ua/device/{code}",
         "pointer": "#/paths/~1v1~1ua~1device~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeviceOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the device of a user agent."
+        "summary": "Get the information of the device of a user agent.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the details of a family of a User Agent.",
         "id": "operation:get:/v1/ua/family/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_family_by_code_v1_ua_family__code__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/ua/family/{code}",
         "pointer": "#/paths/~1v1~1ua~1family~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FamilyOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the family of a user agent."
+        "summary": "Get the information of the family of a user agent.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the details of the Operating System of a User Agent.",
         "id": "operation:get:/v1/ua/os/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_os_by_code_v1_ua_os__code__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/ua/os/{code}",
         "pointer": "#/paths/~1v1~1ua~1os~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OSOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the Operating System of a user agent."
+        "summary": "Get the information of the Operating System of a user agent.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the details of a type of a User Agent.",
         "id": "operation:get:/v1/ua/type/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_type_by_code_v1_ua_type__code__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/ua/type/{code}",
         "pointer": "#/paths/~1v1~1ua~1type~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TypeOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the type of a user agent."
+        "summary": "Get the information of the type of a user agent.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Obtain the details of a vendor of a User Agent.",
         "id": "operation:get:/v1/ua/vendor/{code}",
         "kind": "operation",
         "method": "get",
         "name": "query_vendor_by_code_v1_ua_vendor__code__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/ua/vendor/{code}",
         "pointer": "#/paths/~1v1~1ua~1vendor~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VendorOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information of the vendor of a user agent."
+        "summary": "Get the information of the vendor of a user agent.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### What Get the information found in the User Agent passed as argument.",
         "id": "operation:get:/v1/ua/{user_agent_urlencoded}",
         "kind": "operation",
         "method": "get",
         "name": "parse_user_agent_v1_ua__user_agent_urlencoded__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_agent_urlencoded",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/ua/{user_agent_urlencoded}",
         "pointer": "#/paths/~1v1~1ua~1{user_agent_urlencoded}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UAOutput"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get the information found in an User Agent."
+        "summary": "Get the information found in an User Agent.",
+        "tags": [
+          "User Agent"
+        ]
       },
       {
         "id": "schema:AclGroupOriginCollectionOutput",
         "kind": "schema",
-        "name": "AclGroupOriginCollectionOutput"
+        "name": "AclGroupOriginCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:AclGroupOriginOutput",
         "kind": "schema",
-        "name": "AclGroupOriginOutput"
+        "name": "AclGroupOriginOutput",
+        "type": "object"
       },
       {
         "id": "schema:AclListCollectionOutput",
         "kind": "schema",
-        "name": "AclListCollectionOutput"
+        "name": "AclListCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:ActivityCollectionOutput",
         "kind": "schema",
-        "name": "ActivityCollectionOutput"
+        "name": "ActivityCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:ActivityOutput",
         "kind": "schema",
-        "name": "ActivityOutput"
+        "name": "ActivityOutput",
+        "type": "object"
       },
       {
         "id": "schema:AutonomousSystemOutput",
         "kind": "schema",
-        "name": "AutonomousSystemOutput"
+        "name": "AutonomousSystemOutput",
+        "type": "object"
       },
       {
+        "description": "AutonomousSystemPrefixResponse class to return the information to the user",
         "id": "schema:AutonomousSystemPrefixOutput",
         "kind": "schema",
-        "name": "AutonomousSystemPrefixOutput"
+        "name": "AutonomousSystemPrefixOutput",
+        "type": "object"
       },
       {
         "id": "schema:AutonomousSystemPrefixesOutput",
         "kind": "schema",
-        "name": "AutonomousSystemPrefixesOutput"
+        "name": "AutonomousSystemPrefixesOutput",
+        "type": "object"
       },
       {
+        "description": "The Registry information",
         "id": "schema:AutonomousSystemRegistryOutput",
         "kind": "schema",
-        "name": "AutonomousSystemRegistryOutput"
+        "name": "AutonomousSystemRegistryOutput",
+        "type": "object"
       },
       {
+        "description": "The Status information",
         "id": "schema:AutonomousSystemStatusOutput",
         "kind": "schema",
-        "name": "AutonomousSystemStatusOutput"
+        "name": "AutonomousSystemStatusOutput",
+        "type": "object"
       },
       {
         "id": "schema:Body_assess_ip_set_csv_v1_assess_ip_csv_post",
         "kind": "schema",
-        "name": "Body_assess_ip_set_csv_v1_assess_ip_csv_post"
+        "name": "Body_assess_ip_set_csv_v1_assess_ip_csv_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_assess_ip_set_csv_v1_geo_csv_post",
         "kind": "schema",
-        "name": "Body_assess_ip_set_csv_v1_geo_csv_post"
+        "name": "Body_assess_ip_set_csv_v1_geo_csv_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put",
         "kind": "schema",
-        "name": "Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put"
+        "name": "Body_change_status_of_the_allowlist_v1_allowlist_public__allowlist_id__put",
+        "type": "object"
       },
       {
         "id": "schema:Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put",
         "kind": "schema",
-        "name": "Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put"
+        "name": "Body_change_status_of_the_denylist_v1_denylist_public__denylist_id__put",
+        "type": "object"
       },
       {
         "id": "schema:Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put",
         "kind": "schema",
-        "name": "Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put"
+        "name": "Body_change_status_of_the_origin_allowlist_v1_allowlist_private__allowlist_id__origin_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put",
         "kind": "schema",
-        "name": "Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put"
+        "name": "Body_change_status_of_the_origin_allowlist_v1_allowlist_public__allowlist_id__origin_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put",
         "kind": "schema",
-        "name": "Body_change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put"
+        "name": "Body_change_status_of_the_origin_denylist_v1_denylist_private__denylist_id__origin_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put",
         "kind": "schema",
-        "name": "Body_change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put"
+        "name": "Body_change_status_of_the_origin_denylist_v1_denylist_public__denylist_id__origin_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_create_private_allowlist_of_the_user_v1_allowlist_private_post",
         "kind": "schema",
-        "name": "Body_create_private_allowlist_of_the_user_v1_allowlist_private_post"
+        "name": "Body_create_private_allowlist_of_the_user_v1_allowlist_private_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_create_private_denylist_of_the_user_v1_denylist_private_post",
         "kind": "schema",
-        "name": "Body_create_private_denylist_of_the_user_v1_denylist_private_post"
+        "name": "Body_create_private_denylist_of_the_user_v1_denylist_private_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_delete_token_v1_origin_token_delete",
         "kind": "schema",
-        "name": "Body_delete_token_v1_origin_token_delete"
+        "name": "Body_delete_token_v1_origin_token_delete",
+        "type": "object"
       },
       {
         "id": "schema:Body_disable_origin_token_v1_origin_token_disable_put",
         "kind": "schema",
-        "name": "Body_disable_origin_token_v1_origin_token_disable_put"
+        "name": "Body_disable_origin_token_v1_origin_token_disable_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_enable_origin_token_v1_origin_token_enable_put",
         "kind": "schema",
-        "name": "Body_enable_origin_token_v1_origin_token_enable_put"
+        "name": "Body_enable_origin_token_v1_origin_token_enable_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_parse_user_agents_csv_v1_ua_csv_post",
         "kind": "schema",
-        "name": "Body_parse_user_agents_csv_v1_ua_csv_post"
+        "name": "Body_parse_user_agents_csv_v1_ua_csv_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_query_asn_prefix_information_v1_asn_prefix_post",
         "kind": "schema",
-        "name": "Body_query_asn_prefix_information_v1_asn_prefix_post"
+        "name": "Body_query_asn_prefix_information_v1_asn_prefix_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_query_datacenter_prefix_information_v1_datacenter_prefix_post",
         "kind": "schema",
-        "name": "Body_query_datacenter_prefix_information_v1_datacenter_prefix_post"
+        "name": "Body_query_datacenter_prefix_information_v1_datacenter_prefix_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_query_origin_status_v1_origin_status_post",
         "kind": "schema",
-        "name": "Body_query_origin_status_v1_origin_status_post"
+        "name": "Body_query_origin_status_v1_origin_status_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_query_origin_token_info_v1_origin_token_post",
         "kind": "schema",
-        "name": "Body_query_origin_token_info_v1_origin_token_post"
+        "name": "Body_query_origin_token_info_v1_origin_token_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_update_configuration_origin_v1_origin_put",
         "kind": "schema",
-        "name": "Body_update_configuration_origin_v1_origin_put"
+        "name": "Body_update_configuration_origin_v1_origin_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put",
         "kind": "schema",
-        "name": "Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put"
+        "name": "Body_update_private_allowlist_of_the_user_v1_allowlist_private__allowlist_id__put",
+        "type": "object"
       },
       {
         "id": "schema:Body_update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put",
         "kind": "schema",
-        "name": "Body_update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put"
+        "name": "Body_update_private_content_of_the_allowlist_of_the_user_v1_allowlist_private__allowlist_id__content_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put",
         "kind": "schema",
-        "name": "Body_update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put"
+        "name": "Body_update_private_content_of_the_denylist_of_the_user_v1_denylist_private__denylist_id__content_put",
+        "type": "object"
       },
       {
         "id": "schema:Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put",
         "kind": "schema",
-        "name": "Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put"
+        "name": "Body_update_private_denylist_of_the_user_v1_denylist_private__denylist_id__put",
+        "type": "object"
       },
       {
         "id": "schema:DatacenterOutput",
         "kind": "schema",
-        "name": "DatacenterOutput"
+        "name": "DatacenterOutput",
+        "type": "object"
       },
       {
         "id": "schema:DatacenterPrefixOutput",
         "kind": "schema",
-        "name": "DatacenterPrefixOutput"
+        "name": "DatacenterPrefixOutput",
+        "type": "object"
       },
       {
         "id": "schema:DatacenterPrefixesOutput",
         "kind": "schema",
-        "name": "DatacenterPrefixesOutput"
+        "name": "DatacenterPrefixesOutput",
+        "type": "object"
       },
       {
         "id": "schema:DatasetTypeCollectionOutput",
         "kind": "schema",
-        "name": "DatasetTypeCollectionOutput"
+        "name": "DatasetTypeCollectionOutput",
+        "type": "object"
       },
       {
+        "description": "The Status information",
         "id": "schema:DatasetTypeOutput",
         "kind": "schema",
-        "name": "DatasetTypeOutput"
+        "name": "DatasetTypeOutput",
+        "type": "object"
       },
       {
         "id": "schema:DeviceOutput",
         "kind": "schema",
-        "name": "DeviceOutput"
+        "name": "DeviceOutput",
+        "type": "object"
       },
       {
         "id": "schema:FamilyOutput",
         "kind": "schema",
-        "name": "FamilyOutput"
+        "name": "FamilyOutput",
+        "type": "object"
       },
       {
         "id": "schema:GeoIPCollectionOutput",
         "kind": "schema",
-        "name": "GeoIPCollectionOutput"
+        "name": "GeoIPCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:GeoIPOutput",
         "kind": "schema",
-        "name": "GeoIPOutput"
+        "name": "GeoIPOutput",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:IPAssessmentCollectionOutput",
         "kind": "schema",
-        "name": "IPAssessmentCollectionOutput"
+        "name": "IPAssessmentCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:IPAssessmentOutput",
         "kind": "schema",
-        "name": "IPAssessmentOutput"
+        "name": "IPAssessmentOutput",
+        "type": "object"
       },
       {
         "id": "schema:IPListCollectionOutput",
         "kind": "schema",
-        "name": "IPListCollectionOutput"
+        "name": "IPListCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:IPListOutput",
         "kind": "schema",
-        "name": "IPListOutput"
+        "name": "IPListOutput",
+        "type": "object"
       },
       {
         "id": "schema:IPLogCollectionOutput",
         "kind": "schema",
-        "name": "IPLogCollectionOutput"
+        "name": "IPLogCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:IPLogOutput",
         "kind": "schema",
-        "name": "IPLogOutput"
+        "name": "IPLogOutput",
+        "type": "object"
       },
       {
         "id": "schema:OSOutput",
         "kind": "schema",
-        "name": "OSOutput"
+        "name": "OSOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginAddressStatusCollectionOutput",
         "kind": "schema",
-        "name": "OriginAddressStatusCollectionOutput"
+        "name": "OriginAddressStatusCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginAddressStatusOutput",
         "kind": "schema",
-        "name": "OriginAddressStatusOutput"
+        "name": "OriginAddressStatusOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginClientAnalysisCollectionOutput",
         "kind": "schema",
-        "name": "OriginClientAnalysisCollectionOutput"
+        "name": "OriginClientAnalysisCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginClientAnalysisOutput",
         "kind": "schema",
-        "name": "OriginClientAnalysisOutput"
+        "name": "OriginClientAnalysisOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginCollectionOutput",
         "kind": "schema",
-        "name": "OriginCollectionOutput"
+        "name": "OriginCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginCookieIdStatusCollectionOutput",
         "kind": "schema",
-        "name": "OriginCookieIdStatusCollectionOutput"
+        "name": "OriginCookieIdStatusCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginCookieIdStatusOutput",
         "kind": "schema",
-        "name": "OriginCookieIdStatusOutput"
+        "name": "OriginCookieIdStatusOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginOutput",
         "kind": "schema",
-        "name": "OriginOutput"
+        "name": "OriginOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginScriptsOutput",
         "kind": "schema",
-        "name": "OriginScriptsOutput"
+        "name": "OriginScriptsOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginStatusDetailsCollectionOutput",
         "kind": "schema",
-        "name": "OriginStatusDetailsCollectionOutput"
+        "name": "OriginStatusDetailsCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginStatusDetailsOutput",
         "kind": "schema",
-        "name": "OriginStatusDetailsOutput"
+        "name": "OriginStatusDetailsOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginStatusOutput",
         "kind": "schema",
-        "name": "OriginStatusOutput"
+        "name": "OriginStatusOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginTokenCollectionOutput",
         "kind": "schema",
-        "name": "OriginTokenCollectionOutput"
+        "name": "OriginTokenCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginTokenInput",
         "kind": "schema",
-        "name": "OriginTokenInput"
+        "name": "OriginTokenInput",
+        "type": "object"
       },
       {
         "id": "schema:OriginTokenOutput",
         "kind": "schema",
-        "name": "OriginTokenOutput"
+        "name": "OriginTokenOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginTrafficAnalysisCollectionOutput",
         "kind": "schema",
-        "name": "OriginTrafficAnalysisCollectionOutput"
+        "name": "OriginTrafficAnalysisCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:OriginTrafficAnalysisOutput",
         "kind": "schema",
-        "name": "OriginTrafficAnalysisOutput"
+        "name": "OriginTrafficAnalysisOutput",
+        "type": "object"
       },
       {
         "id": "schema:PrivateAclGroupListCollectionOutput",
         "kind": "schema",
-        "name": "PrivateAclGroupListCollectionOutput"
+        "name": "PrivateAclGroupListCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:PrivateAclGroupListInput",
         "kind": "schema",
-        "name": "PrivateAclGroupListInput"
+        "name": "PrivateAclGroupListInput",
+        "type": "object"
       },
       {
         "id": "schema:PrivateAclGroupListOutput",
         "kind": "schema",
-        "name": "PrivateAclGroupListOutput"
+        "name": "PrivateAclGroupListOutput",
+        "type": "object"
       },
       {
         "id": "schema:PrivateAclListCollectionOutput",
         "kind": "schema",
-        "name": "PrivateAclListCollectionOutput"
+        "name": "PrivateAclListCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:PublicAclGroupListCollectionOutput",
         "kind": "schema",
-        "name": "PublicAclGroupListCollectionOutput"
+        "name": "PublicAclGroupListCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:PublicAclGroupListOutput",
         "kind": "schema",
-        "name": "PublicAclGroupListOutput"
+        "name": "PublicAclGroupListOutput",
+        "type": "object"
       },
       {
         "id": "schema:SourceCollectionOutput",
         "kind": "schema",
-        "name": "SourceCollectionOutput"
+        "name": "SourceCollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:SourceTimeRangeOutput",
         "kind": "schema",
-        "name": "SourceTimeRangeOutput"
+        "name": "SourceTimeRangeOutput",
+        "type": "object"
       },
       {
         "id": "schema:TokenOutput",
         "kind": "schema",
-        "name": "TokenOutput"
+        "name": "TokenOutput",
+        "type": "object"
       },
       {
         "id": "schema:TypeOutput",
         "kind": "schema",
-        "name": "TypeOutput"
+        "name": "TypeOutput",
+        "type": "object"
       },
       {
         "id": "schema:UACollectionOutput",
         "kind": "schema",
-        "name": "UACollectionOutput"
+        "name": "UACollectionOutput",
+        "type": "object"
       },
       {
         "id": "schema:UAOutput",
         "kind": "schema",
-        "name": "UAOutput"
+        "name": "UAOutput",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VendorOutput",
         "kind": "schema",
-        "name": "VendorOutput"
+        "name": "VendorOutput",
+        "type": "object"
       },
       {
         "id": "schema:v1__models__source__SourceOutput",
         "kind": "schema",
-        "name": "v1__models__source__SourceOutput"
+        "name": "v1__models__source__SourceOutput",
+        "type": "object"
       },
       {
         "id": "schema:v1__models__token__SourceOutput",
         "kind": "schema",
-        "name": "v1__models__token__SourceOutput"
+        "name": "v1__models__token__SourceOutput",
+        "type": "object"
       }
     ]
   },

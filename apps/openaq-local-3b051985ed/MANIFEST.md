@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `eed81c76617d327b4811999868579725b1de7cd22a6e66f9ac72e4361440752a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,41 +34,43 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 26 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/favicon.ico` | favico_favicon_ico_get | Favico |
-| GET | `/ping` | pong_ping_get | Pong |
-| GET | `/v1/cities` | cities_getv1_v1_cities_get | Provides a simple listing of cities within the platform |
-| GET | `/v1/countries` | countries_getv1_v1_countries_get | Countries Getv1 |
-| GET | `/v1/countries/{country_id}` | countries_get_v1_countries__country_id__get | Countries Get |
-| GET | `/v1/latest` | latest_v1_get_v1_latest_get | Latest V1 Get |
-| GET | `/v1/latest/{location_id}` | latest_v1_get_v1_latest__location_id__get | Latest V1 Get |
-| GET | `/v1/locations` | locationsv1_get_v1_locations_get | Locationsv1 Get |
-| GET | `/v1/locations/{location_id}` | locationsv1_get_v1_locations__location_id__get | Locationsv1 Get |
-| GET | `/v1/measurements` | measurements_get_v1_v1_measurements_get | Measurements Get V1 |
-| GET | `/v1/parameters` | parameters_getv1_v1_parameters_get | Parameters Getv1 |
-| GET | `/v1/sources` | sources_v1_get_v1_sources_get | Sources V1 Get |
-| GET | `/v2/averages` | averages_v2_get_v2_averages_get | Averages V2 Get |
-| GET | `/v2/cities` | cities_get_v2_cities_get | Provides a simple listing of cities within the platform |
-| GET | `/v2/countries` | countries_get_v2_countries_get | Countries Get |
-| GET | `/v2/countries/{country_id}` | countries_get_v2_countries__country_id__get | Countries Get |
-| GET | `/v2/latest` | latest_get_v2_latest_get | Latest Get |
-| GET | `/v2/latest/{location_id}` | latest_get_v2_latest__location_id__get | Latest Get |
-| GET | `/v2/locations` | locations_get_v2_locations_get | Locations Get |
-| GET | `/v2/locations/tiles/mobile-generalized/tiles.json` | mobilegentilejson_v2_locations_tiles_mobile_generalized_tiles_json_get | Mobilegentilejson |
-| GET | `/v2/locations/tiles/mobile-generalized/{z}/{x}/{y}.pbf` | get_mobilegentile_v2_locations_tiles_mobile_generalized__z___x___y__pbf_get | Get Mobilegentile |
-| GET | `/v2/locations/tiles/mobile/tiles.json` | mobiletilejson_v2_locations_tiles_mobile_tiles_json_get | Mobiletilejson |
-| GET | `/v2/locations/tiles/mobile/{z}/{x}/{y}.pbf` | get_mobiletile_v2_locations_tiles_mobile__z___x___y__pbf_get | Get Mobiletile |
-| GET | `/v2/locations/tiles/tiles.json` | tilejson_v2_locations_tiles_tiles_json_get | Tilejson |
-| GET | `/v2/locations/tiles/viewer` | demo_v2_locations_tiles_viewer_get | Demo |
-| GET | `/v2/locations/tiles/{z}/{x}/{y}.pbf` | get_tile_v2_locations_tiles__z___x___y__pbf_get | Get Tile |
-| GET | `/v2/locations/{location_id}` | locations_get_v2_locations__location_id__get | Locations Get |
-| GET | `/v2/manufacturers` | mfr_get_v2_manufacturers_get | Mfr Get |
-| GET | `/v2/measurements` | measurements_get_v2_measurements_get | Measurements Get |
-| GET | `/v2/models` | model_get_v2_models_get | Model Get |
-| GET | `/v2/parameters` | parameters_get_v2_parameters_get | Parameters Get |
-| GET | `/v2/projects` | projects_get_v2_projects_get | Projects Get |
-| GET | `/v2/projects/{project_id}` | projects_get_v2_projects__project_id__get | Projects Get |
-| GET | `/v2/sources` | sources_get_v2_sources_get | Sources Get |
-| GET | `/v2/sources/readme/{slug}` | readme_get_v2_sources_readme__slug__get | Readme Get |
-| GET | `/v2/summary` | summary_get_v2_summary_get | Summary Get |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/favicon.ico` | favico_favicon_ico_get | — | — | yes | Favico |
+| GET | `/ping` | pong_ping_get | — | — | yes | Pong |
+| GET | `/v1/cities` | cities_getv1_v1_cities_get | `limit`, `page`, `offset`, `sort`, `country_id`, `country`, `city`, `order_by`, `entity` | OpenAQCitiesResult | yes | Provides a simple listing of cities within the platform |
+| GET | `/v1/countries` | countries_getv1_v1_countries_get | `limit`, `page`, `offset`, `sort`, `country_id`, `country`, `order_by` | OpenAQCountriesResult | yes | Countries Getv1 |
+| GET | `/v1/countries/{country_id}` | countries_get_v1_countries__country_id__get | `country_id`*, `limit`, `page`, `offset`, `sort`, `country`, `order_by` | OpenAQCountriesResult | yes | Countries Get |
+| GET | `/v1/latest` | latest_v1_get_v1_latest_get | `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location_id`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Latest V1 Get |
+| GET | `/v1/latest/{location_id}` | latest_v1_get_v1_latest__location_id__get | `location_id`*, `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Latest V1 Get |
+| GET | `/v1/locations` | locationsv1_get_v1_locations_get | `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location_id`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Locationsv1 Get |
+| GET | `/v1/locations/{location_id}` | locationsv1_get_v1_locations__location_id__get | `location_id`*, `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Locationsv1 Get |
+| GET | `/v1/measurements` | measurements_get_v1_v1_measurements_get | `format`, `date_from`, `date_to`, `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location_id`, `location`, `order_by`, `isMobile`, `isAnalysis`, `project`, `entity`, `sensorType`, `value_from`, `value_to`, `include_fields` | — | yes | Measurements Get V1 |
+| GET | `/v1/parameters` | parameters_getv1_v1_parameters_get | `limit`, `page`, `offset`, `sort`, `sourceName`, `sourceId`, `sourceSlug`, `order_by` | OpenAQParametersResult | yes | Parameters Getv1 |
+| GET | `/v1/sources` | sources_v1_get_v1_sources_get | `limit`, `page`, `offset`, `sort`, `name`, `order_by` | OpenAQResult | yes | Sources V1 Get |
+| GET | `/v2/averages` | averages_v2_get_v2_averages_get | `date_from`, `date_to`, `parameter_id`, `parameter`, `unit`, `project_id`, `project`, `country_id`, `country`, `limit`, `page`, `offset`, `sort`, `spatial`*, `temporal`*, `location`, `group` | OpenAQResult | yes | Averages V2 Get |
+| GET | `/v2/cities` | cities_get_v2_cities_get | `limit`, `page`, `offset`, `sort`, `country_id`, `country`, `city`, `order_by`, `entity` | OpenAQCitiesResult | yes | Provides a simple listing of cities within the platform |
+| GET | `/v2/countries` | countries_get_v2_countries_get | `limit`, `page`, `offset`, `sort`, `country_id`, `country`, `order_by` | OpenAQCountriesResult | yes | Countries Get |
+| GET | `/v2/countries/{country_id}` | countries_get_v2_countries__country_id__get | `country_id`*, `limit`, `page`, `offset`, `sort`, `country`, `order_by` | OpenAQCountriesResult | yes | Countries Get |
+| GET | `/v2/latest` | latest_get_v2_latest_get | `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location_id`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Latest Get |
+| GET | `/v2/latest/{location_id}` | latest_get_v2_latest__location_id__get | `location_id`*, `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Latest Get |
+| GET | `/v2/locations` | locations_get_v2_locations_get | `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location_id`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Locations Get |
+| GET | `/v2/locations/tiles/mobile-generalized/tiles.json` | mobilegentilejson_v2_locations_tiles_mobile_generalized_tiles_json_get | — | TileJSON | yes | Mobilegentilejson |
+| GET | `/v2/locations/tiles/mobile-generalized/{z}/{x}/{y}.pbf` | get_mobilegentile_v2_locations_tiles_mobile_generalized__z___x___y__pbf_get | `z`*, `x`*, `y`*, `parameter`, `location`, `lastUpdatedFrom`, `lastUpdatedTo`, `isMobile`, `project`, `isAnalysis` | — | yes | Get Mobilegentile |
+| GET | `/v2/locations/tiles/mobile/tiles.json` | mobiletilejson_v2_locations_tiles_mobile_tiles_json_get | — | TileJSON | yes | Mobiletilejson |
+| GET | `/v2/locations/tiles/mobile/{z}/{x}/{y}.pbf` | get_mobiletile_v2_locations_tiles_mobile__z___x___y__pbf_get | `z`*, `x`*, `y`*, `dateFrom`*, `dateTo`*, `parameter`, `location`, `lastUpdatedFrom`, `lastUpdatedTo`, `isMobile`, `project`, `isAnalysis` | — | yes | Get Mobiletile |
+| GET | `/v2/locations/tiles/tiles.json` | tilejson_v2_locations_tiles_tiles_json_get | — | TileJSON | yes | Tilejson |
+| GET | `/v2/locations/tiles/viewer` | demo_v2_locations_tiles_viewer_get | — | string | yes | Demo |
+| GET | `/v2/locations/tiles/{z}/{x}/{y}.pbf` | get_tile_v2_locations_tiles__z___x___y__pbf_get | `z`*, `x`*, `y`*, `parameter`, `location`, `lastUpdatedFrom`, `lastUpdatedTo`, `isMobile`, `project`, `isAnalysis` | — | yes | Get Tile |
+| GET | `/v2/locations/{location_id}` | locations_get_v2_locations__location_id__get | `location_id`*, `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location`, `order_by`, `isMobile`, `isAnalysis`, `sourceName`, `entity`, `sensorType`, `modelName`, `manufacturerName`, `dumpRaw` | OpenAQResult | yes | Locations Get |
+| GET | `/v2/manufacturers` | mfr_get_v2_manufacturers_get | — | OpenAQResult | yes | Mfr Get |
+| GET | `/v2/measurements` | measurements_get_v2_measurements_get | `format`, `date_from`, `date_to`, `limit`, `page`, `offset`, `sort`, `has_geo`, `parameter_id`, `parameter`, `unit`, `coordinates`, `radius`, `country_id`, `country`, `city`, `location_id`, `location`, `order_by`, `isMobile`, `isAnalysis`, `project`, `entity`, `sensorType`, `value_from`, `value_to`, `include_fields` | — | yes | Measurements Get |
+| GET | `/v2/models` | model_get_v2_models_get | — | OpenAQResult | yes | Model Get |
+| GET | `/v2/parameters` | parameters_get_v2_parameters_get | `limit`, `page`, `offset`, `sort`, `sourceName`, `sourceId`, `sourceSlug`, `order_by` | OpenAQParametersResult | yes | Parameters Get |
+| GET | `/v2/projects` | projects_get_v2_projects_get | `country_id`, `country`, `limit`, `page`, `offset`, `sort`, `parameter_id`, `parameter`, `unit`, `project_id`, `project`, `order_by`, `isMobile`, `isAnalysis`, `entity`, `sensorType`, `sourceName` | OpenAQProjectsResult | yes | Projects Get |
+| GET | `/v2/projects/{project_id}` | projects_get_v2_projects__project_id__get | `project_id`*, `country_id`, `country`, `limit`, `page`, `offset`, `sort`, `parameter_id`, `parameter`, `unit`, `project`, `order_by`, `isMobile`, `isAnalysis`, `entity`, `sensorType`, `sourceName` | OpenAQProjectsResult | yes | Projects Get |
+| GET | `/v2/sources` | sources_get_v2_sources_get | `limit`, `page`, `offset`, `sort`, `sourceName`, `sourceId`, `sourceSlug`, `order_by` | OpenAQResult | yes | Sources Get |
+| GET | `/v2/sources/readme/{slug}` | readme_get_v2_sources_readme__slug__get | `slug`* | — | yes | Readme Get |
+| GET | `/v2/summary` | summary_get_v2_summary_get | — | OpenAQResult | yes | Summary Get |

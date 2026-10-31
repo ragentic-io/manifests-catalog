@@ -22,12 +22,12 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/grocerylist"
+        "to": "operation:get:/grocerylist"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:get:/grocerylist"
+        "to": "operation:delete:/grocerylist"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -47,12 +47,12 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/grocerylist/item/{guid}"
+        "to": "operation:put:/grocerylist/item/{guid}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:put:/grocerylist/item/{guid}"
+        "to": "operation:delete:/grocerylist/item/{guid}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -112,12 +112,12 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:post:/recipe"
+        "to": "operation:put:/recipe"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:put:/recipe"
+        "to": "operation:post:/recipe"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -167,12 +167,12 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/recipe/review/replies/{replyId}"
+        "to": "operation:put:/recipe/review/replies/{replyId}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:put:/recipe/review/replies/{replyId}"
+        "to": "operation:delete:/recipe/review/replies/{replyId}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -207,12 +207,12 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/recipe/{id}"
+        "to": "operation:get:/recipe/{id}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:get:/recipe/{id}"
+        "to": "operation:delete:/recipe/{id}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -242,17 +242,17 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/recipe/{recipeId}/note/{noteId}"
-      },
-      {
-        "from": "bigoven-com-6088c28d5c",
-        "kind": "EXPOSES",
         "to": "operation:get:/recipe/{recipeId}/note/{noteId}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
         "to": "operation:put:/recipe/{recipeId}/note/{noteId}"
+      },
+      {
+        "from": "bigoven-com-6088c28d5c",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/recipe/{recipeId}/note/{noteId}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -282,17 +282,17 @@
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/recipe/{recipeId}/review/{reviewId}"
-      },
-      {
-        "from": "bigoven-com-6088c28d5c",
-        "kind": "EXPOSES",
         "to": "operation:get:/recipe/{recipeId}/review/{reviewId}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
         "to": "operation:put:/recipe/{recipeId}/review/{reviewId}"
+      },
+      {
+        "from": "bigoven-com-6088c28d5c",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/recipe/{recipeId}/review/{reviewId}"
       },
       {
         "from": "bigoven-com-6088c28d5c",
@@ -333,6 +333,631 @@
         "from": "bigoven-com-6088c28d5c",
         "kind": "EXPOSES",
         "to": "operation:get:/recipes/{id}"
+      },
+      {
+        "from": "operation:get:/collection/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.RecipeSearchResult"
+      },
+      {
+        "from": "operation:get:/collection/{id}/meta",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.CollectionInfo"
+      },
+      {
+        "from": "operation:get:/collections",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.CollectionInfo"
+      },
+      {
+        "from": "operation:get:/grocerylist",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.GroceryList"
+      },
+      {
+        "from": "operation:delete:/grocerylist",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:post:/grocerylist/clearcheckedlines",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.GroceryList"
+      },
+      {
+        "from": "operation:post:/grocerylist/department",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.GroceryListController.DepartmentModel"
+      },
+      {
+        "from": "operation:post:/grocerylist/department",
+        "kind": "RETURNS",
+        "to": "schema:API2.GroceryListDepartmentResult"
+      },
+      {
+        "from": "operation:post:/grocerylist/item",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.GroceryListController.PostToGroceryListRecipeRequest"
+      },
+      {
+        "from": "operation:post:/grocerylist/item",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.ShoppingListLine"
+      },
+      {
+        "from": "operation:put:/grocerylist/item/{guid}",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.GroceryListController.UpdateItemByGuidRequest"
+      },
+      {
+        "from": "operation:put:/grocerylist/item/{guid}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:delete:/grocerylist/item/{guid}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:post:/grocerylist/line",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListAddLineRequest"
+      },
+      {
+        "from": "operation:post:/grocerylist/line",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.ShoppingListLine"
+      },
+      {
+        "from": "operation:post:/grocerylist/recipe",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListRecipeRequest"
+      },
+      {
+        "from": "operation:post:/grocerylist/recipe",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:post:/grocerylist/sync",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListSyncRequest"
+      },
+      {
+        "from": "operation:post:/grocerylist/sync",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:post:/image/avatar",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/me",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:put:/me",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:put:/me",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:put:/me/personal",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Models.Personal"
+      },
+      {
+        "from": "operation:put:/me/personal",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:put:/me/preferences",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Models.Preference"
+      },
+      {
+        "from": "operation:put:/me/preferences",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:get:/me/preferences/options",
+        "kind": "RETURNS",
+        "to": "schema:API2.Controllers.WebAPI.MeController.PreferenceOptions"
+      },
+      {
+        "from": "operation:put:/me/profile",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Models.Profile"
+      },
+      {
+        "from": "operation:put:/me/profile",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:get:/me/skinny",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.BigOvenUser"
+      },
+      {
+        "from": "operation:put:/recipe",
+        "kind": "ACCEPTS",
+        "to": "schema:BigOven.Model.API.Recipe"
+      },
+      {
+        "from": "operation:put:/recipe",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Recipe"
+      },
+      {
+        "from": "operation:post:/recipe",
+        "kind": "ACCEPTS",
+        "to": "schema:BigOven.Model.API.Recipe"
+      },
+      {
+        "from": "operation:post:/recipe",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Recipe"
+      },
+      {
+        "from": "operation:get:/recipe/autocomplete/all",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.RecipeInfoTiny"
+      },
+      {
+        "from": "operation:get:/recipe/autocomplete/mine",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.RecipeInfoTiny"
+      },
+      {
+        "from": "operation:get:/recipe/categories",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.RecipeCategory"
+      },
+      {
+        "from": "operation:get:/recipe/get/active/recipe",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Result"
+      },
+      {
+        "from": "operation:post:/recipe/get/step/number",
+        "kind": "RETURNS",
+        "to": "schema:API2.Result"
+      },
+      {
+        "from": "operation:get:/recipe/photos/pending",
+        "kind": "RETURNS",
+        "to": "schema:API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse"
+      },
+      {
+        "from": "operation:post:/recipe/post/step",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Result"
+      },
+      {
+        "from": "operation:put:/recipe/review/replies/{replyId}",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.ReviewController.PostReplyReq"
+      },
+      {
+        "from": "operation:put:/recipe/review/replies/{replyId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Reply"
+      },
+      {
+        "from": "operation:delete:/recipe/review/replies/{replyId}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/recipe/review/{reviewId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "operation:put:/recipe/review/{reviewId}",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.ReviewController.ReviewRequest"
+      },
+      {
+        "from": "operation:put:/recipe/review/{reviewId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "operation:get:/recipe/review/{reviewId}/replies",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Reply"
+      },
+      {
+        "from": "operation:post:/recipe/review/{reviewId}/replies",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.ReviewController.PostReplyReq"
+      },
+      {
+        "from": "operation:post:/recipe/review/{reviewId}/replies",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Reply"
+      },
+      {
+        "from": "operation:get:/recipe/steps/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.Recipe"
+      },
+      {
+        "from": "operation:get:/recipe/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.Recipe"
+      },
+      {
+        "from": "operation:delete:/recipe/{id}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/recipe/{id}/zap",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/feedback",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Models.Recipes.FeedbackDTO"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/feedback",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/image",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/images",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Image"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/note",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.NoteController.NoteRequest"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/note",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.RecipeNote"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/note/{noteId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.RecipeNote"
+      },
+      {
+        "from": "operation:put:/recipe/{recipeId}/note/{noteId}",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.NoteController.NoteRequest"
+      },
+      {
+        "from": "operation:put:/recipe/{recipeId}/note/{noteId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.RecipeNote"
+      },
+      {
+        "from": "operation:delete:/recipe/{recipeId}/note/{noteId}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/notes",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.RecipeNoteList"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/photos",
+        "kind": "RETURNS",
+        "to": "schema:API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/related",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.RecipeSearchResult"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/review",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/review",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.ReviewController.ReviewRequest"
+      },
+      {
+        "from": "operation:post:/recipe/{recipeId}/review",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/review/{reviewId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "operation:put:/recipe/{recipeId}/review/{reviewId}",
+        "kind": "ACCEPTS",
+        "to": "schema:API2.Controllers.WebAPI.ReviewController.ReviewRequestLegacy"
+      },
+      {
+        "from": "operation:put:/recipe/{recipeId}/review/{reviewId}",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "operation:delete:/recipe/{recipeId}/review/{reviewId}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/reviews",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "operation:get:/recipe/{recipeId}/scans",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Image"
+      },
+      {
+        "from": "operation:get:/recipes",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.RecipeSearchResult"
+      },
+      {
+        "from": "operation:get:/recipes/random",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API.Recipe"
+      },
+      {
+        "from": "operation:get:/recipes/raves",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.RecipeInfoReviewTuple2"
+      },
+      {
+        "from": "operation:get:/recipes/recentviews",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.RecipeInfoDateTuple2"
+      },
+      {
+        "from": "operation:get:/recipes/top25random",
+        "kind": "RETURNS",
+        "to": "schema:BigOven.Model.API2.RecipeSearchResult"
+      },
+      {
+        "from": "operation:get:/recipes/{id}",
+        "kind": "RETURNS",
+        "to": "schema:API2.Models.Recipes.RecipeResponse"
+      },
+      {
+        "from": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListSyncRequest",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Grocery.GroceryList"
+      },
+      {
+        "from": "schema:API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.Photo"
+      },
+      {
+        "from": "schema:API2.Controllers.WebAPI.MeController.EatingStyle",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Controllers.WebAPI.MeController.Option"
+      },
+      {
+        "from": "schema:API2.Controllers.WebAPI.MeController.PreferenceOptions",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Controllers.WebAPI.MeController.EatingStyle"
+      },
+      {
+        "from": "schema:API2.Models.BigOvenUser",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Accounting"
+      },
+      {
+        "from": "schema:API2.Models.BigOvenUser",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Personal"
+      },
+      {
+        "from": "schema:API2.Models.BigOvenUser",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Preference"
+      },
+      {
+        "from": "schema:API2.Models.BigOvenUser",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Profile"
+      },
+      {
+        "from": "schema:API2.Models.Personal",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Location"
+      },
+      {
+        "from": "schema:API2.Models.Profile",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Counts"
+      },
+      {
+        "from": "schema:API2.Models.Recipes.RecipeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:API2.Models.Recipes.RecipeVideoResponse"
+      },
+      {
+        "from": "schema:API2.Models.Recipes.RecipeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Ingredient"
+      },
+      {
+        "from": "schema:API2.Models.Recipes.RecipeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.NutritionInfo"
+      },
+      {
+        "from": "schema:API2.Models.Recipes.RecipeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfo"
+      },
+      {
+        "from": "schema:API2.Models.Recipes.RecipeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.InstructionStep"
+      },
+      {
+        "from": "schema:API2.Result",
+        "kind": "REFERENCES",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Grocery.GroceryList",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Grocery.Item"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Grocery.GroceryList",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.RecipeInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Image",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Ingredient",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.IngredientInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Ingredient"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.NutritionInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API.RecipeInfo",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API.RecipeNoteList",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.RecipeNote"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Reply",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfoTiny"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Review",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Reply"
+      },
+      {
+        "from": "schema:BigOven.Model.API.Review",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.CollectionInfo",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.RecipeInfox"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.GroceryList",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Grocery.Item"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.GroceryList",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.RecipeInfox"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.Photo",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.UserInfoTinyx"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Ingredient"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.NutritionInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.UserInfo"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.Recipe",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.InstructionStep"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.RecipeInfox",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.UserInfoTinyx"
+      },
+      {
+        "from": "schema:BigOven.Model.API2.RecipeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.RecipeInfox"
+      },
+      {
+        "from": "schema:BigOven.Model.RecipeInfoDateTuple2",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.RecipeInfox"
+      },
+      {
+        "from": "schema:BigOven.Model.RecipeInfoReviewTuple2",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API.Review"
+      },
+      {
+        "from": "schema:BigOven.Model.RecipeInfoReviewTuple2",
+        "kind": "REFERENCES",
+        "to": "schema:BigOven.Model.API2.RecipeInfox"
+      },
+      {
+        "from": "schema:BigOven.Result",
+        "kind": "REFERENCES",
+        "to": "schema:System.Object"
       }
     ],
     "nodes": [
@@ -346,10 +971,55 @@
         "kind": "operation",
         "method": "get",
         "name": "Collection_GetCollection",
+        "parameters": [
+          {
+            "description": "the collection identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "results per page",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "page number (starting with 1)",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "test",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "sessionForLogging",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collection/{id}",
         "pointer": "#/paths/~1collection~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.RecipeSearchResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a recipe collection. A recipe collection is a curated set of recipes."
+        "summary": "Gets a recipe collection. A recipe collection is a curated set of recipes.",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
@@ -357,10 +1027,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Collection_GetCollectionMeta",
+        "parameters": [
+          {
+            "description": "the collection identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/collection/{id}/meta",
         "pointer": "#/paths/~1collection~1{id}~1meta/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.CollectionInfo"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a recipe collection metadata. A recipe collection is a curated set of recipes."
+        "summary": "Gets a recipe collection metadata. A recipe collection is a curated set of recipes.",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
@@ -368,21 +1057,28 @@
         "kind": "operation",
         "method": "get",
         "name": "Collection_Collections",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "test",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collections",
         "pointer": "#/paths/~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.CollectionInfo[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the list of current, seasonal recipe collections. From here, you can use the /collection/{id} endpoint to retrieve the recipes in those collections."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/grocerylist",
-        "kind": "operation",
-        "method": "delete",
-        "name": "GroceryList_Delete",
-        "path": "/grocerylist",
-        "pointer": "#/paths/~1grocerylist/delete",
-        "security": [],
-        "summary": "Delete all the items on a grocery list; faster operation than a sync with deleted items."
+        "summary": "Get the list of current, seasonal recipe collections. From here, you can use the /collection/{id} endpoint to retrieve the recipes in those collections.",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
@@ -392,8 +1088,39 @@
         "name": "GroceryList_Get",
         "path": "/grocerylist",
         "pointer": "#/paths/~1grocerylist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.GroceryList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the user's grocery list.  User is determined by Basic Authentication."
+        "summary": "Get the user's grocery list.  User is determined by Basic Authentication.",
+        "tags": [
+          "GroceryList"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/grocerylist",
+        "kind": "operation",
+        "method": "delete",
+        "name": "GroceryList_Delete",
+        "path": "/grocerylist",
+        "pointer": "#/paths/~1grocerylist/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete all the items on a grocery list; faster operation than a sync with deleted items.",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -403,8 +1130,18 @@
         "name": "GroceryList_GroceryListRemoveMarkedItems",
         "path": "/grocerylist/clearcheckedlines",
         "pointer": "#/paths/~1grocerylist~1clearcheckedlines/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.GroceryList"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Clears the checked lines."
+        "summary": "Clears the checked lines.",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -414,8 +1151,29 @@
         "name": "GroceryList_Department",
         "path": "/grocerylist/department",
         "pointer": "#/paths/~1grocerylist~1department/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.GroceryListController.DepartmentModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.GroceryListDepartmentResult[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Departmentalize a list of strings -- used for ad-hoc grocery list item addition"
+        "summary": "Departmentalize a list of strings -- used for ad-hoc grocery list item addition",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -425,19 +1183,29 @@
         "name": "post /grocerylist/item",
         "path": "/grocerylist/item",
         "pointer": "#/paths/~1grocerylist~1item/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.GroceryListController.PostToGroceryListRecipeRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.ShoppingListLine"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a single line item to the grocery list"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/grocerylist/item/{guid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "GroceryList_DeleteItemByGuid",
-        "path": "/grocerylist/item/{guid}",
-        "pointer": "#/paths/~1grocerylist~1item~1{guid}/delete",
-        "security": [],
-        "summary": "/grocerylist/item/{guid}  DELETE will delete this item assuming you own it."
+        "summary": "Add a single line item to the grocery list",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -445,10 +1213,68 @@
         "kind": "operation",
         "method": "put",
         "name": "GroceryList_GroceryListItemGuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/grocerylist/item/{guid}",
         "pointer": "#/paths/~1grocerylist~1item~1{guid}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.GroceryListController.UpdateItemByGuidRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a grocery item by GUID"
+        "summary": "Update a grocery item by GUID",
+        "tags": [
+          "GroceryList"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/grocerylist/item/{guid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "GroceryList_DeleteItemByGuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "guid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/grocerylist/item/{guid}",
+        "pointer": "#/paths/~1grocerylist~1item~1{guid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "/grocerylist/item/{guid}  DELETE will delete this item assuming you own it.",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -458,8 +1284,29 @@
         "name": "GroceryList_Post",
         "path": "/grocerylist/line",
         "pointer": "#/paths/~1grocerylist~1line/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListAddLineRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.ShoppingListLine"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a single line item to the grocery list"
+        "summary": "Add a single line item to the grocery list",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -469,8 +1316,29 @@
         "name": "GroceryList_AddRecipe",
         "path": "/grocerylist/recipe",
         "pointer": "#/paths/~1grocerylist~1recipe/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListRecipeRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a Recipe to the grocery list.  In the request data, pass in recipeId, scale (scale=1.0 says to keep the recipe the same size as originally posted), markAsPending (true/false) to indicate that\r\n            the lines in the recipe should be marked in a \"pending\" (unconfirmed by user) state."
+        "summary": "Add a Recipe to the grocery list.  In the request data, pass in recipeId, scale (scale=1.0 says to keep the recipe the same size as originally posted), markAsPending (true/false) to indicate that\r\n            the lines in the recipe should be marked in a \"pending\" (unconfirmed by user) state.",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -480,8 +1348,29 @@
         "name": "GroceryList_PostGroceryListSync",
         "path": "/grocerylist/sync",
         "pointer": "#/paths/~1grocerylist~1sync/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListSyncRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Synchronize the grocery list.  Call this with a POST to /grocerylist/sync"
+        "summary": "Synchronize the grocery list.  Call this with a POST to /grocerylist/sync",
+        "tags": [
+          "GroceryList"
+        ]
       },
       {
         "deprecated": false,
@@ -491,8 +1380,27 @@
         "name": "Images_UploadUserAvatar",
         "path": "/image/avatar",
         "pointer": "#/paths/~1image~1avatar/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "POST: /image/avatar\r\n             \r\n            Testing with Postman (validated 11/20/2015):\r\n            1) Remove the Content-Type header; add authentication information\r\n            2) On the request, click Body and choose \"form-data\", then add a line item with \"key\" column set to \"file\" and on the right,\r\n            change the type of the input from Text to File.  Browse and choose a JPG."
+        "summary": "POST: /image/avatar\r\n             \r\n            Testing with Postman (validated 11/20/2015):\r\n            1) Remove the Content-Type header; add authentication information\r\n            2) On the request, click Body and choose \"form-data\", then add a line item with \"key\" column set to \"file\" and on the right,\r\n            change the type of the input from Text to File.  Browse and choose a JPG.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -502,8 +1410,18 @@
         "name": "Me_Index",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.BigOvenUser"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Indexes this instance."
+        "summary": "Indexes this instance.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -513,8 +1431,29 @@
         "name": "Me_PutMe",
         "path": "/me",
         "pointer": "#/paths/~1me/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Models.BigOvenUser"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.BigOvenUser"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Puts me."
+        "summary": "Puts me.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -524,8 +1463,29 @@
         "name": "Me_PutMePersonal",
         "path": "/me/personal",
         "pointer": "#/paths/~1me~1personal/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Models.Personal"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.BigOvenUser"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Puts me personal."
+        "summary": "Puts me personal.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -535,8 +1495,29 @@
         "name": "Me_PutMePreferences",
         "path": "/me/preferences",
         "pointer": "#/paths/~1me~1preferences/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Models.Preference"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.BigOvenUser"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Puts me preferences."
+        "summary": "Puts me preferences.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -546,8 +1527,18 @@
         "name": "Me_GetOptions",
         "path": "/me/preferences/options",
         "pointer": "#/paths/~1me~1preferences~1options/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Controllers.WebAPI.MeController.PreferenceOptions"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the options."
+        "summary": "Gets the options.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -557,8 +1548,29 @@
         "name": "put /me/profile",
         "path": "/me/profile",
         "pointer": "#/paths/~1me~1profile/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Models.Profile"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.BigOvenUser"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Puts me."
+        "summary": "Puts me.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -568,19 +1580,18 @@
         "name": "Me_Skinny",
         "path": "/me/skinny",
         "pointer": "#/paths/~1me~1skinny/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.BigOvenUser"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Skinnies this instance."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/recipe",
-        "kind": "operation",
-        "method": "post",
-        "name": "Recipe_Post",
-        "path": "/recipe",
-        "pointer": "#/paths/~1recipe/post",
-        "security": [],
-        "summary": "Add a new recipe"
+        "summary": "Skinnies this instance.",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
@@ -590,8 +1601,61 @@
         "name": "Recipe_Put",
         "path": "/recipe",
         "pointer": "#/paths/~1recipe/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "BigOven.Model.API.Recipe"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Recipe"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a recipe"
+        "summary": "Update a recipe",
+        "tags": [
+          "Recipe"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/recipe",
+        "kind": "operation",
+        "method": "post",
+        "name": "Recipe_Post",
+        "path": "/recipe",
+        "pointer": "#/paths/~1recipe/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "BigOven.Model.API.Recipe"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Recipe"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Add a new recipe",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -599,10 +1663,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_AutoComplete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/autocomplete",
         "pointer": "#/paths/~1recipe~1autocomplete/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Given a query, return recipe titles starting with query. Query must be at least 3 chars in length."
+        "summary": "Given a query, return recipe titles starting with query. Query must be at least 3 chars in length.",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -610,10 +1698,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_AutoCompleteAllRecipes",
+        "parameters": [
+          {
+            "description": "The query.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The limit.",
+            "in": "query",
+            "name": "limit",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/autocomplete/all",
         "pointer": "#/paths/~1recipe~1autocomplete~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.RecipeInfoTiny[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Automatics the complete all recipes."
+        "summary": "Automatics the complete all recipes.",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -621,10 +1735,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_AutoCompleteMyRecipes",
+        "parameters": [
+          {
+            "description": "The query.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The limit.",
+            "in": "query",
+            "name": "limit",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/autocomplete/mine",
         "pointer": "#/paths/~1recipe~1autocomplete~1mine/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.RecipeInfoTiny[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Automatics the complete my recipes."
+        "summary": "Automatics the complete my recipes.",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -634,8 +1774,18 @@
         "name": "Recipe_Categories",
         "path": "/recipe/categories",
         "pointer": "#/paths/~1recipe~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.RecipeCategory[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of recipe categories (the ID field can be used for include_cat in search parameters)"
+        "summary": "Get a list of recipe categories (the ID field can be used for include_cat in search parameters)",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -643,10 +1793,28 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_GetActiveRecipe",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/recipe/get/active/recipe",
         "pointer": "#/paths/~1recipe~1get~1active~1recipe/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Result"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns last active recipe for the user"
+        "summary": "Returns last active recipe for the user",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -654,10 +1822,40 @@
         "kind": "operation",
         "method": "post",
         "name": "Recipe_GetStep",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "stepId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/get/saved/step",
         "pointer": "#/paths/~1recipe~1get~1saved~1step/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets recipe single step as text"
+        "summary": "Gets recipe single step as text",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -665,10 +1863,34 @@
         "kind": "operation",
         "method": "post",
         "name": "Recipe_GetStepNumber",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/get/step/number",
         "pointer": "#/paths/~1recipe~1get~1step~1number/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Result"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns stored step number and number of steps in recipe"
+        "summary": "Returns stored step number and number of steps in recipe",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -678,8 +1900,18 @@
         "name": "Images_GetPendingByUser",
         "path": "/recipe/photos/pending",
         "pointer": "#/paths/~1recipe~1photos~1pending/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the pending by user."
+        "summary": "Gets the pending by user.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -687,21 +1919,40 @@
         "kind": "operation",
         "method": "post",
         "name": "Recipe_GetSteps",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "stepId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/post/step",
         "pointer": "#/paths/~1recipe~1post~1step/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Result"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Stores recipe step number and returns saved step data"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/recipe/review/replies/{replyId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Review_DeleteReply",
-        "path": "/recipe/review/replies/{replyId}",
-        "pointer": "#/paths/~1recipe~1review~1replies~1{replyId}/delete",
-        "security": [],
-        "summary": "DELETE a reply to a given review. Authenticated user must be the one who originally posted the reply."
+        "summary": "Stores recipe step number and returns saved step data",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -709,10 +1960,68 @@
         "kind": "operation",
         "method": "put",
         "name": "Review_PutReply",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "replyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/recipe/review/replies/{replyId}",
         "pointer": "#/paths/~1recipe~1review~1replies~1{replyId}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.ReviewController.PostReplyReq"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Reply"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update (PUT) a reply to a given review. Authenticated user must be the original one that posted the reply."
+        "summary": "Update (PUT) a reply to a given review. Authenticated user must be the original one that posted the reply.",
+        "tags": [
+          "Review"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/recipe/review/replies/{replyId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Review_DeleteReply",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "replyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/recipe/review/replies/{replyId}",
+        "pointer": "#/paths/~1recipe~1review~1replies~1{replyId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "DELETE a reply to a given review. Authenticated user must be the one who originally posted the reply.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -720,10 +2029,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /recipe/review/{reviewId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/recipe/review/{reviewId}",
         "pointer": "#/paths/~1recipe~1review~1{reviewId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Review"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a given review by string-style ID. This will return a payload with FeaturedReply, ReplyCount.\r\n            Recommended display is to list top-level reviews with one featured reply underneath. \r\n            Currently, the FeaturedReply is the most recent one for that rating."
+        "summary": "Get a given review by string-style ID. This will return a payload with FeaturedReply, ReplyCount.\r\n            Recommended display is to list top-level reviews with one featured reply underneath. \r\n            Currently, the FeaturedReply is the most recent one for that rating.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -731,10 +2058,39 @@
         "kind": "operation",
         "method": "put",
         "name": "Review_Put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/recipe/review/{reviewId}",
         "pointer": "#/paths/~1recipe~1review~1{reviewId}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.ReviewController.ReviewRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Review"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a given top-level review."
+        "summary": "Update a given top-level review.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -742,10 +2098,42 @@
         "kind": "operation",
         "method": "get",
         "name": "Review_GetReplies",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the page (int), starting with 1",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "results per page (int)",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/review/{reviewId}/replies",
         "pointer": "#/paths/~1recipe~1review~1{reviewId}~1replies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Reply[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a paged list of replies for a given review."
+        "summary": "Get a paged list of replies for a given review.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -753,10 +2141,39 @@
         "kind": "operation",
         "method": "post",
         "name": "Review_PostReply",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/recipe/review/{reviewId}/replies",
         "pointer": "#/paths/~1recipe~1review~1{reviewId}~1replies/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.ReviewController.PostReplyReq"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Reply"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "POST a reply to a given review. The date will be set by server. Note that replies no longer have star ratings, only top-level reviews do."
+        "summary": "POST a reply to a given review. The date will be set by server. Note that replies no longer have star ratings, only top-level reviews do.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -764,10 +2181,54 @@
         "kind": "operation",
         "method": "post",
         "name": "Recipe_Scan",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "test",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "devicetype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "lng",
+            "required": false,
+            "type": "number:double"
+          }
+        ],
         "path": "/recipe/scan",
         "pointer": "#/paths/~1recipe~1scan/post",
+        "responses": [
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "POST an image as a new RecipeScan request\r\n                1)  Fetch the filename -- DONE\r\n                2)  Copy it to the pics/scan folder - ENSURE NO NAMING COLLISIONS -- DONE\r\n                3)  Create 120 thumbnail size  in pics/scan/120 -- DONE\r\n                4)  Insert the CloudTasks record\r\n                5)  Create the HIT\r\n                6)  Update the CloudTasks record with the HIT ID\r\n                7)  Email the requesing user\r\n                8)  Call out to www.bigoven.com to fetch the image and re-create the thumbnail"
+        "summary": "POST an image as a new RecipeScan request\r\n                1)  Fetch the filename -- DONE\r\n                2)  Copy it to the pics/scan folder - ENSURE NO NAMING COLLISIONS -- DONE\r\n                3)  Create 120 thumbnail size  in pics/scan/120 -- DONE\r\n                4)  Insert the CloudTasks record\r\n                5)  Create the HIT\r\n                6)  Update the CloudTasks record with the HIT ID\r\n                7)  Email the requesing user\r\n                8)  Call out to www.bigoven.com to fetch the image and re-create the thumbnail",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -775,21 +2236,35 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_GetRecipeWithSteps",
+        "parameters": [
+          {
+            "description": "the Recipe ID to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "prefetch",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/recipe/steps/{id}",
         "pointer": "#/paths/~1recipe~1steps~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.Recipe"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return full Recipe detail with steps. Returns 403 if the recipe is owned by someone else."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/recipe/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Recipe_Delete",
-        "path": "/recipe/{id}",
-        "pointer": "#/paths/~1recipe~1{id}/delete",
-        "security": [],
-        "summary": "Delete a Recipe (you must be authenticated as an owner of the recipe)"
+        "summary": "Return full Recipe detail with steps. Returns 403 if the recipe is owned by someone else.",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -797,10 +2272,65 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_Get",
+        "parameters": [
+          {
+            "description": "The Recipe ID to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The prefetch.",
+            "in": "query",
+            "name": "prefetch",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/recipe/{id}",
         "pointer": "#/paths/~1recipe~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.Recipe"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return full Recipe detail. Returns 403 if the recipe is owned by someone else."
+        "summary": "Return full Recipe detail. Returns 403 if the recipe is owned by someone else.",
+        "tags": [
+          "Recipe"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/recipe/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Recipe_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/recipe/{id}",
+        "pointer": "#/paths/~1recipe~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Recipe (you must be authenticated as an owner of the recipe)",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -808,10 +2338,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_ZapRecipe",
+        "parameters": [
+          {
+            "description": "The identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{id}/zap",
         "pointer": "#/paths/~1recipe~1{id}~1zap/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Zaps the recipe."
+        "summary": "Zaps the recipe.",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -819,10 +2368,39 @@
         "kind": "operation",
         "method": "post",
         "name": "Recipe_Feedback",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/feedback",
         "pointer": "#/paths/~1recipe~1{recipeId}~1feedback/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Models.Recipes.FeedbackDTO"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Feedback on a Recipe -- for internal BigOven editors"
+        "summary": "Feedback on a Recipe -- for internal BigOven editors",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -830,10 +2408,55 @@
         "kind": "operation",
         "method": "post",
         "name": "Images_UploadRecipeImage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "caption",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "lng",
+            "required": false,
+            "type": "number:double"
+          }
+        ],
         "path": "/recipe/{recipeId}/image",
         "pointer": "#/paths/~1recipe~1{recipeId}~1image/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "POST: /recipe/{recipeId}/image?lat=42&amp;lng=21&amp;caption=this%20is%20my%20caption\r\n             \r\n             Note that caption, lng and lat are all optional, but must go on the request URI as params because this endpoint\r\n             needs a multipart/mime content header and will not parse JSON in the body along with it.\r\n            \r\n             Testing with Postman (validated 11/20/2015):\r\n             1) Remove the Content-Type header; add authentication information\r\n             2) On the request, click Body and choose \"form-data\", then add a line item with \"key\" column set to \"file\" and on the right,\r\n             change the type of the input from Text to File.  Browse and choose a JPG."
+        "summary": "POST: /recipe/{recipeId}/image?lat=42&amp;lng=21&amp;caption=this%20is%20my%20caption\r\n             \r\n             Note that caption, lng and lat are all optional, but must go on the request URI as params because this endpoint\r\n             needs a multipart/mime content header and will not parse JSON in the body along with it.\r\n            \r\n             Testing with Postman (validated 11/20/2015):\r\n             1) Remove the Content-Type header; add authentication information\r\n             2) On the request, click Body and choose \"form-data\", then add a line item with \"key\" column set to \"file\" and on the right,\r\n             change the type of the input from Text to File.  Browse and choose a JPG.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -841,10 +2464,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Images_Get",
+        "parameters": [
+          {
+            "description": "Recipe ID (required)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/images",
         "pointer": "#/paths/~1recipe~1{recipeId}~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Image[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all the images for a recipe. DEPRECATED. Please use /recipe/{recipeId}/photos."
+        "summary": "Get all the images for a recipe. DEPRECATED. Please use /recipe/{recipeId}/photos.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -852,21 +2494,40 @@
         "kind": "operation",
         "method": "post",
         "name": "Note_Post",
+        "parameters": [
+          {
+            "description": "recipeId (int)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/note",
         "pointer": "#/paths/~1recipe~1{recipeId}~1note/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.NoteController.NoteRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.RecipeNote"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "HTTP POST a new note into the system."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/recipe/{recipeId}/note/{noteId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Note_Delete",
-        "path": "/recipe/{recipeId}/note/{noteId}",
-        "pointer": "#/paths/~1recipe~1{recipeId}~1note~1{noteId}/delete",
-        "security": [],
-        "summary": "Delete a review\r\n                do a DELETE Http request of /note/{ID}"
+        "summary": "HTTP POST a new note into the system.",
+        "tags": [
+          "Note"
+        ]
       },
       {
         "deprecated": false,
@@ -874,10 +2535,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Note_Get",
+        "parameters": [
+          {
+            "description": "recipe identifier (integer)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The note ID (note -- it's not the RecipeID)",
+            "in": "path",
+            "name": "noteId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/note/{noteId}",
         "pointer": "#/paths/~1recipe~1{recipeId}~1note~1{noteId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.RecipeNote"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a given note. Make sure you're passing authentication information in the header for the user who owns the note."
+        "summary": "Get a given note. Make sure you're passing authentication information in the header for the user who owns the note.",
+        "tags": [
+          "Note"
+        ]
       },
       {
         "deprecated": false,
@@ -885,10 +2572,82 @@
         "kind": "operation",
         "method": "put",
         "name": "Note_Put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "noteId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/note/{noteId}",
         "pointer": "#/paths/~1recipe~1{recipeId}~1note~1{noteId}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.NoteController.NoteRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.RecipeNote"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "HTTP PUT (update) a Recipe note (RecipeNote)."
+        "summary": "HTTP PUT (update) a Recipe note (RecipeNote).",
+        "tags": [
+          "Note"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/recipe/{recipeId}/note/{noteId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Note_Delete",
+        "parameters": [
+          {
+            "description": "recipeId (int)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "noteId (int)",
+            "in": "path",
+            "name": "noteId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/recipe/{recipeId}/note/{noteId}",
+        "pointer": "#/paths/~1recipe~1{recipeId}~1note~1{noteId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a review\r\n                do a DELETE Http request of /note/{ID}",
+        "tags": [
+          "Note"
+        ]
       },
       {
         "deprecated": false,
@@ -896,10 +2655,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Note_GetNotes",
+        "parameters": [
+          {
+            "description": "recipeId (int)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "page (int, starting from 1)",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "recipeId",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/notes",
         "pointer": "#/paths/~1recipe~1{recipeId}~1notes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.RecipeNoteList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "recipe/100/notes"
+        "summary": "recipe/100/notes",
+        "tags": [
+          "Note"
+        ]
       },
       {
         "deprecated": false,
@@ -907,10 +2699,41 @@
         "kind": "operation",
         "method": "get",
         "name": "Images_GetRecipePhotos",
+        "parameters": [
+          {
+            "description": "Recipe ID (required)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/photos",
         "pointer": "#/paths/~1recipe~1{recipeId}~1photos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all the photos for a recipe"
+        "summary": "Get all the photos for a recipe",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -918,10 +2741,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_Related",
+        "parameters": [
+          {
+            "description": "The recipe id",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The page",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The results per page",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/related",
         "pointer": "#/paths/~1recipe~1{recipeId}~1related/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.RecipeSearchResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get recipes related to the given recipeId"
+        "summary": "Get recipes related to the given recipeId",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -929,10 +2785,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /recipe/{recipeId}/review",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/review",
         "pointer": "#/paths/~1recipe~1{recipeId}~1review/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Review"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get *my* review for the recipe {recipeId}, where \"me\" is determined by standard authentication headers"
+        "summary": "Get *my* review for the recipe {recipeId}, where \"me\" is determined by standard authentication headers",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -940,21 +2814,39 @@
         "kind": "operation",
         "method": "post",
         "name": "Review_Post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/review",
         "pointer": "#/paths/~1recipe~1{recipeId}~1review/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.ReviewController.ReviewRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a new review. Only one review can be provided per {userId, recipeId} pair. Otherwise your review will be updated."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/recipe/{recipeId}/review/{reviewId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Review_Delete",
-        "path": "/recipe/{recipeId}/review/{reviewId}",
-        "pointer": "#/paths/~1recipe~1{recipeId}~1review~1{reviewId}/delete",
-        "security": [],
-        "summary": "DEPRECATED! - Deletes a review by recipeId and reviewId. Please use recipe/review/{reviewId} instead."
+        "summary": "Add a new review. Only one review can be provided per {userId, recipeId} pair. Otherwise your review will be updated.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -962,10 +2854,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Review_Get",
+        "parameters": [
+          {
+            "description": "int",
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "int",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/review/{reviewId}",
         "pointer": "#/paths/~1recipe~1{recipeId}~1review~1{reviewId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Review"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a given review - DEPRECATED. See recipe/review/{reviewId} for the current usage.\r\n            Beginning in January 2017, BigOven moded from an integer-based ID system to a GUID-style string-based ID system for reviews and replies.\r\n            We are also supporting more of a \"Google Play\" style model for Reviews and Replies. That is, there are top-level Reviews and then\r\n            an unlimited list of replies (which do not carry star ratings) underneath existing reviews. Also, a given user can only have one review \r\n            per recipe. Existing legacy endpoints will continue to work, but we strongly recommend you migrate to using the newer endpoints listed\r\n            which do NOT carry the \"DEPRECATED\" flag."
+        "summary": "Get a given review - DEPRECATED. See recipe/review/{reviewId} for the current usage.\r\n            Beginning in January 2017, BigOven moded from an integer-based ID system to a GUID-style string-based ID system for reviews and replies.\r\n            We are also supporting more of a \"Google Play\" style model for Reviews and Replies. That is, there are top-level Reviews and then\r\n            an unlimited list of replies (which do not carry star ratings) underneath existing reviews. Also, a given user can only have one review \r\n            per recipe. Existing legacy endpoints will continue to work, but we strongly recommend you migrate to using the newer endpoints listed\r\n            which do NOT carry the \"DEPRECATED\" flag.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -973,10 +2891,82 @@
         "kind": "operation",
         "method": "put",
         "name": "Review_PutLegacy",
+        "parameters": [
+          {
+            "description": "reviewId (int)",
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "recipeId (int)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/review/{reviewId}",
         "pointer": "#/paths/~1recipe~1{recipeId}~1review~1{reviewId}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "API2.Controllers.WebAPI.ReviewController.ReviewRequestLegacy"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Review"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "HTTP PUT (update) a recipe review. DEPRECATED. Please see recipe/review/{reviewId} PUT for the new endpoint.\r\n            We are moving to a string-based primary key system, no longer integers, for reviews and replies."
+        "summary": "HTTP PUT (update) a recipe review. DEPRECATED. Please see recipe/review/{reviewId} PUT for the new endpoint.\r\n            We are moving to a string-based primary key system, no longer integers, for reviews and replies.",
+        "tags": [
+          "Review"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/recipe/{recipeId}/review/{reviewId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Review_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/recipe/{recipeId}/review/{reviewId}",
+        "pointer": "#/paths/~1recipe~1{recipeId}~1review~1{reviewId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "DEPRECATED! - Deletes a review by recipeId and reviewId. Please use recipe/review/{reviewId} instead.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -984,10 +2974,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Review_GetReviews",
+        "parameters": [
+          {
+            "description": "recipe id (int)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "the page (int), starting with 1",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "results per page (int)",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/reviews",
         "pointer": "#/paths/~1recipe~1{recipeId}~1reviews/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Review[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get paged list of reviews for a recipe. Each review will have at most one FeaturedReply, as well as a ReplyCount."
+        "summary": "Get paged list of reviews for a recipe. Each review will have at most one FeaturedReply, as well as a ReplyCount.",
+        "tags": [
+          "Review"
+        ]
       },
       {
         "deprecated": false,
@@ -995,10 +3018,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Images_GetScanImages",
+        "parameters": [
+          {
+            "description": "the recipe identifier (int)",
+            "in": "path",
+            "name": "recipeId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipe/{recipeId}/scans",
         "pointer": "#/paths/~1recipe~1{recipeId}~1scans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Image[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of RecipeScan images for the recipe. There will be at most 3 per recipe."
+        "summary": "Gets a list of RecipeScan images for the recipe. There will be at most 3 per recipe.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -1006,10 +3048,293 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_RecipeSearch",
+        "parameters": [
+          {
+            "description": "Search anywhere in the recipe for the keyword",
+            "in": "query",
+            "name": "any_kw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search in a specific folder name for the authenticated user",
+            "in": "query",
+            "name": "folder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to a collection ID number",
+            "in": "query",
+            "name": "coll",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "optionally set to either \"myrecipes\", \"try\", \"favorites\",\"added\" to filter to just the authenticated user's recipe set",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search just in the recipe title for the keyword",
+            "in": "query",
+            "name": "title_kw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set the target userid to search their public recipes",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Set the target username to search their public recipes",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "if set to true, limit search results to photos only",
+            "in": "query",
+            "name": "photos",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "if set to true, boost my own recipes in my folders so they show up high in the list (at the expense of other sort orders)",
+            "in": "query",
+            "name": "boostmine",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "integer of the subcategory you'd like to limit searches to (see the /recipe/categories endpoint for available id numbers).",
+            "in": "query",
+            "name": "include_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "like include_cat, set this to an integer to exclude a specific category",
+            "in": "query",
+            "name": "exclude_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "csv indicating up to three top-level categories -- valid values are [appetizers,bread,breakfast,desserts,drinks,maindish,salads,sidedish,soups,marinades,other]",
+            "in": "query",
+            "name": "include_primarycat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "csv indicating integer values for up to 3 top-level categories -- valid values are 1...11 [appetizers,bread,breakfast,desserts,drinks,maindish,salads,sidedish,…",
+            "in": "query",
+            "name": "exclude_primarycat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A CSV representing up to 3 ingredients to include, e.g., tomatoes,corn%20%starch,chicken",
+            "in": "query",
+            "name": "include_ing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A CSV representing up to 3 ingredients to exclude (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "exclude_ing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to a specific cuisine.",
+            "in": "query",
+            "name": "cuisine",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "db",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If set to a given username, it'll force the search to filter to just that username",
+            "in": "query",
+            "name": "userset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to yield of a given number size or greater.",
+            "in": "query",
+            "name": "servingsMin",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "totalMins",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "maxIngredients",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "minIngredients",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "integer; results per page",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "integer: the page number",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to vegetarian (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "vtn",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to vegan (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "vgn",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to contains-cheese (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "chs",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to gluten-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "glf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to nut-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "ntf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to dairy-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "dyf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to seafood-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "sff",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to shellfish-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "slf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to tree-nut free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "tnf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to white-meat free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "wmf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to red-meat free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "rmf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, recipe contains pasta, set to 0 means contains no pasta (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "cps",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "optional.",
+            "in": "query",
+            "name": "champion",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "optional, default is false.",
+            "in": "query",
+            "name": "synonyms",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/recipes",
         "pointer": "#/paths/~1recipes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.RecipeSearchResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for recipes. There are many parameters that you can apply. Starting with the most common, use title_kw to search within a title.\r\n            Use any_kw to search across the entire recipe.\r\n            If you'd like to limit by course, set the parameter \"include_primarycat\" to one of (appetizers,bread,breakfast,dessert,drinks,maindish,salad,sidedish,soup,marinades,other).\r\n            If you'd like to exclude a category, set exclude_cat to one or more (comma-separated) list of those categories to exclude.\r\n            If you'd like to include a category, set include_cat to one or more (comma-separated) of those categories to include.\r\n            To explicitly include an ingredient in your search, set the parameter \"include_ing\" to a CSV of up to three ingredients, e.g.:include_ing=mustard,chicken,beef%20tips\r\n            To explicitly exclude an ingredient in your search, set the parameter \"exclude_ing\" to a CSV of up to three ingredients.\r\n            All searches must contain the paging parameters pg and rpp, which are integers, and represent the page number (1-based) and results per page (rpp).\r\n            So, to get the third page of a result set paged with 25 recipes per page, you'd pass pg=3&amp;rpp=25\r\n            If you'd like to target searches to just a single target user's recipes, set userId=the target userId (number).\r\n            Or, you can set username=theirusername\r\n            vtn;vgn;chs;glf;ntf;dyf;sff;slf;tnf;wmf;rmf;cps\r\n            cuisine\r\n            photos\r\n            filter=added,try,favorites,myrecipes\\r\\n\\r\\n\r\n            folder=FolderNameCaseSensitive\r\n            coll=ID of Collection"
+        "summary": "Search for recipes. There are many parameters that you can apply. Starting with the most common, use title_kw to search within a title.\r\n            Use any_kw to search across the entire recipe.\r\n            If you'd like to limit by course, set the parameter \"include_primarycat\" to one of (appetizers,bread,breakfast,dessert,drinks,maindish,salad,sidedish,soup,marinades,other).\r\n            If you'd like to exclude a category, set exclude_cat to one or more (comma-separated) list of those categories to exclude.\r\n            If you'd like to include a category, set include_cat to one or more (comma-separated) of those categories to include.\r\n            To explicitly include an ingredient in your search, set the parameter \"include_ing\" to a CSV of up to three ingredients, e.g.:include_ing=mustard,chicken,beef%20tips\r\n            To explicitly exclude an ingredient in your search, set the parameter \"exclude_ing\" to a CSV of up to three ingredients.\r\n            All searches must contain the paging parameters pg and rpp, which are integers, and represent the page number (1-based) and results per page (rpp).\r\n            So, to get the third page of a result set paged with 25 recipes per page, you'd pass pg=3&amp;rpp=25\r\n            If you'd like to target searches to just a single target user's recipes, set userId=the target userId (number).\r\n            Or, you can set username=theirusername\r\n            vtn;vgn;chs;glf;ntf;dyf;sff;slf;tnf;wmf;rmf;cps\r\n            cuisine\r\n            photos\r\n            filter=added,try,favorites,myrecipes\\r\\n\\r\\n\r\n            folder=FolderNameCaseSensitive\r\n            coll=ID of Collection",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -1019,8 +3344,18 @@
         "name": "Recipe_GetRandomRecipe",
         "path": "/recipes/random",
         "pointer": "#/paths/~1recipes~1random/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API.Recipe"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a random, home-page-quality Recipe."
+        "summary": "Get a random, home-page-quality Recipe.",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -1028,10 +3363,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_Raves",
+        "parameters": [
+          {
+            "description": "page, starting with 1",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "results per page",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipes/raves",
         "pointer": "#/paths/~1recipes~1raves/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.RecipeInfoReviewTuple2[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the recipe/comment tuples for those recipes with 4 or 5 star ratings"
+        "summary": "Get the recipe/comment tuples for those recipes with 4 or 5 star ratings",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -1039,10 +3400,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_RecentViews",
+        "parameters": [
+          {
+            "description": "Page number starting with 1",
+            "in": "query",
+            "name": "pg",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "results per page",
+            "in": "query",
+            "name": "rpp",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/recipes/recentviews",
         "pointer": "#/paths/~1recipes~1recentviews/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.RecipeInfoDateTuple2[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of recipes that the authenticated user has most recently viewed"
+        "summary": "Get a list of recipes that the authenticated user has most recently viewed",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -1050,10 +3437,279 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_RecipeSearchRandom",
+        "parameters": [
+          {
+            "description": "Search anywhere in the recipe for the keyword",
+            "in": "query",
+            "name": "any_kw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search in a specific folder name for the authenticated user",
+            "in": "query",
+            "name": "folder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to a collection ID number",
+            "in": "query",
+            "name": "coll",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "optionally set to either \"myrecipes\", \"try\", \"favorites\",\"added\" to filter to just the authenticated user's recipe set",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search just in the recipe title for the keyword",
+            "in": "query",
+            "name": "title_kw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set the target userid to search their public recipes",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Set the target username to search their public recipes",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "if set to true, limit search results to photos only",
+            "in": "query",
+            "name": "photos",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "if set to true, boost my own recipes in my folders so they show up high in the list (at the expense of other sort orders)",
+            "in": "query",
+            "name": "boostmine",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "integer of the subcategory you'd like to limit searches to (see the /recipe/categories endpoint for available id numbers).",
+            "in": "query",
+            "name": "include_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "like include_cat, set this to an integer to exclude a specific category",
+            "in": "query",
+            "name": "exclude_cat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "csv indicating up to three top-level categories -- valid values are [appetizers,bread,breakfast,desserts,drinks,maindish,salads,sidedish,soups,marinades,other]",
+            "in": "query",
+            "name": "include_primarycat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "csv indicating integer values for up to 3 top-level categories -- valid values are 1...11 [appetizers,bread,breakfast,desserts,drinks,maindish,salads,sidedish,…",
+            "in": "query",
+            "name": "exclude_primarycat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A CSV representing up to 3 ingredients to include, e.g., tomatoes,corn%20%starch,chicken",
+            "in": "query",
+            "name": "include_ing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A CSV representing up to 3 ingredients to exclude (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "exclude_ing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to a specific cuisine.",
+            "in": "query",
+            "name": "cuisine",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "db",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If set to a given username, it'll force the search to filter to just that username",
+            "in": "query",
+            "name": "userset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit to yield of a given number size or greater.",
+            "in": "query",
+            "name": "servingsMin",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "totalMins",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "maxIngredients",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "minIngredients",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to vegetarian (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "vtn",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to vegan (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "vgn",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to contains-cheese (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "chs",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to gluten-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "glf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to nut-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "ntf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to dairy-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "dyf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to seafood-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "sff",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to shellfish-free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "slf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to tree-nut free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "tnf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to white-meat free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "wmf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, limit to red-meat free (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "rmf",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "when set to 1, recipe contains pasta, set to 0 means contains no pasta (Powersearch-capable plan required)",
+            "in": "query",
+            "name": "cps",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "optional.",
+            "in": "query",
+            "name": "champion",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "optional, default is false.",
+            "in": "query",
+            "name": "synonyms",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/recipes/top25random",
         "pointer": "#/paths/~1recipes~1top25random/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BigOven.Model.API2.RecipeSearchResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for recipes. There are many parameters that you can apply. Starting with the most common, use title_kw to search within a title.\r\n            Use any_kw to search across the entire recipe.\r\n            If you'd like to limit by course, set the parameter \"include_primarycat\" to one of (appetizers,bread,breakfast,dessert,drinks,maindish,salad,sidedish,soup,marinades,other).\r\n            If you'd like to exclude a category, set exclude_cat to one or more (comma-separated) list of those categories to exclude.\r\n            If you'd like to include a category, set include_cat to one or more (comma-separated) of those categories to include.\r\n            To explicitly include an ingredient in your search, set the parameter \"include_ing\" to a CSV of up to three ingredients, e.g.:include_ing=mustard,chicken,beef%20tips\r\n            To explicitly exclude an ingredient in your search, set the parameter \"exclude_ing\" to a CSV of up to three ingredients.\r\n            All searches must contain the paging parameters pg and rpp, which are integers, and represent the page number (1-based) and results per page (rpp).\r\n            So, to get the third page of a result set paged with 25 recipes per page, you'd pass pg=3&amp;rpp=25\r\n            If you'd like to target searches to just a single target user's recipes, set userId=the target userId (number).\r\n            Or, you can set username=theirusername\r\n            vtn;vgn;chs;glf;ntf;dyf;sff;slf;tnf;wmf;rmf;cps\r\n            cuisine\r\n            photos\r\n            filter=added,try,favorites,myrecipes\\r\\n\\r\\n\r\n            folder=FolderNameCaseSensitive\r\n            coll=ID of Collection"
+        "summary": "Search for recipes. There are many parameters that you can apply. Starting with the most common, use title_kw to search within a title.\r\n            Use any_kw to search across the entire recipe.\r\n            If you'd like to limit by course, set the parameter \"include_primarycat\" to one of (appetizers,bread,breakfast,dessert,drinks,maindish,salad,sidedish,soup,marinades,other).\r\n            If you'd like to exclude a category, set exclude_cat to one or more (comma-separated) list of those categories to exclude.\r\n            If you'd like to include a category, set include_cat to one or more (comma-separated) of those categories to include.\r\n            To explicitly include an ingredient in your search, set the parameter \"include_ing\" to a CSV of up to three ingredients, e.g.:include_ing=mustard,chicken,beef%20tips\r\n            To explicitly exclude an ingredient in your search, set the parameter \"exclude_ing\" to a CSV of up to three ingredients.\r\n            All searches must contain the paging parameters pg and rpp, which are integers, and represent the page number (1-based) and results per page (rpp).\r\n            So, to get the third page of a result set paged with 25 recipes per page, you'd pass pg=3&amp;rpp=25\r\n            If you'd like to target searches to just a single target user's recipes, set userId=the target userId (number).\r\n            Or, you can set username=theirusername\r\n            vtn;vgn;chs;glf;ntf;dyf;sff;slf;tnf;wmf;rmf;cps\r\n            cuisine\r\n            photos\r\n            filter=added,try,favorites,myrecipes\\r\\n\\r\\n\r\n            folder=FolderNameCaseSensitive\r\n            coll=ID of Collection",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "deprecated": false,
@@ -1061,290 +3717,379 @@
         "kind": "operation",
         "method": "get",
         "name": "Recipe_GetV2",
+        "parameters": [
+          {
+            "description": "The Recipe ID to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The prefetch.",
+            "in": "query",
+            "name": "prefetch",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/recipes/{id}",
         "pointer": "#/paths/~1recipes~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API2.Models.Recipes.RecipeResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Same as GET recipe but also includes the recipe videos (if any)"
+        "summary": "Same as GET recipe but also includes the recipe videos (if any)",
+        "tags": [
+          "Recipe"
+        ]
       },
       {
         "id": "schema:API2.Controllers.WebAPI.GroceryListController.DepartmentModel",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.GroceryListController.DepartmentModel"
+        "name": "API2.Controllers.WebAPI.GroceryListController.DepartmentModel",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListAddLineRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListAddLineRequest"
+        "name": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListAddLineRequest",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListRecipeRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListRecipeRequest"
+        "name": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListRecipeRequest",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.GroceryListController.PostGroceryListSyncRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListSyncRequest"
+        "name": "API2.Controllers.WebAPI.GroceryListController.PostGroceryListSyncRequest",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.GroceryListController.PostToGroceryListRecipeRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.GroceryListController.PostToGroceryListRecipeRequest"
+        "name": "API2.Controllers.WebAPI.GroceryListController.PostToGroceryListRecipeRequest",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.GroceryListController.UpdateItemByGuidRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.GroceryListController.UpdateItemByGuidRequest"
+        "name": "API2.Controllers.WebAPI.GroceryListController.UpdateItemByGuidRequest",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse"
+        "name": "API2.Controllers.WebAPI.ImagesController.RecipePhotosResponse",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.MeController.EatingStyle",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.MeController.EatingStyle"
+        "name": "API2.Controllers.WebAPI.MeController.EatingStyle",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.MeController.Option",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.MeController.Option"
+        "name": "API2.Controllers.WebAPI.MeController.Option",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.MeController.PreferenceOptions",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.MeController.PreferenceOptions"
+        "name": "API2.Controllers.WebAPI.MeController.PreferenceOptions",
+        "type": "object"
       },
       {
         "id": "schema:API2.Controllers.WebAPI.NoteController.NoteRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.NoteController.NoteRequest"
+        "name": "API2.Controllers.WebAPI.NoteController.NoteRequest",
+        "type": "object"
       },
       {
+        "description": "Reply request parameters",
         "id": "schema:API2.Controllers.WebAPI.ReviewController.PostReplyReq",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.ReviewController.PostReplyReq"
+        "name": "API2.Controllers.WebAPI.ReviewController.PostReplyReq",
+        "type": "object"
       },
       {
+        "description": "Payload for reviews",
         "id": "schema:API2.Controllers.WebAPI.ReviewController.ReviewRequest",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.ReviewController.ReviewRequest"
+        "name": "API2.Controllers.WebAPI.ReviewController.ReviewRequest",
+        "type": "object"
       },
       {
+        "description": "Legacy -- This object here is deprecated.",
         "id": "schema:API2.Controllers.WebAPI.ReviewController.ReviewRequestLegacy",
         "kind": "schema",
-        "name": "API2.Controllers.WebAPI.ReviewController.ReviewRequestLegacy"
+        "name": "API2.Controllers.WebAPI.ReviewController.ReviewRequestLegacy",
+        "type": "object"
       },
       {
         "id": "schema:API2.GroceryListDepartmentResult",
         "kind": "schema",
-        "name": "API2.GroceryListDepartmentResult"
+        "name": "API2.GroceryListDepartmentResult",
+        "type": "object"
       },
       {
         "id": "schema:API2.Models.Accounting",
         "kind": "schema",
-        "name": "API2.Models.Accounting"
+        "name": "API2.Models.Accounting",
+        "type": "object"
       },
       {
+        "description": "An API2 wrapper object for a user",
         "id": "schema:API2.Models.BigOvenUser",
         "kind": "schema",
-        "name": "API2.Models.BigOvenUser"
+        "name": "API2.Models.BigOvenUser",
+        "type": "object"
       },
       {
         "id": "schema:API2.Models.Counts",
         "kind": "schema",
-        "name": "API2.Models.Counts"
+        "name": "API2.Models.Counts",
+        "type": "object"
       },
       {
         "id": "schema:API2.Models.Location",
         "kind": "schema",
-        "name": "API2.Models.Location"
+        "name": "API2.Models.Location",
+        "type": "object"
       },
       {
+        "description": "Personal level info -- email, location, etc.",
         "id": "schema:API2.Models.Personal",
         "kind": "schema",
-        "name": "API2.Models.Personal"
+        "name": "API2.Models.Personal",
+        "type": "object"
       },
       {
         "id": "schema:API2.Models.Preference",
         "kind": "schema",
-        "name": "API2.Models.Preference"
+        "name": "API2.Models.Preference",
+        "type": "object"
       },
       {
         "id": "schema:API2.Models.Profile",
         "kind": "schema",
-        "name": "API2.Models.Profile"
+        "name": "API2.Models.Profile",
+        "type": "object"
       },
       {
         "id": "schema:API2.Models.Recipes.FeedbackDTO",
         "kind": "schema",
-        "name": "API2.Models.Recipes.FeedbackDTO"
+        "name": "API2.Models.Recipes.FeedbackDTO",
+        "type": "object"
       },
       {
+        "description": "DTO used to return a recipe with videos",
         "id": "schema:API2.Models.Recipes.RecipeResponse",
         "kind": "schema",
-        "name": "API2.Models.Recipes.RecipeResponse"
+        "name": "API2.Models.Recipes.RecipeResponse",
+        "type": "object"
       },
       {
+        "description": "DTO used to return the details of a recipe video",
         "id": "schema:API2.Models.Recipes.RecipeVideoResponse",
         "kind": "schema",
-        "name": "API2.Models.Recipes.RecipeVideoResponse"
+        "name": "API2.Models.Recipes.RecipeVideoResponse",
+        "type": "object"
       },
       {
         "id": "schema:API2.Result",
         "kind": "schema",
-        "name": "API2.Result"
+        "name": "API2.Result",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Grocery.GroceryList",
         "kind": "schema",
-        "name": "BigOven.Model.API.Grocery.GroceryList"
+        "name": "BigOven.Model.API.Grocery.GroceryList",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Grocery.Item",
         "kind": "schema",
-        "name": "BigOven.Model.API.Grocery.Item"
+        "name": "BigOven.Model.API.Grocery.Item",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Image",
         "kind": "schema",
-        "name": "BigOven.Model.API.Image"
+        "name": "BigOven.Model.API.Image",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Ingredient",
         "kind": "schema",
-        "name": "BigOven.Model.API.Ingredient"
+        "name": "BigOven.Model.API.Ingredient",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.IngredientInfo",
         "kind": "schema",
-        "name": "BigOven.Model.API.IngredientInfo"
+        "name": "BigOven.Model.API.IngredientInfo",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.NutritionInfo",
         "kind": "schema",
-        "name": "BigOven.Model.API.NutritionInfo"
+        "name": "BigOven.Model.API.NutritionInfo",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Recipe",
         "kind": "schema",
-        "name": "BigOven.Model.API.Recipe"
+        "name": "BigOven.Model.API.Recipe",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.RecipeInfo",
         "kind": "schema",
-        "name": "BigOven.Model.API.RecipeInfo"
+        "name": "BigOven.Model.API.RecipeInfo",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.RecipeNote",
         "kind": "schema",
-        "name": "BigOven.Model.API.RecipeNote"
+        "name": "BigOven.Model.API.RecipeNote",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.RecipeNoteList",
         "kind": "schema",
-        "name": "BigOven.Model.API.RecipeNoteList"
+        "name": "BigOven.Model.API.RecipeNoteList",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Reply",
         "kind": "schema",
-        "name": "BigOven.Model.API.Reply"
+        "name": "BigOven.Model.API.Reply",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.Review",
         "kind": "schema",
-        "name": "BigOven.Model.API.Review"
+        "name": "BigOven.Model.API.Review",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.UserInfo",
         "kind": "schema",
-        "name": "BigOven.Model.API.UserInfo"
+        "name": "BigOven.Model.API.UserInfo",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API.UserInfoTiny",
         "kind": "schema",
-        "name": "BigOven.Model.API.UserInfoTiny"
+        "name": "BigOven.Model.API.UserInfoTiny",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.CollectionInfo",
         "kind": "schema",
-        "name": "BigOven.Model.API2.CollectionInfo"
+        "name": "BigOven.Model.API2.CollectionInfo",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.GroceryList",
         "kind": "schema",
-        "name": "BigOven.Model.API2.GroceryList"
+        "name": "BigOven.Model.API2.GroceryList",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.Photo",
         "kind": "schema",
-        "name": "BigOven.Model.API2.Photo"
+        "name": "BigOven.Model.API2.Photo",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.Recipe",
         "kind": "schema",
-        "name": "BigOven.Model.API2.Recipe"
+        "name": "BigOven.Model.API2.Recipe",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.RecipeInfox",
         "kind": "schema",
-        "name": "BigOven.Model.API2.RecipeInfox"
+        "name": "BigOven.Model.API2.RecipeInfox",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.RecipeNote",
         "kind": "schema",
-        "name": "BigOven.Model.API2.RecipeNote"
+        "name": "BigOven.Model.API2.RecipeNote",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.RecipeSearchResult",
         "kind": "schema",
-        "name": "BigOven.Model.API2.RecipeSearchResult"
+        "name": "BigOven.Model.API2.RecipeSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.API2.UserInfoTinyx",
         "kind": "schema",
-        "name": "BigOven.Model.API2.UserInfoTinyx"
+        "name": "BigOven.Model.API2.UserInfoTinyx",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.InstructionStep",
         "kind": "schema",
-        "name": "BigOven.Model.InstructionStep"
+        "name": "BigOven.Model.InstructionStep",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.RecipeCategory",
         "kind": "schema",
-        "name": "BigOven.Model.RecipeCategory"
+        "name": "BigOven.Model.RecipeCategory",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.RecipeInfoDateTuple2",
         "kind": "schema",
-        "name": "BigOven.Model.RecipeInfoDateTuple2"
+        "name": "BigOven.Model.RecipeInfoDateTuple2",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.RecipeInfoReviewTuple2",
         "kind": "schema",
-        "name": "BigOven.Model.RecipeInfoReviewTuple2"
+        "name": "BigOven.Model.RecipeInfoReviewTuple2",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.RecipeInfoTiny",
         "kind": "schema",
-        "name": "BigOven.Model.RecipeInfoTiny"
+        "name": "BigOven.Model.RecipeInfoTiny",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Model.ShoppingListLine",
         "kind": "schema",
-        "name": "BigOven.Model.ShoppingListLine"
+        "name": "BigOven.Model.ShoppingListLine",
+        "type": "object"
       },
       {
         "id": "schema:BigOven.Result",
         "kind": "schema",
-        "name": "BigOven.Result"
+        "name": "BigOven.Result",
+        "type": "object"
       },
       {
         "id": "schema:System.Object",
         "kind": "schema",
-        "name": "System.Object"
+        "name": "System.Object",
+        "type": "object"
       }
     ]
   },

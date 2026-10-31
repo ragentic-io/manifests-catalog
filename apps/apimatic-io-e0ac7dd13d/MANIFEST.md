@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apimatic.io_img_theme_Convertro
 
 | | |
 | --- | --- |
-| Signed bundle | `173471a417f23f1dab7269a2cd7f0577aa1f2767ddecca001732e0e5d9d7915c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apimatic.io_img_theme_Convertro
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/transform` | ConvertAPI | Transform API Descriptions from/to various formats |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/transform` | ConvertAPI | `format`*, body: object | object |  | Transform API Descriptions from/to various formats |

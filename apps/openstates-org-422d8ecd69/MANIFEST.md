@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_openstates.org_static_images_fa
 
 | | |
 | --- | --- |
-| Signed bundle | `876b7e1f07f646b01339bd918eced358e791522ad0e27c187c268db4fc5e8cd9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,17 +34,19 @@ logo: "https://api.apis.guru/v2/cache/logo/https_openstates.org_static_images_fa
 
 55 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/bills` | bills_search_bills_get | Bills Search |
-| GET | `/bills/ocd-bill/{openstates_bill_id}` | bill_detail_by_id_bills_ocd_bill__openstates_bill_id__get | Bill Detail By Id |
-| GET | `/bills/{jurisdiction}/{session}/{bill_id}` | bill_detail_bills__jurisdiction___session___bill_id__get | Bill Detail |
-| GET | `/committees` | committee_list_committees_get | Committee List |
-| GET | `/committees/{committee_id}` | committee_detail_committees__committee_id__get | Committee Detail |
-| GET | `/events` | event_list_events_get | Event List |
-| GET | `/events/{event_id}` | event_detail_events__event_id__get | Event Detail |
-| GET | `/jurisdictions` | jurisdiction_list_jurisdictions_get | Jurisdiction List |
-| GET | `/jurisdictions/{jurisdiction_id}` | jurisdiction_detail_jurisdictions__jurisdiction_id__get | Jurisdiction Detail |
-| GET | `/metrics` | metrics_metrics_get | Metrics |
-| GET | `/people` | people_search_people_get | People Search |
-| GET | `/people.geo` | people_geo_people_geo_get | People Geo |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/bills` | bills_search_bills_get | `jurisdiction`, `session`, `chamber`, `identifier`, `classification`, `subject`, `updated_since`, `created_since`, `action_since`, `sort`, `sponsor`, `sponsor_classification`, `q`, `include`, `page`, `per_page`, `apikey`, `x-api-key` | BillList | yes | Bills Search |
+| GET | `/bills/ocd-bill/{openstates_bill_id}` | bill_detail_by_id_bills_ocd_bill__openstates_bill_id__get | `openstates_bill_id`*, `include`, `apikey`, `x-api-key` | Bill | yes | Bill Detail By Id |
+| GET | `/bills/{jurisdiction}/{session}/{bill_id}` | bill_detail_bills__jurisdiction___session___bill_id__get | `jurisdiction`*, `session`*, `bill_id`*, `include`, `apikey`, `x-api-key` | Bill | yes | Bill Detail |
+| GET | `/committees` | committee_list_committees_get | `jurisdiction`, `classification`, `parent`, `chamber`, `include`, `apikey`, `page`, `per_page`, `x-api-key` | CommitteeList | yes | Committee List |
+| GET | `/committees/{committee_id}` | committee_detail_committees__committee_id__get | `committee_id`*, `include`, `apikey`, `x-api-key` | Committee | yes | Committee Detail |
+| GET | `/events` | event_list_events_get | `jurisdiction`, `deleted`, `before`, `after`, `require_bills`, `include`, `apikey`, `page`, `per_page`, `x-api-key` | EventList | yes | Event List |
+| GET | `/events/{event_id}` | event_detail_events__event_id__get | `event_id`*, `include`, `apikey`, `x-api-key` | Event | yes | Event Detail |
+| GET | `/jurisdictions` | jurisdiction_list_jurisdictions_get | `classification`, `include`, `page`, `per_page`, `apikey`, `x-api-key` | JurisdictionList | yes | Jurisdiction List |
+| GET | `/jurisdictions/{jurisdiction_id}` | jurisdiction_detail_jurisdictions__jurisdiction_id__get | `jurisdiction_id`*, `include`, `apikey`, `x-api-key` | Jurisdiction | yes | Jurisdiction Detail |
+| GET | `/metrics` | metrics_metrics_get | — | — | yes | Metrics |
+| GET | `/people` | people_search_people_get | `jurisdiction`, `name`, `id`, `org_classification`, `district`, `include`, `page`, `per_page`, `apikey`, `x-api-key` | PersonList | yes | People Search |
+| GET | `/people.geo` | people_geo_people_geo_get | `lat`*, `lng`*, `include`, `apikey`, `x-api-key` | PersonList | yes | People Geo |

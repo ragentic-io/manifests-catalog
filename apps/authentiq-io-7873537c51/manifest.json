@@ -22,17 +22,17 @@
       {
         "from": "authentiq-io-7873537c51",
         "kind": "EXPOSES",
-        "to": "operation:delete:/client/{client_id}"
-      },
-      {
-        "from": "authentiq-io-7873537c51",
-        "kind": "EXPOSES",
         "to": "operation:get:/client/{client_id}"
       },
       {
         "from": "authentiq-io-7873537c51",
         "kind": "EXPOSES",
         "to": "operation:put:/client/{client_id}"
+      },
+      {
+        "from": "authentiq-io-7873537c51",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/client/{client_id}"
       },
       {
         "from": "authentiq-io-7873537c51",
@@ -48,6 +48,46 @@
         "from": "authentiq-io-7873537c51",
         "kind": "EXPOSES",
         "to": "operation:get:/{client_id}/iframe"
+      },
+      {
+        "from": "operation:get:/client",
+        "kind": "RETURNS",
+        "to": "schema:Client"
+      },
+      {
+        "from": "operation:post:/client",
+        "kind": "ACCEPTS",
+        "to": "schema:Client"
+      },
+      {
+        "from": "operation:get:/client/{client_id}",
+        "kind": "RETURNS",
+        "to": "schema:Client"
+      },
+      {
+        "from": "operation:put:/client/{client_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Client"
+      },
+      {
+        "from": "operation:put:/client/{client_id}",
+        "kind": "RETURNS",
+        "to": "schema:Client"
+      },
+      {
+        "from": "operation:post:/token",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:get:/userinfo",
+        "kind": "RETURNS",
+        "to": "schema:UserInfo"
+      },
+      {
+        "from": "schema:UserInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
       }
     ],
     "nodes": [
@@ -57,23 +97,130 @@
       },
       {
         "deprecated": false,
+        "description": "Start a session with Authentiq Connect to authenticate a user.",
         "id": "operation:get:/authorize",
         "kind": "operation",
         "method": "get",
         "name": "authorize",
+        "parameters": [
+          {
+            "description": "A client ID obtained from the [Dashboard](https://dashboard.authentiq.com/).",
+            "in": "query",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The OIDC response type to use for this authentication flow.",
+            "in": "query",
+            "name": "response_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The space-separated identity claims to request from the end-user.",
+            "in": "query",
+            "name": "scope",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location to redirect to after (un)successful authentication.",
+            "in": "query",
+            "name": "redirect_uri",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An opaque string that will be passed back to the redirect URL and therefore can be used to communicate client side state and prevent CSRF attacks.",
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether to append parameters to the redirect URL in the query string (`query`) or as fragments (`fragment`).",
+            "in": "query",
+            "name": "response_mode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An nonce provided by the client (and opaque to Authentiq Connect) that will be included in any ID Token generated for this session.",
+            "in": "query",
+            "name": "nonce",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "page",
+            "description": "The authentication display mode, which can be one of `page`, `popup` or `modal`.",
+            "in": "query",
+            "name": "display",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "login",
+            "description": "Space-delimited, case sensitive list of ASCII string values that specifies whether the Authorization Server prompts the End-User for reauthentication and conse…",
+            "in": "query",
+            "name": "prompt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Specifies the allowable elapsed time in seconds since the last time the end-user was actively authenticated.",
+            "in": "query",
+            "name": "max_age",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specifies the preferred language to use on the authorization page, as a space-separated list of BCP47 language tags.",
+            "in": "query",
+            "name": "ui_locales",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authorize",
         "pointer": "#/paths/~1authorize/get",
+        "responses": [
+          {
+            "status": "302"
+          },
+          {
+            "status": "303"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Authenticate a user"
+        "summary": "Authenticate a user",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of clients.",
         "id": "operation:get:/client",
         "kind": "operation",
         "method": "get",
         "name": "client",
         "path": "/client",
         "pointer": "#/paths/~1client/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Client[]"
+          },
+          {
+            "status": "default",
+            "type": "OAuth2Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "client_registration_token": []
@@ -85,16 +232,38 @@
             "oauth_implicit": []
           }
         ],
-        "summary": "List clients"
+        "summary": "List clients",
+        "tags": [
+          "Client Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register a new client with this Authentiq Connect provider.",
         "id": "operation:post:/client",
         "kind": "operation",
         "method": "post",
         "name": "createClient",
         "path": "/client",
         "pointer": "#/paths/~1client/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Client"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "default",
+            "type": "ProblemDetail"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "client_registration_token": []
@@ -106,37 +275,40 @@
             "oauth_implicit": []
           }
         ],
-        "summary": "Register a client"
+        "summary": "Register a client",
+        "tags": [
+          "Client Management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/client/{client_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "clientClient_id",
-        "path": "/client/{client_id}",
-        "pointer": "#/paths/~1client~1{client_id}/delete",
-        "security": [
-          {
-            "client_registration_token": []
-          },
-          {
-            "oauth_code": []
-          },
-          {
-            "oauth_implicit": []
-          }
-        ],
-        "summary": "Delete a client"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve the configuration of a previously registered client.",
         "id": "operation:get:/client/{client_id}",
         "kind": "operation",
         "method": "get",
         "name": "getClient",
+        "parameters": [
+          {
+            "description": "Client identifier",
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/client/{client_id}",
         "pointer": "#/paths/~1client~1{client_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Client"
+          },
+          {
+            "status": "default",
+            "type": "OAuth2Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "client_registration_token": []
@@ -148,16 +320,48 @@
             "oauth_implicit": []
           }
         ],
-        "summary": "View a client"
+        "summary": "View a client",
+        "tags": [
+          "Client Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the configuration of a previously registered client.",
         "id": "operation:put:/client/{client_id}",
         "kind": "operation",
         "method": "put",
         "name": "updateClient",
+        "parameters": [
+          {
+            "description": "Client identifier",
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/client/{client_id}",
         "pointer": "#/paths/~1client~1{client_id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Client"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Client"
+          },
+          {
+            "status": "default",
+            "type": "ProblemDetail"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "client_registration_token": []
@@ -169,27 +373,125 @@
             "oauth_implicit": []
           }
         ],
-        "summary": "Update a client"
+        "summary": "Update a client",
+        "tags": [
+          "Client Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a previously registered client.",
+        "id": "operation:delete:/client/{client_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "clientClient_id",
+        "parameters": [
+          {
+            "description": "Client identifier",
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/client/{client_id}",
+        "pointer": "#/paths/~1client~1{client_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "ProblemDetail"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "client_registration_token": []
+          },
+          {
+            "oauth_code": []
+          },
+          {
+            "oauth_implicit": []
+          }
+        ],
+        "summary": "Delete a client",
+        "tags": [
+          "Client Management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Exchange en authorization code for an ID Token or Access Token.",
         "id": "operation:post:/token",
         "kind": "operation",
         "method": "post",
         "name": "token",
+        "parameters": [
+          {
+            "description": "HTTP Basic authorization header.",
+            "in": "header",
+            "name": "Authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/token",
         "pointer": "#/paths/~1token/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Token"
+          },
+          {
+            "status": "400",
+            "type": "OAuth2Error"
+          },
+          {
+            "status": "401",
+            "type": "OAuth2Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Obtain an ID Token"
+        "summary": "Obtain an ID Token",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to retrieve a user's profile in case you are unable to parse an ID Token or you've not already obtained enough details from the ID Token via…",
         "id": "operation:get:/userinfo",
         "kind": "operation",
         "method": "get",
         "name": "userInfo",
         "path": "/userinfo",
         "pointer": "#/paths/~1userinfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserInfo"
+          },
+          {
+            "status": "401",
+            "type": "OAuth2Error"
+          },
+          {
+            "status": "default",
+            "type": "OAuth2Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_code": [
@@ -214,53 +516,89 @@
             ]
           }
         ],
-        "summary": "Retrieve a user profile"
+        "summary": "Retrieve a user profile",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "An OpenID Connect Session Management iframe to facilitate e.g.",
         "id": "operation:get:/{client_id}/iframe",
         "kind": "operation",
         "method": "get",
         "name": "authorizeIframe",
+        "parameters": [
+          {
+            "description": "Client identifier",
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{client_id}/iframe",
         "pointer": "#/paths/~1{client_id}~1iframe/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Include a session iframe"
+        "summary": "Include a session iframe",
+        "tags": [
+          "Session Management"
+        ]
       },
       {
+        "description": "OIDC Address structure",
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
+        "description": "Client object",
         "id": "schema:Client",
         "kind": "schema",
-        "name": "Client"
+        "name": "Client",
+        "type": "object"
       },
       {
+        "description": "Error Response defined as in Section 5.2 of OAuth 2.0 [RFC6749].",
         "id": "schema:OAuth2Error",
         "kind": "schema",
-        "name": "OAuth2Error"
+        "name": "OAuth2Error",
+        "type": "object"
       },
       {
+        "description": "HTTP Problem Detail",
         "id": "schema:ProblemDetail",
         "kind": "schema",
-        "name": "ProblemDetail"
+        "name": "ProblemDetail",
+        "type": "object"
       },
       {
+        "description": "Session object",
         "id": "schema:Session",
         "kind": "schema",
-        "name": "Session"
+        "name": "Session",
+        "type": "object"
       },
       {
+        "description": "Successful token response",
         "id": "schema:Token",
         "kind": "schema",
-        "name": "Token"
+        "name": "Token",
+        "type": "object"
       },
       {
+        "description": "OIDC UserInfo structure",
         "id": "schema:UserInfo",
         "kind": "schema",
-        "name": "UserInfo"
+        "name": "UserInfo",
+        "type": "object"
       }
     ]
   },

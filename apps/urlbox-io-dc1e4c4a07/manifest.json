@@ -8,6 +8,16 @@
         "from": "urlbox-io-dc1e4c4a07",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/render/sync"
+      },
+      {
+        "from": "operation:post:/v1/render/sync",
+        "kind": "ACCEPTS",
+        "to": "schema:RenderRequest"
+      },
+      {
+        "from": "operation:post:/v1/render/sync",
+        "kind": "RETURNS",
+        "to": "schema:RenderResponse"
       }
     ],
     "nodes": [
@@ -23,6 +33,36 @@
         "name": "renderSync",
         "path": "/v1/render/sync",
         "pointer": "#/paths/~1v1~1render~1sync/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RenderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "RenderResponse"
+          },
+          {
+            "status": "307",
+            "type": "RedirectResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "SecretKey": []
@@ -33,12 +73,14 @@
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:RedirectResponse",
         "kind": "schema",
-        "name": "RedirectResponse"
+        "name": "RedirectResponse",
+        "type": "object"
       },
       {
         "id": "schema:RenderRequest",
@@ -48,7 +90,8 @@
       {
         "id": "schema:RenderResponse",
         "kind": "schema",
-        "name": "RenderResponse"
+        "name": "RenderResponse",
+        "type": "object"
       }
     ]
   },

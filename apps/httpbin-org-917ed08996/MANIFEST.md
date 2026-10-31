@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `92e6b159a177736b8ce3d7011b5b13e873af0095989ddaf1719ba377ebe31d84` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,83 +32,85 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (78)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/absolute-redirect/{n}` | get /absolute-redirect/{n} | Absolutely 302 Redirects n times. |
-| DELETE | `/anything` | delete /anything | Returns anything passed in request data. |
-| GET | `/anything` | get /anything | Returns anything passed in request data. |
-| PATCH | `/anything` | patch /anything | Returns anything passed in request data. |
-| POST | `/anything` | post /anything | Returns anything passed in request data. |
-| PUT | `/anything` | put /anything | Returns anything passed in request data. |
-| TRACE | `/anything` | trace /anything | Returns anything passed in request data. |
-| DELETE | `/anything/{anything}` | delete /anything/{anything} | Returns anything passed in request data. |
-| GET | `/anything/{anything}` | get /anything/{anything} | Returns anything passed in request data. |
-| PATCH | `/anything/{anything}` | patch /anything/{anything} | Returns anything passed in request data. |
-| POST | `/anything/{anything}` | post /anything/{anything} | Returns anything passed in request data. |
-| PUT | `/anything/{anything}` | put /anything/{anything} | Returns anything passed in request data. |
-| TRACE | `/anything/{anything}` | trace /anything/{anything} | Returns anything passed in request data. |
-| GET | `/base64/{value}` | get /base64/{value} | Decodes base64url-encoded string. |
-| GET | `/basic-auth/{user}/{passwd}` | get /basic-auth/{user}/{passwd} | Prompts the user for authorization using HTTP Basic Auth. |
-| GET | `/bearer` | get /bearer | Prompts the user for authorization using bearer authentication. |
-| GET | `/brotli` | get /brotli | Returns Brotli-encoded data. |
-| GET | `/bytes/{n}` | get /bytes/{n} | Returns n random bytes generated with given seed |
-| GET | `/cache` | get /cache | Returns a 304 if an If-Modified-Since header or If-None-Match is present. Returns the same as a GET otherwise. |
-| GET | `/cache/{value}` | get /cache/{value} | Sets a Cache-Control header for n seconds. |
-| GET | `/cookies` | get /cookies | Returns cookie data. |
-| GET | `/cookies/delete` | get /cookies/delete | Deletes cookie(s) as provided by the query string and redirects to cookie list. |
-| GET | `/cookies/set` | get /cookies/set | Sets cookie(s) as provided by the query string and redirects to cookie list. |
-| GET | `/cookies/set/{name}/{value}` | get /cookies/set/{name}/{value} | Sets a cookie and redirects to cookie list. |
-| GET | `/deflate` | get /deflate | Returns Deflate-encoded data. |
-| DELETE | `/delay/{delay}` | delete /delay/{delay} | Returns a delayed response (max of 10 seconds). |
-| GET | `/delay/{delay}` | get /delay/{delay} | Returns a delayed response (max of 10 seconds). |
-| PATCH | `/delay/{delay}` | patch /delay/{delay} | Returns a delayed response (max of 10 seconds). |
-| POST | `/delay/{delay}` | post /delay/{delay} | Returns a delayed response (max of 10 seconds). |
-| PUT | `/delay/{delay}` | put /delay/{delay} | Returns a delayed response (max of 10 seconds). |
-| TRACE | `/delay/{delay}` | trace /delay/{delay} | Returns a delayed response (max of 10 seconds). |
-| DELETE | `/delete` | delete /delete | The request's DELETE parameters. |
-| GET | `/deny` | get /deny | Returns page denied by robots.txt rules. |
-| GET | `/digest-auth/{qop}/{user}/{passwd}` | get /digest-auth/{qop}/{user}/{passwd} | Prompts the user for authorization using Digest Auth. |
-| GET | `/digest-auth/{qop}/{user}/{passwd}/{algorithm}` | get /digest-auth/{qop}/{user}/{passwd}/{algorithm} | Prompts the user for authorization using Digest Auth + Algorithm. |
-| GET | `/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}` | get /digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after} | Prompts the user for authorization using Digest Auth + Algorithm. |
-| GET | `/drip` | get /drip | Drips data over a duration after an optional initial delay. |
-| GET | `/encoding/utf8` | get /encoding/utf8 | Returns a UTF-8 encoded body. |
-| GET | `/etag/{etag}` | get /etag/{etag} | Assumes the resource has the given etag and responds to If-None-Match and If-Match headers appropriately. |
-| GET | `/get` | get /get | The request's query parameters. |
-| GET | `/gzip` | get /gzip | Returns GZip-encoded data. |
-| GET | `/headers` | get /headers | Return the incoming request's HTTP headers. |
-| GET | `/hidden-basic-auth/{user}/{passwd}` | get /hidden-basic-auth/{user}/{passwd} | Prompts the user for authorization using HTTP Basic Auth. |
-| GET | `/html` | get /html | Returns a simple HTML document. |
-| GET | `/image` | get /image | Returns a simple image of the type suggest by the Accept header. |
-| GET | `/image/jpeg` | get /image/jpeg | Returns a simple JPEG image. |
-| GET | `/image/png` | get /image/png | Returns a simple PNG image. |
-| GET | `/image/svg` | get /image/svg | Returns a simple SVG image. |
-| GET | `/image/webp` | get /image/webp | Returns a simple WEBP image. |
-| GET | `/ip` | get /ip | Returns the requester's IP Address. |
-| GET | `/json` | get /json | Returns a simple JSON document. |
-| GET | `/links/{n}/{offset}` | get /links/{n}/{offset} | Generate a page containing n links to other pages which do the same. |
-| PATCH | `/patch` | patch /patch | The request's PATCH parameters. |
-| POST | `/post` | post /post | The request's POST parameters. |
-| PUT | `/put` | put /put | The request's PUT parameters. |
-| GET | `/range/{numbytes}` | get /range/{numbytes} | Streams n random bytes generated with given seed, at given chunk size per packet. |
-| DELETE | `/redirect-to` | delete /redirect-to | 302/3XX Redirects to the given URL. |
-| GET | `/redirect-to` | get /redirect-to | 302/3XX Redirects to the given URL. |
-| PATCH | `/redirect-to` | patch /redirect-to | 302/3XX Redirects to the given URL. |
-| POST | `/redirect-to` | post /redirect-to | 302/3XX Redirects to the given URL. |
-| PUT | `/redirect-to` | put /redirect-to | 302/3XX Redirects to the given URL. |
-| TRACE | `/redirect-to` | trace /redirect-to | 302/3XX Redirects to the given URL. |
-| GET | `/redirect/{n}` | get /redirect/{n} | 302 Redirects n times. |
-| GET | `/relative-redirect/{n}` | get /relative-redirect/{n} | Relatively 302 Redirects n times. |
-| GET | `/response-headers` | get /response-headers | Returns a set of response headers from the query string. |
-| POST | `/response-headers` | post /response-headers | Returns a set of response headers from the query string. |
-| GET | `/robots.txt` | get /robots.txt | Returns some robots.txt rules. |
-| DELETE | `/status/{codes}` | delete /status/{codes} | Return status code or random status code if more than one are given |
-| GET | `/status/{codes}` | get /status/{codes} | Return status code or random status code if more than one are given |
-| PATCH | `/status/{codes}` | patch /status/{codes} | Return status code or random status code if more than one are given |
-| POST | `/status/{codes}` | post /status/{codes} | Return status code or random status code if more than one are given |
-| PUT | `/status/{codes}` | put /status/{codes} | Return status code or random status code if more than one are given |
-| TRACE | `/status/{codes}` | trace /status/{codes} | Return status code or random status code if more than one are given |
-| GET | `/stream-bytes/{n}` | get /stream-bytes/{n} | Streams n random bytes generated with given seed, at given chunk size per packet. |
-| GET | `/stream/{n}` | get /stream/{n} | Stream n JSON responses |
-| GET | `/user-agent` | get /user-agent | Return the incoming requests's User-Agent header. |
-| GET | `/uuid` | get /uuid | Return a UUID4. |
-| GET | `/xml` | get /xml | Returns a simple XML document. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/absolute-redirect/{n}` | get /absolute-redirect/{n} | `n`* | — | yes | Absolutely 302 Redirects n times. |
+| GET | `/anything` | get /anything | — | — | yes | Returns anything passed in request data. |
+| PUT | `/anything` | put /anything | — | — |  | Returns anything passed in request data. |
+| POST | `/anything` | post /anything | — | — |  | Returns anything passed in request data. |
+| DELETE | `/anything` | delete /anything | — | — |  | Returns anything passed in request data. |
+| PATCH | `/anything` | patch /anything | — | — |  | Returns anything passed in request data. |
+| TRACE | `/anything` | trace /anything | — | — |  | Returns anything passed in request data. |
+| GET | `/anything/{anything}` | get /anything/{anything} | `anything`* | — | yes | Returns anything passed in request data. |
+| PUT | `/anything/{anything}` | put /anything/{anything} | `anything`* | — |  | Returns anything passed in request data. |
+| POST | `/anything/{anything}` | post /anything/{anything} | `anything`* | — |  | Returns anything passed in request data. |
+| DELETE | `/anything/{anything}` | delete /anything/{anything} | `anything`* | — |  | Returns anything passed in request data. |
+| PATCH | `/anything/{anything}` | patch /anything/{anything} | `anything`* | — |  | Returns anything passed in request data. |
+| TRACE | `/anything/{anything}` | trace /anything/{anything} | `anything`* | — |  | Returns anything passed in request data. |
+| GET | `/base64/{value}` | get /base64/{value} | `value`* | — | yes | Decodes base64url-encoded string. |
+| GET | `/basic-auth/{user}/{passwd}` | get /basic-auth/{user}/{passwd} | `user`*, `passwd`* | — | yes | Prompts the user for authorization using HTTP Basic Auth. |
+| GET | `/bearer` | get /bearer | `Authorization` | — | yes | Prompts the user for authorization using bearer authentication. |
+| GET | `/brotli` | get /brotli | — | — | yes | Returns Brotli-encoded data. |
+| GET | `/bytes/{n}` | get /bytes/{n} | `n`* | — | yes | Returns n random bytes generated with given seed |
+| GET | `/cache` | get /cache | `If-Modified-Since`, `If-None-Match` | — | yes | Returns a 304 if an If-Modified-Since header or If-None-Match is present. Returns the same as a GET otherwise. |
+| GET | `/cache/{value}` | get /cache/{value} | `value`* | — | yes | Sets a Cache-Control header for n seconds. |
+| GET | `/cookies` | get /cookies | — | — | yes | Returns cookie data. |
+| GET | `/cookies/delete` | get /cookies/delete | `freeform` | — | yes | Deletes cookie(s) as provided by the query string and redirects to cookie list. |
+| GET | `/cookies/set` | get /cookies/set | `freeform` | — | yes | Sets cookie(s) as provided by the query string and redirects to cookie list. |
+| GET | `/cookies/set/{name}/{value}` | get /cookies/set/{name}/{value} | `name`*, `value`* | — | yes | Sets a cookie and redirects to cookie list. |
+| GET | `/deflate` | get /deflate | — | — | yes | Returns Deflate-encoded data. |
+| GET | `/delay/{delay}` | get /delay/{delay} | `delay`* | — | yes | Returns a delayed response (max of 10 seconds). |
+| PUT | `/delay/{delay}` | put /delay/{delay} | `delay`* | — |  | Returns a delayed response (max of 10 seconds). |
+| POST | `/delay/{delay}` | post /delay/{delay} | `delay`* | — |  | Returns a delayed response (max of 10 seconds). |
+| DELETE | `/delay/{delay}` | delete /delay/{delay} | `delay`* | — |  | Returns a delayed response (max of 10 seconds). |
+| PATCH | `/delay/{delay}` | patch /delay/{delay} | `delay`* | — |  | Returns a delayed response (max of 10 seconds). |
+| TRACE | `/delay/{delay}` | trace /delay/{delay} | `delay`* | — |  | Returns a delayed response (max of 10 seconds). |
+| DELETE | `/delete` | delete /delete | — | — |  | The request's DELETE parameters. |
+| GET | `/deny` | get /deny | — | — | yes | Returns page denied by robots.txt rules. |
+| GET | `/digest-auth/{qop}/{user}/{passwd}` | get /digest-auth/{qop}/{user}/{passwd} | `qop`*, `user`*, `passwd`* | — | yes | Prompts the user for authorization using Digest Auth. |
+| GET | `/digest-auth/{qop}/{user}/{passwd}/{algorithm}` | get /digest-auth/{qop}/{user}/{passwd}/{algorithm} | `qop`*, `user`*, `passwd`*, `algorithm`* | — | yes | Prompts the user for authorization using Digest Auth + Algorithm. |
+| GET | `/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}` | get /digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after} | `qop`*, `user`*, `passwd`*, `algorithm`*, `stale_after`* | — | yes | Prompts the user for authorization using Digest Auth + Algorithm. |
+| GET | `/drip` | get /drip | `duration`, `numbytes`, `code`, `delay` | — | yes | Drips data over a duration after an optional initial delay. |
+| GET | `/encoding/utf8` | get /encoding/utf8 | — | — | yes | Returns a UTF-8 encoded body. |
+| GET | `/etag/{etag}` | get /etag/{etag} | `If-None-Match`, `If-Match`, `etag`* | — | yes | Assumes the resource has the given etag and responds to If-None-Match and If-Match headers appropriately. |
+| GET | `/get` | get /get | — | — | yes | The request's query parameters. |
+| GET | `/gzip` | get /gzip | — | — | yes | Returns GZip-encoded data. |
+| GET | `/headers` | get /headers | — | — | yes | Return the incoming request's HTTP headers. |
+| GET | `/hidden-basic-auth/{user}/{passwd}` | get /hidden-basic-auth/{user}/{passwd} | `user`*, `passwd`* | — | yes | Prompts the user for authorization using HTTP Basic Auth. |
+| GET | `/html` | get /html | — | — | yes | Returns a simple HTML document. |
+| GET | `/image` | get /image | — | — | yes | Returns a simple image of the type suggest by the Accept header. |
+| GET | `/image/jpeg` | get /image/jpeg | — | — | yes | Returns a simple JPEG image. |
+| GET | `/image/png` | get /image/png | — | — | yes | Returns a simple PNG image. |
+| GET | `/image/svg` | get /image/svg | — | — | yes | Returns a simple SVG image. |
+| GET | `/image/webp` | get /image/webp | — | — | yes | Returns a simple WEBP image. |
+| GET | `/ip` | get /ip | — | — | yes | Returns the requester's IP Address. |
+| GET | `/json` | get /json | — | — | yes | Returns a simple JSON document. |
+| GET | `/links/{n}/{offset}` | get /links/{n}/{offset} | `n`*, `offset`* | — | yes | Generate a page containing n links to other pages which do the same. |
+| PATCH | `/patch` | patch /patch | — | — |  | The request's PATCH parameters. |
+| POST | `/post` | post /post | — | — |  | The request's POST parameters. |
+| PUT | `/put` | put /put | — | — |  | The request's PUT parameters. |
+| GET | `/range/{numbytes}` | get /range/{numbytes} | `numbytes`* | — | yes | Streams n random bytes generated with given seed, at given chunk size per packet. |
+| GET | `/redirect-to` | get /redirect-to | `url`*, `status_code` | — | yes | 302/3XX Redirects to the given URL. |
+| PUT | `/redirect-to` | put /redirect-to | body*: object | — |  | 302/3XX Redirects to the given URL. |
+| POST | `/redirect-to` | post /redirect-to | body*: object | — |  | 302/3XX Redirects to the given URL. |
+| DELETE | `/redirect-to` | delete /redirect-to | — | — |  | 302/3XX Redirects to the given URL. |
+| PATCH | `/redirect-to` | patch /redirect-to | — | — |  | 302/3XX Redirects to the given URL. |
+| TRACE | `/redirect-to` | trace /redirect-to | — | — |  | 302/3XX Redirects to the given URL. |
+| GET | `/redirect/{n}` | get /redirect/{n} | `n`* | — | yes | 302 Redirects n times. |
+| GET | `/relative-redirect/{n}` | get /relative-redirect/{n} | `n`* | — | yes | Relatively 302 Redirects n times. |
+| GET | `/response-headers` | get /response-headers | `freeform` | — | yes | Returns a set of response headers from the query string. |
+| POST | `/response-headers` | post /response-headers | `freeform` | — |  | Returns a set of response headers from the query string. |
+| GET | `/robots.txt` | get /robots.txt | — | — | yes | Returns some robots.txt rules. |
+| GET | `/status/{codes}` | get /status/{codes} | `codes`* | — | yes | Return status code or random status code if more than one are given |
+| PUT | `/status/{codes}` | put /status/{codes} | `codes`* | — |  | Return status code or random status code if more than one are given |
+| POST | `/status/{codes}` | post /status/{codes} | `codes`* | — |  | Return status code or random status code if more than one are given |
+| DELETE | `/status/{codes}` | delete /status/{codes} | `codes`* | — |  | Return status code or random status code if more than one are given |
+| PATCH | `/status/{codes}` | patch /status/{codes} | `codes`* | — |  | Return status code or random status code if more than one are given |
+| TRACE | `/status/{codes}` | trace /status/{codes} | `codes`* | — |  | Return status code or random status code if more than one are given |
+| GET | `/stream-bytes/{n}` | get /stream-bytes/{n} | `n`* | — | yes | Streams n random bytes generated with given seed, at given chunk size per packet. |
+| GET | `/stream/{n}` | get /stream/{n} | `n`* | — | yes | Stream n JSON responses |
+| GET | `/user-agent` | get /user-agent | — | — | yes | Return the incoming requests's User-Agent header. |
+| GET | `/uuid` | get /uuid | — | — | yes | Return a UUID4. |
+| GET | `/xml` | get /xml | — | — | yes | Returns a simple XML document. |

@@ -13,6 +13,16 @@
         "from": "shop-app-8b1cb6422b",
         "kind": "EXPOSES",
         "to": "operation:get:/openai/search"
+      },
+      {
+        "from": "operation:get:/openai/details",
+        "kind": "RETURNS",
+        "to": "schema:searchResponse"
+      },
+      {
+        "from": "operation:get:/openai/search",
+        "kind": "RETURNS",
+        "to": "schema:searchResponse"
       }
     ],
     "nodes": [
@@ -26,8 +36,27 @@
         "kind": "operation",
         "method": "get",
         "name": "details",
+        "parameters": [
+          {
+            "description": "Comma separated list of product ids",
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/openai/details",
         "pointer": "#/paths/~1openai~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "searchResponse"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Return more details about a list of products."
       },
@@ -37,15 +66,63 @@
         "kind": "operation",
         "method": "get",
         "name": "search",
+        "parameters": [
+          {
+            "description": "Query string to search for items.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The minimum price to filter by.",
+            "in": "query",
+            "name": "price_min",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The maximum price to filter by.",
+            "in": "query",
+            "name": "price_max",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "A product id that you want to find similar products for.",
+            "in": "query",
+            "name": "similar_to_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "How many results to return.",
+            "in": "query",
+            "name": "num_results",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/openai/search",
         "pointer": "#/paths/~1openai~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "searchResponse"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Search for products"
       },
       {
         "id": "schema:searchResponse",
         "kind": "schema",
-        "name": "searchResponse"
+        "name": "searchResponse",
+        "type": "object"
       }
     ]
   },

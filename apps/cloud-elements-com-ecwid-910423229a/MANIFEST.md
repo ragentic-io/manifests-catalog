@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud-elements.com_wp-content_u
 
 | | |
 | --- | --- |
-| Signed bundle | `bc9ecdfcdf0b0181084303d2dadd895f28547f51b35c1456745652bf26bed14e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,47 +34,49 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cloud-elements.com_wp-content_u
 
 72 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/bulk/download` | createBulkDownload | Create a new bulk download job (asynchronous) |
-| GET | `/bulk/jobs` | getBulkJobs | Fetch all the bulk jobs for an instance |
-| POST | `/bulk/query` | createBulkQuery | Create an asynchronous bulk query job. |
-| PUT | `/bulk/{id}/cancel` | replaceBulkCancel | Cancel an asynchronous bulk query job. |
-| GET | `/bulk/{id}/errors` | getBulkErrors | Retrieve the errors of a bulk job. |
-| GET | `/bulk/{id}/status` | getBulkStatus | Retrieve the status of a bulk job. |
-| GET | `/bulk/{id}/{objectName}` | getBulkByObjectName | Retrieve the results of an asynchronous bulk query. |
-| POST | `/bulk/{objectName}` | createBulkByObjectName | Upload a file of objects to be bulk uploaded to the provider. |
-| GET | `/customers` | getCustomers | Find customers in the eCommerce system, using the provided CEQL search expression. If no search expression is provided, all records will be retrieved |
-| POST | `/customers` | createCustomer | Create a new customer in eCommerce system.With the exception of the 'id' field, the required fields indicated in the 'Customer' model are those required to create a new customer |
-| DELETE | `/customers/{id}` | deleteCustomerById | Delete a customer associated with a given ID from your eCommerce system. Specifying a customer associated with a given ID that does not exist will result in an error message |
-| GET | `/customers/{id}` | getCustomerById | Retrieve a customer associated with a given ID from the eCommerce system. Specifying a customer with an ID that does not exist will result in an error response |
-| PATCH | `/customers/{id}` | updateCustomerById | Update an customer associated with a given ID in the eCommerce system.The update API uses the PATCH HTTP verb, so only those fields provided in the customer object will be updated, and those fields not provided will be left alone. Updating a customer with a specified ID that does not exist will result in an error response |
-| GET | `/customers/{id}/orders` | getCustomersOrders | Find orders in the customer associated with a given ID. If the customer does not exist, an error response will be returned. If no orders are found in the given customer then an empty array will be returned |
-| GET | `/objects` | getObjects | Get a list of all the available objects. |
-| GET | `/objects/{objectName}/docs` | getObjectsObjectNameDocs | Get swagger docs for an object. |
-| GET | `/objects/{objectName}/metadata` | getObjectsObjectNameMetadata | Get a list of all the field for an object. |
-| GET | `/orders` | getOrders | Find orders in the eCommerce system, using the provided CEQL search expression. If no search expression is provided, all records will be retrieved |
-| POST | `/orders` | createOrder | Create an order in the eCommerce system.With the exception of the 'id' field, the required fields indicated in the 'Order' model are those required to create a new order.The paymentStatus can only be AWAITING_PAYMENT or INCOMPLETE.The fulfillmentStatus can only be AWAITING_PROCESSING |
-| DELETE | `/orders/{id}` | deleteOrderById | Delete an order associated with a given ID from your eCommerce system. Specifying an order associated with a given ID that does not exist will result in an error message |
-| GET | `/orders/{id}` | getOrderById | Retrieve an order associated with a given ID from the eCommerce system. Specifying an order with an ID that does not exist will result in an error response |
-| PATCH | `/orders/{id}` | updateOrderById | Update an order associated with a given ID in the eCommerce system. The update API uses the PATCH HTTP verb, so only those fields provided in the order object will be updated, and those fields not provided will be left alone. Updating an order with a specified ID that does not exist will result in an error response</strong> |
-| GET | `/orders/{orderId}/payments` | getOrdersPayments | Retrieve the payments in the eCommerce system for the specified order |
-| GET | `/orders/{orderId}/refunds` | getOrdersRefunds | Retrieve the refunds in the eCommerce system for the specified order |
-| GET | `/ping` | getPing | Ping the Element to confirm that the Hub Element has a heartbeat. If the Element does not have a heartbeat, an error message will be returned. |
-| GET | `/products` | getProducts | Find products in the eCommerce system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. If no search expression is provided, all records will be retrieved |
-| POST | `/products` | createProduct | Create a new product in eCommerce system.With the exception of the 'id' field, the required fields indicated in the 'Product' model are those required to create a new product |
-| DELETE | `/products/{id}` | deleteProductById | Delete a product associated with a given ID from your eCommerce system. Specifying a product associated with a given ID that does not exist will result in an error message |
-| GET | `/products/{id}` | getProductById | Retrieve a product associated with a given ID from the eCommerce system. Specifying a product with an ID that does not exist will result in an error response |
-| PATCH | `/products/{id}` | updateProductById | Update a product associated with a given ID in the eCommerce system. The update API uses the PATCH HTTP verb, so only those fields provided in the product object will be updated, and those fields not provided will be left alone. Updating a product with a specified ID that does not exist will result in an error response. <p><strong>Update supports the following fields: sku, quantity, trackQuantity, quantityDelta, warningLimit, name, price, weight, tangible, enabled, fixedShippingRateOnly, fixedShippingRate, description, wholesalePrices, compareAtPrice, productClassId</strong> |
-| GET | `/{objectName}` | getByObjectName | Search for {objectName} |
-| POST | `/{objectName}` | createByObjectName | Create an {objectName} |
-| DELETE | `/{objectName}/{objectId}` | deleteObjectNameByObjectId | Delete an {objectName} |
-| GET | `/{objectName}/{objectId}` | getObjectNameByObjectId | Retrieve an {objectName} |
-| PATCH | `/{objectName}/{objectId}` | updateObjectNameByObjectId | Update an {objectName} |
-| PUT | `/{objectName}/{objectId}` | replaceObjectNameByObjectId | Update an {objectName} |
-| GET | `/{objectName}/{objectId}/{childObjectName}` | getObjectNameByChildObjectName | Search for {childObjectName} |
-| POST | `/{objectName}/{objectId}/{childObjectName}` | createObjectNameByChildObjectName | Create an {objectName} |
-| DELETE | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | deleteObjectNameByChildObjectId | Delete an {childObjectName} |
-| GET | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | getObjectNameByChildObjectId | Retrieve an {childObjectName} |
-| PATCH | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | updateObjectNameByChildObjectId | Update an {childObjectName} |
-| PUT | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | replaceObjectNameByChildObjectId | Update an {childObjectName} |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/bulk/download` | createBulkDownload | `Authorization`*, body*: bulkDownloadRequest | BulkQuery |  | Create a new bulk download job (asynchronous) |
+| GET | `/bulk/jobs` | getBulkJobs | `Authorization`*, `where`, `nextPage`, `pageSize`, `fields` | BulkJobList | yes | Fetch all the bulk jobs for an instance |
+| POST | `/bulk/query` | createBulkQuery | `Authorization`*, `Elements-Async-Callback-Url`, `q`, `lastRunDate`, `from`, `to`, `metaData` | BulkQuery |  | Create an asynchronous bulk query job. |
+| PUT | `/bulk/{id}/cancel` | replaceBulkCancel | `Authorization`*, `id`* | BulkStatus |  | Cancel an asynchronous bulk query job. |
+| GET | `/bulk/{id}/errors` | getBulkErrors | `Authorization`*, `id`*, `pageSize`, `nextPage`, `fields` | string[] | yes | Retrieve the errors of a bulk job. |
+| GET | `/bulk/{id}/status` | getBulkStatus | `Authorization`*, `id`* | BulkStatus | yes | Retrieve the status of a bulk job. |
+| GET | `/bulk/{id}/{objectName}` | getBulkByObjectName | `Authorization`*, `id`*, `objectName`* | file | yes | Retrieve the results of an asynchronous bulk query. |
+| POST | `/bulk/{objectName}` | createBulkByObjectName | `Authorization`*, `Elements-Async-Callback-Url`, `objectName`*, `metaData`, `file` | BulkUploadResponse |  | Upload a file of objects to be bulk uploaded to the provider. |
+| GET | `/customers` | getCustomers | `Authorization`*, `where`, `pageSize`, `nextPage`, `fields` | Customer[] | yes | Find customers in the eCommerce system, using the provided CEQL search expression. If no search expression is provided, all records will be retrieved |
+| POST | `/customers` | createCustomer | `Authorization`*, body*: CustomerPost | Customer |  | Create a new customer in eCommerce system.With the exception of the 'id' field, the required fields indicated in the 'Customer' model are those required to create a new customer |
+| GET | `/customers/{id}` | getCustomerById | `Authorization`*, `id`* | Customer | yes | Retrieve a customer associated with a given ID from the eCommerce system. Specifying a customer with an ID that does not exist will result in an error response |
+| DELETE | `/customers/{id}` | deleteCustomerById | `Authorization`*, `id`* | — |  | Delete a customer associated with a given ID from your eCommerce system. Specifying a customer associated with a given ID that does not exist will result in an error message |
+| PATCH | `/customers/{id}` | updateCustomerById | `Authorization`*, `id`*, body*: CustomerPatch | Customer |  | Update an customer associated with a given ID in the eCommerce system.The update API uses the PATCH HTTP verb, so only those fields provided in the customer object will be updated, and those fields not provided will be left alone. Updating a customer with a specified ID that does not exist will result in an error response |
+| GET | `/customers/{id}/orders` | getCustomersOrders | `Authorization`*, `id`*, `pageSize`, `nextPage`, `fields` | Order[] | yes | Find orders in the customer associated with a given ID. If the customer does not exist, an error response will be returned. If no orders are found in the given customer then an empty array will be returned |
+| GET | `/objects` | getObjects | `Authorization`*, `Elements-Version` | string[] | yes | Get a list of all the available objects. |
+| GET | `/objects/{objectName}/docs` | getObjectsObjectNameDocs | `Authorization`*, `objectName`*, `discovery`, `resolveReferences`, `basic`, `version` | swaggerDocs | yes | Get swagger docs for an object. |
+| GET | `/objects/{objectName}/metadata` | getObjectsObjectNameMetadata | `Authorization`*, `objectName`*, `Elements-Version` | objectsMetadata | yes | Get a list of all the field for an object. |
+| GET | `/orders` | getOrders | `Authorization`*, `where`, `pageSize`, `nextPage`, `fields` | Order[] | yes | Find orders in the eCommerce system, using the provided CEQL search expression. If no search expression is provided, all records will be retrieved |
+| POST | `/orders` | createOrder | `Authorization`*, body*: OrderPost | Order |  | Create an order in the eCommerce system.With the exception of the 'id' field, the required fields indicated in the 'Order' model are those required to create a new order.The paymentStatus can only be AWAITING_PAYMENT or INCOMPLETE.The fulfillmentStatus can only be AWAITING_PROCESSING |
+| GET | `/orders/{id}` | getOrderById | `Authorization`*, `id`* | Order | yes | Retrieve an order associated with a given ID from the eCommerce system. Specifying an order with an ID that does not exist will result in an error response |
+| DELETE | `/orders/{id}` | deleteOrderById | `Authorization`*, `id`* | — |  | Delete an order associated with a given ID from your eCommerce system. Specifying an order associated with a given ID that does not exist will result in an error message |
+| PATCH | `/orders/{id}` | updateOrderById | `Authorization`*, `id`*, `action`, body*: OrderPatch | Order |  | Update an order associated with a given ID in the eCommerce system. The update API uses the PATCH HTTP verb, so only those fields provided in the order object will be updated, and those fields not provided will be left alone. Updating an order with a specified ID that does not exist will result in an error response</strong> |
+| GET | `/orders/{orderId}/payments` | getOrdersPayments | `Authorization`*, `orderId`*, `pageSize`, `nextPage`, `fields` | Payment[] | yes | Retrieve the payments in the eCommerce system for the specified order |
+| GET | `/orders/{orderId}/refunds` | getOrdersRefunds | `Authorization`*, `orderId`*, `pageSize`, `nextPage`, `fields` | Payment[] | yes | Retrieve the refunds in the eCommerce system for the specified order |
+| GET | `/ping` | getPing | `Authorization`* | Pong | yes | Ping the Element to confirm that the Hub Element has a heartbeat. If the Element does not have a heartbeat, an error message will be returned. |
+| GET | `/products` | getProducts | `Authorization`*, `where`, `pageSize`, `nextPage`, `fields` | Product[] | yes | Find products in the eCommerce system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. If no search expression is provided, all records will be retrieved |
+| POST | `/products` | createProduct | `Authorization`*, body*: ProductPost | Product |  | Create a new product in eCommerce system.With the exception of the 'id' field, the required fields indicated in the 'Product' model are those required to create a new product |
+| GET | `/products/{id}` | getProductById | `Authorization`*, `id`* | Product | yes | Retrieve a product associated with a given ID from the eCommerce system. Specifying a product with an ID that does not exist will result in an error response |
+| DELETE | `/products/{id}` | deleteProductById | `Authorization`*, `id`* | — |  | Delete a product associated with a given ID from your eCommerce system. Specifying a product associated with a given ID that does not exist will result in an error message |
+| PATCH | `/products/{id}` | updateProductById | `Authorization`*, `id`*, body*: ProductPatch | Product |  | Update a product associated with a given ID in the eCommerce system. The update API uses the PATCH HTTP verb, so only those fields provided in the product object will be updated, and those fields not provided will be left alone. Updating a product with a specified ID that does not exist will result in an error response. <p><strong>Update supports the following fields: sku, quantity, trackQuantity, quantityDelta, warningLimit, name, price, weight, tangible, enabled, fixedShippingRateOnly, fixedShippingRate, description, wholesalePrices, compareAtPrice, productClassId</strong> |
+| GET | `/{objectName}` | getByObjectName | `Authorization`*, `objectName`*, `where`, `pageSize`, `nextPage`, `fields` | Object[] | yes | Search for {objectName} |
+| POST | `/{objectName}` | createByObjectName | `Authorization`*, `objectName`*, body*: Object | — |  | Create an {objectName} |
+| GET | `/{objectName}/{objectId}` | getObjectNameByObjectId | `Authorization`*, `objectName`*, `objectId`* | Object | yes | Retrieve an {objectName} |
+| PUT | `/{objectName}/{objectId}` | replaceObjectNameByObjectId | `Authorization`*, `objectName`*, `objectId`*, body*: Object | Object |  | Update an {objectName} |
+| DELETE | `/{objectName}/{objectId}` | deleteObjectNameByObjectId | `Authorization`*, `objectName`*, `objectId`* | — |  | Delete an {objectName} |
+| PATCH | `/{objectName}/{objectId}` | updateObjectNameByObjectId | `Authorization`*, `objectName`*, `objectId`*, body*: Object | Object |  | Update an {objectName} |
+| GET | `/{objectName}/{objectId}/{childObjectName}` | getObjectNameByChildObjectName | `Authorization`*, `objectName`*, `objectId`*, `childObjectName`*, `where`, `pageSize`, `nextPage`, `fields` | Object[] | yes | Search for {childObjectName} |
+| POST | `/{objectName}/{objectId}/{childObjectName}` | createObjectNameByChildObjectName | `Authorization`*, `objectName`*, `objectId`*, `childObjectName`*, body*: Object | — |  | Create an {objectName} |
+| GET | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | getObjectNameByChildObjectId | `Authorization`*, `objectName`*, `childObjectName`*, `objectId`*, `childObjectId`* | Object | yes | Retrieve an {childObjectName} |
+| PUT | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | replaceObjectNameByChildObjectId | `Authorization`*, `objectName`*, `childObjectName`*, `objectId`*, `childObjectId`*, body*: Object | Object |  | Update an {childObjectName} |
+| DELETE | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | deleteObjectNameByChildObjectId | `Authorization`*, `objectName`*, `childObjectName`*, `objectId`*, `childObjectId`* | — |  | Delete an {childObjectName} |
+| PATCH | `/{objectName}/{objectId}/{childObjectName}/{childObjectId}` | updateObjectNameByChildObjectId | `Authorization`*, `objectName`*, `childObjectName`*, `objectId`*, `childObjectId`*, body*: Object | Object |  | Update an {childObjectName} |

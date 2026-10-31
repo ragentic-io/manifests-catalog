@@ -47,12 +47,87 @@
       {
         "from": "openlinksw-com-osdb-11d1c23341",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/services/{serviceId}"
+        "to": "operation:get:/api/v1/services/{serviceId}"
       },
       {
         "from": "openlinksw-com-osdb-11d1c23341",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/services/{serviceId}"
+        "to": "operation:delete:/api/v1/services/{serviceId}"
+      },
+      {
+        "from": "operation:get:/api/v1/actions/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:ListActionsResponse"
+      },
+      {
+        "from": "operation:get:/api/v1/actions/{serviceId}/{actionId}",
+        "kind": "RETURNS",
+        "to": "schema:DescribeActionResponse"
+      },
+      {
+        "from": "operation:post:/api/v1/actions/{serviceId}/{actionId}/exec",
+        "kind": "ACCEPTS",
+        "to": "schema:ExecBody"
+      },
+      {
+        "from": "operation:get:/api/v1/actions/{serviceId}/{actionId}/help",
+        "kind": "RETURNS",
+        "to": "schema:ActionHelpResponse"
+      },
+      {
+        "from": "operation:get:/api/v1/login",
+        "kind": "RETURNS",
+        "to": "schema:LoginResponse"
+      },
+      {
+        "from": "operation:get:/api/v1/logout",
+        "kind": "RETURNS",
+        "to": "schema:LogoutResponse"
+      },
+      {
+        "from": "operation:get:/api/v1/services",
+        "kind": "RETURNS",
+        "to": "schema:ListServicesResponse"
+      },
+      {
+        "from": "operation:get:/api/v1/services/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:DescribeServiceResponse"
+      },
+      {
+        "from": "schema:ActionDescription",
+        "kind": "REFERENCES",
+        "to": "schema:EntryPoint"
+      },
+      {
+        "from": "schema:ActionHelpResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionHelp"
+      },
+      {
+        "from": "schema:DescribeActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionDescription"
+      },
+      {
+        "from": "schema:DescribeServiceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceDescription"
+      },
+      {
+        "from": "schema:EntryPoint",
+        "kind": "REFERENCES",
+        "to": "schema:EntryPointParameter"
+      },
+      {
+        "from": "schema:ListActionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionDescription"
+      },
+      {
+        "from": "schema:ListServicesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceDescription"
       }
     ],
     "nodes": [
@@ -62,183 +137,435 @@
       },
       {
         "deprecated": false,
+        "description": "Returns an array of action descriptions for the actions supported by the given service",
         "id": "operation:get:/api/v1/actions/{serviceId}",
         "kind": "operation",
         "method": "get",
         "name": "listActions",
+        "parameters": [
+          {
+            "description": "Service ID of the service for which actions are to be listed",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/actions/{serviceId}",
         "pointer": "#/paths/~1api~1v1~1actions~1{serviceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListActionsResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List actions"
+        "summary": "List actions",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a description of a given service action.",
         "id": "operation:get:/api/v1/actions/{serviceId}/{actionId}",
         "kind": "operation",
         "method": "get",
         "name": "describeAction",
+        "parameters": [
+          {
+            "description": "Service ID of the service supporting the action.",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Action ID of the action to describe.",
+            "in": "path",
+            "name": "actionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/actions/{serviceId}/{actionId}",
         "pointer": "#/paths/~1api~1v1~1actions~1{serviceId}~1{actionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DescribeActionResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Describe action"
+        "summary": "Describe action",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Executes a registered service action and returns any output from the action.",
         "id": "operation:post:/api/v1/actions/{serviceId}/{actionId}/exec",
         "kind": "operation",
         "method": "post",
         "name": "executeAction",
+        "parameters": [
+          {
+            "description": "Service ID of the service supporting the action.",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Action ID of the action to execute.",
+            "in": "path",
+            "name": "actionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/actions/{serviceId}/{actionId}/exec",
         "pointer": "#/paths/~1api~1v1~1actions~1{serviceId}~1{actionId}~1exec/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ExecBody"
+        },
+        "responses": [
+          {
+            "status": "2XX"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Execute action"
+        "summary": "Execute action",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the help text for a given service action",
         "id": "operation:get:/api/v1/actions/{serviceId}/{actionId}/help",
         "kind": "operation",
         "method": "get",
         "name": "actionHelp",
+        "parameters": [
+          {
+            "description": "Service ID of the service supporting the action.",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Action ID of the action for which help text is being requested.",
+            "in": "path",
+            "name": "actionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/actions/{serviceId}/{actionId}/help",
         "pointer": "#/paths/~1api~1v1~1actions~1{serviceId}~1{actionId}~1help/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActionHelpResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Action help"
+        "summary": "Action help",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Logs a user into the OSDB server, authenticating them by their WebID and returning an OSDB session ID in cookie osdb.sid",
         "id": "operation:get:/api/v1/login",
         "kind": "operation",
         "method": "get",
         "name": "login",
         "path": "/api/v1/login",
         "pointer": "#/paths/~1api~1v1~1login/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LoginResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Login"
+        "summary": "Login",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Logs a user out of the OSDB server, ending their OSDB session",
         "id": "operation:get:/api/v1/logout",
         "kind": "operation",
         "method": "get",
         "name": "logout",
         "path": "/api/v1/logout",
         "pointer": "#/paths/~1api~1v1~1logout/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LogoutResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Logout"
+        "summary": "Logout",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns descriptions of all services registered with the OSDB server.",
         "id": "operation:get:/api/v1/services",
         "kind": "operation",
         "method": "get",
         "name": "listServices",
         "path": "/api/v1/services",
         "pointer": "#/paths/~1api~1v1~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListServicesResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List services"
+        "summary": "List services",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Loads a service description into the OSDB Service Registry",
         "id": "operation:post:/api/v1/services",
         "kind": "operation",
         "method": "post",
         "name": "loadService",
         "path": "/api/v1/services",
         "pointer": "#/paths/~1api~1v1~1services/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Load service"
+        "summary": "Load service",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/services/{serviceId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "unloadService",
-        "path": "/api/v1/services/{serviceId}",
-        "pointer": "#/paths/~1api~1v1~1services~1{serviceId}/delete",
-        "security": [],
-        "summary": "Unload service"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a description of a given service",
         "id": "operation:get:/api/v1/services/{serviceId}",
         "kind": "operation",
         "method": "get",
         "name": "describeService",
+        "parameters": [
+          {
+            "description": "Service ID of the service to describe.",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/services/{serviceId}",
         "pointer": "#/paths/~1api~1v1~1services~1{serviceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DescribeServiceResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Describe service"
+        "summary": "Describe service",
+        "tags": [
+          "OSDB"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Removes a service description from the OSDB Service Registry",
+        "id": "operation:delete:/api/v1/services/{serviceId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "unloadService",
+        "parameters": [
+          {
+            "description": "Service ID of the service to be unloaded",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/services/{serviceId}",
+        "pointer": "#/paths/~1api~1v1~1services~1{serviceId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Unload service",
+        "tags": [
+          "OSDB"
+        ]
       },
       {
         "id": "schema:ActionDescription",
         "kind": "schema",
-        "name": "ActionDescription"
+        "name": "ActionDescription",
+        "type": "object"
       },
       {
         "id": "schema:ActionHelp",
         "kind": "schema",
-        "name": "ActionHelp"
+        "name": "ActionHelp",
+        "type": "object"
       },
       {
         "id": "schema:ActionHelpResponse",
         "kind": "schema",
-        "name": "ActionHelpResponse"
+        "name": "ActionHelpResponse",
+        "type": "object"
       },
       {
         "id": "schema:DescribeActionResponse",
         "kind": "schema",
-        "name": "DescribeActionResponse"
+        "name": "DescribeActionResponse",
+        "type": "object"
       },
       {
         "id": "schema:DescribeServiceResponse",
         "kind": "schema",
-        "name": "DescribeServiceResponse"
+        "name": "DescribeServiceResponse",
+        "type": "object"
       },
       {
         "id": "schema:EntryPoint",
         "kind": "schema",
-        "name": "EntryPoint"
+        "name": "EntryPoint",
+        "type": "object"
       },
       {
         "id": "schema:EntryPointParameter",
         "kind": "schema",
-        "name": "EntryPointParameter"
+        "name": "EntryPointParameter",
+        "type": "object"
       },
       {
         "id": "schema:ErrorModel",
         "kind": "schema",
-        "name": "ErrorModel"
+        "name": "ErrorModel",
+        "type": "object"
       },
       {
         "id": "schema:ExecBody",
         "kind": "schema",
-        "name": "ExecBody"
+        "name": "ExecBody",
+        "type": "object"
       },
       {
         "id": "schema:ListActionsResponse",
         "kind": "schema",
-        "name": "ListActionsResponse"
+        "name": "ListActionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:ListServicesResponse",
         "kind": "schema",
-        "name": "ListServicesResponse"
+        "name": "ListServicesResponse",
+        "type": "object"
       },
       {
         "id": "schema:LoginResponse",
         "kind": "schema",
-        "name": "LoginResponse"
+        "name": "LoginResponse",
+        "type": "object"
       },
       {
         "id": "schema:LogoutResponse",
         "kind": "schema",
-        "name": "LogoutResponse"
+        "name": "LogoutResponse",
+        "type": "object"
       },
       {
         "id": "schema:ServiceDescription",
         "kind": "schema",
-        "name": "ServiceDescription"
+        "name": "ServiceDescription",
+        "type": "object"
       }
     ]
   },

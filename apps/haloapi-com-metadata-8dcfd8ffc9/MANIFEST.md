@@ -10,7 +10,7 @@ catalog: "drafts"
 
 | | |
 | --- | --- |
-| Signed bundle | `6484a52fa22a0ca431dde1d8572b6c54ce56b66c651b7b843bfccafe8604be81` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -31,42 +31,44 @@ catalog: "drafts"
 
 ## Operations (37)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/h5/metadata/campaign-missions` | Halo-5-Campaign-Missions | Halo 5 - Campaign Missions |
-| GET | `/h5/metadata/commendations` | Halo-5-Commendations | Halo 5 - Commendations |
-| GET | `/h5/metadata/company-commendations` | Halo-5-Company-Commendations | Halo 5 - Company Commendations |
-| GET | `/h5/metadata/csr-designations` | Halo-5-CSR-Designations | Halo 5 - CSR Designations |
-| GET | `/h5/metadata/enemies` | Halo-5-Enemies | Halo 5 - Enemies |
-| GET | `/h5/metadata/flexible-stats` | Halo-5-Flexible-Stats | Halo 5 - Flexible Stats |
-| GET | `/h5/metadata/game-base-variants` | Halo-5-Game-Base-Variants | Halo 5 - Game Base Variants |
-| GET | `/h5/metadata/game-variants/{id}` | Halo-5-Game-Variant | Halo 5 - Game Variant |
-| GET | `/h5/metadata/impulses` | Halo-5-Impulses | Halo 5 - Impulses |
-| GET | `/h5/metadata/map-variants/{id}` | Halo-5-Map-Variant | Halo 5 - Map Variant |
-| GET | `/h5/metadata/maps` | Halo-5-Maps | Halo 5 - Maps |
-| GET | `/h5/metadata/medals` | Halo-5-Medals | Halo 5 - Medals |
-| GET | `/h5/metadata/playlists` | Halo-5-Playlists | Halo 5 - Playlists |
-| GET | `/h5/metadata/requisition-packs/{id}` | Halo-5-Requisition-Pack | Halo 5 - Requisition Pack |
-| GET | `/h5/metadata/requisitions/{id}` | Halo-5-Requisition | Halo 5 - Requisition |
-| GET | `/h5/metadata/seasons` | Halo-5-Seasons | Halo 5 - Seasons |
-| GET | `/h5/metadata/skulls` | Halo-5-Skulls | Halo 5 - Skulls |
-| GET | `/h5/metadata/spartan-ranks` | Halo-5-Spartan-Ranks | Halo 5 - Spartan Ranks |
-| GET | `/h5/metadata/team-colors` | Halo-5-Team-Colors | Halo 5 - Team Colors |
-| GET | `/h5/metadata/vehicles` | Halo-5-Vehicles | Halo 5 - Vehicles |
-| GET | `/h5/metadata/weapons` | Halo-5-Weapons | Halo 5 - Weapons |
-| GET | `/hw2/campaign-levels` | Halo-Wars-2-Campaign-Levels | Halo Wars 2 - Campaign Levels |
-| GET | `/hw2/campaign-logs` | Halo-Wars-2-Campaign-Logs | Halo Wars 2 - Campaign Logs |
-| GET | `/hw2/card-keywords` | Halo-Wars-2-Card-Keywords | Halo Wars 2 - Card Keywords |
-| GET | `/hw2/cards` | Halo-Wars-2-Cards | Halo Wars 2 - Cards |
-| GET | `/hw2/csr-designations` | Halo-Wars-2-CSR-Designations | Halo Wars 2 - CSR Designations |
-| GET | `/hw2/difficulties` | Halo-Wars-2-Difficulties | Halo Wars 2 - Difficulties |
-| GET | `/hw2/game-object-categories` | Halo-Wars-2-Game-Object-Categories | Halo Wars 2 - Game Object Categories |
-| GET | `/hw2/game-objects` | Halo-Wars-2-Game-Objects | Halo Wars 2 - Game Objects |
-| GET | `/hw2/leader-powers` | Halo-Wars-2-Leader-Powers | Halo Wars 2 - Leader Powers |
-| GET | `/hw2/leaders` | Halo-Wars-2-Leaders | Halo Wars 2 - Leaders |
-| GET | `/hw2/maps` | Halo-Wars-2-Maps | Halo Wars 2 - Maps |
-| GET | `/hw2/packs` | Halo-Wars-2-Packs | Halo Wars 2 - Packs |
-| GET | `/hw2/playlists` | Halo-Wars-2-Playlists | Halo Wars 2 - Playlists |
-| GET | `/hw2/seasons` | Halo-Wars-2-Seasons | Halo Wars 2 - Seasons |
-| GET | `/hw2/spartan-ranks` | Halo-Wars-2-Spartan-Ranks | Halo Wars 2 - Spartan Ranks |
-| GET | `/hw2/techs` | Halo-Wars-2-Techs | Halo Wars 2 - Techs |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/h5/metadata/campaign-missions` | Halo-5-Campaign-Missions | `Accept-Language` | — | yes | Halo 5 - Campaign Missions |
+| GET | `/h5/metadata/commendations` | Halo-5-Commendations | `Accept-Language` | — | yes | Halo 5 - Commendations |
+| GET | `/h5/metadata/company-commendations` | Halo-5-Company-Commendations | `Accept-Language` | — | yes | Halo 5 - Company Commendations |
+| GET | `/h5/metadata/csr-designations` | Halo-5-CSR-Designations | `Accept-Language` | — | yes | Halo 5 - CSR Designations |
+| GET | `/h5/metadata/enemies` | Halo-5-Enemies | `Accept-Language` | — | yes | Halo 5 - Enemies |
+| GET | `/h5/metadata/flexible-stats` | Halo-5-Flexible-Stats | `Accept-Language` | — | yes | Halo 5 - Flexible Stats |
+| GET | `/h5/metadata/game-base-variants` | Halo-5-Game-Base-Variants | `Accept-Language` | — | yes | Halo 5 - Game Base Variants |
+| GET | `/h5/metadata/game-variants/{id}` | Halo-5-Game-Variant | `id`*, `Accept-Language` | — | yes | Halo 5 - Game Variant |
+| GET | `/h5/metadata/impulses` | Halo-5-Impulses | `Accept-Language` | — | yes | Halo 5 - Impulses |
+| GET | `/h5/metadata/map-variants/{id}` | Halo-5-Map-Variant | `id`*, `Accept-Language` | — | yes | Halo 5 - Map Variant |
+| GET | `/h5/metadata/maps` | Halo-5-Maps | `Accept-Language` | — | yes | Halo 5 - Maps |
+| GET | `/h5/metadata/medals` | Halo-5-Medals | `Accept-Language` | — | yes | Halo 5 - Medals |
+| GET | `/h5/metadata/playlists` | Halo-5-Playlists | `Accept-Language` | — | yes | Halo 5 - Playlists |
+| GET | `/h5/metadata/requisition-packs/{id}` | Halo-5-Requisition-Pack | `id`*, `Accept-Language` | — | yes | Halo 5 - Requisition Pack |
+| GET | `/h5/metadata/requisitions/{id}` | Halo-5-Requisition | `id`*, `Accept-Language` | — | yes | Halo 5 - Requisition |
+| GET | `/h5/metadata/seasons` | Halo-5-Seasons | `Accept-Language` | — | yes | Halo 5 - Seasons |
+| GET | `/h5/metadata/skulls` | Halo-5-Skulls | `Accept-Language` | — | yes | Halo 5 - Skulls |
+| GET | `/h5/metadata/spartan-ranks` | Halo-5-Spartan-Ranks | `Accept-Language` | — | yes | Halo 5 - Spartan Ranks |
+| GET | `/h5/metadata/team-colors` | Halo-5-Team-Colors | `Accept-Language` | — | yes | Halo 5 - Team Colors |
+| GET | `/h5/metadata/vehicles` | Halo-5-Vehicles | `Accept-Language` | — | yes | Halo 5 - Vehicles |
+| GET | `/h5/metadata/weapons` | Halo-5-Weapons | `Accept-Language` | — | yes | Halo 5 - Weapons |
+| GET | `/hw2/campaign-levels` | Halo-Wars-2-Campaign-Levels | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Campaign Levels |
+| GET | `/hw2/campaign-logs` | Halo-Wars-2-Campaign-Logs | `startAt` | — | yes | Halo Wars 2 - Campaign Logs |
+| GET | `/hw2/card-keywords` | Halo-Wars-2-Card-Keywords | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Card Keywords |
+| GET | `/hw2/cards` | Halo-Wars-2-Cards | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Cards |
+| GET | `/hw2/csr-designations` | Halo-Wars-2-CSR-Designations | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - CSR Designations |
+| GET | `/hw2/difficulties` | Halo-Wars-2-Difficulties | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Difficulties |
+| GET | `/hw2/game-object-categories` | Halo-Wars-2-Game-Object-Categories | `startAt` | — | yes | Halo Wars 2 - Game Object Categories |
+| GET | `/hw2/game-objects` | Halo-Wars-2-Game-Objects | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Game Objects |
+| GET | `/hw2/leader-powers` | Halo-Wars-2-Leader-Powers | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Leader Powers |
+| GET | `/hw2/leaders` | Halo-Wars-2-Leaders | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Leaders |
+| GET | `/hw2/maps` | Halo-Wars-2-Maps | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Maps |
+| GET | `/hw2/packs` | Halo-Wars-2-Packs | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Packs |
+| GET | `/hw2/playlists` | Halo-Wars-2-Playlists | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Playlists |
+| GET | `/hw2/seasons` | Halo-Wars-2-Seasons | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Seasons |
+| GET | `/hw2/spartan-ranks` | Halo-Wars-2-Spartan-Ranks | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Spartan Ranks |
+| GET | `/hw2/techs` | Halo-Wars-2-Techs | `startAt`, `Accept-Language` | — | yes | Halo Wars 2 - Techs |

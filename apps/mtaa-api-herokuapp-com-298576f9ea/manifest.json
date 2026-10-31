@@ -37,58 +37,235 @@
       },
       {
         "deprecated": false,
+        "description": "Fetches all regions present in Tanzania and then return a response as json",
         "id": "operation:get:/{country}",
         "kind": "operation",
         "method": "get",
         "name": "Tanzania-regions",
+        "parameters": [
+          {
+            "description": "Country name in lowercase eg (Tanzania)",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{country}",
         "pointer": "#/paths/~1{country}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all regions present in Tanzania"
+        "summary": "Returns all regions present in Tanzania",
+        "tags": [
+          "Tanzania regions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a post code and all districts in a specified region",
         "id": "operation:get:/{country}/{region}",
         "kind": "operation",
         "method": "get",
         "name": "Districts-in-a-region",
+        "parameters": [
+          {
+            "description": "Country name in lowercase eg( tanzania)",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the region eg (Mbeya)",
+            "in": "path",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{country}/{region}",
         "pointer": "#/paths/~1{country}~1{region}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all districts in region"
+        "summary": "Returns all districts in region",
+        "tags": [
+          "Districts in region"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all wards in a specified district and district postcode",
         "id": "operation:get:/{country}/{region}/{district}",
         "kind": "operation",
         "method": "get",
         "name": "Wards-in-a-district",
+        "parameters": [
+          {
+            "description": "Country name in lowercase eg( tanzania)",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the region eg (Mbeya)",
+            "in": "path",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the District eg (Rungwe)",
+            "in": "path",
+            "name": "district",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{country}/{region}/{district}",
         "pointer": "#/paths/~1{country}~1{region}~1{district}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all wards in a district"
+        "summary": "Returns all wards in a district",
+        "tags": [
+          "Wards in a district"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all streets in a specified ward and ward postcode",
         "id": "operation:get:/{country}/{region}/{district}/{ward}",
         "kind": "operation",
         "method": "get",
         "name": "streets-in-a-ward",
+        "parameters": [
+          {
+            "description": "Country name in lowercase eg( tanzania)",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the region eg (Mbeya)",
+            "in": "path",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the District eg (Rungwe)",
+            "in": "path",
+            "name": "district",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the Ward eg (Kiwira)",
+            "in": "path",
+            "name": "ward",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{country}/{region}/{district}/{ward}",
         "pointer": "#/paths/~1{country}~1{region}~1{district}~1{ward}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all streets in a ward"
+        "summary": "Returns all streets in a ward",
+        "tags": [
+          "Streets in a ward"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all neighborhood in a specified street",
         "id": "operation:get:/{country}/{region}/{district}/{ward}/{street}",
         "kind": "operation",
         "method": "get",
         "name": "neighborhood-in-a-street-",
+        "parameters": [
+          {
+            "description": "Country name in lowercase eg( tanzania)",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the region eg (Mbeya)",
+            "in": "path",
+            "name": "region",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the District eg (Rungwe)",
+            "in": "path",
+            "name": "district",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the Ward eg (Kiwira)",
+            "in": "path",
+            "name": "ward",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the Street eg (Ilundo)",
+            "in": "path",
+            "name": "street",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{country}/{region}/{district}/{ward}/{street}",
         "pointer": "#/paths/~1{country}~1{region}~1{district}~1{ward}~1{street}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all neighborhood in a street"
+        "summary": "Returns all neighborhood in a street",
+        "tags": [
+          "neighborhood in a street"
+        ]
       }
     ]
   },

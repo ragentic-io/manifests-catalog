@@ -22,12 +22,12 @@
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/cddrive/files/{file-id}"
+        "to": "operation:get:/api/v2/cddrive/files/{file-id}"
       },
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/cddrive/files/{file-id}"
+        "to": "operation:delete:/api/v2/cddrive/files/{file-id}"
       },
       {
         "from": "prss-org-599d96e6d4",
@@ -42,12 +42,12 @@
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/cddrive/folders/{folder-id}"
+        "to": "operation:get:/api/v2/cddrive/folders/{folder-id}"
       },
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/cddrive/folders/{folder-id}"
+        "to": "operation:delete:/api/v2/cddrive/folders/{folder-id}"
       },
       {
         "from": "prss-org-599d96e6d4",
@@ -87,12 +87,12 @@
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/pieces/{id}"
+        "to": "operation:get:/api/v2/pieces/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/pieces/{id}"
+        "to": "operation:delete:/api/v2/pieces/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
@@ -117,12 +117,12 @@
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/segments/{id}"
+        "to": "operation:get:/api/v2/segments/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/segments/{id}"
+        "to": "operation:delete:/api/v2/segments/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
@@ -142,12 +142,12 @@
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/spotinsertions/{id}"
+        "to": "operation:get:/api/v2/spotinsertions/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/spotinsertions/{id}"
+        "to": "operation:delete:/api/v2/spotinsertions/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
@@ -162,12 +162,12 @@
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v2/spots/{id}"
+        "to": "operation:get:/api/v2/spots/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v2/spots/{id}"
+        "to": "operation:delete:/api/v2/spots/{id}"
       },
       {
         "from": "prss-org-599d96e6d4",
@@ -183,6 +183,136 @@
         "from": "prss-org-599d96e6d4",
         "kind": "EXPOSES",
         "to": "operation:get:/radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml"
+      },
+      {
+        "from": "operation:get:/api/v2/broadcastservices",
+        "kind": "RETURNS",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "operation:get:/api/v2/broadcastservices/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BroadcastService"
+      },
+      {
+        "from": "operation:post:/api/v2/cddrive/files/content",
+        "kind": "RETURNS",
+        "to": "schema:CDDriveFile"
+      },
+      {
+        "from": "operation:get:/api/v2/cddrive/files/{file-id}",
+        "kind": "RETURNS",
+        "to": "schema:CDDriveFile"
+      },
+      {
+        "from": "operation:post:/api/v2/cddrive/folders",
+        "kind": "RETURNS",
+        "to": "schema:CDDriveFolder"
+      },
+      {
+        "from": "operation:get:/api/v2/cddrive/folders/{folder-id}",
+        "kind": "RETURNS",
+        "to": "schema:CDDriveFolder"
+      },
+      {
+        "from": "operation:get:/api/v2/episodes",
+        "kind": "RETURNS",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "operation:get:/api/v2/episodes/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "operation:post:/api/v2/metapub/program-information/batch",
+        "kind": "RETURNS",
+        "to": "schema:ProgramInformationBatch"
+      },
+      {
+        "from": "operation:get:/api/v2/metapub/program-information/batch/{batch-id}",
+        "kind": "RETURNS",
+        "to": "schema:ProgramInformationBatch"
+      },
+      {
+        "from": "operation:get:/api/v2/pieces",
+        "kind": "RETURNS",
+        "to": "schema:Piece"
+      },
+      {
+        "from": "operation:post:/api/v2/pieces",
+        "kind": "ACCEPTS",
+        "to": "schema:Piece"
+      },
+      {
+        "from": "operation:post:/api/v2/pieces",
+        "kind": "RETURNS",
+        "to": "schema:Piece"
+      },
+      {
+        "from": "operation:get:/api/v2/pieces/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Piece"
+      },
+      {
+        "from": "operation:get:/api/v2/programs/search",
+        "kind": "RETURNS",
+        "to": "schema:Program"
+      },
+      {
+        "from": "operation:get:/api/v2/programs/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Program"
+      },
+      {
+        "from": "operation:get:/api/v2/segments",
+        "kind": "RETURNS",
+        "to": "schema:Segment"
+      },
+      {
+        "from": "operation:post:/api/v2/segments",
+        "kind": "RETURNS",
+        "to": "schema:Segment"
+      },
+      {
+        "from": "operation:get:/api/v2/segments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Segment"
+      },
+      {
+        "from": "operation:get:/api/v2/spotinsertions",
+        "kind": "RETURNS",
+        "to": "schema:SpotInsertion"
+      },
+      {
+        "from": "operation:post:/api/v2/spotinsertions",
+        "kind": "ACCEPTS",
+        "to": "schema:SpotInsertion"
+      },
+      {
+        "from": "operation:post:/api/v2/spotinsertions",
+        "kind": "RETURNS",
+        "to": "schema:SpotInsertion"
+      },
+      {
+        "from": "operation:get:/api/v2/spotinsertions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SpotInsertion"
+      },
+      {
+        "from": "operation:get:/api/v2/spots",
+        "kind": "RETURNS",
+        "to": "schema:Spot"
+      },
+      {
+        "from": "operation:post:/api/v2/spots",
+        "kind": "RETURNS",
+        "to": "schema:Spot"
+      },
+      {
+        "from": "operation:get:/api/v2/spots/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Spot"
       }
     ],
     "nodes": [
@@ -196,8 +326,51 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/broadcastservices",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "The start page of the results to return.",
+            "in": "query",
+            "name": "pageStart",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "The number of items to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The sort order of the list of broadcast services, based on broadcast service ID.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "orderById",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/broadcastservices",
         "pointer": "#/paths/~1api~1v2~1broadcastservices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Episode[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -205,7 +378,10 @@
             ]
           }
         ],
-        "summary": "Gets broadcast services matching the given criteria."
+        "summary": "Gets broadcast services matching the given criteria.",
+        "tags": [
+          "Broadcast Services"
+        ]
       },
       {
         "deprecated": false,
@@ -213,8 +389,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/broadcastservices/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the broadcast service to find.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/broadcastservices/{id}",
         "pointer": "#/paths/~1api~1v2~1broadcastservices~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BroadcastService"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -222,16 +422,58 @@
             ]
           }
         ],
-        "summary": "Returns the broadcast service matching the given ID."
+        "summary": "Returns the broadcast service matching the given ID.",
+        "tags": [
+          "Broadcast Services"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Upload a file to the customer's private CD Drive.",
         "id": "operation:post:/api/v2/cddrive/files/content",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v2/cddrive/files/content",
+        "parameters": [
+          {
+            "description": "If present, the MD5 will be compared against the file received as a message integrity check.",
+            "in": "header",
+            "name": "Content-MD5",
+            "required": false,
+            "type": "string:md5"
+          }
+        ],
         "path": "/api/v2/cddrive/files/content",
         "pointer": "#/paths/~1api~1v2~1cddrive~1files~1content/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CDDriveFile"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "413"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -239,33 +481,39 @@
             ]
           }
         ],
-        "summary": "Upload a file."
+        "summary": "Upload a file.",
+        "tags": [
+          "CD Drive"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/cddrive/files/{file-id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v2/cddrive/files/{file-id}",
-        "path": "/api/v2/cddrive/files/{file-id}",
-        "pointer": "#/paths/~1api~1v2~1cddrive~1files~1{file-id}/delete",
-        "security": [
-          {
-            "cd_oauth2": [
-              "cd:full"
-            ]
-          }
-        ],
-        "summary": "Delete a file."
-      },
-      {
-        "deprecated": false,
+        "description": "Get the information about a file in the customer's private CD Drive.",
         "id": "operation:get:/api/v2/cddrive/files/{file-id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/cddrive/files/{file-id}",
+        "parameters": [
+          {
+            "description": "The ID of the file to access.",
+            "in": "path",
+            "name": "file-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/cddrive/files/{file-id}",
         "pointer": "#/paths/~1api~1v2~1cddrive~1files~1{file-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CDDriveFile"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -273,16 +521,88 @@
             ]
           }
         ],
-        "summary": "Get file information."
+        "summary": "Get file information.",
+        "tags": [
+          "CD Drive"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a file from the customer's private CD Drive.",
+        "id": "operation:delete:/api/v2/cddrive/files/{file-id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v2/cddrive/files/{file-id}",
+        "parameters": [
+          {
+            "description": "The ID of the file to access.",
+            "in": "path",
+            "name": "file-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v2/cddrive/files/{file-id}",
+        "pointer": "#/paths/~1api~1v2~1cddrive~1files~1{file-id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cd_oauth2": [
+              "cd:full"
+            ]
+          }
+        ],
+        "summary": "Delete a file.",
+        "tags": [
+          "CD Drive"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Download a file from the customer's private CD Drive.",
         "id": "operation:get:/api/v2/cddrive/files/{file-id}/content",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/cddrive/files/{file-id}/content",
+        "parameters": [
+          {
+            "description": "The ID of the file to download.",
+            "in": "path",
+            "name": "file-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Can be used to limit the range of bytes retrieved.",
+            "in": "header",
+            "name": "Range",
+            "required": false,
+            "type": "string:single byte range"
+          }
+        ],
         "path": "/api/v2/cddrive/files/{file-id}/content",
         "pointer": "#/paths/~1api~1v2~1cddrive~1files~1{file-id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "302"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -290,16 +610,43 @@
             ]
           }
         ],
-        "summary": "UNDER DEVELOPMENT - Download a file."
+        "summary": "UNDER DEVELOPMENT - Download a file.",
+        "tags": [
+          "CD Drive"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new folder in the customer's private CD Drive.",
         "id": "operation:post:/api/v2/cddrive/folders",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v2/cddrive/folders",
         "path": "/api/v2/cddrive/folders",
         "pointer": "#/paths/~1api~1v2~1cddrive~1folders/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CDDriveFolder"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -307,33 +654,39 @@
             ]
           }
         ],
-        "summary": "Create a folder."
+        "summary": "Create a folder.",
+        "tags": [
+          "CD Drive"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v2/cddrive/folders/{folder-id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v2/cddrive/folders/{folder-id}",
-        "path": "/api/v2/cddrive/folders/{folder-id}",
-        "pointer": "#/paths/~1api~1v2~1cddrive~1folders~1{folder-id}/delete",
-        "security": [
-          {
-            "cd_oauth2": [
-              "cd:full"
-            ]
-          }
-        ],
-        "summary": "UNDER DEVELOPMENT - Delete a folder."
-      },
-      {
-        "deprecated": false,
+        "description": "Get the information about a folder in the customer's private CD Drive.",
         "id": "operation:get:/api/v2/cddrive/folders/{folder-id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/cddrive/folders/{folder-id}",
+        "parameters": [
+          {
+            "description": "The ID of the folder to get.",
+            "in": "path",
+            "name": "folder-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/cddrive/folders/{folder-id}",
         "pointer": "#/paths/~1api~1v2~1cddrive~1folders~1{folder-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CDDriveFolder"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -341,16 +694,102 @@
             ]
           }
         ],
-        "summary": "UNDER DEVELOPMENT - Get folder information."
+        "summary": "UNDER DEVELOPMENT - Get folder information.",
+        "tags": [
+          "CD Drive"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a file from the customer's private CD Drive.",
+        "id": "operation:delete:/api/v2/cddrive/folders/{folder-id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v2/cddrive/folders/{folder-id}",
+        "parameters": [
+          {
+            "description": "The ID of the folder to get.",
+            "in": "path",
+            "name": "folder-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": true,
+            "description": "Flag to indicate if the folder should be deleted if it has items inside of it.",
+            "in": "query",
+            "name": "recursive",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/api/v2/cddrive/folders/{folder-id}",
+        "pointer": "#/paths/~1api~1v2~1cddrive~1folders~1{folder-id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cd_oauth2": [
+              "cd:full"
+            ]
+          }
+        ],
+        "summary": "UNDER DEVELOPMENT - Delete a folder.",
+        "tags": [
+          "CD Drive"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the information about a folder in the customer's private CD Drive.",
         "id": "operation:get:/api/v2/cddrive/folders/{folder-id}/items",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/cddrive/folders/{folder-id}/items",
+        "parameters": [
+          {
+            "description": "The ID of the folder to get.",
+            "in": "path",
+            "name": "folder-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": 0,
+            "description": "The offset into the items to begin the response.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 20,
+            "description": "The maximum number of items to return in the response.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v2/cddrive/folders/{folder-id}/items",
         "pointer": "#/paths/~1api~1v2~1cddrive~1folders~1{folder-id}~1items/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -358,7 +797,10 @@
             ]
           }
         ],
-        "summary": "Get the items in the folder."
+        "summary": "Get the items in the folder.",
+        "tags": [
+          "CD Drive"
+        ]
       },
       {
         "deprecated": false,
@@ -366,8 +808,84 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/episodes",
+        "parameters": [
+          {
+            "description": "Matches on the ID of the episode.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Matches on the begin air date of the episode (inclusive).",
+            "in": "query",
+            "name": "beginAirDateAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Matches on the end air date of the episode (inclusive).",
+            "in": "query",
+            "name": "endAirDateBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Matches on the ID of the program that owns the episode.",
+            "in": "query",
+            "name": "programId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": 0,
+            "description": "The start page of the results to return.",
+            "in": "query",
+            "name": "pageStart",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "The number of items to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The sort order of the list of episodes, based on episode ID.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "orderById",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/episodes",
         "pointer": "#/paths/~1api~1v2~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Episode[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -375,7 +893,10 @@
             ]
           }
         ],
-        "summary": "Gets episodes matching the given criteria."
+        "summary": "Gets episodes matching the given criteria.",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -383,8 +904,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/episodes/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the episode to operate on.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/episodes/{id}",
         "pointer": "#/paths/~1api~1v2~1episodes~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Episode"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -392,16 +937,34 @@
             ]
           }
         ],
-        "summary": "Returns the episode matching the given ID."
+        "summary": "Returns the episode matching the given ID.",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Create a batch to process the metadata of one or more electronic program guide (EPG) programs using metadata that has been uploaded to the customer's CD Drive.",
         "id": "operation:post:/api/v2/metapub/program-information/batch",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v2/metapub/program-information/batch",
         "path": "/api/v2/metapub/program-information/batch",
         "pointer": "#/paths/~1api~1v2~1metapub~1program-information~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "ProgramInformationBatch"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -409,16 +972,41 @@
             ]
           }
         ],
-        "summary": "Create a batch operation on EPG information."
+        "summary": "Create a batch operation on EPG information.",
+        "tags": [
+          "MetaPub"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Gets the batch information which can be used to check the status of the operation or retrieve more details if the batch fails.",
         "id": "operation:get:/api/v2/metapub/program-information/batch/{batch-id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/metapub/program-information/batch/{batch-id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batch-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/metapub/program-information/batch/{batch-id}",
         "pointer": "#/paths/~1api~1v2~1metapub~1program-information~1batch~1{batch-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProgramInformationBatch"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -426,7 +1014,10 @@
             ]
           }
         ],
-        "summary": "Get an EPG batch operation."
+        "summary": "Get an EPG batch operation.",
+        "tags": [
+          "MetaPub"
+        ]
       },
       {
         "deprecated": false,
@@ -434,8 +1025,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/pieces",
+        "parameters": [
+          {
+            "description": "The ID of the episode that owns the piece.",
+            "in": "query",
+            "name": "episodeId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/pieces",
         "pointer": "#/paths/~1api~1v2~1pieces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Piece[]"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -443,7 +1056,10 @@
             ]
           }
         ],
-        "summary": "Returns the pieces matching the query parameters."
+        "summary": "Returns the pieces matching the query parameters.",
+        "tags": [
+          "Pieces"
+        ]
       },
       {
         "deprecated": false,
@@ -453,6 +1069,27 @@
         "name": "post /api/v2/pieces",
         "path": "/api/v2/pieces",
         "pointer": "#/paths/~1api~1v2~1pieces/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Piece"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Piece"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -460,24 +1097,10 @@
             ]
           }
         ],
-        "summary": "Create a new piece."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v2/pieces/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v2/pieces/{id}",
-        "path": "/api/v2/pieces/{id}",
-        "pointer": "#/paths/~1api~1v2~1pieces~1{id}/delete",
-        "security": [
-          {
-            "cd_oauth2": [
-              "cd:full"
-            ]
-          }
-        ],
-        "summary": "Deletes the piece with the given ID."
+        "summary": "Create a new piece.",
+        "tags": [
+          "Pieces"
+        ]
       },
       {
         "deprecated": false,
@@ -485,8 +1108,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/pieces/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/pieces/{id}",
         "pointer": "#/paths/~1api~1v2~1pieces~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Piece"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -494,7 +1139,50 @@
             ]
           }
         ],
-        "summary": "Returns the piece matching the given ID."
+        "summary": "Returns the piece matching the given ID.",
+        "tags": [
+          "Pieces"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v2/pieces/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v2/pieces/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v2/pieces/{id}",
+        "pointer": "#/paths/~1api~1v2~1pieces~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cd_oauth2": [
+              "cd:full"
+            ]
+          }
+        ],
+        "summary": "Deletes the piece with the given ID.",
+        "tags": [
+          "Pieces"
+        ]
       },
       {
         "deprecated": false,
@@ -502,8 +1190,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/programs/search",
+        "parameters": [
+          {
+            "description": "Free text search that matches against the program title or description.",
+            "in": "query",
+            "name": "keywords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "The start page of the results to return.",
+            "in": "query",
+            "name": "pageStart",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "The number of items to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v2/programs/search",
         "pointer": "#/paths/~1api~1v2~1programs~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Program[]"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -511,7 +1234,10 @@
             ]
           }
         ],
-        "summary": "Optimized free-text search for programs using various filters."
+        "summary": "Optimized free-text search for programs using various filters.",
+        "tags": [
+          "Programs"
+        ]
       },
       {
         "deprecated": false,
@@ -519,8 +1245,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/programs/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the program to operate on.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/programs/{id}",
         "pointer": "#/paths/~1api~1v2~1programs~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Program"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -528,7 +1278,10 @@
             ]
           }
         ],
-        "summary": "Returns the program matching the given ID."
+        "summary": "Returns the program matching the given ID.",
+        "tags": [
+          "Programs"
+        ]
       },
       {
         "deprecated": false,
@@ -536,8 +1289,65 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/segments",
+        "parameters": [
+          {
+            "description": "The ID of the episode that owns the segment.",
+            "in": "query",
+            "name": "episodeId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "segmentNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "The start page of the results to return.",
+            "in": "query",
+            "name": "pageStart",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "The number of items to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The sort order of the list of segments, based on segment ID.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "orderById",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/segments",
         "pointer": "#/paths/~1api~1v2~1segments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Segment[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -545,7 +1355,10 @@
             ]
           }
         ],
-        "summary": "Returns the segments matching the query parameters."
+        "summary": "Returns the segments matching the query parameters.",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
@@ -555,6 +1368,32 @@
         "name": "post /api/v2/segments",
         "path": "/api/v2/segments",
         "pointer": "#/paths/~1api~1v2~1segments/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Segment"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -562,24 +1401,10 @@
             ]
           }
         ],
-        "summary": "Creates a new segment."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v2/segments/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v2/segments/{id}",
-        "path": "/api/v2/segments/{id}",
-        "pointer": "#/paths/~1api~1v2~1segments~1{id}/delete",
-        "security": [
-          {
-            "cd_oauth2": [
-              "cd:full"
-            ]
-          }
-        ],
-        "summary": "Deletes the segment with the given ID."
+        "summary": "Creates a new segment.",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
@@ -587,8 +1412,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/segments/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/segments/{id}",
         "pointer": "#/paths/~1api~1v2~1segments~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Segment"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -596,7 +1444,52 @@
             ]
           }
         ],
-        "summary": "Returns the segment matching the given ID."
+        "summary": "Returns the segment matching the given ID.",
+        "tags": [
+          "Segments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v2/segments/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v2/segments/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v2/segments/{id}",
+        "pointer": "#/paths/~1api~1v2~1segments~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cd_oauth2": [
+              "cd:full"
+            ]
+          }
+        ],
+        "summary": "Deletes the segment with the given ID.",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
@@ -604,8 +1497,26 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/segments/{id}/content",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/segments/{id}/content",
         "pointer": "#/paths/~1api~1v2~1segments~1{id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -613,7 +1524,10 @@
             ]
           }
         ],
-        "summary": "UNDER DEVELOPMENT - Returns the audio content segment matching the given ID."
+        "summary": "UNDER DEVELOPMENT - Returns the audio content segment matching the given ID.",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
@@ -621,8 +1535,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/spotinsertions",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "The start page of the results to return.",
+            "in": "query",
+            "name": "pageStart",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "The number of items to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The sort order of the list of spot insertions, based on ID.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "orderById",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/spotinsertions",
         "pointer": "#/paths/~1api~1v2~1spotinsertions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpotInsertion[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -630,7 +1584,10 @@
             ]
           }
         ],
-        "summary": "Returns the spot insertions matching the query parameters."
+        "summary": "Returns the spot insertions matching the query parameters.",
+        "tags": [
+          "Spot Insertions"
+        ]
       },
       {
         "deprecated": false,
@@ -640,6 +1597,32 @@
         "name": "post /api/v2/spotinsertions",
         "path": "/api/v2/spotinsertions",
         "pointer": "#/paths/~1api~1v2~1spotinsertions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SpotInsertion"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SpotInsertion"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -647,24 +1630,10 @@
             ]
           }
         ],
-        "summary": "Creates a new spot insertion."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v2/spotinsertions/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v2/spotinsertions/{id}",
-        "path": "/api/v2/spotinsertions/{id}",
-        "pointer": "#/paths/~1api~1v2~1spotinsertions~1{id}/delete",
-        "security": [
-          {
-            "cd_oauth2": [
-              "cd:full"
-            ]
-          }
-        ],
-        "summary": "Deletes the spot insertion with the given ID."
+        "summary": "Creates a new spot insertion.",
+        "tags": [
+          "Spot Insertions"
+        ]
       },
       {
         "deprecated": false,
@@ -672,8 +1641,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/spotinsertions/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/spotinsertions/{id}",
         "pointer": "#/paths/~1api~1v2~1spotinsertions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpotInsertion"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -681,7 +1673,52 @@
             ]
           }
         ],
-        "summary": "Returns the spot insertion matching the given ID."
+        "summary": "Returns the spot insertion matching the given ID.",
+        "tags": [
+          "Spot Insertions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/v2/spotinsertions/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v2/spotinsertions/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v2/spotinsertions/{id}",
+        "pointer": "#/paths/~1api~1v2~1spotinsertions~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cd_oauth2": [
+              "cd:full"
+            ]
+          }
+        ],
+        "summary": "Deletes the spot insertion with the given ID.",
+        "tags": [
+          "Spot Insertions"
+        ]
       },
       {
         "deprecated": false,
@@ -689,8 +1726,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/spots",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "The start page of the spot to return.",
+            "in": "query",
+            "name": "pageStart",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "The number of items to return.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The sort order of the list of spots, based on spot ID.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "orderById",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v2/spots",
         "pointer": "#/paths/~1api~1v2~1spots/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Spot[]"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -698,7 +1779,10 @@
             ]
           }
         ],
-        "summary": "Returns the spots matching the query parameters."
+        "summary": "Returns the spots matching the query parameters.",
+        "tags": [
+          "Spots"
+        ]
       },
       {
         "deprecated": false,
@@ -708,6 +1792,32 @@
         "name": "post /api/v2/spots",
         "path": "/api/v2/spots",
         "pointer": "#/paths/~1api~1v2~1spots/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Spot"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cd_oauth2": [
@@ -715,24 +1825,10 @@
             ]
           }
         ],
-        "summary": "Creates a new spot."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v2/spots/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v2/spots/{id}",
-        "path": "/api/v2/spots/{id}",
-        "pointer": "#/paths/~1api~1v2~1spots~1{id}/delete",
-        "security": [
-          {
-            "cd_oauth2": [
-              "cd:full"
-            ]
-          }
-        ],
-        "summary": "Deletes the spot with the given ID."
+        "summary": "Creates a new spot.",
+        "tags": [
+          "Spots"
+        ]
       },
       {
         "deprecated": false,
@@ -740,8 +1836,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/spots/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v2/spots/{id}",
         "pointer": "#/paths/~1api~1v2~1spots~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Spot"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cd_oauth2": [
@@ -749,100 +1868,238 @@
             ]
           }
         ],
-        "summary": "Returns the spot matching the given ID."
+        "summary": "Returns the spot matching the given ID.",
+        "tags": [
+          "Spots"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/v2/spots/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v2/spots/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/v2/spots/{id}",
+        "pointer": "#/paths/~1api~1v2~1spots~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cd_oauth2": [
+              "cd:full"
+            ]
+          }
+        ],
+        "summary": "Deletes the spot with the given ID.",
+        "tags": [
+          "Spots"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The group information (GI) document allows programs to be put into groups such as serials, series, shows, or general themes and provide additional metadata for…",
         "id": "operation:get:/radiodns/spi/3.1/GI.xml",
         "kind": "operation",
         "method": "get",
         "name": "get /radiodns/spi/3.1/GI.xml",
         "path": "/radiodns/spi/3.1/GI.xml",
         "pointer": "#/paths/~1radiodns~1spi~13.1~1GI.xml/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:RadioDNS Group Information (GI) as defined in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 8"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the group information document."
+        "summary": "Get the group information document.",
+        "tags": [
+          "RadioDNS"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The service information (SI) document holds a definition of services provided by the service provider (e.g.",
         "id": "operation:get:/radiodns/spi/3.1/SI.xml",
         "kind": "operation",
         "method": "get",
         "name": "get /radiodns/spi/3.1/SI.xml",
         "path": "/radiodns/spi/3.1/SI.xml",
         "pointer": "#/paths/~1radiodns~1spi~13.1~1SI.xml/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:RadioDNS Service Information (SI) as defined in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 6"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the service information document."
+        "summary": "Get the service information document.",
+        "tags": [
+          "RadioDNS"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The program information (PI) document holds the linear and the on-demand schedule of programs for a service over a 24 hour period.",
         "id": "operation:get:/radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml",
         "kind": "operation",
         "method": "get",
         "name": "get /radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml",
+        "parameters": [
+          {
+            "description": "The fully qualified domain name for the environment where the service is running.",
+            "in": "path",
+            "name": "fqdn",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "One of the valid service IDs defined in the SI document.",
+            "in": "path",
+            "name": "sid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The PI schedule date to retrieve in format yyyymmdd.",
+            "in": "path",
+            "name": "date",
+            "required": true,
+            "type": "string:yyyymmdd"
+          },
+          {
+            "description": "The API client Id you received.",
+            "in": "header",
+            "name": "x-radiodnsspi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml",
         "pointer": "#/paths/~1radiodns~1spi~13.1~1id~1{fqdn}~1{sid}~1{date}_PI.xml/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:RadioDNS Program Information (PI) as defined in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 7"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the program information document."
+        "summary": "Get the program information document.",
+        "tags": [
+          "RadioDNS"
+        ]
       },
       {
+        "description": "A broadcast service that can subscribe to content for multiple destinations.",
         "id": "schema:BroadcastService",
         "kind": "schema",
-        "name": "BroadcastService"
+        "name": "BroadcastService",
+        "type": "object"
       },
       {
+        "description": "A file in the CD Drive that contains content.",
         "id": "schema:CDDriveFile",
         "kind": "schema",
-        "name": "CDDriveFile"
+        "name": "CDDriveFile",
+        "type": "object"
       },
       {
+        "description": "A folder in the CD Drive that can contain other items such as files or folders.",
         "id": "schema:CDDriveFolder",
         "kind": "schema",
-        "name": "CDDriveFolder"
+        "name": "CDDriveFolder",
+        "type": "object"
       },
       {
+        "description": "A generic reference to an item in the CD Drive such as a file or folder.",
         "id": "schema:CDDriveItem",
         "kind": "schema",
-        "name": "CDDriveItem"
+        "name": "CDDriveItem",
+        "type": "object"
       },
       {
+        "description": "An episode that defines a specific air date for an instance of a program.",
         "id": "schema:Episode",
         "kind": "schema",
-        "name": "Episode"
+        "name": "Episode",
+        "type": "object"
       },
       {
+        "description": "Standard error response.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "The metadata about a \"piece\" which may be a story, song, report, etc.",
         "id": "schema:Piece",
         "kind": "schema",
-        "name": "Piece"
+        "name": "Piece",
+        "type": "object"
       },
       {
+        "description": "A program that stations can subscribe to to get live or file content.",
         "id": "schema:Program",
         "kind": "schema",
-        "name": "Program"
+        "name": "Program",
+        "type": "object"
       },
       {
+        "description": "An electronic program guide (EPG) batch operation to create or update metadata on one or more guide programs.",
         "id": "schema:ProgramInformationBatch",
         "kind": "schema",
-        "name": "ProgramInformationBatch"
+        "name": "ProgramInformationBatch",
+        "type": "object"
       },
       {
+        "description": "An audio segment in an episode.",
         "id": "schema:Segment",
         "kind": "schema",
-        "name": "Segment"
+        "name": "Segment",
+        "type": "object"
       },
       {
+        "description": "An audio spot for insertion.",
         "id": "schema:Spot",
         "kind": "schema",
-        "name": "Spot"
+        "name": "Spot",
+        "type": "object"
       },
       {
+        "description": "A spot insertion for playing a series of spots when a cue is received during a program.",
         "id": "schema:SpotInsertion",
         "kind": "schema",
-        "name": "SpotInsertion"
+        "name": "SpotInsertion",
+        "type": "object"
       }
     ]
   },

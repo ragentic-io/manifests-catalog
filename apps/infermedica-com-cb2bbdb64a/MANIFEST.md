@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Infermedica_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `e934cdefa5715f0ad23201183ef94a5c7a60b3a8d21f7b3c8b0e947955abc989` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,25 +34,27 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Infermedica_profile
 
 33 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/concepts` | getConcepts | — |
-| GET | `/concepts/{id}` | getConcept | — |
-| GET | `/conditions` | getAllConditions | List all conditions |
-| GET | `/conditions/{id}` | getCondition | Get condition by id |
-| POST | `/diagnosis` | computeDiagnosis | Query diagnostic engine |
-| POST | `/explain` | computeExplanation | Query diagnostic engine for explanation |
-| GET | `/info` | getDatabaseInfo | Get database information |
-| GET | `/lab_tests` | getAllLabTests | List all lab tests |
-| GET | `/lab_tests/{id}` | getLabTest | Get lab test by id |
-| GET | `/lookup` | getMatchingObservation | Find observation matching given phrase |
-| POST | `/parse` | getMentions | Find mentions of observations in given text |
-| POST | `/rationale` | computeRationale | Query diagnostic engine for question rationale |
-| POST | `/red_flags` | computeRedFlags | Query the diagnostic engine for possible red flag symptoms |
-| GET | `/risk_factors` | getAllRiskFactors | List all risk factors |
-| GET | `/risk_factors/{id}` | getRiskFactor | Get risk factor by id |
-| GET | `/search` | getMatchingObservations | Find observations matching given phrase |
-| POST | `/suggest` | getSuggestions | Query diagnostic engine for related symptoms |
-| GET | `/symptoms` | getAllSymptoms | List all symptoms |
-| GET | `/symptoms/{id}` | getSymptom | Get symptoms by id |
-| POST | `/triage` | computeTriage | Query diagnostic engine for triage level |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/concepts` | getConcepts | `ids`, `types` | ConceptItemModel_Public[] | yes | — |
+| GET | `/concepts/{id}` | getConcept | `id`* | ConceptItemModel_Public | yes | — |
+| GET | `/conditions` | getAllConditions | `age.value`, `age.unit`, `enable_triage_5` | Condition_Public[] | yes | List all conditions |
+| GET | `/conditions/{id}` | getCondition | `id`*, `age.value`, `age.unit`, `enable_triage_5` | Condition_Details | yes | Get condition by id |
+| POST | `/diagnosis` | computeDiagnosis | body*: DiagnosisRequest | DiagnosisResponse_Public |  | Query diagnostic engine |
+| POST | `/explain` | computeExplanation | body*: ExplanationRequest | ExplanationResponse |  | Query diagnostic engine for explanation |
+| GET | `/info` | getDatabaseInfo | `age.value`, `age.unit` | Info_Public | yes | Get database information |
+| GET | `/lab_tests` | getAllLabTests | `age.value`, `age.unit` | LabTest_Public[] | yes | List all lab tests |
+| GET | `/lab_tests/{id}` | getLabTest | `id`*, `age.value`, `age.unit` | LabTest_Details | yes | Get lab test by id |
+| GET | `/lookup` | getMatchingObservation | `phrase`*, `sex`, `age.value`, `age.unit` | SearchResult | yes | Find observation matching given phrase |
+| POST | `/parse` | getMentions | body*: ParseRequest | ParseResponse |  | Find mentions of observations in given text |
+| POST | `/rationale` | computeRationale | body*: RationaleRequest | RationaleResponse |  | Query diagnostic engine for question rationale |
+| POST | `/red_flags` | computeRedFlags | `max_results`, body*: DiagnosisRequest | SuggestResult[] |  | Query the diagnostic engine for possible red flag symptoms |
+| GET | `/risk_factors` | getAllRiskFactors | `age.value`, `age.unit`, `enable_triage_5` | RiskFactor_Public[] | yes | List all risk factors |
+| GET | `/risk_factors/{id}` | getRiskFactor | `id`*, `age.value`, `age.unit`, `enable_triage_5` | RiskFactor_Details | yes | Get risk factor by id |
+| GET | `/search` | getMatchingObservations | `phrase`*, `sex`, `age.value`, `age.unit`, `max_results`, `type` | SearchResult[] | yes | Find observations matching given phrase |
+| POST | `/suggest` | getSuggestions | `max_results`, body*: SuggestRequest | SuggestResult[] |  | Query diagnostic engine for related symptoms |
+| GET | `/symptoms` | getAllSymptoms | `age.value`, `age.unit`, `enable_triage_5` | Symptom_Public[] | yes | List all symptoms |
+| GET | `/symptoms/{id}` | getSymptom | `id`*, `age.value`, `age.unit`, `enable_triage_5` | Symptom_Details | yes | Get symptoms by id |
+| POST | `/triage` | computeTriage | body*: DiagnosisRequest | TriageResponse |  | Query diagnostic engine for triage level |

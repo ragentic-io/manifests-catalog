@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_TfL_profile_image.j
 
 | | |
 | --- | --- |
-| Signed bundle | `810777ef2d50b4a48ac9df589aaaac8e7045c7919b48908b1d2825785b4afa2d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,89 +34,91 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_TfL_profile_image.j
 
 121 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/AccidentStats/{year}` | AccidentStats_Get | Gets all accident details for accidents occuring in the specified year |
-| GET | `/AirQuality` | AirQuality_Get | Gets air quality data feed |
-| GET | `/BikePoint` | BikePoint_GetAll | Gets all bike point locations. The Place object has an addtionalProperties array which contains the nbBikes, nbDocks and nbSpaces numbers which give the status of the BikePoint. A mismatch in these numbers i.e. nbDocks - (nbBikes + nbSpaces) != 0 indicates broken docks. |
-| GET | `/BikePoint/Search` | BikePoint_Search | Search for bike stations by their name, a bike point's name often contains information about the name of the street or nearby landmarks, for example. Note that the search result does not contain the PlaceProperties i.e. the status or occupancy of the BikePoint, to get that information you should retrieve the BikePoint by its id on /BikePoint/id. |
-| GET | `/BikePoint/{id}` | BikePoint_Get | Gets the bike point with the given id. |
-| GET | `/Cabwise/search` | Cabwise_Get | Gets taxis and minicabs contact information |
-| GET | `/Journey/JourneyResults/{from}/to/{to}` | Journey_JourneyResults | Perform a Journey Planner search from the parameters specified in simple types |
-| GET | `/Journey/Meta/Modes` | Journey_Meta | Gets a list of all of the available journey planner modes |
-| GET | `/Line/Meta/DisruptionCategories` | Line_MetaDisruptionCategories | Gets a list of valid disruption categories |
-| GET | `/Line/Meta/Modes` | Line_MetaModes | Gets a list of valid modes |
-| GET | `/Line/Meta/ServiceTypes` | Line_MetaServiceTypes | Gets a list of valid ServiceTypes to filter on |
-| GET | `/Line/Meta/Severity` | Line_MetaSeverity | Gets a list of valid severity codes |
-| GET | `/Line/Mode/{modes}` | Line_GetByMode | Gets lines that serve the given modes. |
-| GET | `/Line/Mode/{modes}/Disruption` | Line_DisruptionByMode | Get disruptions for all lines of the given modes. |
-| GET | `/Line/Mode/{modes}/Route` | Line_RouteByMode | Gets all lines and their valid routes for given modes, including the name and id of the originating and terminating stops for each route |
-| GET | `/Line/Mode/{modes}/Status` | Line_StatusByMode | Gets the line status of for all lines for the given modes |
-| GET | `/Line/Route` | Line_Route | Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route. |
-| GET | `/Line/Search/{query}` | Line_Search | Search for lines or routes matching the query string |
-| GET | `/Line/Status/{severity}` | Line_StatusBySeverity | Gets the line status for all lines with a given severity A list of valid severity codes can be obtained from a call to Line/Meta/Severity |
-| GET | `/Line/{ids}` | Line_Get | Gets lines that match the specified line ids. |
-| GET | `/Line/{ids}/Arrivals/{stopPointId}` | Line_Arrivals | Get the list of arrival predictions for given line ids based at the given stop |
-| GET | `/Line/{ids}/Disruption` | Line_Disruption | Get disruptions for the given line ids |
-| GET | `/Line/{ids}/Route` | Line_LineRoutesByIds | Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route. |
-| GET | `/Line/{ids}/Status` | Line_StatusByIds | Gets the line status of for given line ids e.g Minor Delays |
-| GET | `/Line/{ids}/Status/{StartDate}/to/{EndDate}` | Line_Status | Gets the line status for given line ids during the provided dates e.g Minor Delays |
-| GET | `/Line/{id}/Route/Sequence/{direction}` | Line_RouteSequence | Gets all valid routes for given line id, including the sequence of stops on each route. |
-| GET | `/Line/{id}/StopPoints` | Line_StopPoints | Gets a list of the stations that serve the given line id |
-| GET | `/Line/{id}/Timetable/{fromStopPointId}` | Line_Timetable | Gets the timetable for a specified station on the give line |
-| GET | `/Line/{id}/Timetable/{fromStopPointId}/to/{toStopPointId}` | Line_TimetableTo | Gets the timetable for a specified station on the give line with specified destination |
-| GET | `/Mode/ActiveServiceTypes` | Mode_GetActiveServiceTypes | Returns the service type active for a mode. Currently only supports tube |
-| GET | `/Mode/{mode}/Arrivals` | Mode_Arrivals | Gets the next arrival predictions for all stops of a given mode |
-| GET | `/Occupancy/BikePoints/{ids}` | Occupancy_GetBikePointsOccupancies | Get the occupancy for bike points. |
-| GET | `/Occupancy/CarPark` | get /Occupancy/CarPark | Gets the occupancy for all car parks that have occupancy data |
-| GET | `/Occupancy/CarPark/{id}` | Occupancy_Get | Gets the occupancy for a car park with a given id |
-| GET | `/Occupancy/ChargeConnector` | Occupancy_GetAllChargeConnectorStatus | Gets the occupancy for all charge connectors |
-| GET | `/Occupancy/ChargeConnector/{ids}` | Occupancy_GetChargeConnectorStatus | Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId) |
-| GET | `/Place` | Place_GetByGeo | Gets the places that lie within a geographic region. The geographic region of interest can either be specified by using a lat/lon geo-point and a radius in metres to return places within the locus defined by the lat/lon of its centre or alternatively, by the use of a bounding box defined by the lat/lon of its north-west and south-east corners. Optionally filters on type and can strip properties for a smaller payload. |
-| GET | `/Place/Address/Streets/{Postcode}` | Place_GetStreetsByPostCode | Gets the set of streets associated with a post code. |
-| GET | `/Place/Meta/Categories` | Place_MetaCategories | Gets a list of all of the available place property categories and keys. |
-| GET | `/Place/Meta/PlaceTypes` | Place_MetaPlaceTypes | Gets a list of the available types of Place. |
-| GET | `/Place/Search` | Place_Search | Gets all places that matches the given query |
-| GET | `/Place/Type/{types}` | Place_GetByType | Gets all places of a given type |
-| GET | `/Place/{id}` | Place_Get | Gets the place with the given id. |
-| GET | `/Place/{type}/At/{Lat}/{Lon}` | Place_GetAt | Gets any places of the given type whose geography intersects the given latitude and longitude. In practice this means the Place must be polygonal e.g. a BoroughBoundary. |
-| GET | `/Place/{type}/overlay/{z}/{Lat}/{Lon}/{width}/{height}` | Place_GetOverlay | Gets the place overlay for a given set of co-ordinates and a given width/height. |
-| GET | `/Road` | Road_Get | Gets all roads managed by TfL |
-| GET | `/Road/Meta/Categories` | Road_MetaCategories | Gets a list of valid RoadDisruption categories |
-| GET | `/Road/Meta/Severities` | Road_MetaSeverities | Gets a list of valid RoadDisruption severity codes |
-| GET | `/Road/all/Disruption/{disruptionIds}` | Road_DisruptionById | Gets a list of active disruptions filtered by disruption Ids. |
-| GET | `/Road/all/Street/Disruption` | Road_DisruptedStreets | Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned. |
-| GET | `/Road/{ids}` | get /Road/{ids} | Gets the road with the specified id (e.g. A1) |
-| GET | `/Road/{ids}/Disruption` | Road_Disruption | Get active disruptions, filtered by road ids |
-| GET | `/Road/{ids}/Status` | Road_Status | Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed. |
-| GET | `/Search` | Search_Get | Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size of 100. To return subsequent pages, use the paginated overload. |
-| GET | `/Search/BusSchedules` | Search_BusSchedules | Searches the bus schedules folder on S3 for a given bus number. |
-| GET | `/Search/Meta/Categories` | Search_MetaCategories | Gets the available search categories. |
-| GET | `/Search/Meta/SearchProviders` | Search_MetaSearchProviders | Gets the available searchProvider names. |
-| GET | `/Search/Meta/Sorts` | Search_MetaSorts | Gets the available sorting options. |
-| GET | `/StopPoint` | StopPoint_GetByGeoPoint | Gets a list of StopPoints within {radius} by the specified criteria |
-| GET | `/StopPoint/Meta/Categories` | StopPoint_MetaCategories | Gets the list of available StopPoint additional information categories |
-| GET | `/StopPoint/Meta/Modes` | StopPoint_MetaModes | Gets the list of available StopPoint modes |
-| GET | `/StopPoint/Meta/StopTypes` | StopPoint_MetaStopTypes | Gets the list of available StopPoint types |
-| GET | `/StopPoint/Mode/{modes}` | StopPoint_GetByMode | Gets a list of StopPoints filtered by the modes available at that StopPoint. |
-| GET | `/StopPoint/Mode/{modes}/Disruption` | StopPoint_DisruptionByMode | Gets a distinct list of disrupted stop points for the given modes |
-| GET | `/StopPoint/Search` | get /StopPoint/Search | Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code. |
-| GET | `/StopPoint/Search/{query}` | StopPoint_Search | Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code. |
-| GET | `/StopPoint/ServiceTypes` | StopPoint_GetServiceTypes | Gets the service types for a given stoppoint |
-| GET | `/StopPoint/Sms/{id}` | StopPoint_GetBySms | Gets a StopPoint for a given sms code. |
-| GET | `/StopPoint/Type/{types}` | StopPoint_GetByType | Gets all stop points of a given type |
-| GET | `/StopPoint/Type/{types}/page/{page}` | StopPoint_GetByTypeWithPagination | Gets all the stop points of given type(s) with a page number |
-| GET | `/StopPoint/{ids}` | StopPoint_Get | Gets a list of StopPoints corresponding to the given list of stop ids. |
-| GET | `/StopPoint/{ids}/Disruption` | StopPoint_Disruption | Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have. |
-| GET | `/StopPoint/{id}/ArrivalDepartures` | StopPoint_ArrivalDepartures | Gets the list of arrival and departure predictions for the given stop point id (overground, Elizabeth line and thameslink only) |
-| GET | `/StopPoint/{id}/Arrivals` | StopPoint_Arrivals | Gets the list of arrival predictions for the given stop point id |
-| GET | `/StopPoint/{id}/CanReachOnLine/{lineId}` | StopPoint_ReachableFrom | Gets Stopoints that are reachable from a station/line combination. |
-| GET | `/StopPoint/{id}/Crowding/{line}` | StopPoint_Crowding | Gets all the Crowding data (static) for the StopPointId, plus crowding data for a given line and optionally a particular direction. |
-| GET | `/StopPoint/{id}/DirectionTo/{toStopPointId}` | StopPoint_Direction | Returns the canonical direction, "inbound" or "outbound", for a given pair of stop point Ids in the direction from -&gt; to. |
-| GET | `/StopPoint/{id}/Route` | StopPoint_Route | Returns the route sections for all the lines that service the given stop point ids |
-| GET | `/StopPoint/{id}/placeTypes` | get /StopPoint/{id}/placeTypes | Get a list of places corresponding to a given id and place types. |
-| GET | `/StopPoint/{stopPointId}/CarParks` | StopPoint_GetCarParksById | Get car parks corresponding to the given stop point id. |
-| GET | `/StopPoint/{stopPointId}/TaxiRanks` | StopPoint_GetTaxiRanksByIds | Gets a list of taxi ranks corresponding to the given stop point id. |
-| GET | `/TravelTimes/compareOverlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}` | TravelTime_GetCompareOverlay | Gets the TravelTime overlay. |
-| GET | `/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}` | TravelTime_GetOverlay | Gets the TravelTime overlay. |
-| GET | `/Vehicle/{ids}/Arrivals` | Vehicle_Get | Gets the predictions for a given list of vehicle Id's. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/AccidentStats/{year}` | AccidentStats_Get | `year`* | Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail[] | yes | Gets all accident details for accidents occuring in the specified year |
+| GET | `/AirQuality` | AirQuality_Get | — | System.Object | yes | Gets air quality data feed |
+| GET | `/BikePoint` | BikePoint_GetAll | — | Tfl.Api.Presentation.Entities.Place[] | yes | Gets all bike point locations. The Place object has an addtionalProperties array which contains the nbBikes, nbDocks and nbSpaces numbers which give the status of the BikePoint. A mismatch in these numbers i.e. nbDocks - (nbBikes + nbSpaces) != 0 indicates broken docks. |
+| GET | `/BikePoint/Search` | BikePoint_Search | `query`* | Tfl.Api.Presentation.Entities.Place[] | yes | Search for bike stations by their name, a bike point's name often contains information about the name of the street or nearby landmarks, for example. Note that the search result does not contain the PlaceProperties i.e. the status or occupancy of the BikePoint, to get that information you should retrieve the BikePoint by its id on /BikePoint/id. |
+| GET | `/BikePoint/{id}` | BikePoint_Get | `id`* | Tfl.Api.Presentation.Entities.Place | yes | Gets the bike point with the given id. |
+| GET | `/Cabwise/search` | Cabwise_Get | `lat`*, `lon`*, `optype`, `wc`, `radius`, `name`, `maxResults`, `legacyFormat`, `forceXml`, `twentyFourSevenOnly` | System.Object | yes | Gets taxis and minicabs contact information |
+| GET | `/Journey/JourneyResults/{from}/to/{to}` | Journey_JourneyResults | `from`*, `to`*, `via`, `nationalSearch`, `date`, `time`, `timeIs`, `journeyPreference`, `mode`, `accessibilityPreference`, `fromName`, `toName`, `viaName`, `maxTransferMinutes`, `maxWalkingMinutes`, `walkingSpeed`, `cyclePreference`, `adjustment`, `bikeProficiency`, `alternativeCycle`, `alternativeWalking`, `applyHtmlMarkup`, `useMultiModalCall`, `walkingOptimization`, `taxiOnlyTrip`, `routeBetweenEntrances`, `useRealTimeLiveArrivals`, `calcOneDirection` | Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult | yes | Perform a Journey Planner search from the parameters specified in simple types |
+| GET | `/Journey/Meta/Modes` | Journey_Meta | — | Tfl.Api.Presentation.Entities.Mode[] | yes | Gets a list of all of the available journey planner modes |
+| GET | `/Line/Meta/DisruptionCategories` | Line_MetaDisruptionCategories | — | string[] | yes | Gets a list of valid disruption categories |
+| GET | `/Line/Meta/Modes` | Line_MetaModes | — | Tfl.Api.Presentation.Entities.Mode[] | yes | Gets a list of valid modes |
+| GET | `/Line/Meta/ServiceTypes` | Line_MetaServiceTypes | — | string[] | yes | Gets a list of valid ServiceTypes to filter on |
+| GET | `/Line/Meta/Severity` | Line_MetaSeverity | — | Tfl.Api.Presentation.Entities.StatusSeverity[] | yes | Gets a list of valid severity codes |
+| GET | `/Line/Mode/{modes}` | Line_GetByMode | `modes`* | Tfl.Api.Presentation.Entities.Line[] | yes | Gets lines that serve the given modes. |
+| GET | `/Line/Mode/{modes}/Disruption` | Line_DisruptionByMode | `modes`* | Tfl.Api.Presentation.Entities.Disruption[] | yes | Get disruptions for all lines of the given modes. |
+| GET | `/Line/Mode/{modes}/Route` | Line_RouteByMode | `modes`*, `serviceTypes` | Tfl.Api.Presentation.Entities.Line[] | yes | Gets all lines and their valid routes for given modes, including the name and id of the originating and terminating stops for each route |
+| GET | `/Line/Mode/{modes}/Status` | Line_StatusByMode | `modes`*, `detail`, `severityLevel` | Tfl.Api.Presentation.Entities.Line[] | yes | Gets the line status of for all lines for the given modes |
+| GET | `/Line/Route` | Line_Route | `serviceTypes` | Tfl.Api.Presentation.Entities.Line[] | yes | Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route. |
+| GET | `/Line/Search/{query}` | Line_Search | `query`*, `modes`, `serviceTypes` | Tfl.Api.Presentation.Entities.RouteSearchResponse | yes | Search for lines or routes matching the query string |
+| GET | `/Line/Status/{severity}` | Line_StatusBySeverity | `severity`* | Tfl.Api.Presentation.Entities.Line[] | yes | Gets the line status for all lines with a given severity A list of valid severity codes can be obtained from a call to Line/Meta/Severity |
+| GET | `/Line/{ids}` | Line_Get | `ids`* | Tfl.Api.Presentation.Entities.Line[] | yes | Gets lines that match the specified line ids. |
+| GET | `/Line/{ids}/Arrivals/{stopPointId}` | Line_Arrivals | `ids`*, `stopPointId`*, `direction`, `destinationStationId` | Tfl.Api.Presentation.Entities.Prediction[] | yes | Get the list of arrival predictions for given line ids based at the given stop |
+| GET | `/Line/{ids}/Disruption` | Line_Disruption | `ids`* | Tfl.Api.Presentation.Entities.Disruption[] | yes | Get disruptions for the given line ids |
+| GET | `/Line/{ids}/Route` | Line_LineRoutesByIds | `ids`*, `serviceTypes` | Tfl.Api.Presentation.Entities.Line[] | yes | Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route. |
+| GET | `/Line/{ids}/Status` | Line_StatusByIds | `ids`*, `detail` | Tfl.Api.Presentation.Entities.Line[] | yes | Gets the line status of for given line ids e.g Minor Delays |
+| GET | `/Line/{ids}/Status/{StartDate}/to/{EndDate}` | Line_Status | `ids`*, `detail`, `startDate`*, `endDate`*, `dateRange.startDate`, `dateRange.endDate`, `StartDate`*, `EndDate`* | Tfl.Api.Presentation.Entities.Line[] | yes | Gets the line status for given line ids during the provided dates e.g Minor Delays |
+| GET | `/Line/{id}/Route/Sequence/{direction}` | Line_RouteSequence | `id`*, `direction`*, `serviceTypes`, `excludeCrowding` | Tfl.Api.Presentation.Entities.RouteSequence | yes | Gets all valid routes for given line id, including the sequence of stops on each route. |
+| GET | `/Line/{id}/StopPoints` | Line_StopPoints | `id`*, `tflOperatedNationalRailStationsOnly` | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets a list of the stations that serve the given line id |
+| GET | `/Line/{id}/Timetable/{fromStopPointId}` | Line_Timetable | `fromStopPointId`*, `id`* | Tfl.Api.Presentation.Entities.TimetableResponse | yes | Gets the timetable for a specified station on the give line |
+| GET | `/Line/{id}/Timetable/{fromStopPointId}/to/{toStopPointId}` | Line_TimetableTo | `fromStopPointId`*, `id`*, `toStopPointId`* | Tfl.Api.Presentation.Entities.TimetableResponse | yes | Gets the timetable for a specified station on the give line with specified destination |
+| GET | `/Mode/ActiveServiceTypes` | Mode_GetActiveServiceTypes | — | Tfl.Api.Presentation.Entities.ActiveServiceType[] | yes | Returns the service type active for a mode. Currently only supports tube |
+| GET | `/Mode/{mode}/Arrivals` | Mode_Arrivals | `mode`*, `count` | Tfl.Api.Presentation.Entities.Prediction[] | yes | Gets the next arrival predictions for all stops of a given mode |
+| GET | `/Occupancy/BikePoints/{ids}` | Occupancy_GetBikePointsOccupancies | `ids`* | Tfl.Api.Presentation.Entities.BikePointOccupancy[] | yes | Get the occupancy for bike points. |
+| GET | `/Occupancy/CarPark` | get /Occupancy/CarPark | — | Tfl.Api.Presentation.Entities.CarParkOccupancy[] | yes | Gets the occupancy for all car parks that have occupancy data |
+| GET | `/Occupancy/CarPark/{id}` | Occupancy_Get | `id`* | Tfl.Api.Presentation.Entities.CarParkOccupancy | yes | Gets the occupancy for a car park with a given id |
+| GET | `/Occupancy/ChargeConnector` | Occupancy_GetAllChargeConnectorStatus | — | Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy[] | yes | Gets the occupancy for all charge connectors |
+| GET | `/Occupancy/ChargeConnector/{ids}` | Occupancy_GetChargeConnectorStatus | `ids`* | Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy[] | yes | Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId) |
+| GET | `/Place` | Place_GetByGeo | `radius`, `categories`, `includeChildren`, `type`, `activeOnly`, `numberOfPlacesToReturn`, `placeGeo.swLat`, `placeGeo.swLon`, `placeGeo.neLat`, `placeGeo.neLon`, `placeGeo.lat`, `placeGeo.lon` | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets the places that lie within a geographic region. The geographic region of interest can either be specified by using a lat/lon geo-point and a radius in metres to return places within the locus defined by the lat/lon of its centre or alternatively, by the use of a bounding box defined by the lat/lon of its north-west and south-east corners. Optionally filters on type and can strip properties for a smaller payload. |
+| GET | `/Place/Address/Streets/{Postcode}` | Place_GetStreetsByPostCode | `postcode`*, `postcodeInput.postcode`, `Postcode`* | System.Object | yes | Gets the set of streets associated with a post code. |
+| GET | `/Place/Meta/Categories` | Place_MetaCategories | — | Tfl.Api.Presentation.Entities.PlaceCategory[] | yes | Gets a list of all of the available place property categories and keys. |
+| GET | `/Place/Meta/PlaceTypes` | Place_MetaPlaceTypes | — | Tfl.Api.Presentation.Entities.PlaceCategory[] | yes | Gets a list of the available types of Place. |
+| GET | `/Place/Search` | Place_Search | `name`*, `types` | Tfl.Api.Presentation.Entities.Place[] | yes | Gets all places that matches the given query |
+| GET | `/Place/Type/{types}` | Place_GetByType | `types`*, `activeOnly` | Tfl.Api.Presentation.Entities.Place[] | yes | Gets all places of a given type |
+| GET | `/Place/{id}` | Place_Get | `id`*, `includeChildren` | Tfl.Api.Presentation.Entities.Place[] | yes | Gets the place with the given id. |
+| GET | `/Place/{type}/At/{Lat}/{Lon}` | Place_GetAt | `type`*, `lat`*, `lon`*, `location.lat`*, `location.lon`*, `Lat`*, `Lon`* | System.Object | yes | Gets any places of the given type whose geography intersects the given latitude and longitude. In practice this means the Place must be polygonal e.g. a BoroughBoundary. |
+| GET | `/Place/{type}/overlay/{z}/{Lat}/{Lon}/{width}/{height}` | Place_GetOverlay | `z`*, `type`*, `width`*, `height`*, `lat`*, `lon`*, `location.lat`*, `location.lon`*, `Lat`*, `Lon`* | System.Object | yes | Gets the place overlay for a given set of co-ordinates and a given width/height. |
+| GET | `/Road` | Road_Get | — | Tfl.Api.Presentation.Entities.RoadCorridor[] | yes | Gets all roads managed by TfL |
+| GET | `/Road/Meta/Categories` | Road_MetaCategories | — | string[] | yes | Gets a list of valid RoadDisruption categories |
+| GET | `/Road/Meta/Severities` | Road_MetaSeverities | — | Tfl.Api.Presentation.Entities.StatusSeverity[] | yes | Gets a list of valid RoadDisruption severity codes |
+| GET | `/Road/all/Disruption/{disruptionIds}` | Road_DisruptionById | `disruptionIds`*, `stripContent` | Tfl.Api.Presentation.Entities.RoadDisruption | yes | Gets a list of active disruptions filtered by disruption Ids. |
+| GET | `/Road/all/Street/Disruption` | Road_DisruptedStreets | `startDate`*, `endDate`* | System.Object | yes | Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned. |
+| GET | `/Road/{ids}` | get /Road/{ids} | `ids`* | Tfl.Api.Presentation.Entities.RoadCorridor[] | yes | Gets the road with the specified id (e.g. A1) |
+| GET | `/Road/{ids}/Disruption` | Road_Disruption | `ids`*, `stripContent`, `severities`, `categories`, `closures` | Tfl.Api.Presentation.Entities.RoadDisruption[] | yes | Get active disruptions, filtered by road ids |
+| GET | `/Road/{ids}/Status` | Road_Status | `ids`*, `dateRangeNullable.startDate`, `dateRangeNullable.endDate` | Tfl.Api.Presentation.Entities.RoadCorridor[] | yes | Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed. |
+| GET | `/Search` | Search_Get | `query`* | Tfl.Api.Presentation.Entities.SearchResponse | yes | Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size of 100. To return subsequent pages, use the paginated overload. |
+| GET | `/Search/BusSchedules` | Search_BusSchedules | `query`* | Tfl.Api.Presentation.Entities.SearchResponse | yes | Searches the bus schedules folder on S3 for a given bus number. |
+| GET | `/Search/Meta/Categories` | Search_MetaCategories | — | string[] | yes | Gets the available search categories. |
+| GET | `/Search/Meta/SearchProviders` | Search_MetaSearchProviders | — | string[] | yes | Gets the available searchProvider names. |
+| GET | `/Search/Meta/Sorts` | Search_MetaSorts | — | string[] | yes | Gets the available sorting options. |
+| GET | `/StopPoint` | StopPoint_GetByGeoPoint | `stopTypes`*, `radius`, `useStopPointHierarchy`, `modes`, `categories`, `returnLines`, `location.lat`*, `location.lon`* | Tfl.Api.Presentation.Entities.StopPointsResponse | yes | Gets a list of StopPoints within {radius} by the specified criteria |
+| GET | `/StopPoint/Meta/Categories` | StopPoint_MetaCategories | — | Tfl.Api.Presentation.Entities.StopPointCategory[] | yes | Gets the list of available StopPoint additional information categories |
+| GET | `/StopPoint/Meta/Modes` | StopPoint_MetaModes | — | Tfl.Api.Presentation.Entities.Mode[] | yes | Gets the list of available StopPoint modes |
+| GET | `/StopPoint/Meta/StopTypes` | StopPoint_MetaStopTypes | — | string[] | yes | Gets the list of available StopPoint types |
+| GET | `/StopPoint/Mode/{modes}` | StopPoint_GetByMode | `modes`*, `page` | Tfl.Api.Presentation.Entities.StopPointsResponse | yes | Gets a list of StopPoints filtered by the modes available at that StopPoint. |
+| GET | `/StopPoint/Mode/{modes}/Disruption` | StopPoint_DisruptionByMode | `modes`*, `includeRouteBlockedStops` | Tfl.Api.Presentation.Entities.DisruptedPoint[] | yes | Gets a distinct list of disrupted stop points for the given modes |
+| GET | `/StopPoint/Search` | get /StopPoint/Search | `query`*, `modes`, `faresOnly`, `maxResults`, `lines`, `includeHubs`, `tflOperatedNationalRailStationsOnly` | Tfl.Api.Presentation.Entities.SearchResponse | yes | Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code. |
+| GET | `/StopPoint/Search/{query}` | StopPoint_Search | `query`*, `modes`, `faresOnly`, `maxResults`, `lines`, `includeHubs`, `tflOperatedNationalRailStationsOnly` | Tfl.Api.Presentation.Entities.SearchResponse | yes | Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code. |
+| GET | `/StopPoint/ServiceTypes` | StopPoint_GetServiceTypes | `id`*, `lineIds`, `modes` | Tfl.Api.Presentation.Entities.LineServiceType[] | yes | Gets the service types for a given stoppoint |
+| GET | `/StopPoint/Sms/{id}` | StopPoint_GetBySms | `id`*, `output` | System.Object | yes | Gets a StopPoint for a given sms code. |
+| GET | `/StopPoint/Type/{types}` | StopPoint_GetByType | `types`* | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets all stop points of a given type |
+| GET | `/StopPoint/Type/{types}/page/{page}` | StopPoint_GetByTypeWithPagination | `types`*, `page`* | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets all the stop points of given type(s) with a page number |
+| GET | `/StopPoint/{ids}` | StopPoint_Get | `ids`*, `includeCrowdingData` | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets a list of StopPoints corresponding to the given list of stop ids. |
+| GET | `/StopPoint/{ids}/Disruption` | StopPoint_Disruption | `ids`*, `getFamily`, `includeRouteBlockedStops`, `flattenResponse` | Tfl.Api.Presentation.Entities.DisruptedPoint[] | yes | Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have. |
+| GET | `/StopPoint/{id}/ArrivalDepartures` | StopPoint_ArrivalDepartures | `id`*, `lineIds`* | Tfl.Api.Presentation.Entities.ArrivalDeparture[] | yes | Gets the list of arrival and departure predictions for the given stop point id (overground, Elizabeth line and thameslink only) |
+| GET | `/StopPoint/{id}/Arrivals` | StopPoint_Arrivals | `id`* | Tfl.Api.Presentation.Entities.Prediction[] | yes | Gets the list of arrival predictions for the given stop point id |
+| GET | `/StopPoint/{id}/CanReachOnLine/{lineId}` | StopPoint_ReachableFrom | `id`*, `lineId`*, `serviceTypes` | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets Stopoints that are reachable from a station/line combination. |
+| GET | `/StopPoint/{id}/Crowding/{line}` | StopPoint_Crowding | `id`*, `line`*, `direction`* | Tfl.Api.Presentation.Entities.StopPoint[] | yes | Gets all the Crowding data (static) for the StopPointId, plus crowding data for a given line and optionally a particular direction. |
+| GET | `/StopPoint/{id}/DirectionTo/{toStopPointId}` | StopPoint_Direction | `id`*, `toStopPointId`*, `lineId` | string | yes | Returns the canonical direction, "inbound" or "outbound", for a given pair of stop point Ids in the direction from -&gt; to. |
+| GET | `/StopPoint/{id}/Route` | StopPoint_Route | `id`*, `serviceTypes` | Tfl.Api.Presentation.Entities.StopPointRouteSection[] | yes | Returns the route sections for all the lines that service the given stop point ids |
+| GET | `/StopPoint/{id}/placeTypes` | get /StopPoint/{id}/placeTypes | `id`*, `placeTypes`* | Tfl.Api.Presentation.Entities.Place[] | yes | Get a list of places corresponding to a given id and place types. |
+| GET | `/StopPoint/{stopPointId}/CarParks` | StopPoint_GetCarParksById | `stopPointId`* | Tfl.Api.Presentation.Entities.Place[] | yes | Get car parks corresponding to the given stop point id. |
+| GET | `/StopPoint/{stopPointId}/TaxiRanks` | StopPoint_GetTaxiRanksByIds | `stopPointId`* | Tfl.Api.Presentation.Entities.Place[] | yes | Gets a list of taxi ranks corresponding to the given stop point id. |
+| GET | `/TravelTimes/compareOverlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}` | TravelTime_GetCompareOverlay | `z`*, `pinLat`*, `pinLon`*, `mapCenterLat`*, `mapCenterLon`*, `scenarioTitle`*, `timeOfDayId`*, `modeId`*, `width`*, `height`*, `direction`*, `travelTimeInterval`*, `compareType`*, `compareValue`* | System.Object | yes | Gets the TravelTime overlay. |
+| GET | `/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}` | TravelTime_GetOverlay | `z`*, `pinLat`*, `pinLon`*, `mapCenterLat`*, `mapCenterLon`*, `scenarioTitle`*, `timeOfDayId`*, `modeId`*, `width`*, `height`*, `direction`*, `travelTimeInterval`* | System.Object | yes | Gets the TravelTime overlay. |
+| GET | `/Vehicle/{ids}/Arrivals` | Vehicle_Get | `ids`* | Tfl.Api.Presentation.Entities.Prediction[] | yes | Gets the predictions for a given list of vehicle Id's. |

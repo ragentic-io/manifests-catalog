@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_vocadb_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `a17d90c7a9f7f56cf8d562f535afaf5ceb83f0b8cabc904f6442306af61f2e59` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,134 +34,136 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_vocadb_profile_imag
 
 150 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/activityEntries` | get /api/activityEntries | — |
-| GET | `/api/albums` | get /api/albums | — |
-| DELETE | `/api/albums/comments/{commentId}` | delete /api/albums/comments/{commentId} | — |
-| POST | `/api/albums/comments/{commentId}` | post /api/albums/comments/{commentId} | — |
-| GET | `/api/albums/names` | get /api/albums/names | — |
-| GET | `/api/albums/new` | get /api/albums/new | — |
-| GET | `/api/albums/top` | get /api/albums/top | — |
-| DELETE | `/api/albums/{id}` | delete /api/albums/{id} | — |
-| GET | `/api/albums/{id}` | get /api/albums/{id} | — |
-| GET | `/api/albums/{id}/comments` | get /api/albums/{id}/comments | — |
-| POST | `/api/albums/{id}/comments` | post /api/albums/{id}/comments | — |
-| GET | `/api/albums/{id}/reviews` | get /api/albums/{id}/reviews | — |
-| POST | `/api/albums/{id}/reviews` | post /api/albums/{id}/reviews | — |
-| DELETE | `/api/albums/{id}/reviews/{reviewId}` | delete /api/albums/{id}/reviews/{reviewId} | — |
-| GET | `/api/albums/{id}/tracks` | get /api/albums/{id}/tracks | — |
-| GET | `/api/albums/{id}/tracks/fields` | get /api/albums/{id}/tracks/fields | — |
-| GET | `/api/albums/{id}/user-collections` | get /api/albums/{id}/user-collections | — |
-| GET | `/api/artists` | get /api/artists | — |
-| DELETE | `/api/artists/comments/{commentId}` | delete /api/artists/comments/{commentId} | — |
-| POST | `/api/artists/comments/{commentId}` | post /api/artists/comments/{commentId} | — |
-| GET | `/api/artists/names` | get /api/artists/names | — |
-| DELETE | `/api/artists/{id}` | delete /api/artists/{id} | — |
-| GET | `/api/artists/{id}` | get /api/artists/{id} | — |
-| GET | `/api/artists/{id}/comments` | get /api/artists/{id}/comments | — |
-| POST | `/api/artists/{id}/comments` | post /api/artists/{id}/comments | — |
-| GET | `/api/comments` | get /api/comments | — |
-| GET | `/api/comments/{entryType}-comments` | get /api/comments/{entryType}-comments | — |
-| POST | `/api/comments/{entryType}-comments` | post /api/comments/{entryType}-comments | — |
-| DELETE | `/api/comments/{entryType}-comments/{commentId}` | delete /api/comments/{entryType}-comments/{commentId} | — |
-| POST | `/api/comments/{entryType}-comments/{commentId}` | post /api/comments/{entryType}-comments/{commentId} | — |
-| DELETE | `/api/discussions/comments/{commentId}` | delete /api/discussions/comments/{commentId} | — |
-| POST | `/api/discussions/comments/{commentId}` | post /api/discussions/comments/{commentId} | — |
-| GET | `/api/discussions/folders` | get /api/discussions/folders | — |
-| POST | `/api/discussions/folders` | post /api/discussions/folders | — |
-| GET | `/api/discussions/folders/{folderId}/topics` | get /api/discussions/folders/{folderId}/topics | — |
-| POST | `/api/discussions/folders/{folderId}/topics` | post /api/discussions/folders/{folderId}/topics | — |
-| GET | `/api/discussions/topics` | get /api/discussions/topics | — |
-| DELETE | `/api/discussions/topics/{topicId}` | delete /api/discussions/topics/{topicId} | — |
-| GET | `/api/discussions/topics/{topicId}` | get /api/discussions/topics/{topicId} | — |
-| POST | `/api/discussions/topics/{topicId}` | post /api/discussions/topics/{topicId} | — |
-| POST | `/api/discussions/topics/{topicId}/comments` | post /api/discussions/topics/{topicId}/comments | — |
-| GET | `/api/entries` | get /api/entries | — |
-| GET | `/api/entries/names` | get /api/entries/names | — |
-| GET | `/api/entry-types/{entryType}/{subType}/tag` | get /api/entry-types/{entryType}/{subType}/tag | — |
-| GET | `/api/pvs/for-songs` | get /api/pvs/for-songs | — |
-| GET | `/api/releaseEventSeries` | get /api/releaseEventSeries | — |
-| DELETE | `/api/releaseEventSeries/{id}` | delete /api/releaseEventSeries/{id} | — |
-| GET | `/api/releaseEventSeries/{id}` | get /api/releaseEventSeries/{id} | — |
-| GET | `/api/releaseEventSeries/{id}/for-edit` | get /api/releaseEventSeries/{id}/for-edit | — |
-| GET | `/api/releaseEvents` | get /api/releaseEvents | — |
-| GET | `/api/releaseEvents/names` | get /api/releaseEvents/names | — |
-| GET | `/api/releaseEvents/{eventId}/albums` | get /api/releaseEvents/{eventId}/albums | — |
-| GET | `/api/releaseEvents/{eventId}/published-songs` | get /api/releaseEvents/{eventId}/published-songs | — |
-| POST | `/api/releaseEvents/{eventId}/reports` | post /api/releaseEvents/{eventId}/reports | — |
-| DELETE | `/api/releaseEvents/{id}` | delete /api/releaseEvents/{id} | — |
-| GET | `/api/releaseEvents/{id}` | get /api/releaseEvents/{id} | — |
-| GET | `/api/resources/{cultureCode}` | get /api/resources/{cultureCode} | — |
-| POST | `/api/songLists` | post /api/songLists | — |
-| DELETE | `/api/songLists/comments/{commentId}` | delete /api/songLists/comments/{commentId} | — |
-| POST | `/api/songLists/comments/{commentId}` | post /api/songLists/comments/{commentId} | — |
-| GET | `/api/songLists/featured` | get /api/songLists/featured | — |
-| GET | `/api/songLists/featured/names` | get /api/songLists/featured/names | — |
-| DELETE | `/api/songLists/{id}` | delete /api/songLists/{id} | — |
-| GET | `/api/songLists/{listId}/comments` | get /api/songLists/{listId}/comments | — |
-| POST | `/api/songLists/{listId}/comments` | post /api/songLists/{listId}/comments | — |
-| GET | `/api/songLists/{listId}/songs` | get /api/songLists/{listId}/songs | — |
-| GET | `/api/songs` | get /api/songs | — |
-| GET | `/api/songs/byPv` | get /api/songs/byPv | — |
-| DELETE | `/api/songs/comments/{commentId}` | delete /api/songs/comments/{commentId} | — |
-| POST | `/api/songs/comments/{commentId}` | post /api/songs/comments/{commentId} | — |
-| GET | `/api/songs/highlighted` | get /api/songs/highlighted | — |
-| GET | `/api/songs/lyrics/{lyricsId}` | get /api/songs/lyrics/{lyricsId} | — |
-| GET | `/api/songs/names` | get /api/songs/names | — |
-| GET | `/api/songs/top-rated` | get /api/songs/top-rated | — |
-| DELETE | `/api/songs/{id}` | delete /api/songs/{id} | — |
-| GET | `/api/songs/{id}` | get /api/songs/{id} | — |
-| GET | `/api/songs/{id}/comments` | get /api/songs/{id}/comments | — |
-| POST | `/api/songs/{id}/comments` | post /api/songs/{id}/comments | — |
-| GET | `/api/songs/{id}/derived` | get /api/songs/{id}/derived | — |
-| GET | `/api/songs/{id}/ratings` | get /api/songs/{id}/ratings | — |
-| POST | `/api/songs/{id}/ratings` | post /api/songs/{id}/ratings | — |
-| GET | `/api/songs/{id}/related` | get /api/songs/{id}/related | — |
-| GET | `/api/tags` | get /api/tags | — |
-| POST | `/api/tags` | post /api/tags | — |
-| GET | `/api/tags/byName/{name}` | get /api/tags/byName/{name} | — |
-| GET | `/api/tags/categoryNames` | get /api/tags/categoryNames | — |
-| DELETE | `/api/tags/comments/{commentId}` | delete /api/tags/comments/{commentId} | — |
-| POST | `/api/tags/comments/{commentId}` | post /api/tags/comments/{commentId} | — |
-| GET | `/api/tags/names` | get /api/tags/names | — |
-| GET | `/api/tags/top` | get /api/tags/top | — |
-| DELETE | `/api/tags/{id}` | delete /api/tags/{id} | — |
-| GET | `/api/tags/{id}` | get /api/tags/{id} | — |
-| GET | `/api/tags/{tagId}/children` | get /api/tags/{tagId}/children | — |
-| GET | `/api/tags/{tagId}/comments` | get /api/tags/{tagId}/comments | — |
-| POST | `/api/tags/{tagId}/comments` | post /api/tags/{tagId}/comments | — |
-| POST | `/api/tags/{tagId}/reports` | post /api/tags/{tagId}/reports | — |
-| GET | `/api/users` | get /api/users | — |
-| GET | `/api/users/current` | get /api/users/current | — |
-| GET | `/api/users/current/album-collection-statuses/{albumId}` | get /api/users/current/album-collection-statuses/{albumId} | — |
-| POST | `/api/users/current/albums/{albumId}` | post /api/users/current/albums/{albumId} | — |
-| GET | `/api/users/current/followedArtists/{artistId}` | get /api/users/current/followedArtists/{artistId} | — |
-| DELETE | `/api/users/current/followedTags/{tagId}` | delete /api/users/current/followedTags/{tagId} | — |
-| POST | `/api/users/current/followedTags/{tagId}` | post /api/users/current/followedTags/{tagId} | — |
-| GET | `/api/users/current/ratedSongs/{songId}` | get /api/users/current/ratedSongs/{songId} | — |
-| POST | `/api/users/current/refreshEntryEdit` | post /api/users/current/refreshEntryEdit | — |
-| POST | `/api/users/current/songTags/{songId}` | post /api/users/current/songTags/{songId} | — |
-| GET | `/api/users/messages/{messageId}` | get /api/users/messages/{messageId} | — |
-| GET | `/api/users/names` | get /api/users/names | — |
-| DELETE | `/api/users/profileComments/{commentId}` | delete /api/users/profileComments/{commentId} | — |
-| POST | `/api/users/profileComments/{commentId}` | post /api/users/profileComments/{commentId} | — |
-| GET | `/api/users/{id}` | get /api/users/{id} | — |
-| GET | `/api/users/{id}/album-collection-statuses/{albumId}` | get /api/users/{id}/album-collection-statuses/{albumId} | — |
-| GET | `/api/users/{id}/albums` | get /api/users/{id}/albums | — |
-| GET | `/api/users/{id}/events` | get /api/users/{id}/events | — |
-| GET | `/api/users/{id}/followedArtists` | get /api/users/{id}/followedArtists | — |
-| GET | `/api/users/{id}/followedArtists/{artistId}` | get /api/users/{id}/followedArtists/{artistId} | — |
-| DELETE | `/api/users/{id}/messages` | delete /api/users/{id}/messages | — |
-| GET | `/api/users/{id}/messages` | get /api/users/{id}/messages | — |
-| POST | `/api/users/{id}/messages` | post /api/users/{id}/messages | — |
-| GET | `/api/users/{id}/profileComments` | get /api/users/{id}/profileComments | — |
-| POST | `/api/users/{id}/profileComments` | post /api/users/{id}/profileComments | — |
-| GET | `/api/users/{id}/ratedSongs` | get /api/users/{id}/ratedSongs | — |
-| GET | `/api/users/{id}/ratedSongs/{songId}` | get /api/users/{id}/ratedSongs/{songId} | — |
-| POST | `/api/users/{id}/reports` | post /api/users/{id}/reports | — |
-| POST | `/api/users/{id}/settings/{settingName}` | post /api/users/{id}/settings/{settingName} | — |
-| GET | `/api/users/{id}/songLists` | get /api/users/{id}/songLists | — |
-| GET | `/api/venues` | get /api/venues | — |
-| DELETE | `/api/venues/{id}` | delete /api/venues/{id} | — |
-| POST | `/api/venues/{id}/reports` | post /api/venues/{id}/reports | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/activityEntries` | get /api/activityEntries | `before`, `since`, `userId`, `editEvent`, `entryType`, `maxResults`, `getTotalCount`, `fields`, `entryFields`, `lang`, `sortRule` | ActivityEntryForApiContractPartialFindResult | yes | — |
+| GET | `/api/albums` | get /api/albums | `query`, `discTypes`, `tagName[]`, `tagId[]`, `childTags`, `artistId[]`, `artistParticipationStatus`, `childVoicebanks`, `includeMembers`, `barcode`, `status`, `releaseDateAfter`, `releaseDateBefore`, `advancedFilters`, `start`, `maxResults`, `getTotalCount`, `sort`, `preferAccurateMatches`, `deleted`, `nameMatchMode`, `fields`, `lang` | AlbumForApiContractPartialFindResult | yes | — |
+| POST | `/api/albums/comments/{commentId}` | post /api/albums/comments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/albums/comments/{commentId}` | delete /api/albums/comments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/albums/names` | get /api/albums/names | `query`, `nameMatchMode`, `maxResults` | string[] | yes | — |
+| GET | `/api/albums/new` | get /api/albums/new | `languagePreference`, `fields` | AlbumForApiContract[] | yes | — |
+| GET | `/api/albums/top` | get /api/albums/top | `ignoreIds[]`, `languagePreference`, `fields` | AlbumForApiContract[] | yes | — |
+| GET | `/api/albums/{id}` | get /api/albums/{id} | `id`*, `fields`, `songFields`, `lang` | AlbumForApiContract | yes | — |
+| DELETE | `/api/albums/{id}` | delete /api/albums/{id} | `id`*, `notes` | — |  | — |
+| GET | `/api/albums/{id}/comments` | get /api/albums/{id}/comments | `id`* | CommentForApiContract[] | yes | — |
+| POST | `/api/albums/{id}/comments` | post /api/albums/{id}/comments | `id`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| GET | `/api/albums/{id}/reviews` | get /api/albums/{id}/reviews | `id`*, `languageCode` | AlbumReviewContract[] | yes | — |
+| POST | `/api/albums/{id}/reviews` | post /api/albums/{id}/reviews | `id`*, body: AlbumReviewContract | AlbumReviewContract |  | — |
+| DELETE | `/api/albums/{id}/reviews/{reviewId}` | delete /api/albums/{id}/reviews/{reviewId} | `reviewId`*, `id`* | — |  | — |
+| GET | `/api/albums/{id}/tracks` | get /api/albums/{id}/tracks | `id`*, `fields`, `lang` | SongInAlbumForApiContract[] | yes | — |
+| GET | `/api/albums/{id}/tracks/fields` | get /api/albums/{id}/tracks/fields | `id`*, `field[]`, `discNumber`, `lang` | object[] | yes | — |
+| GET | `/api/albums/{id}/user-collections` | get /api/albums/{id}/user-collections | `id`*, `languagePreference` | AlbumForUserForApiContract[] | yes | — |
+| GET | `/api/artists` | get /api/artists | `query`, `artistTypes`, `allowBaseVoicebanks`, `tagName[]`, `tagId[]`, `childTags`, `followedByUserId`, `status`, `advancedFilters`, `start`, `maxResults`, `getTotalCount`, `sort`, `preferAccurateMatches`, `nameMatchMode`, `fields`, `lang` | ArtistForApiContractPartialFindResult | yes | — |
+| POST | `/api/artists/comments/{commentId}` | post /api/artists/comments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/artists/comments/{commentId}` | delete /api/artists/comments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/artists/names` | get /api/artists/names | `query`, `nameMatchMode`, `maxResults` | string[] | yes | — |
+| GET | `/api/artists/{id}` | get /api/artists/{id} | `id`*, `fields`, `relations`, `lang` | ArtistForApiContract | yes | — |
+| DELETE | `/api/artists/{id}` | delete /api/artists/{id} | `id`*, `notes` | — |  | — |
+| GET | `/api/artists/{id}/comments` | get /api/artists/{id}/comments | `id`* | CommentForApiContract[] | yes | — |
+| POST | `/api/artists/{id}/comments` | post /api/artists/{id}/comments | `id`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| GET | `/api/comments` | get /api/comments | `before`, `since`, `userId`, `entryType`, `maxResults`, `getTotalCount`, `fields`, `entryFields`, `lang`, `sortRule` | CommentForApiContractPartialFindResult | yes | — |
+| GET | `/api/comments/{entryType}-comments` | get /api/comments/{entryType}-comments | `entryType`*, `entryId` | CommentForApiContractPartialFindResult | yes | — |
+| POST | `/api/comments/{entryType}-comments` | post /api/comments/{entryType}-comments | `entryType`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| POST | `/api/comments/{entryType}-comments/{commentId}` | post /api/comments/{entryType}-comments/{commentId} | `entryType`*, `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/comments/{entryType}-comments/{commentId}` | delete /api/comments/{entryType}-comments/{commentId} | `entryType`*, `commentId`* | — |  | — |
+| POST | `/api/discussions/comments/{commentId}` | post /api/discussions/comments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/discussions/comments/{commentId}` | delete /api/discussions/comments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/discussions/folders` | get /api/discussions/folders | `fields` | DiscussionFolderContract[] | yes | — |
+| POST | `/api/discussions/folders` | post /api/discussions/folders | body: DiscussionFolderContract | DiscussionFolderContract |  | — |
+| GET | `/api/discussions/folders/{folderId}/topics` | get /api/discussions/folders/{folderId}/topics | `folderId`*, `fields` | DiscussionTopicContract[] | yes | — |
+| POST | `/api/discussions/folders/{folderId}/topics` | post /api/discussions/folders/{folderId}/topics | `folderId`*, body: DiscussionTopicContract | DiscussionTopicContract |  | — |
+| GET | `/api/discussions/topics` | get /api/discussions/topics | `folderId`, `start`, `maxResults`, `getTotalCount`, `sort`, `fields` | DiscussionTopicContractPartialFindResult | yes | — |
+| GET | `/api/discussions/topics/{topicId}` | get /api/discussions/topics/{topicId} | `topicId`*, `fields` | DiscussionTopicContract | yes | — |
+| POST | `/api/discussions/topics/{topicId}` | post /api/discussions/topics/{topicId} | `topicId`*, body: DiscussionTopicContract | — |  | — |
+| DELETE | `/api/discussions/topics/{topicId}` | delete /api/discussions/topics/{topicId} | `topicId`* | — |  | — |
+| POST | `/api/discussions/topics/{topicId}/comments` | post /api/discussions/topics/{topicId}/comments | `topicId`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| GET | `/api/entries` | get /api/entries | `query`, `tagName[]`, `tagId[]`, `childTags`, `entryTypes`, `status`, `start`, `maxResults`, `getTotalCount`, `sort`, `nameMatchMode`, `fields`, `lang` | EntryForApiContractPartialFindResult | yes | — |
+| GET | `/api/entries/names` | get /api/entries/names | `query`, `nameMatchMode`, `maxResults` | string[] | yes | — |
+| GET | `/api/entry-types/{entryType}/{subType}/tag` | get /api/entry-types/{entryType}/{subType}/tag | `entryType`*, `subType`*, `fields` | TagForApiContract | yes | — |
+| GET | `/api/pvs/for-songs` | get /api/pvs/for-songs | `name`, `author`, `service`, `maxResults`, `getTotalCount`, `lang` | PVForSongContractPartialFindResult | yes | — |
+| GET | `/api/releaseEventSeries` | get /api/releaseEventSeries | `query`, `fields`, `start`, `maxResults`, `getTotalCount`, `nameMatchMode`, `lang` | ReleaseEventSeriesForApiContractPartialFindResult | yes | — |
+| GET | `/api/releaseEventSeries/{id}` | get /api/releaseEventSeries/{id} | `id`*, `fields`, `lang` | ReleaseEventSeriesForApiContract | yes | — |
+| DELETE | `/api/releaseEventSeries/{id}` | delete /api/releaseEventSeries/{id} | `id`*, `notes`, `hardDelete` | — |  | — |
+| GET | `/api/releaseEventSeries/{id}/for-edit` | get /api/releaseEventSeries/{id}/for-edit | `id`* | ReleaseEventSeriesForEditForApiContract | yes | — |
+| GET | `/api/releaseEvents` | get /api/releaseEvents | `query`, `nameMatchMode`, `seriesId`, `afterDate`, `beforeDate`, `category`, `userCollectionId`, `tagId[]`, `childTags`, `artistId[]`, `childVoicebanks`, `includeMembers`, `status`, `start`, `maxResults`, `getTotalCount`, `sort`, `fields`, `lang`, `sortDirection` | ReleaseEventForApiContractPartialFindResult | yes | — |
+| GET | `/api/releaseEvents/names` | get /api/releaseEvents/names | `query`, `maxResults` | string[] | yes | — |
+| GET | `/api/releaseEvents/{eventId}/albums` | get /api/releaseEvents/{eventId}/albums | `eventId`*, `fields`, `lang` | AlbumForApiContract[] | yes | — |
+| GET | `/api/releaseEvents/{eventId}/published-songs` | get /api/releaseEvents/{eventId}/published-songs | `eventId`*, `fields`, `lang` | SongForApiContract[] | yes | — |
+| POST | `/api/releaseEvents/{eventId}/reports` | post /api/releaseEvents/{eventId}/reports | `eventId`*, `reportType`, `notes`, `versionNumber` | — |  | — |
+| GET | `/api/releaseEvents/{id}` | get /api/releaseEvents/{id} | `id`*, `fields`, `lang` | ReleaseEventForApiContract | yes | — |
+| DELETE | `/api/releaseEvents/{id}` | delete /api/releaseEvents/{id} | `id`*, `notes`, `hardDelete` | — |  | — |
+| GET | `/api/resources/{cultureCode}` | get /api/resources/{cultureCode} | `cultureCode`*, `setNames[]` | object | yes | — |
+| POST | `/api/songLists` | post /api/songLists | body: SongListForEditForApiContract | integer:int32 |  | — |
+| POST | `/api/songLists/comments/{commentId}` | post /api/songLists/comments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/songLists/comments/{commentId}` | delete /api/songLists/comments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/songLists/featured` | get /api/songLists/featured | `query`, `tagId[]`, `childTags`, `nameMatchMode`, `featuredCategory`, `start`, `maxResults`, `getTotalCount`, `sort`, `fields`, `lang` | SongListForApiContractPartialFindResult | yes | — |
+| GET | `/api/songLists/featured/names` | get /api/songLists/featured/names | `query`, `nameMatchMode`, `featuredCategory`, `maxResults` | string[] | yes | — |
+| DELETE | `/api/songLists/{id}` | delete /api/songLists/{id} | `id`*, `notes`, `hardDelete` | — |  | — |
+| GET | `/api/songLists/{listId}/comments` | get /api/songLists/{listId}/comments | `listId`* | CommentForApiContractPartialFindResult | yes | — |
+| POST | `/api/songLists/{listId}/comments` | post /api/songLists/{listId}/comments | `listId`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| GET | `/api/songLists/{listId}/songs` | get /api/songLists/{listId}/songs | `listId`*, `query`, `songTypes`, `pvServices`, `tagId[]`, `artistId[]`, `childVoicebanks`, `advancedFilters`, `start`, `maxResults`, `getTotalCount`, `sort`, `nameMatchMode`, `fields`, `lang` | SongInListForApiContractPartialFindResult | yes | — |
+| GET | `/api/songs` | get /api/songs | `query`, `songTypes`, `afterDate`, `beforeDate`, `tagName[]`, `tagId[]`, `childTags`, `unifyTypesAndTags`, `artistId[]`, `artistParticipationStatus`, `childVoicebanks`, `includeMembers`, `onlyWithPvs`, `pvServices`, `since`, `minScore`, `userCollectionId`, `releaseEventId`, `parentSongId`, `status`, `advancedFilters`, `start`, `maxResults`, `getTotalCount`, `sort`, `preferAccurateMatches`, `nameMatchMode`, `fields`, `lang`, `minMilliBpm`, `maxMilliBpm`, `minLength`, `maxLength` | SongForApiContractPartialFindResult | yes | — |
+| GET | `/api/songs/byPv` | get /api/songs/byPv | `pvService`, `pvId`, `fields`, `lang` | SongForApiContract | yes | — |
+| POST | `/api/songs/comments/{commentId}` | post /api/songs/comments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/songs/comments/{commentId}` | delete /api/songs/comments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/songs/highlighted` | get /api/songs/highlighted | `languagePreference`, `fields` | SongForApiContract[] | yes | — |
+| GET | `/api/songs/lyrics/{lyricsId}` | get /api/songs/lyrics/{lyricsId} | `lyricsId`* | LyricsForSongContract | yes | — |
+| GET | `/api/songs/names` | get /api/songs/names | `query`, `nameMatchMode`, `maxResults` | string[] | yes | — |
+| GET | `/api/songs/top-rated` | get /api/songs/top-rated | `durationHours`, `startDate`, `filterBy`, `vocalist`, `maxResults`, `fields`, `languagePreference` | SongForApiContract[] | yes | — |
+| GET | `/api/songs/{id}` | get /api/songs/{id} | `id`*, `fields`, `lang` | SongForApiContract | yes | — |
+| DELETE | `/api/songs/{id}` | delete /api/songs/{id} | `id`*, `notes` | — |  | — |
+| GET | `/api/songs/{id}/comments` | get /api/songs/{id}/comments | `id`* | CommentForApiContract[] | yes | — |
+| POST | `/api/songs/{id}/comments` | post /api/songs/{id}/comments | `id`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| GET | `/api/songs/{id}/derived` | get /api/songs/{id}/derived | `id`*, `fields`, `lang` | SongForApiContract[] | yes | — |
+| GET | `/api/songs/{id}/ratings` | get /api/songs/{id}/ratings | `id`*, `userFields`, `lang` | RatedSongForUserForApiContract[] | yes | — |
+| POST | `/api/songs/{id}/ratings` | post /api/songs/{id}/ratings | `id`*, body: SongRatingContract | — |  | — |
+| GET | `/api/songs/{id}/related` | get /api/songs/{id}/related | `id`*, `fields`, `lang` | RelatedSongsContract | yes | — |
+| GET | `/api/tags` | get /api/tags | `query`, `allowChildren`, `categoryName`, `start`, `maxResults`, `getTotalCount`, `nameMatchMode`, `sort`, `preferAccurateMatches`, `fields`, `lang`, `target` | TagForApiContractPartialFindResult | yes | — |
+| POST | `/api/tags` | post /api/tags | `name` | TagBaseContract |  | — |
+| GET | `/api/tags/byName/{name}` | get /api/tags/byName/{name} | `name`*, `fields`, `lang` | TagForApiContract | yes | — |
+| GET | `/api/tags/categoryNames` | get /api/tags/categoryNames | `query`, `nameMatchMode` | string[] | yes | — |
+| POST | `/api/tags/comments/{commentId}` | post /api/tags/comments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/tags/comments/{commentId}` | delete /api/tags/comments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/tags/names` | get /api/tags/names | `query`, `allowAliases`, `maxResults` | string[] | yes | — |
+| GET | `/api/tags/top` | get /api/tags/top | `categoryName`, `entryType`, `maxResults`, `lang` | TagBaseContract[] | yes | — |
+| GET | `/api/tags/{id}` | get /api/tags/{id} | `id`*, `fields`, `lang` | TagForApiContract | yes | — |
+| DELETE | `/api/tags/{id}` | delete /api/tags/{id} | `id`*, `notes`, `hardDelete` | — |  | — |
+| GET | `/api/tags/{tagId}/children` | get /api/tags/{tagId}/children | `tagId`*, `fields`, `lang` | TagForApiContract[] | yes | — |
+| GET | `/api/tags/{tagId}/comments` | get /api/tags/{tagId}/comments | `tagId`* | CommentForApiContractPartialFindResult | yes | — |
+| POST | `/api/tags/{tagId}/comments` | post /api/tags/{tagId}/comments | `tagId`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| POST | `/api/tags/{tagId}/reports` | post /api/tags/{tagId}/reports | `tagId`*, `reportType`, `notes`, `versionNumber` | — |  | — |
+| GET | `/api/users` | get /api/users | `query`, `groups`, `joinDateAfter`, `joinDateBefore`, `nameMatchMode`, `start`, `maxResults`, `getTotalCount`, `sort`, `includeDisabled`, `onlyVerified`, `knowsLanguage`, `fields` | UserForApiContractPartialFindResult | yes | — |
+| GET | `/api/users/current` | get /api/users/current | `fields` | UserForApiContract | yes | — |
+| GET | `/api/users/current/album-collection-statuses/{albumId}` | get /api/users/current/album-collection-statuses/{albumId} | `albumId`* | AlbumForUserForApiContract | yes | — |
+| POST | `/api/users/current/albums/{albumId}` | post /api/users/current/albums/{albumId} | `albumId`*, `collectionStatus`, `mediaType`, `rating` | string |  | — |
+| GET | `/api/users/current/followedArtists/{artistId}` | get /api/users/current/followedArtists/{artistId} | `artistId`* | ArtistForUserForApiContract | yes | — |
+| POST | `/api/users/current/followedTags/{tagId}` | post /api/users/current/followedTags/{tagId} | `tagId`* | — |  | — |
+| DELETE | `/api/users/current/followedTags/{tagId}` | delete /api/users/current/followedTags/{tagId} | `tagId`* | — |  | — |
+| GET | `/api/users/current/ratedSongs/{songId}` | get /api/users/current/ratedSongs/{songId} | `songId`* | SongVoteRating | yes | — |
+| POST | `/api/users/current/refreshEntryEdit` | post /api/users/current/refreshEntryEdit | `entryType`, `entryId` | EntryEditDataContract |  | — |
+| POST | `/api/users/current/songTags/{songId}` | post /api/users/current/songTags/{songId} | `songId`* | — |  | — |
+| GET | `/api/users/messages/{messageId}` | get /api/users/messages/{messageId} | `messageId`* | UserMessageContract | yes | — |
+| GET | `/api/users/names` | get /api/users/names | `query`, `nameMatchMode`, `maxResults`, `includeDisabled` | string[] | yes | — |
+| POST | `/api/users/profileComments/{commentId}` | post /api/users/profileComments/{commentId} | `commentId`*, body: CommentForApiContract | — |  | — |
+| DELETE | `/api/users/profileComments/{commentId}` | delete /api/users/profileComments/{commentId} | `commentId`* | — |  | — |
+| GET | `/api/users/{id}` | get /api/users/{id} | `id`*, `fields` | UserForApiContract | yes | — |
+| GET | `/api/users/{id}/album-collection-statuses/{albumId}` | get /api/users/{id}/album-collection-statuses/{albumId} | `id`*, `albumId`* | AlbumForUserForApiContract | yes | — |
+| GET | `/api/users/{id}/albums` | get /api/users/{id}/albums | `id`*, `query`, `tagId`, `tag`, `artistId`, `purchaseStatuses`, `releaseEventId`, `albumTypes`, `advancedFilters`, `start`, `maxResults`, `getTotalCount`, `sort`, `nameMatchMode`, `fields`, `lang`, `mediaType` | AlbumForUserForApiContractPartialFindResult | yes | — |
+| GET | `/api/users/{id}/events` | get /api/users/{id}/events | `id`*, `relationshipType` | ReleaseEventForApiContract[] | yes | — |
+| GET | `/api/users/{id}/followedArtists` | get /api/users/{id}/followedArtists | `id`*, `query`, `tagId[]`, `artistType`, `start`, `maxResults`, `getTotalCount`, `sort`, `nameMatchMode`, `fields`, `lang` | ArtistForUserForApiContractPartialFindResult | yes | — |
+| GET | `/api/users/{id}/followedArtists/{artistId}` | get /api/users/{id}/followedArtists/{artistId} | `id`*, `artistId`* | ArtistForUserForApiContract | yes | — |
+| GET | `/api/users/{id}/messages` | get /api/users/{id}/messages | `id`*, `inbox`, `unread`, `anotherUserId`, `start`, `maxResults`, `getTotalCount` | UserMessageContractPartialFindResult | yes | — |
+| POST | `/api/users/{id}/messages` | post /api/users/{id}/messages | `id`*, body: UserMessageContract | UserMessageContract |  | — |
+| DELETE | `/api/users/{id}/messages` | delete /api/users/{id}/messages | `id`*, `messageId` | — |  | — |
+| GET | `/api/users/{id}/profileComments` | get /api/users/{id}/profileComments | `id`*, `start`, `maxResults`, `getTotalCount` | CommentForApiContractPartialFindResult | yes | — |
+| POST | `/api/users/{id}/profileComments` | post /api/users/{id}/profileComments | `id`*, body: CommentForApiContract | CommentForApiContract |  | — |
+| GET | `/api/users/{id}/ratedSongs` | get /api/users/{id}/ratedSongs | `id`*, `query`, `tagName`, `tagId[]`, `artistId[]`, `childVoicebanks`, `artistGrouping`, `rating`, `songListId`, `groupByRating`, `pvServices`, `advancedFilters`, `start`, `maxResults`, `getTotalCount`, `sort`, `nameMatchMode`, `fields`, `lang` | RatedSongForUserForApiContractPartialFindResult | yes | — |
+| GET | `/api/users/{id}/ratedSongs/{songId}` | get /api/users/{id}/ratedSongs/{songId} | `id`*, `songId`* | SongVoteRating | yes | — |
+| POST | `/api/users/{id}/reports` | post /api/users/{id}/reports | `id`*, body: CreateReportModel | boolean |  | — |
+| POST | `/api/users/{id}/settings/{settingName}` | post /api/users/{id}/settings/{settingName} | `id`*, `settingName`*, body: string | — |  | — |
+| GET | `/api/users/{id}/songLists` | get /api/users/{id}/songLists | `id`*, `query`, `tagId[]`, `childTags`, `nameMatchMode`, `start`, `maxResults`, `getTotalCount`, `sort`, `fields` | SongListForApiContractPartialFindResult | yes | — |
+| GET | `/api/venues` | get /api/venues | `query`, `fields`, `start`, `maxResults`, `getTotalCount`, `nameMatchMode`, `lang`, `sortRule`, `latitude`, `longitude`, `radius`, `distanceUnit` | VenueForApiContractPartialFindResult | yes | — |
+| DELETE | `/api/venues/{id}` | delete /api/venues/{id} | `id`*, `notes`, `hardDelete` | — |  | — |
+| POST | `/api/venues/{id}/reports` | post /api/venues/{id}/reports | `id`*, `reportType`, `notes`, `versionNumber` | — |  | — |

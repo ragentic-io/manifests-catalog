@@ -7,12 +7,12 @@
       {
         "from": "notion-com-880f7ff4c2",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/blocks/{id}"
+        "to": "operation:get:/v1/blocks/{id}"
       },
       {
         "from": "notion-com-880f7ff4c2",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/blocks/{id}"
+        "to": "operation:delete:/v1/blocks/{id}"
       },
       {
         "from": "notion-com-880f7ff4c2",
@@ -77,36 +77,116 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/blocks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteABlock",
-        "path": "/v1/blocks/{id}",
-        "pointer": "#/paths/~1v1~1blocks~1{id}/delete",
-        "security": [],
-        "summary": "Delete a block"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/v1/blocks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "retrieveABlock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/blocks/{id}",
         "pointer": "#/paths/~1v1~1blocks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a block"
+        "summary": "Retrieve a block",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/v1/blocks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteABlock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/blocks/{id}",
+        "pointer": "#/paths/~1v1~1blocks~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a block",
+        "tags": [
+          "Blocks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint allows you to update block content.",
         "id": "operation:patch:/v1/blocks/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateABlock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/blocks/{id}",
         "pointer": "#/paths/~1v1~1blocks~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a block"
+        "summary": "Update a block",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
@@ -114,10 +194,40 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveBlockChildren",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/blocks/{id}/children",
         "pointer": "#/paths/~1v1~1blocks~1{id}~1children/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve block children"
+        "summary": "Retrieve block children",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
@@ -125,32 +235,126 @@
         "kind": "operation",
         "method": "patch",
         "name": "appendBlockChildren",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/blocks/{id}/children",
         "pointer": "#/paths/~1v1~1blocks~1{id}~1children/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Append block children"
+        "summary": "Append block children",
+        "tags": [
+          "Blocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a user object using the ID specified in the request path.",
         "id": "operation:get:/v1/comments",
         "kind": "operation",
         "method": "get",
         "name": "retrieveComments",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "block_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/comments",
         "pointer": "#/paths/~1v1~1comments/get",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve comments"
+        "summary": "Retrieve comments",
+        "tags": [
+          "Comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a database object using the ID specified in the request path.",
         "id": "operation:get:/v1/databases/{id}",
         "kind": "operation",
         "method": "get",
         "name": "retrieveADatabase",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/databases/{id}",
         "pointer": "#/paths/~1v1~1databases~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a database"
+        "summary": "Retrieve a database",
+        "tags": [
+          "Databases"
+        ]
       },
       {
         "deprecated": false,
@@ -158,10 +362,41 @@
         "kind": "operation",
         "method": "patch",
         "name": "updateADatabase",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/databases/{id}",
         "pointer": "#/paths/~1v1~1databases~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a database"
+        "summary": "Update a database",
+        "tags": [
+          "Databases"
+        ]
       },
       {
         "deprecated": false,
@@ -169,32 +404,125 @@
         "kind": "operation",
         "method": "post",
         "name": "queryADatabase",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/databases/{id}/query",
         "pointer": "#/paths/~1v1~1databases~1{id}~1query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Query a database"
+        "summary": "Query a database",
+        "tags": [
+          "Databases"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a Page object using the ID in the request path.",
         "id": "operation:get:/v1/pages/{id}",
         "kind": "operation",
         "method": "get",
         "name": "retrieveAPage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/pages/{id}",
         "pointer": "#/paths/~1v1~1pages~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Page"
+        "summary": "Retrieve a Page",
+        "tags": [
+          "Pages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a page by setting the values of any properties specified in the JSON body of the request.",
         "id": "operation:patch:/v1/pages/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updatePageProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/pages/{id}",
         "pointer": "#/paths/~1v1~1pages~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Page properties "
+        "summary": "Update Page properties ",
+        "tags": [
+          "Pages"
+        ]
       },
       {
         "deprecated": false,
@@ -202,21 +530,77 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieveAPagePropertyItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "property_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/pages/{page_id}/properties/{property_id}",
         "pointer": "#/paths/~1v1~1pages~1{page_id}~1properties~1{property_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a Page Property Item"
+        "summary": "Retrieve a Page Property Item",
+        "tags": [
+          "Pages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a user object using the ID specified in the request path.",
         "id": "operation:get:/v1/users/{id}",
         "kind": "operation",
         "method": "get",
         "name": "retrieveAUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/users/{id}",
         "pointer": "#/paths/~1v1~1users~1{id}/get",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve a user"
+        "summary": "Retrieve a user",
+        "tags": [
+          "Users"
+        ]
       }
     ]
   },

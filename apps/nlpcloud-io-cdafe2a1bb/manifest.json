@@ -28,6 +28,71 @@
         "from": "nlpcloud-io-cdafe2a1bb",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/en_core_web_sm/version"
+      },
+      {
+        "from": "operation:post:/v1/en_core_web_sm/dependencies",
+        "kind": "ACCEPTS",
+        "to": "schema:UserRequestIn"
+      },
+      {
+        "from": "operation:post:/v1/en_core_web_sm/dependencies",
+        "kind": "RETURNS",
+        "to": "schema:DependenciesOut"
+      },
+      {
+        "from": "operation:post:/v1/en_core_web_sm/entities",
+        "kind": "ACCEPTS",
+        "to": "schema:UserRequestIn"
+      },
+      {
+        "from": "operation:post:/v1/en_core_web_sm/entities",
+        "kind": "RETURNS",
+        "to": "schema:EntitiesOut"
+      },
+      {
+        "from": "operation:post:/v1/en_core_web_sm/sentence-dependencies",
+        "kind": "ACCEPTS",
+        "to": "schema:UserRequestIn"
+      },
+      {
+        "from": "operation:post:/v1/en_core_web_sm/sentence-dependencies",
+        "kind": "RETURNS",
+        "to": "schema:SentenceDependenciesOut"
+      },
+      {
+        "from": "operation:get:/v1/en_core_web_sm/version",
+        "kind": "RETURNS",
+        "to": "schema:VersionOut"
+      },
+      {
+        "from": "schema:DependenciesOut",
+        "kind": "REFERENCES",
+        "to": "schema:Arc"
+      },
+      {
+        "from": "schema:DependenciesOut",
+        "kind": "REFERENCES",
+        "to": "schema:Word"
+      },
+      {
+        "from": "schema:EntitiesOut",
+        "kind": "REFERENCES",
+        "to": "schema:EntityOut"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:SentenceDependenciesOut",
+        "kind": "REFERENCES",
+        "to": "schema:SentenceDependencyOut"
+      },
+      {
+        "from": "schema:SentenceDependencyOut",
+        "kind": "REFERENCES",
+        "to": "schema:DependenciesOut"
       }
     ],
     "nodes": [
@@ -43,6 +108,12 @@
         "name": "read_root_v1_en_core_web_sm__get",
         "path": "/v1/en_core_web_sm/",
         "pointer": "#/paths/~1v1~1en_core_web_sm~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -58,6 +129,24 @@
         "name": "read_dependencies_v1_en_core_web_sm_dependencies_post",
         "path": "/v1/en_core_web_sm/dependencies",
         "pointer": "#/paths/~1v1~1en_core_web_sm~1dependencies/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UserRequestIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DependenciesOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -73,6 +162,24 @@
         "name": "read_entities_v1_en_core_web_sm_entities_post",
         "path": "/v1/en_core_web_sm/entities",
         "pointer": "#/paths/~1v1~1en_core_web_sm~1entities/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UserRequestIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EntitiesOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -88,6 +195,24 @@
         "name": "read_sentence_dependencies_v1_en_core_web_sm_sentence_dependencies_post",
         "path": "/v1/en_core_web_sm/sentence-dependencies",
         "pointer": "#/paths/~1v1~1en_core_web_sm~1sentence-dependencies/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UserRequestIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SentenceDependenciesOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -103,6 +228,13 @@
         "name": "read_version_v1_en_core_web_sm_version_get",
         "path": "/v1/en_core_web_sm/version",
         "pointer": "#/paths/~1v1~1en_core_web_sm~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VersionOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -113,57 +245,68 @@
       {
         "id": "schema:Arc",
         "kind": "schema",
-        "name": "Arc"
+        "name": "Arc",
+        "type": "object"
       },
       {
         "id": "schema:DependenciesOut",
         "kind": "schema",
-        "name": "DependenciesOut"
+        "name": "DependenciesOut",
+        "type": "object"
       },
       {
         "id": "schema:EntitiesOut",
         "kind": "schema",
-        "name": "EntitiesOut"
+        "name": "EntitiesOut",
+        "type": "object"
       },
       {
         "id": "schema:EntityOut",
         "kind": "schema",
-        "name": "EntityOut"
+        "name": "EntityOut",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:SentenceDependenciesOut",
         "kind": "schema",
-        "name": "SentenceDependenciesOut"
+        "name": "SentenceDependenciesOut",
+        "type": "object"
       },
       {
         "id": "schema:SentenceDependencyOut",
         "kind": "schema",
-        "name": "SentenceDependencyOut"
+        "name": "SentenceDependencyOut",
+        "type": "object"
       },
       {
         "id": "schema:UserRequestIn",
         "kind": "schema",
-        "name": "UserRequestIn"
+        "name": "UserRequestIn",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VersionOut",
         "kind": "schema",
-        "name": "VersionOut"
+        "name": "VersionOut",
+        "type": "object"
       },
       {
         "id": "schema:Word",
         "kind": "schema",
-        "name": "Word"
+        "name": "Word",
+        "type": "object"
       }
     ]
   },

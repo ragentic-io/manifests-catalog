@@ -68,6 +68,596 @@
         "from": "taggun-io-8c34f7b2b9",
         "kind": "EXPOSES",
         "to": "operation:post:/api/validation/v1/campaign/product-validation/file"
+      },
+      {
+        "from": "operation:post:/api/account/v1/feedback",
+        "kind": "ACCEPTS",
+        "to": "schema:receiptFeedbackAddPayload"
+      },
+      {
+        "from": "operation:post:/api/account/v1/feedback",
+        "kind": "RETURNS",
+        "to": "schema:Result"
+      },
+      {
+        "from": "operation:post:/api/account/v1/merchantname/add",
+        "kind": "ACCEPTS",
+        "to": "schema:merchantNameAddPayload"
+      },
+      {
+        "from": "operation:post:/api/account/v1/merchantname/add",
+        "kind": "RETURNS",
+        "to": "schema:Result"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/match/file",
+        "kind": "RETURNS",
+        "to": "schema:receiptMatchResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/encoded",
+        "kind": "ACCEPTS",
+        "to": "schema:jsonPayload"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/encoded",
+        "kind": "RETURNS",
+        "to": "schema:receiptResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/file",
+        "kind": "RETURNS",
+        "to": "schema:receiptResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/storage",
+        "kind": "ACCEPTS",
+        "to": "schema:storagePayload"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/storage",
+        "kind": "RETURNS",
+        "to": "schema:receiptResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/url",
+        "kind": "ACCEPTS",
+        "to": "schema:urlPayload"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/simple/url",
+        "kind": "RETURNS",
+        "to": "schema:receiptResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/encoded",
+        "kind": "ACCEPTS",
+        "to": "schema:jsonPayload"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/encoded",
+        "kind": "RETURNS",
+        "to": "schema:receiptVerboseResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/file",
+        "kind": "RETURNS",
+        "to": "schema:receiptVerboseResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/storage",
+        "kind": "ACCEPTS",
+        "to": "schema:storagePayload"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/storage",
+        "kind": "RETURNS",
+        "to": "schema:receiptVerboseResult"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/url",
+        "kind": "ACCEPTS",
+        "to": "schema:urlPayload"
+      },
+      {
+        "from": "operation:post:/api/receipt/v1/verbose/url",
+        "kind": "RETURNS",
+        "to": "schema:receiptVerboseResult"
+      },
+      {
+        "from": "schema:LocationResult",
+        "kind": "REFERENCES",
+        "to": "schema:location"
+      },
+      {
+        "from": "schema:Model2",
+        "kind": "REFERENCES",
+        "to": "schema:Model1"
+      },
+      {
+        "from": "schema:Model5",
+        "kind": "REFERENCES",
+        "to": "schema:productName"
+      },
+      {
+        "from": "schema:Model5",
+        "kind": "REFERENCES",
+        "to": "schema:quantity"
+      },
+      {
+        "from": "schema:Model5",
+        "kind": "REFERENCES",
+        "to": "schema:unitPrice"
+      },
+      {
+        "from": "schema:Model5",
+        "kind": "REFERENCES",
+        "to": "schema:wineVarietal"
+      },
+      {
+        "from": "schema:Model6",
+        "kind": "REFERENCES",
+        "to": "schema:data1"
+      },
+      {
+        "from": "schema:Model6",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:Model7",
+        "kind": "REFERENCES",
+        "to": "schema:data2"
+      },
+      {
+        "from": "schema:Model7",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:belgiumVATNumbers",
+        "kind": "REFERENCES",
+        "to": "schema:Model3"
+      },
+      {
+        "from": "schema:data1",
+        "kind": "REFERENCES",
+        "to": "schema:name"
+      },
+      {
+        "from": "schema:data1",
+        "kind": "REFERENCES",
+        "to": "schema:quantity1"
+      },
+      {
+        "from": "schema:data1",
+        "kind": "REFERENCES",
+        "to": "schema:totalPrice"
+      },
+      {
+        "from": "schema:data1",
+        "kind": "REFERENCES",
+        "to": "schema:unitPrice1"
+      },
+      {
+        "from": "schema:data2",
+        "kind": "REFERENCES",
+        "to": "schema:grossAmount"
+      },
+      {
+        "from": "schema:data2",
+        "kind": "REFERENCES",
+        "to": "schema:netAmount"
+      },
+      {
+        "from": "schema:data2",
+        "kind": "REFERENCES",
+        "to": "schema:taxAmount2"
+      },
+      {
+        "from": "schema:data2",
+        "kind": "REFERENCES",
+        "to": "schema:taxRate"
+      },
+      {
+        "from": "schema:data2",
+        "kind": "REFERENCES",
+        "to": "schema:taxType"
+      },
+      {
+        "from": "schema:data3",
+        "kind": "REFERENCES",
+        "to": "schema:vies"
+      },
+      {
+        "from": "schema:date",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:ABN"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:IBAN"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:belgiumVATNumbers"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:excludeItems"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:expenseType"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:fapiaoInvoice"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:fapiaoInvoiceCode"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:fapiaoInvoiceNumber"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:fapiaoMerchantTaxId"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:geoNames"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:invoiceNumber"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:masterCategory"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:merchantVerification"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:multiTaxLineItems"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:productLineItems"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:qrCodeData"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:receiptNumber"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:shoppingMallName"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:wineListItems"
+      },
+      {
+        "from": "schema:excludeItems",
+        "kind": "REFERENCES",
+        "to": "schema:Model4"
+      },
+      {
+        "from": "schema:expenseType",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:geoNames",
+        "kind": "REFERENCES",
+        "to": "schema:Model8"
+      },
+      {
+        "from": "schema:masterCategory",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:match",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantAddress1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantCity1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantCountryCode1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantName1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantPostalCode1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantState",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantTypes",
+        "kind": "REFERENCES",
+        "to": "schema:data"
+      },
+      {
+        "from": "schema:merchantTypes1",
+        "kind": "REFERENCES",
+        "to": "schema:data"
+      },
+      {
+        "from": "schema:merchantTypes1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:merchantVerification",
+        "kind": "REFERENCES",
+        "to": "schema:data3"
+      },
+      {
+        "from": "schema:merchantVerification",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:multiTaxLineItems",
+        "kind": "REFERENCES",
+        "to": "schema:Model7"
+      },
+      {
+        "from": "schema:name",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:paymentType",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:productLineItems",
+        "kind": "REFERENCES",
+        "to": "schema:Model6"
+      },
+      {
+        "from": "schema:quantity1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:receiptMatchResult",
+        "kind": "REFERENCES",
+        "to": "schema:date"
+      },
+      {
+        "from": "schema:receiptMatchResult",
+        "kind": "REFERENCES",
+        "to": "schema:match"
+      },
+      {
+        "from": "schema:receiptNumber",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:date1"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantAddress"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantCity"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantCountryCode"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantName"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantPostalCode"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantTypes"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:taxAmount"
+      },
+      {
+        "from": "schema:receiptResult",
+        "kind": "REFERENCES",
+        "to": "schema:totalAmount"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:LocationResult"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:date"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:entities"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:itemsCount"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:lineAmounts"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantAddress1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantCity1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantCountryCode1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantName1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantPostalCode1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantState"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:merchantTypes1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:paymentType"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:taxAmount1"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:text"
+      },
+      {
+        "from": "schema:receiptVerboseResult",
+        "kind": "REFERENCES",
+        "to": "schema:totalAmount1"
+      },
+      {
+        "from": "schema:regions",
+        "kind": "REFERENCES",
+        "to": "schema:Model2"
+      },
+      {
+        "from": "schema:shoppingMallName",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:taxAmount1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:text",
+        "kind": "REFERENCES",
+        "to": "schema:lineAmounts"
+      },
+      {
+        "from": "schema:totalAmount1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:totalPrice",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:unitPrice1",
+        "kind": "REFERENCES",
+        "to": "schema:regions"
+      },
+      {
+        "from": "schema:urlPayload",
+        "kind": "REFERENCES",
+        "to": "schema:headers"
+      },
+      {
+        "from": "schema:wineListItems",
+        "kind": "REFERENCES",
+        "to": "schema:Model5"
       }
     ],
     "nodes": [
@@ -81,10 +671,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiAccountV1Feedback",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/account/v1/feedback",
         "pointer": "#/paths/~1api~1account~1v1~1feedback/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "receiptFeedbackAddPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Result"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add manually verified receipt data to a given receipt for feedback and training purposes"
+        "summary": "Add manually verified receipt data to a given receipt for feedback and training purposes",
+        "tags": [
+          "3. Improve your results"
+        ]
       },
       {
         "deprecated": false,
@@ -92,10 +712,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiAccountV1MerchantnameAdd",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/account/v1/merchantname/add",
         "pointer": "#/paths/~1api~1account~1v1~1merchantname~1add/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "merchantNameAddPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Result"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a keyword to your account's model to predict merchant name. Changes in your account's model are updated daily."
+        "summary": "Add a keyword to your account's model to predict merchant name. Changes in your account's model are updated daily.",
+        "tags": [
+          "3. Improve your results"
+        ]
       },
       {
         "deprecated": true,
@@ -103,10 +753,105 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1MatchFile",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "file less than 20MB.",
+            "in": "formData",
+            "name": "file",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "default": false,
+            "description": "Set true to force re-process image transcription if the receipt is already in storage",
+            "in": "formData",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Set true to avoid saving the receipt in storage",
+            "in": "formData",
+            "name": "incognito",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "IP Address of the end user",
+            "in": "formData",
+            "name": "ipAddress",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An array of primary keywords to match",
+            "in": "formData",
+            "name": "primaryKeywords",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of secondary keywords to match (lower confidence level than primaryKeywords)",
+            "in": "formData",
+            "name": "secondaryKeywords",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An array of stop words that negate the result to be UNLIKELY",
+            "in": "formData",
+            "name": "stopWords",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Set language as a hint.",
+            "enum": [
+              "en",
+              "es",
+              "fr",
+              "jp",
+              "he",
+              "iw",
+              "et",
+              "lv",
+              "lt",
+              "fi",
+              "el",
+              "zh"
+            ],
+            "in": "formData",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/match/file",
         "pointer": "#/paths/~1api~1receipt~1v1~1match~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptMatchResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "detect and match a receipt against keywords and metadata by uploading an image file"
+        "summary": "detect and match a receipt against keywords and metadata by uploading an image file",
+        "tags": [
+          "4. Deprecated endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -114,10 +859,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1SimpleEncoded",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/simple/encoded",
         "pointer": "#/paths/~1api~1receipt~1v1~1simple~1encoded/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "jsonPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt using base64 encoded image in json payload"
+        "summary": "transcribe a receipt using base64 encoded image in json payload",
+        "tags": [
+          "2. Try other input format endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -125,10 +900,120 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1SimpleFile",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "file less than 20MB.",
+            "in": "formData",
+            "name": "file",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "default": false,
+            "description": "Set true to force re-process image transcription if the receipt is already in storage",
+            "in": "formData",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Set true to avoid saving the receipt in storage",
+            "in": "formData",
+            "name": "incognito",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "IP Address of the end user",
+            "in": "formData",
+            "name": "ipAddress",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A geo location to search for merchant.",
+            "in": "formData",
+            "name": "near",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Ignore this merchant name if detected on the receipt.",
+            "in": "formData",
+            "name": "ignoreMerchantName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set language as a hint.",
+            "enum": [
+              "en",
+              "es",
+              "fr",
+              "jp",
+              "he",
+              "iw",
+              "et",
+              "lv",
+              "lt",
+              "fi",
+              "el",
+              "zh"
+            ],
+            "in": "formData",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set true to return time if found on the receipt.",
+            "in": "formData",
+            "name": "extractTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Tag a request with sub-account ID for billing purposes",
+            "in": "formData",
+            "name": "subAccountId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag a request with a unique reference ID for feedback and training purposes",
+            "in": "formData",
+            "name": "referenceId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/simple/file",
         "pointer": "#/paths/~1api~1receipt~1v1~1simple~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt by uploading an image file"
+        "summary": "transcribe a receipt by uploading an image file",
+        "tags": [
+          "1. Getting started"
+        ]
       },
       {
         "deprecated": true,
@@ -136,10 +1021,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1SimpleStorage",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/simple/storage",
         "pointer": "#/paths/~1api~1receipt~1v1~1simple~1storage/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "storagePayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt in storage"
+        "summary": "transcribe a receipt in storage",
+        "tags": [
+          "4. Deprecated endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -147,10 +1062,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1SimpleUrl",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/simple/url",
         "pointer": "#/paths/~1api~1receipt~1v1~1simple~1url/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "urlPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt from URL"
+        "summary": "transcribe a receipt from URL",
+        "tags": [
+          "2. Try other input format endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -158,10 +1103,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1VerboseEncoded",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/verbose/encoded",
         "pointer": "#/paths/~1api~1receipt~1v1~1verbose~1encoded/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "jsonPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptVerboseResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt using base64 encoded image in json payload and return detailed result"
+        "summary": "transcribe a receipt using base64 encoded image in json payload and return detailed result",
+        "tags": [
+          "2. Try other input format endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -169,10 +1144,120 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1VerboseFile",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "file less than 20MB.",
+            "in": "formData",
+            "name": "file",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "default": false,
+            "description": "Set true to force re-process image transcription if the receipt is already in storage",
+            "in": "formData",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Set true to avoid saving the receipt in storage",
+            "in": "formData",
+            "name": "incognito",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "IP Address of the end user",
+            "in": "formData",
+            "name": "ipAddress",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A geo location to search for merchant.",
+            "in": "formData",
+            "name": "near",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Ignore this merchant name if detected on the receipt.",
+            "in": "formData",
+            "name": "ignoreMerchantName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set language as a hint.",
+            "enum": [
+              "en",
+              "es",
+              "fr",
+              "jp",
+              "he",
+              "iw",
+              "et",
+              "lv",
+              "lt",
+              "fi",
+              "el",
+              "zh"
+            ],
+            "in": "formData",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set true to return time if found on the receipt.",
+            "in": "formData",
+            "name": "extractTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Tag a request with sub-account ID for billing purposes",
+            "in": "formData",
+            "name": "subAccountId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag a request with a unique reference ID for feedback and training purposes",
+            "in": "formData",
+            "name": "referenceId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/verbose/file",
         "pointer": "#/paths/~1api~1receipt~1v1~1verbose~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptVerboseResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt by uploading an image file and return detailed result"
+        "summary": "transcribe a receipt by uploading an image file and return detailed result",
+        "tags": [
+          "1. Getting started"
+        ]
       },
       {
         "deprecated": true,
@@ -180,10 +1265,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1VerboseStorage",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/verbose/storage",
         "pointer": "#/paths/~1api~1receipt~1v1~1verbose~1storage/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "storagePayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptVerboseResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt in storage and return detailed result"
+        "summary": "transcribe a receipt in storage and return detailed result",
+        "tags": [
+          "4. Deprecated endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -191,10 +1306,40 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiReceiptV1VerboseUrl",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/receipt/v1/verbose/url",
         "pointer": "#/paths/~1api~1receipt~1v1~1verbose~1url/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "urlPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "receiptVerboseResult"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "transcribe a receipt from URL and return detailed result"
+        "summary": "transcribe a receipt from URL and return detailed result",
+        "tags": [
+          "2. Try other input format endpoints"
+        ]
       },
       {
         "deprecated": false,
@@ -202,8 +1347,71 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiValidationV1CampaignFile",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "file less than 20MB.",
+            "in": "formData",
+            "name": "file",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "default": false,
+            "description": "Set true to avoid saving the receipt in storage",
+            "in": "formData",
+            "name": "incognito",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "IP Address of the end user",
+            "in": "formData",
+            "name": "ipAddress",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A geo location to search for merchant.",
+            "in": "formData",
+            "name": "near",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the campaign to validate the receipt",
+            "in": "formData",
+            "name": "campaignId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Tag a request with a unique reference ID for feedback and training purposes",
+            "in": "formData",
+            "name": "referenceId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/validation/v1/campaign/file",
         "pointer": "#/paths/~1api~1validation~1v1~1campaign~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "validate and match a receipt against a campaign validation settings by uploading an image file"
       },
@@ -213,430 +1421,571 @@
         "kind": "operation",
         "method": "post",
         "name": "postApiValidationV1CampaignProductvalidationFile",
+        "parameters": [
+          {
+            "description": "API authentication key.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "file less than 20MB.",
+            "in": "formData",
+            "name": "file",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "description": "The number of the product to validate the receipt",
+            "in": "formData",
+            "name": "productVerificationNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set true to avoid saving the receipt in storage",
+            "in": "formData",
+            "name": "incognito",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Tag a request with sub-account ID for billing purposes",
+            "in": "formData",
+            "name": "subAccountId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag a request with a unique reference ID for feedback and training purposes",
+            "in": "formData",
+            "name": "referenceId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/validation/v1/campaign/product-validation/file",
         "pointer": "#/paths/~1api~1validation~1v1~1campaign~1product-validation~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "badRequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "validate if user-submitted info like serial number are detected an image file"
       },
       {
         "id": "schema:ABN",
         "kind": "schema",
-        "name": "ABN"
+        "name": "ABN",
+        "type": "object"
       },
       {
         "id": "schema:IBAN",
         "kind": "schema",
-        "name": "IBAN"
+        "name": "IBAN",
+        "type": "object"
       },
       {
         "id": "schema:LocationResult",
         "kind": "schema",
-        "name": "LocationResult"
+        "name": "LocationResult",
+        "type": "object"
       },
       {
         "id": "schema:Model1",
         "kind": "schema",
-        "name": "Model1"
+        "name": "Model1",
+        "type": "object"
       },
       {
         "id": "schema:Model2",
         "kind": "schema",
-        "name": "Model2"
+        "name": "Model2",
+        "type": "Model1[]"
       },
       {
         "id": "schema:Model3",
         "kind": "schema",
-        "name": "Model3"
+        "name": "Model3",
+        "type": "object"
       },
       {
         "id": "schema:Model4",
         "kind": "schema",
-        "name": "Model4"
+        "name": "Model4",
+        "type": "object"
       },
       {
         "id": "schema:Model5",
         "kind": "schema",
-        "name": "Model5"
+        "name": "Model5",
+        "type": "object"
       },
       {
         "id": "schema:Model6",
         "kind": "schema",
-        "name": "Model6"
+        "name": "Model6",
+        "type": "object"
       },
       {
         "id": "schema:Model7",
         "kind": "schema",
-        "name": "Model7"
+        "name": "Model7",
+        "type": "object"
       },
       {
         "id": "schema:Model8",
         "kind": "schema",
-        "name": "Model8"
+        "name": "Model8",
+        "type": "object"
       },
       {
         "id": "schema:Result",
         "kind": "schema",
-        "name": "Result"
+        "name": "Result",
+        "type": "object"
       },
       {
         "id": "schema:badRequestError",
         "kind": "schema",
-        "name": "badRequestError"
+        "name": "badRequestError",
+        "type": "object"
       },
       {
         "id": "schema:belgiumVATNumbers",
         "kind": "schema",
-        "name": "belgiumVATNumbers"
+        "name": "belgiumVATNumbers",
+        "type": "Model3[]"
       },
       {
         "id": "schema:data",
         "kind": "schema",
-        "name": "data"
+        "name": "data",
+        "type": "string[]"
       },
       {
         "id": "schema:data1",
         "kind": "schema",
-        "name": "data1"
+        "name": "data1",
+        "type": "object"
       },
       {
         "id": "schema:data2",
         "kind": "schema",
-        "name": "data2"
+        "name": "data2",
+        "type": "object"
       },
       {
         "id": "schema:data3",
         "kind": "schema",
-        "name": "data3"
+        "name": "data3",
+        "type": "object"
       },
       {
         "id": "schema:date",
         "kind": "schema",
-        "name": "date"
+        "name": "date",
+        "type": "object"
       },
       {
         "id": "schema:date1",
         "kind": "schema",
-        "name": "date1"
+        "name": "date1",
+        "type": "object"
       },
       {
         "id": "schema:entities",
         "kind": "schema",
-        "name": "entities"
+        "name": "entities",
+        "type": "object"
       },
       {
         "id": "schema:excludeItems",
         "kind": "schema",
-        "name": "excludeItems"
+        "name": "excludeItems",
+        "type": "Model4[]"
       },
       {
         "id": "schema:expenseType",
         "kind": "schema",
-        "name": "expenseType"
+        "name": "expenseType",
+        "type": "object"
       },
       {
         "id": "schema:fapiaoInvoice",
         "kind": "schema",
-        "name": "fapiaoInvoice"
+        "name": "fapiaoInvoice",
+        "type": "object"
       },
       {
         "id": "schema:fapiaoInvoiceCode",
         "kind": "schema",
-        "name": "fapiaoInvoiceCode"
+        "name": "fapiaoInvoiceCode",
+        "type": "object"
       },
       {
         "id": "schema:fapiaoInvoiceNumber",
         "kind": "schema",
-        "name": "fapiaoInvoiceNumber"
+        "name": "fapiaoInvoiceNumber",
+        "type": "object"
       },
       {
         "id": "schema:fapiaoMerchantTaxId",
         "kind": "schema",
-        "name": "fapiaoMerchantTaxId"
+        "name": "fapiaoMerchantTaxId",
+        "type": "object"
       },
       {
         "id": "schema:geoNames",
         "kind": "schema",
-        "name": "geoNames"
+        "name": "geoNames",
+        "type": "Model8[]"
       },
       {
         "id": "schema:grossAmount",
         "kind": "schema",
-        "name": "grossAmount"
+        "name": "grossAmount",
+        "type": "object"
       },
       {
+        "description": "Custom http headers can be set to forward to the target URL.",
         "id": "schema:headers",
         "kind": "schema",
-        "name": "headers"
+        "name": "headers",
+        "type": "object"
       },
       {
         "id": "schema:invoiceNumber",
         "kind": "schema",
-        "name": "invoiceNumber"
+        "name": "invoiceNumber",
+        "type": "object"
       },
       {
         "id": "schema:itemsCount",
         "kind": "schema",
-        "name": "itemsCount"
+        "name": "itemsCount",
+        "type": "object"
       },
       {
         "id": "schema:jsonPayload",
         "kind": "schema",
-        "name": "jsonPayload"
+        "name": "jsonPayload",
+        "type": "object"
       },
       {
         "id": "schema:lineAmounts",
         "kind": "schema",
-        "name": "lineAmounts"
+        "name": "lineAmounts",
+        "type": "string[]"
       },
       {
         "id": "schema:location",
         "kind": "schema",
-        "name": "location"
+        "name": "location",
+        "type": "object"
       },
       {
         "id": "schema:masterCategory",
         "kind": "schema",
-        "name": "masterCategory"
+        "name": "masterCategory",
+        "type": "object"
       },
       {
         "id": "schema:match",
         "kind": "schema",
-        "name": "match"
+        "name": "match",
+        "type": "object"
       },
       {
         "id": "schema:merchantAddress",
         "kind": "schema",
-        "name": "merchantAddress"
+        "name": "merchantAddress",
+        "type": "object"
       },
       {
         "id": "schema:merchantAddress1",
         "kind": "schema",
-        "name": "merchantAddress1"
+        "name": "merchantAddress1",
+        "type": "object"
       },
       {
         "id": "schema:merchantCity",
         "kind": "schema",
-        "name": "merchantCity"
+        "name": "merchantCity",
+        "type": "object"
       },
       {
         "id": "schema:merchantCity1",
         "kind": "schema",
-        "name": "merchantCity1"
+        "name": "merchantCity1",
+        "type": "object"
       },
       {
         "id": "schema:merchantCountryCode",
         "kind": "schema",
-        "name": "merchantCountryCode"
+        "name": "merchantCountryCode",
+        "type": "object"
       },
       {
         "id": "schema:merchantCountryCode1",
         "kind": "schema",
-        "name": "merchantCountryCode1"
+        "name": "merchantCountryCode1",
+        "type": "object"
       },
       {
         "id": "schema:merchantName",
         "kind": "schema",
-        "name": "merchantName"
+        "name": "merchantName",
+        "type": "object"
       },
       {
         "id": "schema:merchantName1",
         "kind": "schema",
-        "name": "merchantName1"
+        "name": "merchantName1",
+        "type": "object"
       },
       {
         "id": "schema:merchantNameAddPayload",
         "kind": "schema",
-        "name": "merchantNameAddPayload"
+        "name": "merchantNameAddPayload",
+        "type": "object"
       },
       {
         "id": "schema:merchantPostalCode",
         "kind": "schema",
-        "name": "merchantPostalCode"
+        "name": "merchantPostalCode",
+        "type": "object"
       },
       {
         "id": "schema:merchantPostalCode1",
         "kind": "schema",
-        "name": "merchantPostalCode1"
+        "name": "merchantPostalCode1",
+        "type": "object"
       },
       {
         "id": "schema:merchantState",
         "kind": "schema",
-        "name": "merchantState"
+        "name": "merchantState",
+        "type": "object"
       },
       {
         "id": "schema:merchantTypes",
         "kind": "schema",
-        "name": "merchantTypes"
+        "name": "merchantTypes",
+        "type": "object"
       },
       {
         "id": "schema:merchantTypes1",
         "kind": "schema",
-        "name": "merchantTypes1"
+        "name": "merchantTypes1",
+        "type": "object"
       },
       {
         "id": "schema:merchantVerification",
         "kind": "schema",
-        "name": "merchantVerification"
+        "name": "merchantVerification",
+        "type": "object"
       },
       {
         "id": "schema:multiTaxLineItems",
         "kind": "schema",
-        "name": "multiTaxLineItems"
+        "name": "multiTaxLineItems",
+        "type": "Model7[]"
       },
       {
         "id": "schema:name",
         "kind": "schema",
-        "name": "name"
+        "name": "name",
+        "type": "object"
       },
       {
         "id": "schema:netAmount",
         "kind": "schema",
-        "name": "netAmount"
+        "name": "netAmount",
+        "type": "object"
       },
       {
         "id": "schema:paymentType",
         "kind": "schema",
-        "name": "paymentType"
+        "name": "paymentType",
+        "type": "object"
       },
       {
         "id": "schema:productLineItems",
         "kind": "schema",
-        "name": "productLineItems"
+        "name": "productLineItems",
+        "type": "Model6[]"
       },
       {
         "id": "schema:productName",
         "kind": "schema",
-        "name": "productName"
+        "name": "productName",
+        "type": "object"
       },
       {
         "id": "schema:qrCodeData",
         "kind": "schema",
-        "name": "qrCodeData"
+        "name": "qrCodeData",
+        "type": "object"
       },
       {
         "id": "schema:quantity",
         "kind": "schema",
-        "name": "quantity"
+        "name": "quantity",
+        "type": "object"
       },
       {
         "id": "schema:quantity1",
         "kind": "schema",
-        "name": "quantity1"
+        "name": "quantity1",
+        "type": "object"
       },
       {
         "id": "schema:receiptFeedbackAddPayload",
         "kind": "schema",
-        "name": "receiptFeedbackAddPayload"
+        "name": "receiptFeedbackAddPayload",
+        "type": "object"
       },
       {
         "id": "schema:receiptMatchResult",
         "kind": "schema",
-        "name": "receiptMatchResult"
+        "name": "receiptMatchResult",
+        "type": "object"
       },
       {
         "id": "schema:receiptNumber",
         "kind": "schema",
-        "name": "receiptNumber"
+        "name": "receiptNumber",
+        "type": "object"
       },
       {
         "id": "schema:receiptResult",
         "kind": "schema",
-        "name": "receiptResult"
+        "name": "receiptResult",
+        "type": "object"
       },
       {
         "id": "schema:receiptVerboseResult",
         "kind": "schema",
-        "name": "receiptVerboseResult"
+        "name": "receiptVerboseResult",
+        "type": "object"
       },
       {
         "id": "schema:regions",
         "kind": "schema",
-        "name": "regions"
+        "name": "regions",
+        "type": "Model2[]"
       },
       {
         "id": "schema:shoppingMallName",
         "kind": "schema",
-        "name": "shoppingMallName"
+        "name": "shoppingMallName",
+        "type": "object"
       },
       {
         "id": "schema:storagePayload",
         "kind": "schema",
-        "name": "storagePayload"
+        "name": "storagePayload",
+        "type": "object"
       },
       {
         "id": "schema:taxAmount",
         "kind": "schema",
-        "name": "taxAmount"
+        "name": "taxAmount",
+        "type": "object"
       },
       {
         "id": "schema:taxAmount1",
         "kind": "schema",
-        "name": "taxAmount1"
+        "name": "taxAmount1",
+        "type": "object"
       },
       {
         "id": "schema:taxAmount2",
         "kind": "schema",
-        "name": "taxAmount2"
+        "name": "taxAmount2",
+        "type": "object"
       },
       {
         "id": "schema:taxRate",
         "kind": "schema",
-        "name": "taxRate"
+        "name": "taxRate",
+        "type": "object"
       },
       {
         "id": "schema:taxType",
         "kind": "schema",
-        "name": "taxType"
+        "name": "taxType",
+        "type": "object"
       },
       {
         "id": "schema:text",
         "kind": "schema",
-        "name": "text"
+        "name": "text",
+        "type": "object"
       },
       {
         "id": "schema:totalAmount",
         "kind": "schema",
-        "name": "totalAmount"
+        "name": "totalAmount",
+        "type": "object"
       },
       {
         "id": "schema:totalAmount1",
         "kind": "schema",
-        "name": "totalAmount1"
+        "name": "totalAmount1",
+        "type": "object"
       },
       {
         "id": "schema:totalPrice",
         "kind": "schema",
-        "name": "totalPrice"
+        "name": "totalPrice",
+        "type": "object"
       },
       {
         "id": "schema:unitPrice",
         "kind": "schema",
-        "name": "unitPrice"
+        "name": "unitPrice",
+        "type": "object"
       },
       {
         "id": "schema:unitPrice1",
         "kind": "schema",
-        "name": "unitPrice1"
+        "name": "unitPrice1",
+        "type": "object"
       },
       {
         "id": "schema:urlPayload",
         "kind": "schema",
-        "name": "urlPayload"
+        "name": "urlPayload",
+        "type": "object"
       },
       {
         "id": "schema:vies",
         "kind": "schema",
-        "name": "vies"
+        "name": "vies",
+        "type": "object"
       },
       {
         "id": "schema:wineListItems",
         "kind": "schema",
-        "name": "wineListItems"
+        "name": "wineListItems",
+        "type": "Model5[]"
       },
       {
         "id": "schema:wineVarietal",
         "kind": "schema",
-        "name": "wineVarietal"
+        "name": "wineVarietal",
+        "type": "object"
       }
     ]
   },

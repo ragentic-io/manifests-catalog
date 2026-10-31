@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `81a11ba8071aa130ddf17eb1c2b16e948bfbc5ba4f35ce8be0f6b37b72017403` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/status/call` | status_call_api_v1_status_call_get | Status Call |
-| GET | `/api/v1/status/sku` | status_sku_api_v1_status_sku_get | Status Sku |
-| GET | `/api/v1/verify/name` | verify_name_api_v1_verify_name_get | Verify Name |
-| GET | `/api/v1/verify/phone` | verify_business_api_v1_verify_phone_get | Verify Business |
-| GET | `/api/v1/verify/sku` | verify_sku_api_v1_verify_sku_get | Verify Sku |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/status/call` | status_call_api_v1_status_call_get | `query`* | StatusCall | yes | Status Call |
+| GET | `/api/v1/status/sku` | status_sku_api_v1_status_sku_get | `query`* | StatusCall | yes | Status Sku |
+| GET | `/api/v1/verify/name` | verify_name_api_v1_verify_name_get | `query`*, `state`, `city` | VerifyName | yes | Verify Name |
+| GET | `/api/v1/verify/phone` | verify_business_api_v1_verify_phone_get | `query`*, `locking_period` | VerifyPhone | yes | Verify Business |
+| GET | `/api/v1/verify/sku` | verify_sku_api_v1_verify_sku_get | `query`*, `locking_period` | VerifyPhone | yes | Verify Sku |

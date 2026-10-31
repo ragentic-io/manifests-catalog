@@ -38,6 +38,31 @@
         "from": "mbus-local-d629a8851d",
         "kind": "EXPOSES",
         "to": "operation:post:/mbus/scan/{device}/{baudrate}"
+      },
+      {
+        "from": "operation:get:/mbus/api",
+        "kind": "RETURNS",
+        "to": "schema:yaml"
+      },
+      {
+        "from": "operation:post:/mbus/get/{device}/{baudrate}/{address}",
+        "kind": "RETURNS",
+        "to": "schema:mbusData"
+      },
+      {
+        "from": "operation:post:/mbus/getMulti/{device}/{baudrate}/{address}/{maxframes}",
+        "kind": "RETURNS",
+        "to": "schema:mbusData"
+      },
+      {
+        "from": "operation:get:/mbus/hat",
+        "kind": "RETURNS",
+        "to": "schema:hat"
+      },
+      {
+        "from": "operation:post:/mbus/scan/{device}/{baudrate}",
+        "kind": "RETURNS",
+        "to": "schema:slaves"
       }
     ],
     "nodes": [
@@ -47,125 +72,306 @@
       },
       {
         "deprecated": false,
+        "description": "Returns this API specification",
         "id": "operation:get:/mbus/api",
         "kind": "operation",
         "method": "get",
         "name": "mbus_api",
         "path": "/mbus/api",
         "pointer": "#/paths/~1mbus~1api/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "yaml"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Gets data from the slave identified by {address}",
         "id": "operation:post:/mbus/get/{device}/{baudrate}/{address}",
         "kind": "operation",
         "method": "post",
         "name": "get",
+        "parameters": [
+          {
+            "description": "The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning",
+            "in": "path",
+            "name": "device",
+            "required": true,
+            "type": "device"
+          },
+          {
+            "description": "Baudrate to communicate with M-Bus devices",
+            "in": "path",
+            "name": "baudrate",
+            "required": true,
+            "type": "baudrate"
+          },
+          {
+            "description": "The slave device to get data from",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "address"
+          }
+        ],
         "path": "/mbus/get/{device}/{baudrate}/{address}",
         "pointer": "#/paths/~1mbus~1get~1{device}~1{baudrate}~1{address}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "mbusData"
+          },
+          {
+            "status": "400",
+            "type": "textError"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Gets data from the slave identified by {address}, and supports multiple responses from the slave",
         "id": "operation:post:/mbus/getMulti/{device}/{baudrate}/{address}/{maxframes}",
         "kind": "operation",
         "method": "post",
         "name": "getMulti",
+        "parameters": [
+          {
+            "description": "The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning",
+            "in": "path",
+            "name": "device",
+            "required": true,
+            "type": "device"
+          },
+          {
+            "description": "Baudrate to communicate with M-Bus devices",
+            "in": "path",
+            "name": "baudrate",
+            "required": true,
+            "type": "baudrate"
+          },
+          {
+            "description": "The slave device to get data from",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "address"
+          },
+          {
+            "description": "The slave device to get data from",
+            "in": "path",
+            "name": "maxframes",
+            "required": true,
+            "type": "maxframes"
+          }
+        ],
         "path": "/mbus/getMulti/{device}/{baudrate}/{address}/{maxframes}",
         "pointer": "#/paths/~1mbus~1getMulti~1{device}~1{baudrate}~1{address}~1{maxframes}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "mbusData"
+          },
+          {
+            "status": "400",
+            "type": "textError"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Gets Raspberry Pi Hat information",
         "id": "operation:get:/mbus/hat",
         "kind": "operation",
         "method": "get",
         "name": "hat",
         "path": "/mbus/hat",
         "pointer": "#/paths/~1mbus~1hat/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "hat"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Turns off power to the M-Bus",
         "id": "operation:post:/mbus/hat/off",
         "kind": "operation",
         "method": "post",
         "name": "hatOff",
         "path": "/mbus/hat/off",
         "pointer": "#/paths/~1mbus~1hat~1off/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Turns on power to the M-Bus",
         "id": "operation:post:/mbus/hat/on",
         "kind": "operation",
         "method": "post",
         "name": "hatOn",
         "path": "/mbus/hat/on",
         "pointer": "#/paths/~1mbus~1hat~1on/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Scan the specified device for slaves",
         "id": "operation:post:/mbus/scan/{device}/{baudrate}",
         "kind": "operation",
         "method": "post",
         "name": "scan",
+        "parameters": [
+          {
+            "description": "The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning",
+            "in": "path",
+            "name": "device",
+            "required": true,
+            "type": "device"
+          },
+          {
+            "description": "Baudrate to communicate with M-Bus devices",
+            "in": "path",
+            "name": "baudrate",
+            "required": true,
+            "type": "baudrate"
+          }
+        ],
         "path": "/mbus/scan/{device}/{baudrate}",
         "pointer": "#/paths/~1mbus~1scan~1{device}~1{baudrate}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "slaves"
+          },
+          {
+            "status": "400",
+            "type": "textError"
+          },
+          {
+            "status": "404",
+            "type": "textError"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
+        "description": "Slave address (primary or secondary)",
         "id": "schema:address",
         "kind": "schema",
-        "name": "address"
+        "name": "address",
+        "type": "string:string"
       },
       {
+        "description": "Baudrate to use for the communication - valid values 300, 600, 1200, 2400, 4800, 9600",
         "id": "schema:baudrate",
         "kind": "schema",
-        "name": "baudrate"
+        "name": "baudrate",
+        "type": "integer:int32"
       },
       {
+        "description": "The device the M-Bus is connected to - /dev/ is prepended to {device} by M-Bus HTTPD",
         "id": "schema:device",
         "kind": "schema",
-        "name": "device"
+        "name": "device",
+        "type": "string"
       },
       {
+        "description": "Raspberry Pi Hat Information",
         "id": "schema:hat",
         "kind": "schema",
-        "name": "hat"
+        "name": "hat",
+        "type": "object"
       },
       {
+        "description": "Max frames to listen for",
         "id": "schema:maxframes",
         "kind": "schema",
-        "name": "maxframes"
+        "name": "maxframes",
+        "type": "integer:int32"
       },
       {
+        "description": "M-Bus device data as an XML document",
         "id": "schema:mbusData",
         "kind": "schema",
-        "name": "mbusData"
+        "name": "mbusData",
+        "type": "string"
       },
       {
+        "description": "Output of libmbus scan command",
         "id": "schema:slaves",
         "kind": "schema",
-        "name": "slaves"
+        "name": "slaves",
+        "type": "string"
       },
       {
+        "description": "Some error text",
         "id": "schema:textError",
         "kind": "schema",
-        "name": "textError"
+        "name": "textError",
+        "type": "string"
       },
       {
+        "description": "A YAML file",
         "id": "schema:yaml",
         "kind": "schema",
-        "name": "yaml"
+        "name": "yaml",
+        "type": "string"
       }
     ]
   },

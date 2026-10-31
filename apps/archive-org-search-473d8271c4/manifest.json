@@ -18,6 +18,36 @@
         "from": "archive-org-search-473d8271c4",
         "kind": "EXPOSES",
         "to": "operation:get:/search/v1/scrape"
+      },
+      {
+        "from": "operation:get:/search/v1/fields",
+        "kind": "RETURNS",
+        "to": "schema:Field"
+      },
+      {
+        "from": "operation:get:/search/v1/organic",
+        "kind": "RETURNS",
+        "to": "schema:OrganicResult"
+      },
+      {
+        "from": "operation:get:/search/v1/scrape",
+        "kind": "RETURNS",
+        "to": "schema:ScrapeResult"
+      },
+      {
+        "from": "schema:OrganicResult",
+        "kind": "REFERENCES",
+        "to": "schema:Hit"
+      },
+      {
+        "from": "schema:ScrapeResult",
+        "kind": "REFERENCES",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:ScrapeResult",
+        "kind": "REFERENCES",
+        "to": "schema:Hit"
       }
     ],
     "nodes": [
@@ -27,66 +57,212 @@
       },
       {
         "deprecated": false,
+        "description": "Fields that can be requested",
         "id": "operation:get:/search/v1/fields",
         "kind": "operation",
         "method": "get",
         "name": "get /search/v1/fields",
+        "parameters": [
+          {
+            "description": "Specifies a JavaScript function func, for a JSON-P response.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search/v1/fields",
         "pointer": "#/paths/~1search~1v1~1fields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Field[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return relevance-based results from search queries",
         "id": "operation:get:/search/v1/organic",
         "kind": "operation",
         "method": "get",
         "name": "get /search/v1/organic",
+        "parameters": [
+          {
+            "description": "Lucene-type search query",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "identifier",
+            "description": "Metadata field",
+            "in": "query",
+            "name": "field",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "description": "Number of query results to return",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": false,
+            "description": "Request total only; do not return hits",
+            "in": "query",
+            "name": "total_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies a JavaScript function func, for a JSON-P response.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search/v1/organic",
         "pointer": "#/paths/~1search~1v1~1organic/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrganicResult"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Scrape search results from Internet Archive, allowing a scrolling cursor",
         "id": "operation:get:/search/v1/scrape",
         "kind": "operation",
         "method": "get",
         "name": "get /search/v1/scrape",
+        "parameters": [
+          {
+            "description": "Lucene-type search query",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "identifier",
+            "description": "Metadata field",
+            "in": "query",
+            "name": "field",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "sort collations",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "description": "Number of query results to return",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Cursor for scrolling (used for subsequent calls)",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Request total only; do not return hits",
+            "in": "query",
+            "name": "total_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies a JavaScript function func, for a JSON-P response.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search/v1/scrape",
         "pointer": "#/paths/~1search~1v1~1scrape/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScrapeResult"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
+        "description": "A scroll handle",
         "id": "schema:Cursor",
         "kind": "schema",
-        "name": "Cursor"
+        "name": "Cursor",
+        "type": "string"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "The name of a field",
         "id": "schema:Field",
         "kind": "schema",
-        "name": "Field"
+        "name": "Field",
+        "type": "string"
       },
       {
+        "description": "One item returned (object of fields and values)",
         "id": "schema:Hit",
         "kind": "schema",
-        "name": "Hit"
+        "name": "Hit",
+        "type": "object"
       },
       {
+        "description": "The result of a organic search request",
         "id": "schema:OrganicResult",
         "kind": "schema",
-        "name": "OrganicResult"
+        "name": "OrganicResult",
+        "type": "object"
       },
       {
+        "description": "The result of a scrape request",
         "id": "schema:ScrapeResult",
         "kind": "schema",
-        "name": "ScrapeResult"
+        "name": "ScrapeResult",
+        "type": "object"
       }
     ]
   },

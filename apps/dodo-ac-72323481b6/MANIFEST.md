@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `47453a56663de0077d4d801949356ca9d74db64873cd8e69dce140598f8a5273` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 21 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/nh/art` | get /nh/art | All New Horizons artwork |
-| GET | `/nh/art/{artwork}` | get /nh/art/{artwork} | Single New Horizons artwork |
-| GET | `/nh/bugs` | get /nh/bugs | All New Horizons bugs |
-| GET | `/nh/bugs/{bug}` | get /nh/bugs/{bug} | Single New Horizons bug |
-| GET | `/nh/clothing` | get /nh/clothing | All New Horizons clothing |
-| GET | `/nh/clothing/{clothing}` | get /nh/clothing/{clothing} | Single New Horizons clothing |
-| GET | `/nh/events` | get /nh/events | All New Horizons events |
-| GET | `/nh/fish` | get /nh/fish | All New Horizons fish |
-| GET | `/nh/fish/{fish}` | get /nh/fish/{fish} | Single New Horizons fish |
-| GET | `/nh/fossils/all` | get /nh/fossils/all | All New Horizons fossil groups or individual fossil |
-| GET | `/nh/fossils/all/{fossil}` | get /nh/fossils/all/{fossil} | Single New Horizons fossil group with individual fossils |
-| GET | `/nh/fossils/groups` | get /nh/fossils/groups | All New Horizons fossil groups |
-| GET | `/nh/fossils/groups/{fossil_group}` | get /nh/fossils/groups/{fossil_group} | Single New Horizons fossil group |
-| GET | `/nh/fossils/individuals` | get /nh/fossils/individuals | All New Horizons fossils |
-| GET | `/nh/fossils/individuals/{fossil}` | get /nh/fossils/individuals/{fossil} | Single New Horizons fossil |
-| GET | `/nh/furniture` | get /nh/furniture | All New Horizons furniture |
-| GET | `/nh/furniture/{furniture}` | get /nh/furniture/{furniture} | Single New Horizons furniture |
-| GET | `/nh/interior` | get /nh/interior | All New Horizons interior items |
-| GET | `/nh/interior/{item}` | get /nh/interior/{item} | Single New Horizons interior item |
-| GET | `/nh/items` | get /nh/items | Miscellaneous New Horizons items |
-| GET | `/nh/items/{item}` | get /nh/items/{item} | Single New Horizons miscellaneous item |
-| GET | `/nh/photos` | get /nh/photos | All New Horizons photos and posters |
-| GET | `/nh/photos/{item}` | get /nh/photos/{item} | Single New Horizons photo or poster |
-| GET | `/nh/recipes` | get /nh/recipes | All New Horizons recipes |
-| GET | `/nh/recipes/{item}` | get /nh/recipes/{item} | Single New Horizons recipe |
-| GET | `/nh/sea` | get /nh/sea | All New Horizons sea creatures |
-| GET | `/nh/sea/{sea_creature}` | get /nh/sea/{sea_creature} | Single New Horizons sea creature |
-| GET | `/nh/tools` | get /nh/tools | All New Horizons tools |
-| GET | `/nh/tools/{tool}` | get /nh/tools/{tool} | Single New Horizons tool |
-| GET | `/villagers` | get /villagers | Villagers |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/nh/art` | get /nh/art | `X-API-KEY`*, `Accept-Version`*, `hasfake`, `excludedetails`, `thumbsize` | NHArtwork[] | yes | All New Horizons artwork |
+| GET | `/nh/art/{artwork}` | get /nh/art/{artwork} | `artwork`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHArtwork | yes | Single New Horizons artwork |
+| GET | `/nh/bugs` | get /nh/bugs | `X-API-KEY`*, `Accept-Version`*, `month`, `excludedetails`, `thumbsize` | NHBug[] | yes | All New Horizons bugs |
+| GET | `/nh/bugs/{bug}` | get /nh/bugs/{bug} | `bug`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHBug | yes | Single New Horizons bug |
+| GET | `/nh/clothing` | get /nh/clothing | `X-API-KEY`*, `Accept-Version`*, `category`, `color`, `style`, `labeltheme`, `excludedetails` | NHClothing[] | yes | All New Horizons clothing |
+| GET | `/nh/clothing/{clothing}` | get /nh/clothing/{clothing} | `clothing`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHClothing | yes | Single New Horizons clothing |
+| GET | `/nh/events` | get /nh/events | `X-API-KEY`*, `Accept-Version`*, `date`, `year`, `month`, `day` | NHEvent[] | yes | All New Horizons events |
+| GET | `/nh/fish` | get /nh/fish | `X-API-KEY`*, `Accept-Version`*, `month`, `excludedetails`, `thumbsize` | NHFish[] | yes | All New Horizons fish |
+| GET | `/nh/fish/{fish}` | get /nh/fish/{fish} | `fish`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHFish | yes | Single New Horizons fish |
+| GET | `/nh/fossils/all` | get /nh/fossils/all | `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHFossilGroupWithIndividualFossilsNoMatched[] | yes | All New Horizons fossil groups or individual fossil |
+| GET | `/nh/fossils/all/{fossil}` | get /nh/fossils/all/{fossil} | `fossil`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHFossilGroupWithIndividualFossils | yes | Single New Horizons fossil group with individual fossils |
+| GET | `/nh/fossils/groups` | get /nh/fossils/groups | `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHFossilGroup[] | yes | All New Horizons fossil groups |
+| GET | `/nh/fossils/groups/{fossil_group}` | get /nh/fossils/groups/{fossil_group} | `fossil_group`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHFossilGroup | yes | Single New Horizons fossil group |
+| GET | `/nh/fossils/individuals` | get /nh/fossils/individuals | `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHIndividualFossil[] | yes | All New Horizons fossils |
+| GET | `/nh/fossils/individuals/{fossil}` | get /nh/fossils/individuals/{fossil} | `fossil`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHIndividualFossil | yes | Single New Horizons fossil |
+| GET | `/nh/furniture` | get /nh/furniture | `X-API-KEY`*, `Accept-Version`*, `category`, `color`, `excludedetails` | NHFurniture[] | yes | All New Horizons furniture |
+| GET | `/nh/furniture/{furniture}` | get /nh/furniture/{furniture} | `furniture`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHFurniture | yes | Single New Horizons furniture |
+| GET | `/nh/interior` | get /nh/interior | `X-API-KEY`*, `Accept-Version`*, `color`, `excludedetails` | NHInterior[] | yes | All New Horizons interior items |
+| GET | `/nh/interior/{item}` | get /nh/interior/{item} | `item`*, `X-API-KEY`*, `Accept-Version`*, `color`, `thumbsize` | NHInterior | yes | Single New Horizons interior item |
+| GET | `/nh/items` | get /nh/items | `X-API-KEY`*, `Accept-Version`*, `excludedetails` | NHItem[] | yes | Miscellaneous New Horizons items |
+| GET | `/nh/items/{item}` | get /nh/items/{item} | `item`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHItem | yes | Single New Horizons miscellaneous item |
+| GET | `/nh/photos` | get /nh/photos | `X-API-KEY`*, `Accept-Version`*, `excludedetails` | NHPhoto[] | yes | All New Horizons photos and posters |
+| GET | `/nh/photos/{item}` | get /nh/photos/{item} | `item`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHPhoto | yes | Single New Horizons photo or poster |
+| GET | `/nh/recipes` | get /nh/recipes | `X-API-KEY`*, `Accept-Version`*, `material`, `excludedetails`, `thumbsize` | NHRecipe[] | yes | All New Horizons recipes |
+| GET | `/nh/recipes/{item}` | get /nh/recipes/{item} | `item`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHRecipe | yes | Single New Horizons recipe |
+| GET | `/nh/sea` | get /nh/sea | `X-API-KEY`*, `Accept-Version`*, `month`, `excludedetails`, `thumbsize` | NHSeaCreature[] | yes | All New Horizons sea creatures |
+| GET | `/nh/sea/{sea_creature}` | get /nh/sea/{sea_creature} | `sea_creature`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHSeaCreature | yes | Single New Horizons sea creature |
+| GET | `/nh/tools` | get /nh/tools | `X-API-KEY`*, `Accept-Version`*, `excludedetails` | NHTool[] | yes | All New Horizons tools |
+| GET | `/nh/tools/{tool}` | get /nh/tools/{tool} | `tool`*, `X-API-KEY`*, `Accept-Version`*, `thumbsize` | NHTool | yes | Single New Horizons tool |
+| GET | `/villagers` | get /villagers | `X-API-KEY`*, `Accept-Version`*, `name`, `species`, `personality`, `game`, `birthmonth`, `birthday`, `nhdetails`, `excludedetails`, `thumbsize` | Villager[] | yes | Villagers |

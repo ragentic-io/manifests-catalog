@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_interactivebrokers.com_images_w
 
 | | |
 | --- | --- |
-| Signed bundle | `bc5846d8c717929c570ed500c65c4baa63ae33f41b8551aed45db7b2c7418c8e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_interactivebrokers.com_images_w
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | get /accounts | Brokerage Accounts |
-| POST | `/accounts/{account}/order_impact` | post /accounts/{account}/order_impact | Return margin impact info |
-| GET | `/accounts/{account}/orders` | get /accounts/{account}/orders | Open Orders |
-| POST | `/accounts/{account}/orders` | post /accounts/{account}/orders | Place Order |
-| DELETE | `/accounts/{account}/orders/{CustomerOrderId}` | delete /accounts/{account}/orders/{CustomerOrderId} | Cancel Order |
-| GET | `/accounts/{account}/orders/{CustomerOrderId}` | get /accounts/{account}/orders/{CustomerOrderId} | Return specific order info |
-| PUT | `/accounts/{account}/orders/{CustomerOrderId}` | put /accounts/{account}/orders/{CustomerOrderId} | Modify Order |
-| GET | `/accounts/{account}/positions` | get /accounts/{account}/positions | Account Positions |
-| GET | `/accounts/{account}/summary` | get /accounts/{account}/summary | Account Values Summary |
-| GET | `/accounts/{account}/trades` | get /accounts/{account}/trades | Returns trades in account |
-| GET | `/marketdata/exchange_components` | get /marketdata/exchange_components | Exchange Components |
-| GET | `/marketdata/snapshot` | get /marketdata/snapshot | Market Data Snapshot |
-| POST | `/oauth/access_token` | post /oauth/access_token | Obtain a access token |
-| POST | `/oauth/live_session_token` | post /oauth/live_session_token | Obtain a live session token |
-| POST | `/oauth/request_token` | post /oauth/request_token | Obtain a request token |
-| GET | `/secdef` | get /secdef | Get security definition |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | get /accounts | `account`* | object | yes | Brokerage Accounts |
+| POST | `/accounts/{account}/order_impact` | post /accounts/{account}/order_impact | `account`*, body*: object | object |  | Return margin impact info |
+| GET | `/accounts/{account}/orders` | get /accounts/{account}/orders | `account`* | orderState[] | yes | Open Orders |
+| POST | `/accounts/{account}/orders` | post /accounts/{account}/orders | `account`*, body*: object | orderState[] |  | Place Order |
+| GET | `/accounts/{account}/orders/{CustomerOrderId}` | get /accounts/{account}/orders/{CustomerOrderId} | `account`*, `CustomerOrderId`* | orderState[] | yes | Return specific order info |
+| PUT | `/accounts/{account}/orders/{CustomerOrderId}` | put /accounts/{account}/orders/{CustomerOrderId} | `account`*, `CustomerOrderId`*, body*: object | object[] |  | Modify Order |
+| DELETE | `/accounts/{account}/orders/{CustomerOrderId}` | delete /accounts/{account}/orders/{CustomerOrderId} | `account`*, `CustomerOrderId`* | object[] |  | Cancel Order |
+| GET | `/accounts/{account}/positions` | get /accounts/{account}/positions | `account`* | object[] | yes | Account Positions |
+| GET | `/accounts/{account}/summary` | get /accounts/{account}/summary | `account`* | object | yes | Account Values Summary |
+| GET | `/accounts/{account}/trades` | get /accounts/{account}/trades | `account`*, body: string | object[] | yes | Returns trades in account |
+| GET | `/marketdata/exchange_components` | get /marketdata/exchange_components | — | object[] | yes | Exchange Components |
+| GET | `/marketdata/snapshot` | get /marketdata/snapshot | body*: object[] | object[] | yes | Market Data Snapshot |
+| POST | `/oauth/access_token` | post /oauth/access_token | body*: object | object |  | Obtain a access token |
+| POST | `/oauth/live_session_token` | post /oauth/live_session_token | body*: object | object |  | Obtain a live session token |
+| POST | `/oauth/request_token` | post /oauth/request_token | body*: object | object |  | Obtain a request token |
+| GET | `/secdef` | get /secdef | body*: object | object[] | yes | Get security definition |

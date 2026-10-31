@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Adobe_profile_image
 
 | | |
 | --- | --- |
-| Signed bundle | `8ff9fcee18654c9a74a72eaaeafcf723214922c06fd10f339fb1aec01aeb8029` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,53 +34,55 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Adobe_profile_image
 
 15 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/.cqactions.html` | postCqActions | — |
-| POST | `/apps/system/config/com.adobe.granite.auth.saml.SamlAuthenticationHandler.config` | postConfigAdobeGraniteSamlAuthenticationHandler | — |
-| POST | `/apps/system/config/com.shinesolutions.aem.passwordreset.Activator` | postConfigAemPasswordReset | — |
-| POST | `/apps/system/config/com.shinesolutions.healthcheck.hc.impl.ActiveBundleHealthCheck` | postConfigAemHealthCheckServlet | — |
-| POST | `/apps/system/config/org.apache.felix.http` | postConfigApacheFelixJettyBasedHttpService | — |
-| POST | `/apps/system/config/org.apache.http.proxyconfigurator.config` | postConfigApacheHttpComponentsProxyConfiguration | — |
-| POST | `/apps/system/config/org.apache.sling.jcr.davex.impl.servlets.SlingDavExServlet` | postConfigApacheSlingDavExServlet | — |
-| POST | `/apps/system/config/org.apache.sling.security.impl.ReferrerFilter` | postConfigApacheSlingReferrerFilter | — |
-| POST | `/apps/system/config/org.apache.sling.servlets.get.DefaultGetServlet` | postConfigApacheSlingGetServlet | — |
-| POST | `/apps/system/config/{configNodeName}` | postConfigProperty | — |
-| GET | `/bin/querybuilder.json` | getQuery | — |
-| POST | `/bin/querybuilder.json` | postQuery | — |
-| POST | `/crx/explorer/ui/setpassword.jsp` | postSetPassword | — |
-| GET | `/crx/packmgr/installstatus.jsp` | getInstallStatus | — |
-| POST | `/crx/packmgr/service.jsp` | postPackageService | — |
-| POST | `/crx/packmgr/service/.json/{path}` | postPackageServiceJson | — |
-| GET | `/crx/packmgr/service/script.html` | getPackageManagerServlet | — |
-| POST | `/crx/packmgr/update.jsp` | postPackageUpdate | — |
-| GET | `/crx/server/crx.default/jcr:root/.1.json` | getCrxdeStatus | — |
-| GET | `/etc/packages/{group}/{name}-{version}.zip` | getPackage | — |
-| GET | `/etc/packages/{group}/{name}-{version}.zip/jcr:content/vlt:definition/filter.tidy.2.json` | getPackageFilter | — |
-| GET | `/etc/replication/agents.{runmode}.-1.json` | getAgents | — |
-| DELETE | `/etc/replication/agents.{runmode}/{name}` | deleteAgent | — |
-| GET | `/etc/replication/agents.{runmode}/{name}` | getAgent | — |
-| POST | `/etc/replication/agents.{runmode}/{name}` | postAgent | — |
-| POST | `/etc/truststore` | postTruststorePKCS12 | — |
-| GET | `/etc/truststore/truststore.p12` | getTruststore | — |
-| GET | `/libs/granite/core/content/login.html` | getLoginPage | — |
-| POST | `/libs/granite/security/post/authorizables` | postAuthorizables | — |
-| POST | `/libs/granite/security/post/sslSetup.html` | sslSetup | — |
-| POST | `/libs/granite/security/post/truststore` | postTruststore | — |
-| GET | `/libs/granite/security/truststore.json` | getTruststoreInfo | — |
-| POST | `/libs/replication/treeactivation.html` | postTreeActivation | — |
-| POST | `/system/console/bundles/{name}` | postBundle | — |
-| GET | `/system/console/bundles/{name}.json` | getBundleInfo | — |
-| GET | `/system/console/configMgr` | getConfigMgr | — |
-| POST | `/system/console/configMgr/com.adobe.granite.auth.saml.SamlAuthenticationHandler` | postSamlConfiguration | — |
-| POST | `/system/console/jmx/com.adobe.granite:type=Repository/op/{action}` | postJmxRepository | — |
-| GET | `/system/console/status-productinfo.json` | getAemProductInfo | — |
-| GET | `/system/health` | getAemHealthCheck | — |
-| POST | `/{intermediatePath}/{authorizableId}.ks.html` | postAuthorizableKeystore | — |
-| GET | `/{intermediatePath}/{authorizableId}.ks.json` | getAuthorizableKeystore | — |
-| GET | `/{intermediatePath}/{authorizableId}/keystore/store.p12` | getKeystore | — |
-| POST | `/{path}/` | postPath | — |
-| DELETE | `/{path}/{name}` | deleteNode | — |
-| GET | `/{path}/{name}` | getNode | — |
-| POST | `/{path}/{name}` | postNode | — |
-| POST | `/{path}/{name}.rw.html` | postNodeRw | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/.cqactions.html` | postCqActions | `authorizableId`*, `changelog`* | — |  | — |
+| POST | `/apps/system/config/com.adobe.granite.auth.saml.SamlAuthenticationHandler.config` | postConfigAdobeGraniteSamlAuthenticationHandler | `keyStorePassword`, `keyStorePassword@TypeHint`, `service.ranking`, `service.ranking@TypeHint`, `idpHttpRedirect`, `idpHttpRedirect@TypeHint`, `createUser`, `createUser@TypeHint`, `defaultRedirectUrl`, `defaultRedirectUrl@TypeHint`, `userIDAttribute`, `userIDAttribute@TypeHint`, `defaultGroups`, `defaultGroups@TypeHint`, `idpCertAlias`, `idpCertAlias@TypeHint`, `addGroupMemberships`, `addGroupMemberships@TypeHint`, `path`, `path@TypeHint`, `synchronizeAttributes`, `synchronizeAttributes@TypeHint`, `clockTolerance`, `clockTolerance@TypeHint`, `groupMembershipAttribute`, `groupMembershipAttribute@TypeHint`, `idpUrl`, `idpUrl@TypeHint`, `logoutUrl`, `logoutUrl@TypeHint`, `serviceProviderEntityId`, `serviceProviderEntityId@TypeHint`, `assertionConsumerServiceURL`, `assertionConsumerServiceURL@TypeHint`, `handleLogout`, `handleLogout@TypeHint`, `spPrivateKeyAlias`, `spPrivateKeyAlias@TypeHint`, `useEncryption`, `useEncryption@TypeHint`, `nameIdFormat`, `nameIdFormat@TypeHint`, `digestMethod`, `digestMethod@TypeHint`, `signatureMethod`, `signatureMethod@TypeHint`, `userIntermediatePath`, `userIntermediatePath@TypeHint` | — |  | — |
+| POST | `/apps/system/config/com.shinesolutions.aem.passwordreset.Activator` | postConfigAemPasswordReset | `pwdreset.authorizables`, `pwdreset.authorizables@TypeHint` | — |  | — |
+| POST | `/apps/system/config/com.shinesolutions.healthcheck.hc.impl.ActiveBundleHealthCheck` | postConfigAemHealthCheckServlet | `bundles.ignored`, `bundles.ignored@TypeHint` | — |  | — |
+| POST | `/apps/system/config/org.apache.felix.http` | postConfigApacheFelixJettyBasedHttpService | `org.apache.felix.https.nio`, `org.apache.felix.https.nio@TypeHint`, `org.apache.felix.https.keystore`, `org.apache.felix.https.keystore@TypeHint`, `org.apache.felix.https.keystore.password`, `org.apache.felix.https.keystore.password@TypeHint`, `org.apache.felix.https.keystore.key`, `org.apache.felix.https.keystore.key@TypeHint`, `org.apache.felix.https.keystore.key.password`, `org.apache.felix.https.keystore.key.password@TypeHint`, `org.apache.felix.https.truststore`, `org.apache.felix.https.truststore@TypeHint`, `org.apache.felix.https.truststore.password`, `org.apache.felix.https.truststore.password@TypeHint`, `org.apache.felix.https.clientcertificate`, `org.apache.felix.https.clientcertificate@TypeHint`, `org.apache.felix.https.enable`, `org.apache.felix.https.enable@TypeHint`, `org.osgi.service.http.port.secure`, `org.osgi.service.http.port.secure@TypeHint` | — |  | — |
+| POST | `/apps/system/config/org.apache.http.proxyconfigurator.config` | postConfigApacheHttpComponentsProxyConfiguration | `proxy.host`, `proxy.host@TypeHint`, `proxy.port`, `proxy.port@TypeHint`, `proxy.exceptions`, `proxy.exceptions@TypeHint`, `proxy.enabled`, `proxy.enabled@TypeHint`, `proxy.user`, `proxy.user@TypeHint`, `proxy.password`, `proxy.password@TypeHint` | — |  | — |
+| POST | `/apps/system/config/org.apache.sling.jcr.davex.impl.servlets.SlingDavExServlet` | postConfigApacheSlingDavExServlet | `alias`, `alias@TypeHint`, `dav.create-absolute-uri`, `dav.create-absolute-uri@TypeHint` | — |  | — |
+| POST | `/apps/system/config/org.apache.sling.security.impl.ReferrerFilter` | postConfigApacheSlingReferrerFilter | `allow.empty`, `allow.empty@TypeHint`, `allow.hosts`, `allow.hosts@TypeHint`, `allow.hosts.regexp`, `allow.hosts.regexp@TypeHint`, `filter.methods`, `filter.methods@TypeHint` | — |  | — |
+| POST | `/apps/system/config/org.apache.sling.servlets.get.DefaultGetServlet` | postConfigApacheSlingGetServlet | `json.maximumresults`, `json.maximumresults@TypeHint`, `enable.html`, `enable.html@TypeHint`, `enable.txt`, `enable.txt@TypeHint`, `enable.xml`, `enable.xml@TypeHint` | — |  | — |
+| POST | `/apps/system/config/{configNodeName}` | postConfigProperty | `configNodeName`* | — |  | — |
+| GET | `/bin/querybuilder.json` | getQuery | `path`*, `p.limit`*, `1_property`*, `1_property.value`* | — | yes | — |
+| POST | `/bin/querybuilder.json` | postQuery | `path`*, `p.limit`*, `1_property`*, `1_property.value`* | — |  | — |
+| POST | `/crx/explorer/ui/setpassword.jsp` | postSetPassword | `old`*, `plain`*, `verify`* | — |  | — |
+| GET | `/crx/packmgr/installstatus.jsp` | getInstallStatus | — | InstallStatus | yes | — |
+| POST | `/crx/packmgr/service.jsp` | postPackageService | `cmd`* | — |  | — |
+| POST | `/crx/packmgr/service/.json/{path}` | postPackageServiceJson | `path`*, `cmd`*, `groupName`, `packageName`, `packageVersion`, `_charset_`, `force`, `recursive`, body: object | — |  | — |
+| GET | `/crx/packmgr/service/script.html` | getPackageManagerServlet | — | — | yes | — |
+| POST | `/crx/packmgr/update.jsp` | postPackageUpdate | `groupName`*, `packageName`*, `version`*, `path`*, `filter`, `_charset_` | — |  | — |
+| GET | `/crx/server/crx.default/jcr:root/.1.json` | getCrxdeStatus | — | string | yes | — |
+| GET | `/etc/packages/{group}/{name}-{version}.zip` | getPackage | `group`*, `name`*, `version`* | — | yes | — |
+| GET | `/etc/packages/{group}/{name}-{version}.zip/jcr:content/vlt:definition/filter.tidy.2.json` | getPackageFilter | `group`*, `name`*, `version`* | — | yes | — |
+| GET | `/etc/replication/agents.{runmode}.-1.json` | getAgents | `runmode`* | — | yes | — |
+| GET | `/etc/replication/agents.{runmode}/{name}` | getAgent | `runmode`*, `name`* | — | yes | — |
+| POST | `/etc/replication/agents.{runmode}/{name}` | postAgent | `runmode`*, `name`*, `jcr:content/cq:distribute`, `jcr:content/cq:distribute@TypeHint`, `jcr:content/cq:name`, `jcr:content/cq:template`, `jcr:content/enabled`, `jcr:content/jcr:description`, `jcr:content/jcr:lastModified`, `jcr:content/jcr:lastModifiedBy`, `jcr:content/jcr:mixinTypes`, `jcr:content/jcr:title`, `jcr:content/logLevel`, `jcr:content/noStatusUpdate`, `jcr:content/noVersioning`, `jcr:content/protocolConnectTimeout`, `jcr:content/protocolHTTPConnectionClosed`, `jcr:content/protocolHTTPExpired`, `jcr:content/protocolHTTPHeaders`, `jcr:content/protocolHTTPHeaders@TypeHint`, `jcr:content/protocolHTTPMethod`, `jcr:content/protocolHTTPSRelaxed`, `jcr:content/protocolInterface`, `jcr:content/protocolSocketTimeout`, `jcr:content/protocolVersion`, `jcr:content/proxyNTLMDomain`, `jcr:content/proxyNTLMHost`, `jcr:content/proxyHost`, `jcr:content/proxyPassword`, `jcr:content/proxyPort`, `jcr:content/proxyUser`, `jcr:content/queueBatchMaxSize`, `jcr:content/queueBatchMode`, `jcr:content/queueBatchWaitTime`, `jcr:content/retryDelay`, `jcr:content/reverseReplication`, `jcr:content/serializationType`, `jcr:content/sling:resourceType`, `jcr:content/ssl`, `jcr:content/transportNTLMDomain`, `jcr:content/transportNTLMHost`, `jcr:content/transportPassword`, `jcr:content/transportUri`, `jcr:content/transportUser`, `jcr:content/triggerDistribute`, `jcr:content/triggerModified`, `jcr:content/triggerOnOffTime`, `jcr:content/triggerReceive`, `jcr:content/triggerSpecific`, `jcr:content/userId`, `jcr:primaryType`, `:operation` | — |  | — |
+| DELETE | `/etc/replication/agents.{runmode}/{name}` | deleteAgent | `runmode`*, `name`* | — |  | — |
+| POST | `/etc/truststore` | postTruststorePKCS12 | body: object | — |  | — |
+| GET | `/etc/truststore/truststore.p12` | getTruststore | — | — | yes | — |
+| GET | `/libs/granite/core/content/login.html` | getLoginPage | — | — | yes | — |
+| POST | `/libs/granite/security/post/authorizables` | postAuthorizables | `authorizableId`*, `intermediatePath`*, `createUser`, `createGroup`, `rep:password`, `profile/givenName` | — |  | — |
+| POST | `/libs/granite/security/post/sslSetup.html` | sslSetup | `keystorePassword`*, `keystorePasswordConfirm`*, `truststorePassword`*, `truststorePasswordConfirm`*, `httpsHostname`*, `httpsPort`*, body: object | — |  | — |
+| POST | `/libs/granite/security/post/truststore` | postTruststore | `:operation`, `newPassword`, `rePassword`, `keyStoreType`, `removeAlias`, body: object | — |  | — |
+| GET | `/libs/granite/security/truststore.json` | getTruststoreInfo | — | TruststoreInfo | yes | — |
+| POST | `/libs/replication/treeactivation.html` | postTreeActivation | `ignoredeactivated`*, `onlymodified`*, `path`*, `cmd`* | — |  | — |
+| POST | `/system/console/bundles/{name}` | postBundle | `name`*, `action`* | — |  | — |
+| GET | `/system/console/bundles/{name}.json` | getBundleInfo | `name`* | BundleInfo | yes | — |
+| GET | `/system/console/configMgr` | getConfigMgr | — | string | yes | — |
+| POST | `/system/console/configMgr/com.adobe.granite.auth.saml.SamlAuthenticationHandler` | postSamlConfiguration | `post`, `apply`, `delete`, `action`, `$location`, `path`, `service.ranking`, `idpUrl`, `idpCertAlias`, `idpHttpRedirect`, `serviceProviderEntityId`, `assertionConsumerServiceURL`, `spPrivateKeyAlias`, `keyStorePassword`, `defaultRedirectUrl`, `userIDAttribute`, `useEncryption`, `createUser`, `addGroupMemberships`, `groupMembershipAttribute`, `defaultGroups`, `nameIdFormat`, `synchronizeAttributes`, `handleLogout`, `logoutUrl`, `clockTolerance`, `digestMethod`, `signatureMethod`, `userIntermediatePath`, `propertylist` | SamlConfigurationInfo |  | — |
+| POST | `/system/console/jmx/com.adobe.granite:type=Repository/op/{action}` | postJmxRepository | `action`* | — |  | — |
+| GET | `/system/console/status-productinfo.json` | getAemProductInfo | — | — | yes | — |
+| GET | `/system/health` | getAemHealthCheck | `tags`, `combineTagsOr` | — | yes | — |
+| POST | `/{intermediatePath}/{authorizableId}.ks.html` | postAuthorizableKeystore | `intermediatePath`*, `authorizableId`*, `:operation`, `currentPassword`, `newPassword`, `rePassword`, `keyPassword`, `keyStorePass`, `alias`, `newAlias`, `removeAlias`, body: object | KeystoreInfo |  | — |
+| GET | `/{intermediatePath}/{authorizableId}.ks.json` | getAuthorizableKeystore | `intermediatePath`*, `authorizableId`* | KeystoreInfo | yes | — |
+| GET | `/{intermediatePath}/{authorizableId}/keystore/store.p12` | getKeystore | `intermediatePath`*, `authorizableId`* | — | yes | — |
+| POST | `/{path}/` | postPath | `path`*, `jcr:primaryType`*, `:name`* | — |  | — |
+| GET | `/{path}/{name}` | getNode | `path`*, `name`* | — | yes | — |
+| POST | `/{path}/{name}` | postNode | `path`*, `name`*, `:operation`, `deleteAuthorizable`, body: object | — |  | — |
+| DELETE | `/{path}/{name}` | deleteNode | `path`*, `name`* | — |  | — |
+| POST | `/{path}/{name}.rw.html` | postNodeRw | `path`*, `name`*, `addMembers` | — |  | — |

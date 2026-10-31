@@ -93,6 +93,96 @@
         "from": "bufferapp-com-413edb6b6c",
         "kind": "EXPOSES",
         "to": "operation:get:/user{mediaTypeExtension}"
+      },
+      {
+        "from": "operation:get:/info/configuration{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:configuration"
+      },
+      {
+        "from": "operation:get:/links/shares{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:shares"
+      },
+      {
+        "from": "operation:post:/profiles/{id}/schedules/update{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:get:/profiles/{id}/schedules{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:schedules"
+      },
+      {
+        "from": "operation:get:/profiles/{id}/updates/pending{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:updates-array"
+      },
+      {
+        "from": "operation:post:/profiles/{id}/updates/reorder{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:shuffle"
+      },
+      {
+        "from": "operation:get:/profiles/{id}/updates/sent{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:updates-array"
+      },
+      {
+        "from": "operation:post:/profiles/{id}/updates/shuffle{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:shuffle"
+      },
+      {
+        "from": "operation:get:/profiles/{id}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:profile"
+      },
+      {
+        "from": "operation:get:/profiles{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:profiles"
+      },
+      {
+        "from": "operation:post:/updates/create{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:newUpdate"
+      },
+      {
+        "from": "operation:post:/updates/{id}/destroy{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:get:/updates/{id}/interactions{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:interactions"
+      },
+      {
+        "from": "operation:post:/updates/{id}/move_to_top{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:update"
+      },
+      {
+        "from": "operation:post:/updates/{id}/share{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:post:/updates/{id}/update{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:individual-update"
+      },
+      {
+        "from": "operation:get:/updates/{id}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:update"
+      },
+      {
+        "from": "operation:get:/user{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:user"
       }
     ],
     "nodes": [
@@ -102,281 +192,1125 @@
       },
       {
         "deprecated": false,
+        "description": "Returns an object with the current configuration that Buffer is using, including supported services, their icons and the varying limits of character and schedu…",
         "id": "operation:get:/info/configuration{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /info/configuration{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/info/configuration{mediaTypeExtension}",
         "pointer": "#/paths/~1info~1configuration{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "configuration"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns an object with a the numbers of shares a link has had using Buffer.",
         "id": "operation:get:/links/shares{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /links/shares{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "URL-encoded URL of the page for which the number of shares is requested.",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/links/shares{mediaTypeExtension}",
         "pointer": "#/paths/~1links~1shares{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "shares"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "\"Set the posting schedules for the specified social media profile.",
         "id": "operation:post:/profiles/{id}/schedules/update{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /profiles/{id}/schedules/update{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/profiles/{id}/schedules/update{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}~1schedules~1update{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns details of the posting schedules associated with a social media profile.",
         "id": "operation:get:/profiles/{id}/schedules{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /profiles/{id}/schedules{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/profiles/{id}/schedules{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}~1schedules{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedules"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "\"Returns an array of updates that are currently in the buffer for an individual social media profile.",
         "id": "operation:get:/profiles/{id}/updates/pending{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /profiles/{id}/updates/pending{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the page of status updates to receive.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specifies the number of status updates to receive.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specifies a unix timestamp which only status updates created after this time will be retrieved.",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone.",
+            "in": "query",
+            "name": "utc",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/profiles/{id}/updates/pending{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}~1updates~1pending{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "updates-array"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Edit the order at which statuses for the specified social media profile will be sent out of the buffer.",
         "id": "operation:post:/profiles/{id}/updates/reorder{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /profiles/{id}/updates/reorder{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/profiles/{id}/updates/reorder{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}~1updates~1reorder{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "shuffle"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns an array of updates that have been sent from the buffer for an individual social media profile.",
         "id": "operation:get:/profiles/{id}/updates/sent{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /profiles/{id}/updates/sent{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the page of status updates to receive.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specifies the number of status updates to receive.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specifies a unix timestamp which only status updates created after this time will be retrieved.",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "If utc is set times will be returned relative to UTC rather than the users associated timezone.",
+            "in": "query",
+            "name": "utc",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/profiles/{id}/updates/sent{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}~1updates~1sent{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "updates-array"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Randomize the order at which statuses for the specified social media profile will be sent out of the buffer.",
         "id": "operation:post:/profiles/{id}/updates/shuffle{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /profiles/{id}/updates/shuffle{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/profiles/{id}/updates/shuffle{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}~1updates~1shuffle{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "shuffle"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns details of the single specified social media profile.",
         "id": "operation:get:/profiles/{id}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /profiles/{id}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/profiles/{id}{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles~1{id}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "profile"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns an array of social media profiles connected to a users account.",
         "id": "operation:get:/profiles{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /profiles{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/profiles{mediaTypeExtension}",
         "pointer": "#/paths/~1profiles{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "profiles"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Create one or more new status updates.",
         "id": "operation:post:/updates/create{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /updates/create{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/updates/create{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1create{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "newUpdate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Permanently delete an existing status update.",
         "id": "operation:post:/updates/{id}/destroy{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /updates/{id}/destroy{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/updates/{id}/destroy{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1{id}~1destroy{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns the detailed information on individual interactions with the social media update such as favorites, retweets and likes.",
         "id": "operation:get:/updates/{id}/interactions{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /updates/{id}/interactions{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies a type of event to be retrieved, for example \"retweet\", \"like\", \"comment\", \"mention\" or \"reshare\".",
+            "in": "query",
+            "name": "event",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the page of status updates to receive.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specifies the number of status updates to receive.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/updates/{id}/interactions{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1{id}~1interactions{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "interactions"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Move an existing status update to the top of the queue and recalculate times for all updates in the queue.",
         "id": "operation:post:/updates/{id}/move_to_top{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /updates/{id}/move_to_top{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/updates/{id}/move_to_top{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1{id}~1move_to_top{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "update"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Immediately shares a single pending update and recalculates times for updates remaining in the queue.",
         "id": "operation:post:/updates/{id}/share{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /updates/{id}/share{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/updates/{id}/share{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1{id}~1share{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Edit an existing, individual status update.",
         "id": "operation:post:/updates/{id}/update{mediaTypeExtension}",
         "kind": "operation",
         "method": "post",
         "name": "post /updates/{id}/update{mediaTypeExtension}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/updates/{id}/update{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1{id}~1update{mediaTypeExtension}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "individual-update"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns a single social media update.",
         "id": "operation:get:/updates/{id}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /updates/{id}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/updates/{id}{mediaTypeExtension}",
         "pointer": "#/paths/~1updates~1{id}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "update"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns a single user.",
         "id": "operation:get:/user{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /user{mediaTypeExtension}",
+        "parameters": [
+          {
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user{mediaTypeExtension}",
         "pointer": "#/paths/~1user{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "user"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:configuration",
         "kind": "schema",
-        "name": "configuration"
+        "name": "configuration",
+        "type": "object"
       },
       {
         "id": "schema:individual-update",
         "kind": "schema",
-        "name": "individual-update"
+        "name": "individual-update",
+        "type": "object"
       },
       {
         "id": "schema:interactions",
         "kind": "schema",
-        "name": "interactions"
+        "name": "interactions",
+        "type": "object"
       },
       {
         "id": "schema:newUpdate",
         "kind": "schema",
-        "name": "newUpdate"
+        "name": "newUpdate",
+        "type": "object"
       },
       {
         "id": "schema:profile",
         "kind": "schema",
-        "name": "profile"
+        "name": "profile",
+        "type": "object"
       },
       {
         "id": "schema:profiles",
         "kind": "schema",
-        "name": "profiles"
+        "name": "profiles",
+        "type": "object[]"
       },
       {
         "id": "schema:reorder",
         "kind": "schema",
-        "name": "reorder"
+        "name": "reorder",
+        "type": "object"
       },
       {
         "id": "schema:schedules",
         "kind": "schema",
-        "name": "schedules"
+        "name": "schedules",
+        "type": "object"
       },
       {
         "id": "schema:schedules-update",
         "kind": "schema",
-        "name": "schedules-update"
+        "name": "schedules-update",
+        "type": "object"
       },
       {
         "id": "schema:share",
         "kind": "schema",
-        "name": "share"
+        "name": "share",
+        "type": "object"
       },
       {
         "id": "schema:shares",
         "kind": "schema",
-        "name": "shares"
+        "name": "shares",
+        "type": "object"
       },
       {
         "id": "schema:shuffle",
         "kind": "schema",
-        "name": "shuffle"
+        "name": "shuffle",
+        "type": "object"
       },
       {
         "id": "schema:success",
         "kind": "schema",
-        "name": "success"
+        "name": "success",
+        "type": "object"
       },
       {
         "id": "schema:update",
         "kind": "schema",
-        "name": "update"
+        "name": "update",
+        "type": "object"
       },
       {
         "id": "schema:updates-array",
         "kind": "schema",
-        "name": "updates-array"
+        "name": "updates-array",
+        "type": "object"
       },
       {
         "id": "schema:user",
         "kind": "schema",
-        "name": "user"
+        "name": "user",
+        "type": "object"
       }
     ]
   },

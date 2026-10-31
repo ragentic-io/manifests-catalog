@@ -37,12 +37,125 @@
       },
       {
         "deprecated": false,
+        "description": "The main feature - check a text with LanguageTool for possible style and grammar issues.",
         "id": "operation:post:/check",
         "kind": "operation",
         "method": "post",
         "name": "post /check",
+        "parameters": [
+          {
+            "description": "The text to be checked.",
+            "in": "formData",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The text to be checked, given as a JSON document that specifies what's text and what's markup.",
+            "in": "formData",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below).",
+            "in": "formData",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set to get Premium API access: Your username/email as used to log in at languagetool.org.",
+            "in": "formData",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set to get Premium API access: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>your API key</a>",
+            "in": "formData",
+            "name": "apiKey",
+            "required": false,
+            "type": "string:password"
+          },
+          {
+            "description": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset",
+            "in": "formData",
+            "name": "dicts",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A language code of the user's native language, enabling false friends checks for some language pairs.",
+            "in": "formData",
+            "name": "motherTongue",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of preferred language variants.",
+            "in": "formData",
+            "name": "preferredVariants",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "IDs of rules to be enabled, comma-separated",
+            "in": "formData",
+            "name": "enabledRules",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "IDs of rules to be disabled, comma-separated",
+            "in": "formData",
+            "name": "disabledRules",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "IDs of categories to be enabled, comma-separated",
+            "in": "formData",
+            "name": "enabledCategories",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "IDs of categories to be disabled, comma-separated",
+            "in": "formData",
+            "name": "disabledCategories",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.",
+            "in": "formData",
+            "name": "enabledOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to `picky`, additional rules will be activated, i.e.",
+            "enum": [
+              "default",
+              "picky"
+            ],
+            "in": "formData",
+            "name": "level",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/check",
         "pointer": "#/paths/~1check/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Check a text"
       },
@@ -54,39 +167,167 @@
         "name": "get /languages",
         "path": "/languages",
         "pointer": "#/paths/~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get a list of supported languages."
       },
       {
         "deprecated": false,
+        "description": "List words in the user's personal dictionaries.",
         "id": "operation:get:/words",
         "kind": "operation",
         "method": "get",
         "name": "get /words",
+        "parameters": [
+          {
+            "description": "Offset of where to start in the list of words.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum number of words to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Your username as used to log in at languagetool.org.",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "<a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>",
+            "in": "query",
+            "name": "apiKey",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset",
+            "in": "query",
+            "name": "dicts",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/words",
         "pointer": "#/paths/~1words/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "List words in dictionaries"
       },
       {
         "deprecated": false,
+        "description": "Add a word to one of the user's personal dictionaries.",
         "id": "operation:post:/words/add",
         "kind": "operation",
         "method": "post",
         "name": "post /words/add",
+        "parameters": [
+          {
+            "description": "The word to be added.",
+            "in": "formData",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your username as used to log in at languagetool.org.",
+            "in": "formData",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "<a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>",
+            "in": "formData",
+            "name": "apiKey",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "Name of the dictionary to add the word to; non-existent dictionaries are created after calling this; if unset, adds to special default dictionary",
+            "in": "formData",
+            "name": "dict",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/words/add",
         "pointer": "#/paths/~1words~1add/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Add word to a dictionary"
       },
       {
         "deprecated": false,
+        "description": "Remove a word from one of the user's personal dictionaries.",
         "id": "operation:post:/words/delete",
         "kind": "operation",
         "method": "post",
         "name": "post /words/delete",
+        "parameters": [
+          {
+            "description": "The word to be removed.",
+            "in": "formData",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your username as used to log in at languagetool.org.",
+            "in": "formData",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "<a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>",
+            "in": "formData",
+            "name": "apiKey",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "Name of the dictionary to remove the word from; if the dictionary is empty upon calling this, it is deleted; if unset, removes from special default dictionary",
+            "in": "formData",
+            "name": "dict",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/words/delete",
         "pointer": "#/paths/~1words~1delete/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Remove word from a dictionary"
       }

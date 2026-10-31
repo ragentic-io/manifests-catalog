@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_clever_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `3b916536c139fd4fd25eea461f25455fdc707d18b8be8b1f0e90d6105dacd378` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,49 +34,51 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_clever_profile_imag
 
 37 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/contacts` | getContacts | — |
-| GET | `/contacts/{id}` | getContact | — |
-| GET | `/contacts/{id}/district` | getDistrictForStudentContact | — |
-| GET | `/contacts/{id}/student` | getStudentForContact | — |
-| GET | `/district_admins` | getDistrictAdmins | — |
-| GET | `/district_admins/{id}` | getDistrictAdmin | — |
-| GET | `/districts` | getDistricts | — |
-| GET | `/districts/{id}` | getDistrict | — |
-| GET | `/districts/{id}/admins` | getAdminsForDistrict | — |
-| GET | `/districts/{id}/schools` | getSchoolsForDistrict | — |
-| GET | `/districts/{id}/sections` | getSectionsForDistrict | — |
-| GET | `/districts/{id}/status` | getDistrictStatus | — |
-| GET | `/districts/{id}/students` | getStudentsForDistrict | — |
-| GET | `/districts/{id}/teachers` | getTeachersForDistrict | — |
-| GET | `/school_admins` | getSchoolAdmins | — |
-| GET | `/school_admins/{id}` | getSchoolAdmin | — |
-| GET | `/school_admins/{id}/schools` | getSchoolsForSchoolAdmin | — |
-| GET | `/schools` | getSchools | — |
-| GET | `/schools/{id}` | getSchool | — |
-| GET | `/schools/{id}/district` | getDistrictForSchool | — |
-| GET | `/schools/{id}/sections` | getSectionsForSchool | — |
-| GET | `/schools/{id}/students` | getStudentsForSchool | — |
-| GET | `/schools/{id}/teachers` | getTeachersForSchool | — |
-| GET | `/sections` | getSections | — |
-| GET | `/sections/{id}` | getSection | — |
-| GET | `/sections/{id}/district` | getDistrictForSection | — |
-| GET | `/sections/{id}/school` | getSchoolForSection | — |
-| GET | `/sections/{id}/students` | getStudentsForSection | — |
-| GET | `/sections/{id}/teacher` | getTeacherForSection | — |
-| GET | `/sections/{id}/teachers` | getTeachersForSection | — |
-| GET | `/students` | getStudents | — |
-| GET | `/students/{id}` | getStudent | — |
-| GET | `/students/{id}/contacts` | getContactsForStudent | — |
-| GET | `/students/{id}/district` | getDistrictForStudent | — |
-| GET | `/students/{id}/school` | getSchoolForStudent | — |
-| GET | `/students/{id}/sections` | getSectionsForStudent | — |
-| GET | `/students/{id}/teachers` | getTeachersForStudent | — |
-| GET | `/teachers` | getTeachers | — |
-| GET | `/teachers/{id}` | getTeacher | — |
-| GET | `/teachers/{id}/district` | getDistrictForTeacher | — |
-| GET | `/teachers/{id}/grade_levels` | getGradeLevelsForTeacher | — |
-| GET | `/teachers/{id}/school` | getSchoolForTeacher | — |
-| GET | `/teachers/{id}/sections` | getSectionsForTeacher | — |
-| GET | `/teachers/{id}/students` | getStudentsForTeacher | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/contacts` | getContacts | `limit`, `starting_after`, `ending_before` | StudentContactsResponse | yes | — |
+| GET | `/contacts/{id}` | getContact | `id`* | StudentContactResponse | yes | — |
+| GET | `/contacts/{id}/district` | getDistrictForStudentContact | `id`* | DistrictResponse | yes | — |
+| GET | `/contacts/{id}/student` | getStudentForContact | `id`* | StudentResponse | yes | — |
+| GET | `/district_admins` | getDistrictAdmins | `starting_after`, `ending_before`, `show_links` | DistrictAdminsResponse | yes | — |
+| GET | `/district_admins/{id}` | getDistrictAdmin | `id`* | DistrictAdminResponse | yes | — |
+| GET | `/districts` | getDistricts | — | DistrictsResponse | yes | — |
+| GET | `/districts/{id}` | getDistrict | `id`*, `include` | DistrictResponse | yes | — |
+| GET | `/districts/{id}/admins` | getAdminsForDistrict | `id`* | DistrictAdminsResponse | yes | — |
+| GET | `/districts/{id}/schools` | getSchoolsForDistrict | `id`*, `limit`, `starting_after`, `ending_before`, `where` | SchoolsResponse | yes | — |
+| GET | `/districts/{id}/sections` | getSectionsForDistrict | `id`*, `limit`, `starting_after`, `ending_before`, `where` | SectionsResponse | yes | — |
+| GET | `/districts/{id}/status` | getDistrictStatus | `id`* | DistrictStatusResponses | yes | — |
+| GET | `/districts/{id}/students` | getStudentsForDistrict | `id`*, `limit`, `starting_after`, `ending_before`, `where` | StudentsResponse | yes | — |
+| GET | `/districts/{id}/teachers` | getTeachersForDistrict | `id`*, `limit`, `starting_after`, `ending_before`, `where` | TeachersResponse | yes | — |
+| GET | `/school_admins` | getSchoolAdmins | `limit`, `starting_after`, `ending_before`, `where` | SchoolAdminsResponse | yes | — |
+| GET | `/school_admins/{id}` | getSchoolAdmin | `id`*, `include` | SchoolAdminResponse | yes | — |
+| GET | `/school_admins/{id}/schools` | getSchoolsForSchoolAdmin | `id`*, `limit`, `starting_after`, `ending_before` | SchoolsResponse | yes | — |
+| GET | `/schools` | getSchools | `limit`, `starting_after`, `ending_before`, `where` | SchoolsResponse | yes | — |
+| GET | `/schools/{id}` | getSchool | `id`* | SchoolResponse | yes | — |
+| GET | `/schools/{id}/district` | getDistrictForSchool | `id`* | DistrictResponse | yes | — |
+| GET | `/schools/{id}/sections` | getSectionsForSchool | `id`*, `limit`, `starting_after`, `ending_before`, `where` | SectionsResponse | yes | — |
+| GET | `/schools/{id}/students` | getStudentsForSchool | `id`*, `limit`, `starting_after`, `ending_before`, `where` | StudentsResponse | yes | — |
+| GET | `/schools/{id}/teachers` | getTeachersForSchool | `id`*, `limit`, `starting_after`, `ending_before`, `where` | TeachersResponse | yes | — |
+| GET | `/sections` | getSections | `limit`, `starting_after`, `ending_before`, `where` | SectionsResponse | yes | — |
+| GET | `/sections/{id}` | getSection | `id`* | SectionResponse | yes | — |
+| GET | `/sections/{id}/district` | getDistrictForSection | `id`* | DistrictResponse | yes | — |
+| GET | `/sections/{id}/school` | getSchoolForSection | `id`* | SchoolResponse | yes | — |
+| GET | `/sections/{id}/students` | getStudentsForSection | `id`*, `limit`, `starting_after`, `ending_before` | StudentsResponse | yes | — |
+| GET | `/sections/{id}/teacher` | getTeacherForSection | `id`* | TeacherResponse | yes | — |
+| GET | `/sections/{id}/teachers` | getTeachersForSection | `id`*, `limit`, `starting_after`, `ending_before` | TeachersResponse | yes | — |
+| GET | `/students` | getStudents | `limit`, `starting_after`, `ending_before`, `where` | StudentsResponse | yes | — |
+| GET | `/students/{id}` | getStudent | `id`*, `include` | StudentResponse | yes | — |
+| GET | `/students/{id}/contacts` | getContactsForStudent | `id`*, `limit` | StudentContactsForStudentResponse | yes | — |
+| GET | `/students/{id}/district` | getDistrictForStudent | `id`* | DistrictResponse | yes | — |
+| GET | `/students/{id}/school` | getSchoolForStudent | `id`* | SchoolResponse | yes | — |
+| GET | `/students/{id}/sections` | getSectionsForStudent | `id`*, `limit`, `starting_after`, `ending_before` | SectionsResponse | yes | — |
+| GET | `/students/{id}/teachers` | getTeachersForStudent | `id`*, `limit`, `starting_after`, `ending_before` | TeachersResponse | yes | — |
+| GET | `/teachers` | getTeachers | `limit`, `starting_after`, `ending_before`, `where` | TeachersResponse | yes | — |
+| GET | `/teachers/{id}` | getTeacher | `id`*, `include` | TeacherResponse | yes | — |
+| GET | `/teachers/{id}/district` | getDistrictForTeacher | `id`* | DistrictResponse | yes | — |
+| GET | `/teachers/{id}/grade_levels` | getGradeLevelsForTeacher | `id`* | GradeLevelsResponse | yes | — |
+| GET | `/teachers/{id}/school` | getSchoolForTeacher | `id`* | SchoolResponse | yes | — |
+| GET | `/teachers/{id}/sections` | getSectionsForTeacher | `id`*, `limit`, `starting_after`, `ending_before` | SectionsResponse | yes | — |
+| GET | `/teachers/{id}/students` | getStudentsForTeacher | `id`*, `limit`, `starting_after`, `ending_before` | StudentsResponse | yes | — |

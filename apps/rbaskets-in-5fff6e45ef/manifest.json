@@ -12,17 +12,7 @@
       {
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/baskets/{name}"
-      },
-      {
-        "from": "rbaskets-in-5fff6e45ef",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/baskets/{name}"
-      },
-      {
-        "from": "rbaskets-in-5fff6e45ef",
-        "kind": "EXPOSES",
-        "to": "operation:post:/api/baskets/{name}"
       },
       {
         "from": "rbaskets-in-5fff6e45ef",
@@ -32,12 +22,22 @@
       {
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/baskets/{name}/requests"
+        "to": "operation:post:/api/baskets/{name}"
+      },
+      {
+        "from": "rbaskets-in-5fff6e45ef",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/baskets/{name}"
       },
       {
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
         "to": "operation:get:/api/baskets/{name}/requests"
+      },
+      {
+        "from": "rbaskets-in-5fff6e45ef",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/baskets/{name}/requests"
       },
       {
         "from": "rbaskets-in-5fff6e45ef",
@@ -67,17 +67,7 @@
       {
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
-        "to": "operation:delete:/baskets/{name}"
-      },
-      {
-        "from": "rbaskets-in-5fff6e45ef",
-        "kind": "EXPOSES",
         "to": "operation:get:/baskets/{name}"
-      },
-      {
-        "from": "rbaskets-in-5fff6e45ef",
-        "kind": "EXPOSES",
-        "to": "operation:post:/baskets/{name}"
       },
       {
         "from": "rbaskets-in-5fff6e45ef",
@@ -87,12 +77,22 @@
       {
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
-        "to": "operation:delete:/baskets/{name}/requests"
+        "to": "operation:post:/baskets/{name}"
+      },
+      {
+        "from": "rbaskets-in-5fff6e45ef",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/baskets/{name}"
       },
       {
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
         "to": "operation:get:/baskets/{name}/requests"
+      },
+      {
+        "from": "rbaskets-in-5fff6e45ef",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/baskets/{name}/requests"
       },
       {
         "from": "rbaskets-in-5fff6e45ef",
@@ -103,6 +103,116 @@
         "from": "rbaskets-in-5fff6e45ef",
         "kind": "EXPOSES",
         "to": "operation:put:/baskets/{name}/responses/{method}"
+      },
+      {
+        "from": "operation:get:/api/baskets",
+        "kind": "RETURNS",
+        "to": "schema:Baskets"
+      },
+      {
+        "from": "operation:get:/api/baskets/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:put:/api/baskets/{name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:post:/api/baskets/{name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:post:/api/baskets/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:get:/api/baskets/{name}/requests",
+        "kind": "RETURNS",
+        "to": "schema:Requests"
+      },
+      {
+        "from": "operation:get:/api/baskets/{name}/responses/{method}",
+        "kind": "RETURNS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "operation:put:/api/baskets/{name}/responses/{method}",
+        "kind": "ACCEPTS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "operation:get:/api/stats",
+        "kind": "RETURNS",
+        "to": "schema:ServiceStats"
+      },
+      {
+        "from": "operation:get:/api/version",
+        "kind": "RETURNS",
+        "to": "schema:Version"
+      },
+      {
+        "from": "operation:get:/baskets",
+        "kind": "RETURNS",
+        "to": "schema:Baskets"
+      },
+      {
+        "from": "operation:get:/baskets/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:put:/baskets/{name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:post:/baskets/{name}",
+        "kind": "ACCEPTS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:post:/baskets/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Token"
+      },
+      {
+        "from": "operation:get:/baskets/{name}/requests",
+        "kind": "RETURNS",
+        "to": "schema:Requests"
+      },
+      {
+        "from": "operation:get:/baskets/{name}/responses/{method}",
+        "kind": "RETURNS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "operation:put:/baskets/{name}/responses/{method}",
+        "kind": "ACCEPTS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Headers"
+      },
+      {
+        "from": "schema:Requests",
+        "kind": "REFERENCES",
+        "to": "schema:Request"
+      },
+      {
+        "from": "schema:Response",
+        "kind": "REFERENCES",
+        "to": "schema:Headers"
+      },
+      {
+        "from": "schema:ServiceStats",
+        "kind": "REFERENCES",
+        "to": "schema:BasketInfo"
       }
     ],
     "nodes": [
@@ -112,341 +222,1098 @@
       },
       {
         "deprecated": false,
+        "description": "Fetches a list of basket names managed by service.",
         "id": "operation:get:/api/baskets",
         "kind": "operation",
         "method": "get",
         "name": "get /api/baskets",
+        "parameters": [
+          {
+            "description": "Maximum number of basket names to return; default 20",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of basket names to skip; default 0",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Query string to filter result, only those basket names that match the query will be included in response",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/baskets",
         "pointer": "#/paths/~1api~1baskets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Baskets"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "service_token": []
           }
         ],
-        "summary": "Get baskets"
+        "summary": "Get baskets",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/baskets/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/baskets/{name}",
-        "path": "/api/baskets/{name}",
-        "pointer": "#/paths/~1api~1baskets~1{name}/delete",
-        "security": [
-          {
-            "basket_token": []
-          }
-        ],
-        "summary": "Delete basket"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves configuration settings of this basket.",
         "id": "operation:get:/api/baskets/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/baskets/{name}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/baskets/{name}",
         "pointer": "#/paths/~1api~1baskets~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Config"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Get basket settings"
+        "summary": "Get basket settings",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/api/baskets/{name}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /api/baskets/{name}",
-        "path": "/api/baskets/{name}",
-        "pointer": "#/paths/~1api~1baskets~1{name}/post",
-        "security": [],
-        "summary": "Create new basket"
-      },
-      {
-        "deprecated": false,
+        "description": "Updates configuration settings of this basket.",
         "id": "operation:put:/api/baskets/{name}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/baskets/{name}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/baskets/{name}",
         "pointer": "#/paths/~1api~1baskets~1{name}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Config"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Update basket settings"
+        "summary": "Update basket settings",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/baskets/{name}/requests",
+        "description": "Creates a new basket with this name.",
+        "id": "operation:post:/api/baskets/{name}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/baskets/{name}",
+        "parameters": [
+          {
+            "description": "The name of new basket",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/baskets/{name}",
+        "pointer": "#/paths/~1api~1baskets~1{name}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Config"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Token"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Create new basket",
+        "tags": [
+          "baskets"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Permanently deletes this basket and all collected requests.",
+        "id": "operation:delete:/api/baskets/{name}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /api/baskets/{name}/requests",
-        "path": "/api/baskets/{name}/requests",
-        "pointer": "#/paths/~1api~1baskets~1{name}~1requests/delete",
+        "name": "delete /api/baskets/{name}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/baskets/{name}",
+        "pointer": "#/paths/~1api~1baskets~1{name}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Delete all requests"
+        "summary": "Delete basket",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches collection of requests collected by this basket.",
         "id": "operation:get:/api/baskets/{name}/requests",
         "kind": "operation",
         "method": "get",
         "name": "get /api/baskets/{name}/requests",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximum number of requests to return; default 20",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of requests to skip; default 0",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Query string to filter result, only requests that match the query will be included in response",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defines what is taken into account when filtering is applied: `body` - search in content body of collected requests, `query` - search among query parameters of…",
+            "enum": [
+              "any",
+              "body",
+              "query",
+              "headers"
+            ],
+            "in": "query",
+            "name": "in",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/baskets/{name}/requests",
         "pointer": "#/paths/~1api~1baskets~1{name}~1requests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Requests"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Get collected requests"
+        "summary": "Get collected requests",
+        "tags": [
+          "requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes all requests collected by this basket.",
+        "id": "operation:delete:/api/baskets/{name}/requests",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/baskets/{name}/requests",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/baskets/{name}/requests",
+        "pointer": "#/paths/~1api~1baskets~1{name}~1requests/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basket_token": []
+          }
+        ],
+        "summary": "Delete all requests",
+        "tags": [
+          "requests"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieves information about configured response of the basket.",
         "id": "operation:get:/api/baskets/{name}/responses/{method}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/baskets/{name}/responses/{method}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The HTTP method this response is configured for",
+            "enum": [
+              "GET",
+              "HEAD",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "CONNECT",
+              "OPTIONS",
+              "TRACE"
+            ],
+            "in": "path",
+            "name": "method",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/baskets/{name}/responses/{method}",
         "pointer": "#/paths/~1api~1baskets~1{name}~1responses~1{method}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Response"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Get response settings"
+        "summary": "Get response settings",
+        "tags": [
+          "responses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows to configure HTTP response of this basket.",
         "id": "operation:put:/api/baskets/{name}/responses/{method}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/baskets/{name}/responses/{method}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The HTTP method this response is configured for",
+            "enum": [
+              "GET",
+              "HEAD",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "CONNECT",
+              "OPTIONS",
+              "TRACE"
+            ],
+            "in": "path",
+            "name": "method",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/baskets/{name}/responses/{method}",
         "pointer": "#/paths/~1api~1baskets~1{name}~1responses~1{method}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Response"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Update response settings"
+        "summary": "Update response settings",
+        "tags": [
+          "responses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get service statistics about baskets and collected HTTP requests.",
         "id": "operation:get:/api/stats",
         "kind": "operation",
         "method": "get",
         "name": "get /api/stats",
+        "parameters": [
+          {
+            "description": "Maximum number of basket names to return; default 5",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/stats",
         "pointer": "#/paths/~1api~1stats/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceStats"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "service_token": []
           }
         ],
-        "summary": "Get baskets statistics"
+        "summary": "Get baskets statistics",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get service version.",
         "id": "operation:get:/api/version",
         "kind": "operation",
         "method": "get",
         "name": "get /api/version",
         "path": "/api/version",
         "pointer": "#/paths/~1api~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Version"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get service version"
+        "summary": "Get service version",
+        "tags": [
+          "service"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Fetches a list of basket names managed by service.",
         "id": "operation:get:/baskets",
         "kind": "operation",
         "method": "get",
         "name": "get /baskets",
+        "parameters": [
+          {
+            "description": "Maximum number of basket names to return; default 20",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of basket names to skip; default 0",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Query string to filter result, only those basket names that match the query will be included in response",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/baskets",
         "pointer": "#/paths/~1baskets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Baskets"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "service_token": []
           }
         ],
-        "summary": "Get baskets"
+        "summary": "Get baskets",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": true,
-        "id": "operation:delete:/baskets/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /baskets/{name}",
-        "path": "/baskets/{name}",
-        "pointer": "#/paths/~1baskets~1{name}/delete",
-        "security": [
-          {
-            "basket_token": []
-          }
-        ],
-        "summary": "Delete basket"
-      },
-      {
-        "deprecated": true,
+        "description": "Retrieves configuration settings of this basket.",
         "id": "operation:get:/baskets/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get /baskets/{name}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/baskets/{name}",
         "pointer": "#/paths/~1baskets~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Config"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Get basket settings"
+        "summary": "Get basket settings",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": true,
-        "id": "operation:post:/baskets/{name}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /baskets/{name}",
-        "path": "/baskets/{name}",
-        "pointer": "#/paths/~1baskets~1{name}/post",
-        "security": [],
-        "summary": "Create new basket"
-      },
-      {
-        "deprecated": true,
+        "description": "Updates configuration settings of this basket.",
         "id": "operation:put:/baskets/{name}",
         "kind": "operation",
         "method": "put",
         "name": "put /baskets/{name}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/baskets/{name}",
         "pointer": "#/paths/~1baskets~1{name}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Config"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Update basket settings"
+        "summary": "Update basket settings",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": true,
-        "id": "operation:delete:/baskets/{name}/requests",
+        "description": "Creates a new basket with this name.",
+        "id": "operation:post:/baskets/{name}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /baskets/{name}",
+        "parameters": [
+          {
+            "description": "The name of new basket",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/baskets/{name}",
+        "pointer": "#/paths/~1baskets~1{name}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Config"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Token"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Create new basket",
+        "tags": [
+          "baskets"
+        ]
+      },
+      {
+        "deprecated": true,
+        "description": "Permanently deletes this basket and all collected requests.",
+        "id": "operation:delete:/baskets/{name}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /baskets/{name}/requests",
-        "path": "/baskets/{name}/requests",
-        "pointer": "#/paths/~1baskets~1{name}~1requests/delete",
+        "name": "delete /baskets/{name}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/baskets/{name}",
+        "pointer": "#/paths/~1baskets~1{name}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Delete all requests"
+        "summary": "Delete basket",
+        "tags": [
+          "baskets"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Fetches collection of requests collected by this basket.",
         "id": "operation:get:/baskets/{name}/requests",
         "kind": "operation",
         "method": "get",
         "name": "get /baskets/{name}/requests",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximum number of requests to return; default 20",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of requests to skip; default 0",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Query string to filter result, only requests that match the query will be included in response",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defines what is taken into account when filtering is applied: `body` - search in content body of collected requests, `query` - search among query parameters of…",
+            "enum": [
+              "any",
+              "body",
+              "query",
+              "headers"
+            ],
+            "in": "query",
+            "name": "in",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/baskets/{name}/requests",
         "pointer": "#/paths/~1baskets~1{name}~1requests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Requests"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Get collected requests"
+        "summary": "Get collected requests",
+        "tags": [
+          "requests"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Deletes all requests collected by this basket.",
+        "id": "operation:delete:/baskets/{name}/requests",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /baskets/{name}/requests",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/baskets/{name}/requests",
+        "pointer": "#/paths/~1baskets~1{name}~1requests/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basket_token": []
+          }
+        ],
+        "summary": "Delete all requests",
+        "tags": [
+          "requests"
+        ]
+      },
+      {
+        "deprecated": true,
+        "description": "Retrieves information about configured response of the basket.",
         "id": "operation:get:/baskets/{name}/responses/{method}",
         "kind": "operation",
         "method": "get",
         "name": "get /baskets/{name}/responses/{method}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The HTTP method this response is configured for",
+            "enum": [
+              "GET",
+              "HEAD",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "CONNECT",
+              "OPTIONS",
+              "TRACE"
+            ],
+            "in": "path",
+            "name": "method",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/baskets/{name}/responses/{method}",
         "pointer": "#/paths/~1baskets~1{name}~1responses~1{method}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Response"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Get response settings"
+        "summary": "Get response settings",
+        "tags": [
+          "responses"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Allows to configure HTTP response of this basket.",
         "id": "operation:put:/baskets/{name}/responses/{method}",
         "kind": "operation",
         "method": "put",
         "name": "put /baskets/{name}/responses/{method}",
+        "parameters": [
+          {
+            "description": "The basket name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The HTTP method this response is configured for",
+            "enum": [
+              "GET",
+              "HEAD",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "CONNECT",
+              "OPTIONS",
+              "TRACE"
+            ],
+            "in": "path",
+            "name": "method",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/baskets/{name}/responses/{method}",
         "pointer": "#/paths/~1baskets~1{name}~1responses~1{method}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Response"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basket_token": []
           }
         ],
-        "summary": "Update response settings"
+        "summary": "Update response settings",
+        "tags": [
+          "responses"
+        ]
       },
       {
         "id": "schema:BasketInfo",
         "kind": "schema",
-        "name": "BasketInfo"
+        "name": "BasketInfo",
+        "type": "object"
       },
       {
         "id": "schema:Baskets",
         "kind": "schema",
-        "name": "Baskets"
+        "name": "Baskets",
+        "type": "object"
       },
       {
         "id": "schema:Config",
         "kind": "schema",
-        "name": "Config"
+        "name": "Config",
+        "type": "object"
       },
       {
+        "description": "Map of HTTP headers, key represents name, value is array of values",
         "id": "schema:Headers",
         "kind": "schema",
-        "name": "Headers"
+        "name": "Headers",
+        "type": "object"
       },
       {
         "id": "schema:Request",
         "kind": "schema",
-        "name": "Request"
+        "name": "Request",
+        "type": "object"
       },
       {
         "id": "schema:Requests",
         "kind": "schema",
-        "name": "Requests"
+        "name": "Requests",
+        "type": "object"
       },
       {
         "id": "schema:Response",
         "kind": "schema",
-        "name": "Response"
+        "name": "Response",
+        "type": "object"
       },
       {
         "id": "schema:ServiceStats",
         "kind": "schema",
-        "name": "ServiceStats"
+        "name": "ServiceStats",
+        "type": "object"
       },
       {
         "id": "schema:Token",
         "kind": "schema",
-        "name": "Token"
+        "name": "Token",
+        "type": "object"
       },
       {
         "id": "schema:Version",
         "kind": "schema",
-        "name": "Version"
+        "name": "Version",
+        "type": "object"
       }
     ]
   },

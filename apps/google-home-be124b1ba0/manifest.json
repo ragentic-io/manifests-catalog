@@ -153,6 +153,361 @@
         "from": "google-home-be124b1ba0",
         "kind": "EXPOSES",
         "to": "operation:post:/user_eq/set_equalizer"
+      },
+      {
+        "from": "operation:post:/assistant/a11y_mode",
+        "kind": "ACCEPTS",
+        "to": "schema:AccessibilityRequest"
+      },
+      {
+        "from": "operation:post:/assistant/a11y_mode",
+        "kind": "RETURNS",
+        "to": "schema:Getcurrentvalues"
+      },
+      {
+        "from": "operation:get:/assistant/alarms",
+        "kind": "RETURNS",
+        "to": "schema:Example18"
+      },
+      {
+        "from": "operation:post:/assistant/alarms/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteAlarmsandTimersRequest"
+      },
+      {
+        "from": "operation:post:/assistant/alarms/delete",
+        "kind": "RETURNS",
+        "to": "schema:Example19"
+      },
+      {
+        "from": "operation:post:/assistant/alarms/volume",
+        "kind": "ACCEPTS",
+        "to": "schema:AlarmVolumeRequest"
+      },
+      {
+        "from": "operation:post:/assistant/alarms/volume",
+        "kind": "RETURNS",
+        "to": "schema:Getvolume"
+      },
+      {
+        "from": "operation:post:/assistant/check_ready_status",
+        "kind": "ACCEPTS",
+        "to": "schema:CheckReadyStatusRequest"
+      },
+      {
+        "from": "operation:post:/assistant/check_ready_status",
+        "kind": "RETURNS",
+        "to": "schema:Example13"
+      },
+      {
+        "from": "operation:post:/assistant/notifications",
+        "kind": "RETURNS",
+        "to": "schema:Getcurrentstate"
+      },
+      {
+        "from": "operation:post:/assistant/set_night_mode_params",
+        "kind": "ACCEPTS",
+        "to": "schema:NightModesettingsRequest"
+      },
+      {
+        "from": "operation:post:/assistant/set_night_mode_params",
+        "kind": "RETURNS",
+        "to": "schema:Example17"
+      },
+      {
+        "from": "operation:post:/bluetooth/bond",
+        "kind": "ACCEPTS",
+        "to": "schema:ForgetpaireddeviceRequest"
+      },
+      {
+        "from": "operation:post:/bluetooth/connect",
+        "kind": "ACCEPTS",
+        "to": "schema:PairwithSpeakerRequest"
+      },
+      {
+        "from": "operation:post:/bluetooth/discovery",
+        "kind": "ACCEPTS",
+        "to": "schema:ChangeDiscoverabilityRequest"
+      },
+      {
+        "from": "operation:get:/bluetooth/get_bonded",
+        "kind": "RETURNS",
+        "to": "schema:Example111"
+      },
+      {
+        "from": "operation:post:/bluetooth/scan",
+        "kind": "ACCEPTS",
+        "to": "schema:ScanfordevicesRequest"
+      },
+      {
+        "from": "operation:get:/bluetooth/scan_results",
+        "kind": "RETURNS",
+        "to": "schema:Example112"
+      },
+      {
+        "from": "operation:get:/bluetooth/status",
+        "kind": "RETURNS",
+        "to": "schema:Example110"
+      },
+      {
+        "from": "operation:get:/configured_networks",
+        "kind": "RETURNS",
+        "to": "schema:Example113"
+      },
+      {
+        "from": "operation:post:/connect_wifi",
+        "kind": "ACCEPTS",
+        "to": "schema:ConnecttoWi-FiNetworkRequest"
+      },
+      {
+        "from": "operation:get:/eureka_info",
+        "kind": "RETURNS",
+        "to": "schema:Example1"
+      },
+      {
+        "from": "operation:post:/forget_wifi",
+        "kind": "ACCEPTS",
+        "to": "schema:ForgetWi-FiNetworkRequest"
+      },
+      {
+        "from": "operation:post:/get_app_device_id",
+        "kind": "ACCEPTS",
+        "to": "schema:AppDeviceIDRequest"
+      },
+      {
+        "from": "operation:post:/get_app_device_id",
+        "kind": "RETURNS",
+        "to": "schema:Example11"
+      },
+      {
+        "from": "operation:get:/offer",
+        "kind": "RETURNS",
+        "to": "schema:Example12"
+      },
+      {
+        "from": "operation:post:/reboot",
+        "kind": "ACCEPTS",
+        "to": "schema:RebootandFactoryResetRequest"
+      },
+      {
+        "from": "operation:get:/scan_results",
+        "kind": "RETURNS",
+        "to": "schema:Example114"
+      },
+      {
+        "from": "operation:post:/set_eureka_info",
+        "kind": "ACCEPTS",
+        "to": "schema:SetEurekaInfoRequest"
+      },
+      {
+        "from": "operation:get:/supported_locales",
+        "kind": "RETURNS",
+        "to": "schema:Example15"
+      },
+      {
+        "from": "operation:get:/supported_timezones",
+        "kind": "RETURNS",
+        "to": "schema:Example14"
+      },
+      {
+        "from": "operation:post:/test_internet_download_speed",
+        "kind": "ACCEPTS",
+        "to": "schema:TestInternetDownloadSpeedRequest"
+      },
+      {
+        "from": "operation:post:/test_internet_download_speed",
+        "kind": "RETURNS",
+        "to": "schema:Example16"
+      },
+      {
+        "from": "operation:post:/user_eq/set_equalizer",
+        "kind": "ACCEPTS",
+        "to": "schema:SetEqualizerValuesRequest"
+      },
+      {
+        "from": "schema:Alarm",
+        "kind": "REFERENCES",
+        "to": "schema:DatePattern"
+      },
+      {
+        "from": "schema:Alarm",
+        "kind": "REFERENCES",
+        "to": "schema:TimePattern"
+      },
+      {
+        "from": "schema:ConnectedDevice",
+        "kind": "REFERENCES",
+        "to": "schema:Device"
+      },
+      {
+        "from": "schema:Detail",
+        "kind": "REFERENCES",
+        "to": "schema:IconList"
+      },
+      {
+        "from": "schema:Detail",
+        "kind": "REFERENCES",
+        "to": "schema:Locale"
+      },
+      {
+        "from": "schema:Detail",
+        "kind": "REFERENCES",
+        "to": "schema:Timezone"
+      },
+      {
+        "from": "schema:DeviceInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Capabilities"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Aogh"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Audio"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:BuildInfo"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Detail"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:DeviceInfo"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Multizone"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Net"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:NightModeParams"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Opencast"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:OptIn"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Proxy"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Settings"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Setup"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Sign"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:UserEq"
+      },
+      {
+        "from": "schema:Example1",
+        "kind": "REFERENCES",
+        "to": "schema:Wifi"
+      },
+      {
+        "from": "schema:Example110",
+        "kind": "REFERENCES",
+        "to": "schema:ConnectedDevice"
+      },
+      {
+        "from": "schema:Example110",
+        "kind": "REFERENCES",
+        "to": "schema:RemoteSink"
+      },
+      {
+        "from": "schema:Example17",
+        "kind": "REFERENCES",
+        "to": "schema:Window2"
+      },
+      {
+        "from": "schema:Example18",
+        "kind": "REFERENCES",
+        "to": "schema:Alarm"
+      },
+      {
+        "from": "schema:Example18",
+        "kind": "REFERENCES",
+        "to": "schema:Timer"
+      },
+      {
+        "from": "schema:NightModeParams",
+        "kind": "REFERENCES",
+        "to": "schema:Window"
+      },
+      {
+        "from": "schema:NightModesettingsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Window"
+      },
+      {
+        "from": "schema:SetEqualizerValuesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:HighShelf1"
+      },
+      {
+        "from": "schema:SetEqualizerValuesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:LowShelf1"
+      },
+      {
+        "from": "schema:SetEurekaInfoRequest",
+        "kind": "REFERENCES",
+        "to": "schema:OptIn1"
+      },
+      {
+        "from": "schema:SetEurekaInfoRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Settings1"
+      },
+      {
+        "from": "schema:Setup",
+        "kind": "REFERENCES",
+        "to": "schema:Stats"
+      },
+      {
+        "from": "schema:UserEq",
+        "kind": "REFERENCES",
+        "to": "schema:HighShelf"
+      },
+      {
+        "from": "schema:UserEq",
+        "kind": "REFERENCES",
+        "to": "schema:LowShelf"
       }
     ],
     "nodes": [
@@ -162,803 +517,1344 @@
       },
       {
         "deprecated": false,
+        "description": "All licenses of programs used by Home.",
         "id": "operation:get:/NOTICE.html.gz",
         "kind": "operation",
         "method": "get",
         "name": "LegalNotice",
         "path": "/NOTICE.html.gz",
         "pointer": "#/paths/~1NOTICE.html.gz/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Legal Notice"
+        "summary": "Legal Notice",
+        "tags": [
+          "Static Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This controls Accessibility sounds.",
         "id": "operation:post:/assistant/a11y_mode",
         "kind": "operation",
         "method": "post",
         "name": "Accessibility",
         "path": "/assistant/a11y_mode",
         "pointer": "#/paths/~1assistant~1a11y_mode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AccessibilityRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Getcurrentvalues"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Accessibility"
+        "summary": "Accessibility",
+        "tags": [
+          "Assistant"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gives a list of all active alarms and timers.",
         "id": "operation:get:/assistant/alarms",
         "kind": "operation",
         "method": "get",
         "name": "GetAlarmsandTimers",
         "path": "/assistant/alarms",
         "pointer": "#/paths/~1assistant~1alarms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example18"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Get Alarms and Timers"
+        "summary": "Get Alarms and Timers",
+        "tags": [
+          "Assistant"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This deletes alarms and timers by their id.",
         "id": "operation:post:/assistant/alarms/delete",
         "kind": "operation",
         "method": "post",
         "name": "DeleteAlarmsandTimers",
         "path": "/assistant/alarms/delete",
         "pointer": "#/paths/~1assistant~1alarms~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeleteAlarmsandTimersRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example19"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Delete Alarms and Timers"
+        "summary": "Delete Alarms and Timers",
+        "tags": [
+          "Assistant"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gets and sets alarms and timers volume.",
         "id": "operation:post:/assistant/alarms/volume",
         "kind": "operation",
         "method": "post",
         "name": "AlarmVolume",
         "path": "/assistant/alarms/volume",
         "pointer": "#/paths/~1assistant~1alarms~1volume/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AlarmVolumeRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Getvolume"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Alarm Volume"
+        "summary": "Alarm Volume",
+        "tags": [
+          "Assistant"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Update:** This seems to have changed now and is no longer possible.",
         "id": "operation:post:/assistant/check_ready_status",
         "kind": "operation",
         "method": "post",
         "name": "CheckReadyStatus",
         "path": "/assistant/check_ready_status",
         "pointer": "#/paths/~1assistant~1check_ready_status/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CheckReadyStatusRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example13"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Check Ready Status"
+        "summary": "Check Ready Status",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is for the Do Not Disturb option.",
         "id": "operation:post:/assistant/notifications",
         "kind": "operation",
         "method": "post",
         "name": "DoNotDisturb",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/assistant/notifications",
         "pointer": "#/paths/~1assistant~1notifications/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Getcurrentstate"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Do Not Disturb"
+        "summary": "Do Not Disturb",
+        "tags": [
+          "Assistant"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This sets night mode options.",
         "id": "operation:post:/assistant/set_night_mode_params",
         "kind": "operation",
         "method": "post",
         "name": "NightModesettings",
         "path": "/assistant/set_night_mode_params",
         "pointer": "#/paths/~1assistant~1set_night_mode_params/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NightModesettingsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example17"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Night Mode settings"
+        "summary": "Night Mode settings",
+        "tags": [
+          "Device Settings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "*See note for Bluetooth under `/setup/bluetooth/status`* **For both parts** This is to forget paired devices by mac address.",
         "id": "operation:post:/bluetooth/bond",
         "kind": "operation",
         "method": "post",
         "name": "Forgetpaireddevice",
         "path": "/bluetooth/bond",
         "pointer": "#/paths/~1bluetooth~1bond/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ForgetpaireddeviceRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Forget paired device"
+        "summary": "Forget paired device",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "*See note for Bluetooth under `/setup/bluetooth/status`* **For Part 2 only** This pairs with other bluetooth speakers by mac address.",
         "id": "operation:post:/bluetooth/connect",
         "kind": "operation",
         "method": "post",
         "name": "PairwithSpeaker",
         "path": "/bluetooth/connect",
         "pointer": "#/paths/~1bluetooth~1connect/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PairwithSpeakerRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Pair with Speaker"
+        "summary": "Pair with Speaker",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "*See note for Bluetooth under `/setup/bluetooth/status`* **For Part 1 only** This enables/disables Home's bluetooth discovery and other devices can pair with H…",
         "id": "operation:post:/bluetooth/discovery",
         "kind": "operation",
         "method": "post",
         "name": "ChangeDiscoverability",
         "path": "/bluetooth/discovery",
         "pointer": "#/paths/~1bluetooth~1discovery/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ChangeDiscoverabilityRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Change Discoverability"
+        "summary": "Change Discoverability",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "*See note for Bluetooth under `/setup/bluetooth/status`* **For both parts** This gives a list of all paired or 'bonded' devices.",
         "id": "operation:get:/bluetooth/get_bonded",
         "kind": "operation",
         "method": "get",
         "name": "GetPairedDevices",
         "path": "/bluetooth/get_bonded",
         "pointer": "#/paths/~1bluetooth~1get_bonded/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example111[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Get Paired Devices"
+        "summary": "Get Paired Devices",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "*See note for Bluetooth under `/setup/bluetooth/status`* **For Part 2 only** This initiates scan for other bluetooth speakers/devices.",
         "id": "operation:post:/bluetooth/scan",
         "kind": "operation",
         "method": "post",
         "name": "Scanfordevices",
         "path": "/bluetooth/scan",
         "pointer": "#/paths/~1bluetooth~1scan/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScanfordevicesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Scan for devices"
+        "summary": "Scan for devices",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "*See note for Bluetooth under `/setup/bluetooth/status`* **For Part 2 only** This returns a list of all nearby bluetooth devices.",
         "id": "operation:get:/bluetooth/scan_results",
         "kind": "operation",
         "method": "get",
         "name": "GetScanResults",
         "path": "/bluetooth/scan_results",
         "pointer": "#/paths/~1bluetooth~1scan_results/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example112[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Get Scan Results"
+        "summary": "Get Scan Results",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "> **There are 2 parts of Bluetooth.** > > *Part 1*: Devices like phones connect to Home and play audio through Home.",
         "id": "operation:get:/bluetooth/status",
         "kind": "operation",
         "method": "get",
         "name": "Status",
         "path": "/bluetooth/status",
         "pointer": "#/paths/~1bluetooth~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example110"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Status"
+        "summary": "Status",
+        "tags": [
+          "Bluetooth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gets a list of all saved Wi-Fi networks.",
         "id": "operation:get:/configured_networks",
         "kind": "operation",
         "method": "get",
         "name": "GetSavedNetworks",
         "path": "/configured_networks",
         "pointer": "#/paths/~1configured_networks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example113[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Get Saved Networks"
+        "summary": "Get Saved Networks",
+        "tags": [
+          "Wifi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Note:** Not sure how the password is encrypted.",
         "id": "operation:post:/connect_wifi",
         "kind": "operation",
         "method": "post",
         "name": "ConnecttoWi-FiNetwork",
         "path": "/connect_wifi",
         "pointer": "#/paths/~1connect_wifi/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ConnecttoWi-FiNetworkRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Connect to Wi-Fi Network"
+        "summary": "Connect to Wi-Fi Network",
+        "tags": [
+          "Wifi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gives most of the device info.",
         "id": "operation:get:/eureka_info",
         "kind": "operation",
         "method": "get",
         "name": "EurekaInfo",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "params",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "options",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "nonce",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/eureka_info",
         "pointer": "#/paths/~1eureka_info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Eureka Info"
+        "summary": "Eureka Info",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is to forget a saved network by `wpa_id`.",
         "id": "operation:post:/forget_wifi",
         "kind": "operation",
         "method": "post",
         "name": "ForgetWi-FiNetwork",
         "path": "/forget_wifi",
         "pointer": "#/paths/~1forget_wifi/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ForgetWi-FiNetworkRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Forget Wi-Fi Network"
+        "summary": "Forget Wi-Fi Network",
+        "tags": [
+          "Wifi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gives \"app device id\", \"certificate\" and \"signed data\".",
         "id": "operation:post:/get_app_device_id",
         "kind": "operation",
         "method": "post",
         "name": "AppDeviceID",
         "path": "/get_app_device_id",
         "pointer": "#/paths/~1get_app_device_id/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AppDeviceIDRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example11"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "App Device ID"
+        "summary": "App Device ID",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Update:** This no longer exists.",
         "id": "operation:get:/icon.png",
         "kind": "operation",
         "method": "get",
         "name": "ChromecastIcon",
         "path": "/icon.png",
         "pointer": "#/paths/~1icon.png/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Chromecast Icon"
+        "summary": "Chromecast Icon",
+        "tags": [
+          "Static Files"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gives a token which is used by the Home app to get offers.",
         "id": "operation:get:/offer",
         "kind": "operation",
         "method": "get",
         "name": "Offer",
         "path": "/offer",
         "pointer": "#/paths/~1offer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example12"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Offer"
+        "summary": "Offer",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This can simply reboot the device (`params: \"now\"`) or factory reset the device (`params: \"fdr\"`).",
         "id": "operation:post:/reboot",
         "kind": "operation",
         "method": "post",
         "name": "RebootandFactoryReset",
         "path": "/reboot",
         "pointer": "#/paths/~1reboot/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RebootandFactoryResetRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Reboot and Factory Reset"
+        "summary": "Reboot and Factory Reset",
+        "tags": [
+          "Device Settings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This gets a list of all nearby Wi-Fi access points.",
         "id": "operation:get:/scan_results",
         "kind": "operation",
         "method": "get",
         "name": "GetWi-FiScanResults",
         "path": "/scan_results",
         "pointer": "#/paths/~1scan_results/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example114[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Get Wi-Fi Scan Results"
+        "summary": "Get Wi-Fi Scan Results",
+        "tags": [
+          "Wifi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This initiates scanning for Wi-Fi networks.",
         "id": "operation:post:/scan_wifi",
         "kind": "operation",
         "method": "post",
         "name": "ScanforNetworks",
         "path": "/scan_wifi",
         "pointer": "#/paths/~1scan_wifi/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Scan for Networks"
+        "summary": "Scan for Networks",
+        "tags": [
+          "Wifi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This can set custom values to some options.",
         "id": "operation:post:/set_eureka_info",
         "kind": "operation",
         "method": "post",
         "name": "SetEurekaInfo",
         "path": "/set_eureka_info",
         "pointer": "#/paths/~1set_eureka_info/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetEurekaInfoRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Set Eureka Info"
+        "summary": "Set Eureka Info",
+        "tags": [
+          "Device Settings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simply returns a list of all supported locales.",
         "id": "operation:get:/supported_locales",
         "kind": "operation",
         "method": "get",
         "name": "Locales",
         "path": "/supported_locales",
         "pointer": "#/paths/~1supported_locales/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example15[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Locales"
+        "summary": "Locales",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simply returns a list of all supported timezones.",
         "id": "operation:get:/supported_timezones",
         "kind": "operation",
         "method": "get",
         "name": "Timezones",
         "path": "/supported_timezones",
         "pointer": "#/paths/~1supported_timezones/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example14[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Timezones"
+        "summary": "Timezones",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Update:** This seems to have been removed.",
         "id": "operation:post:/test_internet_download_speed",
         "kind": "operation",
         "method": "post",
         "name": "TestInternetDownloadSpeed",
         "path": "/test_internet_download_speed",
         "pointer": "#/paths/~1test_internet_download_speed/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestInternetDownloadSpeedRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example16"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Test Internet Download Speed"
+        "summary": "Test Internet Download Speed",
+        "tags": [
+          "Device Info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This can only set new equalizer values.",
         "id": "operation:post:/user_eq/set_equalizer",
         "kind": "operation",
         "method": "post",
         "name": "SetEqualizerValues",
         "path": "/user_eq/set_equalizer",
         "pointer": "#/paths/~1user_eq~1set_equalizer/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetEqualizerValuesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cast-local-authorization-token": []
           }
         ],
-        "summary": "Set Equalizer Values"
+        "summary": "Set Equalizer Values",
+        "tags": [
+          "Assistant"
+        ]
       },
       {
         "id": "schema:AccessibilityRequest",
         "kind": "schema",
-        "name": "AccessibilityRequest"
+        "name": "AccessibilityRequest",
+        "type": "object"
       },
       {
         "id": "schema:Alarm",
         "kind": "schema",
-        "name": "Alarm"
+        "name": "Alarm",
+        "type": "object"
       },
       {
         "id": "schema:AlarmVolumeRequest",
         "kind": "schema",
-        "name": "AlarmVolumeRequest"
+        "name": "AlarmVolumeRequest",
+        "type": "object"
       },
       {
         "id": "schema:Aogh",
         "kind": "schema",
-        "name": "Aogh"
+        "name": "Aogh",
+        "type": "object"
       },
       {
         "id": "schema:AppDeviceIDRequest",
         "kind": "schema",
-        "name": "AppDeviceIDRequest"
+        "name": "AppDeviceIDRequest",
+        "type": "object"
       },
       {
         "id": "schema:Audio",
         "kind": "schema",
-        "name": "Audio"
+        "name": "Audio",
+        "type": "object"
       },
       {
         "id": "schema:BuildInfo",
         "kind": "schema",
-        "name": "BuildInfo"
+        "name": "BuildInfo",
+        "type": "object"
       },
       {
         "id": "schema:Capabilities",
         "kind": "schema",
-        "name": "Capabilities"
+        "name": "Capabilities",
+        "type": "object"
       },
       {
         "id": "schema:ChangeDiscoverabilityRequest",
         "kind": "schema",
-        "name": "ChangeDiscoverabilityRequest"
+        "name": "ChangeDiscoverabilityRequest",
+        "type": "object"
       },
       {
         "id": "schema:CheckReadyStatusRequest",
         "kind": "schema",
-        "name": "CheckReadyStatusRequest"
+        "name": "CheckReadyStatusRequest",
+        "type": "object"
       },
       {
         "id": "schema:ConnectedDevice",
         "kind": "schema",
-        "name": "ConnectedDevice"
+        "name": "ConnectedDevice",
+        "type": "object"
       },
       {
         "id": "schema:ConnecttoWi-FiNetworkRequest",
         "kind": "schema",
-        "name": "ConnecttoWi-FiNetworkRequest"
+        "name": "ConnecttoWi-FiNetworkRequest",
+        "type": "object"
       },
       {
         "id": "schema:DatePattern",
         "kind": "schema",
-        "name": "DatePattern"
+        "name": "DatePattern",
+        "type": "object"
       },
       {
         "id": "schema:DeleteAlarmsandTimersRequest",
         "kind": "schema",
-        "name": "DeleteAlarmsandTimersRequest"
+        "name": "DeleteAlarmsandTimersRequest",
+        "type": "object"
       },
       {
         "id": "schema:Detail",
         "kind": "schema",
-        "name": "Detail"
+        "name": "Detail",
+        "type": "object"
       },
       {
         "id": "schema:Device",
         "kind": "schema",
-        "name": "Device"
+        "name": "Device",
+        "type": "object"
       },
       {
         "id": "schema:DeviceInfo",
         "kind": "schema",
-        "name": "DeviceInfo"
+        "name": "DeviceInfo",
+        "type": "object"
       },
       {
         "id": "schema:Example1",
         "kind": "schema",
-        "name": "Example1"
+        "name": "Example1",
+        "type": "object"
       },
       {
         "id": "schema:Example11",
         "kind": "schema",
-        "name": "Example11"
+        "name": "Example11",
+        "type": "object"
       },
       {
         "id": "schema:Example110",
         "kind": "schema",
-        "name": "Example110"
+        "name": "Example110",
+        "type": "object"
       },
       {
         "id": "schema:Example111",
         "kind": "schema",
-        "name": "Example111"
+        "name": "Example111",
+        "type": "object"
       },
       {
         "id": "schema:Example112",
         "kind": "schema",
-        "name": "Example112"
+        "name": "Example112",
+        "type": "object"
       },
       {
         "id": "schema:Example113",
         "kind": "schema",
-        "name": "Example113"
+        "name": "Example113",
+        "type": "object"
       },
       {
         "id": "schema:Example114",
         "kind": "schema",
-        "name": "Example114"
+        "name": "Example114",
+        "type": "object"
       },
       {
         "id": "schema:Example12",
         "kind": "schema",
-        "name": "Example12"
+        "name": "Example12",
+        "type": "object"
       },
       {
         "id": "schema:Example13",
         "kind": "schema",
-        "name": "Example13"
+        "name": "Example13",
+        "type": "object"
       },
       {
         "id": "schema:Example14",
         "kind": "schema",
-        "name": "Example14"
+        "name": "Example14",
+        "type": "object"
       },
       {
         "id": "schema:Example15",
         "kind": "schema",
-        "name": "Example15"
+        "name": "Example15",
+        "type": "object"
       },
       {
         "id": "schema:Example16",
         "kind": "schema",
-        "name": "Example16"
+        "name": "Example16",
+        "type": "object"
       },
       {
         "id": "schema:Example17",
         "kind": "schema",
-        "name": "Example17"
+        "name": "Example17",
+        "type": "object"
       },
       {
         "id": "schema:Example18",
         "kind": "schema",
-        "name": "Example18"
+        "name": "Example18",
+        "type": "object"
       },
       {
         "id": "schema:Example19",
         "kind": "schema",
-        "name": "Example19"
+        "name": "Example19",
+        "type": "object"
       },
       {
         "id": "schema:ForgetWi-FiNetworkRequest",
         "kind": "schema",
-        "name": "ForgetWi-FiNetworkRequest"
+        "name": "ForgetWi-FiNetworkRequest",
+        "type": "object"
       },
       {
         "id": "schema:ForgetpaireddeviceRequest",
         "kind": "schema",
-        "name": "ForgetpaireddeviceRequest"
+        "name": "ForgetpaireddeviceRequest",
+        "type": "object"
       },
       {
         "id": "schema:Getcurrentstate",
         "kind": "schema",
-        "name": "Getcurrentstate"
+        "name": "Getcurrentstate",
+        "type": "object"
       },
       {
         "id": "schema:Getcurrentvalues",
         "kind": "schema",
-        "name": "Getcurrentvalues"
+        "name": "Getcurrentvalues",
+        "type": "object"
       },
       {
         "id": "schema:Getvolume",
         "kind": "schema",
-        "name": "Getvolume"
+        "name": "Getvolume",
+        "type": "object"
       },
       {
         "id": "schema:HighShelf",
         "kind": "schema",
-        "name": "HighShelf"
+        "name": "HighShelf",
+        "type": "object"
       },
       {
         "id": "schema:HighShelf1",
         "kind": "schema",
-        "name": "HighShelf1"
+        "name": "HighShelf1",
+        "type": "object"
       },
       {
         "id": "schema:IconList",
         "kind": "schema",
-        "name": "IconList"
+        "name": "IconList",
+        "type": "object"
       },
       {
         "id": "schema:Locale",
         "kind": "schema",
-        "name": "Locale"
+        "name": "Locale",
+        "type": "object"
       },
       {
         "id": "schema:LowShelf",
         "kind": "schema",
-        "name": "LowShelf"
+        "name": "LowShelf",
+        "type": "object"
       },
       {
         "id": "schema:LowShelf1",
         "kind": "schema",
-        "name": "LowShelf1"
+        "name": "LowShelf1",
+        "type": "object"
       },
       {
         "id": "schema:Multizone",
         "kind": "schema",
-        "name": "Multizone"
+        "name": "Multizone",
+        "type": "object"
       },
       {
         "id": "schema:Net",
         "kind": "schema",
-        "name": "Net"
+        "name": "Net",
+        "type": "object"
       },
       {
         "id": "schema:NightModeParams",
         "kind": "schema",
-        "name": "NightModeParams"
+        "name": "NightModeParams",
+        "type": "object"
       },
       {
         "id": "schema:NightModesettingsRequest",
         "kind": "schema",
-        "name": "NightModesettingsRequest"
+        "name": "NightModesettingsRequest",
+        "type": "object"
       },
       {
         "id": "schema:Opencast",
         "kind": "schema",
-        "name": "Opencast"
+        "name": "Opencast",
+        "type": "object"
       },
       {
         "id": "schema:OptIn",
         "kind": "schema",
-        "name": "OptIn"
+        "name": "OptIn",
+        "type": "object"
       },
       {
         "id": "schema:OptIn1",
         "kind": "schema",
-        "name": "OptIn1"
+        "name": "OptIn1",
+        "type": "object"
       },
       {
         "id": "schema:PairwithSpeakerRequest",
         "kind": "schema",
-        "name": "PairwithSpeakerRequest"
+        "name": "PairwithSpeakerRequest",
+        "type": "object"
       },
       {
         "id": "schema:Proxy",
         "kind": "schema",
-        "name": "Proxy"
+        "name": "Proxy",
+        "type": "object"
       },
       {
         "id": "schema:RebootandFactoryResetRequest",
         "kind": "schema",
-        "name": "RebootandFactoryResetRequest"
+        "name": "RebootandFactoryResetRequest",
+        "type": "object"
       },
       {
         "id": "schema:RemoteSink",
         "kind": "schema",
-        "name": "RemoteSink"
+        "name": "RemoteSink",
+        "type": "object"
       },
       {
         "id": "schema:ScanfordevicesRequest",
         "kind": "schema",
-        "name": "ScanfordevicesRequest"
+        "name": "ScanfordevicesRequest",
+        "type": "object"
       },
       {
         "id": "schema:SetEqualizerValuesRequest",
         "kind": "schema",
-        "name": "SetEqualizerValuesRequest"
+        "name": "SetEqualizerValuesRequest",
+        "type": "object"
       },
       {
         "id": "schema:SetEurekaInfoRequest",
         "kind": "schema",
-        "name": "SetEurekaInfoRequest"
+        "name": "SetEurekaInfoRequest",
+        "type": "object"
       },
       {
         "id": "schema:Settings",
         "kind": "schema",
-        "name": "Settings"
+        "name": "Settings",
+        "type": "object"
       },
       {
         "id": "schema:Settings1",
         "kind": "schema",
-        "name": "Settings1"
+        "name": "Settings1",
+        "type": "object"
       },
       {
         "id": "schema:Setup",
         "kind": "schema",
-        "name": "Setup"
+        "name": "Setup",
+        "type": "object"
       },
       {
         "id": "schema:Sign",
         "kind": "schema",
-        "name": "Sign"
+        "name": "Sign",
+        "type": "object"
       },
       {
         "id": "schema:Stats",
         "kind": "schema",
-        "name": "Stats"
+        "name": "Stats",
+        "type": "object"
       },
       {
         "id": "schema:TestInternetDownloadSpeedRequest",
         "kind": "schema",
-        "name": "TestInternetDownloadSpeedRequest"
+        "name": "TestInternetDownloadSpeedRequest",
+        "type": "object"
       },
       {
         "id": "schema:TimePattern",
         "kind": "schema",
-        "name": "TimePattern"
+        "name": "TimePattern",
+        "type": "object"
       },
       {
         "id": "schema:Timer",
         "kind": "schema",
-        "name": "Timer"
+        "name": "Timer",
+        "type": "object"
       },
       {
         "id": "schema:Timezone",
         "kind": "schema",
-        "name": "Timezone"
+        "name": "Timezone",
+        "type": "object"
       },
       {
         "id": "schema:UserEq",
         "kind": "schema",
-        "name": "UserEq"
+        "name": "UserEq",
+        "type": "object"
       },
       {
         "id": "schema:Wifi",
         "kind": "schema",
-        "name": "Wifi"
+        "name": "Wifi",
+        "type": "object"
       },
       {
         "id": "schema:Window",
         "kind": "schema",
-        "name": "Window"
+        "name": "Window",
+        "type": "object"
       },
       {
         "id": "schema:Window2",
         "kind": "schema",
-        "name": "Window2"
+        "name": "Window2",
+        "type": "object"
       }
     ]
   },

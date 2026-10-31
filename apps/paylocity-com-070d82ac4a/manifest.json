@@ -67,12 +67,12 @@
       {
         "from": "paylocity-com-070d82ac4a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}"
+        "to": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}"
       },
       {
         "from": "paylocity-com-070d82ac4a",
         "kind": "EXPOSES",
-        "to": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}"
+        "to": "operation:delete:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}"
       },
       {
         "from": "paylocity-com-070d82ac4a",
@@ -92,12 +92,12 @@
       {
         "from": "paylocity-com-070d82ac4a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}"
+        "to": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}"
       },
       {
         "from": "paylocity-com-070d82ac4a",
         "kind": "EXPOSES",
-        "to": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}"
+        "to": "operation:delete:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}"
       },
       {
         "from": "paylocity-com-070d82ac4a",
@@ -153,6 +153,156 @@
         "from": "paylocity-com-070d82ac4a",
         "kind": "EXPOSES",
         "to": "operation:post:/v2/weblinkstaging/companies/{companyId}/employees/newemployees"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/codes/{codeResource}",
+        "kind": "RETURNS",
+        "to": "schema:companyCodes"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/customfields/{category}",
+        "kind": "RETURNS",
+        "to": "schema:customFieldDefinition"
+      },
+      {
+        "from": "operation:post:/v2/companies/{companyId}/employees",
+        "kind": "ACCEPTS",
+        "to": "schema:employee"
+      },
+      {
+        "from": "operation:post:/v2/companies/{companyId}/employees",
+        "kind": "RETURNS",
+        "to": "schema:employeeIdResponse"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/",
+        "kind": "RETURNS",
+        "to": "schema:employeeInfo"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}",
+        "kind": "RETURNS",
+        "to": "schema:employee"
+      },
+      {
+        "from": "operation:patch:/v2/companies/{companyId}/employees/{employeeId}",
+        "kind": "ACCEPTS",
+        "to": "schema:employee"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/additionalRates",
+        "kind": "ACCEPTS",
+        "to": "schema:additionalRate"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/benefitSetup",
+        "kind": "ACCEPTS",
+        "to": "schema:benefitSetup"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/directDeposit",
+        "kind": "RETURNS",
+        "to": "schema:directDeposit"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings",
+        "kind": "RETURNS",
+        "to": "schema:earning"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/earnings",
+        "kind": "ACCEPTS",
+        "to": "schema:earning"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}",
+        "kind": "RETURNS",
+        "to": "schema:earning"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}",
+        "kind": "RETURNS",
+        "to": "schema:earning"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/emergencyContacts",
+        "kind": "ACCEPTS",
+        "to": "schema:emergencyContact"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes",
+        "kind": "RETURNS",
+        "to": "schema:localTax"
+      },
+      {
+        "from": "operation:post:/v2/companies/{companyId}/employees/{employeeId}/localTaxes",
+        "kind": "ACCEPTS",
+        "to": "schema:localTax"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}",
+        "kind": "RETURNS",
+        "to": "schema:localTax"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/nonprimaryStateTax",
+        "kind": "ACCEPTS",
+        "to": "schema:nonPrimaryStateTax"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}",
+        "kind": "RETURNS",
+        "to": "schema:payStatementDetails"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}/{checkDate}",
+        "kind": "RETURNS",
+        "to": "schema:payStatementDetails"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}",
+        "kind": "RETURNS",
+        "to": "schema:payStatementSummary"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}/{checkDate}",
+        "kind": "RETURNS",
+        "to": "schema:payStatementSummary"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/primaryStateTax",
+        "kind": "ACCEPTS",
+        "to": "schema:stateTax"
+      },
+      {
+        "from": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/sensitivedata",
+        "kind": "RETURNS",
+        "to": "schema:sensitiveData"
+      },
+      {
+        "from": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/sensitivedata",
+        "kind": "ACCEPTS",
+        "to": "schema:sensitiveData"
+      },
+      {
+        "from": "operation:post:/v2/credentials/secrets",
+        "kind": "ACCEPTS",
+        "to": "schema:addClientSecret"
+      },
+      {
+        "from": "operation:post:/v2/credentials/secrets",
+        "kind": "RETURNS",
+        "to": "schema:clientCredentialsResponse"
+      },
+      {
+        "from": "operation:post:/v2/weblinkstaging/companies/{companyId}/employees/newemployees",
+        "kind": "ACCEPTS",
+        "to": "schema:stagedEmployee"
+      },
+      {
+        "from": "operation:post:/v2/weblinkstaging/companies/{companyId}/employees/newemployees",
+        "kind": "RETURNS",
+        "to": "schema:trackingNumberResponse"
       }
     ],
     "nodes": [
@@ -162,12 +312,53 @@
       },
       {
         "deprecated": false,
+        "description": "Get All Company Codes for the selected company and resource",
         "id": "operation:get:/v2/companies/{companyId}/codes/{codeResource}",
         "kind": "operation",
         "method": "get",
         "name": "Get All Company Codes and Descriptions by Resource",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of Company Code.",
+            "in": "path",
+            "name": "codeResource",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/codes/{codeResource}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1codes~1{codeResource}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "companyCodes[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -175,16 +366,60 @@
             ]
           }
         ],
-        "summary": "Get All Company Codes"
+        "summary": "Get All Company Codes",
+        "tags": [
+          "Company Codes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get All Custom Fields for the selected company",
         "id": "operation:get:/v2/companies/{companyId}/customfields/{category}",
         "kind": "operation",
         "method": "get",
         "name": "Get All Custom Fields by category",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Custom Fields Category",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/customfields/{category}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1customfields~1{category}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "customFieldDefinition[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -192,16 +427,60 @@
             ]
           }
         ],
-        "summary": "Get All Custom Fields"
+        "summary": "Get All Custom Fields",
+        "tags": [
+          "Custom Fields"
+        ]
       },
       {
         "deprecated": false,
+        "description": "New Employee API sends new employee data directly to Web Pay.",
         "id": "operation:post:/v2/companies/{companyId}/employees",
         "kind": "operation",
         "method": "post",
         "name": "Add employee",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "employee"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "employeeIdResponse"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -209,16 +488,74 @@
             ]
           }
         ],
-        "summary": "Add new employee"
+        "summary": "Add new employee",
+        "tags": [
+          "Employee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get All Employees API will return employee data currently available in Web Pay.",
         "id": "operation:get:/v2/companies/{companyId}/employees/",
         "kind": "operation",
         "method": "get",
         "name": "Get all employees",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records per page.",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0).",
+            "in": "query",
+            "name": "pagenumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Whether to include the total record count in the header's X-Pcty-Total-Count property.",
+            "in": "query",
+            "name": "includetotalcount",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "employeeInfo[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -226,16 +563,60 @@
             ]
           }
         ],
-        "summary": "Get all employees"
+        "summary": "Get all employees",
+        "tags": [
+          "Employee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Employee API will return employee data currently available in Web Pay.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}",
         "kind": "operation",
         "method": "get",
         "name": "Get employee",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "employee"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -243,16 +624,66 @@
             ]
           }
         ],
-        "summary": "Get employee"
+        "summary": "Get employee",
+        "tags": [
+          "Employee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update Employee API will update existing employee data in WebPay.",
         "id": "operation:patch:/v2/companies/{companyId}/employees/{employeeId}",
         "kind": "operation",
         "method": "patch",
         "name": "Update employee",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "employee"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -260,16 +691,66 @@
             ]
           }
         ],
-        "summary": "Update employee"
+        "summary": "Update employee",
+        "tags": [
+          "Employee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends new or updated employee additional rates information directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/additionalRates",
         "kind": "operation",
         "method": "put",
         "name": "Add or update additional rates",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/additionalRates",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1additionalRates/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "additionalRate"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -277,16 +758,66 @@
             ]
           }
         ],
-        "summary": "Add/update additional rates"
+        "summary": "Add/update additional rates",
+        "tags": [
+          "Additional Rates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends new or updated employee benefit setup information directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/benefitSetup",
         "kind": "operation",
         "method": "put",
         "name": "Update or add employee benefit setup",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/benefitSetup",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1benefitSetup/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "benefitSetup"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -294,16 +825,60 @@
             ]
           }
         ],
-        "summary": "Add/update employee's benefit setup"
+        "summary": "Add/update employee's benefit setup",
+        "tags": [
+          "Employee Benefit Setup"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get All Direct Deposit returns main direct deposit and all additional direct depositsfor the selected employee.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/directDeposit",
         "kind": "operation",
         "method": "get",
         "name": "Get All Direct Deposit",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/directDeposit",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1directDeposit/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "directDeposit[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -311,16 +886,59 @@
             ]
           }
         ],
-        "summary": "Get All Direct Deposit"
+        "summary": "Get All Direct Deposit",
+        "tags": [
+          "Direct Deposit"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get All Earnings returns all earnings for the selected employee.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings",
         "kind": "operation",
         "method": "get",
         "name": "Get All Earnings",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/earnings",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1earnings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "earning[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -328,16 +946,66 @@
             ]
           }
         ],
-        "summary": "Get All Earnings"
+        "summary": "Get All Earnings",
+        "tags": [
+          "Earnings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add/Update Earning API sends new or updated employee earnings information directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/earnings",
         "kind": "operation",
         "method": "put",
         "name": "Add or update an employee earning",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/earnings",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1earnings/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "earning"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -345,16 +1013,66 @@
             ]
           }
         ],
-        "summary": "Add/Update Earning"
+        "summary": "Add/Update Earning",
+        "tags": [
+          "Earnings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Earnings returns all earnings with the provided earning code for the selected employee.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}",
         "kind": "operation",
         "method": "get",
         "name": "Get Earnings by Earning Code",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Earning Code",
+            "in": "path",
+            "name": "earningCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1earnings~1{earningCode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "earning[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -362,7 +1080,84 @@
             ]
           }
         ],
-        "summary": "Get Earnings by Earning Code"
+        "summary": "Get Earnings by Earning Code",
+        "tags": [
+          "Earnings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get Earnings returns the single earning with the provided earning code and start date for the selected employee.",
+        "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get Earning by Earning Code and Start Date",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Earning Code",
+            "in": "path",
+            "name": "earningCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Date",
+            "in": "path",
+            "name": "startDate",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}",
+        "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1earnings~1{earningCode}~1{startDate}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "earning"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "paylocity_auth": [
+              "WebLinkAPI"
+            ]
+          }
+        ],
+        "summary": "Get Earning by Earning Code and Start Date",
+        "tags": [
+          "Earnings"
+        ]
       },
       {
         "deprecated": false,
@@ -370,8 +1165,64 @@
         "kind": "operation",
         "method": "delete",
         "name": "Delete Earning by Earning Code and Start Date",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Earning Code",
+            "in": "path",
+            "name": "earningCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Date",
+            "in": "path",
+            "name": "startDate",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1earnings~1{earningCode}~1{startDate}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -379,33 +1230,66 @@
             ]
           }
         ],
-        "summary": "Delete Earning by Earning Code and Start Date"
+        "summary": "Delete Earning by Earning Code and Start Date",
+        "tags": [
+          "Earnings"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}",
-        "kind": "operation",
-        "method": "get",
-        "name": "Get Earning by Earning Code and Start Date",
-        "path": "/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}",
-        "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1earnings~1{earningCode}~1{startDate}/get",
-        "security": [
-          {
-            "paylocity_auth": [
-              "WebLinkAPI"
-            ]
-          }
-        ],
-        "summary": "Get Earning by Earning Code and Start Date"
-      },
-      {
-        "deprecated": false,
+        "description": "Sends new or updated employee emergency contacts directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/emergencyContacts",
         "kind": "operation",
         "method": "put",
         "name": "Add or update emergency contacts",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/emergencyContacts",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1emergencyContacts/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "emergencyContact"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -413,16 +1297,59 @@
             ]
           }
         ],
-        "summary": "Add/update emergency contacts"
+        "summary": "Add/update emergency contacts",
+        "tags": [
+          "Emergency Contacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all local taxes for the selected employee.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes",
         "kind": "operation",
         "method": "get",
         "name": "Get all local taxes",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/localTaxes",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1localTaxes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "localTax[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -430,16 +1357,66 @@
             ]
           }
         ],
-        "summary": "Get all local taxes"
+        "summary": "Get all local taxes",
+        "tags": [
+          "Local Taxes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends new employee local tax information directly to Web Pay.",
         "id": "operation:post:/v2/companies/{companyId}/employees/{employeeId}/localTaxes",
         "kind": "operation",
         "method": "post",
         "name": "Add local tax",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/localTaxes",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1localTaxes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "localTax"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -447,7 +1424,77 @@
             ]
           }
         ],
-        "summary": "Add new local tax"
+        "summary": "Add new local tax",
+        "tags": [
+          "Local Taxes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns all local taxes with the provided tax code for the selected employee.",
+        "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get local tax by tax code",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Tax Code",
+            "in": "path",
+            "name": "taxCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}",
+        "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1localTaxes~1{taxCode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "localTax[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "paylocity_auth": [
+              "WebLinkAPI"
+            ]
+          }
+        ],
+        "summary": "Get local taxes by tax code",
+        "tags": [
+          "Local Taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -455,8 +1502,57 @@
         "kind": "operation",
         "method": "delete",
         "name": "Delete local tax by tax code",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Tax Code",
+            "in": "path",
+            "name": "taxCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1localTaxes~1{taxCode}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -464,33 +1560,66 @@
             ]
           }
         ],
-        "summary": "Delete local tax by tax code"
+        "summary": "Delete local tax by tax code",
+        "tags": [
+          "Local Taxes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}",
-        "kind": "operation",
-        "method": "get",
-        "name": "Get local tax by tax code",
-        "path": "/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}",
-        "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1localTaxes~1{taxCode}/get",
-        "security": [
-          {
-            "paylocity_auth": [
-              "WebLinkAPI"
-            ]
-          }
-        ],
-        "summary": "Get local taxes by tax code"
-      },
-      {
-        "deprecated": false,
+        "description": "Sends new or updated employee non-primary state tax information directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/nonprimaryStateTax",
         "kind": "operation",
         "method": "put",
         "name": "Add or update non-primary state tax",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/nonprimaryStateTax",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1nonprimaryStateTax/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "nonPrimaryStateTax"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -498,16 +1627,95 @@
             ]
           }
         ],
-        "summary": "Add/update non-primary state tax"
+        "summary": "Add/update non-primary state tax",
+        "tags": [
+          "Non-Primary State Tax"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get pay statement details API will return employee pay statement details data currently available in Web Pay for the specified year.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}",
         "kind": "operation",
         "method": "get",
         "name": "Gets employee pay statement detail data based on the specified year",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The year for which to retrieve pay statement data",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records per page.",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0).",
+            "in": "query",
+            "name": "pagenumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Whether to include the total record count in the header's X-Pcty-Total-Count property.",
+            "in": "query",
+            "name": "includetotalcount",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Retrieve pay statement details related to specific deduction, earning or tax types.",
+            "in": "query",
+            "name": "codegroup",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1paystatement~1details~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "payStatementDetails[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -515,16 +1723,102 @@
             ]
           }
         ],
-        "summary": "Get employee pay statement details data for the specified year."
+        "summary": "Get employee pay statement details data for the specified year.",
+        "tags": [
+          "PayStatements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get pay statement details API will return employee pay statement detail data currently available in Web Pay for the specified year and check date.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}/{checkDate}",
         "kind": "operation",
         "method": "get",
         "name": "Gets employee pay statement detail data based on the specified year and check date",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The year for which to retrieve pay statement data",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The check date for which to retrieve pay statement data",
+            "in": "path",
+            "name": "checkDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records per page.",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0).",
+            "in": "query",
+            "name": "pagenumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Whether to include the total record count in the header's X-Pcty-Total-Count property.",
+            "in": "query",
+            "name": "includetotalcount",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Retrieve pay statement details related to specific deduction, earning or tax types.",
+            "in": "query",
+            "name": "codegroup",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}/{checkDate}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1paystatement~1details~1{year}~1{checkDate}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "payStatementDetails[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -532,16 +1826,95 @@
             ]
           }
         ],
-        "summary": "Get employee pay statement details data for the specified year and check date."
+        "summary": "Get employee pay statement details data for the specified year and check date.",
+        "tags": [
+          "PayStatements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get pay statement summary API will return employee pay statement summary data currently available in Web Pay for the specified year.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}",
         "kind": "operation",
         "method": "get",
         "name": "Gets employee pay statement summary data based on the specified year",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The year for which to retrieve pay statement data",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records per page.",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0).",
+            "in": "query",
+            "name": "pagenumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Whether to include the total record count in the header's X-Pcty-Total-Count property.",
+            "in": "query",
+            "name": "includetotalcount",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Retrieve pay statement details related to specific deduction, earning or tax types.",
+            "in": "query",
+            "name": "codegroup",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1paystatement~1summary~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "payStatementSummary[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -549,16 +1922,102 @@
             ]
           }
         ],
-        "summary": "Get employee pay statement summary data for the specified year."
+        "summary": "Get employee pay statement summary data for the specified year.",
+        "tags": [
+          "PayStatements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get pay statement summary API will return employee pay statement summary data currently available in Web Pay for the specified year and check date.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}/{checkDate}",
         "kind": "operation",
         "method": "get",
         "name": "Gets employee pay statement summary data based on the specified year and check date",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The year for which to retrieve pay statement data",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The check date for which to retrieve pay statement data",
+            "in": "path",
+            "name": "checkDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of records per page.",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0).",
+            "in": "query",
+            "name": "pagenumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Whether to include the total record count in the header's X-Pcty-Total-Count property.",
+            "in": "query",
+            "name": "includetotalcount",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Retrieve pay statement details related to specific deduction, earning or tax types.",
+            "in": "query",
+            "name": "codegroup",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}/{checkDate}",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1paystatement~1summary~1{year}~1{checkDate}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "payStatementSummary[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404",
+            "type": "error[]"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -566,16 +2025,66 @@
             ]
           }
         ],
-        "summary": "Get employee pay statement summary data for the specified year and check date."
+        "summary": "Get employee pay statement summary data for the specified year and check date.",
+        "tags": [
+          "PayStatements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends new or updated employee primary state tax information directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/primaryStateTax",
         "kind": "operation",
         "method": "put",
         "name": "Add or update primary state tax",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/primaryStateTax",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1primaryStateTax/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "stateTax"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -583,16 +2092,60 @@
             ]
           }
         ],
-        "summary": "Add/update primary state tax"
+        "summary": "Add/update primary state tax",
+        "tags": [
+          "Primary State Tax"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets employee sensitive data information directly from Web Pay.",
         "id": "operation:get:/v2/companies/{companyId}/employees/{employeeId}/sensitivedata",
         "kind": "operation",
         "method": "get",
         "name": "Get sensitive data",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/sensitivedata",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1sensitivedata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "sensitiveData[]"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -600,16 +2153,66 @@
             ]
           }
         ],
-        "summary": "Get sensitive data"
+        "summary": "Get sensitive data",
+        "tags": [
+          "Sensitive Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends new or updated employee sensitive data information directly to Web Pay.",
         "id": "operation:put:/v2/companies/{companyId}/employees/{employeeId}/sensitivedata",
         "kind": "operation",
         "method": "put",
         "name": "Add or update Sensitive Data",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Employee Id",
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/employees/{employeeId}/sensitivedata",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1employees~1{employeeId}~1sensitivedata/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sensitiveData"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -617,16 +2220,56 @@
             ]
           }
         ],
-        "summary": "Add/update sensitive data"
+        "summary": "Add/update sensitive data",
+        "tags": [
+          "Sensitive Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The company-specific Open API endpoint allows the client to GET an Open API document for the Paylocity API that is customized with company-specific resource sc…",
         "id": "operation:get:/v2/companies/{companyId}/openapi",
         "kind": "operation",
         "method": "get",
         "name": "Get company-specific Open API documentation",
+        "parameters": [
+          {
+            "description": "Bearer + JWT",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/companies/{companyId}/openapi",
         "pointer": "#/paths/~1v2~1companies~1{companyId}~1openapi/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "paylocity_auth": [
@@ -634,16 +2277,51 @@
             ]
           }
         ],
-        "summary": "Get Company-Specific Open API Documentation"
+        "summary": "Get Company-Specific Open API Documentation",
+        "tags": [
+          "Company-Specific Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Obtain new client secret for Paylocity-issued client id.",
         "id": "operation:post:/v2/credentials/secrets",
         "kind": "operation",
         "method": "post",
         "name": "Add Client Secret",
         "path": "/v2/credentials/secrets",
         "pointer": "#/paths/~1v2~1credentials~1secrets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "addClientSecret"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "clientCredentialsResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -651,16 +2329,57 @@
             ]
           }
         ],
-        "summary": "Obtain new client secret."
+        "summary": "Obtain new client secret.",
+        "tags": [
+          "Client Credentials"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add new employee to Web Link will send partially completed or potentially erroneous new hire record to Web Link, where it can be corrected and competed by comp…",
         "id": "operation:post:/v2/weblinkstaging/companies/{companyId}/employees/newemployees",
         "kind": "operation",
         "method": "post",
         "name": "Add new employee to Web Link",
+        "parameters": [
+          {
+            "description": "Company Id",
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v2/weblinkstaging/companies/{companyId}/employees/newemployees",
         "pointer": "#/paths/~1v2~1weblinkstaging~1companies~1{companyId}~1employees~1newemployees/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "stagedEmployee"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "trackingNumberResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "paylocity_auth": [
@@ -668,112 +2387,156 @@
             ]
           }
         ],
-        "summary": "Add new employee to Web Link"
+        "summary": "Add new employee to Web Link",
+        "tags": [
+          "Employee Staging"
+        ]
       },
       {
+        "description": "The Add Client Secret Request Model",
         "id": "schema:addClientSecret",
         "kind": "schema",
-        "name": "addClientSecret"
+        "name": "addClientSecret",
+        "type": "object"
       },
       {
+        "description": "The additional pay rate model",
         "id": "schema:additionalRate",
         "kind": "schema",
-        "name": "additionalRate"
+        "name": "additionalRate",
+        "type": "object"
       },
       {
+        "description": "The benefit setup model",
         "id": "schema:benefitSetup",
         "kind": "schema",
-        "name": "benefitSetup"
+        "name": "benefitSetup",
+        "type": "object"
       },
       {
+        "description": "The Client Credentials Response Model",
         "id": "schema:clientCredentialsResponse",
         "kind": "schema",
-        "name": "clientCredentialsResponse"
+        "name": "clientCredentialsResponse",
+        "type": "object"
       },
       {
+        "description": "The Company Codes model",
         "id": "schema:companyCodes",
         "kind": "schema",
-        "name": "companyCodes"
+        "name": "companyCodes",
+        "type": "object"
       },
       {
         "id": "schema:customFieldDefinition",
         "kind": "schema",
-        "name": "customFieldDefinition"
+        "name": "customFieldDefinition",
+        "type": "object"
       },
       {
+        "description": "The Direct Deposit model",
         "id": "schema:directDeposit",
         "kind": "schema",
-        "name": "directDeposit"
+        "name": "directDeposit",
+        "type": "object"
       },
       {
+        "description": "The employee earning model",
         "id": "schema:earning",
         "kind": "schema",
-        "name": "earning"
+        "name": "earning",
+        "type": "object"
       },
       {
+        "description": "The emergency contact model",
         "id": "schema:emergencyContact",
         "kind": "schema",
-        "name": "emergencyContact"
+        "name": "emergencyContact",
+        "type": "object"
       },
       {
+        "description": "The employee model",
         "id": "schema:employee",
         "kind": "schema",
-        "name": "employee"
+        "name": "employee",
+        "type": "object"
       },
       {
+        "description": "The EmployeeId Response Model",
         "id": "schema:employeeIdResponse",
         "kind": "schema",
-        "name": "employeeIdResponse"
+        "name": "employeeIdResponse",
+        "type": "object"
       },
       {
+        "description": "The employee info model",
         "id": "schema:employeeInfo",
         "kind": "schema",
-        "name": "employeeInfo"
+        "name": "employeeInfo",
+        "type": "object"
       },
       {
+        "description": "The error model",
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
+        "description": "The Local Tax model",
         "id": "schema:localTax",
         "kind": "schema",
-        "name": "localTax"
+        "name": "localTax",
+        "type": "object"
       },
       {
+        "description": "The Non-Primary State Tax model",
         "id": "schema:nonPrimaryStateTax",
         "kind": "schema",
-        "name": "nonPrimaryStateTax"
+        "name": "nonPrimaryStateTax",
+        "type": "object"
       },
       {
+        "description": "The pay statement details model",
         "id": "schema:payStatementDetails",
         "kind": "schema",
-        "name": "payStatementDetails"
+        "name": "payStatementDetails",
+        "type": "object"
       },
       {
+        "description": "The pay statement summary model",
         "id": "schema:payStatementSummary",
         "kind": "schema",
-        "name": "payStatementSummary"
+        "name": "payStatementSummary",
+        "type": "object"
       },
       {
+        "description": "The sensitive data model",
         "id": "schema:sensitiveData",
         "kind": "schema",
-        "name": "sensitiveData"
+        "name": "sensitiveData",
+        "type": "object"
       },
       {
+        "description": "The staged employee model",
         "id": "schema:stagedEmployee",
         "kind": "schema",
-        "name": "stagedEmployee"
+        "name": "stagedEmployee",
+        "type": "object"
       },
       {
+        "description": "The State Tax model",
         "id": "schema:stateTax",
         "kind": "schema",
-        "name": "stateTax"
+        "name": "stateTax",
+        "type": "object"
       },
       {
+        "description": "The Tracking Number Response model",
         "id": "schema:trackingNumberResponse",
         "kind": "schema",
-        "name": "trackingNumberResponse"
+        "name": "trackingNumberResponse",
+        "type": "object"
       }
     ]
   },

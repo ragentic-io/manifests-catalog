@@ -43,6 +43,116 @@
         "from": "docker-com-dvp-d259e12592",
         "kind": "EXPOSES",
         "to": "operation:post:/v2/users/login"
+      },
+      {
+        "from": "operation:get:/",
+        "kind": "RETURNS",
+        "to": "schema:NamespaceData"
+      },
+      {
+        "from": "operation:get:/namespaces/{namespace}",
+        "kind": "RETURNS",
+        "to": "schema:NamespaceMetadata"
+      },
+      {
+        "from": "operation:get:/namespaces/{namespace}/pulls/exports/years",
+        "kind": "RETURNS",
+        "to": "schema:YearData"
+      },
+      {
+        "from": "operation:get:/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}",
+        "kind": "RETURNS",
+        "to": "schema:TimespanData"
+      },
+      {
+        "from": "operation:get:/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}",
+        "kind": "RETURNS",
+        "to": "schema:TimespanModel"
+      },
+      {
+        "from": "operation:get:/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseData"
+      },
+      {
+        "from": "operation:post:/v2/users/2fa-login",
+        "kind": "ACCEPTS",
+        "to": "schema:Users2FALoginRequest"
+      },
+      {
+        "from": "operation:post:/v2/users/2fa-login",
+        "kind": "RETURNS",
+        "to": "schema:PostUsersLoginSuccessResponse"
+      },
+      {
+        "from": "operation:post:/v2/users/login",
+        "kind": "ACCEPTS",
+        "to": "schema:UsersLoginRequest"
+      },
+      {
+        "from": "operation:post:/v2/users/login",
+        "kind": "RETURNS",
+        "to": "schema:PostUsersLoginSuccessResponse"
+      },
+      {
+        "from": "schema:DatasetModel",
+        "kind": "REFERENCES",
+        "to": "schema:DatasetType"
+      },
+      {
+        "from": "schema:DatasetModel",
+        "kind": "REFERENCES",
+        "to": "schema:DataviewType"
+      },
+      {
+        "from": "schema:DatasetModel",
+        "kind": "REFERENCES",
+        "to": "schema:TimespanType"
+      },
+      {
+        "from": "schema:MonthData",
+        "kind": "REFERENCES",
+        "to": "schema:MonthModel"
+      },
+      {
+        "from": "schema:NamespaceMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:DatasetModel"
+      },
+      {
+        "from": "schema:ResponseData",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseDataFile"
+      },
+      {
+        "from": "schema:TimespanData",
+        "kind": "REFERENCES",
+        "to": "schema:MonthData"
+      },
+      {
+        "from": "schema:TimespanData",
+        "kind": "REFERENCES",
+        "to": "schema:WeekData"
+      },
+      {
+        "from": "schema:TimespanModel",
+        "kind": "REFERENCES",
+        "to": "schema:MonthModel"
+      },
+      {
+        "from": "schema:TimespanModel",
+        "kind": "REFERENCES",
+        "to": "schema:WeekModel"
+      },
+      {
+        "from": "schema:WeekData",
+        "kind": "REFERENCES",
+        "to": "schema:WeekModel"
+      },
+      {
+        "from": "schema:YearData",
+        "kind": "REFERENCES",
+        "to": "schema:YearModel"
       }
     ],
     "nodes": [
@@ -52,220 +162,467 @@
       },
       {
         "deprecated": false,
+        "description": "Gets a list of your namespaces and repos which have data available",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "getNamespaces",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NamespaceData"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HubAuth": []
           }
         ],
-        "summary": "Get namespaces and repos"
+        "summary": "Get namespaces and repos",
+        "tags": [
+          "discovery"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets metadata associated with specified namespace, including extra repos associated with the namespace",
         "id": "operation:get:/namespaces/{namespace}",
         "kind": "operation",
         "method": "get",
         "name": "getNamespace",
+        "parameters": [
+          {
+            "description": "Namespace to fetch data for",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/namespaces/{namespace}",
         "pointer": "#/paths/~1namespaces~1{namespace}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NamespaceMetadata"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HubAuth": []
           }
         ],
-        "summary": "Get namespace"
+        "summary": "Get namespace",
+        "tags": [
+          "discovery"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of years that have data for the given namespace",
         "id": "operation:get:/namespaces/{namespace}/pulls/exports/years",
         "kind": "operation",
         "method": "get",
         "name": "getNamespaceYears",
+        "parameters": [
+          {
+            "description": "Namespace to fetch data for",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/namespaces/{namespace}/pulls/exports/years",
         "pointer": "#/paths/~1namespaces~1{namespace}~1pulls~1exports~1years/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "YearData"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HubAuth": []
           }
         ],
-        "summary": "Get years with data"
+        "summary": "Get years with data",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of timespans of the given type that have data for the given namespace and year",
         "id": "operation:get:/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}",
         "kind": "operation",
         "method": "get",
         "name": "getNamespaceTimespans",
+        "parameters": [
+          {
+            "description": "Namespace to fetch data for",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year to fetch data for",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Type of timespan to fetch data for",
+            "in": "path",
+            "name": "timespantype",
+            "required": true,
+            "type": "TimespanType"
+          }
+        ],
         "path": "/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}",
         "pointer": "#/paths/~1namespaces~1{namespace}~1pulls~1exports~1years~1{year}~1{timespantype}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimespanData"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HubAuth": []
           }
         ],
-        "summary": "Get timespans with data"
+        "summary": "Get timespans with data",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets info about data for the given namespace and timespan",
         "id": "operation:get:/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}",
         "kind": "operation",
         "method": "get",
         "name": "getNamespaceTimespanMetadata",
+        "parameters": [
+          {
+            "description": "Namespace to fetch data for",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year to fetch data for",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Type of timespan to fetch data for",
+            "in": "path",
+            "name": "timespantype",
+            "required": true,
+            "type": "TimespanType"
+          },
+          {
+            "description": "Timespan to fetch data for",
+            "in": "path",
+            "name": "timespan",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}",
         "pointer": "#/paths/~1namespaces~1{namespace}~1pulls~1exports~1years~1{year}~1{timespantype}~1{timespan}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimespanModel"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HubAuth": []
           }
         ],
-        "summary": "Get namespace metadata for timespan"
+        "summary": "Get namespace metadata for timespan",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of URLs that can be used to download the pull data for the given namespace and timespan",
         "id": "operation:get:/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}",
         "kind": "operation",
         "method": "get",
         "name": "getNamespaceDataByTimespan",
+        "parameters": [
+          {
+            "description": "Namespace to fetch data for",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Year to fetch data for",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Type of timespan to fetch data for",
+            "in": "path",
+            "name": "timespantype",
+            "required": true,
+            "type": "TimespanType"
+          },
+          {
+            "description": "Timespan to fetch data for",
+            "in": "path",
+            "name": "timespan",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Type of data to fetch",
+            "in": "path",
+            "name": "dataview",
+            "required": true,
+            "type": "DataviewType"
+          }
+        ],
         "path": "/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}",
         "pointer": "#/paths/~1namespaces~1{namespace}~1pulls~1exports~1years~1{year}~1{timespantype}~1{timespan}~1{dataview}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseData"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HubAuth": []
           }
         ],
-        "summary": "Get namespace data for timespan"
+        "summary": "Get namespace data for timespan",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When a user has 2FA enabled, this is the second call to perform after `/v2/users/login` call.",
         "id": "operation:post:/v2/users/2fa-login",
         "kind": "operation",
         "method": "post",
         "name": "PostUsers2FALogin",
         "path": "/v2/users/2fa-login",
         "pointer": "#/paths/~1v2~1users~12fa-login/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Users2FALoginRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PostUsersLoginSuccessResponse"
+          },
+          {
+            "status": "401",
+            "type": "PostUsers2FALoginErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Second factor authentication."
+        "summary": "Second factor authentication.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.",
         "id": "operation:post:/v2/users/login",
         "kind": "operation",
         "method": "post",
         "name": "PostUsersLogin",
         "path": "/v2/users/login",
         "pointer": "#/paths/~1v2~1users~1login/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UsersLoginRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PostUsersLoginSuccessResponse"
+          },
+          {
+            "status": "401",
+            "type": "PostUsersLoginErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an authentication token"
+        "summary": "Create an authentication token",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "id": "schema:DatasetModel",
         "kind": "schema",
-        "name": "DatasetModel"
+        "name": "DatasetModel",
+        "type": "object"
       },
       {
         "id": "schema:DatasetType",
         "kind": "schema",
-        "name": "DatasetType"
+        "name": "DatasetType",
+        "type": "string"
       },
       {
         "id": "schema:DataviewType",
         "kind": "schema",
-        "name": "DataviewType"
+        "name": "DataviewType",
+        "type": "string"
       },
       {
         "id": "schema:MonthData",
         "kind": "schema",
-        "name": "MonthData"
+        "name": "MonthData",
+        "type": "object"
       },
       {
         "id": "schema:MonthModel",
         "kind": "schema",
-        "name": "MonthModel"
+        "name": "MonthModel",
+        "type": "object"
       },
       {
         "id": "schema:NamespaceData",
         "kind": "schema",
-        "name": "NamespaceData"
+        "name": "NamespaceData",
+        "type": "object"
       },
       {
         "id": "schema:NamespaceMetadata",
         "kind": "schema",
-        "name": "NamespaceMetadata"
+        "name": "NamespaceMetadata",
+        "type": "object"
       },
       {
+        "description": "failed second factor login response.",
         "id": "schema:PostUsers2FALoginErrorResponse",
         "kind": "schema",
-        "name": "PostUsers2FALoginErrorResponse"
+        "name": "PostUsers2FALoginErrorResponse",
+        "type": "object"
       },
       {
+        "description": "failed user login response or second factor required",
         "id": "schema:PostUsersLoginErrorResponse",
         "kind": "schema",
-        "name": "PostUsersLoginErrorResponse"
+        "name": "PostUsersLoginErrorResponse",
+        "type": "object"
       },
       {
+        "description": "successful user login response",
         "id": "schema:PostUsersLoginSuccessResponse",
         "kind": "schema",
-        "name": "PostUsersLoginSuccessResponse"
+        "name": "PostUsersLoginSuccessResponse",
+        "type": "object"
       },
       {
         "id": "schema:ResponseData",
         "kind": "schema",
-        "name": "ResponseData"
+        "name": "ResponseData",
+        "type": "object"
       },
       {
         "id": "schema:ResponseDataFile",
         "kind": "schema",
-        "name": "ResponseDataFile"
+        "name": "ResponseDataFile",
+        "type": "object"
       },
       {
         "id": "schema:TimespanData",
         "kind": "schema",
-        "name": "TimespanData"
+        "name": "TimespanData",
+        "type": "MonthData|WeekData"
       },
       {
         "id": "schema:TimespanModel",
         "kind": "schema",
-        "name": "TimespanModel"
+        "name": "TimespanModel",
+        "type": "MonthModel|WeekModel"
       },
       {
         "id": "schema:TimespanType",
         "kind": "schema",
-        "name": "TimespanType"
+        "name": "TimespanType",
+        "type": "string"
       },
       {
+        "description": "Second factor user login details",
         "id": "schema:Users2FALoginRequest",
         "kind": "schema",
-        "name": "Users2FALoginRequest"
+        "name": "Users2FALoginRequest",
+        "type": "object"
       },
       {
+        "description": "User login details",
         "id": "schema:UsersLoginRequest",
         "kind": "schema",
-        "name": "UsersLoginRequest"
+        "name": "UsersLoginRequest",
+        "type": "object"
       },
       {
         "id": "schema:WeekData",
         "kind": "schema",
-        "name": "WeekData"
+        "name": "WeekData",
+        "type": "object"
       },
       {
         "id": "schema:WeekModel",
         "kind": "schema",
-        "name": "WeekModel"
+        "name": "WeekModel",
+        "type": "object"
       },
       {
         "id": "schema:YearData",
         "kind": "schema",
-        "name": "YearData"
+        "name": "YearData",
+        "type": "object"
       },
       {
         "id": "schema:YearModel",
         "kind": "schema",
-        "name": "YearModel"
+        "name": "YearModel",
+        "type": "object"
       }
     ]
   },

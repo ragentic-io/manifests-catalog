@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `6928cfe66bdc9af0450d4e5fde025aa9a23d02063576ac2f3860795a3b7cd98b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/search` | search | Searches through source code |
-| GET | `/searchperpackage` | searchperpackage | Like /search, but aggregates per package |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/search` | search | `query`*, `match_mode` | SearchResult[] | yes | Searches through source code |
+| GET | `/searchperpackage` | searchperpackage | `query`*, `match_mode` | PackageSearchResult[] | yes | Like /search, but aggregates per package |

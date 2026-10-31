@@ -43,6 +43,86 @@
         "from": "firmalyzer-com-iotvas-ce683536bd",
         "kind": "EXPOSES",
         "to": "operation:get:/firmware/{firmware_hash}/weak-keys"
+      },
+      {
+        "from": "operation:post:/device/detect",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceFeatures"
+      },
+      {
+        "from": "operation:post:/device/detect",
+        "kind": "RETURNS",
+        "to": "schema:DeviceInfo"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:DefaultAccount"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/config-issues",
+        "kind": "RETURNS",
+        "to": "schema:ConfigIssue"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/expired-certs",
+        "kind": "RETURNS",
+        "to": "schema:ExpiredCert"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/private-keys",
+        "kind": "RETURNS",
+        "to": "schema:CryptoKey"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/risk",
+        "kind": "RETURNS",
+        "to": "schema:FirmwareRisk"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/weak-certs",
+        "kind": "RETURNS",
+        "to": "schema:WeakCert"
+      },
+      {
+        "from": "operation:get:/firmware/{firmware_hash}/weak-keys",
+        "kind": "RETURNS",
+        "to": "schema:CryptoKey"
+      },
+      {
+        "from": "schema:DeviceInfo",
+        "kind": "REFERENCES",
+        "to": "schema:FirmwareInfo"
+      },
+      {
+        "from": "schema:DeviceInfo",
+        "kind": "REFERENCES",
+        "to": "schema:Vulnerability"
+      },
+      {
+        "from": "schema:ExpiredCert",
+        "kind": "REFERENCES",
+        "to": "schema:PublicKey"
+      },
+      {
+        "from": "schema:FirmwareRisk",
+        "kind": "REFERENCES",
+        "to": "schema:RiskSummary"
+      },
+      {
+        "from": "schema:FirmwareRisk",
+        "kind": "REFERENCES",
+        "to": "schema:VulnerableComponent"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:VulnerableComponent",
+        "kind": "REFERENCES",
+        "to": "schema:Vulnerability"
       }
     ],
     "nodes": [
@@ -52,18 +132,40 @@
       },
       {
         "deprecated": false,
+        "description": "Use device service banners and mac address captured by your network port scanner, vulnerability assessment or asset discovery tools to detect device maker, mod…",
         "id": "operation:post:/device/detect",
         "kind": "operation",
         "method": "post",
         "name": "detect_device",
         "path": "/device/detect",
         "pointer": "#/paths/~1device~1detect/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeviceFeatures"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeviceInfo"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Detect iot device by service banners and mac address"
+        "summary": "Detect iot device by service banners and mac address",
+        "tags": [
+          "device"
+        ]
       },
       {
         "deprecated": false,
@@ -71,14 +173,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_accounts",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/accounts",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DefaultAccount[]"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get default accounts and password hashes of a firmware"
+        "summary": "Get default accounts and password hashes of a firmware",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "deprecated": false,
@@ -86,14 +211,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_config_issues",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/config-issues",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1config-issues/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigIssue[]"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get default OS configuration issues of a device firmware"
+        "summary": "Get default OS configuration issues of a device firmware",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "deprecated": false,
@@ -101,14 +249,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_expired_certs",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/expired-certs",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1expired-certs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpiredCert[]"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get expired digital certificates embedded in a device firmware"
+        "summary": "Get expired digital certificates embedded in a device firmware",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "deprecated": false,
@@ -116,14 +287,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_private_keys",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/private-keys",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1private-keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CryptoKey[]"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get private crypto keys embedded in a device firmware"
+        "summary": "Get private crypto keys embedded in a device firmware",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "deprecated": false,
@@ -131,14 +325,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_risk",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/risk",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1risk/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirmwareRisk"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get iot device firmware risk analysis"
+        "summary": "Get iot device firmware risk analysis",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "deprecated": false,
@@ -146,14 +363,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_weak_certs",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/weak-certs",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1weak-certs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WeakCert[]"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get certificates with weak fingerprinting algorithms that are mebedded in a device firmware"
+        "summary": "Get certificates with weak fingerprinting algorithms that are mebedded in a device firmware",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "deprecated": false,
@@ -161,89 +401,127 @@
         "kind": "operation",
         "method": "get",
         "name": "get_weak_keys",
+        "parameters": [
+          {
+            "description": "SHA2 hash of device firmware",
+            "in": "path",
+            "name": "firmware_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/firmware/{firmware_hash}/weak-keys",
         "pointer": "#/paths/~1firmware~1{firmware_hash}~1weak-keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CryptoKey[]"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key-header": []
           }
         ],
-        "summary": "Get weak crypto keys with short length"
+        "summary": "Get weak crypto keys with short length",
+        "tags": [
+          "firmware"
+        ]
       },
       {
         "id": "schema:ConfigIssue",
         "kind": "schema",
-        "name": "ConfigIssue"
+        "name": "ConfigIssue",
+        "type": "object"
       },
       {
         "id": "schema:CryptoKey",
         "kind": "schema",
-        "name": "CryptoKey"
+        "name": "CryptoKey",
+        "type": "object"
       },
       {
         "id": "schema:DefaultAccount",
         "kind": "schema",
-        "name": "DefaultAccount"
+        "name": "DefaultAccount",
+        "type": "object"
       },
       {
         "id": "schema:DeviceFeatures",
         "kind": "schema",
-        "name": "DeviceFeatures"
+        "name": "DeviceFeatures",
+        "type": "object"
       },
       {
         "id": "schema:DeviceInfo",
         "kind": "schema",
-        "name": "DeviceInfo"
+        "name": "DeviceInfo",
+        "type": "object"
       },
       {
         "id": "schema:ExpiredCert",
         "kind": "schema",
-        "name": "ExpiredCert"
+        "name": "ExpiredCert",
+        "type": "object"
       },
       {
         "id": "schema:FirmwareInfo",
         "kind": "schema",
-        "name": "FirmwareInfo"
+        "name": "FirmwareInfo",
+        "type": "object"
       },
       {
         "id": "schema:FirmwareRisk",
         "kind": "schema",
-        "name": "FirmwareRisk"
+        "name": "FirmwareRisk",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:PublicKey",
         "kind": "schema",
-        "name": "PublicKey"
+        "name": "PublicKey",
+        "type": "object"
       },
       {
         "id": "schema:RiskSummary",
         "kind": "schema",
-        "name": "RiskSummary"
+        "name": "RiskSummary",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:Vulnerability",
         "kind": "schema",
-        "name": "Vulnerability"
+        "name": "Vulnerability",
+        "type": "object"
       },
       {
         "id": "schema:VulnerableComponent",
         "kind": "schema",
-        "name": "VulnerableComponent"
+        "name": "VulnerableComponent",
+        "type": "object"
       },
       {
         "id": "schema:WeakCert",
         "kind": "schema",
-        "name": "WeakCert"
+        "name": "WeakCert",
+        "type": "object"
       }
     ]
   },

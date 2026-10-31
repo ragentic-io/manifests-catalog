@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.nordigen.com_static_asse
 
 | | |
 | --- | --- |
-| Signed bundle | `21518c835fbbd2a0534cd221576a677694343682875b6d771df4b15a6760c816` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,33 +34,35 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.nordigen.com_static_asse
 
 41 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v2/accounts/premium/{id}/transactions/` | retrieve account transactions v2 | — |
-| GET | `/api/v2/accounts/{id}/` | retrieve account metadata | — |
-| GET | `/api/v2/accounts/{id}/balances/` | accounts_balances_retrieve | — |
-| GET | `/api/v2/accounts/{id}/details/` | accounts_details_retrieve | — |
-| GET | `/api/v2/accounts/{id}/transactions/` | accounts_transactions_retrieve | — |
-| GET | `/api/v2/agreements/enduser/` | retrieve all EUAs for an end user v2 | — |
-| POST | `/api/v2/agreements/enduser/` | create EUA v2 | — |
-| DELETE | `/api/v2/agreements/enduser/{id}/` | delete EUA by id v2 | — |
-| GET | `/api/v2/agreements/enduser/{id}/` | retrieve EUA by id v2 | — |
-| PUT | `/api/v2/agreements/enduser/{id}/accept/` | accept EUA | — |
-| GET | `/api/v2/institutions/` | retrieve all supported Institutions in a given country | — |
-| GET | `/api/v2/institutions/{id}/` | retrieve institution | — |
-| GET | `/api/v2/payments/` | list payments | — |
-| POST | `/api/v2/payments/` | create payment | — |
-| GET | `/api/v2/payments/account/` | retrieve all payment creditor accounts | — |
-| GET | `/api/v2/payments/creditors/` | payments_creditors_list | — |
-| POST | `/api/v2/payments/creditors/` | payments_creditors_create | — |
-| DELETE | `/api/v2/payments/creditors/{id}/` | payments_creditors_destroy | — |
-| GET | `/api/v2/payments/creditors/{id}/` | payments_creditors_retrieve | — |
-| GET | `/api/v2/payments/fields/{institution_id}/` | list minimum required fields for institution | — |
-| DELETE | `/api/v2/payments/{id}/` | delete periodic payment | — |
-| GET | `/api/v2/payments/{id}/` | retrieve payment | — |
-| GET | `/api/v2/requisitions/` | retrieve all requisitions | — |
-| POST | `/api/v2/requisitions/` | requisition created | — |
-| DELETE | `/api/v2/requisitions/{id}/` | delete requisition by id v2 | — |
-| GET | `/api/v2/requisitions/{id}/` | requisition by id | — |
-| POST | `/api/v2/token/new/` | JWT Obtain | — |
-| POST | `/api/v2/token/refresh/` | JWT Refresh | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v2/accounts/premium/{id}/transactions/` | retrieve account transactions v2 | `country`, `date_from`, `date_to`, `id`* | — | yes | — |
+| GET | `/api/v2/accounts/{id}/` | retrieve account metadata | `id`* | AccountV2 | yes | — |
+| GET | `/api/v2/accounts/{id}/balances/` | accounts_balances_retrieve | `id`* | — | yes | — |
+| GET | `/api/v2/accounts/{id}/details/` | accounts_details_retrieve | `id`* | — | yes | — |
+| GET | `/api/v2/accounts/{id}/transactions/` | accounts_transactions_retrieve | `date_from`, `date_to`, `id`* | — | yes | — |
+| GET | `/api/v2/agreements/enduser/` | retrieve all EUAs for an end user v2 | `limit`, `offset` | PaginatedEndUserAgreementList | yes | — |
+| POST | `/api/v2/agreements/enduser/` | create EUA v2 | body*: EndUserAgreementRequest | EndUserAgreement |  | — |
+| GET | `/api/v2/agreements/enduser/{id}/` | retrieve EUA by id v2 | `id`* | EndUserAgreement | yes | — |
+| DELETE | `/api/v2/agreements/enduser/{id}/` | delete EUA by id v2 | `id`* | — |  | — |
+| PUT | `/api/v2/agreements/enduser/{id}/accept/` | accept EUA | `id`*, body*: EnduserAcceptanceDetailsRequest | EndUserAgreement |  | — |
+| GET | `/api/v2/institutions/` | retrieve all supported Institutions in a given country | `country`, `payments_enabled` | Integration[] | yes | — |
+| GET | `/api/v2/institutions/{id}/` | retrieve institution | `id`* | Integration | yes | — |
+| GET | `/api/v2/payments/` | list payments | `limit`, `offset` | PaginatedPaymentReadList | yes | — |
+| POST | `/api/v2/payments/` | create payment | body*: PaymentWriteRequest | PaymentWrite |  | — |
+| GET | `/api/v2/payments/account/` | retrieve all payment creditor accounts | — | CreditorAccount[] | yes | — |
+| GET | `/api/v2/payments/creditors/` | payments_creditors_list | `account`, `address_country`, `agent`, `currency`, `limit`, `name`, `offset`, `type` | PaginatedCreditorAccountList | yes | — |
+| POST | `/api/v2/payments/creditors/` | payments_creditors_create | body*: CreditorAccountWriteRequest | CreditorAccountWrite |  | — |
+| GET | `/api/v2/payments/creditors/{id}/` | payments_creditors_retrieve | `id`* | CreditorAccount | yes | — |
+| DELETE | `/api/v2/payments/creditors/{id}/` | payments_creditors_destroy | `id`* | — |  | — |
+| GET | `/api/v2/payments/fields/{institution_id}/` | list minimum required fields for institution | `institution_id`* | object | yes | — |
+| GET | `/api/v2/payments/{id}/` | retrieve payment | `id`* | PaymentRead | yes | — |
+| DELETE | `/api/v2/payments/{id}/` | delete periodic payment | `id`* | object |  | — |
+| GET | `/api/v2/requisitions/` | retrieve all requisitions | `limit`, `offset` | PaginatedRequisitionV2List | yes | — |
+| POST | `/api/v2/requisitions/` | requisition created | body*: RequisitionV2Request | SpectacularRequisitionV2 |  | — |
+| GET | `/api/v2/requisitions/{id}/` | requisition by id | `id`* | RequisitionV2 | yes | — |
+| DELETE | `/api/v2/requisitions/{id}/` | delete requisition by id v2 | `id`* | — |  | — |
+| POST | `/api/v2/token/new/` | JWT Obtain | body*: JWTObtainPairRequest | SpectacularJWTObtain |  | — |
+| POST | `/api/v2/token/refresh/` | JWT Refresh | body*: JWTRefreshRequest | SpectacularJWTRefresh |  | — |

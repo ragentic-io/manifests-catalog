@@ -73,6 +73,66 @@
         "from": "patrowl-local-8281d88f9b",
         "kind": "EXPOSES",
         "to": "operation:get:/test"
+      },
+      {
+        "from": "operation:get:/",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/clean",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/clean/{scanId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/getfindings/{scanId}",
+        "kind": "RETURNS",
+        "to": "schema:Findings"
+      },
+      {
+        "from": "operation:get:/info",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/reloadconfig",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:post:/startscan",
+        "kind": "ACCEPTS",
+        "to": "schema:ScanDefinition"
+      },
+      {
+        "from": "operation:post:/startscan",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/status",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/status/{scanId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/stop/{scanId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "operation:get:/stopscans",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
       }
     ],
     "nodes": [
@@ -82,172 +142,369 @@
       },
       {
         "deprecated": false,
+        "description": "Return index page",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "getDefaultPage",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Index page"
+        "summary": "Index page",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Clean all current scans.",
         "id": "operation:get:/clean",
         "kind": "operation",
         "method": "get",
         "name": "CleanScansPage",
         "path": "/clean",
         "pointer": "#/paths/~1clean/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean all scans"
+        "summary": "Clean all scans",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Clean scan identified by id.",
         "id": "operation:get:/clean/{scanId}",
         "kind": "operation",
         "method": "get",
         "name": "CleanScanPage",
+        "parameters": [
+          {
+            "description": "Numeric ID of the scan to clean",
+            "in": "path",
+            "name": "scanId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/clean/{scanId}",
         "pointer": "#/paths/~1clean~1{scanId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Clean scan"
+        "summary": "Clean scan",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get findings on finished scans.",
         "id": "operation:get:/getfindings/{scanId}",
         "kind": "operation",
         "method": "get",
         "name": "GetFindingPage",
+        "parameters": [
+          {
+            "description": "Numeric ID of the scan to get findings",
+            "in": "path",
+            "name": "scanId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/getfindings/{scanId}",
         "pointer": "#/paths/~1getfindings~1{scanId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Findings"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get findings on finished scans"
+        "summary": "Get findings on finished scans",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return information on engine.",
         "id": "operation:get:/info",
         "kind": "operation",
         "method": "get",
         "name": "getInfoPage",
         "path": "/info",
         "pointer": "#/paths/~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Engine info page"
+        "summary": "Engine info page",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return liveness page",
         "id": "operation:get:/liveness",
         "kind": "operation",
         "method": "get",
         "name": "getLivenessPage",
         "path": "/liveness",
         "pointer": "#/paths/~1liveness/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Liveness page"
+        "summary": "Liveness page",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return liveness page",
         "id": "operation:get:/readiness",
         "kind": "operation",
         "method": "get",
         "name": "getReadinessPage",
         "path": "/readiness",
         "pointer": "#/paths/~1readiness/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Readiness page"
+        "summary": "Readiness page",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reload the configuration file.",
         "id": "operation:get:/reloadconfig",
         "kind": "operation",
         "method": "get",
         "name": "reloadConfigurationPage",
         "path": "/reloadconfig",
         "pointer": "#/paths/~1reloadconfig/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Configuration reloading page"
+        "summary": "Configuration reloading page",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Start a new scan.",
         "id": "operation:post:/startscan",
         "kind": "operation",
         "method": "post",
         "name": "StartScanPage",
         "path": "/startscan",
         "pointer": "#/paths/~1startscan/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScanDefinition"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Start a new scan"
+        "summary": "Start a new scan",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Status all current scans.",
         "id": "operation:get:/status",
         "kind": "operation",
         "method": "get",
         "name": "StatusScansPage",
         "path": "/status",
         "pointer": "#/paths/~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Status on all scans"
+        "summary": "Status on all scans",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Status of a scan identified by id.",
         "id": "operation:get:/status/{scanId}",
         "kind": "operation",
         "method": "get",
         "name": "StatusScanPage",
+        "parameters": [
+          {
+            "description": "Numeric ID of the scan to get status",
+            "in": "path",
+            "name": "scanId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/status/{scanId}",
         "pointer": "#/paths/~1status~1{scanId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Status of a scan"
+        "summary": "Status of a scan",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stop a scan identified by id.",
         "id": "operation:get:/stop/{scanId}",
         "kind": "operation",
         "method": "get",
         "name": "StopScanPage",
+        "parameters": [
+          {
+            "description": "Numeric ID of the scan to stop",
+            "in": "path",
+            "name": "scanId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/stop/{scanId}",
         "pointer": "#/paths/~1stop~1{scanId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Stop a scan"
+        "summary": "Stop a scan",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stop all current scans.",
         "id": "operation:get:/stopscans",
         "kind": "operation",
         "method": "get",
         "name": "StopScansPage",
         "path": "/stopscans",
         "pointer": "#/paths/~1stopscans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Stop all scans"
+        "summary": "Stop all scans",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return test page",
         "id": "operation:get:/test",
         "kind": "operation",
         "method": "get",
         "name": "getTestPage",
         "path": "/test",
         "pointer": "#/paths/~1test/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Test page"
+        "summary": "Test page",
+        "tags": [
+          "patrowl-engine"
+        ]
       },
       {
         "id": "schema:ApiResponse",
         "kind": "schema",
-        "name": "ApiResponse"
+        "name": "ApiResponse",
+        "type": "object"
       },
       {
         "id": "schema:Findings",
         "kind": "schema",
-        "name": "Findings"
+        "name": "Findings",
+        "type": "object[]"
       },
       {
         "id": "schema:ScanDefinition",
         "kind": "schema",
-        "name": "ScanDefinition"
+        "name": "ScanDefinition",
+        "type": "object"
       }
     ]
   },

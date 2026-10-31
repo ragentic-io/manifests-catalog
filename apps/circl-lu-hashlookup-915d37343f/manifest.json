@@ -67,124 +67,365 @@
       },
       {
         "deprecated": false,
+        "description": "Bulk search of MD5 hashes in a JSON array with the key 'hashes'.",
         "id": "operation:post:/bulk/md5",
         "kind": "operation",
         "method": "post",
         "name": "post_bulkmd5",
         "path": "/bulk/md5",
         "pointer": "#/paths/~1bulk~1md5/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Bulk search of SHA1 hashes in a JSON array with the 'hashes'.",
         "id": "operation:post:/bulk/sha1",
         "kind": "operation",
         "method": "post",
         "name": "post_bulksha1",
         "path": "/bulk/sha1",
         "pointer": "#/paths/~1bulk~1sha1/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return children from a given SHA1.",
         "id": "operation:get:/children/{sha1}/{count}/{cursor}",
         "kind": "operation",
         "method": "get",
         "name": "get_children",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sha1",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "cursor",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/children/{sha1}/{count}/{cursor}",
         "pointer": "#/paths/~1children~1{sha1}~1{count}~1{cursor}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Info about the hashlookup database",
         "id": "operation:get:/info",
         "kind": "operation",
         "method": "get",
         "name": "get_info",
         "path": "/info",
         "pointer": "#/paths/~1info/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lookup MD5.",
         "id": "operation:get:/lookup/md5/{md5}",
         "kind": "operation",
         "method": "get",
         "name": "get_lookup_md5",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "md5",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lookup/md5/{md5}",
         "pointer": "#/paths/~1lookup~1md5~1{md5}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lookup SHA-1.",
         "id": "operation:get:/lookup/sha1/{sha1}",
         "kind": "operation",
         "method": "get",
         "name": "get_lookup_sha1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sha1",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lookup/sha1/{sha1}",
         "pointer": "#/paths/~1lookup~1sha1~1{sha1}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lookup SHA-256.",
         "id": "operation:get:/lookup/sha256/{sha256}",
         "kind": "operation",
         "method": "get",
         "name": "get_lookup_sha256",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sha256",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lookup/sha256/{sha256}",
         "pointer": "#/paths/~1lookup~1sha256~1{sha256}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return parents from a given SHA1.",
         "id": "operation:get:/parents/{sha1}/{count}/{cursor}",
         "kind": "operation",
         "method": "get",
         "name": "get_parents",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sha1",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "cursor",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/parents/{sha1}/{count}/{cursor}",
         "pointer": "#/paths/~1parents~1{sha1}~1{count}~1{cursor}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a session key to keep search context.",
         "id": "operation:get:/session/create/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get_session_create",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/session/create/{name}",
         "pointer": "#/paths/~1session~1create~1{name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return set of matching and non-matching hashes from a session.",
         "id": "operation:get:/session/get/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get_session_matches",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/session/get/{name}",
         "pointer": "#/paths/~1session~1get~1{name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the top 100 of most queried values.",
         "id": "operation:get:/stats/top",
         "kind": "operation",
         "method": "get",
         "name": "get_stattop",
         "path": "/stats/top",
         "pointer": "#/paths/~1stats~1top/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "default"
+        ]
       }
     ]
   },

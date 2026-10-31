@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d389zggrogs7qo.cloudfront.net_i
 
 | | |
 | --- | --- |
-| Signed bundle | `ef4e259992d78749b1f878326678d8583b440373fda96af9fa32881d33a32f4b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,23 +34,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d389zggrogs7qo.cloudfront.net_i
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/info/configuration{mediaTypeExtension}` | get /info/configuration{mediaTypeExtension} | — |
-| GET | `/links/shares{mediaTypeExtension}` | get /links/shares{mediaTypeExtension} | — |
-| POST | `/profiles/{id}/schedules/update{mediaTypeExtension}` | post /profiles/{id}/schedules/update{mediaTypeExtension} | — |
-| GET | `/profiles/{id}/schedules{mediaTypeExtension}` | get /profiles/{id}/schedules{mediaTypeExtension} | — |
-| GET | `/profiles/{id}/updates/pending{mediaTypeExtension}` | get /profiles/{id}/updates/pending{mediaTypeExtension} | — |
-| POST | `/profiles/{id}/updates/reorder{mediaTypeExtension}` | post /profiles/{id}/updates/reorder{mediaTypeExtension} | — |
-| GET | `/profiles/{id}/updates/sent{mediaTypeExtension}` | get /profiles/{id}/updates/sent{mediaTypeExtension} | — |
-| POST | `/profiles/{id}/updates/shuffle{mediaTypeExtension}` | post /profiles/{id}/updates/shuffle{mediaTypeExtension} | — |
-| GET | `/profiles/{id}{mediaTypeExtension}` | get /profiles/{id}{mediaTypeExtension} | — |
-| GET | `/profiles{mediaTypeExtension}` | get /profiles{mediaTypeExtension} | — |
-| POST | `/updates/create{mediaTypeExtension}` | post /updates/create{mediaTypeExtension} | — |
-| POST | `/updates/{id}/destroy{mediaTypeExtension}` | post /updates/{id}/destroy{mediaTypeExtension} | — |
-| GET | `/updates/{id}/interactions{mediaTypeExtension}` | get /updates/{id}/interactions{mediaTypeExtension} | — |
-| POST | `/updates/{id}/move_to_top{mediaTypeExtension}` | post /updates/{id}/move_to_top{mediaTypeExtension} | — |
-| POST | `/updates/{id}/share{mediaTypeExtension}` | post /updates/{id}/share{mediaTypeExtension} | — |
-| POST | `/updates/{id}/update{mediaTypeExtension}` | post /updates/{id}/update{mediaTypeExtension} | — |
-| GET | `/updates/{id}{mediaTypeExtension}` | get /updates/{id}{mediaTypeExtension} | — |
-| GET | `/user{mediaTypeExtension}` | get /user{mediaTypeExtension} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/info/configuration{mediaTypeExtension}` | get /info/configuration{mediaTypeExtension} | `mediaTypeExtension`* | configuration | yes | — |
+| GET | `/links/shares{mediaTypeExtension}` | get /links/shares{mediaTypeExtension} | `mediaTypeExtension`*, `url`* | shares | yes | — |
+| POST | `/profiles/{id}/schedules/update{mediaTypeExtension}` | post /profiles/{id}/schedules/update{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | success |  | — |
+| GET | `/profiles/{id}/schedules{mediaTypeExtension}` | get /profiles/{id}/schedules{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | schedules | yes | — |
+| GET | `/profiles/{id}/updates/pending{mediaTypeExtension}` | get /profiles/{id}/updates/pending{mediaTypeExtension} | `id`*, `mediaTypeExtension`*, `page`, `count`, `since`, `utc` | updates-array | yes | — |
+| POST | `/profiles/{id}/updates/reorder{mediaTypeExtension}` | post /profiles/{id}/updates/reorder{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | shuffle |  | — |
+| GET | `/profiles/{id}/updates/sent{mediaTypeExtension}` | get /profiles/{id}/updates/sent{mediaTypeExtension} | `id`*, `mediaTypeExtension`*, `page`, `count`, `since`, `utc` | updates-array | yes | — |
+| POST | `/profiles/{id}/updates/shuffle{mediaTypeExtension}` | post /profiles/{id}/updates/shuffle{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | shuffle |  | — |
+| GET | `/profiles/{id}{mediaTypeExtension}` | get /profiles/{id}{mediaTypeExtension} | `mediaTypeExtension`*, `id`* | profile | yes | — |
+| GET | `/profiles{mediaTypeExtension}` | get /profiles{mediaTypeExtension} | `mediaTypeExtension`* | profiles | yes | — |
+| POST | `/updates/create{mediaTypeExtension}` | post /updates/create{mediaTypeExtension} | `mediaTypeExtension`* | newUpdate |  | — |
+| POST | `/updates/{id}/destroy{mediaTypeExtension}` | post /updates/{id}/destroy{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | success |  | — |
+| GET | `/updates/{id}/interactions{mediaTypeExtension}` | get /updates/{id}/interactions{mediaTypeExtension} | `id`*, `mediaTypeExtension`*, `event`*, `page`, `count` | interactions | yes | — |
+| POST | `/updates/{id}/move_to_top{mediaTypeExtension}` | post /updates/{id}/move_to_top{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | update |  | — |
+| POST | `/updates/{id}/share{mediaTypeExtension}` | post /updates/{id}/share{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | success |  | — |
+| POST | `/updates/{id}/update{mediaTypeExtension}` | post /updates/{id}/update{mediaTypeExtension} | `id`*, `mediaTypeExtension`* | individual-update |  | — |
+| GET | `/updates/{id}{mediaTypeExtension}` | get /updates/{id}{mediaTypeExtension} | `mediaTypeExtension`*, `id`* | update | yes | — |
+| GET | `/user{mediaTypeExtension}` | get /user{mediaTypeExtension} | `mediaTypeExtension`* | user | yes | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_imagecharts_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `3b4d4cdd85b8f47435afd68e4ae3e4442bb2e9e3ca256190b5bc7509ce0633c3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_imagecharts_profile
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/chart` | getChart | Image-Charts API |
-| GET | `/chart.js/2.8.0` | getChartjs280 | Chart.js as image API |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/chart` | getChart | `cht`*, `chd`, `chds`, `choe`, `chld`, `chxr`, `chxp`, `chof`, `chs`, `chdl`, `chdls`, `chg`, `chco`, `chtt`, `chts`, `chxt`, `chxl`, `chxs`, `chm`, `chls`, `chl`*, `chlps`, `chma`, `chdlp`, `chf`, `chbh`, `chbr`, `chan`, `chli`, `icac`, `ichm`, `icff`, `icfs`, `iclocale`, `icwt`, `icretina`, `icqrb`, `icqrf` | — | yes | Image-Charts API |
+| GET | `/chart.js/2.8.0` | getChartjs280 | `c`, `chart`, `width`, `height`, `backgroundColor`, `bkg`, `encoding`, `icac`, `ichm`, `icretina` | — | yes | Chart.js as image API |

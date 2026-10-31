@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.docker.com_assets_images_l
 
 | | |
 | --- | --- |
-| Signed bundle | `5e0cc1c8ee13c324a7cd343adc0e9a1039c8c3c8a2048570d31dda71a9bbf2ee` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.docker.com_assets_images_l
 
 21 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getNamespaces | Get namespaces and repos |
-| GET | `/namespaces/{namespace}` | getNamespace | Get namespace |
-| GET | `/namespaces/{namespace}/pulls/exports/years` | getNamespaceYears | Get years with data |
-| GET | `/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}` | getNamespaceTimespans | Get timespans with data |
-| GET | `/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}` | getNamespaceTimespanMetadata | Get namespace metadata for timespan |
-| GET | `/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}` | getNamespaceDataByTimespan | Get namespace data for timespan |
-| POST | `/v2/users/2fa-login` | PostUsers2FALogin | Second factor authentication. |
-| POST | `/v2/users/login` | PostUsersLogin | Create an authentication token |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getNamespaces | — | NamespaceData | yes | Get namespaces and repos |
+| GET | `/namespaces/{namespace}` | getNamespace | `namespace`* | NamespaceMetadata | yes | Get namespace |
+| GET | `/namespaces/{namespace}/pulls/exports/years` | getNamespaceYears | `namespace`* | YearData | yes | Get years with data |
+| GET | `/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}` | getNamespaceTimespans | `namespace`*, `year`*, `timespantype`* | TimespanData | yes | Get timespans with data |
+| GET | `/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}` | getNamespaceTimespanMetadata | `namespace`*, `year`*, `timespantype`*, `timespan`* | TimespanModel | yes | Get namespace metadata for timespan |
+| GET | `/namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}` | getNamespaceDataByTimespan | `namespace`*, `year`*, `timespantype`*, `timespan`*, `dataview`* | ResponseData | yes | Get namespace data for timespan |
+| POST | `/v2/users/2fa-login` | PostUsers2FALogin | body*: Users2FALoginRequest | PostUsersLoginSuccessResponse |  | Second factor authentication. |
+| POST | `/v2/users/login` | PostUsersLogin | body*: UsersLoginRequest | PostUsersLoginSuccessResponse |  | Create an authentication token |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `b2abe7829e6e263d77f24a4e31bda09001188154a68a3e88fdf3594439c55778` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/reports` | post /reports | Post a report to the data hub |
-| GET | `/settings/organizations` | get /settings/organizations | — |
-| HEAD | `/settings/organizations` | head /settings/organizations | — |
-| DELETE | `/settings/organizations/{organizationName}` | delete /settings/organizations/{organizationName} | — |
-| GET | `/settings/organizations/{organizationName}` | get /settings/organizations/{organizationName} | — |
-| PUT | `/settings/organizations/{organizationName}` | put /settings/organizations/{organizationName} | — |
-| GET | `/settings/organizations/{organizationName}/receivers` | get /settings/organizations/{organizationName}/receivers | — |
-| DELETE | `/settings/organizations/{organizationName}/receivers/{receiverName}` | delete /settings/organizations/{organizationName}/receivers/{receiverName} | — |
-| GET | `/settings/organizations/{organizationName}/receivers/{receiverName}` | get /settings/organizations/{organizationName}/receivers/{receiverName} | — |
-| PUT | `/settings/organizations/{organizationName}/receivers/{receiverName}` | put /settings/organizations/{organizationName}/receivers/{receiverName} | — |
-| GET | `/settings/organizations/{organizationName}/senders` | get /settings/organizations/{organizationName}/senders | — |
-| DELETE | `/settings/organizations/{organizationName}/senders/{senderName}` | delete /settings/organizations/{organizationName}/senders/{senderName} | — |
-| GET | `/settings/organizations/{organizationName}/senders/{senderName}` | get /settings/organizations/{organizationName}/senders/{senderName} | — |
-| PUT | `/settings/organizations/{organizationName}/senders/{senderName}` | put /settings/organizations/{organizationName}/senders/{senderName} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/reports` | post /reports | `client`*, `option`, `default`, `routeTo`, body*: string | Report |  | Post a report to the data hub |
+| GET | `/settings/organizations` | get /settings/organizations | — | Organization[] | yes | — |
+| HEAD | `/settings/organizations` | head /settings/organizations | — | — | yes | — |
+| GET | `/settings/organizations/{organizationName}` | get /settings/organizations/{organizationName} | `organizationName`* | Organization | yes | — |
+| PUT | `/settings/organizations/{organizationName}` | put /settings/organizations/{organizationName} | `organizationName`*, body: Organization | Organization |  | — |
+| DELETE | `/settings/organizations/{organizationName}` | delete /settings/organizations/{organizationName} | `organizationName`* | Organization |  | — |
+| GET | `/settings/organizations/{organizationName}/receivers` | get /settings/organizations/{organizationName}/receivers | `organizationName`* | Receiver[] | yes | — |
+| GET | `/settings/organizations/{organizationName}/receivers/{receiverName}` | get /settings/organizations/{organizationName}/receivers/{receiverName} | `organizationName`*, `receiverName`* | Receiver | yes | — |
+| PUT | `/settings/organizations/{organizationName}/receivers/{receiverName}` | put /settings/organizations/{organizationName}/receivers/{receiverName} | `organizationName`*, `receiverName`*, body: Receiver | Receiver |  | — |
+| DELETE | `/settings/organizations/{organizationName}/receivers/{receiverName}` | delete /settings/organizations/{organizationName}/receivers/{receiverName} | `organizationName`*, `receiverName`* | Receiver |  | — |
+| GET | `/settings/organizations/{organizationName}/senders` | get /settings/organizations/{organizationName}/senders | `organizationName`* | Sender[] | yes | — |
+| GET | `/settings/organizations/{organizationName}/senders/{senderName}` | get /settings/organizations/{organizationName}/senders/{senderName} | `organizationName`*, `senderName`* | Sender | yes | — |
+| PUT | `/settings/organizations/{organizationName}/senders/{senderName}` | put /settings/organizations/{organizationName}/senders/{senderName} | `organizationName`*, `senderName`*, body: Sender | Sender[] |  | — |
+| DELETE | `/settings/organizations/{organizationName}/senders/{senderName}` | delete /settings/organizations/{organizationName}/senders/{senderName} | `organizationName`*, `senderName`* | Sender |  | — |

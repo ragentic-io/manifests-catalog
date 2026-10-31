@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_tcgdex.net_apple-touch-icon.png
 
 | | |
 | --- | --- |
-| Signed bundle | `47fbbf977e5da05bc0d9d711abfce0c34a9cd11598416b7f4e20bcf4acea7097` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,38 +34,40 @@ logo: "https://api.apis.guru/v2/cache/logo/https_tcgdex.net_apple-touch-icon.png
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/cards` | cards | fetch the list of cards |
-| GET | `/cards/{cardId}` | findPetsByTags | Finds Card by Global ID |
-| GET | `/categories` | get /categories | — |
-| GET | `/categories/{category}` | get /categories/{category} | — |
-| GET | `/dex-ids` | get /dex-ids | — |
-| GET | `/dex-ids/{dexId}` | get /dex-ids/{dexId} | — |
-| GET | `/energy-types` | get /energy-types | — |
-| GET | `/energy-types/{energy-type}` | get /energy-types/{energy-type} | — |
-| GET | `/hp` | get /hp | — |
-| GET | `/hp/{hp}` | get /hp/{hp} | — |
-| GET | `/illustrators` | get /illustrators | — |
-| GET | `/illustrators/{illustrator}` | get /illustrators/{illustrator} | — |
-| GET | `/rarities` | get /rarities | — |
-| GET | `/rarities/{rarity}` | get /rarities/{rarity} | — |
-| GET | `/regulation-marks` | get /regulation-marks | — |
-| GET | `/regulation-marks/{regulation-mark}` | get /regulation-marks/{regulation-mark} | — |
-| GET | `/retreats` | get /retreats | — |
-| GET | `/retreats/{retreat}` | get /retreats/{retreat} | — |
-| GET | `/series` | get /series | — |
-| GET | `/series/{serie}` | get /series/{serie} | — |
-| GET | `/sets` | get /sets | — |
-| GET | `/sets/{set}` | get /sets/{set} | — |
-| GET | `/sets/{set}/{cardLocalId}` | get /sets/{set}/{cardLocalId} | — |
-| GET | `/stages` | get /stages | — |
-| GET | `/stages/{stage}` | get /stages/{stage} | — |
-| GET | `/suffixes` | get /suffixes | — |
-| GET | `/suffixes/{suffix}` | get /suffixes/{suffix} | — |
-| GET | `/trainer-types` | get /trainer-types | — |
-| GET | `/trainer-types/{trainer-type}` | get /trainer-types/{trainer-type} | — |
-| GET | `/types` | get /types | — |
-| GET | `/types/{type}` | get /types/{type} | — |
-| GET | `/variants` | get /variants | — |
-| GET | `/variants/{variant}` | get /variants/{variant} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/cards` | cards | — | CardResume[] | yes | fetch the list of cards |
+| GET | `/cards/{cardId}` | findPetsByTags | `cardId`* | Card | yes | Finds Card by Global ID |
+| GET | `/categories` | get /categories | — | string[] | yes | — |
+| GET | `/categories/{category}` | get /categories/{category} | `category`* | StringEndpoint | yes | — |
+| GET | `/dex-ids` | get /dex-ids | — | string[] | yes | — |
+| GET | `/dex-ids/{dexId}` | get /dex-ids/{dexId} | `dexId`* | CardResume[] | yes | — |
+| GET | `/energy-types` | get /energy-types | — | string[] | yes | — |
+| GET | `/energy-types/{energy-type}` | get /energy-types/{energy-type} | `energy-type`* | CardResume[] | yes | — |
+| GET | `/hp` | get /hp | — | string[] | yes | — |
+| GET | `/hp/{hp}` | get /hp/{hp} | `hp`* | StringEndpoint | yes | — |
+| GET | `/illustrators` | get /illustrators | — | string[] | yes | — |
+| GET | `/illustrators/{illustrator}` | get /illustrators/{illustrator} | `illustrator`* | StringEndpoint | yes | — |
+| GET | `/rarities` | get /rarities | — | string[] | yes | — |
+| GET | `/rarities/{rarity}` | get /rarities/{rarity} | `rarity`* | StringEndpoint | yes | — |
+| GET | `/regulation-marks` | get /regulation-marks | — | string[] | yes | — |
+| GET | `/regulation-marks/{regulation-mark}` | get /regulation-marks/{regulation-mark} | `regulation-mark`* | CardResume[] | yes | — |
+| GET | `/retreats` | get /retreats | — | string[] | yes | — |
+| GET | `/retreats/{retreat}` | get /retreats/{retreat} | `retreat`* | StringEndpoint | yes | — |
+| GET | `/series` | get /series | — | SerieResume[] | yes | — |
+| GET | `/series/{serie}` | get /series/{serie} | `serie`* | Serie | yes | — |
+| GET | `/sets` | get /sets | — | SetResume[] | yes | — |
+| GET | `/sets/{set}` | get /sets/{set} | `set`* | Set | yes | — |
+| GET | `/sets/{set}/{cardLocalId}` | get /sets/{set}/{cardLocalId} | `set`*, `cardLocalId`* | Card | yes | — |
+| GET | `/stages` | get /stages | — | string[] | yes | — |
+| GET | `/stages/{stage}` | get /stages/{stage} | `stage`* | CardResume[] | yes | — |
+| GET | `/suffixes` | get /suffixes | — | string[] | yes | — |
+| GET | `/suffixes/{suffix}` | get /suffixes/{suffix} | `suffix`* | CardResume[] | yes | — |
+| GET | `/trainer-types` | get /trainer-types | — | string[] | yes | — |
+| GET | `/trainer-types/{trainer-type}` | get /trainer-types/{trainer-type} | `trainer-type`* | CardResume[] | yes | — |
+| GET | `/types` | get /types | — | string[] | yes | — |
+| GET | `/types/{type}` | get /types/{type} | `type`* | CardResume[] | yes | — |
+| GET | `/variants` | get /variants | — | string[] | yes | — |
+| GET | `/variants/{variant}` | get /variants/{variant} | `variant`* | CardResume[] | yes | — |

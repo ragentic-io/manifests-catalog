@@ -27,17 +27,12 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/attribute/{namespace}"
-      },
-      {
-        "from": "opensuse-org-obs-2814b66dd3",
-        "kind": "EXPOSES",
         "to": "operation:get:/attribute/{namespace}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/attribute/{namespace}/_meta"
+        "to": "operation:delete:/attribute/{namespace}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -47,12 +42,17 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
+        "to": "operation:put:/attribute/{namespace}/_meta"
+      },
+      {
+        "from": "opensuse-org-obs-2814b66dd3",
+        "kind": "EXPOSES",
         "to": "operation:post:/attribute/{namespace}/_meta"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:put:/attribute/{namespace}/_meta"
+        "to": "operation:delete:/attribute/{namespace}/_meta"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -62,12 +62,12 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/attribute/{namespace}/{attribute_name}/_meta"
+        "to": "operation:get:/attribute/{namespace}/{attribute_name}/_meta"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:get:/attribute/{namespace}/{attribute_name}/_meta"
+        "to": "operation:put:/attribute/{namespace}/{attribute_name}/_meta"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -77,7 +77,7 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:put:/attribute/{namespace}/{attribute_name}/_meta"
+        "to": "operation:delete:/attribute/{namespace}/{attribute_name}/_meta"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -202,11 +202,6 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/distributions/{distribution_id}"
-      },
-      {
-        "from": "opensuse-org-obs-2814b66dd3",
-        "kind": "EXPOSES",
         "to": "operation:get:/distributions/{distribution_id}"
       },
       {
@@ -217,12 +212,12 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:get:/group"
+        "to": "operation:delete:/distributions/{distribution_id}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/group/{group_title}"
+        "to": "operation:get:/group"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -232,12 +227,17 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
+        "to": "operation:put:/group/{group_title}"
+      },
+      {
+        "from": "opensuse-org-obs-2814b66dd3",
+        "kind": "EXPOSES",
         "to": "operation:post:/group/{group_title}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:put:/group/{group_title}"
+        "to": "operation:delete:/group/{group_title}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -252,17 +252,17 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/issue_trackers/{issue_tracker_name}"
-      },
-      {
-        "from": "opensuse-org-obs-2814b66dd3",
-        "kind": "EXPOSES",
         "to": "operation:get:/issue_trackers/{issue_tracker_name}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
         "to": "operation:put:/issue_trackers/{issue_tracker_name}"
+      },
+      {
+        "from": "opensuse-org-obs-2814b66dd3",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/issue_trackers/{issue_tracker_name}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -292,12 +292,12 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:post:/person/{login}"
+        "to": "operation:put:/person/{login}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:put:/person/{login}"
+        "to": "operation:post:/person/{login}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -367,12 +367,12 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:delete:/request/{id}"
+        "to": "operation:get:/request/{id}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:get:/request/{id}"
+        "to": "operation:put:/request/{id}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -382,7 +382,7 @@
       {
         "from": "opensuse-org-obs-2814b66dd3",
         "kind": "EXPOSES",
-        "to": "operation:put:/request/{id}"
+        "to": "operation:delete:/request/{id}"
       },
       {
         "from": "opensuse-org-obs-2814b66dd3",
@@ -417,44 +417,97 @@
       },
       {
         "deprecated": false,
+        "description": "Get generic information about the API.",
         "id": "operation:get:/about",
         "kind": "operation",
         "method": "get",
         "name": "get /about",
         "path": "/about",
         "pointer": "#/paths/~1about/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get information about API."
+        "summary": "Get information about API.",
+        "tags": [
+          "General Information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all known architectures known to OBS in general.",
         "id": "operation:get:/architectures",
         "kind": "operation",
         "method": "get",
         "name": "get /architectures",
         "path": "/architectures",
         "pointer": "#/paths/~1architectures/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all known architectures."
+        "summary": "List all known architectures.",
+        "tags": [
+          "General Information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Show information about one architecture.",
         "id": "operation:get:/architectures/{architecture_name}",
         "kind": "operation",
         "method": "get",
         "name": "get /architectures/{architecture_name}",
+        "parameters": [
+          {
+            "description": "Architecture name",
+            "in": "path",
+            "name": "architecture_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/architectures/{architecture_name}",
         "pointer": "#/paths/~1architectures~1{architecture_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show one architecture."
+        "summary": "Show one architecture.",
+        "tags": [
+          "General Information"
+        ]
       },
       {
         "deprecated": false,
@@ -464,12 +517,66 @@
         "name": "get /attribute",
         "path": "/attribute",
         "pointer": "#/paths/~1attribute/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all attribute namespaces."
+        "summary": "List all attribute namespaces.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List all attributes under a given attribute namespace.",
+        "id": "operation:get:/attribute/{namespace}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /attribute/{namespace}",
+        "parameters": [
+          {
+            "description": "The namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/attribute/{namespace}",
+        "pointer": "#/paths/~1attribute~1{namespace}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "List all attributes below a namespace.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
       },
       {
         "deprecated": false,
@@ -477,29 +584,162 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /attribute/{namespace}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/attribute/{namespace}",
         "pointer": "#/paths/~1attribute~1{namespace}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Delete an attribute namespace and all attributes below."
+        "summary": "Delete an attribute namespace and all attributes below.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/attribute/{namespace}",
+        "description": "Shows attribute namespace.",
+        "id": "operation:get:/attribute/{namespace}/_meta",
         "kind": "operation",
         "method": "get",
-        "name": "get /attribute/{namespace}",
-        "path": "/attribute/{namespace}",
-        "pointer": "#/paths/~1attribute~1{namespace}/get",
+        "name": "get /attribute/{namespace}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/attribute/{namespace}/_meta",
+        "pointer": "#/paths/~1attribute~1{namespace}~1_meta/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all attributes below a namespace."
+        "summary": "Show attribute namespace.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint can be used for both, creating an attribute namespace and updating it: * If the attribute namespace passed as parameter doesn't exist, it will cr…",
+        "id": "operation:put:/attribute/{namespace}/_meta",
+        "kind": "operation",
+        "method": "put",
+        "name": "put /attribute/{namespace}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/attribute/{namespace}/_meta",
+        "pointer": "#/paths/~1attribute~1{namespace}~1_meta/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Change attribute namespace. Create an attribute namespace if it doesn't exist.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint can be used for both, creating an attribute namespace and updating it: * If the attribute namespace passed as parameter doesn't exist, it will cr…",
+        "id": "operation:post:/attribute/{namespace}/_meta",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /attribute/{namespace}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/attribute/{namespace}/_meta",
+        "pointer": "#/paths/~1attribute~1{namespace}~1_meta/post",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Change attribute namespace. Create an attribute namespace if it doesn't exist.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
       },
       {
         "deprecated": false,
@@ -507,59 +747,32 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /attribute/{namespace}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/attribute/{namespace}/_meta",
         "pointer": "#/paths/~1attribute~1{namespace}~1_meta/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Delete an attribute namespace and all attributes below."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:get:/attribute/{namespace}/_meta",
-        "kind": "operation",
-        "method": "get",
-        "name": "get /attribute/{namespace}/_meta",
-        "path": "/attribute/{namespace}/_meta",
-        "pointer": "#/paths/~1attribute~1{namespace}~1_meta/get",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Show attribute namespace."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/attribute/{namespace}/_meta",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /attribute/{namespace}/_meta",
-        "path": "/attribute/{namespace}/_meta",
-        "pointer": "#/paths/~1attribute~1{namespace}~1_meta/post",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Change attribute namespace. Create an attribute namespace if it doesn't exist."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/attribute/{namespace}/_meta",
-        "kind": "operation",
-        "method": "put",
-        "name": "put /attribute/{namespace}/_meta",
-        "path": "/attribute/{namespace}/_meta",
-        "pointer": "#/paths/~1attribute~1{namespace}~1_meta/put",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Change attribute namespace. Create an attribute namespace if it doesn't exist."
+        "summary": "Delete an attribute namespace and all attributes below.",
+        "tags": [
+          "Attribute Namespaces"
+        ]
       },
       {
         "deprecated": false,
@@ -567,29 +780,42 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /attribute/{namespace}/{attribute_name}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "The name of the attribute",
+            "in": "path",
+            "name": "attribute_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/attribute/{namespace}/{attribute_name}",
         "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Delete an attribute and all its values in projects or packages."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/attribute/{namespace}/{attribute_name}/_meta",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /attribute/{namespace}/{attribute_name}/_meta",
-        "path": "/attribute/{namespace}/{attribute_name}/_meta",
-        "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}~1_meta/delete",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Delete an attribute and all its values in projects or packages."
+        "summary": "Delete an attribute and all its values in projects or packages.",
+        "tags": [
+          "Attributes"
+        ]
       },
       {
         "deprecated": false,
@@ -597,44 +823,164 @@
         "kind": "operation",
         "method": "get",
         "name": "get /attribute/{namespace}/{attribute_name}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/attribute/{namespace}/{attribute_name}/_meta",
         "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}~1_meta/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Shows attribute."
+        "summary": "Shows attribute.",
+        "tags": [
+          "Attributes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/attribute/{namespace}/{attribute_name}/_meta",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /attribute/{namespace}/{attribute_name}/_meta",
-        "path": "/attribute/{namespace}/{attribute_name}/_meta",
-        "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}~1_meta/post",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Change attribute data. Create an attribute if it doesn't exist."
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint can be used for both, creating an attribute and updating it: * If the attribute passed as parameter doesn't exist, it will create the attribute.",
         "id": "operation:put:/attribute/{namespace}/{attribute_name}/_meta",
         "kind": "operation",
         "method": "put",
         "name": "put /attribute/{namespace}/{attribute_name}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/attribute/{namespace}/{attribute_name}/_meta",
         "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}~1_meta/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Change attribute data. Create an attribute if it doesn't exist."
+        "summary": "Change attribute data. Create an attribute if it doesn't exist.",
+        "tags": [
+          "Attributes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint can be used for both, creating an attribute and updating it: * If the attribute passed as parameter doesn't exist, it will create the attribute.",
+        "id": "operation:post:/attribute/{namespace}/{attribute_name}/_meta",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /attribute/{namespace}/{attribute_name}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/attribute/{namespace}/{attribute_name}/_meta",
+        "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}~1_meta/post",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Change attribute data. Create an attribute if it doesn't exist.",
+        "tags": [
+          "Attributes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/attribute/{namespace}/{attribute_name}/_meta",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /attribute/{namespace}/{attribute_name}/_meta",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/attribute/{namespace}/{attribute_name}/_meta",
+        "pointer": "#/paths/~1attribute~1{namespace}~1{attribute_name}~1_meta/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Delete an attribute and all its values in projects or packages.",
+        "tags": [
+          "Attributes"
+        ]
       },
       {
         "deprecated": false,
@@ -644,12 +990,25 @@
         "name": "get /build",
         "path": "/build",
         "pointer": "#/paths/~1build/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get a simple directory listing of all projects"
+        "summary": "Get a simple directory listing of all projects",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -657,14 +1016,39 @@
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}",
+        "parameters": [
+          {
+            "description": "Project name",
+            "in": "path",
+            "name": "project_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/build/{project_name}",
         "pointer": "#/paths/~1build~1{project_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get a simple directory listing of all repositories for the specified project"
+        "summary": "Get a simple directory listing of all repositories for the specified project",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -672,14 +1056,74 @@
         "kind": "operation",
         "method": "post",
         "name": "post /build/{project_name}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Name of the package.",
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the build architecture.",
+            "in": "query",
+            "name": "arch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the repository.",
+            "in": "query",
+            "name": "repository",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "**NOTE**: All commands described below, can be scoped to a package within the project by setting the `package` parameter.",
+            "enum": [
+              "wipe",
+              "restartbuild",
+              "killbuild",
+              "abortbuild",
+              "rebuild",
+              "unpublish",
+              "sendsysrq"
+            ],
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/build/{project_name}",
         "pointer": "#/paths/~1build~1{project_name}/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Apply different actions on builds/build processes of the specified project"
+        "summary": "Apply different actions on builds/build processes of the specified project",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -687,14 +1131,90 @@
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/_result",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Specify which sections should be included in the result list.",
+            "enum": [
+              "summary",
+              "status",
+              "binarylist"
+            ],
+            "in": "query",
+            "name": "view",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the package.",
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the build architecture.",
+            "in": "query",
+            "name": "arch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the repository.",
+            "in": "query",
+            "name": "repository",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Show the last build result (excludes current building job states).",
+            "in": "query",
+            "name": "lastbuild",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Include build results from packages with project local links.",
+            "in": "query",
+            "name": "locallink",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Include build results from _multibuild definitions.",
+            "in": "query",
+            "name": "multibuild",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/build/{project_name}/_result",
         "pointer": "#/paths/~1build~1{project_name}~1_result/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get the build results for packages, architectures and repositories of the specified project."
+        "summary": "Get the build results for packages, architectures and repositories of the specified project.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -702,14 +1222,42 @@
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Repository name",
+            "in": "path",
+            "name": "repository_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List of all architectures the specified project builds against a given repository."
+        "summary": "List of all architectures the specified project builds against a given repository.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -717,44 +1265,130 @@
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}/_buildconfig",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/_buildconfig",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1_buildconfig/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show the build configuration for the specified repository."
+        "summary": "Show the build configuration for the specified repository.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Show the build dependencies of packages that are part of the project, for a given repository and architecture.",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo",
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Name of the package.",
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "* `pkgnames`: Show whole package dependencies, instead of individual binaries.",
+            "enum": [
+              "pkgnames",
+              "revpkgnames",
+              "order"
+            ],
+            "in": "query",
+            "name": "view",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1_builddepinfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show the build dependencies of packages that are part of the project."
+        "summary": "Show the build dependencies of packages that are part of the project.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all binaries (produced by all packages of the given project) for the specified repository and architecture.",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/_repository",
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}/{architecture_name}/_repository",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/_repository",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1_repository/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all binaries (produced by all packages of the given project)."
+        "summary": "List all binaries (produced by all packages of the given project).",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -762,44 +1396,118 @@
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Package name",
+            "in": "path",
+            "name": "package_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List binaries built by the sources of the specified package."
+        "summary": "List binaries built by the sources of the specified package.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns information about some specific artifact",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_buildinfo",
         "kind": "operation",
         "method": "get",
         "name": "getBuildProjectRepositoryArchPackageBuildinfo",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_buildinfo",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1_buildinfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the build history for a specific artifact",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_history",
         "kind": "operation",
         "method": "get",
         "name": "getBuildProjectRepositoryArchPackageHistory",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_history",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1_history/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -807,149 +1515,393 @@
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_jobstatus",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_jobstatus",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1_jobstatus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show the build status of a currently running build job."
+        "summary": "Show the build status of a currently running build job.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the last log file for a specific build artifact",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_log",
         "kind": "operation",
         "method": "get",
         "name": "getBuildProjectRepositoryArchPackageLog",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_log",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1_log/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Details about the reason of the lastly triggered build.",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason",
         "kind": "operation",
         "method": "get",
         "name": "get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1_reason/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show the reason for the lastly triggered build."
+        "summary": "Show the reason for the lastly triggered build.",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the building status for a specific artifact",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_status",
         "kind": "operation",
         "method": "get",
         "name": "getBuildProjectRepositoryArchPackageStatus",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_status",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1_status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Given a project, repository, architecture and package, retrieve the given file's content.",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}",
         "kind": "operation",
         "method": "get",
         "name": "getBuildProjectRepositoryArchitecturePackageFile",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "The file name",
+            "in": "path",
+            "name": "file_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1{file_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Return a specific artifact file contents"
+        "summary": "Return a specific artifact file contents",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Given a project, repository, architecture and package, update the given file's content.",
         "id": "operation:put:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}",
         "kind": "operation",
         "method": "put",
         "name": "putBuildProjectRepositoryArchitecturePackageFile",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Package name",
+            "in": "path",
+            "name": "package_name",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1{file_name}/put",
+        "request": {
+          "content_types": [
+            "plain/text"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Update a specific artifact file contents"
+        "summary": "Update a specific artifact file contents",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Given a project, repository, architecture and package, retrieve the given artifact's details.",
         "id": "operation:get:/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}?view=fileinfo",
         "kind": "operation",
         "method": "get",
         "name": "getBuildProjectRepositoryArchitecturePackageFileViewFileinfo",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}?view=fileinfo",
         "pointer": "#/paths/~1build~1{project_name}~1{repository_name}~1{architecture_name}~1{package_name}~1{file_name}?view=fileinfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "This endpoint returns details about an specific artifact"
+        "summary": "This endpoint returns details about an specific artifact",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Display the configuration of this Open Build Service instance.",
         "id": "operation:get:/configuration",
         "kind": "operation",
         "method": "get",
         "name": "get /configuration",
         "path": "/configuration",
         "pointer": "#/paths/~1configuration/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Display the configuration of this Open Build Service instance"
+        "summary": "Display the configuration of this Open Build Service instance",
+        "tags": [
+          "Configuration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the configuration of this Open Build Service instance.",
         "id": "operation:put:/configuration",
         "kind": "operation",
         "method": "put",
         "name": "put /configuration",
         "path": "/configuration",
         "pointer": "#/paths/~1configuration/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Update the configuration of this Open Build Service instance"
+        "summary": "Update the configuration of this Open Build Service instance",
+        "tags": [
+          "Configuration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all distributions that can be build against.",
         "id": "operation:get:/distributions",
         "kind": "operation",
         "method": "get",
         "name": "get /distributions",
         "path": "/distributions",
         "pointer": "#/paths/~1distributions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all distributions."
+        "summary": "List all distributions.",
+        "tags": [
+          "Distributions"
+        ]
       },
       {
         "deprecated": false,
@@ -959,12 +1911,32 @@
         "name": "post /distributions",
         "path": "/distributions",
         "pointer": "#/paths/~1distributions/post",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Create a distribution."
+        "summary": "Create a distribution.",
+        "tags": [
+          "Distributions"
+        ]
       },
       {
         "deprecated": false,
@@ -974,27 +1946,148 @@
         "name": "put /distributions/bulk_replace",
         "path": "/distributions/bulk_replace",
         "pointer": "#/paths/~1distributions~1bulk_replace/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Bulk replace all distributions."
+        "summary": "Bulk replace all distributions.",
+        "tags": [
+          "Distributions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all distributions that can be build against, including the ones provided by the interconnect.",
         "id": "operation:get:/distributions/include_remotes",
         "kind": "operation",
         "method": "get",
         "name": "get /distributions/include_remotes",
         "path": "/distributions/include_remotes",
         "pointer": "#/paths/~1distributions~1include_remotes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all distributions including remote."
+        "summary": "List all distributions including remote.",
+        "tags": [
+          "Distributions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Show a distribution that can be build against.",
+        "id": "operation:get:/distributions/{distribution_id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /distributions/{distribution_id}",
+        "parameters": [
+          {
+            "description": "The id of the distribution",
+            "in": "path",
+            "name": "distribution_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/distributions/{distribution_id}",
+        "pointer": "#/paths/~1distributions~1{distribution_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Show a distribution.",
+        "tags": [
+          "Distributions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update the data of a distribution.",
+        "id": "operation:put:/distributions/{distribution_id}",
+        "kind": "operation",
+        "method": "put",
+        "name": "put /distributions/{distribution_id}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/distributions/{distribution_id}",
+        "pointer": "#/paths/~1distributions~1{distribution_id}/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Update a distribution.",
+        "tags": [
+          "Distributions"
+        ]
       },
       {
         "deprecated": false,
@@ -1002,44 +2095,35 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /distributions/{distribution_id}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/distributions/{distribution_id}",
         "pointer": "#/paths/~1distributions~1{distribution_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Delete a distribution."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:get:/distributions/{distribution_id}",
-        "kind": "operation",
-        "method": "get",
-        "name": "get /distributions/{distribution_id}",
-        "path": "/distributions/{distribution_id}",
-        "pointer": "#/paths/~1distributions~1{distribution_id}/get",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Show a distribution."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/distributions/{distribution_id}",
-        "kind": "operation",
-        "method": "put",
-        "name": "put /distributions/{distribution_id}",
-        "path": "/distributions/{distribution_id}",
-        "pointer": "#/paths/~1distributions~1{distribution_id}/put",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Update a distribution."
+        "summary": "Delete a distribution.",
+        "tags": [
+          "Distributions"
+        ]
       },
       {
         "deprecated": false,
@@ -1049,27 +2133,25 @@
         "name": "get /group",
         "path": "/group",
         "pointer": "#/paths/~1group/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List available groups."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/group/{group_title}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /group/{group_title}",
-        "path": "/group/{group_title}",
-        "pointer": "#/paths/~1group~1{group_title}/delete",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Delete a group."
+        "summary": "List available groups.",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1077,29 +2159,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /group/{group_title}",
+        "parameters": [
+          {
+            "description": "Group title",
+            "in": "path",
+            "name": "group_title",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{group_title}",
         "pointer": "#/paths/~1group~1{group_title}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Read group data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/group/{group_title}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /group/{group_title}",
-        "path": "/group/{group_title}",
-        "pointer": "#/paths/~1group~1{group_title}/post",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Modify group data."
+        "summary": "Read group data.",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1107,14 +2200,142 @@
         "kind": "operation",
         "method": "put",
         "name": "put /group/{group_title}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/group/{group_title}",
         "pointer": "#/paths/~1group~1{group_title}/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Write group data."
+        "summary": "Write group data.",
+        "tags": [
+          "Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/group/{group_title}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /group/{group_title}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Command to be executed.",
+            "enum": [
+              "add_user",
+              "remove_user",
+              "set_email"
+            ],
+            "in": "query",
+            "name": "cmd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "User login.",
+            "in": "query",
+            "name": "userid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Group email.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/group/{group_title}",
+        "pointer": "#/paths/~1group~1{group_title}/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Modify group data.",
+        "tags": [
+          "Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/group/{group_title}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /group/{group_title}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/group/{group_title}",
+        "pointer": "#/paths/~1group~1{group_title}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Delete a group.",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1124,12 +2345,26 @@
         "name": "get /issue_trackers",
         "path": "/issue_trackers",
         "pointer": "#/paths/~1issue_trackers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get the list of issue trackers."
+        "summary": "Get the list of issue trackers.",
+        "tags": [
+          "Issue Trackers"
+        ]
       },
       {
         "deprecated": false,
@@ -1139,27 +2374,34 @@
         "name": "post /issue_trackers",
         "path": "/issue_trackers",
         "pointer": "#/paths/~1issue_trackers/post",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Create an issue tracker."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/issue_trackers/{issue_tracker_name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /issue_trackers/{issue_tracker_name}",
-        "path": "/issue_trackers/{issue_tracker_name}",
-        "pointer": "#/paths/~1issue_trackers~1{issue_tracker_name}/delete",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Delete an issue tracker."
+        "summary": "Create an issue tracker.",
+        "tags": [
+          "Issue Trackers"
+        ]
       },
       {
         "deprecated": false,
@@ -1167,29 +2409,118 @@
         "kind": "operation",
         "method": "get",
         "name": "get /issue_trackers/{issue_tracker_name}",
+        "parameters": [
+          {
+            "description": "Issue tracker name",
+            "in": "path",
+            "name": "issue_tracker_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/issue_trackers/{issue_tracker_name}",
         "pointer": "#/paths/~1issue_trackers~1{issue_tracker_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show an issue tracker."
+        "summary": "Show an issue tracker.",
+        "tags": [
+          "Issue Trackers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the issue tracker given as path parameter.",
         "id": "operation:put:/issue_trackers/{issue_tracker_name}",
         "kind": "operation",
         "method": "put",
         "name": "put /issue_trackers/{issue_tracker_name}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/issue_trackers/{issue_tracker_name}",
         "pointer": "#/paths/~1issue_trackers~1{issue_tracker_name}/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Update or create an issue tracker."
+        "summary": "Update or create an issue tracker.",
+        "tags": [
+          "Issue Trackers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/issue_trackers/{issue_tracker_name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /issue_trackers/{issue_tracker_name}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/issue_trackers/{issue_tracker_name}",
+        "pointer": "#/paths/~1issue_trackers~1{issue_tracker_name}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Delete an issue tracker.",
+        "tags": [
+          "Issue Trackers"
+        ]
       },
       {
         "deprecated": false,
@@ -1197,14 +2528,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /issue_trackers/{issue_tracker_name}/issues/{issue_name}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Issue name.",
+            "in": "path",
+            "name": "issue_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/issue_trackers/{issue_tracker_name}/issues/{issue_name}",
         "pointer": "#/paths/~1issue_trackers~1{issue_tracker_name}~1issues~1{issue_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show an issue of an issue tracker."
+        "summary": "Show an issue of an issue tracker.",
+        "tags": [
+          "Issue Trackers"
+        ]
       },
       {
         "deprecated": false,
@@ -1212,25 +2572,75 @@
         "kind": "operation",
         "method": "get",
         "name": "get /person",
+        "parameters": [
+          {
+            "description": "A prefix to filter the people to look for",
+            "in": "query",
+            "name": "prefix",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/person",
         "pointer": "#/paths/~1person/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all people."
+        "summary": "List all people.",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows executing command on the person endpoint.",
         "id": "operation:post:/person",
         "kind": "operation",
         "method": "post",
         "name": "post /person",
+        "parameters": [
+          {
+            "description": "The command to execute",
+            "enum": [
+              "register"
+            ],
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/person",
         "pointer": "#/paths/~1person/post",
+        "request": {
+          "content_types": [
+            "application/xml"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Executes a command on the person endpoint."
+        "summary": "Executes a command on the person endpoint.",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
@@ -1240,8 +2650,30 @@
         "name": "post /person/register",
         "path": "/person/register",
         "pointer": "#/paths/~1person~1register/post",
+        "request": {
+          "content_types": [
+            "application/xml"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Registers a new person"
+        "summary": "Registers a new person",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
@@ -1249,29 +2681,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /person/{login}",
+        "parameters": [
+          {
+            "description": "Person login.",
+            "in": "path",
+            "name": "login",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/person/{login}",
         "pointer": "#/paths/~1person~1{login}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get details about a person"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/person/{login}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /person/{login}",
-        "path": "/person/{login}",
-        "pointer": "#/paths/~1person~1{login}/post",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Perform changes on a registered person"
+        "summary": "Get details about a person",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
@@ -1279,29 +2722,145 @@
         "kind": "operation",
         "method": "put",
         "name": "put /person/{login}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/person/{login}",
         "pointer": "#/paths/~1person~1{login}/put",
+        "request": {
+          "content_types": [
+            "application/xml"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Update person"
+        "summary": "Update person",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:post:/person/{login}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /person/{login}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "The command to execute against the provided person.",
+            "enum": [
+              "change_password",
+              "lock",
+              "delete"
+            ],
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/person/{login}",
+        "pointer": "#/paths/~1person~1{login}/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Perform changes on a registered person",
+        "tags": [
+          "Person"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List the groups the person belongs to.",
         "id": "operation:get:/person/{login}/group",
         "kind": "operation",
         "method": "get",
         "name": "get /person/{login}/group",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/person/{login}/group",
         "pointer": "#/paths/~1person~1{login}~1group/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List the groups of a person"
+        "summary": "List the groups of a person",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
@@ -1309,14 +2868,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /person/{login}/token",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/person/{login}/token",
         "pointer": "#/paths/~1person~1{login}~1token/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List the authentication tokens of a person."
+        "summary": "List the authentication tokens of a person.",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
@@ -1324,130 +2905,400 @@
         "kind": "operation",
         "method": "post",
         "name": "post /person/{login}/token",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Project name.",
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Package name.",
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operation indicates the kind of token that is going to be created.",
+            "enum": [
+              "runservice",
+              "rebuild",
+              "release"
+            ],
+            "in": "query",
+            "name": "operation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "**(Beta/Unstable)** SCM token used in OBS workflows to report back the workflow status, when the operation is workflow.",
+            "in": "query",
+            "name": "scm_token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/person/{login}/token",
         "pointer": "#/paths/~1person~1{login}~1token/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Create a new authentication token for a person."
+        "summary": "Create a new authentication token for a person.",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a token of the specified person.",
         "id": "operation:delete:/person/{login}/token/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /person/{login}/token/{id}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Id of the token to be removed.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/person/{login}/token/{id}",
         "pointer": "#/paths/~1person~1{login}~1token~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a token of a person."
+        "summary": "Delete a token of a person.",
+        "tags": [
+          "Person"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the projects, all of them are considered published.",
         "id": "operation:get:/published",
         "kind": "operation",
         "method": "get",
         "name": "get /published",
         "path": "/published",
         "pointer": "#/paths/~1published/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List all the published projects."
+        "summary": "List all the published projects.",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of the repositories of the project that already have published binaries.",
         "id": "operation:get:/published/{project_name}",
         "kind": "operation",
         "method": "get",
         "name": "get /published/{project_name}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/published/{project_name}",
         "pointer": "#/paths/~1published~1{project_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List the repositories of a project with published binaries"
+        "summary": "List the repositories of a project with published binaries",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of architectures' directories and other files (.repo, .ymp, etc.) present at the level project/repository of the directory tree where the published…",
         "id": "operation:get:/published/{project_name}/{repository_name}",
         "kind": "operation",
         "method": "get",
         "name": "get /published/{project_name}/{repository_name}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/published/{project_name}/{repository_name}",
         "pointer": "#/paths/~1published~1{project_name}~1{repository_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List the content of the directory tree where the binaries are published at the level project/repository."
+        "summary": "List the content of the directory tree where the binaries are published at the level project/repository.",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of binaries and other files present at the level project/repository/architecture of the directory tree as a result of successful building and publis…",
         "id": "operation:get:/published/{project_name}/{repository_name}/{architecture_name}",
         "kind": "operation",
         "method": "get",
         "name": "get /published/{project_name}/{repository_name}/{architecture_name}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/published/{project_name}/{repository_name}/{architecture_name}",
         "pointer": "#/paths/~1published~1{project_name}~1{repository_name}~1{architecture_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "List the content of the directory tree where the binaries are published at the level project/repository/architecture."
+        "summary": "List the content of the directory tree where the binaries are published at the level project/repository/architecture.",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allow to download the binary file that was published and stored under the directory given by project/repository/architecture/.",
         "id": "operation:get:/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}",
         "kind": "operation",
         "method": "get",
         "name": "get /published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Binary filename",
+            "in": "path",
+            "name": "binary_filename",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}",
         "pointer": "#/paths/~1published~1{project_name}~1{repository_name}~1{architecture_name}~1{binary_filename}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Return the binary file itself."
+        "summary": "Return the binary file itself.",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate a ymp pattern, which contains the list of packages needed for intalling certain software without having to create dependencies between them.",
         "id": "operation:get:/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp",
         "kind": "operation",
         "method": "get",
         "name": "get /published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp",
         "pointer": "#/paths/~1published~1{project_name}~1{repository_name}~1{architecture_name}~1{binary_filename}?view=ymp/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Generate a ymp pattern that includes the needed repositories to install the given binary."
+        "summary": "Generate a ymp pattern that includes the needed repositories to install the given binary.",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about the build process (build id, start time, etc.) for the pair project and repository.",
         "id": "operation:get:/published/{project_name}/{repository_name}?view=status",
         "kind": "operation",
         "method": "get",
         "name": "get /published/{project_name}/{repository_name}?view=status",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Set this parameter to status in order to get details about the last publication.",
+            "enum": [
+              "status"
+            ],
+            "in": "query",
+            "name": "view",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/published/{project_name}/{repository_name}?view=status",
         "pointer": "#/paths/~1published~1{project_name}~1{repository_name}?view=status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Present information about the last publication of the pair project and repository."
+        "summary": "Present information about the last publication of the pair project and repository.",
+        "tags": [
+          "Published Binaries"
+        ]
       },
       {
         "deprecated": false,
@@ -1457,12 +3308,25 @@
         "name": "get /request",
         "path": "/request",
         "pointer": "#/paths/~1request/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get a simple directory listing of all requests"
+        "summary": "Get a simple directory listing of all requests",
+        "tags": [
+          "Request"
+        ]
       },
       {
         "deprecated": false,
@@ -1470,29 +3334,82 @@
         "kind": "operation",
         "method": "post",
         "name": "post /request",
+        "parameters": [
+          {
+            "description": "This endpoint will refuse the creation of a new request if this parameter is not set.",
+            "enum": [
+              "create"
+            ],
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Ask the server to add revisions of the current sources to the request.",
+            "enum": [
+              1
+            ],
+            "in": "query",
+            "name": "addrevision",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Enforce a new package instance in a project which has OBS:DelegateRequestTarget set",
+            "enum": [
+              1
+            ],
+            "in": "query",
+            "name": "ignore_delegate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Skip the build state check",
+            "enum": [
+              1
+            ],
+            "in": "query",
+            "name": "ignore_build_state",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/request",
         "pointer": "#/paths/~1request/post",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Create a request"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/request/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /request/{id}",
-        "path": "/request/{id}",
-        "pointer": "#/paths/~1request~1{id}/delete",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Delete a given request."
+        "summary": "Create a request",
+        "tags": [
+          "Request"
+        ]
       },
       {
         "deprecated": false,
@@ -1500,29 +3417,42 @@
         "kind": "operation",
         "method": "get",
         "name": "get /request/{id}",
+        "parameters": [
+          {
+            "description": "Id of the choosen request.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "required": false
+          }
+        ],
         "path": "/request/{id}",
         "pointer": "#/paths/~1request~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Show details about a specified request."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/request/{id}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /request/{id}",
-        "path": "/request/{id}",
-        "pointer": "#/paths/~1request~1{id}/post",
-        "security": [
-          {
-            "basic_authentication": []
-          }
-        ],
-        "summary": "Apply certain actions on a specified request."
+        "summary": "Show details about a specified request.",
+        "tags": [
+          "Request"
+        ]
       },
       {
         "deprecated": false,
@@ -1530,14 +3460,189 @@
         "kind": "operation",
         "method": "put",
         "name": "put /request/{id}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/request/{id}",
         "pointer": "#/paths/~1request~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Modify a given request."
+        "summary": "Modify a given request.",
+        "tags": [
+          "Request"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/request/{id}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /request/{id}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "- `addreview`: Add a review to a request.",
+            "in": "query",
+            "name": "cmd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Define the new state",
+            "in": "query",
+            "name": "newstate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Define the new priority",
+            "in": "query",
+            "name": "priority",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the user of a new review",
+            "in": "query",
+            "name": "by_user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the group of the new review",
+            "in": "query",
+            "name": "by_group",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the project of the new review",
+            "in": "query",
+            "name": "by_project",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the package of the new review",
+            "in": "query",
+            "name": "by_package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the incident number for `setincident`",
+            "in": "query",
+            "name": "incident",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the time for `setacceptat`",
+            "in": "query",
+            "name": "time",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Add a comment to one of the actions",
+            "in": "query",
+            "name": "comment",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/request/{id}",
+        "pointer": "#/paths/~1request~1{id}/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Apply certain actions on a specified request.",
+        "tags": [
+          "Request"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/request/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /request/{id}",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
+        "path": "/request/{id}",
+        "pointer": "#/paths/~1request~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basic_authentication": []
+          }
+        ],
+        "summary": "Delete a given request.",
+        "tags": [
+          "Request"
+        ]
       },
       {
         "deprecated": false,
@@ -1545,44 +3650,199 @@
         "kind": "operation",
         "method": "post",
         "name": "post /request/{id}?cmd=diff",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Diff relative to a given superseded request.",
+            "in": "query",
+            "name": "diff_to_superseded",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set this parameter to xml in order to receive a structured diff instead of plain text.",
+            "enum": [
+              "xml"
+            ],
+            "in": "query",
+            "name": "view",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Include parsed issues",
+            "enum": [
+              true,
+              1
+            ],
+            "in": "query",
+            "name": "withissues",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/request/{id}?cmd=diff",
         "pointer": "#/paths/~1request~1{id}?cmd=diff/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get the diff for all packages affected by the request."
+        "summary": "Get the diff for all packages affected by the request.",
+        "tags": [
+          "Request"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a collection of requests for a specified target.",
         "id": "operation:get:/request?view=collection",
         "kind": "operation",
         "method": "get",
         "name": "get /request?view=collection",
+        "parameters": [
+          {
+            "description": "Filter the results of requests and open reviews for a certain user.",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the results of requests and open review requests to the specified target project.",
+            "in": "query",
+            "name": "project",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the results of requests and open review requests to the specified target package.",
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to a given request state.",
+            "in": "query",
+            "name": "states",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the results to certain action types.",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the results to a given role.",
+            "in": "query",
+            "name": "roles",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Include the request history in the results.",
+            "in": "query",
+            "name": "withhistory",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Includes both, request and review history in the results.",
+            "in": "query",
+            "name": "withfullhistory",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the results to the specified amount of requests.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit the result to specified request id's.",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/request?view=collection",
         "pointer": "#/paths/~1request?view=collection/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Get a collection of requests for a specified target"
+        "summary": "Get a collection of requests for a specified target",
+        "tags": [
+          "Request"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists status of workers, running jobs, waiting jobs, status of the backend services and general statistics.",
         "id": "operation:get:/worker/status",
         "kind": "operation",
         "method": "get",
         "name": "get /worker/status",
         "path": "/worker/status",
         "pointer": "#/paths/~1worker~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Lists status of workers, jobs, backend services and general statistics."
+        "summary": "Lists status of workers, jobs, backend services and general statistics.",
+        "tags": [
+          "Workers"
+        ]
       },
       {
         "deprecated": false,
@@ -1590,29 +3850,115 @@
         "kind": "operation",
         "method": "get",
         "name": "get /worker/{architecture_name}:{worker_id}",
+        "parameters": [
+          {
+            "required": false
+          },
+          {
+            "description": "Worker id.",
+            "in": "path",
+            "name": "worker_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/worker/{architecture_name}:{worker_id}",
         "pointer": "#/paths/~1worker~1{architecture_name}:{worker_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Lists capabilites of a worker."
+        "summary": "Lists capabilites of a worker.",
+        "tags": [
+          "Workers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Given a project, package, repository and architecture, list workers which can build with that restrictions, and also match a constraints filter.",
         "id": "operation:post:/worker?cmd=checkconstraints",
         "kind": "operation",
         "method": "post",
         "name": "post /worker?cmd=checkconstraints",
+        "parameters": [
+          {
+            "description": "Project name.",
+            "in": "query",
+            "name": "project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Repository name.",
+            "in": "query",
+            "name": "repository",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Architecture name.",
+            "in": "query",
+            "name": "arch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Package name.",
+            "in": "query",
+            "name": "package",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/worker?cmd=checkconstraints",
         "pointer": "#/paths/~1worker?cmd=checkconstraints/post",
+        "request": {
+          "content_types": [
+            "application/xml; charset=utf-8"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basic_authentication": []
           }
         ],
-        "summary": "Lists workers which match a constraints filter."
+        "summary": "Lists workers which match a constraints filter.",
+        "tags": [
+          "Workers"
+        ]
       }
     ]
   },

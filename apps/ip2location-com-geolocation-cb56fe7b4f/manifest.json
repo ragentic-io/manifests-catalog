@@ -17,12 +17,119 @@
       },
       {
         "deprecated": false,
+        "description": "Get geolocation information via IP address",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "get /",
+        "parameters": [
+          {
+            "description": "Web service package of different granularity of return information.",
+            "enum": [
+              "WS1",
+              "WS2",
+              "WS3",
+              "WS4",
+              "WS5",
+              "WS6",
+              "WS7",
+              "WS8",
+              "WS9",
+              "WS10",
+              "WS11",
+              "WS12",
+              "WS13",
+              "WS14",
+              "WS15",
+              "WS16",
+              "WS17",
+              "WS18",
+              "WS19",
+              "WS20",
+              "WS21",
+              "WS22",
+              "WS23",
+              "WS24",
+              "WS25"
+            ],
+            "in": "query",
+            "name": "package",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Extra information in addition to the above selected package.",
+            "in": "query",
+            "name": "addon",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "IP address (IPv4 or IPv6) for reverse IP location lookup purpose.",
+            "in": "query",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Format of the response message.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Translation information.",
+            "enum": [
+              "ar",
+              "cs",
+              "da",
+              "de",
+              "en",
+              "es",
+              "et",
+              "fi",
+              "fr",
+              "ga",
+              "it",
+              "ja",
+              "ko",
+              "ms",
+              "nl",
+              "pt",
+              "ru",
+              "sv",
+              "tr",
+              "vi",
+              "zh-cn",
+              "zh-tw"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API Key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       }

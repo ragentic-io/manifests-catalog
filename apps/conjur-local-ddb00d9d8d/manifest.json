@@ -117,7 +117,7 @@
       {
         "from": "conjur-local-ddb00d9d8d",
         "kind": "EXPOSES",
-        "to": "operation:patch:/policies/{account}/policy/{identifier}"
+        "to": "operation:put:/policies/{account}/policy/{identifier}"
       },
       {
         "from": "conjur-local-ddb00d9d8d",
@@ -127,7 +127,7 @@
       {
         "from": "conjur-local-ddb00d9d8d",
         "kind": "EXPOSES",
-        "to": "operation:put:/policies/{account}/policy/{identifier}"
+        "to": "operation:patch:/policies/{account}/policy/{identifier}"
       },
       {
         "from": "conjur-local-ddb00d9d8d",
@@ -162,17 +162,17 @@
       {
         "from": "conjur-local-ddb00d9d8d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/roles/{account}/{kind}/{identifier}"
-      },
-      {
-        "from": "conjur-local-ddb00d9d8d",
-        "kind": "EXPOSES",
         "to": "operation:get:/roles/{account}/{kind}/{identifier}"
       },
       {
         "from": "conjur-local-ddb00d9d8d",
         "kind": "EXPOSES",
         "to": "operation:post:/roles/{account}/{kind}/{identifier}"
+      },
+      {
+        "from": "conjur-local-ddb00d9d8d",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/roles/{account}/{kind}/{identifier}"
       },
       {
         "from": "conjur-local-ddb00d9d8d",
@@ -217,12 +217,29 @@
       },
       {
         "deprecated": false,
+        "description": "Response contains three members: installed, configured, and enabled.",
         "id": "operation:get:/authenticators",
         "kind": "operation",
         "method": "get",
         "name": "getAuthenticators",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authenticators",
         "pointer": "#/paths/~1authenticators/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -234,86 +251,486 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Details about which authenticators are on the Conjur Server"
+        "summary": "Details about which authenticators are on the Conjur Server",
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The access token is used to communicate to the REST API that the bearer of the token has been authorized to access the API and perform specific actions specifi…",
         "id": "operation:post:/authn-azure/{service_id}/{account}/{login}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaAzure",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "URL-encoded login name.",
+            "in": "path",
+            "name": "login",
+            "required": true
+          },
+          {
+            "default": "application/json",
+            "description": "Setting the Accept-Encoding header to base64 will return a pre-encoded access token",
+            "enum": [
+              "application/json",
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn-azure/{service_id}/{account}/{login}/authenticate",
         "pointer": "#/paths/~1authn-azure~1{service_id}~1{account}~1{login}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token for applications running in Azure."
+        "summary": "Gets a short-lived access token for applications running in Azure.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the GCP Authenticator API to send an authentication request from a Google Cloud service to Conjur.",
         "id": "operation:post:/authn-gcp/{account}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaGCP",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Setting the Accept-Encoding header to base64 will return a pre-encoded access token",
+            "enum": [
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn-gcp/{account}/authenticate",
         "pointer": "#/paths/~1authn-gcp~1{account}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token for applications running in\nGoogle Cloud Platform.\n"
+        "summary": "Gets a short-lived access token for applications running in\nGoogle Cloud Platform.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Once the status webservice has been properly configured and the relevant user groups have been given permissions to access the status webservice, the users in…",
         "id": "operation:get:/authn-gcp/{account}/status",
         "kind": "operation",
         "method": "get",
         "name": "getGCPAuthenticatorStatus",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/authn-gcp/{account}/status",
         "pointer": "#/paths/~1authn-gcp~1{account}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "501",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Details whether an authentication service has been configured properly"
+        "summary": "Details whether an authentication service has been configured properly",
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The access token is used to communicate to the REST API that the bearer of the token has been authorized to access the API and perform specific actions specifi…",
         "id": "operation:post:/authn-iam/{service_id}/{account}/{login}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaAWS",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "URL-encoded login name.",
+            "in": "path",
+            "name": "login",
+            "required": true
+          },
+          {
+            "default": "application/json",
+            "description": "Setting the Accept-Encoding header to base64 will return a pre-encoded access token",
+            "enum": [
+              "application/json",
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn-iam/{service_id}/{account}/{login}/authenticate",
         "pointer": "#/paths/~1authn-iam~1{service_id}~1{account}~1{login}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get a short-lived access token for applications running in AWS."
+        "summary": "Get a short-lived access token for applications running in AWS.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the JWT Authenticator to leverage the identity layer provided by JWT to authenticate with Conjur.",
         "id": "operation:post:/authn-jwt/{service_id}/{account}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaJWT",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/authn-jwt/{service_id}/{account}/authenticate",
         "pointer": "#/paths/~1authn-jwt~1{service_id}~1{account}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API.\n"
+        "summary": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the JWT Authenticator to leverage the identity layer provided by JWT to authenticate with Conjur.",
         "id": "operation:post:/authn-jwt/{service_id}/{account}/{id}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaJWTWithId",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Organization user id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/authn-jwt/{service_id}/{account}/{id}/authenticate",
         "pointer": "#/paths/~1authn-jwt~1{service_id}~1{account}~1{id}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API. Covers the case of use of optional URL parameter \"ID\"\n"
+        "summary": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API. Covers the case of use of optional URL parameter \"ID\"\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This request sends a Certificate Signing Request to Conjur, which uses the Kubernetes API to inject a client certificate into the application pod.",
         "id": "operation:post:/authn-k8s/{service_id}/inject_client_cert",
         "kind": "operation",
         "method": "post",
         "name": "k8sInjectClientCert",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Dot-separated policy tree, prefixed by `host.`, where the application identity is defined",
+            "in": "header",
+            "name": "Host-Id-Prefix",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn-k8s/{service_id}/inject_client_cert",
         "pointer": "#/paths/~1authn-k8s~1{service_id}~1inject_client_cert/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -325,116 +742,549 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "For applications running in Kubernetes; sends Conjur a certificate\nsigning request (CSR) and requests a client certificate injected into\nthe application's Kubernetes pod.\n"
+        "summary": "For applications running in Kubernetes; sends Conjur a certificate\nsigning request (CSR) and requests a client certificate injected into\nthe application's Kubernetes pod.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The access token is used to communicate to the REST API that the bearer of the token has been authorized to access the API and perform specific actions specifi…",
         "id": "operation:post:/authn-k8s/{service_id}/{account}/{login}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaKubernetes",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "URL-encoded login name.",
+            "in": "path",
+            "name": "login",
+            "required": true
+          },
+          {
+            "default": "application/json",
+            "description": "Setting the Accept-Encoding header to base64 will return a pre-encoded access token",
+            "enum": [
+              "application/json",
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn-k8s/{service_id}/{account}/{login}/authenticate",
         "pointer": "#/paths/~1authn-k8s~1{service_id}~1{account}~1{login}~1authenticate/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Gets a short-lived access token for applications running in Kubernetes."
+        "summary": "Gets a short-lived access token for applications running in Kubernetes.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Exchange your LDAP credentials for a Conjur API key.",
         "id": "operation:get:/authn-ldap/{service_id}/{account}/login",
         "kind": "operation",
         "method": "get",
         "name": "getAPIKeyViaLDAP",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          }
+        ],
         "path": "/authn-ldap/{service_id}/{account}/login",
         "pointer": "#/paths/~1authn-ldap~1{service_id}~1{account}~1login/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Gets the Conjur API key of a user given the LDAP username and\npassword via HTTP Basic Authentication.\n"
+        "summary": "Gets the Conjur API key of a user given the LDAP username and\npassword via HTTP Basic Authentication.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The access token is used to communicate to the REST API that the bearer of the token has been authorized to access the API and perform specific actions specifi…",
         "id": "operation:post:/authn-ldap/{service_id}/{account}/{login}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaLDAP",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "URL-encoded login name.",
+            "in": "path",
+            "name": "login",
+            "required": true
+          },
+          {
+            "default": "application/json",
+            "description": "Setting the Accept-Encoding header to base64 will return a pre-encoded access token",
+            "enum": [
+              "application/json",
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn-ldap/{service_id}/{account}/{login}/authenticate",
         "pointer": "#/paths/~1authn-ldap~1{service_id}~1{account}~1{login}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token for users and hosts using their\nLDAP identity to access the Conjur API.\n"
+        "summary": "Gets a short-lived access token for users and hosts using their\nLDAP identity to access the Conjur API.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the OIDC Authenticator to leverage the identity layer provided by OIDC to authenticate with Conjur.",
         "id": "operation:post:/authn-oidc/{service_id}/{account}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessTokenViaOIDC",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          }
+        ],
         "path": "/authn-oidc/{service_id}/{account}/authenticate",
         "pointer": "#/paths/~1authn-oidc~1{service_id}~1{account}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token for applications using OpenID\nConnect (OIDC) to access the Conjur API.\n"
+        "summary": "Gets a short-lived access token for applications using OpenID\nConnect (OIDC) to access the Conjur API.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Any role can rotate its own API key.",
         "id": "operation:put:/authn/{account}/api_key",
         "kind": "operation",
         "method": "put",
         "name": "rotateApiKey",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "(**Optional**) role specifier in `{kind}:{identifier}` format ##### Permissions required `update` privilege on the role whose API key is being rotated.",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "RoleType"
+          }
+        ],
         "path": "/authn/{account}/api_key",
         "pointer": "#/paths/~1authn~1{account}~1api_key/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": [],
             "conjurAuth": []
           }
         ],
-        "summary": "Rotates a role's API key."
+        "summary": "Rotates a role's API key.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Passwords are stored in the Conjur database using `bcrypt` with a work factor of 12.",
         "id": "operation:get:/authn/{account}/login",
         "kind": "operation",
         "method": "get",
         "name": "getAPIKey",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          }
+        ],
         "path": "/authn/{account}/login",
         "pointer": "#/paths/~1authn~1{account}~1login/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Gets the API key of a user given the username and password\nvia HTTP Basic Authentication.\n"
+        "summary": "Gets the API key of a user given the username and password\nvia HTTP Basic Authentication.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You must provide the login name and current password or API key of the user whose password is to be updated in an HTTP Basic Authentication header.",
         "id": "operation:put:/authn/{account}/password",
         "kind": "operation",
         "method": "put",
         "name": "changePassword",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          }
+        ],
         "path": "/authn/{account}/password",
         "pointer": "#/paths/~1authn~1{account}~1password/put",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "string:password"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Changes a user’s password."
+        "summary": "Changes a user’s password.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A client can obtain an access token by presenting a valid login name and API key.",
         "id": "operation:post:/authn/{account}/{login}/authenticate",
         "kind": "operation",
         "method": "post",
         "name": "getAccessToken",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "URL-encoded login name.",
+            "in": "path",
+            "name": "login",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "application/json",
+            "description": "Setting the Accept-Encoding header to base64 will return a pre-encoded access token",
+            "enum": [
+              "application/json",
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authn/{account}/{login}/authenticate",
         "pointer": "#/paths/~1authn~1{account}~1{login}~1authenticate/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Gets a short-lived access token, which is required in the header\nof most subsequent API requests.\n"
+        "summary": "Gets a short-lived access token, which is required in the header\nof most subsequent API requests.\n",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
@@ -442,23 +1292,93 @@
         "kind": "operation",
         "method": "post",
         "name": "sign",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Name of the Certificate Authority service",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Setting the Accept header to `application/x-pem-file` allows Conjur to respond with a formatted certificate",
+            "in": "header",
+            "name": "Accept",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ca/{account}/{service_id}/sign",
         "pointer": "#/paths/~1ca~1{account}~1{service_id}~1sign/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Gets a signed certificate from the configured Certificate Authority service."
+        "summary": "Gets a signed certificate from the configured Certificate Authority service.",
+        "tags": [
+          "certificate authority"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can request health checks against any cluster node using the Conjur API.",
         "id": "operation:get:/health",
         "kind": "operation",
         "method": "get",
         "name": "health",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "502"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -470,37 +1390,112 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Health info about conjur"
+        "summary": "Health info about conjur",
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a Host using the Host Factory and returns a JSON description of it.",
         "id": "operation:post:/host_factories/hosts",
         "kind": "operation",
         "method": "post",
         "name": "createHost",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/host_factories/hosts",
         "pointer": "#/paths/~1host_factories~1hosts/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Creates a Host using the Host Factory."
+        "summary": "Creates a Host using the Host Factory.",
+        "tags": [
+          "host factory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates one or more tokens which can be used to bootstrap host identity.",
         "id": "operation:post:/host_factory_tokens",
         "kind": "operation",
         "method": "post",
         "name": "createToken",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/host_factory_tokens",
         "pointer": "#/paths/~1host_factory_tokens/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Creates one or more host identity tokens."
+        "summary": "Creates one or more host identity tokens.",
+        "tags": [
+          "host factory"
+        ]
       },
       {
         "deprecated": false,
@@ -508,23 +1503,65 @@
         "kind": "operation",
         "method": "delete",
         "name": "revokeToken",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The host factory token to revoke",
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/host_factory_tokens/{token}",
         "pointer": "#/paths/~1host_factory_tokens~1{token}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Revokes a token, immediately disabling it."
+        "summary": "Revokes a token, immediately disabling it.",
+        "tags": [
+          "host factory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information about the Conjur Enterprise node which was queried against.",
         "id": "operation:get:/info",
         "kind": "operation",
         "method": "get",
         "name": "info",
         "path": "/info",
         "pointer": "#/paths/~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -536,37 +1573,10 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Basic information about the Conjur Enterprise server"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/policies/{account}/policy/{identifier}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updatePolicy",
-        "path": "/policies/{account}/policy/{identifier}",
-        "pointer": "#/paths/~1policies~1{account}~1policy~1{identifier}/patch",
-        "security": [
-          {
-            "conjurAuth": []
-          }
-        ],
-        "summary": "Modifies an existing Conjur policy."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/policies/{account}/policy/{identifier}",
-        "kind": "operation",
-        "method": "post",
-        "name": "loadPolicy",
-        "path": "/policies/{account}/policy/{identifier}",
-        "pointer": "#/paths/~1policies~1{account}~1policy~1{identifier}/post",
-        "security": [
-          {
-            "conjurAuth": []
-          }
-        ],
-        "summary": "Adds data to the existing Conjur policy."
+        "summary": "Basic information about the Conjur Enterprise server",
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
@@ -574,23 +1584,283 @@
         "kind": "operation",
         "method": "put",
         "name": "replacePolicy",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "ID of the policy to load (root if no root policy has been loaded yet)",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          }
+        ],
         "path": "/policies/{account}/policy/{identifier}",
         "pointer": "#/paths/~1policies~1{account}~1policy~1{identifier}/put",
+        "request": {
+          "content_types": [
+            "application/x-yaml",
+            "text/plain",
+            "text/x-yaml",
+            "text/yaml"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Loads or replaces a Conjur policy document."
+        "summary": "Loads or replaces a Conjur policy document.",
+        "tags": [
+          "policies"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:post:/policies/{account}/policy/{identifier}",
+        "kind": "operation",
+        "method": "post",
+        "name": "loadPolicy",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "ID of the policy to update",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          }
+        ],
+        "path": "/policies/{account}/policy/{identifier}",
+        "pointer": "#/paths/~1policies~1{account}~1policy~1{identifier}/post",
+        "request": {
+          "content_types": [
+            "application/x-yaml",
+            "text/plain",
+            "text/x-yaml",
+            "text/yaml"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "conjurAuth": []
+          }
+        ],
+        "summary": "Adds data to the existing Conjur policy.",
+        "tags": [
+          "policies"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/policies/{account}/policy/{identifier}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updatePolicy",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "ID of the policy to update",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          }
+        ],
+        "path": "/policies/{account}/policy/{identifier}",
+        "pointer": "#/paths/~1policies~1{account}~1policy~1{identifier}/patch",
+        "request": {
+          "content_types": [
+            "application/x-yaml",
+            "text/plain",
+            "text/x-yaml",
+            "text/yaml"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "conjurAuth": []
+          }
+        ],
+        "summary": "Modifies an existing Conjur policy.",
+        "tags": [
+          "policies"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Shows all public keys for a resource as newline delimited string for compatibility with the authorized_keys SSH format.",
         "id": "operation:get:/public_keys/{account}/{kind}/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "showPublicKeys",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "ID of the resource for which to get the information about",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          }
+        ],
         "path": "/public_keys/{account}/{kind}/{identifier}",
         "pointer": "#/paths/~1public_keys~1{account}~1{kind}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -602,16 +1872,39 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Shows all public keys for a resource."
+        "summary": "Shows all public keys for a resource.",
+        "tags": [
+          "public keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the remote_health route to check the health of any Conjur Enterprise Server from any other Conjur Enterprise Server.",
         "id": "operation:get:/remote_health/{remote}",
         "kind": "operation",
         "method": "get",
         "name": "remoteHealth",
+        "parameters": [
+          {
+            "description": "The hostname of the remote to check",
+            "in": "path",
+            "name": "remote",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/remote_health/{remote}",
         "pointer": "#/paths/~1remote_health~1{remote}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "502"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -623,7 +1916,10 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Health info about a given Conjur Enterprise server"
+        "summary": "Health info about a given Conjur Enterprise server",
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
@@ -631,14 +1927,98 @@
         "kind": "operation",
         "method": "get",
         "name": "showResourcesForAllAccounts",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "query",
+            "name": "kind",
+            "required": false,
+            "type": "Kind"
+          },
+          {
+            "description": "Filter resources based on this value by name",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When listing resources, start at this item number.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "Offset"
+          },
+          {
+            "description": "When listing resources, return up to this many results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "Limit"
+          },
+          {
+            "description": "When listing resources, if `true`, return only the count of the results.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "Count"
+          },
+          {
+            "description": "Retrieves the resources list for a different role if the authenticated role has access",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "RoleType"
+          },
+          {
+            "description": "Retrieves the resources list for a different role if the authenticated role has access",
+            "in": "query",
+            "name": "acting_as",
+            "required": false,
+            "type": "RoleType"
+          }
+        ],
         "path": "/resources",
         "pointer": "#/paths/~1resources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Lists resources within an organization account."
+        "summary": "Lists resources within an organization account.",
+        "tags": [
+          "resources"
+        ]
       },
       {
         "deprecated": false,
@@ -646,14 +2026,100 @@
         "kind": "operation",
         "method": "get",
         "name": "showResourcesForAccount",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "query",
+            "name": "kind",
+            "required": false,
+            "type": "Kind"
+          },
+          {
+            "description": "Filter resources based on this value by name",
+            "in": "query",
+            "name": "search",
+            "required": false
+          },
+          {
+            "description": "When listing resources, start at this item number.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "Offset"
+          },
+          {
+            "description": "When listing resources, return up to this many results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "Limit"
+          },
+          {
+            "description": "When listing resources, if `true`, return only the count of the results.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "Count"
+          },
+          {
+            "description": "Retrieves the resources list for a different role if the authenticated role has access",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "RoleType"
+          },
+          {
+            "description": "Retrieves the resources list for a different role if the authenticated role has access",
+            "in": "query",
+            "name": "acting_as",
+            "required": false,
+            "type": "RoleType"
+          }
+        ],
         "path": "/resources/{account}",
         "pointer": "#/paths/~1resources~1{account}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Lists resources within an organization account."
+        "summary": "Lists resources within an organization account.",
+        "tags": [
+          "resources"
+        ]
       },
       {
         "deprecated": false,
@@ -661,89 +2127,564 @@
         "kind": "operation",
         "method": "get",
         "name": "showResourcesForKind",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "Filter resources based on this value by name",
+            "in": "query",
+            "name": "search",
+            "required": false
+          },
+          {
+            "description": "When listing resources, start at this item number.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "Offset"
+          },
+          {
+            "description": "When listing resources, return up to this many results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "Limit"
+          },
+          {
+            "description": "When listing resources, if `true`, return only the count of the results.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "Count"
+          },
+          {
+            "description": "Retrieves the resources list for a different role if the authenticated role has access",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "RoleType"
+          },
+          {
+            "description": "Retrieves the resources list for a different role if the authenticated role has access",
+            "in": "query",
+            "name": "acting_as",
+            "required": false,
+            "type": "RoleType"
+          }
+        ],
         "path": "/resources/{account}/{kind}",
         "pointer": "#/paths/~1resources~1{account}~1{kind}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Lists resources of the same kind within an organization account."
+        "summary": "Lists resources of the same kind within an organization account.",
+        "tags": [
+          "resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Details about a single resource.",
         "id": "operation:get:/resources/{account}/{kind}/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "showResource",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "ID of the resource for which to get the information about",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          },
+          {
+            "description": "Lists the roles which have the named privilege on a resource.",
+            "in": "query",
+            "name": "permitted_roles",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Level of privilege to filter on.",
+            "in": "query",
+            "name": "privilege",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Check whether a role has a privilege on a resource.",
+            "in": "query",
+            "name": "check",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Role to check privilege on.",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "RoleType"
+          }
+        ],
         "path": "/resources/{account}/{kind}/{identifier}",
         "pointer": "#/paths/~1resources~1{account}~1{kind}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Shows a description of a single resource."
+        "summary": "Shows a description of a single resource.",
+        "tags": [
+          "resources"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/roles/{account}/{kind}/{identifier}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "removeMemberFromRole",
-        "path": "/roles/{account}/{kind}/{identifier}",
-        "pointer": "#/paths/~1roles~1{account}~1{kind}~1{identifier}/delete",
-        "security": [
-          {
-            "conjurAuth": []
-          }
-        ],
-        "summary": "Deletes an existing role membership"
-      },
-      {
-        "deprecated": false,
+        "description": "Gets detailed information about a specific role, including the role members.",
         "id": "operation:get:/roles/{account}/{kind}/{identifier}",
         "kind": "operation",
         "method": "get",
         "name": "showRole",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "ID of the role for which to get the information about",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          },
+          {
+            "description": "Returns an array of Role IDs representing all role memberships, expanded recursively.",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns all direct role memberships (members not expanded recursively).",
+            "in": "query",
+            "name": "memberships",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns a list of the Role's members.",
+            "in": "query",
+            "name": "members",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When listing members, start at this item number.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "Offset"
+          },
+          {
+            "description": "When listing members, return up to this many results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "Limit"
+          },
+          {
+            "description": "When listing members, if `true`, return only the count of members.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "Count"
+          },
+          {
+            "description": "When listing members, the results will be narrowed to only those matching the provided string",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If included in the query returns a graph view of the role",
+            "in": "query",
+            "name": "graph",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/roles/{account}/{kind}/{identifier}",
         "pointer": "#/paths/~1roles~1{account}~1{kind}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Get role information"
+        "summary": "Get role information",
+        "tags": [
+          "roles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates or modifies an existing role membership.",
         "id": "operation:post:/roles/{account}/{kind}/{identifier}",
         "kind": "operation",
         "method": "post",
         "name": "addMemberToRole",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "ID of the role for which to get the information about",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          },
+          {
+            "description": "Returns a list of the Role's members.",
+            "in": "query",
+            "name": "members",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The identifier of the Role to be added as a member.",
+            "in": "query",
+            "name": "member",
+            "required": true,
+            "type": "RoleType"
+          }
+        ],
         "path": "/roles/{account}/{kind}/{identifier}",
         "pointer": "#/paths/~1roles~1{account}~1{kind}~1{identifier}/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Update or modify an existing role membership"
+        "summary": "Update or modify an existing role membership",
+        "tags": [
+          "roles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an existing role membership.",
+        "id": "operation:delete:/roles/{account}/{kind}/{identifier}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "removeMemberFromRole",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "ID of the role for which to get the information about",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          },
+          {
+            "description": "Returns a list of the Role's members.",
+            "in": "query",
+            "name": "members",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The identifier of the Role to be added as a member.",
+            "in": "query",
+            "name": "member",
+            "required": true,
+            "type": "RoleType"
+          }
+        ],
+        "path": "/roles/{account}/{kind}/{identifier}",
+        "pointer": "#/paths/~1roles~1{account}~1{kind}~1{identifier}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "conjurAuth": []
+          }
+        ],
+        "summary": "Deletes an existing role membership",
+        "tags": [
+          "roles"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Fetches multiple secret values in one invocation.",
         "id": "operation:get:/secrets",
         "kind": "operation",
         "method": "get",
         "name": "getSecrets",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-delimited, URL-encoded resource IDs of the variables.",
+            "in": "query",
+            "name": "variable_ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set the encoding of the response object",
+            "enum": [
+              "base64"
+            ],
+            "in": "header",
+            "name": "Accept-Encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/secrets",
         "pointer": "#/paths/~1secrets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Fetch multiple secrets"
+        "summary": "Fetch multiple secrets",
+        "tags": [
+          "secrets"
+        ]
       },
       {
         "deprecated": false,
@@ -751,53 +2692,262 @@
         "kind": "operation",
         "method": "get",
         "name": "getSecret",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource - in almost all cases this should be `variable`",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "URL-encoded variable ID",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          },
+          {
+            "description": "(**Optional**) Version you want to retrieve (Conjur keeps the last 20 versions of a secret)",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "ResourceVersion"
+          }
+        ],
         "path": "/secrets/{account}/{kind}/{identifier}",
         "pointer": "#/paths/~1secrets~1{account}~1{kind}~1{identifier}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Fetches the value of a secret from the specified Secret."
+        "summary": "Fetches the value of a secret from the specified Secret.",
+        "tags": [
+          "secrets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a secret value within the specified Secret.",
         "id": "operation:post:/secrets/{account}/{kind}/{identifier}",
         "kind": "operation",
         "method": "post",
         "name": "createSecret",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "AccountName"
+          },
+          {
+            "description": "Type of resource - in almost all cases this should be `variable`",
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "Kind"
+          },
+          {
+            "description": "URL-encoded variable ID",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "type": "ResourceID"
+          },
+          {
+            "description": "Tells the server to reset the variables expiration date",
+            "in": "query",
+            "name": "expirations",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/secrets/{account}/{kind}/{identifier}",
         "pointer": "#/paths/~1secrets~1{account}~1{kind}~1{identifier}/post",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Creates a secret value within the specified variable."
+        "summary": "Creates a secret value within the specified variable.",
+        "tags": [
+          "secrets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "WhoAmI provides information about the client making an API request.",
         "id": "operation:get:/whoami",
         "kind": "operation",
         "method": "get",
         "name": "whoAmI",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/whoami",
         "pointer": "#/paths/~1whoami/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Provides information about the client making an API request."
+        "summary": "Provides information about the client making an API request.",
+        "tags": [
+          "status"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows you to either enable or disable a given authenticator that does not have service_id (For example: authn-gcp).",
         "id": "operation:patch:/{authenticator}/{account}",
         "kind": "operation",
         "method": "patch",
         "name": "enableAuthenticator",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The authenticator to update",
+            "enum": [
+              "authn-iam",
+              "authn-oidc",
+              "authn-ldap",
+              "authn-k8s",
+              "authn-gcp",
+              "authn-azure",
+              "authn-jwt"
+            ],
+            "in": "path",
+            "name": "authenticator",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{authenticator}/{account}",
         "pointer": "#/paths/~1{authenticator}~1{account}/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -809,77 +2959,213 @@
             "conjurKubernetesMutualTls": []
           }
         ],
-        "summary": "Enables or disables authenticator defined without service_id."
+        "summary": "Enables or disables authenticator defined without service_id.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows you to either enable or disable a given authenticator service instance.",
         "id": "operation:patch:/{authenticator}/{service_id}/{account}",
         "kind": "operation",
         "method": "patch",
         "name": "enableAuthenticatorInstance",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The authenticator to update",
+            "in": "path",
+            "name": "authenticator",
+            "required": true
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{authenticator}/{service_id}/{account}",
         "pointer": "#/paths/~1{authenticator}~1{service_id}~1{account}/patch",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Enables or disables authenticator service instances."
+        "summary": "Enables or disables authenticator service instances.",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Once the status webservice has been properly configured and the relevant user groups have been given permissions to access the status webservice, the users in…",
         "id": "operation:get:/{authenticator}/{service_id}/{account}/status",
         "kind": "operation",
         "method": "get",
         "name": "getServiceAuthenticatorStatus",
+        "parameters": [
+          {
+            "description": "Add an ID to the request being made so it can be tracked in Conjur.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The type of authenticator",
+            "in": "path",
+            "name": "authenticator",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "URL-Encoded authenticator service ID",
+            "in": "path",
+            "name": "service_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The organization account name",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{authenticator}/{service_id}/{account}/status",
         "pointer": "#/paths/~1{authenticator}~1{service_id}~1{account}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          },
+          {
+            "status": "501",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "conjurAuth": []
           }
         ],
-        "summary": "Details whether an authentication service has been configured properly"
+        "summary": "Details whether an authentication service has been configured properly",
+        "tags": [
+          "status"
+        ]
       },
       {
+        "description": "Conjur account name",
         "id": "schema:AccountName",
         "kind": "schema",
-        "name": "AccountName"
+        "name": "AccountName",
+        "type": "string"
       },
       {
+        "description": "Return only the count of results",
         "id": "schema:Count",
         "kind": "schema",
-        "name": "Count"
+        "name": "Count",
+        "type": "boolean"
       },
       {
         "id": "schema:Kind",
         "kind": "schema",
-        "name": "Kind"
+        "name": "Kind",
+        "type": "string"
       },
       {
+        "description": "Return no more than this number of results",
         "id": "schema:Limit",
         "kind": "schema",
-        "name": "Limit"
+        "name": "Limit",
+        "type": "integer"
       },
       {
+        "description": "Skips this many items before returning the rest",
         "id": "schema:Offset",
         "kind": "schema",
-        "name": "Offset"
+        "name": "Offset",
+        "type": "integer"
       },
       {
+        "description": "Resource identifier.",
         "id": "schema:ResourceID",
         "kind": "schema",
-        "name": "ResourceID"
+        "name": "ResourceID",
+        "type": "string"
       },
       {
+        "description": "Version of the resource (Conjur keeps the last 20 versions of a secret)",
         "id": "schema:ResourceVersion",
         "kind": "schema",
-        "name": "ResourceVersion"
+        "name": "ResourceVersion",
+        "type": "integer"
       },
       {
+        "description": "##### Kinds of roles: - User: one unique wonderful human - Host: a single logical machine (in the broad sense, not just physical) - Layer: a collection of host…",
         "id": "schema:RoleType",
         "kind": "schema",
-        "name": "RoleType"
+        "name": "RoleType",
+        "type": "string"
       }
     ]
   },

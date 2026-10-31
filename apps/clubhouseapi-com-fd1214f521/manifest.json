@@ -223,6 +223,19 @@
         "name": "post /call_phone_number_auth",
         "path": "/call_phone_number_auth",
         "pointer": "#/paths/~1call_phone_number_auth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Call phone number auth."
       },
@@ -232,8 +245,22 @@
         "kind": "operation",
         "method": "get",
         "name": "get /check_for_update",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "is_testflight",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/check_for_update",
         "pointer": "#/paths/~1check_for_update/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Clubhouse uses this to check for updates when app is not installed from App Store (eg TestFlight)"
       },
@@ -245,6 +272,15 @@
         "name": "post /check_waitlist_status",
         "path": "/check_waitlist_status",
         "pointer": "#/paths/~1check_waitlist_status/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "checks waitlist status."
       },
@@ -256,6 +292,19 @@
         "name": "post /complete_phone_number_auth",
         "path": "/complete_phone_number_auth",
         "pointer": "#/paths/~1complete_phone_number_auth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Call phone number auth."
       },
@@ -267,6 +316,19 @@
         "name": "post /create_channel",
         "path": "/create_channel",
         "pointer": "#/paths/~1create_channel/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "creates a channel"
       },
@@ -278,6 +340,19 @@
         "name": "post /follow",
         "path": "/follow",
         "pointer": "#/paths/~1follow/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "follows a user"
       },
@@ -289,6 +364,12 @@
         "name": "get /get_actionable_notifications",
         "path": "/get_actionable_notifications",
         "pointer": "#/paths/~1get_actionable_notifications/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "get actionable notifications (the bell again)"
       },
@@ -300,6 +381,12 @@
         "name": "get /get_all_topics",
         "path": "/get_all_topics",
         "pointer": "#/paths/~1get_all_topics/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "gets all topics."
       },
@@ -311,6 +398,12 @@
         "name": "get /get_channels",
         "path": "/get_channels",
         "pointer": "#/paths/~1get_channels/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "get all channels"
       },
@@ -322,6 +415,19 @@
         "name": "post /get_club",
         "path": "/get_club",
         "pointer": "#/paths/~1get_club/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "gets club by id"
       },
@@ -333,6 +439,19 @@
         "name": "post /get_clubs_for_topic",
         "path": "/get_clubs_for_topic",
         "pointer": "#/paths/~1get_clubs_for_topic/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "looks up clubs by topic."
       },
@@ -344,6 +463,19 @@
         "name": "post /get_create_channel_targets",
         "path": "/get_create_channel_targets",
         "pointer": "#/paths/~1get_create_channel_targets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "is fetched when you tap Create Room"
       },
@@ -353,8 +485,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get_events",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "is_filtered",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/get_events",
         "pointer": "#/paths/~1get_events/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "the Upcoming for You page"
       },
@@ -366,6 +524,19 @@
         "name": "post /get_following",
         "path": "/get_following",
         "pointer": "#/paths/~1get_following/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "get a list of the users and clubs that this user is following. Returned users have bios truncated to ~80 characters."
       },
@@ -375,8 +546,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get_notifications",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/get_notifications",
         "pointer": "#/paths/~1get_notifications/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "get notifications (the bell icon)"
       },
@@ -388,6 +579,19 @@
         "name": "post /get_online_friends",
         "path": "/get_online_friends",
         "pointer": "#/paths/~1get_online_friends/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "gets online friends on the app homepage."
       },
@@ -399,6 +603,19 @@
         "name": "post /get_profile",
         "path": "/get_profile",
         "pointer": "#/paths/~1get_profile/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "looks up user profile by ID."
       },
@@ -410,6 +627,12 @@
         "name": "post /get_release_notes",
         "path": "/get_release_notes",
         "pointer": "#/paths/~1get_release_notes/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "gets release notes."
       },
@@ -421,6 +644,12 @@
         "name": "get /get_settings",
         "path": "/get_settings",
         "pointer": "#/paths/~1get_settings/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "get notification settings"
       },
@@ -432,6 +661,19 @@
         "name": "post /get_suggested_club_invites",
         "path": "/get_suggested_club_invites",
         "pointer": "#/paths/~1get_suggested_club_invites/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "find users to invite to clubs based on phone number"
       },
@@ -441,8 +683,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get_suggested_follows_all",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "in_onboarding",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/get_suggested_follows_all",
         "pointer": "#/paths/~1get_suggested_follows_all/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "gets suggested follows during signup"
       },
@@ -454,6 +722,19 @@
         "name": "post /get_suggested_follows_friends_only",
         "path": "/get_suggested_follows_friends_only",
         "pointer": "#/paths/~1get_suggested_follows_friends_only/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "find people to follow by uploading contacts during signup"
       },
@@ -465,17 +746,44 @@
         "name": "post /get_suggested_follows_similar",
         "path": "/get_suggested_follows_similar",
         "pointer": "#/paths/~1get_suggested_follows_similar/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "find similar users. (The Sparkles button on Clubhouse's profile page)"
       },
       {
         "deprecated": false,
+        "description": "(also see https://zerforschung.org/posts/clubhouse-telefonnummern-en/ for @zerforschung's analysis of the privacy implications of this API)",
         "id": "operation:post:/get_suggested_invites",
         "kind": "operation",
         "method": "post",
         "name": "post /get_suggested_invites",
         "path": "/get_suggested_invites",
         "pointer": "#/paths/~1get_suggested_invites/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "find users to invite based on phone number."
       },
@@ -487,6 +795,19 @@
         "name": "post /get_suggested_speakers",
         "path": "/get_suggested_speakers",
         "pointer": "#/paths/~1get_suggested_speakers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "gets suggested users when you start a private room"
       },
@@ -498,6 +819,19 @@
         "name": "post /get_topic",
         "path": "/get_topic",
         "pointer": "#/paths/~1get_topic/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "looks up topic by ID."
       },
@@ -507,8 +841,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get_users_for_topic",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "topic_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/get_users_for_topic",
         "pointer": "#/paths/~1get_users_for_topic/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "looks up users by topic."
       },
@@ -520,6 +880,12 @@
         "name": "get /get_welcome_channel",
         "path": "/get_welcome_channel",
         "pointer": "#/paths/~1get_welcome_channel/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "called during signup"
       },
@@ -531,6 +897,19 @@
         "name": "post /invite_from_waitlist",
         "path": "/invite_from_waitlist",
         "pointer": "#/paths/~1invite_from_waitlist/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "wave to another user on the waitlist to give them access"
       },
@@ -542,6 +921,19 @@
         "name": "post /invite_to_app",
         "path": "/invite_to_app",
         "pointer": "#/paths/~1invite_to_app/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "invite a user to the app, using one of your invites"
       },
@@ -553,6 +945,22 @@
         "name": "post /join_channel",
         "path": "/join_channel",
         "pointer": "#/paths/~1join_channel/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "join a channel."
       },
@@ -564,6 +972,19 @@
         "name": "post /leave_channel",
         "path": "/leave_channel",
         "pointer": "#/paths/~1leave_channel/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "leave a channel."
       },
@@ -575,6 +996,22 @@
         "name": "post /me",
         "path": "/me",
         "pointer": "#/paths/~1me/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "gets user"
       },
@@ -586,6 +1023,19 @@
         "name": "post /record_action_trails",
         "path": "/record_action_trails",
         "pointer": "#/paths/~1record_action_trails/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "analytics"
       },
@@ -597,6 +1047,22 @@
         "name": "post /refresh_token",
         "path": "/refresh_token",
         "pointer": "#/paths/~1refresh_token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "gets an access_token from a refresh_token."
       },
@@ -608,6 +1074,19 @@
         "name": "post /resend_phone_number_auth",
         "path": "/resend_phone_number_auth",
         "pointer": "#/paths/~1resend_phone_number_auth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Resend phone number auth."
       },
@@ -619,6 +1098,19 @@
         "name": "post /search_clubs",
         "path": "/search_clubs",
         "pointer": "#/paths/~1search_clubs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "search clubs."
       },
@@ -630,6 +1122,19 @@
         "name": "post /search_users",
         "path": "/search_users",
         "pointer": "#/paths/~1search_users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "search for users"
       },
@@ -641,6 +1146,19 @@
         "name": "post /start_phone_number_auth",
         "path": "/start_phone_number_auth",
         "pointer": "#/paths/~1start_phone_number_auth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Starts phone number auth."
       },
@@ -652,6 +1170,19 @@
         "name": "post /update_notifications",
         "path": "/update_notifications",
         "pointer": "#/paths/~1update_notifications/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "updates notification during signup."
       },
@@ -663,6 +1194,22 @@
         "name": "post /update_username",
         "path": "/update_username",
         "pointer": "#/paths/~1update_username/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "edits username."
       }

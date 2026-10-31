@@ -21,24 +21,53 @@
         "kind": "operation",
         "method": "get",
         "name": "getProductInfo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/code/{code}",
         "pointer": "#/paths/~1code~1{code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Retrieve product info for a particular barcode number (UPC, EAN, or ISBN)."
+        "summary": "Retrieve product info for a particular barcode number (UPC, EAN, or ISBN).",
+        "tags": [
+          "Product"
+        ]
       },
       {
+        "description": "The standardized product code in UPC/EAN format.",
         "id": "schema:code",
         "kind": "schema",
-        "name": "code"
+        "name": "code",
+        "type": "string"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       }
     ]
   },

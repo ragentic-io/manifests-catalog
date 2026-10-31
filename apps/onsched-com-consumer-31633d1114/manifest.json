@@ -27,12 +27,12 @@
       {
         "from": "onsched-com-consumer-31633d1114",
         "kind": "EXPOSES",
-        "to": "operation:delete:/consumer/v1/appointments/{id}"
+        "to": "operation:get:/consumer/v1/appointments/{id}"
       },
       {
         "from": "onsched-com-consumer-31633d1114",
         "kind": "EXPOSES",
-        "to": "operation:get:/consumer/v1/appointments/{id}"
+        "to": "operation:delete:/consumer/v1/appointments/{id}"
       },
       {
         "from": "onsched-com-consumer-31633d1114",
@@ -112,17 +112,17 @@
       {
         "from": "onsched-com-consumer-31633d1114",
         "kind": "EXPOSES",
-        "to": "operation:delete:/consumer/v1/customers/{id}"
-      },
-      {
-        "from": "onsched-com-consumer-31633d1114",
-        "kind": "EXPOSES",
         "to": "operation:get:/consumer/v1/customers/{id}"
       },
       {
         "from": "onsched-com-consumer-31633d1114",
         "kind": "EXPOSES",
         "to": "operation:put:/consumer/v1/customers/{id}"
+      },
+      {
+        "from": "onsched-com-consumer-31633d1114",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/consumer/v1/customers/{id}"
       },
       {
         "from": "onsched-com-consumer-31633d1114",
@@ -193,6 +193,521 @@
         "from": "onsched-com-consumer-31633d1114",
         "kind": "EXPOSES",
         "to": "operation:get:/consumer/v1/services/{id}/resources"
+      },
+      {
+        "from": "operation:get:/consumer/v1/appointments",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentListViewModel"
+      },
+      {
+        "from": "operation:post:/consumer/v1/appointments",
+        "kind": "ACCEPTS",
+        "to": "schema:AppointmentInitialModel"
+      },
+      {
+        "from": "operation:post:/consumer/v1/appointments",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentInitialViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/appointments/bookingfields",
+        "kind": "RETURNS",
+        "to": "schema:BookingFieldListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/appointments/customfields",
+        "kind": "RETURNS",
+        "to": "schema:CustomFieldDefinitionListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/appointments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentViewModel"
+      },
+      {
+        "from": "operation:delete:/consumer/v1/appointments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentViewModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/book",
+        "kind": "ACCEPTS",
+        "to": "schema:AppointmentBookModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/book",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentViewModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentViewModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/noshow",
+        "kind": "ACCEPTS",
+        "to": "schema:AppointmentNoShowModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/reschedule",
+        "kind": "ACCEPTS",
+        "to": "schema:AppointmentRescheduleModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/reschedule",
+        "kind": "RETURNS",
+        "to": "schema:AppointmentViewModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/appointments/{id}/reserve",
+        "kind": "ACCEPTS",
+        "to": "schema:AppointmentReserveModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/availability/{serviceId}/{startDate}/{endDate}",
+        "kind": "RETURNS",
+        "to": "schema:AvailabilityViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days",
+        "kind": "RETURNS",
+        "to": "schema:AvailabilityDayViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable",
+        "kind": "RETURNS",
+        "to": "schema:UnavailableTimeListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/customers",
+        "kind": "RETURNS",
+        "to": "schema:CustomerListViewModel"
+      },
+      {
+        "from": "operation:post:/consumer/v1/customers",
+        "kind": "ACCEPTS",
+        "to": "schema:CustomerInputModel"
+      },
+      {
+        "from": "operation:post:/consumer/v1/customers",
+        "kind": "RETURNS",
+        "to": "schema:CustomerViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/customers/bookingfields",
+        "kind": "RETURNS",
+        "to": "schema:BookingFieldListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/customers/countries",
+        "kind": "RETURNS",
+        "to": "schema:CountryViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/customers/customfields",
+        "kind": "RETURNS",
+        "to": "schema:CustomFieldDefinitionListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/customers/states",
+        "kind": "RETURNS",
+        "to": "schema:StateViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/customers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:CustomerViewModel"
+      },
+      {
+        "from": "operation:put:/consumer/v1/customers/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:CustomerUpdateModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/locations",
+        "kind": "RETURNS",
+        "to": "schema:LocationListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/locations/{id}",
+        "kind": "RETURNS",
+        "to": "schema:LocationViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/resourcegroups",
+        "kind": "RETURNS",
+        "to": "schema:ResourceGroupListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/resourcegroups/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceGroupViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/resources",
+        "kind": "RETURNS",
+        "to": "schema:ResourceListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/resources/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/resources/{id}/services",
+        "kind": "RETURNS",
+        "to": "schema:ResourceServiceListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/servicegroups",
+        "kind": "RETURNS",
+        "to": "schema:ServiceGroupListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/servicegroups/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceGroupViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/services",
+        "kind": "RETURNS",
+        "to": "schema:ServiceListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/services/allocations/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceAllocationViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/services/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/services/{id}/allocations",
+        "kind": "RETURNS",
+        "to": "schema:ServiceAllocationListViewModel"
+      },
+      {
+        "from": "operation:get:/consumer/v1/services/{id}/resources",
+        "kind": "RETURNS",
+        "to": "schema:ResourceListViewModel"
+      },
+      {
+        "from": "schema:AppointmentBookModel",
+        "kind": "REFERENCES",
+        "to": "schema:BookingFieldItem"
+      },
+      {
+        "from": "schema:AppointmentBookModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldInputModel"
+      },
+      {
+        "from": "schema:AppointmentInitialModel",
+        "kind": "REFERENCES",
+        "to": "schema:BookingFieldItem"
+      },
+      {
+        "from": "schema:AppointmentInitialModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldInputModel"
+      },
+      {
+        "from": "schema:AppointmentInitialViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppoinmentBookingFormsViewModel"
+      },
+      {
+        "from": "schema:AppointmentInitialViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentAuditViewModel"
+      },
+      {
+        "from": "schema:AppointmentInitialViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentCustomerViewModel"
+      },
+      {
+        "from": "schema:AppointmentInitialViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentResourceViewModel"
+      },
+      {
+        "from": "schema:AppointmentInitialViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BookingFieldViewModel"
+      },
+      {
+        "from": "schema:AppointmentInitialViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldViewModel"
+      },
+      {
+        "from": "schema:AppointmentListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentViewModel"
+      },
+      {
+        "from": "schema:AppointmentReserveModel",
+        "kind": "REFERENCES",
+        "to": "schema:BookingFieldItem"
+      },
+      {
+        "from": "schema:AppointmentReserveModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldInputModel"
+      },
+      {
+        "from": "schema:AppointmentViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentAuditViewModel"
+      },
+      {
+        "from": "schema:AppointmentViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentCustomerViewModel"
+      },
+      {
+        "from": "schema:AppointmentViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentResourceViewModel"
+      },
+      {
+        "from": "schema:AppointmentViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldViewModel"
+      },
+      {
+        "from": "schema:AvailabilityDayViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AvailableDayViewModel"
+      },
+      {
+        "from": "schema:AvailabilityViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AvailableDayViewModel"
+      },
+      {
+        "from": "schema:AvailabilityViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AvailableTimeViewModel"
+      },
+      {
+        "from": "schema:BookingFieldListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BookingFieldViewModel"
+      },
+      {
+        "from": "schema:BookingFieldViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BookingFieldListItemViewModel"
+      },
+      {
+        "from": "schema:BusinessHoursViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessHourViewModel"
+      },
+      {
+        "from": "schema:CustomFieldDefinitionListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldDefinitionViewModel"
+      },
+      {
+        "from": "schema:CustomFieldDefinitionViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldListDefinitionViewModel"
+      },
+      {
+        "from": "schema:CustomerInputModel",
+        "kind": "REFERENCES",
+        "to": "schema:AddressInputModel"
+      },
+      {
+        "from": "schema:CustomerInputModel",
+        "kind": "REFERENCES",
+        "to": "schema:ContactInputModel"
+      },
+      {
+        "from": "schema:CustomerInputModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldInputModel"
+      },
+      {
+        "from": "schema:CustomerListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomerViewModel"
+      },
+      {
+        "from": "schema:CustomerUpdateModel",
+        "kind": "REFERENCES",
+        "to": "schema:AddressUpdateModel"
+      },
+      {
+        "from": "schema:CustomerUpdateModel",
+        "kind": "REFERENCES",
+        "to": "schema:ContactUpdateModel"
+      },
+      {
+        "from": "schema:CustomerUpdateModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldUpdateModel"
+      },
+      {
+        "from": "schema:CustomerViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AddressViewModel"
+      },
+      {
+        "from": "schema:CustomerViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ContactViewModel"
+      },
+      {
+        "from": "schema:CustomerViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldViewModel"
+      },
+      {
+        "from": "schema:LocationListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:LocationViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AddressViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AppointmentReminderViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessDefaultsViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessHolidayViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessHoursViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessServiceViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:OnlineSettingsViewModel"
+      },
+      {
+        "from": "schema:LocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:TravelViewModel"
+      },
+      {
+        "from": "schema:ResourceGroupListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceGroupViewModel"
+      },
+      {
+        "from": "schema:ResourceHoursViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceHourViewModel"
+      },
+      {
+        "from": "schema:ResourceListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceViewModel"
+      },
+      {
+        "from": "schema:ResourceServiceListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceServiceViewModel"
+      },
+      {
+        "from": "schema:ResourceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AddressViewModel"
+      },
+      {
+        "from": "schema:ResourceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ContactViewModel"
+      },
+      {
+        "from": "schema:ResourceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldInputModel"
+      },
+      {
+        "from": "schema:ResourceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceHoursViewModel"
+      },
+      {
+        "from": "schema:ResourceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceServiceViewModel"
+      },
+      {
+        "from": "schema:ServiceAllocationListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceAllocationViewModel"
+      },
+      {
+        "from": "schema:ServiceAllocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:AddressViewModel"
+      },
+      {
+        "from": "schema:ServiceAllocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneViewModel"
+      },
+      {
+        "from": "schema:ServiceAllocationViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:RepeatViewModel"
+      },
+      {
+        "from": "schema:ServiceGroupListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceGroupViewModel"
+      },
+      {
+        "from": "schema:ServiceHoursViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceHourViewModel"
+      },
+      {
+        "from": "schema:ServiceListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceViewModel"
+      },
+      {
+        "from": "schema:ServiceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:CustomFieldInputModel"
+      },
+      {
+        "from": "schema:ServiceViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceHoursViewModel"
+      },
+      {
+        "from": "schema:UnavailableTimeListViewModel",
+        "kind": "REFERENCES",
+        "to": "schema:UnavailableTimeViewModel"
       }
     ],
     "nodes": [
@@ -202,12 +717,127 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Appointments</b>.",
         "id": "operation:get:/consumer/v1/appointments",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/appointments",
+        "parameters": [
+          {
+            "description": "id of business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by lastname or part of it",
+            "in": "query",
+            "name": "lastname",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by phone number or part of it",
+            "in": "query",
+            "name": "phone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by service",
+            "in": "query",
+            "name": "serviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by calendar",
+            "in": "query",
+            "name": "calendarId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by resource",
+            "in": "query",
+            "name": "resourceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by customer",
+            "in": "query",
+            "name": "customerId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by service allocation",
+            "in": "query",
+            "name": "serviceAllocationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format YYYY-MM-DD.",
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Format YYYY-MM-DD.",
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter by status: IN, BK, CN, RE, RS",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by the email of who booked",
+            "in": "query",
+            "name": "bookedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit, default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/appointments",
         "pointer": "#/paths/~1consumer~1v1~1appointments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -215,16 +845,46 @@
             ]
           }
         ],
-        "summary": "Get Appointments"
+        "summary": "Get Appointments",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Create</b> a new appointment.",
         "id": "operation:post:/consumer/v1/appointments",
         "kind": "operation",
         "method": "post",
         "name": "post /consumer/v1/appointments",
+        "parameters": [
+          {
+            "description": "Options are \"BK\", \"RS\" or \"IN\"",
+            "in": "query",
+            "name": "completeBooking",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments",
         "pointer": "#/paths/~1consumer~1v1~1appointments/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AppointmentInitialModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentInitialViewModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -232,16 +892,36 @@
             ]
           }
         ],
-        "summary": "Create Appointment"
+        "summary": "Create Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a locations <b>Appointment Booking Fields</b>.",
         "id": "operation:get:/consumer/v1/appointments/bookingfields",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/appointments/bookingfields",
+        "parameters": [
+          {
+            "description": "id of business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments/bookingfields",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1bookingfields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BookingFieldListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -249,16 +929,36 @@
             ]
           }
         ],
-        "summary": "Get Custom Fields Labels"
+        "summary": "Get Custom Fields Labels",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a locations <b>Appointment Custom Field</b> definitions.",
         "id": "operation:get:/consumer/v1/appointments/customfields",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/appointments/customfields",
+        "parameters": [
+          {
+            "description": "id of business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments/customfields",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1customfields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomFieldDefinitionListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -266,33 +966,36 @@
             ]
           }
         ],
-        "summary": "Get Custom Fields List"
+        "summary": "Get Custom Fields List",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/consumer/v1/appointments/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /consumer/v1/appointments/{id}",
-        "path": "/consumer/v1/appointments/{id}",
-        "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}/delete",
-        "security": [
-          {
-            "oauth2": [
-              "OnSchedApi"
-            ]
-          }
-        ],
-        "summary": "Delete Appointment"
-      },
-      {
-        "deprecated": false,
+        "description": "<p>Use this endpoint to return an <b>Appointment</b> object.",
         "id": "operation:get:/consumer/v1/appointments/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/appointments/{id}",
+        "parameters": [
+          {
+            "description": "id of appointment requested",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -300,16 +1003,83 @@
             ]
           }
         ],
-        "summary": "Get Appointment"
+        "summary": "Get Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to permanently <b>Delete</b> an appointment.",
+        "id": "operation:delete:/consumer/v1/appointments/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /consumer/v1/appointments/{id}",
+        "parameters": [
+          {
+            "description": "appointment id to delete",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/consumer/v1/appointments/{id}",
+        "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentViewModel"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "OnSchedApi"
+            ]
+          }
+        ],
+        "summary": "Delete Appointment",
+        "tags": [
+          "Appointments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Book</b> an appointment.",
         "id": "operation:put:/consumer/v1/appointments/{id}/book",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/appointments/{id}/book",
+        "parameters": [
+          {
+            "description": "appointment id to book",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}/book",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}~1book/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AppointmentBookModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentViewModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -317,16 +1087,36 @@
             ]
           }
         ],
-        "summary": "Book Appointment"
+        "summary": "Book Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Cancel</b> an appointment booking or reservation.",
         "id": "operation:put:/consumer/v1/appointments/{id}/cancel",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/appointments/{id}/cancel",
+        "parameters": [
+          {
+            "description": "appointment id to cancel",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}/cancel",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}~1cancel/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentViewModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -334,16 +1124,42 @@
             ]
           }
         ],
-        "summary": "Cancel Appointment"
+        "summary": "Cancel Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Confirm</b> an appointment.",
         "id": "operation:put:/consumer/v1/appointments/{id}/confirm",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/appointments/{id}/confirm",
+        "parameters": [
+          {
+            "description": "appointment id to confirm",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Use this parameter to undo the confirmed status",
+            "in": "query",
+            "name": "undo",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}/confirm",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}~1confirm/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -351,16 +1167,45 @@
             ]
           }
         ],
-        "summary": "Confirm Appointment"
+        "summary": "Confirm Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to change the status of an appointment from \"BK\", Booked to <b>\"NS\", NoShow</b>.",
         "id": "operation:put:/consumer/v1/appointments/{id}/noshow",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/appointments/{id}/noshow",
+        "parameters": [
+          {
+            "description": "appointment id to mark as NoShow",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}/noshow",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}~1noshow/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AppointmentNoShowModel"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -368,16 +1213,46 @@
             ]
           }
         ],
-        "summary": "Set NoShow Status"
+        "summary": "Set NoShow Status",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Reschedule</b> an appointment booking.",
         "id": "operation:put:/consumer/v1/appointments/{id}/reschedule",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/appointments/{id}/reschedule",
+        "parameters": [
+          {
+            "description": "appointment id to reschedule",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}/reschedule",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}~1reschedule/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AppointmentRescheduleModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppointmentViewModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -385,16 +1260,51 @@
             ]
           }
         ],
-        "summary": "Reschedule Appointment"
+        "summary": "Reschedule Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Reserve</b> an appointment.",
         "id": "operation:put:/consumer/v1/appointments/{id}/reserve",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/appointments/{id}/reserve",
+        "parameters": [
+          {
+            "description": "appointment id to reserve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sendNotifications",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/consumer/v1/appointments/{id}/reserve",
         "pointer": "#/paths/~1consumer~1v1~1appointments~1{id}~1reserve/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AppointmentReserveModel"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -402,16 +1312,155 @@
             ]
           }
         ],
-        "summary": "Reserve Appointment"
+        "summary": "Reserve Appointment",
+        "tags": [
+          "Appointments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p> <b>Choose your search criteria carefully.",
         "id": "operation:get:/consumer/v1/availability/{serviceId}/{startDate}/{endDate}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}",
+        "parameters": [
+          {
+            "description": "Service Id for availability search",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Format YYYY-MM-DD: Start Date for availability search",
+            "in": "path",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Format YYYY-MM-DD: End Date for availability search",
+            "in": "path",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Format Military Time Start Time for availability search.",
+            "in": "query",
+            "name": "startTime",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Format Military Time.",
+            "in": "query",
+            "name": "endTime",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Resource Id for availability search",
+            "in": "query",
+            "name": "resourceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Resource Group Id for availability search",
+            "in": "query",
+            "name": "resourceGroupId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated Resource Id's for availability search",
+            "in": "query",
+            "name": "resourceIds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Round robin choice 0=none, 1=random, 2=balanced",
+            "in": "query",
+            "name": "roundRobin",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Duration of the service if different from default",
+            "in": "query",
+            "name": "duration",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Booking Interval if different than the default",
+            "in": "query",
+            "name": "interval",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Requested IANA timezone Id to view availability",
+            "in": "query",
+            "name": "timezoneName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request timezone offset to view availability",
+            "in": "query",
+            "name": "tzOffset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "For calculating travel based availability, requires distance scope",
+            "in": "query",
+            "name": "destination",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format YYYY-DD-YY: Start date for day availability, defaults to startDate",
+            "in": "query",
+            "name": "dayAvailabilityStartDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of days of day availability to return",
+            "in": "query",
+            "name": "dayAvailability",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return available times for the first available day",
+            "in": "query",
+            "name": "firstDayAvailable",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/consumer/v1/availability/{serviceId}/{startDate}/{endDate}",
         "pointer": "#/paths/~1consumer~1v1~1availability~1{serviceId}~1{startDate}~1{endDate}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AvailabilityViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -419,16 +1468,71 @@
             ]
           }
         ],
-        "summary": "Get Available Times"
+        "summary": "Get Available Times",
+        "tags": [
+          "Availability"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>This endpoint will return <b>Day Level Availability</b> for the range of dates requested.",
         "id": "operation:get:/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days",
+        "parameters": [
+          {
+            "description": "Service Id for day availability search",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Format YYYY-MM-DD: Start Date for availability search",
+            "in": "path",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Format YYYY-MM-DD: End Date for availability search",
+            "in": "path",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Resource Id to filter on",
+            "in": "query",
+            "name": "resourceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Timezone offset to view availability for",
+            "in": "query",
+            "name": "tzOffset",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days",
         "pointer": "#/paths/~1consumer~1v1~1availability~1{serviceId}~1{startDate}~1{endDate}~1days/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AvailabilityDayViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -436,16 +1540,85 @@
             ]
           }
         ],
-        "summary": "Get Available Days"
+        "summary": "Get Available Days",
+        "tags": [
+          "Availability"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>This endpoint is used to show <b>Unavailable</b> times and provides valuable information as to why a time slot is unavailable.",
         "id": "operation:get:/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable",
+        "parameters": [
+          {
+            "description": "Service Id for availability search",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Format YYYY-MM-DD: Start Date for unavailable time search",
+            "in": "path",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Format YYYY-MM-DD: End Date for unavailable time search",
+            "in": "path",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Resource Id to filter on",
+            "in": "query",
+            "name": "resourceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Duration of the service if different from default",
+            "in": "query",
+            "name": "duration",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Request timezone offset to view unavailable times",
+            "in": "query",
+            "name": "tzOffset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Set as true to remove Time Past (TP) blocks in the response",
+            "in": "query",
+            "name": "skipTimePastUnavailability",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable",
         "pointer": "#/paths/~1consumer~1v1~1availability~1{serviceId}~1{startDate}~1{endDate}~1unavailable/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UnavailableTimeListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -453,16 +1626,78 @@
             ]
           }
         ],
-        "summary": "Get Unavailable Times"
+        "summary": "Get Unavailable Times",
+        "tags": [
+          "Availability"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Customers</b>.",
         "id": "operation:get:/consumer/v1/customers",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/customers",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by groupId",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by lastname",
+            "in": "query",
+            "name": "lastname",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by deleted status",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/customers",
         "pointer": "#/paths/~1consumer~1v1~1customers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomerListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -470,16 +1705,37 @@
             ]
           }
         ],
-        "summary": "List Customers"
+        "summary": "List Customers",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Create</b> a new Customer.",
         "id": "operation:post:/consumer/v1/customers",
         "kind": "operation",
         "method": "post",
         "name": "post /consumer/v1/customers",
         "path": "/consumer/v1/customers",
         "pointer": "#/paths/~1consumer~1v1~1customers/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CustomerInputModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomerViewModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -487,16 +1743,36 @@
             ]
           }
         ],
-        "summary": "Create Customer"
+        "summary": "Create Customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return <b>Customer Booking Fields</b>.",
         "id": "operation:get:/consumer/v1/customers/bookingfields",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/customers/bookingfields",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/customers/bookingfields",
         "pointer": "#/paths/~1consumer~1v1~1customers~1bookingfields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BookingFieldListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -504,16 +1780,27 @@
             ]
           }
         ],
-        "summary": "Get Customer Booking Fields"
+        "summary": "Get Customer Booking Fields",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Countries with their associated Country Code</b>.",
         "id": "operation:get:/consumer/v1/customers/countries",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/customers/countries",
         "path": "/consumer/v1/customers/countries",
         "pointer": "#/paths/~1consumer~1v1~1customers~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountryViewModel[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -521,16 +1808,43 @@
             ]
           }
         ],
-        "summary": "List Country Codes"
+        "summary": "List Country Codes",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return <b>Customer Custom Fields</b>.",
         "id": "operation:get:/consumer/v1/customers/customfields",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/customers/customfields",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A true/false indicator to filter on custom fields used for lead questions",
+            "in": "query",
+            "name": "leadQuestions",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/consumer/v1/customers/customfields",
         "pointer": "#/paths/~1consumer~1v1~1customers~1customfields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomFieldDefinitionListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -538,16 +1852,35 @@
             ]
           }
         ],
-        "summary": "Get Customer Custom Fields"
+        "summary": "Get Customer Custom Fields",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Countries with their associated State Codes</b>.",
         "id": "operation:get:/consumer/v1/customers/states",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/customers/states",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/customers/states",
         "pointer": "#/paths/~1consumer~1v1~1customers~1states/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StateViewModel[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -555,33 +1888,36 @@
             ]
           }
         ],
-        "summary": "List Country States"
+        "summary": "List Country States",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/consumer/v1/customers/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /consumer/v1/customers/{id}",
-        "path": "/consumer/v1/customers/{id}",
-        "pointer": "#/paths/~1consumer~1v1~1customers~1{id}/delete",
-        "security": [
-          {
-            "oauth2": [
-              "OnSchedApi"
-            ]
-          }
-        ],
-        "summary": "Delete Customer"
-      },
-      {
-        "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Customer</b> object.",
         "id": "operation:get:/consumer/v1/customers/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/customers/{id}",
+        "parameters": [
+          {
+            "description": "id of customer object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/customers/{id}",
         "pointer": "#/paths/~1consumer~1v1~1customers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomerViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -589,16 +1925,45 @@
             ]
           }
         ],
-        "summary": "Get Customer"
+        "summary": "Get Customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>Update</b> a Customer object.",
         "id": "operation:put:/consumer/v1/customers/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /consumer/v1/customers/{id}",
+        "parameters": [
+          {
+            "description": "id of customer object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/customers/{id}",
         "pointer": "#/paths/~1consumer~1v1~1customers~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CustomerUpdateModel"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -606,16 +1971,135 @@
             ]
           }
         ],
-        "summary": "Update Customer"
+        "summary": "Update Customer",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to permanently <b>Delete</b> a Customer object.",
+        "id": "operation:delete:/consumer/v1/customers/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /consumer/v1/customers/{id}",
+        "parameters": [
+          {
+            "description": "id of customer object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/consumer/v1/customers/{id}",
+        "pointer": "#/paths/~1consumer~1v1~1customers~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "OnSchedApi"
+            ]
+          }
+        ],
+        "summary": "Delete Customer",
+        "tags": [
+          "Customers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Business Locations</b>.",
         "id": "operation:get:/consumer/v1/locations",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/locations",
+        "parameters": [
+          {
+            "description": "Location name (full or partial)",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search by distance nearest Geocoords, City, Postal/Zip Code",
+            "in": "query",
+            "name": "nearestTo",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximum distance to display",
+            "in": "query",
+            "name": "proximity",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Distance either imperial(miles), metric(kilometers)",
+            "in": "query",
+            "name": "units",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Locations that offer this service",
+            "in": "query",
+            "name": "serviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Frienldy Id of location",
+            "in": "query",
+            "name": "friendlyId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Locations within a specific region",
+            "in": "query",
+            "name": "regionId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Don't include the Primary Location",
+            "in": "query",
+            "name": "ignorePrimary",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit, default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/locations",
         "pointer": "#/paths/~1consumer~1v1~1locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LocationListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -623,16 +2107,36 @@
             ]
           }
         ],
-        "summary": "List Locations"
+        "summary": "List Locations",
+        "tags": [
+          "Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Location</b> object.",
         "id": "operation:get:/consumer/v1/locations/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/locations/{id}",
+        "parameters": [
+          {
+            "description": "id of business location",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/locations/{id}",
         "pointer": "#/paths/~1consumer~1v1~1locations~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LocationViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -640,16 +2144,57 @@
             ]
           }
         ],
-        "summary": "Get Location"
+        "summary": "Get Location",
+        "tags": [
+          "Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a list of <b>Resource Groups</b> for the requested location.",
         "id": "operation:get:/consumer/v1/resourcegroups",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/resourcegroups",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter results by deleted status",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/resourcegroups",
         "pointer": "#/paths/~1consumer~1v1~1resourcegroups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceGroupListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -657,16 +2202,36 @@
             ]
           }
         ],
-        "summary": "List Resource Groups"
+        "summary": "List Resource Groups",
+        "tags": [
+          "ResourceGroups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Resource Group</b> object.",
         "id": "operation:get:/consumer/v1/resourcegroups/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/resourcegroups/{id}",
+        "parameters": [
+          {
+            "description": "id of the resourceGroup object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/resourcegroups/{id}",
         "pointer": "#/paths/~1consumer~1v1~1resourcegroups~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceGroupViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -674,16 +2239,84 @@
             ]
           }
         ],
-        "summary": "Get Resource Group"
+        "summary": "Get Resource Group",
+        "tags": [
+          "ResourceGroups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Resources</b> associated with a business location.",
         "id": "operation:get:/consumer/v1/resources",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/resources",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by groupId",
+            "in": "query",
+            "name": "resourceGroupId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search by name, supports Partial name search",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify sort order of response",
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/resources",
         "pointer": "#/paths/~1consumer~1v1~1resources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceListViewModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -691,16 +2324,36 @@
             ]
           }
         ],
-        "summary": "List Resources"
+        "summary": "List Resources",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Resource</b> object.",
         "id": "operation:get:/consumer/v1/resources/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/resources/{id}",
+        "parameters": [
+          {
+            "description": "id of resource object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/resources/{id}",
         "pointer": "#/paths/~1consumer~1v1~1resources~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -708,16 +2361,59 @@
             ]
           }
         ],
-        "summary": "Get Resource"
+        "summary": "Get Resource",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to get a <b>List of Linked Services</b> associated with the resource requested.",
         "id": "operation:get:/consumer/v1/resources/{id}/services",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/resources/{id}/services",
+        "parameters": [
+          {
+            "description": "id of resource object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/resources/{id}/services",
         "pointer": "#/paths/~1consumer~1v1~1resources~1{id}~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceServiceListViewModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -725,16 +2421,50 @@
             ]
           }
         ],
-        "summary": "Get Resource Linked Services"
+        "summary": "Get Resource Linked Services",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a list of <b>Service Groups</b> for the requested location.",
         "id": "operation:get:/consumer/v1/servicegroups",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/servicegroups",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/servicegroups",
         "pointer": "#/paths/~1consumer~1v1~1servicegroups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceGroupListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -742,16 +2472,36 @@
             ]
           }
         ],
-        "summary": "List Service Groups"
+        "summary": "List Service Groups",
+        "tags": [
+          "ServiceGroups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Service Group</b> object.",
         "id": "operation:get:/consumer/v1/servicegroups/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/servicegroups/{id}",
+        "parameters": [
+          {
+            "description": "id of the serviceGroup object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/servicegroups/{id}",
         "pointer": "#/paths/~1consumer~1v1~1servicegroups~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceGroupViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -759,16 +2509,106 @@
             ]
           }
         ],
-        "summary": "Get Service Group"
+        "summary": "Get Service Group",
+        "tags": [
+          "ServiceGroups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to <b>List Services</b> available at your business location and/or company.",
         "id": "operation:get:/consumer/v1/services",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/services",
+        "parameters": [
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by groupId",
+            "in": "query",
+            "name": "serviceGroupId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by default service, default is false",
+            "in": "query",
+            "name": "defaultService",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Search All Locations, default is false",
+            "in": "query",
+            "name": "allLocations",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter by scope, Company, Location or All, default is All",
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "ServicesScope"
+          },
+          {
+            "description": "Filter by Name, supports Partial name search",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by ServiceId, using this parameter would ignore all other parameters",
+            "in": "query",
+            "name": "serviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Sort results using Natural Sort or Sorted alphabetically by Service Names, default is natural",
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "ServiceSortOrder"
+          },
+          {
+            "description": "Sort results in Descending Order, default true",
+            "in": "query",
+            "name": "sortDescending",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/consumer/v1/services",
         "pointer": "#/paths/~1consumer~1v1~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -776,16 +2616,36 @@
             ]
           }
         ],
-        "summary": "List Services"
+        "summary": "List Services",
+        "tags": [
+          "Services"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Service Allocation</b> object.",
         "id": "operation:get:/consumer/v1/services/allocations/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/services/allocations/{id}",
+        "parameters": [
+          {
+            "description": "id of serviceAllocation object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/consumer/v1/services/allocations/{id}",
         "pointer": "#/paths/~1consumer~1v1~1services~1allocations~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceAllocationViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -793,16 +2653,36 @@
             ]
           }
         ],
-        "summary": "Get Service Allocation"
+        "summary": "Get Service Allocation",
+        "tags": [
+          "Services"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>Service</b> object.",
         "id": "operation:get:/consumer/v1/services/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/services/{id}",
+        "parameters": [
+          {
+            "description": "id of service object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/services/{id}",
         "pointer": "#/paths/~1consumer~1v1~1services~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -810,16 +2690,87 @@
             ]
           }
         ],
-        "summary": "Get Service"
+        "summary": "Get Service",
+        "tags": [
+          "Services"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a <b>List of Service Allocations</b> associated with the requested service.",
         "id": "operation:get:/consumer/v1/services/{id}/allocations",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/services/{id}/allocations",
+        "parameters": [
+          {
+            "description": "id of service to list allocations for, 0 for all",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id of the location, defaults to the primary location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "id of the resource to filter on",
+            "in": "query",
+            "name": "resourceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format YYYY-MM-DD: Filter allocations on/after startDate",
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Format YYYY-MM-DD.",
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/services/{id}/allocations",
         "pointer": "#/paths/~1consumer~1v1~1services~1{id}~1allocations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceAllocationListViewModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -827,16 +2778,57 @@
             ]
           }
         ],
-        "summary": "List Service Allocations"
+        "summary": "List Service Allocations",
+        "tags": [
+          "Services"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<p>Use this endpoint to return a list of <b>Resources that provide the Service requested</b>.",
         "id": "operation:get:/consumer/v1/services/{id}/resources",
         "kind": "operation",
         "method": "get",
         "name": "get /consumer/v1/services/{id}/resources",
+        "parameters": [
+          {
+            "description": "id of service object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id of business location, defaults to primary business location",
+            "in": "query",
+            "name": "locationId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting row of page, default 0",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page limit default 20, max 100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/consumer/v1/services/{id}/resources",
         "pointer": "#/paths/~1consumer~1v1~1services~1{id}~1resources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceListViewModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -844,357 +2836,432 @@
             ]
           }
         ],
-        "summary": "List Resources for Service"
+        "summary": "List Resources for Service",
+        "tags": [
+          "Services"
+        ]
       },
       {
         "id": "schema:AddressInputModel",
         "kind": "schema",
-        "name": "AddressInputModel"
+        "name": "AddressInputModel",
+        "type": "object"
       },
       {
         "id": "schema:AddressUpdateModel",
         "kind": "schema",
-        "name": "AddressUpdateModel"
+        "name": "AddressUpdateModel",
+        "type": "object"
       },
       {
         "id": "schema:AddressViewModel",
         "kind": "schema",
-        "name": "AddressViewModel"
+        "name": "AddressViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppoinmentBookingFormsViewModel",
         "kind": "schema",
-        "name": "AppoinmentBookingFormsViewModel"
+        "name": "AppoinmentBookingFormsViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentAuditViewModel",
         "kind": "schema",
-        "name": "AppointmentAuditViewModel"
+        "name": "AppointmentAuditViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentBookModel",
         "kind": "schema",
-        "name": "AppointmentBookModel"
+        "name": "AppointmentBookModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentCustomerViewModel",
         "kind": "schema",
-        "name": "AppointmentCustomerViewModel"
+        "name": "AppointmentCustomerViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentInitialModel",
         "kind": "schema",
-        "name": "AppointmentInitialModel"
+        "name": "AppointmentInitialModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentInitialViewModel",
         "kind": "schema",
-        "name": "AppointmentInitialViewModel"
+        "name": "AppointmentInitialViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentListViewModel",
         "kind": "schema",
-        "name": "AppointmentListViewModel"
+        "name": "AppointmentListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentNoShowModel",
         "kind": "schema",
-        "name": "AppointmentNoShowModel"
+        "name": "AppointmentNoShowModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentReminderViewModel",
         "kind": "schema",
-        "name": "AppointmentReminderViewModel"
+        "name": "AppointmentReminderViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentRescheduleModel",
         "kind": "schema",
-        "name": "AppointmentRescheduleModel"
+        "name": "AppointmentRescheduleModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentReserveModel",
         "kind": "schema",
-        "name": "AppointmentReserveModel"
+        "name": "AppointmentReserveModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentResourceViewModel",
         "kind": "schema",
-        "name": "AppointmentResourceViewModel"
+        "name": "AppointmentResourceViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AppointmentViewModel",
         "kind": "schema",
-        "name": "AppointmentViewModel"
+        "name": "AppointmentViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AvailabilityDayViewModel",
         "kind": "schema",
-        "name": "AvailabilityDayViewModel"
+        "name": "AvailabilityDayViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AvailabilityViewModel",
         "kind": "schema",
-        "name": "AvailabilityViewModel"
+        "name": "AvailabilityViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AvailableDayViewModel",
         "kind": "schema",
-        "name": "AvailableDayViewModel"
+        "name": "AvailableDayViewModel",
+        "type": "object"
       },
       {
         "id": "schema:AvailableTimeViewModel",
         "kind": "schema",
-        "name": "AvailableTimeViewModel"
+        "name": "AvailableTimeViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BookingFieldItem",
         "kind": "schema",
-        "name": "BookingFieldItem"
+        "name": "BookingFieldItem",
+        "type": "object"
       },
       {
         "id": "schema:BookingFieldListItemViewModel",
         "kind": "schema",
-        "name": "BookingFieldListItemViewModel"
+        "name": "BookingFieldListItemViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BookingFieldListViewModel",
         "kind": "schema",
-        "name": "BookingFieldListViewModel"
+        "name": "BookingFieldListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BookingFieldViewModel",
         "kind": "schema",
-        "name": "BookingFieldViewModel"
+        "name": "BookingFieldViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BusinessDefaultsViewModel",
         "kind": "schema",
-        "name": "BusinessDefaultsViewModel"
+        "name": "BusinessDefaultsViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BusinessHolidayViewModel",
         "kind": "schema",
-        "name": "BusinessHolidayViewModel"
+        "name": "BusinessHolidayViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BusinessHourViewModel",
         "kind": "schema",
-        "name": "BusinessHourViewModel"
+        "name": "BusinessHourViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BusinessHoursViewModel",
         "kind": "schema",
-        "name": "BusinessHoursViewModel"
+        "name": "BusinessHoursViewModel",
+        "type": "object"
       },
       {
         "id": "schema:BusinessServiceViewModel",
         "kind": "schema",
-        "name": "BusinessServiceViewModel"
+        "name": "BusinessServiceViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ContactInputModel",
         "kind": "schema",
-        "name": "ContactInputModel"
+        "name": "ContactInputModel",
+        "type": "object"
       },
       {
         "id": "schema:ContactUpdateModel",
         "kind": "schema",
-        "name": "ContactUpdateModel"
+        "name": "ContactUpdateModel",
+        "type": "object"
       },
       {
         "id": "schema:ContactViewModel",
         "kind": "schema",
-        "name": "ContactViewModel"
+        "name": "ContactViewModel",
+        "type": "object"
       },
       {
+        "description": "View model for country objects",
         "id": "schema:CountryViewModel",
         "kind": "schema",
-        "name": "CountryViewModel"
+        "name": "CountryViewModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomFieldDefinitionListViewModel",
         "kind": "schema",
-        "name": "CustomFieldDefinitionListViewModel"
+        "name": "CustomFieldDefinitionListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomFieldDefinitionViewModel",
         "kind": "schema",
-        "name": "CustomFieldDefinitionViewModel"
+        "name": "CustomFieldDefinitionViewModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomFieldInputModel",
         "kind": "schema",
-        "name": "CustomFieldInputModel"
+        "name": "CustomFieldInputModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomFieldListDefinitionViewModel",
         "kind": "schema",
-        "name": "CustomFieldListDefinitionViewModel"
+        "name": "CustomFieldListDefinitionViewModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomFieldUpdateModel",
         "kind": "schema",
-        "name": "CustomFieldUpdateModel"
+        "name": "CustomFieldUpdateModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomFieldViewModel",
         "kind": "schema",
-        "name": "CustomFieldViewModel"
+        "name": "CustomFieldViewModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomerInputModel",
         "kind": "schema",
-        "name": "CustomerInputModel"
+        "name": "CustomerInputModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomerListViewModel",
         "kind": "schema",
-        "name": "CustomerListViewModel"
+        "name": "CustomerListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomerUpdateModel",
         "kind": "schema",
-        "name": "CustomerUpdateModel"
+        "name": "CustomerUpdateModel",
+        "type": "object"
       },
       {
         "id": "schema:CustomerViewModel",
         "kind": "schema",
-        "name": "CustomerViewModel"
+        "name": "CustomerViewModel",
+        "type": "object"
       },
       {
         "id": "schema:LocationListViewModel",
         "kind": "schema",
-        "name": "LocationListViewModel"
+        "name": "LocationListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:LocationViewModel",
         "kind": "schema",
-        "name": "LocationViewModel"
+        "name": "LocationViewModel",
+        "type": "object"
       },
       {
         "id": "schema:OnlineSettingsViewModel",
         "kind": "schema",
-        "name": "OnlineSettingsViewModel"
+        "name": "OnlineSettingsViewModel",
+        "type": "object"
       },
       {
         "id": "schema:PhoneViewModel",
         "kind": "schema",
-        "name": "PhoneViewModel"
+        "name": "PhoneViewModel",
+        "type": "object"
       },
       {
         "id": "schema:RepeatViewModel",
         "kind": "schema",
-        "name": "RepeatViewModel"
+        "name": "RepeatViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceGroupListViewModel",
         "kind": "schema",
-        "name": "ResourceGroupListViewModel"
+        "name": "ResourceGroupListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceGroupViewModel",
         "kind": "schema",
-        "name": "ResourceGroupViewModel"
+        "name": "ResourceGroupViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceHourViewModel",
         "kind": "schema",
-        "name": "ResourceHourViewModel"
+        "name": "ResourceHourViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceHoursViewModel",
         "kind": "schema",
-        "name": "ResourceHoursViewModel"
+        "name": "ResourceHoursViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceListViewModel",
         "kind": "schema",
-        "name": "ResourceListViewModel"
+        "name": "ResourceListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceServiceListViewModel",
         "kind": "schema",
-        "name": "ResourceServiceListViewModel"
+        "name": "ResourceServiceListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceServiceViewModel",
         "kind": "schema",
-        "name": "ResourceServiceViewModel"
+        "name": "ResourceServiceViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ResourceViewModel",
         "kind": "schema",
-        "name": "ResourceViewModel"
+        "name": "ResourceViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceAllocationListViewModel",
         "kind": "schema",
-        "name": "ServiceAllocationListViewModel"
+        "name": "ServiceAllocationListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceAllocationViewModel",
         "kind": "schema",
-        "name": "ServiceAllocationViewModel"
+        "name": "ServiceAllocationViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceGroupListViewModel",
         "kind": "schema",
-        "name": "ServiceGroupListViewModel"
+        "name": "ServiceGroupListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceGroupViewModel",
         "kind": "schema",
-        "name": "ServiceGroupViewModel"
+        "name": "ServiceGroupViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceHourViewModel",
         "kind": "schema",
-        "name": "ServiceHourViewModel"
+        "name": "ServiceHourViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceHoursViewModel",
         "kind": "schema",
-        "name": "ServiceHoursViewModel"
+        "name": "ServiceHoursViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceListViewModel",
         "kind": "schema",
-        "name": "ServiceListViewModel"
+        "name": "ServiceListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServiceSortOrder",
         "kind": "schema",
-        "name": "ServiceSortOrder"
+        "name": "ServiceSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:ServiceViewModel",
         "kind": "schema",
-        "name": "ServiceViewModel"
+        "name": "ServiceViewModel",
+        "type": "object"
       },
       {
         "id": "schema:ServicesScope",
         "kind": "schema",
-        "name": "ServicesScope"
+        "name": "ServicesScope",
+        "type": "string"
       },
       {
+        "description": "View model for state object",
         "id": "schema:StateViewModel",
         "kind": "schema",
-        "name": "StateViewModel"
+        "name": "StateViewModel",
+        "type": "object"
       },
       {
         "id": "schema:TravelViewModel",
         "kind": "schema",
-        "name": "TravelViewModel"
+        "name": "TravelViewModel",
+        "type": "object"
       },
       {
         "id": "schema:UnavailableTimeListViewModel",
         "kind": "schema",
-        "name": "UnavailableTimeListViewModel"
+        "name": "UnavailableTimeListViewModel",
+        "type": "object"
       },
       {
         "id": "schema:UnavailableTimeViewModel",
         "kind": "schema",
-        "name": "UnavailableTimeViewModel"
+        "name": "UnavailableTimeViewModel",
+        "type": "object"
       }
     ]
   },

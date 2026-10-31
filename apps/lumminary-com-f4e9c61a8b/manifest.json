@@ -88,6 +88,126 @@
         "from": "lumminary-com-f4e9c61a8b",
         "kind": "EXPOSES",
         "to": "operation:get:/reference/snps/{snpAccession}"
+      },
+      {
+        "from": "operation:post:/auth/jwt",
+        "kind": "RETURNS",
+        "to": "schema:JavascriptWebToken"
+      },
+      {
+        "from": "operation:get:/clients/{clientId}/datasets/{datasetId}/genes/{geneSymbol}",
+        "kind": "RETURNS",
+        "to": "schema:ClientGene"
+      },
+      {
+        "from": "operation:get:/clients/{clientId}/datasets/{datasetId}/snps/",
+        "kind": "RETURNS",
+        "to": "schema:ClientSNP"
+      },
+      {
+        "from": "operation:post:/clients/{clientId}/datasets/{datasetId}/snps/",
+        "kind": "RETURNS",
+        "to": "schema:ClientSNP"
+      },
+      {
+        "from": "operation:get:/clients/{clientId}/datasets/{datasetId}/snps/{snpId}",
+        "kind": "RETURNS",
+        "to": "schema:ClientSNP"
+      },
+      {
+        "from": "operation:get:/products/{productId}",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:get:/products/{productId}/authorizations",
+        "kind": "RETURNS",
+        "to": "schema:Authorization"
+      },
+      {
+        "from": "operation:get:/products/{productId}/authorizations/{authorizationId}",
+        "kind": "RETURNS",
+        "to": "schema:Authorization"
+      },
+      {
+        "from": "operation:post:/products/{productId}/authorizations/{authorizationId}/credentials",
+        "kind": "RETURNS",
+        "to": "schema:ReportCredentials"
+      },
+      {
+        "from": "operation:post:/products/{productId}/authorizations/{authorizationId}/file",
+        "kind": "RETURNS",
+        "to": "schema:ReportFile"
+      },
+      {
+        "from": "operation:get:/reference/genes/databases/{databaseName}/accessions/{accession}",
+        "kind": "RETURNS",
+        "to": "schema:PublicGene"
+      },
+      {
+        "from": "operation:get:/reference/genomes/",
+        "kind": "RETURNS",
+        "to": "schema:ReferenceGenomeOverview"
+      },
+      {
+        "from": "operation:get:/reference/genomes/{genomeBuildAccession}/chromosomes",
+        "kind": "RETURNS",
+        "to": "schema:ReferenceChromosomeOverview"
+      },
+      {
+        "from": "operation:get:/reference/genomes/{genomeBuildAccession}/chromosomes/{chromosomeAccession}",
+        "kind": "RETURNS",
+        "to": "schema:ReferenceSequence"
+      },
+      {
+        "from": "operation:get:/reference/snps/{snpAccession}",
+        "kind": "RETURNS",
+        "to": "schema:PublicSNP"
+      },
+      {
+        "from": "schema:AccessScope",
+        "kind": "REFERENCES",
+        "to": "schema:CustomerAddress"
+      },
+      {
+        "from": "schema:AccessScope",
+        "kind": "REFERENCES",
+        "to": "schema:CustomerName"
+      },
+      {
+        "from": "schema:Authorization",
+        "kind": "REFERENCES",
+        "to": "schema:AccessScope"
+      },
+      {
+        "from": "schema:Authorization",
+        "kind": "REFERENCES",
+        "to": "schema:ReportCredentials"
+      },
+      {
+        "from": "schema:Authorization",
+        "kind": "REFERENCES",
+        "to": "schema:ReportFile"
+      },
+      {
+        "from": "schema:ClientGene",
+        "kind": "REFERENCES",
+        "to": "schema:ClientSNP"
+      },
+      {
+        "from": "schema:ClientGene",
+        "kind": "REFERENCES",
+        "to": "schema:MolecularLocation"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:SnpsMinRequired"
+      },
+      {
+        "from": "schema:ReportFile",
+        "kind": "REFERENCES",
+        "to": "schema:FileLocation"
       }
     ],
     "nodes": [
@@ -97,29 +217,114 @@
       },
       {
         "deprecated": false,
+        "description": "## Note: * The JWT tokens returned should be passed to any resource that requires authentication, in the Authentication header, in the format `Bearer: your-tok…",
         "id": "operation:post:/auth/jwt",
         "kind": "operation",
         "method": "post",
         "name": "post_jwt_auth",
+        "parameters": [
+          {
+            "description": "The email for a Client, or the API for a partner product",
+            "in": "formData",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The passowrd for a Client, or the API key for a service",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The role for which authentication will be made.",
+            "in": "formData",
+            "name": "role",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/auth/jwt",
         "pointer": "#/paths/~1auth~1jwt/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JavascriptWebToken"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "General-purpose authentication"
+        "summary": "General-purpose authentication",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets A gene by its symbol, which can be found by querying the reference/ resource.",
         "id": "operation:get:/clients/{clientId}/datasets/{datasetId}/genes/{geneSymbol}",
         "kind": "operation",
         "method": "get",
         "name": "get_client_gene",
+        "parameters": [
+          {
+            "description": "The UUID of the client",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of one of the client's dataset",
+            "in": "path",
+            "name": "datasetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The symbol of a gene to be fetched",
+            "in": "path",
+            "name": "geneSymbol",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/clients/{clientId}/datasets/{datasetId}/genes/{geneSymbol}",
         "pointer": "#/paths/~1clients~1{clientId}~1datasets~1{datasetId}~1genes~1{geneSymbol}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClientGene"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get gene by symbol"
+        "summary": "Get gene by symbol",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -127,44 +332,168 @@
         "kind": "operation",
         "method": "get",
         "name": "get_client_snp_group",
+        "parameters": [
+          {
+            "description": "The UUID of the client",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of one of the client's dataset",
+            "in": "path",
+            "name": "datasetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/clients/{clientId}/datasets/{datasetId}/snps/",
         "pointer": "#/paths/~1clients~1{clientId}~1datasets~1{datasetId}~1snps~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClientSNP[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "SNPs that are not present in the dataset are ignored, 404 is returned only if the dataset/client does not exist",
         "id": "operation:post:/clients/{clientId}/datasets/{datasetId}/snps/",
         "kind": "operation",
         "method": "post",
         "name": "post_client_snp_group",
+        "parameters": [
+          {
+            "description": "The UUID of the client",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of one of the client's dataset",
+            "in": "path",
+            "name": "datasetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "JSON-encoded list of snps to be fetched",
+            "in": "formData",
+            "name": "snps",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/clients/{clientId}/datasets/{datasetId}/snps/",
         "pointer": "#/paths/~1clients~1{clientId}~1datasets~1{datasetId}~1snps~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClientSNP[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get a large group of SNPs"
+        "summary": "Get a large group of SNPs",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets SNP information, as provided by the dataset.",
         "id": "operation:get:/clients/{clientId}/datasets/{datasetId}/snps/{snpId}",
         "kind": "operation",
         "method": "get",
         "name": "get_client_snp",
+        "parameters": [
+          {
+            "description": "The UUID of the client",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of one of the client's dataset",
+            "in": "path",
+            "name": "datasetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The rsId of a SNP to be fetched",
+            "in": "path",
+            "name": "snpId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/clients/{clientId}/datasets/{datasetId}/snps/{snpId}",
         "pointer": "#/paths/~1clients~1{clientId}~1datasets~1{datasetId}~1snps~1{snpId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClientSNP"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get SNP information"
+        "summary": "Get SNP information",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -172,14 +501,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get_product",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/products/{productId}",
         "pointer": "#/paths/~1products~1{productId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Product"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Get product details"
+        "summary": "Get product details",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -187,14 +545,50 @@
         "kind": "operation",
         "method": "get",
         "name": "get_authorizations_queue",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The first sequence number from which to fetch (the sequence number of the last processed authorization)",
+            "in": "query",
+            "name": "seq_num_start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/products/{productId}/authorizations",
         "pointer": "#/paths/~1products~1{productId}~1authorizations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Authorization[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -202,14 +596,50 @@
         "kind": "operation",
         "method": "get",
         "name": "get_product_authorization",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the authorization",
+            "in": "path",
+            "name": "authorizationId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/products/{productId}/authorizations/{authorizationId}",
         "pointer": "#/paths/~1products~1{productId}~1authorizations~1{authorizationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Authorization"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -217,44 +647,187 @@
         "kind": "operation",
         "method": "post",
         "name": "post_product_authorization",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the authorization",
+            "in": "path",
+            "name": "authorizationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/products/{productId}/authorizations/{authorizationId}",
         "pointer": "#/paths/~1products~1{productId}~1authorizations~1{authorizationId}/post",
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Signal that processing is complete, without uploading any result"
+        "summary": "Signal that processing is complete, without uploading any result",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "These can be log-in credentials for a website where the result is available",
         "id": "operation:post:/products/{productId}/authorizations/{authorizationId}/credentials",
         "kind": "operation",
         "method": "post",
         "name": "post_authorization_result_credentials",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the authorization",
+            "in": "path",
+            "name": "authorizationId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Credentials for accessing the result.",
+            "in": "formData",
+            "name": "credentials_username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Credentials for accessing the result.",
+            "in": "formData",
+            "name": "credentials_password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Credentials for accessing the result.",
+            "in": "formData",
+            "name": "report_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/products/{productId}/authorizations/{authorizationId}/credentials",
         "pointer": "#/paths/~1products~1{productId}~1authorizations~1{authorizationId}~1credentials/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportCredentials"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Provide a result for the authorization"
+        "summary": "Provide a result for the authorization",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "g.",
         "id": "operation:post:/products/{productId}/authorizations/{authorizationId}/file",
         "kind": "operation",
         "method": "post",
         "name": "post_authorization_result_file",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the authorization",
+            "in": "path",
+            "name": "authorizationId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A binary file (e.g.",
+            "in": "formData",
+            "name": "file_report",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "description": "Optional original filename for the report.",
+            "in": "query",
+            "name": "original_filename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/products/{productId}/authorizations/{authorizationId}/file",
         "pointer": "#/paths/~1products~1{productId}~1authorizations~1{authorizationId}~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportFile"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Provide a file result to the authorization, e"
+        "summary": "Provide a file result to the authorization, e",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -262,14 +835,39 @@
         "kind": "operation",
         "method": "post",
         "name": "post_product_authorization_unfulfillable",
+        "parameters": [
+          {
+            "description": "The UUID of the product",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the authorization",
+            "in": "path",
+            "name": "authorizationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/products/{productId}/authorizations/{authorizationId}/unfulfillable",
         "pointer": "#/paths/~1products~1{productId}~1authorizations~1{authorizationId}~1unfulfillable/post",
+        "responses": [
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Catch-all Authorization state, for authorizations that passed all verifications and should reach the partner Product, but cannot be fulfilled for various reasons"
+        "summary": "Catch-all Authorization state, for authorizations that passed all verifications and should reach the partner Product, but cannot be fulfilled for various reasons",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -277,29 +875,101 @@
         "kind": "operation",
         "method": "get",
         "name": "get_gene",
+        "parameters": [
+          {
+            "description": "The name of the database to search.",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The accession within the selected database",
+            "in": "path",
+            "name": "accession",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 149,
+            "description": "The dbSNP build for which to consider snps belonging to the gene.",
+            "in": "query",
+            "name": "dbsnp_build",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "GRCH37P13",
+            "description": "The reference genome for which gene annotations will be returned.",
+            "in": "query",
+            "name": "reference_genome",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/reference/genes/databases/{databaseName}/accessions/{accession}",
         "pointer": "#/paths/~1reference~1genes~1databases~1{databaseName}~1accessions~1{accession}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicGene"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Generic gene information"
+        "summary": "Generic gene information",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists reference genome builds that are available",
         "id": "operation:get:/reference/genomes/",
         "kind": "operation",
         "method": "get",
         "name": "get_reference_genomes_group",
+        "parameters": [
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/reference/genomes/",
         "pointer": "#/paths/~1reference~1genomes~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReferenceGenomeOverview[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Reference genome builds"
+        "summary": "Reference genome builds",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
@@ -307,134 +977,277 @@
         "kind": "operation",
         "method": "get",
         "name": "get_reference_genome",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "genomeBuildAccession",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/reference/genomes/{genomeBuildAccession}/chromosomes",
         "pointer": "#/paths/~1reference~1genomes~1{genomeBuildAccession}~1chromosomes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReferenceChromosomeOverview[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Reference genome metadata"
+        "summary": "Reference genome metadata",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch a closed interval of nucleotides on a given chromosome.",
         "id": "operation:get:/reference/genomes/{genomeBuildAccession}/chromosomes/{chromosomeAccession}",
         "kind": "operation",
         "method": "get",
         "name": "get_reference_chromosome",
+        "parameters": [
+          {
+            "description": "The accession of the reference genome",
+            "in": "path",
+            "name": "genomeBuildAccession",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The accession to the chromosome",
+            "in": "path",
+            "name": "chromosomeAccession",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Location on the chromosome",
+            "in": "query",
+            "name": "range_start",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Location on the chromosome",
+            "in": "query",
+            "name": "range_stop",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/reference/genomes/{genomeBuildAccession}/chromosomes/{chromosomeAccession}",
         "pointer": "#/paths/~1reference~1genomes~1{genomeBuildAccession}~1chromosomes~1{chromosomeAccession}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReferenceSequence"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Sequence for a region of the reference genome"
+        "summary": "Sequence for a region of the reference genome",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get reference SNP information, from dbSNP",
         "id": "operation:get:/reference/snps/{snpAccession}",
         "kind": "operation",
         "method": "get",
         "name": "get_reference_snp",
+        "parameters": [
+          {
+            "description": "The rsId of the SNP",
+            "in": "path",
+            "name": "snpAccession",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 149,
+            "description": "The dbSNP build.",
+            "in": "query",
+            "name": "dbsnp_version",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "GRCH37P13",
+            "description": "The GRCh build on which to place snips.",
+            "in": "query",
+            "name": "grch_version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/reference/snps/{snpAccession}",
         "pointer": "#/paths/~1reference~1snps~1{snpAccession}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicSNP"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Reference SNP data"
+        "summary": "Reference SNP data",
+        "tags": [
+          "Lumminary API Spec"
+        ]
       },
       {
         "id": "schema:AccessScope",
         "kind": "schema",
-        "name": "AccessScope"
+        "name": "AccessScope",
+        "type": "object"
       },
       {
         "id": "schema:Authorization",
         "kind": "schema",
-        "name": "Authorization"
+        "name": "Authorization",
+        "type": "object"
       },
       {
         "id": "schema:ClientGene",
         "kind": "schema",
-        "name": "ClientGene"
+        "name": "ClientGene",
+        "type": "object"
       },
       {
         "id": "schema:ClientSNP",
         "kind": "schema",
-        "name": "ClientSNP"
+        "name": "ClientSNP",
+        "type": "object"
       },
       {
         "id": "schema:CustomerAddress",
         "kind": "schema",
-        "name": "CustomerAddress"
+        "name": "CustomerAddress",
+        "type": "object"
       },
       {
         "id": "schema:CustomerName",
         "kind": "schema",
-        "name": "CustomerName"
+        "name": "CustomerName",
+        "type": "object"
       },
       {
         "id": "schema:FileLocation",
         "kind": "schema",
-        "name": "FileLocation"
+        "name": "FileLocation",
+        "type": "object"
       },
       {
         "id": "schema:JavascriptWebToken",
         "kind": "schema",
-        "name": "JavascriptWebToken"
+        "name": "JavascriptWebToken",
+        "type": "object"
       },
       {
         "id": "schema:MolecularLocation",
         "kind": "schema",
-        "name": "MolecularLocation"
+        "name": "MolecularLocation",
+        "type": "object"
       },
       {
         "id": "schema:Product",
         "kind": "schema",
-        "name": "Product"
+        "name": "Product",
+        "type": "object"
       },
       {
         "id": "schema:PublicGene",
         "kind": "schema",
-        "name": "PublicGene"
+        "name": "PublicGene",
+        "type": "object"
       },
       {
         "id": "schema:PublicSNP",
         "kind": "schema",
-        "name": "PublicSNP"
+        "name": "PublicSNP",
+        "type": "object"
       },
       {
         "id": "schema:ReferenceChromosomeOverview",
         "kind": "schema",
-        "name": "ReferenceChromosomeOverview"
+        "name": "ReferenceChromosomeOverview",
+        "type": "object"
       },
       {
         "id": "schema:ReferenceGenomeOverview",
         "kind": "schema",
-        "name": "ReferenceGenomeOverview"
+        "name": "ReferenceGenomeOverview",
+        "type": "object"
       },
       {
         "id": "schema:ReferenceSequence",
         "kind": "schema",
-        "name": "ReferenceSequence"
+        "name": "ReferenceSequence",
+        "type": "object"
       },
       {
         "id": "schema:ReportCredentials",
         "kind": "schema",
-        "name": "ReportCredentials"
+        "name": "ReportCredentials",
+        "type": "object"
       },
       {
         "id": "schema:ReportFile",
         "kind": "schema",
-        "name": "ReportFile"
+        "name": "ReportFile",
+        "type": "object"
       },
       {
         "id": "schema:SnpsMinRequired",
         "kind": "schema",
-        "name": "SnpsMinRequired"
+        "name": "SnpsMinRequired",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_branding_logo_vertica
 
 | | |
 | --- | --- |
-| Signed bundle | `48f935da8ff53f4048b8454d4a0ded242c8c4d813ce0e47e03238c868c1eead4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_branding_logo_vertica
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/list.json` | listAPIs | List all APIs |
-| GET | `/metrics.json` | getMetrics | Get basic metrics |
-| GET | `/providers.json` | getProviders | List all providers |
-| GET | `/specs/{provider}/{api}.json` | getAPI | Retrieve one version of a particular API |
-| GET | `/specs/{provider}/{service}/{api}.json` | getServiceAPI | Retrieve one version of a particular API with a serviceName. |
-| GET | `/{provider}.json` | getProvider | List all APIs for a particular provider |
-| GET | `/{provider}/services.json` | getServices | List all serviceNames for a particular provider |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/list.json` | listAPIs | — | APIs | yes | List all APIs |
+| GET | `/metrics.json` | getMetrics | — | Metrics | yes | Get basic metrics |
+| GET | `/providers.json` | getProviders | — | object | yes | List all providers |
+| GET | `/specs/{provider}/{api}.json` | getAPI | `provider`*, `api`* | API | yes | Retrieve one version of a particular API |
+| GET | `/specs/{provider}/{service}/{api}.json` | getServiceAPI | `provider`*, `service`*, `api`* | API | yes | Retrieve one version of a particular API with a serviceName. |
+| GET | `/{provider}.json` | getProvider | `provider`* | APIs | yes | List all APIs for a particular provider |
+| GET | `/{provider}/services.json` | getServices | `provider`* | object | yes | List all serviceNames for a particular provider |

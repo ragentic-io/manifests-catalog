@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2a339f24e172b2f87ae5b7bb22f5e68769200e2d841d6a2076507648cf16d04a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,69 +34,71 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 47 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/admin/artifactTypes` | listArtifactTypes | List artifact types |
-| GET | `/admin/config/properties` | listConfigProperties | List all configuration properties |
-| DELETE | `/admin/config/properties/{propertyName}` | resetConfigProperty | Reset a configuration property |
-| GET | `/admin/config/properties/{propertyName}` | getConfigProperty | Get configuration property value |
-| PUT | `/admin/config/properties/{propertyName}` | updateConfigProperty | Update a configuration property |
-| GET | `/admin/export` | exportData | Export registry data |
-| POST | `/admin/import` | importData | Import registry data |
-| GET | `/admin/loggers` | listLogConfigurations | List logging configurations |
-| DELETE | `/admin/loggers/{logger}` | removeLogConfiguration | Removes logger configuration |
-| GET | `/admin/loggers/{logger}` | getLogConfiguration | Get a single logger configuration |
-| PUT | `/admin/loggers/{logger}` | setLogConfiguration | Set a logger's configuration |
-| GET | `/admin/roleMappings` | listRoleMappings | List all role mappings |
-| POST | `/admin/roleMappings` | createRoleMapping | Create a new role mapping |
-| DELETE | `/admin/roleMappings/{principalId}` | deleteRoleMapping | Delete a role mapping |
-| GET | `/admin/roleMappings/{principalId}` | getRoleMapping | Return a single role mapping |
-| PUT | `/admin/roleMappings/{principalId}` | updateRoleMapping | Update a role mapping |
-| DELETE | `/admin/rules` | deleteAllGlobalRules | Delete all global rules |
-| GET | `/admin/rules` | listGlobalRules | List global rules |
-| POST | `/admin/rules` | createGlobalRule | Create global rule |
-| DELETE | `/admin/rules/{rule}` | deleteGlobalRule | Delete global rule |
-| GET | `/admin/rules/{rule}` | getGlobalRuleConfig | Get global rule configuration |
-| PUT | `/admin/rules/{rule}` | updateGlobalRuleConfig | Update global rule configuration |
-| GET | `/groups` | listGroups | List groups |
-| POST | `/groups` | createGroup | Create a new group |
-| DELETE | `/groups/{groupId}` | deleteGroupById | Delete a group by the specified ID. |
-| GET | `/groups/{groupId}` | getGroupById | Get a group by the specified ID. |
-| DELETE | `/groups/{groupId}/artifacts` | deleteArtifactsInGroup | Delete artifacts in group |
-| GET | `/groups/{groupId}/artifacts` | listArtifactsInGroup | List artifacts in group |
-| POST | `/groups/{groupId}/artifacts` | createArtifact | Create artifact |
-| DELETE | `/groups/{groupId}/artifacts/{artifactId}` | deleteArtifact | Delete artifact |
-| GET | `/groups/{groupId}/artifacts/{artifactId}` | getLatestArtifact | Get latest artifact |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}` | updateArtifact | Update artifact |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/meta` | getArtifactMetaData | Get artifact metadata |
-| POST | `/groups/{groupId}/artifacts/{artifactId}/meta` | getArtifactVersionMetaDataByContent | Get artifact version metadata by content |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/meta` | updateArtifactMetaData | Update artifact metadata |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/owner` | getArtifactOwner | Get artifact owner |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/owner` | updateArtifactOwner | Update artifact owner |
-| DELETE | `/groups/{groupId}/artifacts/{artifactId}/rules` | deleteArtifactRules | Delete artifact rules |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/rules` | listArtifactRules | List artifact rules |
-| POST | `/groups/{groupId}/artifacts/{artifactId}/rules` | createArtifactRule | Create artifact rule |
-| DELETE | `/groups/{groupId}/artifacts/{artifactId}/rules/{rule}` | deleteArtifactRule | Delete artifact rule |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/rules/{rule}` | getArtifactRuleConfig | Get artifact rule configuration |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/rules/{rule}` | updateArtifactRuleConfig | Update artifact rule configuration |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/state` | updateArtifactState | Update artifact state |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/test` | testUpdateArtifact | Test update artifact |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/versions` | listArtifactVersions | List artifact versions |
-| POST | `/groups/{groupId}/artifacts/{artifactId}/versions` | createArtifactVersion | Create artifact version |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}` | getArtifactVersion | Get artifact version |
-| DELETE | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta` | deleteArtifactVersionMetaData | Delete artifact version metadata |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta` | getArtifactVersionMetaData | Get artifact version metadata |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta` | updateArtifactVersionMetaData | Update artifact version metadata |
-| GET | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/references` | getArtifactVersionReferences | Get artifact version |
-| PUT | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/state` | updateArtifactVersionState | Update artifact version state |
-| GET | `/ids/contentHashes/{contentHash}/` | getContentByHash | Get artifact content by SHA-256 hash |
-| GET | `/ids/contentHashes/{contentHash}/references` | referencesByContentHash | List artifact references by hash |
-| GET | `/ids/contentIds/{contentId}/` | getContentById | Get artifact content by ID |
-| GET | `/ids/contentIds/{contentId}/references` | referencesByContentId | List artifact references by content ID |
-| GET | `/ids/globalIds/{globalId}` | getContentByGlobalId | Get artifact by global ID |
-| GET | `/ids/globalIds/{globalId}/references` | referencesByGlobalId | List artifact references by global ID |
-| GET | `/search/artifacts` | searchArtifacts | Search for artifacts |
-| POST | `/search/artifacts` | searchArtifactsByContent | Search for artifacts by content |
-| GET | `/system/info` | getSystemInfo | Get system information |
-| GET | `/system/limits` | getResourceLimits | Get resource limits information |
-| GET | `/users/me` | getCurrentUserInfo | Get current user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/admin/artifactTypes` | listArtifactTypes | — | ArtifactTypeInfo[] | yes | List artifact types |
+| GET | `/admin/config/properties` | listConfigProperties | — | ConfigurationProperty[] | yes | List all configuration properties |
+| GET | `/admin/config/properties/{propertyName}` | getConfigProperty | `propertyName`* | ConfigurationProperty | yes | Get configuration property value |
+| PUT | `/admin/config/properties/{propertyName}` | updateConfigProperty | `propertyName`*, body*: UpdateConfigurationProperty | — |  | Update a configuration property |
+| DELETE | `/admin/config/properties/{propertyName}` | resetConfigProperty | `propertyName`* | — |  | Reset a configuration property |
+| GET | `/admin/export` | exportData | `forBrowser` | DownloadRef | yes | Export registry data |
+| POST | `/admin/import` | importData | `X-Registry-Preserve-GlobalId`, `X-Registry-Preserve-ContentId`, body*: FileContent | — |  | Import registry data |
+| GET | `/admin/loggers` | listLogConfigurations | — | NamedLogConfiguration[] | yes | List logging configurations |
+| GET | `/admin/loggers/{logger}` | getLogConfiguration | `logger`* | NamedLogConfiguration | yes | Get a single logger configuration |
+| PUT | `/admin/loggers/{logger}` | setLogConfiguration | `logger`*, body*: LogConfiguration | NamedLogConfiguration |  | Set a logger's configuration |
+| DELETE | `/admin/loggers/{logger}` | removeLogConfiguration | `logger`* | NamedLogConfiguration |  | Removes logger configuration |
+| GET | `/admin/roleMappings` | listRoleMappings | — | RoleMapping[] | yes | List all role mappings |
+| POST | `/admin/roleMappings` | createRoleMapping | body*: RoleMapping | — |  | Create a new role mapping |
+| GET | `/admin/roleMappings/{principalId}` | getRoleMapping | `principalId`* | RoleMapping | yes | Return a single role mapping |
+| PUT | `/admin/roleMappings/{principalId}` | updateRoleMapping | `principalId`*, body*: UpdateRole | — |  | Update a role mapping |
+| DELETE | `/admin/roleMappings/{principalId}` | deleteRoleMapping | `principalId`* | — |  | Delete a role mapping |
+| GET | `/admin/rules` | listGlobalRules | — | RuleType[] | yes | List global rules |
+| POST | `/admin/rules` | createGlobalRule | body*: Rule | — |  | Create global rule |
+| DELETE | `/admin/rules` | deleteAllGlobalRules | — | — |  | Delete all global rules |
+| GET | `/admin/rules/{rule}` | getGlobalRuleConfig | `rule`* | Rule | yes | Get global rule configuration |
+| PUT | `/admin/rules/{rule}` | updateGlobalRuleConfig | `rule`*, body*: Rule | Rule |  | Update global rule configuration |
+| DELETE | `/admin/rules/{rule}` | deleteGlobalRule | `rule`* | — |  | Delete global rule |
+| GET | `/groups` | listGroups | `limit`, `offset`, `order`, `orderby` | GroupSearchResults | yes | List groups |
+| POST | `/groups` | createGroup | body*: CreateGroupMetaData | GroupMetaData |  | Create a new group |
+| GET | `/groups/{groupId}` | getGroupById | `groupId`* | GroupMetaData | yes | Get a group by the specified ID. |
+| DELETE | `/groups/{groupId}` | deleteGroupById | `groupId`* | — |  | Delete a group by the specified ID. |
+| GET | `/groups/{groupId}/artifacts` | listArtifactsInGroup | `groupId`*, `limit`, `offset`, `order`, `orderby` | ArtifactSearchResults | yes | List artifacts in group |
+| POST | `/groups/{groupId}/artifacts` | createArtifact | `groupId`*, `X-Registry-ArtifactType`, `X-Registry-ArtifactId`, `X-Registry-Version`, `ifExists`, `canonical`, `X-Registry-Description`, `X-Registry-Description-Encoded`, `X-Registry-Name`, `X-Registry-Name-Encoded`, `X-Registry-Content-Hash`, `X-Registry-Hash-Algorithm`, body*: ContentCreateRequest | ArtifactMetaData |  | Create artifact |
+| DELETE | `/groups/{groupId}/artifacts` | deleteArtifactsInGroup | `groupId`* | — |  | Delete artifacts in group |
+| GET | `/groups/{groupId}/artifacts/{artifactId}` | getLatestArtifact | `groupId`*, `artifactId`*, `dereference` | FileContent | yes | Get latest artifact |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}` | updateArtifact | `groupId`*, `artifactId`*, `X-Registry-Version`, `X-Registry-Name`, `X-Registry-Name-Encoded`, `X-Registry-Description`, `X-Registry-Description-Encoded`, body*: ContentCreateRequest | ArtifactMetaData |  | Update artifact |
+| DELETE | `/groups/{groupId}/artifacts/{artifactId}` | deleteArtifact | `groupId`*, `artifactId`* | — |  | Delete artifact |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/meta` | getArtifactMetaData | `groupId`*, `artifactId`* | ArtifactMetaData | yes | Get artifact metadata |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/meta` | updateArtifactMetaData | `groupId`*, `artifactId`*, body*: EditableMetaData | — |  | Update artifact metadata |
+| POST | `/groups/{groupId}/artifacts/{artifactId}/meta` | getArtifactVersionMetaDataByContent | `groupId`*, `artifactId`*, `canonical`, body*: FileContent | VersionMetaData |  | Get artifact version metadata by content |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/owner` | getArtifactOwner | `groupId`*, `artifactId`* | ArtifactOwner | yes | Get artifact owner |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/owner` | updateArtifactOwner | `groupId`*, `artifactId`*, body*: ArtifactOwner | — |  | Update artifact owner |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/rules` | listArtifactRules | `groupId`*, `artifactId`* | RuleType[] | yes | List artifact rules |
+| POST | `/groups/{groupId}/artifacts/{artifactId}/rules` | createArtifactRule | `groupId`*, `artifactId`*, body*: Rule | — |  | Create artifact rule |
+| DELETE | `/groups/{groupId}/artifacts/{artifactId}/rules` | deleteArtifactRules | `groupId`*, `artifactId`* | — |  | Delete artifact rules |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/rules/{rule}` | getArtifactRuleConfig | `groupId`*, `artifactId`*, `rule`* | Rule | yes | Get artifact rule configuration |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/rules/{rule}` | updateArtifactRuleConfig | `groupId`*, `artifactId`*, `rule`*, body*: Rule | Rule |  | Update artifact rule configuration |
+| DELETE | `/groups/{groupId}/artifacts/{artifactId}/rules/{rule}` | deleteArtifactRule | `groupId`*, `artifactId`*, `rule`* | — |  | Delete artifact rule |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/state` | updateArtifactState | `groupId`*, `artifactId`*, body*: UpdateState | — |  | Update artifact state |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/test` | testUpdateArtifact | `groupId`*, `artifactId`*, body*: FileContent | — |  | Test update artifact |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/versions` | listArtifactVersions | `groupId`*, `artifactId`*, `offset`, `limit` | VersionSearchResults | yes | List artifact versions |
+| POST | `/groups/{groupId}/artifacts/{artifactId}/versions` | createArtifactVersion | `groupId`*, `artifactId`*, `X-Registry-Version`, `X-Registry-Name`, `X-Registry-Description`, `X-Registry-Description-Encoded`, `X-Registry-Name-Encoded`, body*: ContentCreateRequest | VersionMetaData |  | Create artifact version |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}` | getArtifactVersion | `groupId`*, `artifactId`*, `version`*, `dereference` | FileContent | yes | Get artifact version |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta` | getArtifactVersionMetaData | `groupId`*, `artifactId`*, `version`* | VersionMetaData | yes | Get artifact version metadata |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta` | updateArtifactVersionMetaData | `groupId`*, `artifactId`*, `version`*, body*: EditableMetaData | — |  | Update artifact version metadata |
+| DELETE | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta` | deleteArtifactVersionMetaData | `groupId`*, `artifactId`*, `version`* | — |  | Delete artifact version metadata |
+| GET | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/references` | getArtifactVersionReferences | `groupId`*, `artifactId`*, `version`* | ArtifactReference[] | yes | Get artifact version |
+| PUT | `/groups/{groupId}/artifacts/{artifactId}/versions/{version}/state` | updateArtifactVersionState | `groupId`*, `artifactId`*, `version`*, body*: UpdateState | — |  | Update artifact version state |
+| GET | `/ids/contentHashes/{contentHash}/` | getContentByHash | `contentHash`* | FileContent | yes | Get artifact content by SHA-256 hash |
+| GET | `/ids/contentHashes/{contentHash}/references` | referencesByContentHash | `contentHash`* | ArtifactReference[] | yes | List artifact references by hash |
+| GET | `/ids/contentIds/{contentId}/` | getContentById | `contentId`* | FileContent | yes | Get artifact content by ID |
+| GET | `/ids/contentIds/{contentId}/references` | referencesByContentId | `contentId`* | ArtifactReference[] | yes | List artifact references by content ID |
+| GET | `/ids/globalIds/{globalId}` | getContentByGlobalId | `globalId`*, `dereference` | FileContent | yes | Get artifact by global ID |
+| GET | `/ids/globalIds/{globalId}/references` | referencesByGlobalId | `globalId`* | ArtifactReference[] | yes | List artifact references by global ID |
+| GET | `/search/artifacts` | searchArtifacts | `name`, `offset`, `limit`, `order`, `orderby`, `labels`, `properties`, `description`, `group`, `globalId`, `contentId` | ArtifactSearchResults | yes | Search for artifacts |
+| POST | `/search/artifacts` | searchArtifactsByContent | `canonical`, `artifactType`, `offset`, `limit`, `order`, `orderby`, body*: FileContent | ArtifactSearchResults |  | Search for artifacts by content |
+| GET | `/system/info` | getSystemInfo | — | SystemInfo | yes | Get system information |
+| GET | `/system/limits` | getResourceLimits | — | Limits | yes | Get resource limits information |
+| GET | `/users/me` | getCurrentUserInfo | — | UserInfo | yes | Get current user |

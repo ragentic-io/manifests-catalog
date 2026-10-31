@@ -18,6 +18,21 @@
         "from": "ibanapi-com-93066a4fb5",
         "kind": "EXPOSES",
         "to": "operation:get:/validate-basic"
+      },
+      {
+        "from": "operation:get:/balance",
+        "kind": "RETURNS",
+        "to": "schema:BalanceResponse"
+      },
+      {
+        "from": "operation:get:/validate",
+        "kind": "RETURNS",
+        "to": "schema:IBANResult"
+      },
+      {
+        "from": "operation:get:/validate-basic",
+        "kind": "RETURNS",
+        "to": "schema:IBANResultBasic"
       }
     ],
     "nodes": [
@@ -27,83 +42,189 @@
       },
       {
         "deprecated": false,
+        "description": "Returns the account balance and expiry",
         "id": "operation:get:/balance",
         "kind": "operation",
         "method": "get",
         "name": "getBalance",
         "path": "/balance",
         "pointer": "#/paths/~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BalanceResponse"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "401",
+            "type": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "422",
+            "type": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key_security": []
           }
         ],
-        "summary": "Get Account Balance"
+        "summary": "Get Account Balance",
+        "tags": [
+          "IBANAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the validation results",
         "id": "operation:get:/validate",
         "kind": "operation",
         "method": "get",
         "name": "validateIBAN",
+        "parameters": [
+          {
+            "description": "The IBAN",
+            "in": "query",
+            "name": "iban",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/validate",
         "pointer": "#/paths/~1validate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IBANResult"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "401",
+            "type": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "422",
+            "type": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key_security": []
           }
         ],
-        "summary": "Validate IBAN"
+        "summary": "Validate IBAN",
+        "tags": [
+          "IBANAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the basic validation results",
         "id": "operation:get:/validate-basic",
         "kind": "operation",
         "method": "get",
         "name": "validateIBANBasic",
+        "parameters": [
+          {
+            "description": "The IBAN",
+            "in": "query",
+            "name": "iban",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/validate-basic",
         "pointer": "#/paths/~1validate-basic/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IBANResultBasic"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "401",
+            "type": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "422",
+            "type": "422"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key_security": []
           }
         ],
-        "summary": "Validate IBAN Basic"
+        "summary": "Validate IBAN Basic",
+        "tags": [
+          "IBANAPI"
+        ]
       },
       {
         "id": "schema:400",
         "kind": "schema",
-        "name": "400"
+        "name": "400",
+        "type": "object"
       },
       {
         "id": "schema:401",
         "kind": "schema",
-        "name": "401"
+        "name": "401",
+        "type": "object"
       },
       {
         "id": "schema:403",
         "kind": "schema",
-        "name": "403"
+        "name": "403",
+        "type": "object"
       },
       {
         "id": "schema:422",
         "kind": "schema",
-        "name": "422"
+        "name": "422",
+        "type": "object"
       },
       {
         "id": "schema:BalanceResponse",
         "kind": "schema",
-        "name": "BalanceResponse"
+        "name": "BalanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:IBANResult",
         "kind": "schema",
-        "name": "IBANResult"
+        "name": "IBANResult",
+        "type": "object"
       },
       {
         "id": "schema:IBANResultBasic",
         "kind": "schema",
-        "name": "IBANResultBasic"
+        "name": "IBANResultBasic",
+        "type": "object"
       }
     ]
   },

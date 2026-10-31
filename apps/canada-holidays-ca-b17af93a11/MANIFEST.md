@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload.wikimedia.org_wikipedia_
 
 | | |
 | --- | --- |
-| Signed bundle | `20e810a3941c79b6517a4a6af029d4186def93492c59db59ac1b7cbfc0171607` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload.wikimedia.org_wikipedia_
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1` | Root | root |
-| GET | `/api/v1/holidays` | Holidays | Get all holidays |
-| GET | `/api/v1/holidays/{holidayId}` | Holiday | Get a holiday by id |
-| GET | `/api/v1/provinces` | Provinces | Get all provinces |
-| GET | `/api/v1/provinces/{provinceId}` | Province | Get a province or territory by abbreviation |
-| GET | `/api/v1/spec` | Spec | Get JSON schema |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1` | Root | — | object | yes | root |
+| GET | `/api/v1/holidays` | Holidays | `year`, `federal`, `optional` | object | yes | Get all holidays |
+| GET | `/api/v1/holidays/{holidayId}` | Holiday | `holidayId`*, `year`, `optional` | object | yes | Get a holiday by id |
+| GET | `/api/v1/provinces` | Provinces | `year`, `optional` | object | yes | Get all provinces |
+| GET | `/api/v1/provinces/{provinceId}` | Province | `provinceId`*, `year`, `optional` | object | yes | Get a province or territory by abbreviation |
+| GET | `/api/v1/spec` | Spec | — | — | yes | Get JSON schema |

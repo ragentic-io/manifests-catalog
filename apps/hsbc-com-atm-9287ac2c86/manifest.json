@@ -28,6 +28,41 @@
         "from": "hsbc-com-atm-9287ac2c86",
         "kind": "EXPOSES",
         "to": "operation:get:/x-open-banking/v2.2/atms/postcode/{postcode}"
+      },
+      {
+        "from": "operation:get:/open-banking/v2.2/atms",
+        "kind": "RETURNS",
+        "to": "schema:ATMDefinitionMeta"
+      },
+      {
+        "from": "operation:get:/x-open-banking/v2.2/atms/country/{country}",
+        "kind": "RETURNS",
+        "to": "schema:ATMDefinitionMeta"
+      },
+      {
+        "from": "operation:get:/x-open-banking/v2.2/atms/country/{country}/town/{town}",
+        "kind": "RETURNS",
+        "to": "schema:ATMDefinitionMeta"
+      },
+      {
+        "from": "operation:get:/x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude}",
+        "kind": "RETURNS",
+        "to": "schema:ATMDefinitionMeta"
+      },
+      {
+        "from": "operation:get:/x-open-banking/v2.2/atms/postcode/{postcode}",
+        "kind": "RETURNS",
+        "to": "schema:ATMDefinitionMeta"
+      },
+      {
+        "from": "schema:ATMDefinitionMeta",
+        "kind": "REFERENCES",
+        "to": "schema:ATMDefinition"
+      },
+      {
+        "from": "schema:ATMDefinitionMeta",
+        "kind": "REFERENCES",
+        "to": "schema:MetaDefinition"
       }
     ],
     "nodes": [
@@ -37,98 +72,319 @@
       },
       {
         "deprecated": false,
+        "description": "This API will return data about all our ATMs and is prepared to the Open Banking standards as defined by the Open Banking Implementation Entity (OBIE) in data…",
         "id": "operation:get:/open-banking/v2.2/atms",
         "kind": "operation",
         "method": "get",
         "name": "get /open-banking/v2.2/atms",
         "path": "/open-banking/v2.2/atms",
         "pointer": "#/paths/~1open-banking~1v2.2~1atms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ATMDefinitionMeta"
+          },
+          {
+            "status": "400",
+            "type": "ErrorDefinition400"
+          },
+          {
+            "status": "408",
+            "type": "ErrorDefinition408"
+          },
+          {
+            "status": "429",
+            "type": "ErrorDefinition429"
+          },
+          {
+            "status": "500",
+            "type": "ErrorDefinition500"
+          },
+          {
+            "status": "503",
+            "type": "ErrorDefinition503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ATMs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This extended API will return data about all ATMs in the specified country.",
         "id": "operation:get:/x-open-banking/v2.2/atms/country/{country}",
         "kind": "operation",
         "method": "get",
         "name": "get /x-open-banking/v2.2/atms/country/{country}",
+        "parameters": [
+          {
+            "description": "The ISO country code e.g.",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/x-open-banking/v2.2/atms/country/{country}",
         "pointer": "#/paths/~1x-open-banking~1v2.2~1atms~1country~1{country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ATMDefinitionMeta"
+          },
+          {
+            "status": "400",
+            "type": "ErrorDefinition400"
+          },
+          {
+            "status": "408",
+            "type": "ErrorDefinition408"
+          },
+          {
+            "status": "429",
+            "type": "ErrorDefinition429"
+          },
+          {
+            "status": "500",
+            "type": "ErrorDefinition500"
+          },
+          {
+            "status": "503",
+            "type": "ErrorDefinition503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ATMs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This extended API will return data about all ATMs in the specified town.",
         "id": "operation:get:/x-open-banking/v2.2/atms/country/{country}/town/{town}",
         "kind": "operation",
         "method": "get",
         "name": "get /x-open-banking/v2.2/atms/country/{country}/town/{town}",
+        "parameters": [
+          {
+            "description": "The ISO country code e.g.",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Town name, not case sensitive",
+            "in": "path",
+            "name": "town",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/x-open-banking/v2.2/atms/country/{country}/town/{town}",
         "pointer": "#/paths/~1x-open-banking~1v2.2~1atms~1country~1{country}~1town~1{town}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ATMDefinitionMeta"
+          },
+          {
+            "status": "400",
+            "type": "ErrorDefinition400"
+          },
+          {
+            "status": "408",
+            "type": "ErrorDefinition408"
+          },
+          {
+            "status": "429",
+            "type": "ErrorDefinition429"
+          },
+          {
+            "status": "500",
+            "type": "ErrorDefinition500"
+          },
+          {
+            "status": "503",
+            "type": "ErrorDefinition503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ATMs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This extended API will data about all ATMs within a specified radius (1 to 10 miles) of the specified latitude and longitude.",
         "id": "operation:get:/x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude}",
         "kind": "operation",
         "method": "get",
         "name": "get /x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude}",
+        "parameters": [
+          {
+            "description": "Positive or negative decimal value in degrees.",
+            "in": "path",
+            "name": "latitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Positive or negative decimal value in degrees.",
+            "in": "path",
+            "name": "longitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of miles (1 to 10) as an integer.",
+            "in": "query",
+            "name": "radius",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/x-open-banking/v2.2/atms/geo-location/lat/{latitude}/long/{longitude}",
         "pointer": "#/paths/~1x-open-banking~1v2.2~1atms~1geo-location~1lat~1{latitude}~1long~1{longitude}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ATMDefinitionMeta"
+          },
+          {
+            "status": "400",
+            "type": "ErrorDefinition400"
+          },
+          {
+            "status": "408",
+            "type": "ErrorDefinition408"
+          },
+          {
+            "status": "429",
+            "type": "ErrorDefinition429"
+          },
+          {
+            "status": "500",
+            "type": "ErrorDefinition500"
+          },
+          {
+            "status": "503",
+            "type": "ErrorDefinition503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ATMs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This extended API will return data about all ATMs within a 5 mile radius of the specified postcode.",
         "id": "operation:get:/x-open-banking/v2.2/atms/postcode/{postcode}",
         "kind": "operation",
         "method": "get",
         "name": "get /x-open-banking/v2.2/atms/postcode/{postcode}",
+        "parameters": [
+          {
+            "description": "Letters and numerals only.",
+            "in": "path",
+            "name": "postcode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/x-open-banking/v2.2/atms/postcode/{postcode}",
         "pointer": "#/paths/~1x-open-banking~1v2.2~1atms~1postcode~1{postcode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ATMDefinitionMeta"
+          },
+          {
+            "status": "400",
+            "type": "ErrorDefinition400"
+          },
+          {
+            "status": "408",
+            "type": "ErrorDefinition408"
+          },
+          {
+            "status": "429",
+            "type": "ErrorDefinition429"
+          },
+          {
+            "status": "500",
+            "type": "ErrorDefinition500"
+          },
+          {
+            "status": "503",
+            "type": "ErrorDefinition503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ATMs"
+        ]
       },
       {
+        "description": "Environment of the ATM.",
         "id": "schema:ATMDefinition",
         "kind": "schema",
-        "name": "ATMDefinition"
+        "name": "ATMDefinition",
+        "type": "object"
       },
       {
         "id": "schema:ATMDefinitionMeta",
         "kind": "schema",
-        "name": "ATMDefinitionMeta"
+        "name": "ATMDefinitionMeta",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDefinition400",
         "kind": "schema",
-        "name": "ErrorDefinition400"
+        "name": "ErrorDefinition400",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDefinition408",
         "kind": "schema",
-        "name": "ErrorDefinition408"
+        "name": "ErrorDefinition408",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDefinition429",
         "kind": "schema",
-        "name": "ErrorDefinition429"
+        "name": "ErrorDefinition429",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDefinition500",
         "kind": "schema",
-        "name": "ErrorDefinition500"
+        "name": "ErrorDefinition500",
+        "type": "object"
       },
       {
         "id": "schema:ErrorDefinition503",
         "kind": "schema",
-        "name": "ErrorDefinition503"
+        "name": "ErrorDefinition503",
+        "type": "object"
       },
       {
         "id": "schema:MetaDefinition",
         "kind": "schema",
-        "name": "MetaDefinition"
+        "name": "MetaDefinition",
+        "type": "object"
       }
     ]
   },

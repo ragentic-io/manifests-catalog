@@ -18,6 +18,21 @@
         "from": "asuarez-dev-searchly-d1e368a75f",
         "kind": "EXPOSES",
         "to": "operation:get:/song/search"
+      },
+      {
+        "from": "operation:post:/similarity/by_content",
+        "kind": "RETURNS",
+        "to": "schema:APIResponseSimilarity"
+      },
+      {
+        "from": "operation:get:/similarity/by_song",
+        "kind": "RETURNS",
+        "to": "schema:APIResponseSimilarity"
+      },
+      {
+        "from": "operation:get:/song/search",
+        "kind": "RETURNS",
+        "to": "schema:APIResponseSong"
       }
     ],
     "nodes": [
@@ -27,46 +42,118 @@
       },
       {
         "deprecated": false,
+        "description": "Endpoint for an end-user client to search similarity by content.",
         "id": "operation:post:/similarity/by_content",
         "kind": "operation",
         "method": "post",
         "name": "src.searchly.api.v1.controllers.similarity.by_content",
         "path": "/similarity/by_content",
         "pointer": "#/paths/~1similarity~1by_content/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIResponseSimilarity"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "API endpoint to search similarity using content"
+        "summary": "API endpoint to search similarity using content",
+        "tags": [
+          "similarity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint for an end-user client to search similarity by song identifier.",
         "id": "operation:get:/similarity/by_song",
         "kind": "operation",
         "method": "get",
         "name": "src.searchly.api.v1.controllers.similarity.by_song",
+        "parameters": [
+          {
+            "description": "Song identifier.",
+            "in": "query",
+            "name": "song_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/similarity/by_song",
         "pointer": "#/paths/~1similarity~1by_song/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIResponseSimilarity"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "API endpoint to search similarity using a song identifier"
+        "summary": "API endpoint to search similarity using a song identifier",
+        "tags": [
+          "similarity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint for an end-user client to search songs from the database given a String query.",
         "id": "operation:get:/song/search",
         "kind": "operation",
         "method": "get",
         "name": "src.searchly.api.v1.controllers.song.search",
+        "parameters": [
+          {
+            "description": "Query.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/song/search",
         "pointer": "#/paths/~1song~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIResponseSong"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "API endpoint to search songs from the database given a query"
+        "summary": "API endpoint to search songs from the database given a query",
+        "tags": [
+          "song"
+        ]
       },
       {
         "id": "schema:APIResponseSimilarity",
         "kind": "schema",
-        "name": "APIResponseSimilarity"
+        "name": "APIResponseSimilarity",
+        "type": "object"
       },
       {
         "id": "schema:APIResponseSong",
         "kind": "schema",
-        "name": "APIResponseSong"
+        "name": "APIResponseSong",
+        "type": "object"
       }
     ]
   },

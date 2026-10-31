@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `a612062d05a48ae78ac9f08c67634d9628d6e0a9fc20f1bcbd81e5265f6e7f85` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,121 +34,123 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 331 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/app` | GetApp | Get App Settings |
-| PATCH | `/app` | UpdateApp | Update App Settings |
-| GET | `/blocklists` | ListBlockLists | List block lists |
-| POST | `/blocklists` | CreateBlockList | Create block list |
-| DELETE | `/blocklists/{name}` | DeleteBlockList | Delete block list |
-| GET | `/blocklists/{name}` | GetBlockList | Get block list |
-| PUT | `/blocklists/{name}` | UpdateBlockList | Update block list |
-| POST | `/calls/` | GetCallToken__1 | Get Call Token () |
-| POST | `/calls/{call_id}` | GetCallToken_call_id_0 | Get Call Token (call_id) |
-| GET | `/campaigns` | QueryCampaigns | Query campaigns |
-| POST | `/campaigns` | CreateCampaign | Create campaign |
-| DELETE | `/campaigns/{id}` | DeleteCampaign | Delete campaign |
-| PUT | `/campaigns/{id}` | UpdateCampaign | Update campaign |
-| PATCH | `/campaigns/{id}/resume` | ResumeCampaign | Resume campaign |
-| PATCH | `/campaigns/{id}/schedule` | ScheduleCampaign | Schedule campaign |
-| PATCH | `/campaigns/{id}/stop` | StopCampaign | Stop campaign |
-| POST | `/campaigns/{id}/test` | TestCampaign | Test campaign |
-| POST | `/channels` | QueryChannels | Query channels |
-| POST | `/channels/delete` | DeleteChannels | Deletes channels asynchronously |
-| POST | `/channels/read` | MarkChannelsRead | Mark channels as read |
-| POST | `/channels/{type}/query` | GetOrCreateChannel_type_1 | Get or create channel (type) |
-| DELETE | `/channels/{type}/{id}` | DeleteChannel | Delete channel |
-| PATCH | `/channels/{type}/{id}` | UpdateChannelPartial | Partially update channel |
-| POST | `/channels/{type}/{id}` | UpdateChannel | Update channel |
-| POST | `/channels/{type}/{id}/call` | CreateCall | Create a call |
-| POST | `/channels/{type}/{id}/event` | SendEvent | Send event |
-| DELETE | `/channels/{type}/{id}/file` | DeleteFile | Delete file |
-| POST | `/channels/{type}/{id}/file` | UploadFile | Upload file |
-| POST | `/channels/{type}/{id}/hide` | HideChannel | Hide channel |
-| DELETE | `/channels/{type}/{id}/image` | DeleteImage | Delete image |
-| POST | `/channels/{type}/{id}/image` | UploadImage | Upload image |
-| POST | `/channels/{type}/{id}/message` | SendMessage | Send new message |
-| GET | `/channels/{type}/{id}/messages` | GetManyMessages | Get many messages |
-| POST | `/channels/{type}/{id}/query` | GetOrCreateChannel_type_id_0 | Get or create channel (type, id) |
-| POST | `/channels/{type}/{id}/read` | MarkRead | Mark read |
-| POST | `/channels/{type}/{id}/show` | ShowChannel | Show channel |
-| POST | `/channels/{type}/{id}/stop-watching` | StopWatchingChannel | Stop watching channel |
-| POST | `/channels/{type}/{id}/truncate` | TruncateChannel | Truncate channel |
-| POST | `/channels/{type}/{id}/unread` | MarkUnread | Mark unread |
-| GET | `/channeltypes` | ListChannelTypes | List channel types |
-| POST | `/channeltypes` | CreateChannelType | Create channel type |
-| DELETE | `/channeltypes/{name}` | DeleteChannelType | Delete channel type |
-| GET | `/channeltypes/{name}` | GetChannelType | Get channel type |
-| PUT | `/channeltypes/{name}` | UpdateChannelType | Update channel type |
-| POST | `/check_push` | CheckPush | Check push |
-| POST | `/check_sqs` | CheckSQS | Check SQS |
-| GET | `/commands` | ListCommands | List commands |
-| POST | `/commands` | CreateCommand | Create command |
-| DELETE | `/commands/{name}` | DeleteCommand | Delete command |
-| GET | `/commands/{name}` | GetCommand | Get command |
-| PUT | `/commands/{name}` | UpdateCommand | Update command |
-| GET | `/connect` | Connect | Connect (WebSocket) |
-| DELETE | `/devices` | DeleteDevice | Delete device |
-| GET | `/devices` | ListDevices | List devices |
-| POST | `/devices` | CreateDevice | Create device |
-| POST | `/export/users` | ExportUser | Export users |
-| POST | `/export_channels` | ExportChannels | Export channels |
-| GET | `/export_channels/{id}` | GetExportChannelsStatus | Export channels status |
-| POST | `/guest` | CreateGuest | Create guest |
-| POST | `/import_urls` | CreateImportURL | Create import URL |
-| GET | `/imports` | ListImports | Get import |
-| POST | `/imports` | CreateImport | Create import |
-| GET | `/imports/{id}` | GetImport | Get import |
-| GET | `/longpoll` | LongPoll | Long Poll (Transport) |
-| GET | `/members` | QueryMembers | Query members |
-| DELETE | `/messages/{id}` | DeleteMessage | Delete message |
-| GET | `/messages/{id}` | GetMessage | Get message |
-| POST | `/messages/{id}` | UpdateMessage | Update message |
-| PUT | `/messages/{id}` | UpdateMessagePartial | Partially message update |
-| POST | `/messages/{id}/action` | RunMessageAction | Run message command action |
-| POST | `/messages/{id}/commit` | CommitMessage | Commit message |
-| POST | `/messages/{id}/reaction` | SendReaction | Send reaction |
-| DELETE | `/messages/{id}/reaction/{type}` | DeleteReaction | Delete reaction |
-| GET | `/messages/{id}/reactions` | GetReactions | Get reactions |
-| POST | `/messages/{id}/translate` | TranslateMessage | Translate message |
-| GET | `/messages/{parent_id}/replies` | GetReplies | Get replies |
-| DELETE | `/moderation/ban` | Unban | Unban user |
-| POST | `/moderation/ban` | Ban | Ban user |
-| POST | `/moderation/flag` | Flag | Flag |
-| GET | `/moderation/flags/message` | QueryMessageFlags | Query Message Flags |
-| POST | `/moderation/mute` | MuteUser | Mute user |
-| POST | `/moderation/mute/channel` | MuteChannel | Mute channel |
-| POST | `/moderation/unflag` | Unflag | Unflag |
-| POST | `/moderation/unmute` | UnmuteUser | Unmute user |
-| POST | `/moderation/unmute/channel` | UnmuteChannel | Unmute channel |
-| GET | `/og` | GetOG | Get OG |
-| GET | `/permissions` | ListPermissions | List permissions |
-| GET | `/permissions/{id}` | GetPermission | Get permission |
-| GET | `/push_providers` | ListPushProviders | List push providers |
-| POST | `/push_providers` | UpsertPushProvider | Upsert a push provider |
-| DELETE | `/push_providers/{type}/{name}` | DeletePushProvider | Delete a push provider |
-| GET | `/query_banned_users` | QueryBannedUsers | Query Banned Users |
-| GET | `/rate_limits` | GetRateLimits | Get rate limits |
-| GET | `/recipients` | QueryRecipients | Query recipients |
-| GET | `/roles` | ListRoles | List roles |
-| POST | `/roles` | CreateRole | Create role |
-| DELETE | `/roles/{name}` | DeleteRole | Delete role |
-| GET | `/search` | Search | Search messages |
-| GET | `/segments` | QuerySegments | Query segments |
-| POST | `/segments` | CreateSegment | Create segment |
-| DELETE | `/segments/{id}` | DeleteSegment | Delete segment |
-| PUT | `/segments/{id}` | UpdateSegment | Update segment |
-| POST | `/sync` | Sync | Sync |
-| GET | `/tasks/{id}` | GetTask | Get status of a task |
-| GET | `/users` | QueryUsers | Query users |
-| PATCH | `/users` | UpdateUsersPartial | Partially update user |
-| POST | `/users` | UpdateUsers | Upsert users |
-| POST | `/users/deactivate` | DeactivateUsers | Deactivate users |
-| POST | `/users/delete` | DeleteUsers | Delete Users |
-| POST | `/users/reactivate` | ReactivateUsers | Reactivate users |
-| POST | `/users/restore` | RestoreUsers | Restore users |
-| DELETE | `/users/{user_id}` | DeleteUser | Delete user |
-| POST | `/users/{user_id}/deactivate` | DeactivateUser | Deactivate user |
-| POST | `/users/{user_id}/event` | SendUserCustomEvent | Send user event |
-| GET | `/users/{user_id}/export` | get /users/{user_id}/export | Export user |
-| POST | `/users/{user_id}/reactivate` | ReactivateUser | Reactivate user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/app` | GetApp | — | GetApplicationResponse | yes | Get App Settings |
+| PATCH | `/app` | UpdateApp | body*: UpdateAppRequest | Response |  | Update App Settings |
+| GET | `/blocklists` | ListBlockLists | — | ListBlockListResponse | yes | List block lists |
+| POST | `/blocklists` | CreateBlockList | body*: CreateBlockListRequest | Response |  | Create block list |
+| GET | `/blocklists/{name}` | GetBlockList | `name`* | GetBlockListResponse | yes | Get block list |
+| PUT | `/blocklists/{name}` | UpdateBlockList | `name`*, body*: UpdateBlockListRequest | Response |  | Update block list |
+| DELETE | `/blocklists/{name}` | DeleteBlockList | `name`* | Response |  | Delete block list |
+| POST | `/calls/` | GetCallToken__1 | body*: GetCallTokenRequest | GetCallTokenResponse |  | Get Call Token () |
+| POST | `/calls/{call_id}` | GetCallToken_call_id_0 | `call_id`*, body*: GetCallTokenRequest | GetCallTokenResponse |  | Get Call Token (call_id) |
+| GET | `/campaigns` | QueryCampaigns | `payload` | QueryCampaignsResponse | yes | Query campaigns |
+| POST | `/campaigns` | CreateCampaign | body*: CreateCampaignRequest | CreateCampaignResponse |  | Create campaign |
+| PUT | `/campaigns/{id}` | UpdateCampaign | `id`*, body*: UpdateCampaignRequest | UpdateCampaignResponse |  | Update campaign |
+| DELETE | `/campaigns/{id}` | DeleteCampaign | `id`*, `recipients` | DeleteCampaignResponse |  | Delete campaign |
+| PATCH | `/campaigns/{id}/resume` | ResumeCampaign | `id`* | ResumeCampaignResponse |  | Resume campaign |
+| PATCH | `/campaigns/{id}/schedule` | ScheduleCampaign | `id`*, body*: ScheduleCampaignRequest | ScheduleCampaignResponse |  | Schedule campaign |
+| PATCH | `/campaigns/{id}/stop` | StopCampaign | `id`* | StopCampaignResponse |  | Stop campaign |
+| POST | `/campaigns/{id}/test` | TestCampaign | `id`*, body*: TestCampaignRequest | TestCampaignResponse |  | Test campaign |
+| POST | `/channels` | QueryChannels | `client_id`, `connection_id`, body*: QueryChannelsRequest | ChannelsResponse |  | Query channels |
+| POST | `/channels/delete` | DeleteChannels | body*: DeleteChannelsRequest | DeleteChannelsResponse |  | Deletes channels asynchronously |
+| POST | `/channels/read` | MarkChannelsRead | body*: MarkChannelsReadRequest | MarkReadResponse |  | Mark channels as read |
+| POST | `/channels/{type}/query` | GetOrCreateChannel_type_1 | `type`*, `client_id`, `connection_id`, body*: ChannelGetOrCreateRequest | ChannelStateResponse |  | Get or create channel (type) |
+| POST | `/channels/{type}/{id}` | UpdateChannel | `type`*, `id`*, body*: UpdateChannelRequest | UpdateChannelResponse |  | Update channel |
+| DELETE | `/channels/{type}/{id}` | DeleteChannel | `type`*, `id`*, `hard_delete` | DeleteChannelResponse |  | Delete channel |
+| PATCH | `/channels/{type}/{id}` | UpdateChannelPartial | `type`*, `id`*, body*: UpdateChannelPartialRequest | UpdateChannelPartialResponse |  | Partially update channel |
+| POST | `/channels/{type}/{id}/call` | CreateCall | `type`*, `id`*, body*: CreateCallRequest | CreateCallResponse |  | Create a call |
+| POST | `/channels/{type}/{id}/event` | SendEvent | `type`*, `id`*, body*: SendEventRequest | EventResponse |  | Send event |
+| POST | `/channels/{type}/{id}/file` | UploadFile | `type`*, `id`*, body*: FileUploadRequest | FileUploadResponse |  | Upload file |
+| DELETE | `/channels/{type}/{id}/file` | DeleteFile | `url`, `type`*, `id`* | FileDeleteResponse |  | Delete file |
+| POST | `/channels/{type}/{id}/hide` | HideChannel | `type`*, `id`*, body*: HideChannelRequest | HideChannelResponse |  | Hide channel |
+| POST | `/channels/{type}/{id}/image` | UploadImage | `type`*, `id`*, body*: ImageUploadRequest | ImageUploadResponse |  | Upload image |
+| DELETE | `/channels/{type}/{id}/image` | DeleteImage | `url`, `type`*, `id`* | FileDeleteResponse |  | Delete image |
+| POST | `/channels/{type}/{id}/message` | SendMessage | `type`*, `id`*, body*: SendMessageRequest | MessageWithPendingMetadataResponse |  | Send new message |
+| GET | `/channels/{type}/{id}/messages` | GetManyMessages | `type`*, `id`*, `ids` | GetManyMessagesResponse | yes | Get many messages |
+| POST | `/channels/{type}/{id}/query` | GetOrCreateChannel_type_id_0 | `type`*, `id`*, `client_id`, `connection_id`, body*: ChannelGetOrCreateRequest | ChannelStateResponse |  | Get or create channel (type, id) |
+| POST | `/channels/{type}/{id}/read` | MarkRead | `type`*, `id`*, body*: MarkReadRequest | MarkReadResponse |  | Mark read |
+| POST | `/channels/{type}/{id}/show` | ShowChannel | `type`*, `id`*, body*: ShowChannelRequest | ShowChannelResponse |  | Show channel |
+| POST | `/channels/{type}/{id}/stop-watching` | StopWatchingChannel | `type`*, `id`*, `client_id`, `connection_id`, body*: ChannelStopWatchingRequest | StopWatchingResponse |  | Stop watching channel |
+| POST | `/channels/{type}/{id}/truncate` | TruncateChannel | `type`*, `id`*, body*: TruncateChannelRequest | TruncateChannelResponse |  | Truncate channel |
+| POST | `/channels/{type}/{id}/unread` | MarkUnread | `type`*, `id`*, body*: MarkUnreadRequest | Response |  | Mark unread |
+| GET | `/channeltypes` | ListChannelTypes | — | ListChannelTypesResponse | yes | List channel types |
+| POST | `/channeltypes` | CreateChannelType | body*: CreateChannelTypeRequest | CreateChannelTypeResponse |  | Create channel type |
+| GET | `/channeltypes/{name}` | GetChannelType | `name`* | Response | yes | Get channel type |
+| PUT | `/channeltypes/{name}` | UpdateChannelType | `name`*, body*: UpdateChannelTypeRequest | UpdateChannelTypeResponse |  | Update channel type |
+| DELETE | `/channeltypes/{name}` | DeleteChannelType | `name`* | Response |  | Delete channel type |
+| POST | `/check_push` | CheckPush | body*: CheckPushRequest | CheckPushResponse |  | Check push |
+| POST | `/check_sqs` | CheckSQS | body*: CheckSQSRequest | CheckSQSResponse |  | Check SQS |
+| GET | `/commands` | ListCommands | — | ListCommandsResponse | yes | List commands |
+| POST | `/commands` | CreateCommand | body*: CreateCommandRequest | CreateCommandResponse |  | Create command |
+| GET | `/commands/{name}` | GetCommand | `name`* | GetCommandResponse | yes | Get command |
+| PUT | `/commands/{name}` | UpdateCommand | `name`*, body*: UpdateCommandRequest | UpdateCommandResponse |  | Update command |
+| DELETE | `/commands/{name}` | DeleteCommand | `name`* | DeleteCommandResponse |  | Delete command |
+| GET | `/connect` | Connect | `json` | — | yes | Connect (WebSocket) |
+| GET | `/devices` | ListDevices | `user_id` | ListDevicesResponse | yes | List devices |
+| POST | `/devices` | CreateDevice | body*: CreateDeviceRequest | Response |  | Create device |
+| DELETE | `/devices` | DeleteDevice | `id`, `user_id` | Response |  | Delete device |
+| POST | `/export/users` | ExportUser | body*: ExportUsersRequest | ExportUsersResponse |  | Export users |
+| POST | `/export_channels` | ExportChannels | body*: ExportChannelsRequest | ExportChannelsResponse |  | Export channels |
+| GET | `/export_channels/{id}` | GetExportChannelsStatus | `id`* | GetExportChannelsStatusResponse | yes | Export channels status |
+| POST | `/guest` | CreateGuest | body*: GuestRequest | GuestResponse |  | Create guest |
+| POST | `/import_urls` | CreateImportURL | body*: CreateImportURLRequest | CreateImportURLResponse |  | Create import URL |
+| GET | `/imports` | ListImports | — | ListImportsResponse | yes | Get import |
+| POST | `/imports` | CreateImport | body*: CreateImportRequest | CreateImportResponse |  | Create import |
+| GET | `/imports/{id}` | GetImport | `id`* | GetImportResponse | yes | Get import |
+| GET | `/longpoll` | LongPoll | `json`, `connection_id` | — | yes | Long Poll (Transport) |
+| GET | `/members` | QueryMembers | `payload` | MembersResponse | yes | Query members |
+| GET | `/messages/{id}` | GetMessage | `id`* | MessageWithPendingMetadataResponse | yes | Get message |
+| PUT | `/messages/{id}` | UpdateMessagePartial | `id`*, body*: UpdateMessagePartialRequest | MessageResponse |  | Partially message update |
+| POST | `/messages/{id}` | UpdateMessage | `id`*, body*: UpdateMessageRequest | MessageResponse |  | Update message |
+| DELETE | `/messages/{id}` | DeleteMessage | `id`*, `hard` | MessageResponse |  | Delete message |
+| POST | `/messages/{id}/action` | RunMessageAction | `id`*, body*: MessageActionRequest | MessageResponse |  | Run message command action |
+| POST | `/messages/{id}/commit` | CommitMessage | `id`* | MessageResponse |  | Commit message |
+| POST | `/messages/{id}/reaction` | SendReaction | `id`*, body*: SendReactionRequest | ReactionResponse |  | Send reaction |
+| DELETE | `/messages/{id}/reaction/{type}` | DeleteReaction | `id`*, `type`*, `user_id` | ReactionRemovalResponse |  | Delete reaction |
+| GET | `/messages/{id}/reactions` | GetReactions | `id`*, `limit`, `offset` | GetReactionsResponse | yes | Get reactions |
+| POST | `/messages/{id}/translate` | TranslateMessage | `id`*, body*: TranslateMessageRequest | MessageResponse |  | Translate message |
+| GET | `/messages/{parent_id}/replies` | GetReplies | `parent_id`*, `id_gte`, `id_gt`, `id_lte`, `id_lt`, `created_at_after_or_equal`, `created_at_after`, `created_at_before_or_equal`, `created_at_before`, `id_around`, `created_at_around` | GetRepliesResponse | yes | Get replies |
+| POST | `/moderation/ban` | Ban | body*: BanRequest | Response |  | Ban user |
+| DELETE | `/moderation/ban` | Unban | `target_user_id`, `type`, `id` | Response |  | Unban user |
+| POST | `/moderation/flag` | Flag | body*: FlagRequest | FlagResponse |  | Flag |
+| GET | `/moderation/flags/message` | QueryMessageFlags | `payload` | QueryMessageFlagsResponse | yes | Query Message Flags |
+| POST | `/moderation/mute` | MuteUser | body*: MuteUserRequest | MuteUserResponse |  | Mute user |
+| POST | `/moderation/mute/channel` | MuteChannel | body*: MuteChannelRequest | MuteChannelResponse |  | Mute channel |
+| POST | `/moderation/unflag` | Unflag | body*: FlagRequest | FlagResponse |  | Unflag |
+| POST | `/moderation/unmute` | UnmuteUser | body*: UnmuteUserRequest | UnmuteResponse |  | Unmute user |
+| POST | `/moderation/unmute/channel` | UnmuteChannel | body*: UnmuteChannelRequest | UnmuteResponse |  | Unmute channel |
+| GET | `/og` | GetOG | `url` | GetOGResponse | yes | Get OG |
+| GET | `/permissions` | ListPermissions | — | ListPermissionsResponse | yes | List permissions |
+| GET | `/permissions/{id}` | GetPermission | `id`* | GetCustomPermissionResponse | yes | Get permission |
+| GET | `/push_providers` | ListPushProviders | — | ListPushProvidersResponse | yes | List push providers |
+| POST | `/push_providers` | UpsertPushProvider | body*: UpsertPushProviderRequest | UpsertPushProviderResponse |  | Upsert a push provider |
+| DELETE | `/push_providers/{type}/{name}` | DeletePushProvider | `type`*, `name`* | Response |  | Delete a push provider |
+| GET | `/query_banned_users` | QueryBannedUsers | `payload` | QueryBannedUsersResponse | yes | Query Banned Users |
+| GET | `/rate_limits` | GetRateLimits | `server_side`, `android`, `ios`, `web`, `endpoints` | GetRateLimitsResponse | yes | Get rate limits |
+| GET | `/recipients` | QueryRecipients | `payload` | QueryRecipientsResponse | yes | Query recipients |
+| GET | `/roles` | ListRoles | — | ListRolesResponse | yes | List roles |
+| POST | `/roles` | CreateRole | body*: CreateRoleRequest | CreateRoleResponse |  | Create role |
+| DELETE | `/roles/{name}` | DeleteRole | `name`* | Response |  | Delete role |
+| GET | `/search` | Search | `payload` | SearchResponse | yes | Search messages |
+| GET | `/segments` | QuerySegments | `payload` | QuerySegmentsResponse | yes | Query segments |
+| POST | `/segments` | CreateSegment | body*: CreateSegmentRequest | CreateSegmentResponse |  | Create segment |
+| PUT | `/segments/{id}` | UpdateSegment | `id`*, body*: UpdateSegmentRequest | UpdateSegmentResponse |  | Update segment |
+| DELETE | `/segments/{id}` | DeleteSegment | `id`* | DeleteSegmentResponse |  | Delete segment |
+| POST | `/sync` | Sync | `with_inaccessible_cids`, `watch`, `client_id`, `connection_id`, body*: SyncRequest | SyncResponse |  | Sync |
+| GET | `/tasks/{id}` | GetTask | `id`* | GetTaskResponse | yes | Get status of a task |
+| GET | `/users` | QueryUsers | `payload` | UsersResponse | yes | Query users |
+| POST | `/users` | UpdateUsers | body*: UpdateUsersRequest | UpdateUsersResponse |  | Upsert users |
+| PATCH | `/users` | UpdateUsersPartial | body*: UpdateUserPartialRequest | UpdateUsersResponse |  | Partially update user |
+| POST | `/users/deactivate` | DeactivateUsers | body*: DeactivateUsersRequest | DeactivateUsersResponse |  | Deactivate users |
+| POST | `/users/delete` | DeleteUsers | body*: DeleteUsersRequest | DeleteUsersResponse |  | Delete Users |
+| POST | `/users/reactivate` | ReactivateUsers | body*: ReactivateUsersRequest | ReactivateUsersResponse |  | Reactivate users |
+| POST | `/users/restore` | RestoreUsers | body*: RestoreUsersRequest | Response |  | Restore users |
+| DELETE | `/users/{user_id}` | DeleteUser | `user_id`*, `mark_messages_deleted`, `hard_delete`, `delete_conversation_channels` | DeleteUserResponse |  | Delete user |
+| POST | `/users/{user_id}/deactivate` | DeactivateUser | `user_id`*, body*: DeactivateUserRequest | DeactivateUserResponse |  | Deactivate user |
+| POST | `/users/{user_id}/event` | SendUserCustomEvent | `user_id`*, body*: SendUserCustomEventRequest | Response |  | Send user event |
+| GET | `/users/{user_id}/export` | get /users/{user_id}/export | `user_id`* | ExportUserResponse | yes | Export user |
+| POST | `/users/{user_id}/reactivate` | ReactivateUser | `user_id`*, body*: ReactivateUserRequest | ReactivateUserResponse |  | Reactivate user |

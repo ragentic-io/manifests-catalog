@@ -53,6 +53,16 @@
         "from": "giphy-com-6652c97fac",
         "kind": "EXPOSES",
         "to": "operation:get:/stickers/trending"
+      },
+      {
+        "from": "schema:Gif",
+        "kind": "REFERENCES",
+        "to": "schema:Image"
+      },
+      {
+        "from": "schema:Gif",
+        "kind": "REFERENCES",
+        "to": "schema:User"
       }
     ],
     "nodes": [
@@ -62,178 +72,612 @@
       },
       {
         "deprecated": false,
+        "description": "A multiget version of the get GIF by ID endpoint.",
         "id": "operation:get:/gifs",
         "kind": "operation",
         "method": "get",
         "name": "getGifsById",
+        "parameters": [
+          {
+            "description": "Filters results by specified GIF IDs, separated by commas.",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gifs",
         "pointer": "#/paths/~1gifs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get GIFs by ID"
+        "summary": "Get GIFs by ID",
+        "tags": [
+          "gifs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a random GIF, limited by tag.",
         "id": "operation:get:/gifs/random",
         "kind": "operation",
         "method": "get",
         "name": "randomGif",
+        "parameters": [
+          {
+            "description": "Filters results by specified tag.",
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters results by specified rating.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gifs/random",
         "pointer": "#/paths/~1gifs~1random/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Random GIF"
+        "summary": "Random GIF",
+        "tags": [
+          "gifs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search all GIPHY GIFs for a word or phrase.",
         "id": "operation:get:/gifs/search",
         "kind": "operation",
         "method": "get",
         "name": "searchGifs",
+        "parameters": [
+          {
+            "description": "Search query term or prhase.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "An optional results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters results by specified rating.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify default language for regional content; use a 2-letter ISO 639-1 language code.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gifs/search",
         "pointer": "#/paths/~1gifs~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search GIFs"
+        "summary": "Search GIFs",
+        "tags": [
+          "gifs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another.",
         "id": "operation:get:/gifs/translate",
         "kind": "operation",
         "method": "get",
         "name": "translateGif",
+        "parameters": [
+          {
+            "description": "Search term.",
+            "in": "query",
+            "name": "s",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/gifs/translate",
         "pointer": "#/paths/~1gifs~1translate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Translate phrase to GIF"
+        "summary": "Translate phrase to GIF",
+        "tags": [
+          "gifs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch GIFs currently trending online.",
         "id": "operation:get:/gifs/trending",
         "kind": "operation",
         "method": "get",
         "name": "trendingGifs",
+        "parameters": [
+          {
+            "default": 25,
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "An optional results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters results by specified rating.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gifs/trending",
         "pointer": "#/paths/~1gifs~1trending/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Trending GIFs"
+        "summary": "Trending GIFs",
+        "tags": [
+          "gifs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a GIF given that GIF's unique ID",
         "id": "operation:get:/gifs/{gifId}",
         "kind": "operation",
         "method": "get",
         "name": "getGifById",
+        "parameters": [
+          {
+            "description": "Filters results by specified GIF ID.",
+            "in": "path",
+            "name": "gifId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/gifs/{gifId}",
         "pointer": "#/paths/~1gifs~1{gifId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get GIF by Id"
+        "summary": "Get GIF by Id",
+        "tags": [
+          "gifs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a random GIF, limited by tag.",
         "id": "operation:get:/stickers/random",
         "kind": "operation",
         "method": "get",
         "name": "randomSticker",
+        "parameters": [
+          {
+            "description": "Filters results by specified tag.",
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters results by specified rating.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stickers/random",
         "pointer": "#/paths/~1stickers~1random/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Random Sticker"
+        "summary": "Random Sticker",
+        "tags": [
+          "stickers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.",
         "id": "operation:get:/stickers/search",
         "kind": "operation",
         "method": "get",
         "name": "searchStickers",
+        "parameters": [
+          {
+            "description": "Search query term or prhase.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "An optional results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters results by specified rating.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify default language for regional content; use a 2-letter ISO 639-1 language code.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stickers/search",
         "pointer": "#/paths/~1stickers~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search Stickers"
+        "summary": "Search Stickers",
+        "tags": [
+          "stickers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another.",
         "id": "operation:get:/stickers/translate",
         "kind": "operation",
         "method": "get",
         "name": "translateSticker",
+        "parameters": [
+          {
+            "description": "Search term.",
+            "in": "query",
+            "name": "s",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stickers/translate",
         "pointer": "#/paths/~1stickers~1translate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Translate phrase to Sticker"
+        "summary": "Translate phrase to Sticker",
+        "tags": [
+          "stickers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch Stickers currently trending online.",
         "id": "operation:get:/stickers/trending",
         "kind": "operation",
         "method": "get",
         "name": "trendingStickers",
+        "parameters": [
+          {
+            "default": 25,
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "An optional results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters results by specified rating.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stickers/trending",
         "pointer": "#/paths/~1stickers~1trending/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Trending Stickers"
+        "summary": "Trending Stickers",
+        "tags": [
+          "stickers"
+        ]
       },
       {
         "id": "schema:Gif",
         "kind": "schema",
-        "name": "Gif"
+        "name": "Gif",
+        "type": "object"
       },
       {
         "id": "schema:Image",
         "kind": "schema",
-        "name": "Image"
+        "name": "Image",
+        "type": "object"
       },
       {
+        "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.",
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
+        "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positi…",
         "id": "schema:Pagination",
         "kind": "schema",
-        "name": "Pagination"
+        "name": "Pagination",
+        "type": "object"
       },
       {
+        "description": "The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

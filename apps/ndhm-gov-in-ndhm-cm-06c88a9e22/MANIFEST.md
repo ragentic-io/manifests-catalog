@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `652a221bbebcbb3559008a200a24cda28bcb370e3404168b649c1ed1bc017882` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 55 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v0.5/care-contexts/on-discover` | post /v0.5/care-contexts/on-discover | Response to patient's account discovery request |
-| POST | `/v0.5/consent-requests/init` | post /v0.5/consent-requests/init | Create consent request |
-| POST | `/v0.5/consent-requests/status` | post /v0.5/consent-requests/status | Get consent request status |
-| POST | `/v0.5/consents/fetch` | post /v0.5/consents/fetch | Get consent artefact |
-| POST | `/v0.5/consents/hip/on-notify` | post /v0.5/consents/hip/on-notify | Consent notification |
-| POST | `/v0.5/consents/hiu/on-notify` | post /v0.5/consents/hiu/on-notify | Consent notification |
-| POST | `/v0.5/health-information/notify` | post /v0.5/health-information/notify | Notifications corresponding to events during data flow |
-| POST | `/v0.5/health-information/on-request` | post /v0.5/health-information/on-request | Health information data request acknowledgement from HIP |
-| POST | `/v0.5/health-information/request` | post /v0.5/health-information/request | Health information data request from HIU |
-| GET | `/v0.5/heartbeat` | get /v0.5/heartbeat | Get consent request status |
-| POST | `/v0.5/links/link/add-contexts` | post /v0.5/links/link/add-contexts | API for HIP initiated care-context linking for patient |
-| POST | `/v0.5/links/link/on-confirm` | post /v0.5/links/link/on-confirm | Token authenticated by HIP, indicating completion of linkage of care-contexts |
-| POST | `/v0.5/links/link/on-init` | post /v0.5/links/link/on-init | Response to patient's care context link request |
-| POST | `/v0.5/patients/find` | post /v0.5/patients/find | Identify a patient by her consent-manager user-id |
-| POST | `/v0.5/patients/profile/on-share` | post /v0.5/patients/profile/on-share | Response to patient's share profile request |
-| POST | `/v0.5/subscription-requests/cm/init` | post /v0.5/subscription-requests/cm/init | Request for subscription |
-| POST | `/v0.5/subscription-requests/hiu/on-notify` | post /v0.5/subscription-requests/hiu/on-notify | Callback API for /subscription-requests/hiu/notify to acknowledge receipt of notification. |
-| POST | `/v0.5/subscriptions/hiu/on-notify` | post /v0.5/subscriptions/hiu/on-notify | Callback API for /subscriptions/hiu/notify to acknowledge receipt of notification. |
-| POST | `/v0.5/users/auth/confirm` | post /v0.5/users/auth/confirm | Confirmation request sending token, otp or other authentication details from HIP/HIU for confirmation |
-| POST | `/v0.5/users/auth/fetch-modes` | post /v0.5/users/auth/fetch-modes | Get a patient's authentication modes relevant to specified purpose |
-| POST | `/v0.5/users/auth/init` | post /v0.5/users/auth/init | Initialize authentication from HIP |
-| POST | `/v0.5/users/auth/on-notify` | post /v0.5/users/auth/on-notify | callback API from HIU/HIPs as acknowledgement of auth notification (in case of DIRECT auth) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v0.5/care-contexts/on-discover` | post /v0.5/care-contexts/on-discover | `Authorization`*, body*: PatientDiscoveryResult | — |  | Response to patient's account discovery request |
+| POST | `/v0.5/consent-requests/init` | post /v0.5/consent-requests/init | `Authorization`*, body*: ConsentRequest | — |  | Create consent request |
+| POST | `/v0.5/consent-requests/status` | post /v0.5/consent-requests/status | `Authorization`*, body*: ConsentRequestStatusRequest | — |  | Get consent request status |
+| POST | `/v0.5/consents/fetch` | post /v0.5/consents/fetch | `Authorization`*, body*: ConsentFetchRequest | — |  | Get consent artefact |
+| POST | `/v0.5/consents/hip/on-notify` | post /v0.5/consents/hip/on-notify | `Authorization`*, body*: HIPConsentNotificationResponse | — |  | Consent notification |
+| POST | `/v0.5/consents/hiu/on-notify` | post /v0.5/consents/hiu/on-notify | `Authorization`*, body*: HIUConsentNotificationResponse | — |  | Consent notification |
+| POST | `/v0.5/health-information/notify` | post /v0.5/health-information/notify | `Authorization`*, body*: HealthInformationNotification | — |  | Notifications corresponding to events during data flow |
+| POST | `/v0.5/health-information/on-request` | post /v0.5/health-information/on-request | `Authorization`*, body*: HIPHealthInformationRequestAcknowledgement | — |  | Health information data request acknowledgement from HIP |
+| POST | `/v0.5/health-information/request` | post /v0.5/health-information/request | `Authorization`*, body*: HIRequest | — |  | Health information data request from HIU |
+| GET | `/v0.5/heartbeat` | get /v0.5/heartbeat | — | HeartbeatResponse | yes | Get consent request status |
+| POST | `/v0.5/links/link/add-contexts` | post /v0.5/links/link/add-contexts | `Authorization`*, body*: PatientCareContextLinkRequest | — |  | API for HIP initiated care-context linking for patient |
+| POST | `/v0.5/links/link/on-confirm` | post /v0.5/links/link/on-confirm | `Authorization`*, body*: PatientLinkResult | — |  | Token authenticated by HIP, indicating completion of linkage of care-contexts |
+| POST | `/v0.5/links/link/on-init` | post /v0.5/links/link/on-init | `Authorization`*, body*: PatientLinkReferenceResult | — |  | Response to patient's care context link request |
+| POST | `/v0.5/patients/find` | post /v0.5/patients/find | `Authorization`*, body*: PatientIdentificationRequest | — |  | Identify a patient by her consent-manager user-id |
+| POST | `/v0.5/patients/profile/on-share` | post /v0.5/patients/profile/on-share | `Authorization`*, body*: ShareProfileResult | — |  | Response to patient's share profile request |
+| POST | `/v0.5/subscription-requests/cm/init` | post /v0.5/subscription-requests/cm/init | `Authorization`*, body*: SubscriptionRequest | — |  | Request for subscription |
+| POST | `/v0.5/subscription-requests/hiu/on-notify` | post /v0.5/subscription-requests/hiu/on-notify | `Authorization`*, body*: HIUSubscriptionRequestNotificationAcknowledgement | — |  | Callback API for /subscription-requests/hiu/notify to acknowledge receipt of notification. |
+| POST | `/v0.5/subscriptions/hiu/on-notify` | post /v0.5/subscriptions/hiu/on-notify | `Authorization`*, body*: HIUSubscriptionNotificationAcknowledgment | — |  | Callback API for /subscriptions/hiu/notify to acknowledge receipt of notification. |
+| POST | `/v0.5/users/auth/confirm` | post /v0.5/users/auth/confirm | `Authorization`*, body*: PatientAuthConfirmRequest | — |  | Confirmation request sending token, otp or other authentication details from HIP/HIU for confirmation |
+| POST | `/v0.5/users/auth/fetch-modes` | post /v0.5/users/auth/fetch-modes | `Authorization`*, body*: PatientAuthModeQueryRequest | — |  | Get a patient's authentication modes relevant to specified purpose |
+| POST | `/v0.5/users/auth/init` | post /v0.5/users/auth/init | `Authorization`*, body*: PatientAuthInitRequest | — |  | Initialize authentication from HIP |
+| POST | `/v0.5/users/auth/on-notify` | post /v0.5/users/auth/on-notify | `Authorization`*, body*: PatientAuthNotificationAcknowledgement | — |  | callback API from HIU/HIPs as acknowledgement of auth notification (in case of DIRECT auth) |

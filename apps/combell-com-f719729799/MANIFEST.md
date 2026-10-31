@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.combell.com_build_website_i
 
 | | |
 | --- | --- |
-| Signed bundle | `c4157b8fb1d13bf791372c8bc646560d3b10e3a167bf4f116e45b869d3c334d8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,80 +34,82 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.combell.com_build_website_i
 
 89 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | GetAccounts | Overview of accounts |
-| POST | `/accounts` | CreateAccount | Create a new account |
-| GET | `/accounts/{accountId}` | GetAccount | Get a specific account |
-| GET | `/dns/{domainName}/records` | get /dns/{domainName}/records | Get records |
-| POST | `/dns/{domainName}/records` | post /dns/{domainName}/records | Create a record |
-| DELETE | `/dns/{domainName}/records/{recordId}` | delete /dns/{domainName}/records/{recordId} | Delete a record |
-| GET | `/dns/{domainName}/records/{recordId}` | get /dns/{domainName}/records/{recordId} | Get specific record |
-| PUT | `/dns/{domainName}/records/{recordId}` | put /dns/{domainName}/records/{recordId} | Edit a record |
-| GET | `/domains` | GetDomains | Overviews of domains |
-| POST | `/domains/registrations` | Register | Register a domain |
-| POST | `/domains/transfers` | Transfer | Transfer a domain |
-| GET | `/domains/{domainName}` | GetDomain | Details of a domain |
-| PUT | `/domains/{domainName}/nameservers` | EditNameServers | Edit domain name servers |
-| PUT | `/domains/{domainName}/renew` | ConfigureDomain | Edit domain name renew state |
-| GET | `/linuxhostings` | GetLinuxHostings | Overview of linux hostings |
-| GET | `/linuxhostings/{domainName}` | GetLinuxHosting | Linux hosting detail |
-| PUT | `/linuxhostings/{domainName}/ftp/configuration` | ConfigureFtp | Configure FTP |
-| PUT | `/linuxhostings/{domainName}/phpsettings/apcu` | ChangeApcu | Configure PHP APCu setting |
-| GET | `/linuxhostings/{domainName}/phpsettings/availableversions` | GetAvailablePhpVersions | Get the available PHP versions. |
-| PUT | `/linuxhostings/{domainName}/phpsettings/memorylimit` | ChangePhpMemoryLimit | Configure PHP memory limit |
-| PUT | `/linuxhostings/{domainName}/phpsettings/version` | ChangePhpVersion | Change the Linux hosting PHP version. |
-| GET | `/linuxhostings/{domainName}/scheduledtasks` | GetScheduledTasks | Overview of scheduled tasks |
-| POST | `/linuxhostings/{domainName}/scheduledtasks` | AddScheduledTasks | Add a scheduled task |
-| DELETE | `/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}` | DeleteScheduledTask | Delete a scheduled task |
-| GET | `/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}` | GetScheduledTask | Get scheduled task detail |
-| PUT | `/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}` | ConfigureScheduledTask | Configure a scheduled task |
-| PUT | `/linuxhostings/{domainName}/settings/gzipcompression` | ChangeGzipCompression | Enable/disable GZIP compression |
-| POST | `/linuxhostings/{domainName}/sites/{siteName}/hostheaders` | CreateHostHeader | Create a host header |
-| PUT | `/linuxhostings/{domainName}/sites/{siteName}/http2/configuration` | ConfigureHttp2 | Configure HTTP/2 |
-| PUT | `/linuxhostings/{domainName}/ssh/configuration` | ConfigureSsh | Configure SSH |
-| GET | `/linuxhostings/{domainName}/ssh/keys` | GetSshKeys | Overview of SSH keys |
-| POST | `/linuxhostings/{domainName}/ssh/keys` | AddSshKey | Add a SSH key |
-| DELETE | `/linuxhostings/{domainName}/ssh/keys/{fingerprint}` | DeleteSshKey | Delete a SSH key |
-| PUT | `/linuxhostings/{domainName}/sslsettings/{hostname}/autoredirect` | ChangeAutoRedirect | Configure auto redirect |
-| PUT | `/linuxhostings/{domainName}/sslsettings/{hostname}/letsencrypt` | ChangeLetsEncrypt | Configure let's encrypt |
-| POST | `/linuxhostings/{domainName}/subsites` | CreateSubsite | Create a subsite |
-| DELETE | `/linuxhostings/{domainName}/subsites/{siteName}` | DeleteSubsite | Delete a subsite |
-| GET | `/mailboxes` | GetMailboxes | Gets your mailboxes. |
-| POST | `/mailboxes` | CreateMailbox | Create a new mailbox. |
-| DELETE | `/mailboxes/{mailboxName}` | DeleteMailbox | Delete a mailbox |
-| GET | `/mailboxes/{mailboxName}` | GetMailbox | Get a specific mailbox |
-| PUT | `/mailboxes/{mailboxName}/autoforward` | ConfigureMailboxAutoForward | Configure auto-forward for mailbox |
-| PUT | `/mailboxes/{mailboxName}/autoreply` | ConfigureMailboxAutoReply | Configure auto-reply for mailbox |
-| PUT | `/mailboxes/{mailboxName}/password` | ChangeMailboxPassword | Change password for mailbox |
-| GET | `/mailzones/{domainName}` | GetMailZone | Get the mail zone. |
-| POST | `/mailzones/{domainName}/aliases` | CreateAlias | Create a new alias |
-| DELETE | `/mailzones/{domainName}/aliases/{emailAddress}` | DeleteAlias | Delete a alias |
-| PUT | `/mailzones/{domainName}/aliases/{emailAddress}` | ConfigureAlias | Configure a alias |
-| PUT | `/mailzones/{domainName}/antispam` | ConfigureAntiSpam | Configure anti-spam for mail zone |
-| POST | `/mailzones/{domainName}/catchall` | CreateCatchAll | Create a catch-all on the mail zone |
-| DELETE | `/mailzones/{domainName}/catchall/{emailAddress}` | DeleteCatchAll | Delete a catch-all on the mail zone |
-| POST | `/mailzones/{domainName}/smtpdomains` | CreateSmtpDomain | Create an extra smtp domain |
-| DELETE | `/mailzones/{domainName}/smtpdomains/{hostname}` | DeleteSmtpDomain | Delete an extra smtp domain |
-| PUT | `/mailzones/{domainName}/smtpdomains/{hostname}` | ConfigureSmtpDomain | Configure an extra smtp domain |
-| GET | `/mysqldatabases` | GetMySqlDatabases | Overview of mysql databases |
-| POST | `/mysqldatabases` | CreateMySqlDatabase | Create a new mysql database |
-| DELETE | `/mysqldatabases/{databaseName}` | DeleteDatabase | Delete a mysql database |
-| GET | `/mysqldatabases/{databaseName}` | GetMySqlDatabase | Get a specific database |
-| GET | `/mysqldatabases/{databaseName}/users` | GetDatabaseUsers | Overview of mysql users |
-| POST | `/mysqldatabases/{databaseName}/users` | CreateMySqlUser | Create a new mysql user |
-| DELETE | `/mysqldatabases/{databaseName}/users/{userName}` | DeleteDatabaseUser | Delete a mysql user |
-| PUT | `/mysqldatabases/{databaseName}/users/{userName}/password` | ChangeDatabaseUserPassword | Change password for mysql user |
-| PUT | `/mysqldatabases/{databaseName}/users/{userName}/status` | ChangeDatabaseUserStatus | Enable/disable mysql user |
-| GET | `/provisioningjobs/{jobId}` | get /provisioningjobs/{jobId} | Detail of a provisioning job |
-| GET | `/servicepacks` | Servicepacks | Overview of service packs |
-| GET | `/ssh` | GetAllSshKeys | Overview of SSH keys |
-| GET | `/sslcertificaterequests` | GetSslCertificateRequests | Overview of SSL certificate requests |
-| POST | `/sslcertificaterequests` | AddSslCertificateRequest | Add a SSL certificate request |
-| GET | `/sslcertificaterequests/{id}` | GetSslCertificateRequest | Detail of a SSL certificate request |
-| PUT | `/sslcertificaterequests/{id}` | VerifySslCertificateRequestDomainValidations | Verify the SSL certificate request domain validations |
-| GET | `/sslcertificates` | GetSslCertificates | Overview of SSL certificates |
-| GET | `/sslcertificates/{sha1Fingerprint}` | GetSslCertificate | Detail of a SSL certificate |
-| GET | `/sslcertificates/{sha1Fingerprint}/download` | DownloadCertificate | Download a SSL certificate |
-| GET | `/windowshostings` | GetWindowsHostings | Overview of windows hostings |
-| GET | `/windowshostings/{domainName}` | GetWindowsHosting | Windows hosting detail |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | GetAccounts | `skip`, `take`, `asset_type`, `identifier` | Account[] | yes | Overview of accounts |
+| POST | `/accounts` | CreateAccount | body: CreateAccount | — |  | Create a new account |
+| GET | `/accounts/{accountId}` | GetAccount | `account_id`*, `accountId`* | AccountDetail | yes | Get a specific account |
+| GET | `/dns/{domainName}/records` | get /dns/{domainName}/records | `domain_name`*, `skip`, `take`, `type`, `record_name`, `service`, `domainName`* | DnsRecord[] | yes | Get records |
+| POST | `/dns/{domainName}/records` | post /dns/{domainName}/records | `domain_name`*, `domainName`*, body: DnsRecord | — |  | Create a record |
+| GET | `/dns/{domainName}/records/{recordId}` | get /dns/{domainName}/records/{recordId} | `domain_name`*, `record_id`*, `domainName`*, `recordId`* | DnsRecord | yes | Get specific record |
+| PUT | `/dns/{domainName}/records/{recordId}` | put /dns/{domainName}/records/{recordId} | `domain_name`*, `record_id`*, `domainName`*, `recordId`*, body: DnsRecord | — |  | Edit a record |
+| DELETE | `/dns/{domainName}/records/{recordId}` | delete /dns/{domainName}/records/{recordId} | `domain_name`*, `record_id`*, `domainName`*, `recordId`* | — |  | Delete a record |
+| GET | `/domains` | GetDomains | `skip`, `take` | Domain[] | yes | Overviews of domains |
+| POST | `/domains/registrations` | Register | body: RegisterDomain | — |  | Register a domain |
+| POST | `/domains/transfers` | Transfer | body: TransferDomain | — |  | Transfer a domain |
+| GET | `/domains/{domainName}` | GetDomain | `domain_name`*, `domainName`* | DomainDetail | yes | Details of a domain |
+| PUT | `/domains/{domainName}/nameservers` | EditNameServers | `domain_name`*, `domainName`*, body: EditNameServers | — |  | Edit domain name servers |
+| PUT | `/domains/{domainName}/renew` | ConfigureDomain | `domain_name`*, `domainName`*, body: EditDomainWillRenewRequest | — |  | Edit domain name renew state |
+| GET | `/linuxhostings` | GetLinuxHostings | `skip`, `take` | LinuxHosting[] | yes | Overview of linux hostings |
+| GET | `/linuxhostings/{domainName}` | GetLinuxHosting | `domain_name`*, `domainName`* | LinuxHostingDetail | yes | Linux hosting detail |
+| PUT | `/linuxhostings/{domainName}/ftp/configuration` | ConfigureFtp | `domain_name`*, `domainName`*, body: FtpConfiguration | — |  | Configure FTP |
+| PUT | `/linuxhostings/{domainName}/phpsettings/apcu` | ChangeApcu | `domain_name`*, `domainName`*, body: UpdatePhpAPcuRequest | — |  | Configure PHP APCu setting |
+| GET | `/linuxhostings/{domainName}/phpsettings/availableversions` | GetAvailablePhpVersions | `domain_name`*, `domainName`* | PhpVersion[] | yes | Get the available PHP versions. |
+| PUT | `/linuxhostings/{domainName}/phpsettings/memorylimit` | ChangePhpMemoryLimit | `domain_name`*, `domainName`*, body: UpdatePhpMemoryLimitRequest | — |  | Configure PHP memory limit |
+| PUT | `/linuxhostings/{domainName}/phpsettings/version` | ChangePhpVersion | `domain_name`*, `domainName`*, body: PhpVersion | — |  | Change the Linux hosting PHP version. |
+| GET | `/linuxhostings/{domainName}/scheduledtasks` | GetScheduledTasks | `domain_name`*, `domainName`* | ScheduledTask[] | yes | Overview of scheduled tasks |
+| POST | `/linuxhostings/{domainName}/scheduledtasks` | AddScheduledTasks | `domain_name`*, `domainName`*, body: ScheduledTask | — |  | Add a scheduled task |
+| GET | `/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}` | GetScheduledTask | `domain_name`*, `scheduled_task_id`*, `domainName`*, `scheduledTaskId`* | ScheduledTask | yes | Get scheduled task detail |
+| PUT | `/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}` | ConfigureScheduledTask | `domain_name`*, `scheduled_task_id`*, `domainName`*, `scheduledTaskId`*, body: ScheduledTask | — |  | Configure a scheduled task |
+| DELETE | `/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}` | DeleteScheduledTask | `domain_name`*, `scheduled_task_id`*, `domainName`*, `scheduledTaskId`* | — |  | Delete a scheduled task |
+| PUT | `/linuxhostings/{domainName}/settings/gzipcompression` | ChangeGzipCompression | `domain_name`*, `domainName`*, body: GzipConfig | — |  | Enable/disable GZIP compression |
+| POST | `/linuxhostings/{domainName}/sites/{siteName}/hostheaders` | CreateHostHeader | `domain_name`*, `site_name`*, `domainName`*, `siteName`*, body: AddHostHeaderRequest | — |  | Create a host header |
+| PUT | `/linuxhostings/{domainName}/sites/{siteName}/http2/configuration` | ConfigureHttp2 | `domain_name`*, `site_name`*, `domainName`*, `siteName`*, body: Http2Configuration | — |  | Configure HTTP/2 |
+| PUT | `/linuxhostings/{domainName}/ssh/configuration` | ConfigureSsh | `domain_name`*, `domainName`*, body: SshConfiguration | — |  | Configure SSH |
+| GET | `/linuxhostings/{domainName}/ssh/keys` | GetSshKeys | `domain_name`*, `domainName`* | SshKey[] | yes | Overview of SSH keys |
+| POST | `/linuxhostings/{domainName}/ssh/keys` | AddSshKey | `domain_name`*, `domainName`*, body: AddSshKeyRequest | — |  | Add a SSH key |
+| DELETE | `/linuxhostings/{domainName}/ssh/keys/{fingerprint}` | DeleteSshKey | `domain_name`*, `fingerprint`*, `domainName`* | — |  | Delete a SSH key |
+| PUT | `/linuxhostings/{domainName}/sslsettings/{hostname}/autoredirect` | ChangeAutoRedirect | `domain_name`*, `hostname`*, `domainName`*, body: AutoRedirectConfig | — |  | Configure auto redirect |
+| PUT | `/linuxhostings/{domainName}/sslsettings/{hostname}/letsencrypt` | ChangeLetsEncrypt | `domain_name`*, `hostname`*, `domainName`*, body: LetsEncryptConfig | — |  | Configure let's encrypt |
+| POST | `/linuxhostings/{domainName}/subsites` | CreateSubsite | `domain_name`*, `domainName`*, body: AddSubsiteRequest | — |  | Create a subsite |
+| DELETE | `/linuxhostings/{domainName}/subsites/{siteName}` | DeleteSubsite | `domain_name`*, `site_name`*, `domainName`*, `siteName`* | — |  | Delete a subsite |
+| GET | `/mailboxes` | GetMailboxes | `domain_name` | Mailbox[] | yes | Gets your mailboxes. |
+| POST | `/mailboxes` | CreateMailbox | body: CreateMailboxRequest | — |  | Create a new mailbox. |
+| GET | `/mailboxes/{mailboxName}` | GetMailbox | `mailbox_name`*, `mailboxName`* | MailboxDetail | yes | Get a specific mailbox |
+| DELETE | `/mailboxes/{mailboxName}` | DeleteMailbox | `mailbox_name`*, `mailboxName`* | — |  | Delete a mailbox |
+| PUT | `/mailboxes/{mailboxName}/autoforward` | ConfigureMailboxAutoForward | `mailbox_name`*, `mailboxName`*, body: AutoForward | — |  | Configure auto-forward for mailbox |
+| PUT | `/mailboxes/{mailboxName}/autoreply` | ConfigureMailboxAutoReply | `mailbox_name`*, `mailboxName`*, body: AutoReply | — |  | Configure auto-reply for mailbox |
+| PUT | `/mailboxes/{mailboxName}/password` | ChangeMailboxPassword | `mailbox_name`*, `mailboxName`*, body: UpdateMailboxPasswordRequest | — |  | Change password for mailbox |
+| GET | `/mailzones/{domainName}` | GetMailZone | `domain_name`*, `domainName`* | MailZone | yes | Get the mail zone. |
+| POST | `/mailzones/{domainName}/aliases` | CreateAlias | `domain_name`*, `domainName`*, body: CreateAliasRequest | — |  | Create a new alias |
+| PUT | `/mailzones/{domainName}/aliases/{emailAddress}` | ConfigureAlias | `domain_name`*, `email_address`*, `domainName`*, `emailAddress`*, body: UpdateAliasRequest | — |  | Configure a alias |
+| DELETE | `/mailzones/{domainName}/aliases/{emailAddress}` | DeleteAlias | `domain_name`*, `email_address`*, `domainName`*, `emailAddress`* | — |  | Delete a alias |
+| PUT | `/mailzones/{domainName}/antispam` | ConfigureAntiSpam | `domain_name`*, `domainName`*, body: UpdateAntiSpamRequest | — |  | Configure anti-spam for mail zone |
+| POST | `/mailzones/{domainName}/catchall` | CreateCatchAll | `domain_name`*, `domainName`*, body: CreateCatchAllRequest | — |  | Create a catch-all on the mail zone |
+| DELETE | `/mailzones/{domainName}/catchall/{emailAddress}` | DeleteCatchAll | `domain_name`*, `email_address`*, `domainName`*, `emailAddress`* | — |  | Delete a catch-all on the mail zone |
+| POST | `/mailzones/{domainName}/smtpdomains` | CreateSmtpDomain | `domain_name`*, `domainName`*, body: CreateSmtpDomainRequest | — |  | Create an extra smtp domain |
+| PUT | `/mailzones/{domainName}/smtpdomains/{hostname}` | ConfigureSmtpDomain | `domain_name`*, `hostname`*, `domainName`*, body: UpdateSmtpDomainRequest | — |  | Configure an extra smtp domain |
+| DELETE | `/mailzones/{domainName}/smtpdomains/{hostname}` | DeleteSmtpDomain | `domain_name`*, `hostname`*, `domainName`* | — |  | Delete an extra smtp domain |
+| GET | `/mysqldatabases` | GetMySqlDatabases | `skip`, `take` | MySqlDatabase[] | yes | Overview of mysql databases |
+| POST | `/mysqldatabases` | CreateMySqlDatabase | body: CreateMySqlDatabase | — |  | Create a new mysql database |
+| GET | `/mysqldatabases/{databaseName}` | GetMySqlDatabase | `database_name`*, `databaseName`* | MySqlDatabase | yes | Get a specific database |
+| DELETE | `/mysqldatabases/{databaseName}` | DeleteDatabase | `database_name`*, `databaseName`* | — |  | Delete a mysql database |
+| GET | `/mysqldatabases/{databaseName}/users` | GetDatabaseUsers | `database_name`*, `databaseName`* | MySqlUser[] | yes | Overview of mysql users |
+| POST | `/mysqldatabases/{databaseName}/users` | CreateMySqlUser | `database_name`*, `databaseName`*, body: CreateMySqlUser | — |  | Create a new mysql user |
+| DELETE | `/mysqldatabases/{databaseName}/users/{userName}` | DeleteDatabaseUser | `database_name`*, `user_name`*, `databaseName`*, `userName`* | — |  | Delete a mysql user |
+| PUT | `/mysqldatabases/{databaseName}/users/{userName}/password` | ChangeDatabaseUserPassword | `database_name`*, `user_name`*, `databaseName`*, `userName`*, body: UpdateUserPasswordRequest | — |  | Change password for mysql user |
+| PUT | `/mysqldatabases/{databaseName}/users/{userName}/status` | ChangeDatabaseUserStatus | `database_name`*, `user_name`*, `databaseName`*, `userName`*, body: UpdateUserStatusRequest | — |  | Enable/disable mysql user |
+| GET | `/provisioningjobs/{jobId}` | get /provisioningjobs/{jobId} | `job_id`*, `jobId`* | ProvisioningJobInfo, ProvisioningJobCompletion | yes | Detail of a provisioning job |
+| GET | `/servicepacks` | Servicepacks | — | Servicepack[] | yes | Overview of service packs |
+| GET | `/ssh` | GetAllSshKeys | `skip`, `take` | SshKeyDetail[] | yes | Overview of SSH keys |
+| GET | `/sslcertificaterequests` | GetSslCertificateRequests | `skip`, `take` | SslCertificateRequest[] | yes | Overview of SSL certificate requests |
+| POST | `/sslcertificaterequests` | AddSslCertificateRequest | body: CreateSslCertificateRequest | — |  | Add a SSL certificate request |
+| GET | `/sslcertificaterequests/{id}` | GetSslCertificateRequest | `id`* | SslCertificateRequestDetail | yes | Detail of a SSL certificate request |
+| PUT | `/sslcertificaterequests/{id}` | VerifySslCertificateRequestDomainValidations | `id`* | — |  | Verify the SSL certificate request domain validations |
+| GET | `/sslcertificates` | GetSslCertificates | `skip`, `take` | SslCertificate[] | yes | Overview of SSL certificates |
+| GET | `/sslcertificates/{sha1Fingerprint}` | GetSslCertificate | `sha1_fingerprint`*, `sha1Fingerprint`* | SslCertificateDetail | yes | Detail of a SSL certificate |
+| GET | `/sslcertificates/{sha1Fingerprint}/download` | DownloadCertificate | `sha1_fingerprint`*, `file_format`*, `password`*, `sha1Fingerprint`* | string:binary | yes | Download a SSL certificate |
+| GET | `/windowshostings` | GetWindowsHostings | `skip`, `take` | WindowsHosting[] | yes | Overview of windows hostings |
+| GET | `/windowshostings/{domainName}` | GetWindowsHosting | `domain_name`*, `domainName`* | WindowsHostingDetail | yes | Windows hosting detail |

@@ -152,12 +152,12 @@
       {
         "from": "waterlinked-com-7cb3f1a452",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/poi/{ID}"
+        "to": "operation:get:/api/v1/poi/{ID}"
       },
       {
         "from": "waterlinked-com-7cb3f1a452",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/poi/{ID}"
+        "to": "operation:delete:/api/v1/poi/{ID}"
       },
       {
         "from": "waterlinked-com-7cb3f1a452",
@@ -193,6 +193,241 @@
         "from": "waterlinked-com-7cb3f1a452",
         "kind": "EXPOSES",
         "to": "operation:get:/api/v1/warnings/"
+      },
+      {
+        "from": "operation:get:/api/",
+        "kind": "RETURNS",
+        "to": "schema:WupdaterApiversion"
+      },
+      {
+        "from": "operation:get:/api/v1/about",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedAbout"
+      },
+      {
+        "from": "operation:post:/api/v1/about/factoryreset",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/about/status",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedStatus"
+      },
+      {
+        "from": "operation:get:/api/v1/about/temperature",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedTemperature"
+      },
+      {
+        "from": "operation:get:/api/v1/config/antenna",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedAntenna_config"
+      },
+      {
+        "from": "operation:put:/api/v1/config/antenna",
+        "kind": "ACCEPTS",
+        "to": "schema:ModifyAntennaConfigConfigPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/config/antenna",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/config/generic",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedConfiguration"
+      },
+      {
+        "from": "operation:put:/api/v1/config/generic",
+        "kind": "ACCEPTS",
+        "to": "schema:ModifyConfigPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/config/generic",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/config/ip",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedIp_config"
+      },
+      {
+        "from": "operation:put:/api/v1/config/ip",
+        "kind": "ACCEPTS",
+        "to": "schema:ModifyIPConfigPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/config/ip",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/config/receivers/",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedReceiverCollection"
+      },
+      {
+        "from": "operation:get:/api/v1/config/receivers/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedReceiver"
+      },
+      {
+        "from": "operation:put:/api/v1/config/receivers/{ID}",
+        "kind": "ACCEPTS",
+        "to": "schema:ModifyReceiverConfigPayload"
+      },
+      {
+        "from": "operation:get:/api/v1/config/wifi",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedWifi_config"
+      },
+      {
+        "from": "operation:put:/api/v1/config/wifi",
+        "kind": "ACCEPTS",
+        "to": "schema:ModifyWIFIConfigPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/config/wifi",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:put:/api/v1/external/depth",
+        "kind": "ACCEPTS",
+        "to": "schema:SetDepthExternalPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/external/depth",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/external/imu",
+        "kind": "RETURNS",
+        "to": "schema:WlExternalVehicleImu"
+      },
+      {
+        "from": "operation:put:/api/v1/external/imu",
+        "kind": "ACCEPTS",
+        "to": "schema:SetVehicleIMUExternalPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/external/imu",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:put:/api/v1/external/master",
+        "kind": "ACCEPTS",
+        "to": "schema:SetMasterExternalPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/external/master",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/external/orientation",
+        "kind": "RETURNS",
+        "to": "schema:WlExternalLocatorOrientation"
+      },
+      {
+        "from": "operation:put:/api/v1/external/orientation",
+        "kind": "ACCEPTS",
+        "to": "schema:SetOrientationExternalPayload"
+      },
+      {
+        "from": "operation:put:/api/v1/external/orientation",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedOperation_response"
+      },
+      {
+        "from": "operation:get:/api/v1/imu/calibrate",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedImu"
+      },
+      {
+        "from": "operation:post:/api/v1/imu/calibrate",
+        "kind": "ACCEPTS",
+        "to": "schema:CalibrateImuPayload"
+      },
+      {
+        "from": "operation:post:/api/v1/imu/setnorth",
+        "kind": "ACCEPTS",
+        "to": "schema:SetNorthImuPayload"
+      },
+      {
+        "from": "operation:get:/api/v1/poi/",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedPoiCollection"
+      },
+      {
+        "from": "operation:post:/api/v1/poi/",
+        "kind": "ACCEPTS",
+        "to": "schema:CreatePoiPayload"
+      },
+      {
+        "from": "operation:get:/api/v1/poi/{ID}",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedPoi"
+      },
+      {
+        "from": "operation:patch:/api/v1/poi/{ID}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdatePoiPayload"
+      },
+      {
+        "from": "operation:get:/api/v1/position/acoustic/filtered",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedAccousticPosition"
+      },
+      {
+        "from": "operation:get:/api/v1/position/acoustic/raw",
+        "kind": "RETURNS",
+        "to": "schema:WaterlinkedAccousticPosition"
+      },
+      {
+        "from": "operation:get:/api/v1/position/global",
+        "kind": "RETURNS",
+        "to": "schema:WlSatellitePosition"
+      },
+      {
+        "from": "operation:get:/api/v1/position/master",
+        "kind": "RETURNS",
+        "to": "schema:WlSatellitePosition"
+      },
+      {
+        "from": "operation:get:/api/v1/status_report/",
+        "kind": "RETURNS",
+        "to": "schema:WlStatusGroupCollection"
+      },
+      {
+        "from": "operation:get:/api/v1/warnings/",
+        "kind": "RETURNS",
+        "to": "schema:WlWarningCollection"
+      },
+      {
+        "from": "schema:WaterlinkedPoiCollection",
+        "kind": "REFERENCES",
+        "to": "schema:WaterlinkedPoi"
+      },
+      {
+        "from": "schema:WaterlinkedReceiverCollection",
+        "kind": "REFERENCES",
+        "to": "schema:WaterlinkedReceiver"
+      },
+      {
+        "from": "schema:WlStatusGroupCollection",
+        "kind": "REFERENCES",
+        "to": "schema:WlStatusGroup"
+      },
+      {
+        "from": "schema:WlWarningCollection",
+        "kind": "REFERENCES",
+        "to": "schema:WlWarning"
       }
     ],
     "nodes": [
@@ -208,316 +443,888 @@
         "name": "about#ApiVersion",
         "path": "/api/",
         "pointer": "#/paths/~1api~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WupdaterApiversion"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "ApiVersion about"
+        "summary": "ApiVersion about",
+        "tags": [
+          "about"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get about information",
         "id": "operation:get:/api/v1/about",
         "kind": "operation",
         "method": "get",
         "name": "about#Get",
         "path": "/api/v1/about",
         "pointer": "#/paths/~1api~1v1~1about/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedAbout"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get about"
+        "summary": "Get about",
+        "tags": [
+          "about"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reset all settings on master electronics",
         "id": "operation:post:/api/v1/about/factoryreset",
         "kind": "operation",
         "method": "post",
         "name": "about#FactoryReset",
         "path": "/api/v1/about/factoryreset",
         "pointer": "#/paths/~1api~1v1~1about~1factoryreset/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "503",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "FactoryReset about"
+        "summary": "FactoryReset about",
+        "tags": [
+          "about"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Flash LED1 on master electronics",
         "id": "operation:get:/api/v1/about/led",
         "kind": "operation",
         "method": "get",
         "name": "about#LED",
         "path": "/api/v1/about/led",
         "pointer": "#/paths/~1api~1v1~1about~1led/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "LED about"
+        "summary": "LED about",
+        "tags": [
+          "about"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current IMU and GPS status",
         "id": "operation:get:/api/v1/about/status",
         "kind": "operation",
         "method": "get",
         "name": "about#Status",
         "path": "/api/v1/about/status",
         "pointer": "#/paths/~1api~1v1~1about~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedStatus"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Status about"
+        "summary": "Status about",
+        "tags": [
+          "about"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get board temperature",
         "id": "operation:get:/api/v1/about/temperature",
         "kind": "operation",
         "method": "get",
         "name": "about#Temperature",
         "path": "/api/v1/about/temperature",
         "pointer": "#/paths/~1api~1v1~1about~1temperature/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedTemperature"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Temperature about"
+        "summary": "Temperature about",
+        "tags": [
+          "about"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Antenna configuration",
         "id": "operation:get:/api/v1/config/antenna",
         "kind": "operation",
         "method": "get",
         "name": "config#GetAntennaConfig",
         "path": "/api/v1/config/antenna",
         "pointer": "#/paths/~1api~1v1~1config~1antenna/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedAntenna_config"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GetAntennaConfig config"
+        "summary": "GetAntennaConfig config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Modify Antenna configuration",
         "id": "operation:put:/api/v1/config/antenna",
         "kind": "operation",
         "method": "put",
         "name": "config#ModifyAntennaConfig",
         "path": "/api/v1/config/antenna",
         "pointer": "#/paths/~1api~1v1~1config~1antenna/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ModifyAntennaConfigConfigPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "400",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "503",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ModifyAntennaConfig config"
+        "summary": "ModifyAntennaConfig config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get generic configuration",
         "id": "operation:get:/api/v1/config/generic",
         "kind": "operation",
         "method": "get",
         "name": "config#Get",
         "path": "/api/v1/config/generic",
         "pointer": "#/paths/~1api~1v1~1config~1generic/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedConfiguration"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get config"
+        "summary": "Get config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Modify generic configuration",
         "id": "operation:put:/api/v1/config/generic",
         "kind": "operation",
         "method": "put",
         "name": "config#Modify",
         "path": "/api/v1/config/generic",
         "pointer": "#/paths/~1api~1v1~1config~1generic/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ModifyConfigPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "400",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Modify config"
+        "summary": "Modify config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get IP configuration",
         "id": "operation:get:/api/v1/config/ip",
         "kind": "operation",
         "method": "get",
         "name": "config#GetIP",
         "path": "/api/v1/config/ip",
         "pointer": "#/paths/~1api~1v1~1config~1ip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedIp_config"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GetIP config"
+        "summary": "GetIP config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Modify IP configuration",
         "id": "operation:put:/api/v1/config/ip",
         "kind": "operation",
         "method": "put",
         "name": "config#ModifyIP",
         "path": "/api/v1/config/ip",
         "pointer": "#/paths/~1api~1v1~1config~1ip/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ModifyIPConfigPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "400",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "503",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ModifyIP config"
+        "summary": "ModifyIP config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "(Re)Load current receiver settings and return them",
         "id": "operation:get:/api/v1/config/receivers/",
         "kind": "operation",
         "method": "get",
         "name": "config#ListReceiver",
         "path": "/api/v1/config/receivers/",
         "pointer": "#/paths/~1api~1v1~1config~1receivers~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedReceiverCollection"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "ListReceiver config"
+        "summary": "ListReceiver config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get receiver configuration by id",
         "id": "operation:get:/api/v1/config/receivers/{ID}",
         "kind": "operation",
         "method": "get",
         "name": "config#ShowReceiver",
+        "parameters": [
+          {
+            "description": "Identifier",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/config/receivers/{ID}",
         "pointer": "#/paths/~1api~1v1~1config~1receivers~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedReceiver"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "ShowReceiver config"
+        "summary": "ShowReceiver config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Modify receiver configuration, does not apply the change until generic modify is called.",
         "id": "operation:put:/api/v1/config/receivers/{ID}",
         "kind": "operation",
         "method": "put",
         "name": "config#ModifyReceiver",
+        "parameters": [
+          {
+            "description": "Identifier",
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/config/receivers/{ID}",
         "pointer": "#/paths/~1api~1v1~1config~1receivers~1{ID}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ModifyReceiverConfigPayload"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ModifyReceiver config"
+        "summary": "ModifyReceiver config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get WIFI configuration",
         "id": "operation:get:/api/v1/config/wifi",
         "kind": "operation",
         "method": "get",
         "name": "config#GetWIFI",
         "path": "/api/v1/config/wifi",
         "pointer": "#/paths/~1api~1v1~1config~1wifi/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedWifi_config"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GetWIFI config"
+        "summary": "GetWIFI config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Modify WIFI configuration",
         "id": "operation:put:/api/v1/config/wifi",
         "kind": "operation",
         "method": "put",
         "name": "config#ModifyWIFI",
         "path": "/api/v1/config/wifi",
         "pointer": "#/paths/~1api~1v1~1config~1wifi/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ModifyWIFIConfigPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "400",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "503",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ModifyWIFI config"
+        "summary": "ModifyWIFI config",
+        "tags": [
+          "config"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set depth from external source.",
         "id": "operation:put:/api/v1/external/depth",
         "kind": "operation",
         "method": "put",
         "name": "external#SetDepth",
         "path": "/api/v1/external/depth",
         "pointer": "#/paths/~1api~1v1~1external~1depth/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetDepthExternalPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "SetDepth external"
+        "summary": "SetDepth external",
+        "tags": [
+          "external"
+        ]
       },
       {
         "deprecated": false,
+        "description": "[DEPRECATED]Get rotation and acceleration of vehicle Locator is mounted on which was previously set",
         "id": "operation:get:/api/v1/external/imu",
         "kind": "operation",
         "method": "get",
         "name": "external#GetVehicleIMU",
         "path": "/api/v1/external/imu",
         "pointer": "#/paths/~1api~1v1~1external~1imu/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WlExternalVehicleImu"
+          },
+          {
+            "status": "204"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GetVehicleIMU external"
+        "summary": "GetVehicleIMU external",
+        "tags": [
+          "external"
+        ]
       },
       {
         "deprecated": false,
+        "description": "[DEPRECATED]Set rotation and acceleration of vehicle Locator is mounted on.",
         "id": "operation:put:/api/v1/external/imu",
         "kind": "operation",
         "method": "put",
         "name": "external#SetVehicleIMU",
         "path": "/api/v1/external/imu",
         "pointer": "#/paths/~1api~1v1~1external~1imu/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetVehicleIMUExternalPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "SetVehicleIMU external"
+        "summary": "SetVehicleIMU external",
+        "tags": [
+          "external"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set current global position of master electronics from external source.",
         "id": "operation:put:/api/v1/external/master",
         "kind": "operation",
         "method": "put",
         "name": "external#SetMaster",
         "path": "/api/v1/external/master",
         "pointer": "#/paths/~1api~1v1~1external~1master/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetMasterExternalPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "SetMaster external"
+        "summary": "SetMaster external",
+        "tags": [
+          "external"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get orientation of Vehicle/ROV/Locator set by SetOrientation",
         "id": "operation:get:/api/v1/external/orientation",
         "kind": "operation",
         "method": "get",
         "name": "external#GetOrientation",
         "path": "/api/v1/external/orientation",
         "pointer": "#/paths/~1api~1v1~1external~1orientation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WlExternalLocatorOrientation"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GetOrientation external"
+        "summary": "GetOrientation external",
+        "tags": [
+          "external"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set orientation/compass heading of Vehicle/ROV/Locator.",
         "id": "operation:put:/api/v1/external/orientation",
         "kind": "operation",
         "method": "put",
         "name": "external#SetOrientation",
         "path": "/api/v1/external/orientation",
         "pointer": "#/paths/~1api~1v1~1external~1orientation/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetOrientationExternalPayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedOperation_response"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "SetOrientation external"
+        "summary": "SetOrientation external",
+        "tags": [
+          "external"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get IMU status and orientation",
         "id": "operation:get:/api/v1/imu/calibrate",
         "kind": "operation",
         "method": "get",
         "name": "imu#Get",
         "path": "/api/v1/imu/calibrate",
         "pointer": "#/paths/~1api~1v1~1imu~1calibrate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedImu"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get imu"
+        "summary": "Get imu",
+        "tags": [
+          "imu"
+        ]
       },
       {
         "deprecated": false,
+        "description": "[DEPRECATED]Start calibration",
         "id": "operation:post:/api/v1/imu/calibrate",
         "kind": "operation",
         "method": "post",
         "name": "imu#Calibrate",
         "path": "/api/v1/imu/calibrate",
         "pointer": "#/paths/~1api~1v1~1imu~1calibrate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CalibrateImuPayload"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "408"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calibrate imu"
+        "summary": "Calibrate imu",
+        "tags": [
+          "imu"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reset Gyro",
         "id": "operation:post:/api/v1/imu/resetgyros",
         "kind": "operation",
         "method": "post",
         "name": "imu#ResetGyro",
         "path": "/api/v1/imu/resetgyros",
         "pointer": "#/paths/~1api~1v1~1imu~1resetgyros/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "408"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ResetGyro imu"
+        "summary": "ResetGyro imu",
+        "tags": [
+          "imu"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set north point",
         "id": "operation:post:/api/v1/imu/setnorth",
         "kind": "operation",
         "method": "post",
         "name": "imu#SetNorth",
         "path": "/api/v1/imu/setnorth",
         "pointer": "#/paths/~1api~1v1~1imu~1setnorth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SetNorthImuPayload"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "408"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "SetNorth imu"
+        "summary": "SetNorth imu",
+        "tags": [
+          "imu"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all points of interest",
         "id": "operation:get:/api/v1/poi/",
         "kind": "operation",
         "method": "get",
         "name": "poi#List",
         "path": "/api/v1/poi/",
         "pointer": "#/paths/~1api~1v1~1poi~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedPoiCollection"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List poi"
+        "summary": "List poi",
+        "tags": [
+          "poi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new POI",
         "id": "operation:post:/api/v1/poi/",
         "kind": "operation",
         "method": "post",
         "name": "poi#Create",
         "path": "/api/v1/poi/",
         "pointer": "#/paths/~1api~1v1~1poi~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreatePoiPayload"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create poi"
+        "summary": "Create poi",
+        "tags": [
+          "poi"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get a POI",
+        "id": "operation:get:/api/v1/poi/{ID}",
+        "kind": "operation",
+        "method": "get",
+        "name": "poi#Show",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/api/v1/poi/{ID}",
+        "pointer": "#/paths/~1api~1v1~1poi~1{ID}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedPoi"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": "Show poi",
+        "tags": [
+          "poi"
+        ]
       },
       {
         "deprecated": false,
@@ -525,21 +1332,34 @@
         "kind": "operation",
         "method": "delete",
         "name": "poi#Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/poi/{ID}",
         "pointer": "#/paths/~1api~1v1~1poi~1{ID}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete poi"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:get:/api/v1/poi/{ID}",
-        "kind": "operation",
-        "method": "get",
-        "name": "poi#Show",
-        "path": "/api/v1/poi/{ID}",
-        "pointer": "#/paths/~1api~1v1~1poi~1{ID}/get",
-        "security": [],
-        "summary": "Show poi"
+        "summary": "Delete poi",
+        "tags": [
+          "poi"
+        ]
       },
       {
         "deprecated": false,
@@ -547,256 +1367,441 @@
         "kind": "operation",
         "method": "patch",
         "name": "poi#Update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/poi/{ID}",
         "pointer": "#/paths/~1api~1v1~1poi~1{ID}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdatePoiPayload"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update poi"
+        "summary": "Update poi",
+        "tags": [
+          "poi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current Kalman filtered acoustic position relative to master acoustics.",
         "id": "operation:get:/api/v1/position/acoustic/filtered",
         "kind": "operation",
         "method": "get",
         "name": "position#AcousticFiltered",
         "path": "/api/v1/position/acoustic/filtered",
         "pointer": "#/paths/~1api~1v1~1position~1acoustic~1filtered/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedAccousticPosition"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "AcousticFiltered position"
+        "summary": "AcousticFiltered position",
+        "tags": [
+          "position"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current unfiltered acoustic position relative to master acoustics.",
         "id": "operation:get:/api/v1/position/acoustic/raw",
         "kind": "operation",
         "method": "get",
         "name": "position#AcousticRaw",
         "path": "/api/v1/position/acoustic/raw",
         "pointer": "#/paths/~1api~1v1~1position~1acoustic~1raw/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WaterlinkedAccousticPosition"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "AcousticRaw position"
+        "summary": "AcousticRaw position",
+        "tags": [
+          "position"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current global position of locator.",
         "id": "operation:get:/api/v1/position/global",
         "kind": "operation",
         "method": "get",
         "name": "position#Get",
         "path": "/api/v1/position/global",
         "pointer": "#/paths/~1api~1v1~1position~1global/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WlSatellitePosition"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get position"
+        "summary": "Get position",
+        "tags": [
+          "position"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current global position of master electronics.",
         "id": "operation:get:/api/v1/position/master",
         "kind": "operation",
         "method": "get",
         "name": "position#GetMaster",
         "path": "/api/v1/position/master",
         "pointer": "#/paths/~1api~1v1~1position~1master/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WlSatellitePosition"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GetMaster position"
+        "summary": "GetMaster position",
+        "tags": [
+          "position"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get list of status reports from all status groups",
         "id": "operation:get:/api/v1/status_report/",
         "kind": "operation",
         "method": "get",
         "name": "status_report#Get",
         "path": "/api/v1/status_report/",
         "pointer": "#/paths/~1api~1v1~1status_report~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WlStatusGroupCollection"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get status_report"
+        "summary": "Get status_report",
+        "tags": [
+          "status_report"
+        ]
       },
       {
         "deprecated": false,
+        "description": "[DEPRECATED] Get current list of messages",
         "id": "operation:get:/api/v1/warnings/",
         "kind": "operation",
         "method": "get",
         "name": "warnings#Get",
         "path": "/api/v1/warnings/",
         "pointer": "#/paths/~1api~1v1~1warnings~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WlWarningCollection"
+          },
+          {
+            "status": "500",
+            "type": "WaterlinkedOperation_response"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get warnings"
+        "summary": "Get warnings",
+        "tags": [
+          "warnings"
+        ]
       },
       {
+        "description": "IMU calibration action",
         "id": "schema:CalibrateImuPayload",
         "kind": "schema",
-        "name": "CalibrateImuPayload"
+        "name": "CalibrateImuPayload",
+        "type": "object"
       },
       {
+        "description": "A list of all POI",
         "id": "schema:CreatePoiPayload",
         "kind": "schema",
-        "name": "CreatePoiPayload"
+        "name": "CreatePoiPayload",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters for antenna set up",
         "id": "schema:ModifyAntennaConfigConfigPayload",
         "kind": "schema",
-        "name": "ModifyAntennaConfigConfigPayload"
+        "name": "ModifyAntennaConfigConfigPayload",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters",
         "id": "schema:ModifyConfigPayload",
         "kind": "schema",
-        "name": "ModifyConfigPayload"
+        "name": "ModifyConfigPayload",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters",
         "id": "schema:ModifyIPConfigPayload",
         "kind": "schema",
-        "name": "ModifyIPConfigPayload"
+        "name": "ModifyIPConfigPayload",
+        "type": "object"
       },
       {
+        "description": "A receiver configuration",
         "id": "schema:ModifyReceiverConfigPayload",
         "kind": "schema",
-        "name": "ModifyReceiverConfigPayload"
+        "name": "ModifyReceiverConfigPayload",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters",
         "id": "schema:ModifyWIFIConfigPayload",
         "kind": "schema",
-        "name": "ModifyWIFIConfigPayload"
+        "name": "ModifyWIFIConfigPayload",
+        "type": "object"
       },
       {
+        "description": "Current locator depth and temperature",
         "id": "schema:SetDepthExternalPayload",
         "kind": "schema",
-        "name": "SetDepthExternalPayload"
+        "name": "SetDepthExternalPayload",
+        "type": "object"
       },
       {
+        "description": "Global master position from external source",
         "id": "schema:SetMasterExternalPayload",
         "kind": "schema",
-        "name": "SetMasterExternalPayload"
+        "name": "SetMasterExternalPayload",
+        "type": "object"
       },
       {
+        "description": "IMU set north",
         "id": "schema:SetNorthImuPayload",
         "kind": "schema",
-        "name": "SetNorthImuPayload"
+        "name": "SetNorthImuPayload",
+        "type": "object"
       },
       {
+        "description": "Set current compass heading of ROV/locator",
         "id": "schema:SetOrientationExternalPayload",
         "kind": "schema",
-        "name": "SetOrientationExternalPayload"
+        "name": "SetOrientationExternalPayload",
+        "type": "object"
       },
       {
+        "description": "Set current rotation and acceleration of vehicle",
         "id": "schema:SetVehicleIMUExternalPayload",
         "kind": "schema",
-        "name": "SetVehicleIMUExternalPayload"
+        "name": "SetVehicleIMUExternalPayload",
+        "type": "object"
       },
       {
+        "description": "A list of all POI",
         "id": "schema:UpdatePoiPayload",
         "kind": "schema",
-        "name": "UpdatePoiPayload"
+        "name": "UpdatePoiPayload",
+        "type": "object"
       },
       {
+        "description": "About information (default view)",
         "id": "schema:WaterlinkedAbout",
         "kind": "schema",
-        "name": "WaterlinkedAbout"
+        "name": "WaterlinkedAbout",
+        "type": "object"
       },
       {
+        "description": "Current relative Locator position (default view)",
         "id": "schema:WaterlinkedAccousticPosition",
         "kind": "schema",
-        "name": "WaterlinkedAccousticPosition"
+        "name": "WaterlinkedAccousticPosition",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters for antenna set up (default view)",
         "id": "schema:WaterlinkedAntenna_config",
         "kind": "schema",
-        "name": "WaterlinkedAntenna_config"
+        "name": "WaterlinkedAntenna_config",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters (default view)",
         "id": "schema:WaterlinkedConfiguration",
         "kind": "schema",
-        "name": "WaterlinkedConfiguration"
+        "name": "WaterlinkedConfiguration",
+        "type": "object"
       },
       {
+        "description": "IMU status and orientation information (default view)",
         "id": "schema:WaterlinkedImu",
         "kind": "schema",
-        "name": "WaterlinkedImu"
+        "name": "WaterlinkedImu",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters (default view)",
         "id": "schema:WaterlinkedIp_config",
         "kind": "schema",
-        "name": "WaterlinkedIp_config"
+        "name": "WaterlinkedIp_config",
+        "type": "object"
       },
       {
+        "description": "Response from server on operations performed (default view)",
         "id": "schema:WaterlinkedOperation_response",
         "kind": "schema",
-        "name": "WaterlinkedOperation_response"
+        "name": "WaterlinkedOperation_response",
+        "type": "object"
       },
       {
+        "description": "A list of all POI (default view)",
         "id": "schema:WaterlinkedPoi",
         "kind": "schema",
-        "name": "WaterlinkedPoi"
+        "name": "WaterlinkedPoi",
+        "type": "object"
       },
       {
+        "description": "WaterlinkedPoiCollection is the media type for an array of WaterlinkedPoi (default view)",
         "id": "schema:WaterlinkedPoiCollection",
         "kind": "schema",
-        "name": "WaterlinkedPoiCollection"
+        "name": "WaterlinkedPoiCollection",
+        "type": "WaterlinkedPoi[]"
       },
       {
+        "description": "A receiver configuration (default view)",
         "id": "schema:WaterlinkedReceiver",
         "kind": "schema",
-        "name": "WaterlinkedReceiver"
+        "name": "WaterlinkedReceiver",
+        "type": "object"
       },
       {
+        "description": "WaterlinkedReceiverCollection is the media type for an array of WaterlinkedReceiver (default view)",
         "id": "schema:WaterlinkedReceiverCollection",
         "kind": "schema",
-        "name": "WaterlinkedReceiverCollection"
+        "name": "WaterlinkedReceiverCollection",
+        "type": "WaterlinkedReceiver[]"
       },
       {
+        "description": "Status information (default view)",
         "id": "schema:WaterlinkedStatus",
         "kind": "schema",
-        "name": "WaterlinkedStatus"
+        "name": "WaterlinkedStatus",
+        "type": "object"
       },
       {
+        "description": "Temperature information (default view)",
         "id": "schema:WaterlinkedTemperature",
         "kind": "schema",
-        "name": "WaterlinkedTemperature"
+        "name": "WaterlinkedTemperature",
+        "type": "object"
       },
       {
+        "description": "Configuration parameters (default view)",
         "id": "schema:WaterlinkedWifi_config",
         "kind": "schema",
-        "name": "WaterlinkedWifi_config"
+        "name": "WaterlinkedWifi_config",
+        "type": "object"
       },
       {
+        "description": "Set current compass heading of ROV/locator (default view)",
         "id": "schema:WlExternalLocatorOrientation",
         "kind": "schema",
-        "name": "WlExternalLocatorOrientation"
+        "name": "WlExternalLocatorOrientation",
+        "type": "object"
       },
       {
+        "description": "Set current rotation and acceleration of vehicle (default view)",
         "id": "schema:WlExternalVehicleImu",
         "kind": "schema",
-        "name": "WlExternalVehicleImu"
+        "name": "WlExternalVehicleImu",
+        "type": "object"
       },
       {
+        "description": "GPS and IMU position (default view)",
         "id": "schema:WlSatellitePosition",
         "kind": "schema",
-        "name": "WlSatellitePosition"
+        "name": "WlSatellitePosition",
+        "type": "object"
       },
       {
+        "description": "Current status from one specific status group (default view)",
         "id": "schema:WlStatusGroup",
         "kind": "schema",
-        "name": "WlStatusGroup"
+        "name": "WlStatusGroup",
+        "type": "object"
       },
       {
+        "description": "WlStatusGroupCollection is the media type for an array of WlStatusGroup (default view)",
         "id": "schema:WlStatusGroupCollection",
         "kind": "schema",
-        "name": "WlStatusGroupCollection"
+        "name": "WlStatusGroupCollection",
+        "type": "WlStatusGroup[]"
       },
       {
+        "description": "Warning message (default view)",
         "id": "schema:WlWarning",
         "kind": "schema",
-        "name": "WlWarning"
+        "name": "WlWarning",
+        "type": "object"
       },
       {
+        "description": "WlWarningCollection is the media type for an array of WlWarning (default view)",
         "id": "schema:WlWarningCollection",
         "kind": "schema",
-        "name": "WlWarningCollection"
+        "name": "WlWarningCollection",
+        "type": "WlWarning[]"
       },
       {
+        "description": "Returns supported api versions (default view)",
         "id": "schema:WupdaterApiversion",
         "kind": "schema",
-        "name": "WupdaterApiversion"
+        "name": "WupdaterApiversion",
+        "type": "object"
       },
       {
+        "description": "Error response media type (default view)",
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       }
     ]
   },

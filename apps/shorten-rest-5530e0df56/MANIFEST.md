@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.shorten.rest_assets_logo.p
 
 | | |
 | --- | --- |
-| Signed bundle | `5460f7deeec0c9a27b008870b8bc55bfc18055532596da6a114c9b9b937da584` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.shorten.rest_assets_logo.p
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/aliases` | DeleteAlias | Delete alias |
-| GET | `/aliases` | GetAlias | Get alias |
-| POST | `/aliases` | CreateAlias | Create alias |
-| PUT | `/aliases` | UpdateAlias | Update alias |
-| GET | `/aliases/all` | GetAliases | Get aliases by domain |
-| GET | `/clicks` | GetClicks | Get clicks |
-| POST | `/clicks/pg` | GetStatistics | Get clicks statistics |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/aliases` | GetAlias | `domainName`, `aliasName`* | AliasModel | yes | Get alias |
+| PUT | `/aliases` | UpdateAlias | `domainName`, `aliasName`*, body*: CreateAliasModel | — |  | Update alias |
+| POST | `/aliases` | CreateAlias | `domainName`, `aliasName`, body*: CreateAliasModel | CreateAliasResponseModel |  | Create alias |
+| DELETE | `/aliases` | DeleteAlias | `domainName`, `aliasName`* | — |  | Delete alias |
+| GET | `/aliases/all` | GetAliases | `domainName`, `continueFrom`, `limit` | GetAliasesModel | yes | Get aliases by domain |
+| GET | `/clicks` | GetClicks | `continueFrom`, `limit` | GetClicksModel | yes | Get clicks |
+| POST | `/clicks/pg` | GetStatistics | body*: ClicksFilterModel | ClickModelPg |  | Get clicks statistics |

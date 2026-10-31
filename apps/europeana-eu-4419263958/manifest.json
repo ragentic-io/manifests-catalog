@@ -48,6 +48,66 @@
         "from": "europeana-eu-4419263958",
         "kind": "EXPOSES",
         "to": "operation:get:/record/v2/{collectionId}/{recordId}.ttl"
+      },
+      {
+        "from": "operation:get:/record/v2/opensearch.rss",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/search.json",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:post:/record/v2/search.json",
+        "kind": "ACCEPTS",
+        "to": "schema:SearchRequest"
+      },
+      {
+        "from": "operation:post:/record/v2/search.json",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/translateQuery.json",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/{collectionId}/{recordId}.json",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/{collectionId}/{recordId}.jsonld",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/{collectionId}/{recordId}.rdf",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/{collectionId}/{recordId}.schema.jsonld",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "operation:get:/record/v2/{collectionId}/{recordId}.ttl",
+        "kind": "RETURNS",
+        "to": "schema:ModelAndView"
+      },
+      {
+        "from": "schema:ModelAndView",
+        "kind": "REFERENCES",
+        "to": "schema:View"
+      },
+      {
+        "from": "schema:SearchRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Hit"
       }
     ],
     "nodes": [
@@ -61,10 +121,54 @@
         "kind": "operation",
         "method": "get",
         "name": "openSearch",
+        "parameters": [
+          {
+            "default": 12,
+            "description": "count",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "searchTerms",
+            "in": "query",
+            "name": "searchTerms",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "startIndex",
+            "in": "query",
+            "name": "startIndex",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/record/v2/opensearch.rss",
         "pointer": "#/paths/~1record~1v2~1opensearch.rss/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "basic search function following the OpenSearch specification"
+        "summary": "basic search function following the OpenSearch specification",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -72,10 +176,195 @@
         "kind": "operation",
         "method": "get",
         "name": "searchRecords",
+        "parameters": [
+          {
+            "description": "boost",
+            "in": "query",
+            "name": "boost",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "colourpalette",
+            "in": "query",
+            "name": "colourpalette",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "cursor",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "facet",
+            "in": "query",
+            "name": "facet",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "hit.fl",
+            "in": "query",
+            "name": "hit.fl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "hit.selectors",
+            "in": "query",
+            "name": "hit.selectors",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "landingpage",
+            "in": "query",
+            "name": "landingpage",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "lang",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "media",
+            "in": "query",
+            "name": "media",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "standard",
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "q.source",
+            "in": "query",
+            "name": "q.source",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "q.target",
+            "in": "query",
+            "name": "q.target",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "qf",
+            "in": "query",
+            "name": "qf",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "reusability",
+            "in": "query",
+            "name": "reusability",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 12,
+            "description": "rows",
+            "in": "query",
+            "name": "rows",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "sort",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "start",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "text_fulltext",
+            "in": "query",
+            "name": "text_fulltext",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "theme",
+            "in": "query",
+            "name": "theme",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "thumbnail",
+            "in": "query",
+            "name": "thumbnail",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/search.json",
         "pointer": "#/paths/~1record~1v2~1search.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "search for records"
+        "summary": "search for records",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -83,10 +372,48 @@
         "kind": "operation",
         "method": "post",
         "name": "searchRecordsPost",
+        "parameters": [
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/search.json",
         "pointer": "#/paths/~1record~1v2~1search.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SearchRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "search for records post"
+        "summary": "search for records post",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -94,10 +421,66 @@
         "kind": "operation",
         "method": "get",
         "name": "translateQueryUsingGET",
+        "parameters": [
+          {
+            "description": "callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "languageCodes",
+            "in": "query",
+            "name": "languageCodes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "term",
+            "in": "query",
+            "name": "term",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/translateQuery.json",
         "pointer": "#/paths/~1record~1v2~1translateQuery.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "translate a term to different languages"
+        "summary": "translate a term to different languages",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -105,10 +488,74 @@
         "kind": "operation",
         "method": "get",
         "name": "getSingleRecordJson",
+        "parameters": [
+          {
+            "description": "callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "collectionId",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "lang",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "standard",
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "recordId",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/{collectionId}/{recordId}.json",
         "pointer": "#/paths/~1record~1v2~1{collectionId}~1{recordId}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "get a single record in JSON format"
+        "summary": "get a single record in JSON format",
+        "tags": [
+          "Record"
+        ]
       },
       {
         "deprecated": false,
@@ -116,10 +563,74 @@
         "kind": "operation",
         "method": "get",
         "name": "getSingleRecordJsonLD",
+        "parameters": [
+          {
+            "description": "callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "collectionId",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "lang",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "standard",
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "recordId",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/{collectionId}/{recordId}.jsonld",
         "pointer": "#/paths/~1record~1v2~1{collectionId}~1{recordId}.jsonld/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "get single record in JSON LD format"
+        "summary": "get single record in JSON LD format",
+        "tags": [
+          "Record"
+        ]
       },
       {
         "deprecated": false,
@@ -127,10 +638,67 @@
         "kind": "operation",
         "method": "get",
         "name": "getSingleRecordRDF",
+        "parameters": [
+          {
+            "description": "collectionId",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "lang",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "standard",
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "recordId",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/{collectionId}/{recordId}.rdf",
         "pointer": "#/paths/~1record~1v2~1{collectionId}~1{recordId}.rdf/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "get single record in RDF format)"
+        "summary": "get single record in RDF format)",
+        "tags": [
+          "Record"
+        ]
       },
       {
         "deprecated": false,
@@ -138,10 +706,74 @@
         "kind": "operation",
         "method": "get",
         "name": "getSingleRecordSchemaOrg",
+        "parameters": [
+          {
+            "description": "callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "collectionId",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "lang",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "standard",
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "recordId",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/{collectionId}/{recordId}.schema.jsonld",
         "pointer": "#/paths/~1record~1v2~1{collectionId}~1{recordId}.schema.jsonld/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "get single record in Schema.org JSON LD format"
+        "summary": "get single record in Schema.org JSON LD format",
+        "tags": [
+          "Record"
+        ]
       },
       {
         "deprecated": false,
@@ -149,30 +781,91 @@
         "kind": "operation",
         "method": "get",
         "name": "getSingleRecordTurtle",
+        "parameters": [
+          {
+            "description": "collectionId",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "lang",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "standard",
+            "description": "profile",
+            "in": "query",
+            "name": "profile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "recordId",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "wskey",
+            "in": "query",
+            "name": "wskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/record/v2/{collectionId}/{recordId}.ttl",
         "pointer": "#/paths/~1record~1v2~1{collectionId}~1{recordId}.ttl/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ModelAndView"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "get single record in turtle format)"
+        "summary": "get single record in turtle format)",
+        "tags": [
+          "Record"
+        ]
       },
       {
         "id": "schema:Hit",
         "kind": "schema",
-        "name": "Hit"
+        "name": "Hit",
+        "type": "object"
       },
       {
         "id": "schema:ModelAndView",
         "kind": "schema",
-        "name": "ModelAndView"
+        "name": "ModelAndView",
+        "type": "object"
       },
       {
         "id": "schema:SearchRequest",
         "kind": "schema",
-        "name": "SearchRequest"
+        "name": "SearchRequest",
+        "type": "object"
       },
       {
         "id": "schema:View",
         "kind": "schema",
-        "name": "View"
+        "name": "View",
+        "type": "object"
       }
     ]
   },

@@ -32,17 +32,17 @@
       {
         "from": "c19qrserver-local-b3fc02e2b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/signin/{signinId}"
-      },
-      {
-        "from": "c19qrserver-local-b3fc02e2b6",
-        "kind": "EXPOSES",
         "to": "operation:get:/signin/{signinId}"
       },
       {
         "from": "c19qrserver-local-b3fc02e2b6",
         "kind": "EXPOSES",
         "to": "operation:put:/signin/{signinId}"
+      },
+      {
+        "from": "c19qrserver-local-b3fc02e2b6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/signin/{signinId}"
       },
       {
         "from": "c19qrserver-local-b3fc02e2b6",
@@ -57,12 +57,12 @@
       {
         "from": "c19qrserver-local-b3fc02e2b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/{userId}"
+        "to": "operation:get:/user/{userId}"
       },
       {
         "from": "c19qrserver-local-b3fc02e2b6",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/{userId}"
+        "to": "operation:delete:/user/{userId}"
       },
       {
         "from": "c19qrserver-local-b3fc02e2b6",
@@ -73,6 +73,61 @@
         "from": "c19qrserver-local-b3fc02e2b6",
         "kind": "EXPOSES",
         "to": "operation:post:/verifyPasswordChange"
+      },
+      {
+        "from": "operation:post:/login",
+        "kind": "RETURNS",
+        "to": "schema:loginResponse"
+      },
+      {
+        "from": "operation:post:/requestPasswordReset",
+        "kind": "RETURNS",
+        "to": "schema:requestPasswordResetResponse"
+      },
+      {
+        "from": "operation:post:/signin",
+        "kind": "ACCEPTS",
+        "to": "schema:signin"
+      },
+      {
+        "from": "operation:post:/signin",
+        "kind": "RETURNS",
+        "to": "schema:signinResponse"
+      },
+      {
+        "from": "operation:get:/signin/{signinId}",
+        "kind": "RETURNS",
+        "to": "schema:signin"
+      },
+      {
+        "from": "operation:put:/signin/{signinId}",
+        "kind": "ACCEPTS",
+        "to": "schema:signin"
+      },
+      {
+        "from": "operation:put:/signin/{signinId}",
+        "kind": "RETURNS",
+        "to": "schema:userRecord"
+      },
+      {
+        "from": "operation:get:/signins",
+        "kind": "RETURNS",
+        "to": "schema:signin"
+      },
+      {
+        "from": "operation:post:/user",
+        "kind": "RETURNS",
+        "to": "schema:createUserResponse"
+      },
+      {
+        "from": "operation:get:/user/{userId}",
+        "kind": "RETURNS",
+        "to": "schema:userRecord"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:userRecord"
       }
     ],
     "nodes": [
@@ -82,89 +137,175 @@
       },
       {
         "deprecated": false,
+        "description": "Pass in your old password and your new password",
         "id": "operation:post:/changePassword",
         "kind": "operation",
         "method": "post",
         "name": "post /changePassword",
         "path": "/changePassword",
         "pointer": "#/paths/~1changePassword/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Used for changing your password"
+        "summary": "Used for changing your password",
+        "tags": [
+          "Passwords"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submit your email and password to get an API token",
         "id": "operation:post:/login",
         "kind": "operation",
         "method": "post",
         "name": "post /login",
         "path": "/login",
         "pointer": "#/paths/~1login/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "loginResponse"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Log in to get an API token"
+        "summary": "Log in to get an API token",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Log out by deleting your token off the server.",
         "id": "operation:post:/logout",
         "kind": "operation",
         "method": "post",
         "name": "post /logout",
         "path": "/logout",
         "pointer": "#/paths/~1logout/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Log out"
+        "summary": "Log out",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The admin should run this on behalf of a user who forgot their password.",
         "id": "operation:post:/requestPasswordReset",
         "kind": "operation",
         "method": "post",
         "name": "post /requestPasswordReset",
         "path": "/requestPasswordReset",
         "pointer": "#/paths/~1requestPasswordReset/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "requestPasswordResetResponse"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Used for requesting a password reset code"
+        "summary": "Used for requesting a password reset code",
+        "tags": [
+          "Passwords"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new signin record",
         "id": "operation:post:/signin",
         "kind": "operation",
         "method": "post",
         "name": "post /signin",
         "path": "/signin",
         "pointer": "#/paths/~1signin/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "signin"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "signinResponse"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          },
+          {
+            "status": "503",
+            "type": "keyFailure"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/signin/{signinId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /signin/{signinId}",
-        "path": "/signin/{signinId}",
-        "pointer": "#/paths/~1signin~1{signinId}/delete",
-        "security": [
-          {
-            "TokenHeader": []
-          }
-        ],
-        "summary": "Delete a signin record"
+        "summary": null,
+        "tags": [
+          "Attendees signins"
+        ]
       },
       {
         "deprecated": false,
@@ -172,14 +313,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /signin/{signinId}",
+        "parameters": [
+          {
+            "description": "The ID of the signin record to be retrieved.",
+            "in": "path",
+            "name": "signinId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/signin/{signinId}",
         "pointer": "#/paths/~1signin~1{signinId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "signin"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Retrieve the information associated with a signin record"
+        "summary": "Retrieve the information associated with a signin record",
+        "tags": [
+          "Attendees signins"
+        ]
       },
       {
         "deprecated": false,
@@ -187,74 +351,246 @@
         "kind": "operation",
         "method": "put",
         "name": "put /signin/{signinId}",
+        "parameters": [
+          {
+            "description": "The ID of the signin record to be retrieved.",
+            "in": "path",
+            "name": "signinId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/signin/{signinId}",
         "pointer": "#/paths/~1signin~1{signinId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "signin"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "userRecord"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Update a signin record"
+        "summary": "Update a signin record",
+        "tags": [
+          "Attendees signins"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/signin/{signinId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /signin/{signinId}",
+        "parameters": [
+          {
+            "description": "The ID of the signin record to be deleted.",
+            "in": "path",
+            "name": "signinId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/signin/{signinId}",
+        "pointer": "#/paths/~1signin~1{signinId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenHeader": []
+          }
+        ],
+        "summary": "Delete a signin record",
+        "tags": [
+          "Attendees signins"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of signin objects sorted by signin ID descending.",
         "id": "operation:get:/signins",
         "kind": "operation",
         "method": "get",
         "name": "get /signins",
+        "parameters": [
+          {
+            "description": "Return signins with IDs less than this value.",
+            "in": "query",
+            "name": "less_than",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Return this many objects",
+            "in": "query",
+            "name": "return_count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/signins",
         "pointer": "#/paths/~1signins/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "signin[]"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          },
+          {
+            "status": "503",
+            "type": "keyFailure"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Get signin info"
+        "summary": "Get signin info",
+        "tags": [
+          "Attendees signins"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to create a team member (user) record",
         "id": "operation:post:/user",
         "kind": "operation",
         "method": "post",
         "name": "post /user",
         "path": "/user",
         "pointer": "#/paths/~1user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "createUserResponse"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Create a user"
+        "summary": "Create a user",
+        "tags": [
+          "Team Members"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/user/{userId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/{userId}",
-        "path": "/user/{userId}",
-        "pointer": "#/paths/~1user~1{userId}/delete",
-        "security": [
-          {
-            "TokenHeader": []
-          }
-        ],
-        "summary": "Delete a team member's user record"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve the information associated with a user's account",
         "id": "operation:get:/user/{userId}",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{userId}",
+        "parameters": [
+          {
+            "description": "The ID of the user record to be retrieved.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/{userId}",
         "pointer": "#/paths/~1user~1{userId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "userRecord"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Retrieve the information associated with a team member's user record"
+        "summary": "Retrieve the information associated with a team member's user record",
+        "tags": [
+          "Team Members"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "To preserve referential integrity in the database, the user account will not be deleted from the database.",
+        "id": "operation:delete:/user/{userId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/{userId}",
+        "parameters": [
+          {
+            "description": "The ID of the user record to be deleted.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/{userId}",
+        "pointer": "#/paths/~1user~1{userId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenHeader": []
+          }
+        ],
+        "summary": "Delete a team member's user record",
+        "tags": [
+          "Team Members"
+        ]
       },
       {
         "deprecated": false,
@@ -264,67 +600,118 @@
         "name": "get /users",
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "userRecord[]"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Retrieve the information associated with all team members' user records"
+        "summary": "Retrieve the information associated with all team members' user records",
+        "tags": [
+          "Team Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Another endpoint will generate a password reset code for you.",
         "id": "operation:post:/verifyPasswordChange",
         "kind": "operation",
         "method": "post",
         "name": "post /verifyPasswordChange",
         "path": "/verifyPasswordChange",
         "pointer": "#/paths/~1verifyPasswordChange/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "invalidToken"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenHeader": []
           }
         ],
-        "summary": "Used for resetting your password when you forgot it"
+        "summary": "Used for resetting your password when you forgot it",
+        "tags": [
+          "Passwords"
+        ]
       },
       {
+        "description": "The object that's returned when a user record is created.",
         "id": "schema:createUserResponse",
         "kind": "schema",
-        "name": "createUserResponse"
+        "name": "createUserResponse",
+        "type": "object"
       },
       {
+        "description": "Invalid token",
         "id": "schema:invalidToken",
         "kind": "schema",
-        "name": "invalidToken"
+        "name": "invalidToken",
+        "type": "object"
       },
       {
+        "description": "Key Failure",
         "id": "schema:keyFailure",
         "kind": "schema",
-        "name": "keyFailure"
+        "name": "keyFailure",
+        "type": "object"
       },
       {
+        "description": "Payload of successful login",
         "id": "schema:loginResponse",
         "kind": "schema",
-        "name": "loginResponse"
+        "name": "loginResponse",
+        "type": "object"
       },
       {
+        "description": "This object contains the password reset code for the user",
         "id": "schema:requestPasswordResetResponse",
         "kind": "schema",
-        "name": "requestPasswordResetResponse"
+        "name": "requestPasswordResetResponse",
+        "type": "object"
       },
       {
+        "description": "Payload of signin object",
         "id": "schema:signin",
         "kind": "schema",
-        "name": "signin"
+        "name": "signin",
+        "type": "object"
       },
       {
+        "description": "Response when you successfully create a signin record",
         "id": "schema:signinResponse",
         "kind": "schema",
-        "name": "signinResponse"
+        "name": "signinResponse",
+        "type": "object"
       },
       {
+        "description": "A team member user record",
         "id": "schema:userRecord",
         "kind": "schema",
-        "name": "userRecord"
+        "name": "userRecord",
+        "type": "object"
       }
     ]
   },

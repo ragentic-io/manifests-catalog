@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_developer.twinehealth.com_images
 
 | | |
 | --- | --- |
-| Signed bundle | `c59e83f821b81015ecb9c9fb13686067e5b1bbe7680df4138cba44d3c1f1ab30` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,67 +34,69 @@ logo: "https://api.apis.guru/v2/cache/logo/http_developer.twinehealth.com_images
 
 109 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/action` | createAction | Create action |
-| GET | `/action/{id}` | fetchAction | Get an action |
-| PATCH | `/action/{id}` | updateAction | Update an action |
-| POST | `/bundle` | createBundle | Create bundle |
-| GET | `/bundle/{id}` | fetchBundle | Get a bundle |
-| PATCH | `/bundle/{id}` | updateBundle | Update a bundle |
-| GET | `/calendar_event` | fetchCalendarEvents | List calendar events |
-| POST | `/calendar_event` | createCalendarEvent | Create calendar event |
-| DELETE | `/calendar_event/{id}` | deleteCalendarEvent | Delete a calendar event |
-| GET | `/calendar_event/{id}` | fetchCalendarEvent | Get a calendar event |
-| PATCH | `/calendar_event/{id}` | updateCalendarEvent | Update a calendar event |
-| POST | `/calendar_event_response` | createCalendarEventResponse | Create calendar event response |
-| GET | `/coach` | fetchCoaches | List coaches |
-| GET | `/coach/{id}` | fetchCoach | Get a coach |
-| GET | `/email_history` | fetchEmailHistories | List email histories |
-| GET | `/email_history/{id}` | fetchEmailHistory | Get an email history |
-| GET | `/group` | fetchGroups | List groups |
-| POST | `/group` | createGroup | Create a group |
-| GET | `/group/{id}` | fetchGroup | Get a group |
-| GET | `/health_profile` | fetchHealthProfiles | List health profiles |
-| GET | `/health_profile/{id}` | fetchHealthProfile | Get a health profile |
-| GET | `/health_profile_answer` | fetchHealthProfileAnswers | List health profile answers |
-| GET | `/health_profile_answer/{id}` | fetchHealthProfileAnswer | Get a health profile answer |
-| GET | `/health_profile_question` | fetchHealthProfileQuestions | List health profile questions |
-| GET | `/health_profile_question/{id}` | fetchHealthProfileQuestion | Get a health profile question |
-| GET | `/health_question_definition` | fetchHealthQuestionDefinitions | List health question definitions |
-| GET | `/health_question_definition/{id}` | fetchHealthQuestionDefinition | Get a health question definition |
-| POST | `/oauth/token` | createToken | Create an oauth token |
-| GET | `/oauth/token/{id}/groups` | fetchTokenGroups | Get the groups for a token |
-| GET | `/oauth/token/{id}/organization` | fetchTokenOrganization | Get the organization for a token |
-| GET | `/organization/{id}` | fetchOrganization | Get an organization |
-| GET | `/patient` | fetchPatients | List patients |
-| POST | `/patient` | createPatient | Create a patient |
-| PUT | `/patient` | upsertPatient | Upsert patient |
-| GET | `/patient/{id}` | fetchPatient | Get a patient |
-| PATCH | `/patient/{id}` | updatePatient | Update a patient |
-| GET | `/patient/{id}/coaches` | fetchPatientCoaches | List coaches for a patient |
-| GET | `/patient/{id}/groups` | fetchPatientGroups | List groups for a patient |
-| GET | `/patient_health_metric` | fetchPatientHealthMetrics | List patient health metrics |
-| POST | `/patient_health_metric` | createPatientHealthMetric | Create patient health metrics |
-| GET | `/patient_health_metric/{id}` | fetchPatientHealthMetric | Get a patient health metric |
-| GET | `/patient_plan_summary` | fetchPatientPlanSummaries | List patient plan summaries |
-| GET | `/patient_plan_summary/{id}` | fetchPatientPlanSummary | Get the plan summary for a patient |
-| PATCH | `/patient_plan_summary/{id}` | updatePatientPlanSummary | Update a plan summary |
-| GET | `/result` | fetchPatientHealthResults | List patient health results |
-| GET | `/result/{id}` | fetchPatientHealthResult | Get a patient health result |
-| GET | `/reward` | fetchRewards | List rewards |
-| POST | `/reward` | createReward | Create a reward |
-| GET | `/reward/{id}` | fetchReward | Get a reward |
-| GET | `/reward_earning` | fetchRewardEarnings | List reward earnings |
-| POST | `/reward_earning` | createRewardEarning | Create a reward earning |
-| GET | `/reward_earning/{id}` | fetchRewardEarning | Get a reward earning |
-| GET | `/reward_earning_fulfillment` | fetchRewardEarningFulfillments | List reward earning fulfillments |
-| POST | `/reward_earning_fulfillment` | createRewardEarningFulfillment | Create a reward earning fulfillment |
-| GET | `/reward_earning_fulfillment/{id}` | fetchRewardEarningFulfillment | Get a reward earning fulfillment |
-| GET | `/reward_program` | fetchRewardPrograms | List reward programs |
-| POST | `/reward_program` | createRewardProgram | Create a reward program |
-| GET | `/reward_program/{id}` | fetchRewardProgram | Get a reward program |
-| GET | `/reward_program/{id}/group` | fetchRewardProgramGroup | Get group for a reward program |
-| GET | `/reward_program_activation` | fetchRewardProgramActivations | List reward program activations |
-| POST | `/reward_program_activation` | createRewardProgramActivation | Create a reward program activation |
-| GET | `/reward_program_activation/{id}` | fetchRewardProgramActivation | Get a reward program activation |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/action` | createAction | body*: CreateActionRequest | CreateActionResponse |  | Create action |
+| GET | `/action/{id}` | fetchAction | `id`* | FetchActionResponse | yes | Get an action |
+| PATCH | `/action/{id}` | updateAction | `id`*, body*: UpdateActionRequest | UpdateActionResponse |  | Update an action |
+| POST | `/bundle` | createBundle | body*: CreateBundleRequest | CreateBundleResponse |  | Create bundle |
+| GET | `/bundle/{id}` | fetchBundle | `id`* | FetchBundleResponse | yes | Get a bundle |
+| PATCH | `/bundle/{id}` | updateBundle | `id`*, body*: UpdateBundleRequest | UpdateBundleResponse |  | Update a bundle |
+| GET | `/calendar_event` | fetchCalendarEvents | `filter[patient]`, `filter[groups]`, `filter[organization]`, `filter[attendees]`, `filter[type]`, `filter[completed]`, `filter[start_at]`, `filter[end_at]`, `filter[completed_at]`, `filter[created_at]`, `filter[updated_at]`, `page[number]`, `page[size]`, `page[limit]`, `page[cursor]`, `include` | FetchCalendarEventsResponse | yes | List calendar events |
+| POST | `/calendar_event` | createCalendarEvent | body*: CreateCalendarEventRequest | CreateCalendarEventResponse |  | Create calendar event |
+| GET | `/calendar_event/{id}` | fetchCalendarEvent | `id`* | FetchCalendarEventResponse | yes | Get a calendar event |
+| DELETE | `/calendar_event/{id}` | deleteCalendarEvent | `id`* | — |  | Delete a calendar event |
+| PATCH | `/calendar_event/{id}` | updateCalendarEvent | `id`*, body*: UpdateCalendarEventRequest | UpdateCalendarEventResponse |  | Update a calendar event |
+| POST | `/calendar_event_response` | createCalendarEventResponse | body*: CreateCalendarEventResponseRequest | CreateCalendarEventResponseRequest |  | Create calendar event response |
+| GET | `/coach` | fetchCoaches | `filter[groups]`, `filter[organization]` | FetchCoachesResponse | yes | List coaches |
+| GET | `/coach/{id}` | fetchCoach | `id`* | FetchCoachResponse | yes | Get a coach |
+| GET | `/email_history` | fetchEmailHistories | `filter[receiver]`, `filter[sender]`, `filter[emailType]`, `sort` | FetchEmailHistoriesResponse | yes | List email histories |
+| GET | `/email_history/{id}` | fetchEmailHistory | `id`* | FetchEmailHistoryResponse | yes | Get an email history |
+| GET | `/group` | fetchGroups | `filter[organization]`*, `filter[name]` | FetchGroupsResponse | yes | List groups |
+| POST | `/group` | createGroup | body*: CreateGroupRequest | CreateGroupResponse |  | Create a group |
+| GET | `/group/{id}` | fetchGroup | `id`* | FetchGroupResponse | yes | Get a group |
+| GET | `/health_profile` | fetchHealthProfiles | `filter[patient]`, `filter[groups]`, `filter[organization]`, `page[number]`, `page[size]`, `page[limit]`, `page[cursor]`, `include` | FetchHealthProfilesResponse | yes | List health profiles |
+| GET | `/health_profile/{id}` | fetchHealthProfile | `id`*, `include` | FetchHealthProfileResponse | yes | Get a health profile |
+| GET | `/health_profile_answer` | fetchHealthProfileAnswers | `filter[patient]`, `filter[groups]`, `filter[organization]`, `page[number]`, `page[size]`, `page[limit]`, `page[cursor]`, `include` | FetchHealthProfileAnswersResponse | yes | List health profile answers |
+| GET | `/health_profile_answer/{id}` | fetchHealthProfileAnswer | `id`*, `include` | FetchHealthProfileAnswerResponse | yes | Get a health profile answer |
+| GET | `/health_profile_question` | fetchHealthProfileQuestions | `filter[patient]`, `filter[groups]`, `filter[organization]`, `include` | FetchHealthProfileQuestionsResponse | yes | List health profile questions |
+| GET | `/health_profile_question/{id}` | fetchHealthProfileQuestion | `id`*, `include` | FetchHealthProfileQuestionResponse | yes | Get a health profile question |
+| GET | `/health_question_definition` | fetchHealthQuestionDefinitions | — | FetchHealthQuestionDefinitionsResponse | yes | List health question definitions |
+| GET | `/health_question_definition/{id}` | fetchHealthQuestionDefinition | `id`* | FetchHealthQuestionDefinitionResponse | yes | Get a health question definition |
+| POST | `/oauth/token` | createToken | `include`, body*: CreateTokenRequest | CreateTokenResponse |  | Create an oauth token |
+| GET | `/oauth/token/{id}/groups` | fetchTokenGroups | `id`* | FetchGroupsResponse | yes | Get the groups for a token |
+| GET | `/oauth/token/{id}/organization` | fetchTokenOrganization | `id`* | FetchOrganizationResponse | yes | Get the organization for a token |
+| GET | `/organization/{id}` | fetchOrganization | `id`* | FetchOrganizationResponse | yes | Get an organization |
+| GET | `/patient` | fetchPatients | `filter[groups]`, `filter[organization]`, `filter[identifier][system]`, `filter[identifier][value]`, `filter[archived]`, `filter[created_at]`, `filter[updated_at]`, `page[number]`, `page[size]`, `page[limit]`, `page[cursor]` | FetchPatientsResponse | yes | List patients |
+| PUT | `/patient` | upsertPatient | body*: UpsertPatientRequest | CreatePatientResponse |  | Upsert patient |
+| POST | `/patient` | createPatient | body*: CreatePatientRequest | CreatePatientResponse |  | Create a patient |
+| GET | `/patient/{id}` | fetchPatient | `id`* | FetchPatientResponse | yes | Get a patient |
+| PATCH | `/patient/{id}` | updatePatient | `id`*, body*: UpdatePatientRequest | UpdatePatientResponse |  | Update a patient |
+| GET | `/patient/{id}/coaches` | fetchPatientCoaches | `id`* | FetchCoachesResponse | yes | List coaches for a patient |
+| GET | `/patient/{id}/groups` | fetchPatientGroups | `id`* | FetchGroupsResponse | yes | List groups for a patient |
+| GET | `/patient_health_metric` | fetchPatientHealthMetrics | `filter[patient]`, `filter[groups]`, `filter[organization]`, `page[number]`, `page[size]`, `page[limit]`, `page[cursor]` | FetchPatientHealthMetricResponse | yes | List patient health metrics |
+| POST | `/patient_health_metric` | createPatientHealthMetric | body*: CreatePatientHealthMetricRequest | CreatePatientHealthMetricResponse |  | Create patient health metrics |
+| GET | `/patient_health_metric/{id}` | fetchPatientHealthMetric | `id`* | FetchPatientHealthMetricResponse | yes | Get a patient health metric |
+| GET | `/patient_plan_summary` | fetchPatientPlanSummaries | `filter[patient]`, `filter[groups]`, `filter[organization]`, `include` | FetchPatientPlanSummariesResponse | yes | List patient plan summaries |
+| GET | `/patient_plan_summary/{id}` | fetchPatientPlanSummary | `id`*, `include` | FetchPatientPlanSummaryResponse | yes | Get the plan summary for a patient |
+| PATCH | `/patient_plan_summary/{id}` | updatePatientPlanSummary | `id`*, body*: UpdatePatientPlanSummaryRequest | UpdatePatientPlanSummaryResponse |  | Update a plan summary |
+| GET | `/result` | fetchPatientHealthResults | `filter[patient]`*, `filter[actions]`, `filter[start_at]`, `filter[end_at]`, `filter[threads]`, `filter[created_at]`, `filter[updated_at]`, `page[number]`, `page[size]`, `page[limit]`, `page[after]` | FetchPatientHealthResultResponse | yes | List patient health results |
+| GET | `/result/{id}` | fetchPatientHealthResult | `id`* | FetchPatientHealthResultResponse | yes | Get a patient health result |
+| GET | `/reward` | fetchRewards | `filter[patient]`, `filter[reward_program_activation]`, `filter[thread]`, `filter[groups]`, `filter[organization]` | FetchRewardsResponse | yes | List rewards |
+| POST | `/reward` | createReward | body*: CreateRewardRequest | CreateRewardResponse |  | Create a reward |
+| GET | `/reward/{id}` | fetchReward | `id`* | FetchRewardResponse | yes | Get a reward |
+| GET | `/reward_earning` | fetchRewardEarnings | `filter[groups]`*, `filter[patient]`*, `filter[ready_for_fulfillment]` | FetchRewardEarningsResponse | yes | List reward earnings |
+| POST | `/reward_earning` | createRewardEarning | body*: CreateRewardEarningRequest | CreateRewardEarningResponse |  | Create a reward earning |
+| GET | `/reward_earning/{id}` | fetchRewardEarning | `id`* | FetchRewardEarningResponse | yes | Get a reward earning |
+| GET | `/reward_earning_fulfillment` | fetchRewardEarningFulfillments | `filter[patient]`* | FetchRewardEarningFulfillmentsResponse | yes | List reward earning fulfillments |
+| POST | `/reward_earning_fulfillment` | createRewardEarningFulfillment | body*: CreateRewardEarningFulfillmentRequest | CreateRewardEarningFulfillmentResponse |  | Create a reward earning fulfillment |
+| GET | `/reward_earning_fulfillment/{id}` | fetchRewardEarningFulfillment | `id`* | FetchRewardEarningFulfillmentResponse | yes | Get a reward earning fulfillment |
+| GET | `/reward_program` | fetchRewardPrograms | `filter[groups]`, `filter[organization]` | FetchRewardProgramsResponse | yes | List reward programs |
+| POST | `/reward_program` | createRewardProgram | body*: CreateRewardProgramRequest | CreateRewardProgramResponse |  | Create a reward program |
+| GET | `/reward_program/{id}` | fetchRewardProgram | `id`* | FetchRewardProgramResponse | yes | Get a reward program |
+| GET | `/reward_program/{id}/group` | fetchRewardProgramGroup | `id`* | FetchGroupsResponse | yes | Get group for a reward program |
+| GET | `/reward_program_activation` | fetchRewardProgramActivations | `filter[patient]`, `filter[groups]`, `filter[organization]` | FetchRewardProgramActivationsResponse | yes | List reward program activations |
+| POST | `/reward_program_activation` | createRewardProgramActivation | body*: CreateRewardProgramActivationRequest | CreateRewardProgramActivationResponse |  | Create a reward program activation |
+| GET | `/reward_program_activation/{id}` | fetchRewardProgramActivation | `id`* | FetchRewardProgramActivationResponse | yes | Get a reward program activation |

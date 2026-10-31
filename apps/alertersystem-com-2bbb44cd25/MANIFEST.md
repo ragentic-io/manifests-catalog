@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_alertersystem.com_build_images_
 
 | | |
 | --- | --- |
-| Signed bundle | `f54ce46e10902ee0edf1d8c0ee5ce0e603a4f094eeb7d0d9e1a8378c5af6d094` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,427 +34,429 @@ logo: "https://api.apis.guru/v2/cache/logo/https_alertersystem.com_build_images_
 
 498 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/alert-log` | api_alert-log_get_collection | Retrieves the collection of AlertLog resources. |
-| GET | `/api/alert-log-status-code` | api_alert-log-status-code_get_collection | Retrieves the collection of AlertLogStatusCode resources. |
-| GET | `/api/alert-log-status-code/{id}` | api_alert-log-status-code_id_get | Retrieves a AlertLogStatusCode resource. |
-| GET | `/api/alert-log/{id}` | api_alert-log_id_get | Retrieves a AlertLog resource. |
-| GET | `/api/alert-service` | api_alert-service_get_collection | Retrieves the collection of AlertService resources. |
-| POST | `/api/alert-service` | api_alert-service_post | Creates a AlertService resource. |
-| GET | `/api/alert-service-transport-code` | api_alert-service-transport-code_get_collection | Retrieves the collection of AlertServiceTransportCode resources. |
-| GET | `/api/alert-service-transport-code/{id}` | api_alert-service-transport-code_id_get | Retrieves a AlertServiceTransportCode resource. |
-| DELETE | `/api/alert-service/{id}` | api_alert-service_id_delete | Removes the AlertService resource. |
-| GET | `/api/alert-service/{id}` | api_alert-service_id_get | Retrieves a AlertService resource. |
-| PUT | `/api/alert-service/{id}` | api_alert-service_id_put | Replaces the AlertService resource. |
-| GET | `/api/credits-consumption` | api_credits-consumption_get_collection | Retrieves the collection of CreditsConsumption resources. |
-| GET | `/api/credits-consumption/{id}` | api_credits-consumption_id_get | Retrieves a CreditsConsumption resource. |
-| GET | `/api/http-method-code` | api_http-method-code_get_collection | Retrieves the collection of HttpMethodCode resources. |
-| GET | `/api/http-method-code/{id}` | api_http-method-code_id_get | Retrieves a HttpMethodCode resource. |
-| GET | `/api/media-object` | api_media-object_get_collection | Retrieves the collection of MediaObject resources. |
-| POST | `/api/media-object` | api_media-object_post | Creates a MediaObject resource. |
-| DELETE | `/api/media-object/{id}` | api_media-object_id_delete | Removes the MediaObject resource. |
-| GET | `/api/media-object/{id}` | api_media-object_id_get | Retrieves a MediaObject resource. |
-| GET | `/api/monitor` | api_monitor_get_collection | Retrieves the collection of Monitor resources. |
-| POST | `/api/monitor` | api_monitor_post | Creates a Monitor resource. |
-| GET | `/api/monitor-status-code` | api_monitor-status-code_get_collection | Retrieves the collection of MonitorStatusCode resources. |
-| GET | `/api/monitor-status-code/{id}` | api_monitor-status-code_id_get | Retrieves a MonitorStatusCode resource. |
-| GET | `/api/monitor-status-log` | api_monitor-status-log_get_collection | Retrieves the collection of MonitorStatusLog resources. |
-| GET | `/api/monitor-status-log/{id}` | api_monitor-status-log_id_get | Retrieves a MonitorStatusLog resource. |
-| GET | `/api/monitor-type-code` | api_monitor-type-code_get_collection | Retrieves the collection of MonitorTypeCode resources. |
-| GET | `/api/monitor-type-code/{id}` | api_monitor-type-code_id_get | Retrieves a MonitorTypeCode resource. |
-| DELETE | `/api/monitor/{id}` | api_monitor_id_delete | Removes the Monitor resource. |
-| GET | `/api/monitor/{id}` | api_monitor_id_get | Retrieves a Monitor resource. |
-| PUT | `/api/monitor/{id}` | api_monitor_id_put | Replaces the Monitor resource. |
-| GET | `/api/partition` | api_partition_get_collection | Retrieves the collection of Partition resources. |
-| POST | `/api/partition` | api_partition_post | Creates a Partition resource. |
-| DELETE | `/api/partition/{id}` | api_partition_id_delete | Removes the Partition resource. |
-| GET | `/api/partition/{id}` | api_partition_id_get | Retrieves a Partition resource. |
-| PUT | `/api/partition/{id}` | api_partition_id_put | Replaces the Partition resource. |
-| GET | `/api/ping` | api_ping_get_collection | Retrieves the collection of Ping resources. |
-| POST | `/api/ping` | api_ping_post | Creates a Ping resource. |
-| GET | `/api/ping-method-code` | api_ping-method-code_get_collection | Retrieves the collection of PingMethodCode resources. |
-| GET | `/api/ping-method-code/{id}` | api_ping-method-code_id_get | Retrieves a PingMethodCode resource. |
-| GET | `/api/ping/{id}` | api_ping_id_get | Retrieves a Ping resource. |
-| GET | `/api/team-invitation` | api_team-invitation_get_collection | Retrieves the collection of TeamInvitation resources. |
-| POST | `/api/team-invitation` | api_team-invitation_post | Creates a TeamInvitation resource. |
-| DELETE | `/api/team-invitation/{id}` | api_team-invitation_id_delete | Removes the TeamInvitation resource. |
-| GET | `/api/team-invitation/{id}` | api_team-invitation_id_get | Retrieves a TeamInvitation resource. |
-| GET | `/api/team-member` | api_team-member_get_collection | Retrieves the collection of TeamMember resources. |
-| GET | `/api/team-member-role-code` | api_team-member-role-code_get_collection | Retrieves the collection of TeamMemberRoleCode resources. |
-| GET | `/api/team-member-role-code/{id}` | api_team-member-role-code_id_get | Retrieves a TeamMemberRoleCode resource. |
-| DELETE | `/api/team-member/{id}` | api_team-member_id_delete | Removes the TeamMember resource. |
-| GET | `/api/team-member/{id}` | api_team-member_id_get | Retrieves a TeamMember resource. |
-| PUT | `/api/team-member/{id}` | api_team-member_id_put | Replaces the TeamMember resource. |
-| GET | `/api/timezone-code` | api_timezone-code_get_collection | Retrieves the collection of TimezoneCode resources. |
-| GET | `/api/timezone-code/{id}` | api_timezone-code_id_get | Retrieves a TimezoneCode resource. |
-| GET | `/api/transport-alerta` | api_transport-alerta_get_collection | Retrieves the collection of TransportAlerta resources. |
-| POST | `/api/transport-alerta` | api_transport-alerta_post | Creates a TransportAlerta resource. |
-| DELETE | `/api/transport-alerta/{id}` | api_transport-alerta_id_delete | Removes the TransportAlerta resource. |
-| GET | `/api/transport-alerta/{id}` | api_transport-alerta_id_get | Retrieves a TransportAlerta resource. |
-| PUT | `/api/transport-alerta/{id}` | api_transport-alerta_id_put | Replaces the TransportAlerta resource. |
-| GET | `/api/transport-all-my-sms` | api_transport-all-my-sms_get_collection | Retrieves the collection of TransportAllMySms resources. |
-| POST | `/api/transport-all-my-sms` | api_transport-all-my-sms_post | Creates a TransportAllMySms resource. |
-| DELETE | `/api/transport-all-my-sms/{id}` | api_transport-all-my-sms_id_delete | Removes the TransportAllMySms resource. |
-| GET | `/api/transport-all-my-sms/{id}` | api_transport-all-my-sms_id_get | Retrieves a TransportAllMySms resource. |
-| PUT | `/api/transport-all-my-sms/{id}` | api_transport-all-my-sms_id_put | Replaces the TransportAllMySms resource. |
-| GET | `/api/transport-amazon-sns` | api_transport-amazon-sns_get_collection | Retrieves the collection of TransportAmazonSns resources. |
-| POST | `/api/transport-amazon-sns` | api_transport-amazon-sns_post | Creates a TransportAmazonSns resource. |
-| DELETE | `/api/transport-amazon-sns/{id}` | api_transport-amazon-sns_id_delete | Removes the TransportAmazonSns resource. |
-| GET | `/api/transport-amazon-sns/{id}` | api_transport-amazon-sns_id_get | Retrieves a TransportAmazonSns resource. |
-| PUT | `/api/transport-amazon-sns/{id}` | api_transport-amazon-sns_id_put | Replaces the TransportAmazonSns resource. |
-| GET | `/api/transport-bandwidth` | api_transport-bandwidth_get_collection | Retrieves the collection of TransportBandwidth resources. |
-| POST | `/api/transport-bandwidth` | api_transport-bandwidth_post | Creates a TransportBandwidth resource. |
-| DELETE | `/api/transport-bandwidth/{id}` | api_transport-bandwidth_id_delete | Removes the TransportBandwidth resource. |
-| GET | `/api/transport-bandwidth/{id}` | api_transport-bandwidth_id_get | Retrieves a TransportBandwidth resource. |
-| PUT | `/api/transport-bandwidth/{id}` | api_transport-bandwidth_id_put | Replaces the TransportBandwidth resource. |
-| GET | `/api/transport-chatwork` | api_transport-chatwork_get_collection | Retrieves the collection of TransportChatwork resources. |
-| POST | `/api/transport-chatwork` | api_transport-chatwork_post | Creates a TransportChatwork resource. |
-| DELETE | `/api/transport-chatwork/{id}` | api_transport-chatwork_id_delete | Removes the TransportChatwork resource. |
-| GET | `/api/transport-chatwork/{id}` | api_transport-chatwork_id_get | Retrieves a TransportChatwork resource. |
-| PUT | `/api/transport-chatwork/{id}` | api_transport-chatwork_id_put | Replaces the TransportChatwork resource. |
-| GET | `/api/transport-click-send` | api_transport-click-send_get_collection | Retrieves the collection of TransportClickSend resources. |
-| POST | `/api/transport-click-send` | api_transport-click-send_post | Creates a TransportClickSend resource. |
-| DELETE | `/api/transport-click-send/{id}` | api_transport-click-send_id_delete | Removes the TransportClickSend resource. |
-| GET | `/api/transport-click-send/{id}` | api_transport-click-send_id_get | Retrieves a TransportClickSend resource. |
-| PUT | `/api/transport-click-send/{id}` | api_transport-click-send_id_put | Replaces the TransportClickSend resource. |
-| GET | `/api/transport-clickatell` | api_transport-clickatell_get_collection | Retrieves the collection of TransportClickatell resources. |
-| POST | `/api/transport-clickatell` | api_transport-clickatell_post | Creates a TransportClickatell resource. |
-| DELETE | `/api/transport-clickatell/{id}` | api_transport-clickatell_id_delete | Removes the TransportClickatell resource. |
-| GET | `/api/transport-clickatell/{id}` | api_transport-clickatell_id_get | Retrieves a TransportClickatell resource. |
-| PUT | `/api/transport-clickatell/{id}` | api_transport-clickatell_id_put | Replaces the TransportClickatell resource. |
-| GET | `/api/transport-contact-everyone` | api_transport-contact-everyone_get_collection | Retrieves the collection of TransportContactEveryone resources. |
-| POST | `/api/transport-contact-everyone` | api_transport-contact-everyone_post | Creates a TransportContactEveryone resource. |
-| DELETE | `/api/transport-contact-everyone/{id}` | api_transport-contact-everyone_id_delete | Removes the TransportContactEveryone resource. |
-| GET | `/api/transport-contact-everyone/{id}` | api_transport-contact-everyone_id_get | Retrieves a TransportContactEveryone resource. |
-| PUT | `/api/transport-contact-everyone/{id}` | api_transport-contact-everyone_id_put | Replaces the TransportContactEveryone resource. |
-| GET | `/api/transport-discord` | api_transport-discord_get_collection | Retrieves the collection of TransportDiscord resources. |
-| POST | `/api/transport-discord` | api_transport-discord_post | Creates a TransportDiscord resource. |
-| DELETE | `/api/transport-discord/{id}` | api_transport-discord_id_delete | Removes the TransportDiscord resource. |
-| GET | `/api/transport-discord/{id}` | api_transport-discord_id_get | Retrieves a TransportDiscord resource. |
-| PUT | `/api/transport-discord/{id}` | api_transport-discord_id_put | Replaces the TransportDiscord resource. |
-| GET | `/api/transport-email` | api_transport-email_get_collection | Retrieves the collection of TransportEmail resources. |
-| POST | `/api/transport-email` | api_transport-email_post | Creates a TransportEmail resource. |
-| DELETE | `/api/transport-email/{id}` | api_transport-email_id_delete | Removes the TransportEmail resource. |
-| GET | `/api/transport-email/{id}` | api_transport-email_id_get | Retrieves a TransportEmail resource. |
-| PUT | `/api/transport-email/{id}` | api_transport-email_id_put | Replaces the TransportEmail resource. |
-| GET | `/api/transport-engagespot` | api_transport-engagespot_get_collection | Retrieves the collection of TransportEngagespot resources. |
-| POST | `/api/transport-engagespot` | api_transport-engagespot_post | Creates a TransportEngagespot resource. |
-| DELETE | `/api/transport-engagespot/{id}` | api_transport-engagespot_id_delete | Removes the TransportEngagespot resource. |
-| GET | `/api/transport-engagespot/{id}` | api_transport-engagespot_id_get | Retrieves a TransportEngagespot resource. |
-| PUT | `/api/transport-engagespot/{id}` | api_transport-engagespot_id_put | Replaces the TransportEngagespot resource. |
-| GET | `/api/transport-esendex` | api_transport-esendex_get_collection | Retrieves the collection of TransportEsendex resources. |
-| POST | `/api/transport-esendex` | api_transport-esendex_post | Creates a TransportEsendex resource. |
-| DELETE | `/api/transport-esendex/{id}` | api_transport-esendex_id_delete | Removes the TransportEsendex resource. |
-| GET | `/api/transport-esendex/{id}` | api_transport-esendex_id_get | Retrieves a TransportEsendex resource. |
-| PUT | `/api/transport-esendex/{id}` | api_transport-esendex_id_put | Replaces the TransportEsendex resource. |
-| GET | `/api/transport-expo` | api_transport-expo_get_collection | Retrieves the collection of TransportExpo resources. |
-| POST | `/api/transport-expo` | api_transport-expo_post | Creates a TransportExpo resource. |
-| DELETE | `/api/transport-expo/{id}` | api_transport-expo_id_delete | Removes the TransportExpo resource. |
-| GET | `/api/transport-expo/{id}` | api_transport-expo_id_get | Retrieves a TransportExpo resource. |
-| PUT | `/api/transport-expo/{id}` | api_transport-expo_id_put | Replaces the TransportExpo resource. |
-| GET | `/api/transport-firebase` | api_transport-firebase_get_collection | Retrieves the collection of TransportFirebase resources. |
-| POST | `/api/transport-firebase` | api_transport-firebase_post | Creates a TransportFirebase resource. |
-| DELETE | `/api/transport-firebase/{id}` | api_transport-firebase_id_delete | Removes the TransportFirebase resource. |
-| GET | `/api/transport-firebase/{id}` | api_transport-firebase_id_get | Retrieves a TransportFirebase resource. |
-| PUT | `/api/transport-firebase/{id}` | api_transport-firebase_id_put | Replaces the TransportFirebase resource. |
-| GET | `/api/transport-forty-six-elks` | api_transport-forty-six-elks_get_collection | Retrieves the collection of TransportFortySixElks resources. |
-| POST | `/api/transport-forty-six-elks` | api_transport-forty-six-elks_post | Creates a TransportFortySixElks resource. |
-| DELETE | `/api/transport-forty-six-elks/{id}` | api_transport-forty-six-elks_id_delete | Removes the TransportFortySixElks resource. |
-| GET | `/api/transport-forty-six-elks/{id}` | api_transport-forty-six-elks_id_get | Retrieves a TransportFortySixElks resource. |
-| PUT | `/api/transport-forty-six-elks/{id}` | api_transport-forty-six-elks_id_put | Replaces the TransportFortySixElks resource. |
-| GET | `/api/transport-free-mobile` | api_transport-free-mobile_get_collection | Retrieves the collection of TransportFreeMobile resources. |
-| POST | `/api/transport-free-mobile` | api_transport-free-mobile_post | Creates a TransportFreeMobile resource. |
-| DELETE | `/api/transport-free-mobile/{id}` | api_transport-free-mobile_id_delete | Removes the TransportFreeMobile resource. |
-| GET | `/api/transport-free-mobile/{id}` | api_transport-free-mobile_id_get | Retrieves a TransportFreeMobile resource. |
-| PUT | `/api/transport-free-mobile/{id}` | api_transport-free-mobile_id_put | Replaces the TransportFreeMobile resource. |
-| GET | `/api/transport-freshdesk` | api_transport-freshdesk_get_collection | Retrieves the collection of TransportFreshdesk resources. |
-| POST | `/api/transport-freshdesk` | api_transport-freshdesk_post | Creates a TransportFreshdesk resource. |
-| DELETE | `/api/transport-freshdesk/{id}` | api_transport-freshdesk_id_delete | Removes the TransportFreshdesk resource. |
-| GET | `/api/transport-freshdesk/{id}` | api_transport-freshdesk_id_get | Retrieves a TransportFreshdesk resource. |
-| PUT | `/api/transport-freshdesk/{id}` | api_transport-freshdesk_id_put | Replaces the TransportFreshdesk resource. |
-| GET | `/api/transport-gateway-api` | api_transport-gateway-api_get_collection | Retrieves the collection of TransportGatewayApi resources. |
-| POST | `/api/transport-gateway-api` | api_transport-gateway-api_post | Creates a TransportGatewayApi resource. |
-| DELETE | `/api/transport-gateway-api/{id}` | api_transport-gateway-api_id_delete | Removes the TransportGatewayApi resource. |
-| GET | `/api/transport-gateway-api/{id}` | api_transport-gateway-api_id_get | Retrieves a TransportGatewayApi resource. |
-| PUT | `/api/transport-gateway-api/{id}` | api_transport-gateway-api_id_put | Replaces the TransportGatewayApi resource. |
-| GET | `/api/transport-gitter` | api_transport-gitter_get_collection | Retrieves the collection of TransportGitter resources. |
-| POST | `/api/transport-gitter` | api_transport-gitter_post | Creates a TransportGitter resource. |
-| DELETE | `/api/transport-gitter/{id}` | api_transport-gitter_id_delete | Removes the TransportGitter resource. |
-| GET | `/api/transport-gitter/{id}` | api_transport-gitter_id_get | Retrieves a TransportGitter resource. |
-| PUT | `/api/transport-gitter/{id}` | api_transport-gitter_id_put | Replaces the TransportGitter resource. |
-| GET | `/api/transport-google-chat` | api_transport-google-chat_get_collection | Retrieves the collection of TransportGoogleChat resources. |
-| POST | `/api/transport-google-chat` | api_transport-google-chat_post | Creates a TransportGoogleChat resource. |
-| DELETE | `/api/transport-google-chat/{id}` | api_transport-google-chat_id_delete | Removes the TransportGoogleChat resource. |
-| GET | `/api/transport-google-chat/{id}` | api_transport-google-chat_id_get | Retrieves a TransportGoogleChat resource. |
-| PUT | `/api/transport-google-chat/{id}` | api_transport-google-chat_id_put | Replaces the TransportGoogleChat resource. |
-| GET | `/api/transport-gotify` | api_transport-gotify_get_collection | Retrieves the collection of TransportGotify resources. |
-| POST | `/api/transport-gotify` | api_transport-gotify_post | Creates a TransportGotify resource. |
-| DELETE | `/api/transport-gotify/{id}` | api_transport-gotify_id_delete | Removes the TransportGotify resource. |
-| GET | `/api/transport-gotify/{id}` | api_transport-gotify_id_get | Retrieves a TransportGotify resource. |
-| PUT | `/api/transport-gotify/{id}` | api_transport-gotify_id_put | Replaces the TransportGotify resource. |
-| GET | `/api/transport-help-scout` | api_transport-help-scout_get_collection | Retrieves the collection of TransportHelpScout resources. |
-| POST | `/api/transport-help-scout` | api_transport-help-scout_post | Creates a TransportHelpScout resource. |
-| DELETE | `/api/transport-help-scout/{id}` | api_transport-help-scout_id_delete | Removes the TransportHelpScout resource. |
-| GET | `/api/transport-help-scout/{id}` | api_transport-help-scout_id_get | Retrieves a TransportHelpScout resource. |
-| PUT | `/api/transport-help-scout/{id}` | api_transport-help-scout_id_put | Replaces the TransportHelpScout resource. |
-| GET | `/api/transport-infobip` | api_transport-infobip_get_collection | Retrieves the collection of TransportInfobip resources. |
-| POST | `/api/transport-infobip` | api_transport-infobip_post | Creates a TransportInfobip resource. |
-| DELETE | `/api/transport-infobip/{id}` | api_transport-infobip_id_delete | Removes the TransportInfobip resource. |
-| GET | `/api/transport-infobip/{id}` | api_transport-infobip_id_get | Retrieves a TransportInfobip resource. |
-| PUT | `/api/transport-infobip/{id}` | api_transport-infobip_id_put | Replaces the TransportInfobip resource. |
-| GET | `/api/transport-iqsms` | api_transport-iqsms_get_collection | Retrieves the collection of TransportIqsms resources. |
-| POST | `/api/transport-iqsms` | api_transport-iqsms_post | Creates a TransportIqsms resource. |
-| DELETE | `/api/transport-iqsms/{id}` | api_transport-iqsms_id_delete | Removes the TransportIqsms resource. |
-| GET | `/api/transport-iqsms/{id}` | api_transport-iqsms_id_get | Retrieves a TransportIqsms resource. |
-| PUT | `/api/transport-iqsms/{id}` | api_transport-iqsms_id_put | Replaces the TransportIqsms resource. |
-| GET | `/api/transport-kaz-info-teh` | api_transport-kaz-info-teh_get_collection | Retrieves the collection of TransportKazInfoTeh resources. |
-| POST | `/api/transport-kaz-info-teh` | api_transport-kaz-info-teh_post | Creates a TransportKazInfoTeh resource. |
-| DELETE | `/api/transport-kaz-info-teh/{id}` | api_transport-kaz-info-teh_id_delete | Removes the TransportKazInfoTeh resource. |
-| GET | `/api/transport-kaz-info-teh/{id}` | api_transport-kaz-info-teh_id_get | Retrieves a TransportKazInfoTeh resource. |
-| PUT | `/api/transport-kaz-info-teh/{id}` | api_transport-kaz-info-teh_id_put | Replaces the TransportKazInfoTeh resource. |
-| GET | `/api/transport-light-sms` | api_transport-light-sms_get_collection | Retrieves the collection of TransportLightSms resources. |
-| POST | `/api/transport-light-sms` | api_transport-light-sms_post | Creates a TransportLightSms resource. |
-| DELETE | `/api/transport-light-sms/{id}` | api_transport-light-sms_id_delete | Removes the TransportLightSms resource. |
-| GET | `/api/transport-light-sms/{id}` | api_transport-light-sms_id_get | Retrieves a TransportLightSms resource. |
-| PUT | `/api/transport-light-sms/{id}` | api_transport-light-sms_id_put | Replaces the TransportLightSms resource. |
-| GET | `/api/transport-line-notify` | api_transport-line-notify_get_collection | Retrieves the collection of TransportLineNotify resources. |
-| POST | `/api/transport-line-notify` | api_transport-line-notify_post | Creates a TransportLineNotify resource. |
-| DELETE | `/api/transport-line-notify/{id}` | api_transport-line-notify_id_delete | Removes the TransportLineNotify resource. |
-| GET | `/api/transport-line-notify/{id}` | api_transport-line-notify_id_get | Retrieves a TransportLineNotify resource. |
-| PUT | `/api/transport-line-notify/{id}` | api_transport-line-notify_id_put | Replaces the TransportLineNotify resource. |
-| GET | `/api/transport-linked-in` | api_transport-linked-in_get_collection | Retrieves the collection of TransportLinkedIn resources. |
-| POST | `/api/transport-linked-in` | api_transport-linked-in_post | Creates a TransportLinkedIn resource. |
-| DELETE | `/api/transport-linked-in/{id}` | api_transport-linked-in_id_delete | Removes the TransportLinkedIn resource. |
-| GET | `/api/transport-linked-in/{id}` | api_transport-linked-in_id_get | Retrieves a TransportLinkedIn resource. |
-| PUT | `/api/transport-linked-in/{id}` | api_transport-linked-in_id_put | Replaces the TransportLinkedIn resource. |
-| GET | `/api/transport-mailjet` | api_transport-mailjet_get_collection | Retrieves the collection of TransportMailjet resources. |
-| POST | `/api/transport-mailjet` | api_transport-mailjet_post | Creates a TransportMailjet resource. |
-| DELETE | `/api/transport-mailjet/{id}` | api_transport-mailjet_id_delete | Removes the TransportMailjet resource. |
-| GET | `/api/transport-mailjet/{id}` | api_transport-mailjet_id_get | Retrieves a TransportMailjet resource. |
-| PUT | `/api/transport-mailjet/{id}` | api_transport-mailjet_id_put | Replaces the TransportMailjet resource. |
-| GET | `/api/transport-mastodon` | api_transport-mastodon_get_collection | Retrieves the collection of TransportMastodon resources. |
-| POST | `/api/transport-mastodon` | api_transport-mastodon_post | Creates a TransportMastodon resource. |
-| DELETE | `/api/transport-mastodon/{id}` | api_transport-mastodon_id_delete | Removes the TransportMastodon resource. |
-| GET | `/api/transport-mastodon/{id}` | api_transport-mastodon_id_get | Retrieves a TransportMastodon resource. |
-| PUT | `/api/transport-mastodon/{id}` | api_transport-mastodon_id_put | Replaces the TransportMastodon resource. |
-| GET | `/api/transport-mattermost` | api_transport-mattermost_get_collection | Retrieves the collection of TransportMattermost resources. |
-| POST | `/api/transport-mattermost` | api_transport-mattermost_post | Creates a TransportMattermost resource. |
-| DELETE | `/api/transport-mattermost/{id}` | api_transport-mattermost_id_delete | Removes the TransportMattermost resource. |
-| GET | `/api/transport-mattermost/{id}` | api_transport-mattermost_id_get | Retrieves a TransportMattermost resource. |
-| PUT | `/api/transport-mattermost/{id}` | api_transport-mattermost_id_put | Replaces the TransportMattermost resource. |
-| GET | `/api/transport-mercure` | api_transport-mercure_get_collection | Retrieves the collection of TransportMercure resources. |
-| POST | `/api/transport-mercure` | api_transport-mercure_post | Creates a TransportMercure resource. |
-| DELETE | `/api/transport-mercure/{id}` | api_transport-mercure_id_delete | Removes the TransportMercure resource. |
-| GET | `/api/transport-mercure/{id}` | api_transport-mercure_id_get | Retrieves a TransportMercure resource. |
-| PUT | `/api/transport-mercure/{id}` | api_transport-mercure_id_put | Replaces the TransportMercure resource. |
-| GET | `/api/transport-message-bird` | api_transport-message-bird_get_collection | Retrieves the collection of TransportMessageBird resources. |
-| POST | `/api/transport-message-bird` | api_transport-message-bird_post | Creates a TransportMessageBird resource. |
-| DELETE | `/api/transport-message-bird/{id}` | api_transport-message-bird_id_delete | Removes the TransportMessageBird resource. |
-| GET | `/api/transport-message-bird/{id}` | api_transport-message-bird_id_get | Retrieves a TransportMessageBird resource. |
-| PUT | `/api/transport-message-bird/{id}` | api_transport-message-bird_id_put | Replaces the TransportMessageBird resource. |
-| GET | `/api/transport-message-media` | api_transport-message-media_get_collection | Retrieves the collection of TransportMessageMedia resources. |
-| POST | `/api/transport-message-media` | api_transport-message-media_post | Creates a TransportMessageMedia resource. |
-| DELETE | `/api/transport-message-media/{id}` | api_transport-message-media_id_delete | Removes the TransportMessageMedia resource. |
-| GET | `/api/transport-message-media/{id}` | api_transport-message-media_id_get | Retrieves a TransportMessageMedia resource. |
-| PUT | `/api/transport-message-media/{id}` | api_transport-message-media_id_put | Replaces the TransportMessageMedia resource. |
-| GET | `/api/transport-microsoft-teams` | api_transport-microsoft-teams_get_collection | Retrieves the collection of TransportMicrosoftTeams resources. |
-| POST | `/api/transport-microsoft-teams` | api_transport-microsoft-teams_post | Creates a TransportMicrosoftTeams resource. |
-| DELETE | `/api/transport-microsoft-teams/{id}` | api_transport-microsoft-teams_id_delete | Removes the TransportMicrosoftTeams resource. |
-| GET | `/api/transport-microsoft-teams/{id}` | api_transport-microsoft-teams_id_get | Retrieves a TransportMicrosoftTeams resource. |
-| PUT | `/api/transport-microsoft-teams/{id}` | api_transport-microsoft-teams_id_put | Replaces the TransportMicrosoftTeams resource. |
-| GET | `/api/transport-mobyt` | api_transport-mobyt_get_collection | Retrieves the collection of TransportMobyt resources. |
-| POST | `/api/transport-mobyt` | api_transport-mobyt_post | Creates a TransportMobyt resource. |
-| DELETE | `/api/transport-mobyt/{id}` | api_transport-mobyt_id_delete | Removes the TransportMobyt resource. |
-| GET | `/api/transport-mobyt/{id}` | api_transport-mobyt_id_get | Retrieves a TransportMobyt resource. |
-| PUT | `/api/transport-mobyt/{id}` | api_transport-mobyt_id_put | Replaces the TransportMobyt resource. |
-| GET | `/api/transport-octopush` | api_transport-octopush_get_collection | Retrieves the collection of TransportOctopush resources. |
-| POST | `/api/transport-octopush` | api_transport-octopush_post | Creates a TransportOctopush resource. |
-| DELETE | `/api/transport-octopush/{id}` | api_transport-octopush_id_delete | Removes the TransportOctopush resource. |
-| GET | `/api/transport-octopush/{id}` | api_transport-octopush_id_get | Retrieves a TransportOctopush resource. |
-| PUT | `/api/transport-octopush/{id}` | api_transport-octopush_id_put | Replaces the TransportOctopush resource. |
-| GET | `/api/transport-one-signal` | api_transport-one-signal_get_collection | Retrieves the collection of TransportOneSignal resources. |
-| POST | `/api/transport-one-signal` | api_transport-one-signal_post | Creates a TransportOneSignal resource. |
-| DELETE | `/api/transport-one-signal/{id}` | api_transport-one-signal_id_delete | Removes the TransportOneSignal resource. |
-| GET | `/api/transport-one-signal/{id}` | api_transport-one-signal_id_get | Retrieves a TransportOneSignal resource. |
-| PUT | `/api/transport-one-signal/{id}` | api_transport-one-signal_id_put | Replaces the TransportOneSignal resource. |
-| GET | `/api/transport-opsgenie` | api_transport-opsgenie_get_collection | Retrieves the collection of TransportOpsgenie resources. |
-| POST | `/api/transport-opsgenie` | api_transport-opsgenie_post | Creates a TransportOpsgenie resource. |
-| DELETE | `/api/transport-opsgenie/{id}` | api_transport-opsgenie_id_delete | Removes the TransportOpsgenie resource. |
-| GET | `/api/transport-opsgenie/{id}` | api_transport-opsgenie_id_get | Retrieves a TransportOpsgenie resource. |
-| PUT | `/api/transport-opsgenie/{id}` | api_transport-opsgenie_id_put | Replaces the TransportOpsgenie resource. |
-| GET | `/api/transport-orange-sms` | api_transport-orange-sms_get_collection | Retrieves the collection of TransportOrangeSms resources. |
-| POST | `/api/transport-orange-sms` | api_transport-orange-sms_post | Creates a TransportOrangeSms resource. |
-| DELETE | `/api/transport-orange-sms/{id}` | api_transport-orange-sms_id_delete | Removes the TransportOrangeSms resource. |
-| GET | `/api/transport-orange-sms/{id}` | api_transport-orange-sms_id_get | Retrieves a TransportOrangeSms resource. |
-| PUT | `/api/transport-orange-sms/{id}` | api_transport-orange-sms_id_put | Replaces the TransportOrangeSms resource. |
-| GET | `/api/transport-ovh-cloud` | api_transport-ovh-cloud_get_collection | Retrieves the collection of TransportOvhCloud resources. |
-| POST | `/api/transport-ovh-cloud` | api_transport-ovh-cloud_post | Creates a TransportOvhCloud resource. |
-| DELETE | `/api/transport-ovh-cloud/{id}` | api_transport-ovh-cloud_id_delete | Removes the TransportOvhCloud resource. |
-| GET | `/api/transport-ovh-cloud/{id}` | api_transport-ovh-cloud_id_get | Retrieves a TransportOvhCloud resource. |
-| PUT | `/api/transport-ovh-cloud/{id}` | api_transport-ovh-cloud_id_put | Replaces the TransportOvhCloud resource. |
-| GET | `/api/transport-pager-duty` | api_transport-pager-duty_get_collection | Retrieves the collection of TransportPagerDuty resources. |
-| POST | `/api/transport-pager-duty` | api_transport-pager-duty_post | Creates a TransportPagerDuty resource. |
-| DELETE | `/api/transport-pager-duty/{id}` | api_transport-pager-duty_id_delete | Removes the TransportPagerDuty resource. |
-| GET | `/api/transport-pager-duty/{id}` | api_transport-pager-duty_id_get | Retrieves a TransportPagerDuty resource. |
-| PUT | `/api/transport-pager-duty/{id}` | api_transport-pager-duty_id_put | Replaces the TransportPagerDuty resource. |
-| GET | `/api/transport-pager-tree` | api_transport-pager-tree_get_collection | Retrieves the collection of TransportPagerTree resources. |
-| POST | `/api/transport-pager-tree` | api_transport-pager-tree_post | Creates a TransportPagerTree resource. |
-| DELETE | `/api/transport-pager-tree/{id}` | api_transport-pager-tree_id_delete | Removes the TransportPagerTree resource. |
-| GET | `/api/transport-pager-tree/{id}` | api_transport-pager-tree_id_get | Retrieves a TransportPagerTree resource. |
-| PUT | `/api/transport-pager-tree/{id}` | api_transport-pager-tree_id_put | Replaces the TransportPagerTree resource. |
-| GET | `/api/transport-plivo` | api_transport-plivo_get_collection | Retrieves the collection of TransportPlivo resources. |
-| POST | `/api/transport-plivo` | api_transport-plivo_post | Creates a TransportPlivo resource. |
-| DELETE | `/api/transport-plivo/{id}` | api_transport-plivo_id_delete | Removes the TransportPlivo resource. |
-| GET | `/api/transport-plivo/{id}` | api_transport-plivo_id_get | Retrieves a TransportPlivo resource. |
-| PUT | `/api/transport-plivo/{id}` | api_transport-plivo_id_put | Replaces the TransportPlivo resource. |
-| GET | `/api/transport-pushbullet` | api_transport-pushbullet_get_collection | Retrieves the collection of TransportPushbullet resources. |
-| POST | `/api/transport-pushbullet` | api_transport-pushbullet_post | Creates a TransportPushbullet resource. |
-| DELETE | `/api/transport-pushbullet/{id}` | api_transport-pushbullet_id_delete | Removes the TransportPushbullet resource. |
-| GET | `/api/transport-pushbullet/{id}` | api_transport-pushbullet_id_get | Retrieves a TransportPushbullet resource. |
-| PUT | `/api/transport-pushbullet/{id}` | api_transport-pushbullet_id_put | Replaces the TransportPushbullet resource. |
-| GET | `/api/transport-pushover` | api_transport-pushover_get_collection | Retrieves the collection of TransportPushover resources. |
-| POST | `/api/transport-pushover` | api_transport-pushover_post | Creates a TransportPushover resource. |
-| DELETE | `/api/transport-pushover/{id}` | api_transport-pushover_id_delete | Removes the TransportPushover resource. |
-| GET | `/api/transport-pushover/{id}` | api_transport-pushover_id_get | Retrieves a TransportPushover resource. |
-| PUT | `/api/transport-pushover/{id}` | api_transport-pushover_id_put | Replaces the TransportPushover resource. |
-| GET | `/api/transport-pushy` | api_transport-pushy_get_collection | Retrieves the collection of TransportPushy resources. |
-| POST | `/api/transport-pushy` | api_transport-pushy_post | Creates a TransportPushy resource. |
-| DELETE | `/api/transport-pushy/{id}` | api_transport-pushy_id_delete | Removes the TransportPushy resource. |
-| GET | `/api/transport-pushy/{id}` | api_transport-pushy_id_get | Retrieves a TransportPushy resource. |
-| PUT | `/api/transport-pushy/{id}` | api_transport-pushy_id_put | Replaces the TransportPushy resource. |
-| GET | `/api/transport-ring-central` | api_transport-ring-central_get_collection | Retrieves the collection of TransportRingCentral resources. |
-| POST | `/api/transport-ring-central` | api_transport-ring-central_post | Creates a TransportRingCentral resource. |
-| DELETE | `/api/transport-ring-central/{id}` | api_transport-ring-central_id_delete | Removes the TransportRingCentral resource. |
-| GET | `/api/transport-ring-central/{id}` | api_transport-ring-central_id_get | Retrieves a TransportRingCentral resource. |
-| PUT | `/api/transport-ring-central/{id}` | api_transport-ring-central_id_put | Replaces the TransportRingCentral resource. |
-| GET | `/api/transport-rocket-chat` | api_transport-rocket-chat_get_collection | Retrieves the collection of TransportRocketChat resources. |
-| POST | `/api/transport-rocket-chat` | api_transport-rocket-chat_post | Creates a TransportRocketChat resource. |
-| DELETE | `/api/transport-rocket-chat/{id}` | api_transport-rocket-chat_id_delete | Removes the TransportRocketChat resource. |
-| GET | `/api/transport-rocket-chat/{id}` | api_transport-rocket-chat_id_get | Retrieves a TransportRocketChat resource. |
-| PUT | `/api/transport-rocket-chat/{id}` | api_transport-rocket-chat_id_put | Replaces the TransportRocketChat resource. |
-| GET | `/api/transport-sendberry` | api_transport-sendberry_get_collection | Retrieves the collection of TransportSendberry resources. |
-| POST | `/api/transport-sendberry` | api_transport-sendberry_post | Creates a TransportSendberry resource. |
-| DELETE | `/api/transport-sendberry/{id}` | api_transport-sendberry_id_delete | Removes the TransportSendberry resource. |
-| GET | `/api/transport-sendberry/{id}` | api_transport-sendberry_id_get | Retrieves a TransportSendberry resource. |
-| PUT | `/api/transport-sendberry/{id}` | api_transport-sendberry_id_put | Replaces the TransportSendberry resource. |
-| GET | `/api/transport-sendinblue` | api_transport-sendinblue_get_collection | Retrieves the collection of TransportSendinblue resources. |
-| POST | `/api/transport-sendinblue` | api_transport-sendinblue_post | Creates a TransportSendinblue resource. |
-| DELETE | `/api/transport-sendinblue/{id}` | api_transport-sendinblue_id_delete | Removes the TransportSendinblue resource. |
-| GET | `/api/transport-sendinblue/{id}` | api_transport-sendinblue_id_get | Retrieves a TransportSendinblue resource. |
-| PUT | `/api/transport-sendinblue/{id}` | api_transport-sendinblue_id_put | Replaces the TransportSendinblue resource. |
-| GET | `/api/transport-simple-textin` | api_transport-simple-textin_get_collection | Retrieves the collection of TransportSimpleTextin resources. |
-| POST | `/api/transport-simple-textin` | api_transport-simple-textin_post | Creates a TransportSimpleTextin resource. |
-| DELETE | `/api/transport-simple-textin/{id}` | api_transport-simple-textin_id_delete | Removes the TransportSimpleTextin resource. |
-| GET | `/api/transport-simple-textin/{id}` | api_transport-simple-textin_id_get | Retrieves a TransportSimpleTextin resource. |
-| PUT | `/api/transport-simple-textin/{id}` | api_transport-simple-textin_id_put | Replaces the TransportSimpleTextin resource. |
-| GET | `/api/transport-sinch` | api_transport-sinch_get_collection | Retrieves the collection of TransportSinch resources. |
-| POST | `/api/transport-sinch` | api_transport-sinch_post | Creates a TransportSinch resource. |
-| DELETE | `/api/transport-sinch/{id}` | api_transport-sinch_id_delete | Removes the TransportSinch resource. |
-| GET | `/api/transport-sinch/{id}` | api_transport-sinch_id_get | Retrieves a TransportSinch resource. |
-| PUT | `/api/transport-sinch/{id}` | api_transport-sinch_id_put | Replaces the TransportSinch resource. |
-| GET | `/api/transport-slack` | api_transport-slack_get_collection | Retrieves the collection of TransportSlack resources. |
-| POST | `/api/transport-slack` | api_transport-slack_post | Creates a TransportSlack resource. |
-| DELETE | `/api/transport-slack/{id}` | api_transport-slack_id_delete | Removes the TransportSlack resource. |
-| GET | `/api/transport-slack/{id}` | api_transport-slack_id_get | Retrieves a TransportSlack resource. |
-| PUT | `/api/transport-slack/{id}` | api_transport-slack_id_put | Replaces the TransportSlack resource. |
-| GET | `/api/transport-sms-biuras` | api_transport-sms-biuras_get_collection | Retrieves the collection of TransportSmsBiuras resources. |
-| POST | `/api/transport-sms-biuras` | api_transport-sms-biuras_post | Creates a TransportSmsBiuras resource. |
-| DELETE | `/api/transport-sms-biuras/{id}` | api_transport-sms-biuras_id_delete | Removes the TransportSmsBiuras resource. |
-| GET | `/api/transport-sms-biuras/{id}` | api_transport-sms-biuras_id_get | Retrieves a TransportSmsBiuras resource. |
-| PUT | `/api/transport-sms-biuras/{id}` | api_transport-sms-biuras_id_put | Replaces the TransportSmsBiuras resource. |
-| GET | `/api/transport-sms-factor` | api_transport-sms-factor_get_collection | Retrieves the collection of TransportSmsFactor resources. |
-| POST | `/api/transport-sms-factor` | api_transport-sms-factor_post | Creates a TransportSmsFactor resource. |
-| DELETE | `/api/transport-sms-factor/{id}` | api_transport-sms-factor_id_delete | Removes the TransportSmsFactor resource. |
-| GET | `/api/transport-sms-factor/{id}` | api_transport-sms-factor_id_get | Retrieves a TransportSmsFactor resource. |
-| PUT | `/api/transport-sms-factor/{id}` | api_transport-sms-factor_id_put | Replaces the TransportSmsFactor resource. |
-| GET | `/api/transport-sms77` | api_transport-sms77_get_collection | Retrieves the collection of TransportSms77 resources. |
-| POST | `/api/transport-sms77` | api_transport-sms77_post | Creates a TransportSms77 resource. |
-| DELETE | `/api/transport-sms77/{id}` | api_transport-sms77_id_delete | Removes the TransportSms77 resource. |
-| GET | `/api/transport-sms77/{id}` | api_transport-sms77_id_get | Retrieves a TransportSms77 resource. |
-| PUT | `/api/transport-sms77/{id}` | api_transport-sms77_id_put | Replaces the TransportSms77 resource. |
-| GET | `/api/transport-smsapi` | api_transport-smsapi_get_collection | Retrieves the collection of TransportSmsapi resources. |
-| POST | `/api/transport-smsapi` | api_transport-smsapi_post | Creates a TransportSmsapi resource. |
-| DELETE | `/api/transport-smsapi/{id}` | api_transport-smsapi_id_delete | Removes the TransportSmsapi resource. |
-| GET | `/api/transport-smsapi/{id}` | api_transport-smsapi_id_get | Retrieves a TransportSmsapi resource. |
-| PUT | `/api/transport-smsapi/{id}` | api_transport-smsapi_id_put | Replaces the TransportSmsapi resource. |
-| GET | `/api/transport-smsc` | api_transport-smsc_get_collection | Retrieves the collection of TransportSmsc resources. |
-| POST | `/api/transport-smsc` | api_transport-smsc_post | Creates a TransportSmsc resource. |
-| DELETE | `/api/transport-smsc/{id}` | api_transport-smsc_id_delete | Removes the TransportSmsc resource. |
-| GET | `/api/transport-smsc/{id}` | api_transport-smsc_id_get | Retrieves a TransportSmsc resource. |
-| PUT | `/api/transport-smsc/{id}` | api_transport-smsc_id_put | Replaces the TransportSmsc resource. |
-| GET | `/api/transport-smsmode` | api_transport-smsmode_get_collection | Retrieves the collection of TransportSmsmode resources. |
-| POST | `/api/transport-smsmode` | api_transport-smsmode_post | Creates a TransportSmsmode resource. |
-| DELETE | `/api/transport-smsmode/{id}` | api_transport-smsmode_id_delete | Removes the TransportSmsmode resource. |
-| GET | `/api/transport-smsmode/{id}` | api_transport-smsmode_id_get | Retrieves a TransportSmsmode resource. |
-| PUT | `/api/transport-smsmode/{id}` | api_transport-smsmode_id_put | Replaces the TransportSmsmode resource. |
-| GET | `/api/transport-spot-hit` | api_transport-spot-hit_get_collection | Retrieves the collection of TransportSpotHit resources. |
-| POST | `/api/transport-spot-hit` | api_transport-spot-hit_post | Creates a TransportSpotHit resource. |
-| DELETE | `/api/transport-spot-hit/{id}` | api_transport-spot-hit_id_delete | Removes the TransportSpotHit resource. |
-| GET | `/api/transport-spot-hit/{id}` | api_transport-spot-hit_id_get | Retrieves a TransportSpotHit resource. |
-| PUT | `/api/transport-spot-hit/{id}` | api_transport-spot-hit_id_put | Replaces the TransportSpotHit resource. |
-| GET | `/api/transport-telegram` | api_transport-telegram_get_collection | Retrieves the collection of TransportTelegram resources. |
-| POST | `/api/transport-telegram` | api_transport-telegram_post | Creates a TransportTelegram resource. |
-| DELETE | `/api/transport-telegram/{id}` | api_transport-telegram_id_delete | Removes the TransportTelegram resource. |
-| GET | `/api/transport-telegram/{id}` | api_transport-telegram_id_get | Retrieves a TransportTelegram resource. |
-| PUT | `/api/transport-telegram/{id}` | api_transport-telegram_id_put | Replaces the TransportTelegram resource. |
-| GET | `/api/transport-telnyx` | api_transport-telnyx_get_collection | Retrieves the collection of TransportTelnyx resources. |
-| POST | `/api/transport-telnyx` | api_transport-telnyx_post | Creates a TransportTelnyx resource. |
-| DELETE | `/api/transport-telnyx/{id}` | api_transport-telnyx_id_delete | Removes the TransportTelnyx resource. |
-| GET | `/api/transport-telnyx/{id}` | api_transport-telnyx_id_get | Retrieves a TransportTelnyx resource. |
-| PUT | `/api/transport-telnyx/{id}` | api_transport-telnyx_id_put | Replaces the TransportTelnyx resource. |
-| GET | `/api/transport-termii` | api_transport-termii_get_collection | Retrieves the collection of TransportTermii resources. |
-| POST | `/api/transport-termii` | api_transport-termii_post | Creates a TransportTermii resource. |
-| DELETE | `/api/transport-termii/{id}` | api_transport-termii_id_delete | Removes the TransportTermii resource. |
-| GET | `/api/transport-termii/{id}` | api_transport-termii_id_get | Retrieves a TransportTermii resource. |
-| PUT | `/api/transport-termii/{id}` | api_transport-termii_id_put | Replaces the TransportTermii resource. |
-| GET | `/api/transport-trello` | api_transport-trello_get_collection | Retrieves the collection of TransportTrello resources. |
-| POST | `/api/transport-trello` | api_transport-trello_post | Creates a TransportTrello resource. |
-| DELETE | `/api/transport-trello/{id}` | api_transport-trello_id_delete | Removes the TransportTrello resource. |
-| GET | `/api/transport-trello/{id}` | api_transport-trello_id_get | Retrieves a TransportTrello resource. |
-| PUT | `/api/transport-trello/{id}` | api_transport-trello_id_put | Replaces the TransportTrello resource. |
-| GET | `/api/transport-turbo-sms` | api_transport-turbo-sms_get_collection | Retrieves the collection of TransportTurboSms resources. |
-| POST | `/api/transport-turbo-sms` | api_transport-turbo-sms_post | Creates a TransportTurboSms resource. |
-| DELETE | `/api/transport-turbo-sms/{id}` | api_transport-turbo-sms_id_delete | Removes the TransportTurboSms resource. |
-| GET | `/api/transport-turbo-sms/{id}` | api_transport-turbo-sms_id_get | Retrieves a TransportTurboSms resource. |
-| PUT | `/api/transport-turbo-sms/{id}` | api_transport-turbo-sms_id_put | Replaces the TransportTurboSms resource. |
-| GET | `/api/transport-twilio` | api_transport-twilio_get_collection | Retrieves the collection of TransportTwilio resources. |
-| POST | `/api/transport-twilio` | api_transport-twilio_post | Creates a TransportTwilio resource. |
-| DELETE | `/api/transport-twilio/{id}` | api_transport-twilio_id_delete | Removes the TransportTwilio resource. |
-| GET | `/api/transport-twilio/{id}` | api_transport-twilio_id_get | Retrieves a TransportTwilio resource. |
-| PUT | `/api/transport-twilio/{id}` | api_transport-twilio_id_put | Replaces the TransportTwilio resource. |
-| GET | `/api/transport-twitter` | api_transport-twitter_get_collection | Retrieves the collection of TransportTwitter resources. |
-| POST | `/api/transport-twitter` | api_transport-twitter_post | Creates a TransportTwitter resource. |
-| DELETE | `/api/transport-twitter/{id}` | api_transport-twitter_id_delete | Removes the TransportTwitter resource. |
-| GET | `/api/transport-twitter/{id}` | api_transport-twitter_id_get | Retrieves a TransportTwitter resource. |
-| PUT | `/api/transport-twitter/{id}` | api_transport-twitter_id_put | Replaces the TransportTwitter resource. |
-| GET | `/api/transport-vonage` | api_transport-vonage_get_collection | Retrieves the collection of TransportVonage resources. |
-| POST | `/api/transport-vonage` | api_transport-vonage_post | Creates a TransportVonage resource. |
-| DELETE | `/api/transport-vonage/{id}` | api_transport-vonage_id_delete | Removes the TransportVonage resource. |
-| GET | `/api/transport-vonage/{id}` | api_transport-vonage_id_get | Retrieves a TransportVonage resource. |
-| PUT | `/api/transport-vonage/{id}` | api_transport-vonage_id_put | Replaces the TransportVonage resource. |
-| GET | `/api/transport-webhook` | api_transport-webhook_get_collection | Retrieves the collection of TransportWebhook resources. |
-| POST | `/api/transport-webhook` | api_transport-webhook_post | Creates a TransportWebhook resource. |
-| DELETE | `/api/transport-webhook/{id}` | api_transport-webhook_id_delete | Removes the TransportWebhook resource. |
-| GET | `/api/transport-webhook/{id}` | api_transport-webhook_id_get | Retrieves a TransportWebhook resource. |
-| PUT | `/api/transport-webhook/{id}` | api_transport-webhook_id_put | Replaces the TransportWebhook resource. |
-| GET | `/api/transport-yunpian` | api_transport-yunpian_get_collection | Retrieves the collection of TransportYunpian resources. |
-| POST | `/api/transport-yunpian` | api_transport-yunpian_post | Creates a TransportYunpian resource. |
-| DELETE | `/api/transport-yunpian/{id}` | api_transport-yunpian_id_delete | Removes the TransportYunpian resource. |
-| GET | `/api/transport-yunpian/{id}` | api_transport-yunpian_id_get | Retrieves a TransportYunpian resource. |
-| PUT | `/api/transport-yunpian/{id}` | api_transport-yunpian_id_put | Replaces the TransportYunpian resource. |
-| GET | `/api/transport-zendesk` | api_transport-zendesk_get_collection | Retrieves the collection of TransportZendesk resources. |
-| POST | `/api/transport-zendesk` | api_transport-zendesk_post | Creates a TransportZendesk resource. |
-| DELETE | `/api/transport-zendesk/{id}` | api_transport-zendesk_id_delete | Removes the TransportZendesk resource. |
-| GET | `/api/transport-zendesk/{id}` | api_transport-zendesk_id_get | Retrieves a TransportZendesk resource. |
-| PUT | `/api/transport-zendesk/{id}` | api_transport-zendesk_id_put | Replaces the TransportZendesk resource. |
-| GET | `/api/transport-zulip` | api_transport-zulip_get_collection | Retrieves the collection of TransportZulip resources. |
-| POST | `/api/transport-zulip` | api_transport-zulip_post | Creates a TransportZulip resource. |
-| DELETE | `/api/transport-zulip/{id}` | api_transport-zulip_id_delete | Removes the TransportZulip resource. |
-| GET | `/api/transport-zulip/{id}` | api_transport-zulip_id_get | Retrieves a TransportZulip resource. |
-| PUT | `/api/transport-zulip/{id}` | api_transport-zulip_id_put | Replaces the TransportZulip resource. |
-| GET | `/api/user-account` | api_user-account_get_collection | Retrieves the collection of UserAccount resources. |
-| GET | `/api/user-account-level-code` | api_user-account-level-code_get_collection | Retrieves the collection of UserAccountLevelCode resources. |
-| GET | `/api/user-account-level-code/{id}` | api_user-account-level-code_id_get | Retrieves a UserAccountLevelCode resource. |
-| GET | `/api/user-account/{id}` | api_user-account_id_get | Retrieves a UserAccount resource. |
-| PUT | `/api/user-account/{id}` | api_user-account_id_put | Replaces the UserAccount resource. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/alert-log` | api_alert-log_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `monitor`, `monitor[]`, `alertService`, `alertService[]`, `alertLogStatusCode`, `alertLogStatusCode[]`, `partition`, `partition[]`, `properties[]` | AlertLog-get[] | yes | Retrieves the collection of AlertLog resources. |
+| GET | `/api/alert-log-status-code` | api_alert-log-status-code_get_collection | `page`, `properties[]` | AlertLogStatusCode-get[] | yes | Retrieves the collection of AlertLogStatusCode resources. |
+| GET | `/api/alert-log-status-code/{id}` | api_alert-log-status-code_id_get | `id`* | AlertLogStatusCode-get | yes | Retrieves a AlertLogStatusCode resource. |
+| GET | `/api/alert-log/{id}` | api_alert-log_id_get | `id`* | AlertLog-get | yes | Retrieves a AlertLog resource. |
+| GET | `/api/alert-service` | api_alert-service_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | AlertService-get[] | yes | Retrieves the collection of AlertService resources. |
+| POST | `/api/alert-service` | api_alert-service_post | body*: AlertService-post | AlertService-get |  | Creates a AlertService resource. |
+| GET | `/api/alert-service-transport-code` | api_alert-service-transport-code_get_collection | `page`, `properties[]` | AlertServiceTransportCode-get[] | yes | Retrieves the collection of AlertServiceTransportCode resources. |
+| GET | `/api/alert-service-transport-code/{id}` | api_alert-service-transport-code_id_get | `id`* | AlertServiceTransportCode-get | yes | Retrieves a AlertServiceTransportCode resource. |
+| GET | `/api/alert-service/{id}` | api_alert-service_id_get | `id`* | AlertService-get | yes | Retrieves a AlertService resource. |
+| PUT | `/api/alert-service/{id}` | api_alert-service_id_put | `id`*, body*: AlertService-put | AlertService-get |  | Replaces the AlertService resource. |
+| DELETE | `/api/alert-service/{id}` | api_alert-service_id_delete | `id`* | — |  | Removes the AlertService resource. |
+| GET | `/api/credits-consumption` | api_credits-consumption_get_collection | `page`, `properties[]` | CreditsConsumption-get[] | yes | Retrieves the collection of CreditsConsumption resources. |
+| GET | `/api/credits-consumption/{id}` | api_credits-consumption_id_get | `id`* | CreditsConsumption-get | yes | Retrieves a CreditsConsumption resource. |
+| GET | `/api/http-method-code` | api_http-method-code_get_collection | `page`, `properties[]` | HttpMethodCode-get[] | yes | Retrieves the collection of HttpMethodCode resources. |
+| GET | `/api/http-method-code/{id}` | api_http-method-code_id_get | `id`* | HttpMethodCode-get | yes | Retrieves a HttpMethodCode resource. |
+| GET | `/api/media-object` | api_media-object_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | MediaObject-get[] | yes | Retrieves the collection of MediaObject resources. |
+| POST | `/api/media-object` | api_media-object_post | body: object | MediaObject-get |  | Creates a MediaObject resource. |
+| GET | `/api/media-object/{id}` | api_media-object_id_get | `id`* | MediaObject-get | yes | Retrieves a MediaObject resource. |
+| DELETE | `/api/media-object/{id}` | api_media-object_id_delete | `id`* | — |  | Removes the MediaObject resource. |
+| GET | `/api/monitor` | api_monitor_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | Monitor-get[] | yes | Retrieves the collection of Monitor resources. |
+| POST | `/api/monitor` | api_monitor_post | body*: Monitor-post | Monitor-get |  | Creates a Monitor resource. |
+| GET | `/api/monitor-status-code` | api_monitor-status-code_get_collection | `page`, `properties[]` | MonitorStatusCode-get[] | yes | Retrieves the collection of MonitorStatusCode resources. |
+| GET | `/api/monitor-status-code/{id}` | api_monitor-status-code_id_get | `id`* | MonitorStatusCode-get | yes | Retrieves a MonitorStatusCode resource. |
+| GET | `/api/monitor-status-log` | api_monitor-status-log_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `monitor`, `monitor[]`, `monitorStatusCode`, `monitorStatusCode[]`, `partition`, `partition[]`, `properties[]` | MonitorStatusLog-get[] | yes | Retrieves the collection of MonitorStatusLog resources. |
+| GET | `/api/monitor-status-log/{id}` | api_monitor-status-log_id_get | `id`* | MonitorStatusLog-get | yes | Retrieves a MonitorStatusLog resource. |
+| GET | `/api/monitor-type-code` | api_monitor-type-code_get_collection | `page`, `properties[]` | MonitorTypeCode-get[] | yes | Retrieves the collection of MonitorTypeCode resources. |
+| GET | `/api/monitor-type-code/{id}` | api_monitor-type-code_id_get | `id`* | MonitorTypeCode-get | yes | Retrieves a MonitorTypeCode resource. |
+| GET | `/api/monitor/{id}` | api_monitor_id_get | `id`* | Monitor-get | yes | Retrieves a Monitor resource. |
+| PUT | `/api/monitor/{id}` | api_monitor_id_put | `id`*, body*: Monitor-put | Monitor-get |  | Replaces the Monitor resource. |
+| DELETE | `/api/monitor/{id}` | api_monitor_id_delete | `id`* | — |  | Removes the Monitor resource. |
+| GET | `/api/partition` | api_partition_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `properties[]` | Partition-get[] | yes | Retrieves the collection of Partition resources. |
+| POST | `/api/partition` | api_partition_post | body*: Partition-post | Partition-get |  | Creates a Partition resource. |
+| GET | `/api/partition/{id}` | api_partition_id_get | `id`* | Partition-get | yes | Retrieves a Partition resource. |
+| PUT | `/api/partition/{id}` | api_partition_id_put | `id`*, body*: Partition-put | Partition-get |  | Replaces the Partition resource. |
+| DELETE | `/api/partition/{id}` | api_partition_id_delete | `id`* | — |  | Removes the Partition resource. |
+| GET | `/api/ping` | api_ping_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `monitor`, `monitor[]`, `partition`, `partition[]`, `properties[]` | Ping-get[] | yes | Retrieves the collection of Ping resources. |
+| POST | `/api/ping` | api_ping_post | body*: Ping-post | Ping-get |  | Creates a Ping resource. |
+| GET | `/api/ping-method-code` | api_ping-method-code_get_collection | `page`, `properties[]` | PingMethodCode-get[] | yes | Retrieves the collection of PingMethodCode resources. |
+| GET | `/api/ping-method-code/{id}` | api_ping-method-code_id_get | `id`* | PingMethodCode-get | yes | Retrieves a PingMethodCode resource. |
+| GET | `/api/ping/{id}` | api_ping_id_get | `id`* | Ping-get | yes | Retrieves a Ping resource. |
+| GET | `/api/team-invitation` | api_team-invitation_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `inviteeEmail`, `inviteeEmail[]`, `properties[]` | TeamInvitation-get[] | yes | Retrieves the collection of TeamInvitation resources. |
+| POST | `/api/team-invitation` | api_team-invitation_post | body*: TeamInvitation-post | TeamInvitation-get |  | Creates a TeamInvitation resource. |
+| GET | `/api/team-invitation/{id}` | api_team-invitation_id_get | `id`* | TeamInvitation-get | yes | Retrieves a TeamInvitation resource. |
+| DELETE | `/api/team-invitation/{id}` | api_team-invitation_id_delete | `id`* | — |  | Removes the TeamInvitation resource. |
+| GET | `/api/team-member` | api_team-member_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `userAccount`, `userAccount[]`, `properties[]` | TeamMember-get[] | yes | Retrieves the collection of TeamMember resources. |
+| GET | `/api/team-member-role-code` | api_team-member-role-code_get_collection | `page`, `properties[]` | TeamMemberRoleCode-get[] | yes | Retrieves the collection of TeamMemberRoleCode resources. |
+| GET | `/api/team-member-role-code/{id}` | api_team-member-role-code_id_get | `id`* | TeamMemberRoleCode-get | yes | Retrieves a TeamMemberRoleCode resource. |
+| GET | `/api/team-member/{id}` | api_team-member_id_get | `id`* | TeamMember-get | yes | Retrieves a TeamMember resource. |
+| PUT | `/api/team-member/{id}` | api_team-member_id_put | `id`*, body*: TeamMember-put | TeamMember-get |  | Replaces the TeamMember resource. |
+| DELETE | `/api/team-member/{id}` | api_team-member_id_delete | `id`* | — |  | Removes the TeamMember resource. |
+| GET | `/api/timezone-code` | api_timezone-code_get_collection | `page`, `properties[]` | TimezoneCode-get[] | yes | Retrieves the collection of TimezoneCode resources. |
+| GET | `/api/timezone-code/{id}` | api_timezone-code_id_get | `id`* | TimezoneCode-get | yes | Retrieves a TimezoneCode resource. |
+| GET | `/api/transport-alerta` | api_transport-alerta_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportAlerta-get[] | yes | Retrieves the collection of TransportAlerta resources. |
+| POST | `/api/transport-alerta` | api_transport-alerta_post | body*: TransportAlerta-post | TransportAlerta-get |  | Creates a TransportAlerta resource. |
+| GET | `/api/transport-alerta/{id}` | api_transport-alerta_id_get | `id`* | TransportAlerta-get | yes | Retrieves a TransportAlerta resource. |
+| PUT | `/api/transport-alerta/{id}` | api_transport-alerta_id_put | `id`*, body*: TransportAlerta-put | TransportAlerta-get |  | Replaces the TransportAlerta resource. |
+| DELETE | `/api/transport-alerta/{id}` | api_transport-alerta_id_delete | `id`* | — |  | Removes the TransportAlerta resource. |
+| GET | `/api/transport-all-my-sms` | api_transport-all-my-sms_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportAllMySms-get[] | yes | Retrieves the collection of TransportAllMySms resources. |
+| POST | `/api/transport-all-my-sms` | api_transport-all-my-sms_post | body*: TransportAllMySms-post | TransportAllMySms-get |  | Creates a TransportAllMySms resource. |
+| GET | `/api/transport-all-my-sms/{id}` | api_transport-all-my-sms_id_get | `id`* | TransportAllMySms-get | yes | Retrieves a TransportAllMySms resource. |
+| PUT | `/api/transport-all-my-sms/{id}` | api_transport-all-my-sms_id_put | `id`*, body*: TransportAllMySms-put | TransportAllMySms-get |  | Replaces the TransportAllMySms resource. |
+| DELETE | `/api/transport-all-my-sms/{id}` | api_transport-all-my-sms_id_delete | `id`* | — |  | Removes the TransportAllMySms resource. |
+| GET | `/api/transport-amazon-sns` | api_transport-amazon-sns_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportAmazonSns-get[] | yes | Retrieves the collection of TransportAmazonSns resources. |
+| POST | `/api/transport-amazon-sns` | api_transport-amazon-sns_post | body*: TransportAmazonSns-post | TransportAmazonSns-get |  | Creates a TransportAmazonSns resource. |
+| GET | `/api/transport-amazon-sns/{id}` | api_transport-amazon-sns_id_get | `id`* | TransportAmazonSns-get | yes | Retrieves a TransportAmazonSns resource. |
+| PUT | `/api/transport-amazon-sns/{id}` | api_transport-amazon-sns_id_put | `id`*, body*: TransportAmazonSns-put | TransportAmazonSns-get |  | Replaces the TransportAmazonSns resource. |
+| DELETE | `/api/transport-amazon-sns/{id}` | api_transport-amazon-sns_id_delete | `id`* | — |  | Removes the TransportAmazonSns resource. |
+| GET | `/api/transport-bandwidth` | api_transport-bandwidth_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportBandwidth-get[] | yes | Retrieves the collection of TransportBandwidth resources. |
+| POST | `/api/transport-bandwidth` | api_transport-bandwidth_post | body*: TransportBandwidth-post | TransportBandwidth-get |  | Creates a TransportBandwidth resource. |
+| GET | `/api/transport-bandwidth/{id}` | api_transport-bandwidth_id_get | `id`* | TransportBandwidth-get | yes | Retrieves a TransportBandwidth resource. |
+| PUT | `/api/transport-bandwidth/{id}` | api_transport-bandwidth_id_put | `id`*, body*: TransportBandwidth-put | TransportBandwidth-get |  | Replaces the TransportBandwidth resource. |
+| DELETE | `/api/transport-bandwidth/{id}` | api_transport-bandwidth_id_delete | `id`* | — |  | Removes the TransportBandwidth resource. |
+| GET | `/api/transport-chatwork` | api_transport-chatwork_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportChatwork-get[] | yes | Retrieves the collection of TransportChatwork resources. |
+| POST | `/api/transport-chatwork` | api_transport-chatwork_post | body*: TransportChatwork-post | TransportChatwork-get |  | Creates a TransportChatwork resource. |
+| GET | `/api/transport-chatwork/{id}` | api_transport-chatwork_id_get | `id`* | TransportChatwork-get | yes | Retrieves a TransportChatwork resource. |
+| PUT | `/api/transport-chatwork/{id}` | api_transport-chatwork_id_put | `id`*, body*: TransportChatwork-put | TransportChatwork-get |  | Replaces the TransportChatwork resource. |
+| DELETE | `/api/transport-chatwork/{id}` | api_transport-chatwork_id_delete | `id`* | — |  | Removes the TransportChatwork resource. |
+| GET | `/api/transport-click-send` | api_transport-click-send_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportClickSend-get[] | yes | Retrieves the collection of TransportClickSend resources. |
+| POST | `/api/transport-click-send` | api_transport-click-send_post | body*: TransportClickSend-post | TransportClickSend-get |  | Creates a TransportClickSend resource. |
+| GET | `/api/transport-click-send/{id}` | api_transport-click-send_id_get | `id`* | TransportClickSend-get | yes | Retrieves a TransportClickSend resource. |
+| PUT | `/api/transport-click-send/{id}` | api_transport-click-send_id_put | `id`*, body*: TransportClickSend-put | TransportClickSend-get |  | Replaces the TransportClickSend resource. |
+| DELETE | `/api/transport-click-send/{id}` | api_transport-click-send_id_delete | `id`* | — |  | Removes the TransportClickSend resource. |
+| GET | `/api/transport-clickatell` | api_transport-clickatell_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportClickatell-get[] | yes | Retrieves the collection of TransportClickatell resources. |
+| POST | `/api/transport-clickatell` | api_transport-clickatell_post | body*: TransportClickatell-post | TransportClickatell-get |  | Creates a TransportClickatell resource. |
+| GET | `/api/transport-clickatell/{id}` | api_transport-clickatell_id_get | `id`* | TransportClickatell-get | yes | Retrieves a TransportClickatell resource. |
+| PUT | `/api/transport-clickatell/{id}` | api_transport-clickatell_id_put | `id`*, body*: TransportClickatell-put | TransportClickatell-get |  | Replaces the TransportClickatell resource. |
+| DELETE | `/api/transport-clickatell/{id}` | api_transport-clickatell_id_delete | `id`* | — |  | Removes the TransportClickatell resource. |
+| GET | `/api/transport-contact-everyone` | api_transport-contact-everyone_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportContactEveryone-get[] | yes | Retrieves the collection of TransportContactEveryone resources. |
+| POST | `/api/transport-contact-everyone` | api_transport-contact-everyone_post | body*: TransportContactEveryone-post | TransportContactEveryone-get |  | Creates a TransportContactEveryone resource. |
+| GET | `/api/transport-contact-everyone/{id}` | api_transport-contact-everyone_id_get | `id`* | TransportContactEveryone-get | yes | Retrieves a TransportContactEveryone resource. |
+| PUT | `/api/transport-contact-everyone/{id}` | api_transport-contact-everyone_id_put | `id`*, body*: TransportContactEveryone-put | TransportContactEveryone-get |  | Replaces the TransportContactEveryone resource. |
+| DELETE | `/api/transport-contact-everyone/{id}` | api_transport-contact-everyone_id_delete | `id`* | — |  | Removes the TransportContactEveryone resource. |
+| GET | `/api/transport-discord` | api_transport-discord_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportDiscord-get[] | yes | Retrieves the collection of TransportDiscord resources. |
+| POST | `/api/transport-discord` | api_transport-discord_post | body*: TransportDiscord-post | TransportDiscord-get |  | Creates a TransportDiscord resource. |
+| GET | `/api/transport-discord/{id}` | api_transport-discord_id_get | `id`* | TransportDiscord-get | yes | Retrieves a TransportDiscord resource. |
+| PUT | `/api/transport-discord/{id}` | api_transport-discord_id_put | `id`*, body*: TransportDiscord-put | TransportDiscord-get |  | Replaces the TransportDiscord resource. |
+| DELETE | `/api/transport-discord/{id}` | api_transport-discord_id_delete | `id`* | — |  | Removes the TransportDiscord resource. |
+| GET | `/api/transport-email` | api_transport-email_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportEmail-get[] | yes | Retrieves the collection of TransportEmail resources. |
+| POST | `/api/transport-email` | api_transport-email_post | body*: TransportEmail-post | TransportEmail-get |  | Creates a TransportEmail resource. |
+| GET | `/api/transport-email/{id}` | api_transport-email_id_get | `id`* | TransportEmail-get | yes | Retrieves a TransportEmail resource. |
+| PUT | `/api/transport-email/{id}` | api_transport-email_id_put | `id`*, body*: TransportEmail-put | TransportEmail-get |  | Replaces the TransportEmail resource. |
+| DELETE | `/api/transport-email/{id}` | api_transport-email_id_delete | `id`* | — |  | Removes the TransportEmail resource. |
+| GET | `/api/transport-engagespot` | api_transport-engagespot_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportEngagespot-get[] | yes | Retrieves the collection of TransportEngagespot resources. |
+| POST | `/api/transport-engagespot` | api_transport-engagespot_post | body*: TransportEngagespot-post | TransportEngagespot-get |  | Creates a TransportEngagespot resource. |
+| GET | `/api/transport-engagespot/{id}` | api_transport-engagespot_id_get | `id`* | TransportEngagespot-get | yes | Retrieves a TransportEngagespot resource. |
+| PUT | `/api/transport-engagespot/{id}` | api_transport-engagespot_id_put | `id`*, body*: TransportEngagespot-put | TransportEngagespot-get |  | Replaces the TransportEngagespot resource. |
+| DELETE | `/api/transport-engagespot/{id}` | api_transport-engagespot_id_delete | `id`* | — |  | Removes the TransportEngagespot resource. |
+| GET | `/api/transport-esendex` | api_transport-esendex_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportEsendex-get[] | yes | Retrieves the collection of TransportEsendex resources. |
+| POST | `/api/transport-esendex` | api_transport-esendex_post | body*: TransportEsendex-post | TransportEsendex-get |  | Creates a TransportEsendex resource. |
+| GET | `/api/transport-esendex/{id}` | api_transport-esendex_id_get | `id`* | TransportEsendex-get | yes | Retrieves a TransportEsendex resource. |
+| PUT | `/api/transport-esendex/{id}` | api_transport-esendex_id_put | `id`*, body*: TransportEsendex-put | TransportEsendex-get |  | Replaces the TransportEsendex resource. |
+| DELETE | `/api/transport-esendex/{id}` | api_transport-esendex_id_delete | `id`* | — |  | Removes the TransportEsendex resource. |
+| GET | `/api/transport-expo` | api_transport-expo_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportExpo-get[] | yes | Retrieves the collection of TransportExpo resources. |
+| POST | `/api/transport-expo` | api_transport-expo_post | body*: TransportExpo-post | TransportExpo-get |  | Creates a TransportExpo resource. |
+| GET | `/api/transport-expo/{id}` | api_transport-expo_id_get | `id`* | TransportExpo-get | yes | Retrieves a TransportExpo resource. |
+| PUT | `/api/transport-expo/{id}` | api_transport-expo_id_put | `id`*, body*: TransportExpo-put | TransportExpo-get |  | Replaces the TransportExpo resource. |
+| DELETE | `/api/transport-expo/{id}` | api_transport-expo_id_delete | `id`* | — |  | Removes the TransportExpo resource. |
+| GET | `/api/transport-firebase` | api_transport-firebase_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportFirebase-get[] | yes | Retrieves the collection of TransportFirebase resources. |
+| POST | `/api/transport-firebase` | api_transport-firebase_post | body*: TransportFirebase-post | TransportFirebase-get |  | Creates a TransportFirebase resource. |
+| GET | `/api/transport-firebase/{id}` | api_transport-firebase_id_get | `id`* | TransportFirebase-get | yes | Retrieves a TransportFirebase resource. |
+| PUT | `/api/transport-firebase/{id}` | api_transport-firebase_id_put | `id`*, body*: TransportFirebase-put | TransportFirebase-get |  | Replaces the TransportFirebase resource. |
+| DELETE | `/api/transport-firebase/{id}` | api_transport-firebase_id_delete | `id`* | — |  | Removes the TransportFirebase resource. |
+| GET | `/api/transport-forty-six-elks` | api_transport-forty-six-elks_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportFortySixElks-get[] | yes | Retrieves the collection of TransportFortySixElks resources. |
+| POST | `/api/transport-forty-six-elks` | api_transport-forty-six-elks_post | body*: TransportFortySixElks-post | TransportFortySixElks-get |  | Creates a TransportFortySixElks resource. |
+| GET | `/api/transport-forty-six-elks/{id}` | api_transport-forty-six-elks_id_get | `id`* | TransportFortySixElks-get | yes | Retrieves a TransportFortySixElks resource. |
+| PUT | `/api/transport-forty-six-elks/{id}` | api_transport-forty-six-elks_id_put | `id`*, body*: TransportFortySixElks-put | TransportFortySixElks-get |  | Replaces the TransportFortySixElks resource. |
+| DELETE | `/api/transport-forty-six-elks/{id}` | api_transport-forty-six-elks_id_delete | `id`* | — |  | Removes the TransportFortySixElks resource. |
+| GET | `/api/transport-free-mobile` | api_transport-free-mobile_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportFreeMobile-get[] | yes | Retrieves the collection of TransportFreeMobile resources. |
+| POST | `/api/transport-free-mobile` | api_transport-free-mobile_post | body*: TransportFreeMobile-post | TransportFreeMobile-get |  | Creates a TransportFreeMobile resource. |
+| GET | `/api/transport-free-mobile/{id}` | api_transport-free-mobile_id_get | `id`* | TransportFreeMobile-get | yes | Retrieves a TransportFreeMobile resource. |
+| PUT | `/api/transport-free-mobile/{id}` | api_transport-free-mobile_id_put | `id`*, body*: TransportFreeMobile-put | TransportFreeMobile-get |  | Replaces the TransportFreeMobile resource. |
+| DELETE | `/api/transport-free-mobile/{id}` | api_transport-free-mobile_id_delete | `id`* | — |  | Removes the TransportFreeMobile resource. |
+| GET | `/api/transport-freshdesk` | api_transport-freshdesk_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportFreshdesk-get[] | yes | Retrieves the collection of TransportFreshdesk resources. |
+| POST | `/api/transport-freshdesk` | api_transport-freshdesk_post | body*: TransportFreshdesk-post | TransportFreshdesk-get |  | Creates a TransportFreshdesk resource. |
+| GET | `/api/transport-freshdesk/{id}` | api_transport-freshdesk_id_get | `id`* | TransportFreshdesk-get | yes | Retrieves a TransportFreshdesk resource. |
+| PUT | `/api/transport-freshdesk/{id}` | api_transport-freshdesk_id_put | `id`*, body*: TransportFreshdesk-put | TransportFreshdesk-get |  | Replaces the TransportFreshdesk resource. |
+| DELETE | `/api/transport-freshdesk/{id}` | api_transport-freshdesk_id_delete | `id`* | — |  | Removes the TransportFreshdesk resource. |
+| GET | `/api/transport-gateway-api` | api_transport-gateway-api_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportGatewayApi-get[] | yes | Retrieves the collection of TransportGatewayApi resources. |
+| POST | `/api/transport-gateway-api` | api_transport-gateway-api_post | body*: TransportGatewayApi-post | TransportGatewayApi-get |  | Creates a TransportGatewayApi resource. |
+| GET | `/api/transport-gateway-api/{id}` | api_transport-gateway-api_id_get | `id`* | TransportGatewayApi-get | yes | Retrieves a TransportGatewayApi resource. |
+| PUT | `/api/transport-gateway-api/{id}` | api_transport-gateway-api_id_put | `id`*, body*: TransportGatewayApi-put | TransportGatewayApi-get |  | Replaces the TransportGatewayApi resource. |
+| DELETE | `/api/transport-gateway-api/{id}` | api_transport-gateway-api_id_delete | `id`* | — |  | Removes the TransportGatewayApi resource. |
+| GET | `/api/transport-gitter` | api_transport-gitter_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportGitter-get[] | yes | Retrieves the collection of TransportGitter resources. |
+| POST | `/api/transport-gitter` | api_transport-gitter_post | body*: TransportGitter-post | TransportGitter-get |  | Creates a TransportGitter resource. |
+| GET | `/api/transport-gitter/{id}` | api_transport-gitter_id_get | `id`* | TransportGitter-get | yes | Retrieves a TransportGitter resource. |
+| PUT | `/api/transport-gitter/{id}` | api_transport-gitter_id_put | `id`*, body*: TransportGitter-put | TransportGitter-get |  | Replaces the TransportGitter resource. |
+| DELETE | `/api/transport-gitter/{id}` | api_transport-gitter_id_delete | `id`* | — |  | Removes the TransportGitter resource. |
+| GET | `/api/transport-google-chat` | api_transport-google-chat_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportGoogleChat-get[] | yes | Retrieves the collection of TransportGoogleChat resources. |
+| POST | `/api/transport-google-chat` | api_transport-google-chat_post | body*: TransportGoogleChat-post | TransportGoogleChat-get |  | Creates a TransportGoogleChat resource. |
+| GET | `/api/transport-google-chat/{id}` | api_transport-google-chat_id_get | `id`* | TransportGoogleChat-get | yes | Retrieves a TransportGoogleChat resource. |
+| PUT | `/api/transport-google-chat/{id}` | api_transport-google-chat_id_put | `id`*, body*: TransportGoogleChat-put | TransportGoogleChat-get |  | Replaces the TransportGoogleChat resource. |
+| DELETE | `/api/transport-google-chat/{id}` | api_transport-google-chat_id_delete | `id`* | — |  | Removes the TransportGoogleChat resource. |
+| GET | `/api/transport-gotify` | api_transport-gotify_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportGotify-get[] | yes | Retrieves the collection of TransportGotify resources. |
+| POST | `/api/transport-gotify` | api_transport-gotify_post | body*: TransportGotify-post | TransportGotify-get |  | Creates a TransportGotify resource. |
+| GET | `/api/transport-gotify/{id}` | api_transport-gotify_id_get | `id`* | TransportGotify-get | yes | Retrieves a TransportGotify resource. |
+| PUT | `/api/transport-gotify/{id}` | api_transport-gotify_id_put | `id`*, body*: TransportGotify-put | TransportGotify-get |  | Replaces the TransportGotify resource. |
+| DELETE | `/api/transport-gotify/{id}` | api_transport-gotify_id_delete | `id`* | — |  | Removes the TransportGotify resource. |
+| GET | `/api/transport-help-scout` | api_transport-help-scout_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportHelpScout-get[] | yes | Retrieves the collection of TransportHelpScout resources. |
+| POST | `/api/transport-help-scout` | api_transport-help-scout_post | body*: TransportHelpScout-post | TransportHelpScout-get |  | Creates a TransportHelpScout resource. |
+| GET | `/api/transport-help-scout/{id}` | api_transport-help-scout_id_get | `id`* | TransportHelpScout-get | yes | Retrieves a TransportHelpScout resource. |
+| PUT | `/api/transport-help-scout/{id}` | api_transport-help-scout_id_put | `id`*, body*: TransportHelpScout-put | TransportHelpScout-get |  | Replaces the TransportHelpScout resource. |
+| DELETE | `/api/transport-help-scout/{id}` | api_transport-help-scout_id_delete | `id`* | — |  | Removes the TransportHelpScout resource. |
+| GET | `/api/transport-infobip` | api_transport-infobip_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportInfobip-get[] | yes | Retrieves the collection of TransportInfobip resources. |
+| POST | `/api/transport-infobip` | api_transport-infobip_post | body*: TransportInfobip-post | TransportInfobip-get |  | Creates a TransportInfobip resource. |
+| GET | `/api/transport-infobip/{id}` | api_transport-infobip_id_get | `id`* | TransportInfobip-get | yes | Retrieves a TransportInfobip resource. |
+| PUT | `/api/transport-infobip/{id}` | api_transport-infobip_id_put | `id`*, body*: TransportInfobip-put | TransportInfobip-get |  | Replaces the TransportInfobip resource. |
+| DELETE | `/api/transport-infobip/{id}` | api_transport-infobip_id_delete | `id`* | — |  | Removes the TransportInfobip resource. |
+| GET | `/api/transport-iqsms` | api_transport-iqsms_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportIqsms-get[] | yes | Retrieves the collection of TransportIqsms resources. |
+| POST | `/api/transport-iqsms` | api_transport-iqsms_post | body*: TransportIqsms-post | TransportIqsms-get |  | Creates a TransportIqsms resource. |
+| GET | `/api/transport-iqsms/{id}` | api_transport-iqsms_id_get | `id`* | TransportIqsms-get | yes | Retrieves a TransportIqsms resource. |
+| PUT | `/api/transport-iqsms/{id}` | api_transport-iqsms_id_put | `id`*, body*: TransportIqsms-put | TransportIqsms-get |  | Replaces the TransportIqsms resource. |
+| DELETE | `/api/transport-iqsms/{id}` | api_transport-iqsms_id_delete | `id`* | — |  | Removes the TransportIqsms resource. |
+| GET | `/api/transport-kaz-info-teh` | api_transport-kaz-info-teh_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportKazInfoTeh-get[] | yes | Retrieves the collection of TransportKazInfoTeh resources. |
+| POST | `/api/transport-kaz-info-teh` | api_transport-kaz-info-teh_post | body*: TransportKazInfoTeh-post | TransportKazInfoTeh-get |  | Creates a TransportKazInfoTeh resource. |
+| GET | `/api/transport-kaz-info-teh/{id}` | api_transport-kaz-info-teh_id_get | `id`* | TransportKazInfoTeh-get | yes | Retrieves a TransportKazInfoTeh resource. |
+| PUT | `/api/transport-kaz-info-teh/{id}` | api_transport-kaz-info-teh_id_put | `id`*, body*: TransportKazInfoTeh-put | TransportKazInfoTeh-get |  | Replaces the TransportKazInfoTeh resource. |
+| DELETE | `/api/transport-kaz-info-teh/{id}` | api_transport-kaz-info-teh_id_delete | `id`* | — |  | Removes the TransportKazInfoTeh resource. |
+| GET | `/api/transport-light-sms` | api_transport-light-sms_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportLightSms-get[] | yes | Retrieves the collection of TransportLightSms resources. |
+| POST | `/api/transport-light-sms` | api_transport-light-sms_post | body*: TransportLightSms-post | TransportLightSms-get |  | Creates a TransportLightSms resource. |
+| GET | `/api/transport-light-sms/{id}` | api_transport-light-sms_id_get | `id`* | TransportLightSms-get | yes | Retrieves a TransportLightSms resource. |
+| PUT | `/api/transport-light-sms/{id}` | api_transport-light-sms_id_put | `id`*, body*: TransportLightSms-put | TransportLightSms-get |  | Replaces the TransportLightSms resource. |
+| DELETE | `/api/transport-light-sms/{id}` | api_transport-light-sms_id_delete | `id`* | — |  | Removes the TransportLightSms resource. |
+| GET | `/api/transport-line-notify` | api_transport-line-notify_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportLineNotify-get[] | yes | Retrieves the collection of TransportLineNotify resources. |
+| POST | `/api/transport-line-notify` | api_transport-line-notify_post | body*: TransportLineNotify-post | TransportLineNotify-get |  | Creates a TransportLineNotify resource. |
+| GET | `/api/transport-line-notify/{id}` | api_transport-line-notify_id_get | `id`* | TransportLineNotify-get | yes | Retrieves a TransportLineNotify resource. |
+| PUT | `/api/transport-line-notify/{id}` | api_transport-line-notify_id_put | `id`*, body*: TransportLineNotify-put | TransportLineNotify-get |  | Replaces the TransportLineNotify resource. |
+| DELETE | `/api/transport-line-notify/{id}` | api_transport-line-notify_id_delete | `id`* | — |  | Removes the TransportLineNotify resource. |
+| GET | `/api/transport-linked-in` | api_transport-linked-in_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportLinkedIn-get[] | yes | Retrieves the collection of TransportLinkedIn resources. |
+| POST | `/api/transport-linked-in` | api_transport-linked-in_post | body*: TransportLinkedIn-post | TransportLinkedIn-get |  | Creates a TransportLinkedIn resource. |
+| GET | `/api/transport-linked-in/{id}` | api_transport-linked-in_id_get | `id`* | TransportLinkedIn-get | yes | Retrieves a TransportLinkedIn resource. |
+| PUT | `/api/transport-linked-in/{id}` | api_transport-linked-in_id_put | `id`*, body*: TransportLinkedIn-put | TransportLinkedIn-get |  | Replaces the TransportLinkedIn resource. |
+| DELETE | `/api/transport-linked-in/{id}` | api_transport-linked-in_id_delete | `id`* | — |  | Removes the TransportLinkedIn resource. |
+| GET | `/api/transport-mailjet` | api_transport-mailjet_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMailjet-get[] | yes | Retrieves the collection of TransportMailjet resources. |
+| POST | `/api/transport-mailjet` | api_transport-mailjet_post | body*: TransportMailjet-post | TransportMailjet-get |  | Creates a TransportMailjet resource. |
+| GET | `/api/transport-mailjet/{id}` | api_transport-mailjet_id_get | `id`* | TransportMailjet-get | yes | Retrieves a TransportMailjet resource. |
+| PUT | `/api/transport-mailjet/{id}` | api_transport-mailjet_id_put | `id`*, body*: TransportMailjet-put | TransportMailjet-get |  | Replaces the TransportMailjet resource. |
+| DELETE | `/api/transport-mailjet/{id}` | api_transport-mailjet_id_delete | `id`* | — |  | Removes the TransportMailjet resource. |
+| GET | `/api/transport-mastodon` | api_transport-mastodon_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMastodon-get[] | yes | Retrieves the collection of TransportMastodon resources. |
+| POST | `/api/transport-mastodon` | api_transport-mastodon_post | body*: TransportMastodon-post | TransportMastodon-get |  | Creates a TransportMastodon resource. |
+| GET | `/api/transport-mastodon/{id}` | api_transport-mastodon_id_get | `id`* | TransportMastodon-get | yes | Retrieves a TransportMastodon resource. |
+| PUT | `/api/transport-mastodon/{id}` | api_transport-mastodon_id_put | `id`*, body*: TransportMastodon-put | TransportMastodon-get |  | Replaces the TransportMastodon resource. |
+| DELETE | `/api/transport-mastodon/{id}` | api_transport-mastodon_id_delete | `id`* | — |  | Removes the TransportMastodon resource. |
+| GET | `/api/transport-mattermost` | api_transport-mattermost_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMattermost-get[] | yes | Retrieves the collection of TransportMattermost resources. |
+| POST | `/api/transport-mattermost` | api_transport-mattermost_post | body*: TransportMattermost-post | TransportMattermost-get |  | Creates a TransportMattermost resource. |
+| GET | `/api/transport-mattermost/{id}` | api_transport-mattermost_id_get | `id`* | TransportMattermost-get | yes | Retrieves a TransportMattermost resource. |
+| PUT | `/api/transport-mattermost/{id}` | api_transport-mattermost_id_put | `id`*, body*: TransportMattermost-put | TransportMattermost-get |  | Replaces the TransportMattermost resource. |
+| DELETE | `/api/transport-mattermost/{id}` | api_transport-mattermost_id_delete | `id`* | — |  | Removes the TransportMattermost resource. |
+| GET | `/api/transport-mercure` | api_transport-mercure_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMercure-get[] | yes | Retrieves the collection of TransportMercure resources. |
+| POST | `/api/transport-mercure` | api_transport-mercure_post | body*: TransportMercure-post | TransportMercure-get |  | Creates a TransportMercure resource. |
+| GET | `/api/transport-mercure/{id}` | api_transport-mercure_id_get | `id`* | TransportMercure-get | yes | Retrieves a TransportMercure resource. |
+| PUT | `/api/transport-mercure/{id}` | api_transport-mercure_id_put | `id`*, body*: TransportMercure-put | TransportMercure-get |  | Replaces the TransportMercure resource. |
+| DELETE | `/api/transport-mercure/{id}` | api_transport-mercure_id_delete | `id`* | — |  | Removes the TransportMercure resource. |
+| GET | `/api/transport-message-bird` | api_transport-message-bird_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMessageBird-get[] | yes | Retrieves the collection of TransportMessageBird resources. |
+| POST | `/api/transport-message-bird` | api_transport-message-bird_post | body*: TransportMessageBird-post | TransportMessageBird-get |  | Creates a TransportMessageBird resource. |
+| GET | `/api/transport-message-bird/{id}` | api_transport-message-bird_id_get | `id`* | TransportMessageBird-get | yes | Retrieves a TransportMessageBird resource. |
+| PUT | `/api/transport-message-bird/{id}` | api_transport-message-bird_id_put | `id`*, body*: TransportMessageBird-put | TransportMessageBird-get |  | Replaces the TransportMessageBird resource. |
+| DELETE | `/api/transport-message-bird/{id}` | api_transport-message-bird_id_delete | `id`* | — |  | Removes the TransportMessageBird resource. |
+| GET | `/api/transport-message-media` | api_transport-message-media_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMessageMedia-get[] | yes | Retrieves the collection of TransportMessageMedia resources. |
+| POST | `/api/transport-message-media` | api_transport-message-media_post | body*: TransportMessageMedia-post | TransportMessageMedia-get |  | Creates a TransportMessageMedia resource. |
+| GET | `/api/transport-message-media/{id}` | api_transport-message-media_id_get | `id`* | TransportMessageMedia-get | yes | Retrieves a TransportMessageMedia resource. |
+| PUT | `/api/transport-message-media/{id}` | api_transport-message-media_id_put | `id`*, body*: TransportMessageMedia-put | TransportMessageMedia-get |  | Replaces the TransportMessageMedia resource. |
+| DELETE | `/api/transport-message-media/{id}` | api_transport-message-media_id_delete | `id`* | — |  | Removes the TransportMessageMedia resource. |
+| GET | `/api/transport-microsoft-teams` | api_transport-microsoft-teams_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMicrosoftTeams-get[] | yes | Retrieves the collection of TransportMicrosoftTeams resources. |
+| POST | `/api/transport-microsoft-teams` | api_transport-microsoft-teams_post | body*: TransportMicrosoftTeams-post | TransportMicrosoftTeams-get |  | Creates a TransportMicrosoftTeams resource. |
+| GET | `/api/transport-microsoft-teams/{id}` | api_transport-microsoft-teams_id_get | `id`* | TransportMicrosoftTeams-get | yes | Retrieves a TransportMicrosoftTeams resource. |
+| PUT | `/api/transport-microsoft-teams/{id}` | api_transport-microsoft-teams_id_put | `id`*, body*: TransportMicrosoftTeams-put | TransportMicrosoftTeams-get |  | Replaces the TransportMicrosoftTeams resource. |
+| DELETE | `/api/transport-microsoft-teams/{id}` | api_transport-microsoft-teams_id_delete | `id`* | — |  | Removes the TransportMicrosoftTeams resource. |
+| GET | `/api/transport-mobyt` | api_transport-mobyt_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportMobyt-get[] | yes | Retrieves the collection of TransportMobyt resources. |
+| POST | `/api/transport-mobyt` | api_transport-mobyt_post | body*: TransportMobyt-post | TransportMobyt-get |  | Creates a TransportMobyt resource. |
+| GET | `/api/transport-mobyt/{id}` | api_transport-mobyt_id_get | `id`* | TransportMobyt-get | yes | Retrieves a TransportMobyt resource. |
+| PUT | `/api/transport-mobyt/{id}` | api_transport-mobyt_id_put | `id`*, body*: TransportMobyt-put | TransportMobyt-get |  | Replaces the TransportMobyt resource. |
+| DELETE | `/api/transport-mobyt/{id}` | api_transport-mobyt_id_delete | `id`* | — |  | Removes the TransportMobyt resource. |
+| GET | `/api/transport-octopush` | api_transport-octopush_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportOctopush-get[] | yes | Retrieves the collection of TransportOctopush resources. |
+| POST | `/api/transport-octopush` | api_transport-octopush_post | body*: TransportOctopush-post | TransportOctopush-get |  | Creates a TransportOctopush resource. |
+| GET | `/api/transport-octopush/{id}` | api_transport-octopush_id_get | `id`* | TransportOctopush-get | yes | Retrieves a TransportOctopush resource. |
+| PUT | `/api/transport-octopush/{id}` | api_transport-octopush_id_put | `id`*, body*: TransportOctopush-put | TransportOctopush-get |  | Replaces the TransportOctopush resource. |
+| DELETE | `/api/transport-octopush/{id}` | api_transport-octopush_id_delete | `id`* | — |  | Removes the TransportOctopush resource. |
+| GET | `/api/transport-one-signal` | api_transport-one-signal_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportOneSignal-get[] | yes | Retrieves the collection of TransportOneSignal resources. |
+| POST | `/api/transport-one-signal` | api_transport-one-signal_post | body*: TransportOneSignal-post | TransportOneSignal-get |  | Creates a TransportOneSignal resource. |
+| GET | `/api/transport-one-signal/{id}` | api_transport-one-signal_id_get | `id`* | TransportOneSignal-get | yes | Retrieves a TransportOneSignal resource. |
+| PUT | `/api/transport-one-signal/{id}` | api_transport-one-signal_id_put | `id`*, body*: TransportOneSignal-put | TransportOneSignal-get |  | Replaces the TransportOneSignal resource. |
+| DELETE | `/api/transport-one-signal/{id}` | api_transport-one-signal_id_delete | `id`* | — |  | Removes the TransportOneSignal resource. |
+| GET | `/api/transport-opsgenie` | api_transport-opsgenie_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportOpsgenie-get[] | yes | Retrieves the collection of TransportOpsgenie resources. |
+| POST | `/api/transport-opsgenie` | api_transport-opsgenie_post | body*: TransportOpsgenie-post | TransportOpsgenie-get |  | Creates a TransportOpsgenie resource. |
+| GET | `/api/transport-opsgenie/{id}` | api_transport-opsgenie_id_get | `id`* | TransportOpsgenie-get | yes | Retrieves a TransportOpsgenie resource. |
+| PUT | `/api/transport-opsgenie/{id}` | api_transport-opsgenie_id_put | `id`*, body*: TransportOpsgenie-put | TransportOpsgenie-get |  | Replaces the TransportOpsgenie resource. |
+| DELETE | `/api/transport-opsgenie/{id}` | api_transport-opsgenie_id_delete | `id`* | — |  | Removes the TransportOpsgenie resource. |
+| GET | `/api/transport-orange-sms` | api_transport-orange-sms_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportOrangeSms-get[] | yes | Retrieves the collection of TransportOrangeSms resources. |
+| POST | `/api/transport-orange-sms` | api_transport-orange-sms_post | body*: TransportOrangeSms-post | TransportOrangeSms-get |  | Creates a TransportOrangeSms resource. |
+| GET | `/api/transport-orange-sms/{id}` | api_transport-orange-sms_id_get | `id`* | TransportOrangeSms-get | yes | Retrieves a TransportOrangeSms resource. |
+| PUT | `/api/transport-orange-sms/{id}` | api_transport-orange-sms_id_put | `id`*, body*: TransportOrangeSms-put | TransportOrangeSms-get |  | Replaces the TransportOrangeSms resource. |
+| DELETE | `/api/transport-orange-sms/{id}` | api_transport-orange-sms_id_delete | `id`* | — |  | Removes the TransportOrangeSms resource. |
+| GET | `/api/transport-ovh-cloud` | api_transport-ovh-cloud_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportOvhCloud-get[] | yes | Retrieves the collection of TransportOvhCloud resources. |
+| POST | `/api/transport-ovh-cloud` | api_transport-ovh-cloud_post | body*: TransportOvhCloud-post | TransportOvhCloud-get |  | Creates a TransportOvhCloud resource. |
+| GET | `/api/transport-ovh-cloud/{id}` | api_transport-ovh-cloud_id_get | `id`* | TransportOvhCloud-get | yes | Retrieves a TransportOvhCloud resource. |
+| PUT | `/api/transport-ovh-cloud/{id}` | api_transport-ovh-cloud_id_put | `id`*, body*: TransportOvhCloud-put | TransportOvhCloud-get |  | Replaces the TransportOvhCloud resource. |
+| DELETE | `/api/transport-ovh-cloud/{id}` | api_transport-ovh-cloud_id_delete | `id`* | — |  | Removes the TransportOvhCloud resource. |
+| GET | `/api/transport-pager-duty` | api_transport-pager-duty_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportPagerDuty-get[] | yes | Retrieves the collection of TransportPagerDuty resources. |
+| POST | `/api/transport-pager-duty` | api_transport-pager-duty_post | body*: TransportPagerDuty-post | TransportPagerDuty-get |  | Creates a TransportPagerDuty resource. |
+| GET | `/api/transport-pager-duty/{id}` | api_transport-pager-duty_id_get | `id`* | TransportPagerDuty-get | yes | Retrieves a TransportPagerDuty resource. |
+| PUT | `/api/transport-pager-duty/{id}` | api_transport-pager-duty_id_put | `id`*, body*: TransportPagerDuty-put | TransportPagerDuty-get |  | Replaces the TransportPagerDuty resource. |
+| DELETE | `/api/transport-pager-duty/{id}` | api_transport-pager-duty_id_delete | `id`* | — |  | Removes the TransportPagerDuty resource. |
+| GET | `/api/transport-pager-tree` | api_transport-pager-tree_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportPagerTree-get[] | yes | Retrieves the collection of TransportPagerTree resources. |
+| POST | `/api/transport-pager-tree` | api_transport-pager-tree_post | body*: TransportPagerTree-post | TransportPagerTree-get |  | Creates a TransportPagerTree resource. |
+| GET | `/api/transport-pager-tree/{id}` | api_transport-pager-tree_id_get | `id`* | TransportPagerTree-get | yes | Retrieves a TransportPagerTree resource. |
+| PUT | `/api/transport-pager-tree/{id}` | api_transport-pager-tree_id_put | `id`*, body*: TransportPagerTree-put | TransportPagerTree-get |  | Replaces the TransportPagerTree resource. |
+| DELETE | `/api/transport-pager-tree/{id}` | api_transport-pager-tree_id_delete | `id`* | — |  | Removes the TransportPagerTree resource. |
+| GET | `/api/transport-plivo` | api_transport-plivo_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportPlivo-get[] | yes | Retrieves the collection of TransportPlivo resources. |
+| POST | `/api/transport-plivo` | api_transport-plivo_post | body*: TransportPlivo-post | TransportPlivo-get |  | Creates a TransportPlivo resource. |
+| GET | `/api/transport-plivo/{id}` | api_transport-plivo_id_get | `id`* | TransportPlivo-get | yes | Retrieves a TransportPlivo resource. |
+| PUT | `/api/transport-plivo/{id}` | api_transport-plivo_id_put | `id`*, body*: TransportPlivo-put | TransportPlivo-get |  | Replaces the TransportPlivo resource. |
+| DELETE | `/api/transport-plivo/{id}` | api_transport-plivo_id_delete | `id`* | — |  | Removes the TransportPlivo resource. |
+| GET | `/api/transport-pushbullet` | api_transport-pushbullet_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportPushbullet-get[] | yes | Retrieves the collection of TransportPushbullet resources. |
+| POST | `/api/transport-pushbullet` | api_transport-pushbullet_post | body*: TransportPushbullet-post | TransportPushbullet-get |  | Creates a TransportPushbullet resource. |
+| GET | `/api/transport-pushbullet/{id}` | api_transport-pushbullet_id_get | `id`* | TransportPushbullet-get | yes | Retrieves a TransportPushbullet resource. |
+| PUT | `/api/transport-pushbullet/{id}` | api_transport-pushbullet_id_put | `id`*, body*: TransportPushbullet-put | TransportPushbullet-get |  | Replaces the TransportPushbullet resource. |
+| DELETE | `/api/transport-pushbullet/{id}` | api_transport-pushbullet_id_delete | `id`* | — |  | Removes the TransportPushbullet resource. |
+| GET | `/api/transport-pushover` | api_transport-pushover_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportPushover-get[] | yes | Retrieves the collection of TransportPushover resources. |
+| POST | `/api/transport-pushover` | api_transport-pushover_post | body*: TransportPushover-post | TransportPushover-get |  | Creates a TransportPushover resource. |
+| GET | `/api/transport-pushover/{id}` | api_transport-pushover_id_get | `id`* | TransportPushover-get | yes | Retrieves a TransportPushover resource. |
+| PUT | `/api/transport-pushover/{id}` | api_transport-pushover_id_put | `id`*, body*: TransportPushover-put | TransportPushover-get |  | Replaces the TransportPushover resource. |
+| DELETE | `/api/transport-pushover/{id}` | api_transport-pushover_id_delete | `id`* | — |  | Removes the TransportPushover resource. |
+| GET | `/api/transport-pushy` | api_transport-pushy_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportPushy-get[] | yes | Retrieves the collection of TransportPushy resources. |
+| POST | `/api/transport-pushy` | api_transport-pushy_post | body*: TransportPushy-post | TransportPushy-get |  | Creates a TransportPushy resource. |
+| GET | `/api/transport-pushy/{id}` | api_transport-pushy_id_get | `id`* | TransportPushy-get | yes | Retrieves a TransportPushy resource. |
+| PUT | `/api/transport-pushy/{id}` | api_transport-pushy_id_put | `id`*, body*: TransportPushy-put | TransportPushy-get |  | Replaces the TransportPushy resource. |
+| DELETE | `/api/transport-pushy/{id}` | api_transport-pushy_id_delete | `id`* | — |  | Removes the TransportPushy resource. |
+| GET | `/api/transport-ring-central` | api_transport-ring-central_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportRingCentral-get[] | yes | Retrieves the collection of TransportRingCentral resources. |
+| POST | `/api/transport-ring-central` | api_transport-ring-central_post | body*: TransportRingCentral-post | TransportRingCentral-get |  | Creates a TransportRingCentral resource. |
+| GET | `/api/transport-ring-central/{id}` | api_transport-ring-central_id_get | `id`* | TransportRingCentral-get | yes | Retrieves a TransportRingCentral resource. |
+| PUT | `/api/transport-ring-central/{id}` | api_transport-ring-central_id_put | `id`*, body*: TransportRingCentral-put | TransportRingCentral-get |  | Replaces the TransportRingCentral resource. |
+| DELETE | `/api/transport-ring-central/{id}` | api_transport-ring-central_id_delete | `id`* | — |  | Removes the TransportRingCentral resource. |
+| GET | `/api/transport-rocket-chat` | api_transport-rocket-chat_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportRocketChat-get[] | yes | Retrieves the collection of TransportRocketChat resources. |
+| POST | `/api/transport-rocket-chat` | api_transport-rocket-chat_post | body*: TransportRocketChat-post | TransportRocketChat-get |  | Creates a TransportRocketChat resource. |
+| GET | `/api/transport-rocket-chat/{id}` | api_transport-rocket-chat_id_get | `id`* | TransportRocketChat-get | yes | Retrieves a TransportRocketChat resource. |
+| PUT | `/api/transport-rocket-chat/{id}` | api_transport-rocket-chat_id_put | `id`*, body*: TransportRocketChat-put | TransportRocketChat-get |  | Replaces the TransportRocketChat resource. |
+| DELETE | `/api/transport-rocket-chat/{id}` | api_transport-rocket-chat_id_delete | `id`* | — |  | Removes the TransportRocketChat resource. |
+| GET | `/api/transport-sendberry` | api_transport-sendberry_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSendberry-get[] | yes | Retrieves the collection of TransportSendberry resources. |
+| POST | `/api/transport-sendberry` | api_transport-sendberry_post | body*: TransportSendberry-post | TransportSendberry-get |  | Creates a TransportSendberry resource. |
+| GET | `/api/transport-sendberry/{id}` | api_transport-sendberry_id_get | `id`* | TransportSendberry-get | yes | Retrieves a TransportSendberry resource. |
+| PUT | `/api/transport-sendberry/{id}` | api_transport-sendberry_id_put | `id`*, body*: TransportSendberry-put | TransportSendberry-get |  | Replaces the TransportSendberry resource. |
+| DELETE | `/api/transport-sendberry/{id}` | api_transport-sendberry_id_delete | `id`* | — |  | Removes the TransportSendberry resource. |
+| GET | `/api/transport-sendinblue` | api_transport-sendinblue_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSendinblue-get[] | yes | Retrieves the collection of TransportSendinblue resources. |
+| POST | `/api/transport-sendinblue` | api_transport-sendinblue_post | body*: TransportSendinblue-post | TransportSendinblue-get |  | Creates a TransportSendinblue resource. |
+| GET | `/api/transport-sendinblue/{id}` | api_transport-sendinblue_id_get | `id`* | TransportSendinblue-get | yes | Retrieves a TransportSendinblue resource. |
+| PUT | `/api/transport-sendinblue/{id}` | api_transport-sendinblue_id_put | `id`*, body*: TransportSendinblue-put | TransportSendinblue-get |  | Replaces the TransportSendinblue resource. |
+| DELETE | `/api/transport-sendinblue/{id}` | api_transport-sendinblue_id_delete | `id`* | — |  | Removes the TransportSendinblue resource. |
+| GET | `/api/transport-simple-textin` | api_transport-simple-textin_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSimpleTextin-get[] | yes | Retrieves the collection of TransportSimpleTextin resources. |
+| POST | `/api/transport-simple-textin` | api_transport-simple-textin_post | body*: TransportSimpleTextin-post | TransportSimpleTextin-get |  | Creates a TransportSimpleTextin resource. |
+| GET | `/api/transport-simple-textin/{id}` | api_transport-simple-textin_id_get | `id`* | TransportSimpleTextin-get | yes | Retrieves a TransportSimpleTextin resource. |
+| PUT | `/api/transport-simple-textin/{id}` | api_transport-simple-textin_id_put | `id`*, body*: TransportSimpleTextin-put | TransportSimpleTextin-get |  | Replaces the TransportSimpleTextin resource. |
+| DELETE | `/api/transport-simple-textin/{id}` | api_transport-simple-textin_id_delete | `id`* | — |  | Removes the TransportSimpleTextin resource. |
+| GET | `/api/transport-sinch` | api_transport-sinch_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSinch-get[] | yes | Retrieves the collection of TransportSinch resources. |
+| POST | `/api/transport-sinch` | api_transport-sinch_post | body*: TransportSinch-post | TransportSinch-get |  | Creates a TransportSinch resource. |
+| GET | `/api/transport-sinch/{id}` | api_transport-sinch_id_get | `id`* | TransportSinch-get | yes | Retrieves a TransportSinch resource. |
+| PUT | `/api/transport-sinch/{id}` | api_transport-sinch_id_put | `id`*, body*: TransportSinch-put | TransportSinch-get |  | Replaces the TransportSinch resource. |
+| DELETE | `/api/transport-sinch/{id}` | api_transport-sinch_id_delete | `id`* | — |  | Removes the TransportSinch resource. |
+| GET | `/api/transport-slack` | api_transport-slack_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSlack-get[] | yes | Retrieves the collection of TransportSlack resources. |
+| POST | `/api/transport-slack` | api_transport-slack_post | body*: TransportSlack-post | TransportSlack-get |  | Creates a TransportSlack resource. |
+| GET | `/api/transport-slack/{id}` | api_transport-slack_id_get | `id`* | TransportSlack-get | yes | Retrieves a TransportSlack resource. |
+| PUT | `/api/transport-slack/{id}` | api_transport-slack_id_put | `id`*, body*: TransportSlack-put | TransportSlack-get |  | Replaces the TransportSlack resource. |
+| DELETE | `/api/transport-slack/{id}` | api_transport-slack_id_delete | `id`* | — |  | Removes the TransportSlack resource. |
+| GET | `/api/transport-sms-biuras` | api_transport-sms-biuras_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSmsBiuras-get[] | yes | Retrieves the collection of TransportSmsBiuras resources. |
+| POST | `/api/transport-sms-biuras` | api_transport-sms-biuras_post | body*: TransportSmsBiuras-post | TransportSmsBiuras-get |  | Creates a TransportSmsBiuras resource. |
+| GET | `/api/transport-sms-biuras/{id}` | api_transport-sms-biuras_id_get | `id`* | TransportSmsBiuras-get | yes | Retrieves a TransportSmsBiuras resource. |
+| PUT | `/api/transport-sms-biuras/{id}` | api_transport-sms-biuras_id_put | `id`*, body*: TransportSmsBiuras-put | TransportSmsBiuras-get |  | Replaces the TransportSmsBiuras resource. |
+| DELETE | `/api/transport-sms-biuras/{id}` | api_transport-sms-biuras_id_delete | `id`* | — |  | Removes the TransportSmsBiuras resource. |
+| GET | `/api/transport-sms-factor` | api_transport-sms-factor_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSmsFactor-get[] | yes | Retrieves the collection of TransportSmsFactor resources. |
+| POST | `/api/transport-sms-factor` | api_transport-sms-factor_post | body*: TransportSmsFactor-post | TransportSmsFactor-get |  | Creates a TransportSmsFactor resource. |
+| GET | `/api/transport-sms-factor/{id}` | api_transport-sms-factor_id_get | `id`* | TransportSmsFactor-get | yes | Retrieves a TransportSmsFactor resource. |
+| PUT | `/api/transport-sms-factor/{id}` | api_transport-sms-factor_id_put | `id`*, body*: TransportSmsFactor-put | TransportSmsFactor-get |  | Replaces the TransportSmsFactor resource. |
+| DELETE | `/api/transport-sms-factor/{id}` | api_transport-sms-factor_id_delete | `id`* | — |  | Removes the TransportSmsFactor resource. |
+| GET | `/api/transport-sms77` | api_transport-sms77_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSms77-get[] | yes | Retrieves the collection of TransportSms77 resources. |
+| POST | `/api/transport-sms77` | api_transport-sms77_post | body*: TransportSms77-post | TransportSms77-get |  | Creates a TransportSms77 resource. |
+| GET | `/api/transport-sms77/{id}` | api_transport-sms77_id_get | `id`* | TransportSms77-get | yes | Retrieves a TransportSms77 resource. |
+| PUT | `/api/transport-sms77/{id}` | api_transport-sms77_id_put | `id`*, body*: TransportSms77-put | TransportSms77-get |  | Replaces the TransportSms77 resource. |
+| DELETE | `/api/transport-sms77/{id}` | api_transport-sms77_id_delete | `id`* | — |  | Removes the TransportSms77 resource. |
+| GET | `/api/transport-smsapi` | api_transport-smsapi_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSmsapi-get[] | yes | Retrieves the collection of TransportSmsapi resources. |
+| POST | `/api/transport-smsapi` | api_transport-smsapi_post | body*: TransportSmsapi-post | TransportSmsapi-get |  | Creates a TransportSmsapi resource. |
+| GET | `/api/transport-smsapi/{id}` | api_transport-smsapi_id_get | `id`* | TransportSmsapi-get | yes | Retrieves a TransportSmsapi resource. |
+| PUT | `/api/transport-smsapi/{id}` | api_transport-smsapi_id_put | `id`*, body*: TransportSmsapi-put | TransportSmsapi-get |  | Replaces the TransportSmsapi resource. |
+| DELETE | `/api/transport-smsapi/{id}` | api_transport-smsapi_id_delete | `id`* | — |  | Removes the TransportSmsapi resource. |
+| GET | `/api/transport-smsc` | api_transport-smsc_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSmsc-get[] | yes | Retrieves the collection of TransportSmsc resources. |
+| POST | `/api/transport-smsc` | api_transport-smsc_post | body*: TransportSmsc-post | TransportSmsc-get |  | Creates a TransportSmsc resource. |
+| GET | `/api/transport-smsc/{id}` | api_transport-smsc_id_get | `id`* | TransportSmsc-get | yes | Retrieves a TransportSmsc resource. |
+| PUT | `/api/transport-smsc/{id}` | api_transport-smsc_id_put | `id`*, body*: TransportSmsc-put | TransportSmsc-get |  | Replaces the TransportSmsc resource. |
+| DELETE | `/api/transport-smsc/{id}` | api_transport-smsc_id_delete | `id`* | — |  | Removes the TransportSmsc resource. |
+| GET | `/api/transport-smsmode` | api_transport-smsmode_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSmsmode-get[] | yes | Retrieves the collection of TransportSmsmode resources. |
+| POST | `/api/transport-smsmode` | api_transport-smsmode_post | body*: TransportSmsmode-post | TransportSmsmode-get |  | Creates a TransportSmsmode resource. |
+| GET | `/api/transport-smsmode/{id}` | api_transport-smsmode_id_get | `id`* | TransportSmsmode-get | yes | Retrieves a TransportSmsmode resource. |
+| PUT | `/api/transport-smsmode/{id}` | api_transport-smsmode_id_put | `id`*, body*: TransportSmsmode-put | TransportSmsmode-get |  | Replaces the TransportSmsmode resource. |
+| DELETE | `/api/transport-smsmode/{id}` | api_transport-smsmode_id_delete | `id`* | — |  | Removes the TransportSmsmode resource. |
+| GET | `/api/transport-spot-hit` | api_transport-spot-hit_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportSpotHit-get[] | yes | Retrieves the collection of TransportSpotHit resources. |
+| POST | `/api/transport-spot-hit` | api_transport-spot-hit_post | body*: TransportSpotHit-post | TransportSpotHit-get |  | Creates a TransportSpotHit resource. |
+| GET | `/api/transport-spot-hit/{id}` | api_transport-spot-hit_id_get | `id`* | TransportSpotHit-get | yes | Retrieves a TransportSpotHit resource. |
+| PUT | `/api/transport-spot-hit/{id}` | api_transport-spot-hit_id_put | `id`*, body*: TransportSpotHit-put | TransportSpotHit-get |  | Replaces the TransportSpotHit resource. |
+| DELETE | `/api/transport-spot-hit/{id}` | api_transport-spot-hit_id_delete | `id`* | — |  | Removes the TransportSpotHit resource. |
+| GET | `/api/transport-telegram` | api_transport-telegram_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTelegram-get[] | yes | Retrieves the collection of TransportTelegram resources. |
+| POST | `/api/transport-telegram` | api_transport-telegram_post | body*: TransportTelegram-post | TransportTelegram-get |  | Creates a TransportTelegram resource. |
+| GET | `/api/transport-telegram/{id}` | api_transport-telegram_id_get | `id`* | TransportTelegram-get | yes | Retrieves a TransportTelegram resource. |
+| PUT | `/api/transport-telegram/{id}` | api_transport-telegram_id_put | `id`*, body*: TransportTelegram-put | TransportTelegram-get |  | Replaces the TransportTelegram resource. |
+| DELETE | `/api/transport-telegram/{id}` | api_transport-telegram_id_delete | `id`* | — |  | Removes the TransportTelegram resource. |
+| GET | `/api/transport-telnyx` | api_transport-telnyx_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTelnyx-get[] | yes | Retrieves the collection of TransportTelnyx resources. |
+| POST | `/api/transport-telnyx` | api_transport-telnyx_post | body*: TransportTelnyx-post | TransportTelnyx-get |  | Creates a TransportTelnyx resource. |
+| GET | `/api/transport-telnyx/{id}` | api_transport-telnyx_id_get | `id`* | TransportTelnyx-get | yes | Retrieves a TransportTelnyx resource. |
+| PUT | `/api/transport-telnyx/{id}` | api_transport-telnyx_id_put | `id`*, body*: TransportTelnyx-put | TransportTelnyx-get |  | Replaces the TransportTelnyx resource. |
+| DELETE | `/api/transport-telnyx/{id}` | api_transport-telnyx_id_delete | `id`* | — |  | Removes the TransportTelnyx resource. |
+| GET | `/api/transport-termii` | api_transport-termii_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTermii-get[] | yes | Retrieves the collection of TransportTermii resources. |
+| POST | `/api/transport-termii` | api_transport-termii_post | body*: TransportTermii-post | TransportTermii-get |  | Creates a TransportTermii resource. |
+| GET | `/api/transport-termii/{id}` | api_transport-termii_id_get | `id`* | TransportTermii-get | yes | Retrieves a TransportTermii resource. |
+| PUT | `/api/transport-termii/{id}` | api_transport-termii_id_put | `id`*, body*: TransportTermii-put | TransportTermii-get |  | Replaces the TransportTermii resource. |
+| DELETE | `/api/transport-termii/{id}` | api_transport-termii_id_delete | `id`* | — |  | Removes the TransportTermii resource. |
+| GET | `/api/transport-trello` | api_transport-trello_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTrello-get[] | yes | Retrieves the collection of TransportTrello resources. |
+| POST | `/api/transport-trello` | api_transport-trello_post | body*: TransportTrello-post | TransportTrello-get |  | Creates a TransportTrello resource. |
+| GET | `/api/transport-trello/{id}` | api_transport-trello_id_get | `id`* | TransportTrello-get | yes | Retrieves a TransportTrello resource. |
+| PUT | `/api/transport-trello/{id}` | api_transport-trello_id_put | `id`*, body*: TransportTrello-put | TransportTrello-get |  | Replaces the TransportTrello resource. |
+| DELETE | `/api/transport-trello/{id}` | api_transport-trello_id_delete | `id`* | — |  | Removes the TransportTrello resource. |
+| GET | `/api/transport-turbo-sms` | api_transport-turbo-sms_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTurboSms-get[] | yes | Retrieves the collection of TransportTurboSms resources. |
+| POST | `/api/transport-turbo-sms` | api_transport-turbo-sms_post | body*: TransportTurboSms-post | TransportTurboSms-get |  | Creates a TransportTurboSms resource. |
+| GET | `/api/transport-turbo-sms/{id}` | api_transport-turbo-sms_id_get | `id`* | TransportTurboSms-get | yes | Retrieves a TransportTurboSms resource. |
+| PUT | `/api/transport-turbo-sms/{id}` | api_transport-turbo-sms_id_put | `id`*, body*: TransportTurboSms-put | TransportTurboSms-get |  | Replaces the TransportTurboSms resource. |
+| DELETE | `/api/transport-turbo-sms/{id}` | api_transport-turbo-sms_id_delete | `id`* | — |  | Removes the TransportTurboSms resource. |
+| GET | `/api/transport-twilio` | api_transport-twilio_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTwilio-get[] | yes | Retrieves the collection of TransportTwilio resources. |
+| POST | `/api/transport-twilio` | api_transport-twilio_post | body*: TransportTwilio-post | TransportTwilio-get |  | Creates a TransportTwilio resource. |
+| GET | `/api/transport-twilio/{id}` | api_transport-twilio_id_get | `id`* | TransportTwilio-get | yes | Retrieves a TransportTwilio resource. |
+| PUT | `/api/transport-twilio/{id}` | api_transport-twilio_id_put | `id`*, body*: TransportTwilio-put | TransportTwilio-get |  | Replaces the TransportTwilio resource. |
+| DELETE | `/api/transport-twilio/{id}` | api_transport-twilio_id_delete | `id`* | — |  | Removes the TransportTwilio resource. |
+| GET | `/api/transport-twitter` | api_transport-twitter_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportTwitter-get[] | yes | Retrieves the collection of TransportTwitter resources. |
+| POST | `/api/transport-twitter` | api_transport-twitter_post | body*: TransportTwitter-post | TransportTwitter-get |  | Creates a TransportTwitter resource. |
+| GET | `/api/transport-twitter/{id}` | api_transport-twitter_id_get | `id`* | TransportTwitter-get | yes | Retrieves a TransportTwitter resource. |
+| PUT | `/api/transport-twitter/{id}` | api_transport-twitter_id_put | `id`*, body*: TransportTwitter-put | TransportTwitter-get |  | Replaces the TransportTwitter resource. |
+| DELETE | `/api/transport-twitter/{id}` | api_transport-twitter_id_delete | `id`* | — |  | Removes the TransportTwitter resource. |
+| GET | `/api/transport-vonage` | api_transport-vonage_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportVonage-get[] | yes | Retrieves the collection of TransportVonage resources. |
+| POST | `/api/transport-vonage` | api_transport-vonage_post | body*: TransportVonage-post | TransportVonage-get |  | Creates a TransportVonage resource. |
+| GET | `/api/transport-vonage/{id}` | api_transport-vonage_id_get | `id`* | TransportVonage-get | yes | Retrieves a TransportVonage resource. |
+| PUT | `/api/transport-vonage/{id}` | api_transport-vonage_id_put | `id`*, body*: TransportVonage-put | TransportVonage-get |  | Replaces the TransportVonage resource. |
+| DELETE | `/api/transport-vonage/{id}` | api_transport-vonage_id_delete | `id`* | — |  | Removes the TransportVonage resource. |
+| GET | `/api/transport-webhook` | api_transport-webhook_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportWebhook-get[] | yes | Retrieves the collection of TransportWebhook resources. |
+| POST | `/api/transport-webhook` | api_transport-webhook_post | body*: TransportWebhook-post | TransportWebhook-get |  | Creates a TransportWebhook resource. |
+| GET | `/api/transport-webhook/{id}` | api_transport-webhook_id_get | `id`* | TransportWebhook-get | yes | Retrieves a TransportWebhook resource. |
+| PUT | `/api/transport-webhook/{id}` | api_transport-webhook_id_put | `id`*, body*: TransportWebhook-put | TransportWebhook-get |  | Replaces the TransportWebhook resource. |
+| DELETE | `/api/transport-webhook/{id}` | api_transport-webhook_id_delete | `id`* | — |  | Removes the TransportWebhook resource. |
+| GET | `/api/transport-yunpian` | api_transport-yunpian_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportYunpian-get[] | yes | Retrieves the collection of TransportYunpian resources. |
+| POST | `/api/transport-yunpian` | api_transport-yunpian_post | body*: TransportYunpian-post | TransportYunpian-get |  | Creates a TransportYunpian resource. |
+| GET | `/api/transport-yunpian/{id}` | api_transport-yunpian_id_get | `id`* | TransportYunpian-get | yes | Retrieves a TransportYunpian resource. |
+| PUT | `/api/transport-yunpian/{id}` | api_transport-yunpian_id_put | `id`*, body*: TransportYunpian-put | TransportYunpian-get |  | Replaces the TransportYunpian resource. |
+| DELETE | `/api/transport-yunpian/{id}` | api_transport-yunpian_id_delete | `id`* | — |  | Removes the TransportYunpian resource. |
+| GET | `/api/transport-zendesk` | api_transport-zendesk_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportZendesk-get[] | yes | Retrieves the collection of TransportZendesk resources. |
+| POST | `/api/transport-zendesk` | api_transport-zendesk_post | body*: TransportZendesk-post | TransportZendesk-get |  | Creates a TransportZendesk resource. |
+| GET | `/api/transport-zendesk/{id}` | api_transport-zendesk_id_get | `id`* | TransportZendesk-get | yes | Retrieves a TransportZendesk resource. |
+| PUT | `/api/transport-zendesk/{id}` | api_transport-zendesk_id_put | `id`*, body*: TransportZendesk-put | TransportZendesk-get |  | Replaces the TransportZendesk resource. |
+| DELETE | `/api/transport-zendesk/{id}` | api_transport-zendesk_id_delete | `id`* | — |  | Removes the TransportZendesk resource. |
+| GET | `/api/transport-zulip` | api_transport-zulip_get_collection | `page`, `dataSegmentCode`, `dataSegmentCode[]`, `partition`, `partition[]`, `properties[]` | TransportZulip-get[] | yes | Retrieves the collection of TransportZulip resources. |
+| POST | `/api/transport-zulip` | api_transport-zulip_post | body*: TransportZulip-post | TransportZulip-get |  | Creates a TransportZulip resource. |
+| GET | `/api/transport-zulip/{id}` | api_transport-zulip_id_get | `id`* | TransportZulip-get | yes | Retrieves a TransportZulip resource. |
+| PUT | `/api/transport-zulip/{id}` | api_transport-zulip_id_put | `id`*, body*: TransportZulip-put | TransportZulip-get |  | Replaces the TransportZulip resource. |
+| DELETE | `/api/transport-zulip/{id}` | api_transport-zulip_id_delete | `id`* | — |  | Removes the TransportZulip resource. |
+| GET | `/api/user-account` | api_user-account_get_collection | `page`, `properties[]` | UserAccount-get[] | yes | Retrieves the collection of UserAccount resources. |
+| GET | `/api/user-account-level-code` | api_user-account-level-code_get_collection | `page`, `properties[]` | UserAccountLevelCode-get[] | yes | Retrieves the collection of UserAccountLevelCode resources. |
+| GET | `/api/user-account-level-code/{id}` | api_user-account-level-code_id_get | `id`* | UserAccountLevelCode-get | yes | Retrieves a UserAccountLevelCode resource. |
+| GET | `/api/user-account/{id}` | api_user-account_id_get | `id`* | UserAccount-get | yes | Retrieves a UserAccount resource. |
+| PUT | `/api/user-account/{id}` | api_user-account_id_put | `id`*, body*: UserAccount-put | UserAccount-get |  | Replaces the UserAccount resource. |

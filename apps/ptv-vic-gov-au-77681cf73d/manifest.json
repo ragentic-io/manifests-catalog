@@ -133,6 +133,616 @@
         "from": "ptv-vic-gov-au-77681cf73d",
         "kind": "EXPOSES",
         "to": "operation:get:/v3/stops/{stop_id}/route_type/{route_type}"
+      },
+      {
+        "from": "operation:get:/v3/departures/route_type/{route_type}/stop/{stop_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DeparturesResponse"
+      },
+      {
+        "from": "operation:get:/v3/departures/route_type/{route_type}/stop/{stop_id}/route/{route_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DeparturesResponse"
+      },
+      {
+        "from": "operation:get:/v3/directions/route/{route_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DirectionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/directions/{direction_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DirectionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/directions/{direction_id}/route_type/{route_type}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DirectionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/disruptions",
+        "kind": "RETURNS",
+        "to": "schema:V3.DisruptionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/disruptions/modes",
+        "kind": "RETURNS",
+        "to": "schema:V3.DisruptionModesResponse"
+      },
+      {
+        "from": "operation:get:/v3/disruptions/route/{route_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DisruptionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/disruptions/route/{route_id}/stop/{stop_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DisruptionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/disruptions/stop/{stop_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DisruptionsResponse"
+      },
+      {
+        "from": "operation:get:/v3/disruptions/{disruption_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.DisruptionResponse"
+      },
+      {
+        "from": "operation:get:/v3/fare_estimate/min_zone/{minZone}/max_zone/{maxZone}",
+        "kind": "RETURNS",
+        "to": "schema:V3.FareEstimateResponse"
+      },
+      {
+        "from": "operation:get:/v3/outlets",
+        "kind": "RETURNS",
+        "to": "schema:V3.OutletResponse"
+      },
+      {
+        "from": "operation:get:/v3/outlets/location/{latitude},{longitude}",
+        "kind": "RETURNS",
+        "to": "schema:V3.OutletGeolocationResponse"
+      },
+      {
+        "from": "operation:get:/v3/pattern/run/{run_ref}/route_type/{route_type}",
+        "kind": "RETURNS",
+        "to": "schema:V3.StoppingPattern"
+      },
+      {
+        "from": "operation:get:/v3/route_types",
+        "kind": "RETURNS",
+        "to": "schema:V3.RouteTypesResponse"
+      },
+      {
+        "from": "operation:get:/v3/routes",
+        "kind": "RETURNS",
+        "to": "schema:V3.RouteResponse"
+      },
+      {
+        "from": "operation:get:/v3/routes/{route_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.RouteResponse"
+      },
+      {
+        "from": "operation:get:/v3/runs/route/{route_id}",
+        "kind": "RETURNS",
+        "to": "schema:V3.RunsResponse"
+      },
+      {
+        "from": "operation:get:/v3/runs/route/{route_id}/route_type/{route_type}",
+        "kind": "RETURNS",
+        "to": "schema:V3.RunsResponse"
+      },
+      {
+        "from": "operation:get:/v3/runs/{run_ref}",
+        "kind": "RETURNS",
+        "to": "schema:V3.RunsResponse"
+      },
+      {
+        "from": "operation:get:/v3/runs/{run_ref}/route_type/{route_type}",
+        "kind": "RETURNS",
+        "to": "schema:V3.RunResponse"
+      },
+      {
+        "from": "operation:get:/v3/search/{search_term}",
+        "kind": "RETURNS",
+        "to": "schema:V3.SearchResult"
+      },
+      {
+        "from": "operation:get:/v3/stops/location/{latitude},{longitude}",
+        "kind": "RETURNS",
+        "to": "schema:V3.StopsByDistanceResponse"
+      },
+      {
+        "from": "operation:get:/v3/stops/route/{route_id}/route_type/{route_type}",
+        "kind": "RETURNS",
+        "to": "schema:V3.StopsOnRouteResponse"
+      },
+      {
+        "from": "operation:get:/v3/stops/{stop_id}/route_type/{route_type}",
+        "kind": "RETURNS",
+        "to": "schema:V3.StopResponse"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopDepartureRequest"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.BulkDeparturesStopResponse"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.BulkDeparturesUpdateResponse"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Direction"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Run"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesUpdateResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.BulkDeparturesRouteDirectionResponse"
+      },
+      {
+        "from": "schema:V3.BulkDeparturesUpdateResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Departure"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Departure"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Direction"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Run"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.DeparturesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopModel"
+      },
+      {
+        "from": "schema:V3.DirectionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.DirectionWithDescription"
+      },
+      {
+        "from": "schema:V3.DirectionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.Disruption",
+        "kind": "REFERENCES",
+        "to": "schema:V3.DisruptionRoute"
+      },
+      {
+        "from": "schema:V3.Disruption",
+        "kind": "REFERENCES",
+        "to": "schema:V3.DisruptionStop"
+      },
+      {
+        "from": "schema:V3.DisruptionModesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.DisruptionMode"
+      },
+      {
+        "from": "schema:V3.DisruptionModesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.DisruptionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.DisruptionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.DisruptionRoute",
+        "kind": "REFERENCES",
+        "to": "schema:V3.DisruptionDirection"
+      },
+      {
+        "from": "schema:V3.Disruptions",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.DisruptionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruptions"
+      },
+      {
+        "from": "schema:V3.DisruptionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.DynamoDbTimetablesReponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.DynamoDbTimetable"
+      },
+      {
+        "from": "schema:V3.DynamoDbTimetablesReponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.GenerateDivaMappingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.OutletGeolocationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.OutletGeolocation"
+      },
+      {
+        "from": "schema:V3.OutletGeolocationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.OutletResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Outlet"
+      },
+      {
+        "from": "schema:V3.OutletResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.PatternDeparture",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopModel"
+      },
+      {
+        "from": "schema:V3.ResultRoute",
+        "kind": "REFERENCES",
+        "to": "schema:V3.RouteServiceStatus"
+      },
+      {
+        "from": "schema:V3.ResultStop",
+        "kind": "REFERENCES",
+        "to": "schema:V3.ResultRoute"
+      },
+      {
+        "from": "schema:V3.RouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.RouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.RouteTypesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.RouteType"
+      },
+      {
+        "from": "schema:V3.RouteTypesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.Run",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.Run",
+        "kind": "REFERENCES",
+        "to": "schema:V3.VehicleDescriptor"
+      },
+      {
+        "from": "schema:V3.Run",
+        "kind": "REFERENCES",
+        "to": "schema:V3.VehiclePosition"
+      },
+      {
+        "from": "schema:V3.RunResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Run"
+      },
+      {
+        "from": "schema:V3.RunResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.RunsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Run"
+      },
+      {
+        "from": "schema:V3.RunsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.SearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:V3.ResultOutlet"
+      },
+      {
+        "from": "schema:V3.SearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:V3.ResultRoute"
+      },
+      {
+        "from": "schema:V3.SearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:V3.ResultStop"
+      },
+      {
+        "from": "schema:V3.SearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.SiriDirectionRefsDictionary",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriStopsRefsDictionary"
+      },
+      {
+        "from": "schema:V3.SiriDownstreamSubscription",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriDownstreamSubscriptionTopic"
+      },
+      {
+        "from": "schema:V3.SiriEstimatedTimetableSubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriSubscriptionTopic"
+      },
+      {
+        "from": "schema:V3.SiriLineRefDirectionRefsDictionary",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriReferenceDataDetail"
+      },
+      {
+        "from": "schema:V3.SiriLineRefMappingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriLineRefDirectionRefsDictionary"
+      },
+      {
+        "from": "schema:V3.SiriLineRefMappingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.SiriLineRefsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriLineRef"
+      },
+      {
+        "from": "schema:V3.SiriProductionTimetableSubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriSubscriptionTopic"
+      },
+      {
+        "from": "schema:V3.SiriReferenceDataMappingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriDirectionRefsDictionary"
+      },
+      {
+        "from": "schema:V3.SiriReferenceDataMappingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.SiriReferenceDataMappingsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopPoint"
+      },
+      {
+        "from": "schema:V3.SiriReferenceDataRequest",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriLineRefDirectionRefStopPointRef"
+      },
+      {
+        "from": "schema:V3.SiriStopsRefsDictionary",
+        "kind": "REFERENCES",
+        "to": "schema:V3.SiriReferenceDataDetail"
+      },
+      {
+        "from": "schema:V3.StopAccessibility",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopAccessibilityWheelchair"
+      },
+      {
+        "from": "schema:V3.StopDepartureRequest",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopDepartureRequestRouteDirection"
+      },
+      {
+        "from": "schema:V3.StopDetails",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.StopDetails",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopAccessibility"
+      },
+      {
+        "from": "schema:V3.StopDetails",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopAmenityDetails"
+      },
+      {
+        "from": "schema:V3.StopDetails",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopLocation"
+      },
+      {
+        "from": "schema:V3.StopDetails",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopStaffing"
+      },
+      {
+        "from": "schema:V3.StopGeosearch",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.StopLocation",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopGps"
+      },
+      {
+        "from": "schema:V3.StopOnRoute",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopTicket"
+      },
+      {
+        "from": "schema:V3.StopResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.StopResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.StopResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopDetails"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Direction"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V3.PatternDeparture"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Run"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.StoppingPattern",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StoppingPatternStop"
+      },
+      {
+        "from": "schema:V3.StoppingPatternStop",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopTicket"
+      },
+      {
+        "from": "schema:V3.StopsByDistanceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.StopsByDistanceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.StopsByDistanceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopGeosearch"
+      },
+      {
+        "from": "schema:V3.StopsOnRouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V2.Object"
+      },
+      {
+        "from": "schema:V3.StopsOnRouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Disruption"
+      },
+      {
+        "from": "schema:V3.StopsOnRouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.Status"
+      },
+      {
+        "from": "schema:V3.StopsOnRouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:V3.StopOnRoute"
       }
     ],
     "nodes": [
@@ -146,10 +756,135 @@
         "kind": "operation",
         "method": "get",
         "name": "Departures_GetForStop",
+        "parameters": [
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Identifier of stop; values returned by Stops API",
+            "in": "path",
+            "name": "stop_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by platform number at stop",
+            "in": "query",
+            "name": "platform_numbers",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}",
+            "in": "query",
+            "name": "direction_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates that stop_id parameter will accept \"GTFS stop_id\" data",
+            "in": "query",
+            "name": "gtfs",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time)",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Maximum number of results returned",
+            "in": "query",
+            "name": "max_results",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates if cancelled services (if they exist) are returned (default = false) - metropolitan train only",
+            "in": "query",
+            "name": "include_cancelled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false).",
+            "in": "query",
+            "name": "look_backwards",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Indicates if the route geopath should be returned",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/departures/route_type/{route_type}/stop/{stop_id}",
         "pointer": "#/paths/~1v3~1departures~1route_type~1{route_type}~1stop~1{stop_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DeparturesResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View departures for all routes from a stop"
+        "summary": "View departures for all routes from a stop",
+        "tags": [
+          "Departures"
+        ]
       },
       {
         "deprecated": false,
@@ -157,10 +892,135 @@
         "kind": "operation",
         "method": "get",
         "name": "Departures_GetForStopAndRoute",
+        "parameters": [
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Identifier of stop; values returned by Stops API",
+            "in": "path",
+            "name": "stop_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}",
+            "in": "query",
+            "name": "direction_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates that stop_id parameter will accept \"GTFS stop_id\" data",
+            "in": "query",
+            "name": "gtfs",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time)",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Maximum number of results returned",
+            "in": "query",
+            "name": "max_results",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates if cancelled services (if they exist) are returned (default = false) - metropolitan train only",
+            "in": "query",
+            "name": "include_cancelled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false).",
+            "in": "query",
+            "name": "look_backwards",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Indicates if the route geopath should be returned",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/departures/route_type/{route_type}/stop/{stop_id}/route/{route_id}",
         "pointer": "#/paths/~1v3~1departures~1route_type~1{route_type}~1stop~1{stop_id}~1route~1{route_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DeparturesResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View departures for a specific route from a stop"
+        "summary": "View departures for a specific route from a stop",
+        "tags": [
+          "Departures"
+        ]
       },
       {
         "deprecated": false,
@@ -168,10 +1028,58 @@
         "kind": "operation",
         "method": "get",
         "name": "Directions_ForRoute",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/directions/route/{route_id}",
         "pointer": "#/paths/~1v3~1directions~1route~1{route_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DirectionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View directions that a route travels in"
+        "summary": "View directions that a route travels in",
+        "tags": [
+          "Directions"
+        ]
       },
       {
         "deprecated": false,
@@ -179,10 +1087,58 @@
         "kind": "operation",
         "method": "get",
         "name": "Directions_ForDirection",
+        "parameters": [
+          {
+            "description": "Identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}",
+            "in": "path",
+            "name": "direction_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/directions/{direction_id}",
         "pointer": "#/paths/~1v3~1directions~1{direction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DirectionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all routes for a direction of travel"
+        "summary": "View all routes for a direction of travel",
+        "tags": [
+          "Directions"
+        ]
       },
       {
         "deprecated": false,
@@ -190,10 +1146,72 @@
         "kind": "operation",
         "method": "get",
         "name": "Directions_ForDirectionAndType",
+        "parameters": [
+          {
+            "description": "Identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}",
+            "in": "path",
+            "name": "direction_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/directions/{direction_id}/route_type/{route_type}",
         "pointer": "#/paths/~1v3~1directions~1{direction_id}~1route_type~1{route_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DirectionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all routes of a particular type for a direction of travel"
+        "summary": "View all routes of a particular type for a direction of travel",
+        "tags": [
+          "Directions"
+        ]
       },
       {
         "deprecated": false,
@@ -201,10 +1219,76 @@
         "kind": "operation",
         "method": "get",
         "name": "Disruptions_GetAllDisruptions",
+        "parameters": [
+          {
+            "description": "Filter by route_type; values returned via RouteTypes API",
+            "in": "query",
+            "name": "route_types",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter by disruption_mode; values returned via v3/disruptions/modes API",
+            "in": "query",
+            "name": "disruption_modes",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter by status of disruption",
+            "enum": [
+              "current",
+              "planned"
+            ],
+            "in": "query",
+            "name": "disruption_status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/disruptions",
         "pointer": "#/paths/~1v3~1disruptions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DisruptionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all disruptions for all route types"
+        "summary": "View all disruptions for all route types",
+        "tags": [
+          "Disruptions"
+        ]
       },
       {
         "deprecated": false,
@@ -212,10 +1296,51 @@
         "kind": "operation",
         "method": "get",
         "name": "Disruptions_GetDisruptionModes",
+        "parameters": [
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/disruptions/modes",
         "pointer": "#/paths/~1v3~1disruptions~1modes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DisruptionModesResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all disruption modes"
+        "summary": "Get all disruption modes",
+        "tags": [
+          "Disruptions"
+        ]
       },
       {
         "deprecated": false,
@@ -223,10 +1348,69 @@
         "kind": "operation",
         "method": "get",
         "name": "Disruptions_GetDisruptionsByRoute",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by status of disruption",
+            "enum": [
+              "current",
+              "planned"
+            ],
+            "in": "query",
+            "name": "disruption_status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/disruptions/route/{route_id}",
         "pointer": "#/paths/~1v3~1disruptions~1route~1{route_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DisruptionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all disruptions for a particular route"
+        "summary": "View all disruptions for a particular route",
+        "tags": [
+          "Disruptions"
+        ]
       },
       {
         "deprecated": false,
@@ -234,10 +1418,76 @@
         "kind": "operation",
         "method": "get",
         "name": "Disruptions_GetDisruptionsByRouteAndStop",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Identifier of stop; values returned by Stops API - v3/stops",
+            "in": "path",
+            "name": "stop_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by status of disruption",
+            "enum": [
+              "current",
+              "planned"
+            ],
+            "in": "query",
+            "name": "disruption_status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/disruptions/route/{route_id}/stop/{stop_id}",
         "pointer": "#/paths/~1v3~1disruptions~1route~1{route_id}~1stop~1{stop_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DisruptionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all disruptions for a particular route and stop"
+        "summary": "View all disruptions for a particular route and stop",
+        "tags": [
+          "Disruptions"
+        ]
       },
       {
         "deprecated": false,
@@ -245,10 +1495,69 @@
         "kind": "operation",
         "method": "get",
         "name": "Disruptions_GetDisruptionsByStop",
+        "parameters": [
+          {
+            "description": "Identifier of stop; values returned by Stops API - v3/stops",
+            "in": "path",
+            "name": "stop_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by status of disruption",
+            "enum": [
+              "current",
+              "planned"
+            ],
+            "in": "query",
+            "name": "disruption_status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/disruptions/stop/{stop_id}",
         "pointer": "#/paths/~1v3~1disruptions~1stop~1{stop_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DisruptionsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all disruptions for a particular stop"
+        "summary": "View all disruptions for a particular stop",
+        "tags": [
+          "Disruptions"
+        ]
       },
       {
         "deprecated": false,
@@ -256,10 +1565,58 @@
         "kind": "operation",
         "method": "get",
         "name": "Disruptions_GetDisruptionById",
+        "parameters": [
+          {
+            "description": "Identifier of disruption; values returned by Disruptions API - /v3/disruptions OR /v3/disruptions/route/{route_id}",
+            "in": "path",
+            "name": "disruption_id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/disruptions/{disruption_id}",
         "pointer": "#/paths/~1v3~1disruptions~1{disruption_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.DisruptionResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View a specific disruption"
+        "summary": "View a specific disruption",
+        "tags": [
+          "Disruptions"
+        ]
       },
       {
         "deprecated": false,
@@ -267,10 +1624,91 @@
         "kind": "operation",
         "method": "get",
         "name": "FareEstimate_GetFareEstimateByZone",
+        "parameters": [
+          {
+            "description": "Minimum Zone travelled through ie.",
+            "in": "path",
+            "name": "minZone",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Maximum Zone travelled through id.",
+            "in": "path",
+            "name": "maxZone",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "JourneyTouchOnUtc in format yyyy-M-d h:m (e.g 2016-5-31 16:53).",
+            "in": "query",
+            "name": "journey_touch_on_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "JourneyTouchOffUtc in format yyyy-M-d h:m (e.g 2016-5-31 16:53).",
+            "in": "query",
+            "name": "journey_touch_off_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "is_journey_in_free_tram_zone",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "travelled_route_types",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/fare_estimate/min_zone/{minZone}/max_zone/{maxZone}",
         "pointer": "#/paths/~1v3~1fare_estimate~1min_zone~1{minZone}~1max_zone~1{maxZone}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.FareEstimateResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Estimate a fare by zone"
+        "summary": "Estimate a fare by zone",
+        "tags": [
+          "FareEstimate"
+        ]
       },
       {
         "deprecated": false,
@@ -278,10 +1716,58 @@
         "kind": "operation",
         "method": "get",
         "name": "Outlets_GetAllOutlets",
+        "parameters": [
+          {
+            "description": "Maximum number of results returned (default = 30)",
+            "in": "query",
+            "name": "max_results",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/outlets",
         "pointer": "#/paths/~1v3~1outlets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.OutletResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all ticket outlets"
+        "summary": "List all ticket outlets",
+        "tags": [
+          "Outlets"
+        ]
       },
       {
         "deprecated": false,
@@ -289,10 +1775,79 @@
         "kind": "operation",
         "method": "get",
         "name": "Outlets_GetOutletsByGeolocation",
+        "parameters": [
+          {
+            "description": "Geographic coordinate of latitude",
+            "in": "path",
+            "name": "latitude",
+            "required": true,
+            "type": "number:float"
+          },
+          {
+            "description": "Geographic coordinate of longitude",
+            "in": "path",
+            "name": "longitude",
+            "required": true,
+            "type": "number:float"
+          },
+          {
+            "description": "Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)",
+            "in": "query",
+            "name": "max_distance",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Maximum number of results returned (default = 30)",
+            "in": "query",
+            "name": "max_results",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/outlets/location/{latitude},{longitude}",
         "pointer": "#/paths/~1v3~1outlets~1location~1{latitude},{longitude}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.OutletGeolocationResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List ticket outlets near a specific location"
+        "summary": "List ticket outlets near a specific location",
+        "tags": [
+          "Outlets"
+        ]
       },
       {
         "deprecated": false,
@@ -300,10 +1855,107 @@
         "kind": "operation",
         "method": "get",
         "name": "Patterns_GetPatternByRun",
+        "parameters": [
+          {
+            "description": "The run_ref is the identifier of a run as returned by the departures/* and runs/* endpoints.",
+            "in": "path",
+            "name": "run_ref",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter by stop_id; values returned by Stops API",
+            "in": "query",
+            "name": "stop_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by the date and time of the request (ISO 8601 UTC format)",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Include any skipped stops in a stopping pattern.",
+            "in": "query",
+            "name": "include_skipped_stops",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if geopath data will be returned (default = false)",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/pattern/run/{run_ref}/route_type/{route_type}",
         "pointer": "#/paths/~1v3~1pattern~1run~1{run_ref}~1route_type~1{route_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.StoppingPattern"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View the stopping pattern for a specific trip/service run"
+        "summary": "View the stopping pattern for a specific trip/service run",
+        "tags": [
+          "Patterns"
+        ]
       },
       {
         "deprecated": false,
@@ -311,10 +1963,51 @@
         "kind": "operation",
         "method": "get",
         "name": "RouteTypes_GetRouteTypes",
+        "parameters": [
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/route_types",
         "pointer": "#/paths/~1v3~1route_types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RouteTypesResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all route types and their names"
+        "summary": "View all route types and their names",
+        "tags": [
+          "RouteTypes"
+        ]
       },
       {
         "deprecated": false,
@@ -322,10 +2015,65 @@
         "kind": "operation",
         "method": "get",
         "name": "Routes_OneOrMoreRoutes",
+        "parameters": [
+          {
+            "description": "Filter by route_type; values returned via RouteTypes API",
+            "in": "query",
+            "name": "route_types",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter by name of route (accepts partial route name matches)",
+            "in": "query",
+            "name": "route_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/routes",
         "pointer": "#/paths/~1v3~1routes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RouteResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View route names and numbers for all routes"
+        "summary": "View route names and numbers for all routes",
+        "tags": [
+          "Routes"
+        ]
       },
       {
         "deprecated": false,
@@ -333,10 +2081,72 @@
         "kind": "operation",
         "method": "get",
         "name": "Routes_RouteFromId",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Departures, Directions and Disruptions APIs",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates kif geopath data will be returned (default = false)",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter geopaths by date (ISO 8601 UTC format) (default = current date)",
+            "in": "query",
+            "name": "geopath_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/routes/{route_id}",
         "pointer": "#/paths/~1v3~1routes~1{route_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RouteResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View route name and number for specific route ID"
+        "summary": "View route name and number for specific route ID",
+        "tags": [
+          "Routes"
+        ]
       },
       {
         "deprecated": false,
@@ -344,10 +2154,72 @@
         "kind": "operation",
         "method": "get",
         "name": "Runs_ForRoute",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes.",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Date of the request.",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/runs/route/{route_id}",
         "pointer": "#/paths/~1v3~1runs~1route~1{route_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RunsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all trip/service runs for a specific route ID"
+        "summary": "View all trip/service runs for a specific route ID",
+        "tags": [
+          "Runs"
+        ]
       },
       {
         "deprecated": false,
@@ -355,10 +2227,86 @@
         "kind": "operation",
         "method": "get",
         "name": "Runs_ForRouteAndRouteType",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes.",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Date of the request.",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/runs/route/{route_id}/route_type/{route_type}",
         "pointer": "#/paths/~1v3~1runs~1route~1{route_id}~1route_type~1{route_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RunsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all trip/service runs for a specific route ID and route type"
+        "summary": "View all trip/service runs for a specific route ID and route type",
+        "tags": [
+          "Runs"
+        ]
       },
       {
         "deprecated": false,
@@ -366,10 +2314,79 @@
         "kind": "operation",
         "method": "get",
         "name": "Runs_ForRun",
+        "parameters": [
+          {
+            "description": "The run_ref is the identifier of a run as returned by the departures/* and runs/* endpoints.",
+            "in": "path",
+            "name": "run_ref",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Date of the request.",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Indicates if geopath data will be returned (default = false)",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/runs/{run_ref}",
         "pointer": "#/paths/~1v3~1runs~1{run_ref}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RunsResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all trip/service runs for a specific run_ref"
+        "summary": "View all trip/service runs for a specific run_ref",
+        "tags": [
+          "Runs"
+        ]
       },
       {
         "deprecated": false,
@@ -377,10 +2394,93 @@
         "kind": "operation",
         "method": "get",
         "name": "Runs_ForRunAndRouteType",
+        "parameters": [
+          {
+            "description": "The run_ref is the identifier of a run as returned by the departures/* and runs/* endpoints.",
+            "in": "path",
+            "name": "run_ref",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "List of objects to be returned in full (i.e.",
+            "in": "query",
+            "name": "expand",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Date of the request.",
+            "in": "query",
+            "name": "date_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Indicates if geopath data will be returned (default = false)",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/runs/{run_ref}/route_type/{route_type}",
         "pointer": "#/paths/~1v3~1runs~1{run_ref}~1route_type~1{route_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.RunResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View the trip/service run for a specific run_ref and route type"
+        "summary": "View the trip/service run for a specific run_ref and route type",
+        "tags": [
+          "Runs"
+        ]
       },
       {
         "deprecated": false,
@@ -388,10 +2488,121 @@
         "kind": "operation",
         "method": "get",
         "name": "Search_Search",
+        "parameters": [
+          {
+            "description": "Search text (note: if search text is numeric and/or less than 3 characters, the API will only return routes)",
+            "in": "path",
+            "name": "search_term",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter by route_type; values returned via RouteTypes API (note: stops and routes are ordered by route_types specified)",
+            "in": "query",
+            "name": "route_types",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter by geographic coordinate of latitude",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Filter by geographic coordinate of longitude",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Filter by maximum distance (in metres) from location specified via latitude and longitude parameters",
+            "in": "query",
+            "name": "max_distance",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Placeholder for future development; currently unavailable",
+            "in": "query",
+            "name": "include_addresses",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if outlets will be returned in response (default = true)",
+            "in": "query",
+            "name": "include_outlets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates whether to find stops by suburbs in the search term (default = true)",
+            "in": "query",
+            "name": "match_stop_by_suburb",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates whether to find routes by suburbs in the search term (default = true)",
+            "in": "query",
+            "name": "match_route_by_suburb",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates whether to search for stops according to a metlink stop ID (default = false)",
+            "in": "query",
+            "name": "match_stop_by_gtfs_stop_id",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/search/{search_term}",
         "pointer": "#/paths/~1v3~1search~1{search_term}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.SearchResult"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View stops, routes and myki ticket outlets that match the search term"
+        "summary": "View stops, routes and myki ticket outlets that match the search term",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -399,10 +2610,93 @@
         "kind": "operation",
         "method": "get",
         "name": "Stops_StopsByGeolocation",
+        "parameters": [
+          {
+            "description": "Geographic coordinate of latitude",
+            "in": "path",
+            "name": "latitude",
+            "required": true,
+            "type": "number:float"
+          },
+          {
+            "description": "Geographic coordinate of longitude",
+            "in": "path",
+            "name": "longitude",
+            "required": true,
+            "type": "number:float"
+          },
+          {
+            "description": "Filter by route_type; values returned via RouteTypes API",
+            "in": "query",
+            "name": "route_types",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Maximum number of results returned (default = 30)",
+            "in": "query",
+            "name": "max_results",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)",
+            "in": "query",
+            "name": "max_distance",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Indicates if stop disruption information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_disruptions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/stops/location/{latitude},{longitude}",
         "pointer": "#/paths/~1v3~1stops~1location~1{latitude},{longitude}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.StopsByDistanceResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all stops near a specific location"
+        "summary": "View all stops near a specific location",
+        "tags": [
+          "Stops"
+        ]
       },
       {
         "deprecated": false,
@@ -410,10 +2704,100 @@
         "kind": "operation",
         "method": "get",
         "name": "Stops_StopsForRoute",
+        "parameters": [
+          {
+            "description": "Identifier of route; values returned by Routes API - v3/routes",
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "An optional direction; values returned by Directions API.",
+            "in": "query",
+            "name": "direction_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates if stop disruption information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_disruptions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if geopath data will be returned (default = false)",
+            "in": "query",
+            "name": "include_geopath",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter geopaths by date (ISO 8601 UTC format) (default = current date)",
+            "in": "query",
+            "name": "geopath_utc",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/stops/route/{route_id}/route_type/{route_type}",
         "pointer": "#/paths/~1v3~1stops~1route~1{route_id}~1route_type~1{route_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.StopsOnRouteResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View all stops on a specific route"
+        "summary": "View all stops on a specific route",
+        "tags": [
+          "Stops"
+        ]
       },
       {
         "deprecated": false,
@@ -421,140 +2805,285 @@
         "kind": "operation",
         "method": "get",
         "name": "Stops_StopDetails",
+        "parameters": [
+          {
+            "description": "Identifier of stop; values returned by Stops API",
+            "in": "path",
+            "name": "stop_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Number identifying transport mode; values returned via RouteTypes API",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "in": "path",
+            "name": "route_type",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Indicates if stop location information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_location",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if stop amenity information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_amenities",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if stop accessibility information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_accessibility",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if stop contact information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_contact",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if stop ticket information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_ticket",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Incdicates whether the stop_id is a GTFS ID or not",
+            "in": "query",
+            "name": "gtfs",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if stop staffing information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_staffing",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates if stop disruption information will be returned (default = false)",
+            "in": "query",
+            "name": "stop_disruptions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Please ignore",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your developer id",
+            "in": "query",
+            "name": "devid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication signature for request",
+            "in": "query",
+            "name": "signature",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/stops/{stop_id}/route_type/{route_type}",
         "pointer": "#/paths/~1v3~1stops~1{stop_id}~1route_type~1{route_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "V3.StopResponse"
+          },
+          {
+            "status": "400",
+            "type": "V3.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "V3.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "View facilities at a specific stop (Metro and V/Line stations only)"
+        "summary": "View facilities at a specific stop (Metro and V/Line stations only)",
+        "tags": [
+          "Stops"
+        ]
       },
       {
         "id": "schema:V2.Object",
         "kind": "schema",
-        "name": "V2.Object"
+        "name": "V2.Object",
+        "type": "object"
       },
       {
         "id": "schema:V2.Void",
         "kind": "schema",
-        "name": "V2.Void"
+        "name": "V2.Void",
+        "type": "object"
       },
       {
         "id": "schema:V3.BulkDeparturesRequest",
         "kind": "schema",
-        "name": "V3.BulkDeparturesRequest"
+        "name": "V3.BulkDeparturesRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.BulkDeparturesResponse",
         "kind": "schema",
-        "name": "V3.BulkDeparturesResponse"
+        "name": "V3.BulkDeparturesResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.BulkDeparturesRouteDirectionResponse",
         "kind": "schema",
-        "name": "V3.BulkDeparturesRouteDirectionResponse"
+        "name": "V3.BulkDeparturesRouteDirectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.BulkDeparturesStopResponse",
         "kind": "schema",
-        "name": "V3.BulkDeparturesStopResponse"
+        "name": "V3.BulkDeparturesStopResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.BulkDeparturesUpdateResponse",
         "kind": "schema",
-        "name": "V3.BulkDeparturesUpdateResponse"
+        "name": "V3.BulkDeparturesUpdateResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.Departure",
         "kind": "schema",
-        "name": "V3.Departure"
+        "name": "V3.Departure",
+        "type": "object"
       },
       {
         "id": "schema:V3.DeparturesBroadParameters",
         "kind": "schema",
-        "name": "V3.DeparturesBroadParameters"
+        "name": "V3.DeparturesBroadParameters",
+        "type": "object"
       },
       {
         "id": "schema:V3.DeparturesResponse",
         "kind": "schema",
-        "name": "V3.DeparturesResponse"
+        "name": "V3.DeparturesResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.DeparturesSpecificParameters",
         "kind": "schema",
-        "name": "V3.DeparturesSpecificParameters"
+        "name": "V3.DeparturesSpecificParameters",
+        "type": "object"
       },
       {
         "id": "schema:V3.Direction",
         "kind": "schema",
-        "name": "V3.Direction"
+        "name": "V3.Direction",
+        "type": "object"
       },
       {
         "id": "schema:V3.DirectionWithDescription",
         "kind": "schema",
-        "name": "V3.DirectionWithDescription"
+        "name": "V3.DirectionWithDescription",
+        "type": "object"
       },
       {
         "id": "schema:V3.DirectionsResponse",
         "kind": "schema",
-        "name": "V3.DirectionsResponse"
+        "name": "V3.DirectionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.Disruption",
         "kind": "schema",
-        "name": "V3.Disruption"
+        "name": "V3.Disruption",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionDirection",
         "kind": "schema",
-        "name": "V3.DisruptionDirection"
+        "name": "V3.DisruptionDirection",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionMode",
         "kind": "schema",
-        "name": "V3.DisruptionMode"
+        "name": "V3.DisruptionMode",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionModesResponse",
         "kind": "schema",
-        "name": "V3.DisruptionModesResponse"
+        "name": "V3.DisruptionModesResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionResponse",
         "kind": "schema",
-        "name": "V3.DisruptionResponse"
+        "name": "V3.DisruptionResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionRoute",
         "kind": "schema",
-        "name": "V3.DisruptionRoute"
+        "name": "V3.DisruptionRoute",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionStop",
         "kind": "schema",
-        "name": "V3.DisruptionStop"
+        "name": "V3.DisruptionStop",
+        "type": "object"
       },
       {
         "id": "schema:V3.Disruptions",
         "kind": "schema",
-        "name": "V3.Disruptions"
+        "name": "V3.Disruptions",
+        "type": "object"
       },
       {
         "id": "schema:V3.DisruptionsResponse",
         "kind": "schema",
-        "name": "V3.DisruptionsResponse"
+        "name": "V3.DisruptionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.DynamoDbTimetable",
         "kind": "schema",
-        "name": "V3.DynamoDbTimetable"
+        "name": "V3.DynamoDbTimetable",
+        "type": "object"
       },
       {
         "id": "schema:V3.DynamoDbTimetablesReponse",
         "kind": "schema",
-        "name": "V3.DynamoDbTimetablesReponse"
+        "name": "V3.DynamoDbTimetablesReponse",
+        "type": "object"
       },
       {
+        "description": "An error response",
         "id": "schema:V3.ErrorResponse",
         "kind": "schema",
-        "name": "V3.ErrorResponse"
+        "name": "V3.ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.FareEstimateResponse",
@@ -564,307 +3093,368 @@
       {
         "id": "schema:V3.GenerateDivaMappingResponse",
         "kind": "schema",
-        "name": "V3.GenerateDivaMappingResponse"
+        "name": "V3.GenerateDivaMappingResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.Outlet",
         "kind": "schema",
-        "name": "V3.Outlet"
+        "name": "V3.Outlet",
+        "type": "object"
       },
       {
         "id": "schema:V3.OutletGeolocation",
         "kind": "schema",
-        "name": "V3.OutletGeolocation"
+        "name": "V3.OutletGeolocation",
+        "type": "object"
       },
       {
         "id": "schema:V3.OutletGeolocationParameters",
         "kind": "schema",
-        "name": "V3.OutletGeolocationParameters"
+        "name": "V3.OutletGeolocationParameters",
+        "type": "object"
       },
       {
         "id": "schema:V3.OutletGeolocationResponse",
         "kind": "schema",
-        "name": "V3.OutletGeolocationResponse"
+        "name": "V3.OutletGeolocationResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.OutletParameters",
         "kind": "schema",
-        "name": "V3.OutletParameters"
+        "name": "V3.OutletParameters",
+        "type": "object"
       },
       {
         "id": "schema:V3.OutletResponse",
         "kind": "schema",
-        "name": "V3.OutletResponse"
+        "name": "V3.OutletResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.PatternDeparture",
         "kind": "schema",
-        "name": "V3.PatternDeparture"
+        "name": "V3.PatternDeparture",
+        "type": "object"
       },
       {
         "id": "schema:V3.ResultOutlet",
         "kind": "schema",
-        "name": "V3.ResultOutlet"
+        "name": "V3.ResultOutlet",
+        "type": "object"
       },
       {
         "id": "schema:V3.ResultRoute",
         "kind": "schema",
-        "name": "V3.ResultRoute"
+        "name": "V3.ResultRoute",
+        "type": "object"
       },
       {
         "id": "schema:V3.ResultStop",
         "kind": "schema",
-        "name": "V3.ResultStop"
+        "name": "V3.ResultStop",
+        "type": "object"
       },
       {
         "id": "schema:V3.RouteDeparturesSpecificParameters",
         "kind": "schema",
-        "name": "V3.RouteDeparturesSpecificParameters"
+        "name": "V3.RouteDeparturesSpecificParameters",
+        "type": "object"
       },
       {
         "id": "schema:V3.RouteResponse",
         "kind": "schema",
-        "name": "V3.RouteResponse"
+        "name": "V3.RouteResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.RouteServiceStatus",
         "kind": "schema",
-        "name": "V3.RouteServiceStatus"
+        "name": "V3.RouteServiceStatus",
+        "type": "object"
       },
       {
         "id": "schema:V3.RouteType",
         "kind": "schema",
-        "name": "V3.RouteType"
+        "name": "V3.RouteType",
+        "type": "object"
       },
       {
         "id": "schema:V3.RouteTypesResponse",
         "kind": "schema",
-        "name": "V3.RouteTypesResponse"
+        "name": "V3.RouteTypesResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.Run",
         "kind": "schema",
-        "name": "V3.Run"
+        "name": "V3.Run",
+        "type": "object"
       },
       {
         "id": "schema:V3.RunResponse",
         "kind": "schema",
-        "name": "V3.RunResponse"
+        "name": "V3.RunResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.RunsResponse",
         "kind": "schema",
-        "name": "V3.RunsResponse"
+        "name": "V3.RunsResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.SearchParameters",
         "kind": "schema",
-        "name": "V3.SearchParameters"
+        "name": "V3.SearchParameters",
+        "type": "object"
       },
       {
         "id": "schema:V3.SearchResult",
         "kind": "schema",
-        "name": "V3.SearchResult"
+        "name": "V3.SearchResult",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriDirectionRefsDictionary",
         "kind": "schema",
-        "name": "V3.SiriDirectionRefsDictionary"
+        "name": "V3.SiriDirectionRefsDictionary",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriDownstreamSubscription",
         "kind": "schema",
-        "name": "V3.SiriDownstreamSubscription"
+        "name": "V3.SiriDownstreamSubscription",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriDownstreamSubscriptionDeleteRequest",
         "kind": "schema",
-        "name": "V3.SiriDownstreamSubscriptionDeleteRequest"
+        "name": "V3.SiriDownstreamSubscriptionDeleteRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriDownstreamSubscriptionResponse",
         "kind": "schema",
-        "name": "V3.SiriDownstreamSubscriptionResponse"
+        "name": "V3.SiriDownstreamSubscriptionResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriDownstreamSubscriptionTopic",
         "kind": "schema",
-        "name": "V3.SiriDownstreamSubscriptionTopic"
+        "name": "V3.SiriDownstreamSubscriptionTopic",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriEstimatedTimetableSubscriptionRequest",
         "kind": "schema",
-        "name": "V3.SiriEstimatedTimetableSubscriptionRequest"
+        "name": "V3.SiriEstimatedTimetableSubscriptionRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriLineRef",
         "kind": "schema",
-        "name": "V3.SiriLineRef"
+        "name": "V3.SiriLineRef",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriLineRefDirectionRefStopPointRef",
         "kind": "schema",
-        "name": "V3.SiriLineRefDirectionRefStopPointRef"
+        "name": "V3.SiriLineRefDirectionRefStopPointRef",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriLineRefDirectionRefsDictionary",
         "kind": "schema",
-        "name": "V3.SiriLineRefDirectionRefsDictionary"
+        "name": "V3.SiriLineRefDirectionRefsDictionary",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriLineRefMappingsResponse",
         "kind": "schema",
-        "name": "V3.SiriLineRefMappingsResponse"
+        "name": "V3.SiriLineRefMappingsResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriLineRefsRequest",
         "kind": "schema",
-        "name": "V3.SiriLineRefsRequest"
+        "name": "V3.SiriLineRefsRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriProductionTimetableSubscriptionRequest",
         "kind": "schema",
-        "name": "V3.SiriProductionTimetableSubscriptionRequest"
+        "name": "V3.SiriProductionTimetableSubscriptionRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriReferenceDataDetail",
         "kind": "schema",
-        "name": "V3.SiriReferenceDataDetail"
+        "name": "V3.SiriReferenceDataDetail",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriReferenceDataMappingsResponse",
         "kind": "schema",
-        "name": "V3.SiriReferenceDataMappingsResponse"
+        "name": "V3.SiriReferenceDataMappingsResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriReferenceDataRequest",
         "kind": "schema",
-        "name": "V3.SiriReferenceDataRequest"
+        "name": "V3.SiriReferenceDataRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriStopsRefsDictionary",
         "kind": "schema",
-        "name": "V3.SiriStopsRefsDictionary"
+        "name": "V3.SiriStopsRefsDictionary",
+        "type": "object"
       },
       {
         "id": "schema:V3.SiriSubscriptionTopic",
         "kind": "schema",
-        "name": "V3.SiriSubscriptionTopic"
+        "name": "V3.SiriSubscriptionTopic",
+        "type": "object"
       },
       {
         "id": "schema:V3.Status",
         "kind": "schema",
-        "name": "V3.Status"
+        "name": "V3.Status",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopAccessibility",
         "kind": "schema",
-        "name": "V3.StopAccessibility"
+        "name": "V3.StopAccessibility",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopAccessibilityWheelchair",
         "kind": "schema",
-        "name": "V3.StopAccessibilityWheelchair"
+        "name": "V3.StopAccessibilityWheelchair",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopAmenityDetails",
         "kind": "schema",
-        "name": "V3.StopAmenityDetails"
+        "name": "V3.StopAmenityDetails",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopBasic",
         "kind": "schema",
-        "name": "V3.StopBasic"
+        "name": "V3.StopBasic",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopDepartureRequest",
         "kind": "schema",
-        "name": "V3.StopDepartureRequest"
+        "name": "V3.StopDepartureRequest",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopDepartureRequestRouteDirection",
         "kind": "schema",
-        "name": "V3.StopDepartureRequestRouteDirection"
+        "name": "V3.StopDepartureRequestRouteDirection",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopDetails",
         "kind": "schema",
-        "name": "V3.StopDetails"
+        "name": "V3.StopDetails",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopGeosearch",
         "kind": "schema",
-        "name": "V3.StopGeosearch"
+        "name": "V3.StopGeosearch",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopGps",
         "kind": "schema",
-        "name": "V3.StopGps"
+        "name": "V3.StopGps",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopLocation",
         "kind": "schema",
-        "name": "V3.StopLocation"
+        "name": "V3.StopLocation",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopModel",
         "kind": "schema",
-        "name": "V3.StopModel"
+        "name": "V3.StopModel",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopOnRoute",
         "kind": "schema",
-        "name": "V3.StopOnRoute"
+        "name": "V3.StopOnRoute",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopPoint",
         "kind": "schema",
-        "name": "V3.StopPoint"
+        "name": "V3.StopPoint",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopResponse",
         "kind": "schema",
-        "name": "V3.StopResponse"
+        "name": "V3.StopResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopStaffing",
         "kind": "schema",
-        "name": "V3.StopStaffing"
+        "name": "V3.StopStaffing",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopTicket",
         "kind": "schema",
-        "name": "V3.StopTicket"
+        "name": "V3.StopTicket",
+        "type": "object"
       },
       {
         "id": "schema:V3.StoppingPattern",
         "kind": "schema",
-        "name": "V3.StoppingPattern"
+        "name": "V3.StoppingPattern",
+        "type": "object"
       },
       {
         "id": "schema:V3.StoppingPatternStop",
         "kind": "schema",
-        "name": "V3.StoppingPatternStop"
+        "name": "V3.StoppingPatternStop",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopsByDistanceResponse",
         "kind": "schema",
-        "name": "V3.StopsByDistanceResponse"
+        "name": "V3.StopsByDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.StopsOnRouteResponse",
         "kind": "schema",
-        "name": "V3.StopsOnRouteResponse"
+        "name": "V3.StopsOnRouteResponse",
+        "type": "object"
       },
       {
         "id": "schema:V3.VehicleDescriptor",
         "kind": "schema",
-        "name": "V3.VehicleDescriptor"
+        "name": "V3.VehicleDescriptor",
+        "type": "object"
       },
       {
         "id": "schema:V3.VehiclePosition",
         "kind": "schema",
-        "name": "V3.VehiclePosition"
+        "name": "V3.VehiclePosition",
+        "type": "object"
       }
     ]
   },

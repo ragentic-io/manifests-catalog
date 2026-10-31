@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ix-api.net_ix-api_icons_cropped
 
 | | |
 | --- | --- |
-| Signed bundle | `69a021f00b3151671f6cf81ec2ce491f1edfd99bbdbc6e349b99676f55c1c80f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,83 +34,85 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ix-api.net_ix-api_icons_cropped
 
 220 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | accounts_list | — |
-| POST | `/accounts` | accounts_create | — |
-| DELETE | `/accounts/{id}` | accounts_destroy | — |
-| GET | `/accounts/{id}` | accounts_read | — |
-| PATCH | `/accounts/{id}` | accounts_partial_update | — |
-| PUT | `/accounts/{id}` | accounts_update | — |
-| POST | `/auth/refresh` | auth_token_refresh | — |
-| POST | `/auth/token` | auth_token_create | — |
-| GET | `/connections` | connections_list | — |
-| GET | `/connections/{id}` | connections_read | — |
-| GET | `/contacts` | contacts_list | — |
-| POST | `/contacts` | contacts_create | — |
-| DELETE | `/contacts/{id}` | contacts_destroy | — |
-| GET | `/contacts/{id}` | contacts_read | — |
-| PATCH | `/contacts/{id}` | contacts_partial_update | — |
-| PUT | `/contacts/{id}` | contacts_update | — |
-| GET | `/devices` | devices_list | — |
-| GET | `/devices/{id}` | devices_read | — |
-| GET | `/facilities` | facilities_list | — |
-| GET | `/facilities/{id}` | facilities_read | — |
-| GET | `/health` | api_health_read | — |
-| GET | `/implementation` | api_implementation_read | — |
-| GET | `/ips` | ips_list | — |
-| POST | `/ips` | ips_create | — |
-| GET | `/ips/{id}` | ips_read | — |
-| PATCH | `/ips/{id}` | ips_partial_update | — |
-| PUT | `/ips/{id}` | ips_update | — |
-| GET | `/macs` | macs_list | — |
-| POST | `/macs` | macs_create | — |
-| DELETE | `/macs/{id}` | macs_destroy | — |
-| GET | `/macs/{id}` | macs_read | — |
-| GET | `/member-joining-rules` | member_joining_rules_list | — |
-| POST | `/member-joining-rules` | member_joining_rules_create | — |
-| DELETE | `/member-joining-rules/{id}` | member_joining_rules_destroy | — |
-| GET | `/member-joining-rules/{id}` | member_joining_rules_read | — |
-| PATCH | `/member-joining-rules/{id}` | member_joining_rules_partial_update | — |
-| PUT | `/member-joining-rules/{id}` | member_joining_rules_update | — |
-| GET | `/metro-area-networks` | metro_area_networks_list | — |
-| GET | `/metro-area-networks/{id}` | metro_area_networks_read | — |
-| GET | `/metro-areas` | metro_areas_list | — |
-| GET | `/metro-areas/{id}` | metro_areas_read | — |
-| GET | `/network-feature-configs` | network_feature_configs_list | — |
-| POST | `/network-feature-configs` | network_feature_configs_create | — |
-| DELETE | `/network-feature-configs/{id}` | network_feature_configs_destroy | — |
-| GET | `/network-feature-configs/{id}` | network_feature_configs_read | — |
-| PATCH | `/network-feature-configs/{id}` | network_feature_configs_partial_update | — |
-| PUT | `/network-feature-configs/{id}` | network_feature_configs_update | — |
-| GET | `/network-features` | network_features_list | — |
-| GET | `/network-features/{id}` | network_features_read | — |
-| GET | `/network-service-configs` | network_service_configs_list | — |
-| POST | `/network-service-configs` | network_service_configs_create | — |
-| DELETE | `/network-service-configs/{id}` | network_service_configs_destroy | — |
-| GET | `/network-service-configs/{id}` | network_service_configs_read | — |
-| PATCH | `/network-service-configs/{id}` | network_service_configs_partial_update | — |
-| PUT | `/network-service-configs/{id}` | network_service_configs_update | — |
-| GET | `/network-service-configs/{id}/cancellation-policy` | network_service_config_cancellation_policy_read | — |
-| GET | `/network-services` | network_services_list | — |
-| POST | `/network-services` | network_services_create | — |
-| DELETE | `/network-services/{id}` | network_services_destroy | — |
-| GET | `/network-services/{id}` | network_services_read | — |
-| PATCH | `/network-services/{id}` | network_services_partial_update | — |
-| PUT | `/network-services/{id}` | network_services_update | — |
-| GET | `/network-services/{id}/cancellation-policy` | network_service_cancellation_policy_read | — |
-| DELETE | `/network-services/{id}/change-request` | network_service_change_request_destroy | — |
-| GET | `/network-services/{id}/change-request` | network_service_change_request_read | — |
-| POST | `/network-services/{id}/change-request` | network-service-change-request_create | — |
-| GET | `/pops` | pops_list | — |
-| GET | `/pops/{id}` | pops_read | — |
-| GET | `/ports` | ports_list | — |
-| GET | `/ports/{id}` | ports_read | — |
-| GET | `/product-offerings` | product_offerings_list | — |
-| GET | `/product-offerings/{id}` | product_offerings_read | — |
-| GET | `/role-assignments` | role_assignments_list | — |
-| POST | `/role-assignments` | role_assignments_create | — |
-| DELETE | `/role-assignments/{assignment_id}` | role_assignments_destroy | — |
-| GET | `/role-assignments/{assignment_id}` | role_assignments_read | — |
-| GET | `/roles` | roles_list | — |
-| GET | `/roles/{id}` | roles_read | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | accounts_list | `id`, `state`, `state__is_not`, `managing_account`, `billable`, `external_ref`, `name` | Account[] | yes | — |
+| POST | `/accounts` | accounts_create | body: AccountRequest | Account |  | — |
+| GET | `/accounts/{id}` | accounts_read | `id`* | Account | yes | — |
+| PUT | `/accounts/{id}` | accounts_update | `id`*, body: AccountUpdate | Account |  | — |
+| DELETE | `/accounts/{id}` | accounts_destroy | `id`* | Account |  | — |
+| PATCH | `/accounts/{id}` | accounts_partial_update | `id`*, body: AccountUpdatePartial | Account |  | — |
+| POST | `/auth/refresh` | auth_token_refresh | body: RefreshTokenRequest | AuthToken |  | — |
+| POST | `/auth/token` | auth_token_create | body: AuthTokenRequest | AuthToken |  | — |
+| GET | `/connections` | connections_list | `id`, `state`, `state__is_not`, `mode`, `mode__is_not`, `name`, `metro_area_network`, `pop`, `facility`, `external_ref` | Connection[] | yes | — |
+| GET | `/connections/{id}` | connections_read | `id`* | Connection | yes | — |
+| GET | `/contacts` | contacts_list | `id`, `managing_account`, `consuming_account`, `external_ref` | Contact[] | yes | — |
+| POST | `/contacts` | contacts_create | body: ContactRequest | Contact |  | — |
+| GET | `/contacts/{id}` | contacts_read | `id`* | Contact | yes | — |
+| PUT | `/contacts/{id}` | contacts_update | `id`*, body: ContactRequest | Contact |  | — |
+| DELETE | `/contacts/{id}` | contacts_destroy | `id`* | Contact |  | — |
+| PATCH | `/contacts/{id}` | contacts_partial_update | `id`*, body: ContactRequestPartial | Contact |  | — |
+| GET | `/devices` | devices_list | `id`, `name`, `capability_media_type`, `capability_speed`, `capability_speed__lt`, `capability_speed__lte`, `capability_speed__gt`, `capability_speed__gte`, `facility`, `pop`, `metro_area_network` | Device[] | yes | — |
+| GET | `/devices/{id}` | devices_read | `id`* | Device | yes | — |
+| GET | `/facilities` | facilities_list | `id`, `capability_media_type`, `capability_speed`, `capability_speed__lt`, `capability_speed__lte`, `capability_speed__gt`, `capability_speed__gte`, `organisation_name`, `metro_area`, `metro_area_network`, `address_country`, `address_locality`, `postal_code` | Facility[] | yes | — |
+| GET | `/facilities/{id}` | facilities_read | `id`* | Facility[] | yes | — |
+| GET | `/health` | api_health_read | — | HealthResponse | yes | — |
+| GET | `/implementation` | api_implementation_read | — | ImplementationResponse | yes | — |
+| GET | `/ips` | ips_list | `id`, `managing_account`, `consuming_account`, `external_ref`, `network_service`, `network_service_config`, `network_feature`, `network_feature_config`, `version`, `fqdn`, `prefix_length`, `valid_not_before`, `valid_not_after` | IpAddress[] | yes | — |
+| POST | `/ips` | ips_create | body: IpAddressRequest | IpAddress |  | — |
+| GET | `/ips/{id}` | ips_read | `id`* | IpAddress | yes | — |
+| PUT | `/ips/{id}` | ips_update | `id`*, body: IpAddressUpdate | IpAddress |  | — |
+| PATCH | `/ips/{id}` | ips_partial_update | `id`*, body: IpAddressUpdatePartial | IpAddress |  | — |
+| GET | `/macs` | macs_list | `id`, `managing_account`, `consuming_account`, `external_ref`, `network_service_config`, `address`, `assigned_at`, `valid_not_before`, `valid_not_after` | MacAddress[] | yes | — |
+| POST | `/macs` | macs_create | body: MacAddressRequest | MacAddress |  | — |
+| GET | `/macs/{id}` | macs_read | `id`* | MacAddress | yes | — |
+| DELETE | `/macs/{id}` | macs_destroy | `id`* | MacAddress |  | — |
+| GET | `/member-joining-rules` | member_joining_rules_list | `id`, `network_service` | MemberJoiningRule[] | yes | — |
+| POST | `/member-joining-rules` | member_joining_rules_create | body: MemberJoiningRuleRequest | MemberJoiningRule |  | — |
+| GET | `/member-joining-rules/{id}` | member_joining_rules_read | `id`* | MemberJoiningRule | yes | — |
+| PUT | `/member-joining-rules/{id}` | member_joining_rules_update | `id`*, body: MemberJoiningRuleUpdate | MemberJoiningRule |  | — |
+| DELETE | `/member-joining-rules/{id}` | member_joining_rules_destroy | `id`* | MemberJoiningRule |  | — |
+| PATCH | `/member-joining-rules/{id}` | member_joining_rules_partial_update | `id`*, body: MemberJoiningRuleUpdatePartial | MemberJoiningRule |  | — |
+| GET | `/metro-area-networks` | metro_area_networks_list | `id`, `name`, `metro_area`, `service_provider` | MetroAreaNetwork[] | yes | — |
+| GET | `/metro-area-networks/{id}` | metro_area_networks_read | `id`* | MetroAreaNetwork | yes | — |
+| GET | `/metro-areas` | metro_areas_list | `id` | MetroArea[] | yes | — |
+| GET | `/metro-areas/{id}` | metro_areas_read | `id`* | MetroArea[] | yes | — |
+| GET | `/network-feature-configs` | network_feature_configs_list | `id`, `state`, `state__is_not`, `managing_account`, `consuming_account`, `external_ref`, `type`, `service_config`, `network_feature` | NetworkFeatureConfig[] | yes | — |
+| POST | `/network-feature-configs` | network_feature_configs_create | body: NetworkFeatureConfigRequest | NetworkFeatureConfig |  | — |
+| GET | `/network-feature-configs/{id}` | network_feature_configs_read | `id`* | NetworkFeatureConfig | yes | — |
+| PUT | `/network-feature-configs/{id}` | network_feature_configs_update | `id`*, body: NetworkFeatureConfigUpdate | NetworkFeatureConfig |  | — |
+| DELETE | `/network-feature-configs/{id}` | network_feature_configs_destroy | `id`* | NetworkFeatureConfig |  | — |
+| PATCH | `/network-feature-configs/{id}` | network_feature_configs_partial_update | `id`*, body: NetworkFeatureConfigUpdatePartial | NetworkFeatureConfig |  | — |
+| GET | `/network-features` | network_features_list | `id`, `type`, `required`, `network_service`, `name` | NetworkFeature[] | yes | — |
+| GET | `/network-features/{id}` | network_features_read | `id`* | NetworkFeature | yes | — |
+| GET | `/network-service-configs` | network_service_configs_list | `id`, `state`, `state__is_not`, `managing_account`, `consuming_account`, `external_ref`, `type`, `inner_vlan`, `outer_vlan`, `capacity`, `network_service`, `connection`, `product_offering` | NetworkServiceConfig[] | yes | — |
+| POST | `/network-service-configs` | network_service_configs_create | body: NetworkServiceConfigRequest | NetworkServiceConfig |  | — |
+| GET | `/network-service-configs/{id}` | network_service_configs_read | `id`* | NetworkServiceConfig | yes | — |
+| PUT | `/network-service-configs/{id}` | network_service_configs_update | `id`*, body: NetworkServiceConfigUpdate | NetworkServiceConfig |  | — |
+| DELETE | `/network-service-configs/{id}` | network_service_configs_destroy | `id`*, body: CancellationRequest | NetworkServiceConfig |  | — |
+| PATCH | `/network-service-configs/{id}` | network_service_configs_partial_update | `id`*, body: NetworkServiceConfigUpdatePartial | NetworkServiceConfig |  | — |
+| GET | `/network-service-configs/{id}/cancellation-policy` | network_service_config_cancellation_policy_read | `id`*, `decommission_at` | CancellationPolicy | yes | — |
+| GET | `/network-services` | network_services_list | `id`, `state`, `state__is_not`, `managing_account`, `consuming_account`, `external_ref`, `type`, `pop`, `product_offering` | NetworkService[] | yes | — |
+| POST | `/network-services` | network_services_create | body: NetworkServiceRequest | NetworkService |  | — |
+| GET | `/network-services/{id}` | network_services_read | `id`* | NetworkService | yes | — |
+| PUT | `/network-services/{id}` | network_services_update | `id`*, body: NetworkServiceRequest | NetworkService |  | — |
+| DELETE | `/network-services/{id}` | network_services_destroy | `id`*, body: CancellationRequest | NetworkService |  | — |
+| PATCH | `/network-services/{id}` | network_services_partial_update | `id`*, body: NetworkServiceRequestPartial | NetworkService |  | — |
+| GET | `/network-services/{id}/cancellation-policy` | network_service_cancellation_policy_read | `id`*, `decommission_at` | CancellationPolicy | yes | — |
+| GET | `/network-services/{id}/change-request` | network_service_change_request_read | `id`* | NetworkServiceChangeRequest | yes | — |
+| POST | `/network-services/{id}/change-request` | network-service-change-request_create | `id`*, body: NetworkServiceChangeRequest | NetworkServiceChangeRequest |  | — |
+| DELETE | `/network-services/{id}/change-request` | network_service_change_request_destroy | `id`* | NetworkServiceChangeRequest |  | — |
+| GET | `/pops` | pops_list | `id`, `facility`, `metro_area_network`, `capability_media_type`, `capability_speed`, `capability_speed__lt`, `capability_speed__lte`, `capability_speed__gt`, `capability_speed__gte` | PointOfPresence[] | yes | — |
+| GET | `/pops/{id}` | pops_read | `id`* | PointOfPresence | yes | — |
+| GET | `/ports` | ports_list | `id`, `state`, `state__is_not`, `media_type`, `pop`, `name`, `external_ref`, `device`, `speed`, `connection` | Port[] | yes | — |
+| GET | `/ports/{id}` | ports_read | `id`* | Port | yes | — |
+| GET | `/product-offerings` | product_offerings_list | `id`, `type`, `name`, `handover_metro_area`, `handover_metro_area_network`, `service_metro_area`, `service_metro_area_network`, `service_provider`, `downgrade_allowed`, `upgrade_allowed`, `bandwidth`, `physical_port_speed`, `service_provider_region`, `service_provider_pop`, `delivery_method`, `cloud_key`, `fields` | ProductOfferingPartial[] | yes | — |
+| GET | `/product-offerings/{id}` | product_offerings_read | `id`* | ProductOffering | yes | — |
+| GET | `/role-assignments` | role_assignments_list | `id`, `contact`, `role` | RoleAssignment[] | yes | — |
+| POST | `/role-assignments` | role_assignments_create | body: RoleAssignmentRequest | RoleAssignment |  | — |
+| GET | `/role-assignments/{assignment_id}` | role_assignments_read | `assignment_id`* | RoleAssignment | yes | — |
+| DELETE | `/role-assignments/{assignment_id}` | role_assignments_destroy | `assignment_id`* | RoleAssignment |  | — |
+| GET | `/roles` | roles_list | `id`, `name`, `contact` | Role[] | yes | — |
+| GET | `/roles/{id}` | roles_read | `id`*, `id`, `name` | Role | yes | — |

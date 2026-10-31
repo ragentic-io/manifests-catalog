@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_API2Cart_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `b8305f2aaa09363f51c3aee958629728e6a4bc9736a35161d7a1fdaabfc63fb6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,151 +34,153 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_API2Cart_profile_im
 
 136 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/account.cart.add.json` | AccountCartAdd | — |
-| GET | `/account.cart.list.json` | AccountCartList | — |
-| PUT | `/account.config.update.json` | AccountConfigUpdate | — |
-| GET | `/account.failed_webhooks.json` | AccountFailedWebhooks | — |
-| GET | `/account.supported_platforms.json` | AccountSupportedPlatforms | — |
-| POST | `/attribute.add.json` | AttributeAdd | — |
-| POST | `/attribute.assign.group.json` | AttributeAssignGroup | — |
-| POST | `/attribute.assign.set.json` | AttributeAssignSet | — |
-| GET | `/attribute.attributeset.list.json` | AttributeAttributesetList | — |
-| GET | `/attribute.count.json` | AttributeCount | — |
-| DELETE | `/attribute.delete.json` | AttributeDelete | — |
-| GET | `/attribute.group.list.json` | AttributeGroupList | — |
-| GET | `/attribute.info.json` | AttributeInfo | — |
-| GET | `/attribute.list.json` | AttributeList | — |
-| GET | `/attribute.type.list.json` | AttributeTypeList | — |
-| POST | `/attribute.unassign.group.json` | AttributeUnassignGroup | — |
-| POST | `/attribute.unassign.set.json` | AttributeUnassignSet | — |
-| POST | `/attribute.update.json` | AttributeUpdate | — |
-| GET | `/basket.info.json` | BasketInfo | — |
-| POST | `/basket.item.add.json` | BasketItemAdd | — |
-| POST | `/basket.live_shipping_service.create.json` | BasketLiveShippingServiceCreate | — |
-| DELETE | `/basket.live_shipping_service.delete.json` | BasketLiveShippingServiceDelete | — |
-| GET | `/basket.live_shipping_service.list.json` | BasketLiveShippingServiceList | — |
-| POST | `/bridge.delete.json` | BridgeDelete | — |
-| GET | `/bridge.download.file` | BridgeDownload | — |
-| POST | `/bridge.update.json` | BridgeUpdate | — |
-| GET | `/cart.bridge.json` | CartBridge | — |
-| GET | `/cart.catalog_price_rules.count.json` | CartCatalogPriceRulesCount | — |
-| GET | `/cart.catalog_price_rules.list.json` | CartCatalogPriceRulesList | — |
-| POST | `/cart.clear_cache.json` | CartClearCache | — |
-| GET | `/cart.config.json` | CartConfig | — |
-| PUT | `/cart.config.update.json` | CartConfigUpdate | — |
-| POST | `/cart.coupon.add.json` | CartCouponAdd | — |
-| POST | `/cart.coupon.condition.add.json` | CartCouponConditionAdd | — |
-| GET | `/cart.coupon.count.json` | CartCouponCount | — |
-| DELETE | `/cart.coupon.delete.json` | CartCouponDelete | — |
-| GET | `/cart.coupon.list.json` | CartCouponList | — |
-| POST | `/cart.create.json` | CartCreate | — |
-| DELETE | `/cart.delete.json` | CartDelete | — |
-| GET | `/cart.disconnect.json` | CartDisconnect | — |
-| POST | `/cart.giftcard.add.json` | CartGiftcardAdd | — |
-| GET | `/cart.giftcard.count.json` | CartGiftcardCount | — |
-| GET | `/cart.giftcard.list.json` | CartGiftcardList | — |
-| GET | `/cart.info.json` | CartInfo | — |
-| GET | `/cart.list.json` | CartList | — |
-| GET | `/cart.meta_data.list.json` | CartMetaDataList | — |
-| POST | `/cart.meta_data.set.json` | CartMetaDataSet | — |
-| DELETE | `/cart.meta_data.unset.json` | CartMetaDataUnset | — |
-| GET | `/cart.methods.json` | CartMethods | — |
-| GET | `/cart.plugin.list.json` | CartPluginList | — |
-| POST | `/cart.script.add.json` | CartScriptAdd | — |
-| DELETE | `/cart.script.delete.json` | CartScriptDelete | — |
-| GET | `/cart.script.list.json` | CartScriptList | — |
-| GET | `/cart.shipping_zones.list.json` | CartShippingZonesList | — |
-| GET | `/cart.validate.json` | CartValidate | — |
-| POST | `/category.add.json` | CategoryAdd | — |
-| POST | `/category.assign.json` | CategoryAssign | — |
-| GET | `/category.count.json` | CategoryCount | — |
-| DELETE | `/category.delete.json` | CategoryDelete | — |
-| GET | `/category.find.json` | CategoryFind | — |
-| POST | `/category.image.add.json` | CategoryImageAdd | — |
-| DELETE | `/category.image.delete.json` | CategoryImageDelete | — |
-| GET | `/category.info.json` | CategoryInfo | — |
-| GET | `/category.list.json` | CategoryList | — |
-| POST | `/category.unassign.json` | CategoryUnassign | — |
-| PUT | `/category.update.json` | CategoryUpdate | — |
-| POST | `/customer.add.json` | CustomerAdd | — |
-| GET | `/customer.attribute.list.json` | CustomerAttributeList | — |
-| GET | `/customer.count.json` | CustomerCount | — |
-| GET | `/customer.find.json` | CustomerFind | — |
-| POST | `/customer.group.add.json` | CustomerGroupAdd | — |
-| GET | `/customer.group.list.json` | CustomerGroupList | — |
-| GET | `/customer.info.json` | CustomerInfo | — |
-| GET | `/customer.list.json` | CustomerList | — |
-| PUT | `/customer.update.json` | CustomerUpdate | — |
-| GET | `/order.abandoned.list.json` | OrderAbandonedList | — |
-| POST | `/order.add.json` | OrderAdd | — |
-| GET | `/order.count.json` | OrderCount | — |
-| GET | `/order.financial_status.list.json` | OrderFinancialStatusList | — |
-| GET | `/order.find.json` | OrderFind | — |
-| GET | `/order.fulfillment_status.list.json` | OrderFulfillmentStatusList | — |
-| GET | `/order.info.json` | OrderInfo | — |
-| GET | `/order.list.json` | OrderList | — |
-| POST | `/order.preestimate_shipping.list.json` | OrderPreestimateShippingList | — |
-| POST | `/order.refund.add.json` | OrderRefundAdd | — |
-| POST | `/order.shipment.add.json` | OrderShipmentAdd | — |
-| DELETE | `/order.shipment.delete.json` | OrderShipmentDelete | — |
-| GET | `/order.shipment.info.json` | OrderShipmentInfo | — |
-| GET | `/order.shipment.list.json` | OrderShipmentList | — |
-| POST | `/order.shipment.tracking.add.json` | OrderShipmentTrackingAdd | — |
-| PUT | `/order.shipment.update.json` | OrderShipmentUpdate | — |
-| GET | `/order.status.list.json` | OrderStatusList | — |
-| GET | `/order.transaction.list.json` | OrderTransactionList | — |
-| PUT | `/order.update.json` | OrderUpdate | — |
-| POST | `/product.add.json` | ProductAdd | — |
-| GET | `/product.attribute.list.json` | ProductAttributeList | — |
-| POST | `/product.attribute.value.set.json` | ProductAttributeValueSet | — |
-| POST | `/product.attribute.value.unset.json` | ProductAttributeValueUnset | — |
-| GET | `/product.brand.list.json` | ProductBrandList | — |
-| GET | `/product.child_item.find.json` | ProductChildItemFind | — |
-| GET | `/product.child_item.info.json` | ProductChildItemInfo | — |
-| GET | `/product.child_item.list.json` | ProductChildItemList | — |
-| GET | `/product.count.json` | ProductCount | — |
-| POST | `/product.currency.add.json` | ProductCurrencyAdd | — |
-| GET | `/product.currency.list.json` | ProductCurrencyList | — |
-| DELETE | `/product.delete.json` | ProductDelete | — |
-| GET | `/product.fields.json` | ProductFields | — |
-| GET | `/product.find.json` | ProductFind | — |
-| POST | `/product.image.add.json` | ProductImageAdd | — |
-| DELETE | `/product.image.delete.json` | ProductImageDelete | — |
-| PUT | `/product.image.update.json` | ProductImageUpdate | — |
-| GET | `/product.info.json` | ProductInfo | — |
-| GET | `/product.list.json` | ProductList | — |
-| POST | `/product.manufacturer.add.json` | ProductManufacturerAdd | — |
-| POST | `/product.option.add.json` | ProductOptionAdd | — |
-| POST | `/product.option.assign.json` | ProductOptionAssign | — |
-| GET | `/product.option.list.json` | ProductOptionList | — |
-| POST | `/product.option.value.add.json` | ProductOptionValueAdd | — |
-| POST | `/product.option.value.assign.json` | ProductOptionValueAssign | — |
-| PUT | `/product.option.value.update.json` | ProductOptionValueUpdate | — |
-| POST | `/product.price.add.json` | ProductPriceAdd | — |
-| DELETE | `/product.price.delete.json` | ProductPriceDelete | — |
-| PUT | `/product.price.update.json` | ProductPriceUpdate | — |
-| GET | `/product.review.list.json` | ProductReviewList | — |
-| POST | `/product.store.assign.json` | ProductStoreAssign | — |
-| POST | `/product.tax.add.json` | ProductTaxAdd | — |
-| PUT | `/product.update.json` | ProductUpdate | — |
-| POST | `/product.variant.add.json` | ProductVariantAdd | — |
-| GET | `/product.variant.count.json` | ProductVariantCount | — |
-| DELETE | `/product.variant.delete.json` | ProductVariantDelete | — |
-| POST | `/product.variant.image.add.json` | ProductVariantImageAdd | — |
-| DELETE | `/product.variant.image.delete.json` | ProductVariantImageDelete | — |
-| GET | `/product.variant.info.json` | ProductVariantInfo | — |
-| GET | `/product.variant.list.json` | ProductVariantList | — |
-| POST | `/product.variant.price.add.json` | ProductVariantPriceAdd | — |
-| DELETE | `/product.variant.price.delete.json` | ProductVariantPriceDelete | — |
-| PUT | `/product.variant.price.update.json` | ProductVariantPriceUpdate | — |
-| PUT | `/product.variant.update.json` | ProductVariantUpdate | — |
-| GET | `/subscriber.list.json` | SubscriberList | — |
-| GET | `/tax.class.info.json` | TaxClassInfo | — |
-| GET | `/webhook.count.json` | WebhookCount | — |
-| POST | `/webhook.create.json` | WebhookCreate | — |
-| DELETE | `/webhook.delete.json` | WebhookDelete | — |
-| GET | `/webhook.events.json` | WebhookEvents | — |
-| GET | `/webhook.list.json` | WebhookList | — |
-| PUT | `/webhook.update.json` | WebhookUpdate | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/account.cart.add.json` | AccountCartAdd | body*: AccountCartAdd | object |  | — |
+| GET | `/account.cart.list.json` | AccountCartList | `params`, `exclude`, `request_from_date`, `request_to_date`, `store_url`, `store_key` | object | yes | — |
+| PUT | `/account.config.update.json` | AccountConfigUpdate | `new_store_key`, `bridge_url`, `store_root`, `db_tables_prefix`, `3dcart_private_key`, `3dcart_access_token`, `3dcartapi_api_key`, `amazon_sp_client_id`, `amazon_sp_client_secret`, `amazon_sp_aws_user_key_id`, `amazon_sp_aws_user_secret`, `amazon_sp_aws_region`, `amazon_sp_aws_role_arn`, `amazon_sp_refresh_token`, `amazon_sp_api_environment`, `amazon_access_token`, `amazon_seller_id`, `amazon_marketplaces_ids`, `amazon_secret_key`, `amazon_access_key_id`, `aspdotnetstorefront_api_user`, `aspdotnetstorefront_api_pass`, `bigcommerceapi_admin_account`, `bigcommerceapi_api_path`, `bigcommerceapi_api_key`, `bigcommerceapi_client_id`, `bigcommerceapi_access_token`, `bigcommerceapi_context`, `demandware_client_id`, `demandware_api_password`, `demandware_user_name`, `demandware_user_password`, `ebay_client_id`, `ebay_client_secret`, `ebay_runame`, `ebay_access_token`, `ebay_refresh_token`, `ebay_environment`, `ebay_site_id`, `ecwid_acess_token`, `ecwid_store_id`, `etsy_keystring`, `etsy_shared_secret`, `etsy_access_token`, `etsy_token_secret`, `etsy_client_id`, `etsy_refresh_token`, `neto_api_key`, `neto_api_username`, `shopify_api_key`, `shopify_api_password`, `shopify_shared_secret`, `shopify_access_token`, `shopware_access_key`, `shopware_api_key`, `shopware_api_secret`, `volusion_login`, `volusion_password`, `walmart_client_id`, `walmart_client_secret`, `walmart_environment`, `walmart_channel_type`, `squarespace_api_key`, `hybris_client_id`, `hybris_client_secret`, `hybris_username`, `hybris_password`, `hybris_websites`, `lightspeed_api_key`, `lightspeed_api_secret`, `commercehq_api_key`, `commercehq_api_password`, `wc_consumer_key`, `wc_consumer_secret`, `magento_consumer_key`, `magento_consumer_secret`, `magento_access_token`, `magento_token_secret`, `prestashop_webservice_key`, `wix_app_id`, `wix_app_secret_key`, `wix_refresh_token`, `mercado_libre_app_id`, `mercado_libre_app_secret_key`, `mercado_libre_refresh_token`, `zid_client_id`, `zid_client_secret`, `zid_access_token`, `zid_authorization`, `zid_refresh_token` | object |  | — |
+| GET | `/account.failed_webhooks.json` | AccountFailedWebhooks | `count`, `start`, `ids` | object | yes | — |
+| GET | `/account.supported_platforms.json` | AccountSupportedPlatforms | — | object | yes | — |
+| POST | `/attribute.add.json` | AttributeAdd | `type`*, `code`, `name`*, `store_id`, `lang_id`, `visible`, `required`, `position`, `attribute_group_id`, `is_global`, `is_searchable`, `is_filterable`, `is_comparable`, `is_html_allowed_on_front`, `is_filterable_in_search`, `is_configurable`, `is_visible_in_advanced_search`, `is_used_for_promo_rules`, `used_in_product_listing`, `used_for_sort_by`, `apply_to` | object |  | — |
+| POST | `/attribute.assign.group.json` | AttributeAssignGroup | `id`*, `group_id`*, `attribute_set_id` | object |  | — |
+| POST | `/attribute.assign.set.json` | AttributeAssignSet | `id`*, `group_id`, `attribute_set_id`* | object |  | — |
+| GET | `/attribute.attributeset.list.json` | AttributeAttributesetList | `start`, `count`, `params`, `exclude`, `response_fields` | object | yes | — |
+| GET | `/attribute.count.json` | AttributeCount | `type`, `store_id`, `lang_id`, `visible`, `required`, `system` | object | yes | — |
+| DELETE | `/attribute.delete.json` | AttributeDelete | `store_id`, `id`* | object |  | — |
+| GET | `/attribute.group.list.json` | AttributeGroupList | `start`, `count`, `lang_id`, `params`, `exclude`, `response_fields`, `attribute_set_id` | object | yes | — |
+| GET | `/attribute.info.json` | AttributeInfo | `id`*, `store_id`, `lang_id`, `params`, `exclude`, `response_fields` | object | yes | — |
+| GET | `/attribute.list.json` | AttributeList | `start`, `count`, `type`, `attribute_ids`, `store_id`, `lang_id`, `params`, `exclude`, `response_fields`, `visible`, `required`, `system` | Model_Response_Attribute_List | yes | — |
+| GET | `/attribute.type.list.json` | AttributeTypeList | — | object | yes | — |
+| POST | `/attribute.unassign.group.json` | AttributeUnassignGroup | `id`*, `group_id`* | object |  | — |
+| POST | `/attribute.unassign.set.json` | AttributeUnassignSet | `id`*, `attribute_set_id`* | object |  | — |
+| POST | `/attribute.update.json` | AttributeUpdate | `id`*, `name`*, `store_id`, `lang_id` | object |  | — |
+| GET | `/basket.info.json` | BasketInfo | `id`*, `store_id`, `params`, `exclude`, `response_fields` | object | yes | — |
+| POST | `/basket.item.add.json` | BasketItemAdd | `customer_id`*, `product_id`*, `variant_id`, `quantity`, `store_id` | object |  | — |
+| POST | `/basket.live_shipping_service.create.json` | BasketLiveShippingServiceCreate | `store_id`, `name`*, `callback`* | object |  | — |
+| DELETE | `/basket.live_shipping_service.delete.json` | BasketLiveShippingServiceDelete | `id`* | object |  | — |
+| GET | `/basket.live_shipping_service.list.json` | BasketLiveShippingServiceList | `store_id`, `start`, `count` | object | yes | — |
+| POST | `/bridge.delete.json` | BridgeDelete | — | object |  | — |
+| GET | `/bridge.download.file` | BridgeDownload | `whitelabel` | string:binary | yes | — |
+| POST | `/bridge.update.json` | BridgeUpdate | — | object |  | — |
+| GET | `/cart.bridge.json` | CartBridge | — | object | yes | — |
+| GET | `/cart.catalog_price_rules.count.json` | CartCatalogPriceRulesCount | — | object | yes | — |
+| GET | `/cart.catalog_price_rules.list.json` | CartCatalogPriceRulesList | `page_cursor`, `start`, `count`, `ids`, `params`, `response_fields`, `exclude` | Model_Response_Cart_Catalog_PriceRules_List | yes | — |
+| POST | `/cart.clear_cache.json` | CartClearCache | `cache_type`* | object |  | — |
+| GET | `/cart.config.json` | CartConfig | `params`, `exclude` | object | yes | — |
+| PUT | `/cart.config.update.json` | CartConfigUpdate | body*: CartConfigUpdate | object |  | — |
+| POST | `/cart.coupon.add.json` | CartCouponAdd | body*: CartCouponAdd | object |  | — |
+| POST | `/cart.coupon.condition.add.json` | CartCouponConditionAdd | `store_id`, `coupon_id`*, `target`, `entity`*, `key`*, `operator`*, `value`* | object |  | — |
+| GET | `/cart.coupon.count.json` | CartCouponCount | `store_id`, `date_start_from`, `date_start_to`, `date_end_from`, `date_end_to`, `avail` | object | yes | — |
+| DELETE | `/cart.coupon.delete.json` | CartCouponDelete | `id`*, `store_id` | object |  | — |
+| GET | `/cart.coupon.list.json` | CartCouponList | `page_cursor`, `start`, `count`, `coupons_ids`, `store_id`, `date_start_from`, `date_start_to`, `date_end_from`, `date_end_to`, `avail`, `lang_id`, `params`, `response_fields`, `exclude` | Model_Response_Cart_Coupon_List | yes | — |
+| POST | `/cart.create.json` | CartCreate | `cart_id`*, `store_url`*, `bridge_url`, `store_root`, `store_key`, `shared_secret`, `validate_version`, `verify`, `db_tables_prefix`, `ftp_host`, `ftp_user`, `ftp_password`, `ftp_port`, `ftp_store_dir`, `apiKey_3dcart`, `AdminAccount`, `ApiPath`, `ApiKey`, `client_id`, `accessToken`, `context`, `access_token`, `apiKey_shopify`, `apiPassword`, `accessToken_shopify`, `apiKey`, `apiUsername`, `EncryptedPassword`, `Login`, `apiUser_adnsf`, `apiPass`, `accessKey_scelite`, `apiKey_scelite`, `apiSecretKey_scelite`, `privateKey`, `appToken`, `etsy_keystring`, `etsy_shared_secret`, `tokenSecret`, `etsy_client_id`*, `etsy_refresh_token`*, `ebay_client_id`, `ebay_client_secret`, `ebay_runame`, `ebay_access_token`, `ebay_refresh_token`, `ebay_environment`, `ebay_site_id`, `dw_client_id`, `dw_api_pass`, `demandware_user_name`, `demandware_user_password`, `store_id`*, `seller_id`, `amazon_secret_key`, `amazon_access_key_id`, `marketplaces_ids`, `environment`, `hybris_client_id`, `hybris_client_secret`, `hybris_username`, `hybris_password`, `hybris_websites`, `walmart_client_id`, `walmart_client_secret`, `walmart_environment`, `walmart_channel_type`, `lightspeed_api_key`, `lightspeed_api_secret`, `shopware_access_key`, `shopware_api_key`, `shopware_api_secret`, `commercehq_api_key`, `commercehq_api_password`, `3dcart_private_key`, `3dcart_access_token`, `wc_consumer_key`, `wc_consumer_secret`, `magento_consumer_key`, `magento_consumer_secret`, `magento_access_token`, `magento_token_secret`, `prestashop_webservice_key`, `wix_app_id`, `wix_app_secret_key`, `wix_refresh_token`, `mercado_libre_app_id`, `mercado_libre_app_secret_key`, `mercado_libre_refresh_token`, `zid_client_id`, `zid_client_secret`, `zid_access_token`, `zid_authorization`, `zid_refresh_token` | object |  | — |
+| DELETE | `/cart.delete.json` | CartDelete | `delete_bridge` | object |  | — |
+| GET | `/cart.disconnect.json` | CartDisconnect | `delete_bridge` | object | yes | — |
+| POST | `/cart.giftcard.add.json` | CartGiftcardAdd | `amount`*, `code`, `owner_email`, `recipient_email` | object |  | — |
+| GET | `/cart.giftcard.count.json` | CartGiftcardCount | `store_id` | object | yes | — |
+| GET | `/cart.giftcard.list.json` | CartGiftcardList | `page_cursor`, `start`, `count`, `store_id`, `params`, `response_fields`, `exclude` | Model_Response_Cart_GiftCard_List | yes | — |
+| GET | `/cart.info.json` | CartInfo | `params`, `response_fields`, `exclude`, `store_id` | object | yes | — |
+| GET | `/cart.list.json` | CartList | — | object | yes | — |
+| GET | `/cart.meta_data.list.json` | CartMetaDataList | `entity_id`*, `entity`, `store_id`, `key`, `count`, `page_cursor`, `params`, `response_fields`, `exclude` | Model_Response_Cart_MetaData_List | yes | — |
+| POST | `/cart.meta_data.set.json` | CartMetaDataSet | `entity_id`*, `entity`, `store_id`, `key`*, `value`*, `namespace`* | object |  | — |
+| DELETE | `/cart.meta_data.unset.json` | CartMetaDataUnset | `entity_id`*, `entity`, `store_id`, `key`*, `id`* | object |  | — |
+| GET | `/cart.methods.json` | CartMethods | — | object | yes | — |
+| GET | `/cart.plugin.list.json` | CartPluginList | `store_key`, `store_id`, `start`, `count` | object | yes | — |
+| POST | `/cart.script.add.json` | CartScriptAdd | `name`, `description`, `html`, `src`, `load_method`, `scope`, `store_id` | object |  | — |
+| DELETE | `/cart.script.delete.json` | CartScriptDelete | `id`*, `store_id` | object |  | — |
+| GET | `/cart.script.list.json` | CartScriptList | `page_cursor`, `start`, `count`, `created_from`, `created_to`, `modified_from`, `modified_to`, `script_ids`, `store_id`, `params`, `response_fields`, `exclude` | Model_Response_Cart_Script_List | yes | — |
+| GET | `/cart.shipping_zones.list.json` | CartShippingZonesList | `store_id`, `start`, `count`, `params`, `response_fields`, `exclude` | object | yes | — |
+| GET | `/cart.validate.json` | CartValidate | `validate_version` | object | yes | — |
+| POST | `/category.add.json` | CategoryAdd | `name`*, `parent_id`, `stores_ids`, `store_id`, `lang_id`, `avail`, `sort_order`, `created_time`, `modified_time`, `description`, `meta_title`, `meta_description`, `meta_keywords`, `seo_url` | object |  | — |
+| POST | `/category.assign.json` | CategoryAssign | `product_id`*, `category_id`*, `store_id` | object |  | — |
+| GET | `/category.count.json` | CategoryCount | `parent_id`, `store_id`, `lang_id`, `created_from`, `created_to`, `modified_from`, `modified_to`, `avail` | object | yes | — |
+| DELETE | `/category.delete.json` | CategoryDelete | `id`* | object |  | — |
+| GET | `/category.find.json` | CategoryFind | `find_value`*, `find_where`, `find_params`, `store_id`, `lang_id` | object | yes | — |
+| POST | `/category.image.add.json` | CategoryImageAdd | `category_id`*, `image_name`*, `url`*, `label`, `mime`, `type`*, `position`, `store_id` | object |  | — |
+| DELETE | `/category.image.delete.json` | CategoryImageDelete | `category_id`*, `image_id`*, `store_id` | object |  | — |
+| GET | `/category.info.json` | CategoryInfo | `id`*, `params`, `response_fields`, `exclude`, `store_id`, `lang_id` | object | yes | — |
+| GET | `/category.list.json` | CategoryList | `start`, `count`, `page_cursor`, `parent_id`, `params`, `response_fields`, `exclude`, `store_id`, `lang_id`, `created_from`, `created_to`, `modified_from`, `modified_to`, `avail` | Model_Response_Category_List | yes | — |
+| POST | `/category.unassign.json` | CategoryUnassign | `category_id`*, `product_id`*, `store_id` | object |  | — |
+| PUT | `/category.update.json` | CategoryUpdate | `id`*, `name`, `parent_id`, `stores_ids`, `avail`, `sort_order`, `modified_time`, `description`, `meta_title`, `meta_description`, `meta_keywords`, `seo_url`, `lang_id`, `store_id` | object |  | — |
+| POST | `/customer.add.json` | CustomerAdd | body*: CustomerAdd | object |  | — |
+| GET | `/customer.attribute.list.json` | CustomerAttributeList | `count`, `page_cursor`, `customer_id`*, `store_id`, `lang_id`, `params`, `exclude`, `response_fields` | Model_Response_Customer_Attribute_List | yes | — |
+| GET | `/customer.count.json` | CustomerCount | `group_id`, `created_from`, `created_to`, `modified_from`, `modified_to`, `store_id`, `customer_list_id`, `avail` | object | yes | — |
+| GET | `/customer.find.json` | CustomerFind | `find_value`*, `find_where`, `find_params`, `store_id` | object | yes | — |
+| POST | `/customer.group.add.json` | CustomerGroupAdd | `name`*, `store_id`, `stores_ids` | object |  | — |
+| GET | `/customer.group.list.json` | CustomerGroupList | `page_cursor`, `start`, `count`, `store_id`, `lang_id`, `group_ids`, `params`, `exclude`, `response_fields` | Model_Response_Customer_Group_List | yes | — |
+| GET | `/customer.info.json` | CustomerInfo | `id`*, `params`, `response_fields`, `exclude`, `store_id` | object | yes | — |
+| GET | `/customer.list.json` | CustomerList | `page_cursor`, `start`, `count`, `created_from`, `created_to`, `modified_from`, `modified_to`, `params`, `response_fields`, `exclude`, `group_id`, `store_id`, `customer_list_id`, `avail` | Model_Response_Customer_List | yes | — |
+| PUT | `/customer.update.json` | CustomerUpdate | `id`*, `group_id`, `group_ids`, `first_name`, `last_name`, `news_letter_subscription`, `tags`, `address_book_id_{x}`, `address_book_first_name_{x}`, `address_book_last_name_{x}`, `address_book_company_{x}`, `address_book_phone_{x}`, `address_book_address1_{x}`, `address_book_address2_{x}`, `address_book_city_{x}`, `address_book_country_{x}`, `address_book_state_{x}`, `address_book_postcode_{x}` | object |  | — |
+| GET | `/order.abandoned.list.json` | OrderAbandonedList | `customer_id`, `customer_email`, `created_to`, `created_from`, `modified_to`, `modified_from`, `skip_empty_email`, `store_id`, `page_cursor`, `count`, `start`, `params`, `response_fields`, `exclude` | Model_Response_Order_Abandoned_List | yes | — |
+| POST | `/order.add.json` | OrderAdd | body*: OrderAdd | object |  | — |
+| GET | `/order.count.json` | OrderCount | `customer_id`, `customer_email`, `order_status`, `order_status_ids`, `created_to`, `created_from`, `modified_to`, `modified_from`, `store_id`, `ids`, `order_ids`, `ebay_order_status`, `financial_status`, `fulfillment_status`, `shipping_method`, `delivery_method`, `ship_node_type` | object | yes | — |
+| GET | `/order.financial_status.list.json` | OrderFinancialStatusList | — | object | yes | — |
+| GET | `/order.find.json` | OrderFind | `customer_id`, `customer_email`, `order_status`, `start`, `count`, `params`, `exclude`, `created_to`, `created_from`, `modified_to`, `modified_from`, `financial_status` | object | yes | — |
+| GET | `/order.fulfillment_status.list.json` | OrderFulfillmentStatusList | — | object | yes | — |
+| GET | `/order.info.json` | OrderInfo | `order_id`, `id`, `params`, `response_fields`, `exclude`, `store_id`, `enable_cache` | object | yes | — |
+| GET | `/order.list.json` | OrderList | `customer_id`, `customer_email`, `phone`, `order_status`, `order_status_ids`, `start`, `count`, `page_cursor`, `sort_by`, `sort_direction`, `params`, `response_fields`, `exclude`, `created_to`, `created_from`, `modified_to`, `modified_from`, `store_id`, `ids`, `order_ids`, `ebay_order_status`, `basket_id`, `financial_status`, `fulfillment_status`, `shipping_method`, `skip_order_ids`, `since_id`, `is_deleted`, `shipping_country_iso3`, `enable_cache`, `delivery_method`, `ship_node_type`, `currency_id` | Model_Response_Order_List | yes | — |
+| POST | `/order.preestimate_shipping.list.json` | OrderPreestimateShippingList | body*: OrderPreestimateShippingList | Model_Response_Order_PreestimateShipping_List |  | — |
+| POST | `/order.refund.add.json` | OrderRefundAdd | body*: OrderRefundAdd | object |  | — |
+| POST | `/order.shipment.add.json` | OrderShipmentAdd | body*: OrderShipmentAdd | object |  | — |
+| DELETE | `/order.shipment.delete.json` | OrderShipmentDelete | `shipment_id`*, `order_id`*, `store_id` | object |  | — |
+| GET | `/order.shipment.info.json` | OrderShipmentInfo | `id`*, `order_id`*, `start`, `params`, `response_fields`, `exclude`, `store_id` | Model_Response_Order_Shipment_List | yes | — |
+| GET | `/order.shipment.list.json` | OrderShipmentList | `order_id`*, `page_cursor`, `start`, `count`, `params`, `response_fields`, `exclude`, `created_from`, `created_to`, `modified_from`, `modified_to`, `store_id` | Model_Response_Order_Shipment_List | yes | — |
+| POST | `/order.shipment.tracking.add.json` | OrderShipmentTrackingAdd | body*: OrderShipmentTrackingAdd | object |  | — |
+| PUT | `/order.shipment.update.json` | OrderShipmentUpdate | body*: OrderShipmentUpdate | object |  | — |
+| GET | `/order.status.list.json` | OrderStatusList | `store_id` | object | yes | — |
+| GET | `/order.transaction.list.json` | OrderTransactionList | `count`, `order_ids`*, `store_id`, `params`, `response_fields`, `exclude`, `page_cursor` | Model_Response_Order_Transaction_List | yes | — |
+| PUT | `/order.update.json` | OrderUpdate | `order_id`*, `store_id`, `order_status`, `comment`, `admin_comment`, `admin_private_comment`, `date_modified`, `date_finished`, `financial_status`, `fulfillment_status`, `order_payment_method`, `send_notifications` | object |  | — |
+| POST | `/product.add.json` | ProductAdd | body*: ProductAdd | object |  | — |
+| GET | `/product.attribute.list.json` | ProductAttributeList | `product_id`*, `attribute_id`, `variant_id`, `page_cursor`, `start`, `count`, `attribute_group_id`, `set_name`, `lang_id`, `store_id`, `sort_by`, `sort_direction`, `params`, `response_fields`, `exclude` | Model_Response_Product_Attribute_List | yes | — |
+| POST | `/product.attribute.value.set.json` | ProductAttributeValueSet | `product_id`*, `attribute_id`, `attribute_group_id`, `attribute_name`, `value`, `value_id`, `lang_id`, `store_id` | object |  | — |
+| POST | `/product.attribute.value.unset.json` | ProductAttributeValueUnset | `product_id`*, `attribute_id`*, `store_id`, `include_default`, `reindex`, `clear_cache` | object |  | — |
+| GET | `/product.brand.list.json` | ProductBrandList | `start`, `count`, `params`, `brand_ids`, `exclude`, `store_id`, `lang_id`, `created_from`, `created_to`, `modified_from`, `modified_to`, `response_fields` | object | yes | — |
+| GET | `/product.child_item.find.json` | ProductChildItemFind | `find_value`*, `find_where`, `find_params`, `store_id` | object | yes | — |
+| GET | `/product.child_item.info.json` | ProductChildItemInfo | `params`, `response_fields`, `exclude`, `product_id`*, `id`*, `store_id`, `lang_id`, `currency_id` | object | yes | — |
+| GET | `/product.child_item.list.json` | ProductChildItemList | `page_cursor`, `start`, `count`, `params`, `response_fields`, `exclude`, `created_from`, `created_to`, `modified_from`, `modified_to`, `product_id`, `product_ids`, `store_id`, `lang_id`, `currency_id`, `avail_sale`, `report_request_id`, `disable_report_cache` | Model_Response_Product_ChildItem_List | yes | — |
+| GET | `/product.count.json` | ProductCount | `category_id`, `created_from`, `created_to`, `modified_from`, `modified_to`, `avail_view`, `avail_sale`, `store_id`, `lang_id`, `product_ids`, `report_request_id`, `disable_report_cache`, `brand_name`, `product_attributes`, `status`, `type` | object | yes | — |
+| POST | `/product.currency.add.json` | ProductCurrencyAdd | `iso3`*, `rate`*, `name`, `avail`, `symbol_left`, `symbol_right`, `default` | object |  | — |
+| GET | `/product.currency.list.json` | ProductCurrencyList | `start`, `count`, `params`, `page_cursor`, `exclude`, `response_fields`, `default`, `avail` | object | yes | — |
+| DELETE | `/product.delete.json` | ProductDelete | `id`* | object |  | — |
+| GET | `/product.fields.json` | ProductFields | — | object | yes | — |
+| GET | `/product.find.json` | ProductFind | `find_value`*, `find_where`, `find_params`, `find_what`, `lang_id`, `store_id` | object | yes | — |
+| POST | `/product.image.add.json` | ProductImageAdd | body*: ProductImageAdd | object |  | — |
+| DELETE | `/product.image.delete.json` | ProductImageDelete | `product_id`*, `id`*, `store_id` | object |  | — |
+| PUT | `/product.image.update.json` | ProductImageUpdate | `product_id`*, `image_name`, `type`, `label`, `position`, `id`*, `store_id`, `lang_id`, `hidden` | object |  | — |
+| GET | `/product.info.json` | ProductInfo | `id`*, `params`, `response_fields`, `exclude`, `store_id`, `lang_id`, `currency_id`, `report_request_id`, `disable_report_cache` | object | yes | — |
+| GET | `/product.list.json` | ProductList | `page_cursor`, `start`, `count`, `params`, `response_fields`, `exclude`, `category_id`, `created_from`, `created_to`, `modified_from`, `modified_to`, `avail_view`, `avail_sale`, `store_id`, `lang_id`, `currency_id`, `product_ids`, `since_id`, `report_request_id`, `disable_report_cache`, `sort_by`, `sort_direction`, `sku`, `disable_cache`, `brand_name`, `product_attributes`, `status`, `type` | Model_Response_Product_List | yes | — |
+| POST | `/product.manufacturer.add.json` | ProductManufacturerAdd | `product_id`*, `manufacturer`* | object |  | — |
+| POST | `/product.option.add.json` | ProductOptionAdd | `name`*, `type`*, `product_id`, `default_option_value`, `option_values`, `description`, `avail`, `sort_order`, `required`, `clear_cache` | object |  | — |
+| POST | `/product.option.assign.json` | ProductOptionAssign | `product_id`*, `option_id`*, `required`, `sort_order`, `option_values`, `clear_cache` | object |  | — |
+| GET | `/product.option.list.json` | ProductOptionList | `start`, `count`, `params`, `exclude`, `response_fields`, `product_id`, `lang_id`, `store_id` | object | yes | — |
+| POST | `/product.option.value.add.json` | ProductOptionValueAdd | `product_id`*, `option_id`*, `option_value`*, `sort_order`, `clear_cache` | object |  | — |
+| POST | `/product.option.value.assign.json` | ProductOptionValueAssign | `product_option_id`*, `option_value_id`*, `clear_cache` | object |  | — |
+| PUT | `/product.option.value.update.json` | ProductOptionValueUpdate | `product_id`*, `option_id`*, `option_value_id`*, `option_value`*, `price`, `quantity`, `clear_cache` | object |  | — |
+| POST | `/product.price.add.json` | ProductPriceAdd | body*: ProductPriceAdd | object |  | — |
+| DELETE | `/product.price.delete.json` | ProductPriceDelete | `product_id`*, `group_prices` | object |  | — |
+| PUT | `/product.price.update.json` | ProductPriceUpdate | body*: ProductPriceUpdate | object |  | — |
+| GET | `/product.review.list.json` | ProductReviewList | `start`, `page_cursor`, `count`, `product_id`*, `ids`, `store_id`, `status`, `params`, `exclude`, `response_fields` | object | yes | — |
+| POST | `/product.store.assign.json` | ProductStoreAssign | `product_id`*, `store_id`* | object |  | — |
+| POST | `/product.tax.add.json` | ProductTaxAdd | body*: ProductTaxAdd | object |  | — |
+| PUT | `/product.update.json` | ProductUpdate | `id`*, `model`, `old_price`, `price`, `special_price`, `sprice_create`, `sprice_expire`, `cost_price`, `retail_price`, `quantity`, `weight`, `increase_quantity`, `reduce_quantity`, `warehouse_id`, `reserve_quantity`, `manage_stock`, `backorder_status`, `name`, `sku`, `visible`, `manufacturer`, `manufacturer_id`, `categories_ids`, `description`, `short_description`, `meta_title`, `meta_keywords`, `meta_description`, `store_id`, `lang_id`, `in_stock`, `status`, `seo_url`, `report_request_id`, `disable_report_cache`, `reindex`, `tags`, `clear_cache`, `gtin`, `taxable`, `product_class`, `height`, `length`, `width`, `harmonized_system_code`, `country_of_origin`, `search_keywords`, `barcode` | object |  | — |
+| POST | `/product.variant.add.json` | ProductVariantAdd | body*: ProductVariantAdd | object |  | — |
+| GET | `/product.variant.count.json` | ProductVariantCount | `created_from`, `created_to`, `modified_from`, `modified_to`, `category_id`, `product_id`*, `store_id` | object | yes | — |
+| DELETE | `/product.variant.delete.json` | ProductVariantDelete | `id`*, `product_id`* | object |  | — |
+| POST | `/product.variant.image.add.json` | ProductVariantImageAdd | body*: ProductVariantImageAdd | object |  | — |
+| DELETE | `/product.variant.image.delete.json` | ProductVariantImageDelete | `product_id`*, `product_variant_id`*, `id`*, `store_id` | object |  | — |
+| GET | `/product.variant.info.json` | ProductVariantInfo | `params`, `exclude`, `id`*, `store_id` | object | yes | — |
+| GET | `/product.variant.list.json` | ProductVariantList | `start`, `count`, `params`, `exclude`, `created_from`, `created_to`, `modified_from`, `modified_to`, `category_id`, `product_id`, `store_id` | object | yes | — |
+| POST | `/product.variant.price.add.json` | ProductVariantPriceAdd | body*: ProductVariantPriceAdd | object |  | — |
+| DELETE | `/product.variant.price.delete.json` | ProductVariantPriceDelete | `id`*, `group_prices` | object |  | — |
+| PUT | `/product.variant.price.update.json` | ProductVariantPriceUpdate | body*: ProductVariantPriceUpdate | object |  | — |
+| PUT | `/product.variant.update.json` | ProductVariantUpdate | `store_id`, `id`*, `product_id`*, `warehouse_id`, `reserve_quantity`, `quantity`, `increase_quantity`, `reduce_quantity`, `price`, `special_price`, `retail_price`, `old_price`, `cost_price`, `sprice_create`, `sprice_expire`, `manage_stock`, `in_stock`, `name`, `description`, `sku`, `meta_title`, `meta_description`, `meta_keywords`, `short_description`, `visible`, `status`, `backorder_status`, `weight`, `barcode`, `reindex`, `taxable`, `options`, `harmonized_system_code`, `country_of_origin`, `width`, `height`, `length`, `gtin`, `clear_cache`, `lang_id`, `model`, `available_for_sale` | object |  | — |
+| GET | `/subscriber.list.json` | SubscriberList | `start`, `count`, `subscribed`, `store_id`, `email`, `params`, `exclude`, `created_from`, `created_to`, `modified_from`, `modified_to`, `page_cursor`, `response_fields` | object | yes | — |
+| GET | `/tax.class.info.json` | TaxClassInfo | `tax_class_id`*, `store_id`, `lang_id`, `params`, `response_fields`, `exclude` | object | yes | — |
+| GET | `/webhook.count.json` | WebhookCount | `entity`, `action`, `active` | object | yes | — |
+| POST | `/webhook.create.json` | WebhookCreate | `entity`*, `action`*, `callback`, `label`, `fields`, `active`, `store_id` | object |  | — |
+| DELETE | `/webhook.delete.json` | WebhookDelete | `id`* | object |  | — |
+| GET | `/webhook.events.json` | WebhookEvents | — | object | yes | — |
+| GET | `/webhook.list.json` | WebhookList | `params`, `start`, `count`, `entity`, `action`, `active`, `ids` | object | yes | — |
+| PUT | `/webhook.update.json` | WebhookUpdate | `id`*, `callback`, `label`, `fields`, `active` | object |  | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_notion.com_front-static_logo-io
 
 | | |
 | --- | --- |
-| Signed bundle | `afab4e2f533f719965772f98db76618f90959f062a9479d6591d04b44f95a47d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,18 +32,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_notion.com_front-static_logo-io
 
 ## Operations (13)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/v1/blocks/{id}` | deleteABlock | Delete a block |
-| GET | `/v1/blocks/{id}` | retrieveABlock | Retrieve a block |
-| PATCH | `/v1/blocks/{id}` | updateABlock | Update a block |
-| GET | `/v1/blocks/{id}/children` | retrieveBlockChildren | Retrieve block children |
-| PATCH | `/v1/blocks/{id}/children` | appendBlockChildren | Append block children |
-| GET | `/v1/comments` | retrieveComments | Retrieve comments |
-| GET | `/v1/databases/{id}` | retrieveADatabase | Retrieve a database |
-| PATCH | `/v1/databases/{id}` | updateADatabase | Update a database |
-| POST | `/v1/databases/{id}/query` | queryADatabase | Query a database |
-| GET | `/v1/pages/{id}` | retrieveAPage | Retrieve a Page |
-| PATCH | `/v1/pages/{id}` | updatePageProperties | Update Page properties |
-| GET | `/v1/pages/{page_id}/properties/{property_id}` | retrieveAPagePropertyItem | Retrieve a Page Property Item |
-| GET | `/v1/users/{id}` | retrieveAUser | Retrieve a user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/blocks/{id}` | retrieveABlock | `id`*, `Notion-Version` | object | yes | Retrieve a block |
+| DELETE | `/v1/blocks/{id}` | deleteABlock | `id`*, `Notion-Version` | object |  | Delete a block |
+| PATCH | `/v1/blocks/{id}` | updateABlock | `id`*, `Notion-Version`, body: object | object |  | Update a block |
+| GET | `/v1/blocks/{id}/children` | retrieveBlockChildren | `id`*, `page_size`, `Notion-Version` | object | yes | Retrieve block children |
+| PATCH | `/v1/blocks/{id}/children` | appendBlockChildren | `id`*, `Notion-Version`, body: object | object |  | Append block children |
+| GET | `/v1/comments` | retrieveComments | `block_id`, `page_size`, `Notion-Version`, body: object | object | yes | Retrieve comments |
+| GET | `/v1/databases/{id}` | retrieveADatabase | `id`*, `Notion-Version` | object | yes | Retrieve a database |
+| PATCH | `/v1/databases/{id}` | updateADatabase | `id`*, `Notion-Version`, body: object | object |  | Update a database |
+| POST | `/v1/databases/{id}/query` | queryADatabase | `id`*, `Notion-Version`, body: object | object |  | Query a database |
+| GET | `/v1/pages/{id}` | retrieveAPage | `id`*, `Notion-Version`, `—` | object | yes | Retrieve a Page |
+| PATCH | `/v1/pages/{id}` | updatePageProperties | `id`*, `Notion-Version`, body: object | object |  | Update Page properties |
+| GET | `/v1/pages/{page_id}/properties/{property_id}` | retrieveAPagePropertyItem | `page_id`*, `property_id`* | object | yes | Retrieve a Page Property Item |
+| GET | `/v1/users/{id}` | retrieveAUser | `id`*, `Notion-Version`, body: object | object | yes | Retrieve a user |

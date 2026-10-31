@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_collegefootballdata.com_Logo.pn
 
 | | |
 | --- | --- |
-| Signed bundle | `62db531ab86ac18c4bdef77fe5eb87afdfe4a123948f4f3c7ea97df5c3ee1cc3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,56 +34,58 @@ logo: "https://api.apis.guru/v2/cache/logo/https_collegefootballdata.com_Logo.pn
 
 50 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/calendar` | getCalendar | Season calendar |
-| GET | `/coaches` | getCoaches | Coaching records and history |
-| GET | `/conferences` | getConferences | Conferences |
-| GET | `/draft/picks` | getDraftPicks | List of NFL Draft picks |
-| GET | `/draft/positions` | getNFLPositions | List of NFL positions |
-| GET | `/draft/teams` | getNFLTeams | List of NFL teams |
-| GET | `/drives` | getDrives | Drive data and results |
-| GET | `/game/box/advanced` | getAdvancedBoxScore | Advanced box scores |
-| GET | `/games` | getGames | Games and results |
-| GET | `/games/media` | getGameMedia | Game media information and schedules |
-| GET | `/games/players` | getPlayerGameStats | Player game stats |
-| GET | `/games/teams` | getTeamGameStats | Team game stats |
-| GET | `/games/weather` | getGameWeather | Game weather information (Patreon only) |
-| GET | `/lines` | getLines | Betting lines |
-| GET | `/live/plays` | getLivePlays | Live metrics and PBP (Patreon only) |
-| GET | `/metrics/wp` | getWinProbabilityData | Win probability chart data |
-| GET | `/metrics/wp/pregame` | getPregameWinProbabilities | Pregame win probability data |
-| GET | `/play/stat/types` | getPlayStatTypes | Types of player play stats |
-| GET | `/play/stats` | getPlayStats | Play stats by play |
-| GET | `/play/types` | getPlayTypes | Play types |
-| GET | `/player/portal` | getTransferPortal | Transfer portal by season |
-| GET | `/player/returning` | getReturningProduction | Team returning production metrics |
-| GET | `/player/search` | playerSearch | Search for player information |
-| GET | `/player/usage` | getPlayerUsage | Player usage metrics broken down by season |
-| GET | `/plays` | getPlays | Play by play data |
-| GET | `/ppa/games` | getGamePPA | Team Predicated Points Added (PPA/EPA) by game |
-| GET | `/ppa/players/games` | getPlayerGamePPA | Player Predicated Points Added (PPA/EPA) broken down by game |
-| GET | `/ppa/players/season` | getPlayerSeasonPPA | Player Predicated Points Added (PPA/EPA) broken down by season |
-| GET | `/ppa/predicted` | getPredictedPoints | Predicted Points (i.e. Expected Points or EP) |
-| GET | `/ppa/teams` | getTeamPPA | Predicted Points Added (PPA/EPA) data by team |
-| GET | `/rankings` | getRankings | Historical polls and rankings |
-| GET | `/ratings/elo` | getEloRatings | Historical Elo ratings |
-| GET | `/ratings/sp` | getSPRatings | Historical SP+ ratings |
-| GET | `/ratings/sp/conferences` | getConferenceSPRatings | Historical SP+ ratings by conference |
-| GET | `/ratings/srs` | getSRSRatings | Historical SRS ratings |
-| GET | `/records` | getTeamRecords | Team records |
-| GET | `/recruiting/groups` | getRecruitingGroups | Recruit position group ratings |
-| GET | `/recruiting/players` | getRecruitingPlayers | Player recruiting ratings and rankings |
-| GET | `/recruiting/teams` | getRecruitingTeams | Team recruiting rankings and ratings |
-| GET | `/roster` | getRoster | Team rosters |
-| GET | `/scoreboard` | getScoreboard | Live game results (Patreon only) |
-| GET | `/stats/categories` | getStatCategories | Team stat categories |
-| GET | `/stats/game/advanced` | getAdvancedTeamGameStats | Advanced team metrics by game |
-| GET | `/stats/player/season` | getPlayerSeasonStats | Player stats by season |
-| GET | `/stats/season` | getTeamSeasonStats | Team statistics by season |
-| GET | `/stats/season/advanced` | getAdvancedTeamSeasonStats | Advanced team metrics by season |
-| GET | `/talent` | getTalent | Team talent composite rankings |
-| GET | `/teams` | getTeams | Team information |
-| GET | `/teams/fbs` | getFbsTeams | FBS team list |
-| GET | `/teams/matchup` | getTeamMatchup | Team matchup history |
-| GET | `/venues` | getVenues | Arena and venue information |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/calendar` | getCalendar | `year`* | Week[] | yes | Season calendar |
+| GET | `/coaches` | getCoaches | `firstName`, `lastName`, `team`, `year`, `minYear`, `maxYear` | Coach[] | yes | Coaching records and history |
+| GET | `/conferences` | getConferences | — | Conference[] | yes | Conferences |
+| GET | `/draft/picks` | getDraftPicks | `year`, `nflTeam`, `college`, `conference`, `position` | DraftPick[] | yes | List of NFL Draft picks |
+| GET | `/draft/positions` | getNFLPositions | — | DraftPosition[] | yes | List of NFL positions |
+| GET | `/draft/teams` | getNFLTeams | — | DraftTeam[] | yes | List of NFL teams |
+| GET | `/drives` | getDrives | `seasonType`, `year`*, `week`, `team`, `offense`, `defense`, `conference`, `offenseConference`, `defenseConference`, `classification` | Drive[] | yes | Drive data and results |
+| GET | `/game/box/advanced` | getAdvancedBoxScore | `gameId`* | BoxScore | yes | Advanced box scores |
+| GET | `/games` | getGames | `year`*, `week`, `seasonType`, `team`, `home`, `away`, `conference`, `division`, `id` | Game[] | yes | Games and results |
+| GET | `/games/media` | getGameMedia | `year`*, `week`, `seasonType`, `team`, `conference`, `mediaType`, `classification` | GameMedia[] | yes | Game media information and schedules |
+| GET | `/games/players` | getPlayerGameStats | `year`*, `week`, `seasonType`, `team`, `conference`, `category`, `gameId` | PlayerGame[] | yes | Player game stats |
+| GET | `/games/teams` | getTeamGameStats | `year`*, `week`, `seasonType`, `team`, `conference`, `gameId`, `classification` | TeamGame[] | yes | Team game stats |
+| GET | `/games/weather` | getGameWeather | `gameId`, `year`, `week`, `seasonType`, `team`, `conference`, `classification` | GameWeather[] | yes | Game weather information (Patreon only) |
+| GET | `/lines` | getLines | `gameId`, `year`, `week`, `seasonType`, `team`, `home`, `away`, `conference` | GameLines[] | yes | Betting lines |
+| GET | `/live/plays` | getLivePlays | `id`* | LivePlayByPlay | yes | Live metrics and PBP (Patreon only) |
+| GET | `/metrics/wp` | getWinProbabilityData | `gameId`* | PlayWP[] | yes | Win probability chart data |
+| GET | `/metrics/wp/pregame` | getPregameWinProbabilities | `year`, `week`, `team`, `seasonType` | PregameWP[] | yes | Pregame win probability data |
+| GET | `/play/stat/types` | getPlayStatTypes | — | PlayStatType[] | yes | Types of player play stats |
+| GET | `/play/stats` | getPlayStats | `year`, `week`, `team`, `gameId`, `athleteId`, `statTypeId`, `seasonType`, `conference` | PlayStat[] | yes | Play stats by play |
+| GET | `/play/types` | getPlayTypes | — | PlayType[] | yes | Play types |
+| GET | `/player/portal` | getTransferPortal | `year`* | PortalPlayer[] | yes | Transfer portal by season |
+| GET | `/player/returning` | getReturningProduction | `year`, `team`, `conference` | ReturningProduction[] | yes | Team returning production metrics |
+| GET | `/player/search` | playerSearch | `searchTerm`*, `position`, `team`, `year` | PlayerSearchResult[] | yes | Search for player information |
+| GET | `/player/usage` | getPlayerUsage | `year`*, `team`, `conference`, `position`, `playerId`, `excludeGarbageTime` | PlayerUsage[] | yes | Player usage metrics broken down by season |
+| GET | `/plays` | getPlays | `seasonType`, `year`*, `week`*, `team`, `offense`, `defense`, `conference`, `offenseConference`, `defenseConference`, `playType`, `classification` | Play[] | yes | Play by play data |
+| GET | `/ppa/games` | getGamePPA | `year`*, `week`, `team`, `conference`, `excludeGarbageTime`, `seasonType` | GamePPA[] | yes | Team Predicated Points Added (PPA/EPA) by game |
+| GET | `/ppa/players/games` | getPlayerGamePPA | `year`, `week`, `team`, `position`, `playerId`, `threshold`, `excludeGarbageTime`, `seasonType` | PlayerGamePPA[] | yes | Player Predicated Points Added (PPA/EPA) broken down by game |
+| GET | `/ppa/players/season` | getPlayerSeasonPPA | `year`, `team`, `conference`, `position`, `playerId`, `threshold`, `excludeGarbageTime` | PlayerSeasonPPA[] | yes | Player Predicated Points Added (PPA/EPA) broken down by season |
+| GET | `/ppa/predicted` | getPredictedPoints | `down`*, `distance`* | PredictedPoints[] | yes | Predicted Points (i.e. Expected Points or EP) |
+| GET | `/ppa/teams` | getTeamPPA | `year`, `team`, `conference`, `excludeGarbageTime` | TeamPPA[] | yes | Predicted Points Added (PPA/EPA) data by team |
+| GET | `/rankings` | getRankings | `year`*, `week`, `seasonType` | RankingWeek[] | yes | Historical polls and rankings |
+| GET | `/ratings/elo` | getEloRatings | `year`, `week`, `team`, `conference` | TeamEloRating[] | yes | Historical Elo ratings |
+| GET | `/ratings/sp` | getSPRatings | `year`, `team` | TeamSPRating[] | yes | Historical SP+ ratings |
+| GET | `/ratings/sp/conferences` | getConferenceSPRatings | `year`, `conference` | ConferenceSPRating[] | yes | Historical SP+ ratings by conference |
+| GET | `/ratings/srs` | getSRSRatings | `year`, `team`, `conference` | TeamSRSRating[] | yes | Historical SRS ratings |
+| GET | `/records` | getTeamRecords | `year`, `team`, `conference` | TeamRecord[] | yes | Team records |
+| GET | `/recruiting/groups` | getRecruitingGroups | `startYear`, `endYear`, `team`, `conference` | PositionGroupRecruitingRating[] | yes | Recruit position group ratings |
+| GET | `/recruiting/players` | getRecruitingPlayers | `year`, `classification`, `position`, `state`, `team` | Recruit[] | yes | Player recruiting ratings and rankings |
+| GET | `/recruiting/teams` | getRecruitingTeams | `year`, `team` | TeamRecruitingRank[] | yes | Team recruiting rankings and ratings |
+| GET | `/roster` | getRoster | `team`, `year` | Player[] | yes | Team rosters |
+| GET | `/scoreboard` | getScoreboard | `classification`, `conference` | ScoreboardGame[] | yes | Live game results (Patreon only) |
+| GET | `/stats/categories` | getStatCategories | — | string[] | yes | Team stat categories |
+| GET | `/stats/game/advanced` | getAdvancedTeamGameStats | `year`, `week`, `team`, `opponent`, `excludeGarbageTime`, `seasonType` | AdvancedGameStat[] | yes | Advanced team metrics by game |
+| GET | `/stats/player/season` | getPlayerSeasonStats | `year`*, `team`, `conference`, `startWeek`, `endWeek`, `seasonType`, `category` | PlayerSeasonStat[] | yes | Player stats by season |
+| GET | `/stats/season` | getTeamSeasonStats | `year`, `team`, `conference`, `startWeek`, `endWeek` | TeamSeasonStat[] | yes | Team statistics by season |
+| GET | `/stats/season/advanced` | getAdvancedTeamSeasonStats | `year`, `team`, `excludeGarbageTime`, `startWeek`, `endWeek` | AdvancedSeasonStat[] | yes | Advanced team metrics by season |
+| GET | `/talent` | getTalent | `year` | TeamTalent[] | yes | Team talent composite rankings |
+| GET | `/teams` | getTeams | `conference` | Team[] | yes | Team information |
+| GET | `/teams/fbs` | getFbsTeams | `year` | Team[] | yes | FBS team list |
+| GET | `/teams/matchup` | getTeamMatchup | `team1`*, `team2`*, `minYear`, `maxYear` | TeamMatchup | yes | Team matchup history |
+| GET | `/venues` | getVenues | — | Venue[] | yes | Arena and venue information |

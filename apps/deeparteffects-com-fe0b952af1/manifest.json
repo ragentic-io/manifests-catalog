@@ -18,6 +18,31 @@
         "from": "deeparteffects-com-fe0b952af1",
         "kind": "EXPOSES",
         "to": "operation:post:/noauth/upload"
+      },
+      {
+        "from": "operation:get:/noauth/result",
+        "kind": "RETURNS",
+        "to": "schema:Result"
+      },
+      {
+        "from": "operation:get:/noauth/styles",
+        "kind": "RETURNS",
+        "to": "schema:Styles"
+      },
+      {
+        "from": "operation:post:/noauth/upload",
+        "kind": "ACCEPTS",
+        "to": "schema:UploadRequest"
+      },
+      {
+        "from": "operation:post:/noauth/upload",
+        "kind": "RETURNS",
+        "to": "schema:UploadResponse"
+      },
+      {
+        "from": "schema:Styles",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
       }
     ],
     "nodes": [
@@ -31,8 +56,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /noauth/result",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "submissionId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/noauth/result",
         "pointer": "#/paths/~1noauth~1result/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Result"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -48,6 +92,13 @@
         "name": "get /noauth/styles",
         "path": "/noauth/styles",
         "pointer": "#/paths/~1noauth~1styles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Styles"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -63,6 +114,24 @@
         "name": "post /noauth/upload",
         "path": "/noauth/upload",
         "pointer": "#/paths/~1noauth~1upload/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UploadRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UploadResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -73,37 +142,44 @@
       {
         "id": "schema:Empty",
         "kind": "schema",
-        "name": "Empty"
+        "name": "Empty",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Result",
         "kind": "schema",
-        "name": "Result"
+        "name": "Result",
+        "type": "object"
       },
       {
         "id": "schema:Style",
         "kind": "schema",
-        "name": "Style"
+        "name": "Style",
+        "type": "object"
       },
       {
         "id": "schema:Styles",
         "kind": "schema",
-        "name": "Styles"
+        "name": "Styles",
+        "type": "object"
       },
       {
         "id": "schema:UploadRequest",
         "kind": "schema",
-        "name": "UploadRequest"
+        "name": "UploadRequest",
+        "type": "object"
       },
       {
         "id": "schema:UploadResponse",
         "kind": "schema",
-        "name": "UploadResponse"
+        "name": "UploadResponse",
+        "type": "object"
       }
     ]
   },

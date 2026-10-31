@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.vectara.com_img_vectara_wo
 
 | | |
 | --- | --- |
-| Signed bundle | `f65b41431b97cf812de90400178dfed4e7c40532324d20169759bfab7cab7f44` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_docs.vectara.com_img_vectara_wo
 
 37 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/create-corpus` | CreateCorpus | — |
-| POST | `/v1/delete-corpus` | DeleteCorpus | — |
-| POST | `/v1/delete-doc` | Delete | — |
-| POST | `/v1/index` | Index | — |
-| POST | `/v1/list-corpora` | ListCorpora | — |
-| POST | `/v1/query` | Query | — |
-| POST | `/v1/reset-corpus` | ResetCorpus | — |
-| POST | `/v1/stream-query` | StreamQuery | — |
-| POST | `/v1/upload` | FileUpload | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/create-corpus` | CreateCorpus | `customer-id`*, body*: adminCreateCorpusRequest | adminCreateCorpusResponse |  | — |
+| POST | `/v1/delete-corpus` | DeleteCorpus | `customer-id`*, body*: adminDeleteCorpusRequest | adminDeleteCorpusResponse |  | — |
+| POST | `/v1/delete-doc` | Delete | `customer-id`*, body*: vectaraDeleteDocumentRequest | vectaraDeleteDocumentResponse |  | — |
+| POST | `/v1/index` | Index | `customer-id`*, body*: vectaraIndexDocumentRequest | vectaraIndexDocumentResponse |  | — |
+| POST | `/v1/list-corpora` | ListCorpora | `customer-id`*, body*: adminListCorporaRequest | adminListCorporaResponse |  | — |
+| POST | `/v1/query` | Query | `customer-id`*, body*: servingBatchQueryRequest | servingBatchQueryResponse |  | — |
+| POST | `/v1/reset-corpus` | ResetCorpus | `customer-id`*, body*: adminResetCorpusRequest | adminResetCorpusResponse |  | — |
+| POST | `/v1/stream-query` | StreamQuery | `customer-id`*, body*: servingBatchQueryRequest | object |  | — |
+| POST | `/v1/upload` | FileUpload | `c`*, `o`*, `d`, body: object | object |  | — |

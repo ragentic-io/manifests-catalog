@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_trashnothing_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `00d464c16bb47cce107d34f4d3c742c35a707500c0f74e4beb811f541ff48db2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,81 +34,83 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_trashnothing_profil
 
 15 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/conversations` | get_conversations | List conversations |
-| PUT | `/conversations/archive-all` | archive_all_conversations | Archive all conversations |
-| PUT | `/conversations/mark-all-read` | mark_all_conversations_read | Mark all conversations as read |
-| GET | `/conversations/search` | search_conversations | Search conversations |
-| DELETE | `/conversations/{conversation_id}` | delete_conversation | Delete conversation |
-| PUT | `/conversations/{conversation_id}/archive` | archive_conversation | Archive conversation |
-| PUT | `/conversations/{conversation_id}/block` | block_conversation | Block conversation |
-| PUT | `/conversations/{conversation_id}/mark-read` | mark_conversation_read | Mark conversation as read |
-| GET | `/conversations/{conversation_id}/messages` | get_conversation_messages | List conversation messages |
-| POST | `/conversations/{conversation_id}/reply` | reply_to_conversation | Reply to conversation |
-| POST | `/conversations/{conversation_id}/report` | report_conversation | Report conversation |
-| PUT | `/conversations/{conversation_id}/unarchive` | unarchive_conversation | Unarchive conversation |
-| PUT | `/conversations/{conversation_id}/unblock` | unblock_conversation | Unblock conversation |
-| POST | `/feedback` | send_feedback | Send feedback |
-| GET | `/groups` | search_groups | Search groups |
-| GET | `/groups/multiple` | get_groups_by_ids | Retrieve multiple groups |
-| POST | `/groups/subscribe` | join_groups | Join groups |
-| GET | `/groups/{group_id}` | get_group | Retrieve a group |
-| POST | `/groups/{group_id}/answers` | submit_answers | Submit group answers |
-| POST | `/groups/{group_id}/contact` | contact_moderators | Contact group moderators |
-| POST | `/groups/{group_id}/unsubscribe` | leave_group | Leave a group |
-| POST | `/photos` | upload_photo | Create a photo |
-| GET | `/photos/multiple` | get_photos_by_ids | Retrieve multiple photos |
-| DELETE | `/photos/{photo_id}` | delete_photo | Delete a photo |
-| POST | `/photos/{photo_id}/rotate` | rotate_photo | Rotate a photo |
-| GET | `/posts` | get_posts | List posts |
-| POST | `/posts` | submit_post | Submit a post |
-| GET | `/posts/all` | get_all_posts | List all posts |
-| GET | `/posts/all/changes` | get_all_posts_changes | List all post changes |
-| GET | `/posts/multiple` | get_posts_by_ids | Retrieve multiple posts |
-| GET | `/posts/search` | search_posts | Search posts |
-| DELETE | `/posts/{post_id}` | delete_post | Delete a post |
-| GET | `/posts/{post_id}` | get_post | Retrieve a post |
-| PUT | `/posts/{post_id}` | update_post | Update a post |
-| DELETE | `/posts/{post_id}/bookmark` | delete_bookmark | Delete a post bookmark |
-| PUT | `/posts/{post_id}/bookmark` | bookmark_post | Bookmark a post |
-| GET | `/posts/{post_id}/display` | get_post_and_related_data | Retrieve post display data |
-| PUT | `/posts/{post_id}/promise` | promise_post | Promise an offer post |
-| POST | `/posts/{post_id}/reply` | reply_to_post | Reply to a post |
-| POST | `/posts/{post_id}/report` | report_post | Report a post |
-| PUT | `/posts/{post_id}/satisfy` | satisfy_post | Satisfy a post |
-| POST | `/posts/{post_id}/share` | share_post | Share a post |
-| PUT | `/posts/{post_id}/unpromise` | unpromise_post | Unpromise an offer post |
-| PUT | `/posts/{post_id}/withdraw` | withdraw_post | Withdraw a post |
-| GET | `/stories` | get_stories | List stories |
-| POST | `/stories` | submit_story | Submit a story |
-| GET | `/stories/{story_id}` | get_story | Retrieve a story |
-| PUT | `/stories/{story_id}/like` | like_story | Like a story |
-| PUT | `/stories/{story_id}/unlike` | unlike_story | Unlike a story |
-| POST | `/stories/{story_id}/viewed` | viewed_story | Record story viewed |
-| GET | `/users/me` | get_current_user | Retrieve current user |
-| PUT | `/users/me` | update_current_user | Update current user |
-| GET | `/users/me/alerts` | get_alerts | List current users' email alerts |
-| PUT | `/users/me/alerts` | create_alert | Create an email alert |
-| DELETE | `/users/me/alerts/{alert_id}` | delete_alert | Delete an email alert |
-| POST | `/users/me/email` | change_email | Change email address |
-| PUT | `/users/me/email/not-bouncing` | set_email_not_bouncing | Set users' email address as not bouncing |
-| GET | `/users/me/groups` | get_current_user_groups | List current users' groups |
-| PUT | `/users/me/location` | update_location | Update location |
-| GET | `/users/me/notices` | get_user_group_notices | List current users' group notices |
-| GET | `/users/me/post-locations` | get_post_locations | List current users' post locations |
-| PUT | `/users/me/post-locations` | save_post_location | Save a post location for the current user |
-| GET | `/users/me/posts` | get_current_user_posts | List current users' posts |
-| GET | `/users/me/posts/search` | search_current_user_posts | Search current users' posts |
-| POST | `/users/me/profile-image` | set_profile_image | Set a profile image |
-| GET | `/users/me/profile-images` | get_profile_images | List current users' profile images |
-| POST | `/users/me/resend-verification` | resend_account_verification_email | Resend account verification email |
-| POST | `/users/me/reset-password` | send_password_reset_email | Send password reset email |
-| POST | `/users/report` | report_user | Report a user |
-| GET | `/users/{user_id}` | get_user | Retrieve a user |
-| GET | `/users/{user_id}/display` | get_user_and_related_data | Retrieve user display info |
-| DELETE | `/users/{user_id}/feedback` | remove_user_feedback | Remove feedback on a user |
-| POST | `/users/{user_id}/feedback` | submit_user_feedback | Submit feedback on a user |
-| GET | `/users/{user_id}/posts` | get_user_posts | List posts by a user |
-| GET | `/users/{user_id}/posts/search` | search_user_posts | Search posts by a user |
-| GET | `/users/{user_id}/profile-image` | get_profile_image_file | Retrieve a users' profile image |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/conversations` | get_conversations | `category`, `page`, `per_page`, `num_messages`, `include_num_unread`, `device_pixel_ratio` | object | yes | List conversations |
+| PUT | `/conversations/archive-all` | archive_all_conversations | body*: object | — |  | Archive all conversations |
+| PUT | `/conversations/mark-all-read` | mark_all_conversations_read | body*: object | — |  | Mark all conversations as read |
+| GET | `/conversations/search` | search_conversations | `search`*, `page`, `per_page`, `device_pixel_ratio` | object | yes | Search conversations |
+| DELETE | `/conversations/{conversation_id}` | delete_conversation | `conversation_id`*, `message_id`* | — |  | Delete conversation |
+| PUT | `/conversations/{conversation_id}/archive` | archive_conversation | `conversation_id`* | — |  | Archive conversation |
+| PUT | `/conversations/{conversation_id}/block` | block_conversation | `conversation_id`* | — |  | Block conversation |
+| PUT | `/conversations/{conversation_id}/mark-read` | mark_conversation_read | `conversation_id`*, body*: object | — |  | Mark conversation as read |
+| GET | `/conversations/{conversation_id}/messages` | get_conversation_messages | `conversation_id`*, `page`, `per_page`, `device_pixel_ratio`, `include_conversation` | object | yes | List conversation messages |
+| POST | `/conversations/{conversation_id}/reply` | reply_to_conversation | `conversation_id`*, body*: object | Message |  | Reply to conversation |
+| POST | `/conversations/{conversation_id}/report` | report_conversation | `conversation_id`*, body*: object | — |  | Report conversation |
+| PUT | `/conversations/{conversation_id}/unarchive` | unarchive_conversation | `conversation_id`* | — |  | Unarchive conversation |
+| PUT | `/conversations/{conversation_id}/unblock` | unblock_conversation | `conversation_id`* | — |  | Unblock conversation |
+| POST | `/feedback` | send_feedback | body*: object | — |  | Send feedback |
+| GET | `/groups` | search_groups | `name`, `latitude`, `longitude`, `distance`, `country`, `region`, `postal_code`, `page`, `per_page` | object | yes | Search groups |
+| GET | `/groups/multiple` | get_groups_by_ids | `group_ids`* | Group[] | yes | Retrieve multiple groups |
+| POST | `/groups/subscribe` | join_groups | body*: object | object |  | Join groups |
+| GET | `/groups/{group_id}` | get_group | `group_id`* | Group | yes | Retrieve a group |
+| POST | `/groups/{group_id}/answers` | submit_answers | `group_id`*, body*: object | Group |  | Submit group answers |
+| POST | `/groups/{group_id}/contact` | contact_moderators | `group_id`*, body*: object | — |  | Contact group moderators |
+| POST | `/groups/{group_id}/unsubscribe` | leave_group | `group_id`* | Group |  | Leave a group |
+| POST | `/photos` | upload_photo | body*: object | PhotoResult |  | Create a photo |
+| GET | `/photos/multiple` | get_photos_by_ids | `photo_ids`*, `device_pixel_ratio` | PhotoResult[] | yes | Retrieve multiple photos |
+| DELETE | `/photos/{photo_id}` | delete_photo | `photo_id`* | — |  | Delete a photo |
+| POST | `/photos/{photo_id}/rotate` | rotate_photo | `photo_id`*, `degrees`*, `device_pixel_ratio` | PhotoResult |  | Rotate a photo |
+| GET | `/posts` | get_posts | `sort_by`, `types`*, `sources`*, `group_ids`, `per_page`, `page`, `device_pixel_ratio`, `latitude`, `longitude`, `radius`, `date_min`, `date_max`, `outcomes`, `user_state`, `include_reposts` | object | yes | List posts |
+| POST | `/posts` | submit_post | body: object | object |  | Submit a post |
+| GET | `/posts/all` | get_all_posts | `types`*, `date_min`*, `date_max`*, `per_page`, `page`, `device_pixel_ratio` | object | yes | List all posts |
+| GET | `/posts/all/changes` | get_all_posts_changes | `date_min`*, `date_max`*, `per_page`, `page` | object | yes | List all post changes |
+| GET | `/posts/multiple` | get_posts_by_ids | `post_ids`* | object | yes | Retrieve multiple posts |
+| GET | `/posts/search` | search_posts | `search`*, `sort_by`, `types`*, `sources`*, `group_ids`, `per_page`, `page`, `device_pixel_ratio`, `latitude`, `longitude`, `radius`, `date_min`, `date_max`, `outcomes`, `user_state`, `include_reposts` | object | yes | Search posts |
+| GET | `/posts/{post_id}` | get_post | `post_id`* | Post | yes | Retrieve a post |
+| PUT | `/posts/{post_id}` | update_post | `post_id`*, body*: object | object |  | Update a post |
+| DELETE | `/posts/{post_id}` | delete_post | `post_id`* | — |  | Delete a post |
+| PUT | `/posts/{post_id}/bookmark` | bookmark_post | `post_id`* | — |  | Bookmark a post |
+| DELETE | `/posts/{post_id}/bookmark` | delete_bookmark | `post_id`* | — |  | Delete a post bookmark |
+| GET | `/posts/{post_id}/display` | get_post_and_related_data | `post_id`* | object | yes | Retrieve post display data |
+| PUT | `/posts/{post_id}/promise` | promise_post | `post_id`* | Post |  | Promise an offer post |
+| POST | `/posts/{post_id}/reply` | reply_to_post | `post_id`*, body*: object | — |  | Reply to a post |
+| POST | `/posts/{post_id}/report` | report_post | `post_id`*, body*: object | — |  | Report a post |
+| PUT | `/posts/{post_id}/satisfy` | satisfy_post | `post_id`* | Post |  | Satisfy a post |
+| POST | `/posts/{post_id}/share` | share_post | `post_id`* | — |  | Share a post |
+| PUT | `/posts/{post_id}/unpromise` | unpromise_post | `post_id`* | Post |  | Unpromise an offer post |
+| PUT | `/posts/{post_id}/withdraw` | withdraw_post | `post_id`* | Post |  | Withdraw a post |
+| GET | `/stories` | get_stories | `page`, `per_page`, `sort_by`, `latitude`, `longitude`, `device_pixel_ratio` | object | yes | List stories |
+| POST | `/stories` | submit_story | body*: object | Story |  | Submit a story |
+| GET | `/stories/{story_id}` | get_story | `story_id`*, `device_pixel_ratio` | Story | yes | Retrieve a story |
+| PUT | `/stories/{story_id}/like` | like_story | `story_id`*, `device_pixel_ratio` | Story |  | Like a story |
+| PUT | `/stories/{story_id}/unlike` | unlike_story | `story_id`*, `device_pixel_ratio` | Story |  | Unlike a story |
+| POST | `/stories/{story_id}/viewed` | viewed_story | `story_id`* | — |  | Record story viewed |
+| GET | `/users/me` | get_current_user | — | CurrentUser | yes | Retrieve current user |
+| PUT | `/users/me` | update_current_user | body: object | CurrentUser |  | Update current user |
+| GET | `/users/me/alerts` | get_alerts | — | Alert[] | yes | List current users' email alerts |
+| PUT | `/users/me/alerts` | create_alert | body*: object | Alert |  | Create an email alert |
+| DELETE | `/users/me/alerts/{alert_id}` | delete_alert | `alert_id`* | — |  | Delete an email alert |
+| POST | `/users/me/email` | change_email | body*: object | — |  | Change email address |
+| PUT | `/users/me/email/not-bouncing` | set_email_not_bouncing | — | CurrentUser |  | Set users' email address as not bouncing |
+| GET | `/users/me/groups` | get_current_user_groups | `membership` | Group[] | yes | List current users' groups |
+| PUT | `/users/me/location` | update_location | body*: object | CurrentUser |  | Update location |
+| GET | `/users/me/notices` | get_user_group_notices | `group_ids` | GroupNotice[] | yes | List current users' group notices |
+| GET | `/users/me/post-locations` | get_post_locations | — | object[] | yes | List current users' post locations |
+| PUT | `/users/me/post-locations` | save_post_location | body*: object | object[] |  | Save a post location for the current user |
+| GET | `/users/me/posts` | get_current_user_posts | `sort_by`, `types`*, `sources`*, `group_ids`, `per_page`, `page`, `device_pixel_ratio`, `latitude`, `longitude`, `radius`, `date_min`, `date_max`, `outcomes`, `user_state`, `include_reposts` | object | yes | List current users' posts |
+| GET | `/users/me/posts/search` | search_current_user_posts | `search`*, `sort_by`, `types`*, `sources`*, `group_ids`, `per_page`, `page`, `device_pixel_ratio`, `latitude`, `longitude`, `radius`, `date_min`, `date_max`, `outcomes`, `user_state`, `include_reposts` | object | yes | Search current users' posts |
+| POST | `/users/me/profile-image` | set_profile_image | body: object | object |  | Set a profile image |
+| GET | `/users/me/profile-images` | get_profile_images | — | object[] | yes | List current users' profile images |
+| POST | `/users/me/resend-verification` | resend_account_verification_email | — | — |  | Resend account verification email |
+| POST | `/users/me/reset-password` | send_password_reset_email | — | — |  | Send password reset email |
+| POST | `/users/report` | report_user | body: object | — |  | Report a user |
+| GET | `/users/{user_id}` | get_user | `user_id`* | User | yes | Retrieve a user |
+| GET | `/users/{user_id}/display` | get_user_and_related_data | `user_id`* | object | yes | Retrieve user display info |
+| POST | `/users/{user_id}/feedback` | submit_user_feedback | `user_id`*, body*: object | object |  | Submit feedback on a user |
+| DELETE | `/users/{user_id}/feedback` | remove_user_feedback | `user_id`* | object |  | Remove feedback on a user |
+| GET | `/users/{user_id}/posts` | get_user_posts | `user_id`*, `sort_by`, `types`*, `sources`*, `group_ids`, `per_page`, `page`, `device_pixel_ratio`, `latitude`, `longitude`, `radius`, `date_min`, `date_max`, `outcomes`, `include_reposts` | object | yes | List posts by a user |
+| GET | `/users/{user_id}/posts/search` | search_user_posts | `user_id`*, `search`*, `sort_by`, `types`*, `sources`*, `group_ids`, `per_page`, `page`, `device_pixel_ratio`, `latitude`, `longitude`, `radius`, `date_min`, `date_max`, `outcomes`, `include_reposts` | object | yes | Search posts by a user |
+| GET | `/users/{user_id}/profile-image` | get_profile_image_file | `user_id`*, `default` | — | yes | Retrieve a users' profile image |

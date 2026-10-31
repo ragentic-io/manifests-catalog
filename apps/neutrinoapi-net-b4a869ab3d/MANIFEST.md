@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.neutrinoapi.com_img_NEUTRIN
 
 | | |
 | --- | --- |
-| Signed bundle | `515770542c58123e50dc2b026a7458ababc6959b5ef1ea6b90053e5b163206b4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,32 +34,34 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.neutrinoapi.com_img_NEUTRIN
 
 25 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/bad-word-filter` | BadWordFilter | Bad Word Filter |
-| GET | `/bin-list-download` | BINListDownload | BIN List Download |
-| GET | `/bin-lookup` | BINLookup | BIN Lookup |
-| POST | `/browser-bot` | BrowserBot | Browser Bot |
-| GET | `/convert` | Convert | Convert |
-| GET | `/email-validate` | EmailValidate | Email Validate |
-| GET | `/email-verify` | EmailVerify | Email Verify |
-| GET | `/geocode-address` | GeocodeAddress | Geocode Address |
-| GET | `/geocode-reverse` | GeocodeReverse | Geocode Reverse |
-| GET | `/hlr-lookup` | HLRLookup | HLR Lookup |
-| GET | `/host-reputation` | HostReputation | Host Reputation |
-| POST | `/html-clean` | HTMLClean | HTML Clean |
-| POST | `/html-render` | HTMLRender | HTML Render |
-| POST | `/image-resize` | ImageResize | Image Resize |
-| POST | `/image-watermark` | ImageWatermark | Image Watermark |
-| GET | `/ip-blocklist` | IPBlocklist | IP Blocklist |
-| GET | `/ip-blocklist-download` | IPBlocklistDownload | IP Blocklist Download |
-| GET | `/ip-info` | IPInfo | IP Info |
-| GET | `/ip-probe` | IPProbe | IP Probe |
-| POST | `/phone-playback` | PhonePlayback | Phone Playback |
-| GET | `/phone-validate` | PhoneValidate | Phone Validate |
-| POST | `/phone-verify` | PhoneVerify | Phone Verify |
-| POST | `/qr-code` | QRCode | QR Code |
-| POST | `/sms-verify` | SMSVerify | SMS Verify |
-| GET | `/ua-lookup` | UALookup | UA Lookup |
-| GET | `/url-info` | URLInfo | URL Info |
-| GET | `/verify-security-code` | VerifySecurityCode | Verify Security Code |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/bad-word-filter` | BadWordFilter | body*: object | BadWordFilterResponse |  | Bad Word Filter |
+| GET | `/bin-list-download` | BINListDownload | `include-iso3`, `include-8digit` | string:binary | yes | BIN List Download |
+| GET | `/bin-lookup` | BINLookup | `bin-number`*, `customer-ip` | BINLookupResponse | yes | BIN Lookup |
+| POST | `/browser-bot` | BrowserBot | body*: object | BrowserBotResponse |  | Browser Bot |
+| GET | `/convert` | Convert | `from-value`*, `from-type`*, `to-type`* | ConvertResponse | yes | Convert |
+| GET | `/email-validate` | EmailValidate | `email`*, `fix-typos` | EmailValidateResponse | yes | Email Validate |
+| GET | `/email-verify` | EmailVerify | `email`*, `fix-typos` | EmailVerifyResponse | yes | Email Verify |
+| GET | `/geocode-address` | GeocodeAddress | `address`, `house-number`, `street`, `city`, `county`, `state`, `postal-code`, `country-code`, `language-code`, `fuzzy-search` | GeocodeAddressResponse | yes | Geocode Address |
+| GET | `/geocode-reverse` | GeocodeReverse | `latitude`*, `longitude`*, `language-code`, `zoom` | GeocodeReverseResponse | yes | Geocode Reverse |
+| GET | `/hlr-lookup` | HLRLookup | `number`*, `country-code` | HLRLookupResponse | yes | HLR Lookup |
+| GET | `/host-reputation` | HostReputation | `host`*, `list-rating`, `zones` | HostReputationResponse | yes | Host Reputation |
+| POST | `/html-clean` | HTMLClean | body*: object | string:binary |  | HTML Clean |
+| POST | `/html-render` | HTMLRender | body*: object | string:binary |  | HTML Render |
+| POST | `/image-resize` | ImageResize | body*: object | string:binary |  | Image Resize |
+| POST | `/image-watermark` | ImageWatermark | body*: object | string:binary |  | Image Watermark |
+| GET | `/ip-blocklist` | IPBlocklist | `ip`*, `vpn-lookup` | IPBlocklistResponse | yes | IP Blocklist |
+| GET | `/ip-blocklist-download` | IPBlocklistDownload | `format`, `include-vpn`, `cidr`, `ip6` | string:binary | yes | IP Blocklist Download |
+| GET | `/ip-info` | IPInfo | `ip`*, `reverse-lookup` | IPInfoResponse | yes | IP Info |
+| GET | `/ip-probe` | IPProbe | `ip`* | IPProbeResponse | yes | IP Probe |
+| POST | `/phone-playback` | PhonePlayback | body*: object | PhonePlaybackResponse |  | Phone Playback |
+| GET | `/phone-validate` | PhoneValidate | `number`*, `country-code`, `ip` | PhoneValidateResponse | yes | Phone Validate |
+| POST | `/phone-verify` | PhoneVerify | body*: object | PhoneVerifyResponse |  | Phone Verify |
+| POST | `/qr-code` | QRCode | body*: object | string:binary |  | QR Code |
+| POST | `/sms-verify` | SMSVerify | body*: object | SMSVerifyResponse |  | SMS Verify |
+| GET | `/ua-lookup` | UALookup | `ua`*, `ua-version`, `ua-platform`, `ua-platform-version`, `ua-mobile`, `device-model`, `device-brand` | UALookupResponse | yes | UA Lookup |
+| GET | `/url-info` | URLInfo | `url`*, `fetch-content`, `ignore-certificate-errors`, `timeout`, `retry` | URLInfoResponse | yes | URL Info |
+| GET | `/verify-security-code` | VerifySecurityCode | `security-code`*, `limit-by` | VerifySecurityCodeResponse | yes | Verify Security Code |

@@ -157,12 +157,12 @@
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}"
+        "to": "operation:get:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:get:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}"
+        "to": "operation:delete:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
@@ -197,17 +197,17 @@
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}"
-      },
-      {
-        "from": "gamesparks-net-game-details-c877dd97b6",
-        "kind": "EXPOSES",
         "to": "operation:get:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
         "to": "operation:put:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}"
+      },
+      {
+        "from": "gamesparks-net-game-details-c877dd97b6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
@@ -232,17 +232,17 @@
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/restv2/game/{apiKey}/manage/experiments/{id}"
-      },
-      {
-        "from": "gamesparks-net-game-details-c877dd97b6",
-        "kind": "EXPOSES",
         "to": "operation:get:/restv2/game/{apiKey}/manage/experiments/{id}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
         "to": "operation:put:/restv2/game/{apiKey}/manage/experiments/{id}"
+      },
+      {
+        "from": "gamesparks-net-game-details-c877dd97b6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/restv2/game/{apiKey}/manage/experiments/{id}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
@@ -262,17 +262,17 @@
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/restv2/game/{apiKey}/manage/queries/{shortCode}"
-      },
-      {
-        "from": "gamesparks-net-game-details-c877dd97b6",
-        "kind": "EXPOSES",
         "to": "operation:get:/restv2/game/{apiKey}/manage/queries/{shortCode}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
         "to": "operation:put:/restv2/game/{apiKey}/manage/queries/{shortCode}"
+      },
+      {
+        "from": "gamesparks-net-game-details-c877dd97b6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/restv2/game/{apiKey}/manage/queries/{shortCode}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
@@ -292,17 +292,17 @@
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/restv2/game/{apiKey}/manage/screens/{shortCode}"
-      },
-      {
-        "from": "gamesparks-net-game-details-c877dd97b6",
-        "kind": "EXPOSES",
         "to": "operation:get:/restv2/game/{apiKey}/manage/screens/{shortCode}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
         "to": "operation:put:/restv2/game/{apiKey}/manage/screens/{shortCode}"
+      },
+      {
+        "from": "gamesparks-net-game-details-c877dd97b6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/restv2/game/{apiKey}/manage/screens/{shortCode}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
@@ -347,17 +347,17 @@
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/restv2/game/{apiKey}/manage/snippets/{shortCode}"
-      },
-      {
-        "from": "gamesparks-net-game-details-c877dd97b6",
-        "kind": "EXPOSES",
         "to": "operation:get:/restv2/game/{apiKey}/manage/snippets/{shortCode}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
         "to": "operation:put:/restv2/game/{apiKey}/manage/snippets/{shortCode}"
+      },
+      {
+        "from": "gamesparks-net-game-details-c877dd97b6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/restv2/game/{apiKey}/manage/snippets/{shortCode}"
       },
       {
         "from": "gamesparks-net-game-details-c877dd97b6",
@@ -383,6 +383,521 @@
         "from": "gamesparks-net-game-details-c877dd97b6",
         "kind": "EXPOSES",
         "to": "operation:get:/restv2/games/deleted"
+      },
+      {
+        "from": "operation:get:/restv2/game/regions",
+        "kind": "RETURNS",
+        "to": "schema:GameRegionOptionsDTO"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/analytics",
+        "kind": "RETURNS",
+        "to": "schema:AnalyticsDataSwaggerModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/analytics/count",
+        "kind": "RETURNS",
+        "to": "schema:AnalyticsDataCountSwaggerModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/analytics/rollingRetention",
+        "kind": "RETURNS",
+        "to": "schema:AnalyticsDataCountSwaggerModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/billingDetails",
+        "kind": "RETURNS",
+        "to": "schema:BillingDetailsModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/admin/billingDetails",
+        "kind": "ACCEPTS",
+        "to": "schema:BillingDetailsModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/admin/billingDetails",
+        "kind": "RETURNS",
+        "to": "schema:BillingDetailsModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/notifications/summary",
+        "kind": "RETURNS",
+        "to": "schema:GameSummaryModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/amazon",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/amazon",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/apple/development",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/apple/development",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/apple/production",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/apple/production",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/google",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/google",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windows8",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windows8",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windowsPhone8",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windowsPhone8",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/viber/integration",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/viber/integration",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/viber/production",
+        "kind": "ACCEPTS",
+        "to": "schema:PushNotificationTestModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/pushNotifications/test/viber/production",
+        "kind": "RETURNS",
+        "to": "schema:PushNotificationTestSummaryListModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/scripts/differences/{snapshotId1}/{snapshotId2}",
+        "kind": "RETURNS",
+        "to": "schema:ScriptsDifferenceListModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/scripts/import/accept",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/scripts/import/preview",
+        "kind": "RETURNS",
+        "to": "schema:ScriptsDifferenceListModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/scripts/versions",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotScriptVersionListModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/scripts/versions/{page}",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotScriptVersionListModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/segmentQueryFilters",
+        "kind": "RETURNS",
+        "to": "schema:SegmentQueryFilterListModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/segmentQueryFilters/config",
+        "kind": "RETURNS",
+        "to": "schema:SegmentQueryFilterConfigModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/admin/segmentQueryFilters/config",
+        "kind": "ACCEPTS",
+        "to": "schema:SegmentQueryFilterConfigModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/admin/segmentQueryFilters/config",
+        "kind": "RETURNS",
+        "to": "schema:SegmentQueryFilterConfigModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/segmentQueryFilters/standardFilters",
+        "kind": "RETURNS",
+        "to": "schema:SegmentQueryFilterListModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/snapshots",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/snapshots",
+        "kind": "ACCEPTS",
+        "to": "schema:SnapshotCreationModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/snapshots",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/snapshots/liveSnapshotId",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/snapshots/page/{page}",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/snapshots/revert/to/{snapshotId}",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotModel"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotCreationSuccessModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy/to/{targetApiKey}",
+        "kind": "RETURNS",
+        "to": "schema:SnapshotCreationSuccessModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/unpublish",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/testHarness/scenarios",
+        "kind": "RETURNS",
+        "to": "schema:TestHarnessScenarioModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/testHarness/scenarios",
+        "kind": "ACCEPTS",
+        "to": "schema:TestHarnessScenarioModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/admin/testHarness/scenarios",
+        "kind": "RETURNS",
+        "to": "schema:TestHarnessScenarioModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
+        "kind": "RETURNS",
+        "to": "schema:TestHarnessScenarioModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
+        "kind": "ACCEPTS",
+        "to": "schema:TestHarnessScenarioModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
+        "kind": "RETURNS",
+        "to": "schema:TestHarnessScenarioModel"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/endpoints",
+        "kind": "RETURNS",
+        "to": "schema:GameEndpointsModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/experiments",
+        "kind": "RETURNS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/experiments",
+        "kind": "ACCEPTS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/experiments",
+        "kind": "RETURNS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/experiments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/experiments/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/experiments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/manage/experiments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/experiments/{id}/{action}",
+        "kind": "RETURNS",
+        "to": "schema:ExperimentModel"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/queries",
+        "kind": "RETURNS",
+        "to": "schema:ManageItemSummary"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/queries",
+        "kind": "ACCEPTS",
+        "to": "schema:ManageQuery"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/queries",
+        "kind": "RETURNS",
+        "to": "schema:ManageQuery"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/queries/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageQuery"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/queries/{shortCode}",
+        "kind": "ACCEPTS",
+        "to": "schema:ManageQuery"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/queries/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageQuery"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/manage/queries/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/screens",
+        "kind": "RETURNS",
+        "to": "schema:ManageItemSummary"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/screens",
+        "kind": "ACCEPTS",
+        "to": "schema:ManageScreen"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/screens",
+        "kind": "RETURNS",
+        "to": "schema:ManageScreen"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/screens/executable",
+        "kind": "RETURNS",
+        "to": "schema:ManageItemSummary"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/screens/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageScreen"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/screens/{shortCode}",
+        "kind": "ACCEPTS",
+        "to": "schema:ManageScreen"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/screens/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageScreen"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/manage/screens/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/snapshots",
+        "kind": "RETURNS",
+        "to": "schema:ManageSnapshot"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snapshots",
+        "kind": "ACCEPTS",
+        "to": "schema:SnapshotCreationModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snapshots",
+        "kind": "RETURNS",
+        "to": "schema:ManageSnapshot"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/manage/snapshots/{snapshotId}",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/copy/to/{targetApiKey}",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/publish",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/revert",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/snippets",
+        "kind": "RETURNS",
+        "to": "schema:ManageItemSummary"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snippets",
+        "kind": "ACCEPTS",
+        "to": "schema:ManageSnippet"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/manage/snippets",
+        "kind": "RETURNS",
+        "to": "schema:ManageSnippet"
+      },
+      {
+        "from": "operation:get:/restv2/game/{apiKey}/manage/snippets/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageSnippet"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/snippets/{shortCode}",
+        "kind": "ACCEPTS",
+        "to": "schema:ManageSnippet"
+      },
+      {
+        "from": "operation:put:/restv2/game/{apiKey}/manage/snippets/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageSnippet"
+      },
+      {
+        "from": "operation:delete:/restv2/game/{apiKey}/manage/snippets/{shortCode}",
+        "kind": "RETURNS",
+        "to": "schema:ManageResult"
+      },
+      {
+        "from": "operation:post:/restv2/game/{apiKey}/restore",
+        "kind": "RETURNS",
+        "to": "schema:MessageModel"
+      },
+      {
+        "from": "operation:post:/restv2/game/{gameApiKey}/region/{regionCode}",
+        "kind": "RETURNS",
+        "to": "schema:RegionResult"
+      },
+      {
+        "from": "operation:get:/restv2/game/{gameApiKey}/regions",
+        "kind": "RETURNS",
+        "to": "schema:GameRegionOptionsDTO"
+      },
+      {
+        "from": "operation:get:/restv2/games",
+        "kind": "RETURNS",
+        "to": "schema:GameModel"
+      },
+      {
+        "from": "operation:get:/restv2/games/deleted",
+        "kind": "RETURNS",
+        "to": "schema:DeletedGameModel"
+      },
+      {
+        "from": "schema:ExperimentModel",
+        "kind": "REFERENCES",
+        "to": "schema:ExperimentConfigModel"
+      },
+      {
+        "from": "schema:GameRegionOptionsDTO",
+        "kind": "REFERENCES",
+        "to": "schema:GameRegionOptionDTO"
+      },
+      {
+        "from": "schema:GameSummaryModel",
+        "kind": "REFERENCES",
+        "to": "schema:LogLevelSummaryModel"
+      },
+      {
+        "from": "schema:PushNotificationTestSummaryListModel",
+        "kind": "REFERENCES",
+        "to": "schema:PushNotificationTestSummaryModel"
+      },
+      {
+        "from": "schema:ScriptsDifferenceListModel",
+        "kind": "REFERENCES",
+        "to": "schema:ScriptsDifferenceModel"
+      },
+      {
+        "from": "schema:SegmentQueryFilterConfigModel",
+        "kind": "REFERENCES",
+        "to": "schema:SegmentQueryFilterModel"
+      },
+      {
+        "from": "schema:SegmentQueryFilterListModel",
+        "kind": "REFERENCES",
+        "to": "schema:SegmentQueryFilterModel"
+      },
+      {
+        "from": "schema:SnapshotScriptVersionListModel",
+        "kind": "REFERENCES",
+        "to": "schema:SnapshotScriptVersionModel"
       }
     ],
     "nodes": [
@@ -398,8 +913,28 @@
         "name": "getRegionOptionsUsingGET",
         "path": "/restv2/game/regions",
         "pointer": "#/paths/~1restv2~1game~1regions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameRegionOptionsDTO"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getRegionOptions"
+        "summary": "getRegionOptions",
+        "tags": [
+          "region"
+        ]
       },
       {
         "deprecated": false,
@@ -407,10 +942,109 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnalyticsDataUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "stage",
+            "enum": [
+              "LIVE",
+              "PREVIEW"
+            ],
+            "in": "query",
+            "name": "stage",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dataType",
+            "enum": [
+              "activeDevices",
+              "activeLocations",
+              "activeUsers",
+              "averageBandwidthPerUser",
+              "averageDauOverMau",
+              "averageJsExecutionTime",
+              "averageRequestsPerUser",
+              "averageResponseTime",
+              "averageResponseTimePerType",
+              "scriptLogLevelsCount",
+              "sessionAnalytic",
+              "storagePerUser",
+              "customAnalyticTotal",
+              "customAnalyticUser",
+              "timedAnalyticTotal",
+              "sessionAnalyticTotal",
+              "connectedUsers"
+            ],
+            "in": "query",
+            "name": "dataType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "precision",
+            "enum": [
+              "HOURLY",
+              "DAILY",
+              "MONTHLY"
+            ],
+            "in": "query",
+            "name": "precision",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "yyyy-MM-dd",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "yyyy-MM-dd",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "the keys to select.",
+            "in": "query",
+            "name": "keys",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/analytics",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1analytics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AnalyticsDataSwaggerModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the results of executed query defined by the parameters passed in"
+        "summary": "Returns the results of executed query defined by the parameters passed in",
+        "tags": [
+          "analytics"
+        ]
       },
       {
         "deprecated": false,
@@ -418,10 +1052,65 @@
         "kind": "operation",
         "method": "get",
         "name": "getDataCountUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "stage",
+            "enum": [
+              "LIVE",
+              "PREVIEW"
+            ],
+            "in": "query",
+            "name": "stage",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "queryName",
+            "enum": [
+              "activeUsersNow",
+              "dailyActiveUsers",
+              "averageDailyActiveUsers",
+              "lastMonthlyActiveUsers",
+              "monthlyActiveUsers",
+              "averageSessionDuration"
+            ],
+            "in": "query",
+            "name": "queryName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/analytics/count",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1analytics~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AnalyticsDataCountSwaggerModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the count of executed query"
+        "summary": "Returns the count of executed query",
+        "tags": [
+          "analytics"
+        ]
       },
       {
         "deprecated": false,
@@ -429,32 +1118,139 @@
         "kind": "operation",
         "method": "get",
         "name": "getRetentionUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "stage",
+            "enum": [
+              "LIVE",
+              "PREVIEW"
+            ],
+            "in": "query",
+            "name": "stage",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/analytics/rollingRetention",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1analytics~1rollingRetention/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AnalyticsDataCountSwaggerModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the percentage of user retention over the last 30 days"
+        "summary": "Returns the percentage of user retention over the last 30 days",
+        "tags": [
+          "analytics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the Billing Details.",
         "id": "operation:get:/restv2/game/{apiKey}/admin/billingDetails",
         "kind": "operation",
         "method": "get",
         "name": "getBillingDetails",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/billingDetails",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1billingDetails/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillingDetailsModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves the Billing Details"
+        "summary": "Retrieves the Billing Details",
+        "tags": [
+          "billingDetails"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the Billing Details.",
         "id": "operation:put:/restv2/game/{apiKey}/admin/billingDetails",
         "kind": "operation",
         "method": "put",
         "name": "putBillingDetails",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/billingDetails",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1billingDetails/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BillingDetailsModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillingDetailsModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates the Billing Details"
+        "summary": "Updates the Billing Details",
+        "tags": [
+          "billingDetails"
+        ]
       },
       {
         "deprecated": false,
@@ -462,10 +1258,64 @@
         "kind": "operation",
         "method": "get",
         "name": "getGameSummaryUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "stage",
+            "enum": [
+              "LIVE",
+              "PREVIEW"
+            ],
+            "in": "query",
+            "name": "stage",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "yyyy-MM-dd",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "yyyy-MM-dd",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/notifications/summary",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1notifications~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameSummaryModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getGameSummary"
+        "summary": "getGameSummary",
+        "tags": [
+          "notifications"
+        ]
       },
       {
         "deprecated": false,
@@ -473,10 +1323,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testPushAmazonNotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/amazon",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1amazon/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testPushAmazonNotifications"
+        "summary": "testPushAmazonNotifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -484,10 +1370,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testPushAppleDevNotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/apple/development",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1apple~1development/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testPushAppleDevNotifications"
+        "summary": "testPushAppleDevNotifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -495,10 +1417,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testPushAppleProdNotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/apple/production",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1apple~1production/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testPushAppleProdNotifications"
+        "summary": "testPushAppleProdNotifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -506,10 +1464,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testPushGoogleNotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/google",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1google/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testPushGoogleNotifications"
+        "summary": "testPushGoogleNotifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -517,10 +1511,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testWindows8NotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windows8",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1microsoft~1windows8/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testWindows8Notifications"
+        "summary": "testWindows8Notifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -528,10 +1558,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testWindowsPhone8NotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windowsPhone8",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1microsoft~1windowsPhone8/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testWindowsPhone8Notifications"
+        "summary": "testWindowsPhone8Notifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -539,10 +1605,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testViberIntegrationNotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/viber/integration",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1viber~1integration/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testViberIntegrationNotifications"
+        "summary": "testViberIntegrationNotifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -550,10 +1652,46 @@
         "kind": "operation",
         "method": "post",
         "name": "testViberProductionNotificationsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/pushNotifications/test/viber/production",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1pushNotifications~1test~1viber~1production/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PushNotificationTestModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushNotificationTestSummaryListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "testViberProductionNotifications"
+        "summary": "testViberProductionNotifications",
+        "tags": [
+          "pushNotificationTest"
+        ]
       },
       {
         "deprecated": false,
@@ -561,10 +1699,53 @@
         "kind": "operation",
         "method": "get",
         "name": "getScriptDifferencesUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId1",
+            "in": "path",
+            "name": "snapshotId1",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId2",
+            "in": "path",
+            "name": "snapshotId2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/scripts/differences/{snapshotId1}/{snapshotId2}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1scripts~1differences~1{snapshotId1}~1{snapshotId2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScriptsDifferenceListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getScriptDifferences"
+        "summary": "getScriptDifferences",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -572,10 +1753,38 @@
         "kind": "operation",
         "method": "get",
         "name": "exportZipUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/scripts/export",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1scripts~1export/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "exportZip"
+        "summary": "exportZip",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -583,10 +1792,53 @@
         "kind": "operation",
         "method": "post",
         "name": "importAcceptUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "body",
+            "in": "query",
+            "name": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/scripts/import/accept",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1scripts~1import~1accept/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "importAccept"
+        "summary": "importAccept",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -594,10 +1846,46 @@
         "kind": "operation",
         "method": "post",
         "name": "importZipUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/scripts/import/preview",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1scripts~1import~1preview/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScriptsDifferenceListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "importZip"
+        "summary": "importZip",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -605,10 +1893,47 @@
         "kind": "operation",
         "method": "get",
         "name": "getScriptVersionsUsingGET_1",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "pageSize",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/scripts/versions",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1scripts~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotScriptVersionListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getScriptVersions"
+        "summary": "getScriptVersions",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -616,10 +1941,54 @@
         "kind": "operation",
         "method": "get",
         "name": "getScriptVersionsUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "page",
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "pageSize",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/scripts/versions/{page}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1scripts~1versions~1{page}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotScriptVersionListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getScriptVersions"
+        "summary": "getScriptVersions",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -627,10 +1996,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getSegmentQueryFiltersUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/segmentQueryFilters",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1segmentQueryFilters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentQueryFilterListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSegmentQueryFilters"
+        "summary": "getSegmentQueryFilters",
+        "tags": [
+          "segmentQueryFilters"
+        ]
       },
       {
         "deprecated": false,
@@ -638,10 +2036,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getSegmentQueryFiltersConfigUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/segmentQueryFilters/config",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1segmentQueryFilters~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentQueryFilterConfigModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSegmentQueryFiltersConfig"
+        "summary": "getSegmentQueryFiltersConfig",
+        "tags": [
+          "segmentQueryFilters"
+        ]
       },
       {
         "deprecated": false,
@@ -649,10 +2076,46 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSegmentQueryFiltersConfigUsingPUT",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/segmentQueryFilters/config",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1segmentQueryFilters~1config/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SegmentQueryFilterConfigModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentQueryFilterConfigModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateSegmentQueryFiltersConfig"
+        "summary": "updateSegmentQueryFiltersConfig",
+        "tags": [
+          "segmentQueryFilters"
+        ]
       },
       {
         "deprecated": false,
@@ -660,10 +2123,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getSegmentQueryStandardFiltersUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/segmentQueryFilters/standardFilters",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1segmentQueryFilters~1standardFilters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentQueryFilterListModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSegmentQueryStandardFilters"
+        "summary": "getSegmentQueryStandardFilters",
+        "tags": [
+          "segmentQueryFilters"
+        ]
       },
       {
         "deprecated": false,
@@ -671,10 +2163,47 @@
         "kind": "operation",
         "method": "get",
         "name": "getSnapshotsUsingGET_1",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "pageSize",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSnapshots"
+        "summary": "getSnapshots",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -682,10 +2211,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createSnapshotsUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SnapshotCreationModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SnapshotModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createSnapshots"
+        "summary": "createSnapshots",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -693,10 +2258,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getLiveSnapshotIdUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/liveSnapshotId",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1liveSnapshotId/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getLiveSnapshotId"
+        "summary": "getLiveSnapshotId",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -704,10 +2298,54 @@
         "kind": "operation",
         "method": "get",
         "name": "getSnapshotsUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "page",
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": 20,
+            "description": "pageSize",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/page/{page}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1page~1{page}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSnapshots"
+        "summary": "getSnapshots",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -715,21 +2353,46 @@
         "kind": "operation",
         "method": "post",
         "name": "revertToSnapshotUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/revert/to/{snapshotId}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1revert~1to~1{snapshotId}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "revertToSnapshot"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSnapshotUsingDELETE_1",
-        "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
-        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}/delete",
-        "security": [],
-        "summary": "deleteSnapshot"
+        "summary": "revertToSnapshot",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -737,10 +2400,93 @@
         "kind": "operation",
         "method": "get",
         "name": "getSnapshotUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSnapshot"
+        "summary": "getSnapshot",
+        "tags": [
+          "snapshots"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSnapshotUsingDELETE_1",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}",
+        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteSnapshot",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -748,10 +2494,78 @@
         "kind": "operation",
         "method": "post",
         "name": "copySnapshotToNewGameUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "includeGameConfig",
+            "in": "query",
+            "name": "includeGameConfig",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "includeMetadata",
+            "in": "query",
+            "name": "includeMetadata",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "includeBinaries",
+            "in": "query",
+            "name": "includeBinaries",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "includeCollaborators",
+            "in": "query",
+            "name": "includeCollaborators",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}~1copy/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotCreationSuccessModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "copySnapshotToNewGame"
+        "summary": "copySnapshotToNewGame",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -759,10 +2573,85 @@
         "kind": "operation",
         "method": "post",
         "name": "copySnapshotToExistingGameUsingPOST_1",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "targetApiKey",
+            "in": "path",
+            "name": "targetApiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "includeGameConfig",
+            "in": "query",
+            "name": "includeGameConfig",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "includeMetadata",
+            "in": "query",
+            "name": "includeMetadata",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "includeBinaries",
+            "in": "query",
+            "name": "includeBinaries",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "includeCollaborators",
+            "in": "query",
+            "name": "includeCollaborators",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy/to/{targetApiKey}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}~1copy~1to~1{targetApiKey}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnapshotCreationSuccessModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "copySnapshotToExistingGame"
+        "summary": "copySnapshotToExistingGame",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -770,10 +2659,45 @@
         "kind": "operation",
         "method": "post",
         "name": "publishSnapshotUsingPOST_1",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/publish",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}~1publish/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "publishSnapshot"
+        "summary": "publishSnapshot",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -781,10 +2705,46 @@
         "kind": "operation",
         "method": "post",
         "name": "unpublishSnapshotUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/unpublish",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1snapshots~1{snapshotId}~1unpublish/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "unpublishSnapshot"
+        "summary": "unpublishSnapshot",
+        "tags": [
+          "snapshots"
+        ]
       },
       {
         "deprecated": false,
@@ -792,10 +2752,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getTestHarnessScenariosUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/testHarness/scenarios",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1testHarness~1scenarios/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestHarnessScenarioModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getTestHarnessScenarios"
+        "summary": "getTestHarnessScenarios",
+        "tags": [
+          "testHarness"
+        ]
       },
       {
         "deprecated": false,
@@ -803,21 +2792,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createTestHarnessScenarioUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/testHarness/scenarios",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1testHarness~1scenarios/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestHarnessScenarioModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "TestHarnessScenarioModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createTestHarnessScenario"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTestHarnessScenarioUsingDELETE",
-        "path": "/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
-        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1testHarness~1scenarios~1{scenarioName}/delete",
-        "security": [],
-        "summary": "deleteTestHarnessScenario"
+        "summary": "createTestHarnessScenario",
+        "tags": [
+          "testHarness"
+        ]
       },
       {
         "deprecated": false,
@@ -825,10 +2839,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getTestHarnessScenarioUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "scenarioName",
+            "in": "path",
+            "name": "scenarioName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1testHarness~1scenarios~1{scenarioName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestHarnessScenarioModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getTestHarnessScenario"
+        "summary": "getTestHarnessScenario",
+        "tags": [
+          "testHarness"
+        ]
       },
       {
         "deprecated": false,
@@ -836,10 +2886,100 @@
         "kind": "operation",
         "method": "put",
         "name": "updateTestHarnessScenarioUsingPUT",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "scenarioName",
+            "in": "path",
+            "name": "scenarioName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1testHarness~1scenarios~1{scenarioName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TestHarnessScenarioModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestHarnessScenarioModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateTestHarnessScenario"
+        "summary": "updateTestHarnessScenario",
+        "tags": [
+          "testHarness"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTestHarnessScenarioUsingDELETE",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "scenarioName",
+            "in": "path",
+            "name": "scenarioName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}",
+        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1admin~1testHarness~1scenarios~1{scenarioName}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteTestHarnessScenario",
+        "tags": [
+          "testHarness"
+        ]
       },
       {
         "deprecated": false,
@@ -847,10 +2987,45 @@
         "kind": "operation",
         "method": "post",
         "name": "updateCredentialSecretUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "credentialName",
+            "in": "path",
+            "name": "credentialName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/config/~credentials/{credentialName}/resetSecret",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1config~1~0credentials~1{credentialName}~1resetSecret/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Resets the secret of a credential"
+        "summary": "Resets the secret of a credential",
+        "tags": [
+          "credentials"
+        ]
       },
       {
         "deprecated": false,
@@ -858,10 +3033,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getGamesEndpointsUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/endpoints",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1endpoints/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameEndpointsModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getGamesEndpoints"
+        "summary": "getGamesEndpoints",
+        "tags": [
+          "gamesAdmin"
+        ]
       },
       {
         "deprecated": false,
@@ -869,10 +3073,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getExperimentsUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/experiments",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExperimentModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getExperiments"
+        "summary": "getExperiments",
+        "tags": [
+          "experiments"
+        ]
       },
       {
         "deprecated": false,
@@ -880,21 +3113,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createExperimentUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/experiments",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ExperimentModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ExperimentModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createExperiment"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/restv2/game/{apiKey}/manage/experiments/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteExperimentUsingDELETE",
-        "path": "/restv2/game/{apiKey}/manage/experiments/{id}",
-        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments~1{id}/delete",
-        "security": [],
-        "summary": "deleteExperiment"
+        "summary": "createExperiment",
+        "tags": [
+          "experiments"
+        ]
       },
       {
         "deprecated": false,
@@ -902,10 +3160,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getExperimentUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/experiments/{id}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExperimentModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getExperiment"
+        "summary": "getExperiment",
+        "tags": [
+          "experiments"
+        ]
       },
       {
         "deprecated": false,
@@ -913,10 +3207,100 @@
         "kind": "operation",
         "method": "put",
         "name": "updateExperimentUsingPUT",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/experiments/{id}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ExperimentModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExperimentModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateExperiment"
+        "summary": "updateExperiment",
+        "tags": [
+          "experiments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/restv2/game/{apiKey}/manage/experiments/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteExperimentUsingDELETE",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/restv2/game/{apiKey}/manage/experiments/{id}",
+        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteExperiment",
+        "tags": [
+          "experiments"
+        ]
       },
       {
         "deprecated": false,
@@ -924,10 +3308,59 @@
         "kind": "operation",
         "method": "post",
         "name": "doActionExperimentUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "action",
+            "enum": [
+              "start",
+              "stop",
+              "publish",
+              "unpublish"
+            ],
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/experiments/{id}/{action}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1experiments~1{id}~1{action}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExperimentModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "doActionExperiment"
+        "summary": "doActionExperiment",
+        "tags": [
+          "experiments"
+        ]
       },
       {
         "deprecated": false,
@@ -935,10 +3368,39 @@
         "kind": "operation",
         "method": "get",
         "name": "listQueriesUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/queries",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1queries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageItemSummary[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "listQueries"
+        "summary": "listQueries",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -946,21 +3408,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createQueryUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/queries",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1queries/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ManageQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageQuery"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createQuery"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/restv2/game/{apiKey}/manage/queries/{shortCode}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteQueryUsingDELETE",
-        "path": "/restv2/game/{apiKey}/manage/queries/{shortCode}",
-        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1queries~1{shortCode}/delete",
-        "security": [],
-        "summary": "deleteQuery"
+        "summary": "createQuery",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -968,10 +3455,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getQueryUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/queries/{shortCode}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1queries~1{shortCode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageQuery"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getQuery"
+        "summary": "getQuery",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -979,10 +3502,100 @@
         "kind": "operation",
         "method": "put",
         "name": "updateQueryUsingPUT",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/queries/{shortCode}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1queries~1{shortCode}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ManageQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageQuery"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateQuery"
+        "summary": "updateQuery",
+        "tags": [
+          "manage"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/restv2/game/{apiKey}/manage/queries/{shortCode}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteQueryUsingDELETE",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/restv2/game/{apiKey}/manage/queries/{shortCode}",
+        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1queries~1{shortCode}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteQuery",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -990,10 +3603,39 @@
         "kind": "operation",
         "method": "get",
         "name": "listScreensUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/screens",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageItemSummary[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "listScreens"
+        "summary": "listScreens",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1001,10 +3643,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createScreenUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/screens",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ManageScreen"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageScreen"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createScreen"
+        "summary": "createScreen",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1012,21 +3690,39 @@
         "kind": "operation",
         "method": "get",
         "name": "listExecutableScreensUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/screens/executable",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens~1executable/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageItemSummary[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "listExecutableScreens"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/restv2/game/{apiKey}/manage/screens/{shortCode}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScreenUsingDELETE",
-        "path": "/restv2/game/{apiKey}/manage/screens/{shortCode}",
-        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens~1{shortCode}/delete",
-        "security": [],
-        "summary": "deleteScreen"
+        "summary": "listExecutableScreens",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1034,10 +3730,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getScreenUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/screens/{shortCode}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens~1{shortCode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageScreen"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getScreen"
+        "summary": "getScreen",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1045,10 +3777,100 @@
         "kind": "operation",
         "method": "put",
         "name": "updateScreenUsingPUT",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/screens/{shortCode}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens~1{shortCode}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ManageScreen"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageScreen"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateScreen"
+        "summary": "updateScreen",
+        "tags": [
+          "manage"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/restv2/game/{apiKey}/manage/screens/{shortCode}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteScreenUsingDELETE",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/restv2/game/{apiKey}/manage/screens/{shortCode}",
+        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1screens~1{shortCode}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteScreen",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1056,10 +3878,39 @@
         "kind": "operation",
         "method": "get",
         "name": "listSnapshotsUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snapshots",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snapshots/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageSnapshot[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "listSnapshots"
+        "summary": "listSnapshots",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1067,10 +3918,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createSnapshotUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snapshots",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snapshots/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SnapshotCreationModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ManageSnapshot"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createSnapshot"
+        "summary": "createSnapshot",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1078,10 +3965,49 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteSnapshotUsingDELETE",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snapshots/{snapshotId}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snapshots~1{snapshotId}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "201",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "deleteSnapshot"
+        "summary": "deleteSnapshot",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1089,10 +4015,53 @@
         "kind": "operation",
         "method": "post",
         "name": "copySnapshotToExistingGameUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "targetApiKey",
+            "in": "path",
+            "name": "targetApiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/copy/to/{targetApiKey}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snapshots~1{snapshotId}~1copy~1to~1{targetApiKey}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "copySnapshotToExistingGame"
+        "summary": "copySnapshotToExistingGame",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1100,10 +4069,46 @@
         "kind": "operation",
         "method": "post",
         "name": "publishSnapshotUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/publish",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snapshots~1{snapshotId}~1publish/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "publishSnapshot"
+        "summary": "publishSnapshot",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1111,10 +4116,46 @@
         "kind": "operation",
         "method": "post",
         "name": "revertSnapshotUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "snapshotId",
+            "in": "path",
+            "name": "snapshotId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/revert",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snapshots~1{snapshotId}~1revert/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "revertSnapshot"
+        "summary": "revertSnapshot",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1122,10 +4163,39 @@
         "kind": "operation",
         "method": "get",
         "name": "listSnippetsUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snippets",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snippets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageItemSummary[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "listSnippets"
+        "summary": "listSnippets",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1133,21 +4203,46 @@
         "kind": "operation",
         "method": "post",
         "name": "createSnippetUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snippets",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snippets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ManageSnippet"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageSnippet"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createSnippet"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/restv2/game/{apiKey}/manage/snippets/{shortCode}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSnippetUsingDELETE",
-        "path": "/restv2/game/{apiKey}/manage/snippets/{shortCode}",
-        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snippets~1{shortCode}/delete",
-        "security": [],
-        "summary": "deleteSnippet"
+        "summary": "createSnippet",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1155,10 +4250,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getSnippetUsingGET",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snippets/{shortCode}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snippets~1{shortCode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageSnippet"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSnippet"
+        "summary": "getSnippet",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1166,10 +4297,100 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSnippetUsingPUT",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/manage/snippets/{shortCode}",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snippets~1{shortCode}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ManageSnippet"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageSnippet"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateSnippet"
+        "summary": "updateSnippet",
+        "tags": [
+          "manage"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/restv2/game/{apiKey}/manage/snippets/{shortCode}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSnippetUsingDELETE",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "shortCode",
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/restv2/game/{apiKey}/manage/snippets/{shortCode}",
+        "pointer": "#/paths/~1restv2~1game~1{apiKey}~1manage~1snippets~1{shortCode}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ManageResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteSnippet",
+        "tags": [
+          "manage"
+        ]
       },
       {
         "deprecated": false,
@@ -1177,10 +4398,39 @@
         "kind": "operation",
         "method": "post",
         "name": "restoreDeletedGameUsingPOST",
+        "parameters": [
+          {
+            "description": "apiKey",
+            "in": "path",
+            "name": "apiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{apiKey}/restore",
         "pointer": "#/paths/~1restv2~1game~1{apiKey}~1restore/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageModel"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "restoreDeletedGame"
+        "summary": "restoreDeletedGame",
+        "tags": [
+          "gamesAdmin"
+        ]
       },
       {
         "deprecated": false,
@@ -1188,10 +4438,46 @@
         "kind": "operation",
         "method": "post",
         "name": "setGameRegionUsingPOST",
+        "parameters": [
+          {
+            "description": "gameApiKey",
+            "in": "path",
+            "name": "gameApiKey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "regionCode",
+            "in": "path",
+            "name": "regionCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{gameApiKey}/region/{regionCode}",
         "pointer": "#/paths/~1restv2~1game~1{gameApiKey}~1region~1{regionCode}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RegionResult"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "setGameRegion"
+        "summary": "setGameRegion",
+        "tags": [
+          "region"
+        ]
       },
       {
         "deprecated": false,
@@ -1199,10 +4485,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getGameRegionOptionsUsingGET",
+        "parameters": [
+          {
+            "description": "gameApiKey",
+            "in": "path",
+            "name": "gameApiKey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/restv2/game/{gameApiKey}/regions",
         "pointer": "#/paths/~1restv2~1game~1{gameApiKey}~1regions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameRegionOptionsDTO"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getGameRegionOptions"
+        "summary": "getGameRegionOptions",
+        "tags": [
+          "region"
+        ]
       },
       {
         "deprecated": false,
@@ -1212,8 +4527,28 @@
         "name": "listUsingGET",
         "path": "/restv2/games",
         "pointer": "#/paths/~1restv2~1games/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "list"
+        "summary": "list",
+        "tags": [
+          "gamesAdmin"
+        ]
       },
       {
         "deprecated": false,
@@ -1223,183 +4558,238 @@
         "name": "listDeletedUsingGET",
         "path": "/restv2/games/deleted",
         "pointer": "#/paths/~1restv2~1games~1deleted/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeletedGameModel[]"
+          },
+          {
+            "status": "400",
+            "type": "MessageModel"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "listDeleted"
+        "summary": "listDeleted",
+        "tags": [
+          "gamesAdmin"
+        ]
       },
       {
         "id": "schema:AnalyticsDataCountSwaggerModel",
         "kind": "schema",
-        "name": "AnalyticsDataCountSwaggerModel"
+        "name": "AnalyticsDataCountSwaggerModel",
+        "type": "object"
       },
       {
         "id": "schema:AnalyticsDataSwaggerModel",
         "kind": "schema",
-        "name": "AnalyticsDataSwaggerModel"
+        "name": "AnalyticsDataSwaggerModel",
+        "type": "object"
       },
       {
         "id": "schema:BillingDetailsModel",
         "kind": "schema",
-        "name": "BillingDetailsModel"
+        "name": "BillingDetailsModel",
+        "type": "object"
       },
       {
         "id": "schema:DeletedGameModel",
         "kind": "schema",
-        "name": "DeletedGameModel"
+        "name": "DeletedGameModel",
+        "type": "object"
       },
       {
         "id": "schema:ExperimentConfigModel",
         "kind": "schema",
-        "name": "ExperimentConfigModel"
+        "name": "ExperimentConfigModel",
+        "type": "object"
       },
       {
         "id": "schema:ExperimentModel",
         "kind": "schema",
-        "name": "ExperimentModel"
+        "name": "ExperimentModel",
+        "type": "object"
       },
       {
         "id": "schema:GameEndpointsModel",
         "kind": "schema",
-        "name": "GameEndpointsModel"
+        "name": "GameEndpointsModel",
+        "type": "object"
       },
       {
         "id": "schema:GameModel",
         "kind": "schema",
-        "name": "GameModel"
+        "name": "GameModel",
+        "type": "object"
       },
       {
         "id": "schema:GameRegionOptionDTO",
         "kind": "schema",
-        "name": "GameRegionOptionDTO"
+        "name": "GameRegionOptionDTO",
+        "type": "object"
       },
       {
         "id": "schema:GameRegionOptionsDTO",
         "kind": "schema",
-        "name": "GameRegionOptionsDTO"
+        "name": "GameRegionOptionsDTO",
+        "type": "object"
       },
       {
         "id": "schema:GameSummaryModel",
         "kind": "schema",
-        "name": "GameSummaryModel"
+        "name": "GameSummaryModel",
+        "type": "object"
       },
       {
         "id": "schema:LogLevelSummaryModel",
         "kind": "schema",
-        "name": "LogLevelSummaryModel"
+        "name": "LogLevelSummaryModel",
+        "type": "object"
       },
       {
         "id": "schema:ManageItemSummary",
         "kind": "schema",
-        "name": "ManageItemSummary"
+        "name": "ManageItemSummary",
+        "type": "object"
       },
       {
         "id": "schema:ManageQuery",
         "kind": "schema",
-        "name": "ManageQuery"
+        "name": "ManageQuery",
+        "type": "object"
       },
       {
         "id": "schema:ManageResult",
         "kind": "schema",
-        "name": "ManageResult"
+        "name": "ManageResult",
+        "type": "object"
       },
       {
         "id": "schema:ManageScreen",
         "kind": "schema",
-        "name": "ManageScreen"
+        "name": "ManageScreen",
+        "type": "object"
       },
       {
         "id": "schema:ManageSnapshot",
         "kind": "schema",
-        "name": "ManageSnapshot"
+        "name": "ManageSnapshot",
+        "type": "object"
       },
       {
         "id": "schema:ManageSnippet",
         "kind": "schema",
-        "name": "ManageSnippet"
+        "name": "ManageSnippet",
+        "type": "object"
       },
       {
         "id": "schema:MessageModel",
         "kind": "schema",
-        "name": "MessageModel"
+        "name": "MessageModel",
+        "type": "object"
       },
       {
         "id": "schema:Number",
         "kind": "schema",
-        "name": "Number"
+        "name": "Number",
+        "type": "object"
       },
       {
         "id": "schema:PushNotificationTestModel",
         "kind": "schema",
-        "name": "PushNotificationTestModel"
+        "name": "PushNotificationTestModel",
+        "type": "object"
       },
       {
         "id": "schema:PushNotificationTestSummaryListModel",
         "kind": "schema",
-        "name": "PushNotificationTestSummaryListModel"
+        "name": "PushNotificationTestSummaryListModel",
+        "type": "object"
       },
       {
         "id": "schema:PushNotificationTestSummaryModel",
         "kind": "schema",
-        "name": "PushNotificationTestSummaryModel"
+        "name": "PushNotificationTestSummaryModel",
+        "type": "object"
       },
       {
         "id": "schema:RegionResult",
         "kind": "schema",
-        "name": "RegionResult"
+        "name": "RegionResult",
+        "type": "object"
       },
       {
         "id": "schema:ScriptsDifferenceListModel",
         "kind": "schema",
-        "name": "ScriptsDifferenceListModel"
+        "name": "ScriptsDifferenceListModel",
+        "type": "object"
       },
       {
         "id": "schema:ScriptsDifferenceModel",
         "kind": "schema",
-        "name": "ScriptsDifferenceModel"
+        "name": "ScriptsDifferenceModel",
+        "type": "object"
       },
       {
         "id": "schema:SegmentQueryFilterConfigModel",
         "kind": "schema",
-        "name": "SegmentQueryFilterConfigModel"
+        "name": "SegmentQueryFilterConfigModel",
+        "type": "object"
       },
       {
         "id": "schema:SegmentQueryFilterListModel",
         "kind": "schema",
-        "name": "SegmentQueryFilterListModel"
+        "name": "SegmentQueryFilterListModel",
+        "type": "object"
       },
       {
         "id": "schema:SegmentQueryFilterModel",
         "kind": "schema",
-        "name": "SegmentQueryFilterModel"
+        "name": "SegmentQueryFilterModel",
+        "type": "object"
       },
       {
         "id": "schema:SnapshotCreationModel",
         "kind": "schema",
-        "name": "SnapshotCreationModel"
+        "name": "SnapshotCreationModel",
+        "type": "object"
       },
       {
         "id": "schema:SnapshotCreationSuccessModel",
         "kind": "schema",
-        "name": "SnapshotCreationSuccessModel"
+        "name": "SnapshotCreationSuccessModel",
+        "type": "object"
       },
       {
         "id": "schema:SnapshotModel",
         "kind": "schema",
-        "name": "SnapshotModel"
+        "name": "SnapshotModel",
+        "type": "object"
       },
       {
         "id": "schema:SnapshotScriptVersionListModel",
         "kind": "schema",
-        "name": "SnapshotScriptVersionListModel"
+        "name": "SnapshotScriptVersionListModel",
+        "type": "object"
       },
       {
         "id": "schema:SnapshotScriptVersionModel",
         "kind": "schema",
-        "name": "SnapshotScriptVersionModel"
+        "name": "SnapshotScriptVersionModel",
+        "type": "object"
       },
       {
         "id": "schema:TestHarnessScenarioModel",
         "kind": "schema",
-        "name": "TestHarnessScenarioModel"
+        "name": "TestHarnessScenarioModel",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_LumminaryDNA_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `401f81958a4f9dcca20404cb2cae8ab45069912482300c69f862605d4d0e6c28` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,22 +34,24 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_LumminaryDNA_profil
 
 18 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/auth/jwt` | post_jwt_auth | General-purpose authentication |
-| GET | `/clients/{clientId}/datasets/{datasetId}/genes/{geneSymbol}` | get_client_gene | Get gene by symbol |
-| GET | `/clients/{clientId}/datasets/{datasetId}/snps/` | get_client_snp_group | — |
-| POST | `/clients/{clientId}/datasets/{datasetId}/snps/` | post_client_snp_group | Get a large group of SNPs |
-| GET | `/clients/{clientId}/datasets/{datasetId}/snps/{snpId}` | get_client_snp | Get SNP information |
-| GET | `/products/{productId}` | get_product | Get product details |
-| GET | `/products/{productId}/authorizations` | get_authorizations_queue | — |
-| GET | `/products/{productId}/authorizations/{authorizationId}` | get_product_authorization | — |
-| POST | `/products/{productId}/authorizations/{authorizationId}` | post_product_authorization | Signal that processing is complete, without uploading any result |
-| POST | `/products/{productId}/authorizations/{authorizationId}/credentials` | post_authorization_result_credentials | Provide a result for the authorization |
-| POST | `/products/{productId}/authorizations/{authorizationId}/file` | post_authorization_result_file | Provide a file result to the authorization, e |
-| POST | `/products/{productId}/authorizations/{authorizationId}/unfulfillable` | post_product_authorization_unfulfillable | Catch-all Authorization state, for authorizations that passed all verifications and should reach the partner Product, but cannot be fulfilled for various reasons |
-| GET | `/reference/genes/databases/{databaseName}/accessions/{accession}` | get_gene | Generic gene information |
-| GET | `/reference/genomes/` | get_reference_genomes_group | Reference genome builds |
-| GET | `/reference/genomes/{genomeBuildAccession}/chromosomes` | get_reference_genome | Reference genome metadata |
-| GET | `/reference/genomes/{genomeBuildAccession}/chromosomes/{chromosomeAccession}` | get_reference_chromosome | Sequence for a region of the reference genome |
-| GET | `/reference/snps/{snpAccession}` | get_reference_snp | Reference SNP data |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/auth/jwt` | post_jwt_auth | `username`*, `password`*, `role`*, `X-Fields` | JavascriptWebToken |  | General-purpose authentication |
+| GET | `/clients/{clientId}/datasets/{datasetId}/genes/{geneSymbol}` | get_client_gene | `clientId`*, `datasetId`*, `geneSymbol`*, `X-Fields` | ClientGene | yes | Get gene by symbol |
+| GET | `/clients/{clientId}/datasets/{datasetId}/snps/` | get_client_snp_group | `clientId`*, `datasetId`*, `X-Fields` | ClientSNP[] | yes | — |
+| POST | `/clients/{clientId}/datasets/{datasetId}/snps/` | post_client_snp_group | `clientId`*, `datasetId`*, `snps`*, `X-Fields` | ClientSNP[] |  | Get a large group of SNPs |
+| GET | `/clients/{clientId}/datasets/{datasetId}/snps/{snpId}` | get_client_snp | `clientId`*, `datasetId`*, `snpId`*, `X-Fields` | ClientSNP | yes | Get SNP information |
+| GET | `/products/{productId}` | get_product | `productId`*, `X-Fields` | Product | yes | Get product details |
+| GET | `/products/{productId}/authorizations` | get_authorizations_queue | `productId`*, `seq_num_start`, `X-Fields` | Authorization[] | yes | — |
+| GET | `/products/{productId}/authorizations/{authorizationId}` | get_product_authorization | `productId`*, `authorizationId`*, `X-Fields` | Authorization | yes | — |
+| POST | `/products/{productId}/authorizations/{authorizationId}` | post_product_authorization | `productId`*, `authorizationId`* | — |  | Signal that processing is complete, without uploading any result |
+| POST | `/products/{productId}/authorizations/{authorizationId}/credentials` | post_authorization_result_credentials | `productId`*, `authorizationId`*, `credentials_username`, `credentials_password`, `report_url`, `X-Fields` | ReportCredentials |  | Provide a result for the authorization |
+| POST | `/products/{productId}/authorizations/{authorizationId}/file` | post_authorization_result_file | `productId`*, `authorizationId`*, `file_report`, `original_filename`, `X-Fields` | ReportFile |  | Provide a file result to the authorization, e |
+| POST | `/products/{productId}/authorizations/{authorizationId}/unfulfillable` | post_product_authorization_unfulfillable | `productId`*, `authorizationId`* | — |  | Catch-all Authorization state, for authorizations that passed all verifications and should reach the partner Product, but cannot be fulfilled for various reasons |
+| GET | `/reference/genes/databases/{databaseName}/accessions/{accession}` | get_gene | `databaseName`*, `accession`*, `dbsnp_build`, `reference_genome`, `X-Fields` | PublicGene | yes | Generic gene information |
+| GET | `/reference/genomes/` | get_reference_genomes_group | `X-Fields` | ReferenceGenomeOverview[] | yes | Reference genome builds |
+| GET | `/reference/genomes/{genomeBuildAccession}/chromosomes` | get_reference_genome | `genomeBuildAccession`*, `X-Fields` | ReferenceChromosomeOverview[] | yes | Reference genome metadata |
+| GET | `/reference/genomes/{genomeBuildAccession}/chromosomes/{chromosomeAccession}` | get_reference_chromosome | `genomeBuildAccession`*, `chromosomeAccession`*, `range_start`*, `range_stop`*, `X-Fields` | ReferenceSequence | yes | Sequence for a region of the reference genome |
+| GET | `/reference/snps/{snpAccession}` | get_reference_snp | `snpAccession`*, `dbsnp_version`, `grch_version`, `X-Fields` | PublicSNP | yes | Reference SNP data |

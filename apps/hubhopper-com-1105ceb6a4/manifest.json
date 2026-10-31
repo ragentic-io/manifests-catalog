@@ -38,6 +38,71 @@
         "from": "hubhopper-com-1105ceb6a4",
         "kind": "EXPOSES",
         "to": "operation:get:/util/languages"
+      },
+      {
+        "from": "operation:get:/categories",
+        "kind": "RETURNS",
+        "to": "schema:CategoryList"
+      },
+      {
+        "from": "operation:get:/categories/{categoryId}",
+        "kind": "RETURNS",
+        "to": "schema:SingleCategory"
+      },
+      {
+        "from": "operation:get:/categories/{categoryId}/podcasts",
+        "kind": "RETURNS",
+        "to": "schema:PodcastList"
+      },
+      {
+        "from": "operation:get:/podcasts",
+        "kind": "RETURNS",
+        "to": "schema:PodcastList"
+      },
+      {
+        "from": "operation:get:/podcasts/{podcastId}",
+        "kind": "RETURNS",
+        "to": "schema:SinglePodcast"
+      },
+      {
+        "from": "operation:get:/podcasts/{podcastId}/episodes",
+        "kind": "RETURNS",
+        "to": "schema:PodcastEpisodeList"
+      },
+      {
+        "from": "operation:get:/util/languages",
+        "kind": "RETURNS",
+        "to": "schema:LanguageList"
+      },
+      {
+        "from": "schema:CategoryList",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryListCategoriesItem"
+      },
+      {
+        "from": "schema:LanguageList",
+        "kind": "REFERENCES",
+        "to": "schema:LanguageItem"
+      },
+      {
+        "from": "schema:PodcastEpisodeList",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastEpisodeListEpisodesItem"
+      },
+      {
+        "from": "schema:PodcastList",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastListPodcastsItem"
+      },
+      {
+        "from": "schema:SingleCategory",
+        "kind": "REFERENCES",
+        "to": "schema:SingleCategoryCategory"
+      },
+      {
+        "from": "schema:SinglePodcast",
+        "kind": "REFERENCES",
+        "to": "schema:SinglePodcastPodcast"
       }
     ],
     "nodes": [
@@ -47,99 +112,340 @@
       },
       {
         "deprecated": false,
+        "description": "Get the list of all content categories.",
         "id": "operation:get:/categories",
         "kind": "operation",
         "method": "get",
         "name": "get /categories",
+        "parameters": [
+          {
+            "description": "Provide the size of the page to fetch.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provide the page number to fetch.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/categories",
         "pointer": "#/paths/~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryList"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Category"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get specific content category.",
         "id": "operation:get:/categories/{categoryId}",
         "kind": "operation",
         "method": "get",
         "name": "get /categories/{categoryId}",
+        "parameters": [
+          {
+            "description": "Unique qualifier for a category.",
+            "in": "path",
+            "name": "categoryId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/categories/{categoryId}",
         "pointer": "#/paths/~1categories~1{categoryId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SingleCategory"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Category"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all podcasts under a category.",
         "id": "operation:get:/categories/{categoryId}/podcasts",
         "kind": "operation",
         "method": "get",
         "name": "get /categories/{categoryId}/podcasts",
+        "parameters": [
+          {
+            "description": "Unique qualifier for a category.",
+            "in": "path",
+            "name": "categoryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Provide the page number to fetch.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provide the size of the page to fetch.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Order the items by 'newest' | 'random'",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Takes filters like 'lang' in a url encoded json.",
+            "in": "query",
+            "name": "filters",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/categories/{categoryId}/podcasts",
         "pointer": "#/paths/~1categories~1{categoryId}~1podcasts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastList"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Category"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of all podcasts.",
         "id": "operation:get:/podcasts",
         "kind": "operation",
         "method": "get",
         "name": "get /podcasts",
+        "parameters": [
+          {
+            "description": "Provide the page number to fetch.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provide the size of the page to fetch.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Order the items by 'newest' | 'random'",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Takes filters like 'lang' in a url encoded json.",
+            "in": "query",
+            "name": "filters",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts",
         "pointer": "#/paths/~1podcasts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastList"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Podcast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a single Podcast.",
         "id": "operation:get:/podcasts/{podcastId}",
         "kind": "operation",
         "method": "get",
         "name": "get /podcasts/{podcastId}",
+        "parameters": [
+          {
+            "description": "Unique qualifier for a podcast.",
+            "in": "path",
+            "name": "podcastId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts/{podcastId}",
         "pointer": "#/paths/~1podcasts~1{podcastId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SinglePodcast"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Podcast"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all episodes under a podcast.",
         "id": "operation:get:/podcasts/{podcastId}/episodes",
         "kind": "operation",
         "method": "get",
         "name": "get /podcasts/{podcastId}/episodes",
+        "parameters": [
+          {
+            "description": "Provide the page number to fetch.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provide the size of the page to fetch.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Order the items by 'newest' | 'random'",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Takes filters like 'lang' in a url encoded json.",
+            "in": "query",
+            "name": "filters",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Unique qualifier for a podcast.",
+            "in": "path",
+            "name": "podcastId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts/{podcastId}/episodes",
         "pointer": "#/paths/~1podcasts~1{podcastId}~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastEpisodeList"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Podcast"
+        ]
       },
       {
         "deprecated": false,
@@ -147,85 +453,138 @@
         "kind": "operation",
         "method": "get",
         "name": "get /util/languages",
+        "parameters": [
+          {
+            "description": "Provide the size of the page to fetch.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provide the page number to fetch.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/util/languages",
         "pointer": "#/paths/~1util~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LanguageList"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": [],
             "partner_id": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Util"
+        ]
       },
       {
         "id": "schema:CategoryList",
         "kind": "schema",
-        "name": "CategoryList"
+        "name": "CategoryList",
+        "type": "object"
       },
       {
         "id": "schema:CategoryListCategoriesItem",
         "kind": "schema",
-        "name": "CategoryListCategoriesItem"
+        "name": "CategoryListCategoriesItem",
+        "type": "object"
       },
       {
         "id": "schema:Empty",
         "kind": "schema",
-        "name": "Empty"
+        "name": "Empty",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:LanguageItem",
         "kind": "schema",
-        "name": "LanguageItem"
+        "name": "LanguageItem",
+        "type": "object"
       },
       {
         "id": "schema:LanguageList",
         "kind": "schema",
-        "name": "LanguageList"
+        "name": "LanguageList",
+        "type": "object"
       },
       {
         "id": "schema:PodcastEpisodeList",
         "kind": "schema",
-        "name": "PodcastEpisodeList"
+        "name": "PodcastEpisodeList",
+        "type": "object"
       },
       {
         "id": "schema:PodcastEpisodeListEpisodesItem",
         "kind": "schema",
-        "name": "PodcastEpisodeListEpisodesItem"
+        "name": "PodcastEpisodeListEpisodesItem",
+        "type": "object"
       },
       {
         "id": "schema:PodcastList",
         "kind": "schema",
-        "name": "PodcastList"
+        "name": "PodcastList",
+        "type": "object"
       },
       {
         "id": "schema:PodcastListPodcastsItem",
         "kind": "schema",
-        "name": "PodcastListPodcastsItem"
+        "name": "PodcastListPodcastsItem",
+        "type": "object"
       },
       {
+        "description": "Model to fetch a single category.",
         "id": "schema:SingleCategory",
         "kind": "schema",
-        "name": "SingleCategory"
+        "name": "SingleCategory",
+        "type": "object"
       },
       {
         "id": "schema:SingleCategoryCategory",
         "kind": "schema",
-        "name": "SingleCategoryCategory"
+        "name": "SingleCategoryCategory",
+        "type": "object"
       },
       {
         "id": "schema:SinglePodcast",
         "kind": "schema",
-        "name": "SinglePodcast"
+        "name": "SinglePodcast",
+        "type": "object"
       },
       {
         "id": "schema:SinglePodcastPodcast",
         "kind": "schema",
-        "name": "SinglePodcastPodcast"
+        "name": "SinglePodcastPodcast",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_76
 
 | | |
 | --- | --- |
-| Signed bundle | `f2000df69c74d0f937d370c9b4e595bff5a6f1f746ce8fe51ce206275eb2d949` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_76
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/domains/search` | get_search_domain_item | Domains Database Search |
-| GET | `/domains/tld/{zone_id}` | get_tld_domain_item | Get TLD records |
-| GET | `/domains/tld/{zone_id}/download` | get /domains/tld/{zone_id}/download | Download Whole Dataset for TLD |
-| GET | `/domains/tld/{zone_id}/search` | get /domains/tld/{zone_id}/search | Domains Search for TLD |
-| GET | `/domains/updates/added` | get /domains/updates/added | Get added domains, latest if date not specified |
-| GET | `/domains/updates/added/download` | get /domains/updates/added/download | Download added domains, latest if date not specified |
-| GET | `/domains/updates/deleted` | get /domains/updates/deleted | Get deleted domains, latest if date not specified |
-| GET | `/domains/updates/deleted/download` | get /domains/updates/deleted/download | Download deleted domains, latest if date not specified |
-| GET | `/domains/updates/list` | get /domains/updates/list | List of updates |
-| GET | `/info/api` | get_api_info_item | — |
-| GET | `/info/stat/` | get_statistics_collection | Returns overall stagtistics |
-| GET | `/info/stat/{zone}` | get_statistics_item | Returns statistics for specific zone |
-| GET | `/info/tld/` | get /info/tld/ | Returns overall Tld info |
-| GET | `/info/tld/{zone}` | get /info/tld/{zone} | Returns statistics for specific zone |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/domains/search` | get_search_domain_item | `api_key`, `date`, `page`, `limit`, `domain`, `zone`, `country`, `isDead`, `A`, `NS`, `CNAME`, `MX`, `TXT` | Search_Results | yes | Domains Database Search |
+| GET | `/domains/tld/{zone_id}` | get_tld_domain_item | `zone_id`*, `api_key`, `date`, `page`, `limit`, `domain`, `country`, `isDead`, `A`, `NS`, `CNAME`, `MX`, `TXT` | Search_Results | yes | Get TLD records |
+| GET | `/domains/tld/{zone_id}/download` | get /domains/tld/{zone_id}/download | `zone_id`*, `api_key`, `date` | — | yes | Download Whole Dataset for TLD |
+| GET | `/domains/tld/{zone_id}/search` | get /domains/tld/{zone_id}/search | `zone_id`*, `api_key`, `date`, `page`, `limit`, `domain`, `country`, `isDead`, `A`, `NS`, `CNAME`, `MX`, `TXT` | Search_Results | yes | Domains Search for TLD |
+| GET | `/domains/updates/added` | get /domains/updates/added | `api_key`, `date`, `page`, `limit` | Search_Results | yes | Get added domains, latest if date not specified |
+| GET | `/domains/updates/added/download` | get /domains/updates/added/download | `api_key`, `date` | — | yes | Download added domains, latest if date not specified |
+| GET | `/domains/updates/deleted` | get /domains/updates/deleted | `api_key`, `date`, `page`, `limit` | Search_Results | yes | Get deleted domains, latest if date not specified |
+| GET | `/domains/updates/deleted/download` | get /domains/updates/deleted/download | `api_key`, `date` | — | yes | Download deleted domains, latest if date not specified |
+| GET | `/domains/updates/list` | get /domains/updates/list | `api_key` | Update_model | yes | List of updates |
+| GET | `/info/api` | get_api_info_item | `api_key` | API_Key_Info | yes | — |
+| GET | `/info/stat/` | get_statistics_collection | `page`, `limit` | Zone_stats[] | yes | Returns overall stagtistics |
+| GET | `/info/stat/{zone}` | get_statistics_item | `zone`*, `page`, `limit` | Zone_stats | yes | Returns statistics for specific zone |
+| GET | `/info/tld/` | get /info/tld/ | — | Zone_info[] | yes | Returns overall Tld info |
+| GET | `/info/tld/{zone}` | get /info/tld/{zone} | `zone`*, `page`, `limit` | Zone_info | yes | Returns statistics for specific zone |

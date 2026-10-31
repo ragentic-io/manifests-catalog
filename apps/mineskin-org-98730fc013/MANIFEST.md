@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_mineskin.org_img_mineskin-x256.
 
 | | |
 | --- | --- |
-| Signed bundle | `c71bef9bc8cb8717ae8385690c8a82ff48a2e227589ea4653adc6181fce4d6e3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_mineskin.org_img_mineskin-x256.
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/generate/upload` | post /generate/upload | — |
-| POST | `/generate/url` | post /generate/url | — |
-| POST | `/generate/user` | post /generate/user | — |
-| GET | `/get/delay` | get /get/delay | — |
-| GET | `/get/id/{id}` | get /get/id/{id} | — |
-| GET | `/get/list/{page}` | get /get/list/{page} | — |
-| GET | `/get/uuid/{uuid}` | get /get/uuid/{uuid} | — |
-| GET | `/validate/name/{name}` | get /validate/name/{name} | — |
-| GET | `/validate/uuid/{uuid}` | get /validate/uuid/{uuid} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/generate/upload` | post /generate/upload | `User-Agent`*, body*: GenerateOptions\|object | SkinInfo\|object |  | — |
+| POST | `/generate/url` | post /generate/url | `User-Agent`*, body*: GenerateOptions\|object | SkinInfo\|object |  | — |
+| POST | `/generate/user` | post /generate/user | `User-Agent`*, body*: GenerateOptions\|object | SkinInfo\|object |  | — |
+| GET | `/get/delay` | get /get/delay | `User-Agent`* | object | yes | — |
+| GET | `/get/id/{id}` | get /get/id/{id} | `id`*, `User-Agent`* | SkinInfo | yes | — |
+| GET | `/get/list/{page}` | get /get/list/{page} | `page`*, `User-Agent`* | object | yes | — |
+| GET | `/get/uuid/{uuid}` | get /get/uuid/{uuid} | `uuid`*, `User-Agent`* | SkinInfo | yes | — |
+| GET | `/validate/name/{name}` | get /validate/name/{name} | `name`*, `User-Agent`* | UserValidation | yes | — |
+| GET | `/validate/uuid/{uuid}` | get /validate/uuid/{uuid} | `uuid`*, `User-Agent`* | UserValidation | yes | — |

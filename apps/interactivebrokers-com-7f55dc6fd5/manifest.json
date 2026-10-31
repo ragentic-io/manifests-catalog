@@ -27,17 +27,17 @@
       {
         "from": "interactivebrokers-com-7f55dc6fd5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{account}/orders/{CustomerOrderId}"
-      },
-      {
-        "from": "interactivebrokers-com-7f55dc6fd5",
-        "kind": "EXPOSES",
         "to": "operation:get:/accounts/{account}/orders/{CustomerOrderId}"
       },
       {
         "from": "interactivebrokers-com-7f55dc6fd5",
         "kind": "EXPOSES",
         "to": "operation:put:/accounts/{account}/orders/{CustomerOrderId}"
+      },
+      {
+        "from": "interactivebrokers-com-7f55dc6fd5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/accounts/{account}/orders/{CustomerOrderId}"
       },
       {
         "from": "interactivebrokers-com-7f55dc6fd5",
@@ -83,6 +83,36 @@
         "from": "interactivebrokers-com-7f55dc6fd5",
         "kind": "EXPOSES",
         "to": "operation:get:/secdef"
+      },
+      {
+        "from": "operation:get:/accounts/{account}/orders",
+        "kind": "RETURNS",
+        "to": "schema:orderState"
+      },
+      {
+        "from": "operation:post:/accounts/{account}/orders",
+        "kind": "RETURNS",
+        "to": "schema:orderState"
+      },
+      {
+        "from": "operation:get:/accounts/{account}/orders/{CustomerOrderId}",
+        "kind": "RETURNS",
+        "to": "schema:orderState"
+      },
+      {
+        "from": "schema:orderState",
+        "kind": "REFERENCES",
+        "to": "schema:orderStatus"
+      },
+      {
+        "from": "schema:orderState",
+        "kind": "REFERENCES",
+        "to": "schema:orderType"
+      },
+      {
+        "from": "schema:orderState",
+        "kind": "REFERENCES",
+        "to": "schema:timeInForce"
       }
     ],
     "nodes": [
@@ -92,263 +122,876 @@
       },
       {
         "deprecated": false,
+        "description": "Allows the caller to request a list of accounts associated with the session.",
         "id": "operation:get:/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "query",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Brokerage Accounts"
+        "summary": "Brokerage Accounts",
+        "tags": [
+          "Account & Portfolio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the consumer to check the impact that an order would have on the account, including margin, NLV and estimated commission costs.",
         "id": "operation:post:/accounts/{account}/order_impact",
         "kind": "operation",
         "method": "post",
         "name": "post /accounts/{account}/order_impact",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/order_impact",
         "pointer": "#/paths/~1accounts~1{account}~1order_impact/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Return margin impact info"
+        "summary": "Return margin impact info",
+        "tags": [
+          "Order Margin Requirements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of orders for the account passed in the URL",
         "id": "operation:get:/accounts/{account}/orders",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{account}/orders",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/orders",
         "pointer": "#/paths/~1accounts~1{account}~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "orderState[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Open Orders"
+        "summary": "Open Orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Places order",
         "id": "operation:post:/accounts/{account}/orders",
         "kind": "operation",
         "method": "post",
         "name": "post /accounts/{account}/orders",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/orders",
         "pointer": "#/paths/~1accounts~1{account}~1orders/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "orderState[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Place Order"
+        "summary": "Place Order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/accounts/{account}/orders/{CustomerOrderId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /accounts/{account}/orders/{CustomerOrderId}",
-        "path": "/accounts/{account}/orders/{CustomerOrderId}",
-        "pointer": "#/paths/~1accounts~1{account}~1orders~1{CustomerOrderId}/delete",
-        "security": [
-          {
-            "cookieAuth": []
-          }
-        ],
-        "summary": "Cancel Order"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the order with the referenced Customer Order ID for the account passed in the URL.",
         "id": "operation:get:/accounts/{account}/orders/{CustomerOrderId}",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{account}/orders/{CustomerOrderId}",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Customer Order ID",
+            "in": "path",
+            "name": "CustomerOrderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/orders/{CustomerOrderId}",
         "pointer": "#/paths/~1accounts~1{account}~1orders~1{CustomerOrderId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "orderState[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Return specific order info"
+        "summary": "Return specific order info",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows the caller to modify the order with the referenced Customer Order ID specified in the URL.",
         "id": "operation:put:/accounts/{account}/orders/{CustomerOrderId}",
         "kind": "operation",
         "method": "put",
         "name": "put /accounts/{account}/orders/{CustomerOrderId}",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Customer Order ID",
+            "in": "path",
+            "name": "CustomerOrderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/orders/{CustomerOrderId}",
         "pointer": "#/paths/~1accounts~1{account}~1orders~1{CustomerOrderId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Modify Order"
+        "summary": "Modify Order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancels the order with the referenced Customer Order ID for the account passed in the URL.",
+        "id": "operation:delete:/accounts/{account}/orders/{CustomerOrderId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /accounts/{account}/orders/{CustomerOrderId}",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Customer Order ID",
+            "in": "path",
+            "name": "CustomerOrderId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/accounts/{account}/orders/{CustomerOrderId}",
+        "pointer": "#/paths/~1accounts~1{account}~1orders~1{CustomerOrderId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "summary": "Cancel Order",
+        "tags": [
+          "Orders"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of positions for the indicated account.",
         "id": "operation:get:/accounts/{account}/positions",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{account}/positions",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/positions",
         "pointer": "#/paths/~1accounts~1{account}~1positions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Account Positions"
+        "summary": "Account Positions",
+        "tags": [
+          "Account & Portfolio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of account and margin balances associated with the account passed in the URL",
         "id": "operation:get:/accounts/{account}/summary",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{account}/summary",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/summary",
         "pointer": "#/paths/~1accounts~1{account}~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Account Values Summary"
+        "summary": "Account Values Summary",
+        "tags": [
+          "Account & Portfolio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of trades for the account starting at the given 'since' date to the current time (now()).",
         "id": "operation:get:/accounts/{account}/trades",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{account}/trades",
+        "parameters": [
+          {
+            "description": "Account Number",
+            "in": "path",
+            "name": "account",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account}/trades",
         "pointer": "#/paths/~1accounts~1{account}~1trades/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Returns trades in account"
+        "summary": "Returns trades in account",
+        "tags": [
+          "Trades"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides a bit mapping for the bid/ask/last 'market' values in the snapshot response.",
         "id": "operation:get:/marketdata/exchange_components",
         "kind": "operation",
         "method": "get",
         "name": "get /marketdata/exchange_components",
         "path": "/marketdata/exchange_components",
         "pointer": "#/paths/~1marketdata~1exchange_components/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Exchange Components"
+        "summary": "Exchange Components",
+        "tags": [
+          "Market Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the consumer to request a market data snapshot for one or more trading products.",
         "id": "operation:get:/marketdata/snapshot",
         "kind": "operation",
         "method": "get",
         "name": "get /marketdata/snapshot",
         "path": "/marketdata/snapshot",
         "pointer": "#/paths/~1marketdata~1snapshot/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Market Data Snapshot"
+        "summary": "Market Data Snapshot",
+        "tags": [
+          "Market Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Obtain an access token using the request token and the verification code you received after the user provided authorization.",
         "id": "operation:post:/oauth/access_token",
         "kind": "operation",
         "method": "post",
         "name": "post /oauth/access_token",
         "path": "/oauth/access_token",
         "pointer": "#/paths/~1oauth~1access_token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Obtain a access token"
+        "summary": "Obtain a access token",
+        "tags": [
+          "OAuth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "In order to access protected IB resources, a live session token is required.",
         "id": "operation:post:/oauth/live_session_token",
         "kind": "operation",
         "method": "post",
         "name": "post /oauth/live_session_token",
         "path": "/oauth/live_session_token",
         "pointer": "#/paths/~1oauth~1live_session_token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Obtain a live session token"
+        "summary": "Obtain a live session token",
+        "tags": [
+          "OAuth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Obtain a request token.",
         "id": "operation:post:/oauth/request_token",
         "kind": "operation",
         "method": "post",
         "name": "post /oauth/request_token",
         "path": "/oauth/request_token",
         "pointer": "#/paths/~1oauth~1request_token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Obtain a request token"
+        "summary": "Obtain a request token",
+        "tags": [
+          "OAuth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fields that compose security definition.",
         "id": "operation:get:/secdef",
         "kind": "operation",
         "method": "get",
         "name": "get /secdef",
         "path": "/secdef",
         "pointer": "#/paths/~1secdef/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "408"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "cookieAuth": []
           }
         ],
-        "summary": "Get security definition"
+        "summary": "Get security definition",
+        "tags": [
+          "Financial Instrument Definitions"
+        ]
       },
       {
+        "description": "An object containing all the properties defining an order",
         "id": "schema:orderState",
         "kind": "schema",
-        "name": "orderState"
+        "name": "orderState",
+        "type": "object"
       },
       {
+        "description": "Status of the order InvalidOrderStatus = '-1' New = '0' PartiallyFilled = '1' Filled = '2' DoneForTheDay = '3' Canceled = '4' Replaced = '5' PendingCancelRepla…",
         "id": "schema:orderStatus",
         "kind": "schema",
-        "name": "orderStatus"
+        "name": "orderStatus",
+        "type": "string"
       },
       {
+        "description": "Market = '1' Limit = '2' Stop = '3' StopLimit = '4'",
         "id": "schema:orderType",
         "kind": "schema",
-        "name": "orderType"
+        "name": "orderType",
+        "type": "number"
       },
       {
+        "description": "Defines order's active lifetime.",
         "id": "schema:timeInForce",
         "kind": "schema",
-        "name": "timeInForce"
+        "name": "timeInForce",
+        "type": "number"
       }
     ]
   },

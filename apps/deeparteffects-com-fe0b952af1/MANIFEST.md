@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_deeparteffects_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `a26cd541d8cb380fc30c690fba9f7adde967c57ca2cc8d979cdfd293db6e74d9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_deeparteffects_prof
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/noauth/result` | get /noauth/result | — |
-| GET | `/noauth/styles` | get /noauth/styles | — |
-| POST | `/noauth/upload` | post /noauth/upload | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/noauth/result` | get /noauth/result | `submissionId` | Result | yes | — |
+| GET | `/noauth/styles` | get /noauth/styles | — | Styles | yes | — |
+| POST | `/noauth/upload` | post /noauth/upload | body*: UploadRequest | UploadResponse |  | — |

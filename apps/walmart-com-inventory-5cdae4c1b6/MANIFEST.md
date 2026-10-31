@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Walmart_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `f4c9d5101aca8168cb159b3aa5abd793881ec5339ab4270d4a06f8cecf8e1306` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Walmart_profile_ima
 
 25 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v3/feeds` | updateBulkInventory | Bulk Item Inventory Update |
-| GET | `/v3/fulfillment/inventory` | getWFSInventory | WFS Inventory |
-| GET | `/v3/inventories` | getMultiNodeInventoryForAllSkuAndAllShipNodes | Multiple Item Inventory for All Ship Nodes |
-| GET | `/v3/inventories/{sku}` | getMultiNodeInventoryForSkuAndAllShipnodes | Single Item Inventory by Ship Node |
-| PUT | `/v3/inventories/{sku}` | updateMultiNodeInventory | Update Item Inventory per Ship Node |
-| GET | `/v3/inventory` | getInventory | Inventory |
-| PUT | `/v3/inventory` | updateInventoryForAnItem | Update inventory |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v3/feeds` | updateBulkInventory | `feedType`*, `shipNode`, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`*, body: object | object |  | Bulk Item Inventory Update |
+| GET | `/v3/fulfillment/inventory` | getWFSInventory | `sku`, `fromModifiedDate`, `toModifiedDate`, `limit`, `offset`, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`* | object | yes | WFS Inventory |
+| GET | `/v3/inventories` | getMultiNodeInventoryForAllSkuAndAllShipNodes | `limit`, `nextCursor`, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`* | object | yes | Multiple Item Inventory for All Ship Nodes |
+| GET | `/v3/inventories/{sku}` | getMultiNodeInventoryForSkuAndAllShipnodes | `sku`*, `shipNode`, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`* | object | yes | Single Item Inventory by Ship Node |
+| PUT | `/v3/inventories/{sku}` | updateMultiNodeInventory | `sku`*, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`*, body*: object | object |  | Update Item Inventory per Ship Node |
+| GET | `/v3/inventory` | getInventory | `sku`*, `shipNode`, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`* | object | yes | Inventory |
+| PUT | `/v3/inventory` | updateInventoryForAnItem | `sku`*, `shipNode`, `WM_SEC.ACCESS_TOKEN`*, `WM_CONSUMER.CHANNEL.TYPE`, `WM_QOS.CORRELATION_ID`*, `WM_SVC.NAME`*, body*: object | object |  | Update inventory |

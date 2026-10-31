@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_www.statsocial.com_wp-content_up
 
 | | |
 | --- | --- |
-| Signed bundle | `e71e348340304b4111e1e9d768267aa94760334570d0c389bde3f6a0058ae21a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,22 +34,24 @@ logo: "https://api.apis.guru/v2/cache/logo/http_www.statsocial.com_wp-content_up
 
 34 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/applications/status/` | get /applications/status/ | Used to understand API usage |
-| GET | `/reports/` | get /reports/ | Obtain report output |
-| POST | `/reports/` | post /reports/ | Obtain report output |
-| GET | `/reports/custom/create/` | get /reports/custom/create/ | Step 3 of executing custom report |
-| POST | `/reports/custom/create/` | post /reports/custom/create/ | Step 3 of executing custom report |
-| GET | `/reports/custom/generate/` | get /reports/custom/generate/ | Step 1 of executing custom report |
-| POST | `/reports/custom/generate/` | post /reports/custom/generate/ | Step 1 of executing custom report |
-| GET | `/reports/custom/insert/` | get /reports/custom/insert/ | Step 2 of executing custom report |
-| POST | `/reports/custom/insert/` | post /reports/custom/insert/ | Step 2 of executing custom report |
-| GET | `/reports/dates/` | get /reports/dates/ | Get report dates available for a specific report |
-| POST | `/reports/dates/` | post /reports/dates/ | Get report dates available for a specific report |
-| GET | `/reports/status/` | get /reports/status/ | Get list of generated reports |
-| POST | `/reports/status/` | post /reports/status/ | Get list of generated reports |
-| GET | `/reports/tweet/create/` | get /reports/tweet/create/ | Used to create tweet reports |
-| POST | `/reports/tweet/create/` | post /reports/tweet/create/ | Used to create tweet reports |
-| GET | `/reports/twitter/create/` | get /reports/twitter/create/ | Used to create twitter follower report |
-| POST | `/reports/twitter/create/` | post /reports/twitter/create/ | Used to create twitter follower report |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/applications/status/` | get /applications/status/ | `key`* | Application_Status | yes | Used to understand API usage |
+| GET | `/reports/` | get /reports/ | `report_hash`*, `baseline`, `report_date`, `sample`* | Report_Success | yes | Obtain report output |
+| POST | `/reports/` | post /reports/ | `report_hash`*, `baseline`, `report_date`, `sample`* | Report_Success |  | Obtain report output |
+| GET | `/reports/custom/create/` | get /reports/custom/create/ | `upload_hash`*, `filter` | Custom_Create | yes | Step 3 of executing custom report |
+| POST | `/reports/custom/create/` | post /reports/custom/create/ | `upload_hash`*, `filter` | Custom_Create |  | Step 3 of executing custom report |
+| GET | `/reports/custom/generate/` | get /reports/custom/generate/ | `report_name`* | Custom_Generate | yes | Step 1 of executing custom report |
+| POST | `/reports/custom/generate/` | post /reports/custom/generate/ | `report_name`* | Custom_Generate |  | Step 1 of executing custom report |
+| GET | `/reports/custom/insert/` | get /reports/custom/insert/ | `upload_hash`*, `ids`* | Custom_Insert | yes | Step 2 of executing custom report |
+| POST | `/reports/custom/insert/` | post /reports/custom/insert/ | `upload_hash`*, `ids`* | Custom_Insert |  | Step 2 of executing custom report |
+| GET | `/reports/dates/` | get /reports/dates/ | `report_hash`* | Report_Dates | yes | Get report dates available for a specific report |
+| POST | `/reports/dates/` | post /reports/dates/ | `report_hash`* | Report_Dates |  | Get report dates available for a specific report |
+| GET | `/reports/status/` | get /reports/status/ | `report_hash`* | Report_Status | yes | Get list of generated reports |
+| POST | `/reports/status/` | post /reports/status/ | `report_hash`* | Report_Status |  | Get list of generated reports |
+| GET | `/reports/tweet/create/` | get /reports/tweet/create/ | `report_name`*, `start_date`*, `end_date`*, `terms`*, `filter` | Create_Tweet | yes | Used to create tweet reports |
+| POST | `/reports/tweet/create/` | post /reports/tweet/create/ | `report_name`*, `start_date`*, `end_date`*, `terms`*, `filter` | Create_Tweet |  | Used to create tweet reports |
+| GET | `/reports/twitter/create/` | get /reports/twitter/create/ | `twitter_id`, `twitter_handle`, `filter` | Create_Twitter | yes | Used to create twitter follower report |
+| POST | `/reports/twitter/create/` | post /reports/twitter/create/ | `twitter_id`, `twitter_handle`, `filter` | Create_Twitter |  | Used to create twitter follower report |

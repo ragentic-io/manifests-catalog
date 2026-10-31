@@ -8,6 +8,11 @@
         "from": "cowin-gov-cin-cowincert-f94c72eff9",
         "kind": "EXPOSES",
         "to": "operation:post:/pdf/certificate"
+      },
+      {
+        "from": "operation:post:/pdf/certificate",
+        "kind": "ACCEPTS",
+        "to": "schema:CertificateRequest"
       }
     ],
     "nodes": [
@@ -23,6 +28,19 @@
         "name": "getCertificatePdf",
         "path": "/pdf/certificate",
         "pointer": "#/paths/~1pdf~1certificate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CertificateRequest"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "cert_auth": [
@@ -30,12 +48,16 @@
             ]
           }
         ],
-        "summary": "Download the certificate in pdf format"
+        "summary": "Download the certificate in pdf format",
+        "tags": [
+          "certificate"
+        ]
       },
       {
         "id": "schema:CertificateRequest",
         "kind": "schema",
-        "name": "CertificateRequest"
+        "name": "CertificateRequest",
+        "type": "object"
       }
     ]
   },

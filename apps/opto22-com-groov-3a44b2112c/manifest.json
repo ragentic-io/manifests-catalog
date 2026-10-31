@@ -53,6 +53,101 @@
         "from": "opto22-com-groov-3a44b2112c",
         "kind": "EXPOSES",
         "to": "operation:get:/whoami"
+      },
+      {
+        "from": "operation:get:/info",
+        "kind": "RETURNS",
+        "to": "schema:groovInfo"
+      },
+      {
+        "from": "operation:get:/v1/data-store/devices",
+        "kind": "RETURNS",
+        "to": "schema:dataStoreDevice"
+      },
+      {
+        "from": "operation:get:/v1/data-store/devices/{id}/tags",
+        "kind": "RETURNS",
+        "to": "schema:tagDefinition"
+      },
+      {
+        "from": "operation:post:/v1/data-store/read",
+        "kind": "ACCEPTS",
+        "to": "schema:tagReference"
+      },
+      {
+        "from": "operation:post:/v1/data-store/read",
+        "kind": "RETURNS",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "operation:get:/v1/data-store/read/{id}",
+        "kind": "RETURNS",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "operation:get:/v1/data-store/tags",
+        "kind": "RETURNS",
+        "to": "schema:tagDefinition"
+      },
+      {
+        "from": "operation:post:/v1/data-store/write/{id}",
+        "kind": "RETURNS",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "operation:get:/whoami",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:booleanArrayValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:booleanValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:dataStoreDevice",
+        "kind": "REFERENCES",
+        "to": "schema:device"
+      },
+      {
+        "from": "schema:errorValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:floatArrayValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:floatValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:integerArrayValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:integerValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:stringArrayValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
+      },
+      {
+        "from": "schema:stringValue",
+        "kind": "REFERENCES",
+        "to": "schema:tagValue"
       }
     ],
     "nodes": [
@@ -62,229 +157,488 @@
       },
       {
         "deprecated": false,
+        "description": "Get information about groov View.",
         "id": "operation:get:/info",
         "kind": "operation",
         "method": "get",
         "name": "groovInfo",
         "path": "/info",
         "pointer": "#/paths/~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "groovInfo"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List devices available in the data store.",
         "id": "operation:get:/v1/data-store/devices",
         "kind": "operation",
         "method": "get",
         "name": "listDevices",
         "path": "/v1/data-store/devices",
         "pointer": "#/paths/~1v1~1data-store~1devices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dataStoreDevice[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "data-store"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List tags of the given device.",
         "id": "operation:get:/v1/data-store/devices/{id}/tags",
         "kind": "operation",
         "method": "get",
         "name": "listDeviceTags",
+        "parameters": [
+          {
+            "description": "ID of the device to use.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number:int64"
+          }
+        ],
         "path": "/v1/data-store/devices/{id}/tags",
         "pointer": "#/paths/~1v1~1data-store~1devices~1{id}~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "tagDefinition[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "data-store"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Read selected tags from the data store.",
         "id": "operation:post:/v1/data-store/read",
         "kind": "operation",
         "method": "post",
         "name": "batchReadTags",
         "path": "/v1/data-store/read",
         "pointer": "#/paths/~1v1~1data-store~1read/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "tagReference[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "tagValue[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "data-store"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Read the current value of a single tag.",
         "id": "operation:get:/v1/data-store/read/{id}",
         "kind": "operation",
         "method": "get",
         "name": "readTag",
+        "parameters": [
+          {
+            "description": "ID of the tag to read.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number:int64"
+          },
+          {
+            "default": 0,
+            "description": "Table index to start reading at.",
+            "in": "query",
+            "name": "index",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "default": 1,
+            "description": "Number of elements to read from a table.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "number:int32"
+          }
+        ],
         "path": "/v1/data-store/read/{id}",
         "pointer": "#/paths/~1v1~1data-store~1read~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "tagValue"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "data-store"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all data store tags defined in the project.",
         "id": "operation:get:/v1/data-store/tags",
         "kind": "operation",
         "method": "get",
         "name": "listAllTags",
         "path": "/v1/data-store/tags",
         "pointer": "#/paths/~1v1~1data-store~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "tagDefinition[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "data-store"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Writes a new value to the given tag.",
         "id": "operation:post:/v1/data-store/write/{id}",
         "kind": "operation",
         "method": "post",
         "name": "writeTag",
+        "parameters": [
+          {
+            "description": "ID of the tag to write.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number:int64"
+          },
+          {
+            "description": "Value to write to the tag.",
+            "in": "query",
+            "name": "value",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "For array tags, the index to write the value to.",
+            "in": "query",
+            "name": "index",
+            "required": false,
+            "type": "number:int32"
+          }
+        ],
         "path": "/v1/data-store/write/{id}",
         "pointer": "#/paths/~1v1~1data-store~1write~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "tagValue"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "data-store"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Downloads the complete groov View log in JSON format.",
         "id": "operation:get:/v1/logging/groovLogs.json",
         "kind": "operation",
         "method": "get",
         "name": "downloadLogJson",
+        "parameters": [
+          {
+            "default": "INFO",
+            "description": "How verbose the log should be.",
+            "enum": [
+              "TRACE",
+              "DEBUG",
+              "INFO",
+              "WARN",
+              "ERROR",
+              "FATAL"
+            ],
+            "in": "query",
+            "name": "minimum-log-level",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "The earliest time to include in the log.",
+            "in": "query",
+            "name": "last-timestamp",
+            "required": false,
+            "type": "number:int64"
+          },
+          {
+            "description": "Optional string to search for in the log.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/logging/groovLogs.json",
         "pointer": "#/paths/~1v1~1logging~1groovLogs.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "logging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Downloads the complete groov View log.",
         "id": "operation:get:/v1/logging/groovLogs.txt",
         "kind": "operation",
         "method": "get",
         "name": "downloadLogText",
+        "parameters": [
+          {
+            "default": "INFO",
+            "description": "How verbose the log should be.",
+            "enum": [
+              "TRACE",
+              "DEBUG",
+              "INFO",
+              "WARN",
+              "ERROR",
+              "FATAL"
+            ],
+            "in": "query",
+            "name": "minimum-log-level",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "The earliest time to include in the log.",
+            "in": "query",
+            "name": "last-timestamp",
+            "required": false,
+            "type": "number:int64"
+          },
+          {
+            "description": "Optional string to search for in the log.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/logging/groovLogs.txt",
         "pointer": "#/paths/~1v1~1logging~1groovLogs.txt/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "logging"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about the user you are authenticated as.",
         "id": "operation:get:/whoami",
         "kind": "operation",
         "method": "get",
         "name": "whoAmI",
         "path": "/whoami",
         "pointer": "#/paths/~1whoami/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "whoami"
+        ]
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:booleanArrayValue",
         "kind": "schema",
-        "name": "booleanArrayValue"
+        "name": "booleanArrayValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:booleanValue",
         "kind": "schema",
-        "name": "booleanValue"
+        "name": "booleanValue",
+        "type": "tagValue|object"
       },
       {
+        "description": "A Data Store device within a groov View project",
         "id": "schema:dataStoreDevice",
         "kind": "schema",
-        "name": "dataStoreDevice"
+        "name": "dataStoreDevice",
+        "type": "device|object"
       },
       {
+        "description": "A generic device within a groov View project",
         "id": "schema:device",
         "kind": "schema",
-        "name": "device"
+        "name": "device",
+        "type": "object"
       },
       {
         "id": "schema:errorValue",
         "kind": "schema",
-        "name": "errorValue"
+        "name": "errorValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:floatArrayValue",
         "kind": "schema",
-        "name": "floatArrayValue"
+        "name": "floatArrayValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:floatValue",
         "kind": "schema",
-        "name": "floatValue"
+        "name": "floatValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:groovInfo",
         "kind": "schema",
-        "name": "groovInfo"
+        "name": "groovInfo",
+        "type": "object"
       },
       {
         "id": "schema:integerArrayValue",
         "kind": "schema",
-        "name": "integerArrayValue"
+        "name": "integerArrayValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:integerValue",
         "kind": "schema",
-        "name": "integerValue"
+        "name": "integerValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:stringArrayValue",
         "kind": "schema",
-        "name": "stringArrayValue"
+        "name": "stringArrayValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:stringValue",
         "kind": "schema",
-        "name": "stringValue"
+        "name": "stringValue",
+        "type": "tagValue|object"
       },
       {
         "id": "schema:tagDefinition",
         "kind": "schema",
-        "name": "tagDefinition"
+        "name": "tagDefinition",
+        "type": "object"
       },
       {
         "id": "schema:tagReference",
         "kind": "schema",
-        "name": "tagReference"
+        "name": "tagReference",
+        "type": "object"
       },
       {
         "id": "schema:tagValue",
         "kind": "schema",
-        "name": "tagValue"
+        "name": "tagValue",
+        "type": "object"
       }
     ]
   },

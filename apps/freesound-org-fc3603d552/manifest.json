@@ -13,6 +13,16 @@
         "from": "freesound-org-fc3603d552",
         "kind": "EXPOSES",
         "to": "operation:get:/sounds/{soundId}"
+      },
+      {
+        "from": "operation:get:/search/text",
+        "kind": "RETURNS",
+        "to": "schema:Sound"
+      },
+      {
+        "from": "operation:get:/sounds/{soundId}",
+        "kind": "RETURNS",
+        "to": "schema:Sound"
       }
     ],
     "nodes": [
@@ -22,30 +32,128 @@
       },
       {
         "deprecated": false,
+        "description": "This resource allows searching sounds in Freesound by matching their tags and other kinds of metadata.",
         "id": "operation:get:/search/text",
         "kind": "operation",
         "method": "get",
         "name": "searchText",
+        "parameters": [
+          {
+            "description": "The query!",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allows filtering query results.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates how query results should be sorted.",
+            "enum": [
+              "score",
+              "duration_desc",
+              "duration_asc",
+              "created_desc",
+              "created_asc",
+              "downloads_desc",
+              "downloads_asc",
+              "rating_desc",
+              "rating_asc"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This parameter represents a boolean option to indicate whether to collapse results belonging to sounds of the same pack into single entries in the results list.",
+            "in": "query",
+            "name": "group_by_pack",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Query results are paginated, this parameter indicates what page should be returned.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 15,
+            "description": "Indicates the number of sounds per page to include in the result.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/search/text",
         "pointer": "#/paths/~1search~1text/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sound[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search sounds"
+        "summary": "Search sounds",
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This resource allows the retrieval of detailed information about a sound.",
         "id": "operation:get:/sounds/{soundId}",
         "kind": "operation",
         "method": "get",
         "name": "getSoundById",
+        "parameters": [
+          {
+            "description": "ID of the sound that needs to be fetched",
+            "in": "path",
+            "name": "soundId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/sounds/{soundId}",
         "pointer": "#/paths/~1sounds~1{soundId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sound"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Details of a sound"
+        "summary": "Details of a sound",
+        "tags": [
+          "sound"
+        ]
       },
       {
         "id": "schema:Sound",
         "kind": "schema",
-        "name": "Sound"
+        "name": "Sound",
+        "type": "object"
       }
     ]
   },

@@ -38,6 +38,31 @@
         "from": "simplivpn-net-fda50abd90",
         "kind": "EXPOSES",
         "to": "operation:post:/username-available"
+      },
+      {
+        "from": "operation:post:/disable-user",
+        "kind": "ACCEPTS",
+        "to": "schema:DisableUser"
+      },
+      {
+        "from": "operation:post:/enable-user",
+        "kind": "ACCEPTS",
+        "to": "schema:EnableUser"
+      },
+      {
+        "from": "operation:post:/login",
+        "kind": "ACCEPTS",
+        "to": "schema:UserLogin"
+      },
+      {
+        "from": "operation:post:/register",
+        "kind": "ACCEPTS",
+        "to": "schema:Register"
+      },
+      {
+        "from": "operation:post:/username-available",
+        "kind": "ACCEPTS",
+        "to": "schema:EnableUser"
       }
     ],
     "nodes": [
@@ -47,63 +72,131 @@
       },
       {
         "deprecated": false,
+        "description": "This route allows you to disable a user's vpn access.",
         "id": "operation:post:/disable-user",
         "kind": "operation",
         "method": "post",
         "name": "DisableUser",
         "path": "/disable-user",
         "pointer": "#/paths/~1disable-user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DisableUser"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "DisableUser"
+        "summary": "DisableUser",
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This route allows you to enable a user's vpn access.",
         "id": "operation:post:/enable-user",
         "kind": "operation",
         "method": "post",
         "name": "EnableUser",
         "path": "/enable-user",
         "pointer": "#/paths/~1enable-user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EnableUser"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "EnableUser"
+        "summary": "EnableUser",
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This route allows you to login a user.",
         "id": "operation:post:/login",
         "kind": "operation",
         "method": "post",
         "name": "Login",
         "path": "/login",
         "pointer": "#/paths/~1login/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UserLogin"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Login"
+        "summary": "Login",
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This route allows VPN Admin user's with an api key to register a vpn user account.",
         "id": "operation:post:/register",
         "kind": "operation",
         "method": "post",
         "name": "Register",
         "path": "/register",
         "pointer": "#/paths/~1register/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Register"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Register"
+        "summary": "Register",
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "deprecated": false,
@@ -113,12 +206,21 @@
         "name": "GetServerSummaries",
         "path": "/server-summaries",
         "pointer": "#/paths/~1server-summaries/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "deprecated": false,
@@ -128,47 +230,77 @@
         "name": "GetServers",
         "path": "/servers",
         "pointer": "#/paths/~1servers/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This route allows VPN Admin user's to check if a specific username is available before registering an account username.",
         "id": "operation:post:/username-available",
         "kind": "operation",
         "method": "post",
         "name": "UsernameAvailable",
         "path": "/username-available",
         "pointer": "#/paths/~1username-available/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EnableUser"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "UsernameAvailable"
+        "summary": "UsernameAvailable",
+        "tags": [
+          "SimpliVPNAPI"
+        ]
       },
       {
         "id": "schema:DisableUser",
         "kind": "schema",
-        "name": "DisableUser"
+        "name": "DisableUser",
+        "type": "object"
       },
       {
         "id": "schema:EnableUser",
         "kind": "schema",
-        "name": "EnableUser"
+        "name": "EnableUser",
+        "type": "object"
       },
       {
         "id": "schema:Register",
         "kind": "schema",
-        "name": "Register"
+        "name": "Register",
+        "type": "object"
       },
       {
         "id": "schema:UserLogin",
         "kind": "schema",
-        "name": "UserLogin"
+        "name": "UserLogin",
+        "type": "object"
       }
     ]
   },

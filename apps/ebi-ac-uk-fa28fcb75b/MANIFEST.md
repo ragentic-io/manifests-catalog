@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2cbe6ac0ecf7a9c7ad20610287f3391a5a64d11b459bafe66a74cbee742a29a9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,18 +34,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 59 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/activities` | getActivitiesUsingGET | Get ChEMBL activities |
-| GET | `/assays` | getAssaysUsingGET | Get ChEMBL assays |
-| GET | `/drugs` | getDrugsUsingGET | drugs collected from Drugbank |
-| GET | `/efo` | getEFOUsingGET | Get EFO diseases data |
-| GET | `/hpo` | getHpoUsingGET | Get HPO phenotypes data |
-| GET | `/intact` | getIntactUsingGET | Molecular Interactions collected from IntAct |
-| GET | `/molecules` | getMoleculesUsingGET | Get ChEMBL molecules |
-| GET | `/proteins` | getProteinsUsingGET | Proteins collected from Uniprot for selective tax ids HUMAN(9606), MOUSE(10090), RAT(10116), BOVINE(9913), ESCHERICHIA_COLI(83333), SUS_SCROFA(9823), MYCOBACTERIUM_TUBERCULOSIS(83332), ORYCTOLAGUS_CUNICULUS(9986), SACCHAROMYCES_CEREVISIAE(559292), CVHSA(694009) & SARS2(2697049) |
-| GET | `/pubchem/bioassays` | getBioassaysUsingGET | Get pubchem bioassays |
-| GET | `/pubchem/bioassays/sids` | getBioassaysUsingGET_1 | Get pubchem bioassays associated to particular substance ids (sid) & outcome |
-| GET | `/pubchem/compounds` | getCompoundsUsingGET | Get pubchem compounds |
-| GET | `/pubchem/substances` | getSubstancesUsingGET | Get pubchem substances |
-| GET | `/targets` | getTargetsUsingGET | Get ChEMBL targets |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/activities` | getActivitiesUsingGET | `assayChemblId`, `limit`, `moleculeChemblId`, `page`, `pchemblValue`, `targetChemblId` | Activities | yes | Get ChEMBL activities |
+| GET | `/assays` | getAssaysUsingGET | `assayChemblId`, `assayOrg`, `assayType`, `limit`, `page`, `targetChemblId` | Assays | yes | Get ChEMBL assays |
+| GET | `/drugs` | getDrugsUsingGET | `accession`, `chemblId`, `identifier`, `limit`, `name`, `page`, `pubchemCid` | Drugs | yes | drugs collected from Drugbank |
+| GET | `/efo` | getEFOUsingGET | `doid`, `label`, `limit`, `mesh`, `oboId`, `omimId`, `page`, `synonym` | EFOEntities | yes | Get EFO diseases data |
+| GET | `/hpo` | getHpoUsingGET | `genesymbol`, `hpotermname`, `limit`, `page`, `synonym` | HpoEntities | yes | Get HPO phenotypes data |
+| GET | `/intact` | getIntactUsingGET | `accession`, `confidence`, `gene`, `limit`, `page` | IntactInteractions | yes | Molecular Interactions collected from IntAct |
+| GET | `/molecules` | getMoleculesUsingGET | `canonicalSmiles`, `inchiKey`, `limit`, `moleculeChemblId`, `page` | Molecules | yes | Get ChEMBL molecules |
+| GET | `/proteins` | getProteinsUsingGET | `accession`, `ec`, `fullName`, `gene`, `go`, `interpro`, `limit`, `omim`, `orphanet`, `page`, `pfam`, `reactome`, `taxId` | Proteins | yes | Proteins collected from Uniprot for selective tax ids HUMAN(9606), MOUSE(10090), RAT(10116), BOVINE(9913), ESCHERICHIA_COLI(83333), SUS_SCROFA(9823), MYCOBACTERIUM_TUBERCULOSIS(83332), ORYCTOLAGUS_CUNICULUS(9986), SACCHAROMYCES_CEREVISIAE(559292), CVHSA(694009) & SARS2(2697049) |
+| GET | `/pubchem/bioassays` | getBioassaysUsingGET | `accession`, `assayPubchemId`, `limit`, `ncbiProteinId`, `page` | Bioassays | yes | Get pubchem bioassays |
+| GET | `/pubchem/bioassays/sids` | getBioassaysUsingGET_1 | `limit`, `outcome`, `page`, `sids` | Bioassays | yes | Get pubchem bioassays associated to particular substance ids (sid) & outcome |
+| GET | `/pubchem/compounds` | getCompoundsUsingGET | `canonicalSmiles`, `cid`, `inchiKey`, `limit`, `page` | PubchemCompounds | yes | Get pubchem compounds |
+| GET | `/pubchem/substances` | getSubstancesUsingGET | `cid`, `limit`, `page`, `sid` | PubchemSubstances | yes | Get pubchem substances |
+| GET | `/targets` | getTargetsUsingGET | `accession`, `limit`, `page`, `targetIds` | Targets | yes | Get ChEMBL targets |

@@ -37,17 +37,17 @@
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/organizations/{organizationUuid}/discounts/{discountUuid}"
-      },
-      {
-        "from": "izettle-com-products-9b34a9848d",
-        "kind": "EXPOSES",
         "to": "operation:get:/organizations/{organizationUuid}/discounts/{discountUuid}"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
         "to": "operation:put:/organizations/{organizationUuid}/discounts/{discountUuid}"
+      },
+      {
+        "from": "izettle-com-products-9b34a9848d",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/organizations/{organizationUuid}/discounts/{discountUuid}"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
@@ -77,17 +77,17 @@
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/organizations/{organizationUuid}/products"
-      },
-      {
-        "from": "izettle-com-products-9b34a9848d",
-        "kind": "EXPOSES",
         "to": "operation:get:/organizations/{organizationUuid}/products"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
         "to": "operation:post:/organizations/{organizationUuid}/products"
+      },
+      {
+        "from": "izettle-com-products-9b34a9848d",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/organizations/{organizationUuid}/products"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
@@ -117,12 +117,12 @@
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/organizations/{organizationUuid}/products/{productUuid}"
+        "to": "operation:get:/organizations/{organizationUuid}/products/{productUuid}"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
-        "to": "operation:get:/organizations/{organizationUuid}/products/{productUuid}"
+        "to": "operation:delete:/organizations/{organizationUuid}/products/{productUuid}"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
@@ -152,17 +152,382 @@
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/taxes/{taxRateUuid}"
-      },
-      {
-        "from": "izettle-com-products-9b34a9848d",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/taxes/{taxRateUuid}"
       },
       {
         "from": "izettle-com-products-9b34a9848d",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/taxes/{taxRateUuid}"
+      },
+      {
+        "from": "izettle-com-products-9b34a9848d",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/taxes/{taxRateUuid}"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/categories/v2",
+        "kind": "RETURNS",
+        "to": "schema:CategoryResponse"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/categories/v2",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCategoriesRequest"
+      },
+      {
+        "from": "operation:patch:/organizations/{organizationUuid}/categories/v2/{categoryUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:RenameCategoryRequest"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/discounts",
+        "kind": "RETURNS",
+        "to": "schema:DiscountResponse"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/discounts",
+        "kind": "ACCEPTS",
+        "to": "schema:DiscountRequest"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/discounts/{discountUuid}",
+        "kind": "RETURNS",
+        "to": "schema:DiscountResponse"
+      },
+      {
+        "from": "operation:put:/organizations/{organizationUuid}/discounts/{discountUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:DiscountRequest"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/images",
+        "kind": "RETURNS",
+        "to": "schema:LibraryImagesResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/import/status",
+        "kind": "RETURNS",
+        "to": "schema:ImportResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/import/status/{importUuid}",
+        "kind": "RETURNS",
+        "to": "schema:ImportResponse"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/import/v2",
+        "kind": "ACCEPTS",
+        "to": "schema:BulkImportRequest"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/import/v2",
+        "kind": "RETURNS",
+        "to": "schema:ImportResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/library",
+        "kind": "RETURNS",
+        "to": "schema:LibraryResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductResponse"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/products",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductCreateRequest"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductResponse"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/products/online/slug",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSlugRequest"
+      },
+      {
+        "from": "operation:post:/organizations/{organizationUuid}/products/online/slug",
+        "kind": "RETURNS",
+        "to": "schema:SlugResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/products/options",
+        "kind": "RETURNS",
+        "to": "schema:VariantOptionsResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/products/v2",
+        "kind": "RETURNS",
+        "to": "schema:ProductResponse"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/products/v2/count",
+        "kind": "RETURNS",
+        "to": "schema:ProductCountResponse"
+      },
+      {
+        "from": "operation:put:/organizations/{organizationUuid}/products/v2/{productUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:FullProductUpdateRequest"
+      },
+      {
+        "from": "operation:get:/organizations/{organizationUuid}/products/{productUuid}",
+        "kind": "RETURNS",
+        "to": "schema:ProductResponse"
+      },
+      {
+        "from": "operation:get:/v1/taxes",
+        "kind": "RETURNS",
+        "to": "schema:TaxRatesResponse"
+      },
+      {
+        "from": "operation:post:/v1/taxes",
+        "kind": "ACCEPTS",
+        "to": "schema:TaxRatesCreateRequest"
+      },
+      {
+        "from": "operation:post:/v1/taxes",
+        "kind": "RETURNS",
+        "to": "schema:TaxRatesResponse"
+      },
+      {
+        "from": "operation:get:/v1/taxes/count",
+        "kind": "RETURNS",
+        "to": "schema:TaxRateProductCountResponse"
+      },
+      {
+        "from": "operation:get:/v1/taxes/settings",
+        "kind": "RETURNS",
+        "to": "schema:TaxSettingsResponse"
+      },
+      {
+        "from": "operation:put:/v1/taxes/settings",
+        "kind": "ACCEPTS",
+        "to": "schema:TaxSettingsUpdateRequest"
+      },
+      {
+        "from": "operation:put:/v1/taxes/settings",
+        "kind": "RETURNS",
+        "to": "schema:TaxSettingsResponse"
+      },
+      {
+        "from": "operation:get:/v1/taxes/{taxRateUuid}",
+        "kind": "RETURNS",
+        "to": "schema:TaxRate"
+      },
+      {
+        "from": "operation:put:/v1/taxes/{taxRateUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:TaxRateUpdateRequest"
+      },
+      {
+        "from": "operation:put:/v1/taxes/{taxRateUuid}",
+        "kind": "RETURNS",
+        "to": "schema:TaxRate"
+      },
+      {
+        "from": "schema:BulkImportRequest",
+        "kind": "REFERENCES",
+        "to": "schema:FullProductUpdateRequest"
+      },
+      {
+        "from": "schema:CategoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryDTO"
+      },
+      {
+        "from": "schema:CreateCategoriesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryDTO"
+      },
+      {
+        "from": "schema:DiscountRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Price"
+      },
+      {
+        "from": "schema:DiscountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Price"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ConstraintViolation"
+      },
+      {
+        "from": "schema:FullProductUpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryDTO"
+      },
+      {
+        "from": "schema:FullProductUpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MetadataDTO"
+      },
+      {
+        "from": "schema:FullProductUpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:OnlineProperties"
+      },
+      {
+        "from": "schema:FullProductUpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PresentationDTO"
+      },
+      {
+        "from": "schema:FullProductUpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VariantDTO"
+      },
+      {
+        "from": "schema:FullProductUpdateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VariantOptionDefinitions"
+      },
+      {
+        "from": "schema:LibraryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:DiscountResponse"
+      },
+      {
+        "from": "schema:LibraryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ProductResponse"
+      },
+      {
+        "from": "schema:MetadataDTO",
+        "kind": "REFERENCES",
+        "to": "schema:SourceDTO"
+      },
+      {
+        "from": "schema:OnlineProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Presentation"
+      },
+      {
+        "from": "schema:OnlineProperties",
+        "kind": "REFERENCES",
+        "to": "schema:SearchEngineOptimization"
+      },
+      {
+        "from": "schema:OnlineProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Shipping"
+      },
+      {
+        "from": "schema:ProductCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryDTO"
+      },
+      {
+        "from": "schema:ProductCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MetadataDTO"
+      },
+      {
+        "from": "schema:ProductCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:OnlineProperties"
+      },
+      {
+        "from": "schema:ProductCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PresentationDTO"
+      },
+      {
+        "from": "schema:ProductCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VariantDTO"
+      },
+      {
+        "from": "schema:ProductCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VariantOptionDefinitions"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryDTO"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MetadataDTO"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OnlineProperties"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PresentationDTO"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:VariantDTO"
+      },
+      {
+        "from": "schema:ProductResponse",
+        "kind": "REFERENCES",
+        "to": "schema:VariantOptionDefinitions"
+      },
+      {
+        "from": "schema:Shipping",
+        "kind": "REFERENCES",
+        "to": "schema:Weight"
+      },
+      {
+        "from": "schema:TaxRateProductCountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TaxRateProductCount"
+      },
+      {
+        "from": "schema:TaxRatesCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TaxRate"
+      },
+      {
+        "from": "schema:TaxRatesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TaxRate"
+      },
+      {
+        "from": "schema:VariantDTO",
+        "kind": "REFERENCES",
+        "to": "schema:PresentationDTO"
+      },
+      {
+        "from": "schema:VariantDTO",
+        "kind": "REFERENCES",
+        "to": "schema:Price"
+      },
+      {
+        "from": "schema:VariantDTO",
+        "kind": "REFERENCES",
+        "to": "schema:VariantOption"
+      },
+      {
+        "from": "schema:VariantOptionDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:VariantOptionProperties"
+      },
+      {
+        "from": "schema:VariantOptionDefinitions",
+        "kind": "REFERENCES",
+        "to": "schema:VariantOptionDefinition"
+      },
+      {
+        "from": "schema:VariantOptionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Option"
       }
     ],
     "nodes": [
@@ -176,8 +541,23 @@
         "kind": "operation",
         "method": "get",
         "name": "getProductTypes",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/categories/v2",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1categories~1v2/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -185,7 +565,10 @@
             ]
           }
         ],
-        "summary": "Retrieve all categories"
+        "summary": "Retrieve all categories",
+        "tags": [
+          "categories"
+        ]
       },
       {
         "deprecated": false,
@@ -193,8 +576,35 @@
         "kind": "operation",
         "method": "post",
         "name": "createCategories",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/categories/v2",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1categories~1v2/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateCategoriesRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -202,7 +612,10 @@
             ]
           }
         ],
-        "summary": "Create a new category"
+        "summary": "Create a new category",
+        "tags": [
+          "categories"
+        ]
       },
       {
         "deprecated": false,
@@ -210,8 +623,31 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteCategory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "categoryUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/categories/v2/{categoryUuid}",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1categories~1v2~1{categoryUuid}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -219,7 +655,10 @@
             ]
           }
         ],
-        "summary": "Delete a category"
+        "summary": "Delete a category",
+        "tags": [
+          "categories"
+        ]
       },
       {
         "deprecated": false,
@@ -227,8 +666,41 @@
         "kind": "operation",
         "method": "patch",
         "name": "renameCategory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "categoryUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/categories/v2/{categoryUuid}",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1categories~1v2~1{categoryUuid}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RenameCategoryRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -236,7 +708,10 @@
             ]
           }
         ],
-        "summary": "Rename a category"
+        "summary": "Rename a category",
+        "tags": [
+          "categories"
+        ]
       },
       {
         "deprecated": false,
@@ -244,8 +719,23 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllDiscounts",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/discounts",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DiscountResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -253,16 +743,45 @@
             ]
           }
         ],
-        "summary": "Retrieve all discounts"
+        "summary": "Retrieve all discounts",
+        "tags": [
+          "discounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a single discount entity.",
         "id": "operation:post:/organizations/{organizationUuid}/discounts",
         "kind": "operation",
         "method": "post",
         "name": "createDiscount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/discounts",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DiscountRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -270,7 +789,125 @@
             ]
           }
         ],
-        "summary": "Create a discount"
+        "summary": "Create a discount",
+        "tags": [
+          "discounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the full discount with the provided UUID.",
+        "id": "operation:get:/organizations/{organizationUuid}/discounts/{discountUuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getDiscount",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "discountUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/organizations/{organizationUuid}/discounts/{discountUuid}",
+        "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts~1{discountUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DiscountResponse"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "ZettleOauth": [
+              "READ:PRODUCT"
+            ]
+          }
+        ],
+        "summary": "Retrieve a single discount",
+        "tags": [
+          "discounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates a discount entity using JSON merge patch (https://tools.ietf.org/html/rfc7386).",
+        "id": "operation:put:/organizations/{organizationUuid}/discounts/{discountUuid}",
+        "kind": "operation",
+        "method": "put",
+        "name": "updateDiscount",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "discountUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/organizations/{organizationUuid}/discounts/{discountUuid}",
+        "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts~1{discountUuid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DiscountRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "412"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ZettleOauth": [
+              "WRITE:PRODUCT"
+            ]
+          }
+        ],
+        "summary": "Update a single discount",
+        "tags": [
+          "discounts"
+        ]
       },
       {
         "deprecated": false,
@@ -278,8 +915,31 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteDiscount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "discountUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/discounts/{discountUuid}",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts~1{discountUuid}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -287,50 +947,35 @@
             ]
           }
         ],
-        "summary": "Delete a single discount "
+        "summary": "Delete a single discount ",
+        "tags": [
+          "discounts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/organizations/{organizationUuid}/discounts/{discountUuid}",
-        "kind": "operation",
-        "method": "get",
-        "name": "getDiscount",
-        "path": "/organizations/{organizationUuid}/discounts/{discountUuid}",
-        "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts~1{discountUuid}/get",
-        "security": [
-          {
-            "ZettleOauth": [
-              "READ:PRODUCT"
-            ]
-          }
-        ],
-        "summary": "Retrieve a single discount"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/organizations/{organizationUuid}/discounts/{discountUuid}",
-        "kind": "operation",
-        "method": "put",
-        "name": "updateDiscount",
-        "path": "/organizations/{organizationUuid}/discounts/{discountUuid}",
-        "pointer": "#/paths/~1organizations~1{organizationUuid}~1discounts~1{discountUuid}/put",
-        "security": [
-          {
-            "ZettleOauth": [
-              "WRITE:PRODUCT"
-            ]
-          }
-        ],
-        "summary": "Update a single discount"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves all library items images used by the organization, sorted by updated date",
         "id": "operation:get:/organizations/{organizationUuid}/images",
         "kind": "operation",
         "method": "get",
         "name": "getAllImageUrls",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/images",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LibraryImagesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -338,7 +983,10 @@
             ]
           }
         ],
-        "summary": "Retrieve all library item images"
+        "summary": "Retrieve all library item images",
+        "tags": [
+          "images"
+        ]
       },
       {
         "deprecated": false,
@@ -346,8 +994,26 @@
         "kind": "operation",
         "method": "get",
         "name": "getLatestImportStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/import/status",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1import~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -355,7 +1021,10 @@
             ]
           }
         ],
-        "summary": "Get status for latest import"
+        "summary": "Get status for latest import",
+        "tags": [
+          "import"
+        ]
       },
       {
         "deprecated": false,
@@ -363,8 +1032,32 @@
         "kind": "operation",
         "method": "get",
         "name": "getStatusByUuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "importUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/import/status/{importUuid}",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1import~1status~1{importUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportResponse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -372,7 +1065,10 @@
             ]
           }
         ],
-        "summary": "Get status for an import"
+        "summary": "Get status for an import",
+        "tags": [
+          "import"
+        ]
       },
       {
         "deprecated": false,
@@ -380,8 +1076,34 @@
         "kind": "operation",
         "method": "post",
         "name": "importLibraryV2",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/import/v2",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1import~1v2/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BulkImportRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -389,16 +1111,63 @@
             ]
           }
         ],
-        "summary": "Import library items"
+        "summary": "Import library items",
+        "tags": [
+          "import"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Will return the entire library for the authenticated user.",
         "id": "operation:get:/organizations/{organizationUuid}/library",
         "kind": "operation",
         "method": "get",
         "name": "getLibrary",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "query",
+            "name": "eventLogUuid",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "default": 500,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/library",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1library/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LibraryResponse"
+          },
+          {
+            "status": "412"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -406,24 +1175,10 @@
             ]
           }
         ],
-        "summary": "Retrieve the entire library"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/organizations/{organizationUuid}/products",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteProducts",
-        "path": "/organizations/{organizationUuid}/products",
-        "pointer": "#/paths/~1organizations~1{organizationUuid}~1products/delete",
-        "security": [
-          {
-            "ZettleOauth": [
-              "WRITE:PRODUCT"
-            ]
-          }
-        ],
-        "summary": "Delete a list of products"
+        "summary": "Retrieve the entire library",
+        "tags": [
+          "library"
+        ]
       },
       {
         "deprecated": false,
@@ -431,8 +1186,23 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllProductsInPos",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -440,7 +1210,10 @@
             ]
           }
         ],
-        "summary": "Retrieve all products visible in POS"
+        "summary": "Retrieve all products visible in POS",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -448,8 +1221,37 @@
         "kind": "operation",
         "method": "post",
         "name": "createProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "returnEntity",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ProductResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -457,16 +1259,83 @@
             ]
           }
         ],
-        "summary": "Create a new product"
+        "summary": "Create a new product",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/organizations/{organizationUuid}/products",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteProducts",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "List of product UUIDs to be deleted",
+            "in": "query",
+            "name": "uuid",
+            "required": true,
+            "type": "string:uuid[]"
+          }
+        ],
+        "path": "/organizations/{organizationUuid}/products",
+        "pointer": "#/paths/~1organizations~1{organizationUuid}~1products/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ZettleOauth": [
+              "WRITE:PRODUCT"
+            ]
+          }
+        ],
+        "summary": "Delete a list of products",
+        "tags": [
+          "products"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Creates a unique slug (identifier) for a product.",
         "id": "operation:post:/organizations/{organizationUuid}/products/online/slug",
         "kind": "operation",
         "method": "post",
         "name": "createProductSlug",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products/online/slug",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1online~1slug/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateSlugRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SlugResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -474,7 +1343,10 @@
             ]
           }
         ],
-        "summary": "Create a product identifier"
+        "summary": "Create a product identifier",
+        "tags": [
+          "products/online"
+        ]
       },
       {
         "deprecated": false,
@@ -482,8 +1354,23 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllOptions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products/options",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1options/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VariantOptionsResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -491,7 +1378,10 @@
             ]
           }
         ],
-        "summary": "Retrieve an aggregate of active Options in the library"
+        "summary": "Retrieve an aggregate of active Options in the library",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -499,8 +1389,30 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllProductsV2",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "If true, sorts response by created date",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products/v2",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1v2/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -508,7 +1420,10 @@
             ]
           }
         ],
-        "summary": "Retrieve all products visible in POS – v2"
+        "summary": "Retrieve all products visible in POS – v2",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -516,8 +1431,23 @@
         "kind": "operation",
         "method": "get",
         "name": "countAllProducts",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products/v2/count",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1v2~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductCountResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -525,16 +1455,60 @@
             ]
           }
         ],
-        "summary": "Retrieve the count of existing products"
+        "summary": "Retrieve the count of existing products",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a product entity using JSON merge patch (https://tools.ietf.org/html/rfc7386).",
         "id": "operation:put:/organizations/{organizationUuid}/products/v2/{productUuid}",
         "kind": "operation",
         "method": "put",
         "name": "updateProduct",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "productUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products/v2/{productUuid}",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1v2~1{productUuid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FullProductUpdateRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -542,7 +1516,67 @@
             ]
           }
         ],
-        "summary": "Update a single product"
+        "summary": "Update a single product",
+        "tags": [
+          "products"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the full product with the provided UUID.",
+        "id": "operation:get:/organizations/{organizationUuid}/products/{productUuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getProduct",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "productUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/organizations/{organizationUuid}/products/{productUuid}",
+        "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1{productUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductResponse"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "ZettleOauth": [
+              "READ:PRODUCT"
+            ]
+          }
+        ],
+        "summary": "Retrieve a single product",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -550,8 +1584,31 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organizationUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "path",
+            "name": "productUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/organizations/{organizationUuid}/products/{productUuid}",
         "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1{productUuid}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -559,24 +1616,10 @@
             ]
           }
         ],
-        "summary": "Delete a single product"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:get:/organizations/{organizationUuid}/products/{productUuid}",
-        "kind": "operation",
-        "method": "get",
-        "name": "getProduct",
-        "path": "/organizations/{organizationUuid}/products/{productUuid}",
-        "pointer": "#/paths/~1organizations~1{organizationUuid}~1products~1{productUuid}/get",
-        "security": [
-          {
-            "ZettleOauth": [
-              "READ:PRODUCT"
-            ]
-          }
-        ],
-        "summary": "Retrieve a single product"
+        "summary": "Delete a single product",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
@@ -586,6 +1629,16 @@
         "name": "getTaxRates",
         "path": "/v1/taxes",
         "pointer": "#/paths/~1v1~1taxes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxRatesResponse[]"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -593,7 +1646,10 @@
             ]
           }
         ],
-        "summary": "Get all available tax rates"
+        "summary": "Get all available tax rates",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -603,6 +1659,27 @@
         "name": "createTaxRates",
         "path": "/v1/taxes",
         "pointer": "#/paths/~1v1~1taxes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TaxRatesCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "TaxRatesResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -610,7 +1687,10 @@
             ]
           }
         ],
-        "summary": "Create new tax rates"
+        "summary": "Create new tax rates",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -620,6 +1700,16 @@
         "name": "getProductCountForAllTaxes",
         "path": "/v1/taxes/count",
         "pointer": "#/paths/~1v1~1taxes~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxRateProductCountResponse"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -627,7 +1717,10 @@
             ]
           }
         ],
-        "summary": "Get all tax rates and a count of products associated with each"
+        "summary": "Get all tax rates and a count of products associated with each",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -637,6 +1730,16 @@
         "name": "getTaxSettings",
         "path": "/v1/taxes/settings",
         "pointer": "#/paths/~1v1~1taxes~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxSettingsResponse"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -644,7 +1747,10 @@
             ]
           }
         ],
-        "summary": "Get the organization tax settings "
+        "summary": "Get the organization tax settings ",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -654,6 +1760,27 @@
         "name": "setTaxationMode",
         "path": "/v1/taxes/settings",
         "pointer": "#/paths/~1v1~1taxes~1settings/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TaxSettingsUpdateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxSettingsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -661,24 +1788,10 @@
             ]
           }
         ],
-        "summary": "Update the organization tax settings"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/taxes/{taxRateUuid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTaxRate",
-        "path": "/v1/taxes/{taxRateUuid}",
-        "pointer": "#/paths/~1v1~1taxes~1{taxRateUuid}/delete",
-        "security": [
-          {
-            "ZettleOauth": [
-              "WRITE:PRODUCT"
-            ]
-          }
-        ],
-        "summary": "Delete a single tax rate"
+        "summary": "Update the organization tax settings",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -686,8 +1799,29 @@
         "kind": "operation",
         "method": "get",
         "name": "getTaxRate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taxRateUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/taxes/{taxRateUuid}",
         "pointer": "#/paths/~1v1~1taxes~1{taxRateUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxRate"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ZettleOauth": [
@@ -695,7 +1829,10 @@
             ]
           }
         ],
-        "summary": "Get a single tax rate"
+        "summary": "Get a single tax rate",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "deprecated": false,
@@ -703,8 +1840,40 @@
         "kind": "operation",
         "method": "put",
         "name": "updateTaxRate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taxRateUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/taxes/{taxRateUuid}",
         "pointer": "#/paths/~1v1~1taxes~1{taxRateUuid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TaxRateUpdateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxRate"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ZettleOauth": [
@@ -712,217 +1881,302 @@
             ]
           }
         ],
-        "summary": "Update a single tax rate"
+        "summary": "Update a single tax rate",
+        "tags": [
+          "taxes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v1/taxes/{taxRateUuid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTaxRate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taxRateUuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/taxes/{taxRateUuid}",
+        "pointer": "#/paths/~1v1~1taxes~1{taxRateUuid}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ZettleOauth": [
+              "WRITE:PRODUCT"
+            ]
+          }
+        ],
+        "summary": "Delete a single tax rate",
+        "tags": [
+          "taxes"
+        ]
       },
       {
         "id": "schema:BulkImportRequest",
         "kind": "schema",
-        "name": "BulkImportRequest"
+        "name": "BulkImportRequest",
+        "type": "object"
       },
       {
         "id": "schema:CategoryDTO",
         "kind": "schema",
-        "name": "CategoryDTO"
+        "name": "CategoryDTO",
+        "type": "object"
       },
       {
         "id": "schema:CategoryResponse",
         "kind": "schema",
-        "name": "CategoryResponse"
+        "name": "CategoryResponse",
+        "type": "object"
       },
       {
         "id": "schema:ConstraintViolation",
         "kind": "schema",
-        "name": "ConstraintViolation"
+        "name": "ConstraintViolation",
+        "type": "object"
       },
       {
         "id": "schema:CreateCategoriesRequest",
         "kind": "schema",
-        "name": "CreateCategoriesRequest"
+        "name": "CreateCategoriesRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateSlugRequest",
         "kind": "schema",
-        "name": "CreateSlugRequest"
+        "name": "CreateSlugRequest",
+        "type": "object"
       },
       {
         "id": "schema:DiscountRequest",
         "kind": "schema",
-        "name": "DiscountRequest"
+        "name": "DiscountRequest",
+        "type": "object"
       },
       {
         "id": "schema:DiscountResponse",
         "kind": "schema",
-        "name": "DiscountResponse"
+        "name": "DiscountResponse",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:FullProductUpdateRequest",
         "kind": "schema",
-        "name": "FullProductUpdateRequest"
+        "name": "FullProductUpdateRequest",
+        "type": "object"
       },
       {
         "id": "schema:ImportResponse",
         "kind": "schema",
-        "name": "ImportResponse"
+        "name": "ImportResponse",
+        "type": "object"
       },
       {
         "id": "schema:LibraryImagesResponse",
         "kind": "schema",
-        "name": "LibraryImagesResponse"
+        "name": "LibraryImagesResponse",
+        "type": "object"
       },
       {
         "id": "schema:LibraryResponse",
         "kind": "schema",
-        "name": "LibraryResponse"
+        "name": "LibraryResponse",
+        "type": "object"
       },
       {
         "id": "schema:MetadataDTO",
         "kind": "schema",
-        "name": "MetadataDTO"
+        "name": "MetadataDTO",
+        "type": "object"
       },
       {
         "id": "schema:OnlineProperties",
         "kind": "schema",
-        "name": "OnlineProperties"
+        "name": "OnlineProperties",
+        "type": "object"
       },
       {
         "id": "schema:Option",
         "kind": "schema",
-        "name": "Option"
+        "name": "Option",
+        "type": "object"
       },
       {
         "id": "schema:Presentation",
         "kind": "schema",
-        "name": "Presentation"
+        "name": "Presentation",
+        "type": "object"
       },
       {
         "id": "schema:PresentationDTO",
         "kind": "schema",
-        "name": "PresentationDTO"
+        "name": "PresentationDTO",
+        "type": "object"
       },
       {
         "id": "schema:Price",
         "kind": "schema",
-        "name": "Price"
+        "name": "Price",
+        "type": "object"
       },
       {
         "id": "schema:ProductCountResponse",
         "kind": "schema",
-        "name": "ProductCountResponse"
+        "name": "ProductCountResponse",
+        "type": "object"
       },
       {
         "id": "schema:ProductCreateRequest",
         "kind": "schema",
-        "name": "ProductCreateRequest"
+        "name": "ProductCreateRequest",
+        "type": "object"
       },
       {
         "id": "schema:ProductResponse",
         "kind": "schema",
-        "name": "ProductResponse"
+        "name": "ProductResponse",
+        "type": "object"
       },
       {
         "id": "schema:RenameCategoryRequest",
         "kind": "schema",
-        "name": "RenameCategoryRequest"
+        "name": "RenameCategoryRequest",
+        "type": "object"
       },
       {
         "id": "schema:SearchEngineOptimization",
         "kind": "schema",
-        "name": "SearchEngineOptimization"
+        "name": "SearchEngineOptimization",
+        "type": "object"
       },
       {
         "id": "schema:Shipping",
         "kind": "schema",
-        "name": "Shipping"
+        "name": "Shipping",
+        "type": "object"
       },
       {
         "id": "schema:SlugResponse",
         "kind": "schema",
-        "name": "SlugResponse"
+        "name": "SlugResponse",
+        "type": "object"
       },
       {
         "id": "schema:SourceDTO",
         "kind": "schema",
-        "name": "SourceDTO"
+        "name": "SourceDTO",
+        "type": "object"
       },
       {
         "id": "schema:TaxRate",
         "kind": "schema",
-        "name": "TaxRate"
+        "name": "TaxRate",
+        "type": "object"
       },
       {
         "id": "schema:TaxRateProductCount",
         "kind": "schema",
-        "name": "TaxRateProductCount"
+        "name": "TaxRateProductCount",
+        "type": "object"
       },
       {
         "id": "schema:TaxRateProductCountResponse",
         "kind": "schema",
-        "name": "TaxRateProductCountResponse"
+        "name": "TaxRateProductCountResponse",
+        "type": "object"
       },
       {
         "id": "schema:TaxRateUpdateRequest",
         "kind": "schema",
-        "name": "TaxRateUpdateRequest"
+        "name": "TaxRateUpdateRequest",
+        "type": "object"
       },
       {
         "id": "schema:TaxRatesCreateRequest",
         "kind": "schema",
-        "name": "TaxRatesCreateRequest"
+        "name": "TaxRatesCreateRequest",
+        "type": "object"
       },
       {
         "id": "schema:TaxRatesResponse",
         "kind": "schema",
-        "name": "TaxRatesResponse"
+        "name": "TaxRatesResponse",
+        "type": "object"
       },
       {
         "id": "schema:TaxSettingsResponse",
         "kind": "schema",
-        "name": "TaxSettingsResponse"
+        "name": "TaxSettingsResponse",
+        "type": "object"
       },
       {
         "id": "schema:TaxSettingsUpdateRequest",
         "kind": "schema",
-        "name": "TaxSettingsUpdateRequest"
+        "name": "TaxSettingsUpdateRequest",
+        "type": "object"
       },
       {
         "id": "schema:VariantDTO",
         "kind": "schema",
-        "name": "VariantDTO"
+        "name": "VariantDTO",
+        "type": "object"
       },
       {
         "id": "schema:VariantOption",
         "kind": "schema",
-        "name": "VariantOption"
+        "name": "VariantOption",
+        "type": "object"
       },
       {
         "id": "schema:VariantOptionDefinition",
         "kind": "schema",
-        "name": "VariantOptionDefinition"
+        "name": "VariantOptionDefinition",
+        "type": "object"
       },
       {
         "id": "schema:VariantOptionDefinitions",
         "kind": "schema",
-        "name": "VariantOptionDefinitions"
+        "name": "VariantOptionDefinitions",
+        "type": "object"
       },
       {
         "id": "schema:VariantOptionProperties",
         "kind": "schema",
-        "name": "VariantOptionProperties"
+        "name": "VariantOptionProperties",
+        "type": "object"
       },
       {
         "id": "schema:VariantOptionsResponse",
         "kind": "schema",
-        "name": "VariantOptionsResponse"
+        "name": "VariantOptionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Weight",
         "kind": "schema",
-        "name": "Weight"
+        "name": "Weight",
+        "type": "object"
       }
     ]
   },

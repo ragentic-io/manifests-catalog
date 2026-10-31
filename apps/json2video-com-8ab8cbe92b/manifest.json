@@ -13,6 +13,171 @@
         "from": "json2video-com-8ab8cbe92b",
         "kind": "EXPOSES",
         "to": "operation:post:/movies"
+      },
+      {
+        "from": "operation:post:/movies",
+        "kind": "ACCEPTS",
+        "to": "schema:movie"
+      },
+      {
+        "from": "schema:audio",
+        "kind": "REFERENCES",
+        "to": "schema:AudioElement"
+      },
+      {
+        "from": "schema:audio",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
+      },
+      {
+        "from": "schema:component",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
+      },
+      {
+        "from": "schema:component",
+        "kind": "REFERENCES",
+        "to": "schema:VisualElement"
+      },
+      {
+        "from": "schema:html",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
+      },
+      {
+        "from": "schema:html",
+        "kind": "REFERENCES",
+        "to": "schema:VisualElement"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:VisualElement"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:audio"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:component"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:html"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:image"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:scene"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:template"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:text"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:video"
+      },
+      {
+        "from": "schema:movie",
+        "kind": "REFERENCES",
+        "to": "schema:voice"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:audio"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:component"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:html"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:image"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:text"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:video"
+      },
+      {
+        "from": "schema:scene",
+        "kind": "REFERENCES",
+        "to": "schema:voice"
+      },
+      {
+        "from": "schema:template",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
+      },
+      {
+        "from": "schema:template",
+        "kind": "REFERENCES",
+        "to": "schema:VisualElement"
+      },
+      {
+        "from": "schema:text",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
+      },
+      {
+        "from": "schema:text",
+        "kind": "REFERENCES",
+        "to": "schema:VisualElement"
+      },
+      {
+        "from": "schema:video",
+        "kind": "REFERENCES",
+        "to": "schema:AudioElement"
+      },
+      {
+        "from": "schema:video",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
+      },
+      {
+        "from": "schema:video",
+        "kind": "REFERENCES",
+        "to": "schema:VisualElement"
+      },
+      {
+        "from": "schema:voice",
+        "kind": "REFERENCES",
+        "to": "schema:AudioElement"
+      },
+      {
+        "from": "schema:voice",
+        "kind": "REFERENCES",
+        "to": "schema:BaseElement"
       }
     ],
     "nodes": [
@@ -22,95 +187,136 @@
       },
       {
         "deprecated": false,
+        "description": "Get the status any of your movies by passing your project ID in the <code>project</code> query parameter.",
         "id": "operation:get:/movies",
         "kind": "operation",
         "method": "get",
         "name": "getMovies",
         "path": "/movies",
         "pointer": "#/paths/~1movies/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get the status of your movies"
       },
       {
         "deprecated": false,
+        "description": "Submit a new movie rendering job.",
         "id": "operation:post:/movies",
         "kind": "operation",
         "method": "post",
         "name": "newMovie",
         "path": "/movies",
         "pointer": "#/paths/~1movies/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "movie"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Create a new movie"
       },
       {
         "id": "schema:AudioElement",
         "kind": "schema",
-        "name": "AudioElement"
+        "name": "AudioElement",
+        "type": "object"
       },
       {
         "id": "schema:BaseElement",
         "kind": "schema",
-        "name": "BaseElement"
+        "name": "BaseElement",
+        "type": "object"
       },
       {
         "id": "schema:CaptureProperty",
         "kind": "schema",
-        "name": "CaptureProperty"
+        "name": "CaptureProperty",
+        "type": "object"
       },
       {
         "id": "schema:VisualElement",
         "kind": "schema",
-        "name": "VisualElement"
+        "name": "VisualElement",
+        "type": "object"
       },
       {
         "id": "schema:audio",
         "kind": "schema",
-        "name": "audio"
+        "name": "audio",
+        "type": "object|BaseElement|AudioElement"
       },
       {
+        "description": "Creates an element based on the specified feature",
         "id": "schema:component",
         "kind": "schema",
-        "name": "component"
+        "name": "component",
+        "type": "object|BaseElement|VisualElement"
       },
       {
+        "description": "Creates a video recording or a screenshot of the provided HTML snippet",
         "id": "schema:html",
         "kind": "schema",
-        "name": "html"
+        "name": "html",
+        "type": "object|BaseElement|VisualElement"
       },
       {
         "id": "schema:image",
         "kind": "schema",
-        "name": "image"
+        "name": "image",
+        "type": "object|VisualElement"
       },
       {
+        "description": "Object defining the movie to be rendered",
         "id": "schema:movie",
         "kind": "schema",
-        "name": "movie"
+        "name": "movie",
+        "type": "object"
       },
       {
         "id": "schema:scene",
         "kind": "schema",
-        "name": "scene"
+        "name": "scene",
+        "type": "object"
       },
       {
+        "description": "Creates an element based on the specified feature",
         "id": "schema:template",
         "kind": "schema",
-        "name": "template"
+        "name": "template",
+        "type": "object|BaseElement|VisualElement"
       },
       {
+        "description": "Creates a text element of a given style",
         "id": "schema:text",
         "kind": "schema",
-        "name": "text"
+        "name": "text",
+        "type": "object|BaseElement|VisualElement"
       },
       {
         "id": "schema:video",
         "kind": "schema",
-        "name": "video"
+        "name": "video",
+        "type": "object|BaseElement|VisualElement|AudioElement"
       },
       {
+        "description": "Creates a voice audio element from the provided text",
         "id": "schema:voice",
         "kind": "schema",
-        "name": "voice"
+        "name": "voice",
+        "type": "object|BaseElement|AudioElement"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Flickr_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `24be0af1f1f2f238d6faf5a1a4c7dee45d76068d58dafc7269df829d799d4f68` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,30 +34,32 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Flickr_profile_imag
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/oauth/access_token` | getAccessToken | — |
-| GET | `/oauth/request_token` | getRequestToken | — |
-| GET | `/rest?method=flickr.favorites.getContext` | getFavoritesContextByID | — |
-| GET | `/rest?method=flickr.favorites.getList` | getFavoritesByPersonID | — |
-| GET | `/rest?method=flickr.galleries.getPhotos` | getGalleryPhotosByID | — |
-| GET | `/rest?method=flickr.groups.discuss.replies.getInfo` | getGroupTopicRepliesByID | — |
-| GET | `/rest?method=flickr.groups.discuss.topics.getInfo` | getGroupTopicByID | — |
-| GET | `/rest?method=flickr.groups.discuss.topics.getList` | getGroupDiscussionsByID | — |
-| GET | `/rest?method=flickr.groups.getInfo` | getGroupByID | — |
-| GET | `/rest?method=flickr.groups.pools.getContext` | get /rest?method=flickr.groups.pools.getContext | — |
-| GET | `/rest?method=flickr.groups.pools.getPhotos` | getGroupPhotosByID | — |
-| GET | `/rest?method=flickr.people.getInfo` | getPersonByID | — |
-| GET | `/rest?method=flickr.people.getPhotos` | getMediaByPersonID | — |
-| GET | `/rest?method=flickr.photolist.getContext` | getPhotolistContextByID | — |
-| GET | `/rest?method=flickr.photos.getContext` | getPhotostreamContextByID | — |
-| GET | `/rest?method=flickr.photos.getExif` | getPhotoExifByID | — |
-| GET | `/rest?method=flickr.photos.getInfo` | getPhotoByID | — |
-| GET | `/rest?method=flickr.photos.getSizes` | getPhotoSizesByID | — |
-| GET | `/rest?method=flickr.photos.licenses.getInfo` | getLicenseByID | — |
-| GET | `/rest?method=flickr.photos.search` | getMediaBySearch | — |
-| GET | `/rest?method=flickr.photosets.getContext` | getAlbumContextByID | — |
-| GET | `/rest?method=flickr.photosets.getList` | getAlbumsByPersonID | — |
-| GET | `/rest?method=flickr.photosets.getPhotos` | getAlbumByID | — |
-| GET | `/rest?method=flickr.test.echo` | echo | — |
-| POST | `/upload` | uploadPhoto | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/oauth/access_token` | getAccessToken | `oauth_consumer_key`*, `oauth_nonce`*, `oauth_timestamp`*, `oauth_signature_method`*, `oauth_version`*, `oauth_signature`*, `oauth_verifier`*, `oauth_token`* | string | yes | — |
+| GET | `/oauth/request_token` | getRequestToken | `oauth_consumer_key`*, `oauth_nonce`*, `oauth_timestamp`*, `oauth_signature_method`*, `oauth_version`*, `oauth_signature`*, `oauth_callback`* | string | yes | — |
+| GET | `/rest?method=flickr.favorites.getContext` | getFavoritesContextByID | `api_key`*, `photo_id`*, `user_id` | object | yes | — |
+| GET | `/rest?method=flickr.favorites.getList` | getFavoritesByPersonID | `api_key`*, `user_id`*, `min_fave_date`, `max_fave_date`, `page`, `per_page` | object | yes | — |
+| GET | `/rest?method=flickr.galleries.getPhotos` | getGalleryPhotosByID | `api_key`*, `gallery_id`* | object | yes | — |
+| GET | `/rest?method=flickr.groups.discuss.replies.getInfo` | getGroupTopicRepliesByID | `api_key`*, `group_id`, `topic_id`*, `reply_id`* | object | yes | — |
+| GET | `/rest?method=flickr.groups.discuss.topics.getInfo` | getGroupTopicByID | `api_key`*, `group_id`, `topic_id`* | object | yes | — |
+| GET | `/rest?method=flickr.groups.discuss.topics.getList` | getGroupDiscussionsByID | `api_key`*, `group_id`, `page`, `per_page` | object | yes | — |
+| GET | `/rest?method=flickr.groups.getInfo` | getGroupByID | `api_key`*, `group_id`, `group_path_alias`, `lang` | object | yes | — |
+| GET | `/rest?method=flickr.groups.pools.getContext` | get /rest?method=flickr.groups.pools.getContext | `api_key`*, `photo_id`*, `group_id` | object | yes | — |
+| GET | `/rest?method=flickr.groups.pools.getPhotos` | getGroupPhotosByID | `api_key`*, `group_id` | object | yes | — |
+| GET | `/rest?method=flickr.people.getInfo` | getPersonByID | `api_key`*, `user_id` | object | yes | — |
+| GET | `/rest?method=flickr.people.getPhotos` | getMediaByPersonID | `api_key`*, `user_id`*, `safe_search`, `min_upload_date`, `max_upload_date`, `min_taken_date`, `max_taken_date`, `content_type`, `privacy_filter`, `page`, `per_page` | object | yes | — |
+| GET | `/rest?method=flickr.photolist.getContext` | getPhotolistContextByID | `api_key`*, `photo_id`*, `photolist_id`* | object | yes | — |
+| GET | `/rest?method=flickr.photos.getContext` | getPhotostreamContextByID | `api_key`*, `photo_id`* | object | yes | — |
+| GET | `/rest?method=flickr.photos.getExif` | getPhotoExifByID | `api_key`*, `photo_id`*, `secret` | object | yes | — |
+| GET | `/rest?method=flickr.photos.getInfo` | getPhotoByID | `api_key`*, `photo_id`* | object | yes | — |
+| GET | `/rest?method=flickr.photos.getSizes` | getPhotoSizesByID | `api_key`*, `photo_id`* | object | yes | — |
+| GET | `/rest?method=flickr.photos.licenses.getInfo` | getLicenseByID | `api_key`* | object | yes | — |
+| GET | `/rest?method=flickr.photos.search` | getMediaBySearch | `api_key`*, `text`, `tags`, `user_id`, `min_upload_date`, `max_upload_date`, `min_taken_date`, `max_taken_date`, `license`, `sort`, `privacy_filter`, `bbox`, `accuracy`, `safe_search`, `content_type`, `machine_tags`, `machine_tag_mode`, `group_id`, `contacts`, `woe_id`, `place_id`, `media`, `has_geo`, `geo_context`, `lat`, `lon`, `radius`, `radius_units`, `is_commons`, `in_gallery`, `is_getty`, `per_page`, `page` | object | yes | — |
+| GET | `/rest?method=flickr.photosets.getContext` | getAlbumContextByID | `api_key`*, `photo_id`*, `photoset_id` | object | yes | — |
+| GET | `/rest?method=flickr.photosets.getList` | getAlbumsByPersonID | `api_key`*, `user_id`*, `page`, `per_page` | object | yes | — |
+| GET | `/rest?method=flickr.photosets.getPhotos` | getAlbumByID | `api_key`*, `photoset_id`* | object | yes | — |
+| GET | `/rest?method=flickr.test.echo` | echo | `api_key`*, `echo` | object | yes | — |
+| POST | `/upload` | uploadPhoto | body*: object | object |  | — |

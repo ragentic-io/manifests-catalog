@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_contribly_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `48e6fefa61448f1d63fd0f7fde4adf3424fc555c0ae6f9fd1eacba735a564cee` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,49 +34,51 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_contribly_profile_i
 
 42 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/artifact-formats` | get /artifact-formats | Artifact formats |
-| GET | `/assignments` | get /assignments | List assignments |
-| POST | `/assignments` | post /assignments | Create a new assignment |
-| DELETE | `/assignments/{id}` | delete /assignments/{id} | Delete this assignment and all of it's contributions |
-| GET | `/assignments/{id}` | get /assignments/{id} | Get a single assigment by id |
-| GET | `/change-log` | get /change-log | Recent changes |
-| GET | `/contribution-refinement-types` | get /contribution-refinement-types | List valid contribution refinement types |
-| GET | `/contribution-refinements` | get /contribution-refinements | List contribution refinement options |
-| GET | `/contributions` | get /contributions | List contributions |
-| POST | `/contributions` | post /contributions | Create a new contribution |
-| DELETE | `/contributions/{id}` | delete /contributions/{id} | Delete this contribution |
-| GET | `/contributions/{id}` | get /contributions/{id} | Get a single contribution by id |
-| POST | `/contributions/{id}/flag` | post /contributions/{id}/flag | Raise a flag against this contribution |
-| POST | `/contributions/{id}/like` | post /contributions/{id}/like | Allows a user to mark a contribution as liked |
-| GET | `/contributions/{id}/likes` | get /contributions/{id}/likes | List users who have liked this contributions |
-| POST | `/contributions/{id}/moderate` | post /contributions/{id}/moderate | Perform a moderation action on this contribution |
-| GET | `/credentials` | get /credentials | List the credentials associated with the authenticated user. |
-| GET | `/event-types` | get /event-types | Event types |
-| POST | `/export` | post /export | Export contributions. |
-| POST | `/export-summary` | post /export-summary | Export contributions preflight summary. |
-| GET | `/exports/{id}` | get /exports/{id} | Get a single export job; poll to follow export progress. |
-| GET | `/form-responses` | get /form-responses | List form responses |
-| POST | `/form-responses` | post /form-responses | Submit a response to a form |
-| GET | `/form-responses/{id}` | get /form-responses/{id} | Get a single form response by id |
-| GET | `/forms` | get /forms | List forms |
-| POST | `/forms` | post /forms | Create a form |
-| DELETE | `/forms/{id}` | delete /forms/{id} | Delete this form and all of it's responses. |
-| GET | `/forms/{id}` | get /forms/{id} | Get a single form by id |
-| POST | `/media` | post /media | Submit a new media file |
-| GET | `/notifications/contributions/{id}/preview` | get /notifications/contributions/{id}/preview | — |
-| GET | `/scopes` | get /scopes | Scopes |
-| GET | `/subscription-types` | get /subscription-types | Subscription types |
-| GET | `/subscriptions` | get /subscriptions | List subscriptions for the authorised user. |
-| DELETE | `/subscriptions/{id}` | delete /subscriptions/{id} | Delete a subscription. |
-| GET | `/tags` | get /tags | List tags |
-| POST | `/tags` | post /tags | Create a new tag |
-| GET | `/tags/{id}` | get /tags/{id} | Retrieve a single tag by id |
-| GET | `/tagsets` | get /tagsets | List tag sets |
-| POST | `/tagsets` | post /tagsets | Create a new tag set |
-| GET | `/tagsets/{id}` | get /tagsets/{id} | Retrieve a single tag set by id |
-| GET | `/users` | get /users | List users |
-| GET | `/users/{id}` | get /users/{id} | Retrieve a single user by id |
-| GET | `/users/{id}/linked/{type}` | get /users/{id}/linked/{type} | Retrieve a users linked profile by type |
-| POST | `/verify` | post /verify | Verify token and return details of the owning user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/artifact-formats` | get /artifact-formats | — | ArtifactFormats | yes | Artifact formats |
+| GET | `/assignments` | get /assignments | `ownedBy`, `page`, `pageSize`, `q`, `urlWords`, `open`, `alwaysOpen`, `tag`, `name` | Assignment[] | yes | List assignments |
+| POST | `/assignments` | post /assignments | body*: AssignmentSubmission | Assignment |  | Create a new assignment |
+| GET | `/assignments/{id}` | get /assignments/{id} | `id`* | Assignment | yes | Get a single assigment by id |
+| DELETE | `/assignments/{id}` | delete /assignments/{id} | `id`* | — |  | Delete this assignment and all of it's contributions |
+| GET | `/change-log` | get /change-log | — | ChangeLogItem[] | yes | Recent changes |
+| GET | `/contribution-refinement-types` | get /contribution-refinement-types | — | string[] | yes | List valid contribution refinement types |
+| GET | `/contribution-refinements` | get /contribution-refinements | `assignment`, `country`, `createdBefore`, `createdAfter`, `geohash`, `hasLocation`, `latLong`, `radius`, `mediaType`, `ownedBy`, `q`, `urlWords`, `user`, `refinements`, `refinementSize` | object | yes | List contribution refinement options |
+| GET | `/contributions` | get /contributions | `assignment`, `country`, `createdBefore`, `createdAfter`, `createdDay`, `createdMonth`, `geohash`, `hasLocation`, `latLong`, `radius`, `mediaType`, `ownedBy`, `q`, `urlWords`, `user`, `ids`, `format` | Contribution[] | yes | List contributions |
+| POST | `/contributions` | post /contributions | body*: Contribution | Contribution |  | Create a new contribution |
+| GET | `/contributions/{id}` | get /contributions/{id} | `id`* | Contribution | yes | Get a single contribution by id |
+| DELETE | `/contributions/{id}` | delete /contributions/{id} | `id`* | Contribution |  | Delete this contribution |
+| POST | `/contributions/{id}/flag` | post /contributions/{id}/flag | `id`*, body*: Flag | Flag |  | Raise a flag against this contribution |
+| POST | `/contributions/{id}/like` | post /contributions/{id}/like | `id`* | number |  | Allows a user to mark a contribution as liked |
+| GET | `/contributions/{id}/likes` | get /contributions/{id}/likes | `id`* | string[] | yes | List users who have liked this contributions |
+| POST | `/contributions/{id}/moderate` | post /contributions/{id}/moderate | `id`*, body*: ModerationHistoryItemSubmission | string |  | Perform a moderation action on this contribution |
+| GET | `/credentials` | get /credentials | — | Credential[] | yes | List the credentials associated with the authenticated user. |
+| GET | `/event-types` | get /event-types | — | EventType[] | yes | Event types |
+| POST | `/export` | post /export | `assignment`, `country`, `createdBefore`, `createdAfter`, `geohash`, `hasLocation`, `latLong`, `radius`, `mediaType`, `ownedBy`, `q`, `urlWords`, `user`, `tagged`, `combined`, `individual`, `format`, `json` | Export |  | Export contributions. |
+| POST | `/export-summary` | post /export-summary | `assignment`, `country`, `createdBefore`, `createdAfter`, `geohash`, `hasLocation`, `latLong`, `radius`, `mediaType`, `ownedBy`, `q`, `urlWords`, `user` | ExportSummary |  | Export contributions preflight summary. |
+| GET | `/exports/{id}` | get /exports/{id} | `id`* | Export | yes | Get a single export job; poll to follow export progress. |
+| GET | `/form-responses` | get /form-responses | `user`, `form`, `contribution` | FormResponse[] | yes | List form responses |
+| POST | `/form-responses` | post /form-responses | body*: FormResponseSubmission | FormResponse |  | Submit a response to a form |
+| GET | `/form-responses/{id}` | get /form-responses/{id} | `id`* | FormResponse | yes | Get a single form response by id |
+| GET | `/forms` | get /forms | `ownedBy`* | Form[] | yes | List forms |
+| POST | `/forms` | post /forms | body*: FormSubmission | Form |  | Create a form |
+| GET | `/forms/{id}` | get /forms/{id} | `id`* | Form | yes | Get a single form by id |
+| DELETE | `/forms/{id}` | delete /forms/{id} | `id`* | — |  | Delete this form and all of it's responses. |
+| POST | `/media` | post /media | body*: string:byte | Media |  | Submit a new media file |
+| GET | `/notifications/contributions/{id}/preview` | get /notifications/contributions/{id}/preview | `id`*, `message`* | NotificationPreview | yes | — |
+| GET | `/scopes` | get /scopes | — | string[] | yes | Scopes |
+| GET | `/subscription-types` | get /subscription-types | — | SubscriptionType[] | yes | Subscription types |
+| GET | `/subscriptions` | get /subscriptions | body*: SubscriptionSubmission | Subscription[] | yes | List subscriptions for the authorised user. |
+| DELETE | `/subscriptions/{id}` | delete /subscriptions/{id} | `id`* | — |  | Delete a subscription. |
+| GET | `/tags` | get /tags | `ownedBy`, `tagSet`, `urlWords` | Tag[] | yes | List tags |
+| POST | `/tags` | post /tags | body*: TagSubmission | Tag |  | Create a new tag |
+| GET | `/tags/{id}` | get /tags/{id} | `id`* | Tag | yes | Retrieve a single tag by id |
+| GET | `/tagsets` | get /tagsets | `ownedBy`, `urlWords` | TagSet[] | yes | List tag sets |
+| POST | `/tagsets` | post /tagsets | body*: TagSetSubmission | TagSet |  | Create a new tag set |
+| GET | `/tagsets/{id}` | get /tagsets/{id} | `id`* | TagSet | yes | Retrieve a single tag set by id |
+| GET | `/users` | get /users | `assignment`, `country`, `minimumContributions`, `linkedProfile`, `ownedBy`, `submittedBefore`, `submittedAfter`, `username` | User[] | yes | List users |
+| GET | `/users/{id}` | get /users/{id} | `id`* | User | yes | Retrieve a single user by id |
+| GET | `/users/{id}/linked/{type}` | get /users/{id}/linked/{type} | `id`*, `type`* | LinkedProfile | yes | Retrieve a users linked profile by type |
+| POST | `/verify` | post /verify | — | Authority |  | Verify token and return details of the owning user |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.journy.io_developers
 
 | | |
 | --- | --- |
-| Signed bundle | `4f652d06157e1652e5b92df7539a2a7d29ee86b3bd9c35f1e4a9d871d2a8bc87` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,21 +32,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_developers.journy.io_developers
 
 ## Operations (16)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/accounts` | deleteAccount | Delete account |
-| POST | `/accounts/upsert` | upsertAccount | Create or update account |
-| POST | `/accounts/users/add` | addUserToAccount | Add users to an account |
-| POST | `/accounts/users/remove` | removeUserFromAccount | Remove user from account |
-| GET | `/events` | getEvents | Get events |
-| POST | `/events` | trackJourneyEvent | Track event |
-| POST | `/link` | link | Link web activity to user |
-| GET | `/properties/accounts` | getAccountProperties | Get account properties |
-| GET | `/properties/users` | getUserProperties | Get user properties |
-| GET | `/segments/accounts` | getAccountSegments | Get account segments |
-| GET | `/segments/users` | getUserSegments | Get user segments |
-| POST | `/track` | trackEvent | Track event |
-| GET | `/tracking/snippet` | getTrackingSnippet | Get snippet for a website |
-| DELETE | `/users` | deleteUser | Delete user |
-| POST | `/users/upsert` | upsertUser | Create or update user |
-| GET | `/validate` | getValidity | Validate API key |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| DELETE | `/accounts` | deleteAccount | body*: object | object |  | Delete account |
+| POST | `/accounts/upsert` | upsertAccount | body*: object | object |  | Create or update account |
+| POST | `/accounts/users/add` | addUserToAccount | body*: object | object |  | Add users to an account |
+| POST | `/accounts/users/remove` | removeUserFromAccount | body*: object | object |  | Remove user from account |
+| GET | `/events` | getEvents | — | object | yes | Get events |
+| POST | `/events` | trackJourneyEvent | body*: object | object |  | Track event |
+| POST | `/link` | link | body*: object | object |  | Link web activity to user |
+| GET | `/properties/accounts` | getAccountProperties | — | object | yes | Get account properties |
+| GET | `/properties/users` | getUserProperties | — | object | yes | Get user properties |
+| GET | `/segments/accounts` | getAccountSegments | — | object | yes | Get account segments |
+| GET | `/segments/users` | getUserSegments | — | object | yes | Get user segments |
+| POST | `/track` | trackEvent | body*: object | object |  | Track event |
+| GET | `/tracking/snippet` | getTrackingSnippet | `domain`* | object | yes | Get snippet for a website |
+| DELETE | `/users` | deleteUser | body*: object | object |  | Delete user |
+| POST | `/users/upsert` | upsertUser | body*: object | object |  | Create or update user |
+| GET | `/validate` | getValidity | — | object | yes | Validate API key |

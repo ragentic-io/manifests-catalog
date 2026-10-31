@@ -32,17 +32,17 @@
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:delete:/dns/{domainName}/records/{recordId}"
-      },
-      {
-        "from": "combell-com-f719729799",
-        "kind": "EXPOSES",
         "to": "operation:get:/dns/{domainName}/records/{recordId}"
       },
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
         "to": "operation:put:/dns/{domainName}/records/{recordId}"
+      },
+      {
+        "from": "combell-com-f719729799",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/dns/{domainName}/records/{recordId}"
       },
       {
         "from": "combell-com-f719729799",
@@ -122,17 +122,17 @@
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:delete:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}"
-      },
-      {
-        "from": "combell-com-f719729799",
-        "kind": "EXPOSES",
         "to": "operation:get:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}"
       },
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
         "to": "operation:put:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}"
+      },
+      {
+        "from": "combell-com-f719729799",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}"
       },
       {
         "from": "combell-com-f719729799",
@@ -202,12 +202,12 @@
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:delete:/mailboxes/{mailboxName}"
+        "to": "operation:get:/mailboxes/{mailboxName}"
       },
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:get:/mailboxes/{mailboxName}"
+        "to": "operation:delete:/mailboxes/{mailboxName}"
       },
       {
         "from": "combell-com-f719729799",
@@ -237,12 +237,12 @@
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:delete:/mailzones/{domainName}/aliases/{emailAddress}"
+        "to": "operation:put:/mailzones/{domainName}/aliases/{emailAddress}"
       },
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:put:/mailzones/{domainName}/aliases/{emailAddress}"
+        "to": "operation:delete:/mailzones/{domainName}/aliases/{emailAddress}"
       },
       {
         "from": "combell-com-f719729799",
@@ -267,12 +267,12 @@
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:delete:/mailzones/{domainName}/smtpdomains/{hostname}"
+        "to": "operation:put:/mailzones/{domainName}/smtpdomains/{hostname}"
       },
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:put:/mailzones/{domainName}/smtpdomains/{hostname}"
+        "to": "operation:delete:/mailzones/{domainName}/smtpdomains/{hostname}"
       },
       {
         "from": "combell-com-f719729799",
@@ -287,12 +287,12 @@
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:delete:/mysqldatabases/{databaseName}"
+        "to": "operation:get:/mysqldatabases/{databaseName}"
       },
       {
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
-        "to": "operation:get:/mysqldatabases/{databaseName}"
+        "to": "operation:delete:/mysqldatabases/{databaseName}"
       },
       {
         "from": "combell-com-f719729799",
@@ -378,6 +378,551 @@
         "from": "combell-com-f719729799",
         "kind": "EXPOSES",
         "to": "operation:get:/windowshostings/{domainName}"
+      },
+      {
+        "from": "operation:get:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/accounts",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAccount"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}",
+        "kind": "RETURNS",
+        "to": "schema:AccountDetail"
+      },
+      {
+        "from": "operation:get:/dns/{domainName}/records",
+        "kind": "RETURNS",
+        "to": "schema:DnsRecord"
+      },
+      {
+        "from": "operation:post:/dns/{domainName}/records",
+        "kind": "ACCEPTS",
+        "to": "schema:DnsRecord"
+      },
+      {
+        "from": "operation:get:/dns/{domainName}/records/{recordId}",
+        "kind": "RETURNS",
+        "to": "schema:DnsRecord"
+      },
+      {
+        "from": "operation:put:/dns/{domainName}/records/{recordId}",
+        "kind": "ACCEPTS",
+        "to": "schema:DnsRecord"
+      },
+      {
+        "from": "operation:get:/domains",
+        "kind": "RETURNS",
+        "to": "schema:Domain"
+      },
+      {
+        "from": "operation:post:/domains/registrations",
+        "kind": "ACCEPTS",
+        "to": "schema:RegisterDomain"
+      },
+      {
+        "from": "operation:post:/domains/transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:TransferDomain"
+      },
+      {
+        "from": "operation:get:/domains/{domainName}",
+        "kind": "RETURNS",
+        "to": "schema:DomainDetail"
+      },
+      {
+        "from": "operation:put:/domains/{domainName}/nameservers",
+        "kind": "ACCEPTS",
+        "to": "schema:EditNameServers"
+      },
+      {
+        "from": "operation:put:/domains/{domainName}/renew",
+        "kind": "ACCEPTS",
+        "to": "schema:EditDomainWillRenewRequest"
+      },
+      {
+        "from": "operation:get:/linuxhostings",
+        "kind": "RETURNS",
+        "to": "schema:LinuxHosting"
+      },
+      {
+        "from": "operation:get:/linuxhostings/{domainName}",
+        "kind": "RETURNS",
+        "to": "schema:LinuxHostingDetail"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/ftp/configuration",
+        "kind": "ACCEPTS",
+        "to": "schema:FtpConfiguration"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/phpsettings/apcu",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdatePhpAPcuRequest"
+      },
+      {
+        "from": "operation:get:/linuxhostings/{domainName}/phpsettings/availableversions",
+        "kind": "RETURNS",
+        "to": "schema:PhpVersion"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/phpsettings/memorylimit",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdatePhpMemoryLimitRequest"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/phpsettings/version",
+        "kind": "ACCEPTS",
+        "to": "schema:PhpVersion"
+      },
+      {
+        "from": "operation:get:/linuxhostings/{domainName}/scheduledtasks",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledTask"
+      },
+      {
+        "from": "operation:post:/linuxhostings/{domainName}/scheduledtasks",
+        "kind": "ACCEPTS",
+        "to": "schema:ScheduledTask"
+      },
+      {
+        "from": "operation:get:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledTask"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
+        "kind": "ACCEPTS",
+        "to": "schema:ScheduledTask"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/settings/gzipcompression",
+        "kind": "ACCEPTS",
+        "to": "schema:GzipConfig"
+      },
+      {
+        "from": "operation:post:/linuxhostings/{domainName}/sites/{siteName}/hostheaders",
+        "kind": "ACCEPTS",
+        "to": "schema:AddHostHeaderRequest"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/sites/{siteName}/http2/configuration",
+        "kind": "ACCEPTS",
+        "to": "schema:Http2Configuration"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/ssh/configuration",
+        "kind": "ACCEPTS",
+        "to": "schema:SshConfiguration"
+      },
+      {
+        "from": "operation:get:/linuxhostings/{domainName}/ssh/keys",
+        "kind": "RETURNS",
+        "to": "schema:SshKey"
+      },
+      {
+        "from": "operation:post:/linuxhostings/{domainName}/ssh/keys",
+        "kind": "ACCEPTS",
+        "to": "schema:AddSshKeyRequest"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/sslsettings/{hostname}/autoredirect",
+        "kind": "ACCEPTS",
+        "to": "schema:AutoRedirectConfig"
+      },
+      {
+        "from": "operation:put:/linuxhostings/{domainName}/sslsettings/{hostname}/letsencrypt",
+        "kind": "ACCEPTS",
+        "to": "schema:LetsEncryptConfig"
+      },
+      {
+        "from": "operation:post:/linuxhostings/{domainName}/subsites",
+        "kind": "ACCEPTS",
+        "to": "schema:AddSubsiteRequest"
+      },
+      {
+        "from": "operation:get:/mailboxes",
+        "kind": "RETURNS",
+        "to": "schema:Mailbox"
+      },
+      {
+        "from": "operation:post:/mailboxes",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateMailboxRequest"
+      },
+      {
+        "from": "operation:get:/mailboxes/{mailboxName}",
+        "kind": "RETURNS",
+        "to": "schema:MailboxDetail"
+      },
+      {
+        "from": "operation:put:/mailboxes/{mailboxName}/autoforward",
+        "kind": "ACCEPTS",
+        "to": "schema:AutoForward"
+      },
+      {
+        "from": "operation:put:/mailboxes/{mailboxName}/autoreply",
+        "kind": "ACCEPTS",
+        "to": "schema:AutoReply"
+      },
+      {
+        "from": "operation:put:/mailboxes/{mailboxName}/password",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateMailboxPasswordRequest"
+      },
+      {
+        "from": "operation:get:/mailzones/{domainName}",
+        "kind": "RETURNS",
+        "to": "schema:MailZone"
+      },
+      {
+        "from": "operation:post:/mailzones/{domainName}/aliases",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAliasRequest"
+      },
+      {
+        "from": "operation:put:/mailzones/{domainName}/aliases/{emailAddress}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateAliasRequest"
+      },
+      {
+        "from": "operation:put:/mailzones/{domainName}/antispam",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateAntiSpamRequest"
+      },
+      {
+        "from": "operation:post:/mailzones/{domainName}/catchall",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCatchAllRequest"
+      },
+      {
+        "from": "operation:post:/mailzones/{domainName}/smtpdomains",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSmtpDomainRequest"
+      },
+      {
+        "from": "operation:put:/mailzones/{domainName}/smtpdomains/{hostname}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateSmtpDomainRequest"
+      },
+      {
+        "from": "operation:get:/mysqldatabases",
+        "kind": "RETURNS",
+        "to": "schema:MySqlDatabase"
+      },
+      {
+        "from": "operation:post:/mysqldatabases",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateMySqlDatabase"
+      },
+      {
+        "from": "operation:get:/mysqldatabases/{databaseName}",
+        "kind": "RETURNS",
+        "to": "schema:MySqlDatabase"
+      },
+      {
+        "from": "operation:get:/mysqldatabases/{databaseName}/users",
+        "kind": "RETURNS",
+        "to": "schema:MySqlUser"
+      },
+      {
+        "from": "operation:post:/mysqldatabases/{databaseName}/users",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateMySqlUser"
+      },
+      {
+        "from": "operation:put:/mysqldatabases/{databaseName}/users/{userName}/password",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateUserPasswordRequest"
+      },
+      {
+        "from": "operation:put:/mysqldatabases/{databaseName}/users/{userName}/status",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateUserStatusRequest"
+      },
+      {
+        "from": "operation:get:/provisioningjobs/{jobId}",
+        "kind": "RETURNS",
+        "to": "schema:ProvisioningJobCompletion"
+      },
+      {
+        "from": "operation:get:/provisioningjobs/{jobId}",
+        "kind": "RETURNS",
+        "to": "schema:ProvisioningJobInfo"
+      },
+      {
+        "from": "operation:get:/servicepacks",
+        "kind": "RETURNS",
+        "to": "schema:Servicepack"
+      },
+      {
+        "from": "operation:get:/ssh",
+        "kind": "RETURNS",
+        "to": "schema:SshKeyDetail"
+      },
+      {
+        "from": "operation:get:/sslcertificaterequests",
+        "kind": "RETURNS",
+        "to": "schema:SslCertificateRequest"
+      },
+      {
+        "from": "operation:post:/sslcertificaterequests",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSslCertificateRequest"
+      },
+      {
+        "from": "operation:get:/sslcertificaterequests/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SslCertificateRequestDetail"
+      },
+      {
+        "from": "operation:get:/sslcertificates",
+        "kind": "RETURNS",
+        "to": "schema:SslCertificate"
+      },
+      {
+        "from": "operation:get:/sslcertificates/{sha1Fingerprint}",
+        "kind": "RETURNS",
+        "to": "schema:SslCertificateDetail"
+      },
+      {
+        "from": "operation:get:/windowshostings",
+        "kind": "RETURNS",
+        "to": "schema:WindowsHosting"
+      },
+      {
+        "from": "operation:get:/windowshostings/{domainName}",
+        "kind": "RETURNS",
+        "to": "schema:WindowsHostingDetail"
+      },
+      {
+        "from": "schema:AccountDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Addon"
+      },
+      {
+        "from": "schema:AccountDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Servicepack"
+      },
+      {
+        "from": "schema:AntiSpam",
+        "kind": "REFERENCES",
+        "to": "schema:AntiSpamTypes"
+      },
+      {
+        "from": "schema:BadRequestResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationErrorMessage"
+      },
+      {
+        "from": "schema:CreateSslCertificateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalValidationAttribute"
+      },
+      {
+        "from": "schema:CreateSslCertificateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateType"
+      },
+      {
+        "from": "schema:CreateSslCertificateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateValidationLevel"
+      },
+      {
+        "from": "schema:DomainDetail",
+        "kind": "REFERENCES",
+        "to": "schema:NameServer"
+      },
+      {
+        "from": "schema:DomainDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Registrant"
+      },
+      {
+        "from": "schema:LinuxHostingDetail",
+        "kind": "REFERENCES",
+        "to": "schema:LinuxIpType"
+      },
+      {
+        "from": "schema:LinuxHostingDetail",
+        "kind": "REFERENCES",
+        "to": "schema:LinuxSite"
+      },
+      {
+        "from": "schema:LinuxSite",
+        "kind": "REFERENCES",
+        "to": "schema:HostHeader"
+      },
+      {
+        "from": "schema:MailZone",
+        "kind": "REFERENCES",
+        "to": "schema:Alias"
+      },
+      {
+        "from": "schema:MailZone",
+        "kind": "REFERENCES",
+        "to": "schema:AntiSpam"
+      },
+      {
+        "from": "schema:MailZone",
+        "kind": "REFERENCES",
+        "to": "schema:CatchAll"
+      },
+      {
+        "from": "schema:MailZone",
+        "kind": "REFERENCES",
+        "to": "schema:MailZoneAccount"
+      },
+      {
+        "from": "schema:MailZone",
+        "kind": "REFERENCES",
+        "to": "schema:SmtpDomain"
+      },
+      {
+        "from": "schema:MailboxDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AutoForward"
+      },
+      {
+        "from": "schema:MailboxDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AutoReply"
+      },
+      {
+        "from": "schema:MySqlUser",
+        "kind": "REFERENCES",
+        "to": "schema:UserRights"
+      },
+      {
+        "from": "schema:ProvisioningJobInfo",
+        "kind": "REFERENCES",
+        "to": "schema:CompletionEstimation"
+      },
+      {
+        "from": "schema:ProvisioningJobInfo",
+        "kind": "REFERENCES",
+        "to": "schema:ProvisioningJobStatus"
+      },
+      {
+        "from": "schema:RegisterDomain",
+        "kind": "REFERENCES",
+        "to": "schema:RegistrantInput"
+      },
+      {
+        "from": "schema:RegistrantInput",
+        "kind": "REFERENCES",
+        "to": "schema:ExtraField"
+      },
+      {
+        "from": "schema:SslCertificate",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateType"
+      },
+      {
+        "from": "schema:SslCertificate",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateValidationLevel"
+      },
+      {
+        "from": "schema:SslCertificateDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateType"
+      },
+      {
+        "from": "schema:SslCertificateDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateValidationLevel"
+      },
+      {
+        "from": "schema:SslCertificateDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslSubjectAltName"
+      },
+      {
+        "from": "schema:SslCertificateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateType"
+      },
+      {
+        "from": "schema:SslCertificateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateValidationLevel"
+      },
+      {
+        "from": "schema:SslCertificateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateVendor"
+      },
+      {
+        "from": "schema:SslCertificateRequestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateRequestValidation"
+      },
+      {
+        "from": "schema:SslCertificateRequestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateType"
+      },
+      {
+        "from": "schema:SslCertificateRequestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateValidationLevel"
+      },
+      {
+        "from": "schema:SslCertificateRequestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateVendor"
+      },
+      {
+        "from": "schema:SslCertificateRequestDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SslSubjectAltName"
+      },
+      {
+        "from": "schema:SslCertificateRequestValidation",
+        "kind": "REFERENCES",
+        "to": "schema:SslCertificateRequestValidationType"
+      },
+      {
+        "from": "schema:SslSubjectAltName",
+        "kind": "REFERENCES",
+        "to": "schema:SslSubjectAltNameType"
+      },
+      {
+        "from": "schema:TransferDomain",
+        "kind": "REFERENCES",
+        "to": "schema:RegistrantInput"
+      },
+      {
+        "from": "schema:UpdateAntiSpamRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AntiSpamTypes"
+      },
+      {
+        "from": "schema:WindowsHostingDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationPool"
+      },
+      {
+        "from": "schema:WindowsHostingDetail",
+        "kind": "REFERENCES",
+        "to": "schema:WindowsIpType"
+      },
+      {
+        "from": "schema:WindowsHostingDetail",
+        "kind": "REFERENCES",
+        "to": "schema:WindowsSite"
+      },
+      {
+        "from": "schema:WindowsSite",
+        "kind": "REFERENCES",
+        "to": "schema:SiteBinding"
       }
     ],
     "nodes": [
@@ -391,21 +936,82 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAccounts",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters the list, returning only accounts containing the specified asset type.",
+            "in": "query",
+            "name": "asset_type",
+            "required": false,
+            "type": "AssetType"
+          },
+          {
+            "description": "Return only accounts, matching the specified identifier.",
+            "in": "query",
+            "name": "identifier",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of accounts"
+        "summary": "Overview of accounts",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The creation of an account requires some background processing.",
         "id": "operation:post:/accounts",
         "kind": "operation",
         "method": "post",
         "name": "CreateAccount",
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateAccount"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new account"
+        "summary": "Create a new account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
@@ -413,10 +1019,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAccount",
+        "parameters": [
+          {
+            "description": "The id of the account.",
+            "in": "query",
+            "name": "account_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}",
         "pointer": "#/paths/~1accounts~1{accountId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountDetail"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a specific account"
+        "summary": "Get a specific account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
@@ -424,10 +1056,71 @@
         "kind": "operation",
         "method": "get",
         "name": "get /dns/{domainName}/records",
+        "parameters": [
+          {
+            "description": "The domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters records matching the type.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters records matching the record name.",
+            "in": "query",
+            "name": "record_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters records for the service.",
+            "in": "query",
+            "name": "service",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns/{domainName}/records",
         "pointer": "#/paths/~1dns~1{domainName}~1records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DnsRecord[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get records"
+        "summary": "Get records",
+        "tags": [
+          "DNS records"
+        ]
       },
       {
         "deprecated": false,
@@ -435,21 +1128,42 @@
         "kind": "operation",
         "method": "post",
         "name": "post /dns/{domainName}/records",
+        "parameters": [
+          {
+            "description": "The domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns/{domainName}/records",
         "pointer": "#/paths/~1dns~1{domainName}~1records/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DnsRecord"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a record"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/dns/{domainName}/records/{recordId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /dns/{domainName}/records/{recordId}",
-        "path": "/dns/{domainName}/records/{recordId}",
-        "pointer": "#/paths/~1dns~1{domainName}~1records~1{recordId}/delete",
-        "security": [],
-        "summary": "Delete a record"
+        "summary": "Create a record",
+        "tags": [
+          "DNS records"
+        ]
       },
       {
         "deprecated": false,
@@ -457,10 +1171,50 @@
         "kind": "operation",
         "method": "get",
         "name": "get /dns/{domainName}/records/{recordId}",
+        "parameters": [
+          {
+            "description": "The domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the record.",
+            "in": "query",
+            "name": "record_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns/{domainName}/records/{recordId}",
         "pointer": "#/paths/~1dns~1{domainName}~1records~1{recordId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DnsRecord"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get specific record"
+        "summary": "Get specific record",
+        "tags": [
+          "DNS records"
+        ]
       },
       {
         "deprecated": false,
@@ -468,10 +1222,106 @@
         "kind": "operation",
         "method": "put",
         "name": "put /dns/{domainName}/records/{recordId}",
+        "parameters": [
+          {
+            "description": "The domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the record.",
+            "in": "query",
+            "name": "record_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns/{domainName}/records/{recordId}",
         "pointer": "#/paths/~1dns~1{domainName}~1records~1{recordId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DnsRecord"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit a record"
+        "summary": "Edit a record",
+        "tags": [
+          "DNS records"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/dns/{domainName}/records/{recordId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /dns/{domainName}/records/{recordId}",
+        "parameters": [
+          {
+            "description": "The domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the record.",
+            "in": "query",
+            "name": "record_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "recordId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/dns/{domainName}/records/{recordId}",
+        "pointer": "#/paths/~1dns~1{domainName}~1records~1{recordId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a record",
+        "tags": [
+          "DNS records"
+        ]
       },
       {
         "deprecated": false,
@@ -479,32 +1329,92 @@
         "kind": "operation",
         "method": "get",
         "name": "GetDomains",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/domains",
         "pointer": "#/paths/~1domains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Domain[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overviews of domains"
+        "summary": "Overviews of domains",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Registers an available domain.<br />Domain names with extension '.ca' are only available for registrants with country code 'CA'.",
         "id": "operation:post:/domains/registrations",
         "kind": "operation",
         "method": "post",
         "name": "Register",
         "path": "/domains/registrations",
         "pointer": "#/paths/~1domains~1registrations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RegisterDomain"
+        },
+        "responses": [
+          {
+            "status": "202"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Register a domain"
+        "summary": "Register a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Transfers a domain with a transfer authorization code.<br />Domain names with extension '.ca' are only available for registrants with country code 'CA'.",
         "id": "operation:post:/domains/transfers",
         "kind": "operation",
         "method": "post",
         "name": "Transfer",
         "path": "/domains/transfers",
         "pointer": "#/paths/~1domains~1transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "TransferDomain"
+        },
+        "responses": [
+          {
+            "status": "202"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Transfer a domain"
+        "summary": "Transfer a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -512,10 +1422,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetDomain",
+        "parameters": [
+          {
+            "description": "The domain name",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domainName}",
         "pointer": "#/paths/~1domains~1{domainName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DomainDetail"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Details of a domain"
+        "summary": "Details of a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -523,21 +1459,86 @@
         "kind": "operation",
         "method": "put",
         "name": "EditNameServers",
+        "parameters": [
+          {
+            "description": "The domain name",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domainName}/nameservers",
         "pointer": "#/paths/~1domains~1{domainName}~1nameservers/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "EditNameServers"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit domain name servers"
+        "summary": "Edit domain name servers",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allowed if can_toggle_renew is true on the domain detail:<br /><ul><li>If there are no unpaid invoices for the domain name anymore.</li><li>If the renewal won'…",
         "id": "operation:put:/domains/{domainName}/renew",
         "kind": "operation",
         "method": "put",
         "name": "ConfigureDomain",
+        "parameters": [
+          {
+            "description": "The domain name",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{domainName}/renew",
         "pointer": "#/paths/~1domains~1{domainName}~1renew/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "EditDomainWillRenewRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit domain name renew state"
+        "summary": "Edit domain name renew state",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -545,10 +1546,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetLinuxHostings",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/linuxhostings",
         "pointer": "#/paths/~1linuxhostings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinuxHosting[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of linux hostings"
+        "summary": "Overview of linux hostings",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -556,10 +1583,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetLinuxHosting",
+        "parameters": [
+          {
+            "description": "The Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}",
         "pointer": "#/paths/~1linuxhostings~1{domainName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinuxHostingDetail"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Linux hosting detail"
+        "summary": "Linux hosting detail",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -567,10 +1620,45 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureFtp",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/ftp/configuration",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1ftp~1configuration/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "FtpConfiguration"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure FTP"
+        "summary": "Configure FTP",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -578,10 +1666,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeApcu",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/phpsettings/apcu",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1phpsettings~1apcu/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdatePhpAPcuRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure PHP APCu setting"
+        "summary": "Configure PHP APCu setting",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -589,10 +1709,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAvailablePhpVersions",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/phpsettings/availableversions",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1phpsettings~1availableversions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhpVersion[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the available PHP versions."
+        "summary": "Get the available PHP versions.",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -600,10 +1746,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangePhpMemoryLimit",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/phpsettings/memorylimit",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1phpsettings~1memorylimit/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdatePhpMemoryLimitRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure PHP memory limit"
+        "summary": "Configure PHP memory limit",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -611,21 +1789,80 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangePhpVersion",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/phpsettings/version",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1phpsettings~1version/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "PhpVersion"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change the Linux hosting PHP version."
+        "summary": "Change the Linux hosting PHP version.",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Manage scheduled tasks which are also manageable via the control panel.",
         "id": "operation:get:/linuxhostings/{domainName}/scheduledtasks",
         "kind": "operation",
         "method": "get",
         "name": "GetScheduledTasks",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/scheduledtasks",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1scheduledtasks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledTask[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of scheduled tasks"
+        "summary": "Overview of scheduled tasks",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -633,21 +1870,42 @@
         "kind": "operation",
         "method": "post",
         "name": "AddScheduledTasks",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/scheduledtasks",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1scheduledtasks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ScheduledTask"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a scheduled task"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteScheduledTask",
-        "path": "/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
-        "pointer": "#/paths/~1linuxhostings~1{domainName}~1scheduledtasks~1{scheduledTaskId}/delete",
-        "security": [],
-        "summary": "Delete a scheduled task"
+        "summary": "Add a scheduled task",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -655,10 +1913,50 @@
         "kind": "operation",
         "method": "get",
         "name": "GetScheduledTask",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Id of the scheduled task.",
+            "in": "query",
+            "name": "scheduled_task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "scheduledTaskId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1scheduledtasks~1{scheduledTaskId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledTask"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get scheduled task detail"
+        "summary": "Get scheduled task detail",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -666,10 +1964,112 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureScheduledTask",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Id of the scheduled task.",
+            "in": "query",
+            "name": "scheduled_task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "scheduledTaskId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1scheduledtasks~1{scheduledTaskId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ScheduledTask"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure a scheduled task"
+        "summary": "Configure a scheduled task",
+        "tags": [
+          "Linux hostings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteScheduledTask",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Id of the scheduled task.",
+            "in": "query",
+            "name": "scheduled_task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "scheduledTaskId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/linuxhostings/{domainName}/scheduledtasks/{scheduledTaskId}",
+        "pointer": "#/paths/~1linuxhostings~1{domainName}~1scheduledtasks~1{scheduledTaskId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a scheduled task",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -677,10 +2077,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeGzipCompression",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/settings/gzipcompression",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1settings~1gzipcompression/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GzipConfig"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Enable/disable GZIP compression"
+        "summary": "Enable/disable GZIP compression",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -688,10 +2120,56 @@
         "kind": "operation",
         "method": "post",
         "name": "CreateHostHeader",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the site on the linux hosting.",
+            "in": "query",
+            "name": "site_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "siteName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/sites/{siteName}/hostheaders",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1sites~1{siteName}~1hostheaders/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AddHostHeaderRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a host header"
+        "summary": "Create a host header",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -699,10 +2177,59 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureHttp2",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Site name where HTTP/2 should be configured.<br /> For HTTP/2 to work correctly, the site must have ssl enabled.",
+            "in": "query",
+            "name": "site_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "siteName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/sites/{siteName}/http2/configuration",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1sites~1{siteName}~1http2~1configuration/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Http2Configuration"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure HTTP/2"
+        "summary": "Configure HTTP/2",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -710,10 +2237,45 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureSsh",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/ssh/configuration",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1ssh~1configuration/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SshConfiguration"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure SSH"
+        "summary": "Configure SSH",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -721,10 +2283,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSshKeys",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/ssh/keys",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1ssh~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SshKey[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of SSH keys"
+        "summary": "Overview of SSH keys",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -732,10 +2320,42 @@
         "kind": "operation",
         "method": "post",
         "name": "AddSshKey",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/ssh/keys",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1ssh~1keys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AddSshKeyRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a SSH key"
+        "summary": "Add a SSH key",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -743,10 +2363,45 @@
         "kind": "operation",
         "method": "delete",
         "name": "DeleteSshKey",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Fingerprint of public key.",
+            "in": "path",
+            "name": "fingerprint",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/ssh/keys/{fingerprint}",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1ssh~1keys~1{fingerprint}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a SSH key"
+        "summary": "Delete a SSH key",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -754,10 +2409,49 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeAutoRedirect",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specific hostname.",
+            "in": "path",
+            "name": "hostname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/sslsettings/{hostname}/autoredirect",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1sslsettings~1{hostname}~1autoredirect/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AutoRedirectConfig"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure auto redirect"
+        "summary": "Configure auto redirect",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -765,10 +2459,49 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeLetsEncrypt",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specific hostname.",
+            "in": "path",
+            "name": "hostname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/sslsettings/{hostname}/letsencrypt",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1sslsettings~1{hostname}~1letsencrypt/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "LetsEncryptConfig"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure let's encrypt"
+        "summary": "Configure let's encrypt",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -776,10 +2509,42 @@
         "kind": "operation",
         "method": "post",
         "name": "CreateSubsite",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/subsites",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1subsites/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AddSubsiteRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a subsite"
+        "summary": "Create a subsite",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -787,21 +2552,83 @@
         "kind": "operation",
         "method": "delete",
         "name": "DeleteSubsite",
+        "parameters": [
+          {
+            "description": "Linux hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the site on the linux hosting.",
+            "in": "query",
+            "name": "site_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "siteName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/linuxhostings/{domainName}/subsites/{siteName}",
         "pointer": "#/paths/~1linuxhostings~1{domainName}~1subsites~1{siteName}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a subsite"
+        "summary": "Delete a subsite",
+        "tags": [
+          "Linux hostings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Currently only supports getting the mailboxes filtered by domain name.",
         "id": "operation:get:/mailboxes",
         "kind": "operation",
         "method": "get",
         "name": "GetMailboxes",
+        "parameters": [
+          {
+            "description": "Obligated domain name for getting mailboxes.",
+            "in": "query",
+            "name": "domain_name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/mailboxes",
         "pointer": "#/paths/~1mailboxes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Mailbox[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets your mailboxes."
+        "summary": "Gets your mailboxes.",
+        "tags": [
+          "Mailboxes"
+        ]
       },
       {
         "deprecated": false,
@@ -811,19 +2638,24 @@
         "name": "CreateMailbox",
         "path": "/mailboxes",
         "pointer": "#/paths/~1mailboxes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateMailboxRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new mailbox."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/mailboxes/{mailboxName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteMailbox",
-        "path": "/mailboxes/{mailboxName}",
-        "pointer": "#/paths/~1mailboxes~1{mailboxName}/delete",
-        "security": [],
-        "summary": "Delete a mailbox"
+        "summary": "Create a new mailbox.",
+        "tags": [
+          "Mailboxes"
+        ]
       },
       {
         "deprecated": false,
@@ -831,10 +2663,75 @@
         "kind": "operation",
         "method": "get",
         "name": "GetMailbox",
+        "parameters": [
+          {
+            "description": "Mailbox name.",
+            "in": "query",
+            "name": "mailbox_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "mailboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailboxes/{mailboxName}",
         "pointer": "#/paths/~1mailboxes~1{mailboxName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MailboxDetail"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a specific mailbox"
+        "summary": "Get a specific mailbox",
+        "tags": [
+          "Mailboxes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/mailboxes/{mailboxName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteMailbox",
+        "parameters": [
+          {
+            "description": "Mailbox name.",
+            "in": "query",
+            "name": "mailbox_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "mailboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/mailboxes/{mailboxName}",
+        "pointer": "#/paths/~1mailboxes~1{mailboxName}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a mailbox",
+        "tags": [
+          "Mailboxes"
+        ]
       },
       {
         "deprecated": false,
@@ -842,10 +2739,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureMailboxAutoForward",
+        "parameters": [
+          {
+            "description": "Mailbox name.",
+            "in": "query",
+            "name": "mailbox_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "mailboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailboxes/{mailboxName}/autoforward",
         "pointer": "#/paths/~1mailboxes~1{mailboxName}~1autoforward/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AutoForward"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure auto-forward for mailbox"
+        "summary": "Configure auto-forward for mailbox",
+        "tags": [
+          "Mailboxes"
+        ]
       },
       {
         "deprecated": false,
@@ -853,10 +2782,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureMailboxAutoReply",
+        "parameters": [
+          {
+            "description": "Mailbox name.",
+            "in": "query",
+            "name": "mailbox_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "mailboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailboxes/{mailboxName}/autoreply",
         "pointer": "#/paths/~1mailboxes~1{mailboxName}~1autoreply/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AutoReply"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure auto-reply for mailbox"
+        "summary": "Configure auto-reply for mailbox",
+        "tags": [
+          "Mailboxes"
+        ]
       },
       {
         "deprecated": false,
@@ -864,10 +2825,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeMailboxPassword",
+        "parameters": [
+          {
+            "description": "Mailbox name.",
+            "in": "query",
+            "name": "mailbox_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "mailboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailboxes/{mailboxName}/password",
         "pointer": "#/paths/~1mailboxes~1{mailboxName}~1password/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateMailboxPasswordRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change password for mailbox"
+        "summary": "Change password for mailbox",
+        "tags": [
+          "Mailboxes"
+        ]
       },
       {
         "deprecated": false,
@@ -875,10 +2868,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetMailZone",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}",
         "pointer": "#/paths/~1mailzones~1{domainName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MailZone"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the mail zone."
+        "summary": "Get the mail zone.",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -886,21 +2905,46 @@
         "kind": "operation",
         "method": "post",
         "name": "CreateAlias",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/aliases",
         "pointer": "#/paths/~1mailzones~1{domainName}~1aliases/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateAliasRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new alias"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/mailzones/{domainName}/aliases/{emailAddress}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteAlias",
-        "path": "/mailzones/{domainName}/aliases/{emailAddress}",
-        "pointer": "#/paths/~1mailzones~1{domainName}~1aliases~1{emailAddress}/delete",
-        "security": [],
-        "summary": "Delete a alias"
+        "summary": "Create a new alias",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -908,10 +2952,113 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureAlias",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Alias e-mail address.",
+            "in": "query",
+            "name": "email_address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "emailAddress",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/aliases/{emailAddress}",
         "pointer": "#/paths/~1mailzones~1{domainName}~1aliases~1{emailAddress}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateAliasRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure a alias"
+        "summary": "Configure a alias",
+        "tags": [
+          "Mail zones"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/mailzones/{domainName}/aliases/{emailAddress}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteAlias",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Alias e-mail address.",
+            "in": "query",
+            "name": "email_address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "emailAddress",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/mailzones/{domainName}/aliases/{emailAddress}",
+        "pointer": "#/paths/~1mailzones~1{domainName}~1aliases~1{emailAddress}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a alias",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -919,10 +3066,42 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureAntiSpam",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/antispam",
         "pointer": "#/paths/~1mailzones~1{domainName}~1antispam/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateAntiSpamRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure anti-spam for mail zone"
+        "summary": "Configure anti-spam for mail zone",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -930,10 +3109,42 @@
         "kind": "operation",
         "method": "post",
         "name": "CreateCatchAll",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/catchall",
         "pointer": "#/paths/~1mailzones~1{domainName}~1catchall/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateCatchAllRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a catch-all on the mail zone"
+        "summary": "Create a catch-all on the mail zone",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -941,10 +3152,49 @@
         "kind": "operation",
         "method": "delete",
         "name": "DeleteCatchAll",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "E-mail address to which all e-mails are sent to inexistent mailboxes or aliases.",
+            "in": "query",
+            "name": "email_address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "emailAddress",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/catchall/{emailAddress}",
         "pointer": "#/paths/~1mailzones~1{domainName}~1catchall~1{emailAddress}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a catch-all on the mail zone"
+        "summary": "Delete a catch-all on the mail zone",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -952,21 +3202,46 @@
         "kind": "operation",
         "method": "post",
         "name": "CreateSmtpDomain",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/smtpdomains",
         "pointer": "#/paths/~1mailzones~1{domainName}~1smtpdomains/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateSmtpDomainRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create an extra smtp domain"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/mailzones/{domainName}/smtpdomains/{hostname}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteSmtpDomain",
-        "path": "/mailzones/{domainName}/smtpdomains/{hostname}",
-        "pointer": "#/paths/~1mailzones~1{domainName}~1smtpdomains~1{hostname}/delete",
-        "security": [],
-        "summary": "Delete an extra smtp domain"
+        "summary": "Create an extra smtp domain",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -974,10 +3249,99 @@
         "kind": "operation",
         "method": "put",
         "name": "ConfigureSmtpDomain",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Smtp domain name.",
+            "in": "path",
+            "name": "hostname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mailzones/{domainName}/smtpdomains/{hostname}",
         "pointer": "#/paths/~1mailzones~1{domainName}~1smtpdomains~1{hostname}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateSmtpDomainRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Configure an extra smtp domain"
+        "summary": "Configure an extra smtp domain",
+        "tags": [
+          "Mail zones"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/mailzones/{domainName}/smtpdomains/{hostname}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteSmtpDomain",
+        "parameters": [
+          {
+            "description": "Mail zone domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Smtp domain name.",
+            "in": "path",
+            "name": "hostname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/mailzones/{domainName}/smtpdomains/{hostname}",
+        "pointer": "#/paths/~1mailzones~1{domainName}~1smtpdomains~1{hostname}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete an extra smtp domain",
+        "tags": [
+          "Mail zones"
+        ]
       },
       {
         "deprecated": false,
@@ -985,10 +3349,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetMySqlDatabases",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/mysqldatabases",
         "pointer": "#/paths/~1mysqldatabases/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MySqlDatabase[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of mysql databases"
+        "summary": "Overview of mysql databases",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
@@ -998,19 +3388,28 @@
         "name": "CreateMySqlDatabase",
         "path": "/mysqldatabases",
         "pointer": "#/paths/~1mysqldatabases/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateMySqlDatabase"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new mysql database"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/mysqldatabases/{databaseName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteDatabase",
-        "path": "/mysqldatabases/{databaseName}",
-        "pointer": "#/paths/~1mysqldatabases~1{databaseName}/delete",
-        "security": [],
-        "summary": "Delete a mysql database"
+        "summary": "Create a new mysql database",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
@@ -1018,10 +3417,74 @@
         "kind": "operation",
         "method": "get",
         "name": "GetMySqlDatabase",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mysqldatabases/{databaseName}",
         "pointer": "#/paths/~1mysqldatabases~1{databaseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MySqlDatabase"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a specific database"
+        "summary": "Get a specific database",
+        "tags": [
+          "MySql databases"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/mysqldatabases/{databaseName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteDatabase",
+        "parameters": [
+          {
+            "description": "Name of the database.",
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/mysqldatabases/{databaseName}",
+        "pointer": "#/paths/~1mysqldatabases~1{databaseName}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a mysql database",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
@@ -1029,32 +3492,138 @@
         "kind": "operation",
         "method": "get",
         "name": "GetDatabaseUsers",
+        "parameters": [
+          {
+            "description": "Name of the database.",
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mysqldatabases/{databaseName}/users",
         "pointer": "#/paths/~1mysqldatabases~1{databaseName}~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MySqlUser[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of mysql users"
+        "summary": "Overview of mysql users",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The creation of a new mysql user will result in a user with read_only rights.",
         "id": "operation:post:/mysqldatabases/{databaseName}/users",
         "kind": "operation",
         "method": "post",
         "name": "CreateMySqlUser",
+        "parameters": [
+          {
+            "description": "Name of the database.",
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mysqldatabases/{databaseName}/users",
         "pointer": "#/paths/~1mysqldatabases~1{databaseName}~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateMySqlUser"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "BadRequestResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new mysql user"
+        "summary": "Create a new mysql user",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The deletion of a mysql user is allowed for users with read_only rights.",
         "id": "operation:delete:/mysqldatabases/{databaseName}/users/{userName}",
         "kind": "operation",
         "method": "delete",
         "name": "DeleteDatabaseUser",
+        "parameters": [
+          {
+            "description": "Name of the database.",
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the user.",
+            "in": "query",
+            "name": "user_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mysqldatabases/{databaseName}/users/{userName}",
         "pointer": "#/paths/~1mysqldatabases~1{databaseName}~1users~1{userName}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete a mysql user"
+        "summary": "Delete a mysql user",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
@@ -1062,10 +3631,56 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeDatabaseUserPassword",
+        "parameters": [
+          {
+            "description": "Name of the database.",
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the user.",
+            "in": "query",
+            "name": "user_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mysqldatabases/{databaseName}/users/{userName}/password",
         "pointer": "#/paths/~1mysqldatabases~1{databaseName}~1users~1{userName}~1password/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateUserPasswordRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Change password for mysql user"
+        "summary": "Change password for mysql user",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
@@ -1073,21 +3688,97 @@
         "kind": "operation",
         "method": "put",
         "name": "ChangeDatabaseUserStatus",
+        "parameters": [
+          {
+            "description": "Name of the database.",
+            "in": "query",
+            "name": "database_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the user.",
+            "in": "query",
+            "name": "user_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "databaseName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "userName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mysqldatabases/{databaseName}/users/{userName}/status",
         "pointer": "#/paths/~1mysqldatabases~1{databaseName}~1users~1{userName}~1status/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateUserStatusRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Enable/disable mysql user"
+        "summary": "Enable/disable mysql user",
+        "tags": [
+          "MySql databases"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provisioning failures may occur.",
         "id": "operation:get:/provisioningjobs/{jobId}",
         "kind": "operation",
         "method": "get",
         "name": "get /provisioningjobs/{jobId}",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "job_id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/provisioningjobs/{jobId}",
         "pointer": "#/paths/~1provisioningjobs~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProvisioningJobInfo"
+          },
+          {
+            "status": "201",
+            "type": "ProvisioningJobCompletion"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Detail of a provisioning job"
+        "summary": "Detail of a provisioning job",
+        "tags": [
+          "Provisioning jobs"
+        ]
       },
       {
         "deprecated": false,
@@ -1097,8 +3788,18 @@
         "name": "Servicepacks",
         "path": "/servicepacks",
         "pointer": "#/paths/~1servicepacks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Servicepack[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of service packs"
+        "summary": "Overview of service packs",
+        "tags": [
+          "Servicepacks"
+        ]
       },
       {
         "deprecated": false,
@@ -1106,10 +3807,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAllSshKeys",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/ssh",
         "pointer": "#/paths/~1ssh/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SshKeyDetail[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of SSH keys"
+        "summary": "Overview of SSH keys",
+        "tags": [
+          "SSH"
+        ]
       },
       {
         "deprecated": false,
@@ -1117,21 +3844,64 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSslCertificateRequests",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sslcertificaterequests",
         "pointer": "#/paths/~1sslcertificaterequests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SslCertificateRequest[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of SSL certificate requests"
+        "summary": "Overview of SSL certificate requests",
+        "tags": [
+          "SSL certificate requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Executing this method causes the purchase of a paying product.<br /> Log on to our website to see your current (renewal) prices or contact our Sales department…",
         "id": "operation:post:/sslcertificaterequests",
         "kind": "operation",
         "method": "post",
         "name": "AddSslCertificateRequest",
         "path": "/sslcertificaterequests",
         "pointer": "#/paths/~1sslcertificaterequests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateSslCertificateRequest"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a SSL certificate request"
+        "summary": "Add a SSL certificate request",
+        "tags": [
+          "SSL certificate requests"
+        ]
       },
       {
         "deprecated": false,
@@ -1139,10 +3909,35 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSslCertificateRequest",
+        "parameters": [
+          {
+            "description": "The id of the certificate request.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sslcertificaterequests/{id}",
         "pointer": "#/paths/~1sslcertificaterequests~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SslCertificateRequestDetail"
+          },
+          {
+            "status": "303"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Detail of a SSL certificate request"
+        "summary": "Detail of a SSL certificate request",
+        "tags": [
+          "SSL certificate requests"
+        ]
       },
       {
         "deprecated": false,
@@ -1150,10 +3945,34 @@
         "kind": "operation",
         "method": "put",
         "name": "VerifySslCertificateRequestDomainValidations",
+        "parameters": [
+          {
+            "description": "The id of the certificate request.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sslcertificaterequests/{id}",
         "pointer": "#/paths/~1sslcertificaterequests~1{id}/put",
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "303"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Verify the SSL certificate request domain validations"
+        "summary": "Verify the SSL certificate request domain validations",
+        "tags": [
+          "SSL certificate requests"
+        ]
       },
       {
         "deprecated": false,
@@ -1161,10 +3980,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSslCertificates",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sslcertificates",
         "pointer": "#/paths/~1sslcertificates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SslCertificate[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of SSL certificates"
+        "summary": "Overview of SSL certificates",
+        "tags": [
+          "SSL certificates"
+        ]
       },
       {
         "deprecated": false,
@@ -1172,21 +4017,91 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSslCertificate",
+        "parameters": [
+          {
+            "description": "The SHA-1 fingerprint of the certificate.",
+            "in": "query",
+            "name": "sha1_fingerprint",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "sha1Fingerprint",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sslcertificates/{sha1Fingerprint}",
         "pointer": "#/paths/~1sslcertificates~1{sha1Fingerprint}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SslCertificateDetail"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Detail of a SSL certificate"
+        "summary": "Detail of a SSL certificate",
+        "tags": [
+          "SSL certificates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the certifcate as binary data with the content-type and the filename information in the response headers.",
         "id": "operation:get:/sslcertificates/{sha1Fingerprint}/download",
         "kind": "operation",
         "method": "get",
         "name": "DownloadCertificate",
+        "parameters": [
+          {
+            "description": "The SHA-1 fingerprint of the certificate.",
+            "in": "query",
+            "name": "sha1_fingerprint",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The file format of the returned file stream: <ul><li>PFX: Also known as PKCS #12, is a single, password protected certificate archive that contains the entire…",
+            "in": "query",
+            "name": "file_format",
+            "required": true,
+            "type": "SslCertificateFileFormat"
+          },
+          {
+            "description": "The password used to protect the certificate file.<br />",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "sha1Fingerprint",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sslcertificates/{sha1Fingerprint}/download",
         "pointer": "#/paths/~1sslcertificates~1{sha1Fingerprint}~1download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download a SSL certificate"
+        "summary": "Download a SSL certificate",
+        "tags": [
+          "SSL certificates"
+        ]
       },
       {
         "deprecated": false,
@@ -1194,10 +4109,36 @@
         "kind": "operation",
         "method": "get",
         "name": "GetWindowsHostings",
+        "parameters": [
+          {
+            "description": "The number of items to skip in the resultset.",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of items to return in the resultset.",
+            "in": "query",
+            "name": "take",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/windowshostings",
         "pointer": "#/paths/~1windowshostings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WindowsHosting[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Overview of windows hostings"
+        "summary": "Overview of windows hostings",
+        "tags": [
+          "Windows hostings"
+        ]
       },
       {
         "deprecated": false,
@@ -1205,455 +4146,588 @@
         "kind": "operation",
         "method": "get",
         "name": "GetWindowsHosting",
+        "parameters": [
+          {
+            "description": "The Windows hosting domain name.",
+            "in": "query",
+            "name": "domain_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "domainName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/windowshostings/{domainName}",
         "pointer": "#/paths/~1windowshostings~1{domainName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WindowsHostingDetail"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Windows hosting detail"
+        "summary": "Windows hosting detail",
+        "tags": [
+          "Windows hostings"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
+        "description": "A detailed representation of an account.",
         "id": "schema:AccountDetail",
         "kind": "schema",
-        "name": "AccountDetail"
+        "name": "AccountDetail",
+        "type": "object"
       },
       {
         "id": "schema:AddHostHeaderRequest",
         "kind": "schema",
-        "name": "AddHostHeaderRequest"
+        "name": "AddHostHeaderRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddSshKeyRequest",
         "kind": "schema",
-        "name": "AddSshKeyRequest"
+        "name": "AddSshKeyRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddSubsiteRequest",
         "kind": "schema",
-        "name": "AddSubsiteRequest"
+        "name": "AddSubsiteRequest",
+        "type": "object"
       },
       {
         "id": "schema:AdditionalValidationAttribute",
         "kind": "schema",
-        "name": "AdditionalValidationAttribute"
+        "name": "AdditionalValidationAttribute",
+        "type": "object"
       },
       {
+        "description": "Addon information",
         "id": "schema:Addon",
         "kind": "schema",
-        "name": "Addon"
+        "name": "Addon",
+        "type": "object"
       },
       {
         "id": "schema:Alias",
         "kind": "schema",
-        "name": "Alias"
+        "name": "Alias",
+        "type": "object"
       },
       {
         "id": "schema:AntiSpam",
         "kind": "schema",
-        "name": "AntiSpam"
+        "name": "AntiSpam",
+        "type": "object"
       },
       {
+        "description": "Types of anti-spam scanning",
         "id": "schema:AntiSpamTypes",
         "kind": "schema",
-        "name": "AntiSpamTypes"
+        "name": "AntiSpamTypes",
+        "type": "string"
       },
       {
+        "description": "The application pool for the hosting account.",
         "id": "schema:ApplicationPool",
         "kind": "schema",
-        "name": "ApplicationPool"
+        "name": "ApplicationPool",
+        "type": "object"
       },
       {
+        "description": "Asset types",
         "id": "schema:AssetType",
         "kind": "schema",
-        "name": "AssetType"
+        "name": "AssetType",
+        "type": "string"
       },
       {
         "id": "schema:AutoForward",
         "kind": "schema",
-        "name": "AutoForward"
+        "name": "AutoForward",
+        "type": "object"
       },
       {
         "id": "schema:AutoRedirectConfig",
         "kind": "schema",
-        "name": "AutoRedirectConfig"
+        "name": "AutoRedirectConfig",
+        "type": "object"
       },
       {
         "id": "schema:AutoReply",
         "kind": "schema",
-        "name": "AutoReply"
+        "name": "AutoReply",
+        "type": "object"
       },
       {
         "id": "schema:BadRequestResponse",
         "kind": "schema",
-        "name": "BadRequestResponse"
+        "name": "BadRequestResponse",
+        "type": "object"
       },
       {
         "id": "schema:CatchAll",
         "kind": "schema",
-        "name": "CatchAll"
+        "name": "CatchAll",
+        "type": "object"
       },
       {
         "id": "schema:CompletionEstimation",
         "kind": "schema",
-        "name": "CompletionEstimation"
+        "name": "CompletionEstimation",
+        "type": "object"
       },
       {
         "id": "schema:CreateAccount",
         "kind": "schema",
-        "name": "CreateAccount"
+        "name": "CreateAccount",
+        "type": "object"
       },
       {
         "id": "schema:CreateAliasRequest",
         "kind": "schema",
-        "name": "CreateAliasRequest"
+        "name": "CreateAliasRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateCatchAllRequest",
         "kind": "schema",
-        "name": "CreateCatchAllRequest"
+        "name": "CreateCatchAllRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateMailboxRequest",
         "kind": "schema",
-        "name": "CreateMailboxRequest"
+        "name": "CreateMailboxRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateMySqlDatabase",
         "kind": "schema",
-        "name": "CreateMySqlDatabase"
+        "name": "CreateMySqlDatabase",
+        "type": "object"
       },
       {
         "id": "schema:CreateMySqlUser",
         "kind": "schema",
-        "name": "CreateMySqlUser"
+        "name": "CreateMySqlUser",
+        "type": "object"
       },
       {
         "id": "schema:CreateSmtpDomainRequest",
         "kind": "schema",
-        "name": "CreateSmtpDomainRequest"
+        "name": "CreateSmtpDomainRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateSslCertificateRequest",
         "kind": "schema",
-        "name": "CreateSslCertificateRequest"
+        "name": "CreateSslCertificateRequest",
+        "type": "object"
       },
       {
         "id": "schema:DnsRecord",
         "kind": "schema",
-        "name": "DnsRecord"
+        "name": "DnsRecord",
+        "type": "object"
       },
       {
         "id": "schema:Domain",
         "kind": "schema",
-        "name": "Domain"
+        "name": "Domain",
+        "type": "object"
       },
       {
         "id": "schema:DomainDetail",
         "kind": "schema",
-        "name": "DomainDetail"
+        "name": "DomainDetail",
+        "type": "object"
       },
       {
         "id": "schema:EditDomainWillRenewRequest",
         "kind": "schema",
-        "name": "EditDomainWillRenewRequest"
+        "name": "EditDomainWillRenewRequest",
+        "type": "object"
       },
       {
         "id": "schema:EditNameServers",
         "kind": "schema",
-        "name": "EditNameServers"
+        "name": "EditNameServers",
+        "type": "object"
       },
       {
         "id": "schema:ExtraField",
         "kind": "schema",
-        "name": "ExtraField"
+        "name": "ExtraField",
+        "type": "object"
       },
       {
         "id": "schema:FtpConfiguration",
         "kind": "schema",
-        "name": "FtpConfiguration"
+        "name": "FtpConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:GzipConfig",
         "kind": "schema",
-        "name": "GzipConfig"
+        "name": "GzipConfig",
+        "type": "object"
       },
       {
+        "description": "A host header identifies a web domain.",
         "id": "schema:HostHeader",
         "kind": "schema",
-        "name": "HostHeader"
+        "name": "HostHeader",
+        "type": "object"
       },
       {
         "id": "schema:Http2Configuration",
         "kind": "schema",
-        "name": "Http2Configuration"
+        "name": "Http2Configuration",
+        "type": "object"
       },
       {
         "id": "schema:LetsEncryptConfig",
         "kind": "schema",
-        "name": "LetsEncryptConfig"
+        "name": "LetsEncryptConfig",
+        "type": "object"
       },
       {
         "id": "schema:LinuxHosting",
         "kind": "schema",
-        "name": "LinuxHosting"
+        "name": "LinuxHosting",
+        "type": "object"
       },
       {
         "id": "schema:LinuxHostingDetail",
         "kind": "schema",
-        "name": "LinuxHostingDetail"
+        "name": "LinuxHostingDetail",
+        "type": "object"
       },
       {
+        "description": "Type of the hosting IP address (dedicated or shared)",
         "id": "schema:LinuxIpType",
         "kind": "schema",
-        "name": "LinuxIpType"
+        "name": "LinuxIpType",
+        "type": "string"
       },
       {
         "id": "schema:LinuxSite",
         "kind": "schema",
-        "name": "LinuxSite"
+        "name": "LinuxSite",
+        "type": "object"
       },
       {
         "id": "schema:MailZone",
         "kind": "schema",
-        "name": "MailZone"
+        "name": "MailZone",
+        "type": "object"
       },
       {
         "id": "schema:MailZoneAccount",
         "kind": "schema",
-        "name": "MailZoneAccount"
+        "name": "MailZoneAccount",
+        "type": "object"
       },
       {
         "id": "schema:Mailbox",
         "kind": "schema",
-        "name": "Mailbox"
+        "name": "Mailbox",
+        "type": "object"
       },
       {
         "id": "schema:MailboxDetail",
         "kind": "schema",
-        "name": "MailboxDetail"
+        "name": "MailboxDetail",
+        "type": "object"
       },
       {
         "id": "schema:MySqlDatabase",
         "kind": "schema",
-        "name": "MySqlDatabase"
+        "name": "MySqlDatabase",
+        "type": "object"
       },
       {
         "id": "schema:MySqlUser",
         "kind": "schema",
-        "name": "MySqlUser"
+        "name": "MySqlUser",
+        "type": "object"
       },
       {
         "id": "schema:NameServer",
         "kind": "schema",
-        "name": "NameServer"
+        "name": "NameServer",
+        "type": "object"
       },
       {
         "id": "schema:PhpVersion",
         "kind": "schema",
-        "name": "PhpVersion"
+        "name": "PhpVersion",
+        "type": "object"
       },
       {
         "id": "schema:ProvisioningJobCompletion",
         "kind": "schema",
-        "name": "ProvisioningJobCompletion"
+        "name": "ProvisioningJobCompletion",
+        "type": "object"
       },
       {
         "id": "schema:ProvisioningJobInfo",
         "kind": "schema",
-        "name": "ProvisioningJobInfo"
+        "name": "ProvisioningJobInfo",
+        "type": "object"
       },
       {
+        "description": "Current job status",
         "id": "schema:ProvisioningJobStatus",
         "kind": "schema",
-        "name": "ProvisioningJobStatus"
+        "name": "ProvisioningJobStatus",
+        "type": "string"
       },
       {
         "id": "schema:RegisterDomain",
         "kind": "schema",
-        "name": "RegisterDomain"
+        "name": "RegisterDomain",
+        "type": "object"
       },
       {
         "id": "schema:Registrant",
         "kind": "schema",
-        "name": "Registrant"
+        "name": "Registrant",
+        "type": "object"
       },
       {
         "id": "schema:RegistrantInput",
         "kind": "schema",
-        "name": "RegistrantInput"
+        "name": "RegistrantInput",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledTask",
         "kind": "schema",
-        "name": "ScheduledTask"
+        "name": "ScheduledTask",
+        "type": "object"
       },
       {
+        "description": "Servicepack information.",
         "id": "schema:Servicepack",
         "kind": "schema",
-        "name": "Servicepack"
+        "name": "Servicepack",
+        "type": "object"
       },
       {
+        "description": "A site binding identifies a web domain.",
         "id": "schema:SiteBinding",
         "kind": "schema",
-        "name": "SiteBinding"
+        "name": "SiteBinding",
+        "type": "object"
       },
       {
         "id": "schema:SmtpDomain",
         "kind": "schema",
-        "name": "SmtpDomain"
+        "name": "SmtpDomain",
+        "type": "object"
       },
       {
         "id": "schema:SshConfiguration",
         "kind": "schema",
-        "name": "SshConfiguration"
+        "name": "SshConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:SshKey",
         "kind": "schema",
-        "name": "SshKey"
+        "name": "SshKey",
+        "type": "object"
       },
       {
         "id": "schema:SshKeyDetail",
         "kind": "schema",
-        "name": "SshKeyDetail"
+        "name": "SshKeyDetail",
+        "type": "object"
       },
       {
         "id": "schema:SslCertificate",
         "kind": "schema",
-        "name": "SslCertificate"
+        "name": "SslCertificate",
+        "type": "object"
       },
       {
         "id": "schema:SslCertificateDetail",
         "kind": "schema",
-        "name": "SslCertificateDetail"
+        "name": "SslCertificateDetail",
+        "type": "object"
       },
       {
+        "description": "The file format of the returned file stream: <ul><li>PFX: Also known as PKCS #12, is a single, password protected certificate archive that contains the entire…",
         "id": "schema:SslCertificateFileFormat",
         "kind": "schema",
-        "name": "SslCertificateFileFormat"
+        "name": "SslCertificateFileFormat",
+        "type": "string"
       },
       {
         "id": "schema:SslCertificateRequest",
         "kind": "schema",
-        "name": "SslCertificateRequest"
+        "name": "SslCertificateRequest",
+        "type": "object"
       },
       {
         "id": "schema:SslCertificateRequestDetail",
         "kind": "schema",
-        "name": "SslCertificateRequestDetail"
+        "name": "SslCertificateRequestDetail",
+        "type": "object"
       },
       {
         "id": "schema:SslCertificateRequestValidation",
         "kind": "schema",
-        "name": "SslCertificateRequestValidation"
+        "name": "SslCertificateRequestValidation",
+        "type": "object"
       },
       {
+        "description": "The domain validation verification type.",
         "id": "schema:SslCertificateRequestValidationType",
         "kind": "schema",
-        "name": "SslCertificateRequestValidationType"
+        "name": "SslCertificateRequestValidationType",
+        "type": "string"
       },
       {
+        "description": "The type of the certificate: <ul><li>Standard: Certificate for a single domain.</li><li>Multi domain: Certificate for multiple (sub)domains belonging to the sa…",
         "id": "schema:SslCertificateType",
         "kind": "schema",
-        "name": "SslCertificateType"
+        "name": "SslCertificateType",
+        "type": "string"
       },
       {
+        "description": "The validation level of the certificate: <ul><li>Domain validated: Basic check of the identity of the owner of the domain name.</li><li>Organization validated:…",
         "id": "schema:SslCertificateValidationLevel",
         "kind": "schema",
-        "name": "SslCertificateValidationLevel"
+        "name": "SslCertificateValidationLevel",
+        "type": "string"
       },
       {
+        "description": "The vendor of the certificate.",
         "id": "schema:SslCertificateVendor",
         "kind": "schema",
-        "name": "SslCertificateVendor"
+        "name": "SslCertificateVendor",
+        "type": "string"
       },
       {
         "id": "schema:SslSubjectAltName",
         "kind": "schema",
-        "name": "SslSubjectAltName"
+        "name": "SslSubjectAltName",
+        "type": "object"
       },
       {
+        "description": "The type of the alt name: <ul><li>Dns</li><li>Ip</li></ul>",
         "id": "schema:SslSubjectAltNameType",
         "kind": "schema",
-        "name": "SslSubjectAltNameType"
+        "name": "SslSubjectAltNameType",
+        "type": "string"
       },
       {
         "id": "schema:TransferDomain",
         "kind": "schema",
-        "name": "TransferDomain"
+        "name": "TransferDomain",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAliasRequest",
         "kind": "schema",
-        "name": "UpdateAliasRequest"
+        "name": "UpdateAliasRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAntiSpamRequest",
         "kind": "schema",
-        "name": "UpdateAntiSpamRequest"
+        "name": "UpdateAntiSpamRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateMailboxPasswordRequest",
         "kind": "schema",
-        "name": "UpdateMailboxPasswordRequest"
+        "name": "UpdateMailboxPasswordRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePhpAPcuRequest",
         "kind": "schema",
-        "name": "UpdatePhpAPcuRequest"
+        "name": "UpdatePhpAPcuRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePhpMemoryLimitRequest",
         "kind": "schema",
-        "name": "UpdatePhpMemoryLimitRequest"
+        "name": "UpdatePhpMemoryLimitRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateSmtpDomainRequest",
         "kind": "schema",
-        "name": "UpdateSmtpDomainRequest"
+        "name": "UpdateSmtpDomainRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateUserPasswordRequest",
         "kind": "schema",
-        "name": "UpdateUserPasswordRequest"
+        "name": "UpdateUserPasswordRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateUserStatusRequest",
         "kind": "schema",
-        "name": "UpdateUserStatusRequest"
+        "name": "UpdateUserStatusRequest",
+        "type": "object"
       },
       {
+        "description": "User rights",
         "id": "schema:UserRights",
         "kind": "schema",
-        "name": "UserRights"
+        "name": "UserRights",
+        "type": "string"
       },
       {
         "id": "schema:ValidationErrorMessage",
         "kind": "schema",
-        "name": "ValidationErrorMessage"
+        "name": "ValidationErrorMessage",
+        "type": "object"
       },
       {
         "id": "schema:WindowsHosting",
         "kind": "schema",
-        "name": "WindowsHosting"
+        "name": "WindowsHosting",
+        "type": "object"
       },
       {
         "id": "schema:WindowsHostingDetail",
         "kind": "schema",
-        "name": "WindowsHostingDetail"
+        "name": "WindowsHostingDetail",
+        "type": "object"
       },
       {
+        "description": "Type of the hosting IP address (dedicated or shared)",
         "id": "schema:WindowsIpType",
         "kind": "schema",
-        "name": "WindowsIpType"
+        "name": "WindowsIpType",
+        "type": "string"
       },
       {
         "id": "schema:WindowsSite",
         "kind": "schema",
-        "name": "WindowsSite"
+        "name": "WindowsSite",
+        "type": "object"
       }
     ]
   },

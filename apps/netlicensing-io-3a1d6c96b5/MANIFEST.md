@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.labs64.com_content_uploads_
 
 | | |
 | --- | --- |
-| Signed bundle | `6e73bb686ac212acafc49ffca822a09481d640a00b181b3c5dec3eaa29603889` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,45 +34,47 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.labs64.com_content_uploads_
 
 13 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/license` | listLicenses | List Licenses |
-| POST | `/license` | createLicense | Create License |
-| DELETE | `/license/{licenseNumber}` | deleteLicense | Delete License |
-| GET | `/license/{licenseNumber}` | getLicense | Get License |
-| POST | `/license/{licenseNumber}` | updateLicense | Update License |
-| GET | `/licensee` | listLicensees | List Licensees |
-| POST | `/licensee` | createLicensee | Create Licensee |
-| DELETE | `/licensee/{licenseeNumber}` | deleteLicensee | Delete Licensee |
-| GET | `/licensee/{licenseeNumber}` | getLicensee | Get Licensee |
-| POST | `/licensee/{licenseeNumber}` | updateLicensee | Update Licensee |
-| POST | `/licensee/{licenseeNumber}/transfer` | transferLicenses | Transfer Licenses |
-| POST | `/licensee/{licenseeNumber}/validate` | validateLicensee | Validate Licensee |
-| GET | `/licensetemplate` | listLicenseTemplates | List License Templates |
-| POST | `/licensetemplate` | createLicenseTemplate | Create License Template |
-| DELETE | `/licensetemplate/{licenseTemplateNumber}` | deleteLicenseTemplate | Delete License Template |
-| GET | `/licensetemplate/{licenseTemplateNumber}` | getLicenseTemplate | Get License Template |
-| POST | `/licensetemplate/{licenseTemplateNumber}` | updateLicenseTemplate | Update License Template |
-| GET | `/paymentmethod` | listPaymentMethods | List Payment Methods |
-| GET | `/paymentmethod/{paymentMethodNumber}` | getPaymentMethod | Get Payment Method |
-| POST | `/paymentmethod/{paymentMethodNumber}` | updatePaymentMethod | Update Payment Method |
-| GET | `/product` | listProducts | List Products |
-| POST | `/product` | createProduct | Create Product |
-| DELETE | `/product/{productNumber}` | deleteProduct | Delete Product |
-| GET | `/product/{productNumber}` | productNumber | Get Product |
-| POST | `/product/{productNumber}` | updateProduct | Update Product |
-| GET | `/productmodule` | listProductModules | List Product Modules |
-| POST | `/productmodule` | createProductModule | Create Product Module |
-| DELETE | `/productmodule/{productModuleNumber}` | deleteProductModule | Delete Product Module |
-| GET | `/productmodule/{productModuleNumber}` | getProductModule | Get Product Module |
-| POST | `/productmodule/{productModuleNumber}` | updateProductModule | Update Product Module |
-| GET | `/token` | listTokens | List Tokens |
-| POST | `/token` | createToken | Create token |
-| DELETE | `/token/{tokenNumber}` | deleteToken | Delete token |
-| GET | `/token/{tokenNumber}` | getToken | Get token |
-| GET | `/transaction` | listTransactions | List Transactions |
-| POST | `/transaction` | createTransaction | Create Transaction |
-| GET | `/transaction/{transactionNumber}` | getTransaction | Get Transaction |
-| POST | `/transaction/{transactionNumber}` | updateTransaction | Update Transaction |
-| GET | `/utility/licenseTypes` | licenseTypes | List License Types |
-| GET | `/utility/licensingModels` | licensingModels | List Licensing Models |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/license` | listLicenses | — | netlicensing[] | yes | List Licenses |
+| POST | `/license` | createLicense | body*: object | netlicensing |  | Create License |
+| GET | `/license/{licenseNumber}` | getLicense | `licenseNumber`* | netlicensing | yes | Get License |
+| POST | `/license/{licenseNumber}` | updateLicense | `licenseNumber`*, body: object | netlicensing |  | Update License |
+| DELETE | `/license/{licenseNumber}` | deleteLicense | `licenseNumber`* | netlicensing |  | Delete License |
+| GET | `/licensee` | listLicensees | — | netlicensing[] | yes | List Licensees |
+| POST | `/licensee` | createLicensee | body: object | netlicensing |  | Create Licensee |
+| GET | `/licensee/{licenseeNumber}` | getLicensee | `licenseeNumber`* | netlicensing | yes | Get Licensee |
+| POST | `/licensee/{licenseeNumber}` | updateLicensee | `licenseeNumber`*, body: object | netlicensing |  | Update Licensee |
+| DELETE | `/licensee/{licenseeNumber}` | deleteLicensee | `licenseeNumber`*, `forceCascade` | netlicensing |  | Delete Licensee |
+| POST | `/licensee/{licenseeNumber}/transfer` | transferLicenses | `licenseeNumber`*, body*: object | netlicensing |  | Transfer Licenses |
+| POST | `/licensee/{licenseeNumber}/validate` | validateLicensee | `licenseeNumber`*, body: object | netlicensing |  | Validate Licensee |
+| GET | `/licensetemplate` | listLicenseTemplates | — | netlicensing[] | yes | List License Templates |
+| POST | `/licensetemplate` | createLicenseTemplate | body*: object | netlicensing |  | Create License Template |
+| GET | `/licensetemplate/{licenseTemplateNumber}` | getLicenseTemplate | `licenseTemplateNumber`* | netlicensing | yes | Get License Template |
+| POST | `/licensetemplate/{licenseTemplateNumber}` | updateLicenseTemplate | `licenseTemplateNumber`*, body: object | netlicensing |  | Update License Template |
+| DELETE | `/licensetemplate/{licenseTemplateNumber}` | deleteLicenseTemplate | `licenseTemplateNumber`*, `forceCascade` | netlicensing |  | Delete License Template |
+| GET | `/paymentmethod` | listPaymentMethods | — | netlicensing[] | yes | List Payment Methods |
+| GET | `/paymentmethod/{paymentMethodNumber}` | getPaymentMethod | `paymentMethodNumber`* | netlicensing | yes | Get Payment Method |
+| POST | `/paymentmethod/{paymentMethodNumber}` | updatePaymentMethod | `paymentMethodNumber`*, body: object | netlicensing |  | Update Payment Method |
+| GET | `/product` | listProducts | — | netlicensing[] | yes | List Products |
+| POST | `/product` | createProduct | body: object | netlicensing |  | Create Product |
+| GET | `/product/{productNumber}` | productNumber | `productNumber`* | netlicensing | yes | Get Product |
+| POST | `/product/{productNumber}` | updateProduct | `productNumber`*, body: object | netlicensing |  | Update Product |
+| DELETE | `/product/{productNumber}` | deleteProduct | `productNumber`*, `forceCascade` | netlicensing |  | Delete Product |
+| GET | `/productmodule` | listProductModules | — | netlicensing[] | yes | List Product Modules |
+| POST | `/productmodule` | createProductModule | body*: object | netlicensing |  | Create Product Module |
+| GET | `/productmodule/{productModuleNumber}` | getProductModule | `productModuleNumber`* | netlicensing | yes | Get Product Module |
+| POST | `/productmodule/{productModuleNumber}` | updateProductModule | `productModuleNumber`*, body: object | netlicensing |  | Update Product Module |
+| DELETE | `/productmodule/{productModuleNumber}` | deleteProductModule | `productModuleNumber`*, `forceCascade` | netlicensing |  | Delete Product Module |
+| GET | `/token` | listTokens | — | netlicensing[] | yes | List Tokens |
+| POST | `/token` | createToken | body*: object | netlicensing |  | Create token |
+| GET | `/token/{tokenNumber}` | getToken | `tokenNumber`* | netlicensing | yes | Get token |
+| DELETE | `/token/{tokenNumber}` | deleteToken | `tokenNumber`* | netlicensing |  | Delete token |
+| GET | `/transaction` | listTransactions | — | netlicensing[] | yes | List Transactions |
+| POST | `/transaction` | createTransaction | body: object | netlicensing |  | Create Transaction |
+| GET | `/transaction/{transactionNumber}` | getTransaction | `transactionNumber`* | netlicensing | yes | Get Transaction |
+| POST | `/transaction/{transactionNumber}` | updateTransaction | `transactionNumber`*, body: object | netlicensing |  | Update Transaction |
+| GET | `/utility/licenseTypes` | licenseTypes | — | netlicensing | yes | List License Types |
+| GET | `/utility/licensingModels` | licensingModels | — | netlicensing | yes | List Licensing Models |

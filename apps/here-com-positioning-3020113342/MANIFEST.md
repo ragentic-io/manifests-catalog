@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HERE_profile_image.
 
 | | |
 | --- | --- |
-| Signed bundle | `22abd617d24f5aa2cc711d36c7f0a70c830b99fd275557d64bba081bfddf6775` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_HERE_profile_image.
 
 67 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/health` | getHealth | Service health |
-| POST | `/locate` | postLocate | Location query |
-| GET | `/version` | getApiVersion | API version |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/health` | getHealth | — | ApiHealthStatus | yes | Service health |
+| POST | `/locate` | postLocate | `confidence`, `Content-Encoding`, `fallback`, `desired`, `X-Request-ID`, `required`, body*: Locate | object |  | Location query |
+| GET | `/version` | getApiVersion | — | ApiVersion | yes | API version |

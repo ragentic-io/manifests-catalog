@@ -53,6 +53,11 @@
         "from": "phantauth-net-2309dfa94a",
         "kind": "EXPOSES",
         "to": "operation:get:/user/{username}/token/{kind}"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
       }
     ],
     "nodes": [
@@ -62,148 +67,381 @@
       },
       {
         "deprecated": false,
+        "description": "To create a selfie token from the client data, you need an opaqe string token, which contains the encoded client properties sent in the request.",
         "id": "operation:post:/client",
         "kind": "operation",
         "method": "post",
         "name": "post /client",
         "path": "/client",
         "pointer": "#/paths/~1client/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Client Selfie"
+        "summary": "Create a Client Selfie",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate a random client.",
         "id": "operation:get:/client/{client_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /client/{client_id}",
+        "parameters": [
+          {
+            "description": "A client ID or email.",
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/client/{client_id}",
         "pointer": "#/paths/~1client~1{client_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Client"
+        "summary": "Get a Client",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It is used to generate a OpenID Connect token as a path parameter to a client of a given client ID.",
         "id": "operation:get:/client/{client_id}/token/{kind}",
         "kind": "operation",
         "method": "get",
         "name": "get /client/{client_id}/token/{kind}",
+        "parameters": [
+          {
+            "description": "A client ID or email.",
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Token type",
+            "enum": [
+              "'registration'",
+              "'selfie'",
+              "'plain'"
+            ],
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/client/{client_id}/token/{kind}",
         "pointer": "#/paths/~1client~1{client_id}~1token~1{kind}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Client Token"
+        "summary": "Get a Client Token",
+        "tags": [
+          "Client"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to get the data of a given PhantAuth domain.",
         "id": "operation:get:/domain/{domainname}",
         "kind": "operation",
         "method": "get",
         "name": "get /domain/{domainname}",
+        "parameters": [
+          {
+            "description": "The domain ID integrated in the `sub` property.",
+            "in": "path",
+            "name": "domainname",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domain/{domainname}",
         "pointer": "#/paths/~1domain~1{domainname}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Domain"
+        "summary": "Get a Domain",
+        "tags": [
+          "Domain"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate a random group of clients.",
         "id": "operation:get:/fleet/{fleetname}",
         "kind": "operation",
         "method": "get",
         "name": "get /fleet/{fleetname}",
+        "parameters": [
+          {
+            "description": "The identifier or email address of the fleet; it is integrated in the `sub` property and is the basis of the other generated properties.",
+            "in": "path",
+            "name": "fleetname",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fleet/{fleetname}",
         "pointer": "#/paths/~1fleet~1{fleetname}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Fleet"
+        "summary": "Get a Fleet",
+        "tags": [
+          "Fleet"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate a random group of users.",
         "id": "operation:get:/team/{teamname}",
         "kind": "operation",
         "method": "get",
         "name": "get /team/{teamname}",
+        "parameters": [
+          {
+            "description": "The identifier or email address of the team; it is integrated in the `sub` property and is the basis of the other generated properties.",
+            "in": "path",
+            "name": "teamname",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/team/{teamname}",
         "pointer": "#/paths/~1team~1{teamname}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Team"
+        "summary": "Get a Team",
+        "tags": [
+          "Team"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to get the data of a given PhantAuth tenant.",
         "id": "operation:get:/tenant/{tenantname}",
         "kind": "operation",
         "method": "get",
         "name": "get /tenant/{tenantname}",
+        "parameters": [
+          {
+            "description": "The tenant ID integrated in the `sub` property.",
+            "in": "path",
+            "name": "tenantname",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tenant/{tenantname}",
         "pointer": "#/paths/~1tenant~1{tenantname}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a Tenant"
+        "summary": "Get a Tenant",
+        "tags": [
+          "Tenant"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To create a selfie token from the user data, you need an opaqe string token, which contains the encoded user properties sent in the request.",
         "id": "operation:post:/user",
         "kind": "operation",
         "method": "post",
         "name": "post /user",
         "path": "/user",
         "pointer": "#/paths/~1user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a User Selfie"
+        "summary": "Create a User Selfie",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate a random user.",
         "id": "operation:get:/user/{username}",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{username}",
+        "parameters": [
+          {
+            "description": "The username or email used for generation purposes.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{username}",
         "pointer": "#/paths/~1user~1{username}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a User"
+        "summary": "Get a User",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It is used to generate OpenID Connect tokens as path parameters to a user of a given name.",
         "id": "operation:get:/user/{username}/token/{kind}",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{username}/token/{kind}",
+        "parameters": [
+          {
+            "description": "A username or email.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Token type",
+            "enum": [
+              "'access'",
+              "'refresh'",
+              "'authorization'",
+              "'id'",
+              "'selfie'",
+              "'plain'"
+            ],
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "OpenID Connect scope",
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/{username}/token/{kind}",
         "pointer": "#/paths/~1user~1{username}~1token~1{kind}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a User Token"
+        "summary": "Get a User Token",
+        "tags": [
+          "User"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:Client",
         "kind": "schema",
-        "name": "Client"
+        "name": "Client",
+        "type": "object"
       },
       {
         "id": "schema:Domain",
         "kind": "schema",
-        "name": "Domain"
+        "name": "Domain",
+        "type": "object"
       },
       {
         "id": "schema:Fleet",
         "kind": "schema",
-        "name": "Fleet"
+        "name": "Fleet",
+        "type": "object"
       },
       {
         "id": "schema:Team",
         "kind": "schema",
-        "name": "Team"
+        "name": "Team",
+        "type": "object"
       },
       {
         "id": "schema:Tenant",
         "kind": "schema",
-        "name": "Tenant"
+        "name": "Tenant",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

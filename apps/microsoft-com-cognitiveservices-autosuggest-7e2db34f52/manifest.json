@@ -8,6 +8,91 @@
         "from": "microsoft-com-cognitiveservices-autosuggest-7e2db34f52",
         "kind": "EXPOSES",
         "to": "operation:get:/Suggestions"
+      },
+      {
+        "from": "operation:get:/Suggestions",
+        "kind": "RETURNS",
+        "to": "schema:Suggestions"
+      },
+      {
+        "from": "schema:Action",
+        "kind": "REFERENCES",
+        "to": "schema:CreativeWork"
+      },
+      {
+        "from": "schema:Action",
+        "kind": "REFERENCES",
+        "to": "schema:Thing"
+      },
+      {
+        "from": "schema:Answer",
+        "kind": "REFERENCES",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:CreativeWork",
+        "kind": "REFERENCES",
+        "to": "schema:Thing"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:Identifiable",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseBase"
+      },
+      {
+        "from": "schema:Response",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:Response",
+        "kind": "REFERENCES",
+        "to": "schema:Identifiable"
+      },
+      {
+        "from": "schema:SearchAction",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:SearchResultsAnswer",
+        "kind": "REFERENCES",
+        "to": "schema:Answer"
+      },
+      {
+        "from": "schema:SearchResultsAnswer",
+        "kind": "REFERENCES",
+        "to": "schema:QueryContext"
+      },
+      {
+        "from": "schema:Suggestions",
+        "kind": "REFERENCES",
+        "to": "schema:SearchResultsAnswer"
+      },
+      {
+        "from": "schema:Suggestions",
+        "kind": "REFERENCES",
+        "to": "schema:SuggestionsSuggestionGroup"
+      },
+      {
+        "from": "schema:SuggestionsSuggestionGroup",
+        "kind": "REFERENCES",
+        "to": "schema:SearchAction"
+      },
+      {
+        "from": "schema:Thing",
+        "kind": "REFERENCES",
+        "to": "schema:Response"
       }
     ],
     "nodes": [
@@ -21,84 +106,231 @@
         "kind": "operation",
         "method": "get",
         "name": "AutoSuggest",
+        "parameters": [
+          {
+            "description": "Activate swagger compliance",
+            "enum": [
+              "true"
+            ],
+            "in": "header",
+            "name": "X-BingApis-SDK",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The default media type is application/json.",
+            "in": "header",
+            "name": "Accept",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma-delimited list of one or more languages to use for user interface strings.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "By default, Bing returns cached content, if available.",
+            "in": "header",
+            "name": "Pragma",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user agent originating the request.",
+            "in": "header",
+            "name": "User-Agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Bing uses this header to provide users with consistent behavior across Bing API calls.",
+            "in": "header",
+            "name": "X-MSEdge-ClientID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The IPv4 or IPv6 address of the client device.",
+            "in": "header",
+            "name": "X-MSEdge-ClientIP",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A semicolon-delimited list of key/value pairs that describe the client's geographical location.",
+            "in": "header",
+            "name": "X-Search-Location",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A 2-character country code of the country where the results come from.",
+            "in": "query",
+            "name": "cc",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "en-us",
+            "description": "The market where the results come from.",
+            "in": "query",
+            "name": "mkt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's search term.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter suggestions for adult content.",
+            "enum": [
+              "Off",
+              "Moderate",
+              "Strict"
+            ],
+            "in": "query",
+            "name": "safeSearch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The language to use for user interface strings.",
+            "in": "query",
+            "name": "setLang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The media type to use for the response.",
+            "in": "query",
+            "name": "ResponseFormat",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/Suggestions",
         "pointer": "#/paths/~1Suggestions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Suggestions"
+          },
+          {
+            "status": "default",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyHeader": []
           }
         ],
-        "summary": "The AutoSuggest API lets you send a search query to Bing and get back a list of query suggestions. This section provides technical details about the query parameters and headers that you use to request suggestions and the JSON response objects that contain them."
+        "summary": "The AutoSuggest API lets you send a search query to Bing and get back a list of query suggestions. This section provides technical details about the query parameters and headers that you use to request suggestions and the JSON response objects that contain them.",
+        "tags": [
+          "AutoSuggest"
+        ]
       },
       {
         "id": "schema:Action",
         "kind": "schema",
-        "name": "Action"
+        "name": "Action",
+        "type": "CreativeWork"
       },
       {
+        "description": "Defines an answer.",
         "id": "schema:Answer",
         "kind": "schema",
-        "name": "Answer"
+        "name": "Answer",
+        "type": "Response"
       },
       {
+        "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
         "id": "schema:CreativeWork",
         "kind": "schema",
-        "name": "CreativeWork"
+        "name": "CreativeWork",
+        "type": "Thing"
       },
       {
+        "description": "Defines the error that occurred.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "The top-level response that represents a failed request.",
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "Response"
       },
       {
+        "description": "Defines the identity of a resource.",
         "id": "schema:Identifiable",
         "kind": "schema",
-        "name": "Identifiable"
+        "name": "Identifiable",
+        "type": "ResponseBase"
       },
       {
+        "description": "Defines the query context that Bing used for the request.",
         "id": "schema:QueryContext",
         "kind": "schema",
-        "name": "QueryContext"
+        "name": "QueryContext",
+        "type": "object"
       },
       {
+        "description": "Defines a response.",
         "id": "schema:Response",
         "kind": "schema",
-        "name": "Response"
+        "name": "Response",
+        "type": "Identifiable"
       },
       {
+        "description": "Response base",
         "id": "schema:ResponseBase",
         "kind": "schema",
-        "name": "ResponseBase"
+        "name": "ResponseBase",
+        "type": "object"
       },
       {
         "id": "schema:SearchAction",
         "kind": "schema",
-        "name": "SearchAction"
+        "name": "SearchAction",
+        "type": "Action"
       },
       {
+        "description": "Defines a search result answer.",
         "id": "schema:SearchResultsAnswer",
         "kind": "schema",
-        "name": "SearchResultsAnswer"
+        "name": "SearchResultsAnswer",
+        "type": "Answer"
       },
       {
         "id": "schema:Suggestions",
         "kind": "schema",
-        "name": "Suggestions"
+        "name": "Suggestions",
+        "type": "SearchResultsAnswer"
       },
       {
         "id": "schema:SuggestionsSuggestionGroup",
         "kind": "schema",
-        "name": "SuggestionsSuggestionGroup"
+        "name": "SuggestionsSuggestionGroup",
+        "type": "object"
       },
       {
+        "description": "Defines a thing.",
         "id": "schema:Thing",
         "kind": "schema",
-        "name": "Thing"
+        "name": "Thing",
+        "type": "Response"
       }
     ]
   },

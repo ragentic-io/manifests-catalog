@@ -22,22 +22,22 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:delete:/qshow"
-      },
-      {
-        "from": "quotes-rest-7bbda97284",
-        "kind": "EXPOSES",
         "to": "operation:get:/qshow"
       },
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:patch:/qshow"
+        "to": "operation:put:/qshow"
       },
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:put:/qshow"
+        "to": "operation:delete:/qshow"
+      },
+      {
+        "from": "quotes-rest-7bbda97284",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/qshow"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -62,17 +62,12 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:delete:/quote"
-      },
-      {
-        "from": "quotes-rest-7bbda97284",
-        "kind": "EXPOSES",
         "to": "operation:get:/quote"
       },
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:patch:/quote"
+        "to": "operation:put:/quote"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -82,7 +77,12 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:put:/quote"
+        "to": "operation:delete:/quote"
+      },
+      {
+        "from": "quotes-rest-7bbda97284",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/quote"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -107,7 +107,7 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:delete:/quote/dislike"
+        "to": "operation:put:/quote/dislike"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -117,12 +117,7 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:put:/quote/dislike"
-      },
-      {
-        "from": "quotes-rest-7bbda97284",
-        "kind": "EXPOSES",
-        "to": "operation:delete:/quote/image"
+        "to": "operation:delete:/quote/dislike"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -137,12 +132,17 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:delete:/quote/image/background"
+        "to": "operation:delete:/quote/image"
       },
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
         "to": "operation:post:/quote/image/background"
+      },
+      {
+        "from": "quotes-rest-7bbda97284",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/quote/image/background"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -167,12 +167,12 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:delete:/quote/image/font"
+        "to": "operation:post:/quote/image/font"
       },
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:post:/quote/image/font"
+        "to": "operation:delete:/quote/image/font"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -202,7 +202,7 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:delete:/quote/like"
+        "to": "operation:put:/quote/like"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -212,7 +212,7 @@
       {
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
-        "to": "operation:put:/quote/like"
+        "to": "operation:delete:/quote/like"
       },
       {
         "from": "quotes-rest-7bbda97284",
@@ -238,6 +238,41 @@
         "from": "quotes-rest-7bbda97284",
         "kind": "EXPOSES",
         "to": "operation:post:/quote/tags/remove"
+      },
+      {
+        "from": "operation:get:/qod",
+        "kind": "RETURNS",
+        "to": "schema:QuoteResponse"
+      },
+      {
+        "from": "operation:get:/quote",
+        "kind": "RETURNS",
+        "to": "schema:QuoteResponse"
+      },
+      {
+        "from": "operation:get:/quote/random",
+        "kind": "RETURNS",
+        "to": "schema:QuoteResponse"
+      },
+      {
+        "from": "operation:get:/quote/search",
+        "kind": "RETURNS",
+        "to": "schema:QuoteResponse"
+      },
+      {
+        "from": "schema:QOD",
+        "kind": "REFERENCES",
+        "to": "schema:Quote"
+      },
+      {
+        "from": "schema:Quote",
+        "kind": "REFERENCES",
+        "to": "schema:NewQuote"
+      },
+      {
+        "from": "schema:QuoteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Quote"
       }
     ],
     "nodes": [
@@ -247,728 +282,2298 @@
       },
       {
         "deprecated": false,
+        "description": "Gets `Quote of the Day`.",
         "id": "operation:get:/qod",
         "kind": "operation",
         "method": "get",
         "name": "get /qod",
+        "parameters": [
+          {
+            "description": "QOD Category",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "en",
+            "description": "Language of the QOD.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/qod",
         "pointer": "#/paths/~1qod/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QuoteResponse"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote of the day"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Quote of the Day` Categories.",
         "id": "operation:get:/qod/categories",
         "kind": "operation",
         "method": "get",
         "name": "get /qod/categories",
+        "parameters": [
+          {
+            "default": "en",
+            "description": "Language of the QOD category.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": false,
+            "description": "Return detailed information of the categories.",
+            "in": "query",
+            "name": "detailed",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/qod/categories",
         "pointer": "#/paths/~1qod~1categories/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote of the day"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of supported languages for `Quote of the Day`.",
         "id": "operation:get:/qod/languages",
         "kind": "operation",
         "method": "get",
         "name": "get /qod/languages",
         "path": "/qod/languages",
         "pointer": "#/paths/~1qod~1languages/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote of the day"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/qshow",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /qshow",
-        "path": "/qshow",
-        "pointer": "#/paths/~1qshow/delete",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Gets a details about a qshow.",
         "id": "operation:get:/qshow",
         "kind": "operation",
         "method": "get",
         "name": "get /qshow",
+        "parameters": [
+          {
+            "description": "Qshow ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/qshow",
         "pointer": "#/paths/~1qshow/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/qshow",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /qshow",
-        "path": "/qshow",
-        "pointer": "#/paths/~1qshow/patch",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Create and add a new qshow to your private collection.",
         "id": "operation:put:/qshow",
         "kind": "operation",
         "method": "put",
         "name": "put /qshow",
+        "parameters": [
+          {
+            "description": "Qshow title",
+            "in": "query",
+            "name": "title",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Qshow description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Tags for the qshow",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/qshow",
         "pointer": "#/paths/~1qshow/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a qshow.",
+        "id": "operation:delete:/qshow",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /qshow",
+        "parameters": [
+          {
+            "description": "Qshow ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/qshow",
+        "pointer": "#/paths/~1qshow/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update an existing qshow.",
+        "id": "operation:patch:/qshow",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /qshow",
+        "parameters": [
+          {
+            "description": "Qshow ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Qshow title",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Qshow description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Tags for the qshow",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
+        "path": "/qshow",
+        "pointer": "#/paths/~1qshow/patch",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the list of Qshows in They Said So platform.",
         "id": "operation:get:/qshow/list",
         "kind": "operation",
         "method": "get",
         "name": "get /qshow/list",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "Should include public qshows or not in the list",
+            "in": "query",
+            "name": "public",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/qshow/list",
         "pointer": "#/paths/~1qshow~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the quotes in a given Qshow.",
         "id": "operation:get:/qshow/quotes",
         "kind": "operation",
         "method": "get",
         "name": "get /qshow/quotes",
+        "parameters": [
+          {
+            "description": "Qshow ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/qshow/quotes",
         "pointer": "#/paths/~1qshow~1quotes/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a quote to a given Qshow.",
         "id": "operation:post:/qshow/quotes/add",
         "kind": "operation",
         "method": "post",
         "name": "post /qshow/quotes/add",
+        "parameters": [
+          {
+            "description": "Qshow ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote ID to add the qshow collection",
+            "in": "query",
+            "name": "quoteid",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/qshow/quotes/add",
         "pointer": "#/paths/~1qshow~1quotes~1add/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a quote to a given Qshow.",
         "id": "operation:post:/qshow/quotes/remove",
         "kind": "operation",
         "method": "post",
         "name": "post /qshow/quotes/remove",
+        "parameters": [
+          {
+            "description": "Qshow ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote ID to remove from the qshow collection",
+            "in": "query",
+            "name": "quoteid",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/qshow/quotes/remove",
         "pointer": "#/paths/~1qshow~1quotes~1remove/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Qshow"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/quote",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /quote",
-        "path": "/quote",
-        "pointer": "#/paths/~1quote/delete",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Gets a `Quote` with a given `id`.",
         "id": "operation:get:/quote",
         "kind": "operation",
         "method": "get",
         "name": "get /quote",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote",
         "pointer": "#/paths/~1quote/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QuoteResponse"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote",
+          "Private Quotes"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/quote",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /quote",
-        "path": "/quote",
-        "pointer": "#/paths/~1quote/patch",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/quote",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /quote",
-        "path": "/quote",
-        "pointer": "#/paths/~1quote/post",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Add a new quote to your private collection.",
         "id": "operation:put:/quote",
         "kind": "operation",
         "method": "put",
         "name": "put /quote",
+        "parameters": [
+          {
+            "description": "Quote",
+            "in": "query",
+            "name": "quote",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "en",
+            "description": "Language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote",
         "pointer": "#/paths/~1quote/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a new quote to your private collection.",
+        "id": "operation:post:/quote",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /quote",
+        "parameters": [
+          {
+            "description": "Quote",
+            "in": "query",
+            "name": "quote",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "en",
+            "description": "Language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote",
+        "pointer": "#/paths/~1quote/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete a quote.",
+        "id": "operation:delete:/quote",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /quote",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote",
+        "pointer": "#/paths/~1quote/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a quote",
+        "id": "operation:patch:/quote",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /quote",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote",
+            "in": "query",
+            "name": "quote",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "en",
+            "description": "Language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/quote",
+        "pointer": "#/paths/~1quote/patch",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets a list of popular author names in the system.",
         "id": "operation:get:/quote/authors/popular",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/authors/popular",
+        "parameters": [
+          {
+            "default": "en",
+            "description": "Language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": false,
+            "description": "Should return detailed author information such as `birthday`, `death date`, `occupation`, `description` etc.",
+            "in": "query",
+            "name": "detailed",
+            "required": false,
+            "type": "boolean:boolean"
+          },
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 5,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/quote/authors/popular",
         "pointer": "#/paths/~1quote~1authors~1popular/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of author names in the system.",
         "id": "operation:get:/quote/authors/search",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/authors/search",
+        "parameters": [
+          {
+            "description": "Text string to search for in author names",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "en",
+            "description": "Language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": false,
+            "description": "Should return detailed author information such as `birthday`, `death date`, `occupation`, `description` etc.",
+            "in": "query",
+            "name": "detailed",
+            "required": false,
+            "type": "boolean:boolean"
+          },
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/quote/authors/search",
         "pointer": "#/paths/~1quote~1authors~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of popular `Quote` Categories.",
         "id": "operation:get:/quote/categories/popular",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/categories/popular",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 5,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/quote/categories/popular",
         "pointer": "#/paths/~1quote~1categories~1popular/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of `Quote` Categories matching the query string.",
         "id": "operation:get:/quote/categories/search",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/categories/search",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "Text string to search for in the categories",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 2,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/quote/categories/search",
         "pointer": "#/paths/~1quote~1categories~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/quote/dislike",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /quote/dislike",
-        "path": "/quote/dislike",
-        "pointer": "#/paths/~1quote~1dislike/delete",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/quote/dislike",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /quote/dislike",
-        "path": "/quote/dislike",
-        "pointer": "#/paths/~1quote~1dislike/post",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Dislike the given Quote as a user of the API Key.",
         "id": "operation:put:/quote/dislike",
         "kind": "operation",
         "method": "put",
         "name": "put /quote/dislike",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/dislike",
         "pointer": "#/paths/~1quote~1dislike/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/quote/image",
+        "description": "Dislike the given Quote as a user of the API Key.",
+        "id": "operation:post:/quote/dislike",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /quote/dislike",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/dislike",
+        "pointer": "#/paths/~1quote~1dislike/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Remove the disLike for the given Quote as a user of the API Key.",
+        "id": "operation:delete:/quote/dislike",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /quote/image",
-        "path": "/quote/image",
-        "pointer": "#/paths/~1quote~1image/delete",
+        "name": "delete /quote/dislike",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/dislike",
+        "pointer": "#/paths/~1quote~1dislike/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a Quote image for a given id.",
         "id": "operation:get:/quote/image",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/image",
+        "parameters": [
+          {
+            "description": "Quote Image id",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "default": true,
+            "description": "Should the response be a direct file download of the image or a base64 encoded image file wrapped in json?",
+            "in": "query",
+            "name": "binary",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/quote/image",
         "pointer": "#/paths/~1quote~1image/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new quote image for a given quote.",
         "id": "operation:put:/quote/image",
         "kind": "operation",
         "method": "put",
         "name": "put /quote/image",
+        "parameters": [
+          {
+            "description": "Quote id",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "default": "theysaidso_default_background_image",
+            "description": "Background Image id ( Will override bgcolor if supplied)",
+            "in": "query",
+            "name": "bgimage_id",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Background Color(if background image id is not supplied)",
+            "in": "query",
+            "name": "bg_color",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "theysaidso_default_font",
+            "description": "Font id",
+            "in": "query",
+            "name": "font_id",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Text Color",
+            "in": "query",
+            "name": "text_color",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Text/font size",
+            "in": "query",
+            "name": "text_size",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "center",
+            "description": "Horizontal text Alignment Value",
+            "in": "query",
+            "name": "halign",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": "center",
+            "description": "Vertical text Alignment Value",
+            "in": "query",
+            "name": "valign",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Image Width(By default this takes the width of the background image)",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "description": "Image Height(By default this takes the height of the background image)",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "default": false,
+            "description": "Disable They Said So branding (Only available in certain subscription levels.",
+            "in": "query",
+            "name": "branding",
+            "required": false,
+            "type": "boolean:boolean"
+          },
+          {
+            "default": true,
+            "description": "Should include a transparent layer between the text and the background image?",
+            "in": "query",
+            "name": "include_transparent_layer",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/quote/image",
         "pointer": "#/paths/~1quote~1image/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/quote/image/background",
+        "description": "Delete a quote image.",
+        "id": "operation:delete:/quote/image",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /quote/image/background",
-        "path": "/quote/image/background",
-        "pointer": "#/paths/~1quote~1image~1background/delete",
+        "name": "delete /quote/image",
+        "parameters": [
+          {
+            "description": "Quote Image ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/image",
+        "pointer": "#/paths/~1quote~1image/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add an image for use later as a quote background image.",
         "id": "operation:post:/quote/image/background",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/image/background",
         "path": "/quote/image/background",
         "pointer": "#/paths/~1quote~1image~1background/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a background image file.",
+        "id": "operation:delete:/quote/image/background",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /quote/image/background",
+        "parameters": [
+          {
+            "description": "Font ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/image/background",
+        "pointer": "#/paths/~1quote~1image~1background/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Lists background images in your private collection.",
         "id": "operation:get:/quote/image/background/list",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/image/background/list",
+        "parameters": [
+          {
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/quote/image/background/list",
         "pointer": "#/paths/~1quote~1image~1background~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searches for a background image with a given tag.",
         "id": "operation:get:/quote/image/background/search",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/image/background/search",
+        "parameters": [
+          {
+            "description": "Tag string",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/image/background/search",
         "pointer": "#/paths/~1quote~1image~1background~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a tag to a given Image.",
         "id": "operation:post:/quote/image/background/tags/add",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/image/background/tags/add",
+        "parameters": [
+          {
+            "description": "Image ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/image/background/tags/add",
         "pointer": "#/paths/~1quote~1image~1background~1tags~1add/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a tag from a given Image.",
         "id": "operation:post:/quote/image/background/tags/remove",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/image/background/tags/remove",
+        "parameters": [
+          {
+            "description": "Image ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/image/background/tags/remove",
         "pointer": "#/paths/~1quote~1image~1background~1tags~1remove/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/quote/image/font",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /quote/image/font",
-        "path": "/quote/image/font",
-        "pointer": "#/paths/~1quote~1image~1font/delete",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Add a font file for use later in creating a quote image.",
         "id": "operation:post:/quote/image/font",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/image/font",
         "path": "/quote/image/font",
         "pointer": "#/paths/~1quote~1image~1font/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a font file.",
+        "id": "operation:delete:/quote/image/font",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /quote/image/font",
+        "parameters": [
+          {
+            "description": "Font ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/image/font",
+        "pointer": "#/paths/~1quote~1image~1font/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Lists background images in your private collection.",
         "id": "operation:get:/quote/image/font/list",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/image/font/list",
+        "parameters": [
+          {
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/quote/image/font/list",
         "pointer": "#/paths/~1quote~1image~1font~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searches for a font with a given tag.",
         "id": "operation:get:/quote/image/font/search",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/image/font/search",
+        "parameters": [
+          {
+            "description": "Tag string",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/image/font/search",
         "pointer": "#/paths/~1quote~1image~1font~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a tag to a given font.",
         "id": "operation:post:/quote/image/font/tags/add",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/image/font/tags/add",
+        "parameters": [
+          {
+            "description": "Font ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/image/font/tags/add",
         "pointer": "#/paths/~1quote~1image~1font~1tags~1add/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a tag from a given Font.",
         "id": "operation:post:/quote/image/font/tags/remove",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/image/font/tags/remove",
+        "parameters": [
+          {
+            "description": "Font ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/image/font/tags/remove",
         "pointer": "#/paths/~1quote~1image~1font~1tags~1remove/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a Random Quote image.",
         "id": "operation:get:/quote/image/search",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/image/search",
+        "parameters": [
+          {
+            "description": "Quote Category",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": false,
+            "description": "Should search private collection.",
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/quote/image/search",
         "pointer": "#/paths/~1quote~1image~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote Images"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/quote/like",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /quote/like",
-        "path": "/quote/like",
-        "pointer": "#/paths/~1quote~1like/delete",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/quote/like",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /quote/like",
-        "path": "/quote/like",
-        "pointer": "#/paths/~1quote~1like/post",
-        "security": [
-          {
-            "X-TheySaidSo-Api-Secret": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Like the given Quote as a user of the API Key.",
         "id": "operation:put:/quote/like",
         "kind": "operation",
         "method": "put",
         "name": "put /quote/like",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/like",
         "pointer": "#/paths/~1quote~1like/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Like the given Quote as a user of the API Key.",
+        "id": "operation:post:/quote/like",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /quote/like",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/like",
+        "pointer": "#/paths/~1quote~1like/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Remove the Like for the given Quote as a user of the API Key.",
+        "id": "operation:delete:/quote/like",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /quote/like",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "quote_id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
+        "path": "/quote/like",
+        "pointer": "#/paths/~1quote~1like/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "X-TheySaidSo-Api-Secret": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the list of quotes in your private collection.",
         "id": "operation:get:/quote/list",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/list",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Response is paged.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/quote/list",
         "pointer": "#/paths/~1quote~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a `Random Quote`.",
         "id": "operation:get:/quote/random",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/random",
+        "parameters": [
+          {
+            "default": "en",
+            "description": "Language of the Quote.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": 1,
+            "description": "No of quotes to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:integer"
+          }
+        ],
         "path": "/quote/random",
         "pointer": "#/paths/~1quote~1random/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QuoteResponse"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for a `Quote` in They Said So platform.",
         "id": "operation:get:/quote/search",
         "kind": "operation",
         "method": "get",
         "name": "get /quote/search",
+        "parameters": [
+          {
+            "description": "Quote Category",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Quote Author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": 100,
+            "description": "Quote minimum Length",
+            "in": "query",
+            "name": "minlength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 300,
+            "description": "Quote maximum Length",
+            "in": "query",
+            "name": "maxlength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "keyword to search for in the quote",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": false,
+            "description": "Should search private collection?",
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "type": "boolean:boolean"
+          },
+          {
+            "default": "en",
+            "description": "Language of the Quote.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "default": 1,
+            "description": "No of quotes to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:integer"
+          },
+          {
+            "default": false,
+            "description": "Should search only SFW (Safe For Work) quotes?",
+            "in": "query",
+            "name": "sfw",
+            "required": false,
+            "type": "boolean:boolean"
+          }
+        ],
         "path": "/quote/search",
         "pointer": "#/paths/~1quote~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QuoteResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Quote"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a tag to a given Quote.",
         "id": "operation:post:/quote/tags/add",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/tags/add",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/tags/add",
         "pointer": "#/paths/~1quote~1tags~1add/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove a tag from a given quote.",
         "id": "operation:post:/quote/tags/remove",
         "kind": "operation",
         "method": "post",
         "name": "post /quote/tags/remove",
+        "parameters": [
+          {
+            "description": "Quote ID",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Comma Separated tags",
+            "in": "query",
+            "name": "tags",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/quote/tags/remove",
         "pointer": "#/paths/~1quote~1tags~1remove/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "X-TheySaidSo-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Private Quotes"
+        ]
       },
       {
         "id": "schema:NewQuote",
         "kind": "schema",
-        "name": "NewQuote"
+        "name": "NewQuote",
+        "type": "object"
       },
       {
         "id": "schema:QOD",
         "kind": "schema",
-        "name": "QOD"
+        "name": "QOD",
+        "type": "Quote|object"
       },
       {
         "id": "schema:Quote",
         "kind": "schema",
-        "name": "Quote"
+        "name": "Quote",
+        "type": "NewQuote|object"
       },
       {
         "id": "schema:QuoteResponse",
         "kind": "schema",
-        "name": "QuoteResponse"
+        "name": "QuoteResponse",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_SwaggerHub_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `d22f19637264f0f245cace879433f252c9f651132583f7cce65d4a262c9b309d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,92 +34,94 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_SwaggerHub_profile_
 
 55 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/apis` | searchApis | Search APIs |
-| GET | `/apis/{owner}` | getOwnerApis | Get a list of APIs of the specified owner |
-| DELETE | `/apis/{owner}/{api}` | deleteApi | Delete an API |
-| GET | `/apis/{owner}/{api}` | getApiVersions | Get a list of API versions |
-| POST | `/apis/{owner}/{api}` | saveDefinition | Create or update an API |
-| POST | `/apis/{owner}/{api}/rename` | renameApi | Rename an API |
-| GET | `/apis/{owner}/{api}/settings/default` | getApiDefaultVersion | Get the default version of an API |
-| PUT | `/apis/{owner}/{api}/settings/default` | setApiDefaultVersion | Set the default API version |
-| DELETE | `/apis/{owner}/{api}/{version}` | deleteApiVersion | Delete an API version |
-| GET | `/apis/{owner}/{api}/{version}` | getDefinition | Get the OpenAPI definition of the specified API version |
-| POST | `/apis/{owner}/{api}/{version}/clone` | cloneApi | Create a new API version |
-| GET | `/apis/{owner}/{api}/{version}/comments` | getApiCommentsV2 | Get comments for the specified API version |
-| POST | `/apis/{owner}/{api}/{version}/comments` | addApiCommentV2 | Add a new comment |
-| POST | `/apis/{owner}/{api}/{version}/comments/batch` | updateApiCommentsV2 | Bulk update comments |
-| DELETE | `/apis/{owner}/{api}/{version}/comments/{comment}` | deleteApiCommentV2 | Delete a comment |
-| PATCH | `/apis/{owner}/{api}/{version}/comments/{comment}` | updateApiCommentV2 | Update a comment |
-| POST | `/apis/{owner}/{api}/{version}/comments/{comment}/replies` | addApiCommentReplyV2 | Reply to a comment |
-| DELETE | `/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}` | deleteApiCommentReplyV2 | Delete a comment reply |
-| PATCH | `/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}` | updateApiCommentReplyV2 | Update a comment reply |
-| PUT | `/apis/{owner}/{api}/{version}/comments/{comment}/status/{status}` | setApiCommentStatusV2 | Resolve or reopen a comment |
-| POST | `/apis/{owner}/{api}/{version}/fork` | forkApi | Fork an API |
-| GET | `/apis/{owner}/{api}/{version}/integrations` | getIntegrations | Get all integrations configured for the specified API version |
-| POST | `/apis/{owner}/{api}/{version}/integrations` | createIntegration | Create an integration for the specified API and version |
-| DELETE | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | deleteIntegration | Delete an integration |
-| GET | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | getIntegrationById | Get integration settings |
-| PATCH | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | patchIntegration | Partially update integration settings |
-| PUT | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | updateIntegration | Update integration settings |
-| POST | `/apis/{owner}/{api}/{version}/integrations/{integrationId}/execute` | executeIntegration | Run an integration |
-| GET | `/apis/{owner}/{api}/{version}/settings/lifecycle` | getLifecycleSettings | Get the published status for the specified API and version |
-| PUT | `/apis/{owner}/{api}/{version}/settings/lifecycle` | setLifecycleSettings | Publish or unpublish an API version |
-| GET | `/apis/{owner}/{api}/{version}/settings/private` | getPrivateSettings | Get the visibility (public or private) of API version |
-| PUT | `/apis/{owner}/{api}/{version}/settings/private` | setPrivateSettings | Set the visibility (public or private) of an API version |
-| GET | `/apis/{owner}/{api}/{version}/standardization` | getStandardizationErrors | Retrieve the standardization errors for a given API definition |
-| GET | `/apis/{owner}/{api}/{version}/swagger.json` | getJsonDefinition | Get the OpenAPI definition for the specified API version in JSON format |
-| GET | `/apis/{owner}/{api}/{version}/swagger.yaml` | getYamlDefinition | Get the OpenAPI definition for the specified API version in YAML format |
-| GET | `/apis/{owner}/{api}/{version}/validation` | getValidation | Deprecated Get API Standardization errors and warnings |
-| GET | `/domains` | searchDomains | Search domains |
-| GET | `/domains/{owner}` | getOwnerDomains | Get a list of domains of the specified owner |
-| DELETE | `/domains/{owner}/{domain}` | deleteDomain | Delete a domain |
-| GET | `/domains/{owner}/{domain}` | getDomainVersions | Get a list of domain versions |
-| POST | `/domains/{owner}/{domain}` | saveDomainDefinition | Create or update a domain |
-| POST | `/domains/{owner}/{domain}/rename` | renameDomain | Rename a domain |
-| GET | `/domains/{owner}/{domain}/settings/default` | getDomainDefaultVersion | Get the default version of a domain |
-| PUT | `/domains/{owner}/{domain}/settings/default` | setDomainDefaultVersion | Set the default version for a domain |
-| DELETE | `/domains/{owner}/{domain}/{version}` | deleteDomainVersion | Delete a domain version |
-| GET | `/domains/{owner}/{domain}/{version}` | getDomainDefinition | Get the OpenAPI definition of the specified domain version |
-| POST | `/domains/{owner}/{domain}/{version}/clone` | cloneDomain | Create a new domain version |
-| GET | `/domains/{owner}/{domain}/{version}/comments` | getDomainCommentsV2 | Get comments for the specified domain version |
-| POST | `/domains/{owner}/{domain}/{version}/comments` | addDomainCommentV2 | Add a new comment |
-| POST | `/domains/{owner}/{domain}/{version}/comments/batch` | updateDomainCommentsV2 | Bulk update comments |
-| DELETE | `/domains/{owner}/{domain}/{version}/comments/{comment}` | deleteDomainCommentV2 | Delete a comment |
-| PATCH | `/domains/{owner}/{domain}/{version}/comments/{comment}` | updateDomainCommentV2 | Update a comment |
-| POST | `/domains/{owner}/{domain}/{version}/comments/{comment}/replies` | addDomainCommentReplyV2 | Reply to a comment |
-| DELETE | `/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}` | deleteDomainCommentReplyV2 | Delete a comment reply |
-| PATCH | `/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}` | updateDomainCommentReplyV2 | Update a comment reply |
-| PUT | `/domains/{owner}/{domain}/{version}/comments/{comment}/status/{status}` | setDomainCommentStatusV2 | Resolve or reopen a comment |
-| GET | `/domains/{owner}/{domain}/{version}/domain.json` | getDomainJsonDefinition | Get the OpenAPI definition for the specified domain version in JSON format |
-| GET | `/domains/{owner}/{domain}/{version}/domain.yaml` | getDomainYamlDefinition | Get the OpenAPI definition for the specified domain version in YAML format |
-| POST | `/domains/{owner}/{domain}/{version}/fork` | forkDomain | Fork a domain |
-| GET | `/domains/{owner}/{domain}/{version}/settings/lifecycle` | getDomainLifecycleSettings | Get the published status for the specified domain and version |
-| PUT | `/domains/{owner}/{domain}/{version}/settings/lifecycle` | setDomainLifecycleSettings | Publish or unpublish a domain version |
-| GET | `/domains/{owner}/{domain}/{version}/settings/private` | getDomainPrivateSettings | Get the visibility (public or private) of a domain version |
-| PUT | `/domains/{owner}/{domain}/{version}/settings/private` | setDomainPrivateSettings | Set the visibility (public or private) of a domain version |
-| GET | `/projects` | getUserProjects | Get all projects that a user has access to |
-| GET | `/projects/{owner}` | getOrgProjectsV2 | Get all projects of an organization |
-| POST | `/projects/{owner}` | createProject | Create a project in an organization |
-| DELETE | `/projects/{owner}/{projectId}` | deleteProjectV2 | Delete a project |
-| GET | `/projects/{owner}/{projectId}` | getProjectV2 | Get project information |
-| PUT | `/projects/{owner}/{projectId}` | saveProjectV2 | Update a project |
-| GET | `/projects/{owner}/{projectId}/members` | getProjectMembersV2 | Get project members |
-| PUT | `/projects/{owner}/{projectId}/members` | updateProjectMembersV2 | Update a project's members list |
-| PUT | `/projects/{owner}/{projectId}/{specType}/{name}` | addSpecToProjectV2 | Add an API or domain to a project |
-| GET | `/specs` | searchApisAndDomains | Retrieve a list of currently defined APIs, domains, and templates in APIs.json format |
-| GET | `/templates` | getTemplates | Retrieve a list of templates for an owner |
-| DELETE | `/templates/{owner}/{templateId}` | deleteTemplate | Delete a template |
-| GET | `/templates/{owner}/{templateId}` | getTemplateVersions | Retrieve an APIs.json listing for all template versions for an owner and template |
-| POST | `/templates/{owner}/{templateId}` | saveTemplateDefinition | Create or update a template |
-| POST | `/templates/{owner}/{templateId}/rename` | renameTemplate | Rename a template |
-| DELETE | `/templates/{owner}/{templateId}/{version}` | deleteTemplateVersion | Delete a particular version of a template |
-| GET | `/templates/{owner}/{templateId}/{version}` | getTemplateDefinition | Retrieve a template definition |
-| GET | `/templates/{owner}/{templateId}/{version}/comments` | getTemplateComments | Return the list of comments for a template |
-| POST | `/templates/{owner}/{templateId}/{version}/comments/batch` | updateTemplateComments | Update the list of comments for a template |
-| POST | `/templates/{owner}/{templateId}/{version}/fork` | forkTemplate | Create a fork for a template |
-| GET | `/templates/{owner}/{templateId}/{version}/settings/lifecycle` | getTemplateLifecycleSettings | Retrieve lifecycle settings for a template |
-| PUT | `/templates/{owner}/{templateId}/{version}/settings/lifecycle` | setTemplateLifecycleSettings | Update lifecycle settings for a template |
-| GET | `/templates/{owner}/{templateId}/{version}/settings/private` | getTemplatePrivateSettings | Retrieve visibility settings for a template |
-| PUT | `/templates/{owner}/{templateId}/{version}/settings/private` | setTemplatePrivateSettings | Update visibility settings for a template |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/apis` | searchApis | `query`, `state`, `page`, `limit`, `sort`, `order` | — | yes | Search APIs |
+| GET | `/apis/{owner}` | getOwnerApis | `owner`*, `page`, `limit`, `sort`, `order` | ApisJson | yes | Get a list of APIs of the specified owner |
+| GET | `/apis/{owner}/{api}` | getApiVersions | `owner`*, `api`* | ApisJson | yes | Get a list of API versions |
+| POST | `/apis/{owner}/{api}` | saveDefinition | `owner`*, `api`*, `isPrivate`, `version`, `force`, body*: string | — |  | Create or update an API |
+| DELETE | `/apis/{owner}/{api}` | deleteApi | `owner`*, `api`* | — |  | Delete an API |
+| POST | `/apis/{owner}/{api}/rename` | renameApi | `owner`*, `api`*, `newName`* | — |  | Rename an API |
+| GET | `/apis/{owner}/{api}/settings/default` | getApiDefaultVersion | `owner`*, `api`* | DefaultVersion | yes | Get the default version of an API |
+| PUT | `/apis/{owner}/{api}/settings/default` | setApiDefaultVersion | `owner`*, `api`*, body*: DefaultVersion | — |  | Set the default API version |
+| GET | `/apis/{owner}/{api}/{version}` | getDefinition | `owner`*, `api`*, `version`*, `resolved`, `flatten` | object | yes | Get the OpenAPI definition of the specified API version |
+| DELETE | `/apis/{owner}/{api}/{version}` | deleteApiVersion | `owner`*, `api`*, `version`* | — |  | Delete an API version |
+| POST | `/apis/{owner}/{api}/{version}/clone` | cloneApi | `owner`*, `api`*, `version`*, body*: NewVersion | — |  | Create a new API version |
+| GET | `/apis/{owner}/{api}/{version}/comments` | getApiCommentsV2 | `owner`*, `api`*, `version`* | ClosableComment[] | yes | Get comments for the specified API version |
+| POST | `/apis/{owner}/{api}/{version}/comments` | addApiCommentV2 | `owner`*, `api`*, `version`*, body*: NewComment | ClosableComment |  | Add a new comment |
+| POST | `/apis/{owner}/{api}/{version}/comments/batch` | updateApiCommentsV2 | `owner`*, `api`*, `version`*, body*: CommentsBatch | — |  | Bulk update comments |
+| DELETE | `/apis/{owner}/{api}/{version}/comments/{comment}` | deleteApiCommentV2 | `owner`*, `api`*, `version`*, `comment`* | — |  | Delete a comment |
+| PATCH | `/apis/{owner}/{api}/{version}/comments/{comment}` | updateApiCommentV2 | `owner`*, `api`*, `version`*, `comment`*, body: ClosableCommentPatch | ClosableComment |  | Update a comment |
+| POST | `/apis/{owner}/{api}/{version}/comments/{comment}/replies` | addApiCommentReplyV2 | `owner`*, `api`*, `version`*, `comment`*, body*: NewReply | Comment[] |  | Reply to a comment |
+| DELETE | `/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}` | deleteApiCommentReplyV2 | `owner`*, `api`*, `version`*, `comment`*, `reply`* | — |  | Delete a comment reply |
+| PATCH | `/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}` | updateApiCommentReplyV2 | `owner`*, `api`*, `version`*, `comment`*, `reply`*, body: CommentPatch | Comment |  | Update a comment reply |
+| PUT | `/apis/{owner}/{api}/{version}/comments/{comment}/status/{status}` | setApiCommentStatusV2 | `owner`*, `api`*, `version`*, `comment`*, `status`* | — |  | Resolve or reopen a comment |
+| POST | `/apis/{owner}/{api}/{version}/fork` | forkApi | `owner`*, `api`*, `version`*, body*: ForkVersion | — |  | Fork an API |
+| GET | `/apis/{owner}/{api}/{version}/integrations` | getIntegrations | `owner`*, `api`*, `version`* | IntegrationConfigurations | yes | Get all integrations configured for the specified API version |
+| POST | `/apis/{owner}/{api}/{version}/integrations` | createIntegration | `owner`*, `api`*, `version`*, body*: object | IntegrationConfiguration |  | Create an integration for the specified API and version |
+| GET | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | getIntegrationById | `owner`*, `api`*, `version`*, `integrationId`* | IntegrationConfiguration | yes | Get integration settings |
+| PUT | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | updateIntegration | `owner`*, `api`*, `version`*, `integrationId`*, body*: object | — |  | Update integration settings |
+| DELETE | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | deleteIntegration | `owner`*, `api`*, `version`*, `integrationId`* | — |  | Delete an integration |
+| PATCH | `/apis/{owner}/{api}/{version}/integrations/{integrationId}` | patchIntegration | `owner`*, `api`*, `version`*, `integrationId`*, body*: object | — |  | Partially update integration settings |
+| POST | `/apis/{owner}/{api}/{version}/integrations/{integrationId}/execute` | executeIntegration | `owner`*, `api`*, `version`*, `integrationId`*, `commitMessage` | — |  | Run an integration |
+| GET | `/apis/{owner}/{api}/{version}/settings/lifecycle` | getLifecycleSettings | `owner`*, `api`*, `version`* | LifecycleSettings | yes | Get the published status for the specified API and version |
+| PUT | `/apis/{owner}/{api}/{version}/settings/lifecycle` | setLifecycleSettings | `owner`*, `api`*, `version`*, `force`, body*: LifecycleSettings | — |  | Publish or unpublish an API version |
+| GET | `/apis/{owner}/{api}/{version}/settings/private` | getPrivateSettings | `owner`*, `api`*, `version`* | VisibilitySettings | yes | Get the visibility (public or private) of API version |
+| PUT | `/apis/{owner}/{api}/{version}/settings/private` | setPrivateSettings | `owner`*, `api`*, `version`*, body*: VisibilitySettings | — |  | Set the visibility (public or private) of an API version |
+| GET | `/apis/{owner}/{api}/{version}/standardization` | getStandardizationErrors | `owner`*, `api`*, `version`* | StandardizationResult | yes | Retrieve the standardization errors for a given API definition |
+| GET | `/apis/{owner}/{api}/{version}/swagger.json` | getJsonDefinition | `owner`*, `api`*, `version`*, `resolved`, `flatten` | object | yes | Get the OpenAPI definition for the specified API version in JSON format |
+| GET | `/apis/{owner}/{api}/{version}/swagger.yaml` | getYamlDefinition | `owner`*, `api`*, `version`*, `resolved`, `flatten` | object | yes | Get the OpenAPI definition for the specified API version in YAML format |
+| GET | `/apis/{owner}/{api}/{version}/validation` | getValidation | `owner`*, `api`*, `version`* | ValidationResult | yes | Deprecated Get API Standardization errors and warnings |
+| GET | `/domains` | searchDomains | `query`, `state`, `page`, `limit`, `sort`, `order` | — | yes | Search domains |
+| GET | `/domains/{owner}` | getOwnerDomains | `owner`*, `page`, `limit`, `sort`, `order` | ApisJson | yes | Get a list of domains of the specified owner |
+| GET | `/domains/{owner}/{domain}` | getDomainVersions | `owner`*, `domain`* | ApisJson | yes | Get a list of domain versions |
+| POST | `/domains/{owner}/{domain}` | saveDomainDefinition | `owner`*, `domain`*, `isPrivate`, `version`, `force`, body: string | — |  | Create or update a domain |
+| DELETE | `/domains/{owner}/{domain}` | deleteDomain | `owner`*, `domain`*, `force` | — |  | Delete a domain |
+| POST | `/domains/{owner}/{domain}/rename` | renameDomain | `owner`*, `domain`*, `newName`*, `force` | — |  | Rename a domain |
+| GET | `/domains/{owner}/{domain}/settings/default` | getDomainDefaultVersion | `owner`*, `domain`* | DefaultVersion | yes | Get the default version of a domain |
+| PUT | `/domains/{owner}/{domain}/settings/default` | setDomainDefaultVersion | `owner`*, `domain`*, body*: DefaultVersion | — |  | Set the default version for a domain |
+| GET | `/domains/{owner}/{domain}/{version}` | getDomainDefinition | `owner`*, `domain`*, `version`* | object | yes | Get the OpenAPI definition of the specified domain version |
+| DELETE | `/domains/{owner}/{domain}/{version}` | deleteDomainVersion | `owner`*, `domain`*, `version`*, `force` | — |  | Delete a domain version |
+| POST | `/domains/{owner}/{domain}/{version}/clone` | cloneDomain | `owner`*, `domain`*, `version`*, body*: NewVersion | — |  | Create a new domain version |
+| GET | `/domains/{owner}/{domain}/{version}/comments` | getDomainCommentsV2 | `owner`*, `domain`*, `version`* | ClosableComment[] | yes | Get comments for the specified domain version |
+| POST | `/domains/{owner}/{domain}/{version}/comments` | addDomainCommentV2 | `owner`*, `domain`*, `version`*, body*: NewComment | ClosableComment |  | Add a new comment |
+| POST | `/domains/{owner}/{domain}/{version}/comments/batch` | updateDomainCommentsV2 | `owner`*, `domain`*, `version`*, body*: CommentsBatch | — |  | Bulk update comments |
+| DELETE | `/domains/{owner}/{domain}/{version}/comments/{comment}` | deleteDomainCommentV2 | `owner`*, `domain`*, `version`*, `comment`* | — |  | Delete a comment |
+| PATCH | `/domains/{owner}/{domain}/{version}/comments/{comment}` | updateDomainCommentV2 | `owner`*, `domain`*, `version`*, `comment`*, body: ClosableCommentPatch | ClosableComment |  | Update a comment |
+| POST | `/domains/{owner}/{domain}/{version}/comments/{comment}/replies` | addDomainCommentReplyV2 | `owner`*, `domain`*, `version`*, `comment`*, body*: NewReply | Comment[] |  | Reply to a comment |
+| DELETE | `/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}` | deleteDomainCommentReplyV2 | `owner`*, `domain`*, `version`*, `comment`*, `reply`* | — |  | Delete a comment reply |
+| PATCH | `/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}` | updateDomainCommentReplyV2 | `owner`*, `domain`*, `version`*, `comment`*, `reply`*, body: CommentPatch | Comment |  | Update a comment reply |
+| PUT | `/domains/{owner}/{domain}/{version}/comments/{comment}/status/{status}` | setDomainCommentStatusV2 | `owner`*, `domain`*, `version`*, `comment`*, `status`* | — |  | Resolve or reopen a comment |
+| GET | `/domains/{owner}/{domain}/{version}/domain.json` | getDomainJsonDefinition | `owner`*, `domain`*, `version`* | object | yes | Get the OpenAPI definition for the specified domain version in JSON format |
+| GET | `/domains/{owner}/{domain}/{version}/domain.yaml` | getDomainYamlDefinition | `owner`*, `domain`*, `version`* | object | yes | Get the OpenAPI definition for the specified domain version in YAML format |
+| POST | `/domains/{owner}/{domain}/{version}/fork` | forkDomain | `owner`*, `domain`*, `version`*, body*: ForkVersion | — |  | Fork a domain |
+| GET | `/domains/{owner}/{domain}/{version}/settings/lifecycle` | getDomainLifecycleSettings | `owner`*, `domain`*, `version`* | LifecycleSettings | yes | Get the published status for the specified domain and version |
+| PUT | `/domains/{owner}/{domain}/{version}/settings/lifecycle` | setDomainLifecycleSettings | `owner`*, `domain`*, `version`*, `force`, body*: LifecycleSettings | — |  | Publish or unpublish a domain version |
+| GET | `/domains/{owner}/{domain}/{version}/settings/private` | getDomainPrivateSettings | `owner`*, `domain`*, `version`* | VisibilitySettings | yes | Get the visibility (public or private) of a domain version |
+| PUT | `/domains/{owner}/{domain}/{version}/settings/private` | setDomainPrivateSettings | `owner`*, `domain`*, `version`*, `force`, body*: VisibilitySettings | — |  | Set the visibility (public or private) of a domain version |
+| GET | `/projects` | getUserProjects | `nameOnly`, `page`, `limit`, `sort`, `order` | ProjectsJson | yes | Get all projects that a user has access to |
+| GET | `/projects/{owner}` | getOrgProjectsV2 | `owner`*, `nameOnly`, `page`, `limit`, `order` | ProjectsJson | yes | Get all projects of an organization |
+| POST | `/projects/{owner}` | createProject | `owner`*, body*: Project | — |  | Create a project in an organization |
+| GET | `/projects/{owner}/{projectId}` | getProjectV2 | `owner`*, `projectId`* | Project | yes | Get project information |
+| PUT | `/projects/{owner}/{projectId}` | saveProjectV2 | `owner`*, `projectId`*, body*: Project | — |  | Update a project |
+| DELETE | `/projects/{owner}/{projectId}` | deleteProjectV2 | `owner`*, `projectId`* | — |  | Delete a project |
+| GET | `/projects/{owner}/{projectId}/members` | getProjectMembersV2 | `owner`*, `projectId`* | ProjectMemberList | yes | Get project members |
+| PUT | `/projects/{owner}/{projectId}/members` | updateProjectMembersV2 | `owner`*, `projectId`*, body*: ProjectMemberList | — |  | Update a project's members list |
+| PUT | `/projects/{owner}/{projectId}/{specType}/{name}` | addSpecToProjectV2 | `owner`*, `projectId`*, `specType`*, `name`* | — |  | Add an API or domain to a project |
+| GET | `/specs` | searchApisAndDomains | `specType`, `visibility`, `state`, `owner`, `query`, `page`, `limit`, `sort`, `order` | ApisJson | yes | Retrieve a list of currently defined APIs, domains, and templates in APIs.json format |
+| GET | `/templates` | getTemplates | `owner` | TemplateWrapper | yes | Retrieve a list of templates for an owner |
+| GET | `/templates/{owner}/{templateId}` | getTemplateVersions | `owner`*, `templateId`* | ApisJson | yes | Retrieve an APIs.json listing for all template versions for an owner and template |
+| POST | `/templates/{owner}/{templateId}` | saveTemplateDefinition | `owner`*, `templateId`*, `isPrivate`, `version`, `force`, `projectName`, body*: string | — |  | Create or update a template |
+| DELETE | `/templates/{owner}/{templateId}` | deleteTemplate | `owner`*, `templateId`* | — |  | Delete a template |
+| POST | `/templates/{owner}/{templateId}/rename` | renameTemplate | `owner`*, `templateId`*, `newName`* | — |  | Rename a template |
+| GET | `/templates/{owner}/{templateId}/{version}` | getTemplateDefinition | `owner`*, `templateId`*, `version`*, `flatten` | object | yes | Retrieve a template definition |
+| DELETE | `/templates/{owner}/{templateId}/{version}` | deleteTemplateVersion | `owner`*, `templateId`*, `version`* | — |  | Delete a particular version of a template |
+| GET | `/templates/{owner}/{templateId}/{version}/comments` | getTemplateComments | `owner`*, `templateId`*, `version`* | ClosableComment[] | yes | Return the list of comments for a template |
+| POST | `/templates/{owner}/{templateId}/{version}/comments/batch` | updateTemplateComments | `owner`*, `templateId`*, `version`*, body*: CommentsBatch | — |  | Update the list of comments for a template |
+| POST | `/templates/{owner}/{templateId}/{version}/fork` | forkTemplate | `owner`*, `templateId`*, `version`*, body*: ForkVersion | — |  | Create a fork for a template |
+| GET | `/templates/{owner}/{templateId}/{version}/settings/lifecycle` | getTemplateLifecycleSettings | `owner`*, `templateId`*, `version`* | LifecycleSettings | yes | Retrieve lifecycle settings for a template |
+| PUT | `/templates/{owner}/{templateId}/{version}/settings/lifecycle` | setTemplateLifecycleSettings | `owner`*, `templateId`*, `version`*, `force`, body*: LifecycleSettings | — |  | Update lifecycle settings for a template |
+| GET | `/templates/{owner}/{templateId}/{version}/settings/private` | getTemplatePrivateSettings | `owner`*, `templateId`*, `version`* | VisibilitySettings | yes | Retrieve visibility settings for a template |
+| PUT | `/templates/{owner}/{templateId}/{version}/settings/private` | setTemplatePrivateSettings | `owner`*, `templateId`*, `version`*, body*: VisibilitySettings | — |  | Update visibility settings for a template |

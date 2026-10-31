@@ -12,7 +12,7 @@ Read-only Clerk Backend API operations for one Clerk application instance. Ragen
 
 | | |
 | --- | --- |
-| Signed bundle | `71c5957d25ae4e3c53e68f0542ff0df728bc273fc17f961c16f364e70be735a1` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.clerk.com/v1` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.clerk.com/v1/instance` |
@@ -40,88 +40,90 @@ Independent connector for the Clerk Backend API. Not affiliated with or endorsed
 
 175 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/allowlist_identifiers` | ListAllowlistIdentifiers | List all identifiers on the allow-list |
-| GET | `/api_keys` | getApiKeys | Get API Keys |
-| GET | `/api_keys/{apiKeyID}` | getApiKey | Get an API Key by ID |
-| GET | `/api_keys/{apiKeyID}/secret` | getApiKeySecret | Get an API Key Secret |
-| GET | `/billing/plans` | GetCommercePlanList | List all billing plans |
-| GET | `/billing/prices` | GetBillingPriceList | List all billing prices |
-| GET | `/billing/statements` | GetBillingStatementList | List all billing statements |
-| GET | `/billing/statements/{statementID}` | GetBillingStatement | Retrieve a billing statement |
-| GET | `/billing/statements/{statementID}/payment_attempts` | GetBillingStatementPaymentAttempts | List payment attempts for a billing statement |
-| GET | `/billing/subscription_items` | GetCommerceSubscriptionItemList | List all subscription items |
-| GET | `/blocklist_identifiers` | ListBlocklistIdentifiers | List all identifiers on the block-list |
-| GET | `/clients` | GetClientList | List all clients |
-| GET | `/clients/{client_id}` | GetClient | Get a client |
-| GET | `/directories` | ListDirectories | List all directories |
-| GET | `/directories/{directory_id}` | GetDirectory | Retrieve a directory |
-| GET | `/directories/{directory_id}/group_role_mappings` | ListDirectoryGroupRoleMappings | List directory group role mappings |
-| GET | `/directories/{directory_id}/groups/{group_id}` | GetDirectoryGroup | Retrieve a directory group |
-| GET | `/directories/{directory_id}/groups/{group_id}/members` | ListDirectoryGroupMembers | List directory group members |
-| GET | `/domains` | ListDomains | List all instance domains |
-| GET | `/email_addresses/{email_address_id}` | GetEmailAddress | Retrieve an email address |
-| GET | `/enterprise_connections` | ListEnterpriseConnections | List enterprise connections |
-| GET | `/enterprise_connections/{enterprise_connection_id}` | GetEnterpriseConnection | Retrieve an enterprise connection |
-| GET | `/enterprise_connections/{enterprise_connection_id}/test_runs` | ListEnterpriseConnectionTestRuns | List enterprise connection test runs |
-| GET | `/instance` | GetInstance | Fetch the current instance |
-| GET | `/instance/communication` | GetInstanceCommunication | Get instance communication settings |
-| GET | `/instance/oauth_application_settings` | GetInstanceOAuthApplicationSettings | Get OAuth application settings |
-| GET | `/instance/organization_settings` | GetInstanceOrganizationSettings | Get instance organization settings |
-| GET | `/instance/protect` | GetInstanceProtect | Get instance protect settings |
-| GET | `/invitations` | ListInvitations | List all invitations |
-| GET | `/jwks` | GetJWKS | Retrieve the JSON Web Key Set of the instance |
-| GET | `/jwt_templates` | ListJWTTemplates | List all templates |
-| GET | `/jwt_templates/{template_id}` | GetJWTTemplate | Retrieve a template |
-| GET | `/m2m_tokens` | getM2MTokens | Get M2M Tokens |
-| GET | `/machines` | ListMachines | Get a list of machines for an instance |
-| GET | `/machines/{machine_id}` | GetMachine | Retrieve a machine |
-| GET | `/machines/{machine_id}/secret_key` | GetMachineSecretKey | Retrieve a machine secret key |
-| GET | `/oauth_applications` | ListOAuthApplications | Get a list of OAuth applications for an instance |
-| GET | `/oauth_applications/{oauth_application_id}` | GetOAuthApplication | Retrieve an OAuth application by ID |
-| GET | `/organization_domains` | ListAllOrganizationDomains | List all organization domains |
-| GET | `/organization_invitations` | ListInstanceOrganizationInvitations | Get a list of organization invitations for the current instance |
-| GET | `/organization_memberships` | InstanceGetOrganizationMemberships | Get a list of all organization memberships within an instance. |
-| GET | `/organization_permissions` | ListOrganizationPermissions | Get a list of all organization permissions |
-| GET | `/organization_permissions/{permission_id}` | GetOrganizationPermission | Get an organization permission |
-| GET | `/organization_roles` | ListOrganizationRoles | Get a list of organization roles |
-| GET | `/organization_roles/{organization_role_id}` | GetOrganizationRole | Retrieve an organization role |
-| GET | `/organizations` | ListOrganizations | Get a list of organizations for an instance |
-| GET | `/organizations/{organization_id}` | GetOrganization | Retrieve an organization by ID or slug |
-| GET | `/organizations/{organization_id}/billing/credits` | GetOrganizationBillingCreditBalance | Retrieve an organization's credit balance |
-| GET | `/organizations/{organization_id}/billing/subscription` | GetOrganizationBillingSubscription | Retrieve an organization's billing subscription |
-| GET | `/organizations/{organization_id}/domains` | ListOrganizationDomains | Get a list of all domains of an organization. |
-| GET | `/organizations/{organization_id}/invitations` | ListOrganizationInvitations | Get a list of organization invitations |
-| GET | `/organizations/{organization_id}/invitations/pending` | ListPendingOrganizationInvitations | Get a list of pending organization invitations |
-| GET | `/organizations/{organization_id}/invitations/{invitation_id}` | GetOrganizationInvitation | Retrieve an organization invitation by ID |
-| GET | `/organizations/{organization_id}/memberships` | ListOrganizationMemberships | Get a list of all members of an organization |
-| GET | `/phone_numbers/{phone_number_id}` | GetPhoneNumber | Retrieve a phone number |
-| GET | `/public/interstitial` | GetPublicInterstitial | Returns the markup for the interstitial page |
-| GET | `/redirect_urls` | ListRedirectURLs | List all redirect URLs |
-| GET | `/redirect_urls/{id}` | GetRedirectURL | Retrieve a redirect URL |
-| GET | `/role_sets` | ListRoleSets | Get a list of role sets |
-| GET | `/role_sets/{role_set_key_or_id}` | GetRoleSet | Retrieve a role set |
-| GET | `/saml_connections` | ListSAMLConnections | Get a list of SAML Connections for an instance |
-| GET | `/saml_connections/{saml_connection_id}` | GetSAMLConnection | Retrieve a SAML Connection by ID |
-| GET | `/scim_directories` | ListSCIMDirectories | List all directories |
-| GET | `/scim_directories/{scim_directory_id}` | GetSCIMDirectory | Retrieve a directory |
-| GET | `/scim_directories/{scim_directory_id}/group_role_mappings` | ListSCIMGroupRoleMappings | List SCIM group role mappings |
-| GET | `/sessions` | GetSessionList | List all sessions |
-| GET | `/sessions/{session_id}` | GetSession | Retrieve a session |
-| GET | `/sessions/{session_id}/reverifications/{reverification_id}` | GetReverification | Retrieve a reverification |
-| GET | `/sign_ups/{id}` | GetSignUp | Retrieve a sign-up by ID |
-| GET | `/sso_bypass_allowlist_users` | ListSSOBypassAllowlistUsers | List the SSO bypass allowlist |
-| GET | `/templates/{template_type}` | GetTemplateList | List all templates |
-| GET | `/templates/{template_type}/{slug}` | GetTemplate | Retrieve a template |
-| GET | `/users` | GetUserList | List all users |
-| GET | `/users/count` | GetUsersCount | Count users |
-| GET | `/users/{user_id}` | GetUser | Retrieve a user |
-| GET | `/users/{user_id}/billing/credits` | GetUserBillingCreditBalance | Retrieve a user's credit balance |
-| GET | `/users/{user_id}/billing/subscription` | GetUserBillingSubscription | Retrieve a user's billing subscription |
-| GET | `/users/{user_id}/biometric_credentials` | ListUserBiometricCredentials | List a user's biometric credentials |
-| GET | `/users/{user_id}/oauth_access_tokens/{provider}` | GetOAuthAccessToken | Retrieve the OAuth access token of a user |
-| GET | `/users/{user_id}/organization_invitations` | UsersGetOrganizationInvitations | Retrieve all invitations for a user |
-| GET | `/users/{user_id}/organization_memberships` | UsersGetOrganizationMemberships | Retrieve all memberships for a user |
-| GET | `/users/{user_id}/trusted_devices` | ListUserTrustedDevices | List a user's trusted devices |
-| GET | `/waitlist_entries` | ListWaitlistEntries | List all waitlist entries |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/allowlist_identifiers` | ListAllowlistIdentifiers | `paginated`, `limit`, `offset` | AllowlistIdentifier[] | yes | List all identifiers on the allow-list |
+| GET | `/api_keys` | getApiKeys | `type`, `subject`*, `include_invalid`, `limit`, `offset`, `query` | object | yes | Get API Keys |
+| GET | `/api_keys/{apiKeyID}` | getApiKey | `apiKeyID`* | object | yes | Get an API Key by ID |
+| GET | `/api_keys/{apiKeyID}/secret` | getApiKeySecret | `apiKeyID`* | object | yes | Get an API Key Secret |
+| GET | `/billing/plans` | GetCommercePlanList | `paginated`, `limit`, `offset`, `payer_type` | PaginatedCommercePlanResponse | yes | List all billing plans |
+| GET | `/billing/prices` | GetBillingPriceList | `paginated`, `limit`, `offset`, `plan_id` | PaginatedBillingPriceResponse | yes | List all billing prices |
+| GET | `/billing/statements` | GetBillingStatementList | `paginated`, `limit`, `offset` | PaginatedBillingStatementResponse | yes | List all billing statements |
+| GET | `/billing/statements/{statementID}` | GetBillingStatement | `statementID`* | BillingStatement | yes | Retrieve a billing statement |
+| GET | `/billing/statements/{statementID}/payment_attempts` | GetBillingStatementPaymentAttempts | `statementID`*, `paginated`, `limit`, `offset` | PaginatedBillingPaymentAttemptResponse | yes | List payment attempts for a billing statement |
+| GET | `/billing/subscription_items` | GetCommerceSubscriptionItemList | `paginated`, `limit`, `offset`, `status`, `payer_type`, `plan_id`, `include_free`, `query` | PaginatedCommerceSubscriptionItemResponse | yes | List all subscription items |
+| GET | `/blocklist_identifiers` | ListBlocklistIdentifiers | — | BlocklistIdentifiers | yes | List all identifiers on the block-list |
+| GET | `/clients` | GetClientList | `paginated`, `limit`, `offset` | Client[] | yes | List all clients |
+| GET | `/clients/{client_id}` | GetClient | `client_id`* | Client | yes | Get a client |
+| GET | `/directories` | ListDirectories | `limit`, `offset` | object | yes | List all directories |
+| GET | `/directories/{directory_id}` | GetDirectory | `directory_id`* | Directory | yes | Retrieve a directory |
+| GET | `/directories/{directory_id}/group_role_mappings` | ListDirectoryGroupRoleMappings | `directory_id`* | object | yes | List directory group role mappings |
+| GET | `/directories/{directory_id}/groups/{group_id}` | GetDirectoryGroup | `directory_id`*, `group_id`* | DirectoryGroup | yes | Retrieve a directory group |
+| GET | `/directories/{directory_id}/groups/{group_id}/members` | ListDirectoryGroupMembers | `directory_id`*, `group_id`*, `limit`, `starting_after` | object | yes | List directory group members |
+| GET | `/domains` | ListDomains | — | Domains | yes | List all instance domains |
+| GET | `/email_addresses/{email_address_id}` | GetEmailAddress | `email_address_id`* | EmailAddress | yes | Retrieve an email address |
+| GET | `/enterprise_connections` | ListEnterpriseConnections | `limit`, `offset`, `organization_id`, `active` | EnterpriseConnections | yes | List enterprise connections |
+| GET | `/enterprise_connections/{enterprise_connection_id}` | GetEnterpriseConnection | `enterprise_connection_id`* | EnterpriseConnection | yes | Retrieve an enterprise connection |
+| GET | `/enterprise_connections/{enterprise_connection_id}/test_runs` | ListEnterpriseConnectionTestRuns | `enterprise_connection_id`*, `status`, `limit`, `offset` | EnterpriseConnectionTestRuns | yes | List enterprise connection test runs |
+| GET | `/instance` | GetInstance | — | Instance | yes | Fetch the current instance |
+| GET | `/instance/communication` | GetInstanceCommunication | — | InstanceCommunication | yes | Get instance communication settings |
+| GET | `/instance/oauth_application_settings` | GetInstanceOAuthApplicationSettings | — | OAuthApplicationSettings | yes | Get OAuth application settings |
+| GET | `/instance/organization_settings` | GetInstanceOrganizationSettings | — | OrganizationSettings | yes | Get instance organization settings |
+| GET | `/instance/protect` | GetInstanceProtect | — | InstanceProtect | yes | Get instance protect settings |
+| GET | `/invitations` | ListInvitations | `status`, `query`, `order_by`, `paginated`, `limit`, `offset` | Invitation[] | yes | List all invitations |
+| GET | `/jwks` | GetJWKS | — | JWKS | yes | Retrieve the JSON Web Key Set of the instance |
+| GET | `/jwt_templates` | ListJWTTemplates | `paginated`, `limit`, `offset` | JWTTemplate[] | yes | List all templates |
+| GET | `/jwt_templates/{template_id}` | GetJWTTemplate | `template_id`* | JWTTemplate | yes | Retrieve a template |
+| GET | `/m2m_tokens` | getM2MTokens | `subject`*, `revoked`, `expired`, `limit`, `offset` | object | yes | Get M2M Tokens |
+| GET | `/machines` | ListMachines | `limit`, `offset`, `query`, `order_by` | object | yes | Get a list of machines for an instance |
+| GET | `/machines/{machine_id}` | GetMachine | `machine_id`* | Machine | yes | Retrieve a machine |
+| GET | `/machines/{machine_id}/secret_key` | GetMachineSecretKey | `machine_id`* | object | yes | Retrieve a machine secret key |
+| GET | `/oauth_applications` | ListOAuthApplications | `limit`, `offset`, `order_by`, `name_query` | OAuthApplications | yes | Get a list of OAuth applications for an instance |
+| GET | `/oauth_applications/{oauth_application_id}` | GetOAuthApplication | `oauth_application_id`* | OAuthApplication | yes | Retrieve an OAuth application by ID |
+| GET | `/organization_domains` | ListAllOrganizationDomains | `organization_id`, `verified`, `enrollment_mode`, `query`, `domains`, `order_by`, `offset`, `limit` | OrganizationDomains | yes | List all organization domains |
+| GET | `/organization_invitations` | ListInstanceOrganizationInvitations | `order_by`, `status`, `query`, `limit`, `offset` | OrganizationInvitationsWithPublicOrganizationData | yes | Get a list of organization invitations for the current instance |
+| GET | `/organization_memberships` | InstanceGetOrganizationMemberships | `order_by`, `limit`, `offset` | OrganizationMemberships | yes | Get a list of all organization memberships within an instance. |
+| GET | `/organization_permissions` | ListOrganizationPermissions | `query`, `order_by`, `limit`, `offset` | Permissions | yes | Get a list of all organization permissions |
+| GET | `/organization_permissions/{permission_id}` | GetOrganizationPermission | `permission_id`* | Permission | yes | Get an organization permission |
+| GET | `/organization_roles` | ListOrganizationRoles | `query`, `order_by`, `limit`, `offset` | Roles | yes | Get a list of organization roles |
+| GET | `/organization_roles/{organization_role_id}` | GetOrganizationRole | `organization_role_id`* | Role | yes | Retrieve an organization role |
+| GET | `/organizations` | ListOrganizations | `include_members_count`, `include_missing_member_with_elevated_permissions`, `query`, `user_id`, `organization_id`, `order_by`, `limit`, `offset` | Organizations | yes | Get a list of organizations for an instance |
+| GET | `/organizations/{organization_id}` | GetOrganization | `organization_id`*, `include_members_count`, `include_missing_member_with_elevated_permissions` | Organization | yes | Retrieve an organization by ID or slug |
+| GET | `/organizations/{organization_id}/billing/credits` | GetOrganizationBillingCreditBalance | `organization_id`* | CommerceCreditBalanceResponse | yes | Retrieve an organization's credit balance |
+| GET | `/organizations/{organization_id}/billing/subscription` | GetOrganizationBillingSubscription | `organization_id`* | CommerceSubscription | yes | Retrieve an organization's billing subscription |
+| GET | `/organizations/{organization_id}/domains` | ListOrganizationDomains | `organization_id`*, `verified`, `enrollment_mode`, `limit`, `offset` | OrganizationDomains | yes | Get a list of all domains of an organization. |
+| GET | `/organizations/{organization_id}/invitations` | ListOrganizationInvitations | `organization_id`*, `status`, `email_address`, `order_by`, `limit`, `offset` | OrganizationInvitations | yes | Get a list of organization invitations |
+| GET | `/organizations/{organization_id}/invitations/pending` | ListPendingOrganizationInvitations | `organization_id`*, `limit`, `offset` | OrganizationInvitations | yes | Get a list of pending organization invitations |
+| GET | `/organizations/{organization_id}/invitations/{invitation_id}` | GetOrganizationInvitation | `organization_id`*, `invitation_id`* | OrganizationInvitation | yes | Retrieve an organization invitation by ID |
+| GET | `/organizations/{organization_id}/memberships` | ListOrganizationMemberships | `organization_id`*, `order_by`, `user_id`, `email_address`, `phone_number`, `username`, `web3_wallet`, `role`, `query`, `email_address_query`, `phone_number_query`, `username_query`, `name_query`, `last_active_at_before`, `last_active_at_after`, `created_at_before`, `created_at_after`, `limit`, `offset` | OrganizationMemberships | yes | Get a list of all members of an organization |
+| GET | `/phone_numbers/{phone_number_id}` | GetPhoneNumber | `phone_number_id`* | PhoneNumber | yes | Retrieve a phone number |
+| GET | `/public/interstitial` | GetPublicInterstitial | `frontendApi`, `frontend_api`, `publishable_key`, `proxy_url`, `domain`, `sign_in_url`, `use_domain_for_script` | — | yes | Returns the markup for the interstitial page |
+| GET | `/redirect_urls` | ListRedirectURLs | `paginated`, `limit`, `offset` | RedirectURL[] | yes | List all redirect URLs |
+| GET | `/redirect_urls/{id}` | GetRedirectURL | `id`* | RedirectURL | yes | Retrieve a redirect URL |
+| GET | `/role_sets` | ListRoleSets | `query`, `order_by`, `limit`, `offset` | RoleSets | yes | Get a list of role sets |
+| GET | `/role_sets/{role_set_key_or_id}` | GetRoleSet | `role_set_key_or_id`* | RoleSet | yes | Retrieve a role set |
+| GET | `/saml_connections` | ListSAMLConnections | `limit`, `offset`, `query`, `order_by`, `organization_id` | SAMLConnections | yes | Get a list of SAML Connections for an instance |
+| GET | `/saml_connections/{saml_connection_id}` | GetSAMLConnection | `saml_connection_id`* | SAMLConnection | yes | Retrieve a SAML Connection by ID |
+| GET | `/scim_directories` | ListSCIMDirectories | `limit`, `offset` | object | yes | List all directories |
+| GET | `/scim_directories/{scim_directory_id}` | GetSCIMDirectory | `scim_directory_id`* | SCIMDirectory | yes | Retrieve a directory |
+| GET | `/scim_directories/{scim_directory_id}/group_role_mappings` | ListSCIMGroupRoleMappings | `scim_directory_id`* | object | yes | List SCIM group role mappings |
+| GET | `/sessions` | GetSessionList | `client_id`, `user_id`, `status`, `paginated`, `limit`, `offset` | Session[] | yes | List all sessions |
+| GET | `/sessions/{session_id}` | GetSession | `session_id`* | Session | yes | Retrieve a session |
+| GET | `/sessions/{session_id}/reverifications/{reverification_id}` | GetReverification | `session_id`*, `reverification_id`* | Reverification | yes | Retrieve a reverification |
+| GET | `/sign_ups/{id}` | GetSignUp | `id`* | SignUp | yes | Retrieve a sign-up by ID |
+| GET | `/sso_bypass_allowlist_users` | ListSSOBypassAllowlistUsers | `enterprise_connection_id` | SSOBypassAllowlistUsers | yes | List the SSO bypass allowlist |
+| GET | `/templates/{template_type}` | GetTemplateList | `template_type`*, `paginated`, `limit`, `offset` | Template[] | yes | List all templates |
+| GET | `/templates/{template_type}/{slug}` | GetTemplate | `template_type`*, `slug`* | Template | yes | Retrieve a template |
+| GET | `/users` | GetUserList | `email_address`, `phone_number`, `external_id`, `username`, `web3_wallet`, `user_id`, `organization_id`, `query`, `email_address_query`, `phone_number_query`, `username_query`, `name_query`, `banned`, `last_active_at_before`, `last_active_at_after`, `last_active_at_since`, `created_at_before`, `created_at_after`, `last_sign_in_at_before`, `last_sign_in_at_after`, `provider`, `provider_user_id`, `limit`, `offset`, `starting_after`, `order_by` | User[] | yes | List all users |
+| GET | `/users/count` | GetUsersCount | `email_address`, `phone_number`, `external_id`, `username`, `web3_wallet`, `user_id`, `organization_id`, `query`, `email_address_query`, `phone_number_query`, `username_query`, `name_query`, `banned`, `last_active_at_before`, `last_active_at_after`, `last_active_at_since`, `created_at_before`, `created_at_after`, `last_sign_in_at_before`, `last_sign_in_at_after`, `provider`, `provider_user_id` | TotalCount | yes | Count users |
+| GET | `/users/{user_id}` | GetUser | `user_id`* | User | yes | Retrieve a user |
+| GET | `/users/{user_id}/billing/credits` | GetUserBillingCreditBalance | `user_id`* | CommerceCreditBalanceResponse | yes | Retrieve a user's credit balance |
+| GET | `/users/{user_id}/billing/subscription` | GetUserBillingSubscription | `user_id`* | CommerceSubscription | yes | Retrieve a user's billing subscription |
+| GET | `/users/{user_id}/biometric_credentials` | ListUserBiometricCredentials | `user_id`* | object | yes | List a user's biometric credentials |
+| GET | `/users/{user_id}/oauth_access_tokens/{provider}` | GetOAuthAccessToken | `user_id`*, `provider`*, `paginated`, `limit`, `offset` | OAuthAccessToken | yes | Retrieve the OAuth access token of a user |
+| GET | `/users/{user_id}/organization_invitations` | UsersGetOrganizationInvitations | `user_id`*, `limit`, `offset`, `status` | OrganizationInvitationsWithPublicOrganizationData | yes | Retrieve all invitations for a user |
+| GET | `/users/{user_id}/organization_memberships` | UsersGetOrganizationMemberships | `user_id`*, `limit`, `offset` | OrganizationMemberships | yes | Retrieve all memberships for a user |
+| GET | `/users/{user_id}/trusted_devices` | ListUserTrustedDevices | `user_id`* | object | yes | List a user's trusted devices |
+| GET | `/waitlist_entries` | ListWaitlistEntries | `limit`, `offset`, `query`, `status`, `order_by` | object | yes | List all waitlist entries |

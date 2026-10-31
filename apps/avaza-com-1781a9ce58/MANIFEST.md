@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_AvazaHq_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `e45e586f4a88321ce71b79dc8b5abfb8d3ac15218600f4851d936fac5fd0cdc3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,91 +34,93 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_AvazaHq_profile_ima
 
 132 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/ScheduleSeries/AddBooking` | ScheduleSeries_AddBooking | Create new Schedule Booking |
-| POST | `/ScheduleSeries/AddLeave` | ScheduleSeries_AddLeave | Create new Leave Booking |
-| PUT | `/ScheduleSeries/EditBooking` | ScheduleSeries_EditBooking | Edit Booking |
-| PUT | `/ScheduleSeries/EditLeave` | ScheduleSeries_EditLeave | Edit Leave Booking |
-| GET | `/api/Account` | Account_Get | Account Details |
-| GET | `/api/Bill` | Bill_Get | Gets list of Bills |
-| POST | `/api/Bill` | Bill_Post | Create a new draft Bill |
-| GET | `/api/Bill/{id}` | Bill_GetByID | Gets a Bill by Bill ID |
-| GET | `/api/BillPayment` | BillPayment_Get | Gets list of Bill Payments |
-| POST | `/api/BillPayment` | BillPayment_Post | Create new Bill Payment and optionally assign payment allocations to Bills |
-| GET | `/api/BillPayment/{id}` | BillPayment_GetByID | Gets a Bill Payment by Payment Transaction ID |
-| GET | `/api/Company` | Company_Get | Gets list of Companies |
-| POST | `/api/Company` | Company_Post | Create a Company |
-| PUT | `/api/Company` | Company_Put | Update a Company record. |
-| GET | `/api/Company/Lookup` | CompanyLookup | Gets minimal list of Companies. |
-| GET | `/api/Company/{id}` | Company_GetByID | Gets Company by Company ID |
-| GET | `/api/Contact` | Contact_Get | Gets list of Contacts |
-| POST | `/api/Contact` | Contact_Post | Create a Contact |
-| GET | `/api/Contact/{id}` | Contact_GetByID | Gets Contact by Contact ID |
-| GET | `/api/CreditNote` | CreditNote_Get | Gets list of CreditNotes |
-| GET | `/api/CreditNote/{id}` | CreditNote_GetByID | Gets Credit Note by CreditNoteID |
-| GET | `/api/Currency` | Currency_Get | Gets list of Currencies |
-| GET | `/api/Estimate` | Estimate_Get | Gets list of Estimates |
-| POST | `/api/Estimate` | Estimate_Post | Create a new draft Estimate |
-| GET | `/api/Estimate/{id}` | Estimate_GetByID | Gets Estimate by Estimate ID |
-| DELETE | `/api/Expense` | Expense_Delete | Delete a Timesheet Entry |
-| GET | `/api/Expense` | Expense_Get | Gets list of Expenses |
-| POST | `/api/Expense` | Expense_Post | Create an Expense |
-| PUT | `/api/Expense` | Expense_Put | Update an Expense |
-| POST | `/api/Expense/Attachment` | ExpenseAttachment | — |
-| GET | `/api/Expense/{id}` | Expense_GetByID | Gets an Expense Entry by Expense ID |
-| POST | `/api/ExpenseApproval/Submit` | ExpenseApproval | Submit Expenses for Approval. |
-| GET | `/api/ExpenseCategory` | ExpenseCategory_Get | Gets list of Expense Categories |
-| GET | `/api/ExpenseGroup/Lookup` | ExpenseGroupLookup | Gets minimal list of Expense Groups. |
-| GET | `/api/ExpenseMerchant/Lookup` | ExpenseMerchangeLookup | Gets minimal list of Expense Merchants. |
-| GET | `/api/ExpensePaymentMethod/Lookup` | ExpensePaymentMethodLookup | Gets minimal list of Expense Payment Methods. |
-| GET | `/api/ExpenseSummary` | ExpenseSummary_Get | Gets Basic Summary of Expense Statistics |
-| GET | `/api/FixedAmount` | FixedAmount_Get | Gets list of Fixed Amounts |
-| GET | `/api/Inventory` | Inventory_Get | Gets list of Inventory |
-| GET | `/api/Inventory/{id}` | Inventory_GetByID | Gets InventoryItem by InventoryItem ID |
-| GET | `/api/Invoice` | Invoice_Get | Gets list of Invoices |
-| POST | `/api/Invoice` | Invoice_Post | Create a new draft invoice |
-| GET | `/api/Invoice/{id}` | Invoice_GetByID | Gets Invoice by Invoice ID |
-| GET | `/api/Payment` | Payment_Get | Gets list of Payments |
-| POST | `/api/Payment` | Payment_Post | Create new Payment and optionally assign payment allocations to Invoices |
-| GET | `/api/Payment/{id}` | Payment_GetByID | Gets Payment by Payment Transaction ID |
-| GET | `/api/Project` | Project_Get | Gets list of Projects |
-| POST | `/api/Project` | Project_Post | Create a Project |
-| PUT | `/api/Project` | Project_Put | Update an Project |
-| GET | `/api/Project/Lookup` | ProjectLookup | Gets minimal list of active Projects for the current user |
-| GET | `/api/Project/{id}` | Project_GetByID | Gets Project by Project ID |
-| GET | `/api/ProjectMember` | ProjectMember_Get | Gets list of Project Members |
-| POST | `/api/ProjectMember` | ProjectMember_Post | Assign a user as a Member of a Project |
-| PUT | `/api/ProjectMember` | ProjectMember_Put | Update a Member of a Project |
-| GET | `/api/ProjectTimesheetCategory` | ProjectTimesheetCategory_Get | Gets list of Project Timesheet Categories |
-| POST | `/api/ProjectTimesheetCategory` | ProjectTimesheetCategory_Post | Assign a TimeSheetCategory to a Project. |
-| GET | `/api/ScheduleAssignment` | ScheduleAssignment_Get | Gets list of Schedule Assignments. |
-| GET | `/api/ScheduleSeries` | ScheduleSeries_Get | Gets list of Schedule Series |
-| DELETE | `/api/Section` | Section_Delete | Delete a Section |
-| GET | `/api/Section` | Section_Get | Gets list of Sections |
-| POST | `/api/Section` | Section_Post | Create a Section |
-| DELETE | `/api/Task` | Task_Delete | Delete a Task |
-| GET | `/api/Task` | Task_Get | Gets list of Tasks |
-| POST | `/api/Task` | Task_Post | Create a Task |
-| PUT | `/api/Task` | Task_Put | Update a Task. |
-| GET | `/api/Task/Lookup` | TaskLookup | Gets minimal list of Tasks for the current user |
-| GET | `/api/Task/{id}` | Task_GetByID | Gets Task by Task ID |
-| GET | `/api/TaskStatus` | TaskStatus_Get | Gets list of Task Statuses |
-| GET | `/api/TaskType` | TaskType_Get | Gets list of Task Types |
-| GET | `/api/Tax` | Tax_Get | Get List of Taxes configured in the Avaza account. |
-| GET | `/api/Timesheet` | Timesheet_Get | Gets list of Timsheets |
-| POST | `/api/Timesheet` | Timesheet_Post | Create a new Timesheet Entry |
-| PUT | `/api/Timesheet` | Timesheet_Put | Update a Timesheet |
-| DELETE | `/api/Timesheet/{id}` | Timesheet_Delete | Delete a Timesheet Entry |
-| GET | `/api/Timesheet/{id}` | Timesheet_GetByID | Gets a Timesheet Entry by Timesheet ID |
-| POST | `/api/TimesheetSubmission` | TimesheetSubmission_Post | Submit Timesheets for Approval. |
-| GET | `/api/TimesheetSummary` | TimesheetSummary_Get | Gets Basic Summary of Timesheet Statistics |
-| GET | `/api/TimesheetTimer` | TimesheetTimer_GetRunningTimer | Gets the Running Timer if there is one for a user. |
-| DELETE | `/api/TimesheetTimer/{id}` | TimesheetTimer_StopTimer | Stop the timer running on an existing Timesheet Entry |
-| POST | `/api/TimesheetTimer/{id}` | TimesheetTimer_StartTimer | Starts a Timer running on an existing Timesheet Entry |
-| GET | `/api/UserProfile` | UserProfile_Get | Get Collection of Users who have roles in the current Avaza account. |
-| DELETE | `/api/Webhook` | Webhook_DeleteByUrl | Delete webhook subscription by URL |
-| GET | `/api/Webhook` | Webhook_Get | Get list of Webhook Subscriptions |
-| POST | `/api/Webhook` | Webhook_Post | Subscribe to Webhook. On success, returns ID of webhook subscription. |
-| DELETE | `/api/Webhook/{id}` | Webhook_Delete | Delete Webhook Subscription by ID |
-| GET | `/api/Webhook/{id}` | Webhook_GetByID | Get Webhook Subscription by SubscriptionID |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/ScheduleSeries/AddBooking` | ScheduleSeries_AddBooking | body*: CreateBooking | ScheduleSeriesDetails |  | Create new Schedule Booking |
+| POST | `/ScheduleSeries/AddLeave` | ScheduleSeries_AddLeave | body*: CreateLeave | ScheduleSeriesDetails |  | Create new Leave Booking |
+| PUT | `/ScheduleSeries/EditBooking` | ScheduleSeries_EditBooking | body*: EditBooking | ScheduleSeriesDetails |  | Edit Booking |
+| PUT | `/ScheduleSeries/EditLeave` | ScheduleSeries_EditLeave | body*: EditLeave | ScheduleSeriesDetails |  | Edit Leave Booking |
+| GET | `/api/Account` | Account_Get | — | AccountDetails | yes | Account Details |
+| GET | `/api/Bill` | Bill_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort`, `CompanyIDFK` | BillList | yes | Gets list of Bills |
+| POST | `/api/Bill` | Bill_Post | body*: NewBill | Bill |  | Create a new draft Bill |
+| GET | `/api/Bill/{id}` | Bill_GetByID | `id`* | — | yes | Gets a Bill by Bill ID |
+| GET | `/api/BillPayment` | BillPayment_Get | `UpdatedAfter`, `pageSize`, `pageNumber` | BillPaymentList | yes | Gets list of Bill Payments |
+| POST | `/api/BillPayment` | BillPayment_Post | body*: NewBillPayment | BillPayment |  | Create new Bill Payment and optionally assign payment allocations to Bills |
+| GET | `/api/BillPayment/{id}` | BillPayment_GetByID | `id`* | BillPayment | yes | Gets a Bill Payment by Payment Transaction ID |
+| GET | `/api/Company` | Company_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort` | CompanyList | yes | Gets list of Companies |
+| PUT | `/api/Company` | Company_Put | body*: UpdateCompany | Company |  | Update a Company record. |
+| POST | `/api/Company` | Company_Post | body*: NewCompany | Company |  | Create a Company |
+| GET | `/api/Company/Lookup` | CompanyLookup | `pageSize`, `pageNumber`, `search` | CompanyDropdownList | yes | Gets minimal list of Companies. |
+| GET | `/api/Company/{id}` | Company_GetByID | `id`* | Company | yes | Gets Company by Company ID |
+| GET | `/api/Contact` | Contact_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort`, `CompanyIDFK` | ContactList | yes | Gets list of Contacts |
+| POST | `/api/Contact` | Contact_Post | body*: NewCompanyContact | CompanyContact |  | Create a Contact |
+| GET | `/api/Contact/{id}` | Contact_GetByID | `id`* | CompanyContact | yes | Gets Contact by Contact ID |
+| GET | `/api/CreditNote` | CreditNote_Get | `UpdatedAfter`, `pageSize`, `pageNumber` | CreditNoteList | yes | Gets list of CreditNotes |
+| GET | `/api/CreditNote/{id}` | CreditNote_GetByID | `id`* | CreditNote | yes | Gets Credit Note by CreditNoteID |
+| GET | `/api/Currency` | Currency_Get | — | CurrencyList | yes | Gets list of Currencies |
+| GET | `/api/Estimate` | Estimate_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort`, `CompanyIDFK` | EstimateList | yes | Gets list of Estimates |
+| POST | `/api/Estimate` | Estimate_Post | body*: NewEstimate | EstimateDetails |  | Create a new draft Estimate |
+| GET | `/api/Estimate/{id}` | Estimate_GetByID | `id`* | — | yes | Gets Estimate by Estimate ID |
+| GET | `/api/Expense` | Expense_Get | `UpdatedAfter`, `ExpenseDateFrom`, `ExpenseDateTo`, `UserEmail`, `UserID`, `CategoryName`, `CustomerID`, `ProjectID`, `isChargeable`, `isInvoiced`, `ExpenseReimbursementIDFK`, `ExpensePaymentMethodIDFK`, `ExpenseApprovalStatusCode`, `Search`, `pageSize`, `pageNumber`, `Sort` | ExpenseList | yes | Gets list of Expenses |
+| PUT | `/api/Expense` | Expense_Put | body*: UpdateExpense | ExpenseDetails |  | Update an Expense |
+| POST | `/api/Expense` | Expense_Post | body*: NewExpense | ExpenseDetails |  | Create an Expense |
+| DELETE | `/api/Expense` | Expense_Delete | body*: integer:int64[] | ExpenseDeleteResultSet |  | Delete a Timesheet Entry |
+| POST | `/api/Expense/Attachment` | ExpenseAttachment | `File`* | ExpenseAttachmentUploadResult |  | — |
+| GET | `/api/Expense/{id}` | Expense_GetByID | `id`* | ExpenseDetails | yes | Gets an Expense Entry by Expense ID |
+| POST | `/api/ExpenseApproval/Submit` | ExpenseApproval | `UserID`, `SendNotifications`, body*: integer:int64[] | object |  | Submit Expenses for Approval. |
+| GET | `/api/ExpenseCategory` | ExpenseCategory_Get | `isEnabled` | ExpenseCategoryList | yes | Gets list of Expense Categories |
+| GET | `/api/ExpenseGroup/Lookup` | ExpenseGroupLookup | `pageSize`, `pageNumber`, `search` | ExpenseGroupDropdownList | yes | Gets minimal list of Expense Groups. |
+| GET | `/api/ExpenseMerchant/Lookup` | ExpenseMerchangeLookup | `pageSize`, `pageNumber`, `search` | ExpenseMerchantDropdownList | yes | Gets minimal list of Expense Merchants. |
+| GET | `/api/ExpensePaymentMethod/Lookup` | ExpensePaymentMethodLookup | — | ExpensePaymentMethodDropdownList | yes | Gets minimal list of Expense Payment Methods. |
+| GET | `/api/ExpenseSummary` | ExpenseSummary_Get | `model.groupBy`, `model.expenseDateFrom`, `model.expenseDateTo`, `model.userID`, `model.projectID` | ExpenseSummaryResult | yes | Gets Basic Summary of Expense Statistics |
+| GET | `/api/FixedAmount` | FixedAmount_Get | `UpdatedAfter`, `EntryDateFrom`, `EntryDateTo`, `ProjectID`, `TaskID`, `isInvoiced`, `pageSize`, `pageNumber`, `Sort` | FixedAmountList | yes | Gets list of Fixed Amounts |
+| GET | `/api/Inventory` | Inventory_Get | `UpdatedAfter`, `pageSize`, `pageNumber` | InventoryList | yes | Gets list of Inventory |
+| GET | `/api/Inventory/{id}` | Inventory_GetByID | `id`* | — | yes | Gets InventoryItem by InventoryItem ID |
+| GET | `/api/Invoice` | Invoice_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort`, `CompanyIDFK` | InvoiceList | yes | Gets list of Invoices |
+| POST | `/api/Invoice` | Invoice_Post | body*: NewInvoice | Invoice |  | Create a new draft invoice |
+| GET | `/api/Invoice/{id}` | Invoice_GetByID | `id`* | — | yes | Gets Invoice by Invoice ID |
+| GET | `/api/Payment` | Payment_Get | `UpdatedAfter`, `pageSize`, `pageNumber` | PaymentList | yes | Gets list of Payments |
+| POST | `/api/Payment` | Payment_Post | body*: NewPayment | Payment |  | Create new Payment and optionally assign payment allocations to Invoices |
+| GET | `/api/Payment/{id}` | Payment_GetByID | `id`* | Payment | yes | Gets Payment by Payment Transaction ID |
+| GET | `/api/Project` | Project_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort`, `TimesheetUserID`, `includeArchived` | ProjectList | yes | Gets list of Projects |
+| PUT | `/api/Project` | Project_Put | body*: UpdateProjectModel | ProjectDetails |  | Update an Project |
+| POST | `/api/Project` | Project_Post | body*: NewProjectModel | ProjectDetails |  | Create a Project |
+| GET | `/api/Project/Lookup` | ProjectLookup | `pageSize`, `pageNumber`, `TimesheetUserID`, `CompanyIDFK`, `search` | ProjectDropdownList | yes | Gets minimal list of active Projects for the current user |
+| GET | `/api/Project/{id}` | Project_GetByID | `id`* | ProjectDetails | yes | Gets Project by Project ID |
+| GET | `/api/ProjectMember` | ProjectMember_Get | `ProjectID`, `UserID` | ProjectMemberList | yes | Gets list of Project Members |
+| PUT | `/api/ProjectMember` | ProjectMember_Put | body*: UpdateProjectMember | ProjectMemberDetails |  | Update a Member of a Project |
+| POST | `/api/ProjectMember` | ProjectMember_Post | body*: NewProjectMember | ProjectMemberDetails |  | Assign a user as a Member of a Project |
+| GET | `/api/ProjectTimesheetCategory` | ProjectTimesheetCategory_Get | `ProjectID` | ProjectTimesheetCategoryList | yes | Gets list of Project Timesheet Categories |
+| POST | `/api/ProjectTimesheetCategory` | ProjectTimesheetCategory_Post | body*: AssignProjectTimesheetCategory | ProjectTimesheetCategoryDetails |  | Assign a TimeSheetCategory to a Project. |
+| GET | `/api/ScheduleAssignment` | ScheduleAssignment_Get | `UpdatedAfter`, `ScheduleDateFrom`, `ScheduleDateTo`, `ScheduleSeriesID`, `UserID`, `UserEmail`, `pageSize`, `pageNumber`, `Sort` | ScheduleAssignmentList | yes | Gets list of Schedule Assignments. |
+| GET | `/api/ScheduleSeries` | ScheduleSeries_Get | `UpdatedAfter`, `ScheduleStartDateFrom`, `ScheduleStartDateTo`, `ScheduleEndDateFrom`, `ScheduleEndDateTo`, `UserID`, `UserEmail`, `TimeSheetCategoryID`, `TimeSheetCategoryName`, `LeaveTypeID`, `ProjectID`, `CompanyID`, `pageSize`, `pageNumber`, `Sort` | ScheduleSeriesList | yes | Gets list of Schedule Series |
+| GET | `/api/Section` | Section_Get | `ProjectID`* | SectionList | yes | Gets list of Sections |
+| POST | `/api/Section` | Section_Post | body*: NewSection | SectionDetails |  | Create a Section |
+| DELETE | `/api/Section` | Section_Delete | `SectionID`* | object |  | Delete a Section |
+| GET | `/api/Task` | Task_Get | `UpdatedAfter`, `pageSize`, `pageNumber`, `Sort`, `isComplete`, `ProjectID` | TaskList | yes | Gets list of Tasks |
+| PUT | `/api/Task` | Task_Put | body*: UpdateTask | TaskDetails |  | Update a Task. |
+| POST | `/api/Task` | Task_Post | body*: NewTask | TaskDetails |  | Create a Task |
+| DELETE | `/api/Task` | Task_Delete | `TaskID`* | object |  | Delete a Task |
+| GET | `/api/Task/Lookup` | TaskLookup | `projectID`*, `pageSize`, `pageNumber`, `hideCompleted`, `search` | TaskDropdownList | yes | Gets minimal list of Tasks for the current user |
+| GET | `/api/Task/{id}` | Task_GetByID | `id`* | TaskDetails | yes | Gets Task by Task ID |
+| GET | `/api/TaskStatus` | TaskStatus_Get | — | TaskStatusList | yes | Gets list of Task Statuses |
+| GET | `/api/TaskType` | TaskType_Get | — | TaskTypeList | yes | Gets list of Task Types |
+| GET | `/api/Tax` | Tax_Get | — | TaxList | yes | Get List of Taxes configured in the Avaza account. |
+| GET | `/api/Timesheet` | Timesheet_Get | `UpdatedAfter`, `EntryDateFrom`, `EntryDateTo`, `UserID`, `UserEmail`, `CategoryName`, `ProjectID`, `isBillable`, `isInvoiced`, `isTimerRunning`, `pageSize`, `pageNumber`, `includeInvoiceDetails`, `Sort` | TimesheetList | yes | Gets list of Timsheets |
+| PUT | `/api/Timesheet` | Timesheet_Put | body*: UpdateTimesheetModel | TimesheetDetails |  | Update a Timesheet |
+| POST | `/api/Timesheet` | Timesheet_Post | body*: NewTimesheet | TimesheetDetails |  | Create a new Timesheet Entry |
+| GET | `/api/Timesheet/{id}` | Timesheet_GetByID | `id`* | TimesheetDetails | yes | Gets a Timesheet Entry by Timesheet ID |
+| DELETE | `/api/Timesheet/{id}` | Timesheet_Delete | `id`* | object |  | Delete a Timesheet Entry |
+| POST | `/api/TimesheetSubmission` | TimesheetSubmission_Post | `SendNotifications`, `WholeWeekOf`, `WholeDayOf`, `UserID` | object |  | Submit Timesheets for Approval. |
+| GET | `/api/TimesheetSummary` | TimesheetSummary_Get | `model.groupBy`, `model.entryDateFrom`, `model.entryDateTo`, `model.userID`, `model.projectID`, `model.isBillable`, `model.isInvoiced` | TimesheetSummaryResult | yes | Gets Basic Summary of Timesheet Statistics |
+| GET | `/api/TimesheetTimer` | TimesheetTimer_GetRunningTimer | `UserID` | object | yes | Gets the Running Timer if there is one for a user. |
+| POST | `/api/TimesheetTimer/{id}` | TimesheetTimer_StartTimer | `id`*, `UserID` | object |  | Starts a Timer running on an existing Timesheet Entry |
+| DELETE | `/api/TimesheetTimer/{id}` | TimesheetTimer_StopTimer | `id`*, `UserID` | object |  | Stop the timer running on an existing Timesheet Entry |
+| GET | `/api/UserProfile` | UserProfile_Get | `Roles`, `Tags`, `CurrentUserOnly`, `CompanyIDFK` | UserList | yes | Get Collection of Users who have roles in the current Avaza account. |
+| GET | `/api/Webhook` | Webhook_Get | — | WebhookList | yes | Get list of Webhook Subscriptions |
+| POST | `/api/Webhook` | Webhook_Post | body*: CreateSubscription | SubscribeResult |  | Subscribe to Webhook. On success, returns ID of webhook subscription. |
+| DELETE | `/api/Webhook` | Webhook_DeleteByUrl | `target_url`* | object |  | Delete webhook subscription by URL |
+| GET | `/api/Webhook/{id}` | Webhook_GetByID | `id`* | WebhookList | yes | Get Webhook Subscription by SubscriptionID |
+| DELETE | `/api/Webhook/{id}` | Webhook_Delete | `id`* | object |  | Delete Webhook Subscription by ID |

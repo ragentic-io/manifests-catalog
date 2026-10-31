@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_twitter_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `0f7705a08a50538de544f6a40a6e049547a1deebfad045f670bc9dd2ee744142` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,85 +34,87 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_twitter_profile_ima
 
 235 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/2/compliance/jobs` | listBatchComplianceJobs | List Compliance Jobs |
-| POST | `/2/compliance/jobs` | createBatchComplianceJob | Create compliance job |
-| GET | `/2/compliance/jobs/{id}` | getBatchComplianceJob | Get Compliance Job |
-| POST | `/2/dm_conversations` | dmConversationIdCreate | Create a new DM Conversation |
-| GET | `/2/dm_conversations/with/{participant_id}/dm_events` | getDmConversationsWithParticipantIdDmEvents | Get DM Events for a DM Conversation |
-| POST | `/2/dm_conversations/with/{participant_id}/messages` | dmConversationWithUserEventIdCreate | Send a new message to a user |
-| POST | `/2/dm_conversations/{dm_conversation_id}/messages` | dmConversationByIdEventIdCreate | Send a new message to a DM Conversation |
-| GET | `/2/dm_conversations/{id}/dm_events` | getDmConversationsIdDmEvents | Get DM Events for a DM Conversation |
-| GET | `/2/dm_events` | getDmEvents | Get recent DM Events |
-| POST | `/2/lists` | listIdCreate | Create List |
-| DELETE | `/2/lists/{id}` | listIdDelete | Delete List |
-| GET | `/2/lists/{id}` | listIdGet | List lookup by List ID. |
-| PUT | `/2/lists/{id}` | listIdUpdate | Update List. |
-| GET | `/2/lists/{id}/followers` | listGetFollowers | Returns User objects that follow a List by the provided List ID |
-| GET | `/2/lists/{id}/members` | listGetMembers | Returns User objects that are members of a List by the provided List ID. |
-| POST | `/2/lists/{id}/members` | listAddMember | Add a List member |
-| DELETE | `/2/lists/{id}/members/{user_id}` | listRemoveMember | Remove a List member |
-| GET | `/2/lists/{id}/tweets` | listsIdTweets | List Tweets timeline by List ID. |
-| GET | `/2/openapi.json` | getOpenApiSpec | Returns the OpenAPI Specification document. |
-| GET | `/2/spaces` | findSpacesByIds | Space lookup up Space IDs |
-| GET | `/2/spaces/by/creator_ids` | findSpacesByCreatorIds | Space lookup by their creators |
-| GET | `/2/spaces/search` | searchSpaces | Search for Spaces |
-| GET | `/2/spaces/{id}` | findSpaceById | Space lookup by Space ID |
-| GET | `/2/spaces/{id}/buyers` | spaceBuyers | Retrieve the list of Users who purchased a ticket to the given space |
-| GET | `/2/spaces/{id}/tweets` | spaceTweets | Retrieve Tweets from a Space. |
-| GET | `/2/tweets` | findTweetsById | Tweet lookup by Tweet IDs |
-| POST | `/2/tweets` | createTweet | Creation of a Tweet |
-| GET | `/2/tweets/compliance/stream` | getTweetsComplianceStream | Tweets Compliance stream |
-| GET | `/2/tweets/counts/all` | tweetCountsFullArchiveSearch | Full archive search counts |
-| GET | `/2/tweets/counts/recent` | tweetCountsRecentSearch | Recent search counts |
-| GET | `/2/tweets/firehose/stream` | getTweetsFirehoseStream | Firehose stream |
-| GET | `/2/tweets/label/stream` | getTweetsLabelStream | Tweets Label stream |
-| GET | `/2/tweets/sample/stream` | sampleStream | Sample stream |
-| GET | `/2/tweets/sample10/stream` | getTweetsSample10Stream | Sample 10% stream |
-| GET | `/2/tweets/search/all` | tweetsFullarchiveSearch | Full-archive search |
-| GET | `/2/tweets/search/recent` | tweetsRecentSearch | Recent search |
-| GET | `/2/tweets/search/stream` | searchStream | Filtered stream |
-| GET | `/2/tweets/search/stream/rules` | getRules | Rules lookup |
-| POST | `/2/tweets/search/stream/rules` | addOrDeleteRules | Add/Delete rules |
-| DELETE | `/2/tweets/{id}` | deleteTweetById | Tweet delete by Tweet ID |
-| GET | `/2/tweets/{id}` | findTweetById | Tweet lookup by Tweet ID |
-| GET | `/2/tweets/{id}/liking_users` | tweetsIdLikingUsers | Returns User objects that have liked the provided Tweet ID |
-| GET | `/2/tweets/{id}/quote_tweets` | findTweetsThatQuoteATweet | Retrieve Tweets that quote a Tweet. |
-| GET | `/2/tweets/{id}/retweeted_by` | tweetsIdRetweetingUsers | Returns User objects that have retweeted the provided Tweet ID |
-| PUT | `/2/tweets/{tweet_id}/hidden` | hideReplyById | Hide replies |
-| GET | `/2/users` | findUsersById | User lookup by IDs |
-| GET | `/2/users/by` | findUsersByUsername | User lookup by usernames |
-| GET | `/2/users/by/username/{username}` | findUserByUsername | User lookup by username |
-| GET | `/2/users/compliance/stream` | getUsersComplianceStream | Users Compliance stream |
-| GET | `/2/users/me` | findMyUser | User lookup me |
-| GET | `/2/users/{id}` | findUserById | User lookup by ID |
-| GET | `/2/users/{id}/blocking` | usersIdBlocking | Returns User objects that are blocked by provided User ID |
-| POST | `/2/users/{id}/blocking` | usersIdBlock | Block User by User ID |
-| GET | `/2/users/{id}/bookmarks` | getUsersIdBookmarks | Bookmarks by User |
-| POST | `/2/users/{id}/bookmarks` | postUsersIdBookmarks | Add Tweet to Bookmarks |
-| DELETE | `/2/users/{id}/bookmarks/{tweet_id}` | usersIdBookmarksDelete | Remove a bookmarked Tweet |
-| GET | `/2/users/{id}/followed_lists` | userFollowedLists | Get User's Followed Lists |
-| POST | `/2/users/{id}/followed_lists` | listUserFollow | Follow a List |
-| DELETE | `/2/users/{id}/followed_lists/{list_id}` | listUserUnfollow | Unfollow a List |
-| GET | `/2/users/{id}/followers` | usersIdFollowers | Followers by User ID |
-| GET | `/2/users/{id}/following` | usersIdFollowing | Following by User ID |
-| POST | `/2/users/{id}/following` | usersIdFollow | Follow User |
-| GET | `/2/users/{id}/liked_tweets` | usersIdLikedTweets | Returns Tweet objects liked by the provided User ID |
-| POST | `/2/users/{id}/likes` | usersIdLike | Causes the User (in the path) to like the specified Tweet |
-| DELETE | `/2/users/{id}/likes/{tweet_id}` | usersIdUnlike | Causes the User (in the path) to unlike the specified Tweet |
-| GET | `/2/users/{id}/list_memberships` | getUserListMemberships | Get a User's List Memberships |
-| GET | `/2/users/{id}/mentions` | usersIdMentions | User mention timeline by User ID |
-| GET | `/2/users/{id}/muting` | usersIdMuting | Returns User objects that are muted by the provided User ID |
-| POST | `/2/users/{id}/muting` | usersIdMute | Mute User by User ID. |
-| GET | `/2/users/{id}/owned_lists` | listUserOwnedLists | Get a User's Owned Lists. |
-| GET | `/2/users/{id}/pinned_lists` | listUserPinnedLists | Get a User's Pinned Lists |
-| POST | `/2/users/{id}/pinned_lists` | listUserPin | Pin a List |
-| DELETE | `/2/users/{id}/pinned_lists/{list_id}` | listUserUnpin | Unpin a List |
-| POST | `/2/users/{id}/retweets` | usersIdRetweets | Causes the User (in the path) to retweet the specified Tweet. |
-| DELETE | `/2/users/{id}/retweets/{source_tweet_id}` | usersIdUnretweets | Causes the User (in the path) to unretweet the specified Tweet |
-| GET | `/2/users/{id}/timelines/reverse_chronological` | usersIdTimeline | User home timeline by User ID |
-| GET | `/2/users/{id}/tweets` | usersIdTweets | User Tweets timeline by User ID |
-| DELETE | `/2/users/{source_user_id}/blocking/{target_user_id}` | usersIdUnblock | Unblock User by User ID |
-| DELETE | `/2/users/{source_user_id}/following/{target_user_id}` | usersIdUnfollow | Unfollow User |
-| DELETE | `/2/users/{source_user_id}/muting/{target_user_id}` | usersIdUnmute | Unmute User by User ID |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/2/compliance/jobs` | listBatchComplianceJobs | `type`*, `status`, `compliance_job.fields` | Get2ComplianceJobsResponse | yes | List Compliance Jobs |
+| POST | `/2/compliance/jobs` | createBatchComplianceJob | body*: CreateComplianceJobRequest | CreateComplianceJobResponse |  | Create compliance job |
+| GET | `/2/compliance/jobs/{id}` | getBatchComplianceJob | `id`*, `compliance_job.fields` | Get2ComplianceJobsIdResponse | yes | Get Compliance Job |
+| POST | `/2/dm_conversations` | dmConversationIdCreate | body: CreateDmConversationRequest | CreateDmEventResponse |  | Create a new DM Conversation |
+| GET | `/2/dm_conversations/with/{participant_id}/dm_events` | getDmConversationsWithParticipantIdDmEvents | `participant_id`*, `max_results`, `pagination_token`, `event_types`, `dm_event.fields`, `expansions`, `media.fields`, `user.fields`, `tweet.fields` | Get2DmConversationsWithParticipantIdDmEventsResponse | yes | Get DM Events for a DM Conversation |
+| POST | `/2/dm_conversations/with/{participant_id}/messages` | dmConversationWithUserEventIdCreate | `participant_id`*, body: CreateMessageRequest | CreateDmEventResponse |  | Send a new message to a user |
+| POST | `/2/dm_conversations/{dm_conversation_id}/messages` | dmConversationByIdEventIdCreate | `dm_conversation_id`*, body: CreateMessageRequest | CreateDmEventResponse |  | Send a new message to a DM Conversation |
+| GET | `/2/dm_conversations/{id}/dm_events` | getDmConversationsIdDmEvents | `id`*, `max_results`, `pagination_token`, `event_types`, `dm_event.fields`, `expansions`, `media.fields`, `user.fields`, `tweet.fields` | Get2DmConversationsIdDmEventsResponse | yes | Get DM Events for a DM Conversation |
+| GET | `/2/dm_events` | getDmEvents | `max_results`, `pagination_token`, `event_types`, `dm_event.fields`, `expansions`, `media.fields`, `user.fields`, `tweet.fields` | Get2DmEventsResponse | yes | Get recent DM Events |
+| POST | `/2/lists` | listIdCreate | body: ListCreateRequest | ListCreateResponse |  | Create List |
+| GET | `/2/lists/{id}` | listIdGet | `id`*, `list.fields`, `expansions`, `user.fields` | Get2ListsIdResponse | yes | List lookup by List ID. |
+| PUT | `/2/lists/{id}` | listIdUpdate | `id`*, body: ListUpdateRequest | ListUpdateResponse |  | Update List. |
+| DELETE | `/2/lists/{id}` | listIdDelete | `id`* | ListDeleteResponse |  | Delete List |
+| GET | `/2/lists/{id}/followers` | listGetFollowers | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2ListsIdFollowersResponse | yes | Returns User objects that follow a List by the provided List ID |
+| GET | `/2/lists/{id}/members` | listGetMembers | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2ListsIdMembersResponse | yes | Returns User objects that are members of a List by the provided List ID. |
+| POST | `/2/lists/{id}/members` | listAddMember | `id`*, body: ListAddUserRequest | ListMutateResponse |  | Add a List member |
+| DELETE | `/2/lists/{id}/members/{user_id}` | listRemoveMember | `id`*, `user_id`* | ListMutateResponse |  | Remove a List member |
+| GET | `/2/lists/{id}/tweets` | listsIdTweets | `id`*, `max_results`, `pagination_token`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2ListsIdTweetsResponse | yes | List Tweets timeline by List ID. |
+| GET | `/2/openapi.json` | getOpenApiSpec | — | object | yes | Returns the OpenAPI Specification document. |
+| GET | `/2/spaces` | findSpacesByIds | `ids`*, `space.fields`, `expansions`, `user.fields`, `topic.fields` | Get2SpacesResponse | yes | Space lookup up Space IDs |
+| GET | `/2/spaces/by/creator_ids` | findSpacesByCreatorIds | `user_ids`*, `space.fields`, `expansions`, `user.fields`, `topic.fields` | Get2SpacesByCreatorIdsResponse | yes | Space lookup by their creators |
+| GET | `/2/spaces/search` | searchSpaces | `query`*, `state`, `max_results`, `space.fields`, `expansions`, `user.fields`, `topic.fields` | Get2SpacesSearchResponse | yes | Search for Spaces |
+| GET | `/2/spaces/{id}` | findSpaceById | `id`*, `space.fields`, `expansions`, `user.fields`, `topic.fields` | Get2SpacesIdResponse | yes | Space lookup by Space ID |
+| GET | `/2/spaces/{id}/buyers` | spaceBuyers | `id`*, `pagination_token`, `max_results`, `user.fields`, `expansions`, `tweet.fields` | Get2SpacesIdBuyersResponse | yes | Retrieve the list of Users who purchased a ticket to the given space |
+| GET | `/2/spaces/{id}/tweets` | spaceTweets | `id`*, `max_results`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2SpacesIdTweetsResponse | yes | Retrieve Tweets from a Space. |
+| GET | `/2/tweets` | findTweetsById | `ids`*, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2TweetsResponse | yes | Tweet lookup by Tweet IDs |
+| POST | `/2/tweets` | createTweet | body*: TweetCreateRequest | TweetCreateResponse |  | Creation of a Tweet |
+| GET | `/2/tweets/compliance/stream` | getTweetsComplianceStream | `backfill_minutes`, `partition`*, `start_time`, `end_time` | TweetComplianceStreamResponse | yes | Tweets Compliance stream |
+| GET | `/2/tweets/counts/all` | tweetCountsFullArchiveSearch | `query`*, `start_time`, `end_time`, `since_id`, `until_id`, `next_token`, `pagination_token`, `granularity`, `search_count.fields` | Get2TweetsCountsAllResponse | yes | Full archive search counts |
+| GET | `/2/tweets/counts/recent` | tweetCountsRecentSearch | `query`*, `start_time`, `end_time`, `since_id`, `until_id`, `next_token`, `pagination_token`, `granularity`, `search_count.fields` | Get2TweetsCountsRecentResponse | yes | Recent search counts |
+| GET | `/2/tweets/firehose/stream` | getTweetsFirehoseStream | `backfill_minutes`, `partition`*, `start_time`, `end_time`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | StreamingTweetResponse | yes | Firehose stream |
+| GET | `/2/tweets/label/stream` | getTweetsLabelStream | `backfill_minutes`, `start_time`, `end_time` | TweetLabelStreamResponse | yes | Tweets Label stream |
+| GET | `/2/tweets/sample/stream` | sampleStream | `backfill_minutes`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | StreamingTweetResponse | yes | Sample stream |
+| GET | `/2/tweets/sample10/stream` | getTweetsSample10Stream | `backfill_minutes`, `partition`*, `start_time`, `end_time`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2TweetsSample10StreamResponse | yes | Sample 10% stream |
+| GET | `/2/tweets/search/all` | tweetsFullarchiveSearch | `query`*, `start_time`, `end_time`, `since_id`, `until_id`, `max_results`, `next_token`, `pagination_token`, `sort_order`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2TweetsSearchAllResponse | yes | Full-archive search |
+| GET | `/2/tweets/search/recent` | tweetsRecentSearch | `query`*, `start_time`, `end_time`, `since_id`, `until_id`, `max_results`, `next_token`, `pagination_token`, `sort_order`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2TweetsSearchRecentResponse | yes | Recent search |
+| GET | `/2/tweets/search/stream` | searchStream | `backfill_minutes`, `start_time`, `end_time`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | FilteredStreamingTweetResponse | yes | Filtered stream |
+| GET | `/2/tweets/search/stream/rules` | getRules | `ids`, `max_results`, `pagination_token` | RulesLookupResponse | yes | Rules lookup |
+| POST | `/2/tweets/search/stream/rules` | addOrDeleteRules | `dry_run`, body*: AddOrDeleteRulesRequest | AddOrDeleteRulesResponse |  | Add/Delete rules |
+| GET | `/2/tweets/{id}` | findTweetById | `id`*, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2TweetsIdResponse | yes | Tweet lookup by Tweet ID |
+| DELETE | `/2/tweets/{id}` | deleteTweetById | `id`* | TweetDeleteResponse |  | Tweet delete by Tweet ID |
+| GET | `/2/tweets/{id}/liking_users` | tweetsIdLikingUsers | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2TweetsIdLikingUsersResponse | yes | Returns User objects that have liked the provided Tweet ID |
+| GET | `/2/tweets/{id}/quote_tweets` | findTweetsThatQuoteATweet | `id`*, `max_results`, `pagination_token`, `exclude`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2TweetsIdQuoteTweetsResponse | yes | Retrieve Tweets that quote a Tweet. |
+| GET | `/2/tweets/{id}/retweeted_by` | tweetsIdRetweetingUsers | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2TweetsIdRetweetedByResponse | yes | Returns User objects that have retweeted the provided Tweet ID |
+| PUT | `/2/tweets/{tweet_id}/hidden` | hideReplyById | `tweet_id`*, body: TweetHideRequest | TweetHideResponse |  | Hide replies |
+| GET | `/2/users` | findUsersById | `ids`*, `user.fields`, `expansions`, `tweet.fields` | Get2UsersResponse | yes | User lookup by IDs |
+| GET | `/2/users/by` | findUsersByUsername | `usernames`*, `user.fields`, `expansions`, `tweet.fields` | Get2UsersByResponse | yes | User lookup by usernames |
+| GET | `/2/users/by/username/{username}` | findUserByUsername | `username`*, `user.fields`, `expansions`, `tweet.fields` | Get2UsersByUsernameUsernameResponse | yes | User lookup by username |
+| GET | `/2/users/compliance/stream` | getUsersComplianceStream | `backfill_minutes`, `partition`*, `start_time`, `end_time` | UserComplianceStreamResponse | yes | Users Compliance stream |
+| GET | `/2/users/me` | findMyUser | `user.fields`, `expansions`, `tweet.fields` | Get2UsersMeResponse | yes | User lookup me |
+| GET | `/2/users/{id}` | findUserById | `id`*, `user.fields`, `expansions`, `tweet.fields` | Get2UsersIdResponse | yes | User lookup by ID |
+| GET | `/2/users/{id}/blocking` | usersIdBlocking | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2UsersIdBlockingResponse | yes | Returns User objects that are blocked by provided User ID |
+| POST | `/2/users/{id}/blocking` | usersIdBlock | `id`*, body*: BlockUserRequest | BlockUserMutationResponse |  | Block User by User ID |
+| GET | `/2/users/{id}/bookmarks` | getUsersIdBookmarks | `id`*, `max_results`, `pagination_token`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2UsersIdBookmarksResponse | yes | Bookmarks by User |
+| POST | `/2/users/{id}/bookmarks` | postUsersIdBookmarks | `id`*, body*: BookmarkAddRequest | BookmarkMutationResponse |  | Add Tweet to Bookmarks |
+| DELETE | `/2/users/{id}/bookmarks/{tweet_id}` | usersIdBookmarksDelete | `id`*, `tweet_id`* | BookmarkMutationResponse |  | Remove a bookmarked Tweet |
+| GET | `/2/users/{id}/followed_lists` | userFollowedLists | `id`*, `max_results`, `pagination_token`, `list.fields`, `expansions`, `user.fields` | Get2UsersIdFollowedListsResponse | yes | Get User's Followed Lists |
+| POST | `/2/users/{id}/followed_lists` | listUserFollow | `id`*, body: ListFollowedRequest | ListFollowedResponse |  | Follow a List |
+| DELETE | `/2/users/{id}/followed_lists/{list_id}` | listUserUnfollow | `id`*, `list_id`* | ListFollowedResponse |  | Unfollow a List |
+| GET | `/2/users/{id}/followers` | usersIdFollowers | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2UsersIdFollowersResponse | yes | Followers by User ID |
+| GET | `/2/users/{id}/following` | usersIdFollowing | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2UsersIdFollowingResponse | yes | Following by User ID |
+| POST | `/2/users/{id}/following` | usersIdFollow | `id`*, body: UsersFollowingCreateRequest | UsersFollowingCreateResponse |  | Follow User |
+| GET | `/2/users/{id}/liked_tweets` | usersIdLikedTweets | `id`*, `max_results`, `pagination_token`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2UsersIdLikedTweetsResponse | yes | Returns Tweet objects liked by the provided User ID |
+| POST | `/2/users/{id}/likes` | usersIdLike | `id`*, body: UsersLikesCreateRequest | UsersLikesCreateResponse |  | Causes the User (in the path) to like the specified Tweet |
+| DELETE | `/2/users/{id}/likes/{tweet_id}` | usersIdUnlike | `id`*, `tweet_id`* | UsersLikesDeleteResponse |  | Causes the User (in the path) to unlike the specified Tweet |
+| GET | `/2/users/{id}/list_memberships` | getUserListMemberships | `id`*, `max_results`, `pagination_token`, `list.fields`, `expansions`, `user.fields` | Get2UsersIdListMembershipsResponse | yes | Get a User's List Memberships |
+| GET | `/2/users/{id}/mentions` | usersIdMentions | `id`*, `since_id`, `until_id`, `max_results`, `pagination_token`, `start_time`, `end_time`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2UsersIdMentionsResponse | yes | User mention timeline by User ID |
+| GET | `/2/users/{id}/muting` | usersIdMuting | `id`*, `max_results`, `pagination_token`, `user.fields`, `expansions`, `tweet.fields` | Get2UsersIdMutingResponse | yes | Returns User objects that are muted by the provided User ID |
+| POST | `/2/users/{id}/muting` | usersIdMute | `id`*, body: MuteUserRequest | MuteUserMutationResponse |  | Mute User by User ID. |
+| GET | `/2/users/{id}/owned_lists` | listUserOwnedLists | `id`*, `max_results`, `pagination_token`, `list.fields`, `expansions`, `user.fields` | Get2UsersIdOwnedListsResponse | yes | Get a User's Owned Lists. |
+| GET | `/2/users/{id}/pinned_lists` | listUserPinnedLists | `id`*, `list.fields`, `expansions`, `user.fields` | Get2UsersIdPinnedListsResponse | yes | Get a User's Pinned Lists |
+| POST | `/2/users/{id}/pinned_lists` | listUserPin | `id`*, body*: ListPinnedRequest | ListPinnedResponse |  | Pin a List |
+| DELETE | `/2/users/{id}/pinned_lists/{list_id}` | listUserUnpin | `id`*, `list_id`* | ListUnpinResponse |  | Unpin a List |
+| POST | `/2/users/{id}/retweets` | usersIdRetweets | `id`*, body: UsersRetweetsCreateRequest | UsersRetweetsCreateResponse |  | Causes the User (in the path) to retweet the specified Tweet. |
+| DELETE | `/2/users/{id}/retweets/{source_tweet_id}` | usersIdUnretweets | `id`*, `source_tweet_id`* | UsersRetweetsDeleteResponse |  | Causes the User (in the path) to unretweet the specified Tweet |
+| GET | `/2/users/{id}/timelines/reverse_chronological` | usersIdTimeline | `id`*, `since_id`, `until_id`, `max_results`, `pagination_token`, `exclude`, `start_time`, `end_time`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2UsersIdTimelinesReverseChronologicalResponse | yes | User home timeline by User ID |
+| GET | `/2/users/{id}/tweets` | usersIdTweets | `id`*, `since_id`, `until_id`, `max_results`, `pagination_token`, `exclude`, `start_time`, `end_time`, `tweet.fields`, `expansions`, `media.fields`, `poll.fields`, `user.fields`, `place.fields` | Get2UsersIdTweetsResponse | yes | User Tweets timeline by User ID |
+| DELETE | `/2/users/{source_user_id}/blocking/{target_user_id}` | usersIdUnblock | `source_user_id`*, `target_user_id`* | BlockUserMutationResponse |  | Unblock User by User ID |
+| DELETE | `/2/users/{source_user_id}/following/{target_user_id}` | usersIdUnfollow | `source_user_id`*, `target_user_id`* | UsersFollowingDeleteResponse |  | Unfollow User |
+| DELETE | `/2/users/{source_user_id}/muting/{target_user_id}` | usersIdUnmute | `source_user_id`*, `target_user_id`* | MuteUserMutationResponse |  | Unmute User by User ID |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_jumpseller_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `31f1215ae2b7b85d84d751d0bb195ce92b8ceac7a1a50200e7749139f60de1db` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,147 +34,149 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_jumpseller_profile_
 
 148 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/categories.json` | get /categories.json | Retrieve all Categories. |
-| POST | `/categories.json` | post /categories.json | Create a new Category. |
-| GET | `/categories/count.json` | get /categories/count.json | Count all Categories. |
-| DELETE | `/categories/{id}.json` | delete /categories/{id}.json | Delete an existing Category. |
-| GET | `/categories/{id}.json` | get /categories/{id}.json | Retrieve a single Category. |
-| PUT | `/categories/{id}.json` | put /categories/{id}.json | Modify an existing Category. |
-| GET | `/checkout_custom_fields.json` | get /checkout_custom_fields.json | Retrieve all Checkout Custom Fields. |
-| POST | `/checkout_custom_fields.json` | post /checkout_custom_fields.json | Create a new CheckoutCustomField. |
-| DELETE | `/checkout_custom_fields/{id}.json` | delete /checkout_custom_fields/{id}.json | Delete an existing CheckoutCustomField. |
-| GET | `/checkout_custom_fields/{id}.json` | get /checkout_custom_fields/{id}.json | Retrieve a single CheckoutCustomField. |
-| PUT | `/checkout_custom_fields/{id}.json` | put /checkout_custom_fields/{id}.json | Update a CheckoutCustomField. |
-| GET | `/countries.json` | get /countries.json | Retrieve all Countries. |
-| GET | `/countries/{country_code}.json` | get /countries/{country_code}.json | Retrieve a single Country information. |
-| GET | `/countries/{country_code}/regions.json` | get /countries/{country_code}/regions.json | Retrieve all Regions from a single Country. |
-| GET | `/countries/{country_code}/regions/{region_code}.json` | get /countries/{country_code}/regions/{region_code}.json | Retrieve a single Region information object. |
-| GET | `/custom_fields.json` | get /custom_fields.json | Retrieve all Store's Custom Fields. |
-| POST | `/custom_fields.json` | post /custom_fields.json | Create a new Custom Field. |
-| DELETE | `/custom_fields/{id}.json` | delete /custom_fields/{id}.json | Delete an existing CustomField. |
-| GET | `/custom_fields/{id}.json` | get /custom_fields/{id}.json | Retrieve a single CustomField. |
-| PUT | `/custom_fields/{id}.json` | put /custom_fields/{id}.json | Update a CustomField. |
-| GET | `/custom_fields/{id}/select_options.json` | get /custom_fields/{id}/select_options.json | Retrieve all Store's Custom Fields. |
-| POST | `/custom_fields/{id}/select_options.json` | post /custom_fields/{id}/select_options.json | Create a new Custom Field Select Option. |
-| DELETE | `/custom_fields/{id}/select_options/{custom_field_select_option_id}.json` | delete /custom_fields/{id}/select_options/{custom_field_select_option_id}.json | Delete an existing CustomFieldSelectOption. |
-| GET | `/custom_fields/{id}/select_options/{custom_field_select_option_id}.json` | get /custom_fields/{id}/select_options/{custom_field_select_option_id}.json | Retrieve a single SelectOption from a CustomField. |
-| PUT | `/custom_fields/{id}/select_options/{custom_field_select_option_id}.json` | put /custom_fields/{id}/select_options/{custom_field_select_option_id}.json | Update a SelectOption from a CustomField. |
-| GET | `/customer_categories.json` | get /customer_categories.json | Retrieve all Customer Categories. |
-| POST | `/customer_categories.json` | post /customer_categories.json | Create a new CustomerCategory. |
-| DELETE | `/customer_categories/{id}.json` | delete /customer_categories/{id}.json | Delete an existing CustomerCategory. |
-| GET | `/customer_categories/{id}.json` | get /customer_categories/{id}.json | Retrieve a single CustomerCategory. |
-| PUT | `/customer_categories/{id}.json` | put /customer_categories/{id}.json | Update a CustomerCategory. |
-| DELETE | `/customer_categories/{id}/customers.json` | delete /customer_categories/{id}/customers.json | Delete Customers from an existing CustomerCategory. |
-| GET | `/customer_categories/{id}/customers.json` | get /customer_categories/{id}/customers.json | Retrieves the customers in a CustomerCategory. |
-| POST | `/customer_categories/{id}/customers.json` | post /customer_categories/{id}/customers.json | Adds Customers to a CustomerCategory. |
-| GET | `/customers.json` | get /customers.json | Retrieve all Customers. |
-| POST | `/customers.json` | post /customers.json | Create a new Customer. |
-| GET | `/customers/count.json` | get /customers/count.json | Count all Customers. |
-| GET | `/customers/email/{email}.json` | get /customers/email/{email}.json | Retrieve a single Customer by email. |
-| DELETE | `/customers/{id}.json` | delete /customers/{id}.json | Delete an existing Customer. |
-| GET | `/customers/{id}.json` | get /customers/{id}.json | Retrieve a single Customer by id. |
-| PUT | `/customers/{id}.json` | put /customers/{id}.json | Update a new Customer. |
-| GET | `/customers/{id}/fields` | get /customers/{id}/fields | Retrieves the Customer Additional Field of a Customer. |
-| POST | `/customers/{id}/fields` | post /customers/{id}/fields | Adds Customer Additional Fields to a Customer. |
-| DELETE | `/customers/{id}/fields/{field_id}` | delete /customers/{id}/fields/{field_id} | Delete a Customer Additional Field. |
-| GET | `/customers/{id}/fields/{field_id}` | get /customers/{id}/fields/{field_id} | Retrieve a single Customer Additional Field. |
-| PUT | `/customers/{id}/fields/{field_id}` | put /customers/{id}/fields/{field_id} | Update a Customer Additional Field. |
-| GET | `/fulfillments.json` | get /fulfillments.json | Retrieve all Fulfillments. |
-| GET | `/fulfillments/count.json` | get /fulfillments/count.json | Count all Fulfillments. |
-| GET | `/fulfillments/{id}.json` | get /fulfillments/{id}.json | Retrieve a single Fulfillment. |
-| GET | `/hooks.json` | get /hooks.json | Retrieve all Hooks. |
-| POST | `/hooks.json` | post /hooks.json | Create a new Hook. |
-| DELETE | `/hooks/{id}.json` | delete /hooks/{id}.json | Delete an existing Hook. |
-| GET | `/hooks/{id}.json` | get /hooks/{id}.json | Retrieve a single Hook. |
-| PUT | `/hooks/{id}.json` | put /hooks/{id}.json | Update a Hook. |
-| GET | `/jsapps.json` | get /jsapps.json | Retrieve all the Store's JSApps. |
-| POST | `/jsapps.json` | post /jsapps.json | Create a Store JSApp. |
-| DELETE | `/jsapps/{code}.json` | delete /jsapps/{code}.json | Delete an existing JSApp. |
-| GET | `/jsapps/{code}.json` | get /jsapps/{code}.json | Retrieve a JSApp. |
-| GET | `/order/{id}/fulfillments.json` | get /order/{id}/fulfillments.json | Retrieve the Fulfillments associated with the Order. |
-| GET | `/orders.json` | get /orders.json | Retrieve all Orders. |
-| POST | `/orders.json` | post /orders.json | Create a new Order. |
-| GET | `/orders/after/{id}.json` | get /orders/after/{id}.json | Retrieve orders filtered by Order Id. |
-| GET | `/orders/count.json` | get /orders/count.json | Count all Orders. |
-| GET | `/orders/status/{status}.json` | get /orders/status/{status}.json | Retrieve orders filtered by status. |
-| GET | `/orders/{id}.json` | get /orders/{id}.json | Retrieve a single Order. |
-| PUT | `/orders/{id}.json` | put /orders/{id}.json | Modify an existing Order. |
-| GET | `/orders/{id}/history.json` | get /orders/{id}/history.json | Retrieve all Order History. |
-| POST | `/orders/{id}/history.json` | post /orders/{id}/history.json | Create a new Order History Entry. |
-| GET | `/pages.json` | get /pages.json | Retrieve all Pages. |
-| POST | `/pages.json` | post /pages.json | Create a new Page. |
-| GET | `/pages/count.json` | get /pages/count.json | Count all Pages. |
-| DELETE | `/pages/{id}.json` | delete /pages/{id}.json | Delete an existing Page. |
-| GET | `/pages/{id}.json` | get /pages/{id}.json | Retrieve a single Page by id. |
-| PUT | `/pages/{id}.json` | put /pages/{id}.json | Update a Page. |
-| GET | `/partners/stores.json` | get /partners/stores.json | Retrieve statistics. |
-| GET | `/payment_methods.json` | get /payment_methods.json | Retrieve all Store's Payment Methods. |
-| GET | `/payment_methods/{id}.json` | get /payment_methods/{id}.json | Retrieve a single Payment Method. |
-| GET | `/products.json` | get /products.json | Retrieve all Products. |
-| POST | `/products.json` | post /products.json | Create a new Product. |
-| GET | `/products/after/{id}.json` | get /products/after/{id}.json | Retrieves Products after the given id. |
-| GET | `/products/category/{category_id}.json` | get /products/category/{category_id}.json | Retrieve Products filtered by category. |
-| GET | `/products/category/{category_id}/count.json` | get /products/category/{category_id}/count.json | Count Products filtered by category. |
-| GET | `/products/count.json` | get /products/count.json | Count all Products. |
-| GET | `/products/search.json` | get /products/search.json | Retrieve a Product List from a query. |
-| GET | `/products/status/{status}.json` | get /products/status/{status}.json | Retrieve Products filtered by status. |
-| GET | `/products/status/{status}/count.json` | get /products/status/{status}/count.json | Count Products filtered by status. |
-| DELETE | `/products/{id}.json` | delete /products/{id}.json | Delete an existing Product. |
-| GET | `/products/{id}.json` | get /products/{id}.json | Retrieve a single Product. |
-| PUT | `/products/{id}.json` | put /products/{id}.json | Modify an existing Product. |
-| GET | `/products/{id}/attachments.json` | get /products/{id}/attachments.json | Retrieve all Product Attachments. |
-| POST | `/products/{id}/attachments.json` | post /products/{id}/attachments.json | Create a new Product Attachment. |
-| GET | `/products/{id}/attachments/count.json` | get /products/{id}/attachments/count.json | Count all Product Attachments. |
-| DELETE | `/products/{id}/attachments/{attachment_id}.json` | delete /products/{id}/attachments/{attachment_id}.json | Delete a Product Attachment. |
-| GET | `/products/{id}/attachments/{attachment_id}.json` | get /products/{id}/attachments/{attachment_id}.json | Retrieve a single Product Attachment. |
-| GET | `/products/{id}/digital_products.json` | get /products/{id}/digital_products.json | Retrieve all Product DigitalProducts. |
-| POST | `/products/{id}/digital_products.json` | post /products/{id}/digital_products.json | Create a new Product DigitalProduct. |
-| GET | `/products/{id}/digital_products/count.json` | get /products/{id}/digital_products/count.json | Count all Product DigitalProducts. |
-| DELETE | `/products/{id}/digital_products/{digital_product_id}.json` | delete /products/{id}/digital_products/{digital_product_id}.json | Delete a Product DigitalProduct. |
-| GET | `/products/{id}/digital_products/{digital_product_id}.json` | get /products/{id}/digital_products/{digital_product_id}.json | Retrieve a single Product DigitalProduct. |
-| GET | `/products/{id}/fields.json` | get /products/{id}/fields.json | Retrieve all Product Custom Fields |
-| POST | `/products/{id}/fields.json` | post /products/{id}/fields.json | Add an existing Custom Field to a Product. |
-| GET | `/products/{id}/fields/count.json` | get /products/{id}/fields/count.json | Count all Product Custom Fields. |
-| GET | `/products/{id}/images.json` | get /products/{id}/images.json | Retrieve all Product Images. |
-| POST | `/products/{id}/images.json` | post /products/{id}/images.json | Create a new Product Image. |
-| GET | `/products/{id}/images/count.json` | get /products/{id}/images/count.json | Count all Product Images. |
-| DELETE | `/products/{id}/images/{image_id}.json` | delete /products/{id}/images/{image_id}.json | Delete a Product Image. |
-| GET | `/products/{id}/images/{image_id}.json` | get /products/{id}/images/{image_id}.json | Retrieve a single Product Image. |
-| GET | `/products/{id}/options.json` | get /products/{id}/options.json | Retrieve all Product Options. |
-| POST | `/products/{id}/options.json` | post /products/{id}/options.json | Create a new Product Option. |
-| GET | `/products/{id}/options/count.json` | get /products/{id}/options/count.json | Count all Product Options. |
-| DELETE | `/products/{id}/options/{option_id}.json` | delete /products/{id}/options/{option_id}.json | Delete a Product Option. |
-| GET | `/products/{id}/options/{option_id}.json` | get /products/{id}/options/{option_id}.json | Retrieve a single Product Option. |
-| PUT | `/products/{id}/options/{option_id}.json` | put /products/{id}/options/{option_id}.json | Modify an existing Product Option. |
-| GET | `/products/{id}/options/{option_id}/values.json` | get /products/{id}/options/{option_id}/values.json | Retrieve all Product Option Values. |
-| POST | `/products/{id}/options/{option_id}/values.json` | post /products/{id}/options/{option_id}/values.json | Create a new Product Option Value. |
-| GET | `/products/{id}/options/{option_id}/values/count.json` | get /products/{id}/options/{option_id}/values/count.json | Count all Product Option Values. |
-| DELETE | `/products/{id}/options/{option_id}/values/{value_id}.json` | delete /products/{id}/options/{option_id}/values/{value_id}.json | Delete a Product Option Value. |
-| GET | `/products/{id}/options/{option_id}/values/{value_id}.json` | get /products/{id}/options/{option_id}/values/{value_id}.json | Retrieve a single Product Option Value. |
-| PUT | `/products/{id}/options/{option_id}/values/{value_id}.json` | put /products/{id}/options/{option_id}/values/{value_id}.json | Modify an existing Product Option Value. |
-| GET | `/products/{id}/variants.json` | get /products/{id}/variants.json | Retrieve all Product Variants. |
-| POST | `/products/{id}/variants.json` | post /products/{id}/variants.json | Create a new Product Variant. |
-| GET | `/products/{id}/variants/count.json` | get /products/{id}/variants/count.json | Count all Product Variants. |
-| GET | `/products/{id}/variants/{variant_id}.json` | get /products/{id}/variants/{variant_id}.json | Retrieve a single Product Variant. |
-| PUT | `/products/{id}/variants/{variant_id}.json` | put /products/{id}/variants/{variant_id}.json | Modify an existing Product Variant. |
-| DELETE | `/products/{product_id}/fields/{field_id}.json` | delete /products/{product_id}/fields/{field_id}.json | Delete value of Product Custom Field |
-| PUT | `/products/{product_id}/fields/{field_id}.json` | put /products/{product_id}/fields/{field_id}.json | Update value of Product Custom Field |
-| GET | `/promotions.json` | get /promotions.json | Retrieve all Promotions. |
-| POST | `/promotions.json` | post /promotions.json | Create a new Promotion. |
-| DELETE | `/promotions/{id}.json` | delete /promotions/{id}.json | Delete an existing Promotion. |
-| GET | `/promotions/{id}.json` | get /promotions/{id}.json | Retrieve a single Promotion. |
-| PUT | `/promotions/{id}.json` | put /promotions/{id}.json | Update a Promotion. |
-| GET | `/shipping_methods.json` | get /shipping_methods.json | Retrieve all Store's Shipping Methods. |
-| POST | `/shipping_methods.json` | post /shipping_methods.json | Creates a Shipping Method. |
-| DELETE | `/shipping_methods/{id}.json` | delete /shipping_methods/{id}.json | Delete an existing Shipping Method. |
-| GET | `/shipping_methods/{id}.json` | get /shipping_methods/{id}.json | Retrieve a single Shipping Method. |
-| PUT | `/shipping_methods/{id}.json` | put /shipping_methods/{id}.json | Update a Shipping Method. |
-| GET | `/store/check_status.json` | get /store/check_status.json | Retrive store creation status. |
-| POST | `/store/create.json` | post /store/create.json | Create a Partnered Store |
-| GET | `/store/info.json` | get /store/info.json | Retrieve Store Information. |
-| GET | `/store/languages.json` | get /store/languages.json | Retrieve Store Languages. |
-| GET | `/taxes.json` | get /taxes.json | Retrieve all Taxes. |
-| POST | `/taxes.json` | post /taxes.json | Create a new Tax. |
-| GET | `/taxes/{id}.json` | get /taxes/{id}.json | Retrieve a single Tax information. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/categories.json` | get /categories.json | `login`*, `authtoken`* | Category | yes | Retrieve all Categories. |
+| POST | `/categories.json` | post /categories.json | `login`*, `authtoken`*, body*: CategoryEdit | Category |  | Create a new Category. |
+| GET | `/categories/count.json` | get /categories/count.json | `login`*, `authtoken`* | Count | yes | Count all Categories. |
+| GET | `/categories/{id}.json` | get /categories/{id}.json | `login`*, `authtoken`*, `id`* | Category | yes | Retrieve a single Category. |
+| PUT | `/categories/{id}.json` | put /categories/{id}.json | `login`*, `authtoken`*, `id`*, body*: CategoryEdit | Category |  | Modify an existing Category. |
+| DELETE | `/categories/{id}.json` | delete /categories/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Category. |
+| GET | `/checkout_custom_fields.json` | get /checkout_custom_fields.json | `login`*, `authtoken`*, `limit`, `page` | CheckoutCustomField[] | yes | Retrieve all Checkout Custom Fields. |
+| POST | `/checkout_custom_fields.json` | post /checkout_custom_fields.json | `login`*, `authtoken`*, body*: CheckoutCustomFieldEdit | CheckoutCustomField |  | Create a new CheckoutCustomField. |
+| GET | `/checkout_custom_fields/{id}.json` | get /checkout_custom_fields/{id}.json | `login`*, `authtoken`*, `id`* | CheckoutCustomField | yes | Retrieve a single CheckoutCustomField. |
+| PUT | `/checkout_custom_fields/{id}.json` | put /checkout_custom_fields/{id}.json | `login`*, `authtoken`*, `id`*, body*: CheckoutCustomFieldEdit | CheckoutCustomField |  | Update a CheckoutCustomField. |
+| DELETE | `/checkout_custom_fields/{id}.json` | delete /checkout_custom_fields/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing CheckoutCustomField. |
+| GET | `/countries.json` | get /countries.json | `login`*, `authtoken`* | Country[] | yes | Retrieve all Countries. |
+| GET | `/countries/{country_code}.json` | get /countries/{country_code}.json | `login`*, `authtoken`*, `country_code`* | Country | yes | Retrieve a single Country information. |
+| GET | `/countries/{country_code}/regions.json` | get /countries/{country_code}/regions.json | `login`*, `authtoken`*, `country_code`* | Region[] | yes | Retrieve all Regions from a single Country. |
+| GET | `/countries/{country_code}/regions/{region_code}.json` | get /countries/{country_code}/regions/{region_code}.json | `login`*, `authtoken`*, `country_code`*, `region_code`* | Region | yes | Retrieve a single Region information object. |
+| GET | `/custom_fields.json` | get /custom_fields.json | `login`*, `authtoken`* | CustomField[] | yes | Retrieve all Store's Custom Fields. |
+| POST | `/custom_fields.json` | post /custom_fields.json | `login`*, `authtoken`*, body*: CustomFieldEdit | CustomField |  | Create a new Custom Field. |
+| GET | `/custom_fields/{id}.json` | get /custom_fields/{id}.json | `login`*, `authtoken`*, `id`* | CustomField | yes | Retrieve a single CustomField. |
+| PUT | `/custom_fields/{id}.json` | put /custom_fields/{id}.json | `login`*, `authtoken`*, `id`*, body*: CustomFieldEdit | CustomField |  | Update a CustomField. |
+| DELETE | `/custom_fields/{id}.json` | delete /custom_fields/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing CustomField. |
+| GET | `/custom_fields/{id}/select_options.json` | get /custom_fields/{id}/select_options.json | `login`*, `authtoken`*, `id`* | CustomFieldSelectOption[] | yes | Retrieve all Store's Custom Fields. |
+| POST | `/custom_fields/{id}/select_options.json` | post /custom_fields/{id}/select_options.json | `login`*, `authtoken`*, `id`*, body*: CustomFieldSelectOptionEdit | CustomFieldSelectOption |  | Create a new Custom Field Select Option. |
+| GET | `/custom_fields/{id}/select_options/{custom_field_select_option_id}.json` | get /custom_fields/{id}/select_options/{custom_field_select_option_id}.json | `login`*, `authtoken`*, `id`*, `custom_field_select_option_id`* | CustomFieldSelectOption | yes | Retrieve a single SelectOption from a CustomField. |
+| PUT | `/custom_fields/{id}/select_options/{custom_field_select_option_id}.json` | put /custom_fields/{id}/select_options/{custom_field_select_option_id}.json | `login`*, `authtoken`*, `id`*, `custom_field_select_option_id`*, body*: CustomFieldSelectOptionEdit | CustomFieldSelectOption |  | Update a SelectOption from a CustomField. |
+| DELETE | `/custom_fields/{id}/select_options/{custom_field_select_option_id}.json` | delete /custom_fields/{id}/select_options/{custom_field_select_option_id}.json | `login`*, `authtoken`*, `id`*, `custom_field_select_option_id`* | string |  | Delete an existing CustomFieldSelectOption. |
+| GET | `/customer_categories.json` | get /customer_categories.json | `login`*, `authtoken`*, `limit`, `page` | CustomerCategory[] | yes | Retrieve all Customer Categories. |
+| POST | `/customer_categories.json` | post /customer_categories.json | `login`*, `authtoken`*, body*: CustomerCategoryEdit | CustomerCategory |  | Create a new CustomerCategory. |
+| GET | `/customer_categories/{id}.json` | get /customer_categories/{id}.json | `login`*, `authtoken`*, `id`* | CustomerCategory | yes | Retrieve a single CustomerCategory. |
+| PUT | `/customer_categories/{id}.json` | put /customer_categories/{id}.json | `login`*, `authtoken`*, `id`*, body*: CustomerCategoryEdit | CustomerCategory |  | Update a CustomerCategory. |
+| DELETE | `/customer_categories/{id}.json` | delete /customer_categories/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing CustomerCategory. |
+| GET | `/customer_categories/{id}/customers.json` | get /customer_categories/{id}/customers.json | `login`*, `authtoken`*, `id`* | Customer[] | yes | Retrieves the customers in a CustomerCategory. |
+| POST | `/customer_categories/{id}/customers.json` | post /customer_categories/{id}/customers.json | `login`*, `authtoken`*, `id`*, body*: CustomersToCustomerCategory | Customer[] |  | Adds Customers to a CustomerCategory. |
+| DELETE | `/customer_categories/{id}/customers.json` | delete /customer_categories/{id}/customers.json | `login`*, `authtoken`*, `id`*, body*: CustomersToCustomerCategory | string |  | Delete Customers from an existing CustomerCategory. |
+| GET | `/customers.json` | get /customers.json | `login`*, `authtoken`*, `limit`, `page` | Customer[] | yes | Retrieve all Customers. |
+| POST | `/customers.json` | post /customers.json | `login`*, `authtoken`*, body*: CustomerWithPasswordNoID | Customer |  | Create a new Customer. |
+| GET | `/customers/count.json` | get /customers/count.json | `login`*, `authtoken`* | Count | yes | Count all Customers. |
+| GET | `/customers/email/{email}.json` | get /customers/email/{email}.json | `login`*, `authtoken`*, `email`* | Customer | yes | Retrieve a single Customer by email. |
+| GET | `/customers/{id}.json` | get /customers/{id}.json | `login`*, `authtoken`*, `id`* | Customer | yes | Retrieve a single Customer by id. |
+| PUT | `/customers/{id}.json` | put /customers/{id}.json | `login`*, `authtoken`*, `id`*, body*: CustomerWithPasswordNoID | Customer |  | Update a new Customer. |
+| DELETE | `/customers/{id}.json` | delete /customers/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Customer. |
+| GET | `/customers/{id}/fields` | get /customers/{id}/fields | `login`*, `authtoken`*, `id`* | CustomerAdditionalField[] | yes | Retrieves the Customer Additional Field of a Customer. |
+| POST | `/customers/{id}/fields` | post /customers/{id}/fields | `login`*, `authtoken`*, `id`*, body*: CustomerAdditionalFieldEdit | CustomerAdditionalField |  | Adds Customer Additional Fields to a Customer. |
+| GET | `/customers/{id}/fields/{field_id}` | get /customers/{id}/fields/{field_id} | `login`*, `authtoken`*, `id`*, `field_id`* | CustomerAdditionalField | yes | Retrieve a single Customer Additional Field. |
+| PUT | `/customers/{id}/fields/{field_id}` | put /customers/{id}/fields/{field_id} | `login`*, `authtoken`*, `id`*, `field_id`*, body*: CustomerAdditionalFieldEdit | CustomerAdditionalField |  | Update a Customer Additional Field. |
+| DELETE | `/customers/{id}/fields/{field_id}` | delete /customers/{id}/fields/{field_id} | `login`*, `authtoken`*, `id`*, `field_id`* | string |  | Delete a Customer Additional Field. |
+| GET | `/fulfillments.json` | get /fulfillments.json | `login`*, `authtoken`*, `limit`, `page` | Fulfillment[] | yes | Retrieve all Fulfillments. |
+| GET | `/fulfillments/count.json` | get /fulfillments/count.json | `login`*, `authtoken`* | Count | yes | Count all Fulfillments. |
+| GET | `/fulfillments/{id}.json` | get /fulfillments/{id}.json | `login`*, `authtoken`*, `id`* | Fulfillment | yes | Retrieve a single Fulfillment. |
+| GET | `/hooks.json` | get /hooks.json | `login`*, `authtoken`*, `limit`, `page` | Hook[] | yes | Retrieve all Hooks. |
+| POST | `/hooks.json` | post /hooks.json | `login`*, `authtoken`*, body*: HookEdit | Hook |  | Create a new Hook. |
+| GET | `/hooks/{id}.json` | get /hooks/{id}.json | `login`*, `authtoken`*, `id`* | Hook | yes | Retrieve a single Hook. |
+| PUT | `/hooks/{id}.json` | put /hooks/{id}.json | `login`*, `authtoken`*, `id`*, body*: HookEdit | Hook |  | Update a Hook. |
+| DELETE | `/hooks/{id}.json` | delete /hooks/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Hook. |
+| GET | `/jsapps.json` | get /jsapps.json | `login`*, `authtoken`* | App | yes | Retrieve all the Store's JSApps. |
+| POST | `/jsapps.json` | post /jsapps.json | `login`*, `authtoken`*, body*: JSAppEdit | JSApp |  | Create a Store JSApp. |
+| GET | `/jsapps/{code}.json` | get /jsapps/{code}.json | `login`*, `authtoken`*, `code`* | JSApp | yes | Retrieve a JSApp. |
+| DELETE | `/jsapps/{code}.json` | delete /jsapps/{code}.json | `login`*, `authtoken`*, `code`* | string |  | Delete an existing JSApp. |
+| GET | `/order/{id}/fulfillments.json` | get /order/{id}/fulfillments.json | `login`*, `authtoken`*, `id`* | Fulfillment[] | yes | Retrieve the Fulfillments associated with the Order. |
+| GET | `/orders.json` | get /orders.json | `login`*, `authtoken`*, `limit`, `page` | Order[] | yes | Retrieve all Orders. |
+| POST | `/orders.json` | post /orders.json | `login`*, `authtoken`*, body*: OrderCreate | Order |  | Create a new Order. |
+| GET | `/orders/after/{id}.json` | get /orders/after/{id}.json | `login`*, `authtoken`*, `id`* | Order | yes | Retrieve orders filtered by Order Id. |
+| GET | `/orders/count.json` | get /orders/count.json | `login`*, `authtoken`* | Count | yes | Count all Orders. |
+| GET | `/orders/status/{status}.json` | get /orders/status/{status}.json | `login`*, `authtoken`*, `status`* | Order[] | yes | Retrieve orders filtered by status. |
+| GET | `/orders/{id}.json` | get /orders/{id}.json | `login`*, `authtoken`*, `id`* | Order | yes | Retrieve a single Order. |
+| PUT | `/orders/{id}.json` | put /orders/{id}.json | `login`*, `authtoken`*, `id`*, body*: OrderEdit | Order |  | Modify an existing Order. |
+| GET | `/orders/{id}/history.json` | get /orders/{id}/history.json | `login`*, `authtoken`*, `id`* | OrderHistory[] | yes | Retrieve all Order History. |
+| POST | `/orders/{id}/history.json` | post /orders/{id}/history.json | `login`*, `authtoken`*, `id`*, body*: OrderHistoryEdit | OrderHistory |  | Create a new Order History Entry. |
+| GET | `/pages.json` | get /pages.json | `login`*, `authtoken`*, `limit`, `page` | Page[] | yes | Retrieve all Pages. |
+| POST | `/pages.json` | post /pages.json | `login`*, `authtoken`*, body*: PageModify | Page |  | Create a new Page. |
+| GET | `/pages/count.json` | get /pages/count.json | `login`*, `authtoken`* | Count | yes | Count all Pages. |
+| GET | `/pages/{id}.json` | get /pages/{id}.json | `login`*, `authtoken`*, `id`* | Page | yes | Retrieve a single Page by id. |
+| PUT | `/pages/{id}.json` | put /pages/{id}.json | `login`*, `authtoken`*, `id`*, body*: PageModify | Page |  | Update a Page. |
+| DELETE | `/pages/{id}.json` | delete /pages/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Page. |
+| GET | `/partners/stores.json` | get /partners/stores.json | `partner_code`*, `auth_token`*, `page`, `from`*, `to`* | type[] | yes | Retrieve statistics. |
+| GET | `/payment_methods.json` | get /payment_methods.json | `login`*, `authtoken`* | PaymentMethod[] | yes | Retrieve all Store's Payment Methods. |
+| GET | `/payment_methods/{id}.json` | get /payment_methods/{id}.json | `login`*, `authtoken`*, `id`* | PaymentMethod | yes | Retrieve a single Payment Method. |
+| GET | `/products.json` | get /products.json | `login`*, `authtoken`*, `limit`, `page`, `locale` | Product[] | yes | Retrieve all Products. |
+| POST | `/products.json` | post /products.json | `login`*, `authtoken`*, `locale`, body*: ProductEdit | Product |  | Create a new Product. |
+| GET | `/products/after/{id}.json` | get /products/after/{id}.json | `login`*, `authtoken`*, `id`*, `locale` | Product[] | yes | Retrieves Products after the given id. |
+| GET | `/products/category/{category_id}.json` | get /products/category/{category_id}.json | `login`*, `authtoken`*, `locale`, `category_id`* | Product[] | yes | Retrieve Products filtered by category. |
+| GET | `/products/category/{category_id}/count.json` | get /products/category/{category_id}/count.json | `login`*, `authtoken`*, `locale`, `category_id`* | Count | yes | Count Products filtered by category. |
+| GET | `/products/count.json` | get /products/count.json | `login`*, `authtoken`* | Count | yes | Count all Products. |
+| GET | `/products/search.json` | get /products/search.json | `login`*, `authtoken`*, `locale`, `query`*, `fields` | Product[] | yes | Retrieve a Product List from a query. |
+| GET | `/products/status/{status}.json` | get /products/status/{status}.json | `login`*, `authtoken`*, `locale`, `status`* | Product[] | yes | Retrieve Products filtered by status. |
+| GET | `/products/status/{status}/count.json` | get /products/status/{status}/count.json | `login`*, `authtoken`*, `locale`, `status`* | Count | yes | Count Products filtered by status. |
+| GET | `/products/{id}.json` | get /products/{id}.json | `login`*, `authtoken`*, `locale`, `id`* | Product | yes | Retrieve a single Product. |
+| PUT | `/products/{id}.json` | put /products/{id}.json | `login`*, `authtoken`*, `id`*, `locale`, body*: ProductEdit | Product |  | Modify an existing Product. |
+| DELETE | `/products/{id}.json` | delete /products/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Product. |
+| GET | `/products/{id}/attachments.json` | get /products/{id}/attachments.json | `login`*, `authtoken`*, `id`* | Attachment[] | yes | Retrieve all Product Attachments. |
+| POST | `/products/{id}/attachments.json` | post /products/{id}/attachments.json | `login`*, `authtoken`*, `id`*, body*: AttachmentEdit | Attachment |  | Create a new Product Attachment. |
+| GET | `/products/{id}/attachments/count.json` | get /products/{id}/attachments/count.json | `login`*, `authtoken`*, `id`* | Count | yes | Count all Product Attachments. |
+| GET | `/products/{id}/attachments/{attachment_id}.json` | get /products/{id}/attachments/{attachment_id}.json | `login`*, `authtoken`*, `id`*, `attachment_id`* | Attachment | yes | Retrieve a single Product Attachment. |
+| DELETE | `/products/{id}/attachments/{attachment_id}.json` | delete /products/{id}/attachments/{attachment_id}.json | `login`*, `authtoken`*, `id`*, `attachment_id`* | string |  | Delete a Product Attachment. |
+| GET | `/products/{id}/digital_products.json` | get /products/{id}/digital_products.json | `login`*, `authtoken`*, `id`* | DigitalProduct[] | yes | Retrieve all Product DigitalProducts. |
+| POST | `/products/{id}/digital_products.json` | post /products/{id}/digital_products.json | `login`*, `authtoken`*, `id`*, body*: DigitalProductEdit | DigitalProduct |  | Create a new Product DigitalProduct. |
+| GET | `/products/{id}/digital_products/count.json` | get /products/{id}/digital_products/count.json | `login`*, `authtoken`*, `id`* | Count | yes | Count all Product DigitalProducts. |
+| GET | `/products/{id}/digital_products/{digital_product_id}.json` | get /products/{id}/digital_products/{digital_product_id}.json | `login`*, `authtoken`*, `id`*, `digital_product_id`* | DigitalProduct | yes | Retrieve a single Product DigitalProduct. |
+| DELETE | `/products/{id}/digital_products/{digital_product_id}.json` | delete /products/{id}/digital_products/{digital_product_id}.json | `login`*, `authtoken`*, `id`*, `digital_product_id`* | string |  | Delete a Product DigitalProduct. |
+| GET | `/products/{id}/fields.json` | get /products/{id}/fields.json | `login`*, `authtoken`*, `id`* | ProductCustomField[] | yes | Retrieve all Product Custom Fields |
+| POST | `/products/{id}/fields.json` | post /products/{id}/fields.json | `login`*, `authtoken`*, `id`*, body*: AddProductCustomField | Product |  | Add an existing Custom Field to a Product. |
+| GET | `/products/{id}/fields/count.json` | get /products/{id}/fields/count.json | `login`*, `authtoken`*, `id`* | Count | yes | Count all Product Custom Fields. |
+| GET | `/products/{id}/images.json` | get /products/{id}/images.json | `login`*, `authtoken`*, `id`* | Image[] | yes | Retrieve all Product Images. |
+| POST | `/products/{id}/images.json` | post /products/{id}/images.json | `login`*, `authtoken`*, `id`*, body*: ImageEdit | Image |  | Create a new Product Image. |
+| GET | `/products/{id}/images/count.json` | get /products/{id}/images/count.json | `login`*, `authtoken`*, `id`* | Count | yes | Count all Product Images. |
+| GET | `/products/{id}/images/{image_id}.json` | get /products/{id}/images/{image_id}.json | `login`*, `authtoken`*, `id`*, `image_id`* | Image | yes | Retrieve a single Product Image. |
+| DELETE | `/products/{id}/images/{image_id}.json` | delete /products/{id}/images/{image_id}.json | `login`*, `authtoken`*, `id`*, `image_id`* | string |  | Delete a Product Image. |
+| GET | `/products/{id}/options.json` | get /products/{id}/options.json | `login`*, `authtoken`*, `id`* | ProductOption[] | yes | Retrieve all Product Options. |
+| POST | `/products/{id}/options.json` | post /products/{id}/options.json | `login`*, `authtoken`*, `id`*, body*: ProductOptionEdit | ProductOption |  | Create a new Product Option. |
+| GET | `/products/{id}/options/count.json` | get /products/{id}/options/count.json | `login`*, `authtoken`*, `id`* | Count | yes | Count all Product Options. |
+| GET | `/products/{id}/options/{option_id}.json` | get /products/{id}/options/{option_id}.json | `login`*, `authtoken`*, `id`*, `option_id`* | ProductOption | yes | Retrieve a single Product Option. |
+| PUT | `/products/{id}/options/{option_id}.json` | put /products/{id}/options/{option_id}.json | `login`*, `authtoken`*, `id`*, `option_id`*, body*: ProductOptionEdit | ProductOption |  | Modify an existing Product Option. |
+| DELETE | `/products/{id}/options/{option_id}.json` | delete /products/{id}/options/{option_id}.json | `login`*, `authtoken`*, `id`*, `option_id`* | string |  | Delete a Product Option. |
+| GET | `/products/{id}/options/{option_id}/values.json` | get /products/{id}/options/{option_id}/values.json | `login`*, `authtoken`*, `id`*, `option_id`* | ProductOptionValue[] | yes | Retrieve all Product Option Values. |
+| POST | `/products/{id}/options/{option_id}/values.json` | post /products/{id}/options/{option_id}/values.json | `login`*, `authtoken`*, `id`*, `option_id`*, body*: ProductOptionValueEdit | ProductOptionValue |  | Create a new Product Option Value. |
+| GET | `/products/{id}/options/{option_id}/values/count.json` | get /products/{id}/options/{option_id}/values/count.json | `login`*, `authtoken`*, `id`*, `option_id`* | Count | yes | Count all Product Option Values. |
+| GET | `/products/{id}/options/{option_id}/values/{value_id}.json` | get /products/{id}/options/{option_id}/values/{value_id}.json | `login`*, `authtoken`*, `id`*, `option_id`*, `value_id`* | ProductOptionValue | yes | Retrieve a single Product Option Value. |
+| PUT | `/products/{id}/options/{option_id}/values/{value_id}.json` | put /products/{id}/options/{option_id}/values/{value_id}.json | `login`*, `authtoken`*, `id`*, `option_id`*, `value_id`*, body*: ProductOptionValueEdit | ProductOptionValue |  | Modify an existing Product Option Value. |
+| DELETE | `/products/{id}/options/{option_id}/values/{value_id}.json` | delete /products/{id}/options/{option_id}/values/{value_id}.json | `login`*, `authtoken`*, `id`*, `option_id`*, `value_id`* | string |  | Delete a Product Option Value. |
+| GET | `/products/{id}/variants.json` | get /products/{id}/variants.json | `login`*, `authtoken`*, `id`* | Variant[] | yes | Retrieve all Product Variants. |
+| POST | `/products/{id}/variants.json` | post /products/{id}/variants.json | `login`*, `authtoken`*, `id`*, body*: VariantEdit | Variant |  | Create a new Product Variant. |
+| GET | `/products/{id}/variants/count.json` | get /products/{id}/variants/count.json | `login`*, `authtoken`*, `id`* | Count | yes | Count all Product Variants. |
+| GET | `/products/{id}/variants/{variant_id}.json` | get /products/{id}/variants/{variant_id}.json | `login`*, `authtoken`*, `id`*, `variant_id`* | Variant | yes | Retrieve a single Product Variant. |
+| PUT | `/products/{id}/variants/{variant_id}.json` | put /products/{id}/variants/{variant_id}.json | `login`*, `authtoken`*, `id`*, `variant_id`*, body*: VariantEdit | Variant |  | Modify an existing Product Variant. |
+| PUT | `/products/{product_id}/fields/{field_id}.json` | put /products/{product_id}/fields/{field_id}.json | `login`*, `authtoken`*, `product_id`*, `field_id`* | ProductCustomField |  | Update value of Product Custom Field |
+| DELETE | `/products/{product_id}/fields/{field_id}.json` | delete /products/{product_id}/fields/{field_id}.json | `login`*, `authtoken`*, `product_id`*, `field_id`* | MessageObject |  | Delete value of Product Custom Field |
+| GET | `/promotions.json` | get /promotions.json | `login`*, `authtoken`*, `limit`, `page` | Promotion[] | yes | Retrieve all Promotions. |
+| POST | `/promotions.json` | post /promotions.json | `login`*, `authtoken`*, body*: PromotionEdit | Promotion |  | Create a new Promotion. |
+| GET | `/promotions/{id}.json` | get /promotions/{id}.json | `login`*, `authtoken`*, `id`* | Promotion | yes | Retrieve a single Promotion. |
+| PUT | `/promotions/{id}.json` | put /promotions/{id}.json | `login`*, `authtoken`*, `id`*, body*: PromotionEdit | Promotion |  | Update a Promotion. |
+| DELETE | `/promotions/{id}.json` | delete /promotions/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Promotion. |
+| GET | `/shipping_methods.json` | get /shipping_methods.json | `login`*, `authtoken`* | ShippingMethod[] | yes | Retrieve all Store's Shipping Methods. |
+| POST | `/shipping_methods.json` | post /shipping_methods.json | `login`*, `authtoken`*, body*: ShippingMethodEdit | ShippingMethod |  | Creates a Shipping Method. |
+| GET | `/shipping_methods/{id}.json` | get /shipping_methods/{id}.json | `login`*, `authtoken`*, `id`* | ShippingMethod | yes | Retrieve a single Shipping Method. |
+| PUT | `/shipping_methods/{id}.json` | put /shipping_methods/{id}.json | `login`*, `authtoken`*, `id`*, body*: ShippingMethodEdit | ShippingMethod |  | Update a Shipping Method. |
+| DELETE | `/shipping_methods/{id}.json` | delete /shipping_methods/{id}.json | `login`*, `authtoken`*, `id`* | string |  | Delete an existing Shipping Method. |
+| GET | `/store/check_status.json` | get /store/check_status.json | `partner_code`*, `auth_token`*, `store_code`*, `locale` | PartnerStoreStatus\|NewPartnerStore | yes | Retrive store creation status. |
+| POST | `/store/create.json` | post /store/create.json | `partner_code`*, `auth_token`*, body*: PartnerStoreCreate | PartnerStoreCode |  | Create a Partnered Store |
+| GET | `/store/info.json` | get /store/info.json | `login`*, `authtoken`* | Store | yes | Retrieve Store Information. |
+| GET | `/store/languages.json` | get /store/languages.json | `login`*, `authtoken`* | Language[] | yes | Retrieve Store Languages. |
+| GET | `/taxes.json` | get /taxes.json | `login`*, `authtoken`* | Tax[] | yes | Retrieve all Taxes. |
+| POST | `/taxes.json` | post /taxes.json | `login`*, `authtoken`*, body*: TaxEdit | Tax |  | Create a new Tax. |
+| GET | `/taxes/{id}.json` | get /taxes/{id}.json | `login`*, `authtoken`*, `id`* | Tax | yes | Retrieve a single Tax information. |

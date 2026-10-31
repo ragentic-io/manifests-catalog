@@ -32,45 +32,105 @@
       },
       {
         "deprecated": false,
+        "description": "Initiate a connection to a specified peer.",
         "id": "operation:post:/net/connect",
         "kind": "operation",
         "method": "post",
         "name": "connect",
         "path": "/net/connect",
         "pointer": "#/paths/~1net~1connect/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "connect"
       },
       {
         "deprecated": false,
+        "description": "Returns an array of all peer connection statuses.",
         "id": "operation:post:/net/connections",
         "kind": "operation",
         "method": "post",
         "name": "connections",
         "path": "/net/connections",
         "pointer": "#/paths/~1net~1connections/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "connections"
       },
       {
         "deprecated": false,
+        "description": "Initiate disconnection from a specified peer.",
         "id": "operation:post:/net/disconnect",
         "kind": "operation",
         "method": "post",
         "name": "disconnect",
         "path": "/net/disconnect",
         "pointer": "#/paths/~1net~1disconnect/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "disconnect"
       },
       {
         "deprecated": false,
+        "description": "Retrieves the connection status for a specified peer.",
         "id": "operation:post:/net/status",
         "kind": "operation",
         "method": "post",
         "name": "status",
         "path": "/net/status",
         "pointer": "#/paths/~1net~1status/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "status"
       }

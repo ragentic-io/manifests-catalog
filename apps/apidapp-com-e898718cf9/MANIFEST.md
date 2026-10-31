@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i2_wp_com_apidapp_com_wp-conten
 
 | | |
 | --- | --- |
-| Signed bundle | `f4e33a3ebf3e57c4cc9b9a48a48b56999e3efa9413a75b884ce03be9d0544822` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,59 +34,61 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i2_wp_com_apidapp_com_wp-conten
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| OPTIONS | `/` | options / | — |
-| OPTIONS | `/account` | options /account | — |
-| POST | `/account` | post /account | — |
-| GET | `/account/{id}` | get /account/{id} | — |
-| OPTIONS | `/account/{id}` | options /account/{id} | — |
-| GET | `/block` | get /block | — |
-| OPTIONS | `/block` | options /block | — |
-| GET | `/block/{id}` | get /block/{id} | — |
-| OPTIONS | `/block/{id}` | options /block/{id} | — |
-| GET | `/block/{id}/transaction` | get /block/{id}/transaction | — |
-| OPTIONS | `/block/{id}/transaction` | options /block/{id}/transaction | — |
-| GET | `/block/{id}/transaction/{index}` | get /block/{id}/transaction/{index} | — |
-| OPTIONS | `/block/{id}/transaction/{index}` | options /block/{id}/transaction/{index} | — |
-| GET | `/blockchain` | get /blockchain | — |
-| OPTIONS | `/blockchain` | options /blockchain | — |
-| GET | `/blockchain/{id}` | get /blockchain/{id} | — |
-| OPTIONS | `/blockchain/{id}` | options /blockchain/{id} | — |
-| OPTIONS | `/contract` | options /contract | — |
-| POST | `/contract` | post /contract | — |
-| GET | `/contract/{id}` | get /contract/{id} | — |
-| OPTIONS | `/contract/{id}` | options /contract/{id} | — |
-| POST | `/contract/{id}` | post /contract/{id} | — |
-| OPTIONS | `/echo` | options /echo | — |
-| GET | `/erc20` | get /erc20 | — |
-| OPTIONS | `/erc20` | options /erc20 | — |
-| POST | `/erc20` | post /erc20 | — |
-| GET | `/erc20/{address}` | get /erc20/{address} | — |
-| OPTIONS | `/erc20/{address}` | options /erc20/{address} | — |
-| POST | `/erc20/{address}` | post /erc20/{address} | — |
-| GET | `/key` | get /key | — |
-| OPTIONS | `/key` | options /key | — |
-| POST | `/key` | post /key | — |
-| DELETE | `/key/{key}` | delete /key/{key} | — |
-| OPTIONS | `/key/{key}` | options /key/{key} | — |
-| OPTIONS | `/transaction` | options /transaction | — |
-| POST | `/transaction` | post /transaction | — |
-| GET | `/transaction/{hash}` | get /transaction/{hash} | — |
-| OPTIONS | `/transaction/{hash}` | options /transaction/{hash} | — |
-| GET | `/transaction/{hash}/receipt` | get /transaction/{hash}/receipt | — |
-| OPTIONS | `/transaction/{hash}/receipt` | options /transaction/{hash}/receipt | — |
-| GET | `/version` | get /version | — |
-| OPTIONS | `/version` | options /version | — |
-| GET | `/wallet` | get /wallet | — |
-| OPTIONS | `/wallet` | options /wallet | — |
-| POST | `/wallet` | post /wallet | — |
-| GET | `/wallet/account` | get /wallet/account | — |
-| OPTIONS | `/wallet/account` | options /wallet/account | — |
-| POST | `/wallet/account` | post /wallet/account | — |
-| GET | `/wallet/account/{id}` | get /wallet/account/{id} | — |
-| OPTIONS | `/wallet/account/{id}` | options /wallet/account/{id} | — |
-| POST | `/wallet/account/{id}/contract` | post /wallet/account/{id}/contract | — |
-| POST | `/wallet/account/{id}/erc20` | post /wallet/account/{id}/erc20 | — |
-| OPTIONS | `/wallet/account/{id}/pay` | options /wallet/account/{id}/pay | — |
-| POST | `/wallet/account/{id}/pay` | post /wallet/account/{id}/pay | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| OPTIONS | `/` | options / | — | Empty | yes | — |
+| POST | `/account` | post /account | — | Empty |  | — |
+| OPTIONS | `/account` | options /account | — | Empty | yes | — |
+| GET | `/account/{id}` | get /account/{id} | `id`* | Empty | yes | — |
+| OPTIONS | `/account/{id}` | options /account/{id} | `id`* | Empty | yes | — |
+| GET | `/block` | get /block | — | Empty | yes | — |
+| OPTIONS | `/block` | options /block | — | Empty | yes | — |
+| GET | `/block/{id}` | get /block/{id} | `id`* | Empty | yes | — |
+| OPTIONS | `/block/{id}` | options /block/{id} | `id`* | Empty | yes | — |
+| GET | `/block/{id}/transaction` | get /block/{id}/transaction | `id`* | Empty | yes | — |
+| OPTIONS | `/block/{id}/transaction` | options /block/{id}/transaction | `id`* | Empty | yes | — |
+| GET | `/block/{id}/transaction/{index}` | get /block/{id}/transaction/{index} | `index`*, `id`* | Empty | yes | — |
+| OPTIONS | `/block/{id}/transaction/{index}` | options /block/{id}/transaction/{index} | `id`*, `index`* | Empty | yes | — |
+| GET | `/blockchain` | get /blockchain | — | Empty | yes | — |
+| OPTIONS | `/blockchain` | options /blockchain | — | Empty | yes | — |
+| GET | `/blockchain/{id}` | get /blockchain/{id} | `id`* | Empty | yes | — |
+| OPTIONS | `/blockchain/{id}` | options /blockchain/{id} | `id`* | Empty | yes | — |
+| POST | `/contract` | post /contract | — | Empty |  | — |
+| OPTIONS | `/contract` | options /contract | — | Empty | yes | — |
+| GET | `/contract/{id}` | get /contract/{id} | `id`* | Empty | yes | — |
+| POST | `/contract/{id}` | post /contract/{id} | `id`* | Empty |  | — |
+| OPTIONS | `/contract/{id}` | options /contract/{id} | `id`* | Empty | yes | — |
+| OPTIONS | `/echo` | options /echo | — | Empty | yes | — |
+| GET | `/erc20` | get /erc20 | — | Empty | yes | — |
+| POST | `/erc20` | post /erc20 | — | Empty |  | — |
+| OPTIONS | `/erc20` | options /erc20 | — | Empty | yes | — |
+| GET | `/erc20/{address}` | get /erc20/{address} | `address`* | Empty | yes | — |
+| POST | `/erc20/{address}` | post /erc20/{address} | `address`* | Empty |  | — |
+| OPTIONS | `/erc20/{address}` | options /erc20/{address} | `address`* | Empty | yes | — |
+| GET | `/key` | get /key | `token` | Empty | yes | — |
+| POST | `/key` | post /key | — | Empty |  | — |
+| OPTIONS | `/key` | options /key | — | Empty | yes | — |
+| DELETE | `/key/{key}` | delete /key/{key} | `key`* | Empty |  | — |
+| OPTIONS | `/key/{key}` | options /key/{key} | `key`* | Empty | yes | — |
+| POST | `/transaction` | post /transaction | — | Empty |  | — |
+| OPTIONS | `/transaction` | options /transaction | — | Empty | yes | — |
+| GET | `/transaction/{hash}` | get /transaction/{hash} | `hash`* | Empty | yes | — |
+| OPTIONS | `/transaction/{hash}` | options /transaction/{hash} | `hash`* | Empty | yes | — |
+| GET | `/transaction/{hash}/receipt` | get /transaction/{hash}/receipt | `hash`* | Empty | yes | — |
+| OPTIONS | `/transaction/{hash}/receipt` | options /transaction/{hash}/receipt | `hash`* | Empty | yes | — |
+| GET | `/version` | get /version | — | Empty | yes | — |
+| OPTIONS | `/version` | options /version | — | Empty | yes | — |
+| GET | `/wallet` | get /wallet | — | Empty | yes | — |
+| POST | `/wallet` | post /wallet | — | Empty |  | — |
+| OPTIONS | `/wallet` | options /wallet | — | Empty | yes | — |
+| GET | `/wallet/account` | get /wallet/account | — | Empty | yes | — |
+| POST | `/wallet/account` | post /wallet/account | — | Empty |  | — |
+| OPTIONS | `/wallet/account` | options /wallet/account | — | Empty | yes | — |
+| GET | `/wallet/account/{id}` | get /wallet/account/{id} | `id`* | Empty | yes | — |
+| OPTIONS | `/wallet/account/{id}` | options /wallet/account/{id} | `id`* | Empty | yes | — |
+| POST | `/wallet/account/{id}/contract` | post /wallet/account/{id}/contract | `id`* | Empty |  | — |
+| POST | `/wallet/account/{id}/erc20` | post /wallet/account/{id}/erc20 | `id`* | Empty |  | — |
+| POST | `/wallet/account/{id}/pay` | post /wallet/account/{id}/pay | `id`* | Empty |  | — |
+| OPTIONS | `/wallet/account/{id}/pay` | options /wallet/account/{id}/pay | `id`* | Empty | yes | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_44
 
 | | |
 | --- | --- |
-| Signed bundle | `494b32235b363f8a7d7c94e40aac6a8b1c31cee280c54b1708e9def4dc512dc1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_44
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/info` | getInfo | Information about versions of application and data. |
-| GET | `/transit/{from}/{to}` | transit | Transit between basic residential units |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/info` | getInfo | — | InfoResult | yes | Information about versions of application and data. |
+| GET | `/transit/{from}/{to}` | transit | `from`*, `to`*, `fromType`, `toType`, `uniques`* | CountResult | yes | Transit between basic residential units |

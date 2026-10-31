@@ -62,11 +62,6 @@
       {
         "from": "gettyimages-com-e8b5b43038",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/boards/{board_id}"
-      },
-      {
-        "from": "gettyimages-com-e8b5b43038",
-        "kind": "EXPOSES",
         "to": "operation:get:/v3/boards/{board_id}"
       },
       {
@@ -77,7 +72,7 @@
       {
         "from": "gettyimages-com-e8b5b43038",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/boards/{board_id}/assets"
+        "to": "operation:delete:/v3/boards/{board_id}"
       },
       {
         "from": "gettyimages-com-e8b5b43038",
@@ -87,12 +82,17 @@
       {
         "from": "gettyimages-com-e8b5b43038",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/boards/{board_id}/assets/{asset_id}"
+        "to": "operation:delete:/v3/boards/{board_id}/assets"
       },
       {
         "from": "gettyimages-com-e8b5b43038",
         "kind": "EXPOSES",
         "to": "operation:put:/v3/boards/{board_id}/assets/{asset_id}"
+      },
+      {
+        "from": "gettyimages-com-e8b5b43038",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v3/boards/{board_id}/assets/{asset_id}"
       },
       {
         "from": "gettyimages-com-e8b5b43038",
@@ -263,6 +263,756 @@
         "from": "gettyimages-com-e8b5b43038",
         "kind": "EXPOSES",
         "to": "operation:get:/v3/videos/{id}/similar"
+      },
+      {
+        "from": "operation:get:/v3/affiliates/search/images",
+        "kind": "RETURNS",
+        "to": "schema:AffiliateImageSearchResponse"
+      },
+      {
+        "from": "operation:get:/v3/affiliates/search/videos",
+        "kind": "RETURNS",
+        "to": "schema:AffiliateVideoSearchResponse"
+      },
+      {
+        "from": "operation:put:/v3/asset-changes/change-sets",
+        "kind": "RETURNS",
+        "to": "schema:AssetChanges"
+      },
+      {
+        "from": "operation:get:/v3/asset-changes/channels",
+        "kind": "RETURNS",
+        "to": "schema:Channel"
+      },
+      {
+        "from": "operation:post:/v3/asset-licensing/{assetId}",
+        "kind": "ACCEPTS",
+        "to": "schema:AcquireAssetLicensesRequest"
+      },
+      {
+        "from": "operation:post:/v3/asset-licensing/{assetId}",
+        "kind": "RETURNS",
+        "to": "schema:AssetLicensingResponse"
+      },
+      {
+        "from": "operation:get:/v3/asset-management/assets/send-events",
+        "kind": "RETURNS",
+        "to": "schema:GetSendEventsResponse"
+      },
+      {
+        "from": "operation:get:/v3/boards",
+        "kind": "RETURNS",
+        "to": "schema:BoardList"
+      },
+      {
+        "from": "operation:post:/v3/boards",
+        "kind": "ACCEPTS",
+        "to": "schema:BoardInfo"
+      },
+      {
+        "from": "operation:post:/v3/boards",
+        "kind": "RETURNS",
+        "to": "schema:BoardCreated"
+      },
+      {
+        "from": "operation:get:/v3/boards/{board_id}",
+        "kind": "RETURNS",
+        "to": "schema:BoardDetail"
+      },
+      {
+        "from": "operation:put:/v3/boards/{board_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:BoardInfo"
+      },
+      {
+        "from": "operation:put:/v3/boards/{board_id}/assets",
+        "kind": "ACCEPTS",
+        "to": "schema:BoardAsset"
+      },
+      {
+        "from": "operation:put:/v3/boards/{board_id}/assets",
+        "kind": "RETURNS",
+        "to": "schema:AddBoardAssetsResult"
+      },
+      {
+        "from": "operation:get:/v3/boards/{board_id}/comments",
+        "kind": "RETURNS",
+        "to": "schema:CommentsList"
+      },
+      {
+        "from": "operation:post:/v3/boards/{board_id}/comments",
+        "kind": "ACCEPTS",
+        "to": "schema:CommentRequest"
+      },
+      {
+        "from": "operation:post:/v3/boards/{board_id}/comments",
+        "kind": "RETURNS",
+        "to": "schema:CommentCreated"
+      },
+      {
+        "from": "operation:get:/v3/collections",
+        "kind": "RETURNS",
+        "to": "schema:CollectionsList"
+      },
+      {
+        "from": "operation:get:/v3/countries",
+        "kind": "RETURNS",
+        "to": "schema:CountriesList"
+      },
+      {
+        "from": "operation:get:/v3/customers/current",
+        "kind": "RETURNS",
+        "to": "schema:CustomerInfoResponse"
+      },
+      {
+        "from": "operation:get:/v3/downloads",
+        "kind": "RETURNS",
+        "to": "schema:GetDownloadsResponse"
+      },
+      {
+        "from": "operation:post:/v3/downloads/images/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:PremiumAccessDownloadData"
+      },
+      {
+        "from": "operation:post:/v3/downloads/videos/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:PremiumAccessDownloadData"
+      },
+      {
+        "from": "operation:get:/v3/images",
+        "kind": "RETURNS",
+        "to": "schema:ImagesDetailResults"
+      },
+      {
+        "from": "operation:get:/v3/images/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ImagesDetailResults"
+      },
+      {
+        "from": "operation:get:/v3/images/{id}/downloadhistory",
+        "kind": "RETURNS",
+        "to": "schema:AssetDownloadHistoryResults"
+      },
+      {
+        "from": "operation:get:/v3/images/{id}/same-series",
+        "kind": "RETURNS",
+        "to": "schema:ImageSearchItemSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/images/{id}/similar",
+        "kind": "RETURNS",
+        "to": "schema:ImageSearchItemSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/orders/{id}",
+        "kind": "RETURNS",
+        "to": "schema:OrderDetail"
+      },
+      {
+        "from": "operation:get:/v3/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductsResult"
+      },
+      {
+        "from": "operation:get:/v3/purchased-assets",
+        "kind": "RETURNS",
+        "to": "schema:PreviousAssetPurchases"
+      },
+      {
+        "from": "operation:get:/v3/search/events",
+        "kind": "RETURNS",
+        "to": "schema:EventsSearchResult"
+      },
+      {
+        "from": "operation:get:/v3/search/images",
+        "kind": "RETURNS",
+        "to": "schema:ImageSearchItemSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/search/images/creative",
+        "kind": "RETURNS",
+        "to": "schema:CreativeImageSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/search/images/creative/by-image",
+        "kind": "RETURNS",
+        "to": "schema:SearchByImageResourceResults"
+      },
+      {
+        "from": "operation:get:/v3/search/images/editorial",
+        "kind": "RETURNS",
+        "to": "schema:EditorialImageSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/search/videos/creative",
+        "kind": "RETURNS",
+        "to": "schema:CreativeVideoSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/search/videos/creative/by-image",
+        "kind": "RETURNS",
+        "to": "schema:CreativeVideoSearchResults"
+      },
+      {
+        "from": "operation:get:/v3/search/videos/editorial",
+        "kind": "RETURNS",
+        "to": "schema:EditorialVideoSearchResults"
+      },
+      {
+        "from": "operation:put:/v3/usage-batches/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:report_usage_batch_request"
+      },
+      {
+        "from": "operation:put:/v3/usage-batches/{id}",
+        "kind": "RETURNS",
+        "to": "schema:report_usage_batch_response"
+      },
+      {
+        "from": "operation:get:/v3/videos/{id}/downloadhistory",
+        "kind": "RETURNS",
+        "to": "schema:AssetDownloadHistoryResults"
+      },
+      {
+        "from": "schema:AcquireAssetLicensesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedLicenses"
+      },
+      {
+        "from": "schema:AddBoardAssetsResult",
+        "kind": "REFERENCES",
+        "to": "schema:BoardAsset"
+      },
+      {
+        "from": "schema:AffiliateImage",
+        "kind": "REFERENCES",
+        "to": "schema:AffiliateImageUrls"
+      },
+      {
+        "from": "schema:AffiliateImageSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AffiliateImage"
+      },
+      {
+        "from": "schema:AffiliateImageSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AutoCorrections"
+      },
+      {
+        "from": "schema:AffiliateVideo",
+        "kind": "REFERENCES",
+        "to": "schema:AffiliateVideoUrls"
+      },
+      {
+        "from": "schema:AffiliateVideoSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AffiliateVideo"
+      },
+      {
+        "from": "schema:AffiliateVideoSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AutoCorrections"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "REFERENCES",
+        "to": "schema:DisplaySize"
+      },
+      {
+        "from": "schema:AssetChanges",
+        "kind": "REFERENCES",
+        "to": "schema:ChangedAssetDetail"
+      },
+      {
+        "from": "schema:AssetLicensingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedLicenses"
+      },
+      {
+        "from": "schema:BlendedVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AllowedUse"
+      },
+      {
+        "from": "schema:BlendedVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Download"
+      },
+      {
+        "from": "schema:BlendedVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:IStockLicense"
+      },
+      {
+        "from": "schema:BlendedVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Keyword"
+      },
+      {
+        "from": "schema:BlendedVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:ReferralDestination"
+      },
+      {
+        "from": "schema:BlendedVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:VideoSearchItemDisplaySize"
+      },
+      {
+        "from": "schema:BlendedVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:BlendedVideoSearchItem"
+      },
+      {
+        "from": "schema:BlendedVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:BlendedVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchFacetsResponse"
+      },
+      {
+        "from": "schema:BoardDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:BoardDetail",
+        "kind": "REFERENCES",
+        "to": "schema:BoardPermissions"
+      },
+      {
+        "from": "schema:BoardDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:BoardList",
+        "kind": "REFERENCES",
+        "to": "schema:BoardListBoard"
+      },
+      {
+        "from": "schema:BoardListBoard",
+        "kind": "REFERENCES",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:Channel",
+        "kind": "REFERENCES",
+        "to": "schema:AssetFamily"
+      },
+      {
+        "from": "schema:Channel",
+        "kind": "REFERENCES",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "schema:CollectionsList",
+        "kind": "REFERENCES",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "REFERENCES",
+        "to": "schema:Collaborator"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "REFERENCES",
+        "to": "schema:CommentPermissions"
+      },
+      {
+        "from": "schema:CommentsList",
+        "kind": "REFERENCES",
+        "to": "schema:BoardCommentPermissions"
+      },
+      {
+        "from": "schema:CommentsList",
+        "kind": "REFERENCES",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "schema:CountriesList",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:CreativeImageSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:AutoCorrections"
+      },
+      {
+        "from": "schema:CreativeImageSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:ImageSearchItemCreative"
+      },
+      {
+        "from": "schema:CreativeImageSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:CreativeVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AllowedUse"
+      },
+      {
+        "from": "schema:CreativeVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Download"
+      },
+      {
+        "from": "schema:CreativeVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:IStockLicense"
+      },
+      {
+        "from": "schema:CreativeVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Keyword"
+      },
+      {
+        "from": "schema:CreativeVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:ReferralDestination"
+      },
+      {
+        "from": "schema:CreativeVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:VideoSearchItemDisplaySize"
+      },
+      {
+        "from": "schema:CreativeVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:AutoCorrections"
+      },
+      {
+        "from": "schema:CreativeVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:CreativeVideoSearchItem"
+      },
+      {
+        "from": "schema:CreativeVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:CreativeVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchFacetsResponse"
+      },
+      {
+        "from": "schema:EditorialImageSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:ImageSearchItemEditorial"
+      },
+      {
+        "from": "schema:EditorialImageSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:EditorialVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AllowedUse"
+      },
+      {
+        "from": "schema:EditorialVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Download"
+      },
+      {
+        "from": "schema:EditorialVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:IStockLicense"
+      },
+      {
+        "from": "schema:EditorialVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Keyword"
+      },
+      {
+        "from": "schema:EditorialVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:ReferralDestination"
+      },
+      {
+        "from": "schema:EditorialVideoSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:VideoSearchItemDisplaySize"
+      },
+      {
+        "from": "schema:EditorialVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:EditorialVideoSearchItem"
+      },
+      {
+        "from": "schema:EditorialVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:EditorialVideoSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchFacetsResponse"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:HeroImage"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:LocationEvent"
+      },
+      {
+        "from": "schema:EventsSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:Event"
+      },
+      {
+        "from": "schema:GetDownloadsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HistoricalDownload"
+      },
+      {
+        "from": "schema:GetSendEventsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AssetEvent"
+      },
+      {
+        "from": "schema:HeroImage",
+        "kind": "REFERENCES",
+        "to": "schema:HeroImageDisplaySize"
+      },
+      {
+        "from": "schema:HistoricalDownload",
+        "kind": "REFERENCES",
+        "to": "schema:Dimensions"
+      },
+      {
+        "from": "schema:HistoricalDownload",
+        "kind": "REFERENCES",
+        "to": "schema:DownloadDetails"
+      },
+      {
+        "from": "schema:HistoricalDownload",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:IStockLicense",
+        "kind": "REFERENCES",
+        "to": "schema:AssetLicenseName"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:AllowedUse"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Download"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:IStockLicense"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:ImageSearchItemDisplaySize"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:Keyword"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:MaxDimensions"
+      },
+      {
+        "from": "schema:ImageSearchItem",
+        "kind": "REFERENCES",
+        "to": "schema:ReferralDestination"
+      },
+      {
+        "from": "schema:ImageSearchItemCreative",
+        "kind": "REFERENCES",
+        "to": "schema:AllowedUse"
+      },
+      {
+        "from": "schema:ImageSearchItemCreative",
+        "kind": "REFERENCES",
+        "to": "schema:Download"
+      },
+      {
+        "from": "schema:ImageSearchItemCreative",
+        "kind": "REFERENCES",
+        "to": "schema:ImageSearchItemDisplaySize"
+      },
+      {
+        "from": "schema:ImageSearchItemCreative",
+        "kind": "REFERENCES",
+        "to": "schema:Keyword"
+      },
+      {
+        "from": "schema:ImageSearchItemCreative",
+        "kind": "REFERENCES",
+        "to": "schema:MaxDimensions"
+      },
+      {
+        "from": "schema:ImageSearchItemCreative",
+        "kind": "REFERENCES",
+        "to": "schema:ReferralDestination"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:AllowedUse"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:Download"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:EditorialSource"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:ImageSearchItemDisplaySize"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:Keyword"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:MaxDimensions"
+      },
+      {
+        "from": "schema:ImageSearchItemEditorial",
+        "kind": "REFERENCES",
+        "to": "schema:ReferralDestination"
+      },
+      {
+        "from": "schema:ImageSearchItemSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:ImageSearchItem"
+      },
+      {
+        "from": "schema:ImageSearchItemSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:MemcachedLogEntry",
+        "kind": "REFERENCES",
+        "to": "schema:LogLevel"
+      },
+      {
+        "from": "schema:OrderDetail",
+        "kind": "REFERENCES",
+        "to": "schema:AssetIdFromOrder"
+      },
+      {
+        "from": "schema:OrderDetail",
+        "kind": "REFERENCES",
+        "to": "schema:OrderNotes"
+      },
+      {
+        "from": "schema:PreviousAssetPurchases",
+        "kind": "REFERENCES",
+        "to": "schema:PreviousAssetPurchase"
+      },
+      {
+        "from": "schema:PreviousPurchases",
+        "kind": "REFERENCES",
+        "to": "schema:PreviousPurchase"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:DownloadRequirements"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:OverageDetails"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:ProductStatus"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:ProductTypeResponse"
+      },
+      {
+        "from": "schema:ProductsResult",
+        "kind": "REFERENCES",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:SearchByImageResourceResults",
+        "kind": "REFERENCES",
+        "to": "schema:AutoCorrections"
+      },
+      {
+        "from": "schema:SearchByImageResourceResults",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedSearch"
+      },
+      {
+        "from": "schema:SearchByImageResourceResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchFacetsResponse"
+      },
+      {
+        "from": "schema:SearchFacetsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Artist"
+      },
+      {
+        "from": "schema:SearchFacetsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Entertainment"
+      },
+      {
+        "from": "schema:SearchFacetsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FacetEvent"
+      },
+      {
+        "from": "schema:SearchFacetsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:SearchFacetsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SpecificPeople"
+      },
+      {
+        "from": "schema:report_usage_batch_request",
+        "kind": "REFERENCES",
+        "to": "schema:asset_usage"
       }
     ],
     "nodes": [
@@ -276,8 +1026,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/affiliates/search/images",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search images using a search phrase.",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter based on graphical style of the image.",
+            "in": "query",
+            "name": "style",
+            "required": false,
+            "type": "AffiliateSearchStyle"
+          }
+        ],
         "path": "/v3/affiliates/search/images",
         "pointer": "#/paths/~1v3~1affiliates~1search~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AffiliateImageSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -286,7 +1066,10 @@
             "OAuth2": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "AffiliateSearch"
+        ]
       },
       {
         "deprecated": false,
@@ -294,8 +1077,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/affiliates/search/videos",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/affiliates/search/videos",
         "pointer": "#/paths/~1v3~1affiliates~1search~1videos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AffiliateVideoSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -304,7 +1109,10 @@
             "OAuth2": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "AffiliateSearch"
+        ]
       },
       {
         "deprecated": false,
@@ -312,8 +1120,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/artists/images",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of artist for desired images",
+            "in": "query",
+            "name": "artist_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of fields.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ArtistsImageSearchFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/artists/images",
         "pointer": "#/paths/~1v3~1artists~1images/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -322,7 +1181,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for images by a photographer"
+        "summary": "Search for images by a photographer",
+        "tags": [
+          "Artists"
+        ]
       },
       {
         "deprecated": false,
@@ -330,8 +1192,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/artists/videos",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of artist for desired images",
+            "in": "query",
+            "name": "artist_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of fields.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ArtistsVideoSearchFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/artists/videos",
         "pointer": "#/paths/~1v3~1artists~1videos/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -340,16 +1253,56 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for videos by a photographer"
+        "summary": "Search for videos by a photographer",
+        "tags": [
+          "Artists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Asset Changes Get notifications about new, updated or deleted assets for a specific channel.",
         "id": "operation:put:/v3/asset-changes/change-sets",
         "kind": "operation",
         "method": "put",
         "name": "put /v3/asset-changes/change-sets",
+        "parameters": [
+          {
+            "description": "Specifies the id of the channel for the asset data.",
+            "in": "query",
+            "name": "channel_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the number of assets to return.",
+            "in": "query",
+            "name": "batch_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/asset-changes/change-sets",
         "pointer": "#/paths/~1v3~1asset-changes~1change-sets/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssetChanges"
+          },
+          {
+            "status": "201",
+            "type": "AssetChanges"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -358,16 +1311,44 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get asset change notifications."
+        "summary": "Get asset change notifications.",
+        "tags": [
+          "AssetChanges"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Delete Asset Changes Confirm asset changes acknowledges receipt of asset changes (from the PUT asset-changes endpoint).",
         "id": "operation:delete:/v3/asset-changes/change-sets/{change-set-id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /v3/asset-changes/change-sets/{change-set-id}",
+        "parameters": [
+          {
+            "description": "Specify the change-set-id associated with a transaction resource whose receipt you want to confirm.",
+            "in": "path",
+            "name": "change-set-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v3/asset-changes/change-sets/{change-set-id}",
         "pointer": "#/paths/~1v3~1asset-changes~1change-sets~1{change-set-id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -376,16 +1357,33 @@
             "OAuth2": []
           }
         ],
-        "summary": "Confirm asset change notifications."
+        "summary": "Confirm asset change notifications.",
+        "tags": [
+          "AssetChanges"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Get Partner Channels Retrieves the channel data for the partner.",
         "id": "operation:get:/v3/asset-changes/channels",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/asset-changes/channels",
         "path": "/v3/asset-changes/channels",
         "pointer": "#/paths/~1v3~1asset-changes~1channels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Channel[]"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -394,7 +1392,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get a list of asset change notification channels."
+        "summary": "Get a list of asset change notification channels.",
+        "tags": [
+          "AssetChanges"
+        ]
       },
       {
         "deprecated": false,
@@ -402,8 +1403,50 @@
         "kind": "operation",
         "method": "post",
         "name": "post /v3/asset-licensing/{assetId}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Getty Images assetId - examples 520621493, 112301284",
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/asset-licensing/{assetId}",
         "pointer": "#/paths/~1v3~1asset-licensing~1{assetId}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AcquireAssetLicensesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssetLicensingResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -412,7 +1455,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Endpoint for acquiring extended licenses with iStock credits for an asset."
+        "summary": "Endpoint for acquiring extended licenses with iStock credits for an asset.",
+        "tags": [
+          "AssetLicensing"
+        ]
       },
       {
         "deprecated": false,
@@ -420,8 +1466,41 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/asset-management/assets/send-events",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies a date/time (with timezone information) for continuing retrieval of events.",
+            "in": "query",
+            "name": "last_offset",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies the number of events to return.",
+            "in": "query",
+            "name": "event_count",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/asset-management/assets/send-events",
         "pointer": "#/paths/~1v3~1asset-management~1assets~1send-events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetSendEventsResponse"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -430,7 +1509,10 @@
             "OAuth2": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "AssetManagement"
+        ]
       },
       {
         "deprecated": false,
@@ -438,8 +1520,60 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/boards",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search for boards the user owns or has been invited to as an editor.",
+            "in": "query",
+            "name": "board_relationship",
+            "required": false,
+            "type": "BoardRelationship"
+          },
+          {
+            "description": "Sort the list of boards by last update date or name.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "BoardSortOrder"
+          },
+          {
+            "default": 30,
+            "description": "Request number of boards to return in each page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/boards",
         "pointer": "#/paths/~1v3~1boards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BoardList"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -448,7 +1582,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get all boards that the user participates in"
+        "summary": "Get all boards that the user participates in",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -456,8 +1593,37 @@
         "kind": "operation",
         "method": "post",
         "name": "post /v3/boards",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards",
         "pointer": "#/paths/~1v3~1boards/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BoardInfo"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "BoardCreated"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -466,25 +1632,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Create a new board"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v3/boards/{board_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /v3/boards/{board_id}",
-        "path": "/v3/boards/{board_id}",
-        "pointer": "#/paths/~1v3~1boards~1{board_id}/delete",
-        "security": [
-          {
-            "Api-Key": []
-          },
-          {
-            "OAuth2": []
-          }
-        ],
-        "summary": "Delete a board"
+        "summary": "Create a new board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -492,8 +1643,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/boards/{board_id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Retrieve details for a specific board.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}",
         "pointer": "#/paths/~1v3~1boards~1{board_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BoardDetail"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -502,7 +1685,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get assets and metadata for a specific board"
+        "summary": "Get assets and metadata for a specific board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -510,8 +1696,52 @@
         "kind": "operation",
         "method": "put",
         "name": "put /v3/boards/{board_id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to update.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}",
         "pointer": "#/paths/~1v3~1boards~1{board_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BoardInfo"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -520,16 +1750,56 @@
             "OAuth2": []
           }
         ],
-        "summary": "Update a board"
+        "summary": "Update a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v3/boards/{board_id}/assets",
+        "id": "operation:delete:/v3/boards/{board_id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /v3/boards/{board_id}/assets",
-        "path": "/v3/boards/{board_id}/assets",
-        "pointer": "#/paths/~1v3~1boards~1{board_id}~1assets/delete",
+        "name": "delete /v3/boards/{board_id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to delete.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v3/boards/{board_id}",
+        "pointer": "#/paths/~1v3~1boards~1{board_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -538,7 +1808,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Remove assets from a board"
+        "summary": "Delete a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -546,8 +1819,50 @@
         "kind": "operation",
         "method": "put",
         "name": "put /v3/boards/{board_id}/assets",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to add assets to.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}/assets",
         "pointer": "#/paths/~1v3~1boards~1{board_id}~1assets/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BoardAsset[]"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AddBoardAssetsResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -556,16 +1871,60 @@
             "OAuth2": []
           }
         ],
-        "summary": "Add assets to a board"
+        "summary": "Add assets to a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v3/boards/{board_id}/assets/{asset_id}",
+        "id": "operation:delete:/v3/boards/{board_id}/assets",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /v3/boards/{board_id}/assets/{asset_id}",
-        "path": "/v3/boards/{board_id}/assets/{asset_id}",
-        "pointer": "#/paths/~1v3~1boards~1{board_id}~1assets~1{asset_id}/delete",
+        "name": "delete /v3/boards/{board_id}/assets",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to remove assets from.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List the assets to be removed from the board.",
+            "in": "query",
+            "name": "asset_ids",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
+        "path": "/v3/boards/{board_id}/assets",
+        "pointer": "#/paths/~1v3~1boards~1{board_id}~1assets/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -574,7 +1933,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Remove an asset from a board"
+        "summary": "Remove assets from a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -582,8 +1944,49 @@
         "kind": "operation",
         "method": "put",
         "name": "put /v3/boards/{board_id}/assets/{asset_id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to add an asset to.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the asset to add to the board.",
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}/assets/{asset_id}",
         "pointer": "#/paths/~1v3~1boards~1{board_id}~1assets~1{asset_id}/put",
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -592,7 +1995,72 @@
             "OAuth2": []
           }
         ],
-        "summary": "Add an asset to a board"
+        "summary": "Add an asset to a board",
+        "tags": [
+          "Boards"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v3/boards/{board_id}/assets/{asset_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /v3/boards/{board_id}/assets/{asset_id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to remove an asset from.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the asset to remove from the board.",
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v3/boards/{board_id}/assets/{asset_id}",
+        "pointer": "#/paths/~1v3~1boards~1{board_id}~1assets~1{asset_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Api-Key": []
+          },
+          {
+            "OAuth2": []
+          }
+        ],
+        "summary": "Remove an asset from a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -600,8 +2068,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/boards/{board_id}/comments",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to retrieve comments from.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}/comments",
         "pointer": "#/paths/~1v3~1boards~1{board_id}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CommentsList"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -610,7 +2110,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get comments from a board"
+        "summary": "Get comments from a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -618,8 +2121,50 @@
         "kind": "operation",
         "method": "post",
         "name": "post /v3/boards/{board_id}/comments",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board to add a comment to.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}/comments",
         "pointer": "#/paths/~1v3~1boards~1{board_id}~1comments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CommentRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CommentCreated"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -628,7 +2173,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Add a comment to a board"
+        "summary": "Add a comment to a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
@@ -636,8 +2184,52 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /v3/boards/{board_id}/comments/{comment_id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the board containing the comment to delete.",
+            "in": "path",
+            "name": "board_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the comment to delete.",
+            "in": "path",
+            "name": "comment_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/boards/{board_id}/comments/{comment_id}",
         "pointer": "#/paths/~1v3~1boards~1{board_id}~1comments~1{comment_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -646,16 +2238,39 @@
             "OAuth2": []
           }
         ],
-        "summary": "Delete a comment from a board"
+        "summary": "Delete a comment from a board",
+        "tags": [
+          "Boards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to retrieve collections associated with your Getty Images account.",
         "id": "operation:get:/v3/collections",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/collections",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/collections",
         "pointer": "#/paths/~1v3~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CollectionsList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -664,16 +2279,39 @@
             "OAuth2": []
           }
         ],
-        "summary": "Gets collections applicable for the customer."
+        "summary": "Gets collections applicable for the customer.",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of country objects that contains country name, two letter ISO abbreviation and three letter ISO abbreviation.",
         "id": "operation:get:/v3/countries",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/countries",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/countries",
         "pointer": "#/paths/~1v3~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountriesList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -682,16 +2320,45 @@
             "OAuth2": []
           }
         ],
-        "summary": "Gets countries codes and names."
+        "summary": "Gets countries codes and names.",
+        "tags": [
+          "Countries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the first, middle and last name of the authenticated user.",
         "id": "operation:get:/v3/customers/current",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/customers/current",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/customers/current",
         "pointer": "#/paths/~1v3~1customers~1current/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomerInfoResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -700,16 +2367,98 @@
             "OAuth2": []
           }
         ],
-        "summary": "Returns information about the current user."
+        "summary": "Returns information about the current user.",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about a customer's previously downloaded assets.",
         "id": "operation:get:/v3/downloads",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/downloads",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If specified, selects assets downloaded on or after this date.",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "If specified, selects assets downloaded on or before this date.",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "default": false,
+            "description": "If specified, time values provided with date_to or date_from will be used.",
+            "in": "query",
+            "name": "use_time",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies product type to be included in the previous download results.",
+            "in": "query",
+            "name": "product_type",
+            "required": false,
+            "type": "ProductTypeForDownloads"
+          },
+          {
+            "default": false,
+            "description": "If specified, returns the list of previously downloaded images for all users in your company.",
+            "in": "query",
+            "name": "company_downloads",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/downloads",
         "pointer": "#/paths/~1v3~1downloads/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetDownloadsResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -718,16 +2467,108 @@
             "OAuth2": []
           }
         ],
-        "summary": "Returns information about a customer's downloaded assets."
+        "summary": "Returns information about a customer's downloaded assets.",
+        "tags": [
+          "Downloads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate download URLs and related data for images you are authorized to download.",
         "id": "operation:post:/v3/downloads/images/{id}",
         "kind": "operation",
         "method": "post",
         "name": "post /v3/downloads/images/{id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "<remarks> Id of image to download.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "<remarks> Specifies whether to auto-download the image.",
+            "in": "query",
+            "name": "auto_download",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "<remarks> File Type expressed with three character file extension.",
+            "in": "query",
+            "name": "file_type",
+            "required": false,
+            "type": "DownloadFileType"
+          },
+          {
+            "description": "<remarks> Specifies the pixel height of the particular image to download.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "<remarks> Identifier of the instance for the selected product offering type.",
+            "in": "query",
+            "name": "product_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "<remarks> Product types easyaccess, editorialsubscription, imagepack, and premiumaccess are for GettyImages API keys.",
+            "in": "query",
+            "name": "product_type",
+            "required": false,
+            "type": "ProductTypeForDownloads"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether to download the image with iStock Team Credits.",
+            "in": "query",
+            "name": "use_team_credits",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/downloads/images/{id}",
         "pointer": "#/paths/~1v3~1downloads~1images~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "PremiumAccessDownloadData"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "303"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -736,16 +2577,100 @@
             "OAuth2": []
           }
         ],
-        "summary": "Download an image"
+        "summary": "Download an image",
+        "tags": [
+          "Downloads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate download URLs and related data for videos you are authorized to download.",
         "id": "operation:post:/v3/downloads/videos/{id}",
         "kind": "operation",
         "method": "post",
         "name": "post /v3/downloads/videos/{id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "<remarks> Id of video to download.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "<remarks> Specifies whether to auto-download the video.",
+            "in": "query",
+            "name": "auto_download",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies the size to be downloaded.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "<remarks> Identifier of the instance for the selected product offering type.",
+            "in": "query",
+            "name": "product_id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "<remarks> Product types easyaccess, editorialsubscription, imagepack, and premiumaccess are for GettyImages API keys.",
+            "in": "query",
+            "name": "product_type",
+            "required": false,
+            "type": "ProductTypeForDownloads"
+          },
+          {
+            "description": "Specifies whether to download the image with iStock Team Credits.",
+            "in": "query",
+            "name": "use_team_credits",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/downloads/videos/{id}",
         "pointer": "#/paths/~1v3~1downloads~1videos~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "PremiumAccessDownloadData"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "303"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -754,16 +2679,58 @@
             "OAuth2": []
           }
         ],
-        "summary": "Download a video"
+        "summary": "Download a video",
+        "tags": [
+          "Downloads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the detailed event metadata for all specified events.",
         "id": "operation:get:/v3/events",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/events",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of event ids.",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "A comma separated list of fields to return in the response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "EventDetailFieldValues[]"
+          }
+        ],
         "path": "/v3/events",
         "pointer": "#/paths/~1v3~1events/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -772,16 +2739,58 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get metadata for multiple events"
+        "summary": "Get metadata for multiple events",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the detailed event metadata for a specified event.",
         "id": "operation:get:/v3/events/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/events/{id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An event id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A comma separated list of fields to return in the response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "EventDetailFieldValues[]"
+          }
+        ],
         "path": "/v3/events/{id}",
         "pointer": "#/paths/~1v3~1events~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -790,16 +2799,65 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get metadata for a single event"
+        "summary": "Get metadata for a single event",
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the detailed image metadata for all specified images.",
         "id": "operation:get:/v3/images",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/images",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies one or more image ids to return.",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ImageDetailFieldValues[]"
+          }
+        ],
         "path": "/v3/images",
         "pointer": "#/paths/~1v3~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImagesDetailResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -808,16 +2866,65 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get metadata for multiple images by supplying multiple image ids"
+        "summary": "Get metadata for multiple images by supplying multiple image ids",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the detailed image metadata for a specified image.",
         "id": "operation:get:/v3/images/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/images/{id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An image id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ImageDetailFieldValues[]"
+          }
+        ],
         "path": "/v3/images/{id}",
         "pointer": "#/paths/~1v3~1images~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImagesDetailResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -826,7 +2933,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get metadata for a single image by supplying one image id"
+        "summary": "Get metadata for a single image by supplying one image id",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -834,8 +2944,53 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/images/{id}/downloadhistory",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An image id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If specified, returns the list of previously downloaded images for all users in your company.",
+            "in": "query",
+            "name": "company_downloads",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/images/{id}/downloadhistory",
         "pointer": "#/paths/~1v3~1images~1{id}~1downloadhistory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssetDownloadHistoryResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -844,16 +2999,81 @@
             "OAuth2": []
           }
         ],
-        "summary": "Returns information about a customer's download history for a specific asset"
+        "summary": "Returns information about a customer's download history for a specific asset",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will provide the list of images, if any exist, from the same series as the specified creative asset id.",
         "id": "operation:get:/v3/images/{id}/same-series",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/images/{id}/same-series",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Identifies an existing image",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ImagesFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/images/{id}/same-series",
         "pointer": "#/paths/~1v3~1images~1{id}~1same-series/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageSearchItemSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -862,16 +3082,81 @@
             "OAuth2": []
           }
         ],
-        "summary": "Retrieve creative images from the same series"
+        "summary": "Retrieve creative images from the same series",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will provide a list of images that are similar to the specified asset id.",
         "id": "operation:get:/v3/images/{id}/similar",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/images/{id}/similar",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Identifies an existing image",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ImagesFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/images/{id}/similar",
         "pointer": "#/paths/~1v3~1images~1{id}~1similar/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageSearchItemSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -880,16 +3165,52 @@
             "OAuth2": []
           }
         ],
-        "summary": "Retrieve similar images"
+        "summary": "Retrieve similar images",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns detailed order metadata for a specified order.",
         "id": "operation:get:/v3/orders/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/orders/{id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An order id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/orders/{id}",
         "pointer": "#/paths/~1v3~1orders~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrderDetail"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -898,16 +3219,52 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get order metadata"
+        "summary": "Get order metadata",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns all products available to the username used during authentication.",
         "id": "operation:get:/v3/products",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/products",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of fields.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ProductFieldValues[]"
+          }
+        ],
         "path": "/v3/products",
         "pointer": "#/paths/~1v3~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductsResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -916,16 +3273,83 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get Products"
+        "summary": "Get Products",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns a list of all assets purchased on gettyimages.com by the username used for authentication.",
         "id": "operation:get:/v3/purchased-assets",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/purchased-assets",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If specified, retrieves previous purchases on or before this date.",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 75,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "If specified, retrieves previous purchases on or after this date.",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "default": false,
+            "description": "If specified, returns the list of previously purchased assets for all users in your company.",
+            "in": "query",
+            "name": "company_purchases",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/purchased-assets",
         "pointer": "#/paths/~1v3~1purchased-assets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PreviousAssetPurchases"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -934,7 +3358,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get Previously Purchased Images and Video"
+        "summary": "Get Previously Purchased Images and Video",
+        "tags": [
+          "Purchases"
+        ]
       },
       {
         "deprecated": false,
@@ -942,8 +3369,39 @@
         "kind": "operation",
         "method": "put",
         "name": "put /v3/search/by-image/uploads/{file-name}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "file-name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/search/by-image/uploads/{file-name}",
         "pointer": "#/paths/~1v3~1search~1by-image~1uploads~1{file-name}/put",
+        "request": {
+          "content_types": [
+            "image/jpeg",
+            "image/png"
+          ],
+          "required": false,
+          "type": "string:byte"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -952,16 +3410,110 @@
             "OAuth2": []
           }
         ],
-        "summary": "Upload image for use by the search creative images/videos operations"
+        "summary": "Upload image for use by the search creative images/videos operations",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to search Getty Images news, sports and entertainment events.",
         "id": "operation:get:/v3/search/events",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/events",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters to events with a matching editorial segment.",
+            "in": "query",
+            "name": "editorial_segment",
+            "required": false,
+            "type": "EditorialSegmentContract"
+          },
+          {
+            "description": "Filters to events that start on or after this date.",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filters to events that start on or before this date.",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "EventFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1, maximum is 50).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Request number of events to return in each page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filters to events related to this phrase",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the order in which to sort the results.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "EventSearchSortOrder"
+          }
+        ],
         "path": "/v3/search/events",
         "pointer": "#/paths/~1v3~1search~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventsSearchResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -970,16 +3522,232 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for events"
+        "summary": "Search for events",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "## _This endpoint draws from such a large diversity of content, the results will not be as relevant as when the more specific Creative or Editorial endpoints a…",
         "id": "operation:get:/v3/search/images",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/images",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter based on the age of individuals in an image.",
+            "in": "query",
+            "name": "age_of_people",
+            "required": false,
+            "type": "AgeOfPeopleFilterType[]"
+          },
+          {
+            "description": "Search for images by specific artists (free-text, comma-separated list of artists).",
+            "in": "query",
+            "name": "artists",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by collection codes (comma-separated list).",
+            "in": "query",
+            "name": "collection_codes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Provides searching based on specified collection(s).",
+            "in": "query",
+            "name": "collections_filter_type",
+            "required": false,
+            "type": "CollectionsFilterType"
+          },
+          {
+            "description": "Filter based on predominant color in an image.",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter based on image composition.",
+            "in": "query",
+            "name": "compositions",
+            "required": false,
+            "type": "CompositionsFilterType[]"
+          },
+          {
+            "description": "Filters based on which product the asset will download against.",
+            "in": "query",
+            "name": "download_product",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Restrict search results to embeddable images.",
+            "in": "query",
+            "name": "embed_content_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter based on specific events",
+            "in": "query",
+            "name": "event_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter search results based on the ethnicity of individuals in an image.",
+            "in": "query",
+            "name": "ethnicity",
+            "required": false,
+            "type": "EthnicityFilterType[]"
+          },
+          {
+            "default": false,
+            "description": "Excludes images containing nudity.",
+            "in": "query",
+            "name": "exclude_nudity",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "ImagesFieldValues[]"
+          },
+          {
+            "description": "Return only images having a specific file type.",
+            "in": "query",
+            "name": "file_types",
+            "required": false,
+            "type": "SearchFileType[]"
+          },
+          {
+            "description": "Filter based on graphical style of the image.",
+            "in": "query",
+            "name": "graphical_styles",
+            "required": false,
+            "type": "GraphicalStyle[]"
+          },
+          {
+            "description": "Provides searching based on specified graphical style(s).",
+            "in": "query",
+            "name": "graphical_styles_filter_type",
+            "required": false,
+            "type": "GraphicalStylesFilterType"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether or not to include related searches in the response.",
+            "in": "query",
+            "name": "include_related_searches",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only images tagged with specific keyword(s).",
+            "in": "query",
+            "name": "keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter based on minimum size requested.",
+            "in": "query",
+            "name": "minimum_size",
+            "required": false,
+            "type": "TeeShirtSize"
+          },
+          {
+            "description": "Filter based on the number of people in the image.",
+            "in": "query",
+            "name": "number_of_people",
+            "required": false,
+            "type": "NumberOfPeopleFilterType[]"
+          },
+          {
+            "description": "Return only images with selected aspect ratios.",
+            "in": "query",
+            "name": "orientations",
+            "required": false,
+            "type": "ImageOrientationRequest[]"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Request number of images to return in each page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search images using a search phrase.",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Select sort order of results.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "BlendedImageSortOrder"
+          },
+          {
+            "description": "Return only images associated with specific people (using a comma-delimited list).",
+            "in": "query",
+            "name": "specific_people",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/v3/search/images",
         "pointer": "#/paths/~1v3~1search~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageSearchItemSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -988,16 +3756,265 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for both creative and editorial images - *** DEPRECATED ***"
+        "summary": "Search for both creative and editorial images - *** DEPRECATED ***",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to search our contemporary stock photos, illustrations and archival images.",
         "id": "operation:get:/v3/search/images/creative",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/images/creative",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter based on the age of individuals in an image.",
+            "in": "query",
+            "name": "age_of_people",
+            "required": false,
+            "type": "AgeOfPeopleFilterType[]"
+          },
+          {
+            "description": "Search for images by specific artists (free-text, comma-separated list of artists).",
+            "in": "query",
+            "name": "artists",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by collection codes (comma-separated list).",
+            "in": "query",
+            "name": "collection_codes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Use to include or exclude collections from search.",
+            "in": "query",
+            "name": "collections_filter_type",
+            "required": false,
+            "type": "CollectionsFilterType"
+          },
+          {
+            "description": "Filter based on predominant color in an image.",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter based on image composition.",
+            "in": "query",
+            "name": "compositions",
+            "required": false,
+            "type": "CompositionsFilterType[]"
+          },
+          {
+            "description": "Filters based on which product the asset will download against.",
+            "in": "query",
+            "name": "download_product",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Restrict search results to embeddable images.",
+            "in": "query",
+            "name": "embed_content_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter search results based on the ethnicity of individuals in an image.",
+            "in": "query",
+            "name": "ethnicity",
+            "required": false,
+            "type": "EthnicityFilterType[]"
+          },
+          {
+            "description": "Return only images not tagged with specific keyword(s).",
+            "in": "query",
+            "name": "exclude_keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "default": false,
+            "description": "Excludes images containing nudity.",
+            "in": "query",
+            "name": "exclude_nudity",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Exclude images that are only available for editorial (non-commercial) use.",
+            "in": "query",
+            "name": "exclude_editorial_use_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "CreativeImagesFieldValues[]"
+          },
+          {
+            "description": "Return only images having a specific file type.",
+            "in": "query",
+            "name": "file_types",
+            "required": false,
+            "type": "SearchFileType[]"
+          },
+          {
+            "description": "Filter based on graphical style of the image.",
+            "in": "query",
+            "name": "graphical_styles",
+            "required": false,
+            "type": "GraphicalStyle[]"
+          },
+          {
+            "description": "Provides searching based on specified graphical style(s).",
+            "in": "query",
+            "name": "graphical_styles_filter_type",
+            "required": false,
+            "type": "GraphicalStylesFilterType"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether or not to include related searches in the response.",
+            "in": "query",
+            "name": "include_related_searches",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only images tagged with specific keyword(s).",
+            "in": "query",
+            "name": "keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter based on minimum size requested.",
+            "in": "query",
+            "name": "minimum_size",
+            "required": false,
+            "type": "TeeShirtSize"
+          },
+          {
+            "description": "Filter based on the number of people in the image.",
+            "in": "query",
+            "name": "number_of_people",
+            "required": false,
+            "type": "NumberOfPeopleFilterType[]"
+          },
+          {
+            "description": "Return only images with selected aspect ratios.",
+            "in": "query",
+            "name": "orientations",
+            "required": false,
+            "type": "ImageOrientationRequest[]"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Request number of images to return in each page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search images using a search phrase.",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting safe_search to \"true\" excludes images containing nudity, death, profanity, drugs and alcohol, suggestive content, and graphic content from the result s…",
+            "in": "query",
+            "name": "safe_search",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Select sort order of results.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "CreativeImageSortOrder"
+          },
+          {
+            "description": "Specifies the facets to return in the response.",
+            "in": "query",
+            "name": "facet_fields",
+            "required": false,
+            "type": "CreateImageSearchFacetsFields[]"
+          },
+          {
+            "description": "Specifies whether or not to include facets in the result set.",
+            "in": "query",
+            "name": "include_facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 300,
+            "description": "Specifies the maximum number of facets to return per type.",
+            "in": "query",
+            "name": "facet_max_count",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/search/images/creative",
         "pointer": "#/paths/~1v3~1search~1images~1creative/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreativeImageSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1006,16 +4023,131 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for creative images only"
+        "summary": "Search for creative images only",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for **similar creative images** by passing an `image_url` to an uploaded image OR an `asset_id` of an asset in our catalog.",
         "id": "operation:get:/v3/search/images/creative/by-image",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/images/creative/by-image",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the Getty image id to use in the search.",
+            "in": "query",
+            "name": "asset_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Exclude images that are only available for editorial (non-commercial) use.",
+            "in": "query",
+            "name": "exclude_editorial_use_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies the facets to return in the response.",
+            "in": "query",
+            "name": "facet_fields",
+            "required": false,
+            "type": "CreateImageSearchFacetsFields[]"
+          },
+          {
+            "default": 300,
+            "description": "Specifies the maximum number of facets to return per type.",
+            "in": "query",
+            "name": "facet_max_count",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "CreativeImagesFieldValues[]"
+          },
+          {
+            "description": "Specifies the location of the image to use in the search.",
+            "in": "query",
+            "name": "image_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies whether or not to include facets in the result set.",
+            "in": "query",
+            "name": "include_facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Request number of images to return in each page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter images to those from one of your product types.",
+            "in": "query",
+            "name": "product_types",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/v3/search/images/creative/by-image",
         "pointer": "#/paths/~1v3~1search~1images~1creative~1by-image/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SearchByImageResourceResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1024,16 +4156,274 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for creative images based on url"
+        "summary": "Search for creative images based on url",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to search our editorial stock photos, illustrations and archival images.",
         "id": "operation:get:/v3/search/images/editorial",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/images/editorial",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter based on the age of individuals in an image.",
+            "in": "query",
+            "name": "age_of_people",
+            "required": false,
+            "type": "AgeOfPeopleFilterType[]"
+          },
+          {
+            "description": "Search for images by specific artists (free-text, comma-separated list of artists).",
+            "in": "query",
+            "name": "artists",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by collections (comma-separated list of collection codes).",
+            "in": "query",
+            "name": "collection_codes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Use to include or exclude collections from search.",
+            "in": "query",
+            "name": "collections_filter_type",
+            "required": false,
+            "type": "CollectionsFilterType"
+          },
+          {
+            "description": "Filter based on image composition.",
+            "in": "query",
+            "name": "compositions",
+            "required": false,
+            "type": "CompositionsFilterType[]"
+          },
+          {
+            "description": "Return only images that are created on or after this date.",
+            "in": "query",
+            "name": "date_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Return only images that are created on or before this date.",
+            "in": "query",
+            "name": "date_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filters based on which product the asset will download against.",
+            "in": "query",
+            "name": "download_product",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return only events with a matching editorial segment.",
+            "in": "query",
+            "name": "editorial_segments",
+            "required": false,
+            "type": "EditorialSegmentContract[]"
+          },
+          {
+            "default": false,
+            "description": "Restrict search results to embeddable images.",
+            "in": "query",
+            "name": "embed_content_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter search results based on the ethnicity of individuals in an image.",
+            "in": "query",
+            "name": "ethnicity",
+            "required": false,
+            "type": "EthnicityFilterType[]"
+          },
+          {
+            "description": "Filter based on specific events",
+            "in": "query",
+            "name": "event_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Return only images not tagged with specific keyword(s).",
+            "in": "query",
+            "name": "exclude_keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "EditorialImagesFieldValues[]"
+          },
+          {
+            "description": "Return only images having a specific file type.",
+            "in": "query",
+            "name": "file_types",
+            "required": false,
+            "type": "SearchFileType[]"
+          },
+          {
+            "description": "Filter based on graphical style of the image.",
+            "in": "query",
+            "name": "graphical_styles",
+            "required": false,
+            "type": "EditorialGraphicalStyle[]"
+          },
+          {
+            "description": "Provides searching based on specified graphical style(s).",
+            "in": "query",
+            "name": "graphical_styles_filter_type",
+            "required": false,
+            "type": "GraphicalStylesFilterType"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether or not to include related searches in the response.",
+            "in": "query",
+            "name": "include_related_searches",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only images tagged with specific keyword(s).",
+            "in": "query",
+            "name": "keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Filter based on minimum size requested.",
+            "in": "query",
+            "name": "minimum_size",
+            "required": false,
+            "type": "TeeShirtSize"
+          },
+          {
+            "description": "Filter based on the number of people in the image.",
+            "in": "query",
+            "name": "number_of_people",
+            "required": false,
+            "type": "NumberOfPeopleFilterType[]"
+          },
+          {
+            "description": "Return only images with selected aspect ratios.",
+            "in": "query",
+            "name": "orientations",
+            "required": false,
+            "type": "ImageOrientationRequest[]"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Request number of images to return in each page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search images using a search phrase.",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Select sort order of results.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "SortOrder"
+          },
+          {
+            "description": "Return only images associated with specific people (using a comma-delimited list).",
+            "in": "query",
+            "name": "specific_people",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter search results based on minimum quality ranking.",
+            "in": "query",
+            "name": "minimum_quality_rank",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies the facets to return in the response.",
+            "in": "query",
+            "name": "facet_fields",
+            "required": false,
+            "type": "EditorialImageSearchFacetsFields[]"
+          },
+          {
+            "description": "Specifies whether or not to include facets in the result set.",
+            "in": "query",
+            "name": "include_facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 300,
+            "description": "Specifies the maximum number of facets to return per type.",
+            "in": "query",
+            "name": "facet_max_count",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/search/images/editorial",
         "pointer": "#/paths/~1v3~1search~1images~1editorial/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EditorialImageSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1042,16 +4432,273 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for editorial images only"
+        "summary": "Search for editorial images only",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to search premium stock video, from archival film to contemporary 4K and HD footage.",
         "id": "operation:get:/v3/search/videos/creative",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/videos/creative",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provides filtering according to the age of individuals in a video.",
+            "in": "query",
+            "name": "age_of_people",
+            "required": false,
+            "type": "AgeOfPeopleFilterType[]"
+          },
+          {
+            "description": "Search for videos by specific artists (free-text, comma-separated list of artists).",
+            "in": "query",
+            "name": "artists",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search for videos by specific aspect ratios.",
+            "in": "query",
+            "name": "aspect_ratios",
+            "required": false,
+            "type": "VideoAspectRatioFilterType[]"
+          },
+          {
+            "description": "Provides filtering by collection code.",
+            "in": "query",
+            "name": "collection_codes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Use to include or exclude collections from search.",
+            "in": "query",
+            "name": "collections_filter_type",
+            "required": false,
+            "type": "CollectionsFilterType"
+          },
+          {
+            "description": "Filter based on video composition.",
+            "in": "query",
+            "name": "compositions",
+            "required": false,
+            "type": "CompositionsFilterType[]"
+          },
+          {
+            "description": "Filters based on which product the asset will download against.",
+            "in": "query",
+            "name": "download_product",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Excludes videos containing nudity.",
+            "in": "query",
+            "name": "exclude_nudity",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Exclude videos that are only available for editorial (non-commercial) use.",
+            "in": "query",
+            "name": "exclude_editorial_use_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only videos not tagged with specific keyword(s).",
+            "in": "query",
+            "name": "exclude_keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "CreativeVideosFieldValues[]"
+          },
+          {
+            "description": "Filters according to the digital video format available on a film asset.",
+            "in": "query",
+            "name": "format_available",
+            "required": false,
+            "type": "VideoFormatsRequest"
+          },
+          {
+            "description": "Provides filtering by video frame rate (frames/second).",
+            "in": "query",
+            "name": "frame_rates",
+            "required": false,
+            "type": "VideoFrameRates[]"
+          },
+          {
+            "description": "Filter based on image technique.",
+            "in": "query",
+            "name": "image_techniques",
+            "required": false,
+            "type": "ImageTechniquesFilterType[]"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether or not to include related searches in the response.",
+            "in": "query",
+            "name": "include_related_searches",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only videos tagged with specific keyword(s).",
+            "in": "query",
+            "name": "keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Specifies the video licensing model(s).",
+            "in": "query",
+            "name": "license_models",
+            "required": false,
+            "type": "LicenseModelVideoRequest[]"
+          },
+          {
+            "description": "Return only videos with selected orientations.",
+            "in": "query",
+            "name": "orientations",
+            "required": false,
+            "type": "VideoOrientationRequest[]"
+          },
+          {
+            "default": 0,
+            "description": "Provides filtering by minimum length of video clip, in seconds",
+            "in": "query",
+            "name": "min_clip_length",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Provides filtering by maximum length of video, in seconds",
+            "in": "query",
+            "name": "max_clip_length",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Free-text search query.",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting safe_search to \"true\" excludes images containing nudity, death, profanity, drugs and alcohol, suggestive content, and graphic content from the result s…",
+            "in": "query",
+            "name": "safe_search",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Select sort order of results.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "CreativeVideoSortOrder"
+          },
+          {
+            "description": "Allows filtering by type of model release.",
+            "in": "query",
+            "name": "release_status",
+            "required": false,
+            "type": "ReleaseStatus"
+          },
+          {
+            "description": "Specifies the facets to return in the response.",
+            "in": "query",
+            "name": "facet_fields",
+            "required": false,
+            "type": "CreateVideoSearchFacetsFields[]"
+          },
+          {
+            "default": 300,
+            "description": "Specifies the maximum number of facets to return per type.",
+            "in": "query",
+            "name": "facet_max_count",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies whether or not to include facets in the result set.",
+            "in": "query",
+            "name": "include_facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter based on viewpoint.",
+            "in": "query",
+            "name": "viewpoints",
+            "required": false,
+            "type": "ViewpointsFilterType[]"
+          }
+        ],
         "path": "/v3/search/videos/creative",
         "pointer": "#/paths/~1v3~1search~1videos~1creative/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreativeVideoSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1060,16 +4707,131 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for creative videos"
+        "summary": "Search for creative videos",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for **similar creative videos** by passing an `image_url` to an uploaded image/frame grab from a video OR an `asset_id` of an asset in our catalog.",
         "id": "operation:get:/v3/search/videos/creative/by-image",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/videos/creative/by-image",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the Getty video id to use in the search.",
+            "in": "query",
+            "name": "asset_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Exclude videos that are only available for editorial (non-commercial) use.",
+            "in": "query",
+            "name": "exclude_editorial_use_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies the facets to return in the response.",
+            "in": "query",
+            "name": "facet_fields",
+            "required": false,
+            "type": "CreateVideoSearchFacetsFields[]"
+          },
+          {
+            "default": 300,
+            "description": "Specifies the maximum number of facets to return per type.",
+            "in": "query",
+            "name": "facet_max_count",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "CreativeVideosFieldValues[]"
+          },
+          {
+            "description": "Specifies the location of the image to use in the search.",
+            "in": "query",
+            "name": "image_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies whether or not to include facets in the result set.",
+            "in": "query",
+            "name": "include_facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 1,
+            "description": "Request results starting at a page number (default is 1).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Request number of images to return in each page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter images to those from one of your product types.",
+            "in": "query",
+            "name": "product_types",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/v3/search/videos/creative/by-image",
         "pointer": "#/paths/~1v3~1search~1videos~1creative~1by-image/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreativeVideoSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1078,16 +4840,247 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for creative videos based on url"
+        "summary": "Search for creative videos based on url",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to search current and archival video clips of celebrities, newsmakers, and events.",
         "id": "operation:get:/v3/search/videos/editorial",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/search/videos/editorial",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Receive regionally relevant search results based on the value specified.",
+            "in": "header",
+            "name": "GI-Country-Code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provides filtering according to the age of individuals in a video.",
+            "in": "query",
+            "name": "age_of_people",
+            "required": false,
+            "type": "AgeOfPeopleFilterType[]"
+          },
+          {
+            "description": "Search for videos by specific artists (free-text, comma-separated list of artists).",
+            "in": "query",
+            "name": "artists",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search for videos by specific aspect ratios.",
+            "in": "query",
+            "name": "aspect_ratios",
+            "required": false,
+            "type": "VideoAspectRatioFilterType[]"
+          },
+          {
+            "description": "Provides filtering by collection code.",
+            "in": "query",
+            "name": "collection_codes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Use to include or exclude collections from search.",
+            "in": "query",
+            "name": "collections_filter_type",
+            "required": false,
+            "type": "CollectionsFilterType"
+          },
+          {
+            "description": "Filter based on video composition.",
+            "in": "query",
+            "name": "compositions",
+            "required": false,
+            "type": "CompositionsFilterType[]"
+          },
+          {
+            "description": "Filters based on which product the asset will download against.",
+            "in": "query",
+            "name": "download_product",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allows filtering by types of video.",
+            "in": "query",
+            "name": "editorial_video_types",
+            "required": false,
+            "type": "EditorialVideoType[]"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "EditorialVideosFieldValues[]"
+          },
+          {
+            "description": "Filters according to the digital video format available on a film asset.",
+            "in": "query",
+            "name": "format_available",
+            "required": false,
+            "type": "VideoFormatsRequest"
+          },
+          {
+            "description": "Provides filtering by video frame rate (frames/second).",
+            "in": "query",
+            "name": "frame_rates",
+            "required": false,
+            "type": "VideoFrameRates[]"
+          },
+          {
+            "description": "Filter based on image technique.",
+            "in": "query",
+            "name": "image_techniques",
+            "required": false,
+            "type": "ImageTechniquesFilterType[]"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether or not to include related searches in the response.",
+            "in": "query",
+            "name": "include_related_searches",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only videos tagged with specific keyword(s).",
+            "in": "query",
+            "name": "keyword_ids",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "default": 0,
+            "description": "Provides filtering by minimum length of video clip, in seconds",
+            "in": "query",
+            "name": "min_clip_length",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Provides filtering by maximum length of video clip, in seconds",
+            "in": "query",
+            "name": "max_clip_length",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Return only videos with selected orientations.",
+            "in": "query",
+            "name": "orientations",
+            "required": false,
+            "type": "VideoOrientationRequest[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Free-text search query.",
+            "in": "query",
+            "name": "phrase",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Select sort order of results.",
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "type": "SortOrder"
+          },
+          {
+            "description": "Allows filtering by specific peoples' names.",
+            "in": "query",
+            "name": "specific_people",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Allows filtering by type of model release.",
+            "in": "query",
+            "name": "release_status",
+            "required": false,
+            "type": "ReleaseStatus"
+          },
+          {
+            "description": "Specifies the facets to return in the response.",
+            "in": "query",
+            "name": "facet_fields",
+            "required": false,
+            "type": "EditorialVideoSearchFacetsFields[]"
+          },
+          {
+            "description": "Specifies whether or not to include facets in the result set.",
+            "in": "query",
+            "name": "include_facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 300,
+            "description": "Specifies the maximum number of facets to return per type.",
+            "in": "query",
+            "name": "facet_max_count",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter based on viewpoint.",
+            "in": "query",
+            "name": "viewpoints",
+            "required": false,
+            "type": "ViewpointsFilterType[]"
+          }
+        ],
         "path": "/v3/search/videos/editorial",
         "pointer": "#/paths/~1v3~1search~1videos~1editorial/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EditorialVideoSearchResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1096,16 +5089,55 @@
             "OAuth2": []
           }
         ],
-        "summary": "Search for editorial videos"
+        "summary": "Search for editorial videos",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Report Usage Use this endpoint to report the usages of a set of assets.",
         "id": "operation:put:/v3/usage-batches/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /v3/usage-batches/{id}",
+        "parameters": [
+          {
+            "description": "Specifies a unique batch transaction id to identify the report.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/usage-batches/{id}",
         "pointer": "#/paths/~1v3~1usage-batches~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "report_usage_batch_request"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "report_usage_batch_response"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Api-Key": []
@@ -1114,16 +5146,64 @@
             "OAuth2": []
           }
         ],
-        "summary": "Report usage of assets via a batch format."
+        "summary": "Report usage of assets via a batch format.",
+        "tags": [
+          "Usage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to return detailed video metadata for all the specified video ids.",
         "id": "operation:get:/v3/videos",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/videos",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies one or more video ids to return.",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "VideoDetailFieldValues[]"
+          }
+        ],
         "path": "/v3/videos",
         "pointer": "#/paths/~1v3~1videos/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1132,16 +5212,64 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get metadata for multiple videos by supplying multiple video ids"
+        "summary": "Get metadata for multiple videos by supplying multiple video ids",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to return detailed video metadata for the specified video id.",
         "id": "operation:get:/v3/videos/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/videos/{id}",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A video id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "VideoDetailFieldValues[]"
+          }
+        ],
         "path": "/v3/videos/{id}",
         "pointer": "#/paths/~1v3~1videos~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1150,7 +5278,10 @@
             "OAuth2": []
           }
         ],
-        "summary": "Get metadata for a single video by supplying one video id"
+        "summary": "Get metadata for a single video by supplying one video id",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
@@ -1158,8 +5289,53 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v3/videos/{id}/downloadhistory",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A video id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If specified, returns the list of previously downloaded videos for all users in your company.",
+            "in": "query",
+            "name": "company_downloads",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/videos/{id}/downloadhistory",
         "pointer": "#/paths/~1v3~1videos~1{id}~1downloadhistory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssetDownloadHistoryResults"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1168,16 +5344,80 @@
             "OAuth2": []
           }
         ],
-        "summary": "Returns information about a customer's download history for a specific asset"
+        "summary": "Returns information about a customer's download history for a specific asset",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will provide the list of videos, if any exist, from the same series as the specified creative asset id.",
         "id": "operation:get:/v3/videos/{id}/same-series",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/videos/{id}/same-series",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Identifies an existing video",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "AssociatedVideoDetailFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/videos/{id}/same-series",
         "pointer": "#/paths/~1v3~1videos~1{id}~1same-series/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1186,16 +5426,80 @@
             "OAuth2": []
           }
         ],
-        "summary": "Retrieve creative videos from the same series"
+        "summary": "Retrieve creative videos from the same series",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will provide a list of videos that are similar to the specified asset id.",
         "id": "operation:get:/v3/videos/{id}/similar",
         "kind": "operation",
         "method": "get",
         "name": "get /v3/videos/{id}/similar",
+        "parameters": [
+          {
+            "description": "Provide a header to specify the language of result values.",
+            "in": "header",
+            "name": "Accept-Language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A video id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specifies fields to return.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "AssociatedVideoDetailFieldValues[]"
+          },
+          {
+            "default": 1,
+            "description": "Identifies page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Specifies page size.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v3/videos/{id}/similar",
         "pointer": "#/paths/~1v3~1videos~1{id}~1similar/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Api-Key": []
@@ -1204,787 +5508,951 @@
             "OAuth2": []
           }
         ],
-        "summary": "Retrieve similar videos"
+        "summary": "Retrieve similar videos",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "id": "schema:AcquireAssetLicensesRequest",
         "kind": "schema",
-        "name": "AcquireAssetLicensesRequest"
+        "name": "AcquireAssetLicensesRequest",
+        "type": "object"
       },
       {
         "id": "schema:AddBoardAssetsResult",
         "kind": "schema",
-        "name": "AddBoardAssetsResult"
+        "name": "AddBoardAssetsResult",
+        "type": "object"
       },
       {
         "id": "schema:AffiliateImage",
         "kind": "schema",
-        "name": "AffiliateImage"
+        "name": "AffiliateImage",
+        "type": "object"
       },
       {
         "id": "schema:AffiliateImageSearchResponse",
         "kind": "schema",
-        "name": "AffiliateImageSearchResponse"
+        "name": "AffiliateImageSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:AffiliateImageUrls",
         "kind": "schema",
-        "name": "AffiliateImageUrls"
+        "name": "AffiliateImageUrls",
+        "type": "object"
       },
       {
+        "description": "Specifies the graphical style of images desired.",
         "id": "schema:AffiliateSearchStyle",
         "kind": "schema",
-        "name": "AffiliateSearchStyle"
+        "name": "AffiliateSearchStyle",
+        "type": "string"
       },
       {
         "id": "schema:AffiliateVideo",
         "kind": "schema",
-        "name": "AffiliateVideo"
+        "name": "AffiliateVideo",
+        "type": "object"
       },
       {
         "id": "schema:AffiliateVideoSearchResponse",
         "kind": "schema",
-        "name": "AffiliateVideoSearchResponse"
+        "name": "AffiliateVideoSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:AffiliateVideoUrls",
         "kind": "schema",
-        "name": "AffiliateVideoUrls"
+        "name": "AffiliateVideoUrls",
+        "type": "object"
       },
       {
         "id": "schema:AgeOfPeopleFilterType",
         "kind": "schema",
-        "name": "AgeOfPeopleFilterType"
+        "name": "AgeOfPeopleFilterType",
+        "type": "string"
       },
       {
         "id": "schema:AllowedUse",
         "kind": "schema",
-        "name": "AllowedUse"
+        "name": "AllowedUse",
+        "type": "object"
       },
       {
         "id": "schema:Artist",
         "kind": "schema",
-        "name": "Artist"
+        "name": "Artist",
+        "type": "object"
       },
       {
         "id": "schema:ArtistsImageSearchFieldValues",
         "kind": "schema",
-        "name": "ArtistsImageSearchFieldValues"
+        "name": "ArtistsImageSearchFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:ArtistsVideoSearchFieldValues",
         "kind": "schema",
-        "name": "ArtistsVideoSearchFieldValues"
+        "name": "ArtistsVideoSearchFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:Asset",
         "kind": "schema",
-        "name": "Asset"
+        "name": "Asset",
+        "type": "object"
       },
       {
         "id": "schema:AssetChanges",
         "kind": "schema",
-        "name": "AssetChanges"
+        "name": "AssetChanges",
+        "type": "object"
       },
       {
         "id": "schema:AssetDownloadHistoryResults",
         "kind": "schema",
-        "name": "AssetDownloadHistoryResults"
+        "name": "AssetDownloadHistoryResults",
+        "type": "object"
       },
       {
         "id": "schema:AssetEvent",
         "kind": "schema",
-        "name": "AssetEvent"
+        "name": "AssetEvent",
+        "type": "object"
       },
       {
         "id": "schema:AssetFamily",
         "kind": "schema",
-        "name": "AssetFamily"
+        "name": "AssetFamily",
+        "type": "string"
       },
       {
         "id": "schema:AssetIdFromOrder",
         "kind": "schema",
-        "name": "AssetIdFromOrder"
+        "name": "AssetIdFromOrder",
+        "type": "object"
       },
       {
         "id": "schema:AssetLicenseName",
         "kind": "schema",
-        "name": "AssetLicenseName"
+        "name": "AssetLicenseName",
+        "type": "string"
       },
       {
         "id": "schema:AssetLicensingResponse",
         "kind": "schema",
-        "name": "AssetLicensingResponse"
+        "name": "AssetLicensingResponse",
+        "type": "object"
       },
       {
         "id": "schema:AssetType",
         "kind": "schema",
-        "name": "AssetType"
+        "name": "AssetType",
+        "type": "string"
       },
       {
         "id": "schema:AssociatedVideoDetailFieldValues",
         "kind": "schema",
-        "name": "AssociatedVideoDetailFieldValues"
+        "name": "AssociatedVideoDetailFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:AutoCorrections",
         "kind": "schema",
-        "name": "AutoCorrections"
+        "name": "AutoCorrections",
+        "type": "object"
       },
       {
         "id": "schema:BlendedImageSortOrder",
         "kind": "schema",
-        "name": "BlendedImageSortOrder"
+        "name": "BlendedImageSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:BlendedVideoSearchItem",
         "kind": "schema",
-        "name": "BlendedVideoSearchItem"
+        "name": "BlendedVideoSearchItem",
+        "type": "object"
       },
       {
         "id": "schema:BlendedVideoSearchResults",
         "kind": "schema",
-        "name": "BlendedVideoSearchResults"
+        "name": "BlendedVideoSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:BlendedVideosFieldValues",
         "kind": "schema",
-        "name": "BlendedVideosFieldValues"
+        "name": "BlendedVideosFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:BoardAsset",
         "kind": "schema",
-        "name": "BoardAsset"
+        "name": "BoardAsset",
+        "type": "object"
       },
       {
         "id": "schema:BoardCommentPermissions",
         "kind": "schema",
-        "name": "BoardCommentPermissions"
+        "name": "BoardCommentPermissions",
+        "type": "object"
       },
       {
         "id": "schema:BoardCreated",
         "kind": "schema",
-        "name": "BoardCreated"
+        "name": "BoardCreated",
+        "type": "object"
       },
       {
         "id": "schema:BoardDetail",
         "kind": "schema",
-        "name": "BoardDetail"
+        "name": "BoardDetail",
+        "type": "object"
       },
       {
         "id": "schema:BoardInfo",
         "kind": "schema",
-        "name": "BoardInfo"
+        "name": "BoardInfo",
+        "type": "object"
       },
       {
         "id": "schema:BoardList",
         "kind": "schema",
-        "name": "BoardList"
+        "name": "BoardList",
+        "type": "object"
       },
       {
         "id": "schema:BoardListBoard",
         "kind": "schema",
-        "name": "BoardListBoard"
+        "name": "BoardListBoard",
+        "type": "object"
       },
       {
         "id": "schema:BoardPermissions",
         "kind": "schema",
-        "name": "BoardPermissions"
+        "name": "BoardPermissions",
+        "type": "object"
       },
       {
         "id": "schema:BoardRelationship",
         "kind": "schema",
-        "name": "BoardRelationship"
+        "name": "BoardRelationship",
+        "type": "string"
       },
       {
         "id": "schema:BoardSortOrder",
         "kind": "schema",
-        "name": "BoardSortOrder"
+        "name": "BoardSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:ChangedAssetDetail",
         "kind": "schema",
-        "name": "ChangedAssetDetail"
+        "name": "ChangedAssetDetail",
+        "type": "object"
       },
       {
         "id": "schema:Channel",
         "kind": "schema",
-        "name": "Channel"
+        "name": "Channel",
+        "type": "object"
       },
       {
         "id": "schema:Collaborator",
         "kind": "schema",
-        "name": "Collaborator"
+        "name": "Collaborator",
+        "type": "object"
       },
       {
         "id": "schema:Collection",
         "kind": "schema",
-        "name": "Collection"
+        "name": "Collection",
+        "type": "object"
       },
       {
         "id": "schema:CollectionsFilterType",
         "kind": "schema",
-        "name": "CollectionsFilterType"
+        "name": "CollectionsFilterType",
+        "type": "string"
       },
       {
         "id": "schema:CollectionsList",
         "kind": "schema",
-        "name": "CollectionsList"
+        "name": "CollectionsList",
+        "type": "object"
       },
       {
         "id": "schema:Comment",
         "kind": "schema",
-        "name": "Comment"
+        "name": "Comment",
+        "type": "object"
       },
       {
         "id": "schema:CommentCreated",
         "kind": "schema",
-        "name": "CommentCreated"
+        "name": "CommentCreated",
+        "type": "object"
       },
       {
         "id": "schema:CommentPermissions",
         "kind": "schema",
-        "name": "CommentPermissions"
+        "name": "CommentPermissions",
+        "type": "object"
       },
       {
         "id": "schema:CommentRequest",
         "kind": "schema",
-        "name": "CommentRequest"
+        "name": "CommentRequest",
+        "type": "object"
       },
       {
         "id": "schema:CommentsList",
         "kind": "schema",
-        "name": "CommentsList"
+        "name": "CommentsList",
+        "type": "object"
       },
       {
         "id": "schema:CompositionsFilterType",
         "kind": "schema",
-        "name": "CompositionsFilterType"
+        "name": "CompositionsFilterType",
+        "type": "string"
       },
       {
+        "description": "Contributor information for an image or video",
         "id": "schema:Contributor",
         "kind": "schema",
-        "name": "Contributor"
+        "name": "Contributor",
+        "type": "object"
       },
       {
         "id": "schema:CountriesList",
         "kind": "schema",
-        "name": "CountriesList"
+        "name": "CountriesList",
+        "type": "object"
       },
       {
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "object"
       },
       {
         "id": "schema:CreateImageSearchFacetsFields",
         "kind": "schema",
-        "name": "CreateImageSearchFacetsFields"
+        "name": "CreateImageSearchFacetsFields",
+        "type": "string"
       },
       {
         "id": "schema:CreateVideoSearchFacetsFields",
         "kind": "schema",
-        "name": "CreateVideoSearchFacetsFields"
+        "name": "CreateVideoSearchFacetsFields",
+        "type": "string"
       },
       {
         "id": "schema:CreativeImageSearchResults",
         "kind": "schema",
-        "name": "CreativeImageSearchResults"
+        "name": "CreativeImageSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:CreativeImageSortOrder",
         "kind": "schema",
-        "name": "CreativeImageSortOrder"
+        "name": "CreativeImageSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:CreativeImagesFieldValues",
         "kind": "schema",
-        "name": "CreativeImagesFieldValues"
+        "name": "CreativeImagesFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:CreativeVideoSearchItem",
         "kind": "schema",
-        "name": "CreativeVideoSearchItem"
+        "name": "CreativeVideoSearchItem",
+        "type": "object"
       },
       {
         "id": "schema:CreativeVideoSearchResults",
         "kind": "schema",
-        "name": "CreativeVideoSearchResults"
+        "name": "CreativeVideoSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:CreativeVideoSortOrder",
         "kind": "schema",
-        "name": "CreativeVideoSortOrder"
+        "name": "CreativeVideoSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:CreativeVideosFieldValues",
         "kind": "schema",
-        "name": "CreativeVideosFieldValues"
+        "name": "CreativeVideosFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:CuratedSet",
         "kind": "schema",
-        "name": "CuratedSet"
+        "name": "CuratedSet",
+        "type": "object"
       },
       {
         "id": "schema:CustomerInfoResponse",
         "kind": "schema",
-        "name": "CustomerInfoResponse"
+        "name": "CustomerInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:Dimensions",
         "kind": "schema",
-        "name": "Dimensions"
+        "name": "Dimensions",
+        "type": "object"
       },
       {
         "id": "schema:DisplaySize",
         "kind": "schema",
-        "name": "DisplaySize"
+        "name": "DisplaySize",
+        "type": "object"
       },
       {
         "id": "schema:Download",
         "kind": "schema",
-        "name": "Download"
+        "name": "Download",
+        "type": "object"
       },
       {
         "id": "schema:DownloadDetails",
         "kind": "schema",
-        "name": "DownloadDetails"
+        "name": "DownloadDetails",
+        "type": "object"
       },
       {
         "id": "schema:DownloadFileType",
         "kind": "schema",
-        "name": "DownloadFileType"
+        "name": "DownloadFileType",
+        "type": "string"
       },
       {
         "id": "schema:DownloadRequirements",
         "kind": "schema",
-        "name": "DownloadRequirements"
+        "name": "DownloadRequirements",
+        "type": "object"
       },
       {
         "id": "schema:EditorialGraphicalStyle",
         "kind": "schema",
-        "name": "EditorialGraphicalStyle"
+        "name": "EditorialGraphicalStyle",
+        "type": "string"
       },
       {
         "id": "schema:EditorialImageSearchFacetsFields",
         "kind": "schema",
-        "name": "EditorialImageSearchFacetsFields"
+        "name": "EditorialImageSearchFacetsFields",
+        "type": "string"
       },
       {
         "id": "schema:EditorialImageSearchResults",
         "kind": "schema",
-        "name": "EditorialImageSearchResults"
+        "name": "EditorialImageSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:EditorialImagesFieldValues",
         "kind": "schema",
-        "name": "EditorialImagesFieldValues"
+        "name": "EditorialImagesFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:EditorialSegmentContract",
         "kind": "schema",
-        "name": "EditorialSegmentContract"
+        "name": "EditorialSegmentContract",
+        "type": "string"
       },
       {
         "id": "schema:EditorialSource",
         "kind": "schema",
-        "name": "EditorialSource"
+        "name": "EditorialSource",
+        "type": "object"
       },
       {
         "id": "schema:EditorialVideoSearchFacetsFields",
         "kind": "schema",
-        "name": "EditorialVideoSearchFacetsFields"
+        "name": "EditorialVideoSearchFacetsFields",
+        "type": "string"
       },
       {
         "id": "schema:EditorialVideoSearchItem",
         "kind": "schema",
-        "name": "EditorialVideoSearchItem"
+        "name": "EditorialVideoSearchItem",
+        "type": "object"
       },
       {
         "id": "schema:EditorialVideoSearchResults",
         "kind": "schema",
-        "name": "EditorialVideoSearchResults"
+        "name": "EditorialVideoSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:EditorialVideoType",
         "kind": "schema",
-        "name": "EditorialVideoType"
+        "name": "EditorialVideoType",
+        "type": "string"
       },
       {
         "id": "schema:EditorialVideosFieldValues",
         "kind": "schema",
-        "name": "EditorialVideosFieldValues"
+        "name": "EditorialVideosFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:Entertainment",
         "kind": "schema",
-        "name": "Entertainment"
+        "name": "Entertainment",
+        "type": "object"
       },
       {
         "id": "schema:EthnicityFilterType",
         "kind": "schema",
-        "name": "EthnicityFilterType"
+        "name": "EthnicityFilterType",
+        "type": "string"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
         "id": "schema:EventDetailFieldValues",
         "kind": "schema",
-        "name": "EventDetailFieldValues"
+        "name": "EventDetailFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:EventFieldValues",
         "kind": "schema",
-        "name": "EventFieldValues"
+        "name": "EventFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:EventSearchSortOrder",
         "kind": "schema",
-        "name": "EventSearchSortOrder"
+        "name": "EventSearchSortOrder",
+        "type": "string"
       },
       {
         "id": "schema:EventsSearchResult",
         "kind": "schema",
-        "name": "EventsSearchResult"
+        "name": "EventsSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:ExtendedLicenses",
         "kind": "schema",
-        "name": "ExtendedLicenses"
+        "name": "ExtendedLicenses",
+        "type": "string"
       },
       {
         "id": "schema:FacetEvent",
         "kind": "schema",
-        "name": "FacetEvent"
+        "name": "FacetEvent",
+        "type": "object"
       },
       {
         "id": "schema:GetDownloadsResponse",
         "kind": "schema",
-        "name": "GetDownloadsResponse"
+        "name": "GetDownloadsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetSendEventsResponse",
         "kind": "schema",
-        "name": "GetSendEventsResponse"
+        "name": "GetSendEventsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GraphicalStyle",
         "kind": "schema",
-        "name": "GraphicalStyle"
+        "name": "GraphicalStyle",
+        "type": "string"
       },
       {
         "id": "schema:GraphicalStylesFilterType",
         "kind": "schema",
-        "name": "GraphicalStylesFilterType"
+        "name": "GraphicalStylesFilterType",
+        "type": "string"
       },
       {
         "id": "schema:HeroImage",
         "kind": "schema",
-        "name": "HeroImage"
+        "name": "HeroImage",
+        "type": "object"
       },
       {
         "id": "schema:HeroImageDisplaySize",
         "kind": "schema",
-        "name": "HeroImageDisplaySize"
+        "name": "HeroImageDisplaySize",
+        "type": "object"
       },
       {
         "id": "schema:HistoricalDownload",
         "kind": "schema",
-        "name": "HistoricalDownload"
+        "name": "HistoricalDownload",
+        "type": "object"
       },
       {
         "id": "schema:IStockLicense",
         "kind": "schema",
-        "name": "IStockLicense"
+        "name": "IStockLicense",
+        "type": "object"
       },
       {
         "id": "schema:ImageDetailFieldValues",
         "kind": "schema",
-        "name": "ImageDetailFieldValues"
+        "name": "ImageDetailFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:ImageOrientationRequest",
         "kind": "schema",
-        "name": "ImageOrientationRequest"
+        "name": "ImageOrientationRequest",
+        "type": "string"
       },
       {
         "id": "schema:ImageSearchItem",
         "kind": "schema",
-        "name": "ImageSearchItem"
+        "name": "ImageSearchItem",
+        "type": "object"
       },
       {
         "id": "schema:ImageSearchItemCreative",
         "kind": "schema",
-        "name": "ImageSearchItemCreative"
+        "name": "ImageSearchItemCreative",
+        "type": "object"
       },
       {
         "id": "schema:ImageSearchItemDisplaySize",
         "kind": "schema",
-        "name": "ImageSearchItemDisplaySize"
+        "name": "ImageSearchItemDisplaySize",
+        "type": "object"
       },
       {
         "id": "schema:ImageSearchItemEditorial",
         "kind": "schema",
-        "name": "ImageSearchItemEditorial"
+        "name": "ImageSearchItemEditorial",
+        "type": "object"
       },
       {
         "id": "schema:ImageSearchItemSearchResults",
         "kind": "schema",
-        "name": "ImageSearchItemSearchResults"
+        "name": "ImageSearchItemSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:ImageTechniquesFilterType",
         "kind": "schema",
-        "name": "ImageTechniquesFilterType"
+        "name": "ImageTechniquesFilterType",
+        "type": "string"
       },
       {
         "id": "schema:ImagesDetailResults",
         "kind": "schema",
-        "name": "ImagesDetailResults"
+        "name": "ImagesDetailResults",
+        "type": "object"
       },
       {
         "id": "schema:ImagesFieldValues",
         "kind": "schema",
-        "name": "ImagesFieldValues"
+        "name": "ImagesFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:Keyword",
         "kind": "schema",
-        "name": "Keyword"
+        "name": "Keyword",
+        "type": "object"
       },
       {
         "id": "schema:LicenseModelImageRequest",
         "kind": "schema",
-        "name": "LicenseModelImageRequest"
+        "name": "LicenseModelImageRequest",
+        "type": "string"
       },
       {
         "id": "schema:LicenseModelVideoRequest",
         "kind": "schema",
-        "name": "LicenseModelVideoRequest"
+        "name": "LicenseModelVideoRequest",
+        "type": "string"
       },
       {
         "id": "schema:Links",
         "kind": "schema",
-        "name": "Links"
+        "name": "Links",
+        "type": "object"
       },
       {
         "id": "schema:Location",
         "kind": "schema",
-        "name": "Location"
+        "name": "Location",
+        "type": "object"
       },
       {
         "id": "schema:LocationEvent",
         "kind": "schema",
-        "name": "LocationEvent"
+        "name": "LocationEvent",
+        "type": "object"
       },
       {
         "id": "schema:LogLevel",
         "kind": "schema",
-        "name": "LogLevel"
+        "name": "LogLevel",
+        "type": "string"
       },
       {
         "id": "schema:MaxDimensions",
         "kind": "schema",
-        "name": "MaxDimensions"
+        "name": "MaxDimensions",
+        "type": "object"
       },
       {
         "id": "schema:MemcachedLogEntry",
         "kind": "schema",
-        "name": "MemcachedLogEntry"
+        "name": "MemcachedLogEntry",
+        "type": "object"
       },
       {
         "id": "schema:NumberOfPeopleFilterType",
         "kind": "schema",
-        "name": "NumberOfPeopleFilterType"
+        "name": "NumberOfPeopleFilterType",
+        "type": "string"
       },
       {
         "id": "schema:OrderDetail",
         "kind": "schema",
-        "name": "OrderDetail"
+        "name": "OrderDetail",
+        "type": "object"
       },
       {
         "id": "schema:OrderNotes",
         "kind": "schema",
-        "name": "OrderNotes"
+        "name": "OrderNotes",
+        "type": "object"
       },
       {
         "id": "schema:OverageDetails",
         "kind": "schema",
-        "name": "OverageDetails"
+        "name": "OverageDetails",
+        "type": "object"
       },
       {
         "id": "schema:PremiumAccessDownloadData",
         "kind": "schema",
-        "name": "PremiumAccessDownloadData"
+        "name": "PremiumAccessDownloadData",
+        "type": "object"
       },
       {
         "id": "schema:PreviousAssetPurchase",
         "kind": "schema",
-        "name": "PreviousAssetPurchase"
+        "name": "PreviousAssetPurchase",
+        "type": "object"
       },
       {
         "id": "schema:PreviousAssetPurchases",
         "kind": "schema",
-        "name": "PreviousAssetPurchases"
+        "name": "PreviousAssetPurchases",
+        "type": "object"
       },
       {
         "id": "schema:PreviousPurchase",
         "kind": "schema",
-        "name": "PreviousPurchase"
+        "name": "PreviousPurchase",
+        "type": "object"
       },
       {
         "id": "schema:PreviousPurchases",
         "kind": "schema",
-        "name": "PreviousPurchases"
+        "name": "PreviousPurchases",
+        "type": "object"
       },
       {
         "id": "schema:Product",
         "kind": "schema",
-        "name": "Product"
+        "name": "Product",
+        "type": "object"
       },
       {
         "id": "schema:ProductFieldValues",
         "kind": "schema",
-        "name": "ProductFieldValues"
+        "name": "ProductFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:ProductStatus",
         "kind": "schema",
-        "name": "ProductStatus"
+        "name": "ProductStatus",
+        "type": "string"
       },
       {
         "id": "schema:ProductStatusRequest",
         "kind": "schema",
-        "name": "ProductStatusRequest"
+        "name": "ProductStatusRequest",
+        "type": "string"
       },
       {
         "id": "schema:ProductTypeForDownloads",
         "kind": "schema",
-        "name": "ProductTypeForDownloads"
+        "name": "ProductTypeForDownloads",
+        "type": "string"
       },
       {
         "id": "schema:ProductTypeResponse",
         "kind": "schema",
-        "name": "ProductTypeResponse"
+        "name": "ProductTypeResponse",
+        "type": "string"
       },
       {
         "id": "schema:ProductsResult",
         "kind": "schema",
-        "name": "ProductsResult"
+        "name": "ProductsResult",
+        "type": "object"
       },
       {
         "id": "schema:ReferralDestination",
         "kind": "schema",
-        "name": "ReferralDestination"
+        "name": "ReferralDestination",
+        "type": "object"
       },
       {
         "id": "schema:RelatedSearch",
         "kind": "schema",
-        "name": "RelatedSearch"
+        "name": "RelatedSearch",
+        "type": "object"
       },
       {
         "id": "schema:ReleaseStatus",
         "kind": "schema",
-        "name": "ReleaseStatus"
+        "name": "ReleaseStatus",
+        "type": "string"
       },
       {
         "id": "schema:SearchByImageResourceResults",
         "kind": "schema",
-        "name": "SearchByImageResourceResults"
+        "name": "SearchByImageResourceResults",
+        "type": "object"
       },
       {
         "id": "schema:SearchFacetsResponse",
         "kind": "schema",
-        "name": "SearchFacetsResponse"
+        "name": "SearchFacetsResponse",
+        "type": "object"
       },
       {
         "id": "schema:SearchFileType",
         "kind": "schema",
-        "name": "SearchFileType"
+        "name": "SearchFileType",
+        "type": "string"
       },
       {
         "id": "schema:SelfResult",
         "kind": "schema",
-        "name": "SelfResult"
+        "name": "SelfResult",
+        "type": "object"
       },
       {
         "id": "schema:SortOrder",
         "kind": "schema",
-        "name": "SortOrder"
+        "name": "SortOrder",
+        "type": "string"
       },
       {
         "id": "schema:SpecificPeople",
         "kind": "schema",
-        "name": "SpecificPeople"
+        "name": "SpecificPeople",
+        "type": "object"
       },
       {
         "id": "schema:TeeShirtSize",
         "kind": "schema",
-        "name": "TeeShirtSize"
+        "name": "TeeShirtSize",
+        "type": "string"
       },
       {
         "id": "schema:TerritoryRestriction",
         "kind": "schema",
-        "name": "TerritoryRestriction"
+        "name": "TerritoryRestriction",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:VideoAspectRatioFilterType",
         "kind": "schema",
-        "name": "VideoAspectRatioFilterType"
+        "name": "VideoAspectRatioFilterType",
+        "type": "string"
       },
       {
         "id": "schema:VideoDetailFieldValues",
         "kind": "schema",
-        "name": "VideoDetailFieldValues"
+        "name": "VideoDetailFieldValues",
+        "type": "string"
       },
       {
         "id": "schema:VideoFormatsRequest",
         "kind": "schema",
-        "name": "VideoFormatsRequest"
+        "name": "VideoFormatsRequest",
+        "type": "string"
       },
       {
         "id": "schema:VideoFrameRates",
         "kind": "schema",
-        "name": "VideoFrameRates"
+        "name": "VideoFrameRates",
+        "type": "string"
       },
       {
         "id": "schema:VideoOrientationRequest",
         "kind": "schema",
-        "name": "VideoOrientationRequest"
+        "name": "VideoOrientationRequest",
+        "type": "string"
       },
       {
         "id": "schema:VideoSearchItemDisplaySize",
         "kind": "schema",
-        "name": "VideoSearchItemDisplaySize"
+        "name": "VideoSearchItemDisplaySize",
+        "type": "object"
       },
       {
         "id": "schema:ViewpointsFilterType",
         "kind": "schema",
-        "name": "ViewpointsFilterType"
+        "name": "ViewpointsFilterType",
+        "type": "string"
       },
       {
+        "description": "Specifies the id, usage Quantity, and date of when an asset was used.",
         "id": "schema:asset_usage",
         "kind": "schema",
-        "name": "asset_usage"
+        "name": "asset_usage",
+        "type": "object"
       },
       {
+        "description": "Specifies the request information for the Batch Usages endpoint.",
         "id": "schema:report_usage_batch_request",
         "kind": "schema",
-        "name": "report_usage_batch_request"
+        "name": "report_usage_batch_request",
+        "type": "object"
       },
       {
+        "description": "Specifies the response from the Batch Usages endpoint.",
         "id": "schema:report_usage_batch_response",
         "kind": "schema",
-        "name": "report_usage_batch_response"
+        "name": "report_usage_batch_response",
+        "type": "object"
       }
     ]
   },

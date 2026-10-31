@@ -17,17 +17,52 @@
       {
         "from": "linuxfoundation-org-reimbursement-9815e25777",
         "kind": "EXPOSES",
-        "to": "operation:patch:/reimbursement/{projectId}"
-      },
-      {
-        "from": "linuxfoundation-org-reimbursement-9815e25777",
-        "kind": "EXPOSES",
         "to": "operation:post:/reimbursement/{projectId}"
       },
       {
         "from": "linuxfoundation-org-reimbursement-9815e25777",
         "kind": "EXPOSES",
+        "to": "operation:patch:/reimbursement/{projectId}"
+      },
+      {
+        "from": "linuxfoundation-org-reimbursement-9815e25777",
+        "kind": "EXPOSES",
         "to": "operation:post:/reset"
+      },
+      {
+        "from": "operation:get:/health",
+        "kind": "RETURNS",
+        "to": "schema:health"
+      },
+      {
+        "from": "operation:post:/reimbursement/{projectId}",
+        "kind": "ACCEPTS",
+        "to": "schema:policy-create-input"
+      },
+      {
+        "from": "operation:post:/reimbursement/{projectId}",
+        "kind": "ACCEPTS",
+        "to": "schema:policy-update-input"
+      },
+      {
+        "from": "operation:patch:/reimbursement/{projectId}",
+        "kind": "ACCEPTS",
+        "to": "schema:policy-update-input"
+      },
+      {
+        "from": "operation:post:/reset",
+        "kind": "ACCEPTS",
+        "to": "schema:policy-reset-input"
+      },
+      {
+        "from": "schema:health",
+        "kind": "REFERENCES",
+        "to": "schema:health-status"
+      },
+      {
+        "from": "schema:policy-update-input",
+        "kind": "REFERENCES",
+        "to": "schema:contact"
       }
     ],
     "nodes": [
@@ -43,8 +78,17 @@
         "name": "getDoc",
         "path": "/api-docs",
         "pointer": "#/paths/~1api-docs/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get swagger documentation"
+        "summary": "Get swagger documentation",
+        "tags": [
+          "docs"
+        ]
       },
       {
         "deprecated": false,
@@ -54,47 +98,162 @@
         "name": "healthCheck",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "health"
+          },
+          {
+            "status": "503",
+            "type": "health"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get API Health Status"
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/reimbursement/{projectId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateReimbursement",
-        "path": "/reimbursement/{projectId}",
-        "pointer": "#/paths/~1reimbursement~1{projectId}/patch",
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Update Reimbursement"
-      },
-      {
-        "deprecated": false,
+        "description": "Create a new Reimbursement policy",
         "id": "operation:post:/reimbursement/{projectId}",
         "kind": "operation",
         "method": "post",
         "name": "createReimbursement",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reimbursement/{projectId}",
         "pointer": "#/paths/~1reimbursement~1{projectId}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "policy-create-input|policy-update-input"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error-response"
+          },
+          {
+            "status": "401",
+            "type": "error-response"
+          },
+          {
+            "status": "500",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Create Reimbursement"
+        "summary": "Create Reimbursement",
+        "tags": [
+          "reimbursement"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an existing Reimbursement policy",
+        "id": "operation:patch:/reimbursement/{projectId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateReimbursement",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/reimbursement/{projectId}",
+        "pointer": "#/paths/~1reimbursement~1{projectId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "policy-update-input"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error-response"
+          },
+          {
+            "status": "401",
+            "type": "error-response"
+          },
+          {
+            "status": "404",
+            "type": "error-response"
+          },
+          {
+            "status": "500",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Update Reimbursement",
+        "tags": [
+          "reimbursement"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Reset an existing policy to match with templatePolicy",
         "id": "operation:post:/reset",
         "kind": "operation",
         "method": "post",
         "name": "resetPolicy",
         "path": "/reset",
         "pointer": "#/paths/~1reset/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "policy-reset-input"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "error-response"
+          },
+          {
+            "status": "401",
+            "type": "error-response"
+          },
+          {
+            "status": "500",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -103,39 +262,51 @@
         "summary": "Reset Policy"
       },
       {
+        "description": "Contact information",
         "id": "schema:contact",
         "kind": "schema",
-        "name": "contact"
+        "name": "contact",
+        "type": "object"
       },
       {
+        "description": "Standard error format",
         "id": "schema:error-response",
         "kind": "schema",
-        "name": "error-response"
+        "name": "error-response",
+        "type": "object"
       },
       {
         "id": "schema:health",
         "kind": "schema",
-        "name": "health"
+        "name": "health",
+        "type": "object"
       },
       {
         "id": "schema:health-status",
         "kind": "schema",
-        "name": "health-status"
+        "name": "health-status",
+        "type": "object"
       },
       {
+        "description": "Reimbursement creation information",
         "id": "schema:policy-create-input",
         "kind": "schema",
-        "name": "policy-create-input"
+        "name": "policy-create-input",
+        "type": "object"
       },
       {
+        "description": "Expensify policy reset information",
         "id": "schema:policy-reset-input",
         "kind": "schema",
-        "name": "policy-reset-input"
+        "name": "policy-reset-input",
+        "type": "object"
       },
       {
+        "description": "Reimbursement update information",
         "id": "schema:policy-update-input",
         "kind": "schema",
-        "name": "policy-update-input"
+        "name": "policy-update-input",
+        "type": "object"
       }
     ]
   },

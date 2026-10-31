@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `398540bdb00e7a49c367c3860572b35686d40df862ef778f3cc1ab2e4f0d5f0e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,26 +34,28 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 45 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/clearAddress` | clearAddress | clearAddress |
-| POST | `/deleteAddress` | deleteAddress | deleteAddress |
-| POST | `/exportAddress` | exportAddress | exportAddress |
-| POST | `/getBlock` | getBlock | getBlock |
-| POST | `/getEthereumBalance` | getEthereumBalance | getEthereumBalance |
-| POST | `/getExchangeRate` | getExchangeRate | getExchangeRate |
-| POST | `/getGasPrice` | getGasPrice | getGasPrice |
-| POST | `/getLastBlockNumber` | getLastBlockNumber | getLastBlockNumber |
-| POST | `/getToken` | getToken | getToken |
-| POST | `/getTokenBalance` | getTokenBalance | getTokenBalance |
-| POST | `/getTransactions` | getTransactions | getTransactions |
-| POST | `/importAddress` | importAddress | importAddress |
-| POST | `/listAddresses` | listAddresses | listAddresses |
-| POST | `/listFailedIPNs` | listFailedIPNs | listFailedIPNs |
-| POST | `/listSubscribedAddresses` | listSubscribedAddresses | listSubscribedAddresses |
-| POST | `/newAddress` | newAddress | newAddress |
-| POST | `/resendFailedIPN` | resendFailedIPN | resendFailedIPN |
-| POST | `/sendEthereum` | sendEthereum | sendEthereum |
-| POST | `/sendToken` | sendToken | sendToken |
-| POST | `/subscribeAddress` | subscribeAddress | subscribeAddress |
-| POST | `/unsubscribeAddress` | unsubscribeAddress | unsubscribeAddress |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/clearAddress` | clearAddress | `Authorization`*, body*: clearAddressRequest | clearAddress |  | clearAddress |
+| POST | `/deleteAddress` | deleteAddress | `Authorization`*, body*: deleteAddressRequest | deleteAddress |  | deleteAddress |
+| POST | `/exportAddress` | exportAddress | `Authorization`*, body*: exportAddressRequest | exportAddress |  | exportAddress |
+| POST | `/getBlock` | getBlock | `Authorization`*, body*: getBlockRequest | getBlock |  | getBlock |
+| POST | `/getEthereumBalance` | getEthereumBalance | `Authorization`*, body*: getEthereumBalanceRequest | getEthereumBalance |  | getEthereumBalance |
+| POST | `/getExchangeRate` | getExchangeRate | `Authorization`*, body*: getExchangeRateRequest | getExchangeRate |  | getExchangeRate |
+| POST | `/getGasPrice` | getGasPrice | `Content-Type`*, `Authorization`* | getGasPrice |  | getGasPrice |
+| POST | `/getLastBlockNumber` | getLastBlockNumber | `Content-Type`*, `Authorization`* | getLastBlockNumber |  | getLastBlockNumber |
+| POST | `/getToken` | getToken | `Authorization`*, body*: getTokenRequest | getToken |  | getToken |
+| POST | `/getTokenBalance` | getTokenBalance | `Authorization`*, body*: getTokenBalanceRequest | getTokenBalance |  | getTokenBalance |
+| POST | `/getTransactions` | getTransactions | `Authorization`*, body*: getTransactionsRequest | getTransactions |  | getTransactions |
+| POST | `/importAddress` | importAddress | `Authorization`*, body*: importAddressRequest | importAddress |  | importAddress |
+| POST | `/listAddresses` | listAddresses | `Content-Type`*, `Authorization`* | listAddresses |  | listAddresses |
+| POST | `/listFailedIPNs` | listFailedIPNs | `Content-Type`*, `Authorization`* | listFailedIPNs |  | listFailedIPNs |
+| POST | `/listSubscribedAddresses` | listSubscribedAddresses | `Content-Type`*, `Authorization`* | listSubscribedAddresses |  | listSubscribedAddresses |
+| POST | `/newAddress` | newAddress | `Authorization`*, body*: newAddressRequest | newAddress |  | newAddress |
+| POST | `/resendFailedIPN` | resendFailedIPN | `Authorization`*, body*: resendFailedIPNRequest | resendFailedIPN |  | resendFailedIPN |
+| POST | `/sendEthereum` | sendEthereum | `Authorization`*, body*: sendEthereumRequest | sendEthereum |  | sendEthereum |
+| POST | `/sendToken` | sendToken | `Authorization`*, body*: sendTokenRequest | sendToken |  | sendToken |
+| POST | `/subscribeAddress` | subscribeAddress | `Authorization`*, body*: subscribeAddressRequest | subscribeAddress |  | subscribeAddress |
+| POST | `/unsubscribeAddress` | unsubscribeAddress | `Authorization`*, body*: unsubscribeAddressRequest | unsubscribeAddress |  | unsubscribeAddress |

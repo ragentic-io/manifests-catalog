@@ -57,17 +57,17 @@
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{workspace_slug}/members/{member_slug}"
-      },
-      {
-        "from": "orbit-love-477bc7bc1b",
-        "kind": "EXPOSES",
         "to": "operation:get:/{workspace_slug}/members/{member_slug}"
       },
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
         "to": "operation:put:/{workspace_slug}/members/{member_slug}"
+      },
+      {
+        "from": "orbit-love-477bc7bc1b",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/{workspace_slug}/members/{member_slug}"
       },
       {
         "from": "orbit-love-477bc7bc1b",
@@ -82,22 +82,22 @@
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{workspace_slug}/members/{member_slug}/activities/{id}"
-      },
-      {
-        "from": "orbit-love-477bc7bc1b",
-        "kind": "EXPOSES",
         "to": "operation:put:/{workspace_slug}/members/{member_slug}/activities/{id}"
       },
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{workspace_slug}/members/{member_slug}/identities"
+        "to": "operation:delete:/{workspace_slug}/members/{member_slug}/activities/{id}"
       },
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
         "to": "operation:post:/{workspace_slug}/members/{member_slug}/identities"
+      },
+      {
+        "from": "orbit-love-477bc7bc1b",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/{workspace_slug}/members/{member_slug}/identities"
       },
       {
         "from": "orbit-love-477bc7bc1b",
@@ -157,17 +157,137 @@
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{workspace_slug}/webhooks/{id}"
-      },
-      {
-        "from": "orbit-love-477bc7bc1b",
-        "kind": "EXPOSES",
         "to": "operation:get:/{workspace_slug}/webhooks/{id}"
       },
       {
         "from": "orbit-love-477bc7bc1b",
         "kind": "EXPOSES",
         "to": "operation:put:/{workspace_slug}/webhooks/{id}"
+      },
+      {
+        "from": "orbit-love-477bc7bc1b",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/{workspace_slug}/webhooks/{id}"
+      },
+      {
+        "from": "operation:post:/{workspace_slug}/activities",
+        "kind": "ACCEPTS",
+        "to": "schema:activity_and_identity"
+      },
+      {
+        "from": "operation:post:/{workspace_slug}/members",
+        "kind": "ACCEPTS",
+        "to": "schema:member_and_identity"
+      },
+      {
+        "from": "operation:put:/{workspace_slug}/members/{member_slug}",
+        "kind": "ACCEPTS",
+        "to": "schema:member"
+      },
+      {
+        "from": "operation:post:/{workspace_slug}/members/{member_slug}/activities",
+        "kind": "ACCEPTS",
+        "to": "schema:custom_or_post_activity"
+      },
+      {
+        "from": "operation:put:/{workspace_slug}/members/{member_slug}/activities/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:activity"
+      },
+      {
+        "from": "operation:post:/{workspace_slug}/members/{member_slug}/identities",
+        "kind": "ACCEPTS",
+        "to": "schema:identity"
+      },
+      {
+        "from": "operation:delete:/{workspace_slug}/members/{member_slug}/identities",
+        "kind": "ACCEPTS",
+        "to": "schema:identity"
+      },
+      {
+        "from": "operation:post:/{workspace_slug}/members/{member_slug}/notes",
+        "kind": "ACCEPTS",
+        "to": "schema:note"
+      },
+      {
+        "from": "operation:put:/{workspace_slug}/members/{member_slug}/notes/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:note"
+      },
+      {
+        "from": "operation:put:/{workspace_slug}/organizations/{organization_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:organization"
+      },
+      {
+        "from": "operation:post:/{workspace_slug}/webhooks",
+        "kind": "ACCEPTS",
+        "to": "schema:webhook_subscription"
+      },
+      {
+        "from": "operation:put:/{workspace_slug}/webhooks/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:webhook_subscription"
+      },
+      {
+        "from": "schema:activity_and_identity",
+        "kind": "REFERENCES",
+        "to": "schema:activity_with_member"
+      },
+      {
+        "from": "schema:activity_and_identity",
+        "kind": "REFERENCES",
+        "to": "schema:identity"
+      },
+      {
+        "from": "schema:activity_and_identity",
+        "kind": "REFERENCES",
+        "to": "schema:post_activity_with_member"
+      },
+      {
+        "from": "schema:activity_with_member",
+        "kind": "REFERENCES",
+        "to": "schema:activity"
+      },
+      {
+        "from": "schema:activity_with_member",
+        "kind": "REFERENCES",
+        "to": "schema:member"
+      },
+      {
+        "from": "schema:custom_or_post_activity",
+        "kind": "REFERENCES",
+        "to": "schema:activity"
+      },
+      {
+        "from": "schema:custom_or_post_activity",
+        "kind": "REFERENCES",
+        "to": "schema:post_activity"
+      },
+      {
+        "from": "schema:destination",
+        "kind": "REFERENCES",
+        "to": "schema:alert"
+      },
+      {
+        "from": "schema:member_and_identity",
+        "kind": "REFERENCES",
+        "to": "schema:identity"
+      },
+      {
+        "from": "schema:member_and_identity",
+        "kind": "REFERENCES",
+        "to": "schema:member"
+      },
+      {
+        "from": "schema:post_activity_with_member",
+        "kind": "REFERENCES",
+        "to": "schema:member"
+      },
+      {
+        "from": "schema:post_activity_with_member",
+        "kind": "REFERENCES",
+        "to": "schema:post_activity"
       }
     ],
     "nodes": [
@@ -183,12 +303,24 @@
         "name": "get /user",
         "path": "/user",
         "pointer": "#/paths/~1user/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get info about the current user"
+        "summary": "Get info about the current user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -198,12 +330,21 @@
         "name": "get /workspaces",
         "path": "/workspaces",
         "pointer": "#/paths/~1workspaces/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get all workspaces for the current user"
+        "summary": "Get all workspaces for the current user",
+        "tags": [
+          "Workspaces"
+        ]
       },
       {
         "deprecated": false,
@@ -211,14 +352,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /workspaces/{workspace_slug}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Include the number of members by Orbit Level in the attributes",
+            "in": "query",
+            "name": "include_orbit_level_counts",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/workspaces/{workspace_slug}",
         "pointer": "#/paths/~1workspaces~1{workspace_slug}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get a workspace"
+        "summary": "Get a workspace",
+        "tags": [
+          "Workspaces"
+        ]
       },
       {
         "deprecated": false,
@@ -226,29 +391,251 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/activities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "member",
+              "teammate"
+            ],
+            "in": "query",
+            "name": "affiliation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The list of tags to filter against.",
+            "in": "query",
+            "name": "member_tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The list of orbit levels to filter against.",
+            "in": "query",
+            "name": "orbit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of activity types",
+            "enum": [
+              "discourse:topic:created",
+              "discourse:post:liked",
+              "discourse:user:created",
+              "discourse:post:created",
+              "slack:message:sent",
+              "slack:thread:replied",
+              "slack:channel:joined",
+              "note:created",
+              "post:created",
+              "issues:opened",
+              "discord:message:sent",
+              "issue_comment:created",
+              "discord:thread:replied",
+              "custom:happened",
+              "dev:comment",
+              "discord:message:replied",
+              "discord:server:joined",
+              "insided:conversation:started",
+              "fork:created",
+              "insided:idea:replied",
+              "insided:article:created",
+              "discussions:discussion_created",
+              "insided:question:replied",
+              "discussions:comment",
+              "discussions:reply"
+            ],
+            "in": "query",
+            "name": "activity_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "github",
+              "twitter",
+              "email",
+              "discourse",
+              "linkedin",
+              "devto",
+              "slack",
+              "discord"
+            ],
+            "in": "query",
+            "name": "identity",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of companies.",
+            "in": "query",
+            "name": "company[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of job titles.",
+            "in": "query",
+            "name": "title[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of regions.",
+            "in": "query",
+            "name": "regions[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of countries.",
+            "in": "query",
+            "name": "countries[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of cities.",
+            "in": "query",
+            "name": "cities[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter activities after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter activities before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Relative timeframes.",
+            "in": "query",
+            "name": "relative",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ],
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "occurred_at",
+              "member"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Deprecated in favor of the activity_type parameter.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/activities",
         "pointer": "#/paths/~1{workspace_slug}~1activities/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List activities for a workspace"
+        "summary": "List activities for a workspace",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method when you know an identity of the member (github, email, twitter, etc.) but not their Orbit ID.",
         "id": "operation:post:/{workspace_slug}/activities",
         "kind": "operation",
         "method": "post",
         "name": "post /{workspace_slug}/activities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/activities",
         "pointer": "#/paths/~1{workspace_slug}~1activities/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "activity_and_identity"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create a Custom or a Content activity for a new or existing member"
+        "summary": "Create a Custom or a Content activity for a new or existing member",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -256,14 +643,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/activities/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/activities/{id}",
         "pointer": "#/paths/~1{workspace_slug}~1activities~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get an activity in the workspace"
+        "summary": "Get an activity in the workspace",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -271,14 +681,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/activity_types",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/activity_types",
         "pointer": "#/paths/~1{workspace_slug}~1activity_types/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List all activity types for a workspace"
+        "summary": "List all activity types for a workspace",
+        "tags": [
+          "Activity Types"
+        ]
       },
       {
         "deprecated": false,
@@ -286,59 +713,358 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/members",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "member",
+              "teammate"
+            ],
+            "in": "query",
+            "name": "affiliation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The list of tags to filter against.",
+            "in": "query",
+            "name": "member_tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The list of orbit levels to filter against.",
+            "in": "query",
+            "name": "orbit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of activity types",
+            "enum": [
+              "discourse:topic:created",
+              "discourse:post:liked",
+              "discourse:user:created",
+              "discourse:post:created",
+              "slack:message:sent",
+              "slack:thread:replied",
+              "slack:channel:joined",
+              "note:created",
+              "post:created",
+              "issues:opened",
+              "discord:message:sent",
+              "issue_comment:created",
+              "discord:thread:replied",
+              "custom:happened",
+              "dev:comment",
+              "discord:message:replied",
+              "discord:server:joined",
+              "insided:conversation:started",
+              "fork:created",
+              "insided:idea:replied",
+              "insided:article:created",
+              "discussions:discussion_created",
+              "insided:question:replied",
+              "discussions:comment",
+              "discussions:reply"
+            ],
+            "in": "query",
+            "name": "activity_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "github",
+              "twitter",
+              "email",
+              "discourse",
+              "linkedin",
+              "devto",
+              "slack",
+              "discord"
+            ],
+            "in": "query",
+            "name": "identity",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of companies.",
+            "in": "query",
+            "name": "company[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of job titles.",
+            "in": "query",
+            "name": "title[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of regions.",
+            "in": "query",
+            "name": "regions[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of countries.",
+            "in": "query",
+            "name": "countries[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of cities.",
+            "in": "query",
+            "name": "cities[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter activities after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter activities before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Relative timeframes.",
+            "in": "query",
+            "name": "relative",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ],
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "activities_count_min",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "activities_count_max",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "activities_count",
+              "company",
+              "created_at",
+              "first_activity",
+              "github_followers",
+              "id",
+              "last_activity",
+              "location",
+              "love",
+              "name",
+              "orbit",
+              "reach",
+              "title",
+              "twitter_followers",
+              "updated_at"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Deprecated in favor of the activity_type parameter.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members",
         "pointer": "#/paths/~1{workspace_slug}~1members/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List members in a workspace"
+        "summary": "List members in a workspace",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method is useful when you know a member's identity in another system and want to create or update the corresponding Orbit member.",
         "id": "operation:post:/{workspace_slug}/members",
         "kind": "operation",
         "method": "post",
         "name": "post /{workspace_slug}/members",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members",
         "pointer": "#/paths/~1{workspace_slug}~1members/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "member_and_identity"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create or update a member"
+        "summary": "Create or update a member",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provide a source and one of username/uid/email params to return a member with that identity, if one exists.",
         "id": "operation:get:/{workspace_slug}/members/find",
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/members/find",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "source",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "source_host",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "uid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Deprecated, please use source=github and username=<username> instead",
+            "in": "query",
+            "name": "github",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/find",
         "pointer": "#/paths/~1{workspace_slug}~1members~1find/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Find a member by an identity"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{workspace_slug}/members/{member_slug}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /{workspace_slug}/members/{member_slug}",
-        "path": "/{workspace_slug}/members/{member_slug}",
-        "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}/delete",
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Delete a member"
+        "summary": "Find a member by an identity",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
@@ -346,14 +1072,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/members/{member_slug}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get a member"
+        "summary": "Get a member",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
@@ -361,14 +1110,88 @@
         "kind": "operation",
         "method": "put",
         "name": "put /{workspace_slug}/members/{member_slug}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "member"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Update a member"
+        "summary": "Update a member",
+        "tags": [
+          "Members"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{workspace_slug}/members/{member_slug}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /{workspace_slug}/members/{member_slug}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{workspace_slug}/members/{member_slug}",
+        "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Delete a member",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
@@ -376,14 +1199,87 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/members/{member_slug}/activities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ],
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "occurred_at",
+              "member"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "activity_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Deprecated in favor of the activity_type parameter.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/activities",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1activities/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List activities for a member"
+        "summary": "List activities for a member",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -391,29 +1287,50 @@
         "kind": "operation",
         "method": "post",
         "name": "post /{workspace_slug}/members/{member_slug}/activities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/activities",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1activities/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "custom_or_post_activity"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create a Custom or a Content activity for a member"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{workspace_slug}/members/{member_slug}/activities/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /{workspace_slug}/members/{member_slug}/activities/{id}",
-        "path": "/{workspace_slug}/members/{member_slug}/activities/{id}",
-        "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1activities~1{id}/delete",
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Delete a post activity"
+        "summary": "Create a Custom or a Content activity for a member",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -421,29 +1338,103 @@
         "kind": "operation",
         "method": "put",
         "name": "put /{workspace_slug}/members/{member_slug}/activities/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/activities/{id}",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1activities~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "activity"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Update a custom activity for a member"
+        "summary": "Update a custom activity for a member",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/{workspace_slug}/members/{member_slug}/identities",
+        "id": "operation:delete:/{workspace_slug}/members/{member_slug}/activities/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /{workspace_slug}/members/{member_slug}/identities",
-        "path": "/{workspace_slug}/members/{member_slug}/identities",
-        "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1identities/delete",
+        "name": "delete /{workspace_slug}/members/{member_slug}/activities/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{workspace_slug}/members/{member_slug}/activities/{id}",
+        "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1activities~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Remove identity from a member"
+        "summary": "Delete a post activity",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -451,14 +1442,101 @@
         "kind": "operation",
         "method": "post",
         "name": "post /{workspace_slug}/members/{member_slug}/identities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/identities",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1identities/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "identity"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Add identity to a member"
+        "summary": "Add identity to a member",
+        "tags": [
+          "Members"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{workspace_slug}/members/{member_slug}/identities",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /{workspace_slug}/members/{member_slug}/identities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{workspace_slug}/members/{member_slug}/identities",
+        "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1identities/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "identity"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Remove identity from a member",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
@@ -466,14 +1544,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/members/{member_slug}/notes",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/notes",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1notes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get the member's notes"
+        "summary": "Get the member's notes",
+        "tags": [
+          "Notes"
+        ]
       },
       {
         "deprecated": false,
@@ -481,14 +1588,47 @@
         "kind": "operation",
         "method": "post",
         "name": "post /{workspace_slug}/members/{member_slug}/notes",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/notes",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1notes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "note"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create a note"
+        "summary": "Create a note",
+        "tags": [
+          "Notes"
+        ]
       },
       {
         "deprecated": false,
@@ -496,14 +1636,50 @@
         "kind": "operation",
         "method": "put",
         "name": "put /{workspace_slug}/members/{member_slug}/notes/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/members/{member_slug}/notes/{id}",
         "pointer": "#/paths/~1{workspace_slug}~1members~1{member_slug}~1notes~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "note"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Update a note"
+        "summary": "Update a note",
+        "tags": [
+          "Notes"
+        ]
       },
       {
         "deprecated": false,
@@ -511,14 +1687,76 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/organizations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ],
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "name",
+              "website",
+              "members_count",
+              "employees_count"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/organizations",
         "pointer": "#/paths/~1{workspace_slug}~1organizations/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List organizations in a workspace"
+        "summary": "List organizations in a workspace",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -526,14 +1764,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/organizations/{organization_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/organizations/{organization_id}",
         "pointer": "#/paths/~1{workspace_slug}~1organizations~1{organization_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get an organization"
+        "summary": "Get an organization",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -541,14 +1802,50 @@
         "kind": "operation",
         "method": "put",
         "name": "put /{workspace_slug}/organizations/{organization_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/organizations/{organization_id}",
         "pointer": "#/paths/~1{workspace_slug}~1organizations~1{organization_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "organization"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Update an organization"
+        "summary": "Update an organization",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
@@ -556,14 +1853,89 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/organizations/{organization_id}/activities",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ],
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "occurred_at",
+              "member"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "content",
+              "custom",
+              "discord",
+              "discourse",
+              "github",
+              "slack",
+              "twitter"
+            ],
+            "in": "query",
+            "name": "activity_type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/organizations/{organization_id}/activities",
         "pointer": "#/paths/~1{workspace_slug}~1organizations~1{organization_id}~1activities/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List member activities in an organization"
+        "summary": "List member activities in an organization",
+        "tags": [
+          "Activities"
+        ]
       },
       {
         "deprecated": false,
@@ -571,14 +1943,54 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/organizations/{organization_id}/members",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ],
+            "in": "query",
+            "name": "items",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/organizations/{organization_id}/members",
         "pointer": "#/paths/~1{workspace_slug}~1organizations~1{organization_id}~1members/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List members in an organization"
+        "summary": "List members in an organization",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
@@ -586,14 +1998,71 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/reports",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter activities after this date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter activities before this date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Relative timeframes.",
+            "in": "query",
+            "name": "relative",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "properties",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "activity_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Deprecated in favor of the activity_type parameter.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/reports",
         "pointer": "#/paths/~1{workspace_slug}~1reports/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get a workspace stats"
+        "summary": "Get a workspace stats",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
@@ -601,14 +2070,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/webhooks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/webhooks",
         "pointer": "#/paths/~1{workspace_slug}~1webhooks/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "List webhooks in a workspace"
+        "summary": "List webhooks in a workspace",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -616,29 +2102,41 @@
         "kind": "operation",
         "method": "post",
         "name": "post /{workspace_slug}/webhooks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/webhooks",
         "pointer": "#/paths/~1{workspace_slug}~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "webhook_subscription"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Create a webhook"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{workspace_slug}/webhooks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /{workspace_slug}/webhooks/{id}",
-        "path": "/{workspace_slug}/webhooks/{id}",
-        "pointer": "#/paths/~1{workspace_slug}~1webhooks~1{id}/delete",
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Delete a webhook"
+        "summary": "Create a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -646,14 +2144,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get /{workspace_slug}/webhooks/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/webhooks/{id}",
         "pointer": "#/paths/~1{workspace_slug}~1webhooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Get a webhook"
+        "summary": "Get a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -661,84 +2182,173 @@
         "kind": "operation",
         "method": "put",
         "name": "put /{workspace_slug}/webhooks/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{workspace_slug}/webhooks/{id}",
         "pointer": "#/paths/~1{workspace_slug}~1webhooks~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "webhook_subscription"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer": []
           }
         ],
-        "summary": "Update a webhook"
+        "summary": "Update a webhook",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{workspace_slug}/webhooks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /{workspace_slug}/webhooks/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{workspace_slug}/webhooks/{id}",
+        "pointer": "#/paths/~1{workspace_slug}~1webhooks~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Delete a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "id": "schema:activity",
         "kind": "schema",
-        "name": "activity"
+        "name": "activity",
+        "type": "object"
       },
       {
         "id": "schema:activity_and_identity",
         "kind": "schema",
-        "name": "activity_and_identity"
+        "name": "activity_and_identity",
+        "type": "object"
       },
       {
         "id": "schema:activity_with_member",
         "kind": "schema",
-        "name": "activity_with_member"
+        "name": "activity_with_member",
+        "type": "activity|object"
       },
       {
         "id": "schema:alert",
         "kind": "schema",
-        "name": "alert"
+        "name": "alert",
+        "type": "object"
       },
       {
         "id": "schema:custom_or_post_activity",
         "kind": "schema",
-        "name": "custom_or_post_activity"
+        "name": "custom_or_post_activity",
+        "type": "activity|post_activity"
       },
       {
         "id": "schema:destination",
         "kind": "schema",
-        "name": "destination"
+        "name": "destination",
+        "type": "object"
       },
       {
+        "description": "Represents an email address, a profile on networks like github and twitter, or a record in another system.",
         "id": "schema:identity",
         "kind": "schema",
-        "name": "identity"
+        "name": "identity",
+        "type": "object"
       },
       {
         "id": "schema:member",
         "kind": "schema",
-        "name": "member"
+        "name": "member",
+        "type": "object"
       },
       {
         "id": "schema:member_and_identity",
         "kind": "schema",
-        "name": "member_and_identity"
+        "name": "member_and_identity",
+        "type": "object"
       },
       {
         "id": "schema:note",
         "kind": "schema",
-        "name": "note"
+        "name": "note",
+        "type": "object"
       },
       {
         "id": "schema:organization",
         "kind": "schema",
-        "name": "organization"
+        "name": "organization",
+        "type": "object"
       },
       {
         "id": "schema:post_activity",
         "kind": "schema",
-        "name": "post_activity"
+        "name": "post_activity",
+        "type": "object"
       },
       {
         "id": "schema:post_activity_with_member",
         "kind": "schema",
-        "name": "post_activity_with_member"
+        "name": "post_activity_with_member",
+        "type": "post_activity|object"
       },
       {
         "id": "schema:webhook_subscription",
         "kind": "schema",
-        "name": "webhook_subscription"
+        "name": "webhook_subscription",
+        "type": "object"
       }
     ]
   },

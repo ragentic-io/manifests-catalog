@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_92
 
 | | |
 | --- | --- |
-| Signed bundle | `51735d226c1f62661c276a876187db2fbdfda3940cb1d787f2440f7d7300f0a7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,128 +34,130 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_92
 
 60 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/conversations` | getConversations | Gets a list of conversations |
-| GET | `/conversations/byIds` | getConversationsById | Gets conversations |
-| GET | `/conversations/community` | getCommunityConversations | Gets a list of communities |
-| POST | `/conversations/community` | createCommunityConversation | Creates a community conversation |
-| PUT | `/conversations/community/{convId}` | updateConversationCommunity | Updates the information of a community |
-| POST | `/conversations/community/{convId}/join` | joinCommunityConversation | Adds the authenticated user to a community |
-| DELETE | `/conversations/community/{convId}/participants` | removeParticipantCommunity | Removes participants from a community |
-| POST | `/conversations/community/{convId}/participants` | addParticipantCommunity | Adds participants to a community |
-| GET | `/conversations/conversationdetails` | getJoinDetailsMultiple | Gets the conference details for multiple conversations |
-| GET | `/conversations/direct` | getDirectConversation | Checks for a 1-to-1 conversation |
-| POST | `/conversations/direct` | createDirectConversation | Creates a 1-to-1 conversation |
-| GET | `/conversations/favorite` | getFavoriteConversations | Gets favorite conversations |
-| POST | `/conversations/group` | createGroupConversation | Creates a group conversation |
-| PUT | `/conversations/group/{convId}` | updateConversationGroup | Updates the information of a group conversation |
-| DELETE | `/conversations/group/{convId}/participants` | removeParticipantGroup | Removes participants from a group conversation |
-| POST | `/conversations/group/{convId}/participants` | addParticipantGroup | Adds participants to a group conversation |
-| GET | `/conversations/label/{labelId}` | getConversationsByLabel | Returns conversations with a certain label |
-| GET | `/conversations/messages/flag` | getFlagItemConv | Gets a list of the flagged messages |
-| GET | `/conversations/messages/{itemId}` | getSingleConversationtem | Returns a text item |
-| POST | `/conversations/moderate/{convId}` | moderateConversation | Set conversation moderated |
-| GET | `/conversations/resolveinvitetoken` | resolveInvitationToken | Resolves an invite token to a conversation |
-| GET | `/conversations/search` | searchConversations | Performs a conversation search |
-| POST | `/conversations/unmoderate/{convId}` | unmoderateConversation | Set conversation unmoderated |
-| GET | `/conversations/{convId}` | getConversationbyId | Gets a conversation |
-| DELETE | `/conversations/{convId}/archive` | undoArchiveConversation | Unmute conversation |
-| POST | `/conversations/{convId}/archive` | archiveConversation | Archives conversation |
-| GET | `/conversations/{convId}/conversationdetails` | getJoinDetails | Gets the conference details of a conversation |
-| DELETE | `/conversations/{convId}/favorite` | deleteFavorite | Removes a conversation from favorites |
-| POST | `/conversations/{convId}/favorite` | addFavorite | Adds a conversation to the favorites |
-| GET | `/conversations/{convId}/items` | getConversationItems | Gets a list of conversation items |
-| POST | `/conversations/{convId}/label` | assignLabel | Adds a label to a conversation |
-| DELETE | `/conversations/{convId}/label/{labelId}` | unassignLabel | Removes a label from a conversation |
-| POST | `/conversations/{convId}/messages` | addTextItem | Adds a message to a conversation |
-| GET | `/conversations/{convId}/messages/flag` | getFlagItem | Gets a list of the flagged messages of a conversation |
-| DELETE | `/conversations/{convId}/messages/{itemId}` | deleteTextItem | Deletes a message from a conversation |
-| POST | `/conversations/{convId}/messages/{itemId}` | addTextItemWithParent | Adds a message to an item |
-| PUT | `/conversations/{convId}/messages/{itemId}` | updateTextItem | Updates a message |
-| DELETE | `/conversations/{convId}/messages/{itemId}/flag` | unFlagItem | Removes the flag from a message |
-| POST | `/conversations/{convId}/messages/{itemId}/flag` | flagItem | Adds a flag to a message in a conversation |
-| DELETE | `/conversations/{convId}/messages/{itemId}/like` | unlikeItem | Removes a "like" from a message |
-| POST | `/conversations/{convId}/messages/{itemId}/like` | likeItem | Adds a "like" to a message |
-| DELETE | `/conversations/{convId}/moderators` | removeModerators | Remove moderators |
-| POST | `/conversations/{convId}/moderators` | addModerators | Add moderators |
-| GET | `/conversations/{convId}/participants` | getParticipantsByConvId | Performs a list of participants |
-| GET | `/conversations/{convId}/pins` | getPinnedConversations | Returns pinned topics of a conversation |
-| DELETE | `/conversations/{convId}/pins/{itemId}` | unPinAConversation | Unpins a topic of a conversation |
-| POST | `/conversations/{convId}/pins/{itemId}` | pinAConversation | Pins a topic of a conversation |
-| GET | `/rtc/sessions` | getActiveSessions | Gets a list of active sessions |
-| GET | `/spaces` | getSpaces | Get the spaces |
-| POST | `/spaces/create` | createSpace | Create a space |
-| GET | `/spaces/directory` | getDirectory | Get the directory |
-| GET | `/spaces/exists/{name}` | existsSpaceName | Space name exists |
-| PUT | `/spaces/flag/{itemId}` | flagSpaceItem | flag a space item |
-| GET | `/spaces/flagged` | getFlaggedItems | Get flagged items |
-| GET | `/spaces/ids` | getSpacesByIds | Get the spaces by their ids |
-| DELETE | `/spaces/item/{itemId}` | deleteSpaceItem | deletes a space item |
-| PUT | `/spaces/like/{itemId}` | likeSpaceItem | Like a space item |
-| GET | `/spaces/likes/{itemId}` | getLikes | Get the likes of an item |
-| PUT | `/spaces/search/add/recent` | addRecentSpaceSearch | Add recent search |
-| PUT | `/spaces/search/cancel/{searchId}` | cancelSpaceSearch | Cancels a space search of a client. |
-| GET | `/spaces/search/recent` | getRecentSearches | Retrieve recent space searches |
-| GET | `/spaces/search/startBasic` | startBasicSpacesSearch | starts a basic search in spaces |
-| GET | `/spaces/search/startDetailed` | startDetailedSpaceSearch | starts a detailed search in a space |
-| PUT | `/spaces/topic/{topicId}/updateTags` | updateTopicTags | Update tags |
-| PUT | `/spaces/unflag/{itemId}` | unflagSpaceItem | Unflag a space item |
-| PUT | `/spaces/unlike/{itemId}` | unlikeSpaceItem | Unlike a space item |
-| DELETE | `/spaces/{id}` | deleteSpace | Delete a space |
-| PUT | `/spaces/{id}` | updateSpace | Update a space |
-| POST | `/spaces/{id}/join` | joinSpace | Join a space |
-| POST | `/spaces/{id}/labels/assign` | assignLabels | Assign labels |
-| DELETE | `/spaces/{id}/labels/unassign` | unassignLabels | Unassign labels |
-| POST | `/spaces/{id}/leave` | leaveSpace | Leave a space |
-| POST | `/spaces/{id}/participant` | addParticipantsToSpace | Add Participant to Space |
-| POST | `/spaces/{id}/participant/remove` | v2RemoveParticipantsFromSpace | Removes participants from a space |
-| GET | `/spaces/{id}/participants` | getSpaceParticipants | Get the participants of a space |
-| GET | `/spaces/{id}/participants/pending` | getPendingParticipants | Get the pending participants of a space |
-| GET | `/spaces/{id}/pinnedTopics` | getPinnedTopics | Retrieve pinned topics |
-| GET | `/spaces/{id}/searchParticipantsToAdd` | searchParticipantsToAdd | Finds participants to add to add to a space |
-| GET | `/spaces/{id}/searchSpaceParticipants` | searchSpaceParticipants | Get the participants of a space |
-| PUT | `/spaces/{id}/updateTimestamp` | updateReadTimestamp | Update read timestamp |
-| PUT | `/spaces/{spaceId}/participant` | updateParticipantInSpace | Update participant |
-| GET | `/spaces/{spaceId}/participant/import/` | getParticipantsImportData | missing documentation |
-| POST | `/spaces/{spaceId}/participant/request` | requestSpaceAcces | request access for a space |
-| POST | `/spaces/{spaceId}/participant/{participantId}/deny` | denySpaceAcces | Deny access for a space |
-| POST | `/spaces/{spaceId}/participant/{participantId}/grant` | grantSpaceAcces | grant access for a space |
-| POST | `/spaces/{spaceId}/topic` | createSpaceTopic | creates a new space topic |
-| GET | `/spaces/{spaceId}/topic/{topicId}` | v2GetTopicWithReplies | Gets space replies and a topic |
-| PUT | `/spaces/{spaceId}/topic/{topicId}` | updateSpaceTopic | Updates a topic |
-| GET | `/spaces/{spaceId}/topic/{topicId}/reply` | getSpaceReplies | Gets space replies |
-| POST | `/spaces/{spaceId}/topic/{topicId}/reply` | createReply | creates a reply to a topic |
-| PUT | `/spaces/{spaceId}/topic/{topicId}/reply/{replyId}` | updateSpaceReply | Updates a space reply |
-| GET | `/spaces/{spaceId}/topics` | getSpaceTopics | Gets space topics |
-| PUT | `/spaces/{spaceId}/welcomebox/{content}` | v2UpdateWelcomeBoxContent | Update content of welcome box |
-| PUT | `/spaces/{topicId}/pin` | pinTopic | Pin a topic |
-| PUT | `/spaces/{topicId}/unpin` | unpinTopic | Unpin a topic |
-| GET | `/telephony/deviceInfos` | v2GetDeviceInfos | Get devices infos |
-| GET | `/telephony/telephonyConversationId` | v2GetTelephonyConversationId | Get telephony conversation id |
-| GET | `/telephony/{telephonyConversationId}/journal` | getJournalEntries | Get journal |
-| GET | `/users` | searchUser | Search for users |
-| GET | `/users/labels` | getLabel | Returns all user labels |
-| POST | `/users/labels` | addLabel | Add a user label |
-| DELETE | `/users/labels/{labelId}` | removeLabel | Remove a user label |
-| GET | `/users/list` | searchUsersList | Search multiple users. |
-| GET | `/users/presence` | getPresence | Gets the presence status |
-| PUT | `/users/presence` | setUserPresence | Updates the presence status |
-| GET | `/users/profile` | getProfile | Gets the authenticated user's profile information |
-| PUT | `/users/profile` | updateProfile | Updates the user profile |
-| GET | `/users/supportinfo` | getSupportInfo | Gets the support information |
-| GET | `/users/{emailAddress}/getUserByEmail` | getUserByEmailAddress | Get user by email |
-| GET | `/users/{id}` | getUserById | Gets the user's profile information |
-| GET | `/users/{id}/presence` | getUserPresence | Gets the presence status |
-| DELETE | `/webhooks` | removeWebHooks | Removes all webHooks |
-| GET | `/webhooks` | getWebHook | Gets a list of webHooks |
-| POST | `/webhooks` | addWebHook | Registers a WebHook |
-| POST | `/webhooks/incoming/create/{conversationId}` | createIncomingWebhook | Create a new webhook for existing conversation. |
-| GET | `/webhooks/incoming/user/{userId}` | getIncomingWebhookByUser | Get all webhooks of a special user. |
-| DELETE | `/webhooks/incoming/{webhookId}` | deleteIncomingWebhook | Delete an existing webhook |
-| POST | `/webhooks/incoming/{webhookId}` | postWebhookAsSlackMessage | Post text item for conversation via webhook. |
-| POST | `/webhooks/presence` | addPresenceWebHook | Registers Presence WebHook registration |
-| PUT | `/webhooks/presence/{id}` | updatePresenceWebHook | Updates a Presence WebHook registration |
-| DELETE | `/webhooks/{id}` | removeWebHook | Removes a registered webHook |
-| GET | `/webhooks/{id}` | getWebHookById | Gets a webHook |
-| PUT | `/webhooks/{id}` | updateWebHook | Updates a WebHook registration |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/conversations` | getConversations | `modTime`, `direction`, `results` | Conversation[] | yes | Gets a list of conversations |
+| GET | `/conversations/byIds` | getConversationsById | `convIds`* | Conversation[] | yes | Gets conversations |
+| GET | `/conversations/community` | getCommunityConversations | `sort`, `order`, `includeOwn`, `startIndex`, `results` | Conversation[] | yes | Gets a list of communities |
+| POST | `/conversations/community` | createCommunityConversation | body: object | Conversation |  | Creates a community conversation |
+| PUT | `/conversations/community/{convId}` | updateConversationCommunity | `convId`*, body: object | Conversation |  | Updates the information of a community |
+| POST | `/conversations/community/{convId}/join` | joinCommunityConversation | `convId`* | Conversation |  | Adds the authenticated user to a community |
+| POST | `/conversations/community/{convId}/participants` | addParticipantCommunity | `convId`*, body*: object | Conversation |  | Adds participants to a community |
+| DELETE | `/conversations/community/{convId}/participants` | removeParticipantCommunity | `convId`*, `participants`* | Conversation |  | Removes participants from a community |
+| GET | `/conversations/conversationdetails` | getJoinDetailsMultiple | `convIds`* | ConversationDetails[] | yes | Gets the conference details for multiple conversations |
+| GET | `/conversations/direct` | getDirectConversation | `participant`* | Conversation | yes | Checks for a 1-to-1 conversation |
+| POST | `/conversations/direct` | createDirectConversation | body*: object | Conversation |  | Creates a 1-to-1 conversation |
+| GET | `/conversations/favorite` | getFavoriteConversations | — | String[] | yes | Gets favorite conversations |
+| POST | `/conversations/group` | createGroupConversation | body*: object | Conversation |  | Creates a group conversation |
+| PUT | `/conversations/group/{convId}` | updateConversationGroup | `convId`*, body: object | Conversation |  | Updates the information of a group conversation |
+| POST | `/conversations/group/{convId}/participants` | addParticipantGroup | `convId`*, body*: object | Conversation |  | Adds participants to a group conversation |
+| DELETE | `/conversations/group/{convId}/participants` | removeParticipantGroup | `convId`*, `participants`* | Conversation |  | Removes participants from a group conversation |
+| GET | `/conversations/label/{labelId}` | getConversationsByLabel | `labelId`*, `nextPagePointer`, `pageSize` | ConversationsPage | yes | Returns conversations with a certain label |
+| GET | `/conversations/messages/flag` | getFlagItemConv | — | ConversationItem[] | yes | Gets a list of the flagged messages |
+| GET | `/conversations/messages/{itemId}` | getSingleConversationtem | `itemId`* | ConversationItem | yes | Returns a text item |
+| POST | `/conversations/moderate/{convId}` | moderateConversation | `convId`* | — |  | Set conversation moderated |
+| GET | `/conversations/resolveinvitetoken` | resolveInvitationToken | `token`* | Conversation | yes | Resolves an invite token to a conversation |
+| GET | `/conversations/search` | searchConversations | `term`*, `includeItemIds`, `scope` | ConversationSearchResult | yes | Performs a conversation search |
+| POST | `/conversations/unmoderate/{convId}` | unmoderateConversation | `convId`* | — |  | Set conversation unmoderated |
+| GET | `/conversations/{convId}` | getConversationbyId | `convId`* | Conversation | yes | Gets a conversation |
+| POST | `/conversations/{convId}/archive` | archiveConversation | `convId`* | — |  | Archives conversation |
+| DELETE | `/conversations/{convId}/archive` | undoArchiveConversation | `convId`* | — |  | Unmute conversation |
+| GET | `/conversations/{convId}/conversationdetails` | getJoinDetails | `convId`* | ConversationDetails | yes | Gets the conference details of a conversation |
+| POST | `/conversations/{convId}/favorite` | addFavorite | `convId`* | — |  | Adds a conversation to the favorites |
+| DELETE | `/conversations/{convId}/favorite` | deleteFavorite | `convId`* | — |  | Removes a conversation from favorites |
+| GET | `/conversations/{convId}/items` | getConversationItems | `convId`*, `modTime`, `direction`, `results` | ConversationItem[] | yes | Gets a list of conversation items |
+| POST | `/conversations/{convId}/label` | assignLabel | `convId`*, body*: object | Label |  | Adds a label to a conversation |
+| DELETE | `/conversations/{convId}/label/{labelId}` | unassignLabel | `convId`*, `labelId`* | Label |  | Removes a label from a conversation |
+| POST | `/conversations/{convId}/messages` | addTextItem | `convId`*, body: object | ConversationItem |  | Adds a message to a conversation |
+| GET | `/conversations/{convId}/messages/flag` | getFlagItem | `convId`* | ConversationItem[] | yes | Gets a list of the flagged messages of a conversation |
+| PUT | `/conversations/{convId}/messages/{itemId}` | updateTextItem | `convId`*, `itemId`*, body: object | ConversationItem |  | Updates a message |
+| POST | `/conversations/{convId}/messages/{itemId}` | addTextItemWithParent | `convId`*, `itemId`*, body: object | ConversationItem |  | Adds a message to an item |
+| DELETE | `/conversations/{convId}/messages/{itemId}` | deleteTextItem | `convId`*, `itemId`* | ConversationItem |  | Deletes a message from a conversation |
+| POST | `/conversations/{convId}/messages/{itemId}/flag` | flagItem | `convId`*, `itemId`*, body: object | — |  | Adds a flag to a message in a conversation |
+| DELETE | `/conversations/{convId}/messages/{itemId}/flag` | unFlagItem | `convId`*, `itemId`* | — |  | Removes the flag from a message |
+| POST | `/conversations/{convId}/messages/{itemId}/like` | likeItem | `convId`*, `itemId`* | — |  | Adds a "like" to a message |
+| DELETE | `/conversations/{convId}/messages/{itemId}/like` | unlikeItem | `convId`*, `itemId`* | — |  | Removes a "like" from a message |
+| POST | `/conversations/{convId}/moderators` | addModerators | `convId`*, body*: object | — |  | Add moderators |
+| DELETE | `/conversations/{convId}/moderators` | removeModerators | `convId`*, body*: object | — |  | Remove moderators |
+| GET | `/conversations/{convId}/participants` | getParticipantsByConvId | `convId`*, `pageSize`*, `name`, `type`, `searchPointer` | ConversationParticipantsList[] | yes | Performs a list of participants |
+| GET | `/conversations/{convId}/pins` | getPinnedConversations | `convId`* | PinnedTopic[] | yes | Returns pinned topics of a conversation |
+| POST | `/conversations/{convId}/pins/{itemId}` | pinAConversation | `convId`*, `itemId`* | Conversation |  | Pins a topic of a conversation |
+| DELETE | `/conversations/{convId}/pins/{itemId}` | unPinAConversation | `convId`*, `itemId`* | Conversation |  | Unpins a topic of a conversation |
+| GET | `/rtc/sessions` | getActiveSessions | — | Label | yes | Gets a list of active sessions |
+| GET | `/spaces` | getSpaces | `timestamp`, `numberOfResults` | GetSpacesResult | yes | Get the spaces |
+| POST | `/spaces/create` | createSpace | body*: object | ParticipantSpaceWrapper |  | Create a space |
+| GET | `/spaces/directory` | getDirectory | `sortBy`*, `sortOrder`*, `filter`*, `query`, `pagePointer`, `numberOfResults` | DirectoryResult | yes | Get the directory |
+| GET | `/spaces/exists/{name}` | existsSpaceName | `name`* | — | yes | Space name exists |
+| PUT | `/spaces/flag/{itemId}` | flagSpaceItem | `itemId`* | — |  | flag a space item |
+| GET | `/spaces/flagged` | getFlaggedItems | `searchDirection`*, `timestamp`*, `searchPointer`, `numberOfResults` | FlaggedItemsResult | yes | Get flagged items |
+| GET | `/spaces/ids` | getSpacesByIds | `ids`* | GetSpacesResult | yes | Get the spaces by their ids |
+| DELETE | `/spaces/item/{itemId}` | deleteSpaceItem | `itemId`* | — |  | deletes a space item |
+| PUT | `/spaces/like/{itemId}` | likeSpaceItem | `itemId`* | — |  | Like a space item |
+| GET | `/spaces/likes/{itemId}` | getLikes | `itemId`*, `searchPointer`, `numberOfResults` | ParticipantsLikeResult | yes | Get the likes of an item |
+| PUT | `/spaces/search/add/recent` | addRecentSpaceSearch | body*: object | — |  | Add recent search |
+| PUT | `/spaces/search/cancel/{searchId}` | cancelSpaceSearch | `searchId`* | — |  | Cancels a space search of a client. |
+| GET | `/spaces/search/recent` | getRecentSearches | — | SpacesSearchTermResult[] | yes | Retrieve recent space searches |
+| GET | `/spaces/search/startBasic` | startBasicSpacesSearch | `scope`*, `searchTerm`*, `startTime`, `endTime`, `prioritySpaces` | BasicSearchResult | yes | starts a basic search in spaces |
+| GET | `/spaces/search/startDetailed` | startDetailedSpaceSearch | `scope`*, `searchTerm`*, `startTime`, `endTime`, `spaceId`*, `searchId` | SpaceSearchResultDetailedBack[] | yes | starts a detailed search in a space |
+| PUT | `/spaces/topic/{topicId}/updateTags` | updateTopicTags | `topicId`*, body*: object | SpaceTopic |  | Update tags |
+| PUT | `/spaces/unflag/{itemId}` | unflagSpaceItem | `itemId`* | — |  | Unflag a space item |
+| PUT | `/spaces/unlike/{itemId}` | unlikeSpaceItem | `itemId`* | — |  | Unlike a space item |
+| PUT | `/spaces/{id}` | updateSpace | `id`*, body: object | ParticipantSpaceWrapper |  | Update a space |
+| DELETE | `/spaces/{id}` | deleteSpace | `id`* | — |  | Delete a space |
+| POST | `/spaces/{id}/join` | joinSpace | `id`* | ParticipantSpaceWrapper |  | Join a space |
+| POST | `/spaces/{id}/labels/assign` | assignLabels | `id`*, body*: object | LabelIds[] |  | Assign labels |
+| DELETE | `/spaces/{id}/labels/unassign` | unassignLabels | `id`*, body*: object | LabelIds[] |  | Unassign labels |
+| POST | `/spaces/{id}/leave` | leaveSpace | `id`* | — |  | Leave a space |
+| POST | `/spaces/{id}/participant` | addParticipantsToSpace | `id`*, body*: object | ParticipantAddResult[] |  | Add Participant to Space |
+| POST | `/spaces/{id}/participant/remove` | v2RemoveParticipantsFromSpace | `id`*, body*: object | — |  | Removes participants from a space |
+| GET | `/spaces/{id}/participants` | getSpaceParticipants | `id`*, `sortBy`*, `sortOrder`*, `filterType`*, `filterValue`, `query`, `searchPointer`, `numberOfResults` | ParticipantsSearchResult | yes | Get the participants of a space |
+| GET | `/spaces/{id}/participants/pending` | getPendingParticipants | `id`*, `searchPointer`, `numberOfResults` | ParticipantsSearchResult | yes | Get the pending participants of a space |
+| GET | `/spaces/{id}/pinnedTopics` | getPinnedTopics | `id`* | SpacePinnedTopic[] | yes | Retrieve pinned topics |
+| GET | `/spaces/{id}/searchParticipantsToAdd` | searchParticipantsToAdd | `id`*, `query`* | AddParticipantsSearchResult[] | yes | Finds participants to add to add to a space |
+| GET | `/spaces/{id}/searchSpaceParticipants` | searchSpaceParticipants | `id`*, `query`* | ParticipantsSearchResultLarge[] | yes | Get the participants of a space |
+| PUT | `/spaces/{id}/updateTimestamp` | updateReadTimestamp | `id`*, body*: object | — |  | Update read timestamp |
+| PUT | `/spaces/{spaceId}/participant` | updateParticipantInSpace | `spaceId`*, body*: object | — |  | Update participant |
+| GET | `/spaces/{spaceId}/participant/import/` | getParticipantsImportData | `spaceId`* | ParticipantsImportDataResult | yes | missing documentation |
+| POST | `/spaces/{spaceId}/participant/request` | requestSpaceAcces | `spaceId`*, body: object | — |  | request access for a space |
+| POST | `/spaces/{spaceId}/participant/{participantId}/deny` | denySpaceAcces | `spaceId`*, `participantId`*, body: object | — |  | Deny access for a space |
+| POST | `/spaces/{spaceId}/participant/{participantId}/grant` | grantSpaceAcces | `spaceId`*, `participantId`* | — |  | grant access for a space |
+| POST | `/spaces/{spaceId}/topic` | createSpaceTopic | `spaceId`*, body*: object | SpaceTopic |  | creates a new space topic |
+| GET | `/spaces/{spaceId}/topic/{topicId}` | v2GetTopicWithReplies | `spaceId`*, `topicId`*, `numberOfReplies` | SpaceTopicWithReplies | yes | Gets space replies and a topic |
+| PUT | `/spaces/{spaceId}/topic/{topicId}` | updateSpaceTopic | `spaceId`*, `topicId`*, body: object | SpaceTopic |  | Updates a topic |
+| GET | `/spaces/{spaceId}/topic/{topicId}/reply` | getSpaceReplies | `spaceId`*, `topicId`*, `searchDirection`*, `timestamp`, `numberOfResults` | SpaceReply | yes | Gets space replies |
+| POST | `/spaces/{spaceId}/topic/{topicId}/reply` | createReply | `spaceId`*, `topicId`*, body: object | SpaceReply |  | creates a reply to a topic |
+| PUT | `/spaces/{spaceId}/topic/{topicId}/reply/{replyId}` | updateSpaceReply | `spaceId`*, `topicId`*, `replyId`*, body: object | SpaceReply |  | Updates a space reply |
+| GET | `/spaces/{spaceId}/topics` | getSpaceTopics | `spaceId`*, `searchDirection`*, `timestamp`, `numberOfResults` | SpaceTopic[] | yes | Gets space topics |
+| PUT | `/spaces/{spaceId}/welcomebox/{content}` | v2UpdateWelcomeBoxContent | `spaceId`*, `content`*, body: object | — |  | Update content of welcome box |
+| PUT | `/spaces/{topicId}/pin` | pinTopic | `topicId`*, body*: object | — |  | Pin a topic |
+| PUT | `/spaces/{topicId}/unpin` | unpinTopic | `topicId`* | — |  | Unpin a topic |
+| GET | `/telephony/deviceInfos` | v2GetDeviceInfos | — | V2DistributedClientInfo[] | yes | Get devices infos |
+| GET | `/telephony/telephonyConversationId` | v2GetTelephonyConversationId | — | — | yes | Get telephony conversation id |
+| GET | `/telephony/{telephonyConversationId}/journal` | getJournalEntries | `telephonyConversationId`*, `timestamp`, `numberOfEntries`, `direction`, `journalFilter` | ConversationItem[] | yes | Get journal |
+| GET | `/users` | searchUser | `name`* | User[] | yes | Search for users |
+| GET | `/users/labels` | getLabel | — | Label[] | yes | Returns all user labels |
+| POST | `/users/labels` | addLabel | body*: object | Label |  | Add a user label |
+| DELETE | `/users/labels/{labelId}` | removeLabel | `labelId`* | Label |  | Remove a user label |
+| GET | `/users/list` | searchUsersList | `name`*, `returnFullUserInfo`, `secondaryLookup` | User[] | yes | Search multiple users. |
+| GET | `/users/presence` | getPresence | `userIds`* | Presence[] | yes | Gets the presence status |
+| PUT | `/users/presence` | setUserPresence | body*: object | Presence |  | Updates the presence status |
+| GET | `/users/profile` | getProfile | — | User | yes | Gets the authenticated user's profile information |
+| PUT | `/users/profile` | updateProfile | body: object | User |  | Updates the user profile |
+| GET | `/users/supportinfo` | getSupportInfo | — | SupportInfo | yes | Gets the support information |
+| GET | `/users/{emailAddress}/getUserByEmail` | getUserByEmailAddress | `emailAddress`*, `secondaryLookup` | User | yes | Get user by email |
+| GET | `/users/{id}` | getUserById | `id`* | User | yes | Gets the user's profile information |
+| GET | `/users/{id}/presence` | getUserPresence | `id`* | Presence | yes | Gets the presence status |
+| GET | `/webhooks` | getWebHook | — | WebHook[] | yes | Gets a list of webHooks |
+| POST | `/webhooks` | addWebHook | body*: object | WebHook |  | Registers a WebHook |
+| DELETE | `/webhooks` | removeWebHooks | — | — |  | Removes all webHooks |
+| POST | `/webhooks/incoming/create/{conversationId}` | createIncomingWebhook | `conversationId`*, `name`, `userId`, `description` | IncomingWebhook |  | Create a new webhook for existing conversation. |
+| GET | `/webhooks/incoming/user/{userId}` | getIncomingWebhookByUser | `userId`*, `pagesize`, `searchpointer` | IncomingWebhook[] | yes | Get all webhooks of a special user. |
+| POST | `/webhooks/incoming/{webhookId}` | postWebhookAsSlackMessage | `webhookId`*, body*: IncomingWebhookSlackMessage | — |  | Post text item for conversation via webhook. |
+| DELETE | `/webhooks/incoming/{webhookId}` | deleteIncomingWebhook | `webhookId`* | — |  | Delete an existing webhook |
+| POST | `/webhooks/presence` | addPresenceWebHook | body*: object | WebHook |  | Registers Presence WebHook registration |
+| PUT | `/webhooks/presence/{id}` | updatePresenceWebHook | `id`*, body: object | WebHook |  | Updates a Presence WebHook registration |
+| GET | `/webhooks/{id}` | getWebHookById | `id`* | WebHook | yes | Gets a webHook |
+| PUT | `/webhooks/{id}` | updateWebHook | `id`*, body: object | WebHook |  | Updates a WebHook registration |
+| DELETE | `/webhooks/{id}` | removeWebHook | `id`* | — |  | Removes a registered webHook |

@@ -11,7 +11,7 @@ logo: "https://manifests.ragentic.io/assets/figma/figma-icon-full-color-9798b710
 
 | | |
 | --- | --- |
-| Signed bundle | `f8cf2513a63734024f0722f6b57ff7451681c73740f3432a18436319f5255208` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.figma.com` |
 | Credential | api_key_header (`X-Figma-Token`) |
 | Connection test | GET `https://api.figma.com/v1/me` |
@@ -40,64 +40,66 @@ Copyright: Copyright (c) 2023 Figma
 
 237 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/activity_logs` | getActivityLogs | Get activity logs |
-| GET | `/v1/ai_usage/daily` | getAiUsageDaily | Get daily AI credit usage |
-| GET | `/v1/analytics/libraries/{file_key}/component/actions` | getLibraryAnalyticsComponentActions | Get library analytics component action data. |
-| GET | `/v1/analytics/libraries/{file_key}/component/usages` | getLibraryAnalyticsComponentUsages | Get library analytics component usage data. |
-| GET | `/v1/analytics/libraries/{file_key}/style/actions` | getLibraryAnalyticsStyleActions | Get library analytics style action data. |
-| GET | `/v1/analytics/libraries/{file_key}/style/usages` | getLibraryAnalyticsStyleUsages | Get library analytics style usage data. |
-| GET | `/v1/analytics/libraries/{file_key}/variable/actions` | getLibraryAnalyticsVariableActions | Get library analytics variable action data. |
-| GET | `/v1/analytics/libraries/{file_key}/variable/usages` | getLibraryAnalyticsVariableUsages | Get library analytics variable usage data. |
-| GET | `/v1/component_sets/{key}` | getComponentSet | Get component set |
-| GET | `/v1/components/{key}` | getComponent | Get component |
-| POST | `/v1/dev_resources` | postDevResources | Create dev resources |
-| PUT | `/v1/dev_resources` | putDevResources | Update dev resources |
-| POST | `/v1/developer_logs` | getDeveloperLogs | Get developer logs |
-| GET | `/v1/files/{file_key}` | getFile | Get file JSON |
-| GET | `/v1/files/{file_key}/comments` | getComments | Get comments in a file |
-| POST | `/v1/files/{file_key}/comments` | postComment | Add a comment to a file |
-| DELETE | `/v1/files/{file_key}/comments/{comment_id}` | deleteComment | Delete a comment |
-| DELETE | `/v1/files/{file_key}/comments/{comment_id}/reactions` | deleteCommentReaction | Delete a reaction |
-| GET | `/v1/files/{file_key}/comments/{comment_id}/reactions` | getCommentReactions | Get reactions for a comment |
-| POST | `/v1/files/{file_key}/comments/{comment_id}/reactions` | postCommentReaction | Add a reaction to a comment |
-| GET | `/v1/files/{file_key}/component_sets` | getFileComponentSets | Get file component sets |
-| GET | `/v1/files/{file_key}/components` | getFileComponents | Get file components |
-| GET | `/v1/files/{file_key}/dev_resources` | getDevResources | Get dev resources |
-| DELETE | `/v1/files/{file_key}/dev_resources/{dev_resource_id}` | deleteDevResource | Delete dev resource |
-| POST | `/v1/files/{file_key}/duplicate` | postFileDuplicate | Duplicate a file |
-| GET | `/v1/files/{file_key}/images` | getImageFills | Get image fills |
-| GET | `/v1/files/{file_key}/meta` | getFileMeta | Get file metadata |
-| GET | `/v1/files/{file_key}/nodes` | getFileNodes | Get file JSON for specific nodes |
-| GET | `/v1/files/{file_key}/styles` | getFileStyles | Get file styles |
-| POST | `/v1/files/{file_key}/variables` | postVariables | Create/modify/delete variables |
-| GET | `/v1/files/{file_key}/variables/local` | getLocalVariables | Get local variables |
-| GET | `/v1/files/{file_key}/variables/published` | getPublishedVariables | Get published variables |
-| GET | `/v1/files/{file_key}/versions` | getFileVersions | Get versions of a file |
-| GET | `/v1/images/{file_key}` | getImages | Render images of file nodes |
-| GET | `/v1/me` | getMe | Get current user |
-| GET | `/v1/oembed` | getOEmbed | Get oEmbed data |
-| GET | `/v1/payments` | getPayments | Get payments |
-| GET | `/v1/projects/{project_id}/files` | getProjectFiles | [Deprecated] Get files in a project |
-| GET | `/v1/projects/{project_id}/meta` | getProjectMeta | [Deprecated] Get project metadata |
-| GET | `/v1/styles/{key}` | getStyle | Get style |
-| POST | `/v1/teams` | postTeam | Create a team |
-| GET | `/v1/teams/{team_id}` | getTeam | Get a team |
-| GET | `/v1/teams/{team_id}/component_sets` | getTeamComponentSets | Get team component sets |
-| GET | `/v1/teams/{team_id}/components` | getTeamComponents | Get team components |
-| POST | `/v1/teams/{team_id}/folders` | postTeamFolder | Create a folder |
-| POST | `/v1/teams/{team_id}/invites` | postTeamInvites | Invite users to a team |
-| GET | `/v1/teams/{team_id}/projects` | getTeamProjects | [Deprecated] Get projects in a team |
-| GET | `/v1/teams/{team_id}/styles` | getTeamStyles | Get team styles |
-| GET | `/v2/folders/{folder_id}/files` | getFolderFiles | Get files in a folder |
-| GET | `/v2/folders/{folder_id}/folders` | getFolderFolders | Get subfolders in a folder |
-| GET | `/v2/folders/{folder_id}/meta` | getFolderMeta | Get folder metadata |
-| GET | `/v2/teams/{team_id}/folders` | getTeamFolders | Get top-level folders in a team |
-| GET | `/v2/teams/{team_id}/webhooks` | getTeamWebhooks | [Deprecated] Get team webhooks |
-| GET | `/v2/webhooks` | getWebhooks | Get webhooks by context or plan |
-| POST | `/v2/webhooks` | postWebhook | Create a webhook |
-| DELETE | `/v2/webhooks/{webhook_id}` | deleteWebhook | Delete a webhook |
-| GET | `/v2/webhooks/{webhook_id}` | getWebhook | Get a webhook |
-| PUT | `/v2/webhooks/{webhook_id}` | putWebhook | Update a webhook |
-| GET | `/v2/webhooks/{webhook_id}/requests` | getWebhookRequests | Get webhook requests |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/activity_logs` | getActivityLogs | `events`, `start_time`, `end_time`, `limit`, `order` | object | yes | Get activity logs |
+| GET | `/v1/ai_usage/daily` | getAiUsageDaily | `start_date`*, `end_date`*, `user_email`, `limit`, `cursor` | object | yes | Get daily AI credit usage |
+| GET | `/v1/analytics/libraries/{file_key}/component/actions` | getLibraryAnalyticsComponentActions | `file_key`*, `cursor`, `group_by`*, `start_date`, `end_date` | object | yes | Get library analytics component action data. |
+| GET | `/v1/analytics/libraries/{file_key}/component/usages` | getLibraryAnalyticsComponentUsages | `file_key`*, `cursor`, `group_by`* | object | yes | Get library analytics component usage data. |
+| GET | `/v1/analytics/libraries/{file_key}/style/actions` | getLibraryAnalyticsStyleActions | `file_key`*, `cursor`, `group_by`*, `start_date`, `end_date` | object | yes | Get library analytics style action data. |
+| GET | `/v1/analytics/libraries/{file_key}/style/usages` | getLibraryAnalyticsStyleUsages | `file_key`*, `cursor`, `group_by`* | object | yes | Get library analytics style usage data. |
+| GET | `/v1/analytics/libraries/{file_key}/variable/actions` | getLibraryAnalyticsVariableActions | `file_key`*, `cursor`, `group_by`*, `start_date`, `end_date` | object | yes | Get library analytics variable action data. |
+| GET | `/v1/analytics/libraries/{file_key}/variable/usages` | getLibraryAnalyticsVariableUsages | `file_key`*, `cursor`, `group_by`* | object | yes | Get library analytics variable usage data. |
+| GET | `/v1/component_sets/{key}` | getComponentSet | `key`* | object | yes | Get component set |
+| GET | `/v1/components/{key}` | getComponent | `key`* | object | yes | Get component |
+| PUT | `/v1/dev_resources` | putDevResources | body*: object | object |  | Update dev resources |
+| POST | `/v1/dev_resources` | postDevResources | body*: object | object |  | Create dev resources |
+| POST | `/v1/developer_logs` | getDeveloperLogs | body: object | object |  | Get developer logs |
+| GET | `/v1/files/{file_key}` | getFile | `file_key`*, `version`, `ids`, `depth`, `geometry`, `plugin_data`, `branch_data` | object | yes | Get file JSON |
+| GET | `/v1/files/{file_key}/comments` | getComments | `file_key`*, `as_md` | object | yes | Get comments in a file |
+| POST | `/v1/files/{file_key}/comments` | postComment | `file_key`*, body*: object | Comment |  | Add a comment to a file |
+| DELETE | `/v1/files/{file_key}/comments/{comment_id}` | deleteComment | `file_key`*, `comment_id`* | object |  | Delete a comment |
+| GET | `/v1/files/{file_key}/comments/{comment_id}/reactions` | getCommentReactions | `file_key`*, `comment_id`*, `cursor` | object | yes | Get reactions for a comment |
+| POST | `/v1/files/{file_key}/comments/{comment_id}/reactions` | postCommentReaction | `file_key`*, `comment_id`*, body*: object | object |  | Add a reaction to a comment |
+| DELETE | `/v1/files/{file_key}/comments/{comment_id}/reactions` | deleteCommentReaction | `file_key`*, `comment_id`*, `emoji`* | object |  | Delete a reaction |
+| GET | `/v1/files/{file_key}/component_sets` | getFileComponentSets | `file_key`* | object | yes | Get file component sets |
+| GET | `/v1/files/{file_key}/components` | getFileComponents | `file_key`* | object | yes | Get file components |
+| GET | `/v1/files/{file_key}/dev_resources` | getDevResources | `file_key`*, `node_ids` | object | yes | Get dev resources |
+| DELETE | `/v1/files/{file_key}/dev_resources/{dev_resource_id}` | deleteDevResource | `file_key`*, `dev_resource_id`* | — |  | Delete dev resource |
+| POST | `/v1/files/{file_key}/duplicate` | postFileDuplicate | `file_key`*, body*: object | object |  | Duplicate a file |
+| GET | `/v1/files/{file_key}/images` | getImageFills | `file_key`* | object | yes | Get image fills |
+| GET | `/v1/files/{file_key}/meta` | getFileMeta | `file_key`* | object | yes | Get file metadata |
+| GET | `/v1/files/{file_key}/nodes` | getFileNodes | `file_key`*, `ids`*, `version`, `depth`, `geometry`, `plugin_data` | object | yes | Get file JSON for specific nodes |
+| GET | `/v1/files/{file_key}/styles` | getFileStyles | `file_key`* | object | yes | Get file styles |
+| POST | `/v1/files/{file_key}/variables` | postVariables | `file_key`*, body*: object | object |  | Create/modify/delete variables |
+| GET | `/v1/files/{file_key}/variables/local` | getLocalVariables | `file_key`* | object | yes | Get local variables |
+| GET | `/v1/files/{file_key}/variables/published` | getPublishedVariables | `file_key`* | object | yes | Get published variables |
+| GET | `/v1/files/{file_key}/versions` | getFileVersions | `file_key`*, `page_size`, `before`, `after` | object | yes | Get versions of a file |
+| GET | `/v1/images/{file_key}` | getImages | `file_key`*, `ids`*, `version`, `scale`, `format`, `svg_outline_text`, `svg_include_id`, `svg_include_node_id`, `svg_simplify_stroke`, `contents_only`, `use_absolute_bounds` | object | yes | Render images of file nodes |
+| GET | `/v1/me` | getMe | — | User\|object | yes | Get current user |
+| GET | `/v1/oembed` | getOEmbed | `url`*, `maxwidth`, `maxheight` | object | yes | Get oEmbed data |
+| GET | `/v1/payments` | getPayments | `plugin_payment_token`, `user_id`, `community_file_id`, `plugin_id`, `widget_id` | object | yes | Get payments |
+| GET | `/v1/projects/{project_id}/files` | getProjectFiles | `project_id`*, `branch_data` | object | yes | [Deprecated] Get files in a project |
+| GET | `/v1/projects/{project_id}/meta` | getProjectMeta | `project_id`* | object | yes | [Deprecated] Get project metadata |
+| GET | `/v1/styles/{key}` | getStyle | `key`* | object | yes | Get style |
+| POST | `/v1/teams` | postTeam | body*: CreateTeamRequest | Team |  | Create a team |
+| GET | `/v1/teams/{team_id}` | getTeam | `team_id`* | Team | yes | Get a team |
+| GET | `/v1/teams/{team_id}/component_sets` | getTeamComponentSets | `team_id`*, `page_size`, `after`, `before` | object | yes | Get team component sets |
+| GET | `/v1/teams/{team_id}/components` | getTeamComponents | `team_id`*, `page_size`, `after`, `before` | object | yes | Get team components |
+| POST | `/v1/teams/{team_id}/folders` | postTeamFolder | `team_id`*, body*: CreateFolderRequest | Folder\|object |  | Create a folder |
+| POST | `/v1/teams/{team_id}/invites` | postTeamInvites | `team_id`*, body*: InviteTeamMembersRequest | object |  | Invite users to a team |
+| GET | `/v1/teams/{team_id}/projects` | getTeamProjects | `team_id`* | object | yes | [Deprecated] Get projects in a team |
+| GET | `/v1/teams/{team_id}/styles` | getTeamStyles | `team_id`*, `page_size`, `after`, `before` | object | yes | Get team styles |
+| GET | `/v2/folders/{folder_id}/files` | getFolderFiles | `folder_id`*, `branch_data` | object | yes | Get files in a folder |
+| GET | `/v2/folders/{folder_id}/folders` | getFolderFolders | `folder_id`* | object | yes | Get subfolders in a folder |
+| GET | `/v2/folders/{folder_id}/meta` | getFolderMeta | `folder_id`* | object | yes | Get folder metadata |
+| GET | `/v2/teams/{team_id}/folders` | getTeamFolders | `team_id`* | object | yes | Get top-level folders in a team |
+| GET | `/v2/teams/{team_id}/webhooks` | getTeamWebhooks | `team_id`* | object | yes | [Deprecated] Get team webhooks |
+| GET | `/v2/webhooks` | getWebhooks | `context`, `context_id`, `plan_api_id`, `cursor` | object | yes | Get webhooks by context or plan |
+| POST | `/v2/webhooks` | postWebhook | body*: object | WebhookV2 |  | Create a webhook |
+| GET | `/v2/webhooks/{webhook_id}` | getWebhook | `webhook_id`* | WebhookV2 | yes | Get a webhook |
+| PUT | `/v2/webhooks/{webhook_id}` | putWebhook | `webhook_id`*, body*: object | WebhookV2 |  | Update a webhook |
+| DELETE | `/v2/webhooks/{webhook_id}` | deleteWebhook | `webhook_id`* | WebhookV2 |  | Delete a webhook |
+| GET | `/v2/webhooks/{webhook_id}/requests` | getWebhookRequests | `webhook_id`* | object | yes | Get webhook requests |

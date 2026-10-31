@@ -32,14 +32,38 @@
       },
       {
         "deprecated": false,
+        "description": "Processa um arquivo CNAB para obter informações sobre o mesmo.",
         "id": "operation:post:/file",
         "kind": "operation",
         "method": "post",
         "name": "post /file",
+        "parameters": [
+          {
+            "description": "Arquivo CNAB",
+            "in": "formData",
+            "name": "file",
+            "required": true,
+            "type": "file"
+          }
+        ],
         "path": "/file",
         "pointer": "#/paths/~1file/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Faz o upload de um arquivo"
+        "summary": "Faz o upload de um arquivo",
+        "tags": [
+          "file"
+        ]
       },
       {
         "deprecated": false,
@@ -47,10 +71,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /file/{fileId}",
+        "parameters": [
+          {
+            "description": "ID Temporário gerado no endpoint file",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/file/{fileId}",
         "pointer": "#/paths/~1file~1{fileId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retorna as informações básicas de um arquivo previamente processado"
+        "summary": "Retorna as informações básicas de um arquivo previamente processado",
+        "tags": [
+          "file"
+        ]
       },
       {
         "deprecated": false,
@@ -58,10 +105,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /file/{fileId}/lines",
+        "parameters": [
+          {
+            "description": "ID Temporário gerado no endpoint file",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/file/{fileId}/lines",
         "pointer": "#/paths/~1file~1{fileId}~1lines/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retorna todas as linhas e seus respectivos campos (de forma não processada, apenas indicando os campos reconhecidos)"
+        "summary": "Retorna todas as linhas e seus respectivos campos (de forma não processada, apenas indicando os campos reconhecidos)",
+        "tags": [
+          "file"
+        ]
       },
       {
         "deprecated": false,
@@ -69,30 +139,57 @@
         "kind": "operation",
         "method": "get",
         "name": "get /file/{fileId}/occurrences",
+        "parameters": [
+          {
+            "description": "ID Temporário gerado no endpoint file",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/file/{fileId}/occurrences",
         "pointer": "#/paths/~1file~1{fileId}~1occurrences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retorna as informações de baixa de boletos e outros tipos de ocorrências"
+        "summary": "Retorna as informações de baixa de boletos e outros tipos de ocorrências",
+        "tags": [
+          "file"
+        ]
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:File",
         "kind": "schema",
-        "name": "File"
+        "name": "File",
+        "type": "object"
       },
       {
         "id": "schema:Line",
         "kind": "schema",
-        "name": "Line"
+        "name": "Line",
+        "type": "object"
       },
       {
         "id": "schema:Occurrence",
         "kind": "schema",
-        "name": "Occurrence"
+        "name": "Occurrence",
+        "type": "object"
       }
     ]
   },

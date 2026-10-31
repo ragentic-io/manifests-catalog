@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wirefreethought.github.io_geodb
 
 | | |
 | --- | --- |
-| Signed bundle | `9c008ec74d64015c6326f6aae21c496e2d359849a4b16f18df352bc1dc1413e8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wirefreethought.github.io_geodb
 
 34 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/geo/adminDivisions` | findAdminDivisionsUsingGET | Find administrative divisions |
-| GET | `/geo/adminDivisions/{divisionId}` | getAdminDivisionUsingGET | Get administrative division details |
-| GET | `/geo/adminDivisions/{divisionId}/nearbyCities` | findCitiesNearAdminDivisionUsingGET | Find cities near division |
-| GET | `/geo/adminDivisions/{divisionId}/nearbyDivisions` | findDivisionsNearAdminDivisionUsingGET | Find divisions near division |
-| GET | `/geo/cities` | findCitiesUsingGET | Find cities |
-| GET | `/geo/cities/{cityId}` | getCityUsingGET | Get city details |
-| GET | `/geo/cities/{cityId}/dateTime` | getCityDateTimeUsingGET | Get city date-time |
-| GET | `/geo/cities/{cityId}/distance` | getCityDistanceUsingGET | Get city distance |
-| GET | `/geo/cities/{cityId}/locatedIn` | getCityLocatedInUsingGET | Get city admin region |
-| GET | `/geo/cities/{cityId}/nearbyCities` | findCitiesNearCityUsingGET | Find cities near city |
-| GET | `/geo/cities/{cityId}/time` | getCityTimeUsingGET | Get city time |
-| GET | `/geo/countries` | getCountriesUsingGET | Find countries |
-| GET | `/geo/countries/{countryId}` | getCountryUsingGET | Get country details |
-| GET | `/geo/countries/{countryId}/regions` | getRegionsUsingGET | Find country regions |
-| GET | `/geo/countries/{countryId}/regions/{regionCode}` | getRegionUsingGET | Get region details |
-| GET | `/geo/countries/{countryId}/regions/{regionCode}/adminDivisions` | findRegionDivisionsUsingGET | Find country region administrative divisions |
-| GET | `/geo/countries/{countryId}/regions/{regionCode}/cities` | findRegionCitiesUsingGET | Find country region cities |
-| GET | `/geo/locations/{locationId}/nearbyCities` | findCitiesNearLocationUsingGET | Find cities near location |
-| GET | `/geo/locations/{locationId}/nearbyDivisions` | findDivisionsNearLocationUsingGET | Find divisions near location |
-| GET | `/locale/currencies` | getCurrenciesUsingGET | Find currencies |
-| GET | `/locale/languages` | getLanguagesUsingGET | Get languages |
-| GET | `/locale/locales` | getLocalesUsingGET | Get locales |
-| GET | `/locale/timezones` | getTimezonesUsingGET | Get time-zones |
-| GET | `/locale/timezones/{zoneId}` | getTimeZoneUsingGET | Get time-zone |
-| GET | `/locale/timezones/{zoneId}/dateTime` | getTimeZoneDateTimeUsingGET | Get time-zone date-time |
-| GET | `/locale/timezones/{zoneId}/time` | getTimeZoneTimeUsingGET | Get time-zone time |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/geo/adminDivisions` | findAdminDivisionsUsingGET | `location`, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find administrative divisions |
+| GET | `/geo/adminDivisions/{divisionId}` | getAdminDivisionUsingGET | `divisionId`*, `asciiMode`, `languageCode` | PopulatedPlaceResponse | yes | Get administrative division details |
+| GET | `/geo/adminDivisions/{divisionId}/nearbyCities` | findCitiesNearAdminDivisionUsingGET | `divisionId`*, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `types`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find cities near division |
+| GET | `/geo/adminDivisions/{divisionId}/nearbyDivisions` | findDivisionsNearAdminDivisionUsingGET | `divisionId`*, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find divisions near division |
+| GET | `/geo/cities` | findCitiesUsingGET | `location`, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `types`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find cities |
+| GET | `/geo/cities/{cityId}` | getCityUsingGET | `cityId`*, `asciiMode`, `languageCode` | PopulatedPlaceResponse | yes | Get city details |
+| GET | `/geo/cities/{cityId}/dateTime` | getCityDateTimeUsingGET | `cityId`* | DateTimeResponse | yes | Get city date-time |
+| GET | `/geo/cities/{cityId}/distance` | getCityDistanceUsingGET | `cityId`*, `toCityId`*, `distanceUnit` | DistanceResponse | yes | Get city distance |
+| GET | `/geo/cities/{cityId}/locatedIn` | getCityLocatedInUsingGET | `cityId`*, `asciiMode`, `languageCode` | PopulatedPlaceResponse | yes | Get city admin region |
+| GET | `/geo/cities/{cityId}/nearbyCities` | findCitiesNearCityUsingGET | `cityId`*, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `types`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find cities near city |
+| GET | `/geo/cities/{cityId}/time` | getCityTimeUsingGET | `cityId`* | TimeResponse | yes | Get city time |
+| GET | `/geo/countries` | getCountriesUsingGET | `currencyCode`, `namePrefix`, `namePrefixDefaultLangResults`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort` | CountriesResponse | yes | Find countries |
+| GET | `/geo/countries/{countryId}` | getCountryUsingGET | `countryId`*, `asciiMode`, `languageCode` | CountryResponse | yes | Get country details |
+| GET | `/geo/countries/{countryId}/regions` | getRegionsUsingGET | `countryId`*, `namePrefix`, `namePrefixDefaultLangResults`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort` | RegionsResponse | yes | Find country regions |
+| GET | `/geo/countries/{countryId}/regions/{regionCode}` | getRegionUsingGET | `countryId`*, `regionCode`*, `asciiMode`, `languageCode` | RegionResponse | yes | Get region details |
+| GET | `/geo/countries/{countryId}/regions/{regionCode}/adminDivisions` | findRegionDivisionsUsingGET | `countryId`*, `regionCode`*, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find country region administrative divisions |
+| GET | `/geo/countries/{countryId}/regions/{regionCode}/cities` | findRegionCitiesUsingGET | `countryId`*, `regionCode`*, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `types`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find country region cities |
+| GET | `/geo/locations/{locationId}/nearbyCities` | findCitiesNearLocationUsingGET | `locationId`*, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `types`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find cities near location |
+| GET | `/geo/locations/{locationId}/nearbyDivisions` | findDivisionsNearLocationUsingGET | `locationId`*, `radius`, `distanceUnit`, `countryIds`, `excludedCountryIds`, `minPopulation`, `maxPopulation`, `namePrefix`, `namePrefixDefaultLangResults`, `timeZoneIds`, `asciiMode`, `hateoasMode`, `languageCode`, `limit`, `offset`, `sort`, `includeDeleted` | PopulatedPlacesResponse | yes | Find divisions near location |
+| GET | `/locale/currencies` | getCurrenciesUsingGET | `countryId`*, `hateoasMode`, `limit`, `offset` | CurrenciesResponse | yes | Find currencies |
+| GET | `/locale/languages` | getLanguagesUsingGET | `hateoasMode`, `limit`, `offset` | LanguagesResponse | yes | Get languages |
+| GET | `/locale/locales` | getLocalesUsingGET | `hateoasMode`, `limit`, `offset` | LocalesResponse | yes | Get locales |
+| GET | `/locale/timezones` | getTimezonesUsingGET | `hateoasMode`, `limit`, `offset` | TimeZonesResponse | yes | Get time-zones |
+| GET | `/locale/timezones/{zoneId}` | getTimeZoneUsingGET | `zoneId`* | TimeZoneResponse | yes | Get time-zone |
+| GET | `/locale/timezones/{zoneId}/dateTime` | getTimeZoneDateTimeUsingGET | `zoneId`* | DateTimeResponse | yes | Get time-zone date-time |
+| GET | `/locale/timezones/{zoneId}/time` | getTimeZoneTimeUsingGET | `zoneId`* | TimeResponse | yes | Get time-zone time |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_koomalooma_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `4db9f2f10dbda3d63c69a45d52001ef0c4bab5bc7f4bd0c907064cea28a48089` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_koomalooma_profile_
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/users` | post /users | Create a User |
-| POST | `/users/{user_id}/commitments` | post /users/{user_id}/commitments | Assign points to a User |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/users` | post /users | — | User |  | Create a User |
+| POST | `/users/{user_id}/commitments` | post /users/{user_id}/commitments | `user_id`*, body*: CommitmentRequest | Commitment |  | Assign points to a User |

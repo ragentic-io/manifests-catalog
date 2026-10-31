@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_go-upc.com_img_favicon.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `17de686ab5ee7ce574a2f9b4bf51e3eb053c916042bdbc0aacfaff9326633a09` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_go-upc.com_img_favicon.png"
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/code/{code}` | getProductInfo | Retrieve product info for a particular barcode number (UPC, EAN, or ISBN). |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/code/{code}` | getProductInfo | `code`* | object | yes | Retrieve product info for a particular barcode number (UPC, EAN, or ISBN). |

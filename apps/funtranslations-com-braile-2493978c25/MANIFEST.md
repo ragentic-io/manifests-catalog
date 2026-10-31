@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_funtranslate_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `53d316455e105b7d916e9bfc8b436e900535c4accfac4455eb13e5c6fbff5cec` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,10 +32,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_funtranslate_profil
 
 ## Operations (5)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/translate/braille` | get /translate/braille | — |
-| GET | `/translate/braille/dots` | get /translate/braille/dots | — |
-| GET | `/translate/braille/html` | get /translate/braille/html | — |
-| GET | `/translate/braille/image` | get /translate/braille/image | — |
-| GET | `/translate/braille/unicode` | get /translate/braille/unicode | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/translate/braille` | get /translate/braille | `text`* | — | yes | — |
+| GET | `/translate/braille/dots` | get /translate/braille/dots | `text`* | — | yes | — |
+| GET | `/translate/braille/html` | get /translate/braille/html | `text`* | — | yes | — |
+| GET | `/translate/braille/image` | get /translate/braille/image | `text`* | — | yes | — |
+| GET | `/translate/braille/unicode` | get /translate/braille/unicode | `text`* | — | yes | — |

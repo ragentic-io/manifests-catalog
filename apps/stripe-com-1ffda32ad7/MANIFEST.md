@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_stripe_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `bb868e97fc6c2c85ee31e5d30190566c4cb406c7fe6fc667d91866066a7f69af` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,451 +34,453 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_stripe_profile_imag
 
 746 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/account` | GetAccount | — |
-| POST | `/v1/account_links` | PostAccountLinks | — |
-| GET | `/v1/accounts` | GetAccounts | — |
-| POST | `/v1/accounts` | PostAccounts | — |
-| DELETE | `/v1/accounts/{account}` | DeleteAccountsAccount | — |
-| GET | `/v1/accounts/{account}` | GetAccountsAccount | — |
-| POST | `/v1/accounts/{account}` | PostAccountsAccount | — |
-| POST | `/v1/accounts/{account}/bank_accounts` | PostAccountsAccountBankAccounts | — |
-| DELETE | `/v1/accounts/{account}/bank_accounts/{id}` | DeleteAccountsAccountBankAccountsId | — |
-| GET | `/v1/accounts/{account}/bank_accounts/{id}` | GetAccountsAccountBankAccountsId | — |
-| POST | `/v1/accounts/{account}/bank_accounts/{id}` | PostAccountsAccountBankAccountsId | — |
-| GET | `/v1/accounts/{account}/capabilities` | GetAccountsAccountCapabilities | — |
-| GET | `/v1/accounts/{account}/capabilities/{capability}` | GetAccountsAccountCapabilitiesCapability | — |
-| POST | `/v1/accounts/{account}/capabilities/{capability}` | PostAccountsAccountCapabilitiesCapability | — |
-| GET | `/v1/accounts/{account}/external_accounts` | GetAccountsAccountExternalAccounts | — |
-| POST | `/v1/accounts/{account}/external_accounts` | PostAccountsAccountExternalAccounts | — |
-| DELETE | `/v1/accounts/{account}/external_accounts/{id}` | DeleteAccountsAccountExternalAccountsId | — |
-| GET | `/v1/accounts/{account}/external_accounts/{id}` | GetAccountsAccountExternalAccountsId | — |
-| POST | `/v1/accounts/{account}/external_accounts/{id}` | PostAccountsAccountExternalAccountsId | — |
-| POST | `/v1/accounts/{account}/login_links` | PostAccountsAccountLoginLinks | — |
-| GET | `/v1/accounts/{account}/people` | GetAccountsAccountPeople | — |
-| POST | `/v1/accounts/{account}/people` | PostAccountsAccountPeople | — |
-| DELETE | `/v1/accounts/{account}/people/{person}` | DeleteAccountsAccountPeoplePerson | — |
-| GET | `/v1/accounts/{account}/people/{person}` | GetAccountsAccountPeoplePerson | — |
-| POST | `/v1/accounts/{account}/people/{person}` | PostAccountsAccountPeoplePerson | — |
-| GET | `/v1/accounts/{account}/persons` | GetAccountsAccountPersons | — |
-| POST | `/v1/accounts/{account}/persons` | PostAccountsAccountPersons | — |
-| DELETE | `/v1/accounts/{account}/persons/{person}` | DeleteAccountsAccountPersonsPerson | — |
-| GET | `/v1/accounts/{account}/persons/{person}` | GetAccountsAccountPersonsPerson | — |
-| POST | `/v1/accounts/{account}/persons/{person}` | PostAccountsAccountPersonsPerson | — |
-| POST | `/v1/accounts/{account}/reject` | PostAccountsAccountReject | — |
-| GET | `/v1/apple_pay/domains` | GetApplePayDomains | — |
-| POST | `/v1/apple_pay/domains` | PostApplePayDomains | — |
-| DELETE | `/v1/apple_pay/domains/{domain}` | DeleteApplePayDomainsDomain | — |
-| GET | `/v1/apple_pay/domains/{domain}` | GetApplePayDomainsDomain | — |
-| GET | `/v1/application_fees` | GetApplicationFees | — |
-| GET | `/v1/application_fees/{fee}/refunds/{id}` | GetApplicationFeesFeeRefundsId | — |
-| POST | `/v1/application_fees/{fee}/refunds/{id}` | PostApplicationFeesFeeRefundsId | — |
-| GET | `/v1/application_fees/{id}` | GetApplicationFeesId | — |
-| POST | `/v1/application_fees/{id}/refund` | PostApplicationFeesIdRefund | — |
-| GET | `/v1/application_fees/{id}/refunds` | GetApplicationFeesIdRefunds | — |
-| POST | `/v1/application_fees/{id}/refunds` | PostApplicationFeesIdRefunds | — |
-| GET | `/v1/apps/secrets` | GetAppsSecrets | — |
-| POST | `/v1/apps/secrets` | PostAppsSecrets | — |
-| POST | `/v1/apps/secrets/delete` | PostAppsSecretsDelete | — |
-| GET | `/v1/apps/secrets/find` | GetAppsSecretsFind | — |
-| GET | `/v1/balance` | GetBalance | — |
-| GET | `/v1/balance/history` | GetBalanceHistory | — |
-| GET | `/v1/balance/history/{id}` | GetBalanceHistoryId | — |
-| GET | `/v1/balance_transactions` | GetBalanceTransactions | — |
-| GET | `/v1/balance_transactions/{id}` | GetBalanceTransactionsId | — |
-| GET | `/v1/billing_portal/configurations` | GetBillingPortalConfigurations | — |
-| POST | `/v1/billing_portal/configurations` | PostBillingPortalConfigurations | — |
-| GET | `/v1/billing_portal/configurations/{configuration}` | GetBillingPortalConfigurationsConfiguration | — |
-| POST | `/v1/billing_portal/configurations/{configuration}` | PostBillingPortalConfigurationsConfiguration | — |
-| POST | `/v1/billing_portal/sessions` | PostBillingPortalSessions | — |
-| GET | `/v1/charges` | GetCharges | — |
-| POST | `/v1/charges` | PostCharges | — |
-| GET | `/v1/charges/search` | GetChargesSearch | — |
-| GET | `/v1/charges/{charge}` | GetChargesCharge | — |
-| POST | `/v1/charges/{charge}` | PostChargesCharge | — |
-| POST | `/v1/charges/{charge}/capture` | PostChargesChargeCapture | — |
-| GET | `/v1/charges/{charge}/dispute` | GetChargesChargeDispute | — |
-| POST | `/v1/charges/{charge}/dispute` | PostChargesChargeDispute | — |
-| POST | `/v1/charges/{charge}/dispute/close` | PostChargesChargeDisputeClose | — |
-| POST | `/v1/charges/{charge}/refund` | PostChargesChargeRefund | — |
-| GET | `/v1/charges/{charge}/refunds` | GetChargesChargeRefunds | — |
-| POST | `/v1/charges/{charge}/refunds` | PostChargesChargeRefunds | — |
-| GET | `/v1/charges/{charge}/refunds/{refund}` | GetChargesChargeRefundsRefund | — |
-| POST | `/v1/charges/{charge}/refunds/{refund}` | PostChargesChargeRefundsRefund | — |
-| GET | `/v1/checkout/sessions` | GetCheckoutSessions | — |
-| POST | `/v1/checkout/sessions` | PostCheckoutSessions | — |
-| GET | `/v1/checkout/sessions/{session}` | GetCheckoutSessionsSession | — |
-| POST | `/v1/checkout/sessions/{session}/expire` | PostCheckoutSessionsSessionExpire | — |
-| GET | `/v1/checkout/sessions/{session}/line_items` | GetCheckoutSessionsSessionLineItems | — |
-| GET | `/v1/country_specs` | GetCountrySpecs | — |
-| GET | `/v1/country_specs/{country}` | GetCountrySpecsCountry | — |
-| GET | `/v1/coupons` | GetCoupons | — |
-| POST | `/v1/coupons` | PostCoupons | — |
-| DELETE | `/v1/coupons/{coupon}` | DeleteCouponsCoupon | — |
-| GET | `/v1/coupons/{coupon}` | GetCouponsCoupon | — |
-| POST | `/v1/coupons/{coupon}` | PostCouponsCoupon | — |
-| GET | `/v1/credit_notes` | GetCreditNotes | — |
-| POST | `/v1/credit_notes` | PostCreditNotes | — |
-| GET | `/v1/credit_notes/preview` | GetCreditNotesPreview | — |
-| GET | `/v1/credit_notes/preview/lines` | GetCreditNotesPreviewLines | — |
-| GET | `/v1/credit_notes/{credit_note}/lines` | GetCreditNotesCreditNoteLines | — |
-| GET | `/v1/credit_notes/{id}` | GetCreditNotesId | — |
-| POST | `/v1/credit_notes/{id}` | PostCreditNotesId | — |
-| POST | `/v1/credit_notes/{id}/void` | PostCreditNotesIdVoid | — |
-| GET | `/v1/customers` | GetCustomers | — |
-| POST | `/v1/customers` | PostCustomers | — |
-| GET | `/v1/customers/search` | GetCustomersSearch | — |
-| DELETE | `/v1/customers/{customer}` | DeleteCustomersCustomer | — |
-| GET | `/v1/customers/{customer}` | GetCustomersCustomer | — |
-| POST | `/v1/customers/{customer}` | PostCustomersCustomer | — |
-| GET | `/v1/customers/{customer}/balance_transactions` | GetCustomersCustomerBalanceTransactions | — |
-| POST | `/v1/customers/{customer}/balance_transactions` | PostCustomersCustomerBalanceTransactions | — |
-| GET | `/v1/customers/{customer}/balance_transactions/{transaction}` | GetCustomersCustomerBalanceTransactionsTransaction | — |
-| POST | `/v1/customers/{customer}/balance_transactions/{transaction}` | PostCustomersCustomerBalanceTransactionsTransaction | — |
-| GET | `/v1/customers/{customer}/bank_accounts` | GetCustomersCustomerBankAccounts | — |
-| POST | `/v1/customers/{customer}/bank_accounts` | PostCustomersCustomerBankAccounts | — |
-| DELETE | `/v1/customers/{customer}/bank_accounts/{id}` | DeleteCustomersCustomerBankAccountsId | — |
-| GET | `/v1/customers/{customer}/bank_accounts/{id}` | GetCustomersCustomerBankAccountsId | — |
-| POST | `/v1/customers/{customer}/bank_accounts/{id}` | PostCustomersCustomerBankAccountsId | — |
-| POST | `/v1/customers/{customer}/bank_accounts/{id}/verify` | PostCustomersCustomerBankAccountsIdVerify | — |
-| GET | `/v1/customers/{customer}/cards` | GetCustomersCustomerCards | — |
-| POST | `/v1/customers/{customer}/cards` | PostCustomersCustomerCards | — |
-| DELETE | `/v1/customers/{customer}/cards/{id}` | DeleteCustomersCustomerCardsId | — |
-| GET | `/v1/customers/{customer}/cards/{id}` | GetCustomersCustomerCardsId | — |
-| POST | `/v1/customers/{customer}/cards/{id}` | PostCustomersCustomerCardsId | — |
-| GET | `/v1/customers/{customer}/cash_balance` | GetCustomersCustomerCashBalance | — |
-| POST | `/v1/customers/{customer}/cash_balance` | PostCustomersCustomerCashBalance | — |
-| GET | `/v1/customers/{customer}/cash_balance_transactions` | GetCustomersCustomerCashBalanceTransactions | — |
-| GET | `/v1/customers/{customer}/cash_balance_transactions/{transaction}` | GetCustomersCustomerCashBalanceTransactionsTransaction | — |
-| DELETE | `/v1/customers/{customer}/discount` | DeleteCustomersCustomerDiscount | — |
-| GET | `/v1/customers/{customer}/discount` | GetCustomersCustomerDiscount | — |
-| POST | `/v1/customers/{customer}/funding_instructions` | PostCustomersCustomerFundingInstructions | — |
-| GET | `/v1/customers/{customer}/payment_methods` | GetCustomersCustomerPaymentMethods | — |
-| GET | `/v1/customers/{customer}/payment_methods/{payment_method}` | GetCustomersCustomerPaymentMethodsPaymentMethod | — |
-| GET | `/v1/customers/{customer}/sources` | GetCustomersCustomerSources | — |
-| POST | `/v1/customers/{customer}/sources` | PostCustomersCustomerSources | — |
-| DELETE | `/v1/customers/{customer}/sources/{id}` | DeleteCustomersCustomerSourcesId | — |
-| GET | `/v1/customers/{customer}/sources/{id}` | GetCustomersCustomerSourcesId | — |
-| POST | `/v1/customers/{customer}/sources/{id}` | PostCustomersCustomerSourcesId | — |
-| POST | `/v1/customers/{customer}/sources/{id}/verify` | PostCustomersCustomerSourcesIdVerify | — |
-| GET | `/v1/customers/{customer}/subscriptions` | GetCustomersCustomerSubscriptions | — |
-| POST | `/v1/customers/{customer}/subscriptions` | PostCustomersCustomerSubscriptions | — |
-| DELETE | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}` | DeleteCustomersCustomerSubscriptionsSubscriptionExposedId | — |
-| GET | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}` | GetCustomersCustomerSubscriptionsSubscriptionExposedId | — |
-| POST | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}` | PostCustomersCustomerSubscriptionsSubscriptionExposedId | — |
-| DELETE | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount` | DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount | — |
-| GET | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount` | GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount | — |
-| GET | `/v1/customers/{customer}/tax_ids` | GetCustomersCustomerTaxIds | — |
-| POST | `/v1/customers/{customer}/tax_ids` | PostCustomersCustomerTaxIds | — |
-| DELETE | `/v1/customers/{customer}/tax_ids/{id}` | DeleteCustomersCustomerTaxIdsId | — |
-| GET | `/v1/customers/{customer}/tax_ids/{id}` | GetCustomersCustomerTaxIdsId | — |
-| GET | `/v1/disputes` | GetDisputes | — |
-| GET | `/v1/disputes/{dispute}` | GetDisputesDispute | — |
-| POST | `/v1/disputes/{dispute}` | PostDisputesDispute | — |
-| POST | `/v1/disputes/{dispute}/close` | PostDisputesDisputeClose | — |
-| POST | `/v1/ephemeral_keys` | PostEphemeralKeys | — |
-| DELETE | `/v1/ephemeral_keys/{key}` | DeleteEphemeralKeysKey | — |
-| GET | `/v1/events` | GetEvents | — |
-| GET | `/v1/events/{id}` | GetEventsId | — |
-| GET | `/v1/exchange_rates` | GetExchangeRates | — |
-| GET | `/v1/exchange_rates/{rate_id}` | GetExchangeRatesRateId | — |
-| GET | `/v1/file_links` | GetFileLinks | — |
-| POST | `/v1/file_links` | PostFileLinks | — |
-| GET | `/v1/file_links/{link}` | GetFileLinksLink | — |
-| POST | `/v1/file_links/{link}` | PostFileLinksLink | — |
-| GET | `/v1/files` | GetFiles | — |
-| POST | `/v1/files` | PostFiles | — |
-| GET | `/v1/files/{file}` | GetFilesFile | — |
-| GET | `/v1/financial_connections/accounts` | GetFinancialConnectionsAccounts | — |
-| GET | `/v1/financial_connections/accounts/{account}` | GetFinancialConnectionsAccountsAccount | — |
-| POST | `/v1/financial_connections/accounts/{account}/disconnect` | PostFinancialConnectionsAccountsAccountDisconnect | — |
-| GET | `/v1/financial_connections/accounts/{account}/owners` | GetFinancialConnectionsAccountsAccountOwners | — |
-| POST | `/v1/financial_connections/accounts/{account}/refresh` | PostFinancialConnectionsAccountsAccountRefresh | — |
-| POST | `/v1/financial_connections/sessions` | PostFinancialConnectionsSessions | — |
-| GET | `/v1/financial_connections/sessions/{session}` | GetFinancialConnectionsSessionsSession | — |
-| GET | `/v1/identity/verification_reports` | GetIdentityVerificationReports | — |
-| GET | `/v1/identity/verification_reports/{report}` | GetIdentityVerificationReportsReport | — |
-| GET | `/v1/identity/verification_sessions` | GetIdentityVerificationSessions | — |
-| POST | `/v1/identity/verification_sessions` | PostIdentityVerificationSessions | — |
-| GET | `/v1/identity/verification_sessions/{session}` | GetIdentityVerificationSessionsSession | — |
-| POST | `/v1/identity/verification_sessions/{session}` | PostIdentityVerificationSessionsSession | — |
-| POST | `/v1/identity/verification_sessions/{session}/cancel` | PostIdentityVerificationSessionsSessionCancel | — |
-| POST | `/v1/identity/verification_sessions/{session}/redact` | PostIdentityVerificationSessionsSessionRedact | — |
-| GET | `/v1/invoiceitems` | GetInvoiceitems | — |
-| POST | `/v1/invoiceitems` | PostInvoiceitems | — |
-| DELETE | `/v1/invoiceitems/{invoiceitem}` | DeleteInvoiceitemsInvoiceitem | — |
-| GET | `/v1/invoiceitems/{invoiceitem}` | GetInvoiceitemsInvoiceitem | — |
-| POST | `/v1/invoiceitems/{invoiceitem}` | PostInvoiceitemsInvoiceitem | — |
-| GET | `/v1/invoices` | GetInvoices | — |
-| POST | `/v1/invoices` | PostInvoices | — |
-| GET | `/v1/invoices/search` | GetInvoicesSearch | — |
-| GET | `/v1/invoices/upcoming` | GetInvoicesUpcoming | — |
-| GET | `/v1/invoices/upcoming/lines` | GetInvoicesUpcomingLines | — |
-| DELETE | `/v1/invoices/{invoice}` | DeleteInvoicesInvoice | — |
-| GET | `/v1/invoices/{invoice}` | GetInvoicesInvoice | — |
-| POST | `/v1/invoices/{invoice}` | PostInvoicesInvoice | — |
-| POST | `/v1/invoices/{invoice}/finalize` | PostInvoicesInvoiceFinalize | — |
-| GET | `/v1/invoices/{invoice}/lines` | GetInvoicesInvoiceLines | — |
-| POST | `/v1/invoices/{invoice}/mark_uncollectible` | PostInvoicesInvoiceMarkUncollectible | — |
-| POST | `/v1/invoices/{invoice}/pay` | PostInvoicesInvoicePay | — |
-| POST | `/v1/invoices/{invoice}/send` | PostInvoicesInvoiceSend | — |
-| POST | `/v1/invoices/{invoice}/void` | PostInvoicesInvoiceVoid | — |
-| GET | `/v1/issuing/authorizations` | GetIssuingAuthorizations | — |
-| GET | `/v1/issuing/authorizations/{authorization}` | GetIssuingAuthorizationsAuthorization | — |
-| POST | `/v1/issuing/authorizations/{authorization}` | PostIssuingAuthorizationsAuthorization | — |
-| POST | `/v1/issuing/authorizations/{authorization}/approve` | PostIssuingAuthorizationsAuthorizationApprove | — |
-| POST | `/v1/issuing/authorizations/{authorization}/decline` | PostIssuingAuthorizationsAuthorizationDecline | — |
-| GET | `/v1/issuing/cardholders` | GetIssuingCardholders | — |
-| POST | `/v1/issuing/cardholders` | PostIssuingCardholders | — |
-| GET | `/v1/issuing/cardholders/{cardholder}` | GetIssuingCardholdersCardholder | — |
-| POST | `/v1/issuing/cardholders/{cardholder}` | PostIssuingCardholdersCardholder | — |
-| GET | `/v1/issuing/cards` | GetIssuingCards | — |
-| POST | `/v1/issuing/cards` | PostIssuingCards | — |
-| GET | `/v1/issuing/cards/{card}` | GetIssuingCardsCard | — |
-| POST | `/v1/issuing/cards/{card}` | PostIssuingCardsCard | — |
-| GET | `/v1/issuing/disputes` | GetIssuingDisputes | — |
-| POST | `/v1/issuing/disputes` | PostIssuingDisputes | — |
-| GET | `/v1/issuing/disputes/{dispute}` | GetIssuingDisputesDispute | — |
-| POST | `/v1/issuing/disputes/{dispute}` | PostIssuingDisputesDispute | — |
-| POST | `/v1/issuing/disputes/{dispute}/submit` | PostIssuingDisputesDisputeSubmit | — |
-| GET | `/v1/issuing/settlements` | GetIssuingSettlements | — |
-| GET | `/v1/issuing/settlements/{settlement}` | GetIssuingSettlementsSettlement | — |
-| POST | `/v1/issuing/settlements/{settlement}` | PostIssuingSettlementsSettlement | — |
-| GET | `/v1/issuing/transactions` | GetIssuingTransactions | — |
-| GET | `/v1/issuing/transactions/{transaction}` | GetIssuingTransactionsTransaction | — |
-| POST | `/v1/issuing/transactions/{transaction}` | PostIssuingTransactionsTransaction | — |
-| POST | `/v1/link_account_sessions` | PostLinkAccountSessions | — |
-| GET | `/v1/link_account_sessions/{session}` | GetLinkAccountSessionsSession | — |
-| GET | `/v1/linked_accounts` | GetLinkedAccounts | — |
-| GET | `/v1/linked_accounts/{account}` | GetLinkedAccountsAccount | — |
-| POST | `/v1/linked_accounts/{account}/disconnect` | PostLinkedAccountsAccountDisconnect | — |
-| GET | `/v1/linked_accounts/{account}/owners` | GetLinkedAccountsAccountOwners | — |
-| POST | `/v1/linked_accounts/{account}/refresh` | PostLinkedAccountsAccountRefresh | — |
-| GET | `/v1/mandates/{mandate}` | GetMandatesMandate | — |
-| GET | `/v1/payment_intents` | GetPaymentIntents | — |
-| POST | `/v1/payment_intents` | PostPaymentIntents | — |
-| GET | `/v1/payment_intents/search` | GetPaymentIntentsSearch | — |
-| GET | `/v1/payment_intents/{intent}` | GetPaymentIntentsIntent | — |
-| POST | `/v1/payment_intents/{intent}` | PostPaymentIntentsIntent | — |
-| POST | `/v1/payment_intents/{intent}/apply_customer_balance` | PostPaymentIntentsIntentApplyCustomerBalance | — |
-| POST | `/v1/payment_intents/{intent}/cancel` | PostPaymentIntentsIntentCancel | — |
-| POST | `/v1/payment_intents/{intent}/capture` | PostPaymentIntentsIntentCapture | — |
-| POST | `/v1/payment_intents/{intent}/confirm` | PostPaymentIntentsIntentConfirm | — |
-| POST | `/v1/payment_intents/{intent}/increment_authorization` | PostPaymentIntentsIntentIncrementAuthorization | — |
-| POST | `/v1/payment_intents/{intent}/verify_microdeposits` | PostPaymentIntentsIntentVerifyMicrodeposits | — |
-| GET | `/v1/payment_links` | GetPaymentLinks | — |
-| POST | `/v1/payment_links` | PostPaymentLinks | — |
-| GET | `/v1/payment_links/{payment_link}` | GetPaymentLinksPaymentLink | — |
-| POST | `/v1/payment_links/{payment_link}` | PostPaymentLinksPaymentLink | — |
-| GET | `/v1/payment_links/{payment_link}/line_items` | GetPaymentLinksPaymentLinkLineItems | — |
-| GET | `/v1/payment_methods` | GetPaymentMethods | — |
-| POST | `/v1/payment_methods` | PostPaymentMethods | — |
-| GET | `/v1/payment_methods/{payment_method}` | GetPaymentMethodsPaymentMethod | — |
-| POST | `/v1/payment_methods/{payment_method}` | PostPaymentMethodsPaymentMethod | — |
-| POST | `/v1/payment_methods/{payment_method}/attach` | PostPaymentMethodsPaymentMethodAttach | — |
-| POST | `/v1/payment_methods/{payment_method}/detach` | PostPaymentMethodsPaymentMethodDetach | — |
-| GET | `/v1/payouts` | GetPayouts | — |
-| POST | `/v1/payouts` | PostPayouts | — |
-| GET | `/v1/payouts/{payout}` | GetPayoutsPayout | — |
-| POST | `/v1/payouts/{payout}` | PostPayoutsPayout | — |
-| POST | `/v1/payouts/{payout}/cancel` | PostPayoutsPayoutCancel | — |
-| POST | `/v1/payouts/{payout}/reverse` | PostPayoutsPayoutReverse | — |
-| GET | `/v1/plans` | GetPlans | — |
-| POST | `/v1/plans` | PostPlans | — |
-| DELETE | `/v1/plans/{plan}` | DeletePlansPlan | — |
-| GET | `/v1/plans/{plan}` | GetPlansPlan | — |
-| POST | `/v1/plans/{plan}` | PostPlansPlan | — |
-| GET | `/v1/prices` | GetPrices | — |
-| POST | `/v1/prices` | PostPrices | — |
-| GET | `/v1/prices/search` | GetPricesSearch | — |
-| GET | `/v1/prices/{price}` | GetPricesPrice | — |
-| POST | `/v1/prices/{price}` | PostPricesPrice | — |
-| GET | `/v1/products` | GetProducts | — |
-| POST | `/v1/products` | PostProducts | — |
-| GET | `/v1/products/search` | GetProductsSearch | — |
-| DELETE | `/v1/products/{id}` | DeleteProductsId | — |
-| GET | `/v1/products/{id}` | GetProductsId | — |
-| POST | `/v1/products/{id}` | PostProductsId | — |
-| GET | `/v1/promotion_codes` | GetPromotionCodes | — |
-| POST | `/v1/promotion_codes` | PostPromotionCodes | — |
-| GET | `/v1/promotion_codes/{promotion_code}` | GetPromotionCodesPromotionCode | — |
-| POST | `/v1/promotion_codes/{promotion_code}` | PostPromotionCodesPromotionCode | — |
-| GET | `/v1/quotes` | GetQuotes | — |
-| POST | `/v1/quotes` | PostQuotes | — |
-| GET | `/v1/quotes/{quote}` | GetQuotesQuote | — |
-| POST | `/v1/quotes/{quote}` | PostQuotesQuote | — |
-| POST | `/v1/quotes/{quote}/accept` | PostQuotesQuoteAccept | — |
-| POST | `/v1/quotes/{quote}/cancel` | PostQuotesQuoteCancel | — |
-| GET | `/v1/quotes/{quote}/computed_upfront_line_items` | GetQuotesQuoteComputedUpfrontLineItems | — |
-| POST | `/v1/quotes/{quote}/finalize` | PostQuotesQuoteFinalize | — |
-| GET | `/v1/quotes/{quote}/line_items` | GetQuotesQuoteLineItems | — |
-| GET | `/v1/quotes/{quote}/pdf` | GetQuotesQuotePdf | — |
-| GET | `/v1/radar/early_fraud_warnings` | GetRadarEarlyFraudWarnings | — |
-| GET | `/v1/radar/early_fraud_warnings/{early_fraud_warning}` | GetRadarEarlyFraudWarningsEarlyFraudWarning | — |
-| GET | `/v1/radar/value_list_items` | GetRadarValueListItems | — |
-| POST | `/v1/radar/value_list_items` | PostRadarValueListItems | — |
-| DELETE | `/v1/radar/value_list_items/{item}` | DeleteRadarValueListItemsItem | — |
-| GET | `/v1/radar/value_list_items/{item}` | GetRadarValueListItemsItem | — |
-| GET | `/v1/radar/value_lists` | GetRadarValueLists | — |
-| POST | `/v1/radar/value_lists` | PostRadarValueLists | — |
-| DELETE | `/v1/radar/value_lists/{value_list}` | DeleteRadarValueListsValueList | — |
-| GET | `/v1/radar/value_lists/{value_list}` | GetRadarValueListsValueList | — |
-| POST | `/v1/radar/value_lists/{value_list}` | PostRadarValueListsValueList | — |
-| GET | `/v1/refunds` | GetRefunds | — |
-| POST | `/v1/refunds` | PostRefunds | — |
-| GET | `/v1/refunds/{refund}` | GetRefundsRefund | — |
-| POST | `/v1/refunds/{refund}` | PostRefundsRefund | — |
-| POST | `/v1/refunds/{refund}/cancel` | PostRefundsRefundCancel | — |
-| GET | `/v1/reporting/report_runs` | GetReportingReportRuns | — |
-| POST | `/v1/reporting/report_runs` | PostReportingReportRuns | — |
-| GET | `/v1/reporting/report_runs/{report_run}` | GetReportingReportRunsReportRun | — |
-| GET | `/v1/reporting/report_types` | GetReportingReportTypes | — |
-| GET | `/v1/reporting/report_types/{report_type}` | GetReportingReportTypesReportType | — |
-| GET | `/v1/reviews` | GetReviews | — |
-| GET | `/v1/reviews/{review}` | GetReviewsReview | — |
-| POST | `/v1/reviews/{review}/approve` | PostReviewsReviewApprove | — |
-| GET | `/v1/setup_attempts` | GetSetupAttempts | — |
-| GET | `/v1/setup_intents` | GetSetupIntents | — |
-| POST | `/v1/setup_intents` | PostSetupIntents | — |
-| GET | `/v1/setup_intents/{intent}` | GetSetupIntentsIntent | — |
-| POST | `/v1/setup_intents/{intent}` | PostSetupIntentsIntent | — |
-| POST | `/v1/setup_intents/{intent}/cancel` | PostSetupIntentsIntentCancel | — |
-| POST | `/v1/setup_intents/{intent}/confirm` | PostSetupIntentsIntentConfirm | — |
-| POST | `/v1/setup_intents/{intent}/verify_microdeposits` | PostSetupIntentsIntentVerifyMicrodeposits | — |
-| GET | `/v1/shipping_rates` | GetShippingRates | — |
-| POST | `/v1/shipping_rates` | PostShippingRates | — |
-| GET | `/v1/shipping_rates/{shipping_rate_token}` | GetShippingRatesShippingRateToken | — |
-| POST | `/v1/shipping_rates/{shipping_rate_token}` | PostShippingRatesShippingRateToken | — |
-| GET | `/v1/sigma/scheduled_query_runs` | GetSigmaScheduledQueryRuns | — |
-| GET | `/v1/sigma/scheduled_query_runs/{scheduled_query_run}` | GetSigmaScheduledQueryRunsScheduledQueryRun | — |
-| POST | `/v1/sources` | PostSources | — |
-| GET | `/v1/sources/{source}` | GetSourcesSource | — |
-| POST | `/v1/sources/{source}` | PostSourcesSource | — |
-| GET | `/v1/sources/{source}/mandate_notifications/{mandate_notification}` | GetSourcesSourceMandateNotificationsMandateNotification | — |
-| GET | `/v1/sources/{source}/source_transactions` | GetSourcesSourceSourceTransactions | — |
-| GET | `/v1/sources/{source}/source_transactions/{source_transaction}` | GetSourcesSourceSourceTransactionsSourceTransaction | — |
-| POST | `/v1/sources/{source}/verify` | PostSourcesSourceVerify | — |
-| GET | `/v1/subscription_items` | GetSubscriptionItems | — |
-| POST | `/v1/subscription_items` | PostSubscriptionItems | — |
-| DELETE | `/v1/subscription_items/{item}` | DeleteSubscriptionItemsItem | — |
-| GET | `/v1/subscription_items/{item}` | GetSubscriptionItemsItem | — |
-| POST | `/v1/subscription_items/{item}` | PostSubscriptionItemsItem | — |
-| GET | `/v1/subscription_items/{subscription_item}/usage_record_summaries` | GetSubscriptionItemsSubscriptionItemUsageRecordSummaries | — |
-| POST | `/v1/subscription_items/{subscription_item}/usage_records` | PostSubscriptionItemsSubscriptionItemUsageRecords | — |
-| GET | `/v1/subscription_schedules` | GetSubscriptionSchedules | — |
-| POST | `/v1/subscription_schedules` | PostSubscriptionSchedules | — |
-| GET | `/v1/subscription_schedules/{schedule}` | GetSubscriptionSchedulesSchedule | — |
-| POST | `/v1/subscription_schedules/{schedule}` | PostSubscriptionSchedulesSchedule | — |
-| POST | `/v1/subscription_schedules/{schedule}/cancel` | PostSubscriptionSchedulesScheduleCancel | — |
-| POST | `/v1/subscription_schedules/{schedule}/release` | PostSubscriptionSchedulesScheduleRelease | — |
-| GET | `/v1/subscriptions` | GetSubscriptions | — |
-| POST | `/v1/subscriptions` | PostSubscriptions | — |
-| GET | `/v1/subscriptions/search` | GetSubscriptionsSearch | — |
-| DELETE | `/v1/subscriptions/{subscription_exposed_id}` | DeleteSubscriptionsSubscriptionExposedId | — |
-| GET | `/v1/subscriptions/{subscription_exposed_id}` | GetSubscriptionsSubscriptionExposedId | — |
-| POST | `/v1/subscriptions/{subscription_exposed_id}` | PostSubscriptionsSubscriptionExposedId | — |
-| DELETE | `/v1/subscriptions/{subscription_exposed_id}/discount` | DeleteSubscriptionsSubscriptionExposedIdDiscount | — |
-| POST | `/v1/subscriptions/{subscription}/resume` | PostSubscriptionsSubscriptionResume | — |
-| GET | `/v1/tax_codes` | GetTaxCodes | — |
-| GET | `/v1/tax_codes/{id}` | GetTaxCodesId | — |
-| GET | `/v1/tax_rates` | GetTaxRates | — |
-| POST | `/v1/tax_rates` | PostTaxRates | — |
-| GET | `/v1/tax_rates/{tax_rate}` | GetTaxRatesTaxRate | — |
-| POST | `/v1/tax_rates/{tax_rate}` | PostTaxRatesTaxRate | — |
-| GET | `/v1/terminal/configurations` | GetTerminalConfigurations | — |
-| POST | `/v1/terminal/configurations` | PostTerminalConfigurations | — |
-| DELETE | `/v1/terminal/configurations/{configuration}` | DeleteTerminalConfigurationsConfiguration | — |
-| GET | `/v1/terminal/configurations/{configuration}` | GetTerminalConfigurationsConfiguration | — |
-| POST | `/v1/terminal/configurations/{configuration}` | PostTerminalConfigurationsConfiguration | — |
-| POST | `/v1/terminal/connection_tokens` | PostTerminalConnectionTokens | — |
-| GET | `/v1/terminal/locations` | GetTerminalLocations | — |
-| POST | `/v1/terminal/locations` | PostTerminalLocations | — |
-| DELETE | `/v1/terminal/locations/{location}` | DeleteTerminalLocationsLocation | — |
-| GET | `/v1/terminal/locations/{location}` | GetTerminalLocationsLocation | — |
-| POST | `/v1/terminal/locations/{location}` | PostTerminalLocationsLocation | — |
-| GET | `/v1/terminal/readers` | GetTerminalReaders | — |
-| POST | `/v1/terminal/readers` | PostTerminalReaders | — |
-| DELETE | `/v1/terminal/readers/{reader}` | DeleteTerminalReadersReader | — |
-| GET | `/v1/terminal/readers/{reader}` | GetTerminalReadersReader | — |
-| POST | `/v1/terminal/readers/{reader}` | PostTerminalReadersReader | — |
-| POST | `/v1/terminal/readers/{reader}/cancel_action` | PostTerminalReadersReaderCancelAction | — |
-| POST | `/v1/terminal/readers/{reader}/process_payment_intent` | PostTerminalReadersReaderProcessPaymentIntent | — |
-| POST | `/v1/terminal/readers/{reader}/process_setup_intent` | PostTerminalReadersReaderProcessSetupIntent | — |
-| POST | `/v1/terminal/readers/{reader}/refund_payment` | PostTerminalReadersReaderRefundPayment | — |
-| POST | `/v1/terminal/readers/{reader}/set_reader_display` | PostTerminalReadersReaderSetReaderDisplay | — |
-| POST | `/v1/test_helpers/customers/{customer}/fund_cash_balance` | PostTestHelpersCustomersCustomerFundCashBalance | — |
-| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/deliver` | PostTestHelpersIssuingCardsCardShippingDeliver | — |
-| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/fail` | PostTestHelpersIssuingCardsCardShippingFail | — |
-| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/return` | PostTestHelpersIssuingCardsCardShippingReturn | — |
-| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/ship` | PostTestHelpersIssuingCardsCardShippingShip | — |
-| POST | `/v1/test_helpers/refunds/{refund}/expire` | PostTestHelpersRefundsRefundExpire | — |
-| POST | `/v1/test_helpers/terminal/readers/{reader}/present_payment_method` | PostTestHelpersTerminalReadersReaderPresentPaymentMethod | — |
-| GET | `/v1/test_helpers/test_clocks` | GetTestHelpersTestClocks | — |
-| POST | `/v1/test_helpers/test_clocks` | PostTestHelpersTestClocks | — |
-| DELETE | `/v1/test_helpers/test_clocks/{test_clock}` | DeleteTestHelpersTestClocksTestClock | — |
-| GET | `/v1/test_helpers/test_clocks/{test_clock}` | GetTestHelpersTestClocksTestClock | — |
-| POST | `/v1/test_helpers/test_clocks/{test_clock}/advance` | PostTestHelpersTestClocksTestClockAdvance | — |
-| POST | `/v1/test_helpers/treasury/inbound_transfers/{id}/fail` | PostTestHelpersTreasuryInboundTransfersIdFail | — |
-| POST | `/v1/test_helpers/treasury/inbound_transfers/{id}/return` | PostTestHelpersTreasuryInboundTransfersIdReturn | — |
-| POST | `/v1/test_helpers/treasury/inbound_transfers/{id}/succeed` | PostTestHelpersTreasuryInboundTransfersIdSucceed | — |
-| POST | `/v1/test_helpers/treasury/outbound_payments/{id}/fail` | PostTestHelpersTreasuryOutboundPaymentsIdFail | — |
-| POST | `/v1/test_helpers/treasury/outbound_payments/{id}/post` | PostTestHelpersTreasuryOutboundPaymentsIdPost | — |
-| POST | `/v1/test_helpers/treasury/outbound_payments/{id}/return` | PostTestHelpersTreasuryOutboundPaymentsIdReturn | — |
-| POST | `/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail` | PostTestHelpersTreasuryOutboundTransfersOutboundTransferFail | — |
-| POST | `/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post` | PostTestHelpersTreasuryOutboundTransfersOutboundTransferPost | — |
-| POST | `/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return` | PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturn | — |
-| POST | `/v1/test_helpers/treasury/received_credits` | PostTestHelpersTreasuryReceivedCredits | — |
-| POST | `/v1/test_helpers/treasury/received_debits` | PostTestHelpersTreasuryReceivedDebits | — |
-| POST | `/v1/tokens` | PostTokens | — |
-| GET | `/v1/tokens/{token}` | GetTokensToken | — |
-| GET | `/v1/topups` | GetTopups | — |
-| POST | `/v1/topups` | PostTopups | — |
-| GET | `/v1/topups/{topup}` | GetTopupsTopup | — |
-| POST | `/v1/topups/{topup}` | PostTopupsTopup | — |
-| POST | `/v1/topups/{topup}/cancel` | PostTopupsTopupCancel | — |
-| GET | `/v1/transfers` | GetTransfers | — |
-| POST | `/v1/transfers` | PostTransfers | — |
-| GET | `/v1/transfers/{id}/reversals` | GetTransfersIdReversals | — |
-| POST | `/v1/transfers/{id}/reversals` | PostTransfersIdReversals | — |
-| GET | `/v1/transfers/{transfer}` | GetTransfersTransfer | — |
-| POST | `/v1/transfers/{transfer}` | PostTransfersTransfer | — |
-| GET | `/v1/transfers/{transfer}/reversals/{id}` | GetTransfersTransferReversalsId | — |
-| POST | `/v1/transfers/{transfer}/reversals/{id}` | PostTransfersTransferReversalsId | — |
-| GET | `/v1/treasury/credit_reversals` | GetTreasuryCreditReversals | — |
-| POST | `/v1/treasury/credit_reversals` | PostTreasuryCreditReversals | — |
-| GET | `/v1/treasury/credit_reversals/{credit_reversal}` | GetTreasuryCreditReversalsCreditReversal | — |
-| GET | `/v1/treasury/debit_reversals` | GetTreasuryDebitReversals | — |
-| POST | `/v1/treasury/debit_reversals` | PostTreasuryDebitReversals | — |
-| GET | `/v1/treasury/debit_reversals/{debit_reversal}` | GetTreasuryDebitReversalsDebitReversal | — |
-| GET | `/v1/treasury/financial_accounts` | GetTreasuryFinancialAccounts | — |
-| POST | `/v1/treasury/financial_accounts` | PostTreasuryFinancialAccounts | — |
-| GET | `/v1/treasury/financial_accounts/{financial_account}` | GetTreasuryFinancialAccountsFinancialAccount | — |
-| POST | `/v1/treasury/financial_accounts/{financial_account}` | PostTreasuryFinancialAccountsFinancialAccount | — |
-| GET | `/v1/treasury/financial_accounts/{financial_account}/features` | GetTreasuryFinancialAccountsFinancialAccountFeatures | — |
-| POST | `/v1/treasury/financial_accounts/{financial_account}/features` | PostTreasuryFinancialAccountsFinancialAccountFeatures | — |
-| GET | `/v1/treasury/inbound_transfers` | GetTreasuryInboundTransfers | — |
-| POST | `/v1/treasury/inbound_transfers` | PostTreasuryInboundTransfers | — |
-| GET | `/v1/treasury/inbound_transfers/{id}` | GetTreasuryInboundTransfersId | — |
-| POST | `/v1/treasury/inbound_transfers/{inbound_transfer}/cancel` | PostTreasuryInboundTransfersInboundTransferCancel | — |
-| GET | `/v1/treasury/outbound_payments` | GetTreasuryOutboundPayments | — |
-| POST | `/v1/treasury/outbound_payments` | PostTreasuryOutboundPayments | — |
-| GET | `/v1/treasury/outbound_payments/{id}` | GetTreasuryOutboundPaymentsId | — |
-| POST | `/v1/treasury/outbound_payments/{id}/cancel` | PostTreasuryOutboundPaymentsIdCancel | — |
-| GET | `/v1/treasury/outbound_transfers` | GetTreasuryOutboundTransfers | — |
-| POST | `/v1/treasury/outbound_transfers` | PostTreasuryOutboundTransfers | — |
-| GET | `/v1/treasury/outbound_transfers/{outbound_transfer}` | GetTreasuryOutboundTransfersOutboundTransfer | — |
-| POST | `/v1/treasury/outbound_transfers/{outbound_transfer}/cancel` | PostTreasuryOutboundTransfersOutboundTransferCancel | — |
-| GET | `/v1/treasury/received_credits` | GetTreasuryReceivedCredits | — |
-| GET | `/v1/treasury/received_credits/{id}` | GetTreasuryReceivedCreditsId | — |
-| GET | `/v1/treasury/received_debits` | GetTreasuryReceivedDebits | — |
-| GET | `/v1/treasury/received_debits/{id}` | GetTreasuryReceivedDebitsId | — |
-| GET | `/v1/treasury/transaction_entries` | GetTreasuryTransactionEntries | — |
-| GET | `/v1/treasury/transaction_entries/{id}` | GetTreasuryTransactionEntriesId | — |
-| GET | `/v1/treasury/transactions` | GetTreasuryTransactions | — |
-| GET | `/v1/treasury/transactions/{id}` | GetTreasuryTransactionsId | — |
-| GET | `/v1/webhook_endpoints` | GetWebhookEndpoints | — |
-| POST | `/v1/webhook_endpoints` | PostWebhookEndpoints | — |
-| DELETE | `/v1/webhook_endpoints/{webhook_endpoint}` | DeleteWebhookEndpointsWebhookEndpoint | — |
-| GET | `/v1/webhook_endpoints/{webhook_endpoint}` | GetWebhookEndpointsWebhookEndpoint | — |
-| POST | `/v1/webhook_endpoints/{webhook_endpoint}` | PostWebhookEndpointsWebhookEndpoint | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/account` | GetAccount | `expand`, body: object | account | yes | — |
+| POST | `/v1/account_links` | PostAccountLinks | body*: object | account_link |  | — |
+| GET | `/v1/accounts` | GetAccounts | `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/accounts` | PostAccounts | body: object | account |  | — |
+| GET | `/v1/accounts/{account}` | GetAccountsAccount | `account`*, `expand`, body: object | account | yes | — |
+| POST | `/v1/accounts/{account}` | PostAccountsAccount | `account`*, body: object | account |  | — |
+| DELETE | `/v1/accounts/{account}` | DeleteAccountsAccount | `account`*, body: object | deleted_account |  | — |
+| POST | `/v1/accounts/{account}/bank_accounts` | PostAccountsAccountBankAccounts | `account`*, body: object | external_account |  | — |
+| GET | `/v1/accounts/{account}/bank_accounts/{id}` | GetAccountsAccountBankAccountsId | `account`*, `expand`, `id`*, body: object | external_account | yes | — |
+| POST | `/v1/accounts/{account}/bank_accounts/{id}` | PostAccountsAccountBankAccountsId | `account`*, `id`*, body: object | external_account |  | — |
+| DELETE | `/v1/accounts/{account}/bank_accounts/{id}` | DeleteAccountsAccountBankAccountsId | `account`*, `id`*, body: object | deleted_external_account |  | — |
+| GET | `/v1/accounts/{account}/capabilities` | GetAccountsAccountCapabilities | `account`*, `expand`, body: object | object | yes | — |
+| GET | `/v1/accounts/{account}/capabilities/{capability}` | GetAccountsAccountCapabilitiesCapability | `account`*, `capability`*, `expand`, body: object | capability | yes | — |
+| POST | `/v1/accounts/{account}/capabilities/{capability}` | PostAccountsAccountCapabilitiesCapability | `account`*, `capability`*, body: object | capability |  | — |
+| GET | `/v1/accounts/{account}/external_accounts` | GetAccountsAccountExternalAccounts | `account`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/accounts/{account}/external_accounts` | PostAccountsAccountExternalAccounts | `account`*, body: object | external_account |  | — |
+| GET | `/v1/accounts/{account}/external_accounts/{id}` | GetAccountsAccountExternalAccountsId | `account`*, `expand`, `id`*, body: object | external_account | yes | — |
+| POST | `/v1/accounts/{account}/external_accounts/{id}` | PostAccountsAccountExternalAccountsId | `account`*, `id`*, body: object | external_account |  | — |
+| DELETE | `/v1/accounts/{account}/external_accounts/{id}` | DeleteAccountsAccountExternalAccountsId | `account`*, `id`*, body: object | deleted_external_account |  | — |
+| POST | `/v1/accounts/{account}/login_links` | PostAccountsAccountLoginLinks | `account`*, body: object | login_link |  | — |
+| GET | `/v1/accounts/{account}/people` | GetAccountsAccountPeople | `account`*, `ending_before`, `expand`, `limit`, `relationship`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/accounts/{account}/people` | PostAccountsAccountPeople | `account`*, body: object | person |  | — |
+| GET | `/v1/accounts/{account}/people/{person}` | GetAccountsAccountPeoplePerson | `account`*, `expand`, `person`*, body: object | person | yes | — |
+| POST | `/v1/accounts/{account}/people/{person}` | PostAccountsAccountPeoplePerson | `account`*, `person`*, body: object | person |  | — |
+| DELETE | `/v1/accounts/{account}/people/{person}` | DeleteAccountsAccountPeoplePerson | `account`*, `person`*, body: object | deleted_person |  | — |
+| GET | `/v1/accounts/{account}/persons` | GetAccountsAccountPersons | `account`*, `ending_before`, `expand`, `limit`, `relationship`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/accounts/{account}/persons` | PostAccountsAccountPersons | `account`*, body: object | person |  | — |
+| GET | `/v1/accounts/{account}/persons/{person}` | GetAccountsAccountPersonsPerson | `account`*, `expand`, `person`*, body: object | person | yes | — |
+| POST | `/v1/accounts/{account}/persons/{person}` | PostAccountsAccountPersonsPerson | `account`*, `person`*, body: object | person |  | — |
+| DELETE | `/v1/accounts/{account}/persons/{person}` | DeleteAccountsAccountPersonsPerson | `account`*, `person`*, body: object | deleted_person |  | — |
+| POST | `/v1/accounts/{account}/reject` | PostAccountsAccountReject | `account`*, body*: object | account |  | — |
+| GET | `/v1/apple_pay/domains` | GetApplePayDomains | `domain_name`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/apple_pay/domains` | PostApplePayDomains | body*: object | apple_pay_domain |  | — |
+| GET | `/v1/apple_pay/domains/{domain}` | GetApplePayDomainsDomain | `domain`*, `expand`, body: object | apple_pay_domain | yes | — |
+| DELETE | `/v1/apple_pay/domains/{domain}` | DeleteApplePayDomainsDomain | `domain`*, body: object | deleted_apple_pay_domain |  | — |
+| GET | `/v1/application_fees` | GetApplicationFees | `charge`, `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/application_fees/{fee}/refunds/{id}` | GetApplicationFeesFeeRefundsId | `expand`, `fee`*, `id`*, body: object | fee_refund | yes | — |
+| POST | `/v1/application_fees/{fee}/refunds/{id}` | PostApplicationFeesFeeRefundsId | `fee`*, `id`*, body: object | fee_refund |  | — |
+| GET | `/v1/application_fees/{id}` | GetApplicationFeesId | `expand`, `id`*, body: object | application_fee | yes | — |
+| POST | `/v1/application_fees/{id}/refund` | PostApplicationFeesIdRefund | `id`*, body: object | application_fee |  | — |
+| GET | `/v1/application_fees/{id}/refunds` | GetApplicationFeesIdRefunds | `ending_before`, `expand`, `id`*, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/application_fees/{id}/refunds` | PostApplicationFeesIdRefunds | `id`*, body: object | fee_refund |  | — |
+| GET | `/v1/apps/secrets` | GetAppsSecrets | `ending_before`, `expand`, `limit`, `scope`*, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/apps/secrets` | PostAppsSecrets | body*: object | apps.secret |  | — |
+| POST | `/v1/apps/secrets/delete` | PostAppsSecretsDelete | body*: object | apps.secret |  | — |
+| GET | `/v1/apps/secrets/find` | GetAppsSecretsFind | `expand`, `name`*, `scope`*, body: object | apps.secret | yes | — |
+| GET | `/v1/balance` | GetBalance | `expand`, body: object | balance | yes | — |
+| GET | `/v1/balance/history` | GetBalanceHistory | `created`, `currency`, `ending_before`, `expand`, `limit`, `payout`, `source`, `starting_after`, `type`, body: object | object | yes | — |
+| GET | `/v1/balance/history/{id}` | GetBalanceHistoryId | `expand`, `id`*, body: object | balance_transaction | yes | — |
+| GET | `/v1/balance_transactions` | GetBalanceTransactions | `created`, `currency`, `ending_before`, `expand`, `limit`, `payout`, `source`, `starting_after`, `type`, body: object | object | yes | — |
+| GET | `/v1/balance_transactions/{id}` | GetBalanceTransactionsId | `expand`, `id`*, body: object | balance_transaction | yes | — |
+| GET | `/v1/billing_portal/configurations` | GetBillingPortalConfigurations | `active`, `ending_before`, `expand`, `is_default`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/billing_portal/configurations` | PostBillingPortalConfigurations | body*: object | billing_portal.configuration |  | — |
+| GET | `/v1/billing_portal/configurations/{configuration}` | GetBillingPortalConfigurationsConfiguration | `configuration`*, `expand`, body: object | billing_portal.configuration | yes | — |
+| POST | `/v1/billing_portal/configurations/{configuration}` | PostBillingPortalConfigurationsConfiguration | `configuration`*, body: object | billing_portal.configuration |  | — |
+| POST | `/v1/billing_portal/sessions` | PostBillingPortalSessions | body*: object | billing_portal.session |  | — |
+| GET | `/v1/charges` | GetCharges | `created`, `customer`, `ending_before`, `expand`, `limit`, `payment_intent`, `starting_after`, `transfer_group`, body: object | object | yes | — |
+| POST | `/v1/charges` | PostCharges | body: object | charge |  | — |
+| GET | `/v1/charges/search` | GetChargesSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/charges/{charge}` | GetChargesCharge | `charge`*, `expand`, body: object | charge | yes | — |
+| POST | `/v1/charges/{charge}` | PostChargesCharge | `charge`*, body: object | charge |  | — |
+| POST | `/v1/charges/{charge}/capture` | PostChargesChargeCapture | `charge`*, body: object | charge |  | — |
+| GET | `/v1/charges/{charge}/dispute` | GetChargesChargeDispute | `charge`*, `expand`, body: object | dispute | yes | — |
+| POST | `/v1/charges/{charge}/dispute` | PostChargesChargeDispute | `charge`*, body: object | dispute |  | — |
+| POST | `/v1/charges/{charge}/dispute/close` | PostChargesChargeDisputeClose | `charge`*, body: object | dispute |  | — |
+| POST | `/v1/charges/{charge}/refund` | PostChargesChargeRefund | `charge`*, body: object | charge |  | — |
+| GET | `/v1/charges/{charge}/refunds` | GetChargesChargeRefunds | `charge`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/charges/{charge}/refunds` | PostChargesChargeRefunds | `charge`*, body: object | refund |  | — |
+| GET | `/v1/charges/{charge}/refunds/{refund}` | GetChargesChargeRefundsRefund | `charge`*, `expand`, `refund`*, body: object | refund | yes | — |
+| POST | `/v1/charges/{charge}/refunds/{refund}` | PostChargesChargeRefundsRefund | `charge`*, `refund`*, body: object | refund |  | — |
+| GET | `/v1/checkout/sessions` | GetCheckoutSessions | `customer`, `customer_details`, `ending_before`, `expand`, `limit`, `payment_intent`, `payment_link`, `starting_after`, `subscription`, body: object | object | yes | — |
+| POST | `/v1/checkout/sessions` | PostCheckoutSessions | body*: object | checkout.session |  | — |
+| GET | `/v1/checkout/sessions/{session}` | GetCheckoutSessionsSession | `expand`, `session`*, body: object | checkout.session | yes | — |
+| POST | `/v1/checkout/sessions/{session}/expire` | PostCheckoutSessionsSessionExpire | `session`*, body: object | checkout.session |  | — |
+| GET | `/v1/checkout/sessions/{session}/line_items` | GetCheckoutSessionsSessionLineItems | `ending_before`, `expand`, `limit`, `session`*, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/country_specs` | GetCountrySpecs | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/country_specs/{country}` | GetCountrySpecsCountry | `country`*, `expand`, body: object | country_spec | yes | — |
+| GET | `/v1/coupons` | GetCoupons | `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/coupons` | PostCoupons | body: object | coupon |  | — |
+| GET | `/v1/coupons/{coupon}` | GetCouponsCoupon | `coupon`*, `expand`, body: object | coupon | yes | — |
+| POST | `/v1/coupons/{coupon}` | PostCouponsCoupon | `coupon`*, body: object | coupon |  | — |
+| DELETE | `/v1/coupons/{coupon}` | DeleteCouponsCoupon | `coupon`*, body: object | deleted_coupon |  | — |
+| GET | `/v1/credit_notes` | GetCreditNotes | `customer`, `ending_before`, `expand`, `invoice`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/credit_notes` | PostCreditNotes | body*: object | credit_note |  | — |
+| GET | `/v1/credit_notes/preview` | GetCreditNotesPreview | `amount`, `credit_amount`, `expand`, `invoice`*, `lines`, `memo`, `metadata`, `out_of_band_amount`, `reason`, `refund`, `refund_amount`, `shipping_cost`, body: object | credit_note | yes | — |
+| GET | `/v1/credit_notes/preview/lines` | GetCreditNotesPreviewLines | `amount`, `credit_amount`, `ending_before`, `expand`, `invoice`*, `limit`, `lines`, `memo`, `metadata`, `out_of_band_amount`, `reason`, `refund`, `refund_amount`, `shipping_cost`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/credit_notes/{credit_note}/lines` | GetCreditNotesCreditNoteLines | `credit_note`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/credit_notes/{id}` | GetCreditNotesId | `expand`, `id`*, body: object | credit_note | yes | — |
+| POST | `/v1/credit_notes/{id}` | PostCreditNotesId | `id`*, body: object | credit_note |  | — |
+| POST | `/v1/credit_notes/{id}/void` | PostCreditNotesIdVoid | `id`*, body: object | credit_note |  | — |
+| GET | `/v1/customers` | GetCustomers | `created`, `email`, `ending_before`, `expand`, `limit`, `starting_after`, `test_clock`, body: object | object | yes | — |
+| POST | `/v1/customers` | PostCustomers | body: object | customer |  | — |
+| GET | `/v1/customers/search` | GetCustomersSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/customers/{customer}` | GetCustomersCustomer | `customer`*, `expand`, body: object | customer\|deleted_customer | yes | — |
+| POST | `/v1/customers/{customer}` | PostCustomersCustomer | `customer`*, body: object | customer |  | — |
+| DELETE | `/v1/customers/{customer}` | DeleteCustomersCustomer | `customer`*, body: object | deleted_customer |  | — |
+| GET | `/v1/customers/{customer}/balance_transactions` | GetCustomersCustomerBalanceTransactions | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/customers/{customer}/balance_transactions` | PostCustomersCustomerBalanceTransactions | `customer`*, body*: object | customer_balance_transaction |  | — |
+| GET | `/v1/customers/{customer}/balance_transactions/{transaction}` | GetCustomersCustomerBalanceTransactionsTransaction | `customer`*, `expand`, `transaction`*, body: object | customer_balance_transaction | yes | — |
+| POST | `/v1/customers/{customer}/balance_transactions/{transaction}` | PostCustomersCustomerBalanceTransactionsTransaction | `customer`*, `transaction`*, body: object | customer_balance_transaction |  | — |
+| GET | `/v1/customers/{customer}/bank_accounts` | GetCustomersCustomerBankAccounts | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/customers/{customer}/bank_accounts` | PostCustomersCustomerBankAccounts | `customer`*, body: object | payment_source |  | — |
+| GET | `/v1/customers/{customer}/bank_accounts/{id}` | GetCustomersCustomerBankAccountsId | `customer`*, `expand`, `id`*, body: object | bank_account | yes | — |
+| POST | `/v1/customers/{customer}/bank_accounts/{id}` | PostCustomersCustomerBankAccountsId | `customer`*, `id`*, body: object | card\|bank_account\|source |  | — |
+| DELETE | `/v1/customers/{customer}/bank_accounts/{id}` | DeleteCustomersCustomerBankAccountsId | `customer`*, `id`*, body: object | payment_source\|deleted_payment_source |  | — |
+| POST | `/v1/customers/{customer}/bank_accounts/{id}/verify` | PostCustomersCustomerBankAccountsIdVerify | `customer`*, `id`*, body: object | bank_account |  | — |
+| GET | `/v1/customers/{customer}/cards` | GetCustomersCustomerCards | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/customers/{customer}/cards` | PostCustomersCustomerCards | `customer`*, body: object | payment_source |  | — |
+| GET | `/v1/customers/{customer}/cards/{id}` | GetCustomersCustomerCardsId | `customer`*, `expand`, `id`*, body: object | card | yes | — |
+| POST | `/v1/customers/{customer}/cards/{id}` | PostCustomersCustomerCardsId | `customer`*, `id`*, body: object | card\|bank_account\|source |  | — |
+| DELETE | `/v1/customers/{customer}/cards/{id}` | DeleteCustomersCustomerCardsId | `customer`*, `id`*, body: object | payment_source\|deleted_payment_source |  | — |
+| GET | `/v1/customers/{customer}/cash_balance` | GetCustomersCustomerCashBalance | `customer`*, `expand`, body: object | cash_balance | yes | — |
+| POST | `/v1/customers/{customer}/cash_balance` | PostCustomersCustomerCashBalance | `customer`*, body: object | cash_balance |  | — |
+| GET | `/v1/customers/{customer}/cash_balance_transactions` | GetCustomersCustomerCashBalanceTransactions | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/customers/{customer}/cash_balance_transactions/{transaction}` | GetCustomersCustomerCashBalanceTransactionsTransaction | `customer`*, `expand`, `transaction`*, body: object | customer_cash_balance_transaction | yes | — |
+| GET | `/v1/customers/{customer}/discount` | GetCustomersCustomerDiscount | `customer`*, `expand`, body: object | discount | yes | — |
+| DELETE | `/v1/customers/{customer}/discount` | DeleteCustomersCustomerDiscount | `customer`*, body: object | deleted_discount |  | — |
+| POST | `/v1/customers/{customer}/funding_instructions` | PostCustomersCustomerFundingInstructions | `customer`*, body*: object | funding_instructions |  | — |
+| GET | `/v1/customers/{customer}/payment_methods` | GetCustomersCustomerPaymentMethods | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, `type`, body: object | object | yes | — |
+| GET | `/v1/customers/{customer}/payment_methods/{payment_method}` | GetCustomersCustomerPaymentMethodsPaymentMethod | `customer`*, `expand`, `payment_method`*, body: object | payment_method | yes | — |
+| GET | `/v1/customers/{customer}/sources` | GetCustomersCustomerSources | `customer`*, `ending_before`, `expand`, `limit`, `object`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/customers/{customer}/sources` | PostCustomersCustomerSources | `customer`*, body: object | payment_source |  | — |
+| GET | `/v1/customers/{customer}/sources/{id}` | GetCustomersCustomerSourcesId | `customer`*, `expand`, `id`*, body: object | payment_source | yes | — |
+| POST | `/v1/customers/{customer}/sources/{id}` | PostCustomersCustomerSourcesId | `customer`*, `id`*, body: object | card\|bank_account\|source |  | — |
+| DELETE | `/v1/customers/{customer}/sources/{id}` | DeleteCustomersCustomerSourcesId | `customer`*, `id`*, body: object | payment_source\|deleted_payment_source |  | — |
+| POST | `/v1/customers/{customer}/sources/{id}/verify` | PostCustomersCustomerSourcesIdVerify | `customer`*, `id`*, body: object | bank_account |  | — |
+| GET | `/v1/customers/{customer}/subscriptions` | GetCustomersCustomerSubscriptions | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/customers/{customer}/subscriptions` | PostCustomersCustomerSubscriptions | `customer`*, body: object | subscription |  | — |
+| GET | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}` | GetCustomersCustomerSubscriptionsSubscriptionExposedId | `customer`*, `expand`, `subscription_exposed_id`*, body: object | subscription | yes | — |
+| POST | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}` | PostCustomersCustomerSubscriptionsSubscriptionExposedId | `customer`*, `subscription_exposed_id`*, body: object | subscription |  | — |
+| DELETE | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}` | DeleteCustomersCustomerSubscriptionsSubscriptionExposedId | `customer`*, `subscription_exposed_id`*, body: object | subscription |  | — |
+| GET | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount` | GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount | `customer`*, `expand`, `subscription_exposed_id`*, body: object | discount | yes | — |
+| DELETE | `/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount` | DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount | `customer`*, `subscription_exposed_id`*, body: object | deleted_discount |  | — |
+| GET | `/v1/customers/{customer}/tax_ids` | GetCustomersCustomerTaxIds | `customer`*, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/customers/{customer}/tax_ids` | PostCustomersCustomerTaxIds | `customer`*, body*: object | tax_id |  | — |
+| GET | `/v1/customers/{customer}/tax_ids/{id}` | GetCustomersCustomerTaxIdsId | `customer`*, `expand`, `id`*, body: object | tax_id | yes | — |
+| DELETE | `/v1/customers/{customer}/tax_ids/{id}` | DeleteCustomersCustomerTaxIdsId | `customer`*, `id`*, body: object | deleted_tax_id |  | — |
+| GET | `/v1/disputes` | GetDisputes | `charge`, `created`, `ending_before`, `expand`, `limit`, `payment_intent`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/disputes/{dispute}` | GetDisputesDispute | `dispute`*, `expand`, body: object | dispute | yes | — |
+| POST | `/v1/disputes/{dispute}` | PostDisputesDispute | `dispute`*, body: object | dispute |  | — |
+| POST | `/v1/disputes/{dispute}/close` | PostDisputesDisputeClose | `dispute`*, body: object | dispute |  | — |
+| POST | `/v1/ephemeral_keys` | PostEphemeralKeys | body: object | ephemeral_key |  | — |
+| DELETE | `/v1/ephemeral_keys/{key}` | DeleteEphemeralKeysKey | `key`*, body: object | ephemeral_key |  | — |
+| GET | `/v1/events` | GetEvents | `created`, `delivery_success`, `ending_before`, `expand`, `limit`, `starting_after`, `type`, `types`, body: object | object | yes | — |
+| GET | `/v1/events/{id}` | GetEventsId | `expand`, `id`*, body: object | event | yes | — |
+| GET | `/v1/exchange_rates` | GetExchangeRates | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/exchange_rates/{rate_id}` | GetExchangeRatesRateId | `expand`, `rate_id`*, body: object | exchange_rate | yes | — |
+| GET | `/v1/file_links` | GetFileLinks | `created`, `ending_before`, `expand`, `expired`, `file`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/file_links` | PostFileLinks | body*: object | file_link |  | — |
+| GET | `/v1/file_links/{link}` | GetFileLinksLink | `expand`, `link`*, body: object | file_link | yes | — |
+| POST | `/v1/file_links/{link}` | PostFileLinksLink | `link`*, body: object | file_link |  | — |
+| GET | `/v1/files` | GetFiles | `created`, `ending_before`, `expand`, `limit`, `purpose`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/files` | PostFiles | body*: object | file |  | — |
+| GET | `/v1/files/{file}` | GetFilesFile | `expand`, `file`*, body: object | file | yes | — |
+| GET | `/v1/financial_connections/accounts` | GetFinancialConnectionsAccounts | `account_holder`, `ending_before`, `expand`, `limit`, `session`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/financial_connections/accounts/{account}` | GetFinancialConnectionsAccountsAccount | `account`*, `expand`, body: object | financial_connections.account | yes | — |
+| POST | `/v1/financial_connections/accounts/{account}/disconnect` | PostFinancialConnectionsAccountsAccountDisconnect | `account`*, body: object | financial_connections.account |  | — |
+| GET | `/v1/financial_connections/accounts/{account}/owners` | GetFinancialConnectionsAccountsAccountOwners | `account`*, `ending_before`, `expand`, `limit`, `ownership`*, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/financial_connections/accounts/{account}/refresh` | PostFinancialConnectionsAccountsAccountRefresh | `account`*, body*: object | financial_connections.account |  | — |
+| POST | `/v1/financial_connections/sessions` | PostFinancialConnectionsSessions | body*: object | financial_connections.session |  | — |
+| GET | `/v1/financial_connections/sessions/{session}` | GetFinancialConnectionsSessionsSession | `expand`, `session`*, body: object | financial_connections.session | yes | — |
+| GET | `/v1/identity/verification_reports` | GetIdentityVerificationReports | `created`, `ending_before`, `expand`, `limit`, `starting_after`, `type`, `verification_session`, body: object | object | yes | — |
+| GET | `/v1/identity/verification_reports/{report}` | GetIdentityVerificationReportsReport | `expand`, `report`*, body: object | identity.verification_report | yes | — |
+| GET | `/v1/identity/verification_sessions` | GetIdentityVerificationSessions | `created`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/identity/verification_sessions` | PostIdentityVerificationSessions | body*: object | identity.verification_session |  | — |
+| GET | `/v1/identity/verification_sessions/{session}` | GetIdentityVerificationSessionsSession | `expand`, `session`*, body: object | identity.verification_session | yes | — |
+| POST | `/v1/identity/verification_sessions/{session}` | PostIdentityVerificationSessionsSession | `session`*, body: object | identity.verification_session |  | — |
+| POST | `/v1/identity/verification_sessions/{session}/cancel` | PostIdentityVerificationSessionsSessionCancel | `session`*, body: object | identity.verification_session |  | — |
+| POST | `/v1/identity/verification_sessions/{session}/redact` | PostIdentityVerificationSessionsSessionRedact | `session`*, body: object | identity.verification_session |  | — |
+| GET | `/v1/invoiceitems` | GetInvoiceitems | `created`, `customer`, `ending_before`, `expand`, `invoice`, `limit`, `pending`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/invoiceitems` | PostInvoiceitems | body*: object | invoiceitem |  | — |
+| GET | `/v1/invoiceitems/{invoiceitem}` | GetInvoiceitemsInvoiceitem | `expand`, `invoiceitem`*, body: object | invoiceitem | yes | — |
+| POST | `/v1/invoiceitems/{invoiceitem}` | PostInvoiceitemsInvoiceitem | `invoiceitem`*, body: object | invoiceitem |  | — |
+| DELETE | `/v1/invoiceitems/{invoiceitem}` | DeleteInvoiceitemsInvoiceitem | `invoiceitem`*, body: object | deleted_invoiceitem |  | — |
+| GET | `/v1/invoices` | GetInvoices | `collection_method`, `created`, `customer`, `due_date`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, `subscription`, body: object | object | yes | — |
+| POST | `/v1/invoices` | PostInvoices | body: object | invoice |  | — |
+| GET | `/v1/invoices/search` | GetInvoicesSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/invoices/upcoming` | GetInvoicesUpcoming | `automatic_tax`, `coupon`, `currency`, `customer`, `customer_details`, `discounts`, `expand`, `invoice_items`, `schedule`, `subscription`, `subscription_billing_cycle_anchor`, `subscription_cancel_at`, `subscription_cancel_at_period_end`, `subscription_cancel_now`, `subscription_default_tax_rates`, `subscription_items`, `subscription_proration_behavior`, `subscription_proration_date`, `subscription_resume_at`, `subscription_start_date`, `subscription_trial_end`, `subscription_trial_from_plan`, body: object | invoice | yes | — |
+| GET | `/v1/invoices/upcoming/lines` | GetInvoicesUpcomingLines | `automatic_tax`, `coupon`, `currency`, `customer`, `customer_details`, `discounts`, `ending_before`, `expand`, `invoice_items`, `limit`, `schedule`, `starting_after`, `subscription`, `subscription_billing_cycle_anchor`, `subscription_cancel_at`, `subscription_cancel_at_period_end`, `subscription_cancel_now`, `subscription_default_tax_rates`, `subscription_items`, `subscription_proration_behavior`, `subscription_proration_date`, `subscription_resume_at`, `subscription_start_date`, `subscription_trial_end`, `subscription_trial_from_plan`, body: object | object | yes | — |
+| GET | `/v1/invoices/{invoice}` | GetInvoicesInvoice | `expand`, `invoice`*, body: object | invoice | yes | — |
+| POST | `/v1/invoices/{invoice}` | PostInvoicesInvoice | `invoice`*, body: object | invoice |  | — |
+| DELETE | `/v1/invoices/{invoice}` | DeleteInvoicesInvoice | `invoice`*, body: object | deleted_invoice |  | — |
+| POST | `/v1/invoices/{invoice}/finalize` | PostInvoicesInvoiceFinalize | `invoice`*, body: object | invoice |  | — |
+| GET | `/v1/invoices/{invoice}/lines` | GetInvoicesInvoiceLines | `ending_before`, `expand`, `invoice`*, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/invoices/{invoice}/mark_uncollectible` | PostInvoicesInvoiceMarkUncollectible | `invoice`*, body: object | invoice |  | — |
+| POST | `/v1/invoices/{invoice}/pay` | PostInvoicesInvoicePay | `invoice`*, body: object | invoice |  | — |
+| POST | `/v1/invoices/{invoice}/send` | PostInvoicesInvoiceSend | `invoice`*, body: object | invoice |  | — |
+| POST | `/v1/invoices/{invoice}/void` | PostInvoicesInvoiceVoid | `invoice`*, body: object | invoice |  | — |
+| GET | `/v1/issuing/authorizations` | GetIssuingAuthorizations | `card`, `cardholder`, `created`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| GET | `/v1/issuing/authorizations/{authorization}` | GetIssuingAuthorizationsAuthorization | `authorization`*, `expand`, body: object | issuing.authorization | yes | — |
+| POST | `/v1/issuing/authorizations/{authorization}` | PostIssuingAuthorizationsAuthorization | `authorization`*, body: object | issuing.authorization |  | — |
+| POST | `/v1/issuing/authorizations/{authorization}/approve` | PostIssuingAuthorizationsAuthorizationApprove | `authorization`*, body: object | issuing.authorization |  | — |
+| POST | `/v1/issuing/authorizations/{authorization}/decline` | PostIssuingAuthorizationsAuthorizationDecline | `authorization`*, body: object | issuing.authorization |  | — |
+| GET | `/v1/issuing/cardholders` | GetIssuingCardholders | `created`, `email`, `ending_before`, `expand`, `limit`, `phone_number`, `starting_after`, `status`, `type`, body: object | object | yes | — |
+| POST | `/v1/issuing/cardholders` | PostIssuingCardholders | body*: object | issuing.cardholder |  | — |
+| GET | `/v1/issuing/cardholders/{cardholder}` | GetIssuingCardholdersCardholder | `cardholder`*, `expand`, body: object | issuing.cardholder | yes | — |
+| POST | `/v1/issuing/cardholders/{cardholder}` | PostIssuingCardholdersCardholder | `cardholder`*, body: object | issuing.cardholder |  | — |
+| GET | `/v1/issuing/cards` | GetIssuingCards | `cardholder`, `created`, `ending_before`, `exp_month`, `exp_year`, `expand`, `last4`, `limit`, `starting_after`, `status`, `type`, body: object | object | yes | — |
+| POST | `/v1/issuing/cards` | PostIssuingCards | body*: object | issuing.card |  | — |
+| GET | `/v1/issuing/cards/{card}` | GetIssuingCardsCard | `card`*, `expand`, body: object | issuing.card | yes | — |
+| POST | `/v1/issuing/cards/{card}` | PostIssuingCardsCard | `card`*, body: object | issuing.card |  | — |
+| GET | `/v1/issuing/disputes` | GetIssuingDisputes | `created`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, `transaction`, body: object | object | yes | — |
+| POST | `/v1/issuing/disputes` | PostIssuingDisputes | body: object | issuing.dispute |  | — |
+| GET | `/v1/issuing/disputes/{dispute}` | GetIssuingDisputesDispute | `dispute`*, `expand`, body: object | issuing.dispute | yes | — |
+| POST | `/v1/issuing/disputes/{dispute}` | PostIssuingDisputesDispute | `dispute`*, body: object | issuing.dispute |  | — |
+| POST | `/v1/issuing/disputes/{dispute}/submit` | PostIssuingDisputesDisputeSubmit | `dispute`*, body: object | issuing.dispute |  | — |
+| GET | `/v1/issuing/settlements` | GetIssuingSettlements | `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/issuing/settlements/{settlement}` | GetIssuingSettlementsSettlement | `expand`, `settlement`*, body: object | issuing.settlement | yes | — |
+| POST | `/v1/issuing/settlements/{settlement}` | PostIssuingSettlementsSettlement | `settlement`*, body: object | issuing.settlement |  | — |
+| GET | `/v1/issuing/transactions` | GetIssuingTransactions | `card`, `cardholder`, `created`, `ending_before`, `expand`, `limit`, `starting_after`, `type`, body: object | object | yes | — |
+| GET | `/v1/issuing/transactions/{transaction}` | GetIssuingTransactionsTransaction | `expand`, `transaction`*, body: object | issuing.transaction | yes | — |
+| POST | `/v1/issuing/transactions/{transaction}` | PostIssuingTransactionsTransaction | `transaction`*, body: object | issuing.transaction |  | — |
+| POST | `/v1/link_account_sessions` | PostLinkAccountSessions | body*: object | financial_connections.session |  | — |
+| GET | `/v1/link_account_sessions/{session}` | GetLinkAccountSessionsSession | `expand`, `session`*, body: object | financial_connections.session | yes | — |
+| GET | `/v1/linked_accounts` | GetLinkedAccounts | `account_holder`, `ending_before`, `expand`, `limit`, `session`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/linked_accounts/{account}` | GetLinkedAccountsAccount | `account`*, `expand`, body: object | financial_connections.account | yes | — |
+| POST | `/v1/linked_accounts/{account}/disconnect` | PostLinkedAccountsAccountDisconnect | `account`*, body: object | financial_connections.account |  | — |
+| GET | `/v1/linked_accounts/{account}/owners` | GetLinkedAccountsAccountOwners | `account`*, `ending_before`, `expand`, `limit`, `ownership`*, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/linked_accounts/{account}/refresh` | PostLinkedAccountsAccountRefresh | `account`*, body*: object | financial_connections.account |  | — |
+| GET | `/v1/mandates/{mandate}` | GetMandatesMandate | `expand`, `mandate`*, body: object | mandate | yes | — |
+| GET | `/v1/payment_intents` | GetPaymentIntents | `created`, `customer`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/payment_intents` | PostPaymentIntents | body*: object | payment_intent |  | — |
+| GET | `/v1/payment_intents/search` | GetPaymentIntentsSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/payment_intents/{intent}` | GetPaymentIntentsIntent | `client_secret`, `expand`, `intent`*, body: object | payment_intent | yes | — |
+| POST | `/v1/payment_intents/{intent}` | PostPaymentIntentsIntent | `intent`*, body: object | payment_intent |  | — |
+| POST | `/v1/payment_intents/{intent}/apply_customer_balance` | PostPaymentIntentsIntentApplyCustomerBalance | `intent`*, body: object | payment_intent |  | — |
+| POST | `/v1/payment_intents/{intent}/cancel` | PostPaymentIntentsIntentCancel | `intent`*, body: object | payment_intent |  | — |
+| POST | `/v1/payment_intents/{intent}/capture` | PostPaymentIntentsIntentCapture | `intent`*, body: object | payment_intent |  | — |
+| POST | `/v1/payment_intents/{intent}/confirm` | PostPaymentIntentsIntentConfirm | `intent`*, body: object | payment_intent |  | — |
+| POST | `/v1/payment_intents/{intent}/increment_authorization` | PostPaymentIntentsIntentIncrementAuthorization | `intent`*, body*: object | payment_intent |  | — |
+| POST | `/v1/payment_intents/{intent}/verify_microdeposits` | PostPaymentIntentsIntentVerifyMicrodeposits | `intent`*, body: object | payment_intent |  | — |
+| GET | `/v1/payment_links` | GetPaymentLinks | `active`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/payment_links` | PostPaymentLinks | body*: object | payment_link |  | — |
+| GET | `/v1/payment_links/{payment_link}` | GetPaymentLinksPaymentLink | `expand`, `payment_link`*, body: object | payment_link | yes | — |
+| POST | `/v1/payment_links/{payment_link}` | PostPaymentLinksPaymentLink | `payment_link`*, body: object | payment_link |  | — |
+| GET | `/v1/payment_links/{payment_link}/line_items` | GetPaymentLinksPaymentLinkLineItems | `ending_before`, `expand`, `limit`, `payment_link`*, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/payment_methods` | GetPaymentMethods | `customer`, `ending_before`, `expand`, `limit`, `starting_after`, `type`, body: object | object | yes | — |
+| POST | `/v1/payment_methods` | PostPaymentMethods | body: object | payment_method |  | — |
+| GET | `/v1/payment_methods/{payment_method}` | GetPaymentMethodsPaymentMethod | `expand`, `payment_method`*, body: object | payment_method | yes | — |
+| POST | `/v1/payment_methods/{payment_method}` | PostPaymentMethodsPaymentMethod | `payment_method`*, body: object | payment_method |  | — |
+| POST | `/v1/payment_methods/{payment_method}/attach` | PostPaymentMethodsPaymentMethodAttach | `payment_method`*, body*: object | payment_method |  | — |
+| POST | `/v1/payment_methods/{payment_method}/detach` | PostPaymentMethodsPaymentMethodDetach | `payment_method`*, body: object | payment_method |  | — |
+| GET | `/v1/payouts` | GetPayouts | `arrival_date`, `created`, `destination`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/payouts` | PostPayouts | body*: object | payout |  | — |
+| GET | `/v1/payouts/{payout}` | GetPayoutsPayout | `expand`, `payout`*, body: object | payout | yes | — |
+| POST | `/v1/payouts/{payout}` | PostPayoutsPayout | `payout`*, body: object | payout |  | — |
+| POST | `/v1/payouts/{payout}/cancel` | PostPayoutsPayoutCancel | `payout`*, body: object | payout |  | — |
+| POST | `/v1/payouts/{payout}/reverse` | PostPayoutsPayoutReverse | `payout`*, body: object | payout |  | — |
+| GET | `/v1/plans` | GetPlans | `active`, `created`, `ending_before`, `expand`, `limit`, `product`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/plans` | PostPlans | body*: object | plan |  | — |
+| GET | `/v1/plans/{plan}` | GetPlansPlan | `expand`, `plan`*, body: object | plan | yes | — |
+| POST | `/v1/plans/{plan}` | PostPlansPlan | `plan`*, body: object | plan |  | — |
+| DELETE | `/v1/plans/{plan}` | DeletePlansPlan | `plan`*, body: object | deleted_plan |  | — |
+| GET | `/v1/prices` | GetPrices | `active`, `created`, `currency`, `ending_before`, `expand`, `limit`, `lookup_keys`, `product`, `recurring`, `starting_after`, `type`, body: object | object | yes | — |
+| POST | `/v1/prices` | PostPrices | body*: object | price |  | — |
+| GET | `/v1/prices/search` | GetPricesSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/prices/{price}` | GetPricesPrice | `expand`, `price`*, body: object | price | yes | — |
+| POST | `/v1/prices/{price}` | PostPricesPrice | `price`*, body: object | price |  | — |
+| GET | `/v1/products` | GetProducts | `active`, `created`, `ending_before`, `expand`, `ids`, `limit`, `shippable`, `starting_after`, `url`, body: object | object | yes | — |
+| POST | `/v1/products` | PostProducts | body*: object | product |  | — |
+| GET | `/v1/products/search` | GetProductsSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/products/{id}` | GetProductsId | `expand`, `id`*, body: object | product | yes | — |
+| POST | `/v1/products/{id}` | PostProductsId | `id`*, body: object | product |  | — |
+| DELETE | `/v1/products/{id}` | DeleteProductsId | `id`*, body: object | deleted_product |  | — |
+| GET | `/v1/promotion_codes` | GetPromotionCodes | `active`, `code`, `coupon`, `created`, `customer`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/promotion_codes` | PostPromotionCodes | body*: object | promotion_code |  | — |
+| GET | `/v1/promotion_codes/{promotion_code}` | GetPromotionCodesPromotionCode | `expand`, `promotion_code`*, body: object | promotion_code | yes | — |
+| POST | `/v1/promotion_codes/{promotion_code}` | PostPromotionCodesPromotionCode | `promotion_code`*, body: object | promotion_code |  | — |
+| GET | `/v1/quotes` | GetQuotes | `customer`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, `test_clock`, body: object | object | yes | — |
+| POST | `/v1/quotes` | PostQuotes | body: object | quote |  | — |
+| GET | `/v1/quotes/{quote}` | GetQuotesQuote | `expand`, `quote`*, body: object | quote | yes | — |
+| POST | `/v1/quotes/{quote}` | PostQuotesQuote | `quote`*, body: object | quote |  | — |
+| POST | `/v1/quotes/{quote}/accept` | PostQuotesQuoteAccept | `quote`*, body: object | quote |  | — |
+| POST | `/v1/quotes/{quote}/cancel` | PostQuotesQuoteCancel | `quote`*, body: object | quote |  | — |
+| GET | `/v1/quotes/{quote}/computed_upfront_line_items` | GetQuotesQuoteComputedUpfrontLineItems | `ending_before`, `expand`, `limit`, `quote`*, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/quotes/{quote}/finalize` | PostQuotesQuoteFinalize | `quote`*, body: object | quote |  | — |
+| GET | `/v1/quotes/{quote}/line_items` | GetQuotesQuoteLineItems | `ending_before`, `expand`, `limit`, `quote`*, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/quotes/{quote}/pdf` | GetQuotesQuotePdf | `expand`, `quote`*, body: object | string:binary | yes | — |
+| GET | `/v1/radar/early_fraud_warnings` | GetRadarEarlyFraudWarnings | `charge`, `ending_before`, `expand`, `limit`, `payment_intent`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/radar/early_fraud_warnings/{early_fraud_warning}` | GetRadarEarlyFraudWarningsEarlyFraudWarning | `early_fraud_warning`*, `expand`, body: object | radar.early_fraud_warning | yes | — |
+| GET | `/v1/radar/value_list_items` | GetRadarValueListItems | `created`, `ending_before`, `expand`, `limit`, `starting_after`, `value`, `value_list`*, body: object | object | yes | — |
+| POST | `/v1/radar/value_list_items` | PostRadarValueListItems | body*: object | radar.value_list_item |  | — |
+| GET | `/v1/radar/value_list_items/{item}` | GetRadarValueListItemsItem | `expand`, `item`*, body: object | radar.value_list_item | yes | — |
+| DELETE | `/v1/radar/value_list_items/{item}` | DeleteRadarValueListItemsItem | `item`*, body: object | deleted_radar.value_list_item |  | — |
+| GET | `/v1/radar/value_lists` | GetRadarValueLists | `alias`, `contains`, `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/radar/value_lists` | PostRadarValueLists | body*: object | radar.value_list |  | — |
+| GET | `/v1/radar/value_lists/{value_list}` | GetRadarValueListsValueList | `expand`, `value_list`*, body: object | radar.value_list | yes | — |
+| POST | `/v1/radar/value_lists/{value_list}` | PostRadarValueListsValueList | `value_list`*, body: object | radar.value_list |  | — |
+| DELETE | `/v1/radar/value_lists/{value_list}` | DeleteRadarValueListsValueList | `value_list`*, body: object | deleted_radar.value_list |  | — |
+| GET | `/v1/refunds` | GetRefunds | `charge`, `created`, `ending_before`, `expand`, `limit`, `payment_intent`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/refunds` | PostRefunds | body: object | refund |  | — |
+| GET | `/v1/refunds/{refund}` | GetRefundsRefund | `expand`, `refund`*, body: object | refund | yes | — |
+| POST | `/v1/refunds/{refund}` | PostRefundsRefund | `refund`*, body: object | refund |  | — |
+| POST | `/v1/refunds/{refund}/cancel` | PostRefundsRefundCancel | `refund`*, body: object | refund |  | — |
+| GET | `/v1/reporting/report_runs` | GetReportingReportRuns | `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/reporting/report_runs` | PostReportingReportRuns | body*: object | reporting.report_run |  | — |
+| GET | `/v1/reporting/report_runs/{report_run}` | GetReportingReportRunsReportRun | `expand`, `report_run`*, body: object | reporting.report_run | yes | — |
+| GET | `/v1/reporting/report_types` | GetReportingReportTypes | `expand`, body: object | object | yes | — |
+| GET | `/v1/reporting/report_types/{report_type}` | GetReportingReportTypesReportType | `expand`, `report_type`*, body: object | reporting.report_type | yes | — |
+| GET | `/v1/reviews` | GetReviews | `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/reviews/{review}` | GetReviewsReview | `expand`, `review`*, body: object | review | yes | — |
+| POST | `/v1/reviews/{review}/approve` | PostReviewsReviewApprove | `review`*, body: object | review |  | — |
+| GET | `/v1/setup_attempts` | GetSetupAttempts | `created`, `ending_before`, `expand`, `limit`, `setup_intent`*, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/setup_intents` | GetSetupIntents | `attach_to_self`, `created`, `customer`, `ending_before`, `expand`, `limit`, `payment_method`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/setup_intents` | PostSetupIntents | body: object | setup_intent |  | — |
+| GET | `/v1/setup_intents/{intent}` | GetSetupIntentsIntent | `client_secret`, `expand`, `intent`*, body: object | setup_intent | yes | — |
+| POST | `/v1/setup_intents/{intent}` | PostSetupIntentsIntent | `intent`*, body: object | setup_intent |  | — |
+| POST | `/v1/setup_intents/{intent}/cancel` | PostSetupIntentsIntentCancel | `intent`*, body: object | setup_intent |  | — |
+| POST | `/v1/setup_intents/{intent}/confirm` | PostSetupIntentsIntentConfirm | `intent`*, body: object | setup_intent |  | — |
+| POST | `/v1/setup_intents/{intent}/verify_microdeposits` | PostSetupIntentsIntentVerifyMicrodeposits | `intent`*, body: object | setup_intent |  | — |
+| GET | `/v1/shipping_rates` | GetShippingRates | `active`, `created`, `currency`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/shipping_rates` | PostShippingRates | body*: object | shipping_rate |  | — |
+| GET | `/v1/shipping_rates/{shipping_rate_token}` | GetShippingRatesShippingRateToken | `expand`, `shipping_rate_token`*, body: object | shipping_rate | yes | — |
+| POST | `/v1/shipping_rates/{shipping_rate_token}` | PostShippingRatesShippingRateToken | `shipping_rate_token`*, body: object | shipping_rate |  | — |
+| GET | `/v1/sigma/scheduled_query_runs` | GetSigmaScheduledQueryRuns | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/sigma/scheduled_query_runs/{scheduled_query_run}` | GetSigmaScheduledQueryRunsScheduledQueryRun | `expand`, `scheduled_query_run`*, body: object | scheduled_query_run | yes | — |
+| POST | `/v1/sources` | PostSources | body: object | source |  | — |
+| GET | `/v1/sources/{source}` | GetSourcesSource | `client_secret`, `expand`, `source`*, body: object | source | yes | — |
+| POST | `/v1/sources/{source}` | PostSourcesSource | `source`*, body: object | source |  | — |
+| GET | `/v1/sources/{source}/mandate_notifications/{mandate_notification}` | GetSourcesSourceMandateNotificationsMandateNotification | `expand`, `mandate_notification`*, `source`*, body: object | source_mandate_notification | yes | — |
+| GET | `/v1/sources/{source}/source_transactions` | GetSourcesSourceSourceTransactions | `ending_before`, `expand`, `limit`, `source`*, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/sources/{source}/source_transactions/{source_transaction}` | GetSourcesSourceSourceTransactionsSourceTransaction | `expand`, `source`*, `source_transaction`*, body: object | source_transaction | yes | — |
+| POST | `/v1/sources/{source}/verify` | PostSourcesSourceVerify | `source`*, body*: object | source |  | — |
+| GET | `/v1/subscription_items` | GetSubscriptionItems | `ending_before`, `expand`, `limit`, `starting_after`, `subscription`*, body: object | object | yes | — |
+| POST | `/v1/subscription_items` | PostSubscriptionItems | body*: object | subscription_item |  | — |
+| GET | `/v1/subscription_items/{item}` | GetSubscriptionItemsItem | `expand`, `item`*, body: object | subscription_item | yes | — |
+| POST | `/v1/subscription_items/{item}` | PostSubscriptionItemsItem | `item`*, body: object | subscription_item |  | — |
+| DELETE | `/v1/subscription_items/{item}` | DeleteSubscriptionItemsItem | `item`*, body: object | deleted_subscription_item |  | — |
+| GET | `/v1/subscription_items/{subscription_item}/usage_record_summaries` | GetSubscriptionItemsSubscriptionItemUsageRecordSummaries | `ending_before`, `expand`, `limit`, `starting_after`, `subscription_item`*, body: object | object | yes | — |
+| POST | `/v1/subscription_items/{subscription_item}/usage_records` | PostSubscriptionItemsSubscriptionItemUsageRecords | `subscription_item`*, body*: object | usage_record |  | — |
+| GET | `/v1/subscription_schedules` | GetSubscriptionSchedules | `canceled_at`, `completed_at`, `created`, `customer`, `ending_before`, `expand`, `limit`, `released_at`, `scheduled`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/subscription_schedules` | PostSubscriptionSchedules | body: object | subscription_schedule |  | — |
+| GET | `/v1/subscription_schedules/{schedule}` | GetSubscriptionSchedulesSchedule | `expand`, `schedule`*, body: object | subscription_schedule | yes | — |
+| POST | `/v1/subscription_schedules/{schedule}` | PostSubscriptionSchedulesSchedule | `schedule`*, body: object | subscription_schedule |  | — |
+| POST | `/v1/subscription_schedules/{schedule}/cancel` | PostSubscriptionSchedulesScheduleCancel | `schedule`*, body: object | subscription_schedule |  | — |
+| POST | `/v1/subscription_schedules/{schedule}/release` | PostSubscriptionSchedulesScheduleRelease | `schedule`*, body: object | subscription_schedule |  | — |
+| GET | `/v1/subscriptions` | GetSubscriptions | `collection_method`, `created`, `current_period_end`, `current_period_start`, `customer`, `ending_before`, `expand`, `limit`, `price`, `starting_after`, `status`, `test_clock`, body: object | object | yes | — |
+| POST | `/v1/subscriptions` | PostSubscriptions | body*: object | subscription |  | — |
+| GET | `/v1/subscriptions/search` | GetSubscriptionsSearch | `expand`, `limit`, `page`, `query`*, body: object | object | yes | — |
+| GET | `/v1/subscriptions/{subscription_exposed_id}` | GetSubscriptionsSubscriptionExposedId | `expand`, `subscription_exposed_id`*, body: object | subscription | yes | — |
+| POST | `/v1/subscriptions/{subscription_exposed_id}` | PostSubscriptionsSubscriptionExposedId | `subscription_exposed_id`*, body: object | subscription |  | — |
+| DELETE | `/v1/subscriptions/{subscription_exposed_id}` | DeleteSubscriptionsSubscriptionExposedId | `subscription_exposed_id`*, body: object | subscription |  | — |
+| DELETE | `/v1/subscriptions/{subscription_exposed_id}/discount` | DeleteSubscriptionsSubscriptionExposedIdDiscount | `subscription_exposed_id`*, body: object | deleted_discount |  | — |
+| POST | `/v1/subscriptions/{subscription}/resume` | PostSubscriptionsSubscriptionResume | `subscription`*, body: object | subscription |  | — |
+| GET | `/v1/tax_codes` | GetTaxCodes | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| GET | `/v1/tax_codes/{id}` | GetTaxCodesId | `expand`, `id`*, body: object | tax_code | yes | — |
+| GET | `/v1/tax_rates` | GetTaxRates | `active`, `created`, `ending_before`, `expand`, `inclusive`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/tax_rates` | PostTaxRates | body*: object | tax_rate |  | — |
+| GET | `/v1/tax_rates/{tax_rate}` | GetTaxRatesTaxRate | `expand`, `tax_rate`*, body: object | tax_rate | yes | — |
+| POST | `/v1/tax_rates/{tax_rate}` | PostTaxRatesTaxRate | `tax_rate`*, body: object | tax_rate |  | — |
+| GET | `/v1/terminal/configurations` | GetTerminalConfigurations | `ending_before`, `expand`, `is_account_default`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/terminal/configurations` | PostTerminalConfigurations | body: object | terminal.configuration |  | — |
+| GET | `/v1/terminal/configurations/{configuration}` | GetTerminalConfigurationsConfiguration | `configuration`*, `expand`, body: object | terminal.configuration\|deleted_terminal.configuration | yes | — |
+| POST | `/v1/terminal/configurations/{configuration}` | PostTerminalConfigurationsConfiguration | `configuration`*, body: object | terminal.configuration\|deleted_terminal.configuration |  | — |
+| DELETE | `/v1/terminal/configurations/{configuration}` | DeleteTerminalConfigurationsConfiguration | `configuration`*, body: object | deleted_terminal.configuration |  | — |
+| POST | `/v1/terminal/connection_tokens` | PostTerminalConnectionTokens | body: object | terminal.connection_token |  | — |
+| GET | `/v1/terminal/locations` | GetTerminalLocations | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/terminal/locations` | PostTerminalLocations | body*: object | terminal.location |  | — |
+| GET | `/v1/terminal/locations/{location}` | GetTerminalLocationsLocation | `expand`, `location`*, body: object | terminal.location\|deleted_terminal.location | yes | — |
+| POST | `/v1/terminal/locations/{location}` | PostTerminalLocationsLocation | `location`*, body: object | terminal.location\|deleted_terminal.location |  | — |
+| DELETE | `/v1/terminal/locations/{location}` | DeleteTerminalLocationsLocation | `location`*, body: object | deleted_terminal.location |  | — |
+| GET | `/v1/terminal/readers` | GetTerminalReaders | `device_type`, `ending_before`, `expand`, `limit`, `location`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/terminal/readers` | PostTerminalReaders | body*: object | terminal.reader |  | — |
+| GET | `/v1/terminal/readers/{reader}` | GetTerminalReadersReader | `expand`, `reader`*, body: object | terminal.reader\|deleted_terminal.reader | yes | — |
+| POST | `/v1/terminal/readers/{reader}` | PostTerminalReadersReader | `reader`*, body: object | terminal.reader\|deleted_terminal.reader |  | — |
+| DELETE | `/v1/terminal/readers/{reader}` | DeleteTerminalReadersReader | `reader`*, body: object | deleted_terminal.reader |  | — |
+| POST | `/v1/terminal/readers/{reader}/cancel_action` | PostTerminalReadersReaderCancelAction | `reader`*, body: object | terminal.reader |  | — |
+| POST | `/v1/terminal/readers/{reader}/process_payment_intent` | PostTerminalReadersReaderProcessPaymentIntent | `reader`*, body*: object | terminal.reader |  | — |
+| POST | `/v1/terminal/readers/{reader}/process_setup_intent` | PostTerminalReadersReaderProcessSetupIntent | `reader`*, body*: object | terminal.reader |  | — |
+| POST | `/v1/terminal/readers/{reader}/refund_payment` | PostTerminalReadersReaderRefundPayment | `reader`*, body: object | terminal.reader |  | — |
+| POST | `/v1/terminal/readers/{reader}/set_reader_display` | PostTerminalReadersReaderSetReaderDisplay | `reader`*, body*: object | terminal.reader |  | — |
+| POST | `/v1/test_helpers/customers/{customer}/fund_cash_balance` | PostTestHelpersCustomersCustomerFundCashBalance | `customer`*, body*: object | customer_cash_balance_transaction |  | — |
+| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/deliver` | PostTestHelpersIssuingCardsCardShippingDeliver | `card`*, body: object | issuing.card |  | — |
+| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/fail` | PostTestHelpersIssuingCardsCardShippingFail | `card`*, body: object | issuing.card |  | — |
+| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/return` | PostTestHelpersIssuingCardsCardShippingReturn | `card`*, body: object | issuing.card |  | — |
+| POST | `/v1/test_helpers/issuing/cards/{card}/shipping/ship` | PostTestHelpersIssuingCardsCardShippingShip | `card`*, body: object | issuing.card |  | — |
+| POST | `/v1/test_helpers/refunds/{refund}/expire` | PostTestHelpersRefundsRefundExpire | `refund`*, body: object | refund |  | — |
+| POST | `/v1/test_helpers/terminal/readers/{reader}/present_payment_method` | PostTestHelpersTerminalReadersReaderPresentPaymentMethod | `reader`*, body: object | terminal.reader |  | — |
+| GET | `/v1/test_helpers/test_clocks` | GetTestHelpersTestClocks | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/test_helpers/test_clocks` | PostTestHelpersTestClocks | body*: object | test_helpers.test_clock |  | — |
+| GET | `/v1/test_helpers/test_clocks/{test_clock}` | GetTestHelpersTestClocksTestClock | `expand`, `test_clock`*, body: object | test_helpers.test_clock | yes | — |
+| DELETE | `/v1/test_helpers/test_clocks/{test_clock}` | DeleteTestHelpersTestClocksTestClock | `test_clock`*, body: object | deleted_test_helpers.test_clock |  | — |
+| POST | `/v1/test_helpers/test_clocks/{test_clock}/advance` | PostTestHelpersTestClocksTestClockAdvance | `test_clock`*, body*: object | test_helpers.test_clock |  | — |
+| POST | `/v1/test_helpers/treasury/inbound_transfers/{id}/fail` | PostTestHelpersTreasuryInboundTransfersIdFail | `id`*, body: object | treasury.inbound_transfer |  | — |
+| POST | `/v1/test_helpers/treasury/inbound_transfers/{id}/return` | PostTestHelpersTreasuryInboundTransfersIdReturn | `id`*, body: object | treasury.inbound_transfer |  | — |
+| POST | `/v1/test_helpers/treasury/inbound_transfers/{id}/succeed` | PostTestHelpersTreasuryInboundTransfersIdSucceed | `id`*, body: object | treasury.inbound_transfer |  | — |
+| POST | `/v1/test_helpers/treasury/outbound_payments/{id}/fail` | PostTestHelpersTreasuryOutboundPaymentsIdFail | `id`*, body: object | treasury.outbound_payment |  | — |
+| POST | `/v1/test_helpers/treasury/outbound_payments/{id}/post` | PostTestHelpersTreasuryOutboundPaymentsIdPost | `id`*, body: object | treasury.outbound_payment |  | — |
+| POST | `/v1/test_helpers/treasury/outbound_payments/{id}/return` | PostTestHelpersTreasuryOutboundPaymentsIdReturn | `id`*, body: object | treasury.outbound_payment |  | — |
+| POST | `/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail` | PostTestHelpersTreasuryOutboundTransfersOutboundTransferFail | `outbound_transfer`*, body: object | treasury.outbound_transfer |  | — |
+| POST | `/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post` | PostTestHelpersTreasuryOutboundTransfersOutboundTransferPost | `outbound_transfer`*, body: object | treasury.outbound_transfer |  | — |
+| POST | `/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return` | PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturn | `outbound_transfer`*, body: object | treasury.outbound_transfer |  | — |
+| POST | `/v1/test_helpers/treasury/received_credits` | PostTestHelpersTreasuryReceivedCredits | body*: object | treasury.received_credit |  | — |
+| POST | `/v1/test_helpers/treasury/received_debits` | PostTestHelpersTreasuryReceivedDebits | body*: object | treasury.received_debit |  | — |
+| POST | `/v1/tokens` | PostTokens | body: object | token |  | — |
+| GET | `/v1/tokens/{token}` | GetTokensToken | `expand`, `token`*, body: object | token | yes | — |
+| GET | `/v1/topups` | GetTopups | `amount`, `created`, `ending_before`, `expand`, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/topups` | PostTopups | body*: object | topup |  | — |
+| GET | `/v1/topups/{topup}` | GetTopupsTopup | `expand`, `topup`*, body: object | topup | yes | — |
+| POST | `/v1/topups/{topup}` | PostTopupsTopup | `topup`*, body: object | topup |  | — |
+| POST | `/v1/topups/{topup}/cancel` | PostTopupsTopupCancel | `topup`*, body: object | topup |  | — |
+| GET | `/v1/transfers` | GetTransfers | `created`, `destination`, `ending_before`, `expand`, `limit`, `starting_after`, `transfer_group`, body: object | object | yes | — |
+| POST | `/v1/transfers` | PostTransfers | body*: object | transfer |  | — |
+| GET | `/v1/transfers/{id}/reversals` | GetTransfersIdReversals | `ending_before`, `expand`, `id`*, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/transfers/{id}/reversals` | PostTransfersIdReversals | `id`*, body: object | transfer_reversal |  | — |
+| GET | `/v1/transfers/{transfer}` | GetTransfersTransfer | `expand`, `transfer`*, body: object | transfer | yes | — |
+| POST | `/v1/transfers/{transfer}` | PostTransfersTransfer | `transfer`*, body: object | transfer |  | — |
+| GET | `/v1/transfers/{transfer}/reversals/{id}` | GetTransfersTransferReversalsId | `expand`, `id`*, `transfer`*, body: object | transfer_reversal | yes | — |
+| POST | `/v1/transfers/{transfer}/reversals/{id}` | PostTransfersTransferReversalsId | `id`*, `transfer`*, body: object | transfer_reversal |  | — |
+| GET | `/v1/treasury/credit_reversals` | GetTreasuryCreditReversals | `ending_before`, `expand`, `financial_account`*, `limit`, `received_credit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/treasury/credit_reversals` | PostTreasuryCreditReversals | body*: object | treasury.credit_reversal |  | — |
+| GET | `/v1/treasury/credit_reversals/{credit_reversal}` | GetTreasuryCreditReversalsCreditReversal | `credit_reversal`*, `expand`, body: object | treasury.credit_reversal | yes | — |
+| GET | `/v1/treasury/debit_reversals` | GetTreasuryDebitReversals | `ending_before`, `expand`, `financial_account`*, `limit`, `received_debit`, `resolution`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/treasury/debit_reversals` | PostTreasuryDebitReversals | body*: object | treasury.debit_reversal |  | — |
+| GET | `/v1/treasury/debit_reversals/{debit_reversal}` | GetTreasuryDebitReversalsDebitReversal | `debit_reversal`*, `expand`, body: object | treasury.debit_reversal | yes | — |
+| GET | `/v1/treasury/financial_accounts` | GetTreasuryFinancialAccounts | `created`, `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/treasury/financial_accounts` | PostTreasuryFinancialAccounts | body*: object | treasury.financial_account |  | — |
+| GET | `/v1/treasury/financial_accounts/{financial_account}` | GetTreasuryFinancialAccountsFinancialAccount | `expand`, `financial_account`*, body: object | treasury.financial_account | yes | — |
+| POST | `/v1/treasury/financial_accounts/{financial_account}` | PostTreasuryFinancialAccountsFinancialAccount | `financial_account`*, body: object | treasury.financial_account |  | — |
+| GET | `/v1/treasury/financial_accounts/{financial_account}/features` | GetTreasuryFinancialAccountsFinancialAccountFeatures | `expand`, `financial_account`*, body: object | treasury.financial_account_features | yes | — |
+| POST | `/v1/treasury/financial_accounts/{financial_account}/features` | PostTreasuryFinancialAccountsFinancialAccountFeatures | `financial_account`*, body: object | treasury.financial_account_features |  | — |
+| GET | `/v1/treasury/inbound_transfers` | GetTreasuryInboundTransfers | `ending_before`, `expand`, `financial_account`*, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/treasury/inbound_transfers` | PostTreasuryInboundTransfers | body*: object | treasury.inbound_transfer |  | — |
+| GET | `/v1/treasury/inbound_transfers/{id}` | GetTreasuryInboundTransfersId | `expand`, `id`*, body: object | treasury.inbound_transfer | yes | — |
+| POST | `/v1/treasury/inbound_transfers/{inbound_transfer}/cancel` | PostTreasuryInboundTransfersInboundTransferCancel | `inbound_transfer`*, body: object | treasury.inbound_transfer |  | — |
+| GET | `/v1/treasury/outbound_payments` | GetTreasuryOutboundPayments | `customer`, `ending_before`, `expand`, `financial_account`*, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/treasury/outbound_payments` | PostTreasuryOutboundPayments | body*: object | treasury.outbound_payment |  | — |
+| GET | `/v1/treasury/outbound_payments/{id}` | GetTreasuryOutboundPaymentsId | `expand`, `id`*, body: object | treasury.outbound_payment | yes | — |
+| POST | `/v1/treasury/outbound_payments/{id}/cancel` | PostTreasuryOutboundPaymentsIdCancel | `id`*, body: object | treasury.outbound_payment |  | — |
+| GET | `/v1/treasury/outbound_transfers` | GetTreasuryOutboundTransfers | `ending_before`, `expand`, `financial_account`*, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| POST | `/v1/treasury/outbound_transfers` | PostTreasuryOutboundTransfers | body*: object | treasury.outbound_transfer |  | — |
+| GET | `/v1/treasury/outbound_transfers/{outbound_transfer}` | GetTreasuryOutboundTransfersOutboundTransfer | `expand`, `outbound_transfer`*, body: object | treasury.outbound_transfer | yes | — |
+| POST | `/v1/treasury/outbound_transfers/{outbound_transfer}/cancel` | PostTreasuryOutboundTransfersOutboundTransferCancel | `outbound_transfer`*, body: object | treasury.outbound_transfer |  | — |
+| GET | `/v1/treasury/received_credits` | GetTreasuryReceivedCredits | `ending_before`, `expand`, `financial_account`*, `limit`, `linked_flows`, `starting_after`, `status`, body: object | object | yes | — |
+| GET | `/v1/treasury/received_credits/{id}` | GetTreasuryReceivedCreditsId | `expand`, `id`*, body: object | treasury.received_credit | yes | — |
+| GET | `/v1/treasury/received_debits` | GetTreasuryReceivedDebits | `ending_before`, `expand`, `financial_account`*, `limit`, `starting_after`, `status`, body: object | object | yes | — |
+| GET | `/v1/treasury/received_debits/{id}` | GetTreasuryReceivedDebitsId | `expand`, `id`*, body: object | treasury.received_debit | yes | — |
+| GET | `/v1/treasury/transaction_entries` | GetTreasuryTransactionEntries | `created`, `effective_at`, `ending_before`, `expand`, `financial_account`*, `limit`, `order_by`, `starting_after`, `transaction`, body: object | object | yes | — |
+| GET | `/v1/treasury/transaction_entries/{id}` | GetTreasuryTransactionEntriesId | `expand`, `id`*, body: object | treasury.transaction_entry | yes | — |
+| GET | `/v1/treasury/transactions` | GetTreasuryTransactions | `created`, `ending_before`, `expand`, `financial_account`*, `limit`, `order_by`, `starting_after`, `status`, `status_transitions`, body: object | object | yes | — |
+| GET | `/v1/treasury/transactions/{id}` | GetTreasuryTransactionsId | `expand`, `id`*, body: object | treasury.transaction | yes | — |
+| GET | `/v1/webhook_endpoints` | GetWebhookEndpoints | `ending_before`, `expand`, `limit`, `starting_after`, body: object | object | yes | — |
+| POST | `/v1/webhook_endpoints` | PostWebhookEndpoints | body*: object | webhook_endpoint |  | — |
+| GET | `/v1/webhook_endpoints/{webhook_endpoint}` | GetWebhookEndpointsWebhookEndpoint | `expand`, `webhook_endpoint`*, body: object | webhook_endpoint | yes | — |
+| POST | `/v1/webhook_endpoints/{webhook_endpoint}` | PostWebhookEndpointsWebhookEndpoint | `webhook_endpoint`*, body: object | webhook_endpoint |  | — |
+| DELETE | `/v1/webhook_endpoints/{webhook_endpoint}` | DeleteWebhookEndpointsWebhookEndpoint | `webhook_endpoint`*, body: object | deleted_webhook_endpoint |  | — |

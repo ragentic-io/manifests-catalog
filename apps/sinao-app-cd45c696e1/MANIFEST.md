@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_sinao_app_icon.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `138c52d38f3031f67a7c39ee789c07348fa195e4ccf4c04672e3b23eeb33c0aa` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,277 +34,279 @@ logo: "https://api.apis.guru/v2/cache/logo/https_sinao_app_icon.svg"
 
 41 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/apps` | app.list | List apps |
-| POST | `/apps` | app.create | Create an app |
-| DELETE | `/apps/access/invite/{accessToken}` | app.policies.registration.delete | Delete an invitation from token |
-| GET | `/apps/access/invite/{accessToken}` | app.policies.registration.get | Get invitation informations |
-| POST | `/apps/access/invite/{accessToken}/register` | app.policies.registration.register | Create an User by invitation |
-| GET | `/apps/{appId}` | app.get | Get an app |
-| GET | `/apps/{appId}/access` | app.policies.list | Get policies for an app |
-| GET | `/apps/{appId}/access/invite` | app.policies.invitations.list | List invitations |
-| POST | `/apps/{appId}/access/invite` | app.policies.invitations.create | Invite an user |
-| DELETE | `/apps/{appId}/access/invite/{id}` | app.policies.invitations.delete | Delete an invitation |
-| GET | `/apps/{appId}/access/profiles` | app.policies.profiles.list | Get profiles |
-| DELETE | `/apps/{appId}/access/{userId}` | app.policies.delete | Delete police for an user |
-| GET | `/apps/{appId}/access/{userId}` | app.policies.get | Get police for an user |
-| POST | `/apps/{appId}/access/{userId}` | app.policies.update | Update police for an user |
-| GET | `/apps/{appId}/accountcategories/` | app.accounting.categories.list | List categories |
-| POST | `/apps/{appId}/accountcategories/` | app.accounting.categories.create | Create a category |
-| DELETE | `/apps/{appId}/accountcategories/{id}` | app.accounting.categories.delete | Remove a category |
-| GET | `/apps/{appId}/accountcategories/{id}` | app.accounting.categories.get | Get a category |
-| POST | `/apps/{appId}/accountcategories/{id}` | app.accounting.categories.update | Update a category |
-| GET | `/apps/{appId}/accounting_entries/` | app.accounting.entries.list | List accounting entries |
-| GET | `/apps/{appId}/accounts/` | app.accounting.accounts.list | List Account |
-| POST | `/apps/{appId}/accounts/` | app.accounting.accounts.create | Create a Account |
-| POST | `/apps/{appId}/accounts/batch` | app.accounting.accounts.batch | Create many accounts |
-| DELETE | `/apps/{appId}/accounts/{id}` | app.accounting.accounts.delete | Remove a Account |
-| GET | `/apps/{appId}/accounts/{id}` | app.accounting.accounts.get | Get a Account |
-| POST | `/apps/{appId}/accounts/{id}` | app.accounting.accounts.update | Update a Account |
-| GET | `/apps/{appId}/apikeys` | app.apikeys.list | Get all api keys |
-| POST | `/apps/{appId}/apikeys` | app.apikeys.create | Create new API key |
-| DELETE | `/apps/{appId}/apikeys/{id}` | app.apikeys.delete | Remove an api key |
-| GET | `/apps/{appId}/apipartners` | app.apipartners.list | Get all api parners |
-| GET | `/apps/{appId}/attachments` | app.attachments.list | List attachments |
-| POST | `/apps/{appId}/attachments` | app.attachments.create | Attach a file on an object |
-| PUT | `/apps/{appId}/attachments` | app.sapAttestations.generateSapAttestations | Recreate S.A.P attestations |
-| GET | `/apps/{appId}/attachments/download` | app.attachments.download | Download a list of attachments in pdf into a .zip file |
-| GET | `/apps/{appId}/attachments/sap-download` | app.sapAttestations.download | Download a list of SAP attestations in pdf into a .zip file |
-| DELETE | `/apps/{appId}/attachments/{id}` | app.attachments.delete | Detach a file from id |
-| GET | `/apps/{appId}/attachments/{id}` | app.attachments.get | Get attachment by id |
-| GET | `/apps/{appId}/attachments/{id}/pdf` | app.attachments.RedirectToPublicUrl | Download the attachment as pdf |
-| GET | `/apps/{appId}/bankdetails` | app.documents.sales.bankdetails.list | List BankDetails |
-| POST | `/apps/{appId}/bankdetails` | app.documents.sales.bankdetails.create | Create a BankDetails |
-| DELETE | `/apps/{appId}/bankdetails/{id}` | app.documents.sales.bankdetails.delete | Remove a BankDetails |
-| GET | `/apps/{appId}/bankdetails/{id}` | app.documents.sales.bankdetails.get | Get a BankDetails |
-| POST | `/apps/{appId}/bankdetails/{id}` | app.documents.sales.bankdetails.update | Update a BankDetails |
-| DELETE | `/apps/{appId}/banks/` | app.cashflow.banks.delete | Remove a Bankin synchronization |
-| GET | `/apps/{appId}/banks/` | app.cashflow.banks.list | List banks connected to bankin |
-| GET | `/apps/{appId}/banks/connect` | app.cashflow.banks.connect | Get the link to the funnel to connect a bank with Sinao |
-| POST | `/apps/{appId}/banks/synchronize` | app.cashflow.banks.synchronize | Triggers synchronization at Bankin then synchronizes transactions with Sinao |
-| GET | `/apps/{appId}/banks/{id}/funnel/edit` | app.cashflow.banks.url_edit | Get the link to the funnel to edit password |
-| GET | `/apps/{appId}/banks/{id}/funnel/sync` | app.cashflow.banks.url_sync | Get the link to the funnel to start manually a synchronization (SCA) |
-| GET | `/apps/{appId}/banks/{id}/funnel/validate` | app.cashflow.banks.url_validate | Get the link to the funnel to validate a pro item (SCA) |
-| POST | `/apps/{appId}/banks/{id}/select_accounts` | app.cashflow.banks.select_accounts | Select accounts to synchronize |
-| GET | `/apps/{appId}/cashflowsources/` | app.cashflow.cashflowsources.list | List CashflowSource |
-| POST | `/apps/{appId}/cashflowsources/` | app.cashflow.cashflowsources.create | Create a CashflowSource |
-| DELETE | `/apps/{appId}/cashflowsources/{id}` | app.cashflow.cashflowsources.delete | Remove a CashflowSource |
-| GET | `/apps/{appId}/cashflowsources/{id}` | app.cashflow.cashflowsources.get | Get a CashflowSource |
-| POST | `/apps/{appId}/cashflowsources/{id}` | app.cashflow.cashflowsources.update | Update a CashflowSource |
-| POST | `/apps/{appId}/contacts/merge` | app.contacts.transform.merge | Merge many contacts |
-| POST | `/apps/{appId}/email/batch` | app.contacts.email.batch | Send emails |
-| POST | `/apps/{appId}/email/document` | app.contacts.email.send | Send an email |
-| DELETE | `/apps/{appId}/establishments/{id}` | app.contacts.establishments.delete | Remove an establishment |
-| GET | `/apps/{appId}/establishments/{id}` | app.contacts.establishments.get | Get an establishment |
-| POST | `/apps/{appId}/establishments/{id}` | app.contacts.establishments.update | Update an establishment |
-| GET | `/apps/{appId}/exports` | app.accounting.export.list | List ExportEntity |
-| POST | `/apps/{appId}/exports` | app.accounting.export.create | Create a ExportEntity |
-| GET | `/apps/{appId}/exports/acd_compta` | app.accounting.export.AcdComptaGetUuid | Get the ACD UUID for authentification |
-| POST | `/apps/{appId}/exports/acd_compta` | app.accounting.export.AcdComptaSetUuid | Register ACD identifiants |
-| GET | `/apps/{appId}/exports/download` | app.accounting.export.download | Download the export entity as zip |
-| GET | `/apps/{appId}/exports/months` | app.accounting.export.list_by_months | List ExportEntity |
-| DELETE | `/apps/{appId}/exports/{id}` | app.accounting.export.delete | Remove a ExportEntity |
-| GET | `/apps/{appId}/exports/{id}` | app.accounting.export.get | Get a ExportEntity |
-| GET | `/apps/{appId}/invoices` | app.documents.sales.invoices.list | List invoices |
-| POST | `/apps/{appId}/invoices` | app.documents.sales.invoices.create | Create an invoice |
-| DELETE | `/apps/{appId}/invoices/batch` | app.documents.sales.invoices.batch_delete | Delete many invoices |
-| POST | `/apps/{appId}/invoices/batch` | app.documents.sales.invoices.batch | Create or update many invoices |
-| GET | `/apps/{appId}/invoices/download` | app.documents.sales.invoices.download | Download a list of invoices in pdf into a .zip file |
-| POST | `/apps/{appId}/invoices/fresh` | app.documents.sales.invoices.fresh | Regenerate pdf and recalcul amounts of invoice |
-| GET | `/apps/{appId}/invoices/nextnumber` | app.documents.sales.invoices.nextnumber | Get the next invoice number for preview |
-| GET | `/apps/{appId}/invoices/statistics` | app.documents.sales.invoices.statistics | Obtain statistics about invoices |
-| DELETE | `/apps/{appId}/invoices/{id}` | app.documents.sales.invoices.delete | Remove an invoice |
-| GET | `/apps/{appId}/invoices/{id}` | app.documents.sales.invoices.get | Get an invoice |
-| POST | `/apps/{appId}/invoices/{id}` | app.documents.sales.invoices.update | Update an invoice |
-| DELETE | `/apps/{appId}/invoices/{id}/attach` | app.documents.sales.invoices.detach | Detach a file at an invoice |
-| POST | `/apps/{appId}/invoices/{id}/attach` | app.documents.sales.invoices.attach | Attach a file at an invoice |
-| POST | `/apps/{appId}/invoices/{id}/avoid` | app.documents.sales.invoices.avoid | Create a creditnote on an invoice |
-| POST | `/apps/{appId}/invoices/{id}/duplicate` | app.documents.sales.invoices.duplicate | Duplicate an invoice |
-| POST | `/apps/{appId}/invoices/{id}/finalize` | app.documents.sales.invoices.finalize | Finalize an invoice |
-| GET | `/apps/{appId}/invoices/{id}/pdf` | app.documents.sales.invoices.pdf | Download the invoice as pdf |
-| GET | `/apps/{appId}/invoices/{id}/preview.jpg` | app.documents.sales.invoices.preview | Download invoice as jpeg |
-| DELETE | `/apps/{appId}/invoices/{id}/tag` | app.documents.sales.invoices.untag | Delete a tag on an invoice |
-| POST | `/apps/{appId}/invoices/{id}/tag` | app.documents.sales.invoices.tag | Add a tag on an invoice |
-| POST | `/apps/{appId}/invoices/{id}/updatestatus` | app.documents.sales.invoices.updatestatus | Update the status of an invoice |
-| DELETE | `/apps/{appId}/logs/autoreconcile/` | app.cashflow.logsautoreconciliations.clear | Clear autoreconciliation logs |
-| GET | `/apps/{appId}/logs/autoreconcile/` | app.cashflow.logsautoreconciliations.list | List autoreconciliation logs |
-| POST | `/apps/{appId}/logs/autoreconcile/` | app.cashflow.logsautoreconciliations.start | Start force autoreconciliation |
-| GET | `/apps/{appId}/organization` | app.organization.get | Get organization profile for current app |
-| POST | `/apps/{appId}/organization` | app.organization.update | Update organization profile for current app |
-| GET | `/apps/{appId}/organizations` | app.contacts.organizations.list | List organizations |
-| POST | `/apps/{appId}/organizations` | app.contacts.organizations.create | Create an organization |
-| POST | `/apps/{appId}/organizations/batch` | app.contacts.organizations.batch | Create multiple organizations |
-| DELETE | `/apps/{appId}/organizations/{id}` | app.contacts.organizations.delete | Remove an organization |
-| GET | `/apps/{appId}/organizations/{id}` | app.contacts.organizations.get | Get an organization |
-| POST | `/apps/{appId}/organizations/{id}` | app.contacts.organizations.update | Update an organization |
-| GET | `/apps/{appId}/organizations/{id}/restore` | app.contacts.organizations.restore | Restore an organization |
-| GET | `/apps/{appId}/payments` | app.payments.payments.list | List payments |
-| GET | `/apps/{appId}/payments/recipe_book` | app.payments.payments.recipe_book | Get the recipe book |
-| DELETE | `/apps/{appId}/payments/{id}` | app.payments.payments.delete | Remove a payment |
-| GET | `/apps/{appId}/payments/{id}` | app.payments.payments.get | Get a payment |
-| GET | `/apps/{appId}/persons` | app.contacts.persons.list | List persons |
-| POST | `/apps/{appId}/persons` | app.contacts.persons.create | Create a person |
-| POST | `/apps/{appId}/persons/batch` | app.contacts.persons.batch | Create multiple persons |
-| DELETE | `/apps/{appId}/persons/{id}` | app.contacts.persons.delete | Remove a person |
-| GET | `/apps/{appId}/persons/{id}` | app.contacts.persons.get | Get a person |
-| POST | `/apps/{appId}/persons/{id}` | app.contacts.persons.update | Update a person |
-| GET | `/apps/{appId}/persons/{id}/restore` | app.contacts.persons.restore | Restore a person |
-| GET | `/apps/{appId}/ping` | app.ping | Ping app web hostname |
-| GET | `/apps/{appId}/productcategory` | app.catalog.categories.list | List product categories |
-| POST | `/apps/{appId}/productcategory` | app.catalog.categories.create | Create a product category |
-| DELETE | `/apps/{appId}/productcategory/{id}` | app.catalog.categories.delete | Remove a product category |
-| GET | `/apps/{appId}/productcategory/{id}` | app.catalog.categories.get | Get a product category |
-| POST | `/apps/{appId}/productcategory/{id}` | app.catalog.categories.update | Update a product category |
-| GET | `/apps/{appId}/products` | app.catalog.products.list | List products |
-| POST | `/apps/{appId}/products` | app.catalog.products.create | Create a product |
-| POST | `/apps/{appId}/products/batch` | app.catalog.products.batch | Create multiple products |
-| DELETE | `/apps/{appId}/products/{id}` | app.catalog.products.delete | Remove a product |
-| GET | `/apps/{appId}/products/{id}` | app.catalog.products.get | Get a product |
-| POST | `/apps/{appId}/products/{id}` | app.catalog.products.update | Update a product |
-| DELETE | `/apps/{appId}/products/{id}/attach` | app.catalog.products.detach | Detach a file |
-| POST | `/apps/{appId}/products/{id}/attach` | app.catalog.products.attach | Attach a file |
-| GET | `/apps/{appId}/productstocks` | app.catalog.stocks.list | List stocks |
-| POST | `/apps/{appId}/productstocks` | app.catalog.stocks.create | Create a stocks |
-| DELETE | `/apps/{appId}/productstocks/{id}` | app.catalog.stocks.delete | Remove a stocks |
-| GET | `/apps/{appId}/productstocks/{id}` | app.catalog.stocks.get | Get a stocks |
-| POST | `/apps/{appId}/productstocks/{id}` | app.catalog.stocks.update | Update a stocks |
-| POST | `/apps/{appId}/productstocks/{id}/destruct` | app.catalog.stocks.destruct | Destruct a quantity of stock (forgotten, destructed, expirated stock...) |
-| POST | `/apps/{appId}/productstocks/{id}/rental/back` | app.catalog.stocks.rental_back | Consider part of the stock as back |
-| POST | `/apps/{appId}/productstocks/{id}/rental/exit` | app.catalog.stocks.rental_exit | Consider part of the stock as rented |
-| GET | `/apps/{appId}/purchases` | app.documents.purchases.purchases.list | List purchases |
-| POST | `/apps/{appId}/purchases` | app.documents.purchases.purchases.create | Create a purchase |
-| DELETE | `/apps/{appId}/purchases/batch` | app.documents.purchases.purchases.batch_delete | Delete many purchases |
-| POST | `/apps/{appId}/purchases/batch` | app.documents.purchases.purchases.batch | Create or update many purchases |
-| GET | `/apps/{appId}/purchases/download` | app.documents.purchases.purchases.download | Download a list of purchases in pdf into a .zip file |
-| GET | `/apps/{appId}/purchases/statistics` | app.documents.purchases.purchases.statistics | Obtain statistics about purchases |
-| DELETE | `/apps/{appId}/purchases/{id}` | app.documents.purchases.purchases.delete | Remove a purchase |
-| GET | `/apps/{appId}/purchases/{id}` | app.documents.purchases.purchases.get | Get a purchase |
-| POST | `/apps/{appId}/purchases/{id}` | app.documents.purchases.purchases.update | Update a purchase |
-| DELETE | `/apps/{appId}/purchases/{id}/attach` | app.documents.purchases.purchases.detach | Detach a file at a purchase |
-| POST | `/apps/{appId}/purchases/{id}/attach` | app.documents.purchases.purchases.attach | Attach a file at a purchase |
-| GET | `/apps/{appId}/purchases/{id}/original` | app.documents.purchases.purchases.original | Download the purchase as pdf |
-| GET | `/apps/{appId}/purchases/{id}/preview.jpg` | app.documents.purchases.purchases.preview | Download purchase as jpeg |
-| DELETE | `/apps/{appId}/purchases/{id}/tag` | app.documents.purchases.purchases.untag | Delete a tag on a purchase |
-| POST | `/apps/{appId}/purchases/{id}/tag` | app.documents.purchases.purchases.tag | Add a tag on a purchase |
-| GET | `/apps/{appId}/purchases/{id}/thumbnail.jpg` | app.documents.purchases.purchases.thumbnail | Show purchase thumbnail as jpeg |
-| POST | `/apps/{appId}/purchases/{id}/updatestatus` | app.documents.purchases.purchases.updatestatus | Update the status of an invoice |
-| GET | `/apps/{appId}/quotes` | app.documents.sales.quotes.list | List quotes |
-| POST | `/apps/{appId}/quotes` | app.documents.sales.quotes.create | Create a quote |
-| DELETE | `/apps/{appId}/quotes/batch` | app.documents.sales.quotes.batch_delete | Delete many quotes |
-| POST | `/apps/{appId}/quotes/batch` | app.documents.sales.quotes.batch | Create or update many quotes |
-| GET | `/apps/{appId}/quotes/download` | app.documents.sales.quotes.download | Download a list of quotes in pdf into a .zip file |
-| POST | `/apps/{appId}/quotes/fresh` | app.documents.sales.quotes.fresh | Regenerate pdf and recalcul amounts of quote |
-| POST | `/apps/{appId}/quotes/invoice` | app.documents.sales.quotes.invoices | Create or update many quotes |
-| GET | `/apps/{appId}/quotes/nextnumber` | app.documents.sales.quotes.nextnumber | Get the next quote number for preview |
-| GET | `/apps/{appId}/quotes/statistics` | app.documents.sales.quotes.statistics | Obtain statistics about quotes |
-| DELETE | `/apps/{appId}/quotes/{id}` | app.documents.sales.quotes.delete | Remove a quote |
-| GET | `/apps/{appId}/quotes/{id}` | app.documents.sales.quotes.get | Get a quote |
-| POST | `/apps/{appId}/quotes/{id}` | app.documents.sales.quotes.update | Update a quote |
-| DELETE | `/apps/{appId}/quotes/{id}/attach` | app.documents.sales.quotes.detach | Detach a file at a quote |
-| POST | `/apps/{appId}/quotes/{id}/attach` | app.documents.sales.quotes.attach | Attach a file at a quote |
-| POST | `/apps/{appId}/quotes/{id}/downpayment` | app.documents.sales.quotes.downpayment | Transform the quote in a downpayment invoice |
-| POST | `/apps/{appId}/quotes/{id}/duplicate` | app.documents.sales.quotes.duplicate | Duplicate a quote |
-| POST | `/apps/{appId}/quotes/{id}/finalize` | app.documents.sales.quotes.finalize | Finalize a quote |
-| POST | `/apps/{appId}/quotes/{id}/invoice` | app.documents.sales.quotes.invoice | Transform the quote in invoice |
-| GET | `/apps/{appId}/quotes/{id}/pdf` | app.documents.sales.quotes.pdf | Download the quote as pdf |
-| GET | `/apps/{appId}/quotes/{id}/preview.jpg` | app.documents.sales.quotes.preview | Download quote as jpeg |
-| POST | `/apps/{appId}/quotes/{id}/situation_invoice` | app.documents.sales.quotes.situation_invoice | Transform the quote into a situation invoice |
-| DELETE | `/apps/{appId}/quotes/{id}/tag` | app.documents.sales.quotes.untag | Delete a tag on a quote |
-| POST | `/apps/{appId}/quotes/{id}/tag` | app.documents.sales.quotes.tag | Add a tag on an quote |
-| POST | `/apps/{appId}/quotes/{id}/updatestatus` | app.documents.sales.quotes.updatestatus | Update the status of a quote |
-| GET | `/apps/{appId}/quotes/{id}/yousign/preview.jpg` | app.documents.sales.quotes.yousign_preview | Download quote as jpeg |
-| DELETE | `/apps/{appId}/reconcile` | app.payments.reconciliation.unreconcile | Remove payments by an object |
-| POST | `/apps/{appId}/reconcile` | app.payments.reconciliation.reconcile | Reconcile a transaction or a document |
-| POST | `/apps/{appId}/reconcile/batch` | app.payments.reconciliation.batch | Reconcile several transactions |
-| GET | `/apps/{appId}/recurringinvoices` | app.documents.sales.recurringinvoices.list | List RecurringInvoice |
-| POST | `/apps/{appId}/recurringinvoices` | app.documents.sales.recurringinvoices.create | Create a RecurringInvoice |
-| DELETE | `/apps/{appId}/recurringinvoices/batch` | app.documents.sales.recurringinvoices.batch_delete | Delete many RecurringInvoice |
-| POST | `/apps/{appId}/recurringinvoices/batch` | app.documents.sales.recurringinvoices.batch | Create or update many RecurringInvoice |
-| GET | `/apps/{appId}/recurringinvoices/periods` | app.documents.sales.recurringinvoices.getPeriods | Get json of periods_formats for a date. |
-| DELETE | `/apps/{appId}/recurringinvoices/{id}` | app.documents.sales.recurringinvoices.delete | Remove a RecurringInvoice |
-| GET | `/apps/{appId}/recurringinvoices/{id}` | app.documents.sales.recurringinvoices.get | Get a RecurringInvoice |
-| POST | `/apps/{appId}/recurringinvoices/{id}` | app.documents.sales.recurringinvoices.update | Update a RecurringInvoice |
-| GET | `/apps/{appId}/recurringinvoices/{id}/plan` | app.documents.sales.recurringinvoices.plan | Preview next invoices generations |
-| GET | `/apps/{appId}/relationships` | app.contacts.relationships.list | List relationships |
-| GET | `/apps/{appId}/relationships/{id}` | app.contacts.relationships.get | Get a relationship |
-| POST | `/apps/{appId}/relationships/{id}` | app.contacts.relationships.update | Update a relationship |
-| DELETE | `/apps/{appId}/relationships/{id}/attach` | app.contacts.relationships.detach | Detach a file |
-| POST | `/apps/{appId}/relationships/{id}/attach` | app.contacts.relationships.attach | Attach a file |
-| POST | `/apps/{appId}/reset` | app.reset | Reset all data |
-| GET | `/apps/{appId}/rules/` | app.rules.list | List rules |
-| POST | `/apps/{appId}/rules/` | app.rules.create | Create a rule |
-| POST | `/apps/{appId}/rules/execute_on` | app.rules.execute_on | Execute all rules |
-| DELETE | `/apps/{appId}/rules/{id}` | app.rules.delete | Remove a rule |
-| GET | `/apps/{appId}/rules/{id}` | app.rules.get | Get a rule |
-| POST | `/apps/{appId}/rules/{id}` | app.rules.update | Update a rule |
-| GET | `/apps/{appId}/salesdocumentmodels` | app.documents.sales.models.list | List sales documents models |
-| POST | `/apps/{appId}/salesdocumentmodels` | app.documents.sales.models.create | Create a sales document model |
-| DELETE | `/apps/{appId}/salesdocumentmodels/{id}` | app.documents.sales.models.delete | Remove a sales document model |
-| GET | `/apps/{appId}/salesdocumentmodels/{id}` | app.documents.sales.models.get | Get a sales document model |
-| POST | `/apps/{appId}/salesdocumentmodels/{id}` | app.documents.sales.models.update | Update a sales document model |
-| GET | `/apps/{appId}/sepamandates/` | app.payments.sepamandates.list | List SEPAMandate |
-| POST | `/apps/{appId}/sepamandates/` | app.payments.sepamandates.create | Create a SEPAMandate |
-| GET | `/apps/{appId}/sepamandates/credittransfer` | app.payments.sepacredittransfer.preview | Preview sepa credit transfer file |
-| POST | `/apps/{appId}/sepamandates/credittransfer` | app.payments.sepacredittransfer.download | Preview sepa credit transfer file |
-| GET | `/apps/{appId}/sepamandates/directdebit` | app.payments.sepadirectdebit.preview | Preview sepa direct debit file |
-| POST | `/apps/{appId}/sepamandates/directdebit` | app.payments.sepadirectdebit.download | Download sepa direct debit file |
-| DELETE | `/apps/{appId}/sepamandates/{id}` | app.payments.sepamandates.delete | Remove a SEPAMandate |
-| GET | `/apps/{appId}/sepamandates/{id}` | app.payments.sepamandates.get | Get a SEPAMandate |
-| POST | `/apps/{appId}/sepamandates/{id}` | app.payments.sepamandates.update | Update a SEPAMandate |
-| GET | `/apps/{appId}/services/stripe/webhook` | app.services.stripe.webhook.ping | Ping Stripe webhook endpoint |
-| POST | `/apps/{appId}/services/stripe/webhook` | app.services.stripe.webhook.handle | Webhook for Stripe |
-| POST | `/apps/{appId}/services/yousign/webhook` | app.services.yousign.webhook.handle | Webhook for Yousign |
-| GET | `/apps/{appId}/settings` | app.settings.get | Get app config |
-| POST | `/apps/{appId}/settings` | app.settings.update | Update app config |
-| POST | `/apps/{appId}/signature` | app.documents.sales.signature.create | Create a signature |
-| GET | `/apps/{appId}/statistics/charts/{type}` | app.statistics.charts.get | Obtain statistics about sales |
-| GET | `/apps/{appId}/statistics/timetable/purchases` | app.statistics.timetable.purchases | Obtain statistics about timetable purchases |
-| GET | `/apps/{appId}/statistics/timetable/sales` | app.statistics.timetable.sales | Obtain statistics about sales |
-| GET | `/apps/{appId}/statistics/vat` | app.statistics.vat.get | Obtain statistics about vat |
-| POST | `/apps/{appId}/subscription/anchordate` | app.subscription.anchordate | Update anchor date |
-| GET | `/apps/{appId}/subscription/checkout_add_source` | app.subscription.checkout_add_source | Get payment link to Stripe Checkout |
-| POST | `/apps/{appId}/subscription/coupon` | app.subscription.coupon | Add coupon |
-| POST | `/apps/{appId}/subscription/extend_trial` | app.subscription.extend_trial | Extend trial period |
-| POST | `/apps/{appId}/subscription/extra/{stripe_plan}` | app.subscription.extra_enable | Enable plan |
-| POST | `/apps/{appId}/subscription/pay_all` | app.subscription.pay_all | Pay all due invoices |
-| DELETE | `/apps/{appId}/subscription/plan` | app.subscription.end | End current plan |
-| GET | `/apps/{appId}/subscription/plan` | app.subscription.get | Get current plan |
-| GET | `/apps/{appId}/subscription/plans` | app.subscription.list | Get plans |
-| GET | `/apps/{appId}/subscription/plans/{stripe_plan}` | app.subscription.upcoming | Simulate a plan |
-| POST | `/apps/{appId}/subscription/plans/{stripe_plan}` | app.subscription.pay | Change plan |
-| GET | `/apps/{appId}/subscription/plans/{stripe_plan}/checkout` | app.subscription.checkout | Get payment link to Stripe Checkout |
-| DELETE | `/apps/{appId}/subscription/source` | app.subscription.remove_source | Remove creditcard or sepadebit |
-| POST | `/apps/{appId}/subscription/source` | app.subscription.add_source | Add creditcard or sepadebit |
-| POST | `/apps/{appId}/subscription/source/default` | app.subscription.set_default | Change default source |
-| GET | `/apps/{appId}/tags` | app.statistics.tags.get | Get all existants tags |
-| GET | `/apps/{appId}/templates` | app.settings.templates.list | Get templates |
-| POST | `/apps/{appId}/templates` | app.settings.templates.create | Create a template |
-| POST | `/apps/{appId}/templates/batch` | app.settings.templates.batch | Create multiple templates |
-| GET | `/apps/{appId}/templates/default` | app.settings.templates.default_template | Get default template |
-| GET | `/apps/{appId}/templates/{id}` | app.settings.templates.get | Get a template |
-| POST | `/apps/{appId}/templates/{id}` | app.settings.templates.update | Update a template |
-| GET | `/apps/{appId}/transactions/` | app.cashflow.transactions.list | List Transaction |
-| POST | `/apps/{appId}/transactions/` | app.cashflow.transactions.create | Create a Transaction |
-| POST | `/apps/{appId}/transactions/batch` | app.cashflow.transactions.batch | Create multiple transactions |
-| DELETE | `/apps/{appId}/transactions/{id}` | app.cashflow.transactions.delete | Remove a Transaction |
-| GET | `/apps/{appId}/transactions/{id}` | app.cashflow.transactions.get | Get a Transaction |
-| POST | `/apps/{appId}/transactions/{id}` | app.cashflow.transactions.update | Update a Transaction |
-| DELETE | `/apps/{appId}/transactions/{id}/attach` | app.cashflow.transactions.detach | Detach a file |
-| POST | `/apps/{appId}/transactions/{id}/attach` | app.cashflow.transactions.attach | Attach a file |
-| POST | `/apps/{appId}/urssaf/auth` | app.payments.urssaftiers.auth | Login URSSAF |
-| GET | `/apps/{appId}/urssaf/payment` | app.payments.urssaftiers.get_status | Get status of a payment |
-| POST | `/apps/{appId}/urssaf/payment` | app.payments.urssaftiers.send_payments | Send URSSAF request payment |
-| GET | `/apps/{appId}/urssaf/preview` | app.payments.urssaftiers.preview | Preview URSSAF request payment |
-| POST | `/apps/{appId}/urssaf/register_customer` | app.payments.urssaftiers.register_customer | Register a person to URSSAF and create him a mandate |
-| POST | `/changepassword` | auth.changepassword | Change password |
-| POST | `/login` | auth.login | Login |
-| POST | `/logout` | auth.logout | Logout |
-| GET | `/me` | account.get | Get current user |
-| POST | `/me` | account.update | Update current user |
-| GET | `/ping` | auth.ping | Ping server |
-| GET | `/refresh` | auth.refresh | Refresh a token |
-| POST | `/register` | account.create | Create an User |
-| POST | `/sendpassword` | auth.sendpassword | Password recover by email |
-| POST | `/services/collector` | admin.purchaseCollector.push | Push to purchase collector |
-| GET | `/services/vies/{siren}` | services.vies.get | Get VIES database informations from SIREN |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/apps` | app.list | `limit`, `search`, `filters`, `order` | App[] | yes | List apps |
+| POST | `/apps` | app.create | `organization_name`* | App |  | Create an app |
+| GET | `/apps/access/invite/{accessToken}` | app.policies.registration.get | `accessToken`* | AccessInvitation | yes | Get invitation informations |
+| DELETE | `/apps/access/invite/{accessToken}` | app.policies.registration.delete | `accessToken`* | ApiResponse |  | Delete an invitation from token |
+| POST | `/apps/access/invite/{accessToken}/register` | app.policies.registration.register | `accessToken`*, `password`*, `firstname`, `lastname`, `cgu`* | User |  | Create an User by invitation |
+| GET | `/apps/{appId}` | app.get | `appId`* | App | yes | Get an app |
+| GET | `/apps/{appId}/access` | app.policies.list | `appId`*, `limit`, `search`, `filters`, `order` | PolicyProfile[] | yes | Get policies for an app |
+| GET | `/apps/{appId}/access/invite` | app.policies.invitations.list | `appId`*, `limit`, `search`, `filters`, `order` | AccessInvitation[] | yes | List invitations |
+| POST | `/apps/{appId}/access/invite` | app.policies.invitations.create | `appId`*, `email`*, `policy_profile_id`*, `firstname`, `lastname`, `civility`, `password` | AccessInvitation |  | Invite an user |
+| DELETE | `/apps/{appId}/access/invite/{id}` | app.policies.invitations.delete | `appId`*, `id`* | ApiResponse |  | Delete an invitation |
+| GET | `/apps/{appId}/access/profiles` | app.policies.profiles.list | `appId`* | PolicyProfile[] | yes | Get profiles |
+| GET | `/apps/{appId}/access/{userId}` | app.policies.get | `appId`*, `userId`* | PolicyProfile | yes | Get police for an user |
+| POST | `/apps/{appId}/access/{userId}` | app.policies.update | `appId`*, `userId`*, `policy_profile_id`* | PolicyProfile |  | Update police for an user |
+| DELETE | `/apps/{appId}/access/{userId}` | app.policies.delete | `appId`*, `userId`* | ApiResponse |  | Delete police for an user |
+| GET | `/apps/{appId}/accountcategories/` | app.accounting.categories.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | AccountCategory[] | yes | List categories |
+| POST | `/apps/{appId}/accountcategories/` | app.accounting.categories.create | `appId`*, `name`, `description`, `type` | AccountCategory |  | Create a category |
+| GET | `/apps/{appId}/accountcategories/{id}` | app.accounting.categories.get | `appId`*, `id`* | AccountCategory | yes | Get a category |
+| POST | `/apps/{appId}/accountcategories/{id}` | app.accounting.categories.update | `appId`*, `id`*, `name`, `description`, `type` | AccountCategory |  | Update a category |
+| DELETE | `/apps/{appId}/accountcategories/{id}` | app.accounting.categories.delete | `appId`*, `id`* | — |  | Remove a category |
+| GET | `/apps/{appId}/accounting_entries/` | app.accounting.entries.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Account[] | yes | List accounting entries |
+| GET | `/apps/{appId}/accounts/` | app.accounting.accounts.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Account[] | yes | List Account |
+| POST | `/apps/{appId}/accounts/` | app.accounting.accounts.create | `appId`*, `journalcode`, `name`, `description`, `keywords`, `accounting_number`, `is_cashflow`, `is_sales`, `is_purchase` | Account |  | Create a Account |
+| POST | `/apps/{appId}/accounts/batch` | app.accounting.accounts.batch | `appId`*, `data`* | Account |  | Create many accounts |
+| GET | `/apps/{appId}/accounts/{id}` | app.accounting.accounts.get | `appId`*, `id`* | Account | yes | Get a Account |
+| POST | `/apps/{appId}/accounts/{id}` | app.accounting.accounts.update | `appId`*, `id`*, `journalcode`, `name`, `description`, `keywords`, `accounting_number`, `is_cashflow`, `is_sales`, `is_purchase` | Account |  | Update a Account |
+| DELETE | `/apps/{appId}/accounts/{id}` | app.accounting.accounts.delete | `appId`*, `id`* | — |  | Remove a Account |
+| GET | `/apps/{appId}/apikeys` | app.apikeys.list | `appId`*, `limit`, `search`, `filters`, `order` | object | yes | Get all api keys |
+| POST | `/apps/{appId}/apikeys` | app.apikeys.create | `appId`*, `name`*, `api_partner_id` | ApiResponse |  | Create new API key |
+| DELETE | `/apps/{appId}/apikeys/{id}` | app.apikeys.delete | `appId`*, `id`* | — |  | Remove an api key |
+| GET | `/apps/{appId}/apipartners` | app.apipartners.list | `appId`*, `limit`, `search`, `filters`, `order` | object | yes | Get all api parners |
+| GET | `/apps/{appId}/attachments` | app.attachments.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Attachment[] | yes | List attachments |
+| PUT | `/apps/{appId}/attachments` | app.sapAttestations.generateSapAttestations | `appId`* | — |  | Recreate S.A.P attestations |
+| POST | `/apps/{appId}/attachments` | app.attachments.create | `appId`*, `type`*, `attachable_id`, `file` | — |  | Attach a file on an object |
+| GET | `/apps/{appId}/attachments/download` | app.attachments.download | `appId`*, `ids`*, `type`* | string:binary | yes | Download a list of attachments in pdf into a .zip file |
+| GET | `/apps/{appId}/attachments/sap-download` | app.sapAttestations.download | `appId`*, `ids`*, `type`* | string:binary | yes | Download a list of SAP attestations in pdf into a .zip file |
+| GET | `/apps/{appId}/attachments/{id}` | app.attachments.get | `appId`*, `id`* | — | yes | Get attachment by id |
+| DELETE | `/apps/{appId}/attachments/{id}` | app.attachments.delete | `appId`*, `id`* | — |  | Detach a file from id |
+| GET | `/apps/{appId}/attachments/{id}/pdf` | app.attachments.RedirectToPublicUrl | `appId`*, `id`*, `random`* | string:binary | yes | Download the attachment as pdf |
+| GET | `/apps/{appId}/bankdetails` | app.documents.sales.bankdetails.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | BankDetails[] | yes | List BankDetails |
+| POST | `/apps/{appId}/bankdetails` | app.documents.sales.bankdetails.create | `appId`*, `name`, `iban`, `bic` | BankDetails |  | Create a BankDetails |
+| GET | `/apps/{appId}/bankdetails/{id}` | app.documents.sales.bankdetails.get | `appId`*, `id`* | BankDetails | yes | Get a BankDetails |
+| POST | `/apps/{appId}/bankdetails/{id}` | app.documents.sales.bankdetails.update | `appId`*, `id`*, `name`, `iban`, `bic` | BankDetails |  | Update a BankDetails |
+| DELETE | `/apps/{appId}/bankdetails/{id}` | app.documents.sales.bankdetails.delete | `appId`*, `id`* | — |  | Remove a BankDetails |
+| GET | `/apps/{appId}/banks/` | app.cashflow.banks.list | `appId`* | object | yes | List banks connected to bankin |
+| DELETE | `/apps/{appId}/banks/` | app.cashflow.banks.delete | `appId`*, `item_id`* | object |  | Remove a Bankin synchronization |
+| GET | `/apps/{appId}/banks/connect` | app.cashflow.banks.connect | `appId`* | object | yes | Get the link to the funnel to connect a bank with Sinao |
+| POST | `/apps/{appId}/banks/synchronize` | app.cashflow.banks.synchronize | `appId`*, `id`, `is_incremential` | CashflowSource |  | Triggers synchronization at Bankin then synchronizes transactions with Sinao |
+| GET | `/apps/{appId}/banks/{id}/funnel/edit` | app.cashflow.banks.url_edit | `appId`*, `id`* | object | yes | Get the link to the funnel to edit password |
+| GET | `/apps/{appId}/banks/{id}/funnel/sync` | app.cashflow.banks.url_sync | `appId`*, `id`* | object | yes | Get the link to the funnel to start manually a synchronization (SCA) |
+| GET | `/apps/{appId}/banks/{id}/funnel/validate` | app.cashflow.banks.url_validate | `appId`*, `id`* | object | yes | Get the link to the funnel to validate a pro item (SCA) |
+| POST | `/apps/{appId}/banks/{id}/select_accounts` | app.cashflow.banks.select_accounts | `appId`*, `id`*, `bank_account_ids` | CashflowSource |  | Select accounts to synchronize |
+| GET | `/apps/{appId}/cashflowsources/` | app.cashflow.cashflowsources.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | CashflowSource[] | yes | List CashflowSource |
+| POST | `/apps/{appId}/cashflowsources/` | app.cashflow.cashflowsources.create | `appId`*, `name`, `identifiant`, `type`, `balance_amount`, `account_type`, `parent_cashflow_source_id` | CashflowSource |  | Create a CashflowSource |
+| GET | `/apps/{appId}/cashflowsources/{id}` | app.cashflow.cashflowsources.get | `appId`*, `id`* | CashflowSource | yes | Get a CashflowSource |
+| POST | `/apps/{appId}/cashflowsources/{id}` | app.cashflow.cashflowsources.update | `appId`*, `id`*, `name`, `identifiant`, `type`, `balance_amount`, `account_type`, `parent_cashflow_source_id` | CashflowSource |  | Update a CashflowSource |
+| DELETE | `/apps/{appId}/cashflowsources/{id}` | app.cashflow.cashflowsources.delete | `appId`*, `id`* | — |  | Remove a CashflowSource |
+| POST | `/apps/{appId}/contacts/merge` | app.contacts.transform.merge | `appId`*, `contacts`* | — |  | Merge many contacts |
+| POST | `/apps/{appId}/email/batch` | app.contacts.email.batch | `appId`*, `from`, `messages`, `need_copy_bcc` | — |  | Send emails |
+| POST | `/apps/{appId}/email/document` | app.contacts.email.send | `appId`*, `from`, `recipients`*, `recipients_cc`, `recipients_bcc`, `title`, `body`, `documents`*, `need_copy_bcc` | — |  | Send an email |
+| GET | `/apps/{appId}/establishments/{id}` | app.contacts.establishments.get | `appId`*, `id`* | EstablishmentIdentity | yes | Get an establishment |
+| POST | `/apps/{appId}/establishments/{id}` | app.contacts.establishments.update | `appId`*, `id`*, `name`, `phones`, `emails`, `nic`, `place` | EstablishmentIdentity |  | Update an establishment |
+| DELETE | `/apps/{appId}/establishments/{id}` | app.contacts.establishments.delete | `appId`*, `id`* | ApiResponse |  | Remove an establishment |
+| GET | `/apps/{appId}/exports` | app.accounting.export.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | ExportEntity[] | yes | List ExportEntity |
+| POST | `/apps/{appId}/exports` | app.accounting.export.create | `appId`*, `until`* | ExportEntity |  | Create a ExportEntity |
+| GET | `/apps/{appId}/exports/acd_compta` | app.accounting.export.AcdComptaGetUuid | `appId`* | object | yes | Get the ACD UUID for authentification |
+| POST | `/apps/{appId}/exports/acd_compta` | app.accounting.export.AcdComptaSetUuid | `appId`*, `login`*, `password`*, `base`*, `cnx`* | object |  | Register ACD identifiants |
+| GET | `/apps/{appId}/exports/download` | app.accounting.export.download | `appId`*, `format`, `export_entities_ids`, `start_at`, `end_at`, `since`, `since_last` | string:binary | yes | Download the export entity as zip |
+| GET | `/apps/{appId}/exports/months` | app.accounting.export.list_by_months | `appId`* | ExportEntity[] | yes | List ExportEntity |
+| GET | `/apps/{appId}/exports/{id}` | app.accounting.export.get | `appId`*, `id`* | ExportEntity | yes | Get a ExportEntity |
+| DELETE | `/apps/{appId}/exports/{id}` | app.accounting.export.delete | `appId`*, `id`* | — |  | Remove a ExportEntity |
+| GET | `/apps/{appId}/invoices` | app.documents.sales.invoices.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Invoice[] | yes | List invoices |
+| POST | `/apps/{appId}/invoices` | app.documents.sales.invoices.create | `appId`*, `contact_infos`, `third_account`, `title`, `content`, `columns`, `reference`, `discount`, `currency`, `legal_notice`, `bank_details_id`, `vat_exemption`, `tags`, `metadata`, `downpayments`, `downpayment_cash`, `avoid_of`, `delivered_at`, `payment_period`, `payment_methods`, `number_from_other_software` | Invoice |  | Create an invoice |
+| POST | `/apps/{appId}/invoices/batch` | app.documents.sales.invoices.batch | `appId`*, `data`* | Invoice |  | Create or update many invoices |
+| DELETE | `/apps/{appId}/invoices/batch` | app.documents.sales.invoices.batch_delete | `appId`*, `ids`* | ApiResponse |  | Delete many invoices |
+| GET | `/apps/{appId}/invoices/download` | app.documents.sales.invoices.download | `appId`*, `ids`*, `template` | string:binary | yes | Download a list of invoices in pdf into a .zip file |
+| POST | `/apps/{appId}/invoices/fresh` | app.documents.sales.invoices.fresh | `appId`*, `ids`* | object |  | Regenerate pdf and recalcul amounts of invoice |
+| GET | `/apps/{appId}/invoices/nextnumber` | app.documents.sales.invoices.nextnumber | `appId`*, `written_at` | — | yes | Get the next invoice number for preview |
+| GET | `/apps/{appId}/invoices/statistics` | app.documents.sales.invoices.statistics | `appId`*, `search`, `filters` | object | yes | Obtain statistics about invoices |
+| GET | `/apps/{appId}/invoices/{id}` | app.documents.sales.invoices.get | `appId`*, `id`* | Invoice | yes | Get an invoice |
+| POST | `/apps/{appId}/invoices/{id}` | app.documents.sales.invoices.update | `appId`*, `id`*, `contact_infos`, `third_account`, `title`, `content`, `columns`, `reference`, `discount`, `currency`, `legal_notice`, `bank_details_id`, `vat_exemption`, `tags`, `metadata`, `downpayments`, `downpayment_cash`, `avoid_of`, `delivered_at`, `payment_period`, `payment_methods` | Invoice |  | Update an invoice |
+| DELETE | `/apps/{appId}/invoices/{id}` | app.documents.sales.invoices.delete | `appId`*, `id`* | ApiResponse |  | Remove an invoice |
+| POST | `/apps/{appId}/invoices/{id}/attach` | app.documents.sales.invoices.attach | `appId`*, `id`*, `file` | — |  | Attach a file at an invoice |
+| DELETE | `/apps/{appId}/invoices/{id}/attach` | app.documents.sales.invoices.detach | `appId`*, `id`*, `file_id` | — |  | Detach a file at an invoice |
+| POST | `/apps/{appId}/invoices/{id}/avoid` | app.documents.sales.invoices.avoid | `appId`*, `id`* | — |  | Create a creditnote on an invoice |
+| POST | `/apps/{appId}/invoices/{id}/duplicate` | app.documents.sales.invoices.duplicate | `appId`*, `id`* | — |  | Duplicate an invoice |
+| POST | `/apps/{appId}/invoices/{id}/finalize` | app.documents.sales.invoices.finalize | `appId`*, `id`*, `force_date` | — |  | Finalize an invoice |
+| GET | `/apps/{appId}/invoices/{id}/pdf` | app.documents.sales.invoices.pdf | `appId`*, `id`*, `template` | string:binary | yes | Download the invoice as pdf |
+| GET | `/apps/{appId}/invoices/{id}/preview.jpg` | app.documents.sales.invoices.preview | `appId`*, `id`*, `template`, `disable_cache`, `base64` | string:binary | yes | Download invoice as jpeg |
+| POST | `/apps/{appId}/invoices/{id}/tag` | app.documents.sales.invoices.tag | `appId`*, `id`*, `tag` | — |  | Add a tag on an invoice |
+| DELETE | `/apps/{appId}/invoices/{id}/tag` | app.documents.sales.invoices.untag | `appId`*, `id`*, `tag` | — |  | Delete a tag on an invoice |
+| POST | `/apps/{appId}/invoices/{id}/updatestatus` | app.documents.sales.invoices.updatestatus | `appId`*, `id`*, `status` | — |  | Update the status of an invoice |
+| GET | `/apps/{appId}/logs/autoreconcile/` | app.cashflow.logsautoreconciliations.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | — | yes | List autoreconciliation logs |
+| POST | `/apps/{appId}/logs/autoreconcile/` | app.cashflow.logsautoreconciliations.start | `appId`* | — |  | Start force autoreconciliation |
+| DELETE | `/apps/{appId}/logs/autoreconcile/` | app.cashflow.logsautoreconciliations.clear | `appId`* | — |  | Clear autoreconciliation logs |
+| GET | `/apps/{appId}/organization` | app.organization.get | `appId`* | SinaoOrganization[] | yes | Get organization profile for current app |
+| POST | `/apps/{appId}/organization` | app.organization.update | `appId`*, `name`, `billing_name`, `logo`, `legal_form`, `country_iso2`, `founding_date`, `founding_location`, `dissolution_date`, `closeaccounting_period`, `national_id`, `trade_directory_registration`, `vat_id`, `code_naf`, `number_of_employees`, `industry`, `slogan`, `rcs`, `greffe`, `sap_number_registration`, `sap_activities`, `sap_date_registration`, `capital` | SinaoOrganization |  | Update organization profile for current app |
+| GET | `/apps/{appId}/organizations` | app.contacts.organizations.list | `appId`*, `limit`, `search`, `filters`, `order` | ContactOrganization[] | yes | List organizations |
+| POST | `/apps/{appId}/organizations` | app.contacts.organizations.create | `appId`*, `name`*, `billing_name`, `logo`, `legal_form`, `country_iso2`, `founding_date`, `founding_location`, `dissolution_date`, `vat_system`, `closeaccounting_period`, `national_id`, `vat_id`, `code_naf`, `number_of_employees`, `slogan`, `rcs`, `greffe`, `capital`, `metadata` | ContactOrganization |  | Create an organization |
+| POST | `/apps/{appId}/organizations/batch` | app.contacts.organizations.batch | `appId`*, `data`* | ContactOrganization |  | Create multiple organizations |
+| GET | `/apps/{appId}/organizations/{id}` | app.contacts.organizations.get | `appId`*, `id`* | ContactOrganization | yes | Get an organization |
+| POST | `/apps/{appId}/organizations/{id}` | app.contacts.organizations.update | `appId`*, `id`*, `name`, `billing_name`, `logo`, `legal_form`, `country_iso2`, `founding_date`, `founding_location`, `dissolution_date`, `vat_system`, `closeaccounting_period`, `national_id`, `vat_id`, `code_naf`, `number_of_employees`, `slogan`, `rcs`, `greffe`, `capital`, `metadata` | ContactOrganization |  | Update an organization |
+| DELETE | `/apps/{appId}/organizations/{id}` | app.contacts.organizations.delete | `appId`*, `id`* | ApiResponse |  | Remove an organization |
+| GET | `/apps/{appId}/organizations/{id}/restore` | app.contacts.organizations.restore | `appId`*, `id`* | ContactOrganization | yes | Restore an organization |
+| GET | `/apps/{appId}/payments` | app.payments.payments.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Payment[] | yes | List payments |
+| GET | `/apps/{appId}/payments/recipe_book` | app.payments.payments.recipe_book | `appId`* | — | yes | Get the recipe book |
+| GET | `/apps/{appId}/payments/{id}` | app.payments.payments.get | `appId`*, `id`* | Payment | yes | Get a payment |
+| DELETE | `/apps/{appId}/payments/{id}` | app.payments.payments.delete | `appId`*, `id`* | ApiResponse |  | Remove a payment |
+| GET | `/apps/{appId}/persons` | app.contacts.persons.list | `appId`*, `limit`, `search`, `filters`, `order` | ContactPerson[] | yes | List persons |
+| POST | `/apps/{appId}/persons` | app.contacts.persons.create | `appId`*, `civility`, `lastname`*, `firstname`, `picture`, `metadata` | ContactPerson |  | Create a person |
+| POST | `/apps/{appId}/persons/batch` | app.contacts.persons.batch | `appId`*, `data`* | ContactPerson |  | Create multiple persons |
+| GET | `/apps/{appId}/persons/{id}` | app.contacts.persons.get | `appId`*, `id`* | ContactPerson | yes | Get a person |
+| POST | `/apps/{appId}/persons/{id}` | app.contacts.persons.update | `appId`*, `id`*, `civility`, `lastname`, `firstname`, `picture`, `metadata` | ContactPerson |  | Update a person |
+| DELETE | `/apps/{appId}/persons/{id}` | app.contacts.persons.delete | `appId`*, `id`* | ApiResponse |  | Remove a person |
+| GET | `/apps/{appId}/persons/{id}/restore` | app.contacts.persons.restore | `appId`*, `id`* | ContactPerson | yes | Restore a person |
+| GET | `/apps/{appId}/ping` | app.ping | `appId`* | — | yes | Ping app web hostname |
+| GET | `/apps/{appId}/productcategory` | app.catalog.categories.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | ProductCategory[] | yes | List product categories |
+| POST | `/apps/{appId}/productcategory` | app.catalog.categories.create | `appId`*, `name`*, `image`, `parent_category_id` | ProductCategory |  | Create a product category |
+| GET | `/apps/{appId}/productcategory/{id}` | app.catalog.categories.get | `appId`*, `id`* | ProductCategory | yes | Get a product category |
+| POST | `/apps/{appId}/productcategory/{id}` | app.catalog.categories.update | `appId`*, `id`*, `name`*, `image`, `parent_category_id` | ProductCategory |  | Update a product category |
+| DELETE | `/apps/{appId}/productcategory/{id}` | app.catalog.categories.delete | `appId`*, `id`* | ApiResponse |  | Remove a product category |
+| GET | `/apps/{appId}/products` | app.catalog.products.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Product[] | yes | List products |
+| POST | `/apps/{appId}/products` | app.catalog.products.create | `appId`*, `name`*, `amount`, `amount_accurately`, `vat_percent`, `image`, `lifetime`, `description`, `type`, `quantity_name`, `reference`, `account_id`, `tags`, `category_id`, `metadata` | Product |  | Create a product |
+| POST | `/apps/{appId}/products/batch` | app.catalog.products.batch | `appId`*, `data`* | Product |  | Create multiple products |
+| GET | `/apps/{appId}/products/{id}` | app.catalog.products.get | `appId`*, `id`* | Product | yes | Get a product |
+| POST | `/apps/{appId}/products/{id}` | app.catalog.products.update | `appId`*, `id`*, `name`, `amount`, `amount_accurately`, `vat_percent`, `image`, `lifetime`, `description`, `type`, `quantity_name`, `reference`, `account_id`, `tags`, `category_id`, `metadata` | Product |  | Update a product |
+| DELETE | `/apps/{appId}/products/{id}` | app.catalog.products.delete | `appId`*, `id`* | ApiResponse |  | Remove a product |
+| POST | `/apps/{appId}/products/{id}/attach` | app.catalog.products.attach | `appId`*, `id`*, `file` | — |  | Attach a file |
+| DELETE | `/apps/{appId}/products/{id}/attach` | app.catalog.products.detach | `appId`*, `id`*, `file_id` | — |  | Detach a file |
+| GET | `/apps/{appId}/productstocks` | app.catalog.stocks.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | ProductStock[] | yes | List stocks |
+| POST | `/apps/{appId}/productstocks` | app.catalog.stocks.create | `appId`*, `product_id`*, `purchase_id`, `quantity`, `bar_code`, `location`, `entered_at`, `expired_at`, `cost_amount`, `use_duration` | ProductStock |  | Create a stocks |
+| GET | `/apps/{appId}/productstocks/{id}` | app.catalog.stocks.get | `appId`*, `id`* | ProductStock | yes | Get a stocks |
+| POST | `/apps/{appId}/productstocks/{id}` | app.catalog.stocks.update | `appId`*, `id`*, `purchase_id`, `bar_code`, `location`, `entered_at`, `expired_at`, `cost_amount`, `use_duration` | ProductStock |  | Update a stocks |
+| DELETE | `/apps/{appId}/productstocks/{id}` | app.catalog.stocks.delete | `appId`*, `id`* | ApiResponse |  | Remove a stocks |
+| POST | `/apps/{appId}/productstocks/{id}/destruct` | app.catalog.stocks.destruct | `appId`*, `id`*, `quantity`, `comment` | ProductStock |  | Destruct a quantity of stock (forgotten, destructed, expirated stock...) |
+| POST | `/apps/{appId}/productstocks/{id}/rental/back` | app.catalog.stocks.rental_back | `appId`*, `id`*, `quantity`*, `current_return_date`, `use_duration`, `comment` | ProductStock |  | Consider part of the stock as back |
+| POST | `/apps/{appId}/productstocks/{id}/rental/exit` | app.catalog.stocks.rental_exit | `appId`*, `id`*, `quantity`, `future_return_date`, `comment` | ProductStock |  | Consider part of the stock as rented |
+| GET | `/apps/{appId}/purchases` | app.documents.purchases.purchases.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order`, `expand` | Purchase[] | yes | List purchases |
+| POST | `/apps/{appId}/purchases` | app.documents.purchases.purchases.create | `appId`*, `invoice`, `account_id`, `supplier_organization_id`, `title`, `supplier_name`, `amount`, `amount_tax`, `currency`, `vat_detail`, `billed_at`, `comment`, `tags`, `vat_repayment`, `payment_deadline_at`, `payment_account_number`, `payment_routing_number`, `payment_swift`, `payment_iban` | Purchase |  | Create a purchase |
+| POST | `/apps/{appId}/purchases/batch` | app.documents.purchases.purchases.batch | `appId`*, `data`* | Purchase |  | Create or update many purchases |
+| DELETE | `/apps/{appId}/purchases/batch` | app.documents.purchases.purchases.batch_delete | `appId`*, `ids`* | ApiResponse |  | Delete many purchases |
+| GET | `/apps/{appId}/purchases/download` | app.documents.purchases.purchases.download | `appId`*, `ids`* | string:binary | yes | Download a list of purchases in pdf into a .zip file |
+| GET | `/apps/{appId}/purchases/statistics` | app.documents.purchases.purchases.statistics | `appId`*, `search`, `filters` | object | yes | Obtain statistics about purchases |
+| GET | `/apps/{appId}/purchases/{id}` | app.documents.purchases.purchases.get | `appId`*, `id`* | Purchase | yes | Get a purchase |
+| POST | `/apps/{appId}/purchases/{id}` | app.documents.purchases.purchases.update | `appId`*, `id`*, `account_id`, `supplier_organization_id`, `title`, `supplier_name`, `amount`, `amount_tax`, `currency`, `vat_detail`, `billed_at`, `comment`, `tags`, `vat_repayment`, `payment_deadline_at`, `payment_account_number`, `payment_routing_number`, `payment_swift`, `payment_iban`, `purchase_lines` | Purchase |  | Update a purchase |
+| DELETE | `/apps/{appId}/purchases/{id}` | app.documents.purchases.purchases.delete | `appId`*, `id`* | ApiResponse |  | Remove a purchase |
+| POST | `/apps/{appId}/purchases/{id}/attach` | app.documents.purchases.purchases.attach | `appId`*, `id`*, `file` | — |  | Attach a file at a purchase |
+| DELETE | `/apps/{appId}/purchases/{id}/attach` | app.documents.purchases.purchases.detach | `appId`*, `id`*, `file_id` | — |  | Detach a file at a purchase |
+| GET | `/apps/{appId}/purchases/{id}/original` | app.documents.purchases.purchases.original | `appId`*, `id`* | string:binary | yes | Download the purchase as pdf |
+| GET | `/apps/{appId}/purchases/{id}/preview.jpg` | app.documents.purchases.purchases.preview | `appId`*, `id`* | string:binary | yes | Download purchase as jpeg |
+| POST | `/apps/{appId}/purchases/{id}/tag` | app.documents.purchases.purchases.tag | `appId`*, `id`*, `tag` | — |  | Add a tag on a purchase |
+| DELETE | `/apps/{appId}/purchases/{id}/tag` | app.documents.purchases.purchases.untag | `appId`*, `id`*, `tag` | — |  | Delete a tag on a purchase |
+| GET | `/apps/{appId}/purchases/{id}/thumbnail.jpg` | app.documents.purchases.purchases.thumbnail | `appId`*, `id`* | string:binary | yes | Show purchase thumbnail as jpeg |
+| POST | `/apps/{appId}/purchases/{id}/updatestatus` | app.documents.purchases.purchases.updatestatus | `appId`*, `id`*, `status` | — |  | Update the status of an invoice |
+| GET | `/apps/{appId}/quotes` | app.documents.sales.quotes.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Quote[] | yes | List quotes |
+| POST | `/apps/{appId}/quotes` | app.documents.sales.quotes.create | `appId`*, `contact_infos`, `third_account`, `title`, `content`, `columns`, `reference`, `discount`, `currency`, `legal_notice`, `bank_details_id`, `vat_exemption`, `tags`, `metadata`, `downpayment_request`, `commercialvalidity_deadline`, `number_from_other_software` | Quote |  | Create a quote |
+| POST | `/apps/{appId}/quotes/batch` | app.documents.sales.quotes.batch | `appId`*, `data`* | Quote |  | Create or update many quotes |
+| DELETE | `/apps/{appId}/quotes/batch` | app.documents.sales.quotes.batch_delete | `appId`*, `ids`* | ApiResponse |  | Delete many quotes |
+| GET | `/apps/{appId}/quotes/download` | app.documents.sales.quotes.download | `appId`*, `ids`*, `template` | string:binary | yes | Download a list of quotes in pdf into a .zip file |
+| POST | `/apps/{appId}/quotes/fresh` | app.documents.sales.quotes.fresh | `appId`*, `ids`* | object |  | Regenerate pdf and recalcul amounts of quote |
+| POST | `/apps/{appId}/quotes/invoice` | app.documents.sales.quotes.invoices | `appId`*, `ids`* | Invoice |  | Create or update many quotes |
+| GET | `/apps/{appId}/quotes/nextnumber` | app.documents.sales.quotes.nextnumber | `appId`*, `written_at` | — | yes | Get the next quote number for preview |
+| GET | `/apps/{appId}/quotes/statistics` | app.documents.sales.quotes.statistics | `appId`*, `search`, `filters` | object | yes | Obtain statistics about quotes |
+| GET | `/apps/{appId}/quotes/{id}` | app.documents.sales.quotes.get | `appId`*, `id`* | Quote | yes | Get a quote |
+| POST | `/apps/{appId}/quotes/{id}` | app.documents.sales.quotes.update | `appId`*, `id`*, `contact_infos`, `third_account`, `title`, `content`, `columns`, `reference`, `discount`, `currency`, `legal_notice`, `bank_details_id`, `vat_exemption`, `tags`, `metadata`, `downpayment_request`, `commercialvalidity_deadline` | Quote |  | Update a quote |
+| DELETE | `/apps/{appId}/quotes/{id}` | app.documents.sales.quotes.delete | `appId`*, `id`* | ApiResponse |  | Remove a quote |
+| POST | `/apps/{appId}/quotes/{id}/attach` | app.documents.sales.quotes.attach | `appId`*, `id`*, `file` | — |  | Attach a file at a quote |
+| DELETE | `/apps/{appId}/quotes/{id}/attach` | app.documents.sales.quotes.detach | `appId`*, `id`*, `file_id` | — |  | Detach a file at a quote |
+| POST | `/apps/{appId}/quotes/{id}/downpayment` | app.documents.sales.quotes.downpayment | `appId`*, `id`*, `percent`* | Invoice |  | Transform the quote in a downpayment invoice |
+| POST | `/apps/{appId}/quotes/{id}/duplicate` | app.documents.sales.quotes.duplicate | `appId`*, `id`* | Quote |  | Duplicate a quote |
+| POST | `/apps/{appId}/quotes/{id}/finalize` | app.documents.sales.quotes.finalize | `appId`*, `id`* | — |  | Finalize a quote |
+| POST | `/apps/{appId}/quotes/{id}/invoice` | app.documents.sales.quotes.invoice | `appId`*, `id`* | Invoice |  | Transform the quote in invoice |
+| GET | `/apps/{appId}/quotes/{id}/pdf` | app.documents.sales.quotes.pdf | `appId`*, `id`*, `template` | string:binary | yes | Download the quote as pdf |
+| GET | `/apps/{appId}/quotes/{id}/preview.jpg` | app.documents.sales.quotes.preview | `appId`*, `id`*, `template` | string:binary | yes | Download quote as jpeg |
+| POST | `/apps/{appId}/quotes/{id}/situation_invoice` | app.documents.sales.quotes.situation_invoice | `appId`*, `id`*, `progress`* | Invoice |  | Transform the quote into a situation invoice |
+| POST | `/apps/{appId}/quotes/{id}/tag` | app.documents.sales.quotes.tag | `appId`*, `id`*, `tag` | — |  | Add a tag on an quote |
+| DELETE | `/apps/{appId}/quotes/{id}/tag` | app.documents.sales.quotes.untag | `appId`*, `id`*, `tag` | — |  | Delete a tag on a quote |
+| POST | `/apps/{appId}/quotes/{id}/updatestatus` | app.documents.sales.quotes.updatestatus | `appId`*, `id`*, `status` | — |  | Update the status of a quote |
+| GET | `/apps/{appId}/quotes/{id}/yousign/preview.jpg` | app.documents.sales.quotes.yousign_preview | `appId`*, `id`*, `template` | string:binary | yes | Download quote as jpeg |
+| POST | `/apps/{appId}/reconcile` | app.payments.reconciliation.reconcile | `appId`*, `replace_all`, `type`*, `id`*, `movements`*, `paid_at`, `rule` | Payment |  | Reconcile a transaction or a document |
+| DELETE | `/apps/{appId}/reconcile` | app.payments.reconciliation.unreconcile | `appId`*, `type`*, `id`* | ApiResponse |  | Remove payments by an object |
+| POST | `/apps/{appId}/reconcile/batch` | app.payments.reconciliation.batch | `appId`*, `data`* | Quote |  | Reconcile several transactions |
+| GET | `/apps/{appId}/recurringinvoices` | app.documents.sales.recurringinvoices.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | RecurringInvoice[] | yes | List RecurringInvoice |
+| POST | `/apps/{appId}/recurringinvoices` | app.documents.sales.recurringinvoices.create | `appId`*, `contact_infos`, `title`, `content`, `columns`, `currency`, `legal_notice`, `bank_details_id`, `vat_exemption`, `tags`, `metadata`, `payment_period`, `next_invoice_at`, `end_at`, `frequency_count`*, `frequency_duration`*, `discount`, `discount_mode`, `discount_start_at`, `discount_end_at`, `details`, `orders_plan` | RecurringInvoice |  | Create a RecurringInvoice |
+| POST | `/apps/{appId}/recurringinvoices/batch` | app.documents.sales.recurringinvoices.batch | `appId`*, `data`* | RecurringInvoice |  | Create or update many RecurringInvoice |
+| DELETE | `/apps/{appId}/recurringinvoices/batch` | app.documents.sales.recurringinvoices.batch_delete | `appId`*, `ids`* | ApiResponse |  | Delete many RecurringInvoice |
+| GET | `/apps/{appId}/recurringinvoices/periods` | app.documents.sales.recurringinvoices.getPeriods | `appId`*, `date` | array | yes | Get json of periods_formats for a date. |
+| GET | `/apps/{appId}/recurringinvoices/{id}` | app.documents.sales.recurringinvoices.get | `appId`*, `id`* | RecurringInvoice | yes | Get a RecurringInvoice |
+| POST | `/apps/{appId}/recurringinvoices/{id}` | app.documents.sales.recurringinvoices.update | `appId`*, `id`*, `contact_infos`, `title`, `content`, `columns`, `currency`, `legal_notice`, `bank_details_id`, `vat_exemption`, `tags`, `metadata`, `payment_period`, `next_invoice_at`, `end_at`, `frequency_count`, `frequency_duration`, `discount`, `discount_mode`, `discount_start_at`, `discount_end_at`, `details`, `orders_plan` | RecurringInvoice |  | Update a RecurringInvoice |
+| DELETE | `/apps/{appId}/recurringinvoices/{id}` | app.documents.sales.recurringinvoices.delete | `appId`*, `id`* | — |  | Remove a RecurringInvoice |
+| GET | `/apps/{appId}/recurringinvoices/{id}/plan` | app.documents.sales.recurringinvoices.plan | `appId`*, `id`*, `until`* | Invoice[] | yes | Preview next invoices generations |
+| GET | `/apps/{appId}/relationships` | app.contacts.relationships.list | `appId`*, `limit`, `search`, `filters`, `order` | Relationship[] | yes | List relationships |
+| GET | `/apps/{appId}/relationships/{id}` | app.contacts.relationships.get | `appId`*, `id`* | Relationship | yes | Get a relationship |
+| POST | `/apps/{appId}/relationships/{id}` | app.contacts.relationships.update | `appId`*, `id`*, `is_customer`, `is_supplier`, `is_prospect`, `importance_level`, `rating`, `balance_initial_amount`, `is_notifying`, `note`, `reference`, `tags`, `discount`, `details`, `metadata` | Relationship |  | Update a relationship |
+| POST | `/apps/{appId}/relationships/{id}/attach` | app.contacts.relationships.attach | `appId`*, `id`*, `file` | — |  | Attach a file |
+| DELETE | `/apps/{appId}/relationships/{id}/attach` | app.contacts.relationships.detach | `appId`*, `id`*, `file_id` | — |  | Detach a file |
+| POST | `/apps/{appId}/reset` | app.reset | `appId`* | — |  | Reset all data |
+| GET | `/apps/{appId}/rules/` | app.rules.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Rule[] | yes | List rules |
+| POST | `/apps/{appId}/rules/` | app.rules.create | `appId`*, `conditions`, `on_event`, `parameter`, `value`, `priority` | Rule |  | Create a rule |
+| POST | `/apps/{appId}/rules/execute_on` | app.rules.execute_on | `appId`*, `model` | Rule |  | Execute all rules |
+| GET | `/apps/{appId}/rules/{id}` | app.rules.get | `appId`*, `id`* | Rule | yes | Get a rule |
+| POST | `/apps/{appId}/rules/{id}` | app.rules.update | `appId`*, `id`*, `conditions`, `on_event`, `parameter`, `value`, `priority` | Rule |  | Update a rule |
+| DELETE | `/apps/{appId}/rules/{id}` | app.rules.delete | `appId`*, `id`* | — |  | Remove a rule |
+| GET | `/apps/{appId}/salesdocumentmodels` | app.documents.sales.models.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | SalesDocumentModel[] | yes | List sales documents models |
+| POST | `/apps/{appId}/salesdocumentmodels` | app.documents.sales.models.create | `appId`*, `name`, `title`, `content`, `columns` | SalesDocumentModel |  | Create a sales document model |
+| GET | `/apps/{appId}/salesdocumentmodels/{id}` | app.documents.sales.models.get | `appId`*, `id`* | SalesDocumentModel | yes | Get a sales document model |
+| POST | `/apps/{appId}/salesdocumentmodels/{id}` | app.documents.sales.models.update | `appId`*, `id`*, `name`, `title`, `content`, `columns` | SalesDocumentModel |  | Update a sales document model |
+| DELETE | `/apps/{appId}/salesdocumentmodels/{id}` | app.documents.sales.models.delete | `appId`*, `id`* | — |  | Remove a sales document model |
+| GET | `/apps/{appId}/sepamandates/` | app.payments.sepamandates.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | SEPAMandate[] | yes | List SEPAMandate |
+| POST | `/apps/{appId}/sepamandates/` | app.payments.sepamandates.create | `appId`*, `customer_organization_id`, `customer_person_id`, `old_mandate_id`, `mandate_id`*, `signed_at`*, `electronic_signature`, `customer_name`, `iban`*, `bic`*, `is_first` | SEPAMandate |  | Create a SEPAMandate |
+| GET | `/apps/{appId}/sepamandates/credittransfer` | app.payments.sepacredittransfer.preview | `appId`*, `ids`* | object | yes | Preview sepa credit transfer file |
+| POST | `/apps/{appId}/sepamandates/credittransfer` | app.payments.sepacredittransfer.download | `appId`*, `ids`*, `amounts`, `debtor_name`, `debtor_iban`, `debtor_bic`, `btchBookg` | string:binary |  | Preview sepa credit transfer file |
+| GET | `/apps/{appId}/sepamandates/directdebit` | app.payments.sepadirectdebit.preview | `appId`*, `invoices_ids`* | object | yes | Preview sepa direct debit file |
+| POST | `/apps/{appId}/sepamandates/directdebit` | app.payments.sepadirectdebit.download | `appId`*, `invoices_ids`*, `amounts`, `creditor_name`, `creditor_iban`, `creditor_bic`, `creditor_ics`, `date` | string:binary |  | Download sepa direct debit file |
+| GET | `/apps/{appId}/sepamandates/{id}` | app.payments.sepamandates.get | `appId`*, `id`* | SEPAMandate | yes | Get a SEPAMandate |
+| POST | `/apps/{appId}/sepamandates/{id}` | app.payments.sepamandates.update | `appId`*, `id`*, `customer_organization_id`, `customer_person_id`, `old_mandate_id`, `mandate_id`, `signed_at`, `electronic_signature`, `customer_name`, `iban`, `bic`, `is_first` | SEPAMandate |  | Update a SEPAMandate |
+| DELETE | `/apps/{appId}/sepamandates/{id}` | app.payments.sepamandates.delete | `appId`*, `id`* | — |  | Remove a SEPAMandate |
+| GET | `/apps/{appId}/services/stripe/webhook` | app.services.stripe.webhook.ping | `appId`* | — | yes | Ping Stripe webhook endpoint |
+| POST | `/apps/{appId}/services/stripe/webhook` | app.services.stripe.webhook.handle | `appId`* | — |  | Webhook for Stripe |
+| POST | `/apps/{appId}/services/yousign/webhook` | app.services.yousign.webhook.handle | `appId`* | — |  | Webhook for Yousign |
+| GET | `/apps/{appId}/settings` | app.settings.get | `appId`*, `key` | object | yes | Get app config |
+| POST | `/apps/{appId}/settings` | app.settings.update | `appId`*, `settings`, `key`, `value` | ApiResponse |  | Update app config |
+| POST | `/apps/{appId}/signature` | app.documents.sales.signature.create | `appId`*, `documentId`*, `email`*, `firstname`*, `lastname`*, `phone`* | — |  | Create a signature |
+| GET | `/apps/{appId}/statistics/charts/{type}` | app.statistics.charts.get | `appId`*, `type`*, `count`, `period`, `start_at`, `object`, `object_property`, `calcul`, `methods`, `object_date_property`, `group_by`, `group_by_object_name`, `exclude_keys`, `search`, `filters`, `show_details` | object[] | yes | Obtain statistics about sales |
+| GET | `/apps/{appId}/statistics/timetable/purchases` | app.statistics.timetable.purchases | `appId`*, `detailed`, `groups` | object[] | yes | Obtain statistics about timetable purchases |
+| GET | `/apps/{appId}/statistics/timetable/sales` | app.statistics.timetable.sales | `appId`*, `detailed`, `groups` | object[] | yes | Obtain statistics about sales |
+| GET | `/apps/{appId}/statistics/vat` | app.statistics.vat.get | `appId`*, `detailed`, `start_at`, `period`, `end_at` | object | yes | Obtain statistics about vat |
+| POST | `/apps/{appId}/subscription/anchordate` | app.subscription.anchordate | `appId`* | — |  | Update anchor date |
+| GET | `/apps/{appId}/subscription/checkout_add_source` | app.subscription.checkout_add_source | `appId`* | — | yes | Get payment link to Stripe Checkout |
+| POST | `/apps/{appId}/subscription/coupon` | app.subscription.coupon | `appId`*, `code`* | — |  | Add coupon |
+| POST | `/apps/{appId}/subscription/extend_trial` | app.subscription.extend_trial | `appId`* | — |  | Extend trial period |
+| POST | `/apps/{appId}/subscription/extra/{stripe_plan}` | app.subscription.extra_enable | `appId`*, `stripe_plan`* | — |  | Enable plan |
+| POST | `/apps/{appId}/subscription/pay_all` | app.subscription.pay_all | `appId`* | — |  | Pay all due invoices |
+| GET | `/apps/{appId}/subscription/plan` | app.subscription.get | `appId`* | object | yes | Get current plan |
+| DELETE | `/apps/{appId}/subscription/plan` | app.subscription.end | `appId`* | — |  | End current plan |
+| GET | `/apps/{appId}/subscription/plans` | app.subscription.list | `appId`* | object | yes | Get plans |
+| GET | `/apps/{appId}/subscription/plans/{stripe_plan}` | app.subscription.upcoming | `appId`*, `stripe_plan`*, `stripe_coupon` | — | yes | Simulate a plan |
+| POST | `/apps/{appId}/subscription/plans/{stripe_plan}` | app.subscription.pay | `appId`*, `stripe_plan`*, `stripe_source`, `stripe_coupon` | — |  | Change plan |
+| GET | `/apps/{appId}/subscription/plans/{stripe_plan}/checkout` | app.subscription.checkout | `appId`*, `stripe_plan`*, `stripe_coupon` | — | yes | Get payment link to Stripe Checkout |
+| POST | `/apps/{appId}/subscription/source` | app.subscription.add_source | `appId`*, `stripe_source`* | — |  | Add creditcard or sepadebit |
+| DELETE | `/apps/{appId}/subscription/source` | app.subscription.remove_source | `appId`*, `stripe_source`* | — |  | Remove creditcard or sepadebit |
+| POST | `/apps/{appId}/subscription/source/default` | app.subscription.set_default | `appId`*, `stripe_source`* | — |  | Change default source |
+| GET | `/apps/{appId}/tags` | app.statistics.tags.get | `appId`*, `object` | object[] | yes | Get all existants tags |
+| GET | `/apps/{appId}/templates` | app.settings.templates.list | `appId`* | — | yes | Get templates |
+| POST | `/apps/{appId}/templates` | app.settings.templates.create | `appId`* | — |  | Create a template |
+| POST | `/apps/{appId}/templates/batch` | app.settings.templates.batch | `appId`*, `data`* | — |  | Create multiple templates |
+| GET | `/apps/{appId}/templates/default` | app.settings.templates.default_template | `appId`* | — | yes | Get default template |
+| GET | `/apps/{appId}/templates/{id}` | app.settings.templates.get | `appId`*, `id`* | — | yes | Get a template |
+| POST | `/apps/{appId}/templates/{id}` | app.settings.templates.update | `appId`*, `id`* | — |  | Update a template |
+| GET | `/apps/{appId}/transactions/` | app.cashflow.transactions.list | `appId`*, `offset`, `limit`, `search`, `filters`, `order` | Transaction[] | yes | List Transaction |
+| POST | `/apps/{appId}/transactions/` | app.cashflow.transactions.create | `appId`*, `contact_organization_id`, `contact_person_id`, `account_id`, `cashflow_source_id`*, `contact_name`, `amount`*, `method`, `received_at`*, `label`, `details` | Transaction |  | Create a Transaction |
+| POST | `/apps/{appId}/transactions/batch` | app.cashflow.transactions.batch | `appId`*, `data`* | Transaction |  | Create multiple transactions |
+| GET | `/apps/{appId}/transactions/{id}` | app.cashflow.transactions.get | `appId`*, `id`* | Transaction | yes | Get a Transaction |
+| POST | `/apps/{appId}/transactions/{id}` | app.cashflow.transactions.update | `appId`*, `id`*, `contact_organization_id`, `contact_person_id`, `account_id`, `cashflow_source_id`, `contact_name`, `amount`, `method`, `received_at`, `label`, `details` | Transaction |  | Update a Transaction |
+| DELETE | `/apps/{appId}/transactions/{id}` | app.cashflow.transactions.delete | `appId`*, `id`* | — |  | Remove a Transaction |
+| POST | `/apps/{appId}/transactions/{id}/attach` | app.cashflow.transactions.attach | `appId`*, `id`*, `file` | — |  | Attach a file |
+| DELETE | `/apps/{appId}/transactions/{id}/attach` | app.cashflow.transactions.detach | `appId`*, `id`*, `file_id` | — |  | Detach a file |
+| POST | `/apps/{appId}/urssaf/auth` | app.payments.urssaftiers.auth | `appId`*, `client_id`*, `client_secret`* | — |  | Login URSSAF |
+| GET | `/apps/{appId}/urssaf/payment` | app.payments.urssaftiers.get_status | `appId`*, `invoices_ids`* | object | yes | Get status of a payment |
+| POST | `/apps/{appId}/urssaf/payment` | app.payments.urssaftiers.send_payments | `appId`* | string:binary |  | Send URSSAF request payment |
+| GET | `/apps/{appId}/urssaf/preview` | app.payments.urssaftiers.preview | `appId`*, `type`*, `ids`* | object | yes | Preview URSSAF request payment |
+| POST | `/apps/{appId}/urssaf/register_customer` | app.payments.urssaftiers.register_customer | `appId`* | — |  | Register a person to URSSAF and create him a mandate |
+| POST | `/changepassword` | auth.changepassword | `forgotten_password_token`*, `password`* | — |  | Change password |
+| POST | `/login` | auth.login | `email`*, `password`* | — |  | Login |
+| POST | `/logout` | auth.logout | — | — |  | Logout |
+| GET | `/me` | account.get | — | User | yes | Get current user |
+| POST | `/me` | account.update | `civility`, `firstname`, `lastname`, `password`, `email`, `image`, `metadata` | User |  | Update current user |
+| GET | `/ping` | auth.ping | — | — | yes | Ping server |
+| GET | `/refresh` | auth.refresh | — | JsonWebToken | yes | Refresh a token |
+| POST | `/register` | account.create | `email`*, `password`*, `cgu`*, `firstname`, `lastname`, `metadata` | — |  | Create an User |
+| POST | `/sendpassword` | auth.sendpassword | `email`* | — |  | Password recover by email |
+| POST | `/services/collector` | admin.purchaseCollector.push | `app_identifiant`*, `collector_key`*, `invoice`* | — |  | Push to purchase collector |
+| GET | `/services/vies/{siren}` | services.vies.get | `siren`* | — | yes | Get VIES database informations from SIREN |

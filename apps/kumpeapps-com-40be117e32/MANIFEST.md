@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `b92f5438e7ca92e032e7dc762795fda27abbb703bbdda3145deddb7c79747065` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,38 +34,40 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 21 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| PATCH | `/appkey` | appkey_patch | Compromise app key |
-| POST | `/appkey` | appkey_post | Request app key |
-| PUT | `/appkey` | appkey_put | Deactivate app key |
-| PATCH | `/authentication/appkey` | auth_appkey_patch | Compromise app key |
-| POST | `/authentication/appkey` | auth_appkey_post | Request app key |
-| PUT | `/authentication/appkey` | auth_appkey_put | Deactivate app key |
-| GET | `/authentication/authkey` | auth_authkey_get | Request auth key for user (login user) |
-| PATCH | `/authentication/authkey` | auth_authkey_patch | Compromise auth key |
-| POST | `/authentication/authkey` | auth_authkey_post | Request auth key for user (login user) |
-| PUT | `/authentication/authkey` | auth_authkey_put | Deactivate auth key (logout) |
-| GET | `/authentication/verifyotp` | auth_verifyotp_get | Verifies YubiKey OTP for authenticated user |
-| GET | `/authkey` | authkey_get | Request auth key for user (login user) |
-| PATCH | `/authkey` | authkey_patch | Compromise auth key |
-| POST | `/authkey` | authkey_post | Request auth key for user (login user) |
-| PUT | `/authkey` | authkey_put | Deactivate auth key (logout) |
-| GET | `/kkid/allowance` | kkid_allowance_get | returns allowance balance and allowance transactions |
-| POST | `/kkid/allowance` | kkid_allowance_post | adds new allowance transaction to kidUserID |
-| POST | `/kkid/apns` | kkid_apns_post | subscribes/unsubscribes/registers for apns push notifications |
-| DELETE | `/kkid/chorelist` | kkid_chorelist_delete | deletes chore for given chore id |
-| GET | `/kkid/chorelist` | kkid_chorelist_get | returns list of chores for given user |
-| POST | `/kkid/chorelist` | kkid_chorelist_post | adds chore for given user |
-| PUT | `/kkid/chorelist` | kkid_chorelist_put | updates chore for given chore id |
-| POST | `/kkid/masteruser` | kkid_masteruser_post | adds new master user account |
-| GET | `/kkid/share` | kkid_share_get | Create Share Link |
-| GET | `/kkid/user` | kkid_user_get | Gets user info |
-| DELETE | `/kkid/userlist` | kkid_userlist_delete | deletes user |
-| GET | `/kkid/userlist` | kkid_userlist_get | returns list of users |
-| POST | `/kkid/userlist` | kkid_userlist_post | adds new child user |
-| PUT | `/kkid/userlist` | kkid_userlist_put | updates user |
-| DELETE | `/kkid/wishlist` | kkid_wishlist_delete | Delete item from wishlist |
-| GET | `/kkid/wishlist` | kkid_wishlist_get | Get list of wishlist items |
-| POST | `/kkid/wishlist` | kkid_wishlist_post | Add item to kid's wishlist |
-| PUT | `/kkid/wishlist` | kkid_wishlist_put | Update item on kid's wishlist |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/appkey` | appkey_put | `app_key`* | inline_response_202 |  | Deactivate app key |
+| POST | `/appkey` | appkey_post | `username`*, `password`*, `supportsYubikey`* | inline_response_201 |  | Request app key |
+| PATCH | `/appkey` | appkey_patch | `app_key`*, `comments` | inline_response_202 |  | Compromise app key |
+| PUT | `/authentication/appkey` | auth_appkey_put | `app_key`* | inline_response_202 |  | Deactivate app key |
+| POST | `/authentication/appkey` | auth_appkey_post | `username`*, `password`*, `supportsYubikey`* | inline_response_201 |  | Request app key |
+| PATCH | `/authentication/appkey` | auth_appkey_patch | `app_key`*, `comments` | inline_response_202 |  | Compromise app key |
+| GET | `/authentication/authkey` | auth_authkey_get | `username`*, `password`*, `otp`, `deviceName`, `identifierForVendor` | inline_response_201_1 | yes | Request auth key for user (login user) |
+| PUT | `/authentication/authkey` | auth_authkey_put | `auth_key`* | inline_response_202 |  | Deactivate auth key (logout) |
+| POST | `/authentication/authkey` | auth_authkey_post | `username`*, `password`*, `otp` | inline_response_201_1 |  | Request auth key for user (login user) |
+| PATCH | `/authentication/authkey` | auth_authkey_patch | `auth_key`*, `comments` | inline_response_202 |  | Compromise auth key |
+| GET | `/authentication/verifyotp` | auth_verifyotp_get | `otp`* | — | yes | Verifies YubiKey OTP for authenticated user |
+| GET | `/authkey` | authkey_get | `username`*, `password`*, `otp` | inline_response_201_1 | yes | Request auth key for user (login user) |
+| PUT | `/authkey` | authkey_put | `auth_key`* | inline_response_202 |  | Deactivate auth key (logout) |
+| POST | `/authkey` | authkey_post | `username`*, `password`*, `otp` | inline_response_201_1 |  | Request auth key for user (login user) |
+| PATCH | `/authkey` | authkey_patch | `auth_key`*, `comments` | inline_response_202 |  | Compromise auth key |
+| GET | `/kkid/allowance` | kkid_allowance_get | `kidUserId`*, `transactionDays` | allowance, nodata | yes | returns allowance balance and allowance transactions |
+| POST | `/kkid/allowance` | kkid_allowance_post | `kidUserId`*, `amount`*, `description`*, `transactionType`* | success, nodata |  | adds new allowance transaction to kidUserID |
+| POST | `/kkid/apns` | kkid_apns_post | `kidUserId`*, `tool`*, `token`, `devicename`, `title`, `message`, `badge`, `sound`, `section`, `priority` | success, nodata |  | subscribes/unsubscribes/registers for apns push notifications |
+| GET | `/kkid/chorelist` | kkid_chorelist_get | `kidUsername`, `day`, `status`, `blockDash`, `optional`, `canSteal`, `includeCalendar` | chorelist, nodata | yes | returns list of chores for given user |
+| PUT | `/kkid/chorelist` | kkid_chorelist_put | `idChoreList`*, `status`, `stolen`, `stolenBy`, `nfcTag`, `notes`, `latitude`, `longitude`, `altitude`, `updatedByAutomation`, `whereDay`, `whereStatus`, `whereName` | success, nodata |  | updates chore for given chore id |
+| POST | `/kkid/chorelist` | kkid_chorelist_post | `kidUsername`*, `day`, `nfcTag`, `status`, `choreName`*, `choreDescription`, `choreNumber`, `blockDash`, `oneTime`, `extraAllowance`, `optional`, `reassignable`, `canSteal`, `startDate`, `notes`, `requireObjectDetection`, `objectDetectionTag`, `updatedByAutomation`, `aiIcon`, `isCalendar` | success, nodata |  | adds chore for given user |
+| DELETE | `/kkid/chorelist` | kkid_chorelist_delete | `idChoreList`* | success, nodata |  | deletes chore for given chore id |
+| POST | `/kkid/masteruser` | kkid_masteruser_post | `username`*, `password`*, `email`*, `firstName`*, `lastName`* | addUserResponse |  | adds new master user account |
+| GET | `/kkid/share` | kkid_share_get | `linkUserId`*, `link`*, `scope`*, `scope2`, `scope3`, `scope4` | 201_share | yes | Create Share Link |
+| GET | `/kkid/user` | kkid_user_get | `enableBool` | userlist | yes | Gets user info |
+| GET | `/kkid/userlist` | kkid_userlist_get | `isChild`, `isActive`, `isAdmin`, `enableAllowance`, `enableChores`, `userID`, `username`, `email` | userlist, nodata | yes | returns list of users |
+| PUT | `/kkid/userlist` | kkid_userlist_put | `userID`*, `username`*, `email`*, `firstName`*, `lastName`*, `emoji`, `tmdbKey`, `enableWishList`, `enableChores`, `enableAllowance`, `enableAdmin`, `enableTmdb`, `enableObjectDetection` | addUserResponse |  | updates user |
+| POST | `/kkid/userlist` | kkid_userlist_post | `username`*, `password`*, `email`*, `firstName`*, `lastName`* | addUserResponse |  | adds new child user |
+| DELETE | `/kkid/userlist` | kkid_userlist_delete | `userID`* | — |  | deletes user |
+| GET | `/kkid/wishlist` | kkid_wishlist_get | `kidUserId` | wishlist | yes | Get list of wishlist items |
+| PUT | `/kkid/wishlist` | kkid_wishlist_put | `wishId`*, `title`, `description`, `priority`, `link` | success |  | Update item on kid's wishlist |
+| POST | `/kkid/wishlist` | kkid_wishlist_post | `kidUserId`*, `title`*, `description`, `priority`, `link` | success |  | Add item to kid's wishlist |
+| DELETE | `/kkid/wishlist` | kkid_wishlist_delete | `wishId`* | success |  | Delete item from wishlist |

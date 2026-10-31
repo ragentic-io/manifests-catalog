@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_facecheck.id_img_favicon.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `4b08fdcf1afcb5e0069cfb2e5fb5bf838ece27d661b15781683e8fa21e979517` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_facecheck.id_img_favicon.svg"
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/api/delete_pic` | post /api/delete_pic | Remove an image from a search request |
-| POST | `/api/info` | post /api/info | Returns remaining search credits, search engine online status, and number of indexed faces |
-| POST | `/api/search` | post /api/search | Submit a search request to the search engine and get back search results that contain URLs and all images in base64/webp format |
-| POST | `/api/upload_pic` | post /api/upload_pic | Upload 1 to 3 images as multipart/form-data, and get back a search request that contains id_search and 1 to 3 preview thumbnails |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/api/delete_pic` | post /api/delete_pic | `id_search`, `id_pic` | BrowserJsonResponse |  | Remove an image from a search request |
+| POST | `/api/info` | post /api/info | — | InfoResponse |  | Returns remaining search credits, search engine online status, and number of indexed faces |
+| POST | `/api/search` | post /api/search | body: SearchData | BrowserJsonResponse |  | Submit a search request to the search engine and get back search results that contain URLs and all images in base64/webp format |
+| POST | `/api/upload_pic` | post /api/upload_pic | body: object | BrowserJsonResponse |  | Upload 1 to 3 images as multipart/form-data, and get back a search request that contains id_search and 1 to 3 preview thumbnails |

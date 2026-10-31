@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_bethmardutho.org_wp-content_upl
 
 | | |
 | --- | --- |
-| Signed bundle | `736c3f2899fee43da04e85df361e7b09b3bdfb88c89a1ba2a498a6c0044b7b27` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_bethmardutho.org_wp-content_upl
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/lexeme/{id}` | get /lexeme/{id} | Get Syriac lexeme. |
-| GET | `/word/{id}` | get /word/{id} | Get Syriac word. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/lexeme/{id}` | get /lexeme/{id} | `id`* | object | yes | Get Syriac lexeme. |
+| GET | `/word/{id}` | get /word/{id} | `id`* | object[] | yes | Get Syriac word. |

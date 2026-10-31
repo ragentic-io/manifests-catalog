@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `6c10912a3572cb8fa643162d878fe83956626d96250304253bcdc97fcd9093f5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/badge` | getBadge | Return a redirect to a badge svg file depending on a source definition's validity |
-| GET | `/convert` | convertUrl | Convert a Swagger 2.0 definition to OpenAPI 3.0.x from a URL |
-| POST | `/convert` | convert | Convert a Swagger 2.0 definition passed in the body to OpenAPI 3.0.x |
-| GET | `/status` | getStatus | Get the status of the API |
-| GET | `/validate` | validateUrl | Validate an OpenAPI 3.0.x definition |
-| POST | `/validate` | validate | Validate an OpenAPI 3.0.x definition supplied in the body of the request |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/badge` | getBadge | `url`* | — | yes | Return a redirect to a badge svg file depending on a source definition's validity |
+| GET | `/convert` | convertUrl | `url`* | — | yes | Convert a Swagger 2.0 definition to OpenAPI 3.0.x from a URL |
+| POST | `/convert` | convert | body: object | — |  | Convert a Swagger 2.0 definition passed in the body to OpenAPI 3.0.x |
+| GET | `/status` | getStatus | — | — | yes | Get the status of the API |
+| GET | `/validate` | validateUrl | `url`* | validationResult | yes | Validate an OpenAPI 3.0.x definition |
+| POST | `/validate` | validate | body: object | validationResult |  | Validate an OpenAPI 3.0.x definition supplied in the body of the request |

@@ -23,6 +23,46 @@
         "from": "evemarketer-com-95d38a14c4",
         "kind": "EXPOSES",
         "to": "operation:post:/marketstat/json"
+      },
+      {
+        "from": "operation:get:/marketstat",
+        "kind": "RETURNS",
+        "to": "schema:ExecAPI"
+      },
+      {
+        "from": "operation:post:/marketstat",
+        "kind": "RETURNS",
+        "to": "schema:ExecAPI"
+      },
+      {
+        "from": "operation:get:/marketstat/json",
+        "kind": "RETURNS",
+        "to": "schema:Type"
+      },
+      {
+        "from": "operation:post:/marketstat/json",
+        "kind": "RETURNS",
+        "to": "schema:Type"
+      },
+      {
+        "from": "schema:ExecAPI",
+        "kind": "REFERENCES",
+        "to": "schema:MarketStatXML"
+      },
+      {
+        "from": "schema:MarketStatXML",
+        "kind": "REFERENCES",
+        "to": "schema:TypeStatXML"
+      },
+      {
+        "from": "schema:Type",
+        "kind": "REFERENCES",
+        "to": "schema:TypeStat"
+      },
+      {
+        "from": "schema:TypeStat",
+        "kind": "REFERENCES",
+        "to": "schema:ForQuery"
       }
     ],
     "nodes": [
@@ -36,10 +76,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /marketstat",
+        "parameters": [
+          {
+            "description": "TypeID.",
+            "in": "query",
+            "name": "typeid",
+            "required": true,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Limit the statistics to a single region.",
+            "in": "query",
+            "name": "regionlimit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Limit the statistics to a single solar system.",
+            "in": "query",
+            "name": "usesystem",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/marketstat",
         "pointer": "#/paths/~1marketstat/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExecAPI"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "XML Marketstat"
+        "summary": "XML Marketstat",
+        "tags": [
+          "marketstat"
+        ]
       },
       {
         "deprecated": false,
@@ -47,10 +126,49 @@
         "kind": "operation",
         "method": "post",
         "name": "post /marketstat",
+        "parameters": [
+          {
+            "description": "TypeID.",
+            "in": "formData",
+            "name": "typeid",
+            "required": true,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Limit the statistics to a single region.",
+            "in": "formData",
+            "name": "regionlimit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Limit the statistics to a single solar system.",
+            "in": "formData",
+            "name": "usesystem",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/marketstat",
         "pointer": "#/paths/~1marketstat/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExecAPI"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "XML Marketstat"
+        "summary": "XML Marketstat",
+        "tags": [
+          "marketstat"
+        ]
       },
       {
         "deprecated": false,
@@ -58,10 +176,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /marketstat/json",
+        "parameters": [
+          {
+            "description": "TypeID.",
+            "in": "formData",
+            "name": "typeid",
+            "required": true,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Limit the statistics to a single region.",
+            "in": "formData",
+            "name": "regionlimit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Limit the statistics to a single region.",
+            "in": "formData",
+            "name": "usesystem",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/marketstat/json",
         "pointer": "#/paths/~1marketstat~1json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Type[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "JSON Marketstat"
+        "summary": "JSON Marketstat",
+        "tags": [
+          "marketstat"
+        ]
       },
       {
         "deprecated": false,
@@ -69,40 +226,85 @@
         "kind": "operation",
         "method": "post",
         "name": "post /marketstat/json",
+        "parameters": [
+          {
+            "description": "TypeID.",
+            "in": "query",
+            "name": "typeid",
+            "required": true,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "Limit the statistics to a single region.",
+            "in": "query",
+            "name": "regionlimit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Limit the statistics to a single region.",
+            "in": "query",
+            "name": "usesystem",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/marketstat/json",
         "pointer": "#/paths/~1marketstat~1json/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Type[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "JSON Marketstat"
+        "summary": "JSON Marketstat",
+        "tags": [
+          "marketstat"
+        ]
       },
       {
         "id": "schema:ExecAPI",
         "kind": "schema",
-        "name": "ExecAPI"
+        "name": "ExecAPI",
+        "type": "object"
       },
       {
         "id": "schema:ForQuery",
         "kind": "schema",
-        "name": "ForQuery"
+        "name": "ForQuery",
+        "type": "object"
       },
       {
         "id": "schema:MarketStatXML",
         "kind": "schema",
-        "name": "MarketStatXML"
+        "name": "MarketStatXML",
+        "type": "object[]"
       },
       {
         "id": "schema:Type",
         "kind": "schema",
-        "name": "Type"
+        "name": "Type",
+        "type": "object"
       },
       {
         "id": "schema:TypeStat",
         "kind": "schema",
-        "name": "TypeStat"
+        "name": "TypeStat",
+        "type": "object"
       },
       {
         "id": "schema:TypeStatXML",
         "kind": "schema",
-        "name": "TypeStatXML"
+        "name": "TypeStatXML",
+        "type": "object"
       }
     ]
   },

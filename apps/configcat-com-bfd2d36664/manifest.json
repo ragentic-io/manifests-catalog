@@ -17,17 +17,17 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/configs/{configId}"
-      },
-      {
-        "from": "configcat-com-bfd2d36664",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/configs/{configId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/configs/{configId}"
+      },
+      {
+        "from": "configcat-com-bfd2d36664",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/configs/{configId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -57,11 +57,6 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/environments/{environmentId}"
-      },
-      {
-        "from": "configcat-com-bfd2d36664",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/environments/{environmentId}"
       },
       {
@@ -72,7 +67,7 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}"
+        "to": "operation:delete:/v1/environments/{environmentId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -82,17 +77,22 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
+        "to": "operation:delete:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}"
+      },
+      {
+        "from": "configcat-com-bfd2d36664",
+        "kind": "EXPOSES",
         "to": "operation:get:/v1/environments/{environmentId}/settings/{settingId}/value"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:patch:/v1/environments/{environmentId}/settings/{settingId}/value"
+        "to": "operation:put:/v1/environments/{environmentId}/settings/{settingId}/value"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:put:/v1/environments/{environmentId}/settings/{settingId}/value"
+        "to": "operation:patch:/v1/environments/{environmentId}/settings/{settingId}/value"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -132,22 +132,17 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/organizations/{organizationId}/members/{userId}"
-      },
-      {
-        "from": "configcat-com-bfd2d36664",
-        "kind": "EXPOSES",
         "to": "operation:post:/v1/organizations/{organizationId}/members/{userId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:post:/v1/organizations/{organizationId}/products"
+        "to": "operation:delete:/v1/organizations/{organizationId}/members/{userId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/permissions/{permissionGroupId}"
+        "to": "operation:post:/v1/organizations/{organizationId}/products"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -162,12 +157,12 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/products"
+        "to": "operation:delete:/v1/permissions/{permissionGroupId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/products/{productId}"
+        "to": "operation:get:/v1/products"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -178,6 +173,11 @@
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/products/{productId}"
+      },
+      {
+        "from": "configcat-com-bfd2d36664",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/products/{productId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -252,11 +252,6 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/segments/{segmentId}"
-      },
-      {
-        "from": "configcat-com-bfd2d36664",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/segments/{segmentId}"
       },
       {
@@ -267,12 +262,17 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/settings/{settingId}"
+        "to": "operation:delete:/v1/segments/{segmentId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/settings/{settingId}"
+      },
+      {
+        "from": "configcat-com-bfd2d36664",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/settings/{settingId}"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -287,17 +287,12 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:patch:/v1/settings/{settingKeyOrId}/value"
-      },
-      {
-        "from": "configcat-com-bfd2d36664",
-        "kind": "EXPOSES",
         "to": "operation:put:/v1/settings/{settingKeyOrId}/value"
       },
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/tags/{tagId}"
+        "to": "operation:patch:/v1/settings/{settingKeyOrId}/value"
       },
       {
         "from": "configcat-com-bfd2d36664",
@@ -312,7 +307,732 @@
       {
         "from": "configcat-com-bfd2d36664",
         "kind": "EXPOSES",
+        "to": "operation:delete:/v1/tags/{tagId}"
+      },
+      {
+        "from": "configcat-com-bfd2d36664",
+        "kind": "EXPOSES",
         "to": "operation:get:/v1/tags/{tagId}/settings"
+      },
+      {
+        "from": "operation:post:/v1/code-references",
+        "kind": "ACCEPTS",
+        "to": "schema:CodeReferenceRequest"
+      },
+      {
+        "from": "operation:post:/v1/code-references/delete-reports",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteRepositoryReportsRequest"
+      },
+      {
+        "from": "operation:get:/v1/configs/{configId}",
+        "kind": "RETURNS",
+        "to": "schema:ConfigModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/configs/{configId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateConfigRequest"
+      },
+      {
+        "from": "operation:put:/v1/configs/{configId}",
+        "kind": "RETURNS",
+        "to": "schema:ConfigModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/configs/{configId}/deleted-settings",
+        "kind": "RETURNS",
+        "to": "schema:SettingModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/configs/{configId}/environments/{environmentId}",
+        "kind": "RETURNS",
+        "to": "schema:SdkKeysModel"
+      },
+      {
+        "from": "operation:get:/v1/configs/{configId}/environments/{environmentId}/values",
+        "kind": "RETURNS",
+        "to": "schema:ConfigSettingValuesModel"
+      },
+      {
+        "from": "operation:get:/v1/configs/{configId}/settings",
+        "kind": "RETURNS",
+        "to": "schema:SettingModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/configs/{configId}/settings",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSettingInitialValues"
+      },
+      {
+        "from": "operation:post:/v1/configs/{configId}/settings",
+        "kind": "RETURNS",
+        "to": "schema:SettingModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/environments/{environmentId}",
+        "kind": "RETURNS",
+        "to": "schema:EnvironmentModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/environments/{environmentId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateEnvironmentModel"
+      },
+      {
+        "from": "operation:put:/v1/environments/{environmentId}",
+        "kind": "RETURNS",
+        "to": "schema:EnvironmentModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddOrUpdateIntegrationLinkModel"
+      },
+      {
+        "from": "operation:post:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationLinkModel"
+      },
+      {
+        "from": "operation:delete:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
+        "kind": "RETURNS",
+        "to": "schema:DeleteIntegrationLinkModel"
+      },
+      {
+        "from": "operation:get:/v1/environments/{environmentId}/settings/{settingId}/value",
+        "kind": "RETURNS",
+        "to": "schema:SettingValueModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/environments/{environmentId}/settings/{settingId}/value",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateSettingValueModel"
+      },
+      {
+        "from": "operation:put:/v1/environments/{environmentId}/settings/{settingId}/value",
+        "kind": "RETURNS",
+        "to": "schema:SettingValueModel-haljson"
+      },
+      {
+        "from": "operation:patch:/v1/environments/{environmentId}/settings/{settingId}/value",
+        "kind": "ACCEPTS",
+        "to": "schema:JsonPatch"
+      },
+      {
+        "from": "operation:patch:/v1/environments/{environmentId}/settings/{settingId}/value",
+        "kind": "RETURNS",
+        "to": "schema:SettingValueModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/integrationLink/{integrationLinkType}/{key}/details",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationLinkDetailsModel"
+      },
+      {
+        "from": "operation:post:/v1/jira/Connect",
+        "kind": "ACCEPTS",
+        "to": "schema:ConnectRequest"
+      },
+      {
+        "from": "operation:post:/v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddOrUpdateJiraIntegrationLinkModel"
+      },
+      {
+        "from": "operation:post:/v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationLinkModel"
+      },
+      {
+        "from": "operation:get:/v1/me",
+        "kind": "RETURNS",
+        "to": "schema:MeModel"
+      },
+      {
+        "from": "operation:get:/v1/organizations",
+        "kind": "RETURNS",
+        "to": "schema:OrganizationModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/organizations/{organizationId}/auditlogs",
+        "kind": "RETURNS",
+        "to": "schema:AuditLogItemModel"
+      },
+      {
+        "from": "operation:get:/v1/organizations/{organizationId}/members",
+        "kind": "RETURNS",
+        "to": "schema:UserModel"
+      },
+      {
+        "from": "operation:post:/v1/organizations/{organizationId}/members/{userId}",
+        "kind": "ACCEPTS",
+        "to": "schema:AddUserToGroupRequest"
+      },
+      {
+        "from": "operation:post:/v1/organizations/{organizationId}/products",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateProductRequest"
+      },
+      {
+        "from": "operation:post:/v1/organizations/{organizationId}/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/permissions/{permissionGroupId}",
+        "kind": "RETURNS",
+        "to": "schema:PermissionGroupModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/permissions/{permissionGroupId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdatePermissionGroupRequest"
+      },
+      {
+        "from": "operation:put:/v1/permissions/{permissionGroupId}",
+        "kind": "RETURNS",
+        "to": "schema:PermissionGroupModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}",
+        "kind": "RETURNS",
+        "to": "schema:ProductModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/products/{productId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateProductRequest"
+      },
+      {
+        "from": "operation:put:/v1/products/{productId}",
+        "kind": "RETURNS",
+        "to": "schema:ProductModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/auditlogs",
+        "kind": "RETURNS",
+        "to": "schema:AuditLogItemModel"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/configs",
+        "kind": "RETURNS",
+        "to": "schema:ConfigModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/configs",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateConfigRequest"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/configs",
+        "kind": "RETURNS",
+        "to": "schema:ConfigModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/environments",
+        "kind": "RETURNS",
+        "to": "schema:EnvironmentModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/environments",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateEnvironmentModel"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/environments",
+        "kind": "RETURNS",
+        "to": "schema:EnvironmentModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/members",
+        "kind": "RETURNS",
+        "to": "schema:MemberModel"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/members/invite",
+        "kind": "ACCEPTS",
+        "to": "schema:InviteMembersRequest"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/permissions",
+        "kind": "RETURNS",
+        "to": "schema:PermissionGroupModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/permissions",
+        "kind": "ACCEPTS",
+        "to": "schema:CreatePermissionGroupRequest"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/permissions",
+        "kind": "RETURNS",
+        "to": "schema:PermissionGroupModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/segments",
+        "kind": "RETURNS",
+        "to": "schema:SegmentListModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/segments",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSegmentModel"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/segments",
+        "kind": "RETURNS",
+        "to": "schema:SegmentModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/products/{productId}/tags",
+        "kind": "RETURNS",
+        "to": "schema:TagModel-haljson"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateTagModel"
+      },
+      {
+        "from": "operation:post:/v1/products/{productId}/tags",
+        "kind": "RETURNS",
+        "to": "schema:TagModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/segments/{segmentId}",
+        "kind": "RETURNS",
+        "to": "schema:SegmentModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/segments/{segmentId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateSegmentModel"
+      },
+      {
+        "from": "operation:put:/v1/segments/{segmentId}",
+        "kind": "RETURNS",
+        "to": "schema:SegmentModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/settings/{settingId}",
+        "kind": "RETURNS",
+        "to": "schema:SettingModel-haljson"
+      },
+      {
+        "from": "operation:patch:/v1/settings/{settingId}",
+        "kind": "ACCEPTS",
+        "to": "schema:JsonPatch"
+      },
+      {
+        "from": "operation:patch:/v1/settings/{settingId}",
+        "kind": "RETURNS",
+        "to": "schema:SettingModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/settings/{settingKeyOrId}/value",
+        "kind": "RETURNS",
+        "to": "schema:SettingValueModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/settings/{settingKeyOrId}/value",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateSettingValueModel"
+      },
+      {
+        "from": "operation:put:/v1/settings/{settingKeyOrId}/value",
+        "kind": "RETURNS",
+        "to": "schema:SettingValueModel-haljson"
+      },
+      {
+        "from": "operation:patch:/v1/settings/{settingKeyOrId}/value",
+        "kind": "ACCEPTS",
+        "to": "schema:JsonPatch"
+      },
+      {
+        "from": "operation:patch:/v1/settings/{settingKeyOrId}/value",
+        "kind": "RETURNS",
+        "to": "schema:SettingValueModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/tags/{tagId}",
+        "kind": "RETURNS",
+        "to": "schema:TagModel-haljson"
+      },
+      {
+        "from": "operation:put:/v1/tags/{tagId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTagModel"
+      },
+      {
+        "from": "operation:put:/v1/tags/{tagId}",
+        "kind": "RETURNS",
+        "to": "schema:TagModel-haljson"
+      },
+      {
+        "from": "operation:get:/v1/tags/{tagId}/settings",
+        "kind": "RETURNS",
+        "to": "schema:SettingModel-haljson"
+      },
+      {
+        "from": "schema:AuditLogItemModel",
+        "kind": "REFERENCES",
+        "to": "schema:AuditLogType"
+      },
+      {
+        "from": "schema:CodeReferenceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:FlagReference"
+      },
+      {
+        "from": "schema:ConfigModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:ConfigSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationLinkModel"
+      },
+      {
+        "from": "schema:ConfigSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutPercentageItemModel"
+      },
+      {
+        "from": "schema:ConfigSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleModel"
+      },
+      {
+        "from": "schema:ConfigSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:SettingDataModel"
+      },
+      {
+        "from": "schema:ConfigSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:SettingTagModel"
+      },
+      {
+        "from": "schema:ConfigSettingValuesModel",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigModel"
+      },
+      {
+        "from": "schema:ConfigSettingValuesModel",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigSettingValueModel"
+      },
+      {
+        "from": "schema:ConfigSettingValuesModel",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentModel"
+      },
+      {
+        "from": "schema:CreateOrUpdateEnvironmentAccessModel",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessType"
+      },
+      {
+        "from": "schema:CreatePermissionGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AccessType"
+      },
+      {
+        "from": "schema:CreatePermissionGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateEnvironmentAccessModel"
+      },
+      {
+        "from": "schema:CreatePermissionGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessType"
+      },
+      {
+        "from": "schema:CreateSegmentModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleComparator"
+      },
+      {
+        "from": "schema:CreateSettingInitialValues",
+        "kind": "REFERENCES",
+        "to": "schema:InitialValue"
+      },
+      {
+        "from": "schema:CreateSettingInitialValues",
+        "kind": "REFERENCES",
+        "to": "schema:SettingType"
+      },
+      {
+        "from": "schema:EnvironmentAccessModel",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessType"
+      },
+      {
+        "from": "schema:EnvironmentModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:FlagReference",
+        "kind": "REFERENCES",
+        "to": "schema:ReferenceLines"
+      },
+      {
+        "from": "schema:IntegrationLinkDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigModel"
+      },
+      {
+        "from": "schema:IntegrationLinkDetail",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentModel"
+      },
+      {
+        "from": "schema:IntegrationLinkDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:IntegrationLinkDetail",
+        "kind": "REFERENCES",
+        "to": "schema:SettingDataModel"
+      },
+      {
+        "from": "schema:IntegrationLinkDetailsModel",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationLinkDetail"
+      },
+      {
+        "from": "schema:IntegrationLinkModel",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationLinkType"
+      },
+      {
+        "from": "schema:JsonNode",
+        "kind": "REFERENCES",
+        "to": "schema:JsonNodeOptions"
+      },
+      {
+        "from": "schema:JsonPatch",
+        "kind": "REFERENCES",
+        "to": "schema:PatchOperation"
+      },
+      {
+        "from": "schema:JsonPointer",
+        "kind": "REFERENCES",
+        "to": "schema:JsonPointerKind"
+      },
+      {
+        "from": "schema:JsonPointer",
+        "kind": "REFERENCES",
+        "to": "schema:PointerSegment"
+      },
+      {
+        "from": "schema:PatchOperation",
+        "kind": "REFERENCES",
+        "to": "schema:JsonNode"
+      },
+      {
+        "from": "schema:PatchOperation",
+        "kind": "REFERENCES",
+        "to": "schema:JsonPointer"
+      },
+      {
+        "from": "schema:PatchOperation",
+        "kind": "REFERENCES",
+        "to": "schema:OperationType"
+      },
+      {
+        "from": "schema:PermissionGroupModel",
+        "kind": "REFERENCES",
+        "to": "schema:AccessType"
+      },
+      {
+        "from": "schema:PermissionGroupModel",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessModel"
+      },
+      {
+        "from": "schema:PermissionGroupModel",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessType"
+      },
+      {
+        "from": "schema:PermissionGroupModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:PermissionGroupModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:AccessType"
+      },
+      {
+        "from": "schema:PermissionGroupModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessModel"
+      },
+      {
+        "from": "schema:PermissionGroupModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessType"
+      },
+      {
+        "from": "schema:ProductModel",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationModel"
+      },
+      {
+        "from": "schema:ReferenceLines",
+        "kind": "REFERENCES",
+        "to": "schema:ReferenceLine"
+      },
+      {
+        "from": "schema:RolloutRuleModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleComparator"
+      },
+      {
+        "from": "schema:RolloutRuleModel",
+        "kind": "REFERENCES",
+        "to": "schema:SegmentComparator"
+      },
+      {
+        "from": "schema:SegmentListModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:SegmentModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:SegmentModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleComparator"
+      },
+      {
+        "from": "schema:SegmentModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleComparator"
+      },
+      {
+        "from": "schema:SettingDataModel",
+        "kind": "REFERENCES",
+        "to": "schema:SettingType"
+      },
+      {
+        "from": "schema:SettingModel",
+        "kind": "REFERENCES",
+        "to": "schema:SettingType"
+      },
+      {
+        "from": "schema:SettingModel",
+        "kind": "REFERENCES",
+        "to": "schema:TagModel"
+      },
+      {
+        "from": "schema:SettingModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:SettingType"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigModel"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentModel"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationLinkModel"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutPercentageItemModel"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleModel"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:SettingDataModel"
+      },
+      {
+        "from": "schema:SettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:SettingTagModel"
+      },
+      {
+        "from": "schema:SettingValueModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationLinkType"
+      },
+      {
+        "from": "schema:SettingValueModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutPercentageItemModel"
+      },
+      {
+        "from": "schema:SettingValueModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleModel"
+      },
+      {
+        "from": "schema:SettingValueModel-haljson",
+        "kind": "REFERENCES",
+        "to": "schema:SettingType"
+      },
+      {
+        "from": "schema:TagModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProductModel"
+      },
+      {
+        "from": "schema:UpdatePermissionGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AccessType"
+      },
+      {
+        "from": "schema:UpdatePermissionGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateEnvironmentAccessModel"
+      },
+      {
+        "from": "schema:UpdatePermissionGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentAccessType"
+      },
+      {
+        "from": "schema:UpdateSegmentModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleComparator"
+      },
+      {
+        "from": "schema:UpdateSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutPercentageItemModel"
+      },
+      {
+        "from": "schema:UpdateSettingValueModel",
+        "kind": "REFERENCES",
+        "to": "schema:RolloutRuleModel"
       }
     ],
     "nodes": [
@@ -328,12 +1048,42 @@
         "name": "post /v1/code-references",
         "path": "/v1/code-references",
         "pointer": "#/paths/~1v1~1code-references/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CodeReferenceRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Code References"
+        ]
       },
       {
         "deprecated": false,
@@ -343,192 +1093,598 @@
         "name": "post /v1/code-references/delete-reports",
         "path": "/v1/code-references/delete-reports",
         "pointer": "#/paths/~1v1~1code-references~1delete-reports/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "DeleteRepositoryReportsRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Code References"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/configs/{configId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-config",
-        "path": "/v1/configs/{configId}",
-        "pointer": "#/paths/~1v1~1configs~1{configId}/delete",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Delete Config"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint returns the metadata of a Config identified by the `configId`.",
         "id": "operation:get:/v1/configs/{configId}",
         "kind": "operation",
         "method": "get",
         "name": "get-config",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}",
         "pointer": "#/paths/~1v1~1configs~1{configId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Config"
+        "summary": "Get Config",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates a Config identified by the `configId` parameter.",
         "id": "operation:put:/v1/configs/{configId}",
         "kind": "operation",
         "method": "put",
         "name": "update-config",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}",
         "pointer": "#/paths/~1v1~1configs~1{configId}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateConfigRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Config"
+        "summary": "Update Config",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint removes a Config identified by the `configId` parameter.",
+        "id": "operation:delete:/v1/configs/{configId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-config",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/configs/{configId}",
+        "pointer": "#/paths/~1v1~1configs~1{configId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Config",
+        "tags": [
+          "Configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint returns the list of Feature Flags and Settings that were deleted from the given Config.",
         "id": "operation:get:/v1/configs/{configId}/deleted-settings",
         "kind": "operation",
         "method": "get",
         "name": "get-deleted-settings",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}/deleted-settings",
         "pointer": "#/paths/~1v1~1configs~1{configId}~1deleted-settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Deleted Settings"
+        "summary": "List Deleted Settings",
+        "tags": [
+          "Audit logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the SDK Key for your Config in a specified Environment.",
         "id": "operation:get:/v1/configs/{configId}/environments/{environmentId}",
         "kind": "operation",
         "method": "get",
         "name": "get-sdk-keys",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}/environments/{environmentId}",
         "pointer": "#/paths/~1v1~1configs~1{configId}~1environments~1{environmentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SdkKeysModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get SDK Key"
+        "summary": "Get SDK Key",
+        "tags": [
+          "SDK Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the value of a specified Config's Feature Flags or Settings identified by the `configId` parameter in a specified Environment identified…",
         "id": "operation:get:/v1/configs/{configId}/environments/{environmentId}/values",
         "kind": "operation",
         "method": "get",
         "name": "get-setting-values",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}/environments/{environmentId}/values",
         "pointer": "#/paths/~1v1~1configs~1{configId}~1environments~1{environmentId}~1values/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigSettingValuesModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get values"
+        "summary": "Get values",
+        "tags": [
+          "Feature Flag & Setting values"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Feature Flags and Settings defined in a specified Config, identified by the `configId` parameter.",
         "id": "operation:get:/v1/configs/{configId}/settings",
         "kind": "operation",
         "method": "get",
         "name": "get-settings",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}/settings",
         "pointer": "#/paths/~1v1~1configs~1{configId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Flags"
+        "summary": "List Flags",
+        "tags": [
+          "Feature Flags & Settings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Feature Flag or Setting in a specified Config identified by the `configId` parameter.",
         "id": "operation:post:/v1/configs/{configId}/settings",
         "kind": "operation",
         "method": "post",
         "name": "create-setting",
+        "parameters": [
+          {
+            "description": "The identifier of the Config.",
+            "in": "path",
+            "name": "configId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/configs/{configId}/settings",
         "pointer": "#/paths/~1v1~1configs~1{configId}~1settings/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreateSettingInitialValues"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SettingModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Flag"
+        "summary": "Create Flag",
+        "tags": [
+          "Feature Flags & Settings"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/environments/{environmentId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-environment",
-        "path": "/v1/environments/{environmentId}",
-        "pointer": "#/paths/~1v1~1environments~1{environmentId}/delete",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Delete Environment"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint returns the metadata of an Environment identified by the `environmentId`.",
         "id": "operation:get:/v1/environments/{environmentId}",
         "kind": "operation",
         "method": "get",
         "name": "get-environment",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/environments/{environmentId}",
         "pointer": "#/paths/~1v1~1environments~1{environmentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnvironmentModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Environment"
+        "summary": "Get Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates an Environment identified by the `environmentId` parameter.",
         "id": "operation:put:/v1/environments/{environmentId}",
         "kind": "operation",
         "method": "put",
         "name": "update-environment",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/environments/{environmentId}",
         "pointer": "#/paths/~1v1~1environments~1{environmentId}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateEnvironmentModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnvironmentModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Environment"
+        "summary": "Update Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
+        "description": "This endpoint removes an Environment identified by the `environmentId` parameter.",
+        "id": "operation:delete:/v1/environments/{environmentId}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete-integration-link",
-        "path": "/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
-        "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1integrationLinks~1{integrationLinkType}~1{key}/delete",
+        "name": "delete-environment",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/environments/{environmentId}",
+        "pointer": "#/paths/~1v1~1environments~1{environmentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Delete Integration link"
+        "summary": "Delete Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
@@ -536,59 +1692,339 @@
         "kind": "operation",
         "method": "post",
         "name": "add-or-update-integration-link",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The integration link's type.",
+            "in": "path",
+            "name": "integrationLinkType",
+            "required": true,
+            "type": "IntegrationLinkType"
+          },
+          {
+            "description": "The key of the integration link.",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
         "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1integrationLinks~1{integrationLinkType}~1{key}/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AddOrUpdateIntegrationLinkModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationLinkModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Add or update Integration link"
+        "summary": "Add or update Integration link",
+        "tags": [
+          "Integration links"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-integration-link",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The integration's type.",
+            "in": "path",
+            "name": "integrationLinkType",
+            "required": true,
+            "type": "IntegrationLinkType"
+          },
+          {
+            "description": "The key of the integration link.",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}",
+        "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1integrationLinks~1{integrationLinkType}~1{key}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteIntegrationLinkModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Integration link",
+        "tags": [
+          "Integration links"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint returns the value of a Feature Flag or Setting in a specified Environment identified by the `environmentId` parameter.",
         "id": "operation:get:/v1/environments/{environmentId}/settings/{settingId}/value",
         "kind": "operation",
         "method": "get",
         "name": "get-setting-value",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v1/environments/{environmentId}/settings/{settingId}/value",
         "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1value/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingValueModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get value"
+        "summary": "Get value",
+        "tags": [
+          "Feature Flag & Setting values"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/v1/environments/{environmentId}/settings/{settingId}/value",
-        "kind": "operation",
-        "method": "patch",
-        "name": "update-setting-value",
-        "path": "/v1/environments/{environmentId}/settings/{settingId}/value",
-        "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1value/patch",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Update value"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint replaces the whole value of a Feature Flag or Setting in a specified Environment.",
         "id": "operation:put:/v1/environments/{environmentId}/settings/{settingId}/value",
         "kind": "operation",
         "method": "put",
         "name": "replace-setting-value",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/environments/{environmentId}/settings/{settingId}/value",
         "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1value/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateSettingValueModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingValueModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Replace value"
+        "summary": "Replace value",
+        "tags": [
+          "Feature Flag & Setting values"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint updates the value of a Feature Flag or Setting with a collection of [JSON Patch](http://jsonpatch.com) operations in a specified Environment.",
+        "id": "operation:patch:/v1/environments/{environmentId}/settings/{settingId}/value",
+        "kind": "operation",
+        "method": "patch",
+        "name": "update-setting-value",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/environments/{environmentId}/settings/{settingId}/value",
+        "pointer": "#/paths/~1v1~1environments~1{environmentId}~1settings~1{settingId}~1value/patch",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "JsonPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingValueModel-haljson"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Update value",
+        "tags": [
+          "Feature Flag & Setting values"
+        ]
       },
       {
         "deprecated": false,
@@ -596,14 +2032,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get-integration-link-details",
+        "parameters": [
+          {
+            "description": "The integration link's type.",
+            "in": "path",
+            "name": "integrationLinkType",
+            "required": true,
+            "type": "IntegrationLinkType"
+          },
+          {
+            "description": "The key of the integration link.",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/integrationLink/{integrationLinkType}/{key}/details",
         "pointer": "#/paths/~1v1~1integrationLink~1{integrationLinkType}~1{key}~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationLinkDetailsModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Integration link"
+        "summary": "Get Integration link",
+        "tags": [
+          "Integration links"
+        ]
       },
       {
         "deprecated": false,
@@ -613,12 +2087,36 @@
         "name": "post /v1/jira/Connect",
         "path": "/v1/jira/Connect",
         "pointer": "#/paths/~1v1~1jira~1Connect/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "ConnectRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Integration links"
+        ]
       },
       {
         "deprecated": false,
@@ -626,14 +2124,68 @@
         "kind": "operation",
         "method": "post",
         "name": "jira-add-or-update-integration-link",
+        "parameters": [
+          {
+            "description": "The identifier of the Environment.",
+            "in": "path",
+            "name": "environmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The id of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The key of the integration link.",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}",
         "pointer": "#/paths/~1v1~1jira~1environments~1{environmentId}~1settings~1{settingId}~1integrationLinks~1{key}/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AddOrUpdateJiraIntegrationLinkModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationLinkModel"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Integration links"
+        ]
       },
       {
         "deprecated": false,
@@ -643,997 +2195,2596 @@
         "name": "get-me",
         "path": "/v1/me",
         "pointer": "#/paths/~1v1~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MeModel"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get authenticated user details"
+        "summary": "Get authenticated user details",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Organizations that belongs to the user.",
         "id": "operation:get:/v1/organizations",
         "kind": "operation",
         "method": "get",
         "name": "get-organizations",
         "path": "/v1/organizations",
         "pointer": "#/paths/~1v1~1organizations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrganizationModel-haljson[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Organizations"
+        "summary": "List Organizations",
+        "tags": [
+          "Organizations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environmen…",
         "id": "operation:get:/v1/organizations/{organizationId}/auditlogs",
         "kind": "operation",
         "method": "get",
         "name": "get-organization-auditlogs",
+        "parameters": [
+          {
+            "description": "The identifier of the Organization.",
+            "in": "path",
+            "name": "organizationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Product.",
+            "in": "query",
+            "name": "productId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Config.",
+            "in": "query",
+            "name": "configId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Environment.",
+            "in": "query",
+            "name": "environmentId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Filter Audit logs by Audit log type.",
+            "in": "query",
+            "name": "auditLogType",
+            "required": false,
+            "type": "AuditLogType"
+          },
+          {
+            "description": "Filter Audit logs by starting UTC date.",
+            "in": "query",
+            "name": "fromUtcDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter Audit logs by ending UTC date.",
+            "in": "query",
+            "name": "toUtcDateTime",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/v1/organizations/{organizationId}/auditlogs",
         "pointer": "#/paths/~1v1~1organizations~1{organizationId}~1auditlogs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AuditLogItemModel[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Audit log items for Organization"
+        "summary": "List Audit log items for Organization",
+        "tags": [
+          "Audit logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of Members that belongs to the given Organization, identified by the `organizationId` parameter.",
         "id": "operation:get:/v1/organizations/{organizationId}/members",
         "kind": "operation",
         "method": "get",
         "name": "get-organization-members",
+        "parameters": [
+          {
+            "description": "The identifier of the Organization.",
+            "in": "path",
+            "name": "organizationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/organizations/{organizationId}/members",
         "pointer": "#/paths/~1v1~1organizations~1{organizationId}~1members/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserModel[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Organization Members"
+        "summary": "List Organization Members",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/organizations/{organizationId}/members/{userId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-organization-member",
-        "path": "/v1/organizations/{organizationId}/members/{userId}",
-        "pointer": "#/paths/~1v1~1organizations~1{organizationId}~1members~1{userId}/delete",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Delete Member from Organization"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint adds a Member identified by the `userId` to one or more Permission Groups.",
         "id": "operation:post:/v1/organizations/{organizationId}/members/{userId}",
         "kind": "operation",
         "method": "post",
         "name": "add-member-to-group",
+        "parameters": [
+          {
+            "description": "The identifier of the Organization.",
+            "in": "path",
+            "name": "organizationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Member.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/organizations/{organizationId}/members/{userId}",
         "pointer": "#/paths/~1v1~1organizations~1{organizationId}~1members~1{userId}/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "AddUserToGroupRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Member Permissions"
+        "summary": "Update Member Permissions",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint removes a Member identified by the `userId` from the given Organization identified by the `organizationId` parameter.",
+        "id": "operation:delete:/v1/organizations/{organizationId}/members/{userId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-organization-member",
+        "parameters": [
+          {
+            "description": "The identifier of the Organization.",
+            "in": "path",
+            "name": "organizationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Member.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/organizations/{organizationId}/members/{userId}",
+        "pointer": "#/paths/~1v1~1organizations~1{organizationId}~1members~1{userId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Member from Organization",
+        "tags": [
+          "Members"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint creates a new Product in a specified Organization identified by the `organizationId` parameter, which can be obtained from the [List Organization…",
         "id": "operation:post:/v1/organizations/{organizationId}/products",
         "kind": "operation",
         "method": "post",
         "name": "create-product",
+        "parameters": [
+          {
+            "description": "The identifier of the Organization.",
+            "in": "path",
+            "name": "organizationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/organizations/{organizationId}/products",
         "pointer": "#/paths/~1v1~1organizations~1{organizationId}~1products/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreateProductRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ProductModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Product"
+        "summary": "Create Product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/permissions/{permissionGroupId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-permission-group",
-        "path": "/v1/permissions/{permissionGroupId}",
-        "pointer": "#/paths/~1v1~1permissions~1{permissionGroupId}/delete",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Delete Permission Group"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint returns the metadata of a Permission Group identified by the `permissionGroupId`.",
         "id": "operation:get:/v1/permissions/{permissionGroupId}",
         "kind": "operation",
         "method": "get",
         "name": "get-permission-group",
+        "parameters": [
+          {
+            "description": "The identifier of the Permission Group.",
+            "in": "path",
+            "name": "permissionGroupId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/permissions/{permissionGroupId}",
         "pointer": "#/paths/~1v1~1permissions~1{permissionGroupId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PermissionGroupModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Permission Group"
+        "summary": "Get Permission Group",
+        "tags": [
+          "Permission Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates a Permission Group identified by the `permissionGroupId` parameter.",
         "id": "operation:put:/v1/permissions/{permissionGroupId}",
         "kind": "operation",
         "method": "put",
         "name": "update-permission-group",
+        "parameters": [
+          {
+            "description": "The identifier of the Permission Group.",
+            "in": "path",
+            "name": "permissionGroupId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/permissions/{permissionGroupId}",
         "pointer": "#/paths/~1v1~1permissions~1{permissionGroupId}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdatePermissionGroupRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PermissionGroupModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Permission Group"
+        "summary": "Update Permission Group",
+        "tags": [
+          "Permission Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint removes a Permission Group identified by the `permissionGroupId` parameter.",
+        "id": "operation:delete:/v1/permissions/{permissionGroupId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-permission-group",
+        "parameters": [
+          {
+            "description": "The identifier of the Permission Group.",
+            "in": "path",
+            "name": "permissionGroupId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/v1/permissions/{permissionGroupId}",
+        "pointer": "#/paths/~1v1~1permissions~1{permissionGroupId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Permission Group",
+        "tags": [
+          "Permission Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint returns the list of the Products that belongs to the user.",
         "id": "operation:get:/v1/products",
         "kind": "operation",
         "method": "get",
         "name": "get-products",
         "path": "/v1/products",
         "pointer": "#/paths/~1v1~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductModel-haljson[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Products"
+        "summary": "List Products",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/products/{productId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-product",
-        "path": "/v1/products/{productId}",
-        "pointer": "#/paths/~1v1~1products~1{productId}/delete",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Delete Product"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint returns the metadata of a Product identified by the `productId`.",
         "id": "operation:get:/v1/products/{productId}",
         "kind": "operation",
         "method": "get",
         "name": "get-product",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}",
         "pointer": "#/paths/~1v1~1products~1{productId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Product"
+        "summary": "Get Product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates a Product identified by the `productId` parameter.",
         "id": "operation:put:/v1/products/{productId}",
         "kind": "operation",
         "method": "put",
         "name": "update-product",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}",
         "pointer": "#/paths/~1v1~1products~1{productId}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateProductRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Product"
+        "summary": "Update Product",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint removes a Product identified by the `productId` parameter.",
+        "id": "operation:delete:/v1/products/{productId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-product",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/products/{productId}",
+        "pointer": "#/paths/~1v1~1products~1{productId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Product",
+        "tags": [
+          "Products"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.",
         "id": "operation:get:/v1/products/{productId}/auditlogs",
         "kind": "operation",
         "method": "get",
         "name": "get-auditlogs",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Config.",
+            "in": "query",
+            "name": "configId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Environment.",
+            "in": "query",
+            "name": "environmentId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Filter Audit logs by Audit log type.",
+            "in": "query",
+            "name": "auditLogType",
+            "required": false,
+            "type": "AuditLogType"
+          },
+          {
+            "description": "Filter Audit logs by starting UTC date.",
+            "in": "query",
+            "name": "fromUtcDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter Audit logs by ending UTC date.",
+            "in": "query",
+            "name": "toUtcDateTime",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/v1/products/{productId}/auditlogs",
         "pointer": "#/paths/~1v1~1products~1{productId}~1auditlogs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AuditLogItemModel[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Audit log items for Product"
+        "summary": "List Audit log items for Product",
+        "tags": [
+          "Audit logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Configs that belongs to the given Product identified by the `productId` parameter, which can be obtained from the [List P…",
         "id": "operation:get:/v1/products/{productId}/configs",
         "kind": "operation",
         "method": "get",
         "name": "get-configs",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/configs",
         "pointer": "#/paths/~1v1~1products~1{productId}~1configs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Configs"
+        "summary": "List Configs",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Config in a specified Product identified by the `productId` parameter, which can be obtained from the [List Products](#operation/ge…",
         "id": "operation:post:/v1/products/{productId}/configs",
         "kind": "operation",
         "method": "post",
         "name": "create-config",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/configs",
         "pointer": "#/paths/~1v1~1products~1{productId}~1configs/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreateConfigRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ConfigModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Config"
+        "summary": "Create Config",
+        "tags": [
+          "Configs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Environments that belongs to the given Product identified by the `productId` parameter, which can be obtained from the [L…",
         "id": "operation:get:/v1/products/{productId}/environments",
         "kind": "operation",
         "method": "get",
         "name": "get-environments",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/environments",
         "pointer": "#/paths/~1v1~1products~1{productId}~1environments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EnvironmentModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Environments"
+        "summary": "List Environments",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Environment in a specified Product identified by the `productId` parameter, which can be obtained from the [List Products](#operati…",
         "id": "operation:post:/v1/products/{productId}/environments",
         "kind": "operation",
         "method": "post",
         "name": "create-environment",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/environments",
         "pointer": "#/paths/~1v1~1products~1{productId}~1environments/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreateEnvironmentModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "EnvironmentModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Environment"
+        "summary": "Create Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of Members that belongs to the given Product, identified by the `productId` parameter.",
         "id": "operation:get:/v1/products/{productId}/members",
         "kind": "operation",
         "method": "get",
         "name": "get-product-members",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/members",
         "pointer": "#/paths/~1v1~1products~1{productId}~1members/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MemberModel[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Product Members"
+        "summary": "List Product Members",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint invites a Member into the given Product identified by the `productId` parameter.",
         "id": "operation:post:/v1/products/{productId}/members/invite",
         "kind": "operation",
         "method": "post",
         "name": "invite-member",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/members/invite",
         "pointer": "#/paths/~1v1~1products~1{productId}~1members~1invite/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "InviteMembersRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Invite Member"
+        "summary": "Invite Member",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint removes a Member identified by the `userId` from the given Product identified by the `productId` parameter.",
         "id": "operation:delete:/v1/products/{productId}/members/{userId}",
         "kind": "operation",
         "method": "delete",
         "name": "delete-product-member",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The identifier of the Member.",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/products/{productId}/members/{userId}",
         "pointer": "#/paths/~1v1~1products~1{productId}~1members~1{userId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Delete Member from Product"
+        "summary": "Delete Member from Product",
+        "tags": [
+          "Members"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Permission Groups that belongs to the given Product identified by the `productId` parameter, which can be obtained from t…",
         "id": "operation:get:/v1/products/{productId}/permissions",
         "kind": "operation",
         "method": "get",
         "name": "get-permission-groups",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/permissions",
         "pointer": "#/paths/~1v1~1products~1{productId}~1permissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PermissionGroupModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Permission Groups"
+        "summary": "List Permission Groups",
+        "tags": [
+          "Permission Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Permission Group in a specified Product identified by the `productId` parameter, which can be obtained from the [List Products](#op…",
         "id": "operation:post:/v1/products/{productId}/permissions",
         "kind": "operation",
         "method": "post",
         "name": "create-permission-group",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/permissions",
         "pointer": "#/paths/~1v1~1products~1{productId}~1permissions/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreatePermissionGroupRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "PermissionGroupModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Permission Group"
+        "summary": "Create Permission Group",
+        "tags": [
+          "Permission Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Segments that belongs to the given Product identified by the `productId` parameter, which can be obtained from the [List…",
         "id": "operation:get:/v1/products/{productId}/segments",
         "kind": "operation",
         "method": "get",
         "name": "get-segments",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/segments",
         "pointer": "#/paths/~1v1~1products~1{productId}~1segments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentListModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Segments"
+        "summary": "List Segments",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Segment in a specified Product identified by the `productId` parameter, which can be obtained from the [List Products](#operation/g…",
         "id": "operation:post:/v1/products/{productId}/segments",
         "kind": "operation",
         "method": "post",
         "name": "create-segment",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/segments",
         "pointer": "#/paths/~1v1~1products~1{productId}~1segments/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreateSegmentModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SegmentModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Segment"
+        "summary": "Create Segment",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the list of the Tags in a specified Product, identified by the `productId` parameter.",
         "id": "operation:get:/v1/products/{productId}/tags",
         "kind": "operation",
         "method": "get",
         "name": "get-tags",
+        "parameters": [
+          {
+            "description": "The identifier of the Product.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/tags",
         "pointer": "#/paths/~1v1~1products~1{productId}~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagModel-haljson[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Tags"
+        "summary": "List Tags",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint creates a new Tag in a specified Product identified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-p…",
         "id": "operation:post:/v1/products/{productId}/tags",
         "kind": "operation",
         "method": "post",
         "name": "create-tag",
+        "parameters": [
+          {
+            "description": "The identifier of the Organization.",
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/products/{productId}/tags",
         "pointer": "#/paths/~1v1~1products~1{productId}~1tags/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CreateTagModel"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "TagModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Create Tag"
+        "summary": "Create Tag",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/segments/{segmentId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-segment",
-        "path": "/v1/segments/{segmentId}",
-        "pointer": "#/paths/~1v1~1segments~1{segmentId}/delete",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Delete Segment"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint returns the metadata of a Segment identified by the `segmentId`.",
         "id": "operation:get:/v1/segments/{segmentId}",
         "kind": "operation",
         "method": "get",
         "name": "get-segment",
+        "parameters": [
+          {
+            "description": "The identifier of the Segment.",
+            "in": "path",
+            "name": "segmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/segments/{segmentId}",
         "pointer": "#/paths/~1v1~1segments~1{segmentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Segment"
+        "summary": "Get Segment",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates a Segment identified by the `segmentId` parameter.",
         "id": "operation:put:/v1/segments/{segmentId}",
         "kind": "operation",
         "method": "put",
         "name": "update-segment",
+        "parameters": [
+          {
+            "description": "The identifier of the Segment.",
+            "in": "path",
+            "name": "segmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v1/segments/{segmentId}",
         "pointer": "#/paths/~1v1~1segments~1{segmentId}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateSegmentModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SegmentModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Segment"
+        "summary": "Update Segment",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/settings/{settingId}",
+        "description": "This endpoint removes a Segment identified by the `segmentId` parameter.",
+        "id": "operation:delete:/v1/segments/{segmentId}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete-setting",
-        "path": "/v1/settings/{settingId}",
-        "pointer": "#/paths/~1v1~1settings~1{settingId}/delete",
+        "name": "delete-segment",
+        "parameters": [
+          {
+            "description": "The identifier of the Segment.",
+            "in": "path",
+            "name": "segmentId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/v1/segments/{segmentId}",
+        "pointer": "#/paths/~1v1~1segments~1{segmentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Delete Flag"
+        "summary": "Delete Segment",
+        "tags": [
+          "Segments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the metadata attributes of a Feature Flag or Setting identified by the `settingId` parameter.",
         "id": "operation:get:/v1/settings/{settingId}",
         "kind": "operation",
         "method": "get",
         "name": "get-setting",
+        "parameters": [
+          {
+            "description": "The identifier of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v1/settings/{settingId}",
         "pointer": "#/paths/~1v1~1settings~1{settingId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Flag"
+        "summary": "Get Flag",
+        "tags": [
+          "Feature Flags & Settings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint removes a Feature Flag or Setting from a specified Config, identified by the `configId` parameter.",
+        "id": "operation:delete:/v1/settings/{settingId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-setting",
+        "parameters": [
+          {
+            "description": "The identifier of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/v1/settings/{settingId}",
+        "pointer": "#/paths/~1v1~1settings~1{settingId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Flag",
+        "tags": [
+          "Feature Flags & Settings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint updates the metadata of a Feature Flag or Setting with a collection of [JSON Patch](http://jsonpatch.com) operations in a specified Config.",
         "id": "operation:patch:/v1/settings/{settingId}",
         "kind": "operation",
         "method": "patch",
         "name": "update-setting",
+        "parameters": [
+          {
+            "description": "The identifier of the Setting.",
+            "in": "path",
+            "name": "settingId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v1/settings/{settingId}",
         "pointer": "#/paths/~1v1~1settings~1{settingId}/patch",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "JsonPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Flag"
+        "summary": "Update Flag",
+        "tags": [
+          "Feature Flags & Settings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the value of a Feature Flag or Setting in a specified Environment identified by the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"ht…",
         "id": "operation:get:/v1/settings/{settingKeyOrId}/value",
         "kind": "operation",
         "method": "get",
         "name": "get-setting-value-by-sdkkey",
+        "parameters": [
+          {
+            "description": "The key or id of the Setting.",
+            "in": "path",
+            "name": "settingKeyOrId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ConfigCat SDK Key.",
+            "in": "header",
+            "name": "X-CONFIGCAT-SDKKEY",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/settings/{settingKeyOrId}/value",
         "pointer": "#/paths/~1v1~1settings~1{settingKeyOrId}~1value/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingValueModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get value"
+        "summary": "Get value",
+        "tags": [
+          "Feature Flag & Setting values using SDK Key"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/v1/settings/{settingKeyOrId}/value",
-        "kind": "operation",
-        "method": "patch",
-        "name": "update-setting-value-by-sdkkey",
-        "path": "/v1/settings/{settingKeyOrId}/value",
-        "pointer": "#/paths/~1v1~1settings~1{settingKeyOrId}~1value/patch",
-        "security": [
-          {
-            "Basic": []
-          }
-        ],
-        "summary": "Update value"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint replaces the value of a Feature Flag or Setting in a specified Environment identified by the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"h…",
         "id": "operation:put:/v1/settings/{settingKeyOrId}/value",
         "kind": "operation",
         "method": "put",
         "name": "replace-setting-value-by-sdkkey",
+        "parameters": [
+          {
+            "description": "The key or id of the Setting.",
+            "in": "path",
+            "name": "settingKeyOrId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The ConfigCat SDK Key.",
+            "in": "header",
+            "name": "X-CONFIGCAT-SDKKEY",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/settings/{settingKeyOrId}/value",
         "pointer": "#/paths/~1v1~1settings~1{settingKeyOrId}~1value/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateSettingValueModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingValueModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Replace value"
+        "summary": "Replace value",
+        "tags": [
+          "Feature Flag & Setting values using SDK Key"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/tags/{tagId}",
+        "description": "This endpoint updates the value of a Feature Flag or Setting with a collection of [JSON Patch](http://jsonpatch.com) operations in a specified Environment iden…",
+        "id": "operation:patch:/v1/settings/{settingKeyOrId}/value",
         "kind": "operation",
-        "method": "delete",
-        "name": "delete-tag",
-        "path": "/v1/tags/{tagId}",
-        "pointer": "#/paths/~1v1~1tags~1{tagId}/delete",
+        "method": "patch",
+        "name": "update-setting-value-by-sdkkey",
+        "parameters": [
+          {
+            "description": "The key or id of the Setting.",
+            "in": "path",
+            "name": "settingKeyOrId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The ConfigCat SDK Key.",
+            "in": "header",
+            "name": "X-CONFIGCAT-SDKKEY",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/settings/{settingKeyOrId}/value",
+        "pointer": "#/paths/~1v1~1settings~1{settingKeyOrId}~1value/patch",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "JsonPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingValueModel-haljson"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Delete Tag"
+        "summary": "Update value",
+        "tags": [
+          "Feature Flag & Setting values using SDK Key"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the metadata of a Tag identified by the `tagId`.",
         "id": "operation:get:/v1/tags/{tagId}",
         "kind": "operation",
         "method": "get",
         "name": "get-tag",
+        "parameters": [
+          {
+            "description": "The identifier of the Tag.",
+            "in": "path",
+            "name": "tagId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/tags/{tagId}",
         "pointer": "#/paths/~1v1~1tags~1{tagId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Get Tag"
+        "summary": "Get Tag",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint updates a Tag identified by the `tagId` parameter.",
         "id": "operation:put:/v1/tags/{tagId}",
         "kind": "operation",
         "method": "put",
         "name": "update-tag",
+        "parameters": [
+          {
+            "description": "The identifier of the Tag.",
+            "in": "path",
+            "name": "tagId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/tags/{tagId}",
         "pointer": "#/paths/~1v1~1tags~1{tagId}/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "UpdateTagModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagModel-haljson"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "Update Tag"
+        "summary": "Update Tag",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint deletes a Tag identified by the `tagId` parameter.",
+        "id": "operation:delete:/v1/tags/{tagId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-tag",
+        "parameters": [
+          {
+            "description": "The identifier of the Tag.",
+            "in": "path",
+            "name": "tagId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/v1/tags/{tagId}",
+        "pointer": "#/paths/~1v1~1tags~1{tagId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Basic": []
+          }
+        ],
+        "summary": "Delete Tag",
+        "tags": [
+          "Tags"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint returns the list of the Settings that has the specified Tag, identified by the `tagId` parameter.",
         "id": "operation:get:/v1/tags/{tagId}/settings",
         "kind": "operation",
         "method": "get",
         "name": "get-settings-by-tag",
+        "parameters": [
+          {
+            "description": "The identifier of the Tag.",
+            "in": "path",
+            "name": "tagId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/tags/{tagId}/settings",
         "pointer": "#/paths/~1v1~1tags~1{tagId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SettingModel-haljson[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Basic": []
           }
         ],
-        "summary": "List Settings by Tag"
+        "summary": "List Settings by Tag",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "id": "schema:AccessType",
         "kind": "schema",
-        "name": "AccessType"
+        "name": "AccessType",
+        "type": "string"
       },
       {
         "id": "schema:AddOrUpdateIntegrationLinkModel",
         "kind": "schema",
-        "name": "AddOrUpdateIntegrationLinkModel"
+        "name": "AddOrUpdateIntegrationLinkModel",
+        "type": "object"
       },
       {
         "id": "schema:AddOrUpdateJiraIntegrationLinkModel",
         "kind": "schema",
-        "name": "AddOrUpdateJiraIntegrationLinkModel"
+        "name": "AddOrUpdateJiraIntegrationLinkModel",
+        "type": "object"
       },
       {
         "id": "schema:AddUserToGroupRequest",
         "kind": "schema",
-        "name": "AddUserToGroupRequest"
+        "name": "AddUserToGroupRequest",
+        "type": "object"
       },
       {
         "id": "schema:AuditLogItemModel",
         "kind": "schema",
-        "name": "AuditLogItemModel"
+        "name": "AuditLogItemModel",
+        "type": "object"
       },
       {
         "id": "schema:AuditLogType",
         "kind": "schema",
-        "name": "AuditLogType"
+        "name": "AuditLogType",
+        "type": "string"
       },
       {
         "id": "schema:CodeReferenceRequest",
         "kind": "schema",
-        "name": "CodeReferenceRequest"
+        "name": "CodeReferenceRequest",
+        "type": "object"
       },
       {
         "id": "schema:ConfigModel",
         "kind": "schema",
-        "name": "ConfigModel"
+        "name": "ConfigModel",
+        "type": "object"
       },
       {
         "id": "schema:ConfigModel-haljson",
         "kind": "schema",
-        "name": "ConfigModel-haljson"
+        "name": "ConfigModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:ConfigSettingValueModel",
         "kind": "schema",
-        "name": "ConfigSettingValueModel"
+        "name": "ConfigSettingValueModel",
+        "type": "object"
       },
       {
         "id": "schema:ConfigSettingValuesModel",
         "kind": "schema",
-        "name": "ConfigSettingValuesModel"
+        "name": "ConfigSettingValuesModel",
+        "type": "object"
       },
       {
         "id": "schema:ConnectRequest",
         "kind": "schema",
-        "name": "ConnectRequest"
+        "name": "ConnectRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateConfigRequest",
         "kind": "schema",
-        "name": "CreateConfigRequest"
+        "name": "CreateConfigRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateEnvironmentModel",
         "kind": "schema",
-        "name": "CreateEnvironmentModel"
+        "name": "CreateEnvironmentModel",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrUpdateEnvironmentAccessModel",
         "kind": "schema",
-        "name": "CreateOrUpdateEnvironmentAccessModel"
+        "name": "CreateOrUpdateEnvironmentAccessModel",
+        "type": "object"
       },
       {
         "id": "schema:CreatePermissionGroupRequest",
         "kind": "schema",
-        "name": "CreatePermissionGroupRequest"
+        "name": "CreatePermissionGroupRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateProductRequest",
         "kind": "schema",
-        "name": "CreateProductRequest"
+        "name": "CreateProductRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateSegmentModel",
         "kind": "schema",
-        "name": "CreateSegmentModel"
+        "name": "CreateSegmentModel",
+        "type": "object"
       },
       {
         "id": "schema:CreateSettingInitialValues",
         "kind": "schema",
-        "name": "CreateSettingInitialValues"
+        "name": "CreateSettingInitialValues",
+        "type": "object"
       },
       {
         "id": "schema:CreateTagModel",
         "kind": "schema",
-        "name": "CreateTagModel"
+        "name": "CreateTagModel",
+        "type": "object"
       },
       {
         "id": "schema:DeleteIntegrationLinkModel",
         "kind": "schema",
-        "name": "DeleteIntegrationLinkModel"
+        "name": "DeleteIntegrationLinkModel",
+        "type": "object"
       },
       {
         "id": "schema:DeleteRepositoryReportsRequest",
         "kind": "schema",
-        "name": "DeleteRepositoryReportsRequest"
+        "name": "DeleteRepositoryReportsRequest",
+        "type": "object"
       },
       {
         "id": "schema:EnvironmentAccessModel",
         "kind": "schema",
-        "name": "EnvironmentAccessModel"
+        "name": "EnvironmentAccessModel",
+        "type": "object"
       },
       {
         "id": "schema:EnvironmentAccessType",
         "kind": "schema",
-        "name": "EnvironmentAccessType"
+        "name": "EnvironmentAccessType",
+        "type": "string"
       },
       {
         "id": "schema:EnvironmentModel",
         "kind": "schema",
-        "name": "EnvironmentModel"
+        "name": "EnvironmentModel",
+        "type": "object"
       },
       {
         "id": "schema:EnvironmentModel-haljson",
         "kind": "schema",
-        "name": "EnvironmentModel-haljson"
+        "name": "EnvironmentModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:FlagReference",
         "kind": "schema",
-        "name": "FlagReference"
+        "name": "FlagReference",
+        "type": "object"
       },
       {
         "id": "schema:InitialValue",
         "kind": "schema",
-        "name": "InitialValue"
+        "name": "InitialValue",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationLinkDetail",
         "kind": "schema",
-        "name": "IntegrationLinkDetail"
+        "name": "IntegrationLinkDetail",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationLinkDetailsModel",
         "kind": "schema",
-        "name": "IntegrationLinkDetailsModel"
+        "name": "IntegrationLinkDetailsModel",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationLinkModel",
         "kind": "schema",
-        "name": "IntegrationLinkModel"
+        "name": "IntegrationLinkModel",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationLinkType",
         "kind": "schema",
-        "name": "IntegrationLinkType"
+        "name": "IntegrationLinkType",
+        "type": "string"
       },
       {
         "id": "schema:InviteMembersRequest",
         "kind": "schema",
-        "name": "InviteMembersRequest"
+        "name": "InviteMembersRequest",
+        "type": "object"
       },
       {
         "id": "schema:JsonNode",
         "kind": "schema",
-        "name": "JsonNode"
+        "name": "JsonNode",
+        "type": "object"
       },
       {
         "id": "schema:JsonNodeOptions",
         "kind": "schema",
-        "name": "JsonNodeOptions"
+        "name": "JsonNodeOptions",
+        "type": "object"
       },
       {
         "id": "schema:JsonPatch",
         "kind": "schema",
-        "name": "JsonPatch"
+        "name": "JsonPatch",
+        "type": "object"
       },
       {
         "id": "schema:JsonPointer",
         "kind": "schema",
-        "name": "JsonPointer"
+        "name": "JsonPointer",
+        "type": "object"
       },
       {
         "id": "schema:JsonPointerKind",
         "kind": "schema",
-        "name": "JsonPointerKind"
+        "name": "JsonPointerKind",
+        "type": "string"
       },
       {
         "id": "schema:MeModel",
         "kind": "schema",
-        "name": "MeModel"
+        "name": "MeModel",
+        "type": "object"
       },
       {
         "id": "schema:MemberModel",
         "kind": "schema",
-        "name": "MemberModel"
+        "name": "MemberModel",
+        "type": "object"
       },
       {
         "id": "schema:OperationType",
         "kind": "schema",
-        "name": "OperationType"
+        "name": "OperationType",
+        "type": "string"
       },
       {
         "id": "schema:OrganizationModel",
         "kind": "schema",
-        "name": "OrganizationModel"
+        "name": "OrganizationModel",
+        "type": "object"
       },
       {
         "id": "schema:OrganizationModel-haljson",
         "kind": "schema",
-        "name": "OrganizationModel-haljson"
+        "name": "OrganizationModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:PatchOperation",
         "kind": "schema",
-        "name": "PatchOperation"
+        "name": "PatchOperation",
+        "type": "object"
       },
       {
         "id": "schema:PermissionGroupModel",
         "kind": "schema",
-        "name": "PermissionGroupModel"
+        "name": "PermissionGroupModel",
+        "type": "object"
       },
       {
         "id": "schema:PermissionGroupModel-haljson",
         "kind": "schema",
-        "name": "PermissionGroupModel-haljson"
+        "name": "PermissionGroupModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:PointerSegment",
         "kind": "schema",
-        "name": "PointerSegment"
+        "name": "PointerSegment",
+        "type": "object"
       },
       {
         "id": "schema:ProductModel",
         "kind": "schema",
-        "name": "ProductModel"
+        "name": "ProductModel",
+        "type": "object"
       },
       {
         "id": "schema:ProductModel-haljson",
         "kind": "schema",
-        "name": "ProductModel-haljson"
+        "name": "ProductModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:ReferenceLine",
         "kind": "schema",
-        "name": "ReferenceLine"
+        "name": "ReferenceLine",
+        "type": "object"
       },
       {
         "id": "schema:ReferenceLines",
         "kind": "schema",
-        "name": "ReferenceLines"
+        "name": "ReferenceLines",
+        "type": "object"
       },
       {
         "id": "schema:RolloutPercentageItemModel",
         "kind": "schema",
-        "name": "RolloutPercentageItemModel"
+        "name": "RolloutPercentageItemModel",
+        "type": "object"
       },
       {
         "id": "schema:RolloutRuleComparator",
         "kind": "schema",
-        "name": "RolloutRuleComparator"
+        "name": "RolloutRuleComparator",
+        "type": "string"
       },
       {
         "id": "schema:RolloutRuleModel",
         "kind": "schema",
-        "name": "RolloutRuleModel"
+        "name": "RolloutRuleModel",
+        "type": "object"
       },
       {
         "id": "schema:SdkKeysModel",
         "kind": "schema",
-        "name": "SdkKeysModel"
+        "name": "SdkKeysModel",
+        "type": "object"
       },
       {
         "id": "schema:SegmentComparator",
         "kind": "schema",
-        "name": "SegmentComparator"
+        "name": "SegmentComparator",
+        "type": "string"
       },
       {
         "id": "schema:SegmentListModel",
         "kind": "schema",
-        "name": "SegmentListModel"
+        "name": "SegmentListModel",
+        "type": "object"
       },
       {
         "id": "schema:SegmentListModel-haljson",
         "kind": "schema",
-        "name": "SegmentListModel-haljson"
+        "name": "SegmentListModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:SegmentModel",
         "kind": "schema",
-        "name": "SegmentModel"
+        "name": "SegmentModel",
+        "type": "object"
       },
       {
         "id": "schema:SegmentModel-haljson",
         "kind": "schema",
-        "name": "SegmentModel-haljson"
+        "name": "SegmentModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:SettingDataModel",
         "kind": "schema",
-        "name": "SettingDataModel"
+        "name": "SettingDataModel",
+        "type": "object"
       },
       {
         "id": "schema:SettingModel",
         "kind": "schema",
-        "name": "SettingModel"
+        "name": "SettingModel",
+        "type": "object"
       },
       {
         "id": "schema:SettingModel-haljson",
         "kind": "schema",
-        "name": "SettingModel-haljson"
+        "name": "SettingModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:SettingTagModel",
         "kind": "schema",
-        "name": "SettingTagModel"
+        "name": "SettingTagModel",
+        "type": "object"
       },
       {
         "id": "schema:SettingType",
         "kind": "schema",
-        "name": "SettingType"
+        "name": "SettingType",
+        "type": "string"
       },
       {
         "id": "schema:SettingValueModel",
         "kind": "schema",
-        "name": "SettingValueModel"
+        "name": "SettingValueModel",
+        "type": "object"
       },
       {
         "id": "schema:SettingValueModel-haljson",
         "kind": "schema",
-        "name": "SettingValueModel-haljson"
+        "name": "SettingValueModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:TagModel",
         "kind": "schema",
-        "name": "TagModel"
+        "name": "TagModel",
+        "type": "object"
       },
       {
         "id": "schema:TagModel-haljson",
         "kind": "schema",
-        "name": "TagModel-haljson"
+        "name": "TagModel-haljson",
+        "type": "object"
       },
       {
         "id": "schema:UpdateConfigRequest",
         "kind": "schema",
-        "name": "UpdateConfigRequest"
+        "name": "UpdateConfigRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateEnvironmentModel",
         "kind": "schema",
-        "name": "UpdateEnvironmentModel"
+        "name": "UpdateEnvironmentModel",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePermissionGroupRequest",
         "kind": "schema",
-        "name": "UpdatePermissionGroupRequest"
+        "name": "UpdatePermissionGroupRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateProductRequest",
         "kind": "schema",
-        "name": "UpdateProductRequest"
+        "name": "UpdateProductRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateSegmentModel",
         "kind": "schema",
-        "name": "UpdateSegmentModel"
+        "name": "UpdateSegmentModel",
+        "type": "object"
       },
       {
         "id": "schema:UpdateSettingValueModel",
         "kind": "schema",
-        "name": "UpdateSettingValueModel"
+        "name": "UpdateSettingValueModel",
+        "type": "object"
       },
       {
         "id": "schema:UpdateTagModel",
         "kind": "schema",
-        "name": "UpdateTagModel"
+        "name": "UpdateTagModel",
+        "type": "object"
       },
       {
         "id": "schema:UserModel",
         "kind": "schema",
-        "name": "UserModel"
+        "name": "UserModel",
+        "type": "object"
       }
     ]
   },

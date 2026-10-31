@@ -13,6 +13,16 @@
         "from": "arespass-net-20b4b2ccd1",
         "kind": "EXPOSES",
         "to": "operation:get:/ec"
+      },
+      {
+        "from": "operation:get:/about",
+        "kind": "RETURNS",
+        "to": "schema:about"
+      },
+      {
+        "from": "operation:get:/ec",
+        "kind": "RETURNS",
+        "to": "schema:ec"
       }
     ],
     "nodes": [
@@ -26,8 +36,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /about",
+        "parameters": [
+          {
+            "description": "**The format of the returned metadata.** Allowed values are *json*, *xml* and *yaml*.",
+            "in": "query",
+            "name": "outputFormat",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/about",
         "pointer": "#/paths/~1about/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "about"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Metadata about this API&#58; version number, release date and available languages.\n\nMetadata requests are NOT billed.\n"
       },
@@ -37,20 +72,69 @@
         "kind": "operation",
         "method": "get",
         "name": "get /ec",
+        "parameters": [
+          {
+            "description": "**The password to be analyzed.** Minimum length is 4 characters; maximum length is 128 characters.",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "**The format of the returned analysis.** Allowed values are *json*, *xml* and *yaml*.",
+            "in": "query",
+            "name": "outputFormat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "**The penalty applied to each character that is part of a word, number sequence, alphabet sequence, etc.** The penalty is a float number in the range [0, 1].",
+            "in": "query",
+            "name": "penalty",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "**An identifier for this request.** The request identifier is a string that must match the regular expression */(?i)^[a-z0-9]{8,16}$/*.",
+            "in": "query",
+            "name": "reqId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ec",
         "pointer": "#/paths/~1ec/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ec"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "The entropy calculator - alias ec -, analyzes a password and calculates its entropy.\n\nEntropy calculator requests are billed.\n"
       },
       {
+        "description": "**This API version number**.",
         "id": "schema:about",
         "kind": "schema",
-        "name": "about"
+        "name": "about",
+        "type": "object"
       },
       {
         "id": "schema:ec",
         "kind": "schema",
-        "name": "ec"
+        "name": "ec",
+        "type": "object"
       }
     ]
   },

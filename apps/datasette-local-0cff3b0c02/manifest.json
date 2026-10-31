@@ -17,12 +17,45 @@
       },
       {
         "deprecated": false,
+        "description": "Accepts SQLite SQL query, returns JSON.",
         "id": "operation:get:/content.json",
         "kind": "operation",
         "method": "get",
         "name": "query",
+        "parameters": [
+          {
+            "description": "The SQL query to be executed",
+            "in": "query",
+            "name": "sql",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The shape of the response data.",
+            "enum": [
+              "array"
+            ],
+            "in": "query",
+            "name": "_shape",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/content.json",
         "pointer": "#/paths/~1content.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Execute a SQLite SQL query against the content database"
       }

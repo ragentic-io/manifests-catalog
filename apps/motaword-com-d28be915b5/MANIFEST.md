@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_dentycj2qhk72.cloudfront.net_ne
 
 | | |
 | --- | --- |
-| Signed bundle | `82fef212af33d06410cd354bb9e6aa5817aa9f4a45c4ae7efceb01a8b80c3362` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,227 +34,229 @@ logo: "https://api.apis.guru/v2/cache/logo/https_dentycj2qhk72.cloudfront.net_ne
 
 193 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getEndpoints | Available endpoints |
-| GET | `/async/download` | downloadAsync | Download result of an async operation |
-| GET | `/blogs` | getBlogPosts | Get blog posts - ordered by created desc by default |
-| DELETE | `/cache/{key}` | deleteCache | Clear cache by key |
-| GET | `/commissions` | getCommissions | Returns a commission list of current client. |
-| POST | `/commissions` | getCommissionsByFilter | Returns a commission list of current client. |
-| GET | `/continuous_projects` | getContinuousProjects | View continuous projects |
-| POST | `/continuous_projects` | createContinuousProject | Create a continuous project |
-| DELETE | `/continuous_projects/{id}` | deleteContinuousProject | Delete a continuous project |
-| GET | `/continuous_projects/{id}` | getContinuousProject | View a continuous project |
-| POST | `/continuous_projects/{id}` | updateContinuousProject | Update a continuous project |
-| GET | `/continuous_projects/{id}/analytics-token` | getAnalyticsToken | Get JWT token to be used in analytics dashboards |
-| POST | `/continuous_projects/{id}/collect-analytics` | collectAnalytics | Save/collect analytics data from Active widget |
-| POST | `/continuous_projects/{id}/complete` | complete | Complete continuous project |
-| POST | `/continuous_projects/{id}/documents/quote` | getQuoteForDocuments | Get quote for documents |
-| POST | `/continuous_projects/{id}/documents/{documentId}/complete` | completeContinuousDocument | Complete a continuous project document |
-| POST | `/continuous_projects/{id}/documents/{documentId}/quote` | getQuoteForDocument | Get a quote for a continuous project document |
-| POST | `/continuous_projects/{id}/languages/quote` | getQuoteForLanguages | Get quote for languages |
-| POST | `/continuous_projects/{id}/languages/{targetLanguage}/complete` | completeLanguage | Complete continuous project language |
-| POST | `/continuous_projects/{id}/languages/{targetLanguage}/quote` | getQuoteForLanguage | Get quote for language |
-| DELETE | `/continuous_projects/{id}/subscription` | deleteSubscription | Delete subscription for continuous project |
-| GET | `/continuous_projects/{id}/subscription` | getSubscription | Get subscription for continuous project |
-| POST | `/continuous_projects/{id}/subscription` | createSubscription | Create subscription for continuous project |
-| PUT | `/continuous_projects/{id}/subscription` | updateSubscription | Update subscription for continuous project |
-| PUT | `/continuous_projects/{id}/subscription/payment` | updateSubscriptionPaymentMethod | Update subscription payment method for continuous project |
-| POST | `/continuous_projects/{id}/translate/{targetLanguage}` | translate | Instantly translate your content |
-| GET | `/continuous_projects/{projectId}/documents` | getContinuousProjectDocuments | View continuous documents |
-| POST | `/continuous_projects/{projectId}/documents` | addDocument | Add a new document to your continuous project |
-| POST | `/continuous_projects/{projectId}/documents/progress` | postContinuousProjectDocumentProgress | Get continuous project document progress for multiple IDs |
-| POST | `/continuous_projects/{projectId}/documents/strings` | postContinuousProjectFileStrings | Get a list of strings and its translations in the project. |
-| GET | `/continuous_projects/{projectId}/documents/{documentId}` | getContinuousProjectDocument | View a continuous document |
-| POST | `/continuous_projects/{projectId}/documents/{documentId}` | updateDocument | Update the document |
-| GET | `/continuous_projects/{projectId}/documents/{documentId}/progress` | getContinuousProjectDocumentProgress | Monitor progress of a continuous document |
-| GET | `/continuous_projects/{projectId}/documents/{documentId}/strings` | getContinuousProjectFileStrings | View strings their translations in a continuous document |
-| GET | `/continuous_projects/{projectId}/invoices` | getContinuousProjectInvoices | Invoices of a continuous project |
-| GET | `/continuous_projects/{projectId}/progress` | getContinuousProjectProgress | Monitor progress and status of a continous project |
-| GET | `/continuous_projects/{projectId}/strings` | getContinuousProjectStrings | View strings and translations in continuous project |
-| DELETE | `/continuous_projects/{projectId}/strings/cached` | clearTranslationCache | Clear translation cache |
-| GET | `/continuous_projects/{projectId}/strings/cached` | getTranslationCache | View cached strings translations in continuous project |
-| POST | `/continuous_projects/{projectId}/strings/recache-tms` | recacheTranslations | Recache translations |
-| GET | `/continuous_projects/{projectId}/widgets` | getActiveWidgets | View Active widgets |
-| POST | `/continuous_projects/{projectId}/widgets` | createActiveWidget | Create a new Active widget |
-| DELETE | `/continuous_projects/{projectId}/widgets/{widgetId}` | deleteActiveWidget | Delete a single widget for this Active project |
-| GET | `/continuous_projects/{projectId}/widgets/{widgetId}` | getActiveWidget | View an Active widget |
-| POST | `/continuous_projects/{projectId}/widgets/{widgetId}` | updateActiveWidget | Update Active widget settings. |
-| POST | `/continuous_projects/{projectId}/widgets/{widgetId}/reset-token` | resetActiveWidgetToken | Reset Active widget token |
-| GET | `/corporate` | getCorporate | View your corporate account |
-| GET | `/corporate/permissions` | getAvailableCorporatePermissions | View available permissions |
-| GET | `/corporate/user-groups` | getCorporateUserGroups | View user groups |
-| POST | `/corporate/user-groups` | saveCorporateUserGroup | Create or update a corporate user group |
-| GET | `/corporate/users` | getCorporateUsers | View users |
-| POST | `/corporate/users` | saveCorporateUser | Create or update a user |
-| GET | `/corporates/all` | getCorporatesList | Get a list of corporate accounts |
-| GET | `/corporates/{corporateId}` | getCorporateById | Get details of this corporate account |
-| GET | `/corporates/{corporateId}/permissions` | getAvailableCorporatePermissionsById | Get a list of available permissions for this corporate account. They are used when assigning permissions to corporate users. |
-| GET | `/corporates/{corporateId}/user-groups` | getCorporateUserGroupsById | Get a list of user groups for this corporate account |
-| POST | `/corporates/{corporateId}/user-groups` | saveCorporateUserGroupById | Create or update a corporate user group for this corporate account |
-| GET | `/corporates/{corporateId}/users` | getCorporateUsersById | Get a list of users for this corporate account |
-| DELETE | `/delete-account` | deleteAccount | Delete your account |
-| GET | `/documents` | getDocuments | View your documents |
-| GET | `/documents/subjects` | getAllDocumentSubjects | Get a list of subjects of projects |
-| GET | `/documents/{documentId}` | getDocument | View a single document |
-| GET | `/documents/{documentId}/progress` | getDocumentProgress | View a document translation progress |
-| POST | `/documents/{documentId}/regenerate_preview` | regeneratePreview | Regenerate preview and return preview URL for given file |
-| GET | `/documents/{documentId}/similars` | getSimilarDocuments | Find documents similar to this document. |
-| POST | `/documents/{documentId}/use_as_draft` | useAsDraft | Use the translation of given source manual document as manual draft source for the given target document. |
-| POST | `/documents/{documentId}/use_as_regular` | useAsRegular | Use the translation of the given manual document as a regular file. |
-| POST | `/downgrade-proofreader` | downgradeProofreader | — |
-| GET | `/earnings` | getEarnings | View your vendor earnings |
-| GET | `/formats` | getFormats | List of supported file formats |
-| POST | `/freeze-account` | freezeAccount | Freeze account |
-| GET | `/glossary` | downloadGlobalGlossary | Download account glossary. |
-| POST | `/glossary` | updateGlobalGlossary | Create or update the account glossary |
-| GET | `/integrations/token` | getIntegrationsToken | Generate a new access token for MotaWord's integrations service |
-| POST | `/invitation/vendors` | getInvitationVendors | Get vendor list for compiled invitation needs |
-| GET | `/languages` | getLanguages | List of supported languages |
-| POST | `/location` | logLocation | Log user's current location. This data is used in our Intelligent Project Manager for various data analysis, including project prioritization for vendors and account validation. |
-| POST | `/make-proofreader` | makeProofreader | — |
-| GET | `/me` | getMe | View your account info |
-| POST | `/me` | updateMe | Update your account info |
-| POST | `/ml/delivery-prediction` | getDeliveryPrediction | Get a delivery prediction for a project |
-| POST | `/notifications/subscribe` | subscribeNotification | Subscribe to push notifications |
-| POST | `/notifications/unsubscribe` | unsubscribeNotification | — |
-| POST | `/pam/chat` | postMessage | Sends a message to chat |
-| GET | `/pam/profiles/client/{clientId}` | getClientProfileForPam | Get the Pam profile of a client for this client ID |
-| GET | `/pam/projects/{projectId}/completion-report` | getProjectCompletionReportForPam | Get completion report data of a project |
-| POST | `/password` | updatePassword | Update your account password |
-| GET | `/payment` | getPaymentInfo | View your payment and billing info |
-| POST | `/payment` | updatePaymentInfo | Update payment info |
-| POST | `/payment/reset-corporate-payment-code` | resetCorporatePaymentCode | Reset payment code |
-| POST | `/payment/toggle-corporate-auto-charge` | toggleCorporateAutoCharge | Manage automatic charges on your credit card |
-| GET | `/payment/{cardId}` | getCreditCard | View saved credit card |
-| DELETE | `/payment/{cardId}/delete` | deleteCreditCard | Delete credit card |
-| POST | `/payment/{cardId}/reset-payment-code` | resetCardPaymentCode | Reset credit card payment code |
-| GET | `/permissions` | getPermissions | View your permissions |
-| POST | `/profile-picture` | uploadProfilePicture | Upload profile picture |
-| GET | `/projects` | getProjects | View your translation projects |
-| POST | `/projects` | createProject | Create a new project |
-| GET | `/projects/from-internal-id/{projectId}` | getQuoteIdFromInternalId | Get Quote Id |
-| GET | `/projects/vendor` | getVendorProjects | List projects as a vendor |
-| DELETE | `/projects/{id}` | deleteProject | Delete your translation project |
-| GET | `/projects/{id}` | getProject | View a translation project |
-| PUT | `/projects/{id}` | updateProject | Update project info and settings |
-| POST | `/projects/{id}/assign-cm` | assignCM | Assign a CM to the project |
-| GET | `/projects/{id}/callback/{actionType}` | triggerCallback | Trigger a call to your callback URL related to this project. |
-| POST | `/projects/{id}/cancel` | cancelProject | Cancel your translation project |
-| POST | `/projects/{id}/deliver` | deliverProject | Deliver project |
-| GET | `/projects/{id}/download` | download | Download your translated project |
-| GET | `/projects/{id}/download/{language}` | downloadLanguage | Download your translated project language |
-| POST | `/projects/{id}/email-quote` | sendQuoteEmail | Send a quote email |
-| GET | `/projects/{id}/invoice` | getInvoice | View project invoice |
-| GET | `/projects/{id}/invoice.html` | downloadHtmlInvoice | Download project invoice (HTML) |
-| GET | `/projects/{id}/invoice.pdf` | downloadPdfInvoice | Download project invoice (PDF) |
-| POST | `/projects/{id}/launch` | launchProject | Launch your translation project |
-| POST | `/projects/{id}/package` | package | Package your translated project |
-| GET | `/projects/{id}/package/check` | trackPackage | Track translation packaging status |
-| POST | `/projects/{id}/package/{language}` | packageLanguage | Package your translated project language |
-| GET | `/projects/{id}/progress` | getProgress | View progress of a project |
-| POST | `/projects/{id}/recreate` | recreateProject | Recreate your translation project from scratch. This is a risky action, you will lose current translations. |
-| POST | `/projects/{id}/reports` | submitProjectReports | Submit feedback report for a project |
-| GET | `/projects/{id}/sales/activities` | getSalesActivities | Get sales activities for a project |
-| POST | `/projects/{id}/sales/activities` | insertSalesActivity | Insert sales activity for a project |
-| DELETE | `/projects/{id}/webhooks` | deleteProjectWebhook | Delete project webhooks |
-| GET | `/projects/{id}/webhooks` | getProjectWebhooks | View project webhooks |
-| POST | `/projects/{id}/webhooks` | postProjectWebhook | Update project webhook |
-| PUT | `/projects/{id}/webhooks` | updateProjectWebhook | Update project webhook |
-| GET | `/projects/{projectId}/activities` | getActivities | Monitor project activities |
-| GET | `/projects/{projectId}/activities/{activityId}` | getActivity | View an activity |
-| POST | `/projects/{projectId}/activities/{activityId}` | submitComment | Submit comment to an activity |
-| GET | `/projects/{projectId}/activities/{activityId}/comments` | getActivityComments | View activity comments |
-| GET | `/projects/{projectId}/comments` | getComments | View all project comments |
-| GET | `/projects/{projectId}/documents` | getProjectDocuments | View project source documents |
-| POST | `/projects/{projectId}/documents` | createProjectDocument | Upload a new document |
-| DELETE | `/projects/{projectId}/documents/{documentId}` | deleteProjectDocument | Delete the document |
-| GET | `/projects/{projectId}/documents/{documentId}` | getProjectDocument | View a project source document |
-| POST | `/projects/{projectId}/documents/{documentId}` | updateProjectDocument | Update the document. |
-| GET | `/projects/{projectId}/documents/{documentId}/download` | downloadProjectDocument | Download a project source document |
-| GET | `/projects/{projectId}/documents/{documentId}/translations` | getDocumentTranslations | View strings and translations of a document |
-| GET | `/projects/{projectId}/documents/{documentId}/translations/download/{language}` | downloadTranslatedDocumentForLanguage | Download translated document |
-| GET | `/projects/{projectId}/documents/{documentId}/translations/{language}` | getDocumentTranslationsForLanguage | View strings and translations of a document for target language |
-| GET | `/projects/{projectId}/glossaries` | getGlossaries | View glossaries |
-| POST | `/projects/{projectId}/glossaries` | createGlossary | Upload a glossary file |
-| DELETE | `/projects/{projectId}/glossaries/{glossaryId}` | deleteGlossary | Delete a glossary |
-| GET | `/projects/{projectId}/glossaries/{glossaryId}` | getGlossary | View a glossary |
-| PUT | `/projects/{projectId}/glossaries/{glossaryId}` | updateGlossary | Update a glossary |
-| GET | `/projects/{projectId}/glossaries/{glossaryId}/download` | downloadGlossary | Download a glossary |
-| GET | `/projects/{projectId}/strings` | getProjectStrings | View project strings and translations |
-| POST | `/projects/{projectId}/strings/package` | packageProjectTranslationMemory | Download project translation memory |
-| GET | `/projects/{projectId}/strings/package/status` | packageProjectTranslationMemoryStatus | Check translation memory packaging status |
-| POST | `/projects/{projectId}/strings/{languageCode}/package` | packageProjectTranslationMemoryForLanguage | Download language-specific project translation memory |
-| GET | `/projects/{projectId}/strings/{languageCode}/package/status` | packageProjectTranslationMemoryForLanguageStatus | Check language-specific translation memory packaging status |
-| GET | `/projects/{projectId}/strings/{language}` | getProjectStringsForLanguage | View strings and translations for target language |
-| GET | `/projects/{projectId}/styleguides` | getStyleGuides | View style guides |
-| POST | `/projects/{projectId}/styleguides` | createStyleGuide | Upload a new style guide |
-| DELETE | `/projects/{projectId}/styleguides/{styleGuideId}` | deleteStyleGuide | Delete a style guide |
-| GET | `/projects/{projectId}/styleguides/{styleGuideId}` | getStyleGuide | View a style guide |
-| PUT | `/projects/{projectId}/styleguides/{styleGuideId}` | updateStyleGuide | Update a style guide |
-| GET | `/projects/{projectId}/styleguides/{styleGuideId}/download` | downloadStyleGuide | Download a style guide |
-| GET | `/projects/{projectId}/translations` | getProjectTranslations | Deprecated. Use /projects/{projectId}/strings instead. |
-| GET | `/projects/{projectId}/translations/{language}` | getProjectTranslationsForLanguage | Deprecated. use /projects/{projectId}/strings/{language} instead. |
-| GET | `/projects/{projectId}/vendors` | getProjectVendors | Get a list of vendors. |
-| POST | `/reports/filter` | getFilterContents | Returns available options for selected timeframe. |
-| POST | `/reports/language-pairs` | getLanguagePairsReport | Language pairs report |
-| POST | `/reports/projects` | getProjectsReport | Projects report |
-| POST | `/reports/qa` | generateQAReport | Generate a QA report for given filter |
-| POST | `/reports/users` | getUsersReport | Company users report |
-| POST | `/resend-email-confirmation` | sendEmailConfirmation | Sends email confirmation email for current user |
-| GET | `/responsivity` | getResponsivity | View your vendor responsiveness |
-| GET | `/search` | searchEverywhere | Search everything in your account |
-| POST | `/search/documents/reindex` | reindexDocuments | Reindex for search all of the client source and translation documents. |
-| GET | `/search/documents/reindex/status` | checkDocumentsReindex | Check reindex status of the client source and translation documents. |
-| GET | `/stats` | getStats | View your account statistics |
-| GET | `/stats/commissions` | getCommissionStats | Returns the total commissions stats. |
-| POST | `/stats/commissions` | getCommissionStatsByFilter | Returns the total commissions stats by report filter. |
-| GET | `/stats/popular-pairs` | getPopularPairs | View your popular language pairs |
-| GET | `/stats/projects` | getProjectStats | View your project statistics |
-| GET | `/stats/strings` | getStringStats | View your translation statistics |
-| GET | `/strings` | getStrings | View account strings (translation memory) |
-| POST | `/strings` | postStrings | Translate Strings with MT |
-| PUT | `/strings` | updateTranslationMemoryUnit | Update string translation |
-| POST | `/strings/{languageCode}/package` | packageUserTranslationMemory | Download account translation memory |
-| GET | `/strings/{languageCode}/package/status` | packageUserTranslationMemoryForLanguageStatus | Check account translation memory packaging status |
-| GET | `/styleguide` | downloadGlobalStyleGuide | Download account style guide |
-| POST | `/styleguide` | updateGlobalStyleGuide | Create or update the account style guide |
-| GET | `/surveys/{scope}/{type}` | getQuestions | Get survey questions in given scope and type |
-| POST | `/surveys/{scope}/{type}` | submitAnswers | Post survey answers for scope and type |
-| GET | `/swagger` | getSwaggerYaml | OpenAPI YAML representation of our API |
-| POST | `/token` | getAccessToken | Retrieve an access token |
-| POST | `/unfreeze-account` | unfreezeAccount | Defreeze your account |
-| GET | `/user-groups` | getUserGroups | View your user groups |
-| GET | `/users` | getUsers | Get a list of platform users |
-| POST | `/users` | createUser | Create a new user |
-| POST | `/users/available-vendors` | getAvailableVendors | Get a list of vendors available for the criteria given |
-| POST | `/users/filter` | getFilteredVendors | Filter vendors based on provided parameters |
-| POST | `/users/send-password-reminder` | sendPasswordReminder | Sends password reset email to the user's registered email address |
-| GET | `/users/tags` | getAllVendorTags | Returns all vendor tags for vendors filter |
-| GET | `/{userId}` | getUser | Get user information, including client or vendor specific info. |
-| POST | `/{userId}` | updateUser | — |
-| POST | `/{userId}/approve` | approveVendorApplication | — |
-| DELETE | `/{userId}/delete-account` | deleteUserAccount | Delete requester account |
-| GET | `/{userId}/documents` | getUserDocuments | Get a list of your documents |
-| POST | `/{userId}/downgrade-proofreader` | downgradeUserProofreader | — |
-| GET | `/{userId}/earnings` | getUserEarnings | Returns your vendor earnings. Includes real-time earnings from ongoing projects, and fixed earnings from completed projects. Also includes total earnings and string edits. |
-| POST | `/{userId}/freeze-account` | freezeUserAccount | Freeze requester account for project notifications |
-| POST | `/{userId}/make-proofreader` | makeUserProofreader | — |
-| POST | `/{userId}/notifications/subscribe` | subscribeUserNotification | — |
-| POST | `/{userId}/notifications/unsubscribe` | unsubscribeUserNotification | — |
-| GET | `/{userId}/payment` | getUserPaymentInfo | View user's payment and billing info |
-| POST | `/{userId}/payment` | updateUserPaymentInfo | Update user payment info |
-| GET | `/{userId}/permissions` | getUserPermissions | Returns a list of permissions that this user is authorized for. |
-| POST | `/{userId}/profile-picture` | uploadUserProfilePicture | — |
-| GET | `/{userId}/projects/vendor` | getVendorProjectsByUserId | Get a list of user/vendor projects |
-| POST | `/{userId}/reject` | rejectVendorApplication | — |
-| POST | `/{userId}/resend-email-confirmation` | sendUserEmailConfirmation | Sends email confirmation email for a user |
-| GET | `/{userId}/responsivity` | getUserResponsivity | Returns a user's vendor responsivity stats |
-| GET | `/{userId}/stats` | getUserStats | Returns a user's client and vendor statistics. This used to be called "summary" (\\@deprecated). |
-| GET | `/{userId}/stats/popular-pairs` | getUserPopularPairs | Returns the language pairs that the user has ordered most. |
-| GET | `/{userId}/stats/projects` | getUserProjectStats | Returns a user's project statistics. |
-| POST | `/{userId}/suspend` | suspendUser | — |
-| POST | `/{userId}/unfreeze-account` | unfreezeUserAccount | Unfreeze requester account for project notifications |
-| GET | `/{userId}/user-groups` | getThisUserGroups | Returns a list of user groups that this user belongs to. |
-| POST | `/{userId}/user-groups` | updateUserGroup | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getEndpoints | — | object | yes | Available endpoints |
+| GET | `/async/download` | downloadAsync | `async_request_key`* | string:binary | yes | Download result of an async operation |
+| GET | `/blogs` | getBlogPosts | `locale`, `fallback`, `page`, `per_page` | BlogArticleList | yes | Get blog posts - ordered by created desc by default |
+| DELETE | `/cache/{key}` | deleteCache | `key`* | OperationStatus |  | Clear cache by key |
+| GET | `/commissions` | getCommissions | — | CommissionList | yes | Returns a commission list of current client. |
+| POST | `/commissions` | getCommissionsByFilter | body: ReportFilter | CommissionList |  | Returns a commission list of current client. |
+| GET | `/continuous_projects` | getContinuousProjects | `type` | ContinuousProjectsList | yes | View continuous projects |
+| POST | `/continuous_projects` | createContinuousProject | body: ContinuousProject | ContinuousProject |  | Create a continuous project |
+| GET | `/continuous_projects/{id}` | getContinuousProject | `id`* | ContinuousProject | yes | View a continuous project |
+| POST | `/continuous_projects/{id}` | updateContinuousProject | `id`*, body: ContinuousProjectUpdateContent | ContinuousProject |  | Update a continuous project |
+| DELETE | `/continuous_projects/{id}` | deleteContinuousProject | `id`* | OperationStatus |  | Delete a continuous project |
+| GET | `/continuous_projects/{id}/analytics-token` | getAnalyticsToken | `id`* | AnalyticsToken | yes | Get JWT token to be used in analytics dashboards |
+| POST | `/continuous_projects/{id}/collect-analytics` | collectAnalytics | `id`*, body: AnalyticsCollection | OperationStatus |  | Save/collect analytics data from Active widget |
+| POST | `/continuous_projects/{id}/complete` | complete | `id`* | OperationStatus |  | Complete continuous project |
+| POST | `/continuous_projects/{id}/documents/quote` | getQuoteForDocuments | `id`*, body: GetQuotesForDocumentsBody | ProjectList |  | Get quote for documents |
+| POST | `/continuous_projects/{id}/documents/{documentId}/complete` | completeContinuousDocument | `id`*, `documentId`* | OperationStatus |  | Complete a continuous project document |
+| POST | `/continuous_projects/{id}/documents/{documentId}/quote` | getQuoteForDocument | `id`*, `documentId`* | ProjectList |  | Get a quote for a continuous project document |
+| POST | `/continuous_projects/{id}/languages/quote` | getQuoteForLanguages | `id`*, body: GetQuotesForLanguagesBody | ProjectList |  | Get quote for languages |
+| POST | `/continuous_projects/{id}/languages/{targetLanguage}/complete` | completeLanguage | `id`*, `targetLanguage`* | OperationStatus |  | Complete continuous project language |
+| POST | `/continuous_projects/{id}/languages/{targetLanguage}/quote` | getQuoteForLanguage | `id`*, `targetLanguage`* | ProjectList |  | Get quote for language |
+| GET | `/continuous_projects/{id}/subscription` | getSubscription | `id`* | Subscription | yes | Get subscription for continuous project |
+| PUT | `/continuous_projects/{id}/subscription` | updateSubscription | `id`*, body*: Subscription | Subscription |  | Update subscription for continuous project |
+| POST | `/continuous_projects/{id}/subscription` | createSubscription | `id`*, body*: Subscription | Subscription |  | Create subscription for continuous project |
+| DELETE | `/continuous_projects/{id}/subscription` | deleteSubscription | `id`* | Subscription |  | Delete subscription for continuous project |
+| PUT | `/continuous_projects/{id}/subscription/payment` | updateSubscriptionPaymentMethod | `id`*, body*: Subscription | Subscription |  | Update subscription payment method for continuous project |
+| POST | `/continuous_projects/{id}/translate/{targetLanguage}` | translate | `id`*, `targetLanguage`*, body: InstantTranslationRequest | InstantTranslationResult |  | Instantly translate your content |
+| GET | `/continuous_projects/{projectId}/documents` | getContinuousProjectDocuments | `projectId`*, `filterByLanguage` | ContinuousProjectDocumentList | yes | View continuous documents |
+| POST | `/continuous_projects/{projectId}/documents` | addDocument | `projectId`*, body: AddOrUpdateDocumentRequest | ContinuousProjectDocument |  | Add a new document to your continuous project |
+| POST | `/continuous_projects/{projectId}/documents/progress` | postContinuousProjectDocumentProgress | `projectId`*, body: ContinuousProjectDocumentProgressBody | Progress |  | Get continuous project document progress for multiple IDs |
+| POST | `/continuous_projects/{projectId}/documents/strings` | postContinuousProjectFileStrings | `projectId`*, body: ContinuousProjectDocumentStringsBody | StringList |  | Get a list of strings and its translations in the project. |
+| GET | `/continuous_projects/{projectId}/documents/{documentId}` | getContinuousProjectDocument | `projectId`*, `documentId`* | ContinuousProjectDocument | yes | View a continuous document |
+| POST | `/continuous_projects/{projectId}/documents/{documentId}` | updateDocument | `projectId`*, `documentId`*, body: AddOrUpdateDocumentRequest | ContinuousProjectDocument |  | Update the document |
+| GET | `/continuous_projects/{projectId}/documents/{documentId}/progress` | getContinuousProjectDocumentProgress | `projectId`*, `documentId`*, `filterByLanguage` | Progress | yes | Monitor progress of a continuous document |
+| GET | `/continuous_projects/{projectId}/documents/{documentId}/strings` | getContinuousProjectFileStrings | `projectId`*, `documentId`* | StringList | yes | View strings their translations in a continuous document |
+| GET | `/continuous_projects/{projectId}/invoices` | getContinuousProjectInvoices | `projectId`* | ContinuousProjectInvoices | yes | Invoices of a continuous project |
+| GET | `/continuous_projects/{projectId}/progress` | getContinuousProjectProgress | `projectId`*, `filterByLanguage` | ContinuousProjectProgress | yes | Monitor progress and status of a continous project |
+| GET | `/continuous_projects/{projectId}/strings` | getContinuousProjectStrings | `projectId`* | StringList | yes | View strings and translations in continuous project |
+| GET | `/continuous_projects/{projectId}/strings/cached` | getTranslationCache | `projectId`*, `flatten` | ContinuousProjectCache | yes | View cached strings translations in continuous project |
+| DELETE | `/continuous_projects/{projectId}/strings/cached` | clearTranslationCache | `projectId`*, `locale`, `file_id` | OperationStatus |  | Clear translation cache |
+| POST | `/continuous_projects/{projectId}/strings/recache-tms` | recacheTranslations | `projectId`*, `locale`, `file_id` | OperationStatus |  | Recache translations |
+| GET | `/continuous_projects/{projectId}/widgets` | getActiveWidgets | `projectId`* | ActiveWidgetList | yes | View Active widgets |
+| POST | `/continuous_projects/{projectId}/widgets` | createActiveWidget | `projectId`*, body: ActiveWidget | ActiveWidget |  | Create a new Active widget |
+| GET | `/continuous_projects/{projectId}/widgets/{widgetId}` | getActiveWidget | `projectId`*, `widgetId`* | ActiveWidget | yes | View an Active widget |
+| POST | `/continuous_projects/{projectId}/widgets/{widgetId}` | updateActiveWidget | `projectId`*, `widgetId`*, body: ActiveWidget | ActiveWidget |  | Update Active widget settings. |
+| DELETE | `/continuous_projects/{projectId}/widgets/{widgetId}` | deleteActiveWidget | `projectId`*, `widgetId`* | OperationStatus |  | Delete a single widget for this Active project |
+| POST | `/continuous_projects/{projectId}/widgets/{widgetId}/reset-token` | resetActiveWidgetToken | `projectId`*, `widgetId`* | ActiveWidget |  | Reset Active widget token |
+| GET | `/corporate` | getCorporate | — | CorporateAccount | yes | View your corporate account |
+| GET | `/corporate/permissions` | getAvailableCorporatePermissions | — | PermissionList | yes | View available permissions |
+| GET | `/corporate/user-groups` | getCorporateUserGroups | — | UserGroupList | yes | View user groups |
+| POST | `/corporate/user-groups` | saveCorporateUserGroup | body*: UserGroup | UserGroup |  | Create or update a corporate user group |
+| GET | `/corporate/users` | getCorporateUsers | — | UserList | yes | View users |
+| POST | `/corporate/users` | saveCorporateUser | body*: UserUpdateContent | User |  | Create or update a user |
+| GET | `/corporates/all` | getCorporatesList | — | CorporateAccount[] | yes | Get a list of corporate accounts |
+| GET | `/corporates/{corporateId}` | getCorporateById | `corporateId`* | CorporateAccount | yes | Get details of this corporate account |
+| GET | `/corporates/{corporateId}/permissions` | getAvailableCorporatePermissionsById | `corporateId`* | PermissionList | yes | Get a list of available permissions for this corporate account. They are used when assigning permissions to corporate users. |
+| GET | `/corporates/{corporateId}/user-groups` | getCorporateUserGroupsById | `corporateId`* | UserGroupList | yes | Get a list of user groups for this corporate account |
+| POST | `/corporates/{corporateId}/user-groups` | saveCorporateUserGroupById | `corporateId`*, body*: UserGroup | UserGroup |  | Create or update a corporate user group for this corporate account |
+| GET | `/corporates/{corporateId}/users` | getCorporateUsersById | `corporateId`* | UserList | yes | Get a list of users for this corporate account |
+| DELETE | `/delete-account` | deleteAccount | — | OperationStatus |  | Delete your account |
+| GET | `/documents` | getDocuments | `recent`, `search`, `type_filter`, `language_code`, `page`, `per_page`, `order_by`, `order_type`, `with[]` | DocumentList | yes | View your documents |
+| GET | `/documents/subjects` | getAllDocumentSubjects | — | DocumentSubjects[] | yes | Get a list of subjects of projects |
+| GET | `/documents/{documentId}` | getDocument | `documentId`* | ContinuousProjectDocument | yes | View a single document |
+| GET | `/documents/{documentId}/progress` | getDocumentProgress | `documentId`* | Progress | yes | View a document translation progress |
+| POST | `/documents/{documentId}/regenerate_preview` | regeneratePreview | `documentId`* | RegeneratePreviewResponse |  | Regenerate preview and return preview URL for given file |
+| GET | `/documents/{documentId}/similars` | getSimilarDocuments | `documentId`*, `per_page`, `with[]` | DocumentList | yes | Find documents similar to this document. |
+| POST | `/documents/{documentId}/use_as_draft` | useAsDraft | `documentId`*, body: UseAsDraftPayload | OperationStatus |  | Use the translation of given source manual document as manual draft source for the given target document. |
+| POST | `/documents/{documentId}/use_as_regular` | useAsRegular | `documentId`*, body: UseAsRegularPayload | OperationStatus |  | Use the translation of the given manual document as a regular file. |
+| POST | `/downgrade-proofreader` | downgradeProofreader | — | OperationStatus |  | — |
+| GET | `/earnings` | getEarnings | — | Earnings | yes | View your vendor earnings |
+| GET | `/formats` | getFormats | — | object | yes | List of supported file formats |
+| POST | `/freeze-account` | freezeAccount | — | OperationStatus |  | Freeze account |
+| GET | `/glossary` | downloadGlobalGlossary | — | string | yes | Download account glossary. |
+| POST | `/glossary` | updateGlobalGlossary | body: AccountGlossaryUploadRequest | OperationStatus |  | Create or update the account glossary |
+| GET | `/integrations/token` | getIntegrationsToken | — | IntegrationsToken | yes | Generate a new access token for MotaWord's integrations service |
+| POST | `/invitation/vendors` | getInvitationVendors | body: FileNeedsVendor[] | VendorInvitationList |  | Get vendor list for compiled invitation needs |
+| GET | `/languages` | getLanguages | — | Language[] | yes | List of supported languages |
+| POST | `/location` | logLocation | body: LocationUpdateContent | OperationStatus |  | Log user's current location. This data is used in our Intelligent Project Manager for various data analysis, including project prioritization for vendors and account validation. |
+| POST | `/make-proofreader` | makeProofreader | — | OperationStatus |  | — |
+| GET | `/me` | getMe | — | User | yes | View your account info |
+| POST | `/me` | updateMe | body: UserUpdateContent | User |  | Update your account info |
+| POST | `/ml/delivery-prediction` | getDeliveryPrediction | body: DeliveryPredictionPayload | DeliveryPredictionResponse |  | Get a delivery prediction for a project |
+| POST | `/notifications/subscribe` | subscribeNotification | body: NotificationSubscription | OperationStatus |  | Subscribe to push notifications |
+| POST | `/notifications/unsubscribe` | unsubscribeNotification | body: NotificationSubscription | OperationStatus |  | — |
+| POST | `/pam/chat` | postMessage | body: PamMessage | OperationStatus |  | Sends a message to chat |
+| GET | `/pam/profiles/client/{clientId}` | getClientProfileForPam | `clientId`* | ClientProfile | yes | Get the Pam profile of a client for this client ID |
+| GET | `/pam/projects/{projectId}/completion-report` | getProjectCompletionReportForPam | `projectId`* | ProjectCompletionReport | yes | Get completion report data of a project |
+| POST | `/password` | updatePassword | body: PasswordUpdateContent | OperationStatus |  | Update your account password |
+| GET | `/payment` | getPaymentInfo | — | PaymentInfo | yes | View your payment and billing info |
+| POST | `/payment` | updatePaymentInfo | body: UpdatePaymentInfo | PaymentInfo |  | Update payment info |
+| POST | `/payment/reset-corporate-payment-code` | resetCorporatePaymentCode | — | CreditCard |  | Reset payment code |
+| POST | `/payment/toggle-corporate-auto-charge` | toggleCorporateAutoCharge | — | OperationStatus |  | Manage automatic charges on your credit card |
+| GET | `/payment/{cardId}` | getCreditCard | `cardId`* | CreditCard | yes | View saved credit card |
+| DELETE | `/payment/{cardId}/delete` | deleteCreditCard | `cardId`* | OperationStatus |  | Delete credit card |
+| POST | `/payment/{cardId}/reset-payment-code` | resetCardPaymentCode | `cardId`* | CreditCard |  | Reset credit card payment code |
+| GET | `/permissions` | getPermissions | — | PermissionList | yes | View your permissions |
+| POST | `/profile-picture` | uploadProfilePicture | body: ProfilePictureUpload | OperationStatus |  | Upload profile picture |
+| GET | `/projects` | getProjects | `page`, `per_page`, `status[]`, `with_pending`, `with_started`, `with_completed`, `order_by`, `order_type`, `with[]` | ProjectList | yes | View your translation projects |
+| POST | `/projects` | createProject | body: NewProject | Project |  | Create a new project |
+| GET | `/projects/from-internal-id/{projectId}` | getQuoteIdFromInternalId | `projectId`* | ProjectId | yes | Get Quote Id |
+| GET | `/projects/vendor` | getVendorProjects | `joined`, `completed`, `page`, `per_page` | ProjectList | yes | List projects as a vendor |
+| GET | `/projects/{id}` | getProject | `id`*, `with[]` | Project | yes | View a translation project |
+| PUT | `/projects/{id}` | updateProject | `id`*, body: ProjectUpdate | Project |  | Update project info and settings |
+| DELETE | `/projects/{id}` | deleteProject | `id`* | OperationStatus |  | Delete your translation project |
+| POST | `/projects/{id}/assign-cm` | assignCM | `id`*, body: CM | OperationStatus |  | Assign a CM to the project |
+| GET | `/projects/{id}/callback/{actionType}` | triggerCallback | `id`*, `actionType`* | CallbackResult | yes | Trigger a call to your callback URL related to this project. |
+| POST | `/projects/{id}/cancel` | cancelProject | `id`*, body: CancelProjectRequest | OperationStatus |  | Cancel your translation project |
+| POST | `/projects/{id}/deliver` | deliverProject | `id`* | OperationStatus |  | Deliver project |
+| GET | `/projects/{id}/download` | download | `id`* | string:binary | yes | Download your translated project |
+| GET | `/projects/{id}/download/{language}` | downloadLanguage | `id`*, `language`* | string:binary | yes | Download your translated project language |
+| POST | `/projects/{id}/email-quote` | sendQuoteEmail | `id`* | OperationStatus |  | Send a quote email |
+| GET | `/projects/{id}/invoice` | getInvoice | `id`* | Invoice | yes | View project invoice |
+| GET | `/projects/{id}/invoice.html` | downloadHtmlInvoice | `id`* | string | yes | Download project invoice (HTML) |
+| GET | `/projects/{id}/invoice.pdf` | downloadPdfInvoice | `id`* | string:binary | yes | Download project invoice (PDF) |
+| POST | `/projects/{id}/launch` | launchProject | `id`*, body: ProjectPayment | ProjectLaunchResponse |  | Launch your translation project |
+| POST | `/projects/{id}/package` | package | `id`*, `async` | string:binary |  | Package your translated project |
+| GET | `/projects/{id}/package/check` | trackPackage | `id`*, `key` | PackageStatus | yes | Track translation packaging status |
+| POST | `/projects/{id}/package/{language}` | packageLanguage | `id`*, `language`*, `async` | Package |  | Package your translated project language |
+| GET | `/projects/{id}/progress` | getProgress | `id`*, `raw` | Progress | yes | View progress of a project |
+| POST | `/projects/{id}/recreate` | recreateProject | `id`* | OperationStatus |  | Recreate your translation project from scratch. This is a risky action, you will lose current translations. |
+| POST | `/projects/{id}/reports` | submitProjectReports | `id`*, body: ReportContent | OperationStatus |  | Submit feedback report for a project |
+| GET | `/projects/{id}/sales/activities` | getSalesActivities | `id`*, `excludeOwner`, `type` | SalesActivities | yes | Get sales activities for a project |
+| POST | `/projects/{id}/sales/activities` | insertSalesActivity | `id`*, body: NewSalesActivity | OperationStatus |  | Insert sales activity for a project |
+| GET | `/projects/{id}/webhooks` | getProjectWebhooks | `id`* | Project | yes | View project webhooks |
+| PUT | `/projects/{id}/webhooks` | updateProjectWebhook | `id`*, body: Webhook | Project |  | Update project webhook |
+| POST | `/projects/{id}/webhooks` | postProjectWebhook | `id`*, body: Webhook | Project |  | Update project webhook |
+| DELETE | `/projects/{id}/webhooks` | deleteProjectWebhook | `id`* | OperationStatus |  | Delete project webhooks |
+| GET | `/projects/{projectId}/activities` | getActivities | `projectId`*, `page`, `per_page` | ActivityList | yes | Monitor project activities |
+| GET | `/projects/{projectId}/activities/{activityId}` | getActivity | `projectId`*, `activityId`* | Activity | yes | View an activity |
+| POST | `/projects/{projectId}/activities/{activityId}` | submitComment | `projectId`*, `activityId`*, body: Comment | Comment |  | Submit comment to an activity |
+| GET | `/projects/{projectId}/activities/{activityId}/comments` | getActivityComments | `projectId`*, `activityId`* | CommentList | yes | View activity comments |
+| GET | `/projects/{projectId}/comments` | getComments | `projectId`*, `page`, `per_page` | CommentList | yes | View all project comments |
+| GET | `/projects/{projectId}/documents` | getProjectDocuments | `projectId`*, `with[]` | DocumentList | yes | View project source documents |
+| POST | `/projects/{projectId}/documents` | createProjectDocument | `projectId`*, body: DocumentUpdates | DocumentList |  | Upload a new document |
+| GET | `/projects/{projectId}/documents/{documentId}` | getProjectDocument | `projectId`*, `documentId`*, `with[]` | Document | yes | View a project source document |
+| POST | `/projects/{projectId}/documents/{documentId}` | updateProjectDocument | `projectId`*, `documentId`*, body: DocumentUploadRequest | Document |  | Update the document. |
+| DELETE | `/projects/{projectId}/documents/{documentId}` | deleteProjectDocument | `projectId`*, `documentId`* | OperationStatus |  | Delete the document |
+| GET | `/projects/{projectId}/documents/{documentId}/download` | downloadProjectDocument | `projectId`*, `documentId`* | string | yes | Download a project source document |
+| GET | `/projects/{projectId}/documents/{documentId}/translations` | getDocumentTranslations | `projectId`*, `documentId`* | StringList | yes | View strings and translations of a document |
+| GET | `/projects/{projectId}/documents/{documentId}/translations/download/{language}` | downloadTranslatedDocumentForLanguage | `projectId`*, `documentId`*, `language`*, `certified` | string:binary | yes | Download translated document |
+| GET | `/projects/{projectId}/documents/{documentId}/translations/{language}` | getDocumentTranslationsForLanguage | `projectId`*, `documentId`*, `language`* | StringList | yes | View strings and translations of a document for target language |
+| GET | `/projects/{projectId}/glossaries` | getGlossaries | `projectId`* | GlossaryList | yes | View glossaries |
+| POST | `/projects/{projectId}/glossaries` | createGlossary | `projectId`*, body: GlossaryUploadRequest | Glossary |  | Upload a glossary file |
+| GET | `/projects/{projectId}/glossaries/{glossaryId}` | getGlossary | `projectId`*, `glossaryId`* | Glossary | yes | View a glossary |
+| PUT | `/projects/{projectId}/glossaries/{glossaryId}` | updateGlossary | `projectId`*, `glossaryId`*, body: GlossaryUploadRequest | Glossary |  | Update a glossary |
+| DELETE | `/projects/{projectId}/glossaries/{glossaryId}` | deleteGlossary | `projectId`*, `glossaryId`* | OperationStatus |  | Delete a glossary |
+| GET | `/projects/{projectId}/glossaries/{glossaryId}/download` | downloadGlossary | `projectId`*, `glossaryId`* | string | yes | Download a glossary |
+| GET | `/projects/{projectId}/strings` | getProjectStrings | `projectId`* | StringList | yes | View project strings and translations |
+| POST | `/projects/{projectId}/strings/package` | packageProjectTranslationMemory | `projectId`*, `async`, `format` | AsyncOperationStatus |  | Download project translation memory |
+| GET | `/projects/{projectId}/strings/package/status` | packageProjectTranslationMemoryStatus | `projectId`*, `async_request_key`* | AsyncOperationStatus | yes | Check translation memory packaging status |
+| POST | `/projects/{projectId}/strings/{languageCode}/package` | packageProjectTranslationMemoryForLanguage | `projectId`*, `languageCode`*, `async`, `format` | AsyncOperationStatus |  | Download language-specific project translation memory |
+| GET | `/projects/{projectId}/strings/{languageCode}/package/status` | packageProjectTranslationMemoryForLanguageStatus | `projectId`*, `languageCode`*, `async_request_key`* | AsyncOperationStatus | yes | Check language-specific translation memory packaging status |
+| GET | `/projects/{projectId}/strings/{language}` | getProjectStringsForLanguage | `projectId`*, `language`* | StringList | yes | View strings and translations for target language |
+| GET | `/projects/{projectId}/styleguides` | getStyleGuides | `projectId`*, `with[]` | StyleGuideList | yes | View style guides |
+| POST | `/projects/{projectId}/styleguides` | createStyleGuide | `projectId`*, body: StyleGuideUploadRequest | StyleGuideList |  | Upload a new style guide |
+| GET | `/projects/{projectId}/styleguides/{styleGuideId}` | getStyleGuide | `projectId`*, `styleGuideId`*, `with[]` | StyleGuide | yes | View a style guide |
+| PUT | `/projects/{projectId}/styleguides/{styleGuideId}` | updateStyleGuide | `projectId`*, `styleGuideId`*, body: StyleGuideUploadRequest | StyleGuide |  | Update a style guide |
+| DELETE | `/projects/{projectId}/styleguides/{styleGuideId}` | deleteStyleGuide | `projectId`*, `styleGuideId`* | OperationStatus |  | Delete a style guide |
+| GET | `/projects/{projectId}/styleguides/{styleGuideId}/download` | downloadStyleGuide | `projectId`*, `styleGuideId`* | string | yes | Download a style guide |
+| GET | `/projects/{projectId}/translations` | getProjectTranslations | `projectId`* | StringList | yes | Deprecated. Use /projects/{projectId}/strings instead. |
+| GET | `/projects/{projectId}/translations/{language}` | getProjectTranslationsForLanguage | `projectId`*, `language`* | StringList | yes | Deprecated. use /projects/{projectId}/strings/{language} instead. |
+| GET | `/projects/{projectId}/vendors` | getProjectVendors | `projectId`* | UserList | yes | Get a list of vendors. |
+| POST | `/reports/filter` | getFilterContents | body: FilterDates | FilterContents |  | Returns available options for selected timeframe. |
+| POST | `/reports/language-pairs` | getLanguagePairsReport | body: ReportFilter | LanguagePairsReport |  | Language pairs report |
+| POST | `/reports/projects` | getProjectsReport | body: ReportFilter | ProjectList |  | Projects report |
+| POST | `/reports/qa` | generateQAReport | body: QaFilter | QaWarnings |  | Generate a QA report for given filter |
+| POST | `/reports/users` | getUsersReport | body: ReportFilter | UsersReport |  | Company users report |
+| POST | `/resend-email-confirmation` | sendEmailConfirmation | — | OperationStatus\|object |  | Sends email confirmation email for current user |
+| GET | `/responsivity` | getResponsivity | `period` | ResponsivityList | yes | View your vendor responsiveness |
+| GET | `/search` | searchEverywhere | `query`*, `include[]`, `page`, `per_page` | SearchEverywhereResult | yes | Search everything in your account |
+| POST | `/search/documents/reindex` | reindexDocuments | — | AsyncOperationStatus |  | Reindex for search all of the client source and translation documents. |
+| GET | `/search/documents/reindex/status` | checkDocumentsReindex | `async_request_key`* | AsyncOperationStatus | yes | Check reindex status of the client source and translation documents. |
+| GET | `/stats` | getStats | — | Stats | yes | View your account statistics |
+| GET | `/stats/commissions` | getCommissionStats | — | CommissionStats | yes | Returns the total commissions stats. |
+| POST | `/stats/commissions` | getCommissionStatsByFilter | body: ReportFilter | CommissionStats |  | Returns the total commissions stats by report filter. |
+| GET | `/stats/popular-pairs` | getPopularPairs | — | PopularLanguagePairs | yes | View your popular language pairs |
+| GET | `/stats/projects` | getProjectStats | — | ClientProjectStats | yes | View your project statistics |
+| GET | `/stats/strings` | getStringStats | — | ClientStringStats | yes | View your translation statistics |
+| GET | `/strings` | getStrings | `source_language`, `page` | ClientStrings | yes | View account strings (translation memory) |
+| PUT | `/strings` | updateTranslationMemoryUnit | body: TranslationMemoryUnit | OperationStatus |  | Update string translation |
+| POST | `/strings` | postStrings | body: DeprecatedStringTranslationContent | MachineTranslatedStrings |  | Translate Strings with MT |
+| POST | `/strings/{languageCode}/package` | packageUserTranslationMemory | `languageCode`*, `async`, `email` | AsyncOperationStatus |  | Download account translation memory |
+| GET | `/strings/{languageCode}/package/status` | packageUserTranslationMemoryForLanguageStatus | `languageCode`*, `async_request_key`* | AsyncOperationStatus | yes | Check account translation memory packaging status |
+| GET | `/styleguide` | downloadGlobalStyleGuide | — | string | yes | Download account style guide |
+| POST | `/styleguide` | updateGlobalStyleGuide | body: AccountStyleGuideUploadRequest | OperationStatus |  | Create or update the account style guide |
+| GET | `/surveys/{scope}/{type}` | getQuestions | `scope`*, `type`*, `attach_answers_for_project` | SurveyQuestions | yes | Get survey questions in given scope and type |
+| POST | `/surveys/{scope}/{type}` | submitAnswers | `scope`*, `type`*, body: SurveyAnswers | OperationStatus |  | Post survey answers for scope and type |
+| GET | `/swagger` | getSwaggerYaml | — | string | yes | OpenAPI YAML representation of our API |
+| POST | `/token` | getAccessToken | body: TokenRequest | Token |  | Retrieve an access token |
+| POST | `/unfreeze-account` | unfreezeAccount | — | OperationStatus |  | Defreeze your account |
+| GET | `/user-groups` | getUserGroups | — | UserGroupList | yes | View your user groups |
+| GET | `/users` | getUsers | `page`, `per_page`, `user_type`, `search`, `email` | UserList | yes | Get a list of platform users |
+| POST | `/users` | createUser | `notify`, body: User | User |  | Create a new user |
+| POST | `/users/available-vendors` | getAvailableVendors | `with[]`, body: AvailableVendorsFilter | UserList |  | Get a list of vendors available for the criteria given |
+| POST | `/users/filter` | getFilteredVendors | `page`, `per_page`, `order_by`, `order`, body: FilterVendorRequest | UserList |  | Filter vendors based on provided parameters |
+| POST | `/users/send-password-reminder` | sendPasswordReminder | body: Email | OperationStatus |  | Sends password reset email to the user's registered email address |
+| GET | `/users/tags` | getAllVendorTags | — | VendorTag[] | yes | Returns all vendor tags for vendors filter |
+| GET | `/{userId}` | getUser | `userId`* | User | yes | Get user information, including client or vendor specific info. |
+| POST | `/{userId}` | updateUser | `userId`*, body: UserUpdateContent | User |  | — |
+| POST | `/{userId}/approve` | approveVendorApplication | `userId`* | OperationStatus |  | — |
+| DELETE | `/{userId}/delete-account` | deleteUserAccount | `userId`* | OperationStatus |  | Delete requester account |
+| GET | `/{userId}/documents` | getUserDocuments | `userId`*, `recent`, `search`, `type_filter`, `language_code`, `page`, `per_page`, `order_by`, `order_type` | DocumentList | yes | Get a list of your documents |
+| POST | `/{userId}/downgrade-proofreader` | downgradeUserProofreader | `userId`* | OperationStatus |  | — |
+| GET | `/{userId}/earnings` | getUserEarnings | `userId`* | Earnings | yes | Returns your vendor earnings. Includes real-time earnings from ongoing projects, and fixed earnings from completed projects. Also includes total earnings and string edits. |
+| POST | `/{userId}/freeze-account` | freezeUserAccount | `userId`* | OperationStatus |  | Freeze requester account for project notifications |
+| POST | `/{userId}/make-proofreader` | makeUserProofreader | `userId`* | OperationStatus |  | — |
+| POST | `/{userId}/notifications/subscribe` | subscribeUserNotification | `userId`*, body: NotificationSubscription | OperationStatus |  | — |
+| POST | `/{userId}/notifications/unsubscribe` | unsubscribeUserNotification | `userId`*, body: NotificationSubscription | OperationStatus |  | — |
+| GET | `/{userId}/payment` | getUserPaymentInfo | `userId`* | PaymentInfo | yes | View user's payment and billing info |
+| POST | `/{userId}/payment` | updateUserPaymentInfo | `userId`*, body: PaymentInfo | OperationStatus |  | Update user payment info |
+| GET | `/{userId}/permissions` | getUserPermissions | `userId`* | PermissionList | yes | Returns a list of permissions that this user is authorized for. |
+| POST | `/{userId}/profile-picture` | uploadUserProfilePicture | `userId`*, body: ProfilePictureUpload | OperationStatus |  | — |
+| GET | `/{userId}/projects/vendor` | getVendorProjectsByUserId | `userId`*, `joined`, `completed`, `page`, `per_page` | ProjectList | yes | Get a list of user/vendor projects |
+| POST | `/{userId}/reject` | rejectVendorApplication | `userId`* | OperationStatus |  | — |
+| POST | `/{userId}/resend-email-confirmation` | sendUserEmailConfirmation | `userId`* | OperationStatus\|object |  | Sends email confirmation email for a user |
+| GET | `/{userId}/responsivity` | getUserResponsivity | `userId`*, `period` | ResponsivityList | yes | Returns a user's vendor responsivity stats |
+| GET | `/{userId}/stats` | getUserStats | `userId`* | Stats | yes | Returns a user's client and vendor statistics. This used to be called "summary" (\\@deprecated). |
+| GET | `/{userId}/stats/popular-pairs` | getUserPopularPairs | `userId`* | PopularLanguagePairs | yes | Returns the language pairs that the user has ordered most. |
+| GET | `/{userId}/stats/projects` | getUserProjectStats | `userId`* | ClientProjectStats | yes | Returns a user's project statistics. |
+| POST | `/{userId}/suspend` | suspendUser | `userId`*, body: SuspendUserRequest | OperationStatus |  | — |
+| POST | `/{userId}/unfreeze-account` | unfreezeUserAccount | `userId`* | OperationStatus |  | Unfreeze requester account for project notifications |
+| GET | `/{userId}/user-groups` | getThisUserGroups | `userId`* | UserGroupList | yes | Returns a list of user groups that this user belongs to. |
+| POST | `/{userId}/user-groups` | updateUserGroup | `userId`*, body: ActiveWidget | UserGroupList |  | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `5788390f3c5d9922a2d4a7e66859e36d52449fefabc7fed0f97e66dde5d92768` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,18 +32,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (13)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/{organism}/attributeSearch/{query}` | get /{organism}/attributeSearch/{query} | — |
-| GET | `/{organism}/attributeSet` | get /{organism}/attributeSet | — |
-| GET | `/{organism}/attributes/{systemCode}/{identifier}` | get /{organism}/attributes/{systemCode}/{identifier} | — |
-| GET | `/{organism}/isFreeSearchSupported` | get /{organism}/isFreeSearchSupported | — |
-| GET | `/{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode}` | get /{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode} | — |
-| GET | `/{organism}/properties` | get /{organism}/properties | — |
-| GET | `/{organism}/search/{query}` | get /{organism}/search/{query} | — |
-| GET | `/{organism}/sourceDataSources` | get /{organism}/sourceDataSources | — |
-| GET | `/{organism}/targetDataSources` | get /{organism}/targetDataSources | — |
-| GET | `/{organism}/xrefExists/{systemCode}/{identifier}` | get /{organism}/xrefExists/{systemCode}/{identifier} | — |
-| GET | `/{organism}/xrefs/{systemCode}/{identifier}` | get /{organism}/xrefs/{systemCode}/{identifier} | — |
-| POST | `/{organism}/xrefsBatch` | post /{organism}/xrefsBatch | — |
-| POST | `/{organism}/xrefsBatch/{systemCode}` | post /{organism}/xrefsBatch/{systemCode} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/{organism}/attributeSearch/{query}` | get /{organism}/attributeSearch/{query} | `organism`*, `query`*, `limit`, `attrName` | — | yes | — |
+| GET | `/{organism}/attributeSet` | get /{organism}/attributeSet | `organism`* | — | yes | — |
+| GET | `/{organism}/attributes/{systemCode}/{identifier}` | get /{organism}/attributes/{systemCode}/{identifier} | `organism`*, `systemCode`*, `identifier`*, `attrName` | — | yes | — |
+| GET | `/{organism}/isFreeSearchSupported` | get /{organism}/isFreeSearchSupported | `organism`* | — | yes | — |
+| GET | `/{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode}` | get /{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode} | `organism`*, `sourceSystemCode`*, `targetSystemCode`* | — | yes | — |
+| GET | `/{organism}/properties` | get /{organism}/properties | `organism`* | — | yes | — |
+| GET | `/{organism}/search/{query}` | get /{organism}/search/{query} | `organism`*, `query`*, `limit` | — | yes | — |
+| GET | `/{organism}/sourceDataSources` | get /{organism}/sourceDataSources | `organism`* | — | yes | — |
+| GET | `/{organism}/targetDataSources` | get /{organism}/targetDataSources | `organism`* | — | yes | — |
+| GET | `/{organism}/xrefExists/{systemCode}/{identifier}` | get /{organism}/xrefExists/{systemCode}/{identifier} | `organism`*, `systemCode`*, `identifier`* | — | yes | — |
+| GET | `/{organism}/xrefs/{systemCode}/{identifier}` | get /{organism}/xrefs/{systemCode}/{identifier} | `dataSource`, `organism`*, `systemCode`*, `identifier`* | — | yes | — |
+| POST | `/{organism}/xrefsBatch` | post /{organism}/xrefsBatch | `dataSource`, `organism`*, body*: string:string | — |  | — |
+| POST | `/{organism}/xrefsBatch/{systemCode}` | post /{organism}/xrefsBatch/{systemCode} | `dataSource`, `organism`*, `systemCode`*, body*: string | — |  | — |

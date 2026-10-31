@@ -18,6 +18,86 @@
         "from": "wealthreader-com-4c96195310",
         "kind": "EXPOSES",
         "to": "operation:get:/error-codes"
+      },
+      {
+        "from": "operation:get:/entities",
+        "kind": "RETURNS",
+        "to": "schema:entities"
+      },
+      {
+        "from": "operation:post:/entities",
+        "kind": "RETURNS",
+        "to": "schema:entity-data"
+      },
+      {
+        "from": "operation:get:/error-codes",
+        "kind": "RETURNS",
+        "to": "schema:error-codes"
+      },
+      {
+        "from": "schema:accounts",
+        "kind": "REFERENCES",
+        "to": "schema:owner"
+      },
+      {
+        "from": "schema:cards",
+        "kind": "REFERENCES",
+        "to": "schema:owner"
+      },
+      {
+        "from": "schema:entities",
+        "kind": "REFERENCES",
+        "to": "schema:statistics"
+      },
+      {
+        "from": "schema:entity-data",
+        "kind": "REFERENCES",
+        "to": "schema:accounts"
+      },
+      {
+        "from": "schema:entity-data",
+        "kind": "REFERENCES",
+        "to": "schema:cards"
+      },
+      {
+        "from": "schema:entity-data",
+        "kind": "REFERENCES",
+        "to": "schema:portfolios"
+      },
+      {
+        "from": "schema:entity-data",
+        "kind": "REFERENCES",
+        "to": "schema:properties"
+      },
+      {
+        "from": "schema:entity-data",
+        "kind": "REFERENCES",
+        "to": "schema:statistics"
+      },
+      {
+        "from": "schema:entity-data",
+        "kind": "REFERENCES",
+        "to": "schema:user_information"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:error-detail"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:statistics"
+      },
+      {
+        "from": "schema:error-detail",
+        "kind": "REFERENCES",
+        "to": "schema:contracts"
+      },
+      {
+        "from": "schema:portfolios",
+        "kind": "REFERENCES",
+        "to": "schema:owner"
       }
     ],
     "nodes": [
@@ -27,101 +107,186 @@
       },
       {
         "deprecated": false,
+        "description": "Obtiene el listado de entidades soportadas y la información necesaria para dibujar el formulario de login de la entidad.",
         "id": "operation:get:/entities",
         "kind": "operation",
         "method": "get",
         "name": "get /entities",
         "path": "/entities",
         "pointer": "#/paths/~1entities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "entities[]"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Obtiene el listado de entidades soportadas"
+        "summary": "Obtiene el listado de entidades soportadas",
+        "tags": [
+          "entity-data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Obtiene los activos financieros y el detalle de su composición de carteras de inversión compuestas por acciones o fondos, tarjetas de crédito, seguros y présta…",
         "id": "operation:post:/entities",
         "kind": "operation",
         "method": "post",
         "name": "post /entities",
         "path": "/entities",
         "pointer": "#/paths/~1entities/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "entity-data[]"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Obtiene los activos financieros y el detalle de su composición"
+        "summary": "Obtiene los activos financieros y el detalle de su composición",
+        "tags": [
+          "entity-data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Listado de códigos de error.",
         "id": "operation:get:/error-codes",
         "kind": "operation",
         "method": "get",
         "name": "get /error-codes",
+        "parameters": [
+          {
+            "default": "es",
+            "description": "Idioma de la respuesta",
+            "enum": [
+              "es",
+              "en"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/error-codes",
         "pointer": "#/paths/~1error-codes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "error-codes[]"
+          },
+          {
+            "status": "400",
+            "type": "error[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Listado de códigos de error"
+        "summary": "Listado de códigos de error",
+        "tags": [
+          "entity-data"
+        ]
       },
       {
+        "description": "Cuentas bancarias.",
         "id": "schema:accounts",
         "kind": "schema",
-        "name": "accounts"
+        "name": "accounts",
+        "type": "object[]"
       },
       {
+        "description": "Tarjetas de crédito, débito y prepago",
         "id": "schema:cards",
         "kind": "schema",
-        "name": "cards"
+        "name": "cards",
+        "type": "object[]"
       },
       {
+        "description": "Solamente estará informado cuando el valor de code sea 2020 (usuario multicontrato)",
         "id": "schema:contracts",
         "kind": "schema",
-        "name": "contracts"
+        "name": "contracts",
+        "type": "object[]"
       },
       {
         "id": "schema:entities",
         "kind": "schema",
-        "name": "entities"
+        "name": "entities",
+        "type": "object[]"
       },
       {
         "id": "schema:entity-data",
         "kind": "schema",
-        "name": "entity-data"
+        "name": "entity-data",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:error-codes",
         "kind": "schema",
-        "name": "error-codes"
+        "name": "error-codes",
+        "type": "object"
       },
       {
         "id": "schema:error-detail",
         "kind": "schema",
-        "name": "error-detail"
+        "name": "error-detail",
+        "type": "object"
       },
       {
         "id": "schema:owner",
         "kind": "schema",
-        "name": "owner"
+        "name": "owner",
+        "type": "object"
       },
       {
+        "description": "Carteras de acciones, fondos y planes de pensiones",
         "id": "schema:portfolios",
         "kind": "schema",
-        "name": "portfolios"
+        "name": "portfolios",
+        "type": "object[]"
       },
       {
+        "description": "Activos inmobiliarios",
         "id": "schema:properties",
         "kind": "schema",
-        "name": "properties"
+        "name": "properties",
+        "type": "object"
       },
       {
         "id": "schema:statistics",
         "kind": "schema",
-        "name": "statistics"
+        "name": "statistics",
+        "type": "object"
       },
       {
+        "description": "Información relativa a la persona que hace login",
         "id": "schema:user_information",
         "kind": "schema",
-        "name": "user_information"
+        "name": "user_information",
+        "type": "object"
       }
     ]
   },

@@ -27,12 +27,12 @@
       {
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
-        "to": "operation:delete:/course-mappings/{offeringId}/{externalCourseId}"
+        "to": "operation:put:/course-mappings/{offeringId}/{externalCourseId}"
       },
       {
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
-        "to": "operation:put:/course-mappings/{offeringId}/{externalCourseId}"
+        "to": "operation:delete:/course-mappings/{offeringId}/{externalCourseId}"
       },
       {
         "from": "iqualify-com-1161f53a87",
@@ -247,17 +247,17 @@
       {
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
-        "to": "operation:delete:/offerings/{offeringId}/channels/{channelId}/learners"
-      },
-      {
-        "from": "iqualify-com-1161f53a87",
-        "kind": "EXPOSES",
         "to": "operation:get:/offerings/{offeringId}/channels/{channelId}/learners"
       },
       {
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
         "to": "operation:post:/offerings/{offeringId}/channels/{channelId}/learners"
+      },
+      {
+        "from": "iqualify-com-1161f53a87",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/offerings/{offeringId}/channels/{channelId}/learners"
       },
       {
         "from": "iqualify-com-1161f53a87",
@@ -322,17 +322,17 @@
       {
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
-        "to": "operation:delete:/offerings/{offeringId}/users/{markerEmail}/marks"
-      },
-      {
-        "from": "iqualify-com-1161f53a87",
-        "kind": "EXPOSES",
         "to": "operation:get:/offerings/{offeringId}/users/{markerEmail}/marks"
       },
       {
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
         "to": "operation:post:/offerings/{offeringId}/users/{markerEmail}/marks"
+      },
+      {
+        "from": "iqualify-com-1161f53a87",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/offerings/{offeringId}/users/{markerEmail}/marks"
       },
       {
         "from": "iqualify-com-1161f53a87",
@@ -423,6 +423,596 @@
         "from": "iqualify-com-1161f53a87",
         "kind": "EXPOSES",
         "to": "operation:patch:/users/{userEmail}/transfer"
+      },
+      {
+        "from": "operation:get:/courses",
+        "kind": "RETURNS",
+        "to": "schema:CourseResponse"
+      },
+      {
+        "from": "operation:get:/courses/{contentId}",
+        "kind": "RETURNS",
+        "to": "schema:CourseMetaResponse"
+      },
+      {
+        "from": "operation:get:/courses/{contentId}/activations",
+        "kind": "RETURNS",
+        "to": "schema:ActivationResponse"
+      },
+      {
+        "from": "operation:put:/courses/{contentId}/metadata/category",
+        "kind": "RETURNS",
+        "to": "schema:CourseMetaResponse"
+      },
+      {
+        "from": "operation:put:/courses/{contentId}/metadata/level",
+        "kind": "RETURNS",
+        "to": "schema:CourseMetaResponse"
+      },
+      {
+        "from": "operation:put:/courses/{contentId}/metadata/tags",
+        "kind": "RETURNS",
+        "to": "schema:CourseMetaResponse"
+      },
+      {
+        "from": "operation:put:/courses/{contentId}/metadata/topic",
+        "kind": "RETURNS",
+        "to": "schema:CourseMetaResponse"
+      },
+      {
+        "from": "operation:get:/courses/{contentId}/permissions",
+        "kind": "RETURNS",
+        "to": "schema:UserPermission"
+      },
+      {
+        "from": "operation:get:/offerings",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:post:/offerings",
+        "kind": "ACCEPTS",
+        "to": "schema:OfferingRequired"
+      },
+      {
+        "from": "operation:post:/offerings",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:get:/offerings/current",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:get:/offerings/future",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:get:/offerings/info/{textPattern}",
+        "kind": "RETURNS",
+        "to": "schema:PortfolioActivations"
+      },
+      {
+        "from": "operation:get:/offerings/past",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:get:/offerings/summary",
+        "kind": "RETURNS",
+        "to": "schema:PortfolioActivations"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:patch:/offerings/{offeringId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Offering"
+      },
+      {
+        "from": "operation:patch:/offerings/{offeringId}",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/activities/openresponse",
+        "kind": "RETURNS",
+        "to": "schema:OfferingActivitiesResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/activities/responses",
+        "kind": "RETURNS",
+        "to": "schema:ActivityAttemptOpenResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/channels/{channelId}/comments",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/channels/{channelId}/posts",
+        "kind": "RETURNS",
+        "to": "schema:httpPost"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/channels/{channelId}/replies",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/learners-progress",
+        "kind": "RETURNS",
+        "to": "schema:LearnerProgressResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/marks/assignments",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentMarkResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/marks/quizzes",
+        "kind": "RETURNS",
+        "to": "schema:QuizMarkResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/pulses/responses",
+        "kind": "RETURNS",
+        "to": "schema:PulseResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/pulses/{pulseId}/responses",
+        "kind": "RETURNS",
+        "to": "schema:PulseResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/social-notes",
+        "kind": "RETURNS",
+        "to": "schema:SocialNotesResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/submissions/assignments",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentMarkResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/submissions/open-response/{assessmentId}",
+        "kind": "RETURNS",
+        "to": "schema:SubmissionMarkResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId}",
+        "kind": "RETURNS",
+        "to": "schema:SubmissionMarkResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/analytics/unit-reactions",
+        "kind": "RETURNS",
+        "to": "schema:UnitReactionsAnalyticsResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/assessments",
+        "kind": "RETURNS",
+        "to": "schema:AssessmentResponse"
+      },
+      {
+        "from": "operation:patch:/offerings/{offeringId}/assessments/{assessmentId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Assessment"
+      },
+      {
+        "from": "operation:patch:/offerings/{offeringId}/assessments/{assessmentId}",
+        "kind": "RETURNS",
+        "to": "schema:AssessmentResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/badges",
+        "kind": "RETURNS",
+        "to": "schema:Badge"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/channels",
+        "kind": "RETURNS",
+        "to": "schema:ChannelResponse"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/channels",
+        "kind": "ACCEPTS",
+        "to": "schema:ChannelRequired"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/channels",
+        "kind": "RETURNS",
+        "to": "schema:ChannelResponse"
+      },
+      {
+        "from": "operation:patch:/offerings/{offeringId}/channels/{channelId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Channel"
+      },
+      {
+        "from": "operation:patch:/offerings/{offeringId}/channels/{channelId}",
+        "kind": "RETURNS",
+        "to": "schema:ChannelResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/channels/{channelId}/learners",
+        "kind": "RETURNS",
+        "to": "schema:ChannelResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/groups",
+        "kind": "RETURNS",
+        "to": "schema:AssessmentGroupResponse"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/groups",
+        "kind": "ACCEPTS",
+        "to": "schema:AssessmentGroupRequired"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/groups",
+        "kind": "RETURNS",
+        "to": "schema:AssessmentGroupResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/groups/{groupId}/learners",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/groups/{groupId}/learners",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/learners/pending-submission",
+        "kind": "RETURNS",
+        "to": "schema:AssessmentPendingSubmission"
+      },
+      {
+        "from": "operation:put:/offerings/{offeringId}/metadata/category",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:put:/offerings/{offeringId}/metadata/level",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:put:/offerings/{offeringId}/metadata/tags",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:put:/offerings/{offeringId}/metadata/topic",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/users",
+        "kind": "RETURNS",
+        "to": "schema:OfferingUserResponse"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/users",
+        "kind": "ACCEPTS",
+        "to": "schema:OfferingUser"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/users",
+        "kind": "RETURNS",
+        "to": "schema:Error"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/users",
+        "kind": "RETURNS",
+        "to": "schema:OfferingUserAddResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/users/{markerEmail}/marks",
+        "kind": "RETURNS",
+        "to": "schema:OfferingUser"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/users/{markerEmail}/marks",
+        "kind": "RETURNS",
+        "to": "schema:OfferingUser"
+      },
+      {
+        "from": "operation:delete:/offerings/{offeringId}/users/{markerEmail}/marks",
+        "kind": "RETURNS",
+        "to": "schema:OfferingUser"
+      },
+      {
+        "from": "operation:post:/offerings/{offeringId}/users/{userEmail}/badges/award",
+        "kind": "RETURNS",
+        "to": "schema:AwardedResponse"
+      },
+      {
+        "from": "operation:get:/offerings/{offeringId}/users/{userEmail}/submissions/open-response",
+        "kind": "RETURNS",
+        "to": "schema:Assignments"
+      },
+      {
+        "from": "operation:get:/org",
+        "kind": "RETURNS",
+        "to": "schema:OrgResponse"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "ACCEPTS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/users/{userEmail}",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:patch:/users/{userEmail}",
+        "kind": "ACCEPTS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:patch:/users/{userEmail}",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/users/{userEmail}/badges",
+        "kind": "RETURNS",
+        "to": "schema:UserBadge"
+      },
+      {
+        "from": "operation:get:/users/{userEmail}/offerings",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:post:/users/{userEmail}/offerings",
+        "kind": "RETURNS",
+        "to": "schema:OfferingMetadataResponse"
+      },
+      {
+        "from": "operation:post:/users/{userEmail}/permissions/{permissionName}",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/users/{userEmail}/progress",
+        "kind": "RETURNS",
+        "to": "schema:LearnerResponse"
+      },
+      {
+        "from": "operation:put:/users/{userEmail}/suspend",
+        "kind": "ACCEPTS",
+        "to": "schema:SuspendedRequest"
+      },
+      {
+        "from": "operation:patch:/users/{userEmail}/transfer",
+        "kind": "ACCEPTS",
+        "to": "schema:TransferRequest"
+      },
+      {
+        "from": "schema:ActivityAttemptOpenResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActivityAttemptOpenResponseFeedback"
+      },
+      {
+        "from": "schema:ActivityAttemptOpenResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActivityAttemptOpenResponseFiles"
+      },
+      {
+        "from": "schema:AssessmentPendingSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:Document"
+      },
+      {
+        "from": "schema:AssessmentPendingSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:ThemeResponse"
+      },
+      {
+        "from": "schema:AssessmentPendingSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:AssessmentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Document"
+      },
+      {
+        "from": "schema:AssessmentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ThemeResponse"
+      },
+      {
+        "from": "schema:Assignments",
+        "kind": "REFERENCES",
+        "to": "schema:Document"
+      },
+      {
+        "from": "schema:Assignments",
+        "kind": "REFERENCES",
+        "to": "schema:Mark"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "REFERENCES",
+        "to": "schema:BadgeExpiry"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "REFERENCES",
+        "to": "schema:Criteria"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "REFERENCES",
+        "to": "schema:OpenBadgeClass"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "REFERENCES",
+        "to": "schema:Moderation"
+      },
+      {
+        "from": "schema:CourseMetaResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LearningOutcomes"
+      },
+      {
+        "from": "schema:CourseResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LearningOutcomes"
+      },
+      {
+        "from": "schema:LearnerResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OfferingProgressRow"
+      },
+      {
+        "from": "schema:Mark",
+        "kind": "REFERENCES",
+        "to": "schema:MarkFeedback"
+      },
+      {
+        "from": "schema:Moderation",
+        "kind": "REFERENCES",
+        "to": "schema:Moderator"
+      },
+      {
+        "from": "schema:Offering",
+        "kind": "REFERENCES",
+        "to": "schema:BadgeExpiry"
+      },
+      {
+        "from": "schema:OfferingMetadataResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OfferingMetadata"
+      },
+      {
+        "from": "schema:OfferingRequired",
+        "kind": "REFERENCES",
+        "to": "schema:BadgeExpiry"
+      },
+      {
+        "from": "schema:OfferingUser",
+        "kind": "REFERENCES",
+        "to": "schema:UserMetadata"
+      },
+      {
+        "from": "schema:OfferingUser",
+        "kind": "REFERENCES",
+        "to": "schema:UserProfileRequest"
+      },
+      {
+        "from": "schema:OfferingUserAddResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Invite"
+      },
+      {
+        "from": "schema:OfferingUserAddResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserMetadata"
+      },
+      {
+        "from": "schema:OfferingUserAddResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserProfileRequest"
+      },
+      {
+        "from": "schema:OfferingUserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserProfile"
+      },
+      {
+        "from": "schema:PulseAnswer",
+        "kind": "REFERENCES",
+        "to": "schema:PulseMCQOption"
+      },
+      {
+        "from": "schema:PulseAnswer",
+        "kind": "REFERENCES",
+        "to": "schema:PulseSpatialOption"
+      },
+      {
+        "from": "schema:PulseResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PulseAnswer"
+      },
+      {
+        "from": "schema:SubmissionMarkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Document"
+      },
+      {
+        "from": "schema:SubmissionMarkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Mark"
+      },
+      {
+        "from": "schema:UnitReactionsAnalyticsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UnitReactionsFeedback"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UserMetadata"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UserProfileRequest"
+      },
+      {
+        "from": "schema:UserBadge",
+        "kind": "REFERENCES",
+        "to": "schema:Criteria"
+      },
+      {
+        "from": "schema:UserBadge",
+        "kind": "REFERENCES",
+        "to": "schema:OpenBadgeClass"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Invite"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserMetadata"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UserProfile"
+      },
+      {
+        "from": "schema:httpPost",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentResponse"
+      },
+      {
+        "from": "schema:httpPost",
+        "kind": "REFERENCES",
+        "to": "schema:Moderation"
       }
     ],
     "nodes": [
@@ -432,1613 +1022,4929 @@
       },
       {
         "deprecated": false,
+        "description": "Responds with all supported endpoints URLs for v2 version.",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "get /",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "List supported endpoints URLs"
+        "summary": "List supported endpoints URLs",
+        "tags": [
+          "API info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all course mappings for course offerings.",
         "id": "operation:get:/course-mappings",
         "kind": "operation",
         "method": "get",
         "name": "get /course-mappings",
         "path": "/course-mappings",
         "pointer": "#/paths/~1course-mappings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find course mappings"
+        "summary": "Find course mappings",
+        "tags": [
+          "Course mappings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with course mapping details by externalCourseId.",
         "id": "operation:get:/course-mappings/externalcourse/{externalCourseId}",
         "kind": "operation",
         "method": "get",
         "name": "get /course-mappings/externalcourse/{externalCourseId}",
+        "parameters": [
+          {
+            "description": "external course's id",
+            "in": "path",
+            "name": "externalCourseId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/course-mappings/externalcourse/{externalCourseId}",
         "pointer": "#/paths/~1course-mappings~1externalcourse~1{externalCourseId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find course mappings by externalCourseId"
+        "summary": "Find course mappings by externalCourseId",
+        "tags": [
+          "Course mappings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with course mapping details by offeringId.",
         "id": "operation:get:/course-mappings/{offeringId}",
         "kind": "operation",
         "method": "get",
         "name": "get /course-mappings/{offeringId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/course-mappings/{offeringId}",
         "pointer": "#/paths/~1course-mappings~1{offeringId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find course mappings by offeringId"
+        "summary": "Find course mappings by offeringId",
+        "tags": [
+          "Course mappings"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/course-mappings/{offeringId}/{externalCourseId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /course-mappings/{offeringId}/{externalCourseId}",
-        "path": "/course-mappings/{offeringId}/{externalCourseId}",
-        "pointer": "#/paths/~1course-mappings~1{offeringId}~1{externalCourseId}/delete",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Remove course mapping"
-      },
-      {
-        "deprecated": false,
+        "description": "Creates a mapping between the offering and the externalCourseId.",
         "id": "operation:put:/course-mappings/{offeringId}/{externalCourseId}",
         "kind": "operation",
         "method": "put",
         "name": "put /course-mappings/{offeringId}/{externalCourseId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "external course's id",
+            "in": "path",
+            "name": "externalCourseId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/course-mappings/{offeringId}/{externalCourseId}",
         "pointer": "#/paths/~1course-mappings~1{offeringId}~1{externalCourseId}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add course mapping"
+        "summary": "Add course mapping",
+        "tags": [
+          "Course mappings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes the course mapping between the offering and the externalCourseId.",
+        "id": "operation:delete:/course-mappings/{offeringId}/{externalCourseId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /course-mappings/{offeringId}/{externalCourseId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "external course's id",
+            "in": "path",
+            "name": "externalCourseId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/course-mappings/{offeringId}/{externalCourseId}",
+        "pointer": "#/paths/~1course-mappings~1{offeringId}~1{externalCourseId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Remove course mapping",
+        "tags": [
+          "Course mappings"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Responds with all courses (draft and published.)",
         "id": "operation:get:/courses",
         "kind": "operation",
         "method": "get",
         "name": "get /courses",
         "path": "/courses",
         "pointer": "#/paths/~1courses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CourseResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find courses"
+        "summary": "Find courses",
+        "tags": [
+          "Courses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a course matching the contentId.",
         "id": "operation:get:/courses/{contentId}",
         "kind": "operation",
         "method": "get",
         "name": "get /courses/{contentId}",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}",
         "pointer": "#/paths/~1courses~1{contentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CourseMetaResponse"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find course by contentId"
+        "summary": "Find course by contentId",
+        "tags": [
+          "Courses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all activations for the contentId provided.",
         "id": "operation:get:/courses/{contentId}/activations",
         "kind": "operation",
         "method": "get",
         "name": "get /courses/{contentId}/activations",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}/activations",
         "pointer": "#/paths/~1courses~1{contentId}~1activations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActivationResponse"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find activations for a contentId"
+        "summary": "Find activations for a contentId",
+        "tags": [
+          "Courses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add or update course category in the metadata of a course.",
         "id": "operation:put:/courses/{contentId}/metadata/category",
         "kind": "operation",
         "method": "put",
         "name": "put /courses/{contentId}/metadata/category",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}/metadata/category",
         "pointer": "#/paths/~1courses~1{contentId}~1metadata~1category/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CourseMetaResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update course category"
+        "summary": "Update course category",
+        "tags": [
+          "Course metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add or update the course level in the metadata of a course.",
         "id": "operation:put:/courses/{contentId}/metadata/level",
         "kind": "operation",
         "method": "put",
         "name": "put /courses/{contentId}/metadata/level",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}/metadata/level",
         "pointer": "#/paths/~1courses~1{contentId}~1metadata~1level/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CourseMetaResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update course level"
+        "summary": "Update course level",
+        "tags": [
+          "Course metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add or update course tags in the metadata of a course.",
         "id": "operation:put:/courses/{contentId}/metadata/tags",
         "kind": "operation",
         "method": "put",
         "name": "put /courses/{contentId}/metadata/tags",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}/metadata/tags",
         "pointer": "#/paths/~1courses~1{contentId}~1metadata~1tags/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CourseMetaResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update course tags"
+        "summary": "Update course tags",
+        "tags": [
+          "Course metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add or update the course topic in the metadata of a course.",
         "id": "operation:put:/courses/{contentId}/metadata/topic",
         "kind": "operation",
         "method": "put",
         "name": "put /courses/{contentId}/metadata/topic",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}/metadata/topic",
         "pointer": "#/paths/~1courses~1{contentId}~1metadata~1topic/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CourseMetaResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update course topic"
+        "summary": "Update course topic",
+        "tags": [
+          "Course metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with users who have access to a specific course by contentId.",
         "id": "operation:get:/courses/{contentId}/permissions",
         "kind": "operation",
         "method": "get",
         "name": "get /courses/{contentId}/permissions",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{contentId}/permissions",
         "pointer": "#/paths/~1courses~1{contentId}~1permissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserPermission"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find users who have access to the contentId provided"
+        "summary": "Find users who have access to the contentId provided",
+        "tags": [
+          "Courses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provide a user with access to a specific course by rootContentId.",
         "id": "operation:post:/courses/{rootContentId}/permissions/{userEmail}",
         "kind": "operation",
         "method": "post",
         "name": "post /courses/{rootContentId}/permissions/{userEmail}",
+        "parameters": [
+          {
+            "description": "The content Id",
+            "in": "path",
+            "name": "rootContentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The user email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/courses/{rootContentId}/permissions/{userEmail}",
         "pointer": "#/paths/~1courses~1{rootContentId}~1permissions~1{userEmail}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update course access"
+        "summary": "Update course access",
+        "tags": [
+          "Courses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all offerings for your organisation.",
         "id": "operation:get:/offerings",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings",
         "path": "/offerings",
         "pointer": "#/paths/~1offerings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find current, past and future offerings"
+        "summary": "Find current, past and future offerings",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new offering.",
         "id": "operation:post:/offerings",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings",
         "path": "/offerings",
         "pointer": "#/paths/~1offerings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OfferingRequired"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Create offering"
+        "summary": "Create offering",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with active offerings for your organisation.",
         "id": "operation:get:/offerings/current",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/current",
         "path": "/offerings/current",
         "pointer": "#/paths/~1offerings~1current/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find active offerings"
+        "summary": "Find active offerings",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with scheduled offerings for your organisation.",
         "id": "operation:get:/offerings/future",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/future",
         "path": "/offerings/future",
         "pointer": "#/paths/~1offerings~1future/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find scheduled offerings"
+        "summary": "Find scheduled offerings",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find offerings where info field matches the specified text pattern.",
         "id": "operation:get:/offerings/info/{textPattern}",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/info/{textPattern}",
+        "parameters": [
+          {
+            "description": "Text pattern to search for (minimum of 3 characters length).",
+            "in": "path",
+            "name": "textPattern",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/info/{textPattern}",
         "pointer": "#/paths/~1offerings~1info~1{textPattern}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortfolioActivations[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find offerings where info field matches the specified textPattern"
+        "summary": "Find offerings where info field matches the specified textPattern",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with past offerings for your organisation.",
         "id": "operation:get:/offerings/past",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/past",
         "path": "/offerings/past",
         "pointer": "#/paths/~1offerings~1past/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find past offerings"
+        "summary": "Find past offerings",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a summary of all offerings for your organisation.",
         "id": "operation:get:/offerings/summary",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/summary",
+        "parameters": [
+          {
+            "default": "50",
+            "description": "Returns only the first n results.",
+            "in": "query",
+            "name": "$top",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sorts the results.",
+            "in": "query",
+            "name": "$orderby",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters the results, based on a Boolean condition.",
+            "in": "query",
+            "name": "$filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/summary",
         "pointer": "#/paths/~1offerings~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortfolioActivations[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Offerings summary"
+        "summary": "Offerings summary",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}",
         "pointer": "#/paths/~1offerings~1{offeringId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find offering by ID"
+        "summary": "Find offering by ID",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the offering.",
         "id": "operation:patch:/offerings/{offeringId}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /offerings/{offeringId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}",
         "pointer": "#/paths/~1offerings~1{offeringId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Offering"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update offering"
+        "summary": "Update offering",
+        "tags": [
+          "Offerings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with the activities in a specific offering.",
         "id": "operation:get:/offerings/{offeringId}/activities/openresponse",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/activities/openresponse",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/activities/openresponse",
         "pointer": "#/paths/~1offerings~1{offeringId}~1activities~1openresponse/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingActivitiesResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find offering's activities"
+        "summary": "Find offering's activities",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learner activity attempts for open response activities in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/analytics/activities/responses",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/activities/responses",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/activities/responses",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1activities~1responses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActivityAttemptOpenResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find open response activity attempts"
+        "summary": "Find open response activity attempts",
+        "tags": [
+          "Assessment data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a list of comments made in any posts in a specified channel, within an offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/channels/{channelId}/comments",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/channels/{channelId}/comments",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/channels/{channelId}/comments",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1channels~1{channelId}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find comments"
+        "summary": "Find comments",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a list of posts made in a specified channel, within an offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/channels/{channelId}/posts",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/channels/{channelId}/posts",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/channels/{channelId}/posts",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1channels~1{channelId}~1posts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "httpPost[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find posts"
+        "summary": "Find posts",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a list of replies to comments in any posts in a specified channel, within an offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/channels/{channelId}/replies",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/channels/{channelId}/replies",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/channels/{channelId}/replies",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1channels~1{channelId}~1replies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find replies"
+        "summary": "Find replies",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learner progress in the offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/learners-progress",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/learners-progress",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/learners-progress",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1learners-progress/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LearnerProgressResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learner progress in a specified offering"
+        "summary": "Find learner progress in a specified offering",
+        "tags": [
+          "Learner activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learner assessment marks in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/analytics/marks/assignments",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/marks/assignments",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/marks/assignments",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1marks~1assignments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentMarkResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find assessment marks"
+        "summary": "Find assessment marks",
+        "tags": [
+          "Assessment data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learner quiz marks in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/analytics/marks/quizzes",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/marks/quizzes",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/marks/quizzes",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1marks~1quizzes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QuizMarkResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find quiz marks"
+        "summary": "Find quiz marks",
+        "tags": [
+          "Assessment data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with the IDs of all pulses that learners have responded to in a specified offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/pulses",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/pulses",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/pulses",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1pulses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find all pulse IDs in the specified offering"
+        "summary": "Find all pulse IDs in the specified offering",
+        "tags": [
+          "Pulses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with pulse's responses in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/analytics/pulses/responses",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/pulses/responses",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter pulse responses by type.",
+            "enum": [
+              "submit_text",
+              "MCQ",
+              "spatial_triangular",
+              "spatial_planar",
+              "spatial_linear"
+            ],
+            "in": "query",
+            "name": "pulseType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter pulse responses by responseTime.",
+            "in": "query",
+            "name": "responseTime",
+            "required": false,
+            "type": "string|string[]"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/pulses/responses",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1pulses~1responses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PulseResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find pulses by offeringId"
+        "summary": "Find pulses by offeringId",
+        "tags": [
+          "Pulses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with pulse's responses, matching the pulseId, in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/analytics/pulses/{pulseId}/responses",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/pulses/{pulseId}/responses",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "pulse's base id",
+            "in": "path",
+            "name": "pulseId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/pulses/{pulseId}/responses",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1pulses~1{pulseId}~1responses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PulseResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find pulses by offeringId and pulseId"
+        "summary": "Find pulses by offeringId and pulseId",
+        "tags": [
+          "Pulses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all shared social notes in a specified offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/social-notes",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/social-notes",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/social-notes",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1social-notes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SocialNotesResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find shared social notes in an offering"
+        "summary": "Find shared social notes in an offering",
+        "tags": [
+          "Learner activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learner assessment submissions and marks, if any, in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/analytics/submissions/assignments",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/submissions/assignments",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/submissions/assignments",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1submissions~1assignments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentMarkResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find submissions to assessments, including marks if any"
+        "summary": "Find submissions to assessments, including marks if any",
+        "tags": [
+          "Assessment data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learner assessment submissions and marks, if any, in a specified open response assessment.",
         "id": "operation:get:/offerings/{offeringId}/analytics/submissions/open-response/{assessmentId}",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/submissions/open-response/{assessmentId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "assessment's id",
+            "in": "path",
+            "name": "assessmentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/submissions/open-response/{assessmentId}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1submissions~1open-response~1{assessmentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubmissionMarkResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find submissions to a specified open response assessment, including marks if any"
+        "summary": "Find submissions to a specified open response assessment, including marks if any",
+        "tags": [
+          "Assessment data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with the learner's assessment submission and any marks for the submission.",
         "id": "operation:get:/offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId}",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          },
+          {
+            "description": "assessment's id",
+            "in": "path",
+            "name": "assessmentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1submissions~1{userEmail}~1assignments~1{assessmentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubmissionMarkResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find a learner's submission to a specified assessment, including marks if any"
+        "summary": "Find a learner's submission to a specified assessment, including marks if any",
+        "tags": [
+          "Assessment data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with user reactions to units in a specified offering.",
         "id": "operation:get:/offerings/{offeringId}/analytics/unit-reactions",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/analytics/unit-reactions",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/analytics/unit-reactions",
         "pointer": "#/paths/~1offerings~1{offeringId}~1analytics~1unit-reactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UnitReactionsAnalyticsResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find unit reactions"
+        "summary": "Find unit reactions",
+        "tags": [
+          "Learner activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all assessments in an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/assessments",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/assessments",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/assessments",
         "pointer": "#/paths/~1offerings~1{offeringId}~1assessments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssessmentResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find offering's assessments"
+        "summary": "Find offering's assessments",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the assessment details for a specified assessment in an offering.",
         "id": "operation:patch:/offerings/{offeringId}/assessments/{assessmentId}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /offerings/{offeringId}/assessments/{assessmentId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "assessment's id",
+            "in": "path",
+            "name": "assessmentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/assessments/{assessmentId}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1assessments~1{assessmentId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Assessment"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssessmentResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update assessment details"
+        "summary": "Update assessment details",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes the assessment document file for a specified assessment in an offering.",
         "id": "operation:delete:/offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "assessment's id",
+            "in": "path",
+            "name": "assessmentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "documents's id",
+            "in": "path",
+            "name": "documentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1assessments~1{assessmentId}~1documents~1{documentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Remove assessment document"
+        "summary": "Remove assessment document",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the due dates for a learner's quiz attempt specified by the assessmentId.",
         "id": "operation:patch:/offerings/{offeringId}/assessments/{assessmentId}/{userEmail}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /offerings/{offeringId}/assessments/{assessmentId}/{userEmail}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "assessment's id",
+            "in": "path",
+            "name": "assessmentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/offerings/{offeringId}/assessments/{assessmentId}/{userEmail}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1assessments~1{assessmentId}~1{userEmail}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update the due dates for a learner's quiz attempt"
+        "summary": "Update the due dates for a learner's quiz attempt",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with the badge for an offering matching the offeringId.",
         "id": "operation:get:/offerings/{offeringId}/badges",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/badges",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/badges",
         "pointer": "#/paths/~1offerings~1{offeringId}~1badges/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Badge"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find offering badges"
+        "summary": "Find offering badges",
+        "tags": [
+          "Badges"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a list of channels in an offering.",
         "id": "operation:get:/offerings/{offeringId}/channels",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/channels",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/channels",
         "pointer": "#/paths/~1offerings~1{offeringId}~1channels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChannelResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find channels"
+        "summary": "Find channels",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds new channel to the specified offering.",
         "id": "operation:post:/offerings/{offeringId}/channels",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/channels",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/channels",
         "pointer": "#/paths/~1offerings~1{offeringId}~1channels/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ChannelRequired"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ChannelResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add channel"
+        "summary": "Add channel",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a channel in an offering.",
         "id": "operation:patch:/offerings/{offeringId}/channels/{channelId}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /offerings/{offeringId}/channels/{channelId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/channels/{channelId}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1channels~1{channelId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Channel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChannelResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update channel"
+        "summary": "Update channel",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/offerings/{offeringId}/channels/{channelId}/learners",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /offerings/{offeringId}/channels/{channelId}/learners",
-        "path": "/offerings/{offeringId}/channels/{channelId}/learners",
-        "pointer": "#/paths/~1offerings~1{offeringId}~1channels~1{channelId}~1learners/delete",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Remove learners from a group channel"
-      },
-      {
-        "deprecated": false,
+        "description": "Finds all learners in a specified group channel.",
         "id": "operation:get:/offerings/{offeringId}/channels/{channelId}/learners",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/channels/{channelId}/learners",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/channels/{channelId}/learners",
         "pointer": "#/paths/~1offerings~1{offeringId}~1channels~1{channelId}~1learners/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChannelResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learners in a group channel"
+        "summary": "Find learners in a group channel",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a learner to a specified group channel.",
         "id": "operation:post:/offerings/{offeringId}/channels/{channelId}/learners",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/channels/{channelId}/learners",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/channels/{channelId}/learners",
         "pointer": "#/paths/~1offerings~1{offeringId}~1channels~1{channelId}~1learners/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add learners to a group channel"
+        "summary": "Add learners to a group channel",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes a learner from the specified group channel.",
+        "id": "operation:delete:/offerings/{offeringId}/channels/{channelId}/learners",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /offerings/{offeringId}/channels/{channelId}/learners",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "channel's id",
+            "in": "path",
+            "name": "channelId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/offerings/{offeringId}/channels/{channelId}/learners",
+        "pointer": "#/paths/~1offerings~1{offeringId}~1channels~1{channelId}~1learners/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Remove learners from a group channel",
+        "tags": [
+          "Channels"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Responds with a list of assessment groups in an offering.",
         "id": "operation:get:/offerings/{offeringId}/groups",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/groups",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/groups",
         "pointer": "#/paths/~1offerings~1{offeringId}~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssessmentGroupResponse[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find assessment groups"
+        "summary": "Find assessment groups",
+        "tags": [
+          "Assessment groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new assessment group in an offering.",
         "id": "operation:post:/offerings/{offeringId}/groups",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/groups",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/groups",
         "pointer": "#/paths/~1offerings~1{offeringId}~1groups/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssessmentGroupRequired"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "AssessmentGroupResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add an assessment group"
+        "summary": "Add an assessment group",
+        "tags": [
+          "Assessment groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a list of learners in a specified assessment group.",
         "id": "operation:get:/offerings/{offeringId}/groups/{groupId}/learners",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/groups/{groupId}/learners",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Assessment group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/groups/{groupId}/learners",
         "pointer": "#/paths/~1offerings~1{offeringId}~1groups~1{groupId}~1learners/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learners in an assessment group"
+        "summary": "Find learners in an assessment group",
+        "tags": [
+          "Assessment groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a learner into the specified assessment group.",
         "id": "operation:post:/offerings/{offeringId}/groups/{groupId}/learners",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/groups/{groupId}/learners",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Assessment group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/groups/{groupId}/learners",
         "pointer": "#/paths/~1offerings~1{offeringId}~1groups~1{groupId}~1learners/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "UserResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add a learner to an assessment group"
+        "summary": "Add a learner to an assessment group",
+        "tags": [
+          "Assessment groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes a learner from the specified assessment group.",
         "id": "operation:delete:/offerings/{offeringId}/groups/{groupId}/learners/{userEmail}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /offerings/{offeringId}/groups/{groupId}/learners/{userEmail}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Assessment group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/offerings/{offeringId}/groups/{groupId}/learners/{userEmail}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1groups~1{groupId}~1learners~1{userEmail}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Remove a learner from an assessment group"
+        "summary": "Remove a learner from an assessment group",
+        "tags": [
+          "Assessment groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with learners who have one or more assessments due x days before the due date, with each assessment that is due, where x = the number of days specifie…",
         "id": "operation:get:/offerings/{offeringId}/learners/pending-submission",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/learners/pending-submission",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "days to assessment due date.",
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/learners/pending-submission",
         "pointer": "#/paths/~1offerings~1{offeringId}~1learners~1pending-submission/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssessmentPendingSubmission[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learners with assessments pending x days before due date within the specified offeringId"
+        "summary": "Find learners with assessments pending x days before due date within the specified offeringId",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the offering category metadata.",
         "id": "operation:put:/offerings/{offeringId}/metadata/category",
         "kind": "operation",
         "method": "put",
         "name": "put /offerings/{offeringId}/metadata/category",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/metadata/category",
         "pointer": "#/paths/~1offerings~1{offeringId}~1metadata~1category/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update offering category metadata"
+        "summary": "Update offering category metadata",
+        "tags": [
+          "Offering metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the offering level metadata.",
         "id": "operation:put:/offerings/{offeringId}/metadata/level",
         "kind": "operation",
         "method": "put",
         "name": "put /offerings/{offeringId}/metadata/level",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/metadata/level",
         "pointer": "#/paths/~1offerings~1{offeringId}~1metadata~1level/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update offering level metadata"
+        "summary": "Update offering level metadata",
+        "tags": [
+          "Offering metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the offering tags metadata.",
         "id": "operation:put:/offerings/{offeringId}/metadata/tags",
         "kind": "operation",
         "method": "put",
         "name": "put /offerings/{offeringId}/metadata/tags",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/metadata/tags",
         "pointer": "#/paths/~1offerings~1{offeringId}~1metadata~1tags/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update offering tags metadata"
+        "summary": "Update offering tags metadata",
+        "tags": [
+          "Offering metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the offering topic metadata.",
         "id": "operation:put:/offerings/{offeringId}/metadata/topic",
         "kind": "operation",
         "method": "put",
         "name": "put /offerings/{offeringId}/metadata/topic",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/metadata/topic",
         "pointer": "#/paths/~1offerings~1{offeringId}~1metadata~1topic/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update offering topic metadata"
+        "summary": "Update offering topic metadata",
+        "tags": [
+          "Offering metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a list of users in the offering (facilitators, learners and markers.).",
         "id": "operation:get:/offerings/{offeringId}/users",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/users",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "true",
+            "description": "If true, facilitators are included in the results.",
+            "enum": [
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "facilitators",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "true",
+            "description": "If true, learners are included in the results.",
+            "enum": [
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "learners",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "true",
+            "description": "If true, markers are included in the results.",
+            "enum": [
+              "true",
+              "false"
+            ],
+            "in": "query",
+            "name": "markers",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/users",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingUserResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find offering's users"
+        "summary": "Find offering's users",
+        "tags": [
+          "Offering learners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds one or more users to the offering.",
         "id": "operation:post:/offerings/{offeringId}/users",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/users",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/users",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OfferingUser[]"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "OfferingUserAddResponse[]"
+          },
+          {
+            "status": "207",
+            "type": "OfferingUserAddResponse|Error[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Adds user to the offering"
+        "summary": "Adds user to the offering",
+        "tags": [
+          "Offering learners"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/offerings/{offeringId}/users/{markerEmail}/marks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /offerings/{offeringId}/users/{markerEmail}/marks",
-        "path": "/offerings/{offeringId}/users/{markerEmail}/marks",
-        "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{markerEmail}~1marks/delete",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Remove learners from coach's marking list"
-      },
-      {
-        "deprecated": false,
+        "description": "Responds with all learners marked by the specified coach.",
         "id": "operation:get:/offerings/{offeringId}/users/{markerEmail}/marks",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/users/{markerEmail}/marks",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "marker's email",
+            "in": "path",
+            "name": "markerEmail",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/users/{markerEmail}/marks",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{markerEmail}~1marks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingUser[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find Learners marked by a coach"
+        "summary": "Find Learners marked by a coach",
+        "tags": [
+          "Offering learners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds an array of learners to be marked by the specified coach.",
         "id": "operation:post:/offerings/{offeringId}/users/{markerEmail}/marks",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/users/{markerEmail}/marks",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "marker's email",
+            "in": "path",
+            "name": "markerEmail",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/users/{markerEmail}/marks",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{markerEmail}~1marks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingUser[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add learners to be marked by a coach"
+        "summary": "Add learners to be marked by a coach",
+        "tags": [
+          "Offering learners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes an array of learners from coach's marking list.",
+        "id": "operation:delete:/offerings/{offeringId}/users/{markerEmail}/marks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /offerings/{offeringId}/users/{markerEmail}/marks",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "marker's email",
+            "in": "path",
+            "name": "markerEmail",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/offerings/{offeringId}/users/{markerEmail}/marks",
+        "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{markerEmail}~1marks/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingUser[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Remove learners from coach's marking list",
+        "tags": [
+          "Offering learners"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Removes a user from the offering.",
         "id": "operation:delete:/offerings/{offeringId}/users/{userEmail}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /offerings/{offeringId}/users/{userEmail}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/offerings/{offeringId}/users/{userEmail}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{userEmail}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Removes user from the offering"
+        "summary": "Removes user from the offering",
+        "tags": [
+          "Offering learners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resets the user's submitted assessment to a draft state.",
         "id": "operation:delete:/offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId}",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          },
+          {
+            "description": "assessment's id",
+            "in": "path",
+            "name": "assessmentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId}",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{userEmail}~1assessments~1{assessmentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Reset user's assessment to draft state"
+        "summary": "Reset user's assessment to draft state",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Awards a badge to a user in the offering.",
         "id": "operation:post:/offerings/{offeringId}/users/{userEmail}/badges/award",
         "kind": "operation",
         "method": "post",
         "name": "post /offerings/{offeringId}/users/{userEmail}/badges/award",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/offerings/{offeringId}/users/{userEmail}/badges/award",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{userEmail}~1badges~1award/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "AwardedResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Award badge"
+        "summary": "Award badge",
+        "tags": [
+          "Badges"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with open response assessment submissions by a learner in an offering.",
         "id": "operation:get:/offerings/{offeringId}/users/{userEmail}/submissions/open-response",
         "kind": "operation",
         "method": "get",
         "name": "get /offerings/{offeringId}/users/{userEmail}/submissions/open-response",
+        "parameters": [
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/offerings/{offeringId}/users/{userEmail}/submissions/open-response",
         "pointer": "#/paths/~1offerings~1{offeringId}~1users~1{userEmail}~1submissions~1open-response/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignments[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learner's open response assessment submissions"
+        "summary": "Find learner's open response assessment submissions",
+        "tags": [
+          "Assessment management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the current organisation info.",
         "id": "operation:get:/org",
         "kind": "operation",
         "method": "get",
         "name": "get /org",
         "path": "/org",
         "pointer": "#/paths/~1org/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrgResponse"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Gets the current organisation"
+        "summary": "Gets the current organisation",
+        "tags": [
+          "Organisation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new user.",
         "id": "operation:post:/users",
         "kind": "operation",
         "method": "post",
         "name": "post /users",
         "path": "/users",
         "pointer": "#/paths/~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "User"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "UserResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add new user"
+        "summary": "Add new user",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all learners' progress in all offerings.",
         "id": "operation:get:/users/all/progress",
         "kind": "operation",
         "method": "get",
         "name": "get /users/all/progress",
+        "parameters": [
+          {
+            "default": "50",
+            "description": "Returns only the first n results.",
+            "in": "query",
+            "name": "$top",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sorts the results.",
+            "in": "query",
+            "name": "$orderby",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters the results, based on a Boolean condition.",
+            "in": "query",
+            "name": "$filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/all/progress",
         "pointer": "#/paths/~1users~1all~1progress/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learner progress in all offerings"
+        "summary": "Find learner progress in all offerings",
+        "tags": [
+          "Learner activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with a user matching the specified email.",
         "id": "operation:get:/users/{userEmail}",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{userEmail}",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}",
         "pointer": "#/paths/~1users~1{userEmail}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find user by email"
+        "summary": "Find user by email",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the specified user by email.",
         "id": "operation:patch:/users/{userEmail}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /users/{userEmail}",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}",
         "pointer": "#/paths/~1users~1{userEmail}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "User"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Update user"
+        "summary": "Update user",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all badges that the specified user has been awarded.",
         "id": "operation:get:/users/{userEmail}/badges",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{userEmail}/badges",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/badges",
         "pointer": "#/paths/~1users~1{userEmail}~1badges/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserBadge[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find user's badges"
+        "summary": "Find user's badges",
+        "tags": [
+          "Badges"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Re-sends an invitation e-mail to the specified user.",
         "id": "operation:post:/users/{userEmail}/invite-email",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{userEmail}/invite-email",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/invite-email",
         "pointer": "#/paths/~1users~1{userEmail}~1invite-email/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Resend invitation email"
+        "summary": "Resend invitation email",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with all offerings that the user in.",
         "id": "operation:get:/users/{userEmail}/offerings",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{userEmail}/offerings",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/offerings",
         "pointer": "#/paths/~1users~1{userEmail}~1offerings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find user's offerings"
+        "summary": "Find user's offerings",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a user to an array of offerings by offeringId.",
         "id": "operation:post:/users/{userEmail}/offerings",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{userEmail}/offerings",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/offerings",
         "pointer": "#/paths/~1users~1{userEmail}~1offerings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OfferingMetadataResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Adds the user to the specified offerings as a learner"
+        "summary": "Adds the user to the specified offerings as a learner",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with the learner's progress in a specified offering.",
         "id": "operation:get:/users/{userEmail}/offerings/{offeringId}/progress",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{userEmail}/offerings/{offeringId}/progress",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          },
+          {
+            "description": "offering's id",
+            "in": "path",
+            "name": "offeringId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userEmail}/offerings/{offeringId}/progress",
         "pointer": "#/paths/~1users~1{userEmail}~1offerings~1{offeringId}~1progress/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learner's progress in a specified offering"
+        "summary": "Find learner's progress in a specified offering",
+        "tags": [
+          "Learner activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds additional permissions to the specified user.",
         "id": "operation:post:/users/{userEmail}/permissions/{permissionName}",
         "kind": "operation",
         "method": "post",
         "name": "post /users/{userEmail}/permissions/{permissionName}",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          },
+          {
+            "description": "permission name",
+            "enum": [
+              "builder",
+              "manager"
+            ],
+            "in": "path",
+            "name": "permissionName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userEmail}/permissions/{permissionName}",
         "pointer": "#/paths/~1users~1{userEmail}~1permissions~1{permissionName}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add permission to user"
+        "summary": "Add permission to user",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Responds with the specified learner's progress in all offerings.",
         "id": "operation:get:/users/{userEmail}/progress",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{userEmail}/progress",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/progress",
         "pointer": "#/paths/~1users~1{userEmail}~1progress/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LearnerResponse"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find learner's progress in offerings"
+        "summary": "Find learner's progress in offerings",
+        "tags": [
+          "Learner activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Suspends the specified user's account.",
         "id": "operation:put:/users/{userEmail}/suspend",
         "kind": "operation",
         "method": "put",
         "name": "put /users/{userEmail}/suspend",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/suspend",
         "pointer": "#/paths/~1users~1{userEmail}~1suspend/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SuspendedRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Suspend user"
+        "summary": "Suspend user",
+        "tags": [
+          "Users in iQualify"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Moves the user's access and progress from one offering to another.",
         "id": "operation:patch:/users/{userEmail}/transfer",
         "kind": "operation",
         "method": "patch",
         "name": "patch /users/{userEmail}/transfer",
+        "parameters": [
+          {
+            "description": "user's email",
+            "in": "path",
+            "name": "userEmail",
+            "required": true,
+            "type": "string:email"
+          }
+        ],
         "path": "/users/{userEmail}/transfer",
         "pointer": "#/paths/~1users~1{userEmail}~1transfer/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TransferRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Transfer a user between offerings"
+        "summary": "Transfer a user between offerings",
+        "tags": [
+          "Offering learners"
+        ]
       },
       {
         "id": "schema:ActivationResponse",
         "kind": "schema",
-        "name": "ActivationResponse"
+        "name": "ActivationResponse",
+        "type": "object"
       },
       {
         "id": "schema:ActivityAttemptOpenResponse",
         "kind": "schema",
-        "name": "ActivityAttemptOpenResponse"
+        "name": "ActivityAttemptOpenResponse",
+        "type": "object"
       },
       {
         "id": "schema:ActivityAttemptOpenResponseFeedback",
         "kind": "schema",
-        "name": "ActivityAttemptOpenResponseFeedback"
+        "name": "ActivityAttemptOpenResponseFeedback",
+        "type": "object"
       },
       {
         "id": "schema:ActivityAttemptOpenResponseFiles",
         "kind": "schema",
-        "name": "ActivityAttemptOpenResponseFiles"
+        "name": "ActivityAttemptOpenResponseFiles",
+        "type": "object"
       },
       {
         "id": "schema:Assessment",
         "kind": "schema",
-        "name": "Assessment"
+        "name": "Assessment",
+        "type": "object"
       },
       {
         "id": "schema:AssessmentGroupRequired",
         "kind": "schema",
-        "name": "AssessmentGroupRequired"
+        "name": "AssessmentGroupRequired",
+        "type": "object"
       },
       {
         "id": "schema:AssessmentGroupResponse",
         "kind": "schema",
-        "name": "AssessmentGroupResponse"
+        "name": "AssessmentGroupResponse",
+        "type": "object"
       },
       {
         "id": "schema:AssessmentPendingSubmission",
         "kind": "schema",
-        "name": "AssessmentPendingSubmission"
+        "name": "AssessmentPendingSubmission",
+        "type": "object"
       },
       {
         "id": "schema:AssessmentResponse",
         "kind": "schema",
-        "name": "AssessmentResponse"
+        "name": "AssessmentResponse",
+        "type": "object"
       },
       {
         "id": "schema:AssignmentMarkResponse",
         "kind": "schema",
-        "name": "AssignmentMarkResponse"
+        "name": "AssignmentMarkResponse",
+        "type": "object"
       },
       {
         "id": "schema:Assignments",
         "kind": "schema",
-        "name": "Assignments"
+        "name": "Assignments",
+        "type": "object"
       },
       {
         "id": "schema:AwardedResponse",
         "kind": "schema",
-        "name": "AwardedResponse"
+        "name": "AwardedResponse",
+        "type": "object"
       },
       {
         "id": "schema:Badge",
         "kind": "schema",
-        "name": "Badge"
+        "name": "Badge",
+        "type": "object"
       },
       {
         "id": "schema:BadgeExpiry",
         "kind": "schema",
-        "name": "BadgeExpiry"
+        "name": "BadgeExpiry",
+        "type": "object"
       },
       {
         "id": "schema:Channel",
         "kind": "schema",
-        "name": "Channel"
+        "name": "Channel",
+        "type": "object"
       },
       {
         "id": "schema:ChannelRequired",
         "kind": "schema",
-        "name": "ChannelRequired"
+        "name": "ChannelRequired",
+        "type": "object"
       },
       {
         "id": "schema:ChannelResponse",
         "kind": "schema",
-        "name": "ChannelResponse"
+        "name": "ChannelResponse",
+        "type": "object"
       },
       {
         "id": "schema:Comment",
         "kind": "schema",
-        "name": "Comment"
+        "name": "Comment",
+        "type": "object"
       },
       {
         "id": "schema:CourseMetaResponse",
         "kind": "schema",
-        "name": "CourseMetaResponse"
+        "name": "CourseMetaResponse",
+        "type": "object"
       },
       {
         "id": "schema:CourseResponse",
         "kind": "schema",
-        "name": "CourseResponse"
+        "name": "CourseResponse",
+        "type": "object"
       },
       {
         "id": "schema:Criteria",
         "kind": "schema",
-        "name": "Criteria"
+        "name": "Criteria",
+        "type": "object"
       },
       {
         "id": "schema:Document",
         "kind": "schema",
-        "name": "Document"
+        "name": "Document",
+        "type": "object"
       },
       {
         "id": "schema:DocumentResponse",
         "kind": "schema",
-        "name": "DocumentResponse"
+        "name": "DocumentResponse",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Invite",
         "kind": "schema",
-        "name": "Invite"
+        "name": "Invite",
+        "type": "object"
       },
       {
         "id": "schema:LearnerOfferingDates",
         "kind": "schema",
-        "name": "LearnerOfferingDates"
+        "name": "LearnerOfferingDates",
+        "type": "object"
       },
       {
         "id": "schema:LearnerProgressResponse",
         "kind": "schema",
-        "name": "LearnerProgressResponse"
+        "name": "LearnerProgressResponse",
+        "type": "object"
       },
       {
         "id": "schema:LearnerResponse",
         "kind": "schema",
-        "name": "LearnerResponse"
+        "name": "LearnerResponse",
+        "type": "object"
       },
       {
         "id": "schema:LearningOutcomes",
         "kind": "schema",
-        "name": "LearningOutcomes"
+        "name": "LearningOutcomes",
+        "type": "object"
       },
       {
         "id": "schema:Mark",
         "kind": "schema",
-        "name": "Mark"
+        "name": "Mark",
+        "type": "object"
       },
       {
         "id": "schema:MarkFeedback",
         "kind": "schema",
-        "name": "MarkFeedback"
+        "name": "MarkFeedback",
+        "type": "object"
       },
       {
         "id": "schema:Moderation",
         "kind": "schema",
-        "name": "Moderation"
+        "name": "Moderation",
+        "type": "object"
       },
       {
         "id": "schema:Moderator",
         "kind": "schema",
-        "name": "Moderator"
+        "name": "Moderator",
+        "type": "object"
       },
       {
         "id": "schema:Offering",
         "kind": "schema",
-        "name": "Offering"
+        "name": "Offering",
+        "type": "object"
       },
       {
         "id": "schema:OfferingActivitiesResponse",
         "kind": "schema",
-        "name": "OfferingActivitiesResponse"
+        "name": "OfferingActivitiesResponse",
+        "type": "object"
       },
       {
         "id": "schema:OfferingMetadata",
         "kind": "schema",
-        "name": "OfferingMetadata"
+        "name": "OfferingMetadata",
+        "type": "object"
       },
       {
         "id": "schema:OfferingMetadataResponse",
         "kind": "schema",
-        "name": "OfferingMetadataResponse"
+        "name": "OfferingMetadataResponse",
+        "type": "object"
       },
       {
         "id": "schema:OfferingProgressRow",
         "kind": "schema",
-        "name": "OfferingProgressRow"
+        "name": "OfferingProgressRow",
+        "type": "object"
       },
       {
         "id": "schema:OfferingRequired",
         "kind": "schema",
-        "name": "OfferingRequired"
+        "name": "OfferingRequired",
+        "type": "object"
       },
       {
         "id": "schema:OfferingResponse",
         "kind": "schema",
-        "name": "OfferingResponse"
+        "name": "OfferingResponse",
+        "type": "object"
       },
       {
         "id": "schema:OfferingUser",
         "kind": "schema",
-        "name": "OfferingUser"
+        "name": "OfferingUser",
+        "type": "object"
       },
       {
         "id": "schema:OfferingUserAddResponse",
         "kind": "schema",
-        "name": "OfferingUserAddResponse"
+        "name": "OfferingUserAddResponse",
+        "type": "object"
       },
       {
         "id": "schema:OfferingUserResponse",
         "kind": "schema",
-        "name": "OfferingUserResponse"
+        "name": "OfferingUserResponse",
+        "type": "object"
       },
       {
         "id": "schema:OpenBadgeClass",
         "kind": "schema",
-        "name": "OpenBadgeClass"
+        "name": "OpenBadgeClass",
+        "type": "object"
       },
       {
         "id": "schema:OrgRequest",
         "kind": "schema",
-        "name": "OrgRequest"
+        "name": "OrgRequest",
+        "type": "object"
       },
       {
         "id": "schema:OrgResponse",
         "kind": "schema",
-        "name": "OrgResponse"
+        "name": "OrgResponse",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioActivations",
         "kind": "schema",
-        "name": "PortfolioActivations"
+        "name": "PortfolioActivations",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioLicenseResponse",
         "kind": "schema",
-        "name": "PortfolioLicenseResponse"
+        "name": "PortfolioLicenseResponse",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioMetadata",
         "kind": "schema",
-        "name": "PortfolioMetadata"
+        "name": "PortfolioMetadata",
+        "type": "object"
       },
       {
         "id": "schema:PulseAnswer",
         "kind": "schema",
-        "name": "PulseAnswer"
+        "name": "PulseAnswer",
+        "type": "object"
       },
       {
         "id": "schema:PulseMCQOption",
         "kind": "schema",
-        "name": "PulseMCQOption"
+        "name": "PulseMCQOption",
+        "type": "object"
       },
       {
         "id": "schema:PulseResponse",
         "kind": "schema",
-        "name": "PulseResponse"
+        "name": "PulseResponse",
+        "type": "object"
       },
       {
         "id": "schema:PulseSpatialOption",
         "kind": "schema",
-        "name": "PulseSpatialOption"
+        "name": "PulseSpatialOption",
+        "type": "object"
       },
       {
         "id": "schema:QuizMarkResponse",
         "kind": "schema",
-        "name": "QuizMarkResponse"
+        "name": "QuizMarkResponse",
+        "type": "object"
       },
       {
         "id": "schema:RevokedResponse",
         "kind": "schema",
-        "name": "RevokedResponse"
+        "name": "RevokedResponse",
+        "type": "object"
       },
       {
         "id": "schema:SocialNotesResponse",
         "kind": "schema",
-        "name": "SocialNotesResponse"
+        "name": "SocialNotesResponse",
+        "type": "object"
       },
       {
         "id": "schema:SubmissionMarkResponse",
         "kind": "schema",
-        "name": "SubmissionMarkResponse"
+        "name": "SubmissionMarkResponse",
+        "type": "object"
       },
       {
         "id": "schema:SuspendedRequest",
         "kind": "schema",
-        "name": "SuspendedRequest"
+        "name": "SuspendedRequest",
+        "type": "object"
       },
       {
         "id": "schema:ThemeResponse",
         "kind": "schema",
-        "name": "ThemeResponse"
+        "name": "ThemeResponse",
+        "type": "object"
       },
       {
         "id": "schema:TransferRequest",
         "kind": "schema",
-        "name": "TransferRequest"
+        "name": "TransferRequest",
+        "type": "object"
       },
       {
         "id": "schema:UnitReactionsAnalyticsResponse",
         "kind": "schema",
-        "name": "UnitReactionsAnalyticsResponse"
+        "name": "UnitReactionsAnalyticsResponse",
+        "type": "object"
       },
       {
         "id": "schema:UnitReactionsFeedback",
         "kind": "schema",
-        "name": "UnitReactionsFeedback"
+        "name": "UnitReactionsFeedback",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:UserBadge",
         "kind": "schema",
-        "name": "UserBadge"
+        "name": "UserBadge",
+        "type": "object"
       },
       {
         "id": "schema:UserMetadata",
         "kind": "schema",
-        "name": "UserMetadata"
+        "name": "UserMetadata",
+        "type": "object"
       },
       {
         "id": "schema:UserPermission",
         "kind": "schema",
-        "name": "UserPermission"
+        "name": "UserPermission",
+        "type": "object"
       },
       {
         "id": "schema:UserProfile",
         "kind": "schema",
-        "name": "UserProfile"
+        "name": "UserProfile",
+        "type": "object"
       },
       {
         "id": "schema:UserProfileRequest",
         "kind": "schema",
-        "name": "UserProfileRequest"
+        "name": "UserProfileRequest",
+        "type": "object"
       },
       {
         "id": "schema:UserResponse",
         "kind": "schema",
-        "name": "UserResponse"
+        "name": "UserResponse",
+        "type": "object"
       },
       {
         "id": "schema:httpPost",
         "kind": "schema",
-        "name": "httpPost"
+        "name": "httpPost",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_taggun_io_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `27d6650a1c43166b22b66d8d485eedfed411211ae3e2480580ff67542bd2e23b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,18 +34,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_taggun_io_profile_i
 
 84 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/api/account/v1/feedback` | postApiAccountV1Feedback | Add manually verified receipt data to a given receipt for feedback and training purposes |
-| POST | `/api/account/v1/merchantname/add` | postApiAccountV1MerchantnameAdd | Add a keyword to your account's model to predict merchant name. Changes in your account's model are updated daily. |
-| POST | `/api/receipt/v1/match/file` | postApiReceiptV1MatchFile | detect and match a receipt against keywords and metadata by uploading an image file |
-| POST | `/api/receipt/v1/simple/encoded` | postApiReceiptV1SimpleEncoded | transcribe a receipt using base64 encoded image in json payload |
-| POST | `/api/receipt/v1/simple/file` | postApiReceiptV1SimpleFile | transcribe a receipt by uploading an image file |
-| POST | `/api/receipt/v1/simple/storage` | postApiReceiptV1SimpleStorage | transcribe a receipt in storage |
-| POST | `/api/receipt/v1/simple/url` | postApiReceiptV1SimpleUrl | transcribe a receipt from URL |
-| POST | `/api/receipt/v1/verbose/encoded` | postApiReceiptV1VerboseEncoded | transcribe a receipt using base64 encoded image in json payload and return detailed result |
-| POST | `/api/receipt/v1/verbose/file` | postApiReceiptV1VerboseFile | transcribe a receipt by uploading an image file and return detailed result |
-| POST | `/api/receipt/v1/verbose/storage` | postApiReceiptV1VerboseStorage | transcribe a receipt in storage and return detailed result |
-| POST | `/api/receipt/v1/verbose/url` | postApiReceiptV1VerboseUrl | transcribe a receipt from URL and return detailed result |
-| POST | `/api/validation/v1/campaign/file` | postApiValidationV1CampaignFile | validate and match a receipt against a campaign validation settings by uploading an image file |
-| POST | `/api/validation/v1/campaign/product-validation/file` | postApiValidationV1CampaignProductvalidationFile | validate if user-submitted info like serial number are detected an image file |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/api/account/v1/feedback` | postApiAccountV1Feedback | `apikey`*, body: receiptFeedbackAddPayload | Result |  | Add manually verified receipt data to a given receipt for feedback and training purposes |
+| POST | `/api/account/v1/merchantname/add` | postApiAccountV1MerchantnameAdd | `apikey`*, body: merchantNameAddPayload | Result |  | Add a keyword to your account's model to predict merchant name. Changes in your account's model are updated daily. |
+| POST | `/api/receipt/v1/match/file` | postApiReceiptV1MatchFile | `apikey`*, `file`, `refresh`, `incognito`, `ipAddress`, `primaryKeywords`, `secondaryKeywords`, `stopWords`, `language` | receiptMatchResult |  | detect and match a receipt against keywords and metadata by uploading an image file |
+| POST | `/api/receipt/v1/simple/encoded` | postApiReceiptV1SimpleEncoded | `apikey`*, body: jsonPayload | receiptResult |  | transcribe a receipt using base64 encoded image in json payload |
+| POST | `/api/receipt/v1/simple/file` | postApiReceiptV1SimpleFile | `apikey`*, `file`, `refresh`, `incognito`, `ipAddress`, `near`, `ignoreMerchantName`, `language`, `extractTime`, `subAccountId`, `referenceId` | receiptResult |  | transcribe a receipt by uploading an image file |
+| POST | `/api/receipt/v1/simple/storage` | postApiReceiptV1SimpleStorage | `apikey`*, body: storagePayload | receiptResult |  | transcribe a receipt in storage |
+| POST | `/api/receipt/v1/simple/url` | postApiReceiptV1SimpleUrl | `apikey`*, body: urlPayload | receiptResult |  | transcribe a receipt from URL |
+| POST | `/api/receipt/v1/verbose/encoded` | postApiReceiptV1VerboseEncoded | `apikey`*, body: jsonPayload | receiptVerboseResult |  | transcribe a receipt using base64 encoded image in json payload and return detailed result |
+| POST | `/api/receipt/v1/verbose/file` | postApiReceiptV1VerboseFile | `apikey`*, `file`, `refresh`, `incognito`, `ipAddress`, `near`, `ignoreMerchantName`, `language`, `extractTime`, `subAccountId`, `referenceId` | receiptVerboseResult |  | transcribe a receipt by uploading an image file and return detailed result |
+| POST | `/api/receipt/v1/verbose/storage` | postApiReceiptV1VerboseStorage | `apikey`*, body: storagePayload | receiptVerboseResult |  | transcribe a receipt in storage and return detailed result |
+| POST | `/api/receipt/v1/verbose/url` | postApiReceiptV1VerboseUrl | `apikey`*, body: urlPayload | receiptVerboseResult |  | transcribe a receipt from URL and return detailed result |
+| POST | `/api/validation/v1/campaign/file` | postApiValidationV1CampaignFile | `apikey`*, `file`, `incognito`, `ipAddress`, `near`, `campaignId`*, `referenceId` | string |  | validate and match a receipt against a campaign validation settings by uploading an image file |
+| POST | `/api/validation/v1/campaign/product-validation/file` | postApiValidationV1CampaignProductvalidationFile | `apikey`*, `file`, `productVerificationNumber`*, `incognito`, `subAccountId`, `referenceId` | string |  | validate if user-submitted info like serial number are detected an image file |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_54
 
 | | |
 | --- | --- |
-| Signed bundle | `92196d4a54da6ca967183ebe8e559a1cf303e7880d4deaddeeb66be3469d37b5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_54
 
 88 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v3/departures/route_type/{route_type}/stop/{stop_id}` | Departures_GetForStop | View departures for all routes from a stop |
-| GET | `/v3/departures/route_type/{route_type}/stop/{stop_id}/route/{route_id}` | Departures_GetForStopAndRoute | View departures for a specific route from a stop |
-| GET | `/v3/directions/route/{route_id}` | Directions_ForRoute | View directions that a route travels in |
-| GET | `/v3/directions/{direction_id}` | Directions_ForDirection | View all routes for a direction of travel |
-| GET | `/v3/directions/{direction_id}/route_type/{route_type}` | Directions_ForDirectionAndType | View all routes of a particular type for a direction of travel |
-| GET | `/v3/disruptions` | Disruptions_GetAllDisruptions | View all disruptions for all route types |
-| GET | `/v3/disruptions/modes` | Disruptions_GetDisruptionModes | Get all disruption modes |
-| GET | `/v3/disruptions/route/{route_id}` | Disruptions_GetDisruptionsByRoute | View all disruptions for a particular route |
-| GET | `/v3/disruptions/route/{route_id}/stop/{stop_id}` | Disruptions_GetDisruptionsByRouteAndStop | View all disruptions for a particular route and stop |
-| GET | `/v3/disruptions/stop/{stop_id}` | Disruptions_GetDisruptionsByStop | View all disruptions for a particular stop |
-| GET | `/v3/disruptions/{disruption_id}` | Disruptions_GetDisruptionById | View a specific disruption |
-| GET | `/v3/fare_estimate/min_zone/{minZone}/max_zone/{maxZone}` | FareEstimate_GetFareEstimateByZone | Estimate a fare by zone |
-| GET | `/v3/outlets` | Outlets_GetAllOutlets | List all ticket outlets |
-| GET | `/v3/outlets/location/{latitude},{longitude}` | Outlets_GetOutletsByGeolocation | List ticket outlets near a specific location |
-| GET | `/v3/pattern/run/{run_ref}/route_type/{route_type}` | Patterns_GetPatternByRun | View the stopping pattern for a specific trip/service run |
-| GET | `/v3/route_types` | RouteTypes_GetRouteTypes | View all route types and their names |
-| GET | `/v3/routes` | Routes_OneOrMoreRoutes | View route names and numbers for all routes |
-| GET | `/v3/routes/{route_id}` | Routes_RouteFromId | View route name and number for specific route ID |
-| GET | `/v3/runs/route/{route_id}` | Runs_ForRoute | View all trip/service runs for a specific route ID |
-| GET | `/v3/runs/route/{route_id}/route_type/{route_type}` | Runs_ForRouteAndRouteType | View all trip/service runs for a specific route ID and route type |
-| GET | `/v3/runs/{run_ref}` | Runs_ForRun | View all trip/service runs for a specific run_ref |
-| GET | `/v3/runs/{run_ref}/route_type/{route_type}` | Runs_ForRunAndRouteType | View the trip/service run for a specific run_ref and route type |
-| GET | `/v3/search/{search_term}` | Search_Search | View stops, routes and myki ticket outlets that match the search term |
-| GET | `/v3/stops/location/{latitude},{longitude}` | Stops_StopsByGeolocation | View all stops near a specific location |
-| GET | `/v3/stops/route/{route_id}/route_type/{route_type}` | Stops_StopsForRoute | View all stops on a specific route |
-| GET | `/v3/stops/{stop_id}/route_type/{route_type}` | Stops_StopDetails | View facilities at a specific stop (Metro and V/Line stations only) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v3/departures/route_type/{route_type}/stop/{stop_id}` | Departures_GetForStop | `route_type`*, `stop_id`*, `platform_numbers`, `direction_id`, `gtfs`, `date_utc`, `max_results`, `include_cancelled`, `look_backwards`, `expand`, `include_geopath`, `token`, `devid`, `signature` | V3.DeparturesResponse | yes | View departures for all routes from a stop |
+| GET | `/v3/departures/route_type/{route_type}/stop/{stop_id}/route/{route_id}` | Departures_GetForStopAndRoute | `route_type`*, `stop_id`*, `route_id`*, `direction_id`, `gtfs`, `date_utc`, `max_results`, `include_cancelled`, `look_backwards`, `expand`, `include_geopath`, `token`, `devid`, `signature` | V3.DeparturesResponse | yes | View departures for a specific route from a stop |
+| GET | `/v3/directions/route/{route_id}` | Directions_ForRoute | `route_id`*, `token`, `devid`, `signature` | V3.DirectionsResponse | yes | View directions that a route travels in |
+| GET | `/v3/directions/{direction_id}` | Directions_ForDirection | `direction_id`*, `token`, `devid`, `signature` | V3.DirectionsResponse | yes | View all routes for a direction of travel |
+| GET | `/v3/directions/{direction_id}/route_type/{route_type}` | Directions_ForDirectionAndType | `direction_id`*, `route_type`*, `token`, `devid`, `signature` | V3.DirectionsResponse | yes | View all routes of a particular type for a direction of travel |
+| GET | `/v3/disruptions` | Disruptions_GetAllDisruptions | `route_types`, `disruption_modes`, `disruption_status`, `token`, `devid`, `signature` | V3.DisruptionsResponse | yes | View all disruptions for all route types |
+| GET | `/v3/disruptions/modes` | Disruptions_GetDisruptionModes | `token`, `devid`, `signature` | V3.DisruptionModesResponse | yes | Get all disruption modes |
+| GET | `/v3/disruptions/route/{route_id}` | Disruptions_GetDisruptionsByRoute | `route_id`*, `disruption_status`, `token`, `devid`, `signature` | V3.DisruptionsResponse | yes | View all disruptions for a particular route |
+| GET | `/v3/disruptions/route/{route_id}/stop/{stop_id}` | Disruptions_GetDisruptionsByRouteAndStop | `route_id`*, `stop_id`*, `disruption_status`, `token`, `devid`, `signature` | V3.DisruptionsResponse | yes | View all disruptions for a particular route and stop |
+| GET | `/v3/disruptions/stop/{stop_id}` | Disruptions_GetDisruptionsByStop | `stop_id`*, `disruption_status`, `token`, `devid`, `signature` | V3.DisruptionsResponse | yes | View all disruptions for a particular stop |
+| GET | `/v3/disruptions/{disruption_id}` | Disruptions_GetDisruptionById | `disruption_id`*, `token`, `devid`, `signature` | V3.DisruptionResponse | yes | View a specific disruption |
+| GET | `/v3/fare_estimate/min_zone/{minZone}/max_zone/{maxZone}` | FareEstimate_GetFareEstimateByZone | `minZone`*, `maxZone`*, `journey_touch_on_utc`, `journey_touch_off_utc`, `is_journey_in_free_tram_zone`, `travelled_route_types`, `token`, `devid`, `signature` | V3.FareEstimateResponse | yes | Estimate a fare by zone |
+| GET | `/v3/outlets` | Outlets_GetAllOutlets | `max_results`, `token`, `devid`, `signature` | V3.OutletResponse | yes | List all ticket outlets |
+| GET | `/v3/outlets/location/{latitude},{longitude}` | Outlets_GetOutletsByGeolocation | `latitude`*, `longitude`*, `max_distance`, `max_results`, `token`, `devid`, `signature` | V3.OutletGeolocationResponse | yes | List ticket outlets near a specific location |
+| GET | `/v3/pattern/run/{run_ref}/route_type/{route_type}` | Patterns_GetPatternByRun | `run_ref`*, `route_type`*, `expand`*, `stop_id`, `date_utc`, `include_skipped_stops`, `include_geopath`, `token`, `devid`, `signature` | V3.StoppingPattern | yes | View the stopping pattern for a specific trip/service run |
+| GET | `/v3/route_types` | RouteTypes_GetRouteTypes | `token`, `devid`, `signature` | V3.RouteTypesResponse | yes | View all route types and their names |
+| GET | `/v3/routes` | Routes_OneOrMoreRoutes | `route_types`, `route_name`, `token`, `devid`, `signature` | V3.RouteResponse | yes | View route names and numbers for all routes |
+| GET | `/v3/routes/{route_id}` | Routes_RouteFromId | `route_id`*, `include_geopath`, `geopath_utc`, `token`, `devid`, `signature` | V3.RouteResponse | yes | View route name and number for specific route ID |
+| GET | `/v3/runs/route/{route_id}` | Runs_ForRoute | `route_id`*, `expand`, `date_utc`, `token`, `devid`, `signature` | V3.RunsResponse | yes | View all trip/service runs for a specific route ID |
+| GET | `/v3/runs/route/{route_id}/route_type/{route_type}` | Runs_ForRouteAndRouteType | `route_id`*, `route_type`*, `expand`*, `date_utc`, `token`, `devid`, `signature` | V3.RunsResponse | yes | View all trip/service runs for a specific route ID and route type |
+| GET | `/v3/runs/{run_ref}` | Runs_ForRun | `run_ref`*, `expand`*, `date_utc`, `include_geopath`, `token`, `devid`, `signature` | V3.RunsResponse | yes | View all trip/service runs for a specific run_ref |
+| GET | `/v3/runs/{run_ref}/route_type/{route_type}` | Runs_ForRunAndRouteType | `run_ref`*, `route_type`*, `expand`*, `date_utc`, `include_geopath`, `token`, `devid`, `signature` | V3.RunResponse | yes | View the trip/service run for a specific run_ref and route type |
+| GET | `/v3/search/{search_term}` | Search_Search | `search_term`*, `route_types`, `latitude`, `longitude`, `max_distance`, `include_addresses`, `include_outlets`, `match_stop_by_suburb`, `match_route_by_suburb`, `match_stop_by_gtfs_stop_id`, `token`, `devid`, `signature` | V3.SearchResult | yes | View stops, routes and myki ticket outlets that match the search term |
+| GET | `/v3/stops/location/{latitude},{longitude}` | Stops_StopsByGeolocation | `latitude`*, `longitude`*, `route_types`, `max_results`, `max_distance`, `stop_disruptions`, `token`, `devid`, `signature` | V3.StopsByDistanceResponse | yes | View all stops near a specific location |
+| GET | `/v3/stops/route/{route_id}/route_type/{route_type}` | Stops_StopsForRoute | `route_id`*, `route_type`*, `direction_id`, `stop_disruptions`, `include_geopath`, `geopath_utc`, `token`, `devid`, `signature` | V3.StopsOnRouteResponse | yes | View all stops on a specific route |
+| GET | `/v3/stops/{stop_id}/route_type/{route_type}` | Stops_StopDetails | `stop_id`*, `route_type`*, `stop_location`, `stop_amenities`, `stop_accessibility`, `stop_contact`, `stop_ticket`, `gtfs`, `stop_staffing`, `stop_disruptions`, `token`, `devid`, `signature` | V3.StopResponse | yes | View facilities at a specific stop (Metro and V/Line stations only) |

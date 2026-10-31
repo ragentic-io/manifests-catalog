@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d301sr5gafysq2.cloudfront.net_0
 
 | | |
 | --- | --- |
-| Signed bundle | `5dea034e53b89bbe1671537764db03f8e2370d57510170ed815abb3ff7e10403` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,308 +34,310 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d301sr5gafysq2.cloudfront.net_0
 
 194 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/addon` | delete /addon | Delete an app |
-| PUT | `/addon` | put /addon | Update an installed app |
-| GET | `/addon/linkers` | get /addon/linkers | List linkers for an app |
-| GET | `/addon/linkers/{linker_key}` | get /addon/linkers/{linker_key} | Get a linker for an app |
-| DELETE | `/addon/linkers/{linker_key}/values` | delete /addon/linkers/{linker_key}/values | Delete all linker values |
-| GET | `/addon/linkers/{linker_key}/values` | get /addon/linkers/{linker_key}/values | List linker values for a linker |
-| POST | `/addon/linkers/{linker_key}/values` | post /addon/linkers/{linker_key}/values | Create a linker value |
-| PUT | `/addon/linkers/{linker_key}/values` | put /addon/linkers/{linker_key}/values | Update a linker value |
-| DELETE | `/addon/linkers/{linker_key}/values/{value_id}` | delete /addon/linkers/{linker_key}/values/{value_id} | Delete a linker value |
-| GET | `/addon/linkers/{linker_key}/values/{value_id}` | get /addon/linkers/{linker_key}/values/{value_id} | Get a linker value |
-| GET | `/hook_events` | get /hook_events | Get a webhook resource |
-| GET | `/hook_events/{subject_type}` | get /hook_events/{subject_type} | List subscribable webhook types |
-| GET | `/pullrequests/{selected_user}` | get /pullrequests/{selected_user} | List pull requests for a user |
-| GET | `/repositories` | get /repositories | List public repositories |
-| GET | `/repositories/{workspace}` | get /repositories/{workspace} | List repositories in a workspace |
-| DELETE | `/repositories/{workspace}/{repo_slug}` | delete /repositories/{workspace}/{repo_slug} | Delete a repository |
-| GET | `/repositories/{workspace}/{repo_slug}` | get /repositories/{workspace}/{repo_slug} | Get a repository |
-| POST | `/repositories/{workspace}/{repo_slug}` | post /repositories/{workspace}/{repo_slug} | Create a repository |
-| PUT | `/repositories/{workspace}/{repo_slug}` | put /repositories/{workspace}/{repo_slug} | Update a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/branch-restrictions` | get /repositories/{workspace}/{repo_slug}/branch-restrictions | List branch restrictions |
-| POST | `/repositories/{workspace}/{repo_slug}/branch-restrictions` | post /repositories/{workspace}/{repo_slug}/branch-restrictions | Create a branch restriction rule |
-| DELETE | `/repositories/{workspace}/{repo_slug}/branch-restrictions/{id}` | delete /repositories/{workspace}/{repo_slug}/branch-restrictions/{id} | Delete a branch restriction rule |
-| GET | `/repositories/{workspace}/{repo_slug}/branch-restrictions/{id}` | get /repositories/{workspace}/{repo_slug}/branch-restrictions/{id} | Get a branch restriction rule |
-| PUT | `/repositories/{workspace}/{repo_slug}/branch-restrictions/{id}` | put /repositories/{workspace}/{repo_slug}/branch-restrictions/{id} | Update a branch restriction rule |
-| GET | `/repositories/{workspace}/{repo_slug}/branching-model` | get /repositories/{workspace}/{repo_slug}/branching-model | Get the branching model for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/branching-model/settings` | get /repositories/{workspace}/{repo_slug}/branching-model/settings | Get the branching model config for a repository |
-| PUT | `/repositories/{workspace}/{repo_slug}/branching-model/settings` | put /repositories/{workspace}/{repo_slug}/branching-model/settings | Update the branching model config for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}` | get /repositories/{workspace}/{repo_slug}/commit/{commit} | Get a commit |
-| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/approve` | delete /repositories/{workspace}/{repo_slug}/commit/{commit}/approve | Unapprove a commit |
-| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/approve` | post /repositories/{workspace}/{repo_slug}/commit/{commit}/approve | Approve a commit |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/comments | List a commit's comments |
-| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments` | post /repositories/{workspace}/{repo_slug}/commit/{commit}/comments | Create comment for a commit |
-| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id}` | delete /repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id} | Delete a commit comment |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id}` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id} | Get a commit comment |
-| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id}` | put /repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id} | Update a commit comment |
-| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/properties/{app_key}/{property_name}` | deleteCommitHostedPropertyValue | Delete a commit application property |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/properties/{app_key}/{property_name}` | getCommitHostedPropertyValue | Get a commit application property |
-| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/properties/{app_key}/{property_name}` | updateCommitHostedPropertyValue | Update a commit application property |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/pullrequests` | getPullrequestsForCommit | List pull requests that contain a commit |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports` | getReportsForCommit | List reports |
-| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}` | deleteReport | Delete a report |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}` | getReport | Get a report |
-| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}` | createOrUpdateReport | Create or update a report |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations` | getAnnotationsForReport | List annotations |
-| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations` | bulkCreateOrUpdateAnnotations | Bulk create or update annotations |
-| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}` | deleteAnnotation | Delete an annotation |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}` | getAnnotation | Get an annotation |
-| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}` | createOrUpdateAnnotation | Create or update an annotation |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses | List commit statuses for a commit |
-| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build` | post /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build | Create a build status for a commit |
-| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key}` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key} | Get a build status for a commit |
-| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key}` | put /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key} | Update a build status for a commit |
-| GET | `/repositories/{workspace}/{repo_slug}/commits` | get /repositories/{workspace}/{repo_slug}/commits | List commits |
-| POST | `/repositories/{workspace}/{repo_slug}/commits` | post /repositories/{workspace}/{repo_slug}/commits | List commits with include/exclude |
-| GET | `/repositories/{workspace}/{repo_slug}/commits/{revision}` | get /repositories/{workspace}/{repo_slug}/commits/{revision} | List commits for revision |
-| POST | `/repositories/{workspace}/{repo_slug}/commits/{revision}` | post /repositories/{workspace}/{repo_slug}/commits/{revision} | List commits for revision using include/exclude |
-| GET | `/repositories/{workspace}/{repo_slug}/components` | get /repositories/{workspace}/{repo_slug}/components | List components |
-| GET | `/repositories/{workspace}/{repo_slug}/components/{component_id}` | get /repositories/{workspace}/{repo_slug}/components/{component_id} | Get a component for issues |
-| GET | `/repositories/{workspace}/{repo_slug}/default-reviewers` | get /repositories/{workspace}/{repo_slug}/default-reviewers | List default reviewers |
-| DELETE | `/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}` | delete /repositories/{workspace}/{repo_slug}/default-reviewers/{target_username} | Remove a user from the default reviewers |
-| GET | `/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}` | get /repositories/{workspace}/{repo_slug}/default-reviewers/{target_username} | Get a default reviewer |
-| PUT | `/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}` | put /repositories/{workspace}/{repo_slug}/default-reviewers/{target_username} | Add a user to the default reviewers |
-| GET | `/repositories/{workspace}/{repo_slug}/deploy-keys` | get /repositories/{workspace}/{repo_slug}/deploy-keys | List repository deploy keys |
-| POST | `/repositories/{workspace}/{repo_slug}/deploy-keys` | post /repositories/{workspace}/{repo_slug}/deploy-keys | Add a repository deploy key |
-| DELETE | `/repositories/{workspace}/{repo_slug}/deploy-keys/{key_id}` | delete /repositories/{workspace}/{repo_slug}/deploy-keys/{key_id} | Delete a repository deploy key |
-| GET | `/repositories/{workspace}/{repo_slug}/deploy-keys/{key_id}` | get /repositories/{workspace}/{repo_slug}/deploy-keys/{key_id} | Get a repository deploy key |
-| PUT | `/repositories/{workspace}/{repo_slug}/deploy-keys/{key_id}` | put /repositories/{workspace}/{repo_slug}/deploy-keys/{key_id} | Update a repository deploy key |
-| GET | `/repositories/{workspace}/{repo_slug}/deployments/` | getDeploymentsForRepository | List deployments |
-| GET | `/repositories/{workspace}/{repo_slug}/deployments/{deployment_uuid}` | getDeploymentForRepository | Get a deployment |
-| GET | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables` | getDeploymentVariables | List variables for an environment |
-| POST | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables` | createDeploymentVariable | Create a variable for an environment |
-| DELETE | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables/{variable_uuid}` | deleteDeploymentVariable | Delete a variable for an environment |
-| PUT | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables/{variable_uuid}` | updateDeploymentVariable | Update a variable for an environment |
-| GET | `/repositories/{workspace}/{repo_slug}/diff/{spec}` | get /repositories/{workspace}/{repo_slug}/diff/{spec} | Compare two commits |
-| GET | `/repositories/{workspace}/{repo_slug}/diffstat/{spec}` | get /repositories/{workspace}/{repo_slug}/diffstat/{spec} | Compare two commit diff stats |
-| GET | `/repositories/{workspace}/{repo_slug}/downloads` | get /repositories/{workspace}/{repo_slug}/downloads | List download artifacts |
-| POST | `/repositories/{workspace}/{repo_slug}/downloads` | post /repositories/{workspace}/{repo_slug}/downloads | Upload a download artifact |
-| DELETE | `/repositories/{workspace}/{repo_slug}/downloads/{filename}` | delete /repositories/{workspace}/{repo_slug}/downloads/{filename} | Delete a download artifact |
-| GET | `/repositories/{workspace}/{repo_slug}/downloads/{filename}` | get /repositories/{workspace}/{repo_slug}/downloads/{filename} | Get a download artifact link |
-| GET | `/repositories/{workspace}/{repo_slug}/effective-branching-model` | get /repositories/{workspace}/{repo_slug}/effective-branching-model | Get the effective, or currently applied, branching model for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/effective-default-reviewers` | get /repositories/{workspace}/{repo_slug}/effective-default-reviewers | List effective default reviewers |
-| GET | `/repositories/{workspace}/{repo_slug}/environments/` | getEnvironmentsForRepository | List environments |
-| POST | `/repositories/{workspace}/{repo_slug}/environments/` | createEnvironment | Create an environment |
-| DELETE | `/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}` | deleteEnvironmentForRepository | Delete an environment |
-| GET | `/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}` | getEnvironmentForRepository | Get an environment |
-| POST | `/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}/changes/` | updateEnvironmentForRepository | Update an environment |
-| GET | `/repositories/{workspace}/{repo_slug}/filehistory/{commit}/{path}` | get /repositories/{workspace}/{repo_slug}/filehistory/{commit}/{path} | List commits that modified a file |
-| GET | `/repositories/{workspace}/{repo_slug}/forks` | get /repositories/{workspace}/{repo_slug}/forks | List repository forks |
-| POST | `/repositories/{workspace}/{repo_slug}/forks` | post /repositories/{workspace}/{repo_slug}/forks | Fork a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/hooks` | get /repositories/{workspace}/{repo_slug}/hooks | List webhooks for a repository |
-| POST | `/repositories/{workspace}/{repo_slug}/hooks` | post /repositories/{workspace}/{repo_slug}/hooks | Create a webhook for a repository |
-| DELETE | `/repositories/{workspace}/{repo_slug}/hooks/{uid}` | delete /repositories/{workspace}/{repo_slug}/hooks/{uid} | Delete a webhook for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/hooks/{uid}` | get /repositories/{workspace}/{repo_slug}/hooks/{uid} | Get a webhook for a repository |
-| PUT | `/repositories/{workspace}/{repo_slug}/hooks/{uid}` | put /repositories/{workspace}/{repo_slug}/hooks/{uid} | Update a webhook for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/issues` | get /repositories/{workspace}/{repo_slug}/issues | List issues |
-| POST | `/repositories/{workspace}/{repo_slug}/issues` | post /repositories/{workspace}/{repo_slug}/issues | Create an issue |
-| POST | `/repositories/{workspace}/{repo_slug}/issues/export` | post /repositories/{workspace}/{repo_slug}/issues/export | Export issues |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/export/{repo_name}-issues-{task_id}.zip` | get /repositories/{workspace}/{repo_slug}/issues/export/{repo_name}-issues-{task_id}.zip | Check issue export status |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/import` | get /repositories/{workspace}/{repo_slug}/issues/import | Check issue import status |
-| POST | `/repositories/{workspace}/{repo_slug}/issues/import` | post /repositories/{workspace}/{repo_slug}/issues/import | Import issues |
-| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id} | Delete an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id} | Get an issue |
-| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id} | Update an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments | List attachments for an issue |
-| POST | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments` | post /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments | Upload an attachment to an issue |
-| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path}` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path} | Delete an attachment for an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path} | Get attachment for an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes | List changes on an issue |
-| POST | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes` | post /repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes | Modify the state of an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes/{change_id}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes/{change_id} | Get issue change object |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments | List comments on an issue |
-| POST | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments` | post /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments | Create a comment on an issue |
-| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id}` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id} | Delete a comment on an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id} | Get a comment on an issue |
-| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id}` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id} | Update a comment on an issue |
-| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote | Remove vote for an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote | Check if current user voted for an issue |
-| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote | Vote for an issue |
-| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch | Stop watching an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch | Check if current user is watching a issue |
-| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch | Watch an issue |
-| GET | `/repositories/{workspace}/{repo_slug}/merge-base/{revspec}` | get /repositories/{workspace}/{repo_slug}/merge-base/{revspec} | Get the common ancestor between two commits |
-| GET | `/repositories/{workspace}/{repo_slug}/milestones` | get /repositories/{workspace}/{repo_slug}/milestones | List milestones |
-| GET | `/repositories/{workspace}/{repo_slug}/milestones/{milestone_id}` | get /repositories/{workspace}/{repo_slug}/milestones/{milestone_id} | Get a milestone |
-| GET | `/repositories/{workspace}/{repo_slug}/override-settings` | get /repositories/{workspace}/{repo_slug}/override-settings | Retrieve the inheritance state for repository settings |
-| PUT | `/repositories/{workspace}/{repo_slug}/override-settings` | put /repositories/{workspace}/{repo_slug}/override-settings | Set the inheritance state for repository settings |
-| GET | `/repositories/{workspace}/{repo_slug}/patch/{spec}` | get /repositories/{workspace}/{repo_slug}/patch/{spec} | Get a patch for two commits |
-| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/groups` | get /repositories/{workspace}/{repo_slug}/permissions-config/groups | List explicit group permissions for a repository |
-| DELETE | `/repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug}` | delete /repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug} | Delete an explicit group permission for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug}` | get /repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug} | Get an explicit group permission for a repository |
-| PUT | `/repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug}` | put /repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug} | Update an explicit group permission for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/users` | get /repositories/{workspace}/{repo_slug}/permissions-config/users | List explicit user permissions for a repository |
-| DELETE | `/repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id}` | delete /repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id} | Delete an explicit user permission for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id}` | get /repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id} | Get an explicit user permission for a repository |
-| PUT | `/repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id}` | put /repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id} | Update an explicit user permission for a repository |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches` | deleteRepositoryPipelineCaches | Delete caches |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches/` | getRepositoryPipelineCaches | List caches |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches/{cache_uuid}` | deleteRepositoryPipelineCache | Delete a cache |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches/{cache_uuid}/content-uri` | getRepositoryPipelineCacheContentURI | Get cache content URI |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/` | getPipelinesForRepository | List pipelines |
-| POST | `/repositories/{workspace}/{repo_slug}/pipelines/` | createPipelineForRepository | Run a pipeline |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}` | getPipelineForRepository | Get a pipeline |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/` | getPipelineStepsForRepository | List steps for a pipeline |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}` | getPipelineStepForRepository | Get a step of a pipeline |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/log` | getPipelineStepLogForRepository | Get log file for a step |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/logs/{log_uuid}` | getPipelineContainerLog | Get the logs for the build container or a service container for a given step of a pipeline. |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports` | getPipelineTestReports | Get a summary of test reports for a given step of a pipeline. |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases` | getPipelineTestReportTestCases | Get test cases for a given step of a pipeline. |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases/{test_case_uuid}/test_case_reasons` | getPipelineTestReportTestCaseReasons | Get test case reasons (output) for a given test case in a step of a pipeline. |
-| POST | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/stopPipeline` | stopPipeline | Stop a pipeline |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config` | getRepositoryPipelineConfig | Get configuration |
-| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config` | updateRepositoryPipelineConfig | Update configuration |
-| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/build_number` | updateRepositoryBuildNumber | Update the next build number |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/` | getRepositoryPipelineSchedules | List schedules |
-| POST | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/` | createRepositoryPipelineSchedule | Create a schedule |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}` | deleteRepositoryPipelineSchedule | Delete a schedule |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}` | getRepositoryPipelineSchedule | Get a schedule |
-| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}` | updateRepositoryPipelineSchedule | Update a schedule |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}/executions/` | getRepositoryPipelineScheduleExecutions | List executions of a schedule |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair` | deleteRepositoryPipelineKeyPair | Delete SSH key pair |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair` | getRepositoryPipelineSshKeyPair | Get SSH key pair |
-| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair` | updateRepositoryPipelineKeyPair | Update SSH key pair |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/` | getRepositoryPipelineKnownHosts | List known hosts |
-| POST | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/` | createRepositoryPipelineKnownHost | Create a known host |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}` | deleteRepositoryPipelineKnownHost | Delete a known host |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}` | getRepositoryPipelineKnownHost | Get a known host |
-| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}` | updateRepositoryPipelineKnownHost | Update a known host |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/` | getRepositoryPipelineVariables | List variables for a repository |
-| POST | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/` | createRepositoryPipelineVariable | Create a variable for a repository |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}` | deleteRepositoryPipelineVariable | Delete a variable for a repository |
-| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}` | getRepositoryPipelineVariable | Get a variable for a repository |
-| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}` | updateRepositoryPipelineVariable | Update a variable for a repository |
-| DELETE | `/repositories/{workspace}/{repo_slug}/properties/{app_key}/{property_name}` | deleteRepositoryHostedPropertyValue | Delete a repository application property |
-| GET | `/repositories/{workspace}/{repo_slug}/properties/{app_key}/{property_name}` | getRepositoryHostedPropertyValue | Get a repository application property |
-| PUT | `/repositories/{workspace}/{repo_slug}/properties/{app_key}/{property_name}` | updateRepositoryHostedPropertyValue | Update a repository application property |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests` | get /repositories/{workspace}/{repo_slug}/pullrequests | List pull requests |
-| POST | `/repositories/{workspace}/{repo_slug}/pullrequests` | post /repositories/{workspace}/{repo_slug}/pullrequests | Create a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/activity` | get /repositories/{workspace}/{repo_slug}/pullrequests/activity | List a pull request activity log |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id} | Get a pull request |
-| PUT | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}` | put /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id} | Update a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/activity` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/activity | List a pull request activity log |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve` | delete /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve | Unapprove a pull request |
-| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve | Approve a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments | List comments on a pull request |
-| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments | Create a comment on a pull request |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}` | delete /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id} | Delete a comment on a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id} | Get a comment on a pull request |
-| PUT | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}` | put /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id} | Update a comment on a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/commits` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/commits | List commits on a pull request |
-| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/decline` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/decline | Decline a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diff` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diff | List changes in a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diffstat` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diffstat | Get the diff stat for a pull request |
-| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge | Merge a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge/task-status/{task_id}` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge/task-status/{task_id} | Get the merge task status for a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/patch` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/patch | Get the patch for a pull request |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes` | delete /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes | Remove change request for a pull request |
-| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes | Request changes for a pull request |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses | List commit statuses for a pull request |
-| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pullrequest_id}/properties/{app_key}/{property_name}` | deletePullRequestHostedPropertyValue | Delete a pull request application property |
-| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pullrequest_id}/properties/{app_key}/{property_name}` | getPullRequestHostedPropertyValue | Get a pull request application property |
-| PUT | `/repositories/{workspace}/{repo_slug}/pullrequests/{pullrequest_id}/properties/{app_key}/{property_name}` | updatePullRequestHostedPropertyValue | Update a pull request application property |
-| GET | `/repositories/{workspace}/{repo_slug}/refs` | get /repositories/{workspace}/{repo_slug}/refs | List branches and tags |
-| GET | `/repositories/{workspace}/{repo_slug}/refs/branches` | get /repositories/{workspace}/{repo_slug}/refs/branches | List open branches |
-| POST | `/repositories/{workspace}/{repo_slug}/refs/branches` | post /repositories/{workspace}/{repo_slug}/refs/branches | Create a branch |
-| DELETE | `/repositories/{workspace}/{repo_slug}/refs/branches/{name}` | delete /repositories/{workspace}/{repo_slug}/refs/branches/{name} | Delete a branch |
-| GET | `/repositories/{workspace}/{repo_slug}/refs/branches/{name}` | get /repositories/{workspace}/{repo_slug}/refs/branches/{name} | Get a branch |
-| GET | `/repositories/{workspace}/{repo_slug}/refs/tags` | get /repositories/{workspace}/{repo_slug}/refs/tags | List tags |
-| POST | `/repositories/{workspace}/{repo_slug}/refs/tags` | post /repositories/{workspace}/{repo_slug}/refs/tags | Create a tag |
-| DELETE | `/repositories/{workspace}/{repo_slug}/refs/tags/{name}` | delete /repositories/{workspace}/{repo_slug}/refs/tags/{name} | Delete a tag |
-| GET | `/repositories/{workspace}/{repo_slug}/refs/tags/{name}` | get /repositories/{workspace}/{repo_slug}/refs/tags/{name} | Get a tag |
-| GET | `/repositories/{workspace}/{repo_slug}/src` | get /repositories/{workspace}/{repo_slug}/src | Get the root directory of the main branch |
-| POST | `/repositories/{workspace}/{repo_slug}/src` | post /repositories/{workspace}/{repo_slug}/src | Create a commit by uploading a file |
-| GET | `/repositories/{workspace}/{repo_slug}/src/{commit}/{path}` | get /repositories/{workspace}/{repo_slug}/src/{commit}/{path} | Get file or directory contents |
-| GET | `/repositories/{workspace}/{repo_slug}/versions` | get /repositories/{workspace}/{repo_slug}/versions | List defined versions for issues |
-| GET | `/repositories/{workspace}/{repo_slug}/versions/{version_id}` | get /repositories/{workspace}/{repo_slug}/versions/{version_id} | Get a defined version for issues |
-| GET | `/repositories/{workspace}/{repo_slug}/watchers` | get /repositories/{workspace}/{repo_slug}/watchers | List repositories watchers |
-| GET | `/snippets` | get /snippets | List snippets |
-| POST | `/snippets` | post /snippets | Create a snippet |
-| GET | `/snippets/{workspace}` | get /snippets/{workspace} | List snippets in a workspace |
-| POST | `/snippets/{workspace}` | post /snippets/{workspace} | Create a snippet for a workspace |
-| DELETE | `/snippets/{workspace}/{encoded_id}` | delete /snippets/{workspace}/{encoded_id} | Delete a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}` | get /snippets/{workspace}/{encoded_id} | Get a snippet |
-| PUT | `/snippets/{workspace}/{encoded_id}` | put /snippets/{workspace}/{encoded_id} | Update a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/comments` | get /snippets/{workspace}/{encoded_id}/comments | List comments on a snippet |
-| POST | `/snippets/{workspace}/{encoded_id}/comments` | post /snippets/{workspace}/{encoded_id}/comments | Create a comment on a snippet |
-| DELETE | `/snippets/{workspace}/{encoded_id}/comments/{comment_id}` | delete /snippets/{workspace}/{encoded_id}/comments/{comment_id} | Delete a comment on a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/comments/{comment_id}` | get /snippets/{workspace}/{encoded_id}/comments/{comment_id} | Get a comment on a snippet |
-| PUT | `/snippets/{workspace}/{encoded_id}/comments/{comment_id}` | put /snippets/{workspace}/{encoded_id}/comments/{comment_id} | Update a comment on a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/commits` | get /snippets/{workspace}/{encoded_id}/commits | List snippet changes |
-| GET | `/snippets/{workspace}/{encoded_id}/commits/{revision}` | get /snippets/{workspace}/{encoded_id}/commits/{revision} | Get a previous snippet change |
-| GET | `/snippets/{workspace}/{encoded_id}/files/{path}` | get /snippets/{workspace}/{encoded_id}/files/{path} | Get a snippet's raw file at HEAD |
-| DELETE | `/snippets/{workspace}/{encoded_id}/watch` | delete /snippets/{workspace}/{encoded_id}/watch | Stop watching a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/watch` | get /snippets/{workspace}/{encoded_id}/watch | Check if the current user is watching a snippet |
-| PUT | `/snippets/{workspace}/{encoded_id}/watch` | put /snippets/{workspace}/{encoded_id}/watch | Watch a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/watchers` | get /snippets/{workspace}/{encoded_id}/watchers | List users watching a snippet |
-| DELETE | `/snippets/{workspace}/{encoded_id}/{node_id}` | delete /snippets/{workspace}/{encoded_id}/{node_id} | Delete a previous revision of a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/{node_id}` | get /snippets/{workspace}/{encoded_id}/{node_id} | Get a previous revision of a snippet |
-| PUT | `/snippets/{workspace}/{encoded_id}/{node_id}` | put /snippets/{workspace}/{encoded_id}/{node_id} | Update a previous revision of a snippet |
-| GET | `/snippets/{workspace}/{encoded_id}/{node_id}/files/{path}` | get /snippets/{workspace}/{encoded_id}/{node_id}/files/{path} | Get a snippet's raw file |
-| GET | `/snippets/{workspace}/{encoded_id}/{revision}/diff` | get /snippets/{workspace}/{encoded_id}/{revision}/diff | Get snippet changes between versions |
-| GET | `/snippets/{workspace}/{encoded_id}/{revision}/patch` | get /snippets/{workspace}/{encoded_id}/{revision}/patch | Get snippet patch between versions |
-| GET | `/teams/{username}/pipelines_config/variables/` | getPipelineVariablesForTeam | List variables for an account |
-| POST | `/teams/{username}/pipelines_config/variables/` | createPipelineVariableForTeam | Create a variable for a user |
-| DELETE | `/teams/{username}/pipelines_config/variables/{variable_uuid}` | deletePipelineVariableForTeam | Delete a variable for a team |
-| GET | `/teams/{username}/pipelines_config/variables/{variable_uuid}` | getPipelineVariableForTeam | Get a variable for a team |
-| PUT | `/teams/{username}/pipelines_config/variables/{variable_uuid}` | updatePipelineVariableForTeam | Update a variable for a team |
-| GET | `/teams/{username}/search/code` | searchTeam | Search for code in a team's repositories |
-| GET | `/user` | get /user | Get current user |
-| GET | `/user/emails` | get /user/emails | List email addresses for current user |
-| GET | `/user/emails/{email}` | get /user/emails/{email} | Get an email address for current user |
-| GET | `/user/permissions/repositories` | get /user/permissions/repositories | List repository permissions for a user |
-| GET | `/user/permissions/workspaces` | get /user/permissions/workspaces | List workspaces for the current user |
-| GET | `/users/{selected_user}` | get /users/{selected_user} | Get a user |
-| GET | `/users/{selected_user}/pipelines_config/variables/` | getPipelineVariablesForUser | List variables for a user |
-| POST | `/users/{selected_user}/pipelines_config/variables/` | createPipelineVariableForUser | Create a variable for a user |
-| DELETE | `/users/{selected_user}/pipelines_config/variables/{variable_uuid}` | deletePipelineVariableForUser | Delete a variable for a user |
-| GET | `/users/{selected_user}/pipelines_config/variables/{variable_uuid}` | getPipelineVariableForUser | Get a variable for a user |
-| PUT | `/users/{selected_user}/pipelines_config/variables/{variable_uuid}` | updatePipelineVariableForUser | Update a variable for a user |
-| DELETE | `/users/{selected_user}/properties/{app_key}/{property_name}` | deleteUserHostedPropertyValue | Delete a user application property |
-| GET | `/users/{selected_user}/properties/{app_key}/{property_name}` | retrieveUserHostedPropertyValue | Get a user application property |
-| PUT | `/users/{selected_user}/properties/{app_key}/{property_name}` | updateUserHostedPropertyValue | Update a user application property |
-| GET | `/users/{selected_user}/search/code` | searchAccount | Search for code in a user's repositories |
-| GET | `/users/{selected_user}/ssh-keys` | get /users/{selected_user}/ssh-keys | List SSH keys |
-| POST | `/users/{selected_user}/ssh-keys` | post /users/{selected_user}/ssh-keys | Add a new SSH key |
-| DELETE | `/users/{selected_user}/ssh-keys/{key_id}` | delete /users/{selected_user}/ssh-keys/{key_id} | Delete a SSH key |
-| GET | `/users/{selected_user}/ssh-keys/{key_id}` | get /users/{selected_user}/ssh-keys/{key_id} | Get a SSH key |
-| PUT | `/users/{selected_user}/ssh-keys/{key_id}` | put /users/{selected_user}/ssh-keys/{key_id} | Update a SSH key |
-| GET | `/workspaces` | get /workspaces | List workspaces for user |
-| GET | `/workspaces/{workspace}` | get /workspaces/{workspace} | Get a workspace |
-| GET | `/workspaces/{workspace}/hooks` | get /workspaces/{workspace}/hooks | List webhooks for a workspace |
-| POST | `/workspaces/{workspace}/hooks` | post /workspaces/{workspace}/hooks | Create a webhook for a workspace |
-| DELETE | `/workspaces/{workspace}/hooks/{uid}` | delete /workspaces/{workspace}/hooks/{uid} | Delete a webhook for a workspace |
-| GET | `/workspaces/{workspace}/hooks/{uid}` | get /workspaces/{workspace}/hooks/{uid} | Get a webhook for a workspace |
-| PUT | `/workspaces/{workspace}/hooks/{uid}` | put /workspaces/{workspace}/hooks/{uid} | Update a webhook for a workspace |
-| GET | `/workspaces/{workspace}/members` | get /workspaces/{workspace}/members | List users in a workspace |
-| GET | `/workspaces/{workspace}/members/{member}` | get /workspaces/{workspace}/members/{member} | Get user membership for a workspace |
-| GET | `/workspaces/{workspace}/permissions` | get /workspaces/{workspace}/permissions | List user permissions in a workspace |
-| GET | `/workspaces/{workspace}/permissions/repositories` | get /workspaces/{workspace}/permissions/repositories | List all repository permissions for a workspace |
-| GET | `/workspaces/{workspace}/permissions/repositories/{repo_slug}` | get /workspaces/{workspace}/permissions/repositories/{repo_slug} | List a repository permissions for a workspace |
-| GET | `/workspaces/{workspace}/pipelines-config/identity/oidc/.well-known/openid-configuration` | getOIDCConfiguration | Get OpenID configuration for OIDC in Pipelines |
-| GET | `/workspaces/{workspace}/pipelines-config/identity/oidc/keys.json` | getOIDCKeys | Get keys for OIDC in Pipelines |
-| GET | `/workspaces/{workspace}/pipelines-config/variables` | getPipelineVariablesForWorkspace | List variables for a workspace |
-| POST | `/workspaces/{workspace}/pipelines-config/variables` | createPipelineVariableForWorkspace | Create a variable for a workspace |
-| DELETE | `/workspaces/{workspace}/pipelines-config/variables/{variable_uuid}` | deletePipelineVariableForWorkspace | Delete a variable for a workspace |
-| GET | `/workspaces/{workspace}/pipelines-config/variables/{variable_uuid}` | getPipelineVariableForWorkspace | Get variable for a workspace |
-| PUT | `/workspaces/{workspace}/pipelines-config/variables/{variable_uuid}` | updatePipelineVariableForWorkspace | Update variable for a workspace |
-| GET | `/workspaces/{workspace}/projects` | get /workspaces/{workspace}/projects | List projects in a workspace |
-| POST | `/workspaces/{workspace}/projects` | post /workspaces/{workspace}/projects | Create a project in a workspace |
-| DELETE | `/workspaces/{workspace}/projects/{project_key}` | delete /workspaces/{workspace}/projects/{project_key} | Delete a project for a workspace |
-| GET | `/workspaces/{workspace}/projects/{project_key}` | get /workspaces/{workspace}/projects/{project_key} | Get a project for a workspace |
-| PUT | `/workspaces/{workspace}/projects/{project_key}` | put /workspaces/{workspace}/projects/{project_key} | Update a project for a workspace |
-| GET | `/workspaces/{workspace}/projects/{project_key}/branching-model` | get /workspaces/{workspace}/projects/{project_key}/branching-model | Get the branching model for a project |
-| GET | `/workspaces/{workspace}/projects/{project_key}/branching-model/settings` | get /workspaces/{workspace}/projects/{project_key}/branching-model/settings | Get the branching model config for a project |
-| PUT | `/workspaces/{workspace}/projects/{project_key}/branching-model/settings` | put /workspaces/{workspace}/projects/{project_key}/branching-model/settings | Update the branching model config for a project |
-| GET | `/workspaces/{workspace}/projects/{project_key}/default-reviewers` | get /workspaces/{workspace}/projects/{project_key}/default-reviewers | List the default reviewers in a project |
-| DELETE | `/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}` | delete /workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user} | Remove the specific user from the project's default reviewers |
-| GET | `/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}` | get /workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user} | Get a default reviewer |
-| PUT | `/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}` | put /workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user} | Add the specific user as a default reviewer for the project |
-| GET | `/workspaces/{workspace}/projects/{project_key}/deploy-keys` | get /workspaces/{workspace}/projects/{project_key}/deploy-keys | List project deploy keys |
-| POST | `/workspaces/{workspace}/projects/{project_key}/deploy-keys` | post /workspaces/{workspace}/projects/{project_key}/deploy-keys | Create a project deploy key |
-| DELETE | `/workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id}` | delete /workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id} | Delete a deploy key from a project |
-| GET | `/workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id}` | get /workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id} | Get a project deploy key |
-| GET | `/workspaces/{workspace}/search/code` | searchWorkspace | Search for code in a workspace |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/addon` | put /addon | — | — |  | Update an installed app |
+| DELETE | `/addon` | delete /addon | — | — |  | Delete an app |
+| GET | `/addon/linkers` | get /addon/linkers | — | — | yes | List linkers for an app |
+| GET | `/addon/linkers/{linker_key}` | get /addon/linkers/{linker_key} | `linker_key`* | — | yes | Get a linker for an app |
+| GET | `/addon/linkers/{linker_key}/values` | get /addon/linkers/{linker_key}/values | `linker_key`* | — | yes | List linker values for a linker |
+| PUT | `/addon/linkers/{linker_key}/values` | put /addon/linkers/{linker_key}/values | `linker_key`* | — |  | Update a linker value |
+| POST | `/addon/linkers/{linker_key}/values` | post /addon/linkers/{linker_key}/values | `linker_key`* | — |  | Create a linker value |
+| DELETE | `/addon/linkers/{linker_key}/values` | delete /addon/linkers/{linker_key}/values | `linker_key`* | — |  | Delete all linker values |
+| GET | `/addon/linkers/{linker_key}/values/{value_id}` | get /addon/linkers/{linker_key}/values/{value_id} | `linker_key`*, `value_id`* | — | yes | Get a linker value |
+| DELETE | `/addon/linkers/{linker_key}/values/{value_id}` | delete /addon/linkers/{linker_key}/values/{value_id} | `linker_key`*, `value_id`* | — |  | Delete a linker value |
+| GET | `/hook_events` | get /hook_events | — | subject_types | yes | Get a webhook resource |
+| GET | `/hook_events/{subject_type}` | get /hook_events/{subject_type} | `subject_type`* | paginated_hook_events | yes | List subscribable webhook types |
+| GET | `/pullrequests/{selected_user}` | get /pullrequests/{selected_user} | `selected_user`*, `state` | paginated_pullrequests | yes | List pull requests for a user |
+| GET | `/repositories` | get /repositories | `after`, `role`, `q`, `sort` | paginated_repositories | yes | List public repositories |
+| GET | `/repositories/{workspace}` | get /repositories/{workspace} | `workspace`*, `role`, `q`, `sort` | paginated_repositories | yes | List repositories in a workspace |
+| GET | `/repositories/{workspace}/{repo_slug}` | get /repositories/{workspace}/{repo_slug} | `repo_slug`*, `workspace`* | repository | yes | Get a repository |
+| PUT | `/repositories/{workspace}/{repo_slug}` | put /repositories/{workspace}/{repo_slug} | `repo_slug`*, `workspace`*, body: repository | repository |  | Update a repository |
+| POST | `/repositories/{workspace}/{repo_slug}` | post /repositories/{workspace}/{repo_slug} | `repo_slug`*, `workspace`*, body: repository | repository |  | Create a repository |
+| DELETE | `/repositories/{workspace}/{repo_slug}` | delete /repositories/{workspace}/{repo_slug} | `repo_slug`*, `workspace`*, `redirect_to` | — |  | Delete a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/branch-restrictions` | get /repositories/{workspace}/{repo_slug}/branch-restrictions | `repo_slug`*, `workspace`*, `kind`, `pattern` | paginated_branchrestrictions | yes | List branch restrictions |
+| POST | `/repositories/{workspace}/{repo_slug}/branch-restrictions` | post /repositories/{workspace}/{repo_slug}/branch-restrictions | `repo_slug`*, `workspace`*, body*: branchrestriction | branchrestriction |  | Create a branch restriction rule |
+| GET | `/repositories/{workspace}/{repo_slug}/branch-restrictions/{id}` | get /repositories/{workspace}/{repo_slug}/branch-restrictions/{id} | `id`*, `repo_slug`*, `workspace`* | branchrestriction | yes | Get a branch restriction rule |
+| PUT | `/repositories/{workspace}/{repo_slug}/branch-restrictions/{id}` | put /repositories/{workspace}/{repo_slug}/branch-restrictions/{id} | `id`*, `repo_slug`*, `workspace`*, body*: branchrestriction | branchrestriction |  | Update a branch restriction rule |
+| DELETE | `/repositories/{workspace}/{repo_slug}/branch-restrictions/{id}` | delete /repositories/{workspace}/{repo_slug}/branch-restrictions/{id} | `id`*, `repo_slug`*, `workspace`* | — |  | Delete a branch restriction rule |
+| GET | `/repositories/{workspace}/{repo_slug}/branching-model` | get /repositories/{workspace}/{repo_slug}/branching-model | `repo_slug`*, `workspace`* | branching_model | yes | Get the branching model for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/branching-model/settings` | get /repositories/{workspace}/{repo_slug}/branching-model/settings | `repo_slug`*, `workspace`* | branching_model_settings | yes | Get the branching model config for a repository |
+| PUT | `/repositories/{workspace}/{repo_slug}/branching-model/settings` | put /repositories/{workspace}/{repo_slug}/branching-model/settings | `repo_slug`*, `workspace`* | branching_model_settings |  | Update the branching model config for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}` | get /repositories/{workspace}/{repo_slug}/commit/{commit} | `commit`*, `repo_slug`*, `workspace`* | commit | yes | Get a commit |
+| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/approve` | post /repositories/{workspace}/{repo_slug}/commit/{commit}/approve | `commit`*, `repo_slug`*, `workspace`* | participant |  | Approve a commit |
+| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/approve` | delete /repositories/{workspace}/{repo_slug}/commit/{commit}/approve | `commit`*, `repo_slug`*, `workspace`* | — |  | Unapprove a commit |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/comments | `commit`*, `repo_slug`*, `workspace`*, `q`, `sort` | paginated_commit_comments | yes | List a commit's comments |
+| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments` | post /repositories/{workspace}/{repo_slug}/commit/{commit}/comments | `commit`*, `repo_slug`*, `workspace`*, body*: commit_comment | — |  | Create comment for a commit |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id}` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id} | `comment_id`*, `commit`*, `repo_slug`*, `workspace`* | commit_comment | yes | Get a commit comment |
+| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id}` | put /repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id} | `comment_id`*, `commit`*, `repo_slug`*, `workspace`*, body*: commit_comment | — |  | Update a commit comment |
+| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id}` | delete /repositories/{workspace}/{repo_slug}/commit/{commit}/comments/{comment_id} | `comment_id`*, `commit`*, `repo_slug`*, `workspace`* | — |  | Delete a commit comment |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/properties/{app_key}/{property_name}` | getCommitHostedPropertyValue | `workspace`*, `repo_slug`*, `commit`*, `app_key`*, `property_name`* | application_property | yes | Get a commit application property |
+| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/properties/{app_key}/{property_name}` | updateCommitHostedPropertyValue | `workspace`*, `repo_slug`*, `commit`*, `app_key`*, `property_name`*, body*: application_property | — |  | Update a commit application property |
+| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/properties/{app_key}/{property_name}` | deleteCommitHostedPropertyValue | `workspace`*, `repo_slug`*, `commit`*, `app_key`*, `property_name`* | — |  | Delete a commit application property |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/pullrequests` | getPullrequestsForCommit | `workspace`*, `repo_slug`*, `commit`*, `page`, `pagelen` | paginated_pullrequests | yes | List pull requests that contain a commit |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports` | getReportsForCommit | `workspace`*, `repo_slug`*, `commit`* | paginated_reports | yes | List reports |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}` | getReport | `workspace`*, `repo_slug`*, `commit`*, `reportId`* | report | yes | Get a report |
+| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}` | createOrUpdateReport | `workspace`*, `repo_slug`*, `commit`*, `reportId`*, body*: report | report |  | Create or update a report |
+| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}` | deleteReport | `workspace`*, `repo_slug`*, `commit`*, `reportId`* | — |  | Delete a report |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations` | getAnnotationsForReport | `workspace`*, `repo_slug`*, `commit`*, `reportId`* | paginated_annotations | yes | List annotations |
+| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations` | bulkCreateOrUpdateAnnotations | `workspace`*, `repo_slug`*, `commit`*, `reportId`*, body*: report_annotation[] | report_annotation[] |  | Bulk create or update annotations |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}` | getAnnotation | `workspace`*, `repo_slug`*, `commit`*, `reportId`*, `annotationId`* | report_annotation | yes | Get an annotation |
+| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}` | createOrUpdateAnnotation | `workspace`*, `repo_slug`*, `commit`*, `reportId`*, `annotationId`*, body*: report_annotation | report_annotation |  | Create or update an annotation |
+| DELETE | `/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}` | deleteAnnotation | `workspace`*, `repo_slug`*, `commit`*, `reportId`*, `annotationId`* | — |  | Delete an annotation |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses | `commit`*, `repo_slug`*, `workspace`*, `q`, `sort` | paginated_commitstatuses | yes | List commit statuses for a commit |
+| POST | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build` | post /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build | `commit`*, `repo_slug`*, `workspace`*, body: commitstatus | commitstatus |  | Create a build status for a commit |
+| GET | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key}` | get /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key} | `commit`*, `key`*, `repo_slug`*, `workspace`* | commitstatus | yes | Get a build status for a commit |
+| PUT | `/repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key}` | put /repositories/{workspace}/{repo_slug}/commit/{commit}/statuses/build/{key} | `commit`*, `key`*, `repo_slug`*, `workspace`*, body: commitstatus | commitstatus |  | Update a build status for a commit |
+| GET | `/repositories/{workspace}/{repo_slug}/commits` | get /repositories/{workspace}/{repo_slug}/commits | `repo_slug`*, `workspace`* | paginated_changeset | yes | List commits |
+| POST | `/repositories/{workspace}/{repo_slug}/commits` | post /repositories/{workspace}/{repo_slug}/commits | `repo_slug`*, `workspace`* | paginated_changeset |  | List commits with include/exclude |
+| GET | `/repositories/{workspace}/{repo_slug}/commits/{revision}` | get /repositories/{workspace}/{repo_slug}/commits/{revision} | `repo_slug`*, `revision`*, `workspace`* | paginated_changeset | yes | List commits for revision |
+| POST | `/repositories/{workspace}/{repo_slug}/commits/{revision}` | post /repositories/{workspace}/{repo_slug}/commits/{revision} | `repo_slug`*, `revision`*, `workspace`* | paginated_changeset |  | List commits for revision using include/exclude |
+| GET | `/repositories/{workspace}/{repo_slug}/components` | get /repositories/{workspace}/{repo_slug}/components | `repo_slug`*, `workspace`* | paginated_components | yes | List components |
+| GET | `/repositories/{workspace}/{repo_slug}/components/{component_id}` | get /repositories/{workspace}/{repo_slug}/components/{component_id} | `component_id`*, `repo_slug`*, `workspace`* | component | yes | Get a component for issues |
+| GET | `/repositories/{workspace}/{repo_slug}/default-reviewers` | get /repositories/{workspace}/{repo_slug}/default-reviewers | `repo_slug`*, `workspace`* | paginated_accounts | yes | List default reviewers |
+| GET | `/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}` | get /repositories/{workspace}/{repo_slug}/default-reviewers/{target_username} | `repo_slug`*, `target_username`*, `workspace`* | account | yes | Get a default reviewer |
+| PUT | `/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}` | put /repositories/{workspace}/{repo_slug}/default-reviewers/{target_username} | `repo_slug`*, `target_username`*, `workspace`* | account |  | Add a user to the default reviewers |
+| DELETE | `/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}` | delete /repositories/{workspace}/{repo_slug}/default-reviewers/{target_username} | `repo_slug`*, `target_username`*, `workspace`* | — |  | Remove a user from the default reviewers |
+| GET | `/repositories/{workspace}/{repo_slug}/deploy-keys` | get /repositories/{workspace}/{repo_slug}/deploy-keys | `repo_slug`*, `workspace`* | paginated_deploy_keys | yes | List repository deploy keys |
+| POST | `/repositories/{workspace}/{repo_slug}/deploy-keys` | post /repositories/{workspace}/{repo_slug}/deploy-keys | `repo_slug`*, `workspace`* | deploy_key |  | Add a repository deploy key |
+| GET | `/repositories/{workspace}/{repo_slug}/deploy-keys/{key_id}` | get /repositories/{workspace}/{repo_slug}/deploy-keys/{key_id} | `key_id`*, `repo_slug`*, `workspace`* | deploy_key | yes | Get a repository deploy key |
+| PUT | `/repositories/{workspace}/{repo_slug}/deploy-keys/{key_id}` | put /repositories/{workspace}/{repo_slug}/deploy-keys/{key_id} | `key_id`*, `repo_slug`*, `workspace`* | deploy_key |  | Update a repository deploy key |
+| DELETE | `/repositories/{workspace}/{repo_slug}/deploy-keys/{key_id}` | delete /repositories/{workspace}/{repo_slug}/deploy-keys/{key_id} | `key_id`*, `repo_slug`*, `workspace`* | — |  | Delete a repository deploy key |
+| GET | `/repositories/{workspace}/{repo_slug}/deployments/` | getDeploymentsForRepository | `workspace`*, `repo_slug`* | paginated_deployments | yes | List deployments |
+| GET | `/repositories/{workspace}/{repo_slug}/deployments/{deployment_uuid}` | getDeploymentForRepository | `workspace`*, `repo_slug`*, `deployment_uuid`* | deployment | yes | Get a deployment |
+| GET | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables` | getDeploymentVariables | `workspace`*, `repo_slug`*, `environment_uuid`* | paginated_deployment_variable | yes | List variables for an environment |
+| POST | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables` | createDeploymentVariable | `workspace`*, `repo_slug`*, `environment_uuid`*, body*: deployment_variable | deployment_variable |  | Create a variable for an environment |
+| PUT | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables/{variable_uuid}` | updateDeploymentVariable | `workspace`*, `repo_slug`*, `environment_uuid`*, `variable_uuid`*, body*: deployment_variable | deployment_variable |  | Update a variable for an environment |
+| DELETE | `/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables/{variable_uuid}` | deleteDeploymentVariable | `workspace`*, `repo_slug`*, `environment_uuid`*, `variable_uuid`* | — |  | Delete a variable for an environment |
+| GET | `/repositories/{workspace}/{repo_slug}/diff/{spec}` | get /repositories/{workspace}/{repo_slug}/diff/{spec} | `repo_slug`*, `spec`*, `workspace`*, `context`, `path`, `ignore_whitespace`, `binary`, `renames`, `merge`, `topic` | — | yes | Compare two commits |
+| GET | `/repositories/{workspace}/{repo_slug}/diffstat/{spec}` | get /repositories/{workspace}/{repo_slug}/diffstat/{spec} | `ignore_whitespace`, `merge`, `path`, `renames`, `repo_slug`*, `spec`*, `topic`, `workspace`* | paginated_diffstats | yes | Compare two commit diff stats |
+| GET | `/repositories/{workspace}/{repo_slug}/downloads` | get /repositories/{workspace}/{repo_slug}/downloads | `repo_slug`*, `workspace`* | — | yes | List download artifacts |
+| POST | `/repositories/{workspace}/{repo_slug}/downloads` | post /repositories/{workspace}/{repo_slug}/downloads | `repo_slug`*, `workspace`* | — |  | Upload a download artifact |
+| GET | `/repositories/{workspace}/{repo_slug}/downloads/{filename}` | get /repositories/{workspace}/{repo_slug}/downloads/{filename} | `filename`*, `repo_slug`*, `workspace`* | — | yes | Get a download artifact link |
+| DELETE | `/repositories/{workspace}/{repo_slug}/downloads/{filename}` | delete /repositories/{workspace}/{repo_slug}/downloads/{filename} | `filename`*, `repo_slug`*, `workspace`* | — |  | Delete a download artifact |
+| GET | `/repositories/{workspace}/{repo_slug}/effective-branching-model` | get /repositories/{workspace}/{repo_slug}/effective-branching-model | `repo_slug`*, `workspace`* | effective_repo_branching_model | yes | Get the effective, or currently applied, branching model for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/effective-default-reviewers` | get /repositories/{workspace}/{repo_slug}/effective-default-reviewers | `repo_slug`*, `workspace`* | paginated_default_reviewer_and_type | yes | List effective default reviewers |
+| GET | `/repositories/{workspace}/{repo_slug}/environments/` | getEnvironmentsForRepository | `workspace`*, `repo_slug`* | paginated_environments | yes | List environments |
+| POST | `/repositories/{workspace}/{repo_slug}/environments/` | createEnvironment | `workspace`*, `repo_slug`*, body*: deployment_environment | deployment_environment |  | Create an environment |
+| GET | `/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}` | getEnvironmentForRepository | `workspace`*, `repo_slug`*, `environment_uuid`* | deployment_environment | yes | Get an environment |
+| DELETE | `/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}` | deleteEnvironmentForRepository | `workspace`*, `repo_slug`*, `environment_uuid`* | — |  | Delete an environment |
+| POST | `/repositories/{workspace}/{repo_slug}/environments/{environment_uuid}/changes/` | updateEnvironmentForRepository | `workspace`*, `repo_slug`*, `environment_uuid`* | — |  | Update an environment |
+| GET | `/repositories/{workspace}/{repo_slug}/filehistory/{commit}/{path}` | get /repositories/{workspace}/{repo_slug}/filehistory/{commit}/{path} | `commit`*, `path`*, `repo_slug`*, `workspace`*, `renames`, `q`, `sort` | paginated_files | yes | List commits that modified a file |
+| GET | `/repositories/{workspace}/{repo_slug}/forks` | get /repositories/{workspace}/{repo_slug}/forks | `repo_slug`*, `workspace`*, `role`, `q`, `sort` | paginated_repositories | yes | List repository forks |
+| POST | `/repositories/{workspace}/{repo_slug}/forks` | post /repositories/{workspace}/{repo_slug}/forks | `repo_slug`*, `workspace`*, body: repository | repository |  | Fork a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/hooks` | get /repositories/{workspace}/{repo_slug}/hooks | `repo_slug`*, `workspace`* | paginated_webhook_subscriptions | yes | List webhooks for a repository |
+| POST | `/repositories/{workspace}/{repo_slug}/hooks` | post /repositories/{workspace}/{repo_slug}/hooks | `repo_slug`*, `workspace`* | webhook_subscription |  | Create a webhook for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/hooks/{uid}` | get /repositories/{workspace}/{repo_slug}/hooks/{uid} | `repo_slug`*, `uid`*, `workspace`* | webhook_subscription | yes | Get a webhook for a repository |
+| PUT | `/repositories/{workspace}/{repo_slug}/hooks/{uid}` | put /repositories/{workspace}/{repo_slug}/hooks/{uid} | `repo_slug`*, `uid`*, `workspace`* | webhook_subscription |  | Update a webhook for a repository |
+| DELETE | `/repositories/{workspace}/{repo_slug}/hooks/{uid}` | delete /repositories/{workspace}/{repo_slug}/hooks/{uid} | `repo_slug`*, `uid`*, `workspace`* | — |  | Delete a webhook for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/issues` | get /repositories/{workspace}/{repo_slug}/issues | `repo_slug`*, `workspace`* | paginated_issues | yes | List issues |
+| POST | `/repositories/{workspace}/{repo_slug}/issues` | post /repositories/{workspace}/{repo_slug}/issues | `repo_slug`*, `workspace`*, body*: issue | issue |  | Create an issue |
+| POST | `/repositories/{workspace}/{repo_slug}/issues/export` | post /repositories/{workspace}/{repo_slug}/issues/export | `repo_slug`*, `workspace`*, body: export_options | — |  | Export issues |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/export/{repo_name}-issues-{task_id}.zip` | get /repositories/{workspace}/{repo_slug}/issues/export/{repo_name}-issues-{task_id}.zip | `repo_name`*, `repo_slug`*, `task_id`*, `workspace`* | issue_job_status | yes | Check issue export status |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/import` | get /repositories/{workspace}/{repo_slug}/issues/import | `repo_slug`*, `workspace`* | issue_job_status | yes | Check issue import status |
+| POST | `/repositories/{workspace}/{repo_slug}/issues/import` | post /repositories/{workspace}/{repo_slug}/issues/import | `repo_slug`*, `workspace`* | issue_job_status |  | Import issues |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id} | `issue_id`*, `repo_slug`*, `workspace`* | issue | yes | Get an issue |
+| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id} | `issue_id`*, `repo_slug`*, `workspace`* | issue |  | Update an issue |
+| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id} | `issue_id`*, `repo_slug`*, `workspace`* | issue |  | Delete an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments | `issue_id`*, `repo_slug`*, `workspace`* | paginated_issue_attachments | yes | List attachments for an issue |
+| POST | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments` | post /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments | `issue_id`*, `repo_slug`*, `workspace`* | — |  | Upload an attachment to an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path} | `issue_id`*, `path`*, `repo_slug`*, `workspace`* | — | yes | Get attachment for an issue |
+| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path}` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/attachments/{path} | `issue_id`*, `path`*, `repo_slug`*, `workspace`* | — |  | Delete an attachment for an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes | `issue_id`*, `repo_slug`*, `workspace`*, `q`, `sort` | paginated_log_entries | yes | List changes on an issue |
+| POST | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes` | post /repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes | `issue_id`*, `repo_slug`*, `workspace`*, body*: issue_change | issue_change |  | Modify the state of an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes/{change_id}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/changes/{change_id} | `change_id`*, `issue_id`*, `repo_slug`*, `workspace`* | issue_change | yes | Get issue change object |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments | `issue_id`*, `repo_slug`*, `workspace`*, `q` | paginated_issue_comments | yes | List comments on an issue |
+| POST | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments` | post /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments | `issue_id`*, `repo_slug`*, `workspace`*, body*: issue_comment | — |  | Create a comment on an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id}` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id} | `comment_id`*, `issue_id`*, `repo_slug`*, `workspace`* | issue_comment | yes | Get a comment on an issue |
+| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id}` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id} | `comment_id`*, `issue_id`*, `repo_slug`*, `workspace`*, body*: issue_comment | issue_comment |  | Update a comment on an issue |
+| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id}` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/comments/{comment_id} | `comment_id`*, `issue_id`*, `repo_slug`*, `workspace`* | — |  | Delete a comment on an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote | `issue_id`*, `repo_slug`*, `workspace`* | error | yes | Check if current user voted for an issue |
+| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote | `issue_id`*, `repo_slug`*, `workspace`* | error |  | Vote for an issue |
+| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/vote | `issue_id`*, `repo_slug`*, `workspace`* | — |  | Remove vote for an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch` | get /repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch | `issue_id`*, `repo_slug`*, `workspace`* | error | yes | Check if current user is watching a issue |
+| PUT | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch` | put /repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch | `issue_id`*, `repo_slug`*, `workspace`* | error |  | Watch an issue |
+| DELETE | `/repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch` | delete /repositories/{workspace}/{repo_slug}/issues/{issue_id}/watch | `issue_id`*, `repo_slug`*, `workspace`* | error |  | Stop watching an issue |
+| GET | `/repositories/{workspace}/{repo_slug}/merge-base/{revspec}` | get /repositories/{workspace}/{repo_slug}/merge-base/{revspec} | `repo_slug`*, `revspec`*, `workspace`* | commit | yes | Get the common ancestor between two commits |
+| GET | `/repositories/{workspace}/{repo_slug}/milestones` | get /repositories/{workspace}/{repo_slug}/milestones | `repo_slug`*, `workspace`* | paginated_milestones | yes | List milestones |
+| GET | `/repositories/{workspace}/{repo_slug}/milestones/{milestone_id}` | get /repositories/{workspace}/{repo_slug}/milestones/{milestone_id} | `milestone_id`*, `repo_slug`*, `workspace`* | milestone | yes | Get a milestone |
+| GET | `/repositories/{workspace}/{repo_slug}/override-settings` | get /repositories/{workspace}/{repo_slug}/override-settings | `repo_slug`*, `workspace`* | repository_inheritance_state | yes | Retrieve the inheritance state for repository settings |
+| PUT | `/repositories/{workspace}/{repo_slug}/override-settings` | put /repositories/{workspace}/{repo_slug}/override-settings | `repo_slug`*, `workspace`* | — |  | Set the inheritance state for repository settings |
+| GET | `/repositories/{workspace}/{repo_slug}/patch/{spec}` | get /repositories/{workspace}/{repo_slug}/patch/{spec} | `repo_slug`*, `spec`*, `workspace`* | — | yes | Get a patch for two commits |
+| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/groups` | get /repositories/{workspace}/{repo_slug}/permissions-config/groups | `repo_slug`*, `workspace`* | paginated_repository_group_permissions | yes | List explicit group permissions for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug}` | get /repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug} | `group_slug`*, `repo_slug`*, `workspace`* | repository_group_permission | yes | Get an explicit group permission for a repository |
+| PUT | `/repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug}` | put /repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug} | `group_slug`*, `repo_slug`*, `workspace`* | repository_group_permission |  | Update an explicit group permission for a repository |
+| DELETE | `/repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug}` | delete /repositories/{workspace}/{repo_slug}/permissions-config/groups/{group_slug} | `group_slug`*, `repo_slug`*, `workspace`* | — |  | Delete an explicit group permission for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/users` | get /repositories/{workspace}/{repo_slug}/permissions-config/users | `repo_slug`*, `workspace`* | paginated_repository_user_permissions | yes | List explicit user permissions for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id}` | get /repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id} | `repo_slug`*, `selected_user_id`*, `workspace`* | repository_user_permission | yes | Get an explicit user permission for a repository |
+| PUT | `/repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id}` | put /repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id} | `repo_slug`*, `selected_user_id`*, `workspace`* | repository_user_permission |  | Update an explicit user permission for a repository |
+| DELETE | `/repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id}` | delete /repositories/{workspace}/{repo_slug}/permissions-config/users/{selected_user_id} | `repo_slug`*, `selected_user_id`*, `workspace`* | — |  | Delete an explicit user permission for a repository |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches` | deleteRepositoryPipelineCaches | `workspace`*, `repo_slug`*, `name`* | — |  | Delete caches |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches/` | getRepositoryPipelineCaches | `workspace`*, `repo_slug`* | paginated_pipeline_caches | yes | List caches |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches/{cache_uuid}` | deleteRepositoryPipelineCache | `workspace`*, `repo_slug`*, `cache_uuid`* | — |  | Delete a cache |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines-config/caches/{cache_uuid}/content-uri` | getRepositoryPipelineCacheContentURI | `workspace`*, `repo_slug`*, `cache_uuid`* | pipeline_cache_content_uri | yes | Get cache content URI |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/` | getPipelinesForRepository | `workspace`*, `repo_slug`* | paginated_pipelines | yes | List pipelines |
+| POST | `/repositories/{workspace}/{repo_slug}/pipelines/` | createPipelineForRepository | `workspace`*, `repo_slug`*, body*: pipeline | pipeline |  | Run a pipeline |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}` | getPipelineForRepository | `workspace`*, `repo_slug`*, `pipeline_uuid`* | pipeline | yes | Get a pipeline |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/` | getPipelineStepsForRepository | `workspace`*, `repo_slug`*, `pipeline_uuid`* | paginated_pipeline_steps | yes | List steps for a pipeline |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}` | getPipelineStepForRepository | `workspace`*, `repo_slug`*, `pipeline_uuid`*, `step_uuid`* | pipeline_step | yes | Get a step of a pipeline |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/log` | getPipelineStepLogForRepository | `workspace`*, `repo_slug`*, `pipeline_uuid`*, `step_uuid`* | — | yes | Get log file for a step |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/logs/{log_uuid}` | getPipelineContainerLog | `workspace`*, `repo_slug`*, `pipeline_uuid`*, `step_uuid`*, `log_uuid`* | — | yes | Get the logs for the build container or a service container for a given step of a pipeline. |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports` | getPipelineTestReports | `workspace`*, `repo_slug`*, `pipeline_uuid`*, `step_uuid`* | — | yes | Get a summary of test reports for a given step of a pipeline. |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases` | getPipelineTestReportTestCases | `workspace`*, `repo_slug`*, `pipeline_uuid`*, `step_uuid`* | — | yes | Get test cases for a given step of a pipeline. |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/test_reports/test_cases/{test_case_uuid}/test_case_reasons` | getPipelineTestReportTestCaseReasons | `workspace`*, `repo_slug`*, `pipeline_uuid`*, `step_uuid`*, `test_case_uuid`* | — | yes | Get test case reasons (output) for a given test case in a step of a pipeline. |
+| POST | `/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/stopPipeline` | stopPipeline | `workspace`*, `repo_slug`*, `pipeline_uuid`* | — |  | Stop a pipeline |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config` | getRepositoryPipelineConfig | `workspace`*, `repo_slug`* | pipelines_config | yes | Get configuration |
+| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config` | updateRepositoryPipelineConfig | `workspace`*, `repo_slug`*, body*: pipelines_config | pipelines_config |  | Update configuration |
+| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/build_number` | updateRepositoryBuildNumber | `workspace`*, `repo_slug`*, body*: pipeline_build_number | pipeline_build_number |  | Update the next build number |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/` | getRepositoryPipelineSchedules | `workspace`*, `repo_slug`* | paginated_pipeline_schedules | yes | List schedules |
+| POST | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/` | createRepositoryPipelineSchedule | `workspace`*, `repo_slug`*, body*: pipeline_schedule | pipeline_schedule |  | Create a schedule |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}` | getRepositoryPipelineSchedule | `workspace`*, `repo_slug`*, `schedule_uuid`* | pipeline_schedule | yes | Get a schedule |
+| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}` | updateRepositoryPipelineSchedule | `workspace`*, `repo_slug`*, `schedule_uuid`*, body*: pipeline_schedule | pipeline_schedule |  | Update a schedule |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}` | deleteRepositoryPipelineSchedule | `workspace`*, `repo_slug`*, `schedule_uuid`* | — |  | Delete a schedule |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}/executions/` | getRepositoryPipelineScheduleExecutions | `workspace`*, `repo_slug`*, `schedule_uuid`* | paginated_pipeline_schedule_executions | yes | List executions of a schedule |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair` | getRepositoryPipelineSshKeyPair | `workspace`*, `repo_slug`* | pipeline_ssh_key_pair | yes | Get SSH key pair |
+| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair` | updateRepositoryPipelineKeyPair | `workspace`*, `repo_slug`*, body*: pipeline_ssh_key_pair | pipeline_ssh_key_pair |  | Update SSH key pair |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair` | deleteRepositoryPipelineKeyPair | `workspace`*, `repo_slug`* | — |  | Delete SSH key pair |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/` | getRepositoryPipelineKnownHosts | `workspace`*, `repo_slug`* | paginated_pipeline_known_hosts | yes | List known hosts |
+| POST | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/` | createRepositoryPipelineKnownHost | `workspace`*, `repo_slug`*, body*: pipeline_known_host | pipeline_known_host |  | Create a known host |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}` | getRepositoryPipelineKnownHost | `workspace`*, `repo_slug`*, `known_host_uuid`* | pipeline_known_host | yes | Get a known host |
+| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}` | updateRepositoryPipelineKnownHost | `workspace`*, `repo_slug`*, `known_host_uuid`*, body*: pipeline_known_host | pipeline_known_host |  | Update a known host |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}` | deleteRepositoryPipelineKnownHost | `workspace`*, `repo_slug`*, `known_host_uuid`* | — |  | Delete a known host |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/` | getRepositoryPipelineVariables | `workspace`*, `repo_slug`* | paginated_pipeline_variables | yes | List variables for a repository |
+| POST | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/` | createRepositoryPipelineVariable | `workspace`*, `repo_slug`*, body*: pipeline_variable | pipeline_variable |  | Create a variable for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}` | getRepositoryPipelineVariable | `workspace`*, `repo_slug`*, `variable_uuid`* | pipeline_variable | yes | Get a variable for a repository |
+| PUT | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}` | updateRepositoryPipelineVariable | `workspace`*, `repo_slug`*, `variable_uuid`*, body*: pipeline_variable | pipeline_variable |  | Update a variable for a repository |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}` | deleteRepositoryPipelineVariable | `workspace`*, `repo_slug`*, `variable_uuid`* | — |  | Delete a variable for a repository |
+| GET | `/repositories/{workspace}/{repo_slug}/properties/{app_key}/{property_name}` | getRepositoryHostedPropertyValue | `workspace`*, `repo_slug`*, `app_key`*, `property_name`* | application_property | yes | Get a repository application property |
+| PUT | `/repositories/{workspace}/{repo_slug}/properties/{app_key}/{property_name}` | updateRepositoryHostedPropertyValue | `workspace`*, `repo_slug`*, `app_key`*, `property_name`*, body*: application_property | — |  | Update a repository application property |
+| DELETE | `/repositories/{workspace}/{repo_slug}/properties/{app_key}/{property_name}` | deleteRepositoryHostedPropertyValue | `workspace`*, `repo_slug`*, `app_key`*, `property_name`* | — |  | Delete a repository application property |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests` | get /repositories/{workspace}/{repo_slug}/pullrequests | `repo_slug`*, `workspace`*, `state` | paginated_pullrequests | yes | List pull requests |
+| POST | `/repositories/{workspace}/{repo_slug}/pullrequests` | post /repositories/{workspace}/{repo_slug}/pullrequests | `repo_slug`*, `workspace`*, body: pullrequest | pullrequest |  | Create a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/activity` | get /repositories/{workspace}/{repo_slug}/pullrequests/activity | `repo_slug`*, `workspace`* | — | yes | List a pull request activity log |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id} | `pull_request_id`*, `repo_slug`*, `workspace`* | pullrequest | yes | Get a pull request |
+| PUT | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}` | put /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id} | `pull_request_id`*, `repo_slug`*, `workspace`*, body: pullrequest | pullrequest |  | Update a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/activity` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/activity | `pull_request_id`*, `repo_slug`*, `workspace`* | — | yes | List a pull request activity log |
+| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve | `pull_request_id`*, `repo_slug`*, `workspace`* | participant |  | Approve a pull request |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve` | delete /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve | `pull_request_id`*, `repo_slug`*, `workspace`* | — |  | Unapprove a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments | `pull_request_id`*, `repo_slug`*, `workspace`* | paginated_pullrequest_comments | yes | List comments on a pull request |
+| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments | `pull_request_id`*, `repo_slug`*, `workspace`*, body*: pullrequest_comment | pullrequest_comment |  | Create a comment on a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id} | `comment_id`*, `pull_request_id`*, `repo_slug`*, `workspace`* | pullrequest_comment | yes | Get a comment on a pull request |
+| PUT | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}` | put /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id} | `comment_id`*, `pull_request_id`*, `repo_slug`*, `workspace`*, body*: pullrequest_comment | pullrequest_comment |  | Update a comment on a pull request |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}` | delete /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id} | `comment_id`*, `pull_request_id`*, `repo_slug`*, `workspace`* | — |  | Delete a comment on a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/commits` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/commits | `pull_request_id`*, `repo_slug`*, `workspace`* | — | yes | List commits on a pull request |
+| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/decline` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/decline | `pull_request_id`*, `repo_slug`*, `workspace`* | pullrequest |  | Decline a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diff` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diff | `pull_request_id`*, `repo_slug`*, `workspace`* | — | yes | List changes in a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diffstat` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diffstat | `pull_request_id`*, `repo_slug`*, `workspace`* | — | yes | Get the diff stat for a pull request |
+| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge | `pull_request_id`*, `repo_slug`*, `workspace`*, `async`, body: pullrequest_merge_parameters | pullrequest |  | Merge a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge/task-status/{task_id}` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge/task-status/{task_id} | `pull_request_id`*, `repo_slug`*, `task_id`*, `workspace`* | — | yes | Get the merge task status for a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/patch` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/patch | `pull_request_id`*, `repo_slug`*, `workspace`* | — | yes | Get the patch for a pull request |
+| POST | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes` | post /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes | `pull_request_id`*, `repo_slug`*, `workspace`* | participant |  | Request changes for a pull request |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes` | delete /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/request-changes | `pull_request_id`*, `repo_slug`*, `workspace`* | — |  | Remove change request for a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses` | get /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses | `pull_request_id`*, `repo_slug`*, `workspace`*, `q`, `sort` | paginated_commitstatuses | yes | List commit statuses for a pull request |
+| GET | `/repositories/{workspace}/{repo_slug}/pullrequests/{pullrequest_id}/properties/{app_key}/{property_name}` | getPullRequestHostedPropertyValue | `workspace`*, `repo_slug`*, `pullrequest_id`*, `app_key`*, `property_name`* | application_property | yes | Get a pull request application property |
+| PUT | `/repositories/{workspace}/{repo_slug}/pullrequests/{pullrequest_id}/properties/{app_key}/{property_name}` | updatePullRequestHostedPropertyValue | `workspace`*, `repo_slug`*, `pullrequest_id`*, `app_key`*, `property_name`*, body*: application_property | — |  | Update a pull request application property |
+| DELETE | `/repositories/{workspace}/{repo_slug}/pullrequests/{pullrequest_id}/properties/{app_key}/{property_name}` | deletePullRequestHostedPropertyValue | `workspace`*, `repo_slug`*, `pullrequest_id`*, `app_key`*, `property_name`* | — |  | Delete a pull request application property |
+| GET | `/repositories/{workspace}/{repo_slug}/refs` | get /repositories/{workspace}/{repo_slug}/refs | `repo_slug`*, `workspace`*, `q`, `sort` | paginated_refs | yes | List branches and tags |
+| GET | `/repositories/{workspace}/{repo_slug}/refs/branches` | get /repositories/{workspace}/{repo_slug}/refs/branches | `repo_slug`*, `workspace`*, `q`, `sort` | paginated_branches | yes | List open branches |
+| POST | `/repositories/{workspace}/{repo_slug}/refs/branches` | post /repositories/{workspace}/{repo_slug}/refs/branches | `repo_slug`*, `workspace`* | branch |  | Create a branch |
+| GET | `/repositories/{workspace}/{repo_slug}/refs/branches/{name}` | get /repositories/{workspace}/{repo_slug}/refs/branches/{name} | `name`*, `repo_slug`*, `workspace`* | branch | yes | Get a branch |
+| DELETE | `/repositories/{workspace}/{repo_slug}/refs/branches/{name}` | delete /repositories/{workspace}/{repo_slug}/refs/branches/{name} | `name`*, `repo_slug`*, `workspace`* | — |  | Delete a branch |
+| GET | `/repositories/{workspace}/{repo_slug}/refs/tags` | get /repositories/{workspace}/{repo_slug}/refs/tags | `repo_slug`*, `workspace`*, `q`, `sort` | paginated_tags | yes | List tags |
+| POST | `/repositories/{workspace}/{repo_slug}/refs/tags` | post /repositories/{workspace}/{repo_slug}/refs/tags | `repo_slug`*, `workspace`*, body*: tag | tag |  | Create a tag |
+| GET | `/repositories/{workspace}/{repo_slug}/refs/tags/{name}` | get /repositories/{workspace}/{repo_slug}/refs/tags/{name} | `name`*, `repo_slug`*, `workspace`* | tag | yes | Get a tag |
+| DELETE | `/repositories/{workspace}/{repo_slug}/refs/tags/{name}` | delete /repositories/{workspace}/{repo_slug}/refs/tags/{name} | `name`*, `repo_slug`*, `workspace`* | — |  | Delete a tag |
+| GET | `/repositories/{workspace}/{repo_slug}/src` | get /repositories/{workspace}/{repo_slug}/src | `repo_slug`*, `workspace`*, `format` | paginated_treeentries | yes | Get the root directory of the main branch |
+| POST | `/repositories/{workspace}/{repo_slug}/src` | post /repositories/{workspace}/{repo_slug}/src | `repo_slug`*, `workspace`*, `message`, `author`, `parents`, `files`, `branch` | — |  | Create a commit by uploading a file |
+| GET | `/repositories/{workspace}/{repo_slug}/src/{commit}/{path}` | get /repositories/{workspace}/{repo_slug}/src/{commit}/{path} | `commit`*, `path`*, `repo_slug`*, `workspace`*, `format`, `q`, `sort`, `max_depth` | paginated_treeentries | yes | Get file or directory contents |
+| GET | `/repositories/{workspace}/{repo_slug}/versions` | get /repositories/{workspace}/{repo_slug}/versions | `repo_slug`*, `workspace`* | paginated_versions | yes | List defined versions for issues |
+| GET | `/repositories/{workspace}/{repo_slug}/versions/{version_id}` | get /repositories/{workspace}/{repo_slug}/versions/{version_id} | `repo_slug`*, `version_id`*, `workspace`* | version | yes | Get a defined version for issues |
+| GET | `/repositories/{workspace}/{repo_slug}/watchers` | get /repositories/{workspace}/{repo_slug}/watchers | `repo_slug`*, `workspace`* | paginated_accounts | yes | List repositories watchers |
+| GET | `/snippets` | get /snippets | `role` | paginated_snippets | yes | List snippets |
+| POST | `/snippets` | post /snippets | body*: snippet | snippet |  | Create a snippet |
+| GET | `/snippets/{workspace}` | get /snippets/{workspace} | `workspace`*, `role` | paginated_snippets | yes | List snippets in a workspace |
+| POST | `/snippets/{workspace}` | post /snippets/{workspace} | `workspace`*, body*: snippet | snippet |  | Create a snippet for a workspace |
+| GET | `/snippets/{workspace}/{encoded_id}` | get /snippets/{workspace}/{encoded_id} | `encoded_id`*, `workspace`* | snippet | yes | Get a snippet |
+| PUT | `/snippets/{workspace}/{encoded_id}` | put /snippets/{workspace}/{encoded_id} | `encoded_id`*, `workspace`* | snippet |  | Update a snippet |
+| DELETE | `/snippets/{workspace}/{encoded_id}` | delete /snippets/{workspace}/{encoded_id} | `encoded_id`*, `workspace`* | — |  | Delete a snippet |
+| GET | `/snippets/{workspace}/{encoded_id}/comments` | get /snippets/{workspace}/{encoded_id}/comments | `encoded_id`*, `workspace`* | paginated_snippet_comments | yes | List comments on a snippet |
+| POST | `/snippets/{workspace}/{encoded_id}/comments` | post /snippets/{workspace}/{encoded_id}/comments | `encoded_id`*, `workspace`*, body*: snippet_comment | snippet_comment |  | Create a comment on a snippet |
+| GET | `/snippets/{workspace}/{encoded_id}/comments/{comment_id}` | get /snippets/{workspace}/{encoded_id}/comments/{comment_id} | `comment_id`*, `encoded_id`*, `workspace`* | snippet_comment | yes | Get a comment on a snippet |
+| PUT | `/snippets/{workspace}/{encoded_id}/comments/{comment_id}` | put /snippets/{workspace}/{encoded_id}/comments/{comment_id} | `comment_id`*, `encoded_id`*, `workspace`*, body*: snippet_comment | snippet_comment |  | Update a comment on a snippet |
+| DELETE | `/snippets/{workspace}/{encoded_id}/comments/{comment_id}` | delete /snippets/{workspace}/{encoded_id}/comments/{comment_id} | `comment_id`*, `encoded_id`*, `workspace`* | — |  | Delete a comment on a snippet |
+| GET | `/snippets/{workspace}/{encoded_id}/commits` | get /snippets/{workspace}/{encoded_id}/commits | `encoded_id`*, `workspace`* | paginated_snippet_commit | yes | List snippet changes |
+| GET | `/snippets/{workspace}/{encoded_id}/commits/{revision}` | get /snippets/{workspace}/{encoded_id}/commits/{revision} | `encoded_id`*, `revision`*, `workspace`* | snippet_commit | yes | Get a previous snippet change |
+| GET | `/snippets/{workspace}/{encoded_id}/files/{path}` | get /snippets/{workspace}/{encoded_id}/files/{path} | `encoded_id`*, `path`*, `workspace`* | — | yes | Get a snippet's raw file at HEAD |
+| GET | `/snippets/{workspace}/{encoded_id}/watch` | get /snippets/{workspace}/{encoded_id}/watch | `encoded_id`*, `workspace`* | — | yes | Check if the current user is watching a snippet |
+| PUT | `/snippets/{workspace}/{encoded_id}/watch` | put /snippets/{workspace}/{encoded_id}/watch | `encoded_id`*, `workspace`* | — |  | Watch a snippet |
+| DELETE | `/snippets/{workspace}/{encoded_id}/watch` | delete /snippets/{workspace}/{encoded_id}/watch | `encoded_id`*, `workspace`* | — |  | Stop watching a snippet |
+| GET | `/snippets/{workspace}/{encoded_id}/watchers` | get /snippets/{workspace}/{encoded_id}/watchers | `encoded_id`*, `workspace`* | paginated_accounts | yes | List users watching a snippet |
+| GET | `/snippets/{workspace}/{encoded_id}/{node_id}` | get /snippets/{workspace}/{encoded_id}/{node_id} | `encoded_id`*, `node_id`*, `workspace`* | snippet | yes | Get a previous revision of a snippet |
+| PUT | `/snippets/{workspace}/{encoded_id}/{node_id}` | put /snippets/{workspace}/{encoded_id}/{node_id} | `encoded_id`*, `node_id`*, `workspace`* | snippet |  | Update a previous revision of a snippet |
+| DELETE | `/snippets/{workspace}/{encoded_id}/{node_id}` | delete /snippets/{workspace}/{encoded_id}/{node_id} | `encoded_id`*, `node_id`*, `workspace`* | — |  | Delete a previous revision of a snippet |
+| GET | `/snippets/{workspace}/{encoded_id}/{node_id}/files/{path}` | get /snippets/{workspace}/{encoded_id}/{node_id}/files/{path} | `encoded_id`*, `node_id`*, `path`*, `workspace`* | — | yes | Get a snippet's raw file |
+| GET | `/snippets/{workspace}/{encoded_id}/{revision}/diff` | get /snippets/{workspace}/{encoded_id}/{revision}/diff | `encoded_id`*, `revision`*, `workspace`*, `path` | — | yes | Get snippet changes between versions |
+| GET | `/snippets/{workspace}/{encoded_id}/{revision}/patch` | get /snippets/{workspace}/{encoded_id}/{revision}/patch | `encoded_id`*, `revision`*, `workspace`* | — | yes | Get snippet patch between versions |
+| GET | `/teams/{username}/pipelines_config/variables/` | getPipelineVariablesForTeam | `username`* | paginated_pipeline_variables | yes | List variables for an account |
+| POST | `/teams/{username}/pipelines_config/variables/` | createPipelineVariableForTeam | `username`*, body: pipeline_variable | pipeline_variable |  | Create a variable for a user |
+| GET | `/teams/{username}/pipelines_config/variables/{variable_uuid}` | getPipelineVariableForTeam | `username`*, `variable_uuid`* | pipeline_variable | yes | Get a variable for a team |
+| PUT | `/teams/{username}/pipelines_config/variables/{variable_uuid}` | updatePipelineVariableForTeam | `username`*, `variable_uuid`*, body*: pipeline_variable | pipeline_variable |  | Update a variable for a team |
+| DELETE | `/teams/{username}/pipelines_config/variables/{variable_uuid}` | deletePipelineVariableForTeam | `username`*, `variable_uuid`* | — |  | Delete a variable for a team |
+| GET | `/teams/{username}/search/code` | searchTeam | `username`*, `search_query`*, `page`, `pagelen` | search_result_page | yes | Search for code in a team's repositories |
+| GET | `/user` | get /user | — | account | yes | Get current user |
+| GET | `/user/emails` | get /user/emails | — | — | yes | List email addresses for current user |
+| GET | `/user/emails/{email}` | get /user/emails/{email} | `email`* | — | yes | Get an email address for current user |
+| GET | `/user/permissions/repositories` | get /user/permissions/repositories | `q`, `sort` | paginated_repository_permissions | yes | List repository permissions for a user |
+| GET | `/user/permissions/workspaces` | get /user/permissions/workspaces | `q`, `sort` | paginated_workspace_memberships | yes | List workspaces for the current user |
+| GET | `/users/{selected_user}` | get /users/{selected_user} | `selected_user`* | account | yes | Get a user |
+| GET | `/users/{selected_user}/pipelines_config/variables/` | getPipelineVariablesForUser | `selected_user`* | paginated_pipeline_variables | yes | List variables for a user |
+| POST | `/users/{selected_user}/pipelines_config/variables/` | createPipelineVariableForUser | `selected_user`*, body: pipeline_variable | pipeline_variable |  | Create a variable for a user |
+| GET | `/users/{selected_user}/pipelines_config/variables/{variable_uuid}` | getPipelineVariableForUser | `selected_user`*, `variable_uuid`* | pipeline_variable | yes | Get a variable for a user |
+| PUT | `/users/{selected_user}/pipelines_config/variables/{variable_uuid}` | updatePipelineVariableForUser | `selected_user`*, `variable_uuid`*, body*: pipeline_variable | pipeline_variable |  | Update a variable for a user |
+| DELETE | `/users/{selected_user}/pipelines_config/variables/{variable_uuid}` | deletePipelineVariableForUser | `selected_user`*, `variable_uuid`* | — |  | Delete a variable for a user |
+| GET | `/users/{selected_user}/properties/{app_key}/{property_name}` | retrieveUserHostedPropertyValue | `selected_user`*, `app_key`*, `property_name`* | application_property | yes | Get a user application property |
+| PUT | `/users/{selected_user}/properties/{app_key}/{property_name}` | updateUserHostedPropertyValue | `selected_user`*, `app_key`*, `property_name`*, body*: application_property | — |  | Update a user application property |
+| DELETE | `/users/{selected_user}/properties/{app_key}/{property_name}` | deleteUserHostedPropertyValue | `selected_user`*, `app_key`*, `property_name`* | — |  | Delete a user application property |
+| GET | `/users/{selected_user}/search/code` | searchAccount | `selected_user`*, `search_query`*, `page`, `pagelen` | search_result_page | yes | Search for code in a user's repositories |
+| GET | `/users/{selected_user}/ssh-keys` | get /users/{selected_user}/ssh-keys | `selected_user`* | paginated_ssh_user_keys | yes | List SSH keys |
+| POST | `/users/{selected_user}/ssh-keys` | post /users/{selected_user}/ssh-keys | `selected_user`*, body: ssh_account_key | ssh_account_key |  | Add a new SSH key |
+| GET | `/users/{selected_user}/ssh-keys/{key_id}` | get /users/{selected_user}/ssh-keys/{key_id} | `key_id`*, `selected_user`* | ssh_account_key | yes | Get a SSH key |
+| PUT | `/users/{selected_user}/ssh-keys/{key_id}` | put /users/{selected_user}/ssh-keys/{key_id} | `key_id`*, `selected_user`*, body: ssh_account_key | ssh_account_key |  | Update a SSH key |
+| DELETE | `/users/{selected_user}/ssh-keys/{key_id}` | delete /users/{selected_user}/ssh-keys/{key_id} | `key_id`*, `selected_user`* | — |  | Delete a SSH key |
+| GET | `/workspaces` | get /workspaces | `role`, `q`, `sort` | paginated_workspaces | yes | List workspaces for user |
+| GET | `/workspaces/{workspace}` | get /workspaces/{workspace} | `workspace`* | workspace | yes | Get a workspace |
+| GET | `/workspaces/{workspace}/hooks` | get /workspaces/{workspace}/hooks | `workspace`* | paginated_webhook_subscriptions | yes | List webhooks for a workspace |
+| POST | `/workspaces/{workspace}/hooks` | post /workspaces/{workspace}/hooks | `workspace`* | webhook_subscription |  | Create a webhook for a workspace |
+| GET | `/workspaces/{workspace}/hooks/{uid}` | get /workspaces/{workspace}/hooks/{uid} | `uid`*, `workspace`* | webhook_subscription | yes | Get a webhook for a workspace |
+| PUT | `/workspaces/{workspace}/hooks/{uid}` | put /workspaces/{workspace}/hooks/{uid} | `uid`*, `workspace`* | webhook_subscription |  | Update a webhook for a workspace |
+| DELETE | `/workspaces/{workspace}/hooks/{uid}` | delete /workspaces/{workspace}/hooks/{uid} | `uid`*, `workspace`* | — |  | Delete a webhook for a workspace |
+| GET | `/workspaces/{workspace}/members` | get /workspaces/{workspace}/members | `workspace`* | paginated_workspace_memberships | yes | List users in a workspace |
+| GET | `/workspaces/{workspace}/members/{member}` | get /workspaces/{workspace}/members/{member} | `member`*, `workspace`* | workspace_membership | yes | Get user membership for a workspace |
+| GET | `/workspaces/{workspace}/permissions` | get /workspaces/{workspace}/permissions | `workspace`*, `q` | paginated_workspace_memberships | yes | List user permissions in a workspace |
+| GET | `/workspaces/{workspace}/permissions/repositories` | get /workspaces/{workspace}/permissions/repositories | `workspace`*, `q`, `sort` | paginated_repository_permissions | yes | List all repository permissions for a workspace |
+| GET | `/workspaces/{workspace}/permissions/repositories/{repo_slug}` | get /workspaces/{workspace}/permissions/repositories/{repo_slug} | `repo_slug`*, `workspace`*, `q`, `sort` | paginated_repository_permissions | yes | List a repository permissions for a workspace |
+| GET | `/workspaces/{workspace}/pipelines-config/identity/oidc/.well-known/openid-configuration` | getOIDCConfiguration | `workspace`* | — | yes | Get OpenID configuration for OIDC in Pipelines |
+| GET | `/workspaces/{workspace}/pipelines-config/identity/oidc/keys.json` | getOIDCKeys | `workspace`* | — | yes | Get keys for OIDC in Pipelines |
+| GET | `/workspaces/{workspace}/pipelines-config/variables` | getPipelineVariablesForWorkspace | `workspace`* | paginated_pipeline_variables | yes | List variables for a workspace |
+| POST | `/workspaces/{workspace}/pipelines-config/variables` | createPipelineVariableForWorkspace | `workspace`*, body: pipeline_variable | pipeline_variable |  | Create a variable for a workspace |
+| GET | `/workspaces/{workspace}/pipelines-config/variables/{variable_uuid}` | getPipelineVariableForWorkspace | `workspace`*, `variable_uuid`* | pipeline_variable | yes | Get variable for a workspace |
+| PUT | `/workspaces/{workspace}/pipelines-config/variables/{variable_uuid}` | updatePipelineVariableForWorkspace | `workspace`*, `variable_uuid`*, body*: pipeline_variable | pipeline_variable |  | Update variable for a workspace |
+| DELETE | `/workspaces/{workspace}/pipelines-config/variables/{variable_uuid}` | deletePipelineVariableForWorkspace | `workspace`*, `variable_uuid`* | — |  | Delete a variable for a workspace |
+| GET | `/workspaces/{workspace}/projects` | get /workspaces/{workspace}/projects | `workspace`* | paginated_projects | yes | List projects in a workspace |
+| POST | `/workspaces/{workspace}/projects` | post /workspaces/{workspace}/projects | `workspace`*, body*: project | project |  | Create a project in a workspace |
+| GET | `/workspaces/{workspace}/projects/{project_key}` | get /workspaces/{workspace}/projects/{project_key} | `project_key`*, `workspace`* | project | yes | Get a project for a workspace |
+| PUT | `/workspaces/{workspace}/projects/{project_key}` | put /workspaces/{workspace}/projects/{project_key} | `project_key`*, `workspace`*, body*: project | project |  | Update a project for a workspace |
+| DELETE | `/workspaces/{workspace}/projects/{project_key}` | delete /workspaces/{workspace}/projects/{project_key} | `project_key`*, `workspace`* | — |  | Delete a project for a workspace |
+| GET | `/workspaces/{workspace}/projects/{project_key}/branching-model` | get /workspaces/{workspace}/projects/{project_key}/branching-model | `project_key`*, `workspace`* | project_branching_model | yes | Get the branching model for a project |
+| GET | `/workspaces/{workspace}/projects/{project_key}/branching-model/settings` | get /workspaces/{workspace}/projects/{project_key}/branching-model/settings | `project_key`*, `workspace`* | branching_model_settings | yes | Get the branching model config for a project |
+| PUT | `/workspaces/{workspace}/projects/{project_key}/branching-model/settings` | put /workspaces/{workspace}/projects/{project_key}/branching-model/settings | `project_key`*, `workspace`* | branching_model_settings |  | Update the branching model config for a project |
+| GET | `/workspaces/{workspace}/projects/{project_key}/default-reviewers` | get /workspaces/{workspace}/projects/{project_key}/default-reviewers | `project_key`*, `workspace`* | paginated_default_reviewer_and_type | yes | List the default reviewers in a project |
+| GET | `/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}` | get /workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user} | `project_key`*, `selected_user`*, `workspace`* | user | yes | Get a default reviewer |
+| PUT | `/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}` | put /workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user} | `project_key`*, `selected_user`*, `workspace`* | user |  | Add the specific user as a default reviewer for the project |
+| DELETE | `/workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user}` | delete /workspaces/{workspace}/projects/{project_key}/default-reviewers/{selected_user} | `project_key`*, `selected_user`*, `workspace`* | — |  | Remove the specific user from the project's default reviewers |
+| GET | `/workspaces/{workspace}/projects/{project_key}/deploy-keys` | get /workspaces/{workspace}/projects/{project_key}/deploy-keys | `project_key`*, `workspace`* | paginated_project_deploy_keys | yes | List project deploy keys |
+| POST | `/workspaces/{workspace}/projects/{project_key}/deploy-keys` | post /workspaces/{workspace}/projects/{project_key}/deploy-keys | `project_key`*, `workspace`* | project_deploy_key |  | Create a project deploy key |
+| GET | `/workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id}` | get /workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id} | `key_id`*, `project_key`*, `workspace`* | project_deploy_key | yes | Get a project deploy key |
+| DELETE | `/workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id}` | delete /workspaces/{workspace}/projects/{project_key}/deploy-keys/{key_id} | `key_id`*, `project_key`*, `workspace`* | — |  | Delete a deploy key from a project |
+| GET | `/workspaces/{workspace}/search/code` | searchWorkspace | `workspace`*, `search_query`*, `page`, `pagelen` | search_result_page | yes | Search for code in a workspace |

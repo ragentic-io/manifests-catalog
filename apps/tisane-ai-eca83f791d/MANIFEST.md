@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_TisaneLabs_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `56f6f7de2604049b27542342deece58f0ed3c53c5db5044ebc3d279dbf369108` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,11 +32,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_TisaneLabs_profile_
 
 ## Operations (6)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/hypernyms` | listHypernyms | List hypernyms |
-| GET | `/hyponyms` | listHyponyms | List hyponyms |
-| GET | `/inflections` | listInflectedForms | List inflected forms |
-| GET | `/lm/family` | getFamilyDetails | Get family details |
-| GET | `/senses` | listWordSenses | List word senses |
-| GET | `/values` | listFeatureValues | List feature values |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/hypernyms` | listHypernyms | `family`, `maxLevel`, `Ocp-Apim-Subscription-Key` | number\|string[][] | yes | List hypernyms |
+| GET | `/hyponyms` | listHyponyms | `family`, `maxLevel`, `Ocp-Apim-Subscription-Key` | — | yes | List hyponyms |
+| GET | `/inflections` | listInflectedForms | `language`, `lexeme`, `family`, `Ocp-Apim-Subscription-Key` | object[] | yes | List inflected forms |
+| GET | `/lm/family` | getFamilyDetails | `id`, `Ocp-Apim-Subscription-Key` | object | yes | Get family details |
+| GET | `/senses` | listWordSenses | `language`, `word`, `Ocp-Apim-Subscription-Key` | object[] | yes | List word senses |
+| GET | `/values` | listFeatureValues | `language`, `type`, `description`, `Ocp-Apim-Subscription-Key` | string[] | yes | List feature values |

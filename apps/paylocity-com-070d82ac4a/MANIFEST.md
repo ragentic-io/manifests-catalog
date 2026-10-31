@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_paylocity_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `d26b8ea5a9c7486ce4663c74e00d3afde4207b61d46a5e46116f31caeefc8b0d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_paylocity_profile_i
 
 21 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v2/companies/{companyId}/codes/{codeResource}` | Get All Company Codes and Descriptions by Resource | Get All Company Codes |
-| GET | `/v2/companies/{companyId}/customfields/{category}` | Get All Custom Fields by category | Get All Custom Fields |
-| POST | `/v2/companies/{companyId}/employees` | Add employee | Add new employee |
-| GET | `/v2/companies/{companyId}/employees/` | Get all employees | Get all employees |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}` | Get employee | Get employee |
-| PATCH | `/v2/companies/{companyId}/employees/{employeeId}` | Update employee | Update employee |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/additionalRates` | Add or update additional rates | Add/update additional rates |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/benefitSetup` | Update or add employee benefit setup | Add/update employee's benefit setup |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/directDeposit` | Get All Direct Deposit | Get All Direct Deposit |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/earnings` | Get All Earnings | Get All Earnings |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/earnings` | Add or update an employee earning | Add/Update Earning |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}` | Get Earnings by Earning Code | Get Earnings by Earning Code |
-| DELETE | `/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}` | Delete Earning by Earning Code and Start Date | Delete Earning by Earning Code and Start Date |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}` | Get Earning by Earning Code and Start Date | Get Earning by Earning Code and Start Date |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/emergencyContacts` | Add or update emergency contacts | Add/update emergency contacts |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes` | Get all local taxes | Get all local taxes |
-| POST | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes` | Add local tax | Add new local tax |
-| DELETE | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}` | Delete local tax by tax code | Delete local tax by tax code |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}` | Get local tax by tax code | Get local taxes by tax code |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/nonprimaryStateTax` | Add or update non-primary state tax | Add/update non-primary state tax |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}` | Gets employee pay statement detail data based on the specified year | Get employee pay statement details data for the specified year. |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}/{checkDate}` | Gets employee pay statement detail data based on the specified year and check date | Get employee pay statement details data for the specified year and check date. |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}` | Gets employee pay statement summary data based on the specified year | Get employee pay statement summary data for the specified year. |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}/{checkDate}` | Gets employee pay statement summary data based on the specified year and check date | Get employee pay statement summary data for the specified year and check date. |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/primaryStateTax` | Add or update primary state tax | Add/update primary state tax |
-| GET | `/v2/companies/{companyId}/employees/{employeeId}/sensitivedata` | Get sensitive data | Get sensitive data |
-| PUT | `/v2/companies/{companyId}/employees/{employeeId}/sensitivedata` | Add or update Sensitive Data | Add/update sensitive data |
-| GET | `/v2/companies/{companyId}/openapi` | Get company-specific Open API documentation | Get Company-Specific Open API Documentation |
-| POST | `/v2/credentials/secrets` | Add Client Secret | Obtain new client secret. |
-| POST | `/v2/weblinkstaging/companies/{companyId}/employees/newemployees` | Add new employee to Web Link | Add new employee to Web Link |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v2/companies/{companyId}/codes/{codeResource}` | Get All Company Codes and Descriptions by Resource | `companyId`*, `codeResource`* | companyCodes[] | yes | Get All Company Codes |
+| GET | `/v2/companies/{companyId}/customfields/{category}` | Get All Custom Fields by category | `companyId`*, `category`* | customFieldDefinition[] | yes | Get All Custom Fields |
+| POST | `/v2/companies/{companyId}/employees` | Add employee | `companyId`*, body*: employee | employeeIdResponse |  | Add new employee |
+| GET | `/v2/companies/{companyId}/employees/` | Get all employees | `companyId`*, `pagesize`, `pagenumber`, `includetotalcount` | employeeInfo[] | yes | Get all employees |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}` | Get employee | `companyId`*, `employeeId`* | employee | yes | Get employee |
+| PATCH | `/v2/companies/{companyId}/employees/{employeeId}` | Update employee | `companyId`*, `employeeId`*, body*: employee | — |  | Update employee |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/additionalRates` | Add or update additional rates | `companyId`*, `employeeId`*, body*: additionalRate | — |  | Add/update additional rates |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/benefitSetup` | Update or add employee benefit setup | `companyId`*, `employeeId`*, body*: benefitSetup | — |  | Add/update employee's benefit setup |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/directDeposit` | Get All Direct Deposit | `companyId`*, `employeeId`* | directDeposit[] | yes | Get All Direct Deposit |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/earnings` | Get All Earnings | `companyId`*, `employeeId`* | earning[] | yes | Get All Earnings |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/earnings` | Add or update an employee earning | `companyId`*, `employeeId`*, body*: earning | — |  | Add/Update Earning |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}` | Get Earnings by Earning Code | `companyId`*, `employeeId`*, `earningCode`* | earning[] | yes | Get Earnings by Earning Code |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}` | Get Earning by Earning Code and Start Date | `companyId`*, `employeeId`*, `earningCode`*, `startDate`* | earning | yes | Get Earning by Earning Code and Start Date |
+| DELETE | `/v2/companies/{companyId}/employees/{employeeId}/earnings/{earningCode}/{startDate}` | Delete Earning by Earning Code and Start Date | `companyId`*, `employeeId`*, `earningCode`*, `startDate`* | — |  | Delete Earning by Earning Code and Start Date |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/emergencyContacts` | Add or update emergency contacts | `companyId`*, `employeeId`*, body*: emergencyContact | — |  | Add/update emergency contacts |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes` | Get all local taxes | `companyId`*, `employeeId`* | localTax[] | yes | Get all local taxes |
+| POST | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes` | Add local tax | `companyId`*, `employeeId`*, body*: localTax | — |  | Add new local tax |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}` | Get local tax by tax code | `companyId`*, `employeeId`*, `taxCode`* | localTax[] | yes | Get local taxes by tax code |
+| DELETE | `/v2/companies/{companyId}/employees/{employeeId}/localTaxes/{taxCode}` | Delete local tax by tax code | `companyId`*, `employeeId`*, `taxCode`* | — |  | Delete local tax by tax code |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/nonprimaryStateTax` | Add or update non-primary state tax | `companyId`*, `employeeId`*, body*: nonPrimaryStateTax | — |  | Add/update non-primary state tax |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}` | Gets employee pay statement detail data based on the specified year | `companyId`*, `employeeId`*, `year`*, `pagesize`, `pagenumber`, `includetotalcount`, `codegroup` | payStatementDetails[] | yes | Get employee pay statement details data for the specified year. |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/details/{year}/{checkDate}` | Gets employee pay statement detail data based on the specified year and check date | `companyId`*, `employeeId`*, `year`*, `checkDate`*, `pagesize`, `pagenumber`, `includetotalcount`, `codegroup` | payStatementDetails[] | yes | Get employee pay statement details data for the specified year and check date. |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}` | Gets employee pay statement summary data based on the specified year | `companyId`*, `employeeId`*, `year`*, `pagesize`, `pagenumber`, `includetotalcount`, `codegroup` | payStatementSummary[] | yes | Get employee pay statement summary data for the specified year. |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/paystatement/summary/{year}/{checkDate}` | Gets employee pay statement summary data based on the specified year and check date | `companyId`*, `employeeId`*, `year`*, `checkDate`*, `pagesize`, `pagenumber`, `includetotalcount`, `codegroup` | payStatementSummary[] | yes | Get employee pay statement summary data for the specified year and check date. |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/primaryStateTax` | Add or update primary state tax | `companyId`*, `employeeId`*, body*: stateTax | — |  | Add/update primary state tax |
+| GET | `/v2/companies/{companyId}/employees/{employeeId}/sensitivedata` | Get sensitive data | `companyId`*, `employeeId`* | sensitiveData[] | yes | Get sensitive data |
+| PUT | `/v2/companies/{companyId}/employees/{employeeId}/sensitivedata` | Add or update Sensitive Data | `companyId`*, `employeeId`*, body*: sensitiveData | — |  | Add/update sensitive data |
+| GET | `/v2/companies/{companyId}/openapi` | Get company-specific Open API documentation | `Authorization`*, `companyId`* | — | yes | Get Company-Specific Open API Documentation |
+| POST | `/v2/credentials/secrets` | Add Client Secret | body*: addClientSecret | clientCredentialsResponse[] |  | Obtain new client secret. |
+| POST | `/v2/weblinkstaging/companies/{companyId}/employees/newemployees` | Add new employee to Web Link | `companyId`*, body*: stagedEmployee | trackingNumberResponse[] |  | Add new employee to Web Link |

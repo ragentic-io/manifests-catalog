@@ -38,6 +38,41 @@
         "from": "apis-guru-4c890897bd",
         "kind": "EXPOSES",
         "to": "operation:get:/{provider}/services.json"
+      },
+      {
+        "from": "operation:get:/list.json",
+        "kind": "RETURNS",
+        "to": "schema:APIs"
+      },
+      {
+        "from": "operation:get:/metrics.json",
+        "kind": "RETURNS",
+        "to": "schema:Metrics"
+      },
+      {
+        "from": "operation:get:/specs/{provider}/{api}.json",
+        "kind": "RETURNS",
+        "to": "schema:API"
+      },
+      {
+        "from": "operation:get:/specs/{provider}/{service}/{api}.json",
+        "kind": "RETURNS",
+        "to": "schema:API"
+      },
+      {
+        "from": "operation:get:/{provider}.json",
+        "kind": "RETURNS",
+        "to": "schema:APIs"
+      },
+      {
+        "from": "schema:API",
+        "kind": "REFERENCES",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "schema:APIs",
+        "kind": "REFERENCES",
+        "to": "schema:API"
       }
     ],
     "nodes": [
@@ -47,100 +82,234 @@
       },
       {
         "deprecated": false,
+        "description": "List all APIs in the directory.",
         "id": "operation:get:/list.json",
         "kind": "operation",
         "method": "get",
         "name": "listAPIs",
         "path": "/list.json",
         "pointer": "#/paths/~1list.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIs"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all APIs"
+        "summary": "List all APIs",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Some basic metrics for the entire directory.",
         "id": "operation:get:/metrics.json",
         "kind": "operation",
         "method": "get",
         "name": "getMetrics",
         "path": "/metrics.json",
         "pointer": "#/paths/~1metrics.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Metrics"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get basic metrics"
+        "summary": "Get basic metrics",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all the providers in the directory",
         "id": "operation:get:/providers.json",
         "kind": "operation",
         "method": "get",
         "name": "getProviders",
         "path": "/providers.json",
         "pointer": "#/paths/~1providers.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all providers"
+        "summary": "List all providers",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the API entry for one specific version of an API where there is no serviceName.",
         "id": "operation:get:/specs/{provider}/{api}.json",
         "kind": "operation",
         "method": "get",
         "name": "getAPI",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/specs/{provider}/{api}.json",
         "pointer": "#/paths/~1specs~1{provider}~1{api}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve one version of a particular API"
+        "summary": "Retrieve one version of a particular API",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the API entry for one specific version of an API where there is a serviceName.",
         "id": "operation:get:/specs/{provider}/{service}/{api}.json",
         "kind": "operation",
         "method": "get",
         "name": "getServiceAPI",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/specs/{provider}/{service}/{api}.json",
         "pointer": "#/paths/~1specs~1{provider}~1{service}~1{api}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve one version of a particular API with a serviceName."
+        "summary": "Retrieve one version of a particular API with a serviceName.",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all APIs in the directory for a particular providerName Returns links to the individual API entry for each API.",
         "id": "operation:get:/{provider}.json",
         "kind": "operation",
         "method": "get",
         "name": "getProvider",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{provider}.json",
         "pointer": "#/paths/~1{provider}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIs"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all APIs for a particular provider"
+        "summary": "List all APIs for a particular provider",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all serviceNames in the directory for a particular providerName",
         "id": "operation:get:/{provider}/services.json",
         "kind": "operation",
         "method": "get",
         "name": "getServices",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{provider}/services.json",
         "pointer": "#/paths/~1{provider}~1services.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all serviceNames for a particular provider"
+        "summary": "List all serviceNames for a particular provider",
+        "tags": [
+          "APIs"
+        ]
       },
       {
+        "description": "Meta information about API",
         "id": "schema:API",
         "kind": "schema",
-        "name": "API"
+        "name": "API",
+        "type": "object"
       },
       {
+        "description": "List of API details.",
         "id": "schema:APIs",
         "kind": "schema",
-        "name": "APIs"
+        "name": "APIs",
+        "type": "object"
       },
       {
         "id": "schema:ApiVersion",
         "kind": "schema",
-        "name": "ApiVersion"
+        "name": "ApiVersion",
+        "type": "object"
       },
       {
+        "description": "List of basic metrics",
         "id": "schema:Metrics",
         "kind": "schema",
-        "name": "Metrics"
+        "name": "Metrics",
+        "type": "object"
       }
     ]
   },

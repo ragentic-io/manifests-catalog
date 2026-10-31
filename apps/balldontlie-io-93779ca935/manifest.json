@@ -51,10 +51,33 @@
         "kind": "operation",
         "method": "get",
         "name": "allGamesExampleParameters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "seasons[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "team_ids[]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/games",
         "pointer": "#/paths/~1api~1v1~1games/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "all games (example parameters)"
+        "summary": "all games (example parameters)",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -64,8 +87,17 @@
         "name": "specificGame",
         "path": "/api/v1/games/32881",
         "pointer": "#/paths/~1api~1v1~1games~132881/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "specific game"
+        "summary": "specific game",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -73,10 +105,27 @@
         "kind": "operation",
         "method": "get",
         "name": "allPlayersSearch",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/players",
         "pointer": "#/paths/~1api~1v1~1players/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "all players (search)"
+        "summary": "all players (search)",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
@@ -86,8 +135,17 @@
         "name": "specificPlayer",
         "path": "/api/v1/players/237",
         "pointer": "#/paths/~1api~1v1~1players~1237/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "specific player"
+        "summary": "specific player",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
@@ -95,10 +153,33 @@
         "kind": "operation",
         "method": "get",
         "name": "allStatsExampleParameters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "season[]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "player_ids[]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/stats",
         "pointer": "#/paths/~1api~1v1~1stats/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "all stats (example parameters)"
+        "summary": "all stats (example parameters)",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
@@ -108,8 +189,17 @@
         "name": "allTeams",
         "path": "/api/v1/teams",
         "pointer": "#/paths/~1api~1v1~1teams/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "all teams"
+        "summary": "all teams",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
@@ -119,8 +209,17 @@
         "name": "specificTeam",
         "path": "/api/v1/teams/1",
         "pointer": "#/paths/~1api~1v1~1teams~11/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "specific team"
+        "summary": "specific team",
+        "tags": [
+          "teams"
+        ]
       }
     ]
   },

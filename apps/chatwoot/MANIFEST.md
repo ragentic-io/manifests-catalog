@@ -12,7 +12,7 @@ Connect to Chatwoot Cloud with an independent Ragentic integration. Self-hosted 
 
 | | |
 | --- | --- |
-| Signed bundle | `d755bcf9e4a760b3773ff3e1ea572d09a165faf867f1d1f243f83671f16dc582` in `bundles/`, expires 2027-01-28 01:47 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://app.chatwoot.com` |
 | Credential | static_bearer |
 | Connection test | GET `https://app.chatwoot.com/api/v1/profile` |
@@ -41,162 +41,164 @@ Copyright: Copyright (c) 2017-2026 Chatwoot Inc.
 
 128 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts/{account_id}/conversations/{conversation_id}/messages` | getConversationMessages | Get messages from a conversation |
-| GET | `/api/v1/accounts/{account_id}` | get-account-details | Get account details |
-| PATCH | `/api/v1/accounts/{account_id}` | update-account | Update account |
-| POST | `/api/v1/accounts/{account_id}/actions/contact_merge` | contactMerge | Merge Contacts |
-| GET | `/api/v1/accounts/{account_id}/agent_bots` | list-all-account-agent-bots | List all AgentBots |
-| POST | `/api/v1/accounts/{account_id}/agent_bots` | create-an-account-agent-bot | Create an Agent Bot |
-| DELETE | `/api/v1/accounts/{account_id}/agent_bots/{id}` | delete-an-account-agent-bot | Delete an AgentBot |
-| GET | `/api/v1/accounts/{account_id}/agent_bots/{id}` | get-details-of-a-single-account-agent-bot | Get an agent bot details |
-| PATCH | `/api/v1/accounts/{account_id}/agent_bots/{id}` | update-an-account-agent-bot | Update an agent bot |
-| GET | `/api/v1/accounts/{account_id}/agents` | get-account-agents | List Agents in Account |
-| POST | `/api/v1/accounts/{account_id}/agents` | add-new-agent-to-account | Add a New Agent |
-| DELETE | `/api/v1/accounts/{account_id}/agents/{id}` | delete-agent-from-account | Remove an Agent from Account |
-| PATCH | `/api/v1/accounts/{account_id}/agents/{id}` | update-agent-in-account | Update Agent in Account |
-| GET | `/api/v1/accounts/{account_id}/audit_logs` | get-account-audit-logs | List Audit Logs in Account |
-| GET | `/api/v1/accounts/{account_id}/automation_rules` | get-account-automation-rule | List all automation rules in an account |
-| POST | `/api/v1/accounts/{account_id}/automation_rules` | add-new-automation-rule-to-account | Add a new automation rule |
-| DELETE | `/api/v1/accounts/{account_id}/automation_rules/{id}` | delete-automation-rule-from-account | Remove a automation rule from account |
-| GET | `/api/v1/accounts/{account_id}/automation_rules/{id}` | get-details-of-a-single-automation-rule | Get a automation rule details |
-| PATCH | `/api/v1/accounts/{account_id}/automation_rules/{id}` | update-automation-rule-in-account | Update automation rule in Account |
-| GET | `/api/v1/accounts/{account_id}/branded_email_layout` | getAccountBrandedEmailLayout | Get account branded email layout |
-| PATCH | `/api/v1/accounts/{account_id}/branded_email_layout` | updateAccountBrandedEmailLayout | Update account branded email layout |
-| GET | `/api/v1/accounts/{account_id}/campaigns` | list-campaigns | List campaigns |
-| POST | `/api/v1/accounts/{account_id}/campaigns` | create-campaign | Create a campaign |
-| DELETE | `/api/v1/accounts/{account_id}/campaigns/{id}` | delete-campaign | Delete a campaign |
-| GET | `/api/v1/accounts/{account_id}/campaigns/{id}` | get-campaign | Get a campaign |
-| PATCH | `/api/v1/accounts/{account_id}/campaigns/{id}` | update-campaign | Update a campaign |
-| GET | `/api/v1/accounts/{account_id}/canned_responses` | get-account-canned-response | List all Canned Responses in an Account |
-| POST | `/api/v1/accounts/{account_id}/canned_responses` | add-new-canned-response-to-account | Add a New Canned Response |
-| DELETE | `/api/v1/accounts/{account_id}/canned_responses/{id}` | delete-canned-response-from-account | Remove a Canned Response from Account |
-| PATCH | `/api/v1/accounts/{account_id}/canned_responses/{id}` | update-canned-response-in-account | Update Canned Response in Account |
-| GET | `/api/v1/accounts/{account_id}/contacts` | contactList | List Contacts |
-| POST | `/api/v1/accounts/{account_id}/contacts` | contactCreate | Create Contact |
-| POST | `/api/v1/accounts/{account_id}/contacts/filter` | contactFilter | Contact Filter |
-| GET | `/api/v1/accounts/{account_id}/contacts/search` | contactSearch | Search Contacts |
-| DELETE | `/api/v1/accounts/{account_id}/contacts/{id}` | contactDelete | Delete Contact |
-| GET | `/api/v1/accounts/{account_id}/contacts/{id}` | contactDetails | Show Contact |
-| PUT | `/api/v1/accounts/{account_id}/contacts/{id}` | contactUpdate | Update Contact |
-| POST | `/api/v1/accounts/{account_id}/contacts/{id}/contact_inboxes` | contactInboxCreation | Create contact inbox |
-| GET | `/api/v1/accounts/{account_id}/contacts/{id}/contactable_inboxes` | contactableInboxesGet | Get Contactable Inboxes |
-| GET | `/api/v1/accounts/{account_id}/contacts/{id}/conversations` | contactConversations | Contact Conversations |
-| GET | `/api/v1/accounts/{account_id}/contacts/{id}/labels` | list-all-labels-of-a-contact | List Labels |
-| POST | `/api/v1/accounts/{account_id}/contacts/{id}/labels` | contact-add-labels | Add Labels |
-| GET | `/api/v1/accounts/{account_id}/conversations` | conversationList | Conversations List |
-| POST | `/api/v1/accounts/{account_id}/conversations` | newConversation | Create New Conversation |
-| POST | `/api/v1/accounts/{account_id}/conversations/filter` | conversationFilter | Conversations Filter |
-| GET | `/api/v1/accounts/{account_id}/conversations/meta` | conversationListMeta | Get Conversation Counts |
-| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}` | get-details-of-a-conversation | Conversation Details |
-| PATCH | `/api/v1/accounts/{account_id}/conversations/{conversation_id}` | update-conversation | Update Conversation |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/assignments` | assign-a-conversation | Assign Conversation |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/custom_attributes` | update-custom-attributes-of-a-conversation | Update Custom Attributes |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/destroy_custom_attributes` | destroy-custom-attributes-of-a-conversation | Destroy Custom Attributes |
-| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/labels` | list-all-labels-of-a-conversation | List Labels |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/labels` | conversation-add-labels | Add Labels |
-| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages` | list-all-messages | Get messages |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages` | create-a-new-message-in-a-conversation | Create New Message |
-| DELETE | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages/{message_id}` | delete-a-message | Delete a message |
-| PATCH | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages/{message_id}` | update-message-status | Update message status |
-| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/reporting_events` | get-conversation-reporting-events | Conversation Reporting Events |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/toggle_priority` | toggle-priority-of-a-conversation | Toggle Priority |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/toggle_status` | toggle-status-of-a-conversation | Toggle Status |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/toggle_typing_status` | toggle-typing-status-of-a-conversation | Toggle Typing Status |
-| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/update_last_seen` | conversationUpdateLastSeen | Update Last Seen |
-| GET | `/api/v1/accounts/{account_id}/custom_attribute_definitions` | get-account-custom-attribute | List all custom attributes in an account |
-| POST | `/api/v1/accounts/{account_id}/custom_attribute_definitions` | add-new-custom-attribute-to-account | Add a new custom attribute |
-| DELETE | `/api/v1/accounts/{account_id}/custom_attribute_definitions/{id}` | delete-custom-attribute-from-account | Remove a custom attribute from account |
-| GET | `/api/v1/accounts/{account_id}/custom_attribute_definitions/{id}` | get-details-of-a-single-custom-attribute | Get a custom attribute details |
-| PATCH | `/api/v1/accounts/{account_id}/custom_attribute_definitions/{id}` | update-custom-attribute-in-account | Update custom attribute in Account |
-| GET | `/api/v1/accounts/{account_id}/custom_filters` | list-all-filters | List all custom filters |
-| POST | `/api/v1/accounts/{account_id}/custom_filters` | create-a-custom-filter | Create a custom filter |
-| DELETE | `/api/v1/accounts/{account_id}/custom_filters/{custom_filter_id}` | delete-a-custom-filter | Delete a custom filter |
-| GET | `/api/v1/accounts/{account_id}/custom_filters/{custom_filter_id}` | get-details-of-a-single-custom-filter | Get a custom filter details |
-| PATCH | `/api/v1/accounts/{account_id}/custom_filters/{custom_filter_id}` | update-a-custom-filter | Update a custom filter |
-| DELETE | `/api/v1/accounts/{account_id}/inbox_members` | delete-agent-in-inbox | Remove an Agent from Inbox |
-| PATCH | `/api/v1/accounts/{account_id}/inbox_members` | update-agents-in-inbox | Update Agents in Inbox |
-| POST | `/api/v1/accounts/{account_id}/inbox_members` | add-new-agent-to-inbox | Add a New Agent |
-| GET | `/api/v1/accounts/{account_id}/inbox_members/{inbox_id}` | get-inbox-members | List Agents in Inbox |
-| GET | `/api/v1/accounts/{account_id}/inboxes` | listAllInboxes | List all inboxes |
-| POST | `/api/v1/accounts/{account_id}/inboxes` | inboxCreation | Create an inbox |
-| GET | `/api/v1/accounts/{account_id}/inboxes/{id}` | GetInbox | Get an inbox |
-| PATCH | `/api/v1/accounts/{account_id}/inboxes/{id}` | updateInbox | Update Inbox |
-| GET | `/api/v1/accounts/{account_id}/inboxes/{id}/agent_bot` | getInboxAgentBot | Show Inbox Agent Bot |
-| GET | `/api/v1/accounts/{account_id}/inboxes/{id}/message_templates` | listWhatsappMessageTemplates | List WhatsApp message templates |
-| POST | `/api/v1/accounts/{account_id}/inboxes/{id}/set_agent_bot` | updateAgentBot | Add or remove agent bot |
-| GET | `/api/v1/accounts/{account_id}/integrations/apps` | get-details-of-all-integrations | List all the Integrations |
-| POST | `/api/v1/accounts/{account_id}/integrations/hooks` | create-an-integration-hook | Create an integration hook |
-| DELETE | `/api/v1/accounts/{account_id}/integrations/hooks/{hook_id}` | delete-an-integration-hook | Delete an Integration Hook |
-| PATCH | `/api/v1/accounts/{account_id}/integrations/hooks/{hook_id}` | update-an-integrations-hook | Update an Integration Hook |
-| GET | `/api/v1/accounts/{account_id}/labels` | list-all-labels | List all labels |
-| POST | `/api/v1/accounts/{account_id}/labels` | create-a-label | Create a label |
-| DELETE | `/api/v1/accounts/{account_id}/labels/{id}` | delete-a-label | Delete a label |
-| GET | `/api/v1/accounts/{account_id}/labels/{id}` | get-details-of-a-single-label | Get a label |
-| PATCH | `/api/v1/accounts/{account_id}/labels/{id}` | update-a-label | Update a label |
-| GET | `/api/v1/accounts/{account_id}/portals` | get-portal | List all portals in an account |
-| POST | `/api/v1/accounts/{account_id}/portals` | add-new-portal-to-account | Add a new portal |
-| GET | `/api/v1/accounts/{account_id}/portals/{portal_slug}` | get-details-of-a-single-portal | Get a portal details |
-| PATCH | `/api/v1/accounts/{account_id}/portals/{portal_slug}` | update-portal-to-account | Update a portal |
-| POST | `/api/v1/accounts/{account_id}/portals/{portal_slug}/articles` | add-new-article-to-account | Add a new article |
-| POST | `/api/v1/accounts/{account_id}/portals/{portal_slug}/categories` | add-new-category-to-account | Add a new category |
-| GET | `/api/v1/accounts/{account_id}/reporting_events` | get-account-reporting-events | Account Reporting Events |
-| GET | `/api/v1/accounts/{account_id}/teams` | list-all-teams | List all teams |
-| POST | `/api/v1/accounts/{account_id}/teams` | create-a-team | Create a team |
-| DELETE | `/api/v1/accounts/{account_id}/teams/{team_id}` | delete-a-team | Delete a team |
-| GET | `/api/v1/accounts/{account_id}/teams/{team_id}` | get-details-of-a-single-team | Get a team details |
-| PATCH | `/api/v1/accounts/{account_id}/teams/{team_id}` | update-a-team | Update a team |
-| DELETE | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | delete-agent-in-team | Remove an Agent from Team |
-| GET | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | get-team-members | List Agents in Team |
-| PATCH | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | update-agents-in-team | Update Agents in Team |
-| POST | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | add-new-agent-to-team | Add a New Agent |
-| GET | `/api/v1/accounts/{account_id}/webhooks` | list-all-webhooks | List all webhooks |
-| POST | `/api/v1/accounts/{account_id}/webhooks` | create-a-webhook | Add a webhook |
-| DELETE | `/api/v1/accounts/{account_id}/webhooks/{webhook_id}` | delete-a-webhook | Delete a webhook |
-| PATCH | `/api/v1/accounts/{account_id}/webhooks/{webhook_id}` | update-a-webhook | Update a webhook object |
-| GET | `/api/v1/profile` | fetchProfile | Fetch user profile |
-| PUT | `/api/v1/profile` | updateProfile | Update user profile |
-| GET | `/api/v2/accounts/{account_id}/reports` | list-all-conversation-statistics | Get Account reports |
-| GET | `/api/v2/accounts/{account_id}/reports/conversations` | get-account-conversation-metrics | Account Conversation Metrics |
-| GET | `/api/v2/accounts/{account_id}/reports/conversations/` | get-agent-conversation-metrics | Agent Conversation Metrics |
-| GET | `/api/v2/accounts/{account_id}/reports/first_response_time_distribution` | get-first-response-time-distribution | Get first response time distribution by channel |
-| GET | `/api/v2/accounts/{account_id}/reports/inbox_label_matrix` | get-inbox-label-matrix | Get inbox-label matrix report |
-| GET | `/api/v2/accounts/{account_id}/reports/outgoing_messages_count` | get-outgoing-messages-count | Get outgoing messages count grouped by entity |
-| GET | `/api/v2/accounts/{account_id}/reports/summary` | list-all-conversation-statistics-summary | Get Account reports summary |
-| GET | `/api/v2/accounts/{account_id}/summary_reports/agent` | get-agent-summary-report | Get conversation statistics grouped by agent |
-| GET | `/api/v2/accounts/{account_id}/summary_reports/channel` | get-channel-summary-report | Get conversation statistics grouped by channel type |
-| GET | `/api/v2/accounts/{account_id}/summary_reports/inbox` | get-inbox-summary-report | Get conversation statistics grouped by inbox |
-| GET | `/api/v2/accounts/{account_id}/summary_reports/team` | get-team-summary-report | Get conversation statistics grouped by team |
-| POST | `/platform/api/v1/accounts` | create-an-account | Create an Account |
-| DELETE | `/platform/api/v1/accounts/{account_id}` | delete-an-account | Delete an Account |
-| GET | `/platform/api/v1/accounts/{account_id}` | get-details-of-an-account | Get an account details |
-| PATCH | `/platform/api/v1/accounts/{account_id}` | update-an-account | Update an account |
-| DELETE | `/platform/api/v1/accounts/{account_id}/account_users` | delete-an-account-user | Delete an Account User |
-| GET | `/platform/api/v1/accounts/{account_id}/account_users` | list-all-account-users | List all Account Users |
-| POST | `/platform/api/v1/accounts/{account_id}/account_users` | create-an-account-user | Create an Account User |
-| GET | `/platform/api/v1/agent_bots` | list-all-agent-bots | List all AgentBots |
-| POST | `/platform/api/v1/agent_bots` | create-an-agent-bot | Create an Agent Bot |
-| DELETE | `/platform/api/v1/agent_bots/{id}` | delete-an-agent-bot | Delete an AgentBot |
-| GET | `/platform/api/v1/agent_bots/{id}` | get-details-of-a-single-agent-bot | Get an agent bot details |
-| PATCH | `/platform/api/v1/agent_bots/{id}` | update-an-agent-bot | Update an agent bot |
-| POST | `/platform/api/v1/users` | create-a-user | Create a User |
-| DELETE | `/platform/api/v1/users/{id}` | delete-a-user | Delete a User |
-| GET | `/platform/api/v1/users/{id}` | get-details-of-a-user | Get an user details |
-| PATCH | `/platform/api/v1/users/{id}` | update-a-user | Update a user |
-| GET | `/platform/api/v1/users/{id}/login` | get-sso-url-of-a-user | Get User SSO Link |
-| POST | `/platform/api/v1/users/{id}/token` | post-user-token | Get User Access Token |
-| GET | `/public/api/v1/inboxes/{inbox_identifier}` | get-details-of-a-inbox | Inbox details |
-| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts` | create-a-contact | Create a contact |
-| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}` | get-details-of-a-contact | Get a contact |
-| PATCH | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}` | update-a-contact | Update a contact |
-| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations` | list-all-contact-conversations | List all conversations |
-| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations` | create-a-conversation | Create a conversation |
-| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}` | get-single-conversation | Get a single conversation |
-| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/messages` | list-all-conversation-messages | List all messages |
-| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/messages` | create-a-message | Create a message |
-| PATCH | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/messages/{message_id}` | update-a-message | Update a message |
-| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/toggle_status` | resolve-conversation | Resolve a conversation |
-| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/toggle_typing` | toggle-typing-status | Toggle typing status |
-| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/update_last_seen` | update-last-seen | Update last seen and mark messages read |
-| GET | `/survey/responses/{conversation_uuid}` | get-csat-survey-page | Get CSAT survey page |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts/{account_id}/conversations/{conversation_id}/messages` | getConversationMessages | `account_id`*, `conversation_id`* | conversation_messages | yes | Get messages from a conversation |
+| GET | `/api/v1/accounts/{account_id}` | get-account-details | `account_id`* | account_show_response | yes | Get account details |
+| PATCH | `/api/v1/accounts/{account_id}` | update-account | `account_id`*, body*: account_update_payload | account_detail |  | Update account |
+| POST | `/api/v1/accounts/{account_id}/actions/contact_merge` | contactMerge | `account_id`*, body*: object | contact_base |  | Merge Contacts |
+| GET | `/api/v1/accounts/{account_id}/agent_bots` | list-all-account-agent-bots | `account_id`* | agent_bot[] | yes | List all AgentBots |
+| POST | `/api/v1/accounts/{account_id}/agent_bots` | create-an-account-agent-bot | `account_id`*, body*: agent_bot_create_update_payload | agent_bot |  | Create an Agent Bot |
+| GET | `/api/v1/accounts/{account_id}/agent_bots/{id}` | get-details-of-a-single-account-agent-bot | `account_id`*, `id`* | agent_bot | yes | Get an agent bot details |
+| DELETE | `/api/v1/accounts/{account_id}/agent_bots/{id}` | delete-an-account-agent-bot | `account_id`*, `id`* | — |  | Delete an AgentBot |
+| PATCH | `/api/v1/accounts/{account_id}/agent_bots/{id}` | update-an-account-agent-bot | `account_id`*, `id`*, body*: agent_bot_create_update_payload | agent_bot |  | Update an agent bot |
+| GET | `/api/v1/accounts/{account_id}/agents` | get-account-agents | `account_id`* | agent[] | yes | List Agents in Account |
+| POST | `/api/v1/accounts/{account_id}/agents` | add-new-agent-to-account | `account_id`*, body*: agent_create_payload | agent |  | Add a New Agent |
+| DELETE | `/api/v1/accounts/{account_id}/agents/{id}` | delete-agent-from-account | `account_id`*, `id`* | — |  | Remove an Agent from Account |
+| PATCH | `/api/v1/accounts/{account_id}/agents/{id}` | update-agent-in-account | `account_id`*, `id`*, body*: agent_update_payload | agent |  | Update Agent in Account |
+| GET | `/api/v1/accounts/{account_id}/audit_logs` | get-account-audit-logs | `account_id`*, `page`, `q`, `types`, `since`, `until`, `sort` | object | yes | List Audit Logs in Account |
+| GET | `/api/v1/accounts/{account_id}/automation_rules` | get-account-automation-rule | `account_id`*, `page` | automation_rule | yes | List all automation rules in an account |
+| POST | `/api/v1/accounts/{account_id}/automation_rules` | add-new-automation-rule-to-account | `account_id`*, body*: automation_rule_create_update_payload | automation_rule |  | Add a new automation rule |
+| GET | `/api/v1/accounts/{account_id}/automation_rules/{id}` | get-details-of-a-single-automation-rule | `account_id`*, `id`* | automation_rule | yes | Get a automation rule details |
+| DELETE | `/api/v1/accounts/{account_id}/automation_rules/{id}` | delete-automation-rule-from-account | `account_id`*, `id`* | — |  | Remove a automation rule from account |
+| PATCH | `/api/v1/accounts/{account_id}/automation_rules/{id}` | update-automation-rule-in-account | `account_id`*, `id`*, body*: automation_rule_create_update_payload | automation_rule |  | Update automation rule in Account |
+| GET | `/api/v1/accounts/{account_id}/branded_email_layout` | getAccountBrandedEmailLayout | `account_id`* | branded_email_layout | yes | Get account branded email layout |
+| PATCH | `/api/v1/accounts/{account_id}/branded_email_layout` | updateAccountBrandedEmailLayout | `account_id`*, body*: account_branded_email_layout_payload | branded_email_layout |  | Update account branded email layout |
+| GET | `/api/v1/accounts/{account_id}/campaigns` | list-campaigns | `account_id`* | campaign[] | yes | List campaigns |
+| POST | `/api/v1/accounts/{account_id}/campaigns` | create-campaign | `account_id`*, body*: campaign_create_payload | campaign |  | Create a campaign |
+| GET | `/api/v1/accounts/{account_id}/campaigns/{id}` | get-campaign | `account_id`*, `id`* | campaign | yes | Get a campaign |
+| DELETE | `/api/v1/accounts/{account_id}/campaigns/{id}` | delete-campaign | `account_id`*, `id`* | — |  | Delete a campaign |
+| PATCH | `/api/v1/accounts/{account_id}/campaigns/{id}` | update-campaign | `account_id`*, `id`*, body*: campaign_update_payload | campaign |  | Update a campaign |
+| GET | `/api/v1/accounts/{account_id}/canned_responses` | get-account-canned-response | `account_id`* | canned_response[] | yes | List all Canned Responses in an Account |
+| POST | `/api/v1/accounts/{account_id}/canned_responses` | add-new-canned-response-to-account | `account_id`*, body*: canned_response_create_update_payload | canned_response |  | Add a New Canned Response |
+| DELETE | `/api/v1/accounts/{account_id}/canned_responses/{id}` | delete-canned-response-from-account | `account_id`*, `id`* | — |  | Remove a Canned Response from Account |
+| PATCH | `/api/v1/accounts/{account_id}/canned_responses/{id}` | update-canned-response-in-account | `account_id`*, `id`*, body*: canned_response_create_update_payload | canned_response |  | Update Canned Response in Account |
+| GET | `/api/v1/accounts/{account_id}/contacts` | contactList | `account_id`*, `sort`, `page` | contacts_list_response | yes | List Contacts |
+| POST | `/api/v1/accounts/{account_id}/contacts` | contactCreate | `account_id`*, body*: contact_create_payload | extended_contact |  | Create Contact |
+| POST | `/api/v1/accounts/{account_id}/contacts/filter` | contactFilter | `account_id`*, `page`, body*: object | contacts_list_response |  | Contact Filter |
+| GET | `/api/v1/accounts/{account_id}/contacts/search` | contactSearch | `account_id`*, `q`, `sort`, `page` | contacts_list_response | yes | Search Contacts |
+| GET | `/api/v1/accounts/{account_id}/contacts/{id}` | contactDetails | `account_id`*, `id`* | contact_show_response | yes | Show Contact |
+| PUT | `/api/v1/accounts/{account_id}/contacts/{id}` | contactUpdate | `account_id`*, `id`*, body*: contact_update_payload | contact_base |  | Update Contact |
+| DELETE | `/api/v1/accounts/{account_id}/contacts/{id}` | contactDelete | `account_id`*, `id`* | — |  | Delete Contact |
+| POST | `/api/v1/accounts/{account_id}/contacts/{id}/contact_inboxes` | contactInboxCreation | `account_id`*, `id`*, body*: object | contact_inboxes |  | Create contact inbox |
+| GET | `/api/v1/accounts/{account_id}/contacts/{id}/contactable_inboxes` | contactableInboxesGet | `account_id`*, `id`* | contactable_inboxes_response | yes | Get Contactable Inboxes |
+| GET | `/api/v1/accounts/{account_id}/contacts/{id}/conversations` | contactConversations | `account_id`*, `id`* | contact_conversations_response | yes | Contact Conversations |
+| GET | `/api/v1/accounts/{account_id}/contacts/{id}/labels` | list-all-labels-of-a-contact | `account_id`*, `id`* | contact_labels | yes | List Labels |
+| POST | `/api/v1/accounts/{account_id}/contacts/{id}/labels` | contact-add-labels | `account_id`*, `id`*, body*: object | contact_labels |  | Add Labels |
+| GET | `/api/v1/accounts/{account_id}/conversations` | conversationList | `account_id`*, `assignee_type`, `status`, `q`, `inbox_id`, `team_id`, `labels`, `page` | conversation_list | yes | Conversations List |
+| POST | `/api/v1/accounts/{account_id}/conversations` | newConversation | `account_id`*, body*: conversation_create_payload | object |  | Create New Conversation |
+| POST | `/api/v1/accounts/{account_id}/conversations/filter` | conversationFilter | `account_id`*, `page`, `sort_by`, body*: object | conversation_list |  | Conversations Filter |
+| GET | `/api/v1/accounts/{account_id}/conversations/meta` | conversationListMeta | `account_id`*, `status`, `q`, `inbox_id`, `team_id`, `labels` | object | yes | Get Conversation Counts |
+| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}` | get-details-of-a-conversation | `account_id`*, `conversation_id`* | conversation_show | yes | Conversation Details |
+| PATCH | `/api/v1/accounts/{account_id}/conversations/{conversation_id}` | update-conversation | `account_id`*, `conversation_id`*, body*: object | conversation |  | Update Conversation |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/assignments` | assign-a-conversation | `account_id`*, `conversation_id`*, body*: object | user |  | Assign Conversation |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/custom_attributes` | update-custom-attributes-of-a-conversation | `account_id`*, `conversation_id`*, body*: object | object |  | Update Custom Attributes |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/destroy_custom_attributes` | destroy-custom-attributes-of-a-conversation | `account_id`*, `conversation_id`*, body*: object | object |  | Destroy Custom Attributes |
+| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/labels` | list-all-labels-of-a-conversation | `account_id`*, `conversation_id`* | conversation_labels | yes | List Labels |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/labels` | conversation-add-labels | `account_id`*, `conversation_id`*, body*: object | conversation_labels |  | Add Labels |
+| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages` | list-all-messages | `account_id`*, `conversation_id`*, `after`, `before` | object | yes | Get messages |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages` | create-a-new-message-in-a-conversation | `account_id`*, `conversation_id`*, body*: conversation_message_create_payload | generic_id\|message |  | Create New Message |
+| DELETE | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages/{message_id}` | delete-a-message | `account_id`*, `conversation_id`*, `message_id`* | — |  | Delete a message |
+| PATCH | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/messages/{message_id}` | update-message-status | `account_id`*, `conversation_id`*, `message_id`*, body*: object | generic_id\|message |  | Update message status |
+| GET | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/reporting_events` | get-conversation-reporting-events | `account_id`*, `conversation_id`* | reporting_event[] | yes | Conversation Reporting Events |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/toggle_priority` | toggle-priority-of-a-conversation | `account_id`*, `conversation_id`*, body: object | — |  | Toggle Priority |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/toggle_status` | toggle-status-of-a-conversation | `account_id`*, `conversation_id`*, body*: object | object |  | Toggle Status |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/toggle_typing_status` | toggle-typing-status-of-a-conversation | `account_id`*, `conversation_id`*, body*: object | — |  | Toggle Typing Status |
+| POST | `/api/v1/accounts/{account_id}/conversations/{conversation_id}/update_last_seen` | conversationUpdateLastSeen | `account_id`*, `conversation_id`* | conversation_show |  | Update Last Seen |
+| GET | `/api/v1/accounts/{account_id}/custom_attribute_definitions` | get-account-custom-attribute | `account_id`*, `attribute_model`* | custom_attribute[] | yes | List all custom attributes in an account |
+| POST | `/api/v1/accounts/{account_id}/custom_attribute_definitions` | add-new-custom-attribute-to-account | `account_id`*, body*: custom_attribute_create_update_payload | custom_attribute |  | Add a new custom attribute |
+| GET | `/api/v1/accounts/{account_id}/custom_attribute_definitions/{id}` | get-details-of-a-single-custom-attribute | `account_id`*, `id`* | custom_attribute | yes | Get a custom attribute details |
+| DELETE | `/api/v1/accounts/{account_id}/custom_attribute_definitions/{id}` | delete-custom-attribute-from-account | `account_id`*, `id`* | — |  | Remove a custom attribute from account |
+| PATCH | `/api/v1/accounts/{account_id}/custom_attribute_definitions/{id}` | update-custom-attribute-in-account | `account_id`*, `id`*, body*: custom_attribute_create_update_payload | custom_attribute |  | Update custom attribute in Account |
+| GET | `/api/v1/accounts/{account_id}/custom_filters` | list-all-filters | `account_id`*, `filter_type` | custom_filter[] | yes | List all custom filters |
+| POST | `/api/v1/accounts/{account_id}/custom_filters` | create-a-custom-filter | `account_id`*, `filter_type`, body*: custom_filter_create_update_payload | custom_filter |  | Create a custom filter |
+| GET | `/api/v1/accounts/{account_id}/custom_filters/{custom_filter_id}` | get-details-of-a-single-custom-filter | `account_id`*, `custom_filter_id`* | custom_filter | yes | Get a custom filter details |
+| DELETE | `/api/v1/accounts/{account_id}/custom_filters/{custom_filter_id}` | delete-a-custom-filter | `account_id`*, `custom_filter_id`* | — |  | Delete a custom filter |
+| PATCH | `/api/v1/accounts/{account_id}/custom_filters/{custom_filter_id}` | update-a-custom-filter | `account_id`*, `custom_filter_id`*, body*: custom_filter_create_update_payload | custom_filter |  | Update a custom filter |
+| POST | `/api/v1/accounts/{account_id}/inbox_members` | add-new-agent-to-inbox | `account_id`*, body*: object | object |  | Add a New Agent |
+| DELETE | `/api/v1/accounts/{account_id}/inbox_members` | delete-agent-in-inbox | `account_id`*, body*: object | — |  | Remove an Agent from Inbox |
+| PATCH | `/api/v1/accounts/{account_id}/inbox_members` | update-agents-in-inbox | `account_id`*, body*: object | object |  | Update Agents in Inbox |
+| GET | `/api/v1/accounts/{account_id}/inbox_members/{inbox_id}` | get-inbox-members | `account_id`*, `inbox_id`* | object | yes | List Agents in Inbox |
+| GET | `/api/v1/accounts/{account_id}/inboxes` | listAllInboxes | `account_id`* | object | yes | List all inboxes |
+| POST | `/api/v1/accounts/{account_id}/inboxes` | inboxCreation | `account_id`*, body*: inbox_create_payload | inbox |  | Create an inbox |
+| GET | `/api/v1/accounts/{account_id}/inboxes/{id}` | GetInbox | `account_id`*, `id`* | inbox | yes | Get an inbox |
+| PATCH | `/api/v1/accounts/{account_id}/inboxes/{id}` | updateInbox | `account_id`*, `id`*, body*: inbox_update_payload | inbox |  | Update Inbox |
+| GET | `/api/v1/accounts/{account_id}/inboxes/{id}/agent_bot` | getInboxAgentBot | `account_id`*, `id`* | agent_bot | yes | Show Inbox Agent Bot |
+| GET | `/api/v1/accounts/{account_id}/inboxes/{id}/message_templates` | listWhatsappMessageTemplates | `account_id`*, `id`*, `name` | object | yes | List WhatsApp message templates |
+| POST | `/api/v1/accounts/{account_id}/inboxes/{id}/set_agent_bot` | updateAgentBot | `account_id`*, `id`*, body*: object | — |  | Add or remove agent bot |
+| GET | `/api/v1/accounts/{account_id}/integrations/apps` | get-details-of-all-integrations | `account_id`* | object | yes | List all the Integrations |
+| POST | `/api/v1/accounts/{account_id}/integrations/hooks` | create-an-integration-hook | `account_id`*, body*: integrations_hook_create_payload | integrations_hook |  | Create an integration hook |
+| DELETE | `/api/v1/accounts/{account_id}/integrations/hooks/{hook_id}` | delete-an-integration-hook | `account_id`*, `hook_id`* | — |  | Delete an Integration Hook |
+| PATCH | `/api/v1/accounts/{account_id}/integrations/hooks/{hook_id}` | update-an-integrations-hook | `account_id`*, `hook_id`*, body*: integrations_hook_update_payload | integrations_hook |  | Update an Integration Hook |
+| GET | `/api/v1/accounts/{account_id}/labels` | list-all-labels | `account_id`* | object | yes | List all labels |
+| POST | `/api/v1/accounts/{account_id}/labels` | create-a-label | `account_id`*, body*: label_create_update_payload | label |  | Create a label |
+| GET | `/api/v1/accounts/{account_id}/labels/{id}` | get-details-of-a-single-label | `account_id`*, `id`* | label | yes | Get a label |
+| DELETE | `/api/v1/accounts/{account_id}/labels/{id}` | delete-a-label | `account_id`*, `id`* | — |  | Delete a label |
+| PATCH | `/api/v1/accounts/{account_id}/labels/{id}` | update-a-label | `account_id`*, `id`*, body*: label_create_update_payload | label |  | Update a label |
+| GET | `/api/v1/accounts/{account_id}/portals` | get-portal | `account_id`* | portal | yes | List all portals in an account |
+| POST | `/api/v1/accounts/{account_id}/portals` | add-new-portal-to-account | `account_id`*, body*: portal_create_update_payload | portal |  | Add a new portal |
+| GET | `/api/v1/accounts/{account_id}/portals/{portal_slug}` | get-details-of-a-single-portal | `account_id`*, `portal_slug`* | portal_item | yes | Get a portal details |
+| PATCH | `/api/v1/accounts/{account_id}/portals/{portal_slug}` | update-portal-to-account | `account_id`*, `portal_slug`*, body*: portal_create_update_payload | portal_single |  | Update a portal |
+| POST | `/api/v1/accounts/{account_id}/portals/{portal_slug}/articles` | add-new-article-to-account | `account_id`*, `portal_slug`*, body*: article_create_update_payload | article |  | Add a new article |
+| POST | `/api/v1/accounts/{account_id}/portals/{portal_slug}/categories` | add-new-category-to-account | `account_id`*, `portal_slug`*, body*: category_create_update_payload | category |  | Add a new category |
+| GET | `/api/v1/accounts/{account_id}/reporting_events` | get-account-reporting-events | `account_id`*, `page`, `since`, `until`, `inbox_id`, `user_id`, `name` | reporting_events_list_response | yes | Account Reporting Events |
+| GET | `/api/v1/accounts/{account_id}/teams` | list-all-teams | `account_id`* | team[] | yes | List all teams |
+| POST | `/api/v1/accounts/{account_id}/teams` | create-a-team | `account_id`*, body*: team_create_update_payload | team |  | Create a team |
+| GET | `/api/v1/accounts/{account_id}/teams/{team_id}` | get-details-of-a-single-team | `account_id`*, `team_id`* | team | yes | Get a team details |
+| DELETE | `/api/v1/accounts/{account_id}/teams/{team_id}` | delete-a-team | `account_id`*, `team_id`* | — |  | Delete a team |
+| PATCH | `/api/v1/accounts/{account_id}/teams/{team_id}` | update-a-team | `account_id`*, `team_id`*, body*: team_create_update_payload | team |  | Update a team |
+| GET | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | get-team-members | `account_id`*, `team_id`* | agent[] | yes | List Agents in Team |
+| POST | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | add-new-agent-to-team | `account_id`*, `team_id`*, body*: object | agent[] |  | Add a New Agent |
+| DELETE | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | delete-agent-in-team | `account_id`*, `team_id`*, body*: object | — |  | Remove an Agent from Team |
+| PATCH | `/api/v1/accounts/{account_id}/teams/{team_id}/team_members` | update-agents-in-team | `account_id`*, `team_id`*, body*: object | agent[] |  | Update Agents in Team |
+| GET | `/api/v1/accounts/{account_id}/webhooks` | list-all-webhooks | `account_id`* | webhook[] | yes | List all webhooks |
+| POST | `/api/v1/accounts/{account_id}/webhooks` | create-a-webhook | `account_id`*, body*: webhook_create_update_payload | webhook |  | Add a webhook |
+| DELETE | `/api/v1/accounts/{account_id}/webhooks/{webhook_id}` | delete-a-webhook | `account_id`*, `webhook_id`* | — |  | Delete a webhook |
+| PATCH | `/api/v1/accounts/{account_id}/webhooks/{webhook_id}` | update-a-webhook | `account_id`*, `webhook_id`*, body*: webhook_create_update_payload | webhook |  | Update a webhook object |
+| GET | `/api/v1/profile` | fetchProfile | — | user | yes | Fetch user profile |
+| PUT | `/api/v1/profile` | updateProfile | body*: object | user |  | Update user profile |
+| GET | `/api/v2/accounts/{account_id}/reports` | list-all-conversation-statistics | `account_id`*, `metric`*, `type`*, `id`, `since`, `until` | object[] | yes | Get Account reports |
+| GET | `/api/v2/accounts/{account_id}/reports/conversations` | get-account-conversation-metrics | `account_id`*, `type`* | object | yes | Account Conversation Metrics |
+| GET | `/api/v2/accounts/{account_id}/reports/conversations/` | get-agent-conversation-metrics | `account_id`*, `type`*, `user_id` | agent_conversation_metrics[] | yes | Agent Conversation Metrics |
+| GET | `/api/v2/accounts/{account_id}/reports/first_response_time_distribution` | get-first-response-time-distribution | `account_id`*, `since`, `until` | first_response_time_distribution | yes | Get first response time distribution by channel |
+| GET | `/api/v2/accounts/{account_id}/reports/inbox_label_matrix` | get-inbox-label-matrix | `account_id`*, `since`, `until`, `inbox_ids`, `label_ids` | inbox_label_matrix | yes | Get inbox-label matrix report |
+| GET | `/api/v2/accounts/{account_id}/reports/outgoing_messages_count` | get-outgoing-messages-count | `account_id`*, `since`, `until`, `group_by`* | outgoing_messages_count | yes | Get outgoing messages count grouped by entity |
+| GET | `/api/v2/accounts/{account_id}/reports/summary` | list-all-conversation-statistics-summary | `account_id`*, `type`*, `id`, `since`, `until` | account_summary | yes | Get Account reports summary |
+| GET | `/api/v2/accounts/{account_id}/summary_reports/agent` | get-agent-summary-report | `account_id`*, `since`, `until`, `business_hours` | agent_summary | yes | Get conversation statistics grouped by agent |
+| GET | `/api/v2/accounts/{account_id}/summary_reports/channel` | get-channel-summary-report | `account_id`*, `since`, `until` | channel_summary | yes | Get conversation statistics grouped by channel type |
+| GET | `/api/v2/accounts/{account_id}/summary_reports/inbox` | get-inbox-summary-report | `account_id`*, `since`, `until`, `business_hours` | inbox_summary | yes | Get conversation statistics grouped by inbox |
+| GET | `/api/v2/accounts/{account_id}/summary_reports/team` | get-team-summary-report | `account_id`*, `since`, `until`, `business_hours` | team_summary | yes | Get conversation statistics grouped by team |
+| POST | `/platform/api/v1/accounts` | create-an-account | body*: account_create_update_payload | platform_account |  | Create an Account |
+| GET | `/platform/api/v1/accounts/{account_id}` | get-details-of-an-account | `account_id`* | platform_account | yes | Get an account details |
+| DELETE | `/platform/api/v1/accounts/{account_id}` | delete-an-account | `account_id`* | — |  | Delete an Account |
+| PATCH | `/platform/api/v1/accounts/{account_id}` | update-an-account | `account_id`*, body*: account_create_update_payload | platform_account |  | Update an account |
+| GET | `/platform/api/v1/accounts/{account_id}/account_users` | list-all-account-users | `account_id`* | account_user | yes | List all Account Users |
+| POST | `/platform/api/v1/accounts/{account_id}/account_users` | create-an-account-user | `account_id`*, body*: account_user_create_update_payload | object |  | Create an Account User |
+| DELETE | `/platform/api/v1/accounts/{account_id}/account_users` | delete-an-account-user | `account_id`* | — |  | Delete an Account User |
+| GET | `/platform/api/v1/agent_bots` | list-all-agent-bots | — | agent_bot[] | yes | List all AgentBots |
+| POST | `/platform/api/v1/agent_bots` | create-an-agent-bot | body*: platform_agent_bot_create_update_payload | agent_bot |  | Create an Agent Bot |
+| GET | `/platform/api/v1/agent_bots/{id}` | get-details-of-a-single-agent-bot | `id`* | agent_bot | yes | Get an agent bot details |
+| DELETE | `/platform/api/v1/agent_bots/{id}` | delete-an-agent-bot | `id`* | — |  | Delete an AgentBot |
+| PATCH | `/platform/api/v1/agent_bots/{id}` | update-an-agent-bot | `id`*, body*: platform_agent_bot_create_update_payload | agent_bot |  | Update an agent bot |
+| POST | `/platform/api/v1/users` | create-a-user | body*: user_create_update_payload | user |  | Create a User |
+| GET | `/platform/api/v1/users/{id}` | get-details-of-a-user | `id`* | user | yes | Get an user details |
+| DELETE | `/platform/api/v1/users/{id}` | delete-a-user | `id`* | — |  | Delete a User |
+| PATCH | `/platform/api/v1/users/{id}` | update-a-user | `id`*, body*: user_create_update_payload | user |  | Update a user |
+| GET | `/platform/api/v1/users/{id}/login` | get-sso-url-of-a-user | `id`* | object | yes | Get User SSO Link |
+| POST | `/platform/api/v1/users/{id}/token` | post-user-token | `id`* | object |  | Get User Access Token |
+| GET | `/public/api/v1/inboxes/{inbox_identifier}` | get-details-of-a-inbox | `inbox_identifier`* | public_inbox | yes | Inbox details |
+| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts` | create-a-contact | `inbox_identifier`*, body*: public_contact_create_update_payload | public_contact |  | Create a contact |
+| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}` | get-details-of-a-contact | `inbox_identifier`*, `contact_identifier`* | public_contact | yes | Get a contact |
+| PATCH | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}` | update-a-contact | `inbox_identifier`*, `contact_identifier`*, body*: public_contact_create_update_payload | public_contact_record |  | Update a contact |
+| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations` | list-all-contact-conversations | `inbox_identifier`*, `contact_identifier`* | public_conversation[] | yes | List all conversations |
+| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations` | create-a-conversation | `inbox_identifier`*, `contact_identifier`*, body*: public_conversation_create_payload | public_conversation |  | Create a conversation |
+| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}` | get-single-conversation | `inbox_identifier`*, `contact_identifier`*, `conversation_id`* | public_conversation | yes | Get a single conversation |
+| GET | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/messages` | list-all-conversation-messages | `inbox_identifier`*, `contact_identifier`*, `conversation_id`* | public_message[] | yes | List all messages |
+| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/messages` | create-a-message | `inbox_identifier`*, `contact_identifier`*, `conversation_id`*, body*: public_message_create_payload | public_message |  | Create a message |
+| PATCH | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/messages/{message_id}` | update-a-message | `inbox_identifier`*, `contact_identifier`*, `conversation_id`*, `message_id`*, body*: public_message_update_payload | public_message |  | Update a message |
+| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/toggle_status` | resolve-conversation | `inbox_identifier`*, `contact_identifier`*, `conversation_id`* | public_conversation |  | Resolve a conversation |
+| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/toggle_typing` | toggle-typing-status | `inbox_identifier`*, `contact_identifier`*, `conversation_id`*, `typing_status`*, body*: object | — |  | Toggle typing status |
+| POST | `/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}/conversations/{conversation_id}/update_last_seen` | update-last-seen | `inbox_identifier`*, `contact_identifier`*, `conversation_id`* | — |  | Update last seen and mark messages read |
+| GET | `/survey/responses/{conversation_uuid}` | get-csat-survey-page | `conversation_uuid`* | — | yes | Get CSAT survey page |

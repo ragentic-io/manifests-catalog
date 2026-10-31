@@ -8,6 +8,56 @@
         "from": "openindex-ai-0fd697d1d0",
         "kind": "EXPOSES",
         "to": "operation:post:/query"
+      },
+      {
+        "from": "operation:post:/query",
+        "kind": "ACCEPTS",
+        "to": "schema:QueryRequest"
+      },
+      {
+        "from": "operation:post:/query",
+        "kind": "RETURNS",
+        "to": "schema:QueryResponse"
+      },
+      {
+        "from": "schema:DocumentChunkMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:DocumentChunkWithScore",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentChunkMetadata"
+      },
+      {
+        "from": "schema:DocumentMetadataFilter",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentMetadataFilter"
+      },
+      {
+        "from": "schema:QueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Query"
+      },
+      {
+        "from": "schema:QueryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:QueryResult"
+      },
+      {
+        "from": "schema:QueryResult",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentChunkWithScore"
       }
     ],
     "nodes": [
@@ -17,12 +67,31 @@
       },
       {
         "deprecated": false,
+        "description": "Accepts search query objects array each with query and optional filter.",
         "id": "operation:post:/query",
         "kind": "operation",
         "method": "post",
         "name": "query_query_post",
         "path": "/query",
         "pointer": "#/paths/~1query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "QueryRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "QueryResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
@@ -33,52 +102,63 @@
       {
         "id": "schema:DocumentChunkMetadata",
         "kind": "schema",
-        "name": "DocumentChunkMetadata"
+        "name": "DocumentChunkMetadata",
+        "type": "object"
       },
       {
         "id": "schema:DocumentChunkWithScore",
         "kind": "schema",
-        "name": "DocumentChunkWithScore"
+        "name": "DocumentChunkWithScore",
+        "type": "object"
       },
       {
         "id": "schema:DocumentMetadataFilter",
         "kind": "schema",
-        "name": "DocumentMetadataFilter"
+        "name": "DocumentMetadataFilter",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:Query",
         "kind": "schema",
-        "name": "Query"
+        "name": "Query",
+        "type": "object"
       },
       {
         "id": "schema:QueryRequest",
         "kind": "schema",
-        "name": "QueryRequest"
+        "name": "QueryRequest",
+        "type": "object"
       },
       {
         "id": "schema:QueryResponse",
         "kind": "schema",
-        "name": "QueryResponse"
+        "name": "QueryResponse",
+        "type": "object"
       },
       {
         "id": "schema:QueryResult",
         "kind": "schema",
-        "name": "QueryResult"
+        "name": "QueryResult",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Source",
         "kind": "schema",
-        "name": "Source"
+        "name": "Source",
+        "type": "string"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       }
     ]
   },

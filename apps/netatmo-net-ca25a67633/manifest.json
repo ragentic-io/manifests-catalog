@@ -113,6 +113,471 @@
         "from": "netatmo-net-ca25a67633",
         "kind": "EXPOSES",
         "to": "operation:post:/syncschedule"
+      },
+      {
+        "from": "operation:get:/addwebhook",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomeWebhookResponse"
+      },
+      {
+        "from": "operation:post:/createnewschedule",
+        "kind": "ACCEPTS",
+        "to": "schema:NAThermProgram"
+      },
+      {
+        "from": "operation:post:/createnewschedule",
+        "kind": "RETURNS",
+        "to": "schema:NANewScheduleResponse"
+      },
+      {
+        "from": "operation:get:/devicelist",
+        "kind": "RETURNS",
+        "to": "schema:NADeviceListResponse"
+      },
+      {
+        "from": "operation:get:/dropwebhook",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomeWebhookResponse"
+      },
+      {
+        "from": "operation:get:/geteventsuntil",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomeEventResponse"
+      },
+      {
+        "from": "operation:get:/gethomecoachsdata",
+        "kind": "RETURNS",
+        "to": "schema:NAHealthyHomeCoachDataResponse"
+      },
+      {
+        "from": "operation:get:/gethomedata",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomeHomeDataResponse"
+      },
+      {
+        "from": "operation:get:/getlasteventof",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomeEventResponse"
+      },
+      {
+        "from": "operation:get:/getmeasure",
+        "kind": "RETURNS",
+        "to": "schema:NAMeasureResponse"
+      },
+      {
+        "from": "operation:get:/getnextevents",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomeEventResponse"
+      },
+      {
+        "from": "operation:get:/getpublicdata",
+        "kind": "RETURNS",
+        "to": "schema:NAPublicDataResponse"
+      },
+      {
+        "from": "operation:get:/getstationsdata",
+        "kind": "RETURNS",
+        "to": "schema:NAStationDataResponse"
+      },
+      {
+        "from": "operation:get:/getthermostatsdata",
+        "kind": "RETURNS",
+        "to": "schema:NAThermostatDataResponse"
+      },
+      {
+        "from": "operation:get:/getthermstate",
+        "kind": "RETURNS",
+        "to": "schema:NAThermStateResponse"
+      },
+      {
+        "from": "operation:get:/getuser",
+        "kind": "RETURNS",
+        "to": "schema:NAUserResponse"
+      },
+      {
+        "from": "operation:get:/partnerdevices",
+        "kind": "RETURNS",
+        "to": "schema:NAPartnerDevicesResponse"
+      },
+      {
+        "from": "operation:post:/setpersonsaway",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomePersonsAwayResponse"
+      },
+      {
+        "from": "operation:post:/setpersonshome",
+        "kind": "RETURNS",
+        "to": "schema:NAWelcomePersonsHomeResponse"
+      },
+      {
+        "from": "operation:post:/setthermpoint",
+        "kind": "RETURNS",
+        "to": "schema:NAOkResponse"
+      },
+      {
+        "from": "operation:post:/switchschedule",
+        "kind": "RETURNS",
+        "to": "schema:NAOkResponse"
+      },
+      {
+        "from": "operation:post:/syncschedule",
+        "kind": "ACCEPTS",
+        "to": "schema:NAThermProgram"
+      },
+      {
+        "from": "operation:post:/syncschedule",
+        "kind": "RETURNS",
+        "to": "schema:NAOkResponse"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NADashboardData"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NADate"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NAHeatingSystem"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NAHouseModel"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NAObject"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NAPlace"
+      },
+      {
+        "from": "schema:NADevice",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermProgram"
+      },
+      {
+        "from": "schema:NADeviceListBody",
+        "kind": "REFERENCES",
+        "to": "schema:NADevice"
+      },
+      {
+        "from": "schema:NADeviceListBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAModule"
+      },
+      {
+        "from": "schema:NADeviceListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NADeviceListBody"
+      },
+      {
+        "from": "schema:NAHealthyHomeCoach",
+        "kind": "REFERENCES",
+        "to": "schema:NADashboardData"
+      },
+      {
+        "from": "schema:NAHealthyHomeCoach",
+        "kind": "REFERENCES",
+        "to": "schema:NAPlace"
+      },
+      {
+        "from": "schema:NAHealthyHomeCoachDataBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAHealthyHomeCoach"
+      },
+      {
+        "from": "schema:NAHealthyHomeCoachDataBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAUser"
+      },
+      {
+        "from": "schema:NAHealthyHomeCoachDataResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAHealthyHomeCoachDataBody"
+      },
+      {
+        "from": "schema:NAHouseModel",
+        "kind": "REFERENCES",
+        "to": "schema:NADate"
+      },
+      {
+        "from": "schema:NAHouseModel",
+        "kind": "REFERENCES",
+        "to": "schema:NAHouseModelCa"
+      },
+      {
+        "from": "schema:NAHouseModel",
+        "kind": "REFERENCES",
+        "to": "schema:NALinkStation"
+      },
+      {
+        "from": "schema:NAHouseModel",
+        "kind": "REFERENCES",
+        "to": "schema:NAPidAlgo"
+      },
+      {
+        "from": "schema:NAHouseModel",
+        "kind": "REFERENCES",
+        "to": "schema:NASimpleAlgo"
+      },
+      {
+        "from": "schema:NAHouseModel",
+        "kind": "REFERENCES",
+        "to": "schema:NAStation"
+      },
+      {
+        "from": "schema:NAMain",
+        "kind": "REFERENCES",
+        "to": "schema:NADashboardData"
+      },
+      {
+        "from": "schema:NAMain",
+        "kind": "REFERENCES",
+        "to": "schema:NAPlace"
+      },
+      {
+        "from": "schema:NAMain",
+        "kind": "REFERENCES",
+        "to": "schema:NAStationModule"
+      },
+      {
+        "from": "schema:NAMeasureResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAMeasureBodyElem"
+      },
+      {
+        "from": "schema:NAModule",
+        "kind": "REFERENCES",
+        "to": "schema:NADashboardData"
+      },
+      {
+        "from": "schema:NAModule",
+        "kind": "REFERENCES",
+        "to": "schema:NADate"
+      },
+      {
+        "from": "schema:NANewScheduleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NANewScheduleBody"
+      },
+      {
+        "from": "schema:NAPlug",
+        "kind": "REFERENCES",
+        "to": "schema:NAPlace"
+      },
+      {
+        "from": "schema:NAPlug",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermostat"
+      },
+      {
+        "from": "schema:NAPlug",
+        "kind": "REFERENCES",
+        "to": "schema:NAYearMonth"
+      },
+      {
+        "from": "schema:NAPublicData",
+        "kind": "REFERENCES",
+        "to": "schema:NAMeasure"
+      },
+      {
+        "from": "schema:NAPublicData",
+        "kind": "REFERENCES",
+        "to": "schema:NAPlace"
+      },
+      {
+        "from": "schema:NAPublicDataResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAPublicData"
+      },
+      {
+        "from": "schema:NASetpointLog",
+        "kind": "REFERENCES",
+        "to": "schema:NASetpoint"
+      },
+      {
+        "from": "schema:NAStationDataBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAMain"
+      },
+      {
+        "from": "schema:NAStationDataBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAUser"
+      },
+      {
+        "from": "schema:NAStationDataResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAStationDataBody"
+      },
+      {
+        "from": "schema:NAStationModule",
+        "kind": "REFERENCES",
+        "to": "schema:NADashboardData"
+      },
+      {
+        "from": "schema:NAThermProgram",
+        "kind": "REFERENCES",
+        "to": "schema:NATimeTableItem"
+      },
+      {
+        "from": "schema:NAThermProgram",
+        "kind": "REFERENCES",
+        "to": "schema:NAZone"
+      },
+      {
+        "from": "schema:NAThermStateBody",
+        "kind": "REFERENCES",
+        "to": "schema:NASetpoint"
+      },
+      {
+        "from": "schema:NAThermStateBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermMeasure"
+      },
+      {
+        "from": "schema:NAThermStateBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermProgram"
+      },
+      {
+        "from": "schema:NAThermStateResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermStateBody"
+      },
+      {
+        "from": "schema:NAThermostat",
+        "kind": "REFERENCES",
+        "to": "schema:NASetpoint"
+      },
+      {
+        "from": "schema:NAThermostat",
+        "kind": "REFERENCES",
+        "to": "schema:NASetpointLog"
+      },
+      {
+        "from": "schema:NAThermostat",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermMeasure"
+      },
+      {
+        "from": "schema:NAThermostat",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermProgram"
+      },
+      {
+        "from": "schema:NAThermostatDataBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAPlug"
+      },
+      {
+        "from": "schema:NAThermostatDataBody",
+        "kind": "REFERENCES",
+        "to": "schema:NAUser"
+      },
+      {
+        "from": "schema:NAThermostatDataResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAThermostatDataBody"
+      },
+      {
+        "from": "schema:NAUser",
+        "kind": "REFERENCES",
+        "to": "schema:NADate"
+      },
+      {
+        "from": "schema:NAUser",
+        "kind": "REFERENCES",
+        "to": "schema:NAUserAdministrative"
+      },
+      {
+        "from": "schema:NAUserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAUser"
+      },
+      {
+        "from": "schema:NAWelcomeEvent",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeSnapshot"
+      },
+      {
+        "from": "schema:NAWelcomeEvent",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeSubEvent"
+      },
+      {
+        "from": "schema:NAWelcomeEventData",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeEvent"
+      },
+      {
+        "from": "schema:NAWelcomeEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeEventData"
+      },
+      {
+        "from": "schema:NAWelcomeHome",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeCamera"
+      },
+      {
+        "from": "schema:NAWelcomeHome",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeEvent"
+      },
+      {
+        "from": "schema:NAWelcomeHome",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeModule"
+      },
+      {
+        "from": "schema:NAWelcomeHome",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomePerson"
+      },
+      {
+        "from": "schema:NAWelcomeHome",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomePlace"
+      },
+      {
+        "from": "schema:NAWelcomeHomeData",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeGlobalInfo"
+      },
+      {
+        "from": "schema:NAWelcomeHomeData",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeHome"
+      },
+      {
+        "from": "schema:NAWelcomeHomeData",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeUser"
+      },
+      {
+        "from": "schema:NAWelcomeHomeDataResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeHomeData"
+      },
+      {
+        "from": "schema:NAWelcomePerson",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeFace"
+      },
+      {
+        "from": "schema:NAWelcomeSubEvent",
+        "kind": "REFERENCES",
+        "to": "schema:NAWelcomeSnapshot"
       }
     ],
     "nodes": [
@@ -122,12 +587,36 @@
       },
       {
         "deprecated": false,
+        "description": "Links a callback url to a user.",
         "id": "operation:get:/addwebhook",
         "kind": "operation",
         "method": "get",
         "name": "addwebhook",
+        "parameters": [
+          {
+            "description": "Your webhook callback url",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Webhooks are only available for Welcome, enter app_camera.",
+            "in": "query",
+            "name": "app_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/addwebhook",
         "pointer": "#/paths/~1addwebhook/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomeWebhookResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": []
@@ -136,16 +625,50 @@
             "password_oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method createnewschedule creates a new schedule stored in the backup list.",
         "id": "operation:post:/createnewschedule",
         "kind": "operation",
         "method": "post",
         "name": "createnewschedule",
+        "parameters": [
+          {
+            "description": "The relay id",
+            "in": "query",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The thermostat id",
+            "in": "query",
+            "name": "module_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/createnewschedule",
         "pointer": "#/paths/~1createnewschedule/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "NAThermProgram"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NANewScheduleResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "code_oauth": [
@@ -158,16 +681,55 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "thermostat"
+        ]
       },
       {
         "deprecated": true,
+        "description": "The method devicelist returns the list of devices owned by the user, and their modules.",
         "id": "operation:get:/devicelist",
         "kind": "operation",
         "method": "get",
         "name": "devicelist",
+        "parameters": [
+          {
+            "description": "Defines which device type will be returned by devicelist.",
+            "enum": [
+              "app_thermostat",
+              "app_station"
+            ],
+            "in": "query",
+            "name": "app_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify a device_id if you want to retrieve only this device informations.",
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "When set to \"true\", the favorite devices of the user are returned.",
+            "in": "query",
+            "name": "get_favorites",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/devicelist",
         "pointer": "#/paths/~1devicelist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NADeviceListResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -182,16 +744,36 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deprecated"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Dissociates a webhook from a user.",
         "id": "operation:get:/dropwebhook",
         "kind": "operation",
         "method": "get",
         "name": "dropwebhook",
+        "parameters": [
+          {
+            "description": "For Welcome, use app_camera",
+            "in": "query",
+            "name": "app_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dropwebhook",
         "pointer": "#/paths/~1dropwebhook/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomeWebhookResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": []
@@ -200,16 +782,43 @@
             "password_oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the snapshot associated to an event.",
         "id": "operation:get:/getcamerapicture",
         "kind": "operation",
         "method": "get",
         "name": "getcamerapicture",
+        "parameters": [
+          {
+            "description": "id of the image (can be retrieved as 'id' in 'face' in Gethomedata, or as 'id' in 'snapshot' in Getnextevents, Getlasteventof and Geteventsuntil)",
+            "in": "query",
+            "name": "image_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Security key to access snapshots.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getcamerapicture",
         "pointer": "#/paths/~1getcamerapicture/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": []
@@ -218,16 +827,43 @@
             "password_oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the snapshot associated to an event.",
         "id": "operation:get:/geteventsuntil",
         "kind": "operation",
         "method": "get",
         "name": "geteventsuntil",
+        "parameters": [
+          {
+            "description": "ID of the Home you're interested in",
+            "in": "query",
+            "name": "home_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your request will retrieve all the events until this one",
+            "in": "query",
+            "name": "event_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/geteventsuntil",
         "pointer": "#/paths/~1geteventsuntil/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomeEventResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -242,16 +878,36 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method gethomecoachsdata Returns data from a user Healthy Home Coach Station (measures and device specific data).",
         "id": "operation:get:/gethomecoachsdata",
         "kind": "operation",
         "method": "get",
         "name": "gethomecoachsdata",
+        "parameters": [
+          {
+            "description": "Id of the device you want to retrieve information of",
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gethomecoachsdata",
         "pointer": "#/paths/~1gethomecoachsdata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAHealthyHomeCoachDataResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -264,16 +920,43 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "healthyhomecoach"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about users homes and cameras.",
         "id": "operation:get:/gethomedata",
         "kind": "operation",
         "method": "get",
         "name": "gethomedata",
+        "parameters": [
+          {
+            "description": "Specify if you're looking for the events of a specific Home.",
+            "in": "query",
+            "name": "home_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of events to retrieve.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/gethomedata",
         "pointer": "#/paths/~1gethomedata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomeHomeDataResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -288,16 +971,50 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns most recent events.",
         "id": "operation:get:/getlasteventof",
         "kind": "operation",
         "method": "get",
         "name": "getlasteventof",
+        "parameters": [
+          {
+            "description": "ID of the Home you're interested in",
+            "in": "query",
+            "name": "home_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your request will retrieve all events of the given home until the most recent event of the given person",
+            "in": "query",
+            "name": "person_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of events to retrieve.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/getlasteventof",
         "pointer": "#/paths/~1getlasteventof/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomeEventResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -312,16 +1029,101 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method getmeasure returns the measurements of a device or a module.",
         "id": "operation:get:/getmeasure",
         "kind": "operation",
         "method": "get",
         "name": "getmeasure",
+        "parameters": [
+          {
+            "description": "Id of the device whose module's measurements you want to retrieve.",
+            "in": "query",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If you don't specify any module_id you will retrieve the device's measurements.",
+            "in": "query",
+            "name": "module_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defines the time interval between two measurements.",
+            "enum": [
+              "max",
+              "30min",
+              "1hour",
+              "3hours",
+              "1day",
+              "1week",
+              "1month"
+            ],
+            "in": "query",
+            "name": "scale",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Measures you are interested in.",
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Starting timestamp (utc) of the requested measurements.",
+            "in": "query",
+            "name": "date_begin",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Ending timestamp (utc) of the request measurements.",
+            "in": "query",
+            "name": "date_end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limits the number of measurements returned (default & max is 1024)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Allows you to choose the format of the answer.",
+            "in": "query",
+            "name": "optimize",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "In scales higher than max, since the data is aggregated, the timestamps returned are by default offset by +(scale/2).",
+            "in": "query",
+            "name": "real_time",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/getmeasure",
         "pointer": "#/paths/~1getmeasure/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAMeasureResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -336,16 +1138,53 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "station",
+          "thermostat",
+          "partner",
+          "public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns previous events.",
         "id": "operation:get:/getnextevents",
         "kind": "operation",
         "method": "get",
         "name": "getnextevents",
+        "parameters": [
+          {
+            "description": "ID of the Home you're interested in",
+            "in": "query",
+            "name": "home_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your request will retrieve events occured before this one",
+            "in": "query",
+            "name": "event_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of events to retrieve.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/getnextevents",
         "pointer": "#/paths/~1getnextevents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomeEventResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -360,16 +1199,71 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves publicly shared weather data from Outdoor Modules within a predefined area.",
         "id": "operation:get:/getpublicdata",
         "kind": "operation",
         "method": "get",
         "name": "getpublicdata",
+        "parameters": [
+          {
+            "description": "Latitude of the north east corner of the requested area.",
+            "in": "query",
+            "name": "lat_ne",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Longitude of the north east corner of the requested area.",
+            "in": "query",
+            "name": "lon_ne",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Latitude of the south west corner of the requested area.",
+            "in": "query",
+            "name": "lat_sw",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Longitude of the south west corner of the requested area.",
+            "in": "query",
+            "name": "lon_sw",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "To filter stations based on relevant measurements you want (e.g.",
+            "in": "query",
+            "name": "required_data",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "True to exclude stations with abnormal temperature measures.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/getpublicdata",
         "pointer": "#/paths/~1getpublicdata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAPublicDataResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": []
@@ -378,16 +1272,44 @@
             "password_oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "public"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method getstationsdata Returns data from a user's Weather Stations (measures and device specific data).",
         "id": "operation:get:/getstationsdata",
         "kind": "operation",
         "method": "get",
         "name": "getstationsdata",
+        "parameters": [
+          {
+            "description": "Id of the device you want to retrieve information of",
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Whether to include the user's favorite Weather Stations in addition to the user's own Weather Stations",
+            "in": "query",
+            "name": "get_favorites",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/getstationsdata",
         "pointer": "#/paths/~1getstationsdata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAStationDataResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -400,16 +1322,36 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "station"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method getthermostatsdata returns information about user's thermostats such as their last measurements.",
         "id": "operation:get:/getthermostatsdata",
         "kind": "operation",
         "method": "get",
         "name": "getthermostatsdata",
+        "parameters": [
+          {
+            "description": "Id of the device you want to retrieve information of",
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/getthermostatsdata",
         "pointer": "#/paths/~1getthermostatsdata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAThermostatDataResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -422,16 +1364,43 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "thermostat"
+        ]
       },
       {
         "deprecated": true,
+        "description": "The method getthermstate returns the last Thermostat measurements, its current weekly schedule, and, if present, its current manual temperature setpoint.",
         "id": "operation:get:/getthermstate",
         "kind": "operation",
         "method": "get",
         "name": "getthermstate",
+        "parameters": [
+          {
+            "description": "The relay id",
+            "in": "query",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The thermostat id",
+            "in": "query",
+            "name": "module_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/getthermstate",
         "pointer": "#/paths/~1getthermstate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAThermStateResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": [
@@ -444,16 +1413,27 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deprecated"
+        ]
       },
       {
         "deprecated": true,
+        "description": "The method getuser returns information about a user such as prefered language, prefered units, and list of devices.",
         "id": "operation:get:/getuser",
         "kind": "operation",
         "method": "get",
         "name": "getuser",
         "path": "/getuser",
         "pointer": "#/paths/~1getuser/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAUserResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": []
@@ -462,16 +1442,27 @@
             "password_oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deprecated"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method partnerdevices returns the list of device_id to which your partner application has access to.",
         "id": "operation:get:/partnerdevices",
         "kind": "operation",
         "method": "get",
         "name": "partnerdevices",
         "path": "/partnerdevices",
         "pointer": "#/paths/~1partnerdevices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAPartnerDevicesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "code_oauth": []
@@ -480,16 +1471,43 @@
             "password_oauth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "partner"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets a person as 'Away' or the Home as 'Empty'.",
         "id": "operation:post:/setpersonsaway",
         "kind": "operation",
         "method": "post",
         "name": "setpersonsaway",
+        "parameters": [
+          {
+            "description": "ID of the Home you're interested in",
+            "in": "query",
+            "name": "home_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If a person_id is specified, that person will be set as 'Away'.",
+            "in": "query",
+            "name": "person_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/setpersonsaway",
         "pointer": "#/paths/~1setpersonsaway/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomePersonsAwayResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "code_oauth": [
@@ -502,16 +1520,43 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets a person as 'At home'.",
         "id": "operation:post:/setpersonshome",
         "kind": "operation",
         "method": "post",
         "name": "setpersonshome",
+        "parameters": [
+          {
+            "description": "ID of the Home you're interested in",
+            "in": "query",
+            "name": "home_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of persons IDs",
+            "in": "query",
+            "name": "person_ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/setpersonshome",
         "pointer": "#/paths/~1setpersonshome/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAWelcomePersonsHomeResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "code_oauth": [
@@ -524,16 +1569,72 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method setthermpoint changes the Thermostat manual temperature setpoint.",
         "id": "operation:post:/setthermpoint",
         "kind": "operation",
         "method": "post",
         "name": "setthermpoint",
+        "parameters": [
+          {
+            "description": "The relay id",
+            "in": "query",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The thermostat id",
+            "in": "query",
+            "name": "module_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Chosen setpoint_mode",
+            "enum": [
+              "program",
+              "away",
+              "hg",
+              "manual",
+              "off",
+              "max"
+            ],
+            "in": "query",
+            "name": "setpoint_mode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When using the manual or max setpoint_mode, this parameter defines when the setpoint expires.",
+            "in": "query",
+            "name": "setpoint_endtime",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "When using the manual setpoint_mode, this parameter defines the temperature setpoint (in Celcius) to use.",
+            "in": "query",
+            "name": "setpoint_temp",
+            "required": false,
+            "type": "number:float"
+          }
+        ],
         "path": "/setthermpoint",
         "pointer": "#/paths/~1setthermpoint/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAOkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "code_oauth": [
@@ -546,16 +1647,50 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "thermostat"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method switchschedule switches the Thermostat's schedule to another existing schedule.",
         "id": "operation:post:/switchschedule",
         "kind": "operation",
         "method": "post",
         "name": "switchschedule",
+        "parameters": [
+          {
+            "description": "The relay id",
+            "in": "query",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The thermostat id",
+            "in": "query",
+            "name": "module_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The schedule id.",
+            "in": "query",
+            "name": "schedule_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/switchschedule",
         "pointer": "#/paths/~1switchschedule/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAOkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "code_oauth": [
@@ -568,16 +1703,50 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "thermostat"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The method syncschedule changes the Thermostat weekly schedule.",
         "id": "operation:post:/syncschedule",
         "kind": "operation",
         "method": "post",
         "name": "syncschedule",
+        "parameters": [
+          {
+            "description": "The relay id",
+            "in": "query",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The thermostat id",
+            "in": "query",
+            "name": "module_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/syncschedule",
         "pointer": "#/paths/~1syncschedule/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "NAThermProgram"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NAOkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "code_oauth": [
@@ -590,332 +1759,400 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "thermostat"
+        ]
       },
       {
         "id": "schema:NADashboardData",
         "kind": "schema",
-        "name": "NADashboardData"
+        "name": "NADashboardData",
+        "type": "object"
       },
       {
         "id": "schema:NADate",
         "kind": "schema",
-        "name": "NADate"
+        "name": "NADate",
+        "type": "object"
       },
       {
         "id": "schema:NADevice",
         "kind": "schema",
-        "name": "NADevice"
+        "name": "NADevice",
+        "type": "object"
       },
       {
         "id": "schema:NADeviceListBody",
         "kind": "schema",
-        "name": "NADeviceListBody"
+        "name": "NADeviceListBody",
+        "type": "object"
       },
       {
         "id": "schema:NADeviceListResponse",
         "kind": "schema",
-        "name": "NADeviceListResponse"
+        "name": "NADeviceListResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAHealthyHomeCoach",
         "kind": "schema",
-        "name": "NAHealthyHomeCoach"
+        "name": "NAHealthyHomeCoach",
+        "type": "object"
       },
       {
         "id": "schema:NAHealthyHomeCoachDataBody",
         "kind": "schema",
-        "name": "NAHealthyHomeCoachDataBody"
+        "name": "NAHealthyHomeCoachDataBody",
+        "type": "object"
       },
       {
         "id": "schema:NAHealthyHomeCoachDataResponse",
         "kind": "schema",
-        "name": "NAHealthyHomeCoachDataResponse"
+        "name": "NAHealthyHomeCoachDataResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAHeatingSystem",
         "kind": "schema",
-        "name": "NAHeatingSystem"
+        "name": "NAHeatingSystem",
+        "type": "object"
       },
       {
         "id": "schema:NAHouseModel",
         "kind": "schema",
-        "name": "NAHouseModel"
+        "name": "NAHouseModel",
+        "type": "object"
       },
       {
         "id": "schema:NAHouseModelCa",
         "kind": "schema",
-        "name": "NAHouseModelCa"
+        "name": "NAHouseModelCa",
+        "type": "object"
       },
       {
         "id": "schema:NALinkStation",
         "kind": "schema",
-        "name": "NALinkStation"
+        "name": "NALinkStation",
+        "type": "object"
       },
       {
         "id": "schema:NAMain",
         "kind": "schema",
-        "name": "NAMain"
+        "name": "NAMain",
+        "type": "object"
       },
       {
         "id": "schema:NAMeasure",
         "kind": "schema",
-        "name": "NAMeasure"
+        "name": "NAMeasure",
+        "type": "object"
       },
       {
         "id": "schema:NAMeasureBodyElem",
         "kind": "schema",
-        "name": "NAMeasureBodyElem"
+        "name": "NAMeasureBodyElem",
+        "type": "object"
       },
       {
         "id": "schema:NAMeasureResponse",
         "kind": "schema",
-        "name": "NAMeasureResponse"
+        "name": "NAMeasureResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAModule",
         "kind": "schema",
-        "name": "NAModule"
+        "name": "NAModule",
+        "type": "object"
       },
       {
         "id": "schema:NANewScheduleBody",
         "kind": "schema",
-        "name": "NANewScheduleBody"
+        "name": "NANewScheduleBody",
+        "type": "object"
       },
       {
         "id": "schema:NANewScheduleResponse",
         "kind": "schema",
-        "name": "NANewScheduleResponse"
+        "name": "NANewScheduleResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAObject",
         "kind": "schema",
-        "name": "NAObject"
+        "name": "NAObject",
+        "type": "object"
       },
       {
         "id": "schema:NAOkResponse",
         "kind": "schema",
-        "name": "NAOkResponse"
+        "name": "NAOkResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAPartnerDevicesResponse",
         "kind": "schema",
-        "name": "NAPartnerDevicesResponse"
+        "name": "NAPartnerDevicesResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAPidAlgo",
         "kind": "schema",
-        "name": "NAPidAlgo"
+        "name": "NAPidAlgo",
+        "type": "object"
       },
       {
         "id": "schema:NAPlace",
         "kind": "schema",
-        "name": "NAPlace"
+        "name": "NAPlace",
+        "type": "object"
       },
       {
         "id": "schema:NAPlug",
         "kind": "schema",
-        "name": "NAPlug"
+        "name": "NAPlug",
+        "type": "object"
       },
       {
         "id": "schema:NAPublicData",
         "kind": "schema",
-        "name": "NAPublicData"
+        "name": "NAPublicData",
+        "type": "object"
       },
       {
         "id": "schema:NAPublicDataResponse",
         "kind": "schema",
-        "name": "NAPublicDataResponse"
+        "name": "NAPublicDataResponse",
+        "type": "object"
       },
       {
         "id": "schema:NASetpoint",
         "kind": "schema",
-        "name": "NASetpoint"
+        "name": "NASetpoint",
+        "type": "object"
       },
       {
         "id": "schema:NASetpointLog",
         "kind": "schema",
-        "name": "NASetpointLog"
+        "name": "NASetpointLog",
+        "type": "object"
       },
       {
         "id": "schema:NASimpleAlgo",
         "kind": "schema",
-        "name": "NASimpleAlgo"
+        "name": "NASimpleAlgo",
+        "type": "object"
       },
       {
         "id": "schema:NAStation",
         "kind": "schema",
-        "name": "NAStation"
+        "name": "NAStation",
+        "type": "object"
       },
       {
         "id": "schema:NAStationDataBody",
         "kind": "schema",
-        "name": "NAStationDataBody"
+        "name": "NAStationDataBody",
+        "type": "object"
       },
       {
         "id": "schema:NAStationDataResponse",
         "kind": "schema",
-        "name": "NAStationDataResponse"
+        "name": "NAStationDataResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAStationModule",
         "kind": "schema",
-        "name": "NAStationModule"
+        "name": "NAStationModule",
+        "type": "object"
       },
       {
         "id": "schema:NAThermMeasure",
         "kind": "schema",
-        "name": "NAThermMeasure"
+        "name": "NAThermMeasure",
+        "type": "object"
       },
       {
         "id": "schema:NAThermProgram",
         "kind": "schema",
-        "name": "NAThermProgram"
+        "name": "NAThermProgram",
+        "type": "object"
       },
       {
         "id": "schema:NAThermStateBody",
         "kind": "schema",
-        "name": "NAThermStateBody"
+        "name": "NAThermStateBody",
+        "type": "object"
       },
       {
         "id": "schema:NAThermStateResponse",
         "kind": "schema",
-        "name": "NAThermStateResponse"
+        "name": "NAThermStateResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAThermostat",
         "kind": "schema",
-        "name": "NAThermostat"
+        "name": "NAThermostat",
+        "type": "object"
       },
       {
         "id": "schema:NAThermostatDataBody",
         "kind": "schema",
-        "name": "NAThermostatDataBody"
+        "name": "NAThermostatDataBody",
+        "type": "object"
       },
       {
         "id": "schema:NAThermostatDataResponse",
         "kind": "schema",
-        "name": "NAThermostatDataResponse"
+        "name": "NAThermostatDataResponse",
+        "type": "object"
       },
       {
         "id": "schema:NATimeTableItem",
         "kind": "schema",
-        "name": "NATimeTableItem"
+        "name": "NATimeTableItem",
+        "type": "object"
       },
       {
         "id": "schema:NAUser",
         "kind": "schema",
-        "name": "NAUser"
+        "name": "NAUser",
+        "type": "object"
       },
       {
         "id": "schema:NAUserAdministrative",
         "kind": "schema",
-        "name": "NAUserAdministrative"
+        "name": "NAUserAdministrative",
+        "type": "object"
       },
       {
         "id": "schema:NAUserResponse",
         "kind": "schema",
-        "name": "NAUserResponse"
+        "name": "NAUserResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeCamera",
         "kind": "schema",
-        "name": "NAWelcomeCamera"
+        "name": "NAWelcomeCamera",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeEvent",
         "kind": "schema",
-        "name": "NAWelcomeEvent"
+        "name": "NAWelcomeEvent",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeEventData",
         "kind": "schema",
-        "name": "NAWelcomeEventData"
+        "name": "NAWelcomeEventData",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeEventResponse",
         "kind": "schema",
-        "name": "NAWelcomeEventResponse"
+        "name": "NAWelcomeEventResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeFace",
         "kind": "schema",
-        "name": "NAWelcomeFace"
+        "name": "NAWelcomeFace",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeGlobalInfo",
         "kind": "schema",
-        "name": "NAWelcomeGlobalInfo"
+        "name": "NAWelcomeGlobalInfo",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeHome",
         "kind": "schema",
-        "name": "NAWelcomeHome"
+        "name": "NAWelcomeHome",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeHomeData",
         "kind": "schema",
-        "name": "NAWelcomeHomeData"
+        "name": "NAWelcomeHomeData",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeHomeDataResponse",
         "kind": "schema",
-        "name": "NAWelcomeHomeDataResponse"
+        "name": "NAWelcomeHomeDataResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeModule",
         "kind": "schema",
-        "name": "NAWelcomeModule"
+        "name": "NAWelcomeModule",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomePerson",
         "kind": "schema",
-        "name": "NAWelcomePerson"
+        "name": "NAWelcomePerson",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomePersonsAwayResponse",
         "kind": "schema",
-        "name": "NAWelcomePersonsAwayResponse"
+        "name": "NAWelcomePersonsAwayResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomePersonsHomeResponse",
         "kind": "schema",
-        "name": "NAWelcomePersonsHomeResponse"
+        "name": "NAWelcomePersonsHomeResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomePlace",
         "kind": "schema",
-        "name": "NAWelcomePlace"
+        "name": "NAWelcomePlace",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeSnapshot",
         "kind": "schema",
-        "name": "NAWelcomeSnapshot"
+        "name": "NAWelcomeSnapshot",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeSubEvent",
         "kind": "schema",
-        "name": "NAWelcomeSubEvent"
+        "name": "NAWelcomeSubEvent",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeUser",
         "kind": "schema",
-        "name": "NAWelcomeUser"
+        "name": "NAWelcomeUser",
+        "type": "object"
       },
       {
         "id": "schema:NAWelcomeWebhookResponse",
         "kind": "schema",
-        "name": "NAWelcomeWebhookResponse"
+        "name": "NAWelcomeWebhookResponse",
+        "type": "object"
       },
       {
         "id": "schema:NAYearMonth",
         "kind": "schema",
-        "name": "NAYearMonth"
+        "name": "NAYearMonth",
+        "type": "object"
       },
       {
         "id": "schema:NAZone",
         "kind": "schema",
-        "name": "NAZone"
+        "name": "NAZone",
+        "type": "object"
       }
     ]
   },

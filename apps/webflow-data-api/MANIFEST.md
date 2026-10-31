@@ -12,7 +12,7 @@ Webflow Data API operations available to site API tokens, scoped by Webflow to t
 
 | | |
 | --- | --- |
-| Signed bundle | `b8c0c8da2bf988cd4e338797cad46c8a43c7625440a812fa200e18d77a6ea722` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.webflow.com/v2` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.webflow.com/v2/sites/{value}` |
@@ -38,117 +38,119 @@ Independent integration for Webflow Data API. Not affiliated with or endorsed by
 
 ## Operations (112)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/asset_folders/{asset_folder_id}` | get-asset-folder | Get Asset Folder |
-| DELETE | `/assets/{asset_id}` | delete-asset | Delete Asset |
-| GET | `/assets/{asset_id}` | get-asset | Get Asset |
-| PATCH | `/assets/{asset_id}` | patch-asset | Update Asset |
-| DELETE | `/collections/{collection_id}` | delete-collection | Delete Collection |
-| GET | `/collections/{collection_id}` | collection-details | Get Collection Details |
-| PATCH | `/collections/{collection_id}` | patch-collection | Update Collection |
-| POST | `/collections/{collection_id}/fields` | create-field | Create Collection Field |
-| DELETE | `/collections/{collection_id}/fields/{field_id}` | delete-field | Delete Collection Field |
-| PATCH | `/collections/{collection_id}/fields/{field_id}` | update-field | Update Collection Field |
-| DELETE | `/collections/{collection_id}/items` | delete-items | Delete Collection Items |
-| GET | `/collections/{collection_id}/items` | list-collection-items | List Collection Items |
-| PATCH | `/collections/{collection_id}/items` | update-items | Update Collection Items |
-| POST | `/collections/{collection_id}/items` | create-item | Create Collection Item(s) |
-| POST | `/collections/{collection_id}/items/bulk` | create-items | Create Collection Items |
-| DELETE | `/collections/{collection_id}/items/live` | delete-items-live | Unpublish Live Collection Items |
-| GET | `/collections/{collection_id}/items/live` | list-collection-items-live | List Live Collection Items |
-| PATCH | `/collections/{collection_id}/items/live` | update-items-live | Update Live Collection Items |
-| POST | `/collections/{collection_id}/items/live` | create-item-live | Create Live Collection Item(s) |
-| POST | `/collections/{collection_id}/items/publish` | publish-item | Publish Collection Item |
-| DELETE | `/collections/{collection_id}/items/{item_id}` | delete-item | Delete Collection Item |
-| GET | `/collections/{collection_id}/items/{item_id}` | Get-Item | Get Collection Item |
-| PATCH | `/collections/{collection_id}/items/{item_id}` | update-item | Update Collection Item |
-| DELETE | `/collections/{collection_id}/items/{item_id}/live` | delete-item-live | Unpublish Live Collection Item |
-| GET | `/collections/{collection_id}/items/{item_id}/live` | get-item-live | Get Live Collection Item |
-| PATCH | `/collections/{collection_id}/items/{item_id}/live` | update-item-live | Update Live Collection Item |
-| GET | `/collections/{sku_collection_id}/items/{sku_id}/inventory` | list-inventory | List Inventory |
-| PATCH | `/collections/{sku_collection_id}/items/{sku_id}/inventory` | update-inventory | Update Item Inventory |
-| DELETE | `/form_submissions/{form_submission_id}` | delete-form-submission | Delete Form Submission |
-| GET | `/form_submissions/{form_submission_id}` | get-form-submission | Get Form Submission |
-| PATCH | `/form_submissions/{form_submission_id}` | modify-form-submission | Modify Form Submission |
-| GET | `/forms/{form_id}` | get-form-schema | Get Form Schema |
-| GET | `/forms/{form_id}/submissions` | list-submissions | List Form Submissions |
-| GET | `/pages/{page_id}` | get-page-metadata | Get Page Metadata |
-| PUT | `/pages/{page_id}` | update-page-settings | Update Page Metadata |
-| GET | `/pages/{page_id}/dom` | get-static-content | Get Page Content |
-| POST | `/pages/{page_id}/dom` | update-static-content | Update Page Content |
-| GET | `/sites` | list-sites | List Sites |
-| DELETE | `/sites/{site_id}` | delete-site | Delete Site |
-| GET | `/sites/{site_id}` | get-site | Get Site |
-| PATCH | `/sites/{site_id}` | update-site | Update Site |
-| GET | `/sites/{site_id}/activity_logs` | get-site-activity-logs | Get Site Activity Logs |
-| GET | `/sites/{site_id}/analyze/reports/time_on_page` | get-analyze-time-on-page-report | Get Time On Page Report |
-| GET | `/sites/{site_id}/analyze/reports/top_dimensions` | get-analyze-top-dimensions-report | Get Top Dimensions Report |
-| GET | `/sites/{site_id}/analyze/reports/top_events` | get-analyze-top-events-report | Get Top Events Report |
-| GET | `/sites/{site_id}/analyze/reports/top_pages` | get-analyze-top-pages-report | Get Top Pages Report |
-| GET | `/sites/{site_id}/analyze/reports/traffic` | get-analyze-traffic-report | Get Traffic Report |
-| GET | `/sites/{site_id}/asset_folders` | list-asset-folders | List Asset Folders |
-| POST | `/sites/{site_id}/asset_folders` | create-asset-folder | Create Asset Folder |
-| GET | `/sites/{site_id}/assets` | list-assets | List Assets |
-| POST | `/sites/{site_id}/assets` | create-asset | Upload Asset |
-| GET | `/sites/{site_id}/collections` | list-collections | List Collections |
-| POST | `/sites/{site_id}/collections` | create-collection | Create Collection |
-| GET | `/sites/{site_id}/comments` | list-comment-threads | List Comment Threads |
-| GET | `/sites/{site_id}/comments/{comment_thread_id}` | get-comment-thread | Get Comment Thread |
-| PATCH | `/sites/{site_id}/comments/{comment_thread_id}` | resolve-comment-thread | Resolve Comment Thread |
-| GET | `/sites/{site_id}/comments/{comment_thread_id}/replies` | list-comment-replies | List Comment Replies |
-| POST | `/sites/{site_id}/comments/{comment_thread_id}/replies` | create-comment-reply | Create Comment Reply |
-| GET | `/sites/{site_id}/components` | list-components | List Components |
-| GET | `/sites/{site_id}/components/{component_id}/dom` | get-component-content | Get Component Content |
-| POST | `/sites/{site_id}/components/{component_id}/dom` | update-component-content | Update Component Content |
-| GET | `/sites/{site_id}/components/{component_id}/properties` | get-component-properties | Get Component Properties |
-| POST | `/sites/{site_id}/components/{component_id}/properties` | update-component-properties | Update Component Properties |
-| GET | `/sites/{site_id}/custom_domains` | get-custom-domains | Get Custom Domains |
-| GET | `/sites/{site_id}/custom_fonts` | list-custom-fonts | List custom fonts |
-| POST | `/sites/{site_id}/custom_fonts` | create-custom-font | Create custom font |
-| POST | `/sites/{site_id}/custom_fonts/batchCreate` | batch-create-custom-fonts | Batch create custom fonts |
-| POST | `/sites/{site_id}/custom_fonts/batchDelete` | batch-delete-custom-fonts | Batch delete custom fonts |
-| DELETE | `/sites/{site_id}/custom_fonts/{font_id}` | delete-custom-font | Delete custom font |
-| GET | `/sites/{site_id}/custom_fonts/{font_id}` | get-custom-font | Get custom font |
-| PATCH | `/sites/{site_id}/custom_fonts/{font_id}` | update-custom-font | Update custom font |
-| PUT | `/sites/{site_id}/custom_fonts/{font_id}/file` | replace-custom-font-file | Replace custom font file |
-| GET | `/sites/{site_id}/ecommerce/settings` | ecommerce-settings | Get Ecommerce Settings |
-| GET | `/sites/{site_id}/form_submissions` | list-submissions-by-site | List Form Submissions by Site |
-| DELETE | `/sites/{site_id}/form_submissions/{form_submission_id}` | delete-form-submission-by-site | Delete Form Submission by Site |
-| GET | `/sites/{site_id}/form_submissions/{form_submission_id}` | get-form-submission-by-site | Get Form Submission by Site |
-| PATCH | `/sites/{site_id}/form_submissions/{form_submission_id}` | modify-form-submission-by-site | Modify Form Submission by Site |
-| GET | `/sites/{site_id}/forms` | list-forms | List Forms |
-| GET | `/sites/{site_id}/forms/{form_id}/submissions` | list-submissions | List Form Submissions |
-| DELETE | `/sites/{site_id}/integrations/google_tags` | delete-google-tags | Delete Google Tags |
-| GET | `/sites/{site_id}/integrations/google_tags` | list-google-tags | List Google Tags |
-| PATCH | `/sites/{site_id}/integrations/google_tags` | upsert-google-tags | Update Google Tag |
-| DELETE | `/sites/{site_id}/integrations/google_tags/{tag_id}` | delete-google-tag | Delete Google Tag |
-| GET | `/sites/{site_id}/orders` | list-orders | List Orders |
-| GET | `/sites/{site_id}/orders/{order_id}` | get-order | Get Order |
-| PATCH | `/sites/{site_id}/orders/{order_id}` | update-order | Update Order |
-| POST | `/sites/{site_id}/orders/{order_id}/fulfill` | fulfill-order | Fulfill Order |
-| POST | `/sites/{site_id}/orders/{order_id}/refund` | refund-order | Refund Order |
-| POST | `/sites/{site_id}/orders/{order_id}/unfulfill` | unfulfill-order | Unfulfill Order |
-| GET | `/sites/{site_id}/pages` | list-pages | List Pages |
-| GET | `/sites/{site_id}/plan` | get-site-plan | Get Site Plan |
-| GET | `/sites/{site_id}/products` | list-products | List Products & SKUs |
-| POST | `/sites/{site_id}/products` | create-product | Create Product & SKU |
-| GET | `/sites/{site_id}/products/{product_id}` | get-product | Get Product and SKUs |
-| PATCH | `/sites/{site_id}/products/{product_id}` | update-product | Update Product |
-| POST | `/sites/{site_id}/products/{product_id}/skus` | create-skus | Create SKUs |
-| PATCH | `/sites/{site_id}/products/{product_id}/skus/{sku_id}` | update-sku | Update SKU |
-| POST | `/sites/{site_id}/publish` | site-publish | Publish Site |
-| GET | `/sites/{site_id}/redirects` | get-redirects | Get 301 redirects |
-| POST | `/sites/{site_id}/redirects` | create-redirect | Create a 301 redirect |
-| DELETE | `/sites/{site_id}/redirects/{redirect_id}` | delete-redirects | Delete 301 redirects |
-| PATCH | `/sites/{site_id}/redirects/{redirect_id}` | update-redirect | Update 301 redirect |
-| DELETE | `/sites/{site_id}/robots_txt` | delete-robots-txt | Delete robots.txt |
-| GET | `/sites/{site_id}/robots_txt` | get-robots-txt | Get robots.txt |
-| PATCH | `/sites/{site_id}/robots_txt` | update-robots-txt | Update robots.txt |
-| PUT | `/sites/{site_id}/robots_txt` | replace-robots-txt | Replace robots.txt |
-| GET | `/sites/{site_id}/webhooks` | list-webhooks | List Webhooks |
-| POST | `/sites/{site_id}/webhooks` | create-webhook | Create Webhook |
-| DELETE | `/sites/{site_id}/well_known` | delete-well-known | Delete a well-known file |
-| PUT | `/sites/{site_id}/well_known` | set-well-known | Set a well-known file |
-| DELETE | `/webhooks/{webhook_id}` | remove-webhook | Remove Webhook |
-| GET | `/webhooks/{webhook_id}` | get-webhook | Get Webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/asset_folders/{asset_folder_id}` | get-asset-folder | `asset_folder_id`* | object | yes | Get Asset Folder |
+| GET | `/assets/{asset_id}` | get-asset | `asset_id`*, `localeId` | object | yes | Get Asset |
+| DELETE | `/assets/{asset_id}` | delete-asset | `asset_id`* | — |  | Delete Asset |
+| PATCH | `/assets/{asset_id}` | patch-asset | `asset_id`*, `localeId`, body*: object | object |  | Update Asset |
+| GET | `/collections/{collection_id}` | collection-details | `collection_id`* | object | yes | Get Collection Details |
+| DELETE | `/collections/{collection_id}` | delete-collection | `collection_id`* | — |  | Delete Collection |
+| PATCH | `/collections/{collection_id}` | patch-collection | `collection_id`*, body*: object | object |  | Update Collection |
+| POST | `/collections/{collection_id}/fields` | create-field | `collection_id`*, body*: object | object |  | Create Collection Field |
+| DELETE | `/collections/{collection_id}/fields/{field_id}` | delete-field | `collection_id`*, `field_id`* | — |  | Delete Collection Field |
+| PATCH | `/collections/{collection_id}/fields/{field_id}` | update-field | `collection_id`*, `field_id`*, body: object | object |  | Update Collection Field |
+| GET | `/collections/{collection_id}/items` | list-collection-items | `collection_id`*, `cmsLocaleId`, `offset`, `limit`, `name`, `slug`, `createdOn`, `lastPublished`, `lastUpdated`, `filter`, `sortBy`, `sortOrder`, `sort`, `translatable` | object | yes | List Collection Items |
+| POST | `/collections/{collection_id}/items` | create-item | `collection_id`*, `skipInvalidFiles`, body: object | object |  | Create Collection Item(s) |
+| DELETE | `/collections/{collection_id}/items` | delete-items | `collection_id`*, body: object | — |  | Delete Collection Items |
+| PATCH | `/collections/{collection_id}/items` | update-items | `collection_id`*, `skipInvalidFiles`, body: object | object |  | Update Collection Items |
+| POST | `/collections/{collection_id}/items/bulk` | create-items | `collection_id`*, `skipInvalidFiles`, body: object | object |  | Create Collection Items |
+| GET | `/collections/{collection_id}/items/live` | list-collection-items-live | `collection_id`*, `cmsLocaleId`, `offset`, `limit`, `name`, `slug`, `createdOn`, `lastPublished`, `lastUpdated`, `filter`, `sortBy`, `sortOrder`, `sort`, `translatable` | object | yes | List Live Collection Items |
+| POST | `/collections/{collection_id}/items/live` | create-item-live | `collection_id`*, `skipInvalidFiles`, body: object | object |  | Create Live Collection Item(s) |
+| DELETE | `/collections/{collection_id}/items/live` | delete-items-live | `collection_id`*, body: object | — |  | Unpublish Live Collection Items |
+| PATCH | `/collections/{collection_id}/items/live` | update-items-live | `collection_id`*, `skipInvalidFiles`, body: object | object |  | Update Live Collection Items |
+| POST | `/collections/{collection_id}/items/publish` | publish-item | `collection_id`*, body: object | object |  | Publish Collection Item |
+| GET | `/collections/{collection_id}/items/{item_id}` | Get-Item | `collection_id`*, `item_id`*, `cmsLocaleId`, `translatable` | object | yes | Get Collection Item |
+| DELETE | `/collections/{collection_id}/items/{item_id}` | delete-item | `collection_id`*, `item_id`*, `cmsLocaleId` | — |  | Delete Collection Item |
+| PATCH | `/collections/{collection_id}/items/{item_id}` | update-item | `collection_id`*, `item_id`*, `skipInvalidFiles`, body: object | object |  | Update Collection Item |
+| GET | `/collections/{collection_id}/items/{item_id}/live` | get-item-live | `collection_id`*, `item_id`*, `cmsLocaleId`, `translatable` | object | yes | Get Live Collection Item |
+| DELETE | `/collections/{collection_id}/items/{item_id}/live` | delete-item-live | `collection_id`*, `item_id`*, `cmsLocaleId` | — |  | Unpublish Live Collection Item |
+| PATCH | `/collections/{collection_id}/items/{item_id}/live` | update-item-live | `collection_id`*, `item_id`*, `skipInvalidFiles`, body: object | object |  | Update Live Collection Item |
+| GET | `/collections/{sku_collection_id}/items/{sku_id}/inventory` | list-inventory | `sku_collection_id`*, `sku_id`* | object | yes | List Inventory |
+| PATCH | `/collections/{sku_collection_id}/items/{sku_id}/inventory` | update-inventory | `sku_collection_id`*, `sku_id`*, body*: object | object |  | Update Item Inventory |
+| GET | `/form_submissions/{form_submission_id}` | get-form-submission | `form_submission_id`* | object | yes | Get Form Submission |
+| DELETE | `/form_submissions/{form_submission_id}` | delete-form-submission | `form_submission_id`* | — |  | Delete Form Submission |
+| PATCH | `/form_submissions/{form_submission_id}` | modify-form-submission | `form_submission_id`*, body*: object | object |  | Modify Form Submission |
+| GET | `/forms/{form_id}` | get-form-schema | `form_id`* | object | yes | Get Form Schema |
+| GET | `/forms/{form_id}/submissions` | list-submissions | `form_id`*, `offset`, `limit` | object | yes | List Form Submissions |
+| GET | `/pages/{page_id}` | get-page-metadata | `page_id`*, `localeId`, `translatable` | object | yes | Get Page Metadata |
+| PUT | `/pages/{page_id}` | update-page-settings | `page_id`*, `localeId`, body: object | object |  | Update Page Metadata |
+| GET | `/pages/{page_id}/dom` | get-static-content | `page_id`*, `localeId`, `limit`, `offset`, `translatable` | object | yes | Get Page Content |
+| POST | `/pages/{page_id}/dom` | update-static-content | `page_id`*, `localeId`*, body: object | object |  | Update Page Content |
+| GET | `/sites` | list-sites | — | object | yes | List Sites |
+| GET | `/sites/{site_id}` | get-site | `site_id`* | object | yes | Get Site |
+| DELETE | `/sites/{site_id}` | delete-site | `site_id`* | — |  | Delete Site |
+| PATCH | `/sites/{site_id}` | update-site | `site_id`*, body: object | object |  | Update Site |
+| GET | `/sites/{site_id}/activity_logs` | get-site-activity-logs | `site_id`*, `limit`, `offset` | object | yes | Get Site Activity Logs |
+| GET | `/sites/{site_id}/analyze/reports/time_on_page` | get-analyze-time-on-page-report | `site_id`*, `startTime`*, `endTime`*, `metricScope`*, `timeseries`, `deviceType`, `country`, `pagePath`, `trafficSource`, `referrer`, `browser`, `utmCampaign`, `utmMedium`, `utmSource`, `filter` | object | yes | Get Time On Page Report |
+| GET | `/sites/{site_id}/analyze/reports/top_dimensions` | get-analyze-top-dimensions-report | `site_id`*, `startTime`*, `endTime`*, `dimension`*, `metricScope`*, `limit`, `deviceType`, `country`, `pagePath`, `trafficSource`, `referrer`, `browser`, `utmCampaign`, `utmMedium`, `utmSource`, `filter` | object | yes | Get Top Dimensions Report |
+| GET | `/sites/{site_id}/analyze/reports/top_events` | get-analyze-top-events-report | `site_id`*, `startTime`*, `endTime`*, `limit`, `timeseries`, `deviceType`, `country`, `pagePath`, `trafficSource`, `browser`, `utmCampaign`, `utmMedium`, `utmSource`, `filter` | object | yes | Get Top Events Report |
+| GET | `/sites/{site_id}/analyze/reports/top_pages` | get-analyze-top-pages-report | `site_id`*, `startTime`*, `endTime`*, `sortBy`, `limit`, `timeseries`, `deviceType`, `country`, `pagePath`, `trafficSource`, `referrer`, `browser`, `utmCampaign`, `utmMedium`, `utmSource`, `filter` | object | yes | Get Top Pages Report |
+| GET | `/sites/{site_id}/analyze/reports/traffic` | get-analyze-traffic-report | `site_id`*, `startTime`*, `endTime`*, `metricScope`*, `bucketTimeZone`*, `deviceType`, `country`, `pagePath`, `trafficSource`, `referrer`, `browser`, `utmCampaign`, `utmMedium`, `utmSource`, `filter` | object | yes | Get Traffic Report |
+| GET | `/sites/{site_id}/asset_folders` | list-asset-folders | `site_id`* | object | yes | List Asset Folders |
+| POST | `/sites/{site_id}/asset_folders` | create-asset-folder | `site_id`*, body*: object | object |  | Create Asset Folder |
+| GET | `/sites/{site_id}/assets` | list-assets | `site_id`*, `localeId`, `offset`, `limit`, `folderId` | object | yes | List Assets |
+| POST | `/sites/{site_id}/assets` | create-asset | `site_id`*, body*: object | object |  | Upload Asset |
+| GET | `/sites/{site_id}/collections` | list-collections | `site_id`* | object | yes | List Collections |
+| POST | `/sites/{site_id}/collections` | create-collection | `site_id`*, body*: object | object |  | Create Collection |
+| GET | `/sites/{site_id}/comments` | list-comment-threads | `site_id`*, `localeId`, `offset`, `limit`, `sortBy`, `sortOrder` | object | yes | List Comment Threads |
+| GET | `/sites/{site_id}/comments/{comment_thread_id}` | get-comment-thread | `site_id`*, `comment_thread_id`*, `localeId`, `offset`, `limit`, `sortBy`, `sortOrder` | object | yes | Get Comment Thread |
+| PATCH | `/sites/{site_id}/comments/{comment_thread_id}` | resolve-comment-thread | `site_id`*, `comment_thread_id`*, body*: object | object |  | Resolve Comment Thread |
+| GET | `/sites/{site_id}/comments/{comment_thread_id}/replies` | list-comment-replies | `site_id`*, `comment_thread_id`*, `localeId`, `offset`, `limit`, `sortBy`, `sortOrder` | object | yes | List Comment Replies |
+| POST | `/sites/{site_id}/comments/{comment_thread_id}/replies` | create-comment-reply | `site_id`*, `comment_thread_id`*, body*: object | object |  | Create Comment Reply |
+| GET | `/sites/{site_id}/components` | list-components | `site_id`*, `branchId`, `limit`, `offset` | object | yes | List Components |
+| GET | `/sites/{site_id}/components/{component_id}/dom` | get-component-content | `site_id`*, `component_id`*, `localeId`, `branchId`, `limit`, `offset`, `translatable` | object | yes | Get Component Content |
+| POST | `/sites/{site_id}/components/{component_id}/dom` | update-component-content | `site_id`*, `component_id`*, `localeId`, `branchId`, body: object | object |  | Update Component Content |
+| GET | `/sites/{site_id}/components/{component_id}/properties` | get-component-properties | `site_id`*, `component_id`*, `localeId`, `branchId`, `limit`, `offset`, `translatable` | object | yes | Get Component Properties |
+| POST | `/sites/{site_id}/components/{component_id}/properties` | update-component-properties | `site_id`*, `component_id`*, `localeId`, `branchId`, body: object | object |  | Update Component Properties |
+| GET | `/sites/{site_id}/custom_domains` | get-custom-domains | `site_id`* | object | yes | Get Custom Domains |
+| GET | `/sites/{site_id}/custom_fonts` | list-custom-fonts | `site_id`*, `offset`, `limit` | object | yes | List custom fonts |
+| POST | `/sites/{site_id}/custom_fonts` | create-custom-font | `site_id`*, body*: object | object |  | Create custom font |
+| POST | `/sites/{site_id}/custom_fonts/batchCreate` | batch-create-custom-fonts | `site_id`*, body*: object | object |  | Batch create custom fonts |
+| POST | `/sites/{site_id}/custom_fonts/batchDelete` | batch-delete-custom-fonts | `site_id`*, body*: object | object |  | Batch delete custom fonts |
+| GET | `/sites/{site_id}/custom_fonts/{font_id}` | get-custom-font | `site_id`*, `font_id`* | object | yes | Get custom font |
+| DELETE | `/sites/{site_id}/custom_fonts/{font_id}` | delete-custom-font | `site_id`*, `font_id`* | — |  | Delete custom font |
+| PATCH | `/sites/{site_id}/custom_fonts/{font_id}` | update-custom-font | `site_id`*, `font_id`*, body*: object | object |  | Update custom font |
+| PUT | `/sites/{site_id}/custom_fonts/{font_id}/file` | replace-custom-font-file | `site_id`*, `font_id`*, body*: object | object |  | Replace custom font file |
+| GET | `/sites/{site_id}/ecommerce/settings` | ecommerce-settings | `site_id`* | object | yes | Get Ecommerce Settings |
+| GET | `/sites/{site_id}/form_submissions` | list-submissions-by-site | `site_id`*, `elementId`, `offset`, `limit` | object | yes | List Form Submissions by Site |
+| GET | `/sites/{site_id}/form_submissions/{form_submission_id}` | get-form-submission-by-site | `site_id`*, `form_submission_id`* | object | yes | Get Form Submission by Site |
+| DELETE | `/sites/{site_id}/form_submissions/{form_submission_id}` | delete-form-submission-by-site | `site_id`*, `form_submission_id`* | — |  | Delete Form Submission by Site |
+| PATCH | `/sites/{site_id}/form_submissions/{form_submission_id}` | modify-form-submission-by-site | `site_id`*, `form_submission_id`*, body*: object | object |  | Modify Form Submission by Site |
+| GET | `/sites/{site_id}/forms` | list-forms | `site_id`*, `limit`, `offset` | object | yes | List Forms |
+| GET | `/sites/{site_id}/forms/{form_id}/submissions` | list-submissions | `site_id`*, `form_id`*, `offset`, `limit` | object | yes | List Form Submissions |
+| GET | `/sites/{site_id}/integrations/google_tags` | list-google-tags | `site_id`* | object | yes | List Google Tags |
+| DELETE | `/sites/{site_id}/integrations/google_tags` | delete-google-tags | `site_id`* | — |  | Delete Google Tags |
+| PATCH | `/sites/{site_id}/integrations/google_tags` | upsert-google-tags | `site_id`*, body*: object | object |  | Update Google Tag |
+| DELETE | `/sites/{site_id}/integrations/google_tags/{tag_id}` | delete-google-tag | `site_id`*, `tag_id`* | object |  | Delete Google Tag |
+| GET | `/sites/{site_id}/orders` | list-orders | `site_id`*, `status`, `offset`, `limit` | object | yes | List Orders |
+| GET | `/sites/{site_id}/orders/{order_id}` | get-order | `site_id`*, `order_id`* | object | yes | Get Order |
+| PATCH | `/sites/{site_id}/orders/{order_id}` | update-order | `site_id`*, `order_id`*, body*: object | object |  | Update Order |
+| POST | `/sites/{site_id}/orders/{order_id}/fulfill` | fulfill-order | `site_id`*, `order_id`*, body: object | object |  | Fulfill Order |
+| POST | `/sites/{site_id}/orders/{order_id}/refund` | refund-order | `site_id`*, `order_id`*, body: object | object |  | Refund Order |
+| POST | `/sites/{site_id}/orders/{order_id}/unfulfill` | unfulfill-order | `site_id`*, `order_id`* | object |  | Unfulfill Order |
+| GET | `/sites/{site_id}/pages` | list-pages | `site_id`*, `localeId`, `limit`, `offset` | object | yes | List Pages |
+| GET | `/sites/{site_id}/plan` | get-site-plan | `site_id`* | object | yes | Get Site Plan |
+| GET | `/sites/{site_id}/products` | list-products | `site_id`*, `offset`, `limit` | object | yes | List Products & SKUs |
+| POST | `/sites/{site_id}/products` | create-product | `site_id`*, body*: object | object |  | Create Product & SKU |
+| GET | `/sites/{site_id}/products/{product_id}` | get-product | `site_id`*, `product_id`* | object | yes | Get Product and SKUs |
+| PATCH | `/sites/{site_id}/products/{product_id}` | update-product | `site_id`*, `product_id`*, body*: object | object |  | Update Product |
+| POST | `/sites/{site_id}/products/{product_id}/skus` | create-skus | `site_id`*, `product_id`*, body*: object | object |  | Create SKUs |
+| PATCH | `/sites/{site_id}/products/{product_id}/skus/{sku_id}` | update-sku | `site_id`*, `product_id`*, `sku_id`*, body*: object | object |  | Update SKU |
+| POST | `/sites/{site_id}/publish` | site-publish | `site_id`*, body: object | object |  | Publish Site |
+| GET | `/sites/{site_id}/redirects` | get-redirects | `site_id`* | object | yes | Get 301 redirects |
+| POST | `/sites/{site_id}/redirects` | create-redirect | `site_id`*, body: object | object |  | Create a 301 redirect |
+| DELETE | `/sites/{site_id}/redirects/{redirect_id}` | delete-redirects | `site_id`*, `redirect_id`* | object |  | Delete 301 redirects |
+| PATCH | `/sites/{site_id}/redirects/{redirect_id}` | update-redirect | `site_id`*, `redirect_id`*, body: object | object |  | Update 301 redirect |
+| GET | `/sites/{site_id}/robots_txt` | get-robots-txt | `site_id`* | object | yes | Get robots.txt |
+| PUT | `/sites/{site_id}/robots_txt` | replace-robots-txt | `site_id`*, body: object | object |  | Replace robots.txt |
+| DELETE | `/sites/{site_id}/robots_txt` | delete-robots-txt | `site_id`*, body: object | object |  | Delete robots.txt |
+| PATCH | `/sites/{site_id}/robots_txt` | update-robots-txt | `site_id`*, body: object | object |  | Update robots.txt |
+| GET | `/sites/{site_id}/webhooks` | list-webhooks | `site_id`* | object | yes | List Webhooks |
+| POST | `/sites/{site_id}/webhooks` | create-webhook | `site_id`*, body*: object | object |  | Create Webhook |
+| PUT | `/sites/{site_id}/well_known` | set-well-known | `site_id`*, body: object | — |  | Set a well-known file |
+| DELETE | `/sites/{site_id}/well_known` | delete-well-known | `site_id`*, body: object | — |  | Delete a well-known file |
+| GET | `/webhooks/{webhook_id}` | get-webhook | `webhook_id`* | object | yes | Get Webhook |
+| DELETE | `/webhooks/{webhook_id}` | remove-webhook | `webhook_id`* | — |  | Remove Webhook |

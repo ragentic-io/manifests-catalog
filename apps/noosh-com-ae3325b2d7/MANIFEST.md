@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NooshInc_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `ae97d24ea3dd75acb0a6e9bd25b10740fe0510c47fb835538470956dddc1cdb2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,107 +34,109 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NooshInc_profile_im
 
 208 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/fileTags` | getFileTags | List Tags from Workgroup and Project. |
-| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/files` | getFiles | List Files from Project. Works for Regular and Remote Files |
-| POST | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/files` | uploadFile | Upload File to Project. A multipart/form-data request with a name "file" |
-| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/files/{file_id}` | getFile | Get File from Project. Works for Regular and Remote Files |
-| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | getSpec | List a specific spec of project Level |
-| PUT | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | putSpec | Update a specific Spec |
-| POST | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/teammembers` | postTeamMemberOfProject | Invite a team member or all the members of team template for the specific project. |
-| GET | `/1.1/workgroups/{workgroup_id}/specTypes/{spec_type_id}/specTypeFields` | getSpecTypeFields | Get Spec Type Fields |
-| GET | `/v1/countries` | getCountryList | List all countries |
-| GET | `/v1/workgroups` | getWorkgroupList | List the workgroups |
-| GET | `/v1/workgroups/{workgroup_id}/automaticInvitations` | getAutomaticInvitationList | List current user's automatic invitations info |
-| GET | `/v1/workgroups/{workgroup_id}/billingRecipients` | getBillingRecipients | List Billing Recipients |
-| GET | `/v1/workgroups/{workgroup_id}/buyOrders` | getBuyOrderListOfWorkgroup | List the buy orders of workgroup |
-| GET | `/v1/workgroups/{workgroup_id}/buyOrders/{order_id}` | getBuyOrderOfWorkgroup | Get a specific buy order of workgroup |
-| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups` | getClientWorkgroupList | List client workgroups |
-| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}` | getSpecificClientWorkgroup | Get a specific client workgroups |
-| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}/projectCategory` | getProjectCategoryListOfClient | List the project categories of client side |
-| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}/projectHomeUserFields` | getProjectHomeUserFieldListOfClient | List projec home user fields of client workgroup |
-| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}/projectStatus` | getProjectStatusOfClient | List the project status of client |
-| GET | `/v1/workgroups/{workgroup_id}/contacts` | getContactList | List the contacts |
-| GET | `/v1/workgroups/{workgroup_id}/contacts/{user_id}` | getContactUserInfo | Contact Info |
-| GET | `/v1/workgroups/{workgroup_id}/customTaskStatus` | getWgTaskStatusListOfWorkgroup | Get custom task status of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/customTaskTypes` | getCustomTaskTypesOfWg | Get custom task types of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/deactivationReasons` | getDeactivationReasonList | List all deactivation reasons |
-| GET | `/v1/workgroups/{workgroup_id}/defaultTaskPriority` | TaskPriorityList | Get default task priority list |
-| GET | `/v1/workgroups/{workgroup_id}/defaultTaskStatus` | getDefaultTaskStatusList | Get default task status list |
-| GET | `/v1/workgroups/{workgroup_id}/detail` | getWorkgroupDetail | Detail workgroup info |
-| PUT | `/v1/workgroups/{workgroup_id}/detail` | putWorkgroup | Update a specific Workgroup |
-| GET | `/v1/workgroups/{workgroup_id}/exchangeRate` | getExchangeRateList | Get Exchange Rate List |
-| POST | `/v1/workgroups/{workgroup_id}/exchangeRate` | postExchangeRate | Create Exchange Rates |
-| GET | `/v1/workgroups/{workgroup_id}/myTimeCards` | getMyTimeCardList | List my time cards |
-| GET | `/v1/workgroups/{workgroup_id}/myTimeCards/{timeCard_id}` | getMyTimeCard | Get a specific my time cards |
-| GET | `/v1/workgroups/{workgroup_id}/productTypes` | getProductTypeListOfWorkgroup | Get product type of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/productTypesOfSpecTypes` | getSpecProductTypeListOfWorkgroup | Get product type of spec level by workgroupId |
-| POST | `/v1/workgroups/{workgroup_id}/productTypesOfSpecTypes` | postSpecProductTypeListOfWorkgroup | Register product types for spec types |
-| POST | `/v1/workgroups/{workgroup_id}/profileImage` | uploadProfileImage | Upload Profile Image. A multipart/form-data request with a name "file" |
-| GET | `/v1/workgroups/{workgroup_id}/projectCategory` | getProjectCategoryList | List the project categories |
-| GET | `/v1/workgroups/{workgroup_id}/projectHomeUserFields` | getProjectHomeUserFieldsList | List projec home user fields |
-| GET | `/v1/workgroups/{workgroup_id}/projectStatus` | getProjectStatus | List the project status |
-| GET | `/v1/workgroups/{workgroup_id}/projects` | getProjectList | List the projects |
-| POST | `/v1/workgroups/{workgroup_id}/projects` | postProject | Create a Project |
-| DELETE | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | deleteProject | Archieve a specific Project |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | getProject | Get a specific Project |
-| PATCH | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | patchProject | Patch a specific Project |
-| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | putProject | Update a specific Project |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders` | getBuyOrderList | List the buy orders |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders` | postBuyOrder | Create a quick buy order |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders/{order_id}` | getBuyOrder | Get a specific buy order |
-| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders/{order_id}` | putBuyOrder | Update a specific buy order |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/children` | attachProject | Attach children projects to specific Project |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/estimates` | getEstimateList | List the Estimates |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/estimates` | postEstimate | Create a Estimate |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/estimates/{estimate_id}` | getEstimate | Get a specific estimate of project |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/invoices/orders/{order_id}` | getInvoices | List invoices by a specific order |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/invoices/{invoice_id}` | getInvoice | List a specific invoice of project Level |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/invoices/{invoice_id}/files` | getInvoiceFiles | List files of invoice Level |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/memberroles/{user_id}` | getMemberRoles | List all the role options for the user |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/orders/{order_id}` | getOrder | Get a specific buy/sell order |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/quotes` | getQuoteList | List the quotes |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/quotes/{quote_id}` | getQuote | Get a specific quote of project |
-| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/quotes/{quote_id}` | putQuote | Accept / Reject a Quote |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfes` | getRfeList | List the RFES |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfes` | postRfe | Create a RFE |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfes/{rfe_id}` | getRfe | Get a specific Rfe |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfqs` | getRfqList | List the rfqs |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfqs/{rfq_id}` | getRfq | Get a specific Rfq |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/sellOrders` | getSellOrderList | List the sell orders |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/sellOrders/{order_id}` | getSellOrder | Get a specific sell order |
-| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/sellOrders/{order_id}` | putSellOrder | Update / Accept or Reject a specific sell order |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments` | getShipmentList | List shipments of project |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments` | postShipment | Create a shipment |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments/{shipment_id}` | getShipment | Get a specific shipment. |
-| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments/{shipment_id}/locations/{location_id}` | putShipmentLocation | Update a specific shipment location |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs` | getSpecList | List specs of project Level |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs` | postSpec | Create a Spec |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | get /v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id} | List a specific spec of project Level |
-| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | put /v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id} | Update a specific Spec |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/tasks` | getTaskListOfProject | Get task list of project level |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/tasks` | postTaskForProject | Create a new task |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/tasks/{task_id}` | getTaskOfProject | Get a sepcific task of project level |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teamMembersOfClientProject` | getTeamMemberListOfClientProject | List team member of client project side. |
-| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers` | getTeamMemberListOfProject | List team member of project. |
-| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers` | post /v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers | Deprecated, please use 1.1 Version |
-| DELETE | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers/{teammember_id}` | deleteTeamMemberOfProject | Delete a team member for the specific project. |
-| GET | `/v1/workgroups/{workgroup_id}/quoteStates` | getQuoteStateList | List the quote states |
-| GET | `/v1/workgroups/{workgroup_id}/quotes` | get /v1/workgroups/{workgroup_id}/quotes | List the quotes of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/receivedTimeCards` | getReceivedTimeCardList | List received time cards |
-| GET | `/v1/workgroups/{workgroup_id}/receivedTimeCards/{timeCard_id}` | getReceivedTimeCard | List a specific received time cards |
-| GET | `/v1/workgroups/{workgroup_id}/sellOrders` | getSellOrderListOfWorkgroup | List the sell orders of workgrop |
-| GET | `/v1/workgroups/{workgroup_id}/sellOrders/{order_id}` | getSellOrderOfWorkgroup | Get a specific sell order |
-| GET | `/v1/workgroups/{workgroup_id}/specTemplates` | getSpecTemplateList | List Spec Templates of Workgroup Level |
-| GET | `/v1/workgroups/{workgroup_id}/specTemplates/{spec_template_id}` | getSpecTemplate | Get a specific Spec Template |
-| GET | `/v1/workgroups/{workgroup_id}/specTypes/{spec_type_id}/specTypeFields` | get /v1/workgroups/{workgroup_id}/specTypes/{spec_type_id}/specTypeFields | Get Spec Type Fields |
-| GET | `/v1/workgroups/{workgroup_id}/supplierWorkgroups` | getSupplierWorkgroupList | List supplier workgroups |
-| GET | `/v1/workgroups/{workgroup_id}/supplierWorkgroups/{bu_supplier_workgroup_id}` | getSupplierWorkgroupDetail | Get the specific supplier of My Group |
-| GET | `/v1/workgroups/{workgroup_id}/taskTypes` | getTaskTypesOfWorkgroup | Get task types of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/tasks` | getTaskListOfWorkgroup | Get task list of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/tasks/{task_id}` | getTaskOfWorkgroup | Get a sepcific task of workgroup level |
-| GET | `/v1/workgroups/{workgroup_id}/teamTemplates` | getTeamTemplateList | List current user's team templates info |
-| GET | `/v1/workgroups/{workgroup_id}/teamTemplates/{team_template_id}` | getTeamTemplateDetail | Get current user's team template detal info |
-| GET | `/v1/workgroups/{workgroup_id}/workgroupMembers` | getWorkgroupMemberList | List the workgroup members |
-| GET | `/v1/workgroups/{workgroup_id}/workgroupMembers/{user_id}` | getWorkgroupMemberInfo | Workgroup Member Info |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/fileTags` | getFileTags | `workgroup_id`*, `project_id`* | FileTagResponseVO | yes | List Tags from Workgroup and Project. |
+| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/files` | getFiles | `workgroup_id`*, `project_id`* | FileResponseVO | yes | List Files from Project. Works for Regular and Remote Files |
+| POST | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/files` | uploadFile | `workgroup_id`*, `project_id`*, body: string:binary | FileResponseVO |  | Upload File to Project. A multipart/form-data request with a name "file" |
+| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/files/{file_id}` | getFile | `workgroup_id`*, `project_id`*, `file_id`* | FileResponseVO | yes | Get File from Project. Works for Regular and Remote Files |
+| GET | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | getSpec | `workgroup_id`*, `project_id`*, `spec_id`* | V1x1SpecExpandVO | yes | List a specific spec of project Level |
+| PUT | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | putSpec | `workgroup_id`*, `project_id`*, `spec_id`*, body: V1X1SpecUpdatingPO | SpecHTTPStatusVO |  | Update a specific Spec |
+| POST | `/1.1/workgroups/{workgroup_id}/projects/{project_id}/teammembers` | postTeamMemberOfProject | `workgroup_id`*, `project_id`*, body: TeamMemberPO | V1x1InvitedTeamMemberResultsVO |  | Invite a team member or all the members of team template for the specific project. |
+| GET | `/1.1/workgroups/{workgroup_id}/specTypes/{spec_type_id}/specTypeFields` | getSpecTypeFields | `workgroup_id`*, `spec_type_id`* | SpecTypeFieldsListVO | yes | Get Spec Type Fields |
+| GET | `/v1/countries` | getCountryList | — | CountryListVO | yes | List all countries |
+| GET | `/v1/workgroups` | getWorkgroupList | `workgroup_name`, `workgroup_types` | WorkgroupListVO | yes | List the workgroups |
+| GET | `/v1/workgroups/{workgroup_id}/automaticInvitations` | getAutomaticInvitationList | `workgroup_id`* | AutomaticInvitationsListVO | yes | List current user's automatic invitations info |
+| GET | `/v1/workgroups/{workgroup_id}/billingRecipients` | getBillingRecipients | `workgroup_id`* | ContactsListVO | yes | List Billing Recipients |
+| GET | `/v1/workgroups/{workgroup_id}/buyOrders` | getBuyOrderListOfWorkgroup | `workgroup_id`* | OrderWorkgroupLevelListVO | yes | List the buy orders of workgroup |
+| GET | `/v1/workgroups/{workgroup_id}/buyOrders/{order_id}` | getBuyOrderOfWorkgroup | `workgroup_id`*, `order_id`* | OrderExpandWorkgroupLevelVO | yes | Get a specific buy order of workgroup |
+| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups` | getClientWorkgroupList | `workgroup_id`* | ClientWorkgroupListVO | yes | List client workgroups |
+| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}` | getSpecificClientWorkgroup | `workgroup_id`*, `client_workgroup_id`* | ClientWorkgroupExpandVO | yes | Get a specific client workgroups |
+| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}/projectCategory` | getProjectCategoryListOfClient | `workgroup_id`*, `client_workgroup_id`* | ProjectCategoryListVO | yes | List the project categories of client side |
+| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}/projectHomeUserFields` | getProjectHomeUserFieldListOfClient | `workgroup_id`*, `client_workgroup_id`* | ProjectHomeUserFieldsListVO | yes | List projec home user fields of client workgroup |
+| GET | `/v1/workgroups/{workgroup_id}/clientWorkgroups/{client_workgroup_id}/projectStatus` | getProjectStatusOfClient | `workgroup_id`*, `client_workgroup_id`* | ProjectStatusListVO | yes | List the project status of client |
+| GET | `/v1/workgroups/{workgroup_id}/contacts` | getContactList | `workgroup_id`* | ContactsListVO | yes | List the contacts |
+| GET | `/v1/workgroups/{workgroup_id}/contacts/{user_id}` | getContactUserInfo | `workgroup_id`*, `user_id`* | UserDetailsExpandVO | yes | Contact Info |
+| GET | `/v1/workgroups/{workgroup_id}/customTaskStatus` | getWgTaskStatusListOfWorkgroup | `workgroup_id`* | WgTaskStatusListVO | yes | Get custom task status of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/customTaskTypes` | getCustomTaskTypesOfWg | `workgroup_id`* | TaskTypeListVO | yes | Get custom task types of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/deactivationReasons` | getDeactivationReasonList | `workgroup_id`* | DeactivationReasonListVO | yes | List all deactivation reasons |
+| GET | `/v1/workgroups/{workgroup_id}/defaultTaskPriority` | TaskPriorityList | `workgroup_id`* | TaskPriorityListVO | yes | Get default task priority list |
+| GET | `/v1/workgroups/{workgroup_id}/defaultTaskStatus` | getDefaultTaskStatusList | `workgroup_id`* | TaskStatusListVO | yes | Get default task status list |
+| GET | `/v1/workgroups/{workgroup_id}/detail` | getWorkgroupDetail | `workgroup_id`* | WorkgroupExpandVO | yes | Detail workgroup info |
+| PUT | `/v1/workgroups/{workgroup_id}/detail` | putWorkgroup | `workgroup_id`*, body: WorkgroupUpdPersistVO | WorkgroupHTTPStatusVO |  | Update a specific Workgroup |
+| GET | `/v1/workgroups/{workgroup_id}/exchangeRate` | getExchangeRateList | `workgroup_id`* | MultiExchangeRateListVO | yes | Get Exchange Rate List |
+| POST | `/v1/workgroups/{workgroup_id}/exchangeRate` | postExchangeRate | `workgroup_id`*, body: MultiExchangeRatePersistListVO | HTTPStatus |  | Create Exchange Rates |
+| GET | `/v1/workgroups/{workgroup_id}/myTimeCards` | getMyTimeCardList | `workgroup_id`* | TimeCardListVO | yes | List my time cards |
+| GET | `/v1/workgroups/{workgroup_id}/myTimeCards/{timeCard_id}` | getMyTimeCard | `workgroup_id`*, `timeCard_id`* | TimeCardDetailVO | yes | Get a specific my time cards |
+| GET | `/v1/workgroups/{workgroup_id}/productTypes` | getProductTypeListOfWorkgroup | `workgroup_id`* | WorkgroupAttributeListVO | yes | Get product type of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/productTypesOfSpecTypes` | getSpecProductTypeListOfWorkgroup | `workgroup_id`* | WorkgroupAttributeListVO | yes | Get product type of spec level by workgroupId |
+| POST | `/v1/workgroups/{workgroup_id}/productTypesOfSpecTypes` | postSpecProductTypeListOfWorkgroup | `workgroup_id`*, body: WgSpecPrdTypeRegPersistVO | WgSpecPrdTypeRegPersistVO |  | Register product types for spec types |
+| POST | `/v1/workgroups/{workgroup_id}/profileImage` | uploadProfileImage | `workgroup_id`*, body: string:binary | ProfileImageVO |  | Upload Profile Image. A multipart/form-data request with a name "file" |
+| GET | `/v1/workgroups/{workgroup_id}/projectCategory` | getProjectCategoryList | `workgroup_id`* | ProjectCategoryListVO | yes | List the project categories |
+| GET | `/v1/workgroups/{workgroup_id}/projectHomeUserFields` | getProjectHomeUserFieldsList | `workgroup_id`* | ProjectHomeUserFieldsListVO | yes | List projec home user fields |
+| GET | `/v1/workgroups/{workgroup_id}/projectStatus` | getProjectStatus | `workgroup_id`* | ProjectStatusListVO | yes | List the project status |
+| GET | `/v1/workgroups/{workgroup_id}/projects` | getProjectList | `workgroup_id`* | ProjectListVO | yes | List the projects |
+| POST | `/v1/workgroups/{workgroup_id}/projects` | postProject | `workgroup_id`*, body: ProjectPersistVO | ProjectVO |  | Create a Project |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | getProject | `workgroup_id`*, `project_id`* | ProjectExpandVO | yes | Get a specific Project |
+| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | putProject | `workgroup_id`*, `project_id`*, body: ProjectPersistVO | HTTPStatusVO |  | Update a specific Project |
+| DELETE | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | deleteProject | `workgroup_id`*, `project_id`* | HTTPStatusVO |  | Archieve a specific Project |
+| PATCH | `/v1/workgroups/{workgroup_id}/projects/{project_id}` | patchProject | `workgroup_id`*, `project_id`*, body: ProjectPatchPO | HTTPStatusVO |  | Patch a specific Project |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders` | getBuyOrderList | `workgroup_id`*, `project_id`* | OrderListVO | yes | List the buy orders |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders` | postBuyOrder | `workgroup_id`*, `project_id`*, body: OrderPO | OrderPO |  | Create a quick buy order |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders/{order_id}` | getBuyOrder | `workgroup_id`*, `project_id`*, `order_id`* | OrderDetailVO | yes | Get a specific buy order |
+| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/buyOrders/{order_id}` | putBuyOrder | `workgroup_id`*, `project_id`*, `order_id`*, body: OrderUpdPersistVO | OrderVO |  | Update a specific buy order |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/children` | attachProject | `workgroup_id`*, `project_id`*, body: ProjectIdListVO | HTTPStatusVO |  | Attach children projects to specific Project |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/estimates` | getEstimateList | `workgroup_id`*, `project_id`* | EstimateListExpandVO | yes | List the Estimates |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/estimates` | postEstimate | `workgroup_id`*, `project_id`*, body: EstimatePO | EstimatePO |  | Create a Estimate |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/estimates/{estimate_id}` | getEstimate | `workgroup_id`*, `project_id`*, `estimate_id`* | EstimateExpandVO | yes | Get a specific estimate of project |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/invoices/orders/{order_id}` | getInvoices | `workgroup_id`*, `project_id`*, `order_id`* | InvoiceDetailListExpandVO | yes | List invoices by a specific order |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/invoices/{invoice_id}` | getInvoice | `workgroup_id`*, `project_id`*, `invoice_id`* | InvoiceExpandVO | yes | List a specific invoice of project Level |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/invoices/{invoice_id}/files` | getInvoiceFiles | `workgroup_id`*, `project_id`*, `invoice_id`* | FileListResponseVO | yes | List files of invoice Level |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/memberroles/{user_id}` | getMemberRoles | `workgroup_id`*, `project_id`*, `user_id`* | RoleListVO | yes | List all the role options for the user |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/orders/{order_id}` | getOrder | `workgroup_id`*, `project_id`*, `order_id`* | OrderDetailWithIndicatorVO | yes | Get a specific buy/sell order |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/quotes` | getQuoteList | `workgroup_id`*, `project_id`*, `quote_state_id, use filters={"quote_state_id":111111}` | QuoteListVO | yes | List the quotes |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/quotes/{quote_id}` | getQuote | `workgroup_id`*, `project_id`*, `quote_id`* | QuoteExpandVO | yes | Get a specific quote of project |
+| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/quotes/{quote_id}` | putQuote | `workgroup_id`*, `project_id`*, `quote_id`*, body: QuotePutPersistVO | HTTPStatusVO |  | Accept / Reject a Quote |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfes` | getRfeList | `workgroup_id`*, `project_id`* | RfeListVO | yes | List the RFES |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfes` | postRfe | `workgroup_id`*, `project_id`*, body: RfePO | RfqVO |  | Create a RFE |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfes/{rfe_id}` | getRfe | `workgroup_id`*, `project_id`*, `rfe_id`* | RfeExpandVO | yes | Get a specific Rfe |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfqs` | getRfqList | `workgroup_id`*, `project_id`* | RfqListVO | yes | List the rfqs |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/rfqs/{rfq_id}` | getRfq | `workgroup_id`*, `project_id`*, `rfq_id`* | RfqExpandVO | yes | Get a specific Rfq |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/sellOrders` | getSellOrderList | `workgroup_id`*, `project_id`* | OrderListVO | yes | List the sell orders |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/sellOrders/{order_id}` | getSellOrder | `workgroup_id`*, `project_id`*, `order_id`* | OrderDetailVO | yes | Get a specific sell order |
+| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/sellOrders/{order_id}` | putSellOrder | `workgroup_id`*, `project_id`*, `order_id`*, body: OrderUpdPersistVO | OrderVO |  | Update / Accept or Reject a specific sell order |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments` | getShipmentList | `workgroup_id`*, `project_id`* | ShipmentListVO | yes | List shipments of project |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments` | postShipment | `workgroup_id`*, `project_id`*, body: ShipmentLocationPostPersistVO | ShipmentLocationsPOSTResultVO |  | Create a shipment |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments/{shipment_id}` | getShipment | `workgroup_id`*, `project_id`*, `shipment_id`* | ShipmentExpandVO | yes | Get a specific shipment. |
+| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/shipments/{shipment_id}/locations/{location_id}` | putShipmentLocation | `workgroup_id`*, `project_id`*, `shipment_id`*, `location_id`*, body: ShipmentLocationPersistVO | HTTPStatusVO |  | Update a specific shipment location |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs` | getSpecList | `workgroup_id`*, `project_id`* | SpecListVO | yes | List specs of project Level |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs` | postSpec | `workgroup_id`*, `project_id`*, body: SpecPersistVO | SpecVO |  | Create a Spec |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | get /v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id} | `workgroup_id`*, `project_id`*, `spec_id`* | SpecListVO | yes | List a specific spec of project Level |
+| PUT | `/v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id}` | put /v1/workgroups/{workgroup_id}/projects/{project_id}/specs/{spec_id} | `workgroup_id`*, `project_id`*, `spec_id`*, body: SpecUpdatePersistVO | SpecHTTPStatusVO |  | Update a specific Spec |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/tasks` | getTaskListOfProject | `workgroup_id`*, `project_id`* | TaskListVO | yes | Get task list of project level |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/tasks` | postTaskForProject | `workgroup_id`*, `project_id`*, body: TaskPersistVO | TaskCreatedVO |  | Create a new task |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/tasks/{task_id}` | getTaskOfProject | `workgroup_id`*, `project_id`*, `task_id`* | TaskExpandVO | yes | Get a sepcific task of project level |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teamMembersOfClientProject` | getTeamMemberListOfClientProject | `workgroup_id`*, `project_id`* | TeamMemberListVO | yes | List team member of client project side. |
+| GET | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers` | getTeamMemberListOfProject | `workgroup_id`*, `project_id`* | TeamMemberListVO | yes | List team member of project. |
+| POST | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers` | post /v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers | `workgroup_id`*, `project_id`*, body: ContactUserVO | TeamMemberBaseInfVO |  | Deprecated, please use 1.1 Version |
+| DELETE | `/v1/workgroups/{workgroup_id}/projects/{project_id}/teammembers/{teammember_id}` | deleteTeamMemberOfProject | `workgroup_id`*, `project_id`*, `teammember_id`* | TeamMemberBaseInfVO |  | Delete a team member for the specific project. |
+| GET | `/v1/workgroups/{workgroup_id}/quoteStates` | getQuoteStateList | `workgroup_id`* | ObjectStateListVO | yes | List the quote states |
+| GET | `/v1/workgroups/{workgroup_id}/quotes` | get /v1/workgroups/{workgroup_id}/quotes | `workgroup_id`*, `quote_state_id, use filters={"quote_state_id":111111}` | QuoteOfWgLevelSimpleVO | yes | List the quotes of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/receivedTimeCards` | getReceivedTimeCardList | `workgroup_id`* | TimeCardListVO | yes | List received time cards |
+| GET | `/v1/workgroups/{workgroup_id}/receivedTimeCards/{timeCard_id}` | getReceivedTimeCard | `workgroup_id`*, `timeCard_id`* | TimeCardReceivedDetailVO | yes | List a specific received time cards |
+| GET | `/v1/workgroups/{workgroup_id}/sellOrders` | getSellOrderListOfWorkgroup | `workgroup_id`* | OrderWorkgroupLevelListVO | yes | List the sell orders of workgrop |
+| GET | `/v1/workgroups/{workgroup_id}/sellOrders/{order_id}` | getSellOrderOfWorkgroup | `workgroup_id`*, `order_id`* | OrderExpandWorkgroupLevelVO | yes | Get a specific sell order |
+| GET | `/v1/workgroups/{workgroup_id}/specTemplates` | getSpecTemplateList | `workgroup_id`* | SpecTemplateListVO | yes | List Spec Templates of Workgroup Level |
+| GET | `/v1/workgroups/{workgroup_id}/specTemplates/{spec_template_id}` | getSpecTemplate | `workgroup_id`*, `spec_template_id`* | SpecTemplateExpandVO | yes | Get a specific Spec Template |
+| GET | `/v1/workgroups/{workgroup_id}/specTypes/{spec_type_id}/specTypeFields` | get /v1/workgroups/{workgroup_id}/specTypes/{spec_type_id}/specTypeFields | `workgroup_id`*, `spec_type_id`* | PropertyParamListVO | yes | Get Spec Type Fields |
+| GET | `/v1/workgroups/{workgroup_id}/supplierWorkgroups` | getSupplierWorkgroupList | `workgroup_id`* | SupplierWorkgroupListVO | yes | List supplier workgroups |
+| GET | `/v1/workgroups/{workgroup_id}/supplierWorkgroups/{bu_supplier_workgroup_id}` | getSupplierWorkgroupDetail | `workgroup_id`*, `bu_supplier_workgroup_id`* | SupplierWorkgroupExpandVO | yes | Get the specific supplier of My Group |
+| GET | `/v1/workgroups/{workgroup_id}/taskTypes` | getTaskTypesOfWorkgroup | `workgroup_id`* | TaskTypeListVO | yes | Get task types of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/tasks` | getTaskListOfWorkgroup | `workgroup_id`* | TaskWorkgroupLevelListVO | yes | Get task list of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/tasks/{task_id}` | getTaskOfWorkgroup | `workgroup_id`*, `task_id`* | TaskExpandWorkgroupLevelVO | yes | Get a sepcific task of workgroup level |
+| GET | `/v1/workgroups/{workgroup_id}/teamTemplates` | getTeamTemplateList | `workgroup_id`* | TeamTemplateListVO | yes | List current user's team templates info |
+| GET | `/v1/workgroups/{workgroup_id}/teamTemplates/{team_template_id}` | getTeamTemplateDetail | `workgroup_id`*, `team_template_id`* | TeamTemplateExpandVO | yes | Get current user's team template detal info |
+| GET | `/v1/workgroups/{workgroup_id}/workgroupMembers` | getWorkgroupMemberList | `workgroup_id`* | WorkgroupMembersListVO | yes | List the workgroup members |
+| GET | `/v1/workgroups/{workgroup_id}/workgroupMembers/{user_id}` | getWorkgroupMemberInfo | `workgroup_id`*, `user_id`* | UserDetailsExpandVO | yes | Workgroup Member Info |

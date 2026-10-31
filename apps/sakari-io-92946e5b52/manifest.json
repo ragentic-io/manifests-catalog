@@ -22,17 +22,17 @@
       {
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/accounts/{accountId}/campaigns/{campaignId}"
-      },
-      {
-        "from": "sakari-io-92946e5b52",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/accounts/{accountId}/campaigns/{campaignId}"
       },
       {
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/accounts/{accountId}/campaigns/{campaignId}"
+      },
+      {
+        "from": "sakari-io-92946e5b52",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/accounts/{accountId}/campaigns/{campaignId}"
       },
       {
         "from": "sakari-io-92946e5b52",
@@ -47,17 +47,17 @@
       {
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/accounts/{accountId}/contacts/{contactId}"
-      },
-      {
-        "from": "sakari-io-92946e5b52",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/accounts/{accountId}/contacts/{contactId}"
       },
       {
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/accounts/{accountId}/contacts/{contactId}"
+      },
+      {
+        "from": "sakari-io-92946e5b52",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/accounts/{accountId}/contacts/{contactId}"
       },
       {
         "from": "sakari-io-92946e5b52",
@@ -102,17 +102,17 @@
       {
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/accounts/{accountId}/templates/{templateId}"
-      },
-      {
-        "from": "sakari-io-92946e5b52",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/accounts/{accountId}/templates/{templateId}"
       },
       {
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/accounts/{accountId}/templates/{templateId}"
+      },
+      {
+        "from": "sakari-io-92946e5b52",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/accounts/{accountId}/templates/{templateId}"
       },
       {
         "from": "sakari-io-92946e5b52",
@@ -133,6 +133,356 @@
         "from": "sakari-io-92946e5b52",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/tools/sharefile"
+      },
+      {
+        "from": "operation:post:/oauth2/token",
+        "kind": "ACCEPTS",
+        "to": "schema:TokenRequest"
+      },
+      {
+        "from": "operation:post:/oauth2/token",
+        "kind": "RETURNS",
+        "to": "schema:TokenResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/campaigns",
+        "kind": "RETURNS",
+        "to": "schema:CampaignsResponse"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/campaigns",
+        "kind": "ACCEPTS",
+        "to": "schema:CampaignRequest"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/campaigns",
+        "kind": "RETURNS",
+        "to": "schema:CampaignResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/campaigns/{campaignId}",
+        "kind": "RETURNS",
+        "to": "schema:CampaignResponse"
+      },
+      {
+        "from": "operation:put:/v1/accounts/{accountId}/campaigns/{campaignId}",
+        "kind": "RETURNS",
+        "to": "schema:CampaignResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/contacts",
+        "kind": "RETURNS",
+        "to": "schema:ContactsResponse"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/contacts",
+        "kind": "ACCEPTS",
+        "to": "schema:ContactRequest"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/contacts",
+        "kind": "RETURNS",
+        "to": "schema:ContactUploadResponse"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/contacts",
+        "kind": "RETURNS",
+        "to": "schema:ContactsResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/contacts/{contactId}",
+        "kind": "RETURNS",
+        "to": "schema:ContactResponse"
+      },
+      {
+        "from": "operation:put:/v1/accounts/{accountId}/contacts/{contactId}",
+        "kind": "RETURNS",
+        "to": "schema:ContactResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/conversations",
+        "kind": "RETURNS",
+        "to": "schema:ConversationsResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/conversations/{conversationId}",
+        "kind": "RETURNS",
+        "to": "schema:ConversationResponse"
+      },
+      {
+        "from": "operation:put:/v1/accounts/{accountId}/conversations/{conversationId}/close",
+        "kind": "RETURNS",
+        "to": "schema:ConversationResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/messages",
+        "kind": "RETURNS",
+        "to": "schema:MessagesResponse"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/messages",
+        "kind": "ACCEPTS",
+        "to": "schema:SendMessagesRequest"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/messages",
+        "kind": "RETURNS",
+        "to": "schema:SendMessagesResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/messages/{messageId}",
+        "kind": "RETURNS",
+        "to": "schema:MessageResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/templates",
+        "kind": "RETURNS",
+        "to": "schema:TemplatesResponse"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/templates",
+        "kind": "ACCEPTS",
+        "to": "schema:TemplateRequest"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/templates",
+        "kind": "RETURNS",
+        "to": "schema:TemplatesResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/templates/{templateId}",
+        "kind": "RETURNS",
+        "to": "schema:TemplateResponse"
+      },
+      {
+        "from": "operation:put:/v1/accounts/{accountId}/templates/{templateId}",
+        "kind": "RETURNS",
+        "to": "schema:TemplateResponse"
+      },
+      {
+        "from": "operation:get:/v1/accounts/{accountId}/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:WebhooksResponse"
+      },
+      {
+        "from": "operation:post:/v1/accounts/{accountId}/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:WebhookResponse"
+      },
+      {
+        "from": "operation:post:/v1/tools/sharefile",
+        "kind": "RETURNS",
+        "to": "schema:ShareFileResponse"
+      },
+      {
+        "from": "schema:AccountEvent",
+        "kind": "REFERENCES",
+        "to": "schema:AccountId"
+      },
+      {
+        "from": "schema:AccountEvent",
+        "kind": "REFERENCES",
+        "to": "schema:EventType"
+      },
+      {
+        "from": "schema:CampaignResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:CampaignsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Campaign"
+      },
+      {
+        "from": "schema:CampaignsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaginatedResponse"
+      },
+      {
+        "from": "schema:Contact",
+        "kind": "REFERENCES",
+        "to": "schema:ContactRequest"
+      },
+      {
+        "from": "schema:Contact",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:Contact",
+        "kind": "REFERENCES",
+        "to": "schema:Updated"
+      },
+      {
+        "from": "schema:ContactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ContactIdentifiers"
+      },
+      {
+        "from": "schema:ContactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:ContactResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Contact"
+      },
+      {
+        "from": "schema:ContactUploadResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Contact"
+      },
+      {
+        "from": "schema:ContactsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Contact"
+      },
+      {
+        "from": "schema:ContactsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaginatedResponse"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:ContactIdentifiers"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneNumber"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:Updated"
+      },
+      {
+        "from": "schema:ConversationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:ConversationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "schema:ConversationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaginatedResponse"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:AccountEventPayload"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:AccountId"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:EventType"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:MessageEventPayload"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:ContactIdentifiers"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Updated"
+      },
+      {
+        "from": "schema:MessageEventPayload",
+        "kind": "REFERENCES",
+        "to": "schema:ContactIdentifiers"
+      },
+      {
+        "from": "schema:MessageResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:MessagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:MessagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaginatedResponse"
+      },
+      {
+        "from": "schema:SendMessagesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ContactRequest"
+      },
+      {
+        "from": "schema:SendMessagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Contact"
+      },
+      {
+        "from": "schema:SendMessagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Template",
+        "kind": "REFERENCES",
+        "to": "schema:TemplateRequest"
+      },
+      {
+        "from": "schema:TemplateResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Template"
+      },
+      {
+        "from": "schema:TemplatesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaginatedResponse"
+      },
+      {
+        "from": "schema:TemplatesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Template"
+      },
+      {
+        "from": "schema:WebhookResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "schema:WebhooksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaginatedResponse"
+      },
+      {
+        "from": "schema:WebhooksResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
       }
     ],
     "nodes": [
@@ -148,8 +498,25 @@
         "name": "auth.token",
         "path": "/oauth2/token",
         "pointer": "#/paths/~1oauth2~1token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "TokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TokenResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get token for accessing APIs"
+        "summary": "Get token for accessing APIs",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
@@ -157,14 +524,62 @@
         "kind": "operation",
         "method": "get",
         "name": "campaigns.fetchAll",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Results to skip when paginating through a result set",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Filter by name or part of",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/campaigns",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1campaigns/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CampaignsResponse"
+          },
+          {
+            "status": "4XX",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "5XX",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch campaigns"
+        "summary": "Fetch campaigns",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
@@ -172,29 +587,40 @@
         "kind": "operation",
         "method": "post",
         "name": "campaigns.create",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/campaigns",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1campaigns/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CampaignRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CampaignResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Create campaign"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/accounts/{accountId}/campaigns/{campaignId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "campaigns.remove",
-        "path": "/v1/accounts/{accountId}/campaigns/{campaignId}",
-        "pointer": "#/paths/~1v1~1accounts~1{accountId}~1campaigns~1{campaignId}/delete",
-        "security": [
-          {
-            "sakari_auth": []
-          }
-        ],
-        "summary": "Deletes a campaign"
+        "summary": "Create campaign",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
@@ -202,14 +628,40 @@
         "kind": "operation",
         "method": "get",
         "name": "campaigns.fetch",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of campaign to return",
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/campaigns/{campaignId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1campaigns~1{campaignId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CampaignResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch campaign by ID"
+        "summary": "Fetch campaign by ID",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
@@ -217,14 +669,81 @@
         "kind": "operation",
         "method": "put",
         "name": "campaigns.update",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of campaign",
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/campaigns/{campaignId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1campaigns~1{campaignId}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CampaignResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Updates a campaign"
+        "summary": "Updates a campaign",
+        "tags": [
+          "campaigns"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v1/accounts/{accountId}/campaigns/{campaignId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "campaigns.remove",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campaign id to delete",
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/accounts/{accountId}/campaigns/{campaignId}",
+        "pointer": "#/paths/~1v1~1accounts~1{accountId}~1campaigns~1{campaignId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "sakari_auth": []
+          }
+        ],
+        "summary": "Deletes a campaign",
+        "tags": [
+          "campaigns"
+        ]
       },
       {
         "deprecated": false,
@@ -232,14 +751,90 @@
         "kind": "operation",
         "method": "get",
         "name": "contacts.fetchAll",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Results to skip when paginating through a result set",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Filter by first name or part of",
+            "in": "query",
+            "name": "firstName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by last name or part of",
+            "in": "query",
+            "name": "lastName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by mobile or part of",
+            "in": "query",
+            "name": "mobile",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by email or part of",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by tag(s)",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/contacts",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1contacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContactsResponse"
+          },
+          {
+            "status": "4XX",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "5XX",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch contacts"
+        "summary": "Fetch contacts",
+        "tags": [
+          "contacts"
+        ]
       },
       {
         "deprecated": false,
@@ -247,29 +842,53 @@
         "kind": "operation",
         "method": "post",
         "name": "contacts.create",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Determines how existing contacts with matching mobile numbers are treated",
+            "enum": [
+              "append",
+              "core",
+              "remove"
+            ],
+            "in": "query",
+            "name": "mergeStrategy",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/contacts",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1contacts/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/csv"
+          ],
+          "required": false,
+          "type": "ContactRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ContactsResponse|ContactUploadResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Create contact"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/accounts/{accountId}/contacts/{contactId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "contacts.remove",
-        "path": "/v1/accounts/{accountId}/contacts/{contactId}",
-        "pointer": "#/paths/~1v1~1accounts~1{accountId}~1contacts~1{contactId}/delete",
-        "security": [
-          {
-            "sakari_auth": []
-          }
-        ],
-        "summary": "Deletes a contact"
+        "summary": "Create contact",
+        "tags": [
+          "contacts"
+        ]
       },
       {
         "deprecated": false,
@@ -277,14 +896,40 @@
         "kind": "operation",
         "method": "get",
         "name": "contacts.fetch",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of contact to return",
+            "in": "path",
+            "name": "contactId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/contacts/{contactId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1contacts~1{contactId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContactResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch contact by ID"
+        "summary": "Fetch contact by ID",
+        "tags": [
+          "contacts"
+        ]
       },
       {
         "deprecated": false,
@@ -292,14 +937,81 @@
         "kind": "operation",
         "method": "put",
         "name": "contacts.update",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of contact",
+            "in": "path",
+            "name": "contactId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/contacts/{contactId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1contacts~1{contactId}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContactResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Updates a contact"
+        "summary": "Updates a contact",
+        "tags": [
+          "contacts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v1/accounts/{accountId}/contacts/{contactId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "contacts.remove",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Contact id to delete",
+            "in": "path",
+            "name": "contactId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/accounts/{accountId}/contacts/{contactId}",
+        "pointer": "#/paths/~1v1~1accounts~1{accountId}~1contacts~1{contactId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "sakari_auth": []
+          }
+        ],
+        "summary": "Deletes a contact",
+        "tags": [
+          "contacts"
+        ]
       },
       {
         "deprecated": false,
@@ -307,14 +1019,55 @@
         "kind": "operation",
         "method": "get",
         "name": "conversations.fetchAll",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Results to skip when paginating through a result set",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/conversations",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1conversations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConversationsResponse"
+          },
+          {
+            "status": "4XX",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "5XX",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch conversations"
+        "summary": "Fetch conversations",
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
@@ -322,14 +1075,40 @@
         "kind": "operation",
         "method": "get",
         "name": "conversations.fetch",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of template to return",
+            "in": "path",
+            "name": "conversationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/conversations/{conversationId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1conversations~1{conversationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConversationResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch conversation by ID"
+        "summary": "Fetch conversation by ID",
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
@@ -337,14 +1116,40 @@
         "kind": "operation",
         "method": "put",
         "name": "conversations.close",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of conversation",
+            "in": "path",
+            "name": "conversationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/conversations/{conversationId}/close",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1conversations~1{conversationId}~1close/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConversationResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Closes a conversation"
+        "summary": "Closes a conversation",
+        "tags": [
+          "conversations"
+        ]
       },
       {
         "deprecated": false,
@@ -352,14 +1157,61 @@
         "kind": "operation",
         "method": "get",
         "name": "messages.fetchAll",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Results to skip when paginating through a result set",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "ID of contact",
+            "in": "query",
+            "name": "contactId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ID of conversation",
+            "in": "query",
+            "name": "conversationId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/messages",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessagesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch messages"
+        "summary": "Fetch messages",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -367,29 +1219,82 @@
         "kind": "operation",
         "method": "post",
         "name": "messages.send",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/messages",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1messages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SendMessagesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SendMessagesResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Send Messages"
+        "summary": "Send Messages",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a single messag",
         "id": "operation:get:/v1/accounts/{accountId}/messages/{messageId}",
         "kind": "operation",
         "method": "get",
         "name": "messages.fetch",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of message to return",
+            "in": "path",
+            "name": "messageId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/messages/{messageId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1messages~1{messageId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch message by id"
+        "summary": "Fetch message by id",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -397,14 +1302,62 @@
         "kind": "operation",
         "method": "get",
         "name": "templates.fetchAll",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Results to skip when paginating through a result set",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Filter by name or part of",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/templates",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1templates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplatesResponse"
+          },
+          {
+            "status": "4XX",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "5XX",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch templates"
+        "summary": "Fetch templates",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
@@ -412,29 +1365,40 @@
         "kind": "operation",
         "method": "post",
         "name": "templates.create",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/templates",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1templates/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "TemplateRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "TemplatesResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Create template"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/accounts/{accountId}/templates/{templateId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "templates.remove",
-        "path": "/v1/accounts/{accountId}/templates/{templateId}",
-        "pointer": "#/paths/~1v1~1accounts~1{accountId}~1templates~1{templateId}/delete",
-        "security": [
-          {
-            "sakari_auth": []
-          }
-        ],
-        "summary": "Deletes a template"
+        "summary": "Create template",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
@@ -442,14 +1406,40 @@
         "kind": "operation",
         "method": "get",
         "name": "templates.fetch",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of template to return",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/templates/{templateId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1templates~1{templateId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplateResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch template by ID"
+        "summary": "Fetch template by ID",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
@@ -457,59 +1447,199 @@
         "kind": "operation",
         "method": "put",
         "name": "templates.update",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of template",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/templates/{templateId}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1templates~1{templateId}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplateResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Updates a template"
+        "summary": "Updates a template",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/v1/accounts/{accountId}/templates/{templateId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "templates.remove",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template id to delete",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/accounts/{accountId}/templates/{templateId}",
+        "pointer": "#/paths/~1v1~1accounts~1{accountId}~1templates~1{templateId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "sakari_auth": []
+          }
+        ],
+        "summary": "Deletes a template",
+        "tags": [
+          "templates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "When messages are acknowledge by carriers, a notification is sent to the specified URL",
         "id": "operation:get:/v1/accounts/{accountId}/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "webhooks.fetchAll",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/webhooks",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhooksResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Fetch active webhooks"
+        "summary": "Fetch active webhooks",
+        "tags": [
+          "webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When messages are acknowledge by carriers, a notification is sent to the specified URL",
         "id": "operation:post:/v1/accounts/{accountId}/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "webhooks.subscribe",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/webhooks",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Subscribe to message events"
+        "summary": "Subscribe to message events",
+        "tags": [
+          "webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete subscription for receiving notifications",
         "id": "operation:delete:/v1/accounts/{accountId}/webhooks/{url}",
         "kind": "operation",
         "method": "delete",
         "name": "webhooks.unsubscribe",
+        "parameters": [
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account to apply operations to",
+            "in": "path",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/accounts/{accountId}/webhooks/{url}",
         "pointer": "#/paths/~1v1~1accounts~1{accountId}~1webhooks~1{url}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Unsubscribe to message events"
+        "summary": "Unsubscribe to message events",
+        "tags": [
+          "webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -519,217 +1649,284 @@
         "name": "tools.shareFile",
         "path": "/v1/tools/sharefile",
         "pointer": "#/paths/~1v1~1tools~1sharefile/post",
+        "request": {
+          "content_types": [
+            "application/octet-stream",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShareFileResponse"
+          },
+          {
+            "status": "4XX",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "5XX",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "sakari_auth": []
           }
         ],
-        "summary": "Share file - use to host a file and generate a short link to be used directly in a message or as a link to media for a MMS"
+        "summary": "Share file - use to host a file and generate a short link to be used directly in a message or as a link to media for a MMS",
+        "tags": [
+          "tools"
+        ]
       },
       {
         "id": "schema:AccountEvent",
         "kind": "schema",
-        "name": "AccountEvent"
+        "name": "AccountEvent",
+        "type": "object"
       },
       {
         "id": "schema:AccountEventPayload",
         "kind": "schema",
-        "name": "AccountEventPayload"
+        "name": "AccountEventPayload",
+        "type": "object"
       },
       {
         "id": "schema:AccountId",
         "kind": "schema",
-        "name": "AccountId"
+        "name": "AccountId",
+        "type": "string"
       },
       {
         "id": "schema:AttributeFilter",
         "kind": "schema",
-        "name": "AttributeFilter"
+        "name": "AttributeFilter",
+        "type": "object"
       },
       {
         "id": "schema:Campaign",
         "kind": "schema",
-        "name": "Campaign"
+        "name": "Campaign",
+        "type": "object"
       },
       {
         "id": "schema:CampaignRequest",
         "kind": "schema",
-        "name": "CampaignRequest"
+        "name": "CampaignRequest",
+        "type": "object"
       },
       {
         "id": "schema:CampaignResponse",
         "kind": "schema",
-        "name": "CampaignResponse"
+        "name": "CampaignResponse",
+        "type": "object"
       },
       {
         "id": "schema:CampaignsResponse",
         "kind": "schema",
-        "name": "CampaignsResponse"
+        "name": "CampaignsResponse",
+        "type": "PaginatedResponse|object"
       },
       {
         "id": "schema:Contact",
         "kind": "schema",
-        "name": "Contact"
+        "name": "Contact",
+        "type": "ContactRequest|object"
       },
       {
         "id": "schema:ContactIdentifiers",
         "kind": "schema",
-        "name": "ContactIdentifiers"
+        "name": "ContactIdentifiers",
+        "type": "object"
       },
       {
         "id": "schema:ContactRequest",
         "kind": "schema",
-        "name": "ContactRequest"
+        "name": "ContactRequest",
+        "type": "ContactIdentifiers|object"
       },
       {
         "id": "schema:ContactResponse",
         "kind": "schema",
-        "name": "ContactResponse"
+        "name": "ContactResponse",
+        "type": "object"
       },
       {
         "id": "schema:ContactUploadResponse",
         "kind": "schema",
-        "name": "ContactUploadResponse"
+        "name": "ContactUploadResponse",
+        "type": "object"
       },
       {
         "id": "schema:ContactsResponse",
         "kind": "schema",
-        "name": "ContactsResponse"
+        "name": "ContactsResponse",
+        "type": "PaginatedResponse|object"
       },
       {
         "id": "schema:Conversation",
         "kind": "schema",
-        "name": "Conversation"
+        "name": "Conversation",
+        "type": "object"
       },
       {
         "id": "schema:ConversationResponse",
         "kind": "schema",
-        "name": "ConversationResponse"
+        "name": "ConversationResponse",
+        "type": "object"
       },
       {
         "id": "schema:ConversationsResponse",
         "kind": "schema",
-        "name": "ConversationsResponse"
+        "name": "ConversationsResponse",
+        "type": "PaginatedResponse|object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
         "id": "schema:EventType",
         "kind": "schema",
-        "name": "EventType"
+        "name": "EventType",
+        "type": "string"
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:MessageEventPayload",
         "kind": "schema",
-        "name": "MessageEventPayload"
+        "name": "MessageEventPayload",
+        "type": "object"
       },
       {
         "id": "schema:MessageResponse",
         "kind": "schema",
-        "name": "MessageResponse"
+        "name": "MessageResponse",
+        "type": "object"
       },
       {
         "id": "schema:MessagesResponse",
         "kind": "schema",
-        "name": "MessagesResponse"
+        "name": "MessagesResponse",
+        "type": "PaginatedResponse|object"
       },
       {
         "id": "schema:PaginatedResponse",
         "kind": "schema",
-        "name": "PaginatedResponse"
+        "name": "PaginatedResponse",
+        "type": "object"
       },
       {
         "id": "schema:PhoneNumber",
         "kind": "schema",
-        "name": "PhoneNumber"
+        "name": "PhoneNumber",
+        "type": "object"
       },
       {
         "id": "schema:SendMessagesRequest",
         "kind": "schema",
-        "name": "SendMessagesRequest"
+        "name": "SendMessagesRequest",
+        "type": "object"
       },
       {
         "id": "schema:SendMessagesResponse",
         "kind": "schema",
-        "name": "SendMessagesResponse"
+        "name": "SendMessagesResponse",
+        "type": "object"
       },
       {
         "id": "schema:ShareFileResponse",
         "kind": "schema",
-        "name": "ShareFileResponse"
+        "name": "ShareFileResponse",
+        "type": "object"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:Template",
         "kind": "schema",
-        "name": "Template"
+        "name": "Template",
+        "type": "TemplateRequest|object"
       },
       {
         "id": "schema:TemplateRequest",
         "kind": "schema",
-        "name": "TemplateRequest"
+        "name": "TemplateRequest",
+        "type": "object"
       },
       {
         "id": "schema:TemplateResponse",
         "kind": "schema",
-        "name": "TemplateResponse"
+        "name": "TemplateResponse",
+        "type": "object"
       },
       {
         "id": "schema:TemplatesResponse",
         "kind": "schema",
-        "name": "TemplatesResponse"
+        "name": "TemplatesResponse",
+        "type": "PaginatedResponse|object"
       },
       {
         "id": "schema:TokenRequest",
         "kind": "schema",
-        "name": "TokenRequest"
+        "name": "TokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:TokenResponse",
         "kind": "schema",
-        "name": "TokenResponse"
+        "name": "TokenResponse",
+        "type": "object"
       },
       {
         "id": "schema:Updated",
         "kind": "schema",
-        "name": "Updated"
+        "name": "Updated",
+        "type": "object"
       },
       {
         "id": "schema:Webhook",
         "kind": "schema",
-        "name": "Webhook"
+        "name": "Webhook",
+        "type": "object"
       },
       {
         "id": "schema:WebhookResponse",
         "kind": "schema",
-        "name": "WebhookResponse"
+        "name": "WebhookResponse",
+        "type": "object"
       },
       {
         "id": "schema:WebhooksResponse",
         "kind": "schema",
-        "name": "WebhooksResponse"
+        "name": "WebhooksResponse",
+        "type": "PaginatedResponse|object"
       }
     ]
   },

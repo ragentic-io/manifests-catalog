@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_ablyrealtime_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `de3bb8c9fa9cf36c41b556edad9834293ec1a22873e9af96b22a4bccf2c1dd25` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_ablyrealtime_profil
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/channels` | getMetadataOfAllChannels | Enumerate all active channels of the application |
-| GET | `/channels/{channel_id}` | getMetadataOfChannel | Get metadata of a channel |
-| GET | `/channels/{channel_id}/messages` | getMessagesByChannel | Get message history for a channel |
-| POST | `/channels/{channel_id}/messages` | publishMessagesToChannel | Publish a message to a channel |
-| GET | `/channels/{channel_id}/presence` | getPresenceOfChannel | Get presence of a channel |
-| GET | `/channels/{channel_id}/presence/history` | getPresenceHistoryOfChannel | Get presence history of a channel |
-| POST | `/keys/{keyName}/requestToken` | requestAccessToken | Request an access token |
-| DELETE | `/push/channelSubscriptions` | deletePushDeviceDetails | Delete a registered device's update token |
-| GET | `/push/channelSubscriptions` | getPushSubscriptionsOnChannels | List channel subscriptions |
-| POST | `/push/channelSubscriptions` | subscribePushDeviceToChannel | Subscribe a device to a channel |
-| GET | `/push/channels` | getChannelsWithPushSubscribers | List all channels with at least one subscribed device |
-| DELETE | `/push/deviceRegistrations` | unregisterAllPushDevices | Unregister matching devices for push notifications |
-| GET | `/push/deviceRegistrations` | getRegisteredPushDevices | List devices registered for receiving push notifications |
-| POST | `/push/deviceRegistrations` | registerPushDevice | Register a device for receiving push notifications |
-| DELETE | `/push/deviceRegistrations/{device_id}` | unregisterPushDevice | Unregister a single device for push notifications |
-| GET | `/push/deviceRegistrations/{device_id}` | getPushDeviceDetails | Get a device registration |
-| PATCH | `/push/deviceRegistrations/{device_id}` | patchPushDeviceDetails | Update a device registration |
-| PUT | `/push/deviceRegistrations/{device_id}` | putPushDeviceDetails | Update a device registration |
-| GET | `/push/deviceRegistrations/{device_id}/resetUpdateToken` | updatePushDeviceDetails | Reset a registered device's update token |
-| POST | `/push/publish` | publishPushNotificationToDevices | Publish a push notification to device(s) |
-| GET | `/stats` | getStats | Retrieve usage statistics for an application |
-| GET | `/time` | getTime | Get the service time |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/channels` | getMetadataOfAllChannels | `X-Ably-Version`, `format`, `limit`, `prefix`, `by` | ChannelDetails[]\|string[] | yes | Enumerate all active channels of the application |
+| GET | `/channels/{channel_id}` | getMetadataOfChannel | `X-Ably-Version`, `format`, `channel_id`* | ChannelDetails | yes | Get metadata of a channel |
+| GET | `/channels/{channel_id}/messages` | getMessagesByChannel | `X-Ably-Version`, `format`, `channel_id`*, `start`, `limit`, `end`, `direction` | Message[] | yes | Get message history for a channel |
+| POST | `/channels/{channel_id}/messages` | publishMessagesToChannel | `X-Ably-Version`, `format`, `channel_id`*, body: Message | object |  | Publish a message to a channel |
+| GET | `/channels/{channel_id}/presence` | getPresenceOfChannel | `X-Ably-Version`, `format`, `channel_id`*, `clientId`, `connectionId`, `limit` | PresenceMessage[] | yes | Get presence of a channel |
+| GET | `/channels/{channel_id}/presence/history` | getPresenceHistoryOfChannel | `X-Ably-Version`, `format`, `channel_id`*, `start`, `limit`, `end`, `direction` | PresenceMessage[] | yes | Get presence history of a channel |
+| POST | `/keys/{keyName}/requestToken` | requestAccessToken | `X-Ably-Version`, `format`, `keyName`*, body: TokenRequest\|SignedTokenRequest | TokenDetails |  | Request an access token |
+| GET | `/push/channelSubscriptions` | getPushSubscriptionsOnChannels | `X-Ably-Version`, `format`, `channel`, `deviceId`, `clientId`, `limit` | DeviceDetails | yes | List channel subscriptions |
+| POST | `/push/channelSubscriptions` | subscribePushDeviceToChannel | `X-Ably-Version`, `format`, body: object | — |  | Subscribe a device to a channel |
+| DELETE | `/push/channelSubscriptions` | deletePushDeviceDetails | `X-Ably-Version`, `format`, `channel`, `deviceId`, `clientId` | — |  | Delete a registered device's update token |
+| GET | `/push/channels` | getChannelsWithPushSubscribers | `X-Ably-Version`, `format` | string[] | yes | List all channels with at least one subscribed device |
+| GET | `/push/deviceRegistrations` | getRegisteredPushDevices | `X-Ably-Version`, `format`, `deviceId`, `clientId`, `limit` | DeviceDetails | yes | List devices registered for receiving push notifications |
+| POST | `/push/deviceRegistrations` | registerPushDevice | `X-Ably-Version`, `format`, body: DeviceDetails | DeviceDetails |  | Register a device for receiving push notifications |
+| DELETE | `/push/deviceRegistrations` | unregisterAllPushDevices | `X-Ably-Version`, `format`, `deviceId`, `clientId` | — |  | Unregister matching devices for push notifications |
+| GET | `/push/deviceRegistrations/{device_id}` | getPushDeviceDetails | `X-Ably-Version`, `format`, `device_id`* | DeviceDetails | yes | Get a device registration |
+| PUT | `/push/deviceRegistrations/{device_id}` | putPushDeviceDetails | `X-Ably-Version`, `format`, `device_id`*, body: DeviceDetails | DeviceDetails |  | Update a device registration |
+| DELETE | `/push/deviceRegistrations/{device_id}` | unregisterPushDevice | `X-Ably-Version`, `format`, `device_id`* | — |  | Unregister a single device for push notifications |
+| PATCH | `/push/deviceRegistrations/{device_id}` | patchPushDeviceDetails | `X-Ably-Version`, `format`, `device_id`*, body: DeviceDetails | DeviceDetails |  | Update a device registration |
+| GET | `/push/deviceRegistrations/{device_id}/resetUpdateToken` | updatePushDeviceDetails | `X-Ably-Version`, `format`, `device_id`* | DeviceDetails | yes | Reset a registered device's update token |
+| POST | `/push/publish` | publishPushNotificationToDevices | `X-Ably-Version`, `format`, body: object | — |  | Publish a push notification to device(s) |
+| GET | `/stats` | getStats | `X-Ably-Version`, `format`, `start`, `limit`, `end`, `direction`, `unit` | object | yes | Retrieve usage statistics for an application |
+| GET | `/time` | getTime | `X-Ably-Version`, `format` | integer[] | yes | Get the service time |

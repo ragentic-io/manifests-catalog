@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.clicksend.com_img_favicons_
 
 | | |
 | --- | --- |
-| Signed bundle | `483893a7076b7b3beca46acedb608459b382b49a4e61a4c3f9eee99cd0e42021` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,210 +34,212 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.clicksend.com_img_favicons_
 
 84 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | Get account | Get account |
-| POST | `/account` | Create a new account | Create a new account |
-| PUT | `/account` | Update Account | Update Account |
-| PUT | `/account-verify/send` | Send account activation token | Send account activation token |
-| PUT | `/account-verify/verify/{activation_token}` | Verify new account | Verify new account |
-| GET | `/account/usage/{year}/{month}/{type}` | Account Usage | Account Usage |
-| GET | `/automations/email/receipt` | get /automations/email/receipt | List Rules |
-| POST | `/automations/email/receipt` | post /automations/email/receipt | Create a New Rule |
-| DELETE | `/automations/email/receipt/{rule_id}` | delete /automations/email/receipt/{rule_id} | Delete a Rule |
-| GET | `/automations/email/receipt/{rule_id}` | get /automations/email/receipt/{rule_id} | Get a Specific Rule |
-| PUT | `/automations/email/receipt/{rule_id}` | put /automations/email/receipt/{rule_id} | Update a Rule |
-| GET | `/automations/fax/inbound` | get /automations/fax/inbound | List rules |
-| POST | `/automations/fax/inbound` | post /automations/fax/inbound | Create a new rule |
-| DELETE | `/automations/fax/inbound/{inbound_rule_id}` | delete /automations/fax/inbound/{inbound_rule_id} | Delete a rule |
-| GET | `/automations/fax/inbound/{inbound_rule_id}` | get /automations/fax/inbound/{inbound_rule_id} | Get a specific rule |
-| PUT | `/automations/fax/inbound/{inbound_rule_id}` | put /automations/fax/inbound/{inbound_rule_id} | Update a rule |
-| GET | `/automations/fax/receipts` | List Rules | List Rules |
-| POST | `/automations/fax/receipts` | Create a New Rule | Create a New Rule |
-| DELETE | `/automations/fax/receipts/{rule_id}` | Delete a Rule | Delete a Rule |
-| GET | `/automations/fax/receipts/{rule_id}` | Get a Specific Rule | Get a Specific Rule |
-| PUT | `/automations/fax/receipts/{rule_id}` | Update a Rule | Update a Rule |
-| GET | `/automations/sms/inbound` | List rules | List rules |
-| POST | `/automations/sms/inbound/` | Create a new rule | Create a new rule |
-| DELETE | `/automations/sms/inbound/{inbound_rule_id}` | Delete a rule | Delete a rule |
-| GET | `/automations/sms/inbound/{inbound_rule_id}` | Get a specific rule | Get a specific rule |
-| PUT | `/automations/sms/inbound/{inbound_rule_id}` | Update a rule | Update a rule |
-| GET | `/automations/sms/receipts` | get /automations/sms/receipts | List rules |
-| POST | `/automations/sms/receipts` | post /automations/sms/receipts | Create a new rule |
-| DELETE | `/automations/sms/receipts/{receipt_rule_id}` | delete /automations/sms/receipts/{receipt_rule_id} | Delete a rule |
-| GET | `/automations/sms/receipts/{receipt_rule_id}` | get /automations/sms/receipts/{receipt_rule_id} | Get a specific rule |
-| PUT | `/automations/sms/receipts/{receipt_rule_id}` | put /automations/sms/receipts/{receipt_rule_id} | Update a rule |
-| GET | `/automations/voice/receipts` | get /automations/voice/receipts | List rules |
-| POST | `/automations/voice/receipts` | post /automations/voice/receipts | Create a new rule |
-| DELETE | `/automations/voice/receipts/{receipt_rule_id}` | delete /automations/voice/receipts/{receipt_rule_id} | Delete a rule |
-| GET | `/automations/voice/receipts/{receipt_rule_id}` | get /automations/voice/receipts/{receipt_rule_id} | Get a specific rule |
-| PUT | `/automations/voice/receipts/{receipt_rule_id}` | put /automations/voice/receipts/{receipt_rule_id} | Update a rule |
-| GET | `/contact-suggestions` | List Contact Suggestions | List Contact Suggestions |
-| GET | `/countries` | Get all Countries | Get all Countries |
-| GET | `/delivery-issues` | Get Delivery Issues | Get Delivery Issues |
-| POST | `/delivery-issues` | Create Delivery Issue | Create Delivery Issue |
-| GET | `/email-campaigns` | Get All Email Campaigns | Get All Email Campaigns |
-| POST | `/email-campaigns/price` | Calculate Price | Calculate Price |
-| POST | `/email-campaigns/send` | Create Email Campaign | Create Email Campaign |
-| GET | `/email-campaigns/{campaign_id}/history` | Get Specific Email Campaign History | Get Specific Email Campaign History |
-| GET | `/email-campaigns/{email_campaign_id}` | Get Specific Email Campaign | Get Specific Email Campaign |
-| PUT | `/email-campaigns/{email_campaign_id}` | Update Email Campaign | Update Email Campaign |
-| PUT | `/email-campaigns/{email_campaign_id}/cancel` | Cancel Email Campaign | Cancel Email Campaign |
-| PUT | `/email/address-verify/{email_address_id}/send` | Send Verification Token | Send Verification Token |
-| PUT | `/email/address-verify/{email_address_id}/verify/{activation_token}` | Verify Allowed Email Address | Verify Allowed Email Address |
-| GET | `/email/addresses` | Get All Allowed Email Addresses | Get All Allowed Email Addresses |
-| POST | `/email/addresses` | Create Allowed Email Address | Create Allowed Email Address |
-| DELETE | `/email/addresses/{email_address_id}` | Delete Allowed Email Address | Delete Allowed Email Address |
-| GET | `/email/addresses/{email_address_id}` | Get Specific Allowed Email Address | Get Specific Allowed Email Address |
-| GET | `/email/history` | Email History | Email History |
-| GET | `/email/history/export?filename={filename}` | Export History | Export History |
-| GET | `/email/master-templates` | Get All Master Email Templates | Get All Master Email Templates |
-| GET | `/email/master-templates-categories` | Get All Master Template Categories | Get All Master Template Categories |
-| GET | `/email/master-templates-categories/{category_id}` | Get Specific Email Template Category | Get Specific Email Template Category |
-| GET | `/email/master-templates-categories/{category_id}/master-templates` | Get All Templates For Category | Get All Templates For Category |
-| GET | `/email/master-templates/{template_id}` | Get Specific Master Template | Get Specific Master Template |
-| POST | `/email/price` | Email Price | Email Price |
-| POST | `/email/receipts` | post /email/receipts | Add a Test Delivery Receipt |
-| POST | `/email/send` | Email Send | Email Send |
-| GET | `/email/templates` | Get All Email Templates | Get All Email Templates |
-| POST | `/email/templates` | Create New Email Template from Master Template | Create New Email Template from Master Template |
-| POST | `/email/templates-images/{template_id}` | Upload Image to Specific Template | Upload Image to Specific Template |
-| DELETE | `/email/templates/{template_id}` | Delete Email Template | Delete Email Template |
-| GET | `/email/templates/{template_id}` | Get Specific Email Template | Get Specific Email Template |
-| PUT | `/email/templates/{template_id}` | Update an Email Template | Update an Email Template |
-| GET | `/fax/history/export?filename={filename}` | Export Fax History | Export Fax History |
-| GET | `/fax/history?date_from={date_from}&date_to={date_to}&q={q}&order_by={order_by}` | Get Fax History | Get Fax History |
-| POST | `/fax/price` | post /fax/price | Calculate Price |
-| GET | `/fax/receipts` | List of Fax Delivery Receipts | List of Fax Delivery Receipts |
-| POST | `/fax/receipts` | Add a Test Delivery Receipt | Add a Test Delivery Receipt |
-| PUT | `/fax/receipts-read` | Mark Fax Delivery Receipts as read | Mark Fax Delivery Receipts as read |
-| GET | `/fax/receipts/{message_id}` | Get a Specific Fax Delivery Receipt | Get a Specific Fax Delivery Receipt |
-| POST | `/fax/send` | Send Fax | Send Fax |
-| PUT | `/forgot-password` | Forgot Password | Forgot Password |
-| PUT | `/forgot-password/verify` | Verify Forgot Password | Verify Forgot Password |
-| PUT | `/forgot-username` | Forgot Username | Forgot Username |
-| GET | `/lists` | Get all Contact Lists | Get all Contact Lists |
-| POST | `/lists` | Create a new contact list | Create a new contact list |
-| PUT | `/lists/{from_list_id}/contacts/{contact_id}/{to_list_id}` | Transfer a Contact | Transfer a Contact |
-| DELETE | `/lists/{list_id}` | Delete a specific contact list | Delete a specific contact list |
-| GET | `/lists/{list_id}` | Get a specific contact list | Get a specific contact list |
-| PUT | `/lists/{list_id}` | Update a specific contact list | Update a specific contact list |
-| GET | `/lists/{list_id}/contacts` | Get all Contacts in a List | Get all Contacts in a List |
-| POST | `/lists/{list_id}/contacts` | Create a new contact | Create a new contact |
-| DELETE | `/lists/{list_id}/contacts/{contact_id}` | Delete a specific contact | Delete a specific contact |
-| GET | `/lists/{list_id}/contacts/{contact_id}` | Get a specific contact | Get a specific contact |
-| PUT | `/lists/{list_id}/contacts/{contact_id}` | Update a specific contact | Update a specific contact |
-| GET | `/lists/{list_id}/export?filename={filename}` | Export Contacts List | Export Contacts List |
-| POST | `/lists/{list_id}/import` | Import Contacts to List | Import Contacts to List |
-| POST | `/lists/{list_id}/import-csv-preview` | Show CSV Import File Preview | Show CSV Import File Preview |
-| GET | `/lists/{list_id}/import-fields` | Get List of Acceptable Import Fields | Get List of Acceptable Import Fields |
-| PUT | `/lists/{list_id}/remove-duplicates` | Remove Duplicate Contacts | Remove Duplicate Contacts |
-| PUT | `/lists/{list_id}/remove-opted-out-contacts/{opt_out_list_id}` | Remove Opted Out Contacts | Remove Opted Out Contacts |
-| PUT | `/mms/cancel-all` | Cancel All MMS | Cancel All MMS |
-| GET | `/mms/history/export?filename={filename}` | Export MMS History | Export MMS History |
-| GET | `/mms/history?q={q}&order_by={order_by}&date_from={date_from}&date_to={date_to}` | Get MMS History | Get MMS History |
-| POST | `/mms/price` | Get Price | Get Price |
-| GET | `/mms/receipts` | Get all Delivery Receipts | Get all Delivery Receipts |
-| PUT | `/mms/receipts-read` | Mark Receipts As Read | Mark Receipts As Read |
-| GET | `/mms/receipts/{message_id}` | Get Delivery Receipt | Get Delivery Receipt |
-| POST | `/mms/send` | Send MMS | Send MMS |
-| PUT | `/mms/{message_id}/cancel` | Cancel MMS | Cancel MMS |
-| GET | `/numbers` | Get all Dedicated Numbers | Get all Dedicated Numbers |
-| POST | `/numbers/buy/{dedicated_number}` | Buy dedicated number | Buy dedicated number |
-| GET | `/numbers/search/{country}?{search}=1&{search_type}=2` | Search Dedicated Numbers by Country | Search Dedicated Numbers by Country |
-| GET | `/post/direct-mail/campaigns` | List Direct Mail Campaigns | List Direct Mail Campaigns |
-| POST | `/post/direct-mail/campaigns/price` | Calculate Direct Mail Campaign Price | Calculate Direct Mail Campaign Price |
-| POST | `/post/direct-mail/campaigns/send` | Create New Campaign | Create New Campaign |
-| GET | `/post/direct-mail/locations/search/{country}/?q={query}` | Search Locations | Search Locations |
-| POST | `/post/letters/detect-address` | Detect Address | Detect Address |
-| GET | `/post/letters/history` | Get Post Letter History | Get Post Letter History |
-| GET | `/post/letters/history/export?filename={filename}` | Export Post Letter History | Export Post Letter History |
-| POST | `/post/letters/price` | post /post/letters/price | Calculate Price |
-| POST | `/post/letters/send` | Send Post Letter | Send Post Letter |
-| GET | `/post/postcards/export?filename={filename}` | Export Postcard History | Export Postcard History |
-| GET | `/post/postcards/history` | Get Postcard History | Get Postcard History |
-| POST | `/post/postcards/price` | Calculate Pricing | Calculate Pricing |
-| POST | `/post/postcards/send` | Send Postcard | Send Postcard |
-| GET | `/post/return-addresses` | Get List of Post Return Addresses | Get List of Post Return Addresses |
-| POST | `/post/return-addresses` | Create a Post Return Address | Create a Post Return Address |
-| DELETE | `/post/return-addresses/{return_address_id}` | Delete Post Return Address | Delete Post Return Address |
-| GET | `/post/return-addresses/{return_address_id}` | Get Post Return Address | Get Post Return Address |
-| PUT | `/post/return-addresses/{return_address_id}` | Update Post Return Address | Update Post Return Address |
-| GET | `/pricing/{country}?currency={currency}` | Get Country Pricing | Get Country Pricing |
-| GET | `/recharge/credit-card` | Get Credit Card info | Get Credit Card info |
-| PUT | `/recharge/credit-card` | Update Credit Card info | Update Credit Card info |
-| GET | `/recharge/packages?country={country}` | List of Packages | List of Packages |
-| PUT | `/recharge/purchase/{package_id}` | Purchase a Package | Purchase a Package |
-| GET | `/recharge/transactions` | Get Transactions | Get Transactions |
-| GET | `/recharge/transactions/{transaction_id}` | Get a specific transaction | Get a specific transaction |
-| GET | `/referral/accounts` | Get List of Referral Accounts | Get List of Referral Accounts |
-| GET | `/reseller` | Get Reseller Setting | Get Reseller Setting |
-| PUT | `/reseller` | Update Reseller Setting | Update Reseller Setting |
-| GET | `/reseller/accounts` | List of Reseller Accounts | List of Reseller Accounts |
-| POST | `/reseller/accounts` | Create Reseller Account | Create Reseller Account |
-| POST | `/reseller/accounts-public` | Create Reseller Account - Public | Create Reseller Account - Public |
-| GET | `/reseller/accounts/{client_user_id}` | Get Reseller Account | Get Reseller Account |
-| PUT | `/reseller/accounts/{client_user_id}` | Update Reseller Account | Update Reseller Account |
-| PUT | `/reseller/transfer-credit` | Transfer Credit | Transfer Credit |
-| GET | `/reseller/{subdomain}` | Reseller By Subdomain | Reseller By Subdomain |
-| GET | `/sdk-download/{type}` | SDK Download | SDK Download |
-| GET | `/search/contacts-lists?q={q}` | Search Contacts-Lists | Search Contacts-Lists |
-| GET | `/sms-campaigns` | Get list of SMS Campaigns | Get list of SMS Campaigns |
-| POST | `/sms-campaigns/price` | Calculate Price for SMS Campaign | Calculate Price for SMS Campaign |
-| POST | `/sms-campaigns/send` | Use Short URL | Use Short URL |
-| GET | `/sms-campaigns/{campaign_id}/link-export?filename={filename}` | Link Tracking Export | Link Tracking Export |
-| GET | `/sms-campaigns/{campaign_id}/link-statistics` | Link Statistics | Link Statistics |
-| GET | `/sms-campaigns/{campaign_id}/link-tracking` | Link Tracking | Link Tracking |
-| GET | `/sms-campaigns/{sms_campaign_id}` | Get SMS Campaign | Get SMS Campaign |
-| PUT | `/sms-campaigns/{sms_campaign_id}` | Update an SMS Campaign | Update an SMS Campaign |
-| PUT | `/sms-campaigns/{sms_campaign_id}/cancel` | Cancel an SMS Campaign | Cancel an SMS Campaign |
-| PUT | `/sms/cancel-all` | Cancel all Scheduled Messages | Cancel all Scheduled Messages |
-| GET | `/sms/email-sms` | List of Email-to-SMS Allowed Address | List of Email-to-SMS Allowed Address |
-| POST | `/sms/email-sms` | Create Email to SMS Allowed Address | Create Email to SMS Allowed Address |
-| GET | `/sms/email-sms-stripped-strings` | List Stripped Strings | List Stripped Strings |
-| POST | `/sms/email-sms-stripped-strings` | Create Stripped String | Create Stripped String |
-| DELETE | `/sms/email-sms-stripped-strings/{rule_id}` | Delete Stripped String | Delete Stripped String |
-| GET | `/sms/email-sms-stripped-strings/{rule_id}` | Find Specific Stripped String | Find Specific Stripped String |
-| PUT | `/sms/email-sms-stripped-strings/{rule_id}` | Update Stripped String | Update Stripped String |
-| DELETE | `/sms/email-sms/{email_address_id}` | Delete Email-to-SMS Allowed Address | Delete Email-to-SMS Allowed Address |
-| GET | `/sms/email-sms/{email_address_id}` | Get specific Email-to-SMS Allowed Address | Get specific Email-to-SMS Allowed Address |
-| PUT | `/sms/email-sms/{email_address_id}` | Update Email-to-SMS Allowed Address | Update Email-to-SMS Allowed Address |
-| GET | `/sms/history/export?filename={filename}` | Export SMS History | Export SMS History |
-| GET | `/sms/history?date_from={date_from}&date_to={date_to}` | Get all History | Get all History |
-| GET | `/sms/inbound` | Get all Inbound SMS - Pull | Get all Inbound SMS - Pull |
-| POST | `/sms/inbound` | Add a Test Inbound SMS | Add a Test Inbound SMS |
-| PUT | `/sms/inbound-read` | Mark all Inbound SMS as read | Mark all Inbound SMS as read |
-| PUT | `/sms/inbound-read/{message_id}` | Mark a specific Inbound SMS as read | Mark a specific Inbound SMS as read |
-| GET | `/sms/inbound/{outbound_message_id}` | Get Specific Inbound - Pull | Get Specific Inbound - Pull |
-| POST | `/sms/price` | post /sms/price | Calculate Price |
-| GET | `/sms/receipts` | get /sms/receipts | Get all Delivery Receipts |
-| POST | `/sms/receipts` | post /sms/receipts | Add a Test Delivery Receipt |
-| PUT | `/sms/receipts-read` | Mark Delivery Receipts as read | Mark Delivery Receipts as read |
-| GET | `/sms/receipts/{message_id}` | Get a Specific Delivery Receipt | Get a Specific Delivery Receipt |
-| POST | `/sms/send` | Send an SMS | Send an SMS |
-| GET | `/sms/templates` | List of Templates | List of Templates |
-| POST | `/sms/templates` | Create a Template | Create a Template |
-| DELETE | `/sms/templates/{template_id}` | Delete a Template | Delete a Template |
-| PUT | `/sms/templates/{template_id}` | Update a Template | Update a Template |
-| PUT | `/sms/{message_id}/cancel` | Cancel a Scheduled Message | Cancel a Scheduled Message |
-| GET | `/statistics/sms` | Get SMS Statistics | Get SMS Statistics |
-| GET | `/statistics/voice` | Get Voice Statistics | Get Voice Statistics |
-| GET | `/subaccounts` | Get all Subaccounts | Get all Subaccounts |
-| POST | `/subaccounts` | Create a new subaccount | Create a new subaccount |
-| DELETE | `/subaccounts/{subaccount_id}` | Delete a specific subaccount | Delete a specific subaccount |
-| GET | `/subaccounts/{subaccount_id}` | Get a specific subaccount | Get a specific subaccount |
-| PUT | `/subaccounts/{subaccount_id}` | Update a specific subaccount | Update a specific subaccount |
-| PUT | `/subaccounts/{subaccount_id}/regen-api-key` | Regenerate API Key | Regenerate API Key |
-| GET | `/timezones` | Get Timezones | Get Timezones |
-| POST | `/uploads?convert={convert}` | Upload a file | Upload a file |
-| PUT | `/voice/cancel-all` | Cancel all Voice Calls | Cancel all Voice Calls |
-| GET | `/voice/history/export?filename={filename}` | Export Voice History | Export Voice History |
-| GET | `/voice/history?date_from={date_from}&date_to={date_to}` | Get Voice History | Get Voice History |
-| GET | `/voice/lang` | Voice Languages | Voice Languages |
-| POST | `/voice/price` | post /voice/price | Calculate Price |
-| GET | `/voice/receipts` | Get Voice receipts | Get Voice receipts |
-| POST | `/voice/receipts` | post /voice/receipts | Add a Test Delivery Receipt |
-| PUT | `/voice/receipts-read?date_before={date_before}` | Marked Voice Receipts as Read | Marked Voice Receipts as Read |
-| GET | `/voice/receipts/{message_id}` | Get Specific Voice Receipt | Get Specific Voice Receipt |
-| POST | `/voice/send` | Send a Voice Call | Send a Voice Call |
-| PUT | `/voice/{message_id}/cancel` | Cancel a Specific Voice Call | Cancel a Specific Voice Call |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | Get account | — | — | yes | Get account |
+| PUT | `/account` | Update Account | body: object | — |  | Update Account |
+| POST | `/account` | Create a new account | body: object | — |  | Create a new account |
+| PUT | `/account-verify/send` | Send account activation token | body: object | — |  | Send account activation token |
+| PUT | `/account-verify/verify/{activation_token}` | Verify new account | `activation_token`* | — |  | Verify new account |
+| GET | `/account/usage/{year}/{month}/{type}` | Account Usage | `year`*, `month`*, `type`* | — | yes | Account Usage |
+| GET | `/automations/email/receipt` | get /automations/email/receipt | — | — | yes | List Rules |
+| POST | `/automations/email/receipt` | post /automations/email/receipt | body: object | — |  | Create a New Rule |
+| GET | `/automations/email/receipt/{rule_id}` | get /automations/email/receipt/{rule_id} | `rule_id`* | — | yes | Get a Specific Rule |
+| PUT | `/automations/email/receipt/{rule_id}` | put /automations/email/receipt/{rule_id} | `rule_id`*, body: object | — |  | Update a Rule |
+| DELETE | `/automations/email/receipt/{rule_id}` | delete /automations/email/receipt/{rule_id} | `rule_id`* | — |  | Delete a Rule |
+| GET | `/automations/fax/inbound` | get /automations/fax/inbound | — | — | yes | List rules |
+| POST | `/automations/fax/inbound` | post /automations/fax/inbound | body: object | — |  | Create a new rule |
+| GET | `/automations/fax/inbound/{inbound_rule_id}` | get /automations/fax/inbound/{inbound_rule_id} | `inbound_rule_id`* | — | yes | Get a specific rule |
+| PUT | `/automations/fax/inbound/{inbound_rule_id}` | put /automations/fax/inbound/{inbound_rule_id} | `inbound_rule_id`*, body: object | — |  | Update a rule |
+| DELETE | `/automations/fax/inbound/{inbound_rule_id}` | delete /automations/fax/inbound/{inbound_rule_id} | `inbound_rule_id`* | — |  | Delete a rule |
+| GET | `/automations/fax/receipts` | List Rules | — | — | yes | List Rules |
+| POST | `/automations/fax/receipts` | Create a New Rule | body: object | — |  | Create a New Rule |
+| GET | `/automations/fax/receipts/{rule_id}` | Get a Specific Rule | `rule_id`* | — | yes | Get a Specific Rule |
+| PUT | `/automations/fax/receipts/{rule_id}` | Update a Rule | `rule_id`*, body: object | — |  | Update a Rule |
+| DELETE | `/automations/fax/receipts/{rule_id}` | Delete a Rule | `rule_id`* | — |  | Delete a Rule |
+| GET | `/automations/sms/inbound` | List rules | — | — | yes | List rules |
+| POST | `/automations/sms/inbound/` | Create a new rule | body: object | — |  | Create a new rule |
+| GET | `/automations/sms/inbound/{inbound_rule_id}` | Get a specific rule | `inbound_rule_id`* | — | yes | Get a specific rule |
+| PUT | `/automations/sms/inbound/{inbound_rule_id}` | Update a rule | `inbound_rule_id`*, body: object | — |  | Update a rule |
+| DELETE | `/automations/sms/inbound/{inbound_rule_id}` | Delete a rule | `inbound_rule_id`* | — |  | Delete a rule |
+| GET | `/automations/sms/receipts` | get /automations/sms/receipts | — | — | yes | List rules |
+| POST | `/automations/sms/receipts` | post /automations/sms/receipts | body: object | — |  | Create a new rule |
+| GET | `/automations/sms/receipts/{receipt_rule_id}` | get /automations/sms/receipts/{receipt_rule_id} | `receipt_rule_id`* | — | yes | Get a specific rule |
+| PUT | `/automations/sms/receipts/{receipt_rule_id}` | put /automations/sms/receipts/{receipt_rule_id} | `receipt_rule_id`*, body: object | — |  | Update a rule |
+| DELETE | `/automations/sms/receipts/{receipt_rule_id}` | delete /automations/sms/receipts/{receipt_rule_id} | `receipt_rule_id`* | — |  | Delete a rule |
+| GET | `/automations/voice/receipts` | get /automations/voice/receipts | — | — | yes | List rules |
+| POST | `/automations/voice/receipts` | post /automations/voice/receipts | body: object | — |  | Create a new rule |
+| GET | `/automations/voice/receipts/{receipt_rule_id}` | get /automations/voice/receipts/{receipt_rule_id} | `receipt_rule_id`* | — | yes | Get a specific rule |
+| PUT | `/automations/voice/receipts/{receipt_rule_id}` | put /automations/voice/receipts/{receipt_rule_id} | `receipt_rule_id`*, body: object | — |  | Update a rule |
+| DELETE | `/automations/voice/receipts/{receipt_rule_id}` | delete /automations/voice/receipts/{receipt_rule_id} | `receipt_rule_id`* | — |  | Delete a rule |
+| GET | `/contact-suggestions` | List Contact Suggestions | — | — | yes | List Contact Suggestions |
+| GET | `/countries` | Get all Countries | — | — | yes | Get all Countries |
+| GET | `/delivery-issues` | Get Delivery Issues | — | — | yes | Get Delivery Issues |
+| POST | `/delivery-issues` | Create Delivery Issue | body: object | — |  | Create Delivery Issue |
+| GET | `/email-campaigns` | Get All Email Campaigns | — | — | yes | Get All Email Campaigns |
+| POST | `/email-campaigns/price` | Calculate Price | body: object | — |  | Calculate Price |
+| POST | `/email-campaigns/send` | Create Email Campaign | body: object | — |  | Create Email Campaign |
+| GET | `/email-campaigns/{campaign_id}/history` | Get Specific Email Campaign History | `campaign_id`* | — | yes | Get Specific Email Campaign History |
+| GET | `/email-campaigns/{email_campaign_id}` | Get Specific Email Campaign | `email_campaign_id`* | — | yes | Get Specific Email Campaign |
+| PUT | `/email-campaigns/{email_campaign_id}` | Update Email Campaign | `email_campaign_id`*, body: object | — |  | Update Email Campaign |
+| PUT | `/email-campaigns/{email_campaign_id}/cancel` | Cancel Email Campaign | `email_campaign_id`* | — |  | Cancel Email Campaign |
+| PUT | `/email/address-verify/{email_address_id}/send` | Send Verification Token | `email_address_id`* | — |  | Send Verification Token |
+| PUT | `/email/address-verify/{email_address_id}/verify/{activation_token}` | Verify Allowed Email Address | `email_address_id`*, `activation_token`* | — |  | Verify Allowed Email Address |
+| GET | `/email/addresses` | Get All Allowed Email Addresses | — | — | yes | Get All Allowed Email Addresses |
+| POST | `/email/addresses` | Create Allowed Email Address | body: object | — |  | Create Allowed Email Address |
+| GET | `/email/addresses/{email_address_id}` | Get Specific Allowed Email Address | `email_address_id`* | — | yes | Get Specific Allowed Email Address |
+| DELETE | `/email/addresses/{email_address_id}` | Delete Allowed Email Address | `email_address_id`* | — |  | Delete Allowed Email Address |
+| GET | `/email/history` | Email History | — | — | yes | Email History |
+| GET | `/email/history/export?filename={filename}` | Export History | `filename`* | — | yes | Export History |
+| GET | `/email/master-templates` | Get All Master Email Templates | — | — | yes | Get All Master Email Templates |
+| GET | `/email/master-templates-categories` | Get All Master Template Categories | — | — | yes | Get All Master Template Categories |
+| GET | `/email/master-templates-categories/{category_id}` | Get Specific Email Template Category | `category_id`* | — | yes | Get Specific Email Template Category |
+| GET | `/email/master-templates-categories/{category_id}/master-templates` | Get All Templates For Category | `category_id`* | — | yes | Get All Templates For Category |
+| GET | `/email/master-templates/{template_id}` | Get Specific Master Template | `template_id`* | — | yes | Get Specific Master Template |
+| POST | `/email/price` | Email Price | body: object | — |  | Email Price |
+| POST | `/email/receipts` | post /email/receipts | body: object | — |  | Add a Test Delivery Receipt |
+| POST | `/email/send` | Email Send | body: object | — |  | Email Send |
+| GET | `/email/templates` | Get All Email Templates | — | — | yes | Get All Email Templates |
+| POST | `/email/templates` | Create New Email Template from Master Template | body: object | — |  | Create New Email Template from Master Template |
+| POST | `/email/templates-images/{template_id}` | Upload Image to Specific Template | `template_id`*, body: object | — |  | Upload Image to Specific Template |
+| GET | `/email/templates/{template_id}` | Get Specific Email Template | `template_id`* | — | yes | Get Specific Email Template |
+| PUT | `/email/templates/{template_id}` | Update an Email Template | `template_id`*, body: object | — |  | Update an Email Template |
+| DELETE | `/email/templates/{template_id}` | Delete Email Template | `template_id`* | — |  | Delete Email Template |
+| GET | `/fax/history/export?filename={filename}` | Export Fax History | `filename`* | — | yes | Export Fax History |
+| GET | `/fax/history?date_from={date_from}&date_to={date_to}&q={q}&order_by={order_by}` | Get Fax History | `date_from`*, `date_to`*, `q`*, `order_by`* | — | yes | Get Fax History |
+| POST | `/fax/price` | post /fax/price | body: object | — |  | Calculate Price |
+| GET | `/fax/receipts` | List of Fax Delivery Receipts | — | — | yes | List of Fax Delivery Receipts |
+| POST | `/fax/receipts` | Add a Test Delivery Receipt | body: object | — |  | Add a Test Delivery Receipt |
+| PUT | `/fax/receipts-read` | Mark Fax Delivery Receipts as read | body: object | — |  | Mark Fax Delivery Receipts as read |
+| GET | `/fax/receipts/{message_id}` | Get a Specific Fax Delivery Receipt | `message_id`* | — | yes | Get a Specific Fax Delivery Receipt |
+| POST | `/fax/send` | Send Fax | body: object | — |  | Send Fax |
+| PUT | `/forgot-password` | Forgot Password | body: object | — |  | Forgot Password |
+| PUT | `/forgot-password/verify` | Verify Forgot Password | body: object | — |  | Verify Forgot Password |
+| PUT | `/forgot-username` | Forgot Username | body: object | — |  | Forgot Username |
+| GET | `/lists` | Get all Contact Lists | — | — | yes | Get all Contact Lists |
+| POST | `/lists` | Create a new contact list | body: object | — |  | Create a new contact list |
+| PUT | `/lists/{from_list_id}/contacts/{contact_id}/{to_list_id}` | Transfer a Contact | `from_list_id`*, `contact_id`*, `to_list_id`* | — |  | Transfer a Contact |
+| GET | `/lists/{list_id}` | Get a specific contact list | `list_id`* | — | yes | Get a specific contact list |
+| PUT | `/lists/{list_id}` | Update a specific contact list | `list_id`*, body: object | — |  | Update a specific contact list |
+| DELETE | `/lists/{list_id}` | Delete a specific contact list | `list_id`* | — |  | Delete a specific contact list |
+| GET | `/lists/{list_id}/contacts` | Get all Contacts in a List | `list_id`* | — | yes | Get all Contacts in a List |
+| POST | `/lists/{list_id}/contacts` | Create a new contact | `list_id`*, body: object | — |  | Create a new contact |
+| GET | `/lists/{list_id}/contacts/{contact_id}` | Get a specific contact | `list_id`*, `contact_id`* | — | yes | Get a specific contact |
+| PUT | `/lists/{list_id}/contacts/{contact_id}` | Update a specific contact | `list_id`*, `contact_id`*, body: object | — |  | Update a specific contact |
+| DELETE | `/lists/{list_id}/contacts/{contact_id}` | Delete a specific contact | `list_id`*, `contact_id`* | — |  | Delete a specific contact |
+| GET | `/lists/{list_id}/export?filename={filename}` | Export Contacts List | `filename`*, `list_id`* | — | yes | Export Contacts List |
+| POST | `/lists/{list_id}/import` | Import Contacts to List | `list_id`*, body: object | — |  | Import Contacts to List |
+| POST | `/lists/{list_id}/import-csv-preview` | Show CSV Import File Preview | `list_id`*, body: object | — |  | Show CSV Import File Preview |
+| GET | `/lists/{list_id}/import-fields` | Get List of Acceptable Import Fields | `list_id`* | — | yes | Get List of Acceptable Import Fields |
+| PUT | `/lists/{list_id}/remove-duplicates` | Remove Duplicate Contacts | `list_id`*, body: object | — |  | Remove Duplicate Contacts |
+| PUT | `/lists/{list_id}/remove-opted-out-contacts/{opt_out_list_id}` | Remove Opted Out Contacts | `list_id`*, `opt_out_list_id`* | — |  | Remove Opted Out Contacts |
+| PUT | `/mms/cancel-all` | Cancel All MMS | — | — |  | Cancel All MMS |
+| GET | `/mms/history/export?filename={filename}` | Export MMS History | `filename`* | — | yes | Export MMS History |
+| GET | `/mms/history?q={q}&order_by={order_by}&date_from={date_from}&date_to={date_to}` | Get MMS History | `q`*, `order_by`*, `date_from`*, `date_to`* | — | yes | Get MMS History |
+| POST | `/mms/price` | Get Price | body: object | — |  | Get Price |
+| GET | `/mms/receipts` | Get all Delivery Receipts | — | — | yes | Get all Delivery Receipts |
+| PUT | `/mms/receipts-read` | Mark Receipts As Read | — | — |  | Mark Receipts As Read |
+| GET | `/mms/receipts/{message_id}` | Get Delivery Receipt | `message_id`* | — | yes | Get Delivery Receipt |
+| POST | `/mms/send` | Send MMS | body: object | — |  | Send MMS |
+| PUT | `/mms/{message_id}/cancel` | Cancel MMS | `message_id`* | — |  | Cancel MMS |
+| GET | `/numbers` | Get all Dedicated Numbers | — | — | yes | Get all Dedicated Numbers |
+| POST | `/numbers/buy/{dedicated_number}` | Buy dedicated number | `dedicated_number`* | — |  | Buy dedicated number |
+| GET | `/numbers/search/{country}?{search}=1&{search_type}=2` | Search Dedicated Numbers by Country | `country`*, `search`*, `search_type`* | — | yes | Search Dedicated Numbers by Country |
+| GET | `/post/direct-mail/campaigns` | List Direct Mail Campaigns | — | — | yes | List Direct Mail Campaigns |
+| POST | `/post/direct-mail/campaigns/price` | Calculate Direct Mail Campaign Price | body: object | — |  | Calculate Direct Mail Campaign Price |
+| POST | `/post/direct-mail/campaigns/send` | Create New Campaign | body: object | — |  | Create New Campaign |
+| GET | `/post/direct-mail/locations/search/{country}/?q={query}` | Search Locations | `country`*, `query`* | — | yes | Search Locations |
+| POST | `/post/letters/detect-address` | Detect Address | body: object | — |  | Detect Address |
+| GET | `/post/letters/history` | Get Post Letter History | — | — | yes | Get Post Letter History |
+| GET | `/post/letters/history/export?filename={filename}` | Export Post Letter History | `filename`* | — | yes | Export Post Letter History |
+| POST | `/post/letters/price` | post /post/letters/price | body: object | — |  | Calculate Price |
+| POST | `/post/letters/send` | Send Post Letter | body: object | — |  | Send Post Letter |
+| GET | `/post/postcards/export?filename={filename}` | Export Postcard History | `filename`* | — | yes | Export Postcard History |
+| GET | `/post/postcards/history` | Get Postcard History | — | — | yes | Get Postcard History |
+| POST | `/post/postcards/price` | Calculate Pricing | body: object | — |  | Calculate Pricing |
+| POST | `/post/postcards/send` | Send Postcard | body: object | — |  | Send Postcard |
+| GET | `/post/return-addresses` | Get List of Post Return Addresses | — | — | yes | Get List of Post Return Addresses |
+| POST | `/post/return-addresses` | Create a Post Return Address | body: object | — |  | Create a Post Return Address |
+| GET | `/post/return-addresses/{return_address_id}` | Get Post Return Address | `return_address_id`* | — | yes | Get Post Return Address |
+| PUT | `/post/return-addresses/{return_address_id}` | Update Post Return Address | `return_address_id`*, body: object | — |  | Update Post Return Address |
+| DELETE | `/post/return-addresses/{return_address_id}` | Delete Post Return Address | `return_address_id`* | — |  | Delete Post Return Address |
+| GET | `/pricing/{country}?currency={currency}` | Get Country Pricing | `country`*, `currency`* | — | yes | Get Country Pricing |
+| GET | `/recharge/credit-card` | Get Credit Card info | — | — | yes | Get Credit Card info |
+| PUT | `/recharge/credit-card` | Update Credit Card info | body: object | — |  | Update Credit Card info |
+| GET | `/recharge/packages?country={country}` | List of Packages | `country`* | — | yes | List of Packages |
+| PUT | `/recharge/purchase/{package_id}` | Purchase a Package | `package_id`* | — |  | Purchase a Package |
+| GET | `/recharge/transactions` | Get Transactions | — | — | yes | Get Transactions |
+| GET | `/recharge/transactions/{transaction_id}` | Get a specific transaction | `transaction_id`* | — | yes | Get a specific transaction |
+| GET | `/referral/accounts` | Get List of Referral Accounts | — | — | yes | Get List of Referral Accounts |
+| GET | `/reseller` | Get Reseller Setting | — | — | yes | Get Reseller Setting |
+| PUT | `/reseller` | Update Reseller Setting | body: object | — |  | Update Reseller Setting |
+| GET | `/reseller/accounts` | List of Reseller Accounts | — | — | yes | List of Reseller Accounts |
+| POST | `/reseller/accounts` | Create Reseller Account | body: object | — |  | Create Reseller Account |
+| POST | `/reseller/accounts-public` | Create Reseller Account - Public | body: object | — |  | Create Reseller Account - Public |
+| GET | `/reseller/accounts/{client_user_id}` | Get Reseller Account | `client_user_id`* | — | yes | Get Reseller Account |
+| PUT | `/reseller/accounts/{client_user_id}` | Update Reseller Account | `client_user_id`*, body: object | — |  | Update Reseller Account |
+| PUT | `/reseller/transfer-credit` | Transfer Credit | body: object | — |  | Transfer Credit |
+| GET | `/reseller/{subdomain}` | Reseller By Subdomain | `subdomain`* | — | yes | Reseller By Subdomain |
+| GET | `/sdk-download/{type}` | SDK Download | `type`* | — | yes | SDK Download |
+| GET | `/search/contacts-lists?q={q}` | Search Contacts-Lists | `q`* | — | yes | Search Contacts-Lists |
+| GET | `/sms-campaigns` | Get list of SMS Campaigns | — | — | yes | Get list of SMS Campaigns |
+| POST | `/sms-campaigns/price` | Calculate Price for SMS Campaign | body: object | — |  | Calculate Price for SMS Campaign |
+| POST | `/sms-campaigns/send` | Use Short URL | body: object | — |  | Use Short URL |
+| GET | `/sms-campaigns/{campaign_id}/link-export?filename={filename}` | Link Tracking Export | `campaign_id`*, `filename`* | — | yes | Link Tracking Export |
+| GET | `/sms-campaigns/{campaign_id}/link-statistics` | Link Statistics | `campaign_id`* | — | yes | Link Statistics |
+| GET | `/sms-campaigns/{campaign_id}/link-tracking` | Link Tracking | `campaign_id`* | — | yes | Link Tracking |
+| GET | `/sms-campaigns/{sms_campaign_id}` | Get SMS Campaign | `sms_campaign_id`* | — | yes | Get SMS Campaign |
+| PUT | `/sms-campaigns/{sms_campaign_id}` | Update an SMS Campaign | `sms_campaign_id`*, body: object | — |  | Update an SMS Campaign |
+| PUT | `/sms-campaigns/{sms_campaign_id}/cancel` | Cancel an SMS Campaign | `sms_campaign_id`* | — |  | Cancel an SMS Campaign |
+| PUT | `/sms/cancel-all` | Cancel all Scheduled Messages | — | — |  | Cancel all Scheduled Messages |
+| GET | `/sms/email-sms` | List of Email-to-SMS Allowed Address | — | — | yes | List of Email-to-SMS Allowed Address |
+| POST | `/sms/email-sms` | Create Email to SMS Allowed Address | body: object | — |  | Create Email to SMS Allowed Address |
+| GET | `/sms/email-sms-stripped-strings` | List Stripped Strings | — | — | yes | List Stripped Strings |
+| POST | `/sms/email-sms-stripped-strings` | Create Stripped String | body: object | — |  | Create Stripped String |
+| GET | `/sms/email-sms-stripped-strings/{rule_id}` | Find Specific Stripped String | `rule_id`* | — | yes | Find Specific Stripped String |
+| PUT | `/sms/email-sms-stripped-strings/{rule_id}` | Update Stripped String | `rule_id`*, body: object | — |  | Update Stripped String |
+| DELETE | `/sms/email-sms-stripped-strings/{rule_id}` | Delete Stripped String | `rule_id`* | — |  | Delete Stripped String |
+| GET | `/sms/email-sms/{email_address_id}` | Get specific Email-to-SMS Allowed Address | `email_address_id`* | — | yes | Get specific Email-to-SMS Allowed Address |
+| PUT | `/sms/email-sms/{email_address_id}` | Update Email-to-SMS Allowed Address | `email_address_id`*, body: object | — |  | Update Email-to-SMS Allowed Address |
+| DELETE | `/sms/email-sms/{email_address_id}` | Delete Email-to-SMS Allowed Address | `email_address_id`* | — |  | Delete Email-to-SMS Allowed Address |
+| GET | `/sms/history/export?filename={filename}` | Export SMS History | `filename`* | — | yes | Export SMS History |
+| GET | `/sms/history?date_from={date_from}&date_to={date_to}` | Get all History | `date_from`*, `date_to`* | — | yes | Get all History |
+| GET | `/sms/inbound` | Get all Inbound SMS - Pull | — | — | yes | Get all Inbound SMS - Pull |
+| POST | `/sms/inbound` | Add a Test Inbound SMS | body: object | — |  | Add a Test Inbound SMS |
+| PUT | `/sms/inbound-read` | Mark all Inbound SMS as read | body: object | — |  | Mark all Inbound SMS as read |
+| PUT | `/sms/inbound-read/{message_id}` | Mark a specific Inbound SMS as read | `message_id`* | — |  | Mark a specific Inbound SMS as read |
+| GET | `/sms/inbound/{outbound_message_id}` | Get Specific Inbound - Pull | `outbound_message_id`* | — | yes | Get Specific Inbound - Pull |
+| POST | `/sms/price` | post /sms/price | body: object | — |  | Calculate Price |
+| GET | `/sms/receipts` | get /sms/receipts | — | — | yes | Get all Delivery Receipts |
+| POST | `/sms/receipts` | post /sms/receipts | body: object | — |  | Add a Test Delivery Receipt |
+| PUT | `/sms/receipts-read` | Mark Delivery Receipts as read | body: object | — |  | Mark Delivery Receipts as read |
+| GET | `/sms/receipts/{message_id}` | Get a Specific Delivery Receipt | `message_id`* | — | yes | Get a Specific Delivery Receipt |
+| POST | `/sms/send` | Send an SMS | body: object | — |  | Send an SMS |
+| GET | `/sms/templates` | List of Templates | — | — | yes | List of Templates |
+| POST | `/sms/templates` | Create a Template | body: object | — |  | Create a Template |
+| PUT | `/sms/templates/{template_id}` | Update a Template | `template_id`*, body: object | — |  | Update a Template |
+| DELETE | `/sms/templates/{template_id}` | Delete a Template | `template_id`* | — |  | Delete a Template |
+| PUT | `/sms/{message_id}/cancel` | Cancel a Scheduled Message | `message_id`* | — |  | Cancel a Scheduled Message |
+| GET | `/statistics/sms` | Get SMS Statistics | — | — | yes | Get SMS Statistics |
+| GET | `/statistics/voice` | Get Voice Statistics | — | — | yes | Get Voice Statistics |
+| GET | `/subaccounts` | Get all Subaccounts | — | — | yes | Get all Subaccounts |
+| POST | `/subaccounts` | Create a new subaccount | body: object | — |  | Create a new subaccount |
+| GET | `/subaccounts/{subaccount_id}` | Get a specific subaccount | `subaccount_id`* | — | yes | Get a specific subaccount |
+| PUT | `/subaccounts/{subaccount_id}` | Update a specific subaccount | `subaccount_id`*, body: object | — |  | Update a specific subaccount |
+| DELETE | `/subaccounts/{subaccount_id}` | Delete a specific subaccount | `subaccount_id`* | — |  | Delete a specific subaccount |
+| PUT | `/subaccounts/{subaccount_id}/regen-api-key` | Regenerate API Key | `subaccount_id`* | — |  | Regenerate API Key |
+| GET | `/timezones` | Get Timezones | — | — | yes | Get Timezones |
+| POST | `/uploads?convert={convert}` | Upload a file | body: object | — |  | Upload a file |
+| PUT | `/voice/cancel-all` | Cancel all Voice Calls | — | — |  | Cancel all Voice Calls |
+| GET | `/voice/history/export?filename={filename}` | Export Voice History | `filename`* | — | yes | Export Voice History |
+| GET | `/voice/history?date_from={date_from}&date_to={date_to}` | Get Voice History | `date_from`*, `date_to`* | — | yes | Get Voice History |
+| GET | `/voice/lang` | Voice Languages | — | — | yes | Voice Languages |
+| POST | `/voice/price` | post /voice/price | body: object | — |  | Calculate Price |
+| GET | `/voice/receipts` | Get Voice receipts | — | — | yes | Get Voice receipts |
+| POST | `/voice/receipts` | post /voice/receipts | body: object | — |  | Add a Test Delivery Receipt |
+| PUT | `/voice/receipts-read?date_before={date_before}` | Marked Voice Receipts as Read | `date_before`* | — |  | Marked Voice Receipts as Read |
+| GET | `/voice/receipts/{message_id}` | Get Specific Voice Receipt | `message_id`* | — | yes | Get Specific Voice Receipt |
+| POST | `/voice/send` | Send a Voice Call | body: object | — |  | Send a Voice Call |
+| PUT | `/voice/{message_id}/cancel` | Cancel a Specific Voice Call | `message_id`* | — |  | Cancel a Specific Voice Call |

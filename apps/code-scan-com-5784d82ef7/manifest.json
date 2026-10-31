@@ -13,6 +13,21 @@
         "from": "code-scan-com-5784d82ef7",
         "kind": "EXPOSES",
         "to": "operation:post:/job"
+      },
+      {
+        "from": "operation:get:/job",
+        "kind": "RETURNS",
+        "to": "schema:Job"
+      },
+      {
+        "from": "operation:post:/job",
+        "kind": "ACCEPTS",
+        "to": "schema:NewJob"
+      },
+      {
+        "from": "operation:post:/job",
+        "kind": "RETURNS",
+        "to": "schema:Job"
       }
     ],
     "nodes": [
@@ -22,12 +37,33 @@
       },
       {
         "deprecated": false,
+        "description": "Fetches the status of a job",
         "id": "operation:get:/job",
         "kind": "operation",
         "method": "get",
         "name": "get /job",
+        "parameters": [
+          {
+            "description": "Id of the Job to retrieve",
+            "in": "query",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/job",
         "pointer": "#/paths/~1job/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Job"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "codescan_auth": []
@@ -37,12 +73,31 @@
       },
       {
         "deprecated": false,
+        "description": "Creates a new job",
         "id": "operation:post:/job",
         "kind": "operation",
         "method": "post",
         "name": "post /job",
         "path": "/job",
         "pointer": "#/paths/~1job/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewJob"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Job"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "codescan_auth": []
@@ -53,17 +108,20 @@
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Job",
         "kind": "schema",
-        "name": "Job"
+        "name": "Job",
+        "type": "object"
       },
       {
         "id": "schema:NewJob",
         "kind": "schema",
-        "name": "NewJob"
+        "name": "NewJob",
+        "type": "object"
       }
     ]
   },

@@ -8,6 +8,21 @@
         "from": "api-gov-uk-vehicle-enquiry-9e04c95d5a",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/vehicles"
+      },
+      {
+        "from": "operation:post:/v1/vehicles",
+        "kind": "ACCEPTS",
+        "to": "schema:VehicleRequest"
+      },
+      {
+        "from": "operation:post:/v1/vehicles",
+        "kind": "RETURNS",
+        "to": "schema:Vehicle"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Errors"
       }
     ],
     "nodes": [
@@ -17,34 +32,89 @@
       },
       {
         "deprecated": false,
+        "description": "Returns vehicle details based on registration number",
         "id": "operation:post:/v1/vehicles",
         "kind": "operation",
         "method": "post",
         "name": "getVehicleDetailsByRegistrationNumber",
+        "parameters": [
+          {
+            "description": "Client Specific API Key",
+            "in": "header",
+            "name": "x-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Consumer Correlation ID",
+            "in": "header",
+            "name": "X-Correlation-Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/vehicles",
         "pointer": "#/paths/~1v1~1vehicles/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VehicleRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Vehicle"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "503",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get vehicle details by registration number"
+        "summary": "Get vehicle details by registration number",
+        "tags": [
+          "vehicle"
+        ]
       },
       {
+        "description": "Error Response",
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:Errors",
         "kind": "schema",
-        "name": "Errors"
+        "name": "Errors",
+        "type": "object"
       },
       {
         "id": "schema:Vehicle",
         "kind": "schema",
-        "name": "Vehicle"
+        "name": "Vehicle",
+        "type": "object"
       },
       {
         "id": "schema:VehicleRequest",
         "kind": "schema",
-        "name": "VehicleRequest"
+        "name": "VehicleRequest",
+        "type": "object"
       }
     ]
   },

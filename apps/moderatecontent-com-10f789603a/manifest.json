@@ -21,10 +21,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Blocks images with nudity"
+        "summary": "Blocks images with nudity",
+        "tags": [
+          "Inappropriate Content"
+        ]
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_acps-iaa_freet
 
 | | |
 | --- | --- |
-| Signed bundle | `9b0b668f9a5564c782c1fec9a1f235aae3b64c82990878bf1b228f197c9fd996` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_acps-iaa_freet
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/services` | getLatestNews | Query the latest news |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/services` | getLatestNews | `mobile`*, `funcs`* | ApiResponse | yes | Query the latest news |

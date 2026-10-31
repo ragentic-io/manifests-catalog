@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars0.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `bc871e46164f3f4ffc7efe277556f727c8f4bf6a700a2b92df4e1b05ef7f0ea9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,231 +34,233 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars0.githubusercontent.com_
 
 834 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/orders/v3/batches/changeOrders` | ChangeOrderListV3 | Send a batch of operations to change your marketplace Order information: accept, ship, etc. (max 100 items per call) |
-| POST | `/orders/v3/batches/changeOrders/{changeOrderType}` | ChangeOrderListV2 | Send a batch of operations to change your marketplace Order information: accept, ship, etc. (max 100 items per call) |
-| POST | `/orders/v3/batches/clearMerchantOrderInfos` | ClearMerchantOrderInfoListV3 | Send a batch of operations to clear an Order's merchant information (max 100 items per call) |
-| POST | `/orders/v3/batches/setMerchantOrderInfos` | SetMerchantOrderInfoListV3 | Send a batch of operations to set an Order's merchant information (max 100 items per call) |
-| POST | `/orders/v3/harvest` | HarvestAllV3 | Send harvest request to all your marketplaces |
-| POST | `/orders/v3/list/full` | GetOrderListFullV3 | Get a paginated list of all Orders with all Order and Order Item(s) properties |
-| POST | `/orders/v3/list/light` | GetOrderListLightV3 | Get a paginated list of all Orders without details |
-| GET | `/orders/v3/lov/orderManagementReadyMarketplaceBusinessCode` | GetOrderManagementReadyMarketplaceBusinessCode | — |
-| GET | `/orders/v3/status` | GetMarketplaceAccountsSynchronizationV3 | — |
-| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/harvest` | HarvestAccount | Send harvest request for an Account |
-| GET | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | GetOrderV3 | Get full Order and Order Item(s) properties |
-| HEAD | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | HeadOrderV3 | Get the meta information about the order (ETag, Last-Modified) |
-| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo` | ClearMerchantOrderInfoV3 | Clear an Order's merchant information |
-| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest` | HarvestOrderV3 | Send harvest request for a single Order |
-| GET | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history` | GetOrderHistoryV3 | Get an Order's harvest and change history |
-| GET | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history/{orderChangeExecutionUUID}` | GetOrderChangeReportingV3 | Get the order change reporting |
-| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo` | SetMerchantOrderInfoV3 | Set an Order's merchant information |
-| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}` | ChangeOrderV3 | Change your marketplace Order Information (accept, ship, etc.) |
-| GET | `/v2/public/channels/` | GetChannelsIndex | Get public channel index |
-| GET | `/v2/public/channels/{countryIsoCode}` | GetChannels | The channel list for one country |
-| GET | `/v2/public/lov/` | GetPublicLovIndex | Get all list names |
-| GET | `/v2/public/lov/{listName}` | GetPublicListOfValues | Get the list of values related to this list name |
-| POST | `/v2/public/security/login` | Login | Login |
-| POST | `/v2/public/security/lostpassword` | LostPassword | Lost password |
-| POST | `/v2/public/security/register` | Register | User Registration |
-| GET | `/v2/user/analytics/` | AnalyticsIndex | Get the Analytics API operation index |
-| POST | `/v2/user/analytics/reports/byday` | GetStoreReportByDayPerStore | Get the report by day for a StoreId |
-| GET | `/v2/user/analytics/tracking/status` | GetTrackingStatus | Get the global synchronization status of clicks and orders |
-| GET | `/v2/user/analytics/{storeId}` | AnalyticsStoreIndex | Get the Analytics API operation index for one store |
-| POST | `/v2/user/analytics/{storeId}/optimisations/all/{actionName}` | OptimiseAll | Optimise all products |
-| POST | `/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}` | OptimiseByCategory | Optimise products by category |
-| POST | `/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}` | OptimiseByChannel | Optimise products by channel |
-| POST | `/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}` | OptimiseByProduct | Optimise product |
-| POST | `/v2/user/analytics/{storeId}/optimisations/copy` | CopyOptimisation | Copy product optimisations between 2 channels |
-| POST | `/v2/user/analytics/{storeId}/optimisations/{actionName}` | Optimise | Optimise products by page |
-| POST | `/v2/user/analytics/{storeId}/reports/bycategory` | GetStoreReportByCategory | Get the report by category |
-| POST | `/v2/user/analytics/{storeId}/reports/bychannel` | GetStoreReportByChannel | Get the report by channel |
-| POST | `/v2/user/analytics/{storeId}/reports/byday` | GetStoreReportByDay | Get the report by day for a StoreId |
-| POST | `/v2/user/analytics/{storeId}/reports/byproduct` | GetStoreReportByProduct | Get the report by product |
-| GET | `/v2/user/analytics/{storeId}/reports/filters` | GetReportFilters | Get report filter list for the given store |
-| DELETE | `/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}` | DeleteReportFilter | Delete the report filter |
-| GET | `/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}` | GetReportFilter | Get the report filter description |
-| PUT | `/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}` | SaveReportFilter | Save the report filter |
-| GET | `/v2/user/analytics/{storeId}/rules` | GetRules | Gets the list of rules for a given store |
-| POST | `/v2/user/analytics/{storeId}/rules` | CreateRule | Rule creation |
-| GET | `/v2/user/analytics/{storeId}/rules/executions` | GetRulesExecutions | Get the rules execution history |
-| POST | `/v2/user/analytics/{storeId}/rules/run` | RunRules | Run all rules for this store |
-| DELETE | `/v2/user/analytics/{storeId}/rules/{ruleId}` | DeleteRule | Delete Rule |
-| GET | `/v2/user/analytics/{storeId}/rules/{ruleId}` | GetRule | Gets the rule |
-| PATCH | `/v2/user/analytics/{storeId}/rules/{ruleId}` | UpdateRule | Update Rule |
-| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/disable` | DisableRule | Disable rule |
-| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/enable` | EnableRule | Enable rule |
-| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/movedown` | MoveDownRule | Move the rule down |
-| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/moveup` | MoveUpRule | Move the rule up |
-| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/run` | RunRule | Run rule |
-| GET | `/v2/user/analytics/{storeId}/tracking/clicks` | GetStoreTrackedClicks | Get the latest tracked clicks |
-| GET | `/v2/user/analytics/{storeId}/tracking/externalorders` | GetStoreTrackedExternalOrders | Get the latest tracked external orders |
-| GET | `/v2/user/analytics/{storeId}/tracking/orders` | GetStoreTrackedOrders | Get the latest tracked orders |
-| GET | `/v2/user/analytics/{storeId}/tracking/status` | GetStoreTrackingStatus | Get the synchronization status of clicks and orders of a store |
-| GET | `/v2/user/catalogs/` | CatalogIndex | Get the index of the catalog API |
-| GET | `/v2/user/catalogs/beezupColumns` | Catalog_GetBeezUPColumns | Get the BeezUP columns |
-| GET | `/v2/user/catalogs/importations` | Importation_GetReportingsAllStores | Get the latest catalog importation reporting for all your stores |
-| GET | `/v2/user/catalogs/{storeId}` | CatalogStoreIndex | Get the index of the catalog API for this store |
-| DELETE | `/v2/user/catalogs/{storeId}/autoImport` | Auto_DeleteAutoImport | Delete Auto Import |
-| GET | `/v2/user/catalogs/{storeId}/autoImport` | Auto_GetAutoImportConfiguration | Get the auto import configuration |
-| POST | `/v2/user/catalogs/{storeId}/autoImport/activate` | Importation_ActivateAutoImport | Activate the auto importation of the last successful manual catalog importation. |
-| POST | `/v2/user/catalogs/{storeId}/autoImport/pause` | Auto_PauseAutoImport | Pause Auto Import |
-| POST | `/v2/user/catalogs/{storeId}/autoImport/resume` | Auto_ResumeAutoImport | Resume Auto Import |
-| POST | `/v2/user/catalogs/{storeId}/autoImport/scheduling/interval` | Auto_ConfigureAutoImportInterval | Configure Auto Import Interval |
-| POST | `/v2/user/catalogs/{storeId}/autoImport/scheduling/schedules` | Auto_ScheduleAutoImport | Configure Auto Import Schedules |
-| POST | `/v2/user/catalogs/{storeId}/autoImport/start` | Auto_StartAutoImport | Start Auto Import Manually |
-| GET | `/v2/user/catalogs/{storeId}/catalogColumns` | Catalog_GetCatalogColumns | Get catalog column list |
-| POST | `/v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename` | Catalog_ChangeCatalogColumnUserName | Change Catalog Column User Name |
-| GET | `/v2/user/catalogs/{storeId}/categories` | Catalog_GetCategories | Get category list |
-| GET | `/v2/user/catalogs/{storeId}/customColumns` | Catalog_GetCustomColumns | Get custom column list |
-| POST | `/v2/user/catalogs/{storeId}/customColumns/computeExpression` | Catalog_ComputeExpression | Compute the expression for this catalog. |
-| DELETE | `/v2/user/catalogs/{storeId}/customColumns/{columnId}` | Catalog_DeleteCustomColumn | Delete custom column |
-| PUT | `/v2/user/catalogs/{storeId}/customColumns/{columnId}` | Catalog_SaveCustomColumn | Create or replace a custom column |
-| GET | `/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression` | Catalog_GetCustomColumnExpression | Get the encrypted custom column expression |
-| PUT | `/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression` | Catalog_ChangeCustomColumnExpression | Change custom column expression |
-| POST | `/v2/user/catalogs/{storeId}/customColumns/{columnId}/rename` | Catalog_ChangeCustomColumnUserName | Change Custom Column User Name |
-| GET | `/v2/user/catalogs/{storeId}/importations` | Importation_GetReportings | Get the latest catalog importation reporting |
-| POST | `/v2/user/catalogs/{storeId}/importations/start` | Importation_StartManualUpdate | Start Manual Import |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}` | Importation_GetImportationMonitoring | Get the importation status |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/cancel` | Importation_Cancel | Cancel importation |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns` | Importation_GetDetectedCatalogColumns | Get detected catalog columns during this importation. |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}` | Importation_ConfigureCatalogColumn | Configure catalog column |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore` | Importation_IgnoreColumn | Ignore Column |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map` | Importation_MapCatalogColumn | Map catalog column to a BeezUP column |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend` | Importation_ReattendColumn | Reattend Column |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap` | Importation_UnmapCatalogColumn | Unmap catalog column |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/commit` | Importation_Commit | Commit Importation |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns` | Importation_CommitColumns | Commit columns |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns` | Importation_ConfigureRemainingCatalogColumns | Configure remaining catalog columns |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns` | Importation_GetCustomColumns | Get custom columns currently place in this importation |
-| DELETE | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}` | Importation_DeleteCustomColumn | Delete Custom Column |
-| PUT | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}` | Importation_SaveCustomColumn | Create or replace a custom column |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression` | Importation_GetCustomColumnExpression | Get the encrypted custom column expression in this importation |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map` | Importation_MapCustomColumn | Map custom column to a BeezUP column |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap` | Importation_UnmapCustomColumn | Unmap custom column |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}` | Importation_GetProductSample | Get the product sample related to this importation with all columns (catalog and custom) |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}` | Importation_GetProductSampleCustomColumnValue | Get product sample custom column value related to this importation. |
-| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/products/list` | Importation_GetProductsReport | Importation Get Products Report |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/report` | Importation_GetReport | Importation Get Report |
-| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression` | Importation_TechnicalProgression | Get technical progression |
-| GET | `/v2/user/catalogs/{storeId}/inputConfiguration` | Importation_GetManualUpdateLastInputConfig | Get the last input configuration |
-| GET | `/v2/user/catalogs/{storeId}/products` | Catalog_GetProductBySku | Get product by Sku |
-| POST | `/v2/user/catalogs/{storeId}/products/list` | Catalog_GetProducts | Get product list |
-| GET | `/v2/user/catalogs/{storeId}/products/random` | Catalog_GetRandomProducts | Get random product list |
-| GET | `/v2/user/catalogs/{storeId}/products/{productId}` | Catalog_GetProductByProductId | Get product by ProductId |
-| GET | `/v2/user/channelCatalogs/` | GetChannelCatalogs | List all your current channel catalogs |
-| POST | `/v2/user/channelCatalogs/` | AddChannelCatalog | Add a new channel catalog |
-| GET | `/v2/user/channelCatalogs/filterOperators` | GetChannelCatalogFilterOperators | Get channel catalog filter operators |
-| POST | `/v2/user/channelCatalogs/products` | GetChannelCatalogProductByChannelCatalog | Get channel catalog products related to these channel catalogs |
-| DELETE | `/v2/user/channelCatalogs/{channelCatalogId}` | DeleteChannelCatalog | Delete the channel catalog |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}` | GetChannelCatalog | Get the channel catalog information |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/categories` | GetChannelCatalogCategories | Get channel catalog categories |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/categories/configure` | ConfigureChannelCatalogCategory | Configure channel catalog category |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/categories/disableMapping` | DisableChannelCatalogCategoryMapping | Disable a channel catalog category mapping |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/categories/reenableMapping` | ReenableChannelCatalogCategoryMapping | Reenable a channel catalog category mapping |
-| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/columnMappings` | ConfigureChannelCatalogColumnMappings | Configure channel catalog column mappings |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/disable` | DisableChannelCatalog | Disable a channel catalog |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/enable` | EnableChannelCatalog | Enable a channel catalog |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters` | GetChannelCatalogExclusionFilters | Get channel catalog exclusion filters |
-| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters` | ConfigureChannelCatalogExclusionFilters | Configure channel catalog exclusion filters |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/exportations/cache` | GetChannelCatalogExportationCacheInfo | Get the exportation cache information |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/exportations/cache/clear` | ClearChannelCatalogExportationCache | Clear the exportation cache |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/exportations/history` | GetChannelCatalogExportationHistory | Get the exportation history |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products` | GetChannelCatalogProductInfoList | Get channel catalog product information list |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/products/counters` | GetChannelCatalogProductsCounters | Get channel catalog products' counters |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/export` | ExportChannelCatalogProductInfoList | Export channel catalog product information list |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}` | GetChannelCatalogProductInfo | Get channel catalog product information |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable` | DisableChannelCatalogProduct | Disable channel catalog product |
-| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides` | OverrideChannelCatalogProductValues | Override channel catalog product values |
-| GET | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/copy` | GetChannelCatalogProductValueOverrideCopy | Get channel catalog product value override compatibilities status |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/copy` | ConfigureChannelCatalogProductValueOverrideCopy | Copy channel catalog product value override |
-| DELETE | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}` | DeleteChannelCatalogProductValueOverride | Delete a specific channel catalog product value override |
-| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable` | ReenableChannelCatalogProduct | Reenable channel catalog product |
-| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/settings/cost` | ConfigureChannelCatalogCostSettings | Configure channel catalog cost settings |
-| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/settings/general` | ConfigureChannelCatalogGeneralSettings | Configure channel catalog general settings |
-| GET | `/v2/user/channels/` | GetAvailableChannels | List all available channel for this store |
-| GET | `/v2/user/channels/{channelId}` | GetChannelInfo | Get channel information |
-| GET | `/v2/user/channels/{channelId}/categories` | GetChannelCategories | Get channel categories |
-| POST | `/v2/user/channels/{channelId}/columns` | GetChannelColumns | Get channel columns |
-| GET | `/v2/user/customer/` | GetCustomerIndex | The index of all operations and LOV |
-| GET | `/v2/user/customer/account` | GetUserAccountInfo | Get user account information |
-| POST | `/v2/user/customer/account/activate` | ActivateUserAccount | Activate the user account |
-| POST | `/v2/user/customer/account/changeEmail` | ChangeEmail | Change user email |
-| POST | `/v2/user/customer/account/changePassword` | ChangePassword | Change user password |
-| PUT | `/v2/user/customer/account/companyInfo` | SaveCompanyInfo | Change company information |
-| GET | `/v2/user/customer/account/creditCardInfo` | GetCreditCardInfo | Get credit card information |
-| PUT | `/v2/user/customer/account/creditCardInfo` | SaveCreditCardInfo | Save user credit card info |
-| PUT | `/v2/user/customer/account/personalInfo` | SavePersonalInfo | Save user personal information |
-| GET | `/v2/user/customer/account/profilePictureInfo` | GetProfilePictureInfo | Get profile picture information |
-| PUT | `/v2/user/customer/account/profilePictureInfo` | SaveProfilePictureInfo | Change user picture information |
-| POST | `/v2/user/customer/account/resendEmailActivation` | ResendEmailActivation | Resend email activation |
-| GET | `/v2/user/customer/billingPeriods` | GetBillingPeriods | Get billing periods conditions |
-| GET | `/v2/user/customer/contracts` | GetContracts | Get contract list |
-| POST | `/v2/user/customer/contracts` | CreateContract | Create a new contract |
-| POST | `/v2/user/customer/contracts/current/disableAutoRenewal` | TerminateCurrentContract | Schedule termination of your current contract at the end of the commitment. |
-| POST | `/v2/user/customer/contracts/current/reenableAutoRenewal` | ReactivateCurrentContract | Reactivate your terminated contract. |
-| DELETE | `/v2/user/customer/contracts/next` | DeleteNextContract | Delete your next contract |
-| GET | `/v2/user/customer/friends/{userId}` | GetFriendInfo | Get friend information |
-| GET | `/v2/user/customer/invoices` | GetInvoices | Get all your invoices |
-| GET | `/v2/user/customer/offers` | GetStandardOffers | Get all standard offers |
-| POST | `/v2/user/customer/offers` | GetOffer | Get offer pricing |
-| POST | `/v2/user/customer/security/logout` | Logout | Log out the current user from go2 |
-| GET | `/v2/user/customer/stores` | GetStores | Get store list |
-| POST | `/v2/user/customer/stores` | CreateStore | Create a new store |
-| DELETE | `/v2/user/customer/stores/{storeId}` | DeleteStore | Delete a store |
-| GET | `/v2/user/customer/stores/{storeId}` | GetStore | Get store's information |
-| PATCH | `/v2/user/customer/stores/{storeId}` | UpdateStore | Update some store's information. |
-| GET | `/v2/user/customer/stores/{storeId}/alerts` | GetStoreAlerts | Get store's alerts |
-| POST | `/v2/user/customer/stores/{storeId}/alerts` | SaveStoreAlerts | Save store alerts |
-| GET | `/v2/user/customer/stores/{storeId}/rights` | GetRights | Get store's rights |
-| GET | `/v2/user/customer/stores/{storeId}/shares` | GetStoreShares | Get shares related to this store |
-| POST | `/v2/user/customer/stores/{storeId}/shares` | ShareStore | Share a store to another user |
-| DELETE | `/v2/user/customer/stores/{storeId}/shares/{userId}` | DeleteStoreShare | Delete a share of a store to another user |
-| GET | `/v2/user/customer/zendeskToken` | ZendeskToken | Zendesk token |
-| GET | `/v2/user/legacyTracking/channelCatalogs/` | GetLegacyTrackingChannelCatalogs | List all your current channel catalogs configured to use legacy tracking format |
-| GET | `/v2/user/legacyTracking/channelCatalogs/{channelCatalogId}` | GetLegacyTrackingChannelCatalog | Get the channel catalog configured to use legacy tracking format information |
-| POST | `/v2/user/legacyTracking/channelCatalogs/{channelCatalogId}/migrate` | MigrateLegacyTrackingChannelCatalog | Migrate a channel catalog to current tracking format |
-| GET | `/v2/user/lov/` | GetUserLovIndex | Get all list names |
-| GET | `/v2/user/lov/{listName}` | GetUserListOfValues | Get the list of values related to this list name |
-| GET | `/v2/user/marketplaces/channelcatalogs/` | GetMarketplaceChannelCatalogs | Get your marketplace channel catalog list |
-| GET | `/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history` | GetPublications | Fetch the publication history for an account, sorted by descending start date |
-| POST | `/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/publish` | PublishCatalogToMarketplace | [PREVIEW] Launch a publication of the catalog to the marketplace |
-| GET | `/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties` | GetChannelCatalogMarketplaceProperties | Get the marketplace properties for a channel catalog |
-| GET | `/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings` | GetChannelCatalogMarketplaceSettings | Get the marketplace settings for a channel catalog |
-| POST | `/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings` | SetChannelCatalogMarketplaceSettings | Save new marketplace settings for a channel catalog |
-| GET | `/v2/user/marketplaces/orders/` | GetOrderIndex | [DEPRECATED] Get all actions you can do on the order API |
-| GET | `/v2/user/marketplaces/orders/automaticTransitions` | GetAutomaticTransitions | Get list of configured automatic Order status transitions |
-| POST | `/v2/user/marketplaces/orders/automaticTransitions` | ConfigureAutomaticTransitions | Configure new or existing automatic Order status transition |
-| POST | `/v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType}` | ChangeOrderList | [DEPRECATED] Send a batch of operations to change your marketplace Order information: accept, ship, etc. (max 100 items per call) |
-| POST | `/v2/user/marketplaces/orders/batches/clearMerchantOrderInfos` | ClearMerchantOrderInfoList | [DEPRECATED] Send a batch of operations to clear an Order's merchant information (max 100 items per call) |
-| POST | `/v2/user/marketplaces/orders/batches/setMerchantOrderInfos` | SetMerchantOrderInfoList | [DEPRECATED] Send a batch of operations to set an Order's merchant information (max 100 items per call) |
-| GET | `/v2/user/marketplaces/orders/exportations` | GetOrderExportations | Get a paginated list of Order report exportations |
-| POST | `/v2/user/marketplaces/orders/exportations` | ExportOrders | Request a new Order report exportation to be generated |
-| POST | `/v2/user/marketplaces/orders/harvest` | HarvestAll | [DEPRECATED] Send harvest request to all your marketplaces |
-| POST | `/v2/user/marketplaces/orders/invoices/generate` | GenerateBatchOrderInvoice | Generate an Order Invoice batch |
-| POST | `/v2/user/marketplaces/orders/invoices/getPdfInvoice` | GetOrderInvoicePdf | Returns the PDF version of the invoice |
-| GET | `/v2/user/marketplaces/orders/invoices/settings/design` | GetOrderInvoiceDesignSettings | Get Order Invoice design settings |
-| PUT | `/v2/user/marketplaces/orders/invoices/settings/design` | SaveOrderInvoiceDesignSettings | Save Order Invoice design settings |
-| POST | `/v2/user/marketplaces/orders/invoices/settings/design/preview` | GetOrderInvoiceDesignSettingsPreview | View a preview an Order Invoice using custom design settings |
-| GET | `/v2/user/marketplaces/orders/invoices/settings/general` | GetOrderInvoiceGeneralSettings | Get Order Invoice general settings |
-| PUT | `/v2/user/marketplaces/orders/invoices/settings/general` | SaveOrderInvoiceGeneralSettings | Save Order Invoice general settings |
-| POST | `/v2/user/marketplaces/orders/invoices/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderUUID}/generate` | GenerateOrderInvoice | Generate an Order Invoice |
-| POST | `/v2/user/marketplaces/orders/invoices/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderUUID}/preview` | GetOrderInvoicePreview | View a preview an Order Invoice |
-| POST | `/v2/user/marketplaces/orders/list/full` | GetOrderListFull | [DEPRECATED] Get a paginated list of all Orders with all Order and Order Item(s) properties |
-| POST | `/v2/user/marketplaces/orders/list/light` | GetOrderListLight | [DEPRECATED] Get a paginated list of all Orders without details |
-| GET | `/v2/user/marketplaces/orders/status` | GetMarketplaceAccountsSynchronization | [DEPRECATED] Get current synchronization status between your marketplaces and BeezUP accounts |
-| GET | `/v2/user/marketplaces/orders/subscriptions/` | GetSubscriptionList | Get the subscription list |
-| DELETE | `/v2/user/marketplaces/orders/subscriptions/{id}` | DeleteSubscription | Delete a subscription to the orders |
-| GET | `/v2/user/marketplaces/orders/subscriptions/{id}` | GetSubscription | Get a subscription to the orders |
-| POST | `/v2/user/marketplaces/orders/subscriptions/{id}` | CreateSubscription | Creates a subscription to the orders |
-| POST | `/v2/user/marketplaces/orders/subscriptions/{id}/activate` | ActivateSubscription | Activate a subscription to the orders |
-| POST | `/v2/user/marketplaces/orders/subscriptions/{id}/deactivate` | DeactivateSubscription | Deactivate a subscription to the orders |
-| GET | `/v2/user/marketplaces/orders/subscriptions/{id}/reporting` | GetSubscriptionPushReporting | Get the push reporting related to this subscription |
-| POST | `/v2/user/marketplaces/orders/subscriptions/{id}/retry` | RetryPushOrders | Force retry push orders immediatly |
-| GET | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | GetOrder | [DEPRECATED] DEPRECATED - Get full Order and Order Item(s) properties |
-| HEAD | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | HeadOrder | [DEPRECATED] DEPRECATED - Get the meta information about the order (ETag, Last-Modified) |
-| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo` | ClearMerchantOrderInfo | [DEPRECATED] Clear an Order's merchant information |
-| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest` | HarvestOrder | [DEPRECATED] Send harvest request for a single Order |
-| GET | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history` | GetOrderHistory | [DEPRECATED] Get an Order's harvest and change history |
-| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo` | SetMerchantOrderInfo | [DEPRECATED] Set an Order's merchant information |
-| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}` | ChangeOrder | [DEPRECATED] Change your marketplace Order Information (accept, ship, etc.) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/orders/v3/batches/changeOrders` | ChangeOrderListV3 | `userName`*, `testMode`, body*: changeOrderListRequest | batchOrderOperationResponse |  | Send a batch of operations to change your marketplace Order information: accept, ship, etc. (max 100 items per call) |
+| POST | `/orders/v3/batches/changeOrders/{changeOrderType}` | ChangeOrderListV2 | `userName`*, `testMode`, `changeOrderType`*, body*: changeOrderListRequestV2 | batchOrderOperationResponse |  | Send a batch of operations to change your marketplace Order information: accept, ship, etc. (max 100 items per call) |
+| POST | `/orders/v3/batches/clearMerchantOrderInfos` | ClearMerchantOrderInfoListV3 | `testMode`, body*: clearMerchantOrderInfoListRequest | batchOrderOperationResponse |  | Send a batch of operations to clear an Order's merchant information (max 100 items per call) |
+| POST | `/orders/v3/batches/setMerchantOrderInfos` | SetMerchantOrderInfoListV3 | `testMode`, body*: setMerchantOrderInfoListRequest | batchOrderOperationResponse |  | Send a batch of operations to set an Order's merchant information (max 100 items per call) |
+| POST | `/orders/v3/harvest` | HarvestAllV3 | `storeId` | — |  | Send harvest request to all your marketplaces |
+| POST | `/orders/v3/list/full` | GetOrderListFullV3 | `Accept-Encoding`*, body*: orderListRequest | orderListFullWithLinks |  | Get a paginated list of all Orders with all Order and Order Item(s) properties |
+| POST | `/orders/v3/list/light` | GetOrderListLightV3 | body*: orderListRequest | orderListLightWithLinks |  | Get a paginated list of all Orders without details |
+| GET | `/orders/v3/lov/orderManagementReadyMarketplaceBusinessCode` | GetOrderManagementReadyMarketplaceBusinessCode | `Accept-Language`, `storeIds` | oMReadyMarketplaceBusinessCodeResponse | yes | — |
+| GET | `/orders/v3/status` | GetMarketplaceAccountsSynchronizationV3 | `If-None-Match`, `storeIds` | accountSynchronizationList | yes | — |
+| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/harvest` | HarvestAccount | `marketplaceTechnicalCode`*, `accountId`*, `marketplaceOrderId`, `beezUPOrderId` | — |  | Send harvest request for an Account |
+| GET | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | GetOrderV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `If-None-Match` | orderWithLinks | yes | Get full Order and Order Item(s) properties |
+| HEAD | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | HeadOrderV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `If-None-Match` | — | yes | Get the meta information about the order (ETag, Last-Modified) |
+| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo` | ClearMerchantOrderInfoV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `testMode` | — |  | Clear an Order's merchant information |
+| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest` | HarvestOrderV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`* | — |  | Send harvest request for a single Order |
+| GET | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history` | GetOrderHistoryV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`* | orderHistory | yes | Get an Order's harvest and change history |
+| GET | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history/{orderChangeExecutionUUID}` | GetOrderChangeReportingV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `orderChangeExecutionUUID`* | changeOrderReporting | yes | Get the order change reporting |
+| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo` | SetMerchantOrderInfoV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `testMode`, body*: setMerchantOrderInfoRequest | — |  | Set an Order's merchant information |
+| POST | `/orders/v3/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}` | ChangeOrderV3 | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `changeOrderType`*, `userName`*, `testMode`, body: changeOrderRequest | — |  | Change your marketplace Order Information (accept, ship, etc.) |
+| GET | `/v2/public/channels/` | GetChannelsIndex | `If-None-Match` | publicChannelIndex | yes | Get public channel index |
+| GET | `/v2/public/channels/{countryIsoCode}` | GetChannels | `countryIsoCode`*, `Accept-Encoding`*, `If-None-Match` | publicChannelInfoList | yes | The channel list for one country |
+| GET | `/v2/public/lov/` | GetPublicLovIndex | `If-None-Match` | publicLovIndex | yes | Get all list names |
+| GET | `/v2/public/lov/{listName}` | GetPublicListOfValues | `listName`*, `Accept-Language`, `If-None-Match` | publicListOfValuesResponse | yes | Get the list of values related to this list name |
+| POST | `/v2/public/security/login` | Login | body*: loginRequest | apiCredentials |  | Login |
+| POST | `/v2/public/security/lostpassword` | LostPassword | body*: BeezUP.Common.Email | — |  | Lost password |
+| POST | `/v2/public/security/register` | Register | body*: registerRequest | — |  | User Registration |
+| GET | `/v2/user/analytics/` | AnalyticsIndex | — | analyticsIndex | yes | Get the Analytics API operation index |
+| POST | `/v2/user/analytics/reports/byday` | GetStoreReportByDayPerStore | body*: reportByDayRequest | reportByDayPerStoreResponse |  | Get the report by day for a StoreId |
+| GET | `/v2/user/analytics/tracking/status` | GetTrackingStatus | — | trackingStatus | yes | Get the global synchronization status of clicks and orders |
+| GET | `/v2/user/analytics/{storeId}` | AnalyticsStoreIndex | `storeId`* | analyticsStoreIndex | yes | Get the Analytics API operation index for one store |
+| POST | `/v2/user/analytics/{storeId}/optimisations/all/{actionName}` | OptimiseAll | `storeId`*, `actionName`*, body*: optimiseAllRequest | — |  | Optimise all products |
+| POST | `/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}` | OptimiseByCategory | `storeId`*, `catalogCategoryId`*, `actionName`*, body: string:guid[] | — |  | Optimise products by category |
+| POST | `/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}` | OptimiseByChannel | `storeId`*, `channelId`*, `actionName`* | — |  | Optimise products by channel |
+| POST | `/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}` | OptimiseByProduct | `storeId`*, `productId`*, `actionName`*, body: string:guid[] | — |  | Optimise product |
+| POST | `/v2/user/analytics/{storeId}/optimisations/copy` | CopyOptimisation | `storeId`*, body*: copyOptimisationRequest | copyOptimisationResponse |  | Copy product optimisations between 2 channels |
+| POST | `/v2/user/analytics/{storeId}/optimisations/{actionName}` | Optimise | `storeId`*, `actionName`*, body*: optimiseRequest | — |  | Optimise products by page |
+| POST | `/v2/user/analytics/{storeId}/reports/bycategory` | GetStoreReportByCategory | `storeId`*, body*: reportByCategoryRequest | reportByCategoryResponse |  | Get the report by category |
+| POST | `/v2/user/analytics/{storeId}/reports/bychannel` | GetStoreReportByChannel | `storeId`*, body*: reportByChannelRequest | reportByChannelResponse |  | Get the report by channel |
+| POST | `/v2/user/analytics/{storeId}/reports/byday` | GetStoreReportByDay | `storeId`*, body*: reportByDayRequest | reportByDayResponse |  | Get the report by day for a StoreId |
+| POST | `/v2/user/analytics/{storeId}/reports/byproduct` | GetStoreReportByProduct | `storeId`*, body*: reportByProductRequest | reportByProductResponse |  | Get the report by product |
+| GET | `/v2/user/analytics/{storeId}/reports/filters` | GetReportFilters | `storeId`* | reportFilterList | yes | Get report filter list for the given store |
+| GET | `/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}` | GetReportFilter | `storeId`*, `reportFilterId`* | reportFilter | yes | Get the report filter description |
+| PUT | `/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}` | SaveReportFilter | `storeId`*, `reportFilterId`*, body*: saveReportFilterRequest | — |  | Save the report filter |
+| DELETE | `/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}` | DeleteReportFilter | `storeId`*, `reportFilterId`* | — |  | Delete the report filter |
+| GET | `/v2/user/analytics/{storeId}/rules` | GetRules | `storeId`* | ruleList | yes | Gets the list of rules for a given store |
+| POST | `/v2/user/analytics/{storeId}/rules` | CreateRule | `storeId`*, body*: createRuleRequest | — |  | Rule creation |
+| GET | `/v2/user/analytics/{storeId}/rules/executions` | GetRulesExecutions | `storeId`*, `pageNumber`*, `pageSize`* | ruleExecutionReportings | yes | Get the rules execution history |
+| POST | `/v2/user/analytics/{storeId}/rules/run` | RunRules | `storeId`* | — |  | Run all rules for this store |
+| GET | `/v2/user/analytics/{storeId}/rules/{ruleId}` | GetRule | `storeId`*, `ruleId`* | rule | yes | Gets the rule |
+| DELETE | `/v2/user/analytics/{storeId}/rules/{ruleId}` | DeleteRule | `storeId`*, `ruleId`* | — |  | Delete Rule |
+| PATCH | `/v2/user/analytics/{storeId}/rules/{ruleId}` | UpdateRule | `storeId`*, `ruleId`*, body*: updateRuleRequest | — |  | Update Rule |
+| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/disable` | DisableRule | `storeId`*, `ruleId`* | — |  | Disable rule |
+| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/enable` | EnableRule | `storeId`*, `ruleId`* | — |  | Enable rule |
+| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/movedown` | MoveDownRule | `storeId`*, `ruleId`* | — |  | Move the rule down |
+| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/moveup` | MoveUpRule | `storeId`*, `ruleId`* | — |  | Move the rule up |
+| POST | `/v2/user/analytics/{storeId}/rules/{ruleId}/run` | RunRule | `storeId`*, `ruleId`* | — |  | Run rule |
+| GET | `/v2/user/analytics/{storeId}/tracking/clicks` | GetStoreTrackedClicks | `storeId`*, `count` | trackedClicks | yes | Get the latest tracked clicks |
+| GET | `/v2/user/analytics/{storeId}/tracking/externalorders` | GetStoreTrackedExternalOrders | `storeId`*, `count` | trackedExternalOrders | yes | Get the latest tracked external orders |
+| GET | `/v2/user/analytics/{storeId}/tracking/orders` | GetStoreTrackedOrders | `storeId`*, `count` | trackedOrders | yes | Get the latest tracked orders |
+| GET | `/v2/user/analytics/{storeId}/tracking/status` | GetStoreTrackingStatus | `storeId`* | storeTrackingStatus | yes | Get the synchronization status of clicks and orders of a store |
+| GET | `/v2/user/catalogs/` | CatalogIndex | — | catalogIndex | yes | Get the index of the catalog API |
+| GET | `/v2/user/catalogs/beezupColumns` | Catalog_GetBeezUPColumns | — | beezUPColumnConfiguration[] | yes | Get the BeezUP columns |
+| GET | `/v2/user/catalogs/importations` | Importation_GetReportingsAllStores | — | importationsPerStoreResponse | yes | Get the latest catalog importation reporting for all your stores |
+| GET | `/v2/user/catalogs/{storeId}` | CatalogStoreIndex | `storeId`* | catalogStoreIndex | yes | Get the index of the catalog API for this store |
+| GET | `/v2/user/catalogs/{storeId}/autoImport` | Auto_GetAutoImportConfiguration | `storeId`* | autoImportConfiguration | yes | Get the auto import configuration |
+| DELETE | `/v2/user/catalogs/{storeId}/autoImport` | Auto_DeleteAutoImport | `storeId`* | — |  | Delete Auto Import |
+| POST | `/v2/user/catalogs/{storeId}/autoImport/activate` | Importation_ActivateAutoImport | `storeId`* | — |  | Activate the auto importation of the last successful manual catalog importation. |
+| POST | `/v2/user/catalogs/{storeId}/autoImport/pause` | Auto_PauseAutoImport | `storeId`* | — |  | Pause Auto Import |
+| POST | `/v2/user/catalogs/{storeId}/autoImport/resume` | Auto_ResumeAutoImport | `storeId`* | — |  | Resume Auto Import |
+| POST | `/v2/user/catalogs/{storeId}/autoImport/scheduling/interval` | Auto_ConfigureAutoImportInterval | `storeId`*, body*: configureAutoImportIntervalRequest | — |  | Configure Auto Import Interval |
+| POST | `/v2/user/catalogs/{storeId}/autoImport/scheduling/schedules` | Auto_ScheduleAutoImport | `storeId`*, body*: scheduleAutoImportRequest | — |  | Configure Auto Import Schedules |
+| POST | `/v2/user/catalogs/{storeId}/autoImport/start` | Auto_StartAutoImport | `storeId`* | links.Importation_GetImportationMonitoringLink |  | Start Auto Import Manually |
+| GET | `/v2/user/catalogs/{storeId}/catalogColumns` | Catalog_GetCatalogColumns | `storeId`* | catalogColumnList | yes | Get catalog column list |
+| POST | `/v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename` | Catalog_ChangeCatalogColumnUserName | `storeId`*, `columnId`*, body*: changeUserColumnNameRequest | — |  | Change Catalog Column User Name |
+| GET | `/v2/user/catalogs/{storeId}/categories` | Catalog_GetCategories | `storeId`*, `Accept-Encoding`* | categoryList | yes | Get category list |
+| GET | `/v2/user/catalogs/{storeId}/customColumns` | Catalog_GetCustomColumns | `storeId`* | customColumnList | yes | Get custom column list |
+| POST | `/v2/user/catalogs/{storeId}/customColumns/computeExpression` | Catalog_ComputeExpression | `storeId`*, body*: computeExpressionRequest | string |  | Compute the expression for this catalog. |
+| PUT | `/v2/user/catalogs/{storeId}/customColumns/{columnId}` | Catalog_SaveCustomColumn | `storeId`*, `columnId`*, body*: createCustomColumnRequest | — |  | Create or replace a custom column |
+| DELETE | `/v2/user/catalogs/{storeId}/customColumns/{columnId}` | Catalog_DeleteCustomColumn | `storeId`*, `columnId`* | — |  | Delete custom column |
+| GET | `/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression` | Catalog_GetCustomColumnExpression | `storeId`*, `columnId`* | string | yes | Get the encrypted custom column expression |
+| PUT | `/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression` | Catalog_ChangeCustomColumnExpression | `storeId`*, `columnId`*, body*: changeCustomColumnExpressionRequest | — |  | Change custom column expression |
+| POST | `/v2/user/catalogs/{storeId}/customColumns/{columnId}/rename` | Catalog_ChangeCustomColumnUserName | `storeId`*, `columnId`*, body*: changeUserColumnNameRequest | — |  | Change Custom Column User Name |
+| GET | `/v2/user/catalogs/{storeId}/importations` | Importation_GetReportings | `storeId`* | importationsResponse | yes | Get the latest catalog importation reporting |
+| POST | `/v2/user/catalogs/{storeId}/importations/start` | Importation_StartManualUpdate | `storeId`*, body*: startManualImportRequest | links.Importation_GetImportationMonitoringLink |  | Start Manual Import |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}` | Importation_GetImportationMonitoring | `storeId`*, `executionId`* | importationMonitoring | yes | Get the importation status |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/cancel` | Importation_Cancel | `storeId`*, `executionId`* | — |  | Cancel importation |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns` | Importation_GetDetectedCatalogColumns | `storeId`*, `executionId`* | detectedCatalogColumnList | yes | Get detected catalog columns during this importation. |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}` | Importation_ConfigureCatalogColumn | `storeId`*, `executionId`*, `columnId`*, body*: configureCatalogColumnCatalogRequest | — |  | Configure catalog column |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore` | Importation_IgnoreColumn | `storeId`*, `executionId`*, `columnId`* | — |  | Ignore Column |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map` | Importation_MapCatalogColumn | `storeId`*, `executionId`*, `columnId`*, body*: mapBeezUPColumnRequest | — |  | Map catalog column to a BeezUP column |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend` | Importation_ReattendColumn | `storeId`*, `executionId`*, `columnId`* | — |  | Reattend Column |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap` | Importation_UnmapCatalogColumn | `storeId`*, `executionId`*, `columnId`* | — |  | Unmap catalog column |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/commit` | Importation_Commit | `storeId`*, `executionId`* | — |  | Commit Importation |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns` | Importation_CommitColumns | `storeId`*, `executionId`* | — |  | Commit columns |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns` | Importation_ConfigureRemainingCatalogColumns | `storeId`*, `executionId`* | — |  | Configure remaining catalog columns |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns` | Importation_GetCustomColumns | `storeId`*, `executionId`* | importationCustomColumnList | yes | Get custom columns currently place in this importation |
+| PUT | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}` | Importation_SaveCustomColumn | `storeId`*, `executionId`*, `columnId`*, body*: changeCustomColumnRequest | — |  | Create or replace a custom column |
+| DELETE | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}` | Importation_DeleteCustomColumn | `storeId`*, `executionId`*, `columnId`* | — |  | Delete Custom Column |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression` | Importation_GetCustomColumnExpression | `storeId`*, `executionId`*, `columnId`* | string | yes | Get the encrypted custom column expression in this importation |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map` | Importation_MapCustomColumn | `storeId`*, `executionId`*, `columnId`*, body*: mapBeezUPColumnRequest | — |  | Map custom column to a BeezUP column |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap` | Importation_UnmapCustomColumn | `storeId`*, `executionId`*, `columnId`* | — |  | Unmap custom column |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}` | Importation_GetProductSample | `storeId`*, `executionId`*, `productSampleIndex`* | productSample | yes | Get the product sample related to this importation with all columns (catalog and custom) |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}` | Importation_GetProductSampleCustomColumnValue | `storeId`*, `executionId`*, `productSampleIndex`*, `columnId`* | string | yes | Get product sample custom column value related to this importation. |
+| POST | `/v2/user/catalogs/{storeId}/importations/{executionId}/products/list` | Importation_GetProductsReport | `storeId`*, `executionId`*, body*: getImportationProductsReportRequest | getImportationProductsReportResponse |  | Importation Get Products Report |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/report` | Importation_GetReport | `storeId`*, `executionId`* | getImportationReportResponse | yes | Importation Get Report |
+| GET | `/v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression` | Importation_TechnicalProgression | `storeId`*, `executionId`* | importationTechnicalProgression | yes | Get technical progression |
+| GET | `/v2/user/catalogs/{storeId}/inputConfiguration` | Importation_GetManualUpdateLastInputConfig | `storeId`* | lastManualImportInputConfiguration | yes | Get the last input configuration |
+| GET | `/v2/user/catalogs/{storeId}/products` | Catalog_GetProductBySku | `storeId`*, `sku`* | product | yes | Get product by Sku |
+| POST | `/v2/user/catalogs/{storeId}/products/list` | Catalog_GetProducts | `storeId`*, body*: getProductsRequest | productList |  | Get product list |
+| GET | `/v2/user/catalogs/{storeId}/products/random` | Catalog_GetRandomProducts | `storeId`* | randomProductList | yes | Get random product list |
+| GET | `/v2/user/catalogs/{storeId}/products/{productId}` | Catalog_GetProductByProductId | `storeId`*, `productId`* | product | yes | Get product by ProductId |
+| GET | `/v2/user/channelCatalogs/` | GetChannelCatalogs | `storeId` | channelCatalogList | yes | List all your current channel catalogs |
+| POST | `/v2/user/channelCatalogs/` | AddChannelCatalog | body*: addChannelCatalogRequest | links.GetChannelCatalogLink |  | Add a new channel catalog |
+| GET | `/v2/user/channelCatalogs/filterOperators` | GetChannelCatalogFilterOperators | — | filterOperator[] | yes | Get channel catalog filter operators |
+| POST | `/v2/user/channelCatalogs/products` | GetChannelCatalogProductByChannelCatalog | body*: channelCatalogProductByChannelCatalogRequest | channelCatalogProductByChannelCatalogResponse |  | Get channel catalog products related to these channel catalogs |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}` | GetChannelCatalog | `channelCatalogId`* | channelCatalog | yes | Get the channel catalog information |
+| DELETE | `/v2/user/channelCatalogs/{channelCatalogId}` | DeleteChannelCatalog | `channelCatalogId`* | — |  | Delete the channel catalog |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/categories` | GetChannelCatalogCategories | `channelCatalogId`* | channelCatalogCategoryConfigurationList | yes | Get channel catalog categories |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/categories/configure` | ConfigureChannelCatalogCategory | `channelCatalogId`*, body*: configureCategoryRequest | — |  | Configure channel catalog category |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/categories/disableMapping` | DisableChannelCatalogCategoryMapping | `channelCatalogId`* | — |  | Disable a channel catalog category mapping |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/categories/reenableMapping` | ReenableChannelCatalogCategoryMapping | `channelCatalogId`* | — |  | Reenable a channel catalog category mapping |
+| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/columnMappings` | ConfigureChannelCatalogColumnMappings | `channelCatalogId`*, body*: channelCatalogColumnMappingList | — |  | Configure channel catalog column mappings |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/disable` | DisableChannelCatalog | `channelCatalogId`* | — |  | Disable a channel catalog |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/enable` | EnableChannelCatalog | `channelCatalogId`* | — |  | Enable a channel catalog |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters` | GetChannelCatalogExclusionFilters | `channelCatalogId`* | exclusionFiltersResponse | yes | Get channel catalog exclusion filters |
+| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters` | ConfigureChannelCatalogExclusionFilters | `channelCatalogId`*, body*: exclusionFilters | — |  | Configure channel catalog exclusion filters |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/exportations/cache` | GetChannelCatalogExportationCacheInfo | `channelCatalogId`* | channelCatalogExportCacheInfoResponse | yes | Get the exportation cache information |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/exportations/cache/clear` | ClearChannelCatalogExportationCache | `channelCatalogId`* | — |  | Clear the exportation cache |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/exportations/history` | GetChannelCatalogExportationHistory | `channelCatalogId`*, `pageNumber`*, `pageSize`* | channelCatalogExportationHistory | yes | Get the exportation history |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products` | GetChannelCatalogProductInfoList | `channelCatalogId`*, body*: getChannelCatalogProductInfoListRequest | channelCatalogProductInfoList |  | Get channel catalog product information list |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/products/counters` | GetChannelCatalogProductsCounters | `channelCatalogId`* | channelCatalogProductsCounters | yes | Get channel catalog products' counters |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/export` | ExportChannelCatalogProductInfoList | `channelCatalogId`*, `format`*, body*: getChannelCatalogProductInfoListRequest | BeezUP.Common.Link3 |  | Export channel catalog product information list |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}` | GetChannelCatalogProductInfo | `channelCatalogId`*, `productId`* | channelCatalogProductInfo | yes | Get channel catalog product information |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable` | DisableChannelCatalogProduct | `channelCatalogId`*, `productId`* | — |  | Disable channel catalog product |
+| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides` | OverrideChannelCatalogProductValues | `channelCatalogId`*, `productId`*, body*: productOverrides | — |  | Override channel catalog product values |
+| GET | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/copy` | GetChannelCatalogProductValueOverrideCopy | `channelCatalogId`*, `productId`* | — | yes | Get channel catalog product value override compatibilities status |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/copy` | ConfigureChannelCatalogProductValueOverrideCopy | `channelCatalogId`*, `productId`* | — |  | Copy channel catalog product value override |
+| DELETE | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}` | DeleteChannelCatalogProductValueOverride | `channelCatalogId`*, `productId`*, `channelColumnId`* | — |  | Delete a specific channel catalog product value override |
+| POST | `/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable` | ReenableChannelCatalogProduct | `channelCatalogId`*, `productId`* | — |  | Reenable channel catalog product |
+| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/settings/cost` | ConfigureChannelCatalogCostSettings | `channelCatalogId`*, body*: costSettings | — |  | Configure channel catalog cost settings |
+| PUT | `/v2/user/channelCatalogs/{channelCatalogId}/settings/general` | ConfigureChannelCatalogGeneralSettings | `channelCatalogId`*, body*: generalSettings | — |  | Configure channel catalog general settings |
+| GET | `/v2/user/channels/` | GetAvailableChannels | `storeId`* | channelHeader[] | yes | List all available channel for this store |
+| GET | `/v2/user/channels/{channelId}` | GetChannelInfo | `channelId`* | channelInfo | yes | Get channel information |
+| GET | `/v2/user/channels/{channelId}/categories` | GetChannelCategories | `channelId`*, `Accept-Encoding`* | channelRootCategory | yes | Get channel categories |
+| POST | `/v2/user/channels/{channelId}/columns` | GetChannelColumns | `channelId`*, `Accept-Encoding`*, body: BeezUP.Common.ChannelColumnId[] | channelColumn[] |  | Get channel columns |
+| GET | `/v2/user/customer/` | GetCustomerIndex | `If-None-Match` | customerIndex | yes | The index of all operations and LOV |
+| GET | `/v2/user/customer/account` | GetUserAccountInfo | `If-None-Match` | accountInfo | yes | Get user account information |
+| POST | `/v2/user/customer/account/activate` | ActivateUserAccount | body*: string:guid | — |  | Activate the user account |
+| POST | `/v2/user/customer/account/changeEmail` | ChangeEmail | body*: changeEmailRequest | — |  | Change user email |
+| POST | `/v2/user/customer/account/changePassword` | ChangePassword | body*: changePasswordRequest | — |  | Change user password |
+| PUT | `/v2/user/customer/account/companyInfo` | SaveCompanyInfo | body*: companyInfo | — |  | Change company information |
+| GET | `/v2/user/customer/account/creditCardInfo` | GetCreditCardInfo | `If-None-Match` | creditCardInfoResponse | yes | Get credit card information |
+| PUT | `/v2/user/customer/account/creditCardInfo` | SaveCreditCardInfo | body*: creditCardInfo | — |  | Save user credit card info |
+| PUT | `/v2/user/customer/account/personalInfo` | SavePersonalInfo | body*: personalInfo | — |  | Save user personal information |
+| GET | `/v2/user/customer/account/profilePictureInfo` | GetProfilePictureInfo | `If-None-Match` | profilePictureInfoResponse | yes | Get profile picture information |
+| PUT | `/v2/user/customer/account/profilePictureInfo` | SaveProfilePictureInfo | body*: profilePictureInfo | — |  | Change user picture information |
+| POST | `/v2/user/customer/account/resendEmailActivation` | ResendEmailActivation | — | — |  | Resend email activation |
+| GET | `/v2/user/customer/billingPeriods` | GetBillingPeriods | `If-None-Match` | billingPeriodList | yes | Get billing periods conditions |
+| GET | `/v2/user/customer/contracts` | GetContracts | `If-None-Match` | contracts | yes | Get contract list |
+| POST | `/v2/user/customer/contracts` | CreateContract | body*: createContract | createContractResponse |  | Create a new contract |
+| POST | `/v2/user/customer/contracts/current/disableAutoRenewal` | TerminateCurrentContract | body*: terminateContract | — |  | Schedule termination of your current contract at the end of the commitment. |
+| POST | `/v2/user/customer/contracts/current/reenableAutoRenewal` | ReactivateCurrentContract | — | — |  | Reactivate your terminated contract. |
+| DELETE | `/v2/user/customer/contracts/next` | DeleteNextContract | — | — |  | Delete your next contract |
+| GET | `/v2/user/customer/friends/{userId}` | GetFriendInfo | `userId`*, `If-None-Match` | userFriendInfo | yes | Get friend information |
+| GET | `/v2/user/customer/invoices` | GetInvoices | `If-None-Match` | invoiceList | yes | Get all your invoices |
+| GET | `/v2/user/customer/offers` | GetStandardOffers | `If-None-Match` | standardOffers | yes | Get all standard offers |
+| POST | `/v2/user/customer/offers` | GetOffer | body*: offerRequest | offer |  | Get offer pricing |
+| POST | `/v2/user/customer/security/logout` | Logout | — | — |  | Log out the current user from go2 |
+| GET | `/v2/user/customer/stores` | GetStores | `If-None-Match` | storeList | yes | Get store list |
+| POST | `/v2/user/customer/stores` | CreateStore | body*: createStoreRequest | links.getStoreLink |  | Create a new store |
+| GET | `/v2/user/customer/stores/{storeId}` | GetStore | `storeId`*, `If-None-Match` | store | yes | Get store's information |
+| DELETE | `/v2/user/customer/stores/{storeId}` | DeleteStore | `storeId`* | — |  | Delete a store |
+| PATCH | `/v2/user/customer/stores/{storeId}` | UpdateStore | `storeId`*, body*: updateStoreRequest | — |  | Update some store's information. |
+| GET | `/v2/user/customer/stores/{storeId}/alerts` | GetStoreAlerts | `storeId`*, `If-None-Match` | storeAlerts | yes | Get store's alerts |
+| POST | `/v2/user/customer/stores/{storeId}/alerts` | SaveStoreAlerts | `storeId`*, body*: saveStoreAlertsRequest | — |  | Save store alerts |
+| GET | `/v2/user/customer/stores/{storeId}/rights` | GetRights | `storeId`* | functionalityRightInfo[] | yes | Get store's rights |
+| GET | `/v2/user/customer/stores/{storeId}/shares` | GetStoreShares | `storeId`*, `If-None-Match` | storeShares | yes | Get shares related to this store |
+| POST | `/v2/user/customer/stores/{storeId}/shares` | ShareStore | `storeId`*, body*: friendEmail | — |  | Share a store to another user |
+| DELETE | `/v2/user/customer/stores/{storeId}/shares/{userId}` | DeleteStoreShare | `storeId`*, `userId`* | — |  | Delete a share of a store to another user |
+| GET | `/v2/user/customer/zendeskToken` | ZendeskToken | — | zendeskToken | yes | Zendesk token |
+| GET | `/v2/user/legacyTracking/channelCatalogs/` | GetLegacyTrackingChannelCatalogs | `storeId` | legacyTrackingChannelCatalogList | yes | List all your current channel catalogs configured to use legacy tracking format |
+| GET | `/v2/user/legacyTracking/channelCatalogs/{channelCatalogId}` | GetLegacyTrackingChannelCatalog | `channelCatalogId`* | legacyTrackingChannelCatalog | yes | Get the channel catalog configured to use legacy tracking format information |
+| POST | `/v2/user/legacyTracking/channelCatalogs/{channelCatalogId}/migrate` | MigrateLegacyTrackingChannelCatalog | `channelCatalogId`* | — |  | Migrate a channel catalog to current tracking format |
+| GET | `/v2/user/lov/` | GetUserLovIndex | — | userLovIndex | yes | Get all list names |
+| GET | `/v2/user/lov/{listName}` | GetUserListOfValues | `listName`*, `Accept-Language`, `If-None-Match` | userListOfValuesResponse | yes | Get the list of values related to this list name |
+| GET | `/v2/user/marketplaces/channelcatalogs/` | GetMarketplaceChannelCatalogs | `storeId` | marketplaceChannelCatalogList | yes | Get your marketplace channel catalog list |
+| GET | `/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history` | GetPublications | `marketplaceTechnicalCode`*, `accountId`*, `channelCatalogId`, `count`, `publicationTypes`* | accountPublications | yes | Fetch the publication history for an account, sorted by descending start date |
+| POST | `/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/publish` | PublishCatalogToMarketplace | `marketplaceTechnicalCode`*, `accountId`*, body*: publishCatalogToMarketplaceRequest | — |  | [PREVIEW] Launch a publication of the catalog to the marketplace |
+| GET | `/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties` | GetChannelCatalogMarketplaceProperties | `channelCatalogId`*, `redirectionPageUrl`*, `Accept-Language` | channelCatalogMarketplaceProperties | yes | Get the marketplace properties for a channel catalog |
+| GET | `/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings` | GetChannelCatalogMarketplaceSettings | `channelCatalogId`* | channelCatalogMarketplaceSettings | yes | Get the marketplace settings for a channel catalog |
+| POST | `/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings` | SetChannelCatalogMarketplaceSettings | `channelCatalogId`*, body*: setChannelCatalogMarketplaceSettingsRequest | — |  | Save new marketplace settings for a channel catalog |
+| GET | `/v2/user/marketplaces/orders/` | GetOrderIndex | `If-None-Match` | orderIndex | yes | [DEPRECATED] Get all actions you can do on the order API |
+| GET | `/v2/user/marketplaces/orders/automaticTransitions` | GetAutomaticTransitions | `storeId`, `If-None-Match` | automaticTransitionInfoList | yes | Get list of configured automatic Order status transitions |
+| POST | `/v2/user/marketplaces/orders/automaticTransitions` | ConfigureAutomaticTransitions | body*: configureAutomaticTransitionRequest | — |  | Configure new or existing automatic Order status transition |
+| POST | `/v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType}` | ChangeOrderList | `changeOrderType`*, `userName`*, `testMode`, body*: changeOrderListRequest | batchOrderOperationResponse |  | [DEPRECATED] Send a batch of operations to change your marketplace Order information: accept, ship, etc. (max 100 items per call) |
+| POST | `/v2/user/marketplaces/orders/batches/clearMerchantOrderInfos` | ClearMerchantOrderInfoList | body*: clearMerchantOrderInfoListRequest | batchOrderOperationResponse |  | [DEPRECATED] Send a batch of operations to clear an Order's merchant information (max 100 items per call) |
+| POST | `/v2/user/marketplaces/orders/batches/setMerchantOrderInfos` | SetMerchantOrderInfoList | body*: setMerchantOrderInfoListRequest | batchOrderOperationResponse |  | [DEPRECATED] Send a batch of operations to set an Order's merchant information (max 100 items per call) |
+| GET | `/v2/user/marketplaces/orders/exportations` | GetOrderExportations | `pageNumber`*, `pageSize`*, `storeId`*, `If-None-Match` | orderExportations | yes | Get a paginated list of Order report exportations |
+| POST | `/v2/user/marketplaces/orders/exportations` | ExportOrders | body*: exportOrderListRequest | — |  | Request a new Order report exportation to be generated |
+| POST | `/v2/user/marketplaces/orders/harvest` | HarvestAll | `storeId` | — |  | [DEPRECATED] Send harvest request to all your marketplaces |
+| POST | `/v2/user/marketplaces/orders/invoices/generate` | GenerateBatchOrderInvoice | `userName`*, body*: generateBatchOrderInvoiceRequest | generateBatchOrderInvoiceResponse |  | Generate an Order Invoice batch |
+| POST | `/v2/user/marketplaces/orders/invoices/getPdfInvoice` | GetOrderInvoicePdf | body*: getOrderInvoicePdfFromHtmlInvoiceUrlRequest | string:binary |  | Returns the PDF version of the invoice |
+| GET | `/v2/user/marketplaces/orders/invoices/settings/design` | GetOrderInvoiceDesignSettings | — | orderInvoiceDesignSettings | yes | Get Order Invoice design settings |
+| PUT | `/v2/user/marketplaces/orders/invoices/settings/design` | SaveOrderInvoiceDesignSettings | body*: orderInvoiceDesignSettings | — |  | Save Order Invoice design settings |
+| POST | `/v2/user/marketplaces/orders/invoices/settings/design/preview` | GetOrderInvoiceDesignSettingsPreview | `Accept-Encoding`*, body*: orderInvoiceDesignSettings | getOrderInvoiceDesignPreviewResponse |  | View a preview an Order Invoice using custom design settings |
+| GET | `/v2/user/marketplaces/orders/invoices/settings/general` | GetOrderInvoiceGeneralSettings | — | getOrderInvoiceGeneralSettingsResponse | yes | Get Order Invoice general settings |
+| PUT | `/v2/user/marketplaces/orders/invoices/settings/general` | SaveOrderInvoiceGeneralSettings | body*: orderInvoiceGeneralSettings | — |  | Save Order Invoice general settings |
+| POST | `/v2/user/marketplaces/orders/invoices/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderUUID}/generate` | GenerateOrderInvoice | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderUUID`*, `userName`*, body*: generateOrderInvoiceRequest | — |  | Generate an Order Invoice |
+| POST | `/v2/user/marketplaces/orders/invoices/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderUUID}/preview` | GetOrderInvoicePreview | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderUUID`*, `Accept-Encoding`*, body*: previewOrderInvoiceRequest | previewOrderInvoiceResponse |  | View a preview an Order Invoice |
+| POST | `/v2/user/marketplaces/orders/list/full` | GetOrderListFull | `Accept-Encoding`*, body*: orderListRequest | orderListFull |  | [DEPRECATED] Get a paginated list of all Orders with all Order and Order Item(s) properties |
+| POST | `/v2/user/marketplaces/orders/list/light` | GetOrderListLight | body*: orderListRequest | orderListLight |  | [DEPRECATED] Get a paginated list of all Orders without details |
+| GET | `/v2/user/marketplaces/orders/status` | GetMarketplaceAccountsSynchronization | `storeId`, `If-None-Match` | accountSynchronizationList | yes | [DEPRECATED] Get current synchronization status between your marketplaces and BeezUP accounts |
+| GET | `/v2/user/marketplaces/orders/subscriptions/` | GetSubscriptionList | — | subscriptionIndex[] | yes | Get the subscription list |
+| GET | `/v2/user/marketplaces/orders/subscriptions/{id}` | GetSubscription | `id`* | subscriptionIndex | yes | Get a subscription to the orders |
+| POST | `/v2/user/marketplaces/orders/subscriptions/{id}` | CreateSubscription | `id`*, body*: createSubscriptionRequest | — |  | Creates a subscription to the orders |
+| DELETE | `/v2/user/marketplaces/orders/subscriptions/{id}` | DeleteSubscription | `id`* | — |  | Delete a subscription to the orders |
+| POST | `/v2/user/marketplaces/orders/subscriptions/{id}/activate` | ActivateSubscription | `id`*, body: activateSubscriptionRequest | — |  | Activate a subscription to the orders |
+| POST | `/v2/user/marketplaces/orders/subscriptions/{id}/deactivate` | DeactivateSubscription | `id`* | — |  | Deactivate a subscription to the orders |
+| GET | `/v2/user/marketplaces/orders/subscriptions/{id}/reporting` | GetSubscriptionPushReporting | `id`*, `pageNumber`, `pageSize` | subscriptionPushReporting[] | yes | Get the push reporting related to this subscription |
+| POST | `/v2/user/marketplaces/orders/subscriptions/{id}/retry` | RetryPushOrders | `id`* | — |  | Force retry push orders immediatly |
+| GET | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | GetOrder | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `If-None-Match` | order | yes | [DEPRECATED] DEPRECATED - Get full Order and Order Item(s) properties |
+| HEAD | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}` | HeadOrder | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `If-None-Match` | — | yes | [DEPRECATED] DEPRECATED - Get the meta information about the order (ETag, Last-Modified) |
+| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo` | ClearMerchantOrderInfo | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`* | — |  | [DEPRECATED] Clear an Order's merchant information |
+| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest` | HarvestOrder | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`* | — |  | [DEPRECATED] Send harvest request for a single Order |
+| GET | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history` | GetOrderHistory | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `If-None-Match` | orderHistory | yes | [DEPRECATED] Get an Order's harvest and change history |
+| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo` | SetMerchantOrderInfo | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, body*: setMerchantOrderInfoRequest | — |  | [DEPRECATED] Set an Order's merchant information |
+| POST | `/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}` | ChangeOrder | `marketplaceTechnicalCode`*, `accountId`*, `beezUPOrderId`*, `changeOrderType`*, `userName`*, `testMode`, `If-Match`*, body: changeOrderRequest | — |  | [DEPRECATED] Change your marketplace Order Information (accept, ship, etc.) |

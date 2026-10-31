@@ -27,12 +27,12 @@
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:patch:/v1/ProductsApi"
+        "to": "operation:post:/v1/ProductsApi"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:post:/v1/ProductsApi"
+        "to": "operation:patch:/v1/ProductsApi"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
@@ -57,17 +57,12 @@
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/ProductsApi/{serial}"
-      },
-      {
-        "from": "keyserv-solutions-f3d640eee5",
-        "kind": "EXPOSES",
         "to": "operation:post:/v1/ProductsApi/{serial}"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:post:/v1/SubscriptionsApi"
+        "to": "operation:delete:/v1/ProductsApi/{serial}"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
@@ -77,12 +72,12 @@
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:post:/v1/SubscriptionsApi/Count"
+        "to": "operation:post:/v1/SubscriptionsApi"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:patch:/v1/SubscriptionsApi/Disable"
+        "to": "operation:post:/v1/SubscriptionsApi/Count"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
@@ -92,12 +87,17 @@
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:patch:/v1/SubscriptionsApi/Enable"
+        "to": "operation:patch:/v1/SubscriptionsApi/Disable"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/SubscriptionsApi/Enable"
+      },
+      {
+        "from": "keyserv-solutions-f3d640eee5",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/v1/SubscriptionsApi/Enable"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
@@ -117,12 +117,157 @@
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/SubscriptionsApi/{serial}"
+        "to": "operation:post:/v1/SubscriptionsApi/{serial}"
       },
       {
         "from": "keyserv-solutions-f3d640eee5",
         "kind": "EXPOSES",
-        "to": "operation:post:/v1/SubscriptionsApi/{serial}"
+        "to": "operation:delete:/v1/SubscriptionsApi/{serial}"
+      },
+      {
+        "from": "operation:get:/v1/KeysApi/Current/{serial}",
+        "kind": "RETURNS",
+        "to": "schema:CurrentKey"
+      },
+      {
+        "from": "operation:get:/v1/KeysApi/Expiry/{serial}",
+        "kind": "RETURNS",
+        "to": "schema:Expiry"
+      },
+      {
+        "from": "operation:get:/v1/KeysApi/Find/{serial}",
+        "kind": "RETURNS",
+        "to": "schema:KeyView"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductCreateModify"
+      },
+      {
+        "from": "operation:patch:/v1/ProductsApi",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductCreateModify"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/Count",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/Count",
+        "kind": "RETURNS",
+        "to": "schema:CountOf"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/Find",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/Find",
+        "kind": "RETURNS",
+        "to": "schema:ProductView"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/List",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/List",
+        "kind": "RETURNS",
+        "to": "schema:ProductView"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/Save",
+        "kind": "ACCEPTS",
+        "to": "schema:ProductCreateModify"
+      },
+      {
+        "from": "operation:post:/v1/ProductsApi/Save",
+        "kind": "RETURNS",
+        "to": "schema:ProductView"
+      },
+      {
+        "from": "operation:put:/v1/SubscriptionsApi",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscriptionCreateModify"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscriptionCreateModify"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Count",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiCredentials"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Count",
+        "kind": "RETURNS",
+        "to": "schema:CountOf"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Disable",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:patch:/v1/SubscriptionsApi/Disable",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Enable",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:patch:/v1/SubscriptionsApi/Enable",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Find",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Find",
+        "kind": "RETURNS",
+        "to": "schema:SubscriptionView"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/List",
+        "kind": "ACCEPTS",
+        "to": "schema:FindCredentials"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/List",
+        "kind": "RETURNS",
+        "to": "schema:SubscriptionView"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Save",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscriptionCreateModify"
+      },
+      {
+        "from": "operation:post:/v1/SubscriptionsApi/Save",
+        "kind": "RETURNS",
+        "to": "schema:KeyView"
+      },
+      {
+        "from": "schema:ProductView",
+        "kind": "REFERENCES",
+        "to": "schema:SubscriptionView"
+      },
+      {
+        "from": "schema:SubscriptionView",
+        "kind": "REFERENCES",
+        "to": "schema:KeyView"
       }
     ],
     "nodes": [
@@ -136,10 +281,28 @@
         "kind": "operation",
         "method": "get",
         "name": "KeysApi_Current",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          }
+        ],
         "path": "/v1/KeysApi/Current/{serial}",
         "pointer": "#/paths/~1v1~1KeysApi~1Current~1{serial}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentKey"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "KeysApi"
+        ]
       },
       {
         "deprecated": false,
@@ -147,10 +310,28 @@
         "kind": "operation",
         "method": "get",
         "name": "KeysApi_Custom",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          }
+        ],
         "path": "/v1/KeysApi/Custom/{serial}",
         "pointer": "#/paths/~1v1~1KeysApi~1Custom~1{serial}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "KeysApi"
+        ]
       },
       {
         "deprecated": false,
@@ -158,10 +339,28 @@
         "kind": "operation",
         "method": "get",
         "name": "KeysApi_Expiry",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          }
+        ],
         "path": "/v1/KeysApi/Expiry/{serial}",
         "pointer": "#/paths/~1v1~1KeysApi~1Expiry~1{serial}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Expiry"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "KeysApi"
+        ]
       },
       {
         "deprecated": false,
@@ -169,21 +368,28 @@
         "kind": "operation",
         "method": "get",
         "name": "KeysApi_Find",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          }
+        ],
         "path": "/v1/KeysApi/Find/{serial}",
         "pointer": "#/paths/~1v1~1KeysApi~1Find~1{serial}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "KeyView"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/v1/ProductsApi",
-        "kind": "operation",
-        "method": "patch",
-        "name": "ProductsApi_PatchProduct",
-        "path": "/v1/ProductsApi",
-        "pointer": "#/paths/~1v1~1ProductsApi/patch",
-        "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "KeysApi"
+        ]
       },
       {
         "deprecated": false,
@@ -193,8 +399,51 @@
         "name": "ProductsApi_PatchProduct2",
         "path": "/v1/ProductsApi",
         "pointer": "#/paths/~1v1~1ProductsApi/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductCreateModify"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/v1/ProductsApi",
+        "kind": "operation",
+        "method": "patch",
+        "name": "ProductsApi_PatchProduct",
+        "path": "/v1/ProductsApi",
+        "pointer": "#/paths/~1v1~1ProductsApi/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductCreateModify"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -204,8 +453,25 @@
         "name": "ProductsApi_Count",
         "path": "/v1/ProductsApi/Count",
         "pointer": "#/paths/~1v1~1ProductsApi~1Count/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountOf"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -213,10 +479,35 @@
         "kind": "operation",
         "method": "post",
         "name": "ProductsApi_Find",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v1/ProductsApi/Find",
         "pointer": "#/paths/~1v1~1ProductsApi~1Find/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductView"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -224,10 +515,35 @@
         "kind": "operation",
         "method": "post",
         "name": "ProductsApi_List",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v1/ProductsApi/List",
         "pointer": "#/paths/~1v1~1ProductsApi~1List/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductView[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -237,19 +553,25 @@
         "name": "ProductsApi_Save",
         "path": "/v1/ProductsApi/Save",
         "pointer": "#/paths/~1v1~1ProductsApi~1Save/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProductCreateModify"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ProductView"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/ProductsApi/{serial}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "ProductsApi_DeleteProduct",
-        "path": "/v1/ProductsApi/{serial}",
-        "pointer": "#/paths/~1v1~1ProductsApi~1{serial}/delete",
-        "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -257,21 +579,67 @@
         "kind": "operation",
         "method": "post",
         "name": "ProductsApi_DeleteProduct2",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Api-Key",
+            "required": true,
+            "type": "string:guid"
+          },
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          }
+        ],
         "path": "/v1/ProductsApi/{serial}",
         "pointer": "#/paths/~1v1~1ProductsApi~1{serial}/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/v1/SubscriptionsApi",
+        "id": "operation:delete:/v1/ProductsApi/{serial}",
         "kind": "operation",
-        "method": "post",
-        "name": "SubscriptionsApi_PutSubscription2",
-        "path": "/v1/SubscriptionsApi",
-        "pointer": "#/paths/~1v1~1SubscriptionsApi/post",
+        "method": "delete",
+        "name": "ProductsApi_DeleteProduct",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Api-Key",
+            "required": true,
+            "type": "string:guid"
+          },
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          }
+        ],
+        "path": "/v1/ProductsApi/{serial}",
+        "pointer": "#/paths/~1v1~1ProductsApi~1{serial}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ProductsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -281,8 +649,51 @@
         "name": "SubscriptionsApi_PutSubscription",
         "path": "/v1/SubscriptionsApi",
         "pointer": "#/paths/~1v1~1SubscriptionsApi/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubscriptionCreateModify"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/SubscriptionsApi",
+        "kind": "operation",
+        "method": "post",
+        "name": "SubscriptionsApi_PutSubscription2",
+        "path": "/v1/SubscriptionsApi",
+        "pointer": "#/paths/~1v1~1SubscriptionsApi/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubscriptionCreateModify"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -292,19 +703,25 @@
         "name": "SubscriptionsApi_Count",
         "path": "/v1/SubscriptionsApi/Count",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1Count/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApiCredentials"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountOf"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/v1/SubscriptionsApi/Disable",
-        "kind": "operation",
-        "method": "patch",
-        "name": "SubscriptionsApi_Disable",
-        "path": "/v1/SubscriptionsApi/Disable",
-        "pointer": "#/paths/~1v1~1SubscriptionsApi~1Disable/patch",
-        "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -314,19 +731,51 @@
         "name": "SubscriptionsApi_Disable2",
         "path": "/v1/SubscriptionsApi/Disable",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1Disable/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/v1/SubscriptionsApi/Enable",
+        "id": "operation:patch:/v1/SubscriptionsApi/Disable",
         "kind": "operation",
         "method": "patch",
-        "name": "SubscriptionsApi_Enable",
-        "path": "/v1/SubscriptionsApi/Enable",
-        "pointer": "#/paths/~1v1~1SubscriptionsApi~1Enable/patch",
+        "name": "SubscriptionsApi_Disable",
+        "path": "/v1/SubscriptionsApi/Disable",
+        "pointer": "#/paths/~1v1~1SubscriptionsApi~1Disable/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -336,8 +785,51 @@
         "name": "SubscriptionsApi_Enable2",
         "path": "/v1/SubscriptionsApi/Enable",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1Enable/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/v1/SubscriptionsApi/Enable",
+        "kind": "operation",
+        "method": "patch",
+        "name": "SubscriptionsApi_Enable",
+        "path": "/v1/SubscriptionsApi/Enable",
+        "pointer": "#/paths/~1v1~1SubscriptionsApi~1Enable/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -347,8 +839,25 @@
         "name": "SubscriptionsApi_Find",
         "path": "/v1/SubscriptionsApi/Find",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1Find/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubscriptionView"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -356,10 +865,35 @@
         "kind": "operation",
         "method": "post",
         "name": "SubscriptionsApi_List",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v1/SubscriptionsApi/List",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1List/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FindCredentials"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubscriptionView[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -369,19 +903,25 @@
         "name": "SubscriptionsApi_Save",
         "path": "/v1/SubscriptionsApi/Save",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1Save/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubscriptionCreateModify"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "KeyView"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/v1/SubscriptionsApi/{serial}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "SubscriptionsApi_DeleteSubscription",
-        "path": "/v1/SubscriptionsApi/{serial}",
-        "pointer": "#/paths/~1v1~1SubscriptionsApi~1{serial}/delete",
-        "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "deprecated": false,
@@ -389,65 +929,145 @@
         "kind": "operation",
         "method": "post",
         "name": "SubscriptionsApi_DeleteSubscription2",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Api-Key",
+            "required": true,
+            "type": "string:guid"
+          },
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          },
+          {
+            "in": "query",
+            "name": "keep",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/SubscriptionsApi/{serial}",
         "pointer": "#/paths/~1v1~1SubscriptionsApi~1{serial}/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/v1/SubscriptionsApi/{serial}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "SubscriptionsApi_DeleteSubscription",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Api-Key",
+            "required": true,
+            "type": "string:guid"
+          },
+          {
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "string:guid"
+          },
+          {
+            "in": "query",
+            "name": "keep",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/SubscriptionsApi/{serial}",
+        "pointer": "#/paths/~1v1~1SubscriptionsApi~1{serial}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "SubscriptionsApi"
+        ]
       },
       {
         "id": "schema:ApiCredentials",
         "kind": "schema",
-        "name": "ApiCredentials"
+        "name": "ApiCredentials",
+        "type": "object"
       },
       {
         "id": "schema:ApiKey",
         "kind": "schema",
-        "name": "ApiKey"
+        "name": "ApiKey",
+        "type": "object"
       },
       {
         "id": "schema:CountOf",
         "kind": "schema",
-        "name": "CountOf"
+        "name": "CountOf",
+        "type": "object"
       },
       {
         "id": "schema:CurrentKey",
         "kind": "schema",
-        "name": "CurrentKey"
+        "name": "CurrentKey",
+        "type": "object"
       },
       {
         "id": "schema:Expiry",
         "kind": "schema",
-        "name": "Expiry"
+        "name": "Expiry",
+        "type": "object"
       },
       {
         "id": "schema:FindCredentials",
         "kind": "schema",
-        "name": "FindCredentials"
+        "name": "FindCredentials",
+        "type": "object"
       },
       {
         "id": "schema:KeyView",
         "kind": "schema",
-        "name": "KeyView"
+        "name": "KeyView",
+        "type": "object"
       },
       {
         "id": "schema:ProductCreateModify",
         "kind": "schema",
-        "name": "ProductCreateModify"
+        "name": "ProductCreateModify",
+        "type": "object"
       },
       {
         "id": "schema:ProductView",
         "kind": "schema",
-        "name": "ProductView"
+        "name": "ProductView",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionCreateModify",
         "kind": "schema",
-        "name": "SubscriptionCreateModify"
+        "name": "SubscriptionCreateModify",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionView",
         "kind": "schema",
-        "name": "SubscriptionView"
+        "name": "SubscriptionView",
+        "type": "object"
       }
     ]
   },

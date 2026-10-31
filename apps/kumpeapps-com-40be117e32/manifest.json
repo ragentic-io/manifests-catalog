@@ -7,7 +7,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:patch:/appkey"
+        "to": "operation:put:/appkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -17,17 +17,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:put:/appkey"
-      },
-      {
-        "from": "kumpeapps-com-40be117e32",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/authentication/appkey"
-      },
-      {
-        "from": "kumpeapps-com-40be117e32",
-        "kind": "EXPOSES",
-        "to": "operation:post:/authentication/appkey"
+        "to": "operation:patch:/appkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -37,12 +27,22 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
+        "to": "operation:post:/authentication/appkey"
+      },
+      {
+        "from": "kumpeapps-com-40be117e32",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/authentication/appkey"
+      },
+      {
+        "from": "kumpeapps-com-40be117e32",
+        "kind": "EXPOSES",
         "to": "operation:get:/authentication/authkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:patch:/authentication/authkey"
+        "to": "operation:put:/authentication/authkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -52,7 +52,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:put:/authentication/authkey"
+        "to": "operation:patch:/authentication/authkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -67,7 +67,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:patch:/authkey"
+        "to": "operation:put:/authkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -77,7 +77,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:put:/authkey"
+        "to": "operation:patch:/authkey"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -97,12 +97,12 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:delete:/kkid/chorelist"
+        "to": "operation:get:/kkid/chorelist"
       },
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:get:/kkid/chorelist"
+        "to": "operation:put:/kkid/chorelist"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -112,7 +112,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:put:/kkid/chorelist"
+        "to": "operation:delete:/kkid/chorelist"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -132,17 +132,7 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:delete:/kkid/userlist"
-      },
-      {
-        "from": "kumpeapps-com-40be117e32",
-        "kind": "EXPOSES",
         "to": "operation:get:/kkid/userlist"
-      },
-      {
-        "from": "kumpeapps-com-40be117e32",
-        "kind": "EXPOSES",
-        "to": "operation:post:/kkid/userlist"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -152,7 +142,12 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:delete:/kkid/wishlist"
+        "to": "operation:post:/kkid/userlist"
+      },
+      {
+        "from": "kumpeapps-com-40be117e32",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/kkid/userlist"
       },
       {
         "from": "kumpeapps-com-40be117e32",
@@ -162,12 +157,237 @@
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
+        "to": "operation:put:/kkid/wishlist"
+      },
+      {
+        "from": "kumpeapps-com-40be117e32",
+        "kind": "EXPOSES",
         "to": "operation:post:/kkid/wishlist"
       },
       {
         "from": "kumpeapps-com-40be117e32",
         "kind": "EXPOSES",
-        "to": "operation:put:/kkid/wishlist"
+        "to": "operation:delete:/kkid/wishlist"
+      },
+      {
+        "from": "operation:put:/appkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:post:/appkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_201"
+      },
+      {
+        "from": "operation:patch:/appkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:put:/authentication/appkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:post:/authentication/appkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_201"
+      },
+      {
+        "from": "operation:patch:/authentication/appkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:get:/authentication/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_201_1"
+      },
+      {
+        "from": "operation:put:/authentication/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:post:/authentication/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_201_1"
+      },
+      {
+        "from": "operation:patch:/authentication/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:get:/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_201_1"
+      },
+      {
+        "from": "operation:put:/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:post:/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_201_1"
+      },
+      {
+        "from": "operation:patch:/authkey",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_202"
+      },
+      {
+        "from": "operation:get:/kkid/allowance",
+        "kind": "RETURNS",
+        "to": "schema:allowance"
+      },
+      {
+        "from": "operation:get:/kkid/allowance",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:post:/kkid/allowance",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:post:/kkid/allowance",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:post:/kkid/apns",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:post:/kkid/apns",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:get:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:chorelist"
+      },
+      {
+        "from": "operation:get:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:put:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:put:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:post:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:post:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:delete:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:delete:/kkid/chorelist",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:post:/kkid/masteruser",
+        "kind": "RETURNS",
+        "to": "schema:addUserResponse"
+      },
+      {
+        "from": "operation:get:/kkid/share",
+        "kind": "RETURNS",
+        "to": "schema:201_share"
+      },
+      {
+        "from": "operation:get:/kkid/user",
+        "kind": "RETURNS",
+        "to": "schema:userlist"
+      },
+      {
+        "from": "operation:get:/kkid/userlist",
+        "kind": "RETURNS",
+        "to": "schema:nodata"
+      },
+      {
+        "from": "operation:get:/kkid/userlist",
+        "kind": "RETURNS",
+        "to": "schema:userlist"
+      },
+      {
+        "from": "operation:put:/kkid/userlist",
+        "kind": "RETURNS",
+        "to": "schema:addUserResponse"
+      },
+      {
+        "from": "operation:post:/kkid/userlist",
+        "kind": "RETURNS",
+        "to": "schema:addUserResponse"
+      },
+      {
+        "from": "operation:get:/kkid/wishlist",
+        "kind": "RETURNS",
+        "to": "schema:wishlist"
+      },
+      {
+        "from": "operation:put:/kkid/wishlist",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:post:/kkid/wishlist",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "operation:delete:/kkid/wishlist",
+        "kind": "RETURNS",
+        "to": "schema:success"
+      },
+      {
+        "from": "schema:allowance",
+        "kind": "REFERENCES",
+        "to": "schema:allowance_allowanceTransaction"
+      },
+      {
+        "from": "schema:authentication",
+        "kind": "REFERENCES",
+        "to": "schema:user"
+      },
+      {
+        "from": "schema:chorelist",
+        "kind": "REFERENCES",
+        "to": "schema:chore"
+      },
+      {
+        "from": "schema:userlist",
+        "kind": "REFERENCES",
+        "to": "schema:user"
+      },
+      {
+        "from": "schema:wishlist",
+        "kind": "REFERENCES",
+        "to": "schema:wish"
       }
     ],
     "nodes": [
@@ -177,133 +397,452 @@
       },
       {
         "deprecated": true,
-        "id": "operation:patch:/appkey",
-        "kind": "operation",
-        "method": "patch",
-        "name": "appkey_patch",
-        "path": "/appkey",
-        "pointer": "#/paths/~1appkey/patch",
-        "security": [],
-        "summary": "Compromise app key"
-      },
-      {
-        "deprecated": true,
-        "id": "operation:post:/appkey",
-        "kind": "operation",
-        "method": "post",
-        "name": "appkey_post",
-        "path": "/appkey",
-        "pointer": "#/paths/~1appkey/post",
-        "security": [],
-        "summary": "Request app key"
-      },
-      {
-        "deprecated": true,
+        "description": "Pass your app key to deactivate the key",
         "id": "operation:put:/appkey",
         "kind": "operation",
         "method": "put",
         "name": "appkey_put",
+        "parameters": [
+          {
+            "description": "app key to deactivate",
+            "in": "query",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/appkey",
         "pointer": "#/paths/~1appkey/put",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "Deactivate app key"
+        "summary": "Deactivate app key",
+        "tags": [
+          "authentication"
+        ]
       },
       {
-        "deprecated": false,
-        "id": "operation:patch:/authentication/appkey",
-        "kind": "operation",
-        "method": "patch",
-        "name": "auth_appkey_patch",
-        "path": "/authentication/appkey",
-        "pointer": "#/paths/~1authentication~1appkey/patch",
-        "security": [],
-        "summary": "Compromise app key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/authentication/appkey",
+        "deprecated": true,
+        "description": "Request a new app key by passing username and password for app account",
+        "id": "operation:post:/appkey",
         "kind": "operation",
         "method": "post",
-        "name": "auth_appkey_post",
-        "path": "/authentication/appkey",
-        "pointer": "#/paths/~1authentication~1appkey/post",
+        "name": "appkey_post",
+        "parameters": [
+          {
+            "description": "Username assigned to your app",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Password assigned to your app",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "App supports YubiKey OTP",
+            "in": "query",
+            "name": "supportsYubikey",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "path": "/appkey",
+        "pointer": "#/paths/~1appkey/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "inline_response_201"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request app key"
+        "summary": "Request app key",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": true,
+        "description": "Pass an app key to mark it as compromised.",
+        "id": "operation:patch:/appkey",
+        "kind": "operation",
+        "method": "patch",
+        "name": "appkey_patch",
+        "parameters": [
+          {
+            "description": "compromised app key",
+            "in": "query",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comments (like how was this compromised)",
+            "in": "query",
+            "name": "comments",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/appkey",
+        "pointer": "#/paths/~1appkey/patch",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Compromise app key",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Pass your app key to deactivate the key",
         "id": "operation:put:/authentication/appkey",
         "kind": "operation",
         "method": "put",
         "name": "auth_appkey_put",
+        "parameters": [
+          {
+            "description": "app key to deactivate",
+            "in": "query",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/authentication/appkey",
         "pointer": "#/paths/~1authentication~1appkey/put",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "Deactivate app key"
+        "summary": "Deactivate app key",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Request a new app key by passing username and password for app account",
+        "id": "operation:post:/authentication/appkey",
+        "kind": "operation",
+        "method": "post",
+        "name": "auth_appkey_post",
+        "parameters": [
+          {
+            "description": "Username assigned to your app",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Password assigned to your app",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "App supports YubiKey OTP",
+            "in": "query",
+            "name": "supportsYubikey",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "path": "/authentication/appkey",
+        "pointer": "#/paths/~1authentication~1appkey/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "inline_response_201"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Request app key",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Pass an app key to mark it as compromised.",
+        "id": "operation:patch:/authentication/appkey",
+        "kind": "operation",
+        "method": "patch",
+        "name": "auth_appkey_patch",
+        "parameters": [
+          {
+            "description": "compromised app key",
+            "in": "query",
+            "name": "app_key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comments (like how was this compromised)",
+            "in": "query",
+            "name": "comments",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/authentication/appkey",
+        "pointer": "#/paths/~1authentication~1appkey/patch",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Compromise app key",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Obtain auth key for user that has provided their username and password to login to your app.",
         "id": "operation:get:/authentication/authkey",
         "kind": "operation",
         "method": "get",
         "name": "auth_authkey_get",
+        "parameters": [
+          {
+            "description": "Authenticated username",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Authenticated password",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "YubiKey OTP (if configured for user)",
+            "in": "query",
+            "name": "otp",
+            "required": false,
+            "type": "string:password"
+          },
+          {
+            "description": "User's device name",
+            "in": "query",
+            "name": "deviceName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "identifierForVendor for User's Device (if app is iOS)",
+            "in": "query",
+            "name": "identifierForVendor",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authentication/authkey",
         "pointer": "#/paths/~1authentication~1authkey/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inline_response_201_1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "449",
+            "type": "449"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "Request auth key for user (login user)"
+        "summary": "Request auth key for user (login user)",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/authentication/authkey",
-        "kind": "operation",
-        "method": "patch",
-        "name": "auth_authkey_patch",
-        "path": "/authentication/authkey",
-        "pointer": "#/paths/~1authentication~1authkey/patch",
-        "security": [],
-        "summary": "Compromise auth key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/authentication/authkey",
-        "kind": "operation",
-        "method": "post",
-        "name": "auth_authkey_post",
-        "path": "/authentication/authkey",
-        "pointer": "#/paths/~1authentication~1authkey/post",
-        "security": [
-          {
-            "app_key": []
-          }
-        ],
-        "summary": "Request auth key for user (login user)"
-      },
-      {
-        "deprecated": false,
+        "description": "Deactivate auth key for user logging them out of your application",
         "id": "operation:put:/authentication/authkey",
         "kind": "operation",
         "method": "put",
         "name": "auth_authkey_put",
+        "parameters": [
+          {
+            "description": "auth key to logout",
+            "in": "query",
+            "name": "auth_key",
+            "required": true,
+            "type": "string:password"
+          }
+        ],
         "path": "/authentication/authkey",
         "pointer": "#/paths/~1authentication~1authkey/put",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "Deactivate auth key (logout)"
+        "summary": "Deactivate auth key (logout)",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Obtain auth key for user that has provided their username and password to login to your app.",
+        "id": "operation:post:/authentication/authkey",
+        "kind": "operation",
+        "method": "post",
+        "name": "auth_authkey_post",
+        "parameters": [
+          {
+            "description": "Authenticated username",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Authenticated password",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "YubiKey OTP (if configured for user)",
+            "in": "query",
+            "name": "otp",
+            "required": false,
+            "type": "string:password"
+          }
+        ],
+        "path": "/authentication/authkey",
+        "pointer": "#/paths/~1authentication~1authkey/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inline_response_201_1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "449",
+            "type": "449"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "app_key": []
+          }
+        ],
+        "summary": "Request auth key for user (login user)",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Mark user auth key as compromised",
+        "id": "operation:patch:/authentication/authkey",
+        "kind": "operation",
+        "method": "patch",
+        "name": "auth_authkey_patch",
+        "parameters": [
+          {
+            "description": "auth key to mark as compromised",
+            "in": "query",
+            "name": "auth_key",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "Comments (like how was this compromised)",
+            "in": "query",
+            "name": "comments",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/authentication/authkey",
+        "pointer": "#/paths/~1authentication~1authkey/patch",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Compromise auth key",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
@@ -311,100 +850,388 @@
         "kind": "operation",
         "method": "get",
         "name": "auth_verifyotp_get",
+        "parameters": [
+          {
+            "description": "YubiKey OTP code",
+            "in": "query",
+            "name": "otp",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/authentication/verifyotp",
         "pointer": "#/paths/~1authentication~1verifyotp/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "Verifies YubiKey OTP for authenticated user"
+        "summary": "Verifies YubiKey OTP for authenticated user",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Obtain auth key for user that has provided their username and password to login to your app.",
         "id": "operation:get:/authkey",
         "kind": "operation",
         "method": "get",
         "name": "authkey_get",
+        "parameters": [
+          {
+            "description": "Authenticated username",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Authenticated password",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "YubiKey OTP (if configured for user)",
+            "in": "query",
+            "name": "otp",
+            "required": false,
+            "type": "string:password"
+          }
+        ],
         "path": "/authkey",
         "pointer": "#/paths/~1authkey/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inline_response_201_1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "449",
+            "type": "449"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "Request auth key for user (login user)"
+        "summary": "Request auth key for user (login user)",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": true,
-        "id": "operation:patch:/authkey",
-        "kind": "operation",
-        "method": "patch",
-        "name": "authkey_patch",
-        "path": "/authkey",
-        "pointer": "#/paths/~1authkey/patch",
-        "security": [],
-        "summary": "Compromise auth key"
-      },
-      {
-        "deprecated": true,
-        "id": "operation:post:/authkey",
-        "kind": "operation",
-        "method": "post",
-        "name": "authkey_post",
-        "path": "/authkey",
-        "pointer": "#/paths/~1authkey/post",
-        "security": [
-          {
-            "app_key": []
-          }
-        ],
-        "summary": "Request auth key for user (login user)"
-      },
-      {
-        "deprecated": true,
+        "description": "Deactivate auth key for user logging them out of your application",
         "id": "operation:put:/authkey",
         "kind": "operation",
         "method": "put",
         "name": "authkey_put",
+        "parameters": [
+          {
+            "description": "auth key to logout",
+            "in": "query",
+            "name": "auth_key",
+            "required": true,
+            "type": "string:password"
+          }
+        ],
         "path": "/authkey",
         "pointer": "#/paths/~1authkey/put",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "Deactivate auth key (logout)"
+        "summary": "Deactivate auth key (logout)",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": true,
+        "description": "Obtain auth key for user that has provided their username and password to login to your app.",
+        "id": "operation:post:/authkey",
+        "kind": "operation",
+        "method": "post",
+        "name": "authkey_post",
+        "parameters": [
+          {
+            "description": "Authenticated username",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Authenticated password",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "YubiKey OTP (if configured for user)",
+            "in": "query",
+            "name": "otp",
+            "required": false,
+            "type": "string:password"
+          }
+        ],
+        "path": "/authkey",
+        "pointer": "#/paths/~1authkey/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inline_response_201_1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "403"
+          },
+          {
+            "status": "449",
+            "type": "449"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "app_key": []
+          }
+        ],
+        "summary": "Request auth key for user (login user)",
+        "tags": [
+          "authentication"
+        ]
+      },
+      {
+        "deprecated": true,
+        "description": "Mark user auth key as compromised",
+        "id": "operation:patch:/authkey",
+        "kind": "operation",
+        "method": "patch",
+        "name": "authkey_patch",
+        "parameters": [
+          {
+            "description": "auth key to mark as compromised",
+            "in": "query",
+            "name": "auth_key",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "Comments (like how was this compromised)",
+            "in": "query",
+            "name": "comments",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/authkey",
+        "pointer": "#/paths/~1authkey/patch",
+        "responses": [
+          {
+            "status": "202",
+            "type": "inline_response_202"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Compromise auth key",
+        "tags": [
+          "authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "By passing in the appropriate options, you can view allowance balance and allowance transactions for a given user provided that they are within the masterID ac…",
         "id": "operation:get:/kkid/allowance",
         "kind": "operation",
         "method": "get",
         "name": "kkid_allowance_get",
+        "parameters": [
+          {
+            "description": "userID of the kid",
+            "in": "query",
+            "name": "kidUserId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "number of days you wish to search allowance transactions (default is 90 days)",
+            "in": "query",
+            "name": "transactionDays",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/kkid/allowance",
         "pointer": "#/paths/~1kkid~1allowance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "allowance"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "returns allowance balance and allowance transactions"
+        "summary": "returns allowance balance and allowance transactions",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
+        "description": "By passing in the appropriate options, you can add an allowance transaction to a given user.",
         "id": "operation:post:/kkid/allowance",
         "kind": "operation",
         "method": "post",
         "name": "kkid_allowance_post",
+        "parameters": [
+          {
+            "description": "userID of the kid",
+            "in": "query",
+            "name": "kidUserId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "amount you wish to Add/Subtract (subtract value should be a negative value)",
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Description (reason) of allowance transaction",
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Transaction Type (Add/Subtract)",
+            "enum": [
+              "Add",
+              "Subtract"
+            ],
+            "in": "query",
+            "name": "transactionType",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/allowance",
         "pointer": "#/paths/~1kkid~1allowance/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "adds new allowance transaction to kidUserID"
+        "summary": "adds new allowance transaction to kidUserID",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
@@ -412,194 +1239,1245 @@
         "kind": "operation",
         "method": "post",
         "name": "kkid_apns_post",
+        "parameters": [
+          {
+            "description": "userID of the kid",
+            "in": "query",
+            "name": "kidUserId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "tool you wish to talk to",
+            "enum": [
+              "register",
+              "subscribe",
+              "unsubscribe",
+              "send"
+            ],
+            "in": "query",
+            "name": "tool",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "device APNS token (required for register)",
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of device to associate to token (required for register)",
+            "in": "query",
+            "name": "devicename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "title of APNS message (required for send)",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "APNS message body (required for send)",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number for badge icon (optional for send)",
+            "in": "query",
+            "name": "badge",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Name of sound file to play for send notification (optional for send)",
+            "in": "query",
+            "name": "sound",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Notification section name (required for send/subscribe/unsubscribe)",
+            "enum": [
+              "Chores",
+              "Chores-New",
+              "Chores-Reminders",
+              "Allowance",
+              "Allowance-New",
+              "WishList"
+            ],
+            "in": "query",
+            "name": "section",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Notification section name (optional for send, default is active)",
+            "enum": [
+              "passive",
+              "active",
+              "time-sensitive",
+              "critical"
+            ],
+            "in": "query",
+            "name": "priority",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/apns",
         "pointer": "#/paths/~1kkid~1apns/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "subscribes/unsubscribes/registers for apns push notifications"
+        "summary": "subscribes/unsubscribes/registers for apns push notifications",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/kkid/chorelist",
-        "kind": "operation",
-        "method": "delete",
-        "name": "kkid_chorelist_delete",
-        "path": "/kkid/chorelist",
-        "pointer": "#/paths/~1kkid~1chorelist/delete",
-        "security": [
-          {
-            "auth_key": []
-          }
-        ],
-        "summary": "deletes chore for given chore id"
-      },
-      {
-        "deprecated": false,
+        "description": "By passing in the appropriate options, you can search for chores assigned to a given user within the authenticated user's master account",
         "id": "operation:get:/kkid/chorelist",
         "kind": "operation",
         "method": "get",
         "name": "kkid_chorelist_get",
+        "parameters": [
+          {
+            "description": "Username of kid you wish to search",
+            "in": "query",
+            "name": "kidUsername",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Day of week for chores (Weekly for weekly chores)",
+            "enum": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Weekly"
+            ],
+            "in": "query",
+            "name": "day",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Status of Chore to search",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter results by blockDash parameter",
+            "in": "query",
+            "name": "blockDash",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter results by optional parameter",
+            "in": "query",
+            "name": "optional",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter results by canSteal parameter",
+            "in": "query",
+            "name": "canSteal",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "include calendar notations (default is false)",
+            "in": "query",
+            "name": "includeCalendar",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/kkid/chorelist",
         "pointer": "#/paths/~1kkid~1chorelist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "chorelist"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "returns list of chores for given user"
+        "summary": "returns list of chores for given user",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/kkid/chorelist",
-        "kind": "operation",
-        "method": "post",
-        "name": "kkid_chorelist_post",
-        "path": "/kkid/chorelist",
-        "pointer": "#/paths/~1kkid~1chorelist/post",
-        "security": [
-          {
-            "auth_key": []
-          }
-        ],
-        "summary": "adds chore for given user"
-      },
-      {
-        "deprecated": false,
+        "description": "By passing in the appropriate options, you can update the fields of a specific core within the authenticated user's master account",
         "id": "operation:put:/kkid/chorelist",
         "kind": "operation",
         "method": "put",
         "name": "kkid_chorelist_put",
+        "parameters": [
+          {
+            "description": "id number of chore you wish to update",
+            "in": "query",
+            "name": "idChoreList",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "new status of chore",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "mark chore as stolen by sibling",
+            "in": "query",
+            "name": "stolen",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "username of sibling that stole the chore (required if stolen is true)",
+            "in": "query",
+            "name": "stolenBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "text field of NFC tag that is required to be scanned to check off this chore (normally null)",
+            "in": "query",
+            "name": "nfcTag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "notes field for chore",
+            "in": "query",
+            "name": "notes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "GPS latitude of where the chore was marked",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "GPS longitude of where the chore was marked",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "GPS altitude of where the chore was marked",
+            "in": "query",
+            "name": "altitude",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "true if updated via API by automation system",
+            "in": "query",
+            "name": "updatedByAutomation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Where day equals...",
+            "enum": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Weekly",
+              "Today"
+            ],
+            "in": "query",
+            "name": "whereDay",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Where status equals...",
+            "in": "query",
+            "name": "whereStatus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Where chore name equals...",
+            "in": "query",
+            "name": "whereName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/chorelist",
         "pointer": "#/paths/~1kkid~1chorelist/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "updates chore for given chore id"
+        "summary": "updates chore for given chore id",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
+        "description": "By passing in the appropriate options, you can add a chore to given kid username under authenticated user's master account",
+        "id": "operation:post:/kkid/chorelist",
+        "kind": "operation",
+        "method": "post",
+        "name": "kkid_chorelist_post",
+        "parameters": [
+          {
+            "description": "username of kid to assign the chore to.",
+            "in": "query",
+            "name": "kidUsername",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "day of week (Monday, Tuesday....) for the chore.",
+            "enum": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Weekly",
+              "Today"
+            ],
+            "in": "query",
+            "name": "day",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "text field of nfc tag required to check off chore",
+            "in": "query",
+            "name": "nfcTag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "status of chore (default is todo)",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "name of chore",
+            "in": "query",
+            "name": "choreName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "optional chore description",
+            "in": "query",
+            "name": "choreDescription",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "number priority of chore (default is 5)",
+            "in": "query",
+            "name": "choreNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "block dash option on this chore",
+            "in": "query",
+            "name": "blockDash",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "mark as one time chore (does not repeat each week)",
+            "in": "query",
+            "name": "oneTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "ammount of allowance added at end of week for completing this chore",
+            "in": "query",
+            "name": "extraAllowance",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "mark as optional chore",
+            "in": "query",
+            "name": "optional",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "mark as reassignable (default is true)",
+            "in": "query",
+            "name": "reassignable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "mark as sibling can steal chore",
+            "in": "query",
+            "name": "canSteal",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "date (yyyy-mm-dd) that you wish the chore to start showing up.",
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "notes added to chore (visable only on reports, kids do not see this note, this is mostly just for the developer)",
+            "in": "query",
+            "name": "notes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "require use of camera to detect object detection tag order to check off chore",
+            "in": "query",
+            "name": "requireObjectDetection",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "tag for object detection to search for (required if requireObjectDetection is true)",
+            "in": "query",
+            "name": "objectDetectionTag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "true if chore updated via API from an Automation System",
+            "in": "query",
+            "name": "updatedByAutomation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Notes if AI Icons should be used (n for no, y for yes, e for yes- error)",
+            "in": "query",
+            "name": "aiIcon",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "True if this is a calendar note instead of a chore.",
+            "in": "query",
+            "name": "isCalendar",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/kkid/chorelist",
+        "pointer": "#/paths/~1kkid~1chorelist/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "auth_key": []
+          }
+        ],
+        "summary": "adds chore for given user",
+        "tags": [
+          "KKid"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "By passing in the appropriate options, you can delete a chore for the given chore id under authenticated user's master account",
+        "id": "operation:delete:/kkid/chorelist",
+        "kind": "operation",
+        "method": "delete",
+        "name": "kkid_chorelist_delete",
+        "parameters": [
+          {
+            "description": "id of the chore you wish to delete",
+            "in": "query",
+            "name": "idChoreList",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/kkid/chorelist",
+        "pointer": "#/paths/~1kkid~1chorelist/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "206",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "auth_key": []
+          }
+        ],
+        "summary": "deletes chore for given chore id",
+        "tags": [
+          "KKid"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "By passing in the appropriate variables this method creates a new user with master account access.",
         "id": "operation:post:/kkid/masteruser",
         "kind": "operation",
         "method": "post",
         "name": "kkid_masteruser_post",
+        "parameters": [
+          {
+            "description": "username of user to create",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "password of user to create",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "email address of user to create",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "First Name of user to create",
+            "in": "query",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Last Name of user to create",
+            "in": "query",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/masteruser",
         "pointer": "#/paths/~1kkid~1masteruser/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "addUserResponse"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "app_key": []
           }
         ],
-        "summary": "adds new master user account"
+        "summary": "adds new master user account",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create share link",
         "id": "operation:get:/kkid/share",
         "kind": "operation",
         "method": "get",
         "name": "kkid_share_get",
+        "parameters": [
+          {
+            "description": "User ID that the link should be authenticated to",
+            "in": "query",
+            "name": "linkUserId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Link to share",
+            "enum": [
+              "https://khome.kumpeapps.com/portal/wish-list.php",
+              "https://khome.kumpeapps.com/portal/chores-today.php"
+            ],
+            "in": "query",
+            "name": "link",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Authentication scope for link",
+            "enum": [
+              "WishList",
+              "WishListAdmin",
+              "Chores",
+              "ChoresAdmin"
+            ],
+            "in": "query",
+            "name": "scope",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Authentication scope for link",
+            "enum": [
+              "WishList",
+              "WishListAdmin",
+              "Chores",
+              "ChoresAdmin"
+            ],
+            "in": "query",
+            "name": "scope2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication scope for link",
+            "enum": [
+              "WishList",
+              "WishListAdmin",
+              "Chores",
+              "ChoresAdmin"
+            ],
+            "in": "query",
+            "name": "scope3",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Authentication scope for link",
+            "enum": [
+              "WishList",
+              "WishListAdmin",
+              "Chores",
+              "ChoresAdmin"
+            ],
+            "in": "query",
+            "name": "scope4",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/share",
         "pointer": "#/paths/~1kkid~1share/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "201_share"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "Create Share Link"
+        "summary": "Create Share Link",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets user info for authenticated user",
         "id": "operation:get:/kkid/user",
         "kind": "operation",
         "method": "get",
         "name": "kkid_user_get",
+        "parameters": [
+          {
+            "description": "Use bool values instead of Int 0/1",
+            "in": "query",
+            "name": "enableBool",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/kkid/user",
         "pointer": "#/paths/~1kkid~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "userlist"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "Gets user info"
+        "summary": "Gets user info",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/kkid/userlist",
-        "kind": "operation",
-        "method": "delete",
-        "name": "kkid_userlist_delete",
-        "path": "/kkid/userlist",
-        "pointer": "#/paths/~1kkid~1userlist/delete",
-        "security": [
-          {
-            "auth_key": []
-          }
-        ],
-        "summary": "deletes user"
-      },
-      {
-        "deprecated": false,
+        "description": "By passing in the appropriate options, you can search for users within the authenticated user's master account",
         "id": "operation:get:/kkid/userlist",
         "kind": "operation",
         "method": "get",
         "name": "kkid_userlist_get",
+        "parameters": [
+          {
+            "description": "Filter Search by isChild flag",
+            "in": "query",
+            "name": "isChild",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter Search by isActive flag",
+            "in": "query",
+            "name": "isActive",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter Search by isAdmin flag",
+            "in": "query",
+            "name": "isAdmin",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter Search by enableAllowance flag",
+            "in": "query",
+            "name": "enableAllowance",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter Search by enableChores flag",
+            "in": "query",
+            "name": "enableChores",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "userID of user to search",
+            "in": "query",
+            "name": "userID",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Username of user to search",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Email address of user to search",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/userlist",
         "pointer": "#/paths/~1kkid~1userlist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "userlist"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "204",
+            "type": "nodata"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "returns list of users"
+        "summary": "returns list of users",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/kkid/userlist",
-        "kind": "operation",
-        "method": "post",
-        "name": "kkid_userlist_post",
-        "path": "/kkid/userlist",
-        "pointer": "#/paths/~1kkid~1userlist/post",
-        "security": [
-          {
-            "auth_key": []
-          }
-        ],
-        "summary": "adds new child user"
-      },
-      {
-        "deprecated": false,
+        "description": "By passing in the appropriate variables this method updates the user's profile",
         "id": "operation:put:/kkid/userlist",
         "kind": "operation",
         "method": "put",
         "name": "kkid_userlist_put",
+        "parameters": [
+          {
+            "description": "userID of the user you wish to update",
+            "in": "query",
+            "name": "userID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "username of user to create",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "email address of user to create",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "First Name of user to create",
+            "in": "query",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Last Name of user to create",
+            "in": "query",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "emoji character for user",
+            "in": "query",
+            "name": "emoji",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "User's TMdB Session Key",
+            "in": "query",
+            "name": "tmdbKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "set status of Wish List module enabled",
+            "in": "query",
+            "name": "enableWishList",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "set status of chores module enabled",
+            "in": "query",
+            "name": "enableChores",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "set status of allowance module enabled",
+            "in": "query",
+            "name": "enableAllowance",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "set status of isAdmin",
+            "in": "query",
+            "name": "enableAdmin",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "set status of enableTmdb (movie and tv search)",
+            "in": "query",
+            "name": "enableTmdb",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "set status of enableObjectDetection",
+            "in": "query",
+            "name": "enableObjectDetection",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/kkid/userlist",
         "pointer": "#/paths/~1kkid~1userlist/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "addUserResponse"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "updates user"
+        "summary": "updates user",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/kkid/wishlist",
+        "description": "By passing in the appropriate variables this method creates a new user and assigns it to the master account of the authenticated user.",
+        "id": "operation:post:/kkid/userlist",
         "kind": "operation",
-        "method": "delete",
-        "name": "kkid_wishlist_delete",
-        "path": "/kkid/wishlist",
-        "pointer": "#/paths/~1kkid~1wishlist/delete",
+        "method": "post",
+        "name": "kkid_userlist_post",
+        "parameters": [
+          {
+            "description": "username of user to create",
+            "in": "query",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "password of user to create",
+            "in": "query",
+            "name": "password",
+            "required": true,
+            "type": "string:password"
+          },
+          {
+            "description": "email address of user to create",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "First Name of user to create",
+            "in": "query",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Last Name of user to create",
+            "in": "query",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/kkid/userlist",
+        "pointer": "#/paths/~1kkid~1userlist/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "addUserResponse"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "Delete item from wishlist"
+        "summary": "adds new child user",
+        "tags": [
+          "KKid"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "By passing in the appropriate variables this method deletes the specified user.",
+        "id": "operation:delete:/kkid/userlist",
+        "kind": "operation",
+        "method": "delete",
+        "name": "kkid_userlist_delete",
+        "parameters": [
+          {
+            "description": "userID of the user you wish to delete",
+            "in": "query",
+            "name": "userID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/kkid/userlist",
+        "pointer": "#/paths/~1kkid~1userlist/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "405",
+            "type": "405"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "412",
+            "type": "412"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "auth_key": []
+          }
+        ],
+        "summary": "deletes user",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
@@ -607,29 +2485,33 @@
         "kind": "operation",
         "method": "get",
         "name": "kkid_wishlist_get",
+        "parameters": [
+          {
+            "description": "userID of the kid",
+            "in": "query",
+            "name": "kidUserId",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/kkid/wishlist",
         "pointer": "#/paths/~1kkid~1wishlist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wishlist"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "Get list of wishlist items"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/kkid/wishlist",
-        "kind": "operation",
-        "method": "post",
-        "name": "kkid_wishlist_post",
-        "path": "/kkid/wishlist",
-        "pointer": "#/paths/~1kkid~1wishlist/post",
-        "security": [
-          {
-            "auth_key": []
-          }
-        ],
-        "summary": "Add item to kid's wishlist"
+        "summary": "Get list of wishlist items",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "deprecated": false,
@@ -637,119 +2519,298 @@
         "kind": "operation",
         "method": "put",
         "name": "kkid_wishlist_put",
+        "parameters": [
+          {
+            "description": "Wish list item ID to update",
+            "in": "query",
+            "name": "wishId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Item title",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Item Description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Item Priority",
+            "in": "query",
+            "name": "priority",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "URL Link to item",
+            "in": "query",
+            "name": "link",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kkid/wishlist",
         "pointer": "#/paths/~1kkid~1wishlist/put",
+        "responses": [
+          {
+            "status": "201",
+            "type": "success"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth_key": []
           }
         ],
-        "summary": "Update item on kid's wishlist"
+        "summary": "Update item on kid's wishlist",
+        "tags": [
+          "KKid"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/kkid/wishlist",
+        "kind": "operation",
+        "method": "post",
+        "name": "kkid_wishlist_post",
+        "parameters": [
+          {
+            "description": "userID of the kid",
+            "in": "query",
+            "name": "kidUserId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Item title",
+            "in": "query",
+            "name": "title",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Item Description",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Item Priority",
+            "in": "query",
+            "name": "priority",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "URL Link to item",
+            "in": "query",
+            "name": "link",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/kkid/wishlist",
+        "pointer": "#/paths/~1kkid~1wishlist/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "success"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "auth_key": []
+          }
+        ],
+        "summary": "Add item to kid's wishlist",
+        "tags": [
+          "KKid"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/kkid/wishlist",
+        "kind": "operation",
+        "method": "delete",
+        "name": "kkid_wishlist_delete",
+        "parameters": [
+          {
+            "description": "ID of wishlist item to delete",
+            "in": "query",
+            "name": "wishId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/kkid/wishlist",
+        "pointer": "#/paths/~1kkid~1wishlist/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "success"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "auth_key": []
+          }
+        ],
+        "summary": "Delete item from wishlist",
+        "tags": [
+          "KKid"
+        ]
       },
       {
         "id": "schema:201_share",
         "kind": "schema",
-        "name": "201_share"
+        "name": "201_share",
+        "type": "object"
       },
       {
+        "description": "Access Denied",
         "id": "schema:403",
         "kind": "schema",
-        "name": "403"
+        "name": "403",
+        "type": "object"
       },
       {
+        "description": "API Access Denied",
         "id": "schema:405",
         "kind": "schema",
-        "name": "405"
+        "name": "405",
+        "type": "object"
       },
       {
+        "description": "API Key invalid",
         "id": "schema:412",
         "kind": "schema",
-        "name": "412"
+        "name": "412",
+        "type": "object"
       },
       {
+        "description": "OTP Required is configured for this User.",
         "id": "schema:449",
         "kind": "schema",
-        "name": "449"
+        "name": "449",
+        "type": "object"
       },
       {
+        "description": "add user",
         "id": "schema:addUserResponse",
         "kind": "schema",
-        "name": "addUserResponse"
+        "name": "addUserResponse",
+        "type": "object"
       },
       {
+        "description": "Allowance",
         "id": "schema:allowance",
         "kind": "schema",
-        "name": "allowance"
+        "name": "allowance",
+        "type": "object"
       },
       {
         "id": "schema:allowance_allowanceTransaction",
         "kind": "schema",
-        "name": "allowance_allowanceTransaction"
+        "name": "allowance_allowanceTransaction",
+        "type": "object"
       },
       {
+        "description": "authentication",
         "id": "schema:authentication",
         "kind": "schema",
-        "name": "authentication"
+        "name": "authentication",
+        "type": "object"
       },
       {
+        "description": "chore",
         "id": "schema:chore",
         "kind": "schema",
-        "name": "chore"
+        "name": "chore",
+        "type": "object"
       },
       {
+        "description": "chorelist",
         "id": "schema:chorelist",
         "kind": "schema",
-        "name": "chorelist"
+        "name": "chorelist",
+        "type": "object"
       },
       {
         "id": "schema:inline_response_201",
         "kind": "schema",
-        "name": "inline_response_201"
+        "name": "inline_response_201",
+        "type": "object"
       },
       {
         "id": "schema:inline_response_201_1",
         "kind": "schema",
-        "name": "inline_response_201_1"
+        "name": "inline_response_201_1",
+        "type": "object"
       },
       {
         "id": "schema:inline_response_202",
         "kind": "schema",
-        "name": "inline_response_202"
+        "name": "inline_response_202",
+        "type": "object"
       },
       {
+        "description": "invalidate api key",
         "id": "schema:invalidateApiKey",
         "kind": "schema",
-        "name": "invalidateApiKey"
+        "name": "invalidateApiKey",
+        "type": "object"
       },
       {
+        "description": "nodata",
         "id": "schema:nodata",
         "kind": "schema",
-        "name": "nodata"
+        "name": "nodata",
+        "type": "object"
       },
       {
+        "description": "Success",
         "id": "schema:success",
         "kind": "schema",
-        "name": "success"
+        "name": "success",
+        "type": "object"
       },
       {
+        "description": "user",
         "id": "schema:user",
         "kind": "schema",
-        "name": "user"
+        "name": "user",
+        "type": "object"
       },
       {
+        "description": "userlist",
         "id": "schema:userlist",
         "kind": "schema",
-        "name": "userlist"
+        "name": "userlist",
+        "type": "object"
       },
       {
         "id": "schema:wish",
         "kind": "schema",
-        "name": "wish"
+        "name": "wish",
+        "type": "object"
       },
       {
+        "description": "Allowance",
         "id": "schema:wishlist",
         "kind": "schema",
-        "name": "wishlist"
+        "name": "wishlist",
+        "type": "object"
       }
     ]
   },

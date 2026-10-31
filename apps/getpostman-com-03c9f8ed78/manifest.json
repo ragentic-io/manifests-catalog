@@ -17,17 +17,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apis/{apiId}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/apis/{apiId}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/apis/{apiId}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/apis/{apiId}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
@@ -42,17 +42,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apis/{apiId}/versions/{apiVersionId}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/apis/{apiId}/versions/{apiVersionId}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/apis/{apiId}/versions/{apiVersionId}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/apis/{apiId}/versions/{apiVersionId}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
@@ -142,17 +142,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection_uid}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/collections/{collection_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/collections/{collection_uid}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/collections/{collection_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
@@ -167,17 +167,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/environments/{environment_uid}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/environments/{environment_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/environments/{environment_uid}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/environments/{environment_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
@@ -207,17 +207,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/mocks/{mock_uid}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/mocks/{mock_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/mocks/{mock_uid}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/mocks/{mock_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
@@ -242,17 +242,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/monitors/{monitor_uid}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/monitors/{monitor_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/monitors/{monitor_uid}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/monitors/{monitor_uid}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
@@ -277,17 +277,17 @@
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
-        "to": "operation:delete:/workspaces/{workspace_id}"
-      },
-      {
-        "from": "getpostman-com-03c9f8ed78",
-        "kind": "EXPOSES",
         "to": "operation:get:/workspaces/{workspace_id}"
       },
       {
         "from": "getpostman-com-03c9f8ed78",
         "kind": "EXPOSES",
         "to": "operation:put:/workspaces/{workspace_id}"
+      },
+      {
+        "from": "getpostman-com-03c9f8ed78",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/workspaces/{workspace_id}"
       }
     ],
     "nodes": [
@@ -297,630 +297,2061 @@
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the APIs present in the specified workspace Response contains an array named `apis` which would contain all the details of APIs present i…",
         "id": "operation:get:/apis",
         "kind": "operation",
         "method": "get",
         "name": "getAllApIs",
+        "parameters": [
+          {
+            "description": "Only return APIs that are inside the given workspace.",
+            "in": "query",
+            "name": "workspace",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs that have been updated after this time.",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs that have been updated before this time.",
+            "in": "query",
+            "name": "until",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs that have been created by the user ID represented by the given value.",
+            "in": "query",
+            "name": "createdBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs that have been updated by the user ID represented by the given value.",
+            "in": "query",
+            "name": "updatedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs with the corresponding privacy state.",
+            "in": "query",
+            "name": "isPublic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs whose name includes the given value.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs whose summary includes the given value.",
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return APIs whose description includes the given value.",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The value of sort can be one of the names of the fields included in the response.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The sorting direction, which can be ascending or descending.",
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apis",
         "pointer": "#/paths/~1apis/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all APIs"
+        "summary": "Get all APIs",
+        "tags": [
+          "API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call creates a new API with a default API Version.",
         "id": "operation:post:/apis",
         "kind": "operation",
         "method": "post",
         "name": "createApi",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "workspace",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apis",
         "pointer": "#/paths/~1apis/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create API"
+        "summary": "Create API",
+        "tags": [
+          "API"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/apis/{apiId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteAnApi",
-        "path": "/apis/{apiId}",
-        "pointer": "#/paths/~1apis~1{apiId}/delete",
-        "security": [],
-        "summary": "Delete an API"
-      },
-      {
-        "deprecated": false,
+        "description": "This call fetches a single API having the specified id.",
         "id": "operation:get:/apis/{apiId}",
         "kind": "operation",
         "method": "get",
         "name": "singleApi",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}",
         "pointer": "#/paths/~1apis~1{apiId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Single API"
+        "summary": "Single API",
+        "tags": [
+          "API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call updates an existing API .",
         "id": "operation:put:/apis/{apiId}",
         "kind": "operation",
         "method": "put",
         "name": "updateAnApi",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}",
         "pointer": "#/paths/~1apis~1{apiId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an API"
+        "summary": "Update an API",
+        "tags": [
+          "API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call deletes an existing API having the specified id.",
+        "id": "operation:delete:/apis/{apiId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteAnApi",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apis/{apiId}",
+        "pointer": "#/paths/~1apis~1{apiId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete an API",
+        "tags": [
+          "API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This call fetches details about the all the API Versions in the specified API.",
         "id": "operation:get:/apis/{apiId}/versions",
         "kind": "operation",
         "method": "get",
         "name": "getAllApiVersions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions",
         "pointer": "#/paths/~1apis~1{apiId}~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get All API Versions"
+        "summary": "Get All API Versions",
+        "tags": [
+          "API",
+          "API Version"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call creates a new API version in the specified API.",
         "id": "operation:post:/apis/{apiId}/versions",
         "kind": "operation",
         "method": "post",
         "name": "createApiVersion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions",
         "pointer": "#/paths/~1apis~1{apiId}~1versions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create API Version"
+        "summary": "Create API Version",
+        "tags": [
+          "API",
+          "API Version"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/apis/{apiId}/versions/{apiVersionId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteAnApiVersion",
-        "path": "/apis/{apiId}/versions/{apiVersionId}",
-        "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}/delete",
-        "security": [],
-        "summary": "Delete an API Version"
-      },
-      {
-        "deprecated": false,
+        "description": "This call fetches details about the specified API Version.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}",
         "kind": "operation",
         "method": "get",
         "name": "getAnApiVersion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an API Version"
+        "summary": "Get an API Version",
+        "tags": [
+          "API",
+          "API Version"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call updates an existing API Version.",
         "id": "operation:put:/apis/{apiId}/versions/{apiVersionId}",
         "kind": "operation",
         "method": "put",
         "name": "updateAnApiVersion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an API Version"
+        "summary": "Update an API Version",
+        "tags": [
+          "API",
+          "API Version"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call deletes an existing API Version having the specified id.",
+        "id": "operation:delete:/apis/{apiId}/versions/{apiVersionId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteAnApiVersion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apis/{apiId}/versions/{apiVersionId}",
+        "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete an API Version",
+        "tags": [
+          "API",
+          "API Version"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/contracttest",
         "kind": "operation",
         "method": "get",
         "name": "getContractTestRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/contracttest",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1contracttest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get contract test relations"
+        "summary": "Get contract test relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/documentation",
         "kind": "operation",
         "method": "get",
         "name": "getDocumentationRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/documentation",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1documentation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get  documentation relations"
+        "summary": "Get  documentation relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/environment",
         "kind": "operation",
         "method": "get",
         "name": "getEnvironmentRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/environment",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1environment/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get environment relations"
+        "summary": "Get environment relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/integrationtest",
         "kind": "operation",
         "method": "get",
         "name": "getIntegrationTestRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/integrationtest",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1integrationtest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get integration test relations"
+        "summary": "Get integration test relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/monitor",
         "kind": "operation",
         "method": "get",
         "name": "getMonitorRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/monitor",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1monitor/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get monitor relations"
+        "summary": "Get monitor relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the relations which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/relations",
         "kind": "operation",
         "method": "get",
         "name": "getLinkedRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/relations",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1relations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get linked relations"
+        "summary": "Get linked relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call allows you to add existing Postman entities as new relations to an API.",
         "id": "operation:post:/apis/{apiId}/versions/{apiVersionId}/relations",
         "kind": "operation",
         "method": "post",
         "name": "createRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/relations",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1relations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create relations"
+        "summary": "Create relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call creates a new schema.",
         "id": "operation:post:/apis/{apiId}/versions/{apiVersionId}/schemas",
         "kind": "operation",
         "method": "post",
         "name": "createSchema",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/schemas",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1schemas/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Schema"
+        "summary": "Create Schema",
+        "tags": [
+          "API",
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches a single schema having the specified id.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}",
         "kind": "operation",
         "method": "get",
         "name": "getSchema",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "schemaId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1schemas~1{schemaId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Schema"
+        "summary": "Get Schema",
+        "tags": [
+          "API",
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call updates an existing schema.",
         "id": "operation:put:/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}",
         "kind": "operation",
         "method": "put",
         "name": "updateSchema",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "schemaId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1schemas~1{schemaId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Schema"
+        "summary": "Update Schema",
+        "tags": [
+          "API",
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call creates a collection and links it to an API as one or multiple relations.",
         "id": "operation:post:/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}/collections",
         "kind": "operation",
         "method": "post",
         "name": "createCollectionFromSchema",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "schemaId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "workspace",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/schemas/{schemaId}/collections",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1schemas~1{schemaId}~1collections/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create collection from schema"
+        "summary": "Create collection from schema",
+        "tags": [
+          "API",
+          "Schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.",
         "id": "operation:get:/apis/{apiId}/versions/{apiVersionId}/testsuite",
         "kind": "operation",
         "method": "get",
         "name": "getTestSuiteRelations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/testsuite",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1testsuite/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get test suite relations"
+        "summary": "Get test suite relations",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call allows you to keep the relation in sync with the API schema.",
         "id": "operation:put:/apis/{apiId}/versions/{apiVersionId}/{entityType}/{entityId}/syncWithSchema",
         "kind": "operation",
         "method": "put",
         "name": "syncRelationsWithSchema",
+        "parameters": [
+          {
+            "description": "Id of the API",
+            "in": "path",
+            "name": "apiId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Id of the API version",
+            "in": "path",
+            "name": "apiVersionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Relation type (e.g documentation, contracttest, integrationtest, testsuite, mock, monitor)",
+            "in": "path",
+            "name": "entityType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Relation id",
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{apiId}/versions/{apiVersionId}/{entityType}/{entityId}/syncWithSchema",
         "pointer": "#/paths/~1apis~1{apiId}~1versions~1{apiVersionId}~1{entityType}~1{entityId}~1syncWithSchema/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sync relations with schema"
+        "summary": "Sync relations with schema",
+        "tags": [
+          "API",
+          "Relations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `/collections` endpoint returns a list of all [collections](https://www.getpostman.com/docs/collections) that are accessible by you.",
         "id": "operation:get:/collections",
         "kind": "operation",
         "method": "get",
         "name": "allCollections",
         "path": "/collections",
         "pointer": "#/paths/~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "All Collections"
+        "summary": "All Collections",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create collections using the Postman Collection v2 format.",
         "id": "operation:post:/collections",
         "kind": "operation",
         "method": "post",
         "name": "createCollection",
         "path": "/collections",
         "pointer": "#/paths/~1collections/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Collection"
+        "summary": "Create Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a fork from an existing collection.",
         "id": "operation:post:/collections/fork/{collection_uid}",
         "kind": "operation",
         "method": "post",
         "name": "createAFork",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "collection_uid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Workspace ID is required to create a fork",
+            "in": "query",
+            "name": "workspace",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collections/fork/{collection_uid}",
         "pointer": "#/paths/~1collections~1fork~1{collection_uid}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a Fork"
+        "summary": "Create a Fork",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to merge a forked collection back to its destination collection.",
         "id": "operation:post:/collections/merge",
         "kind": "operation",
         "method": "post",
         "name": "mergeAFork",
         "path": "/collections/merge",
         "pointer": "#/paths/~1collections~1merge/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Merge a Fork"
+        "summary": "Merge a Fork",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collection_uid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCollection",
-        "path": "/collections/{collection_uid}",
-        "pointer": "#/paths/~1collections~1{collection_uid}/delete",
-        "security": [],
-        "summary": "Delete Collection"
-      },
-      {
-        "deprecated": false,
+        "description": "Access the contents of a collection that is accessible to you using its unique id (`uid`).",
         "id": "operation:get:/collections/{collection_uid}",
         "kind": "operation",
         "method": "get",
         "name": "singleCollection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "collection_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_uid}",
         "pointer": "#/paths/~1collections~1{collection_uid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Single Collection "
+        "summary": "Single Collection ",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to update an existing collection using the Postman Collection v2 format.",
         "id": "operation:put:/collections/{collection_uid}",
         "kind": "operation",
         "method": "put",
         "name": "updateCollection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "collection_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection_uid}",
         "pointer": "#/paths/~1collections~1{collection_uid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Collection"
+        "summary": "Update Collection",
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to delete an existing collection.",
+        "id": "operation:delete:/collections/{collection_uid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCollection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "collection_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection_uid}",
+        "pointer": "#/paths/~1collections~1{collection_uid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Collection",
+        "tags": [
+          "Collections"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The `/environments` endpoint returns a list of all [environments](https://www.getpostman.com/docs/environments) that belong to you..",
         "id": "operation:get:/environments",
         "kind": "operation",
         "method": "get",
         "name": "allEnvironments",
         "path": "/environments",
         "pointer": "#/paths/~1environments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "All Environments"
+        "summary": "All Environments",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A sample body is added to the request that conforms to the following JSON schema: ```json { \"type\": \"object\", \"properties\": { \"environment\": { \"type\": \"object\"…",
         "id": "operation:post:/environments",
         "kind": "operation",
         "method": "post",
         "name": "createEnvironment",
         "path": "/environments",
         "pointer": "#/paths/~1environments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Environment"
+        "summary": "Create Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/environments/{environment_uid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteEnvironment",
-        "path": "/environments/{environment_uid}",
-        "pointer": "#/paths/~1environments~1{environment_uid}/delete",
-        "security": [],
-        "summary": "Delete Environment"
-      },
-      {
-        "deprecated": false,
+        "description": "Access the contents of an environment that is accessible to you using its unique id (`uid`).",
         "id": "operation:get:/environments/{environment_uid}",
         "kind": "operation",
         "method": "get",
         "name": "singleEnvironment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "environment_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/environments/{environment_uid}",
         "pointer": "#/paths/~1environments~1{environment_uid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Single Environment"
+        "summary": "Single Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint replaces an existing environment.",
         "id": "operation:put:/environments/{environment_uid}",
         "kind": "operation",
         "method": "put",
         "name": "updateEnvironment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "environment_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/environments/{environment_uid}",
         "pointer": "#/paths/~1environments~1{environment_uid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Environment"
+        "summary": "Update Environment",
+        "tags": [
+          "Environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to delete a single environment based on an environment's unique `uid`.",
+        "id": "operation:delete:/environments/{environment_uid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteEnvironment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "environment_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/environments/{environment_uid}",
+        "pointer": "#/paths/~1environments~1{environment_uid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Environment",
+        "tags": [
+          "Environments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint allows you to import your exported Postman data.",
         "id": "operation:post:/import/exported",
         "kind": "operation",
         "method": "post",
         "name": "importExportedData",
         "path": "/import/exported",
         "pointer": "#/paths/~1import~1exported/post",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Import exported data"
+        "summary": "Import exported data",
+        "tags": [
+          "Import"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to import external API specifications into Postman.",
         "id": "operation:post:/import/openapi",
         "kind": "operation",
         "method": "post",
         "name": "importExternalApiSpecification",
         "path": "/import/openapi",
         "pointer": "#/paths/~1import~1openapi/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Import external API specification"
+        "summary": "Import external API specification",
+        "tags": [
+          "Import"
+        ]
       },
       {
         "deprecated": false,
+        "description": "the `/me` Postman API endpoint lets you access information about the authenticated user.",
         "id": "operation:get:/me",
         "kind": "operation",
         "method": "get",
         "name": "apiKeyOwner",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "API Key Owner"
+        "summary": "API Key Owner",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint fetches all the mocks that you have created.",
         "id": "operation:get:/mocks",
         "kind": "operation",
         "method": "get",
         "name": "allMocks",
         "path": "/mocks",
         "pointer": "#/paths/~1mocks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "All Mocks"
+        "summary": "All Mocks",
+        "tags": [
+          "Mocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a mock on a collection.",
         "id": "operation:post:/mocks",
         "kind": "operation",
         "method": "post",
         "name": "createMock",
         "path": "/mocks",
         "pointer": "#/paths/~1mocks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Mock"
+        "summary": "Create Mock",
+        "tags": [
+          "Mocks"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/mocks/{mock_uid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteMock",
-        "path": "/mocks/{mock_uid}",
-        "pointer": "#/paths/~1mocks~1{mock_uid}/delete",
-        "security": [],
-        "summary": "Delete Mock"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint fetches you the basic information about a single mock using its `uid`.",
         "id": "operation:get:/mocks/{mock_uid}",
         "kind": "operation",
         "method": "get",
         "name": "singleMock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mock_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mocks/{mock_uid}",
         "pointer": "#/paths/~1mocks~1{mock_uid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Single Mock"
+        "summary": "Single Mock",
+        "tags": [
+          "Mocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to update a mock you have created using its `uid`.",
         "id": "operation:put:/mocks/{mock_uid}",
         "kind": "operation",
         "method": "put",
         "name": "updateMock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mock_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mocks/{mock_uid}",
         "pointer": "#/paths/~1mocks~1{mock_uid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Mock"
+        "summary": "Update Mock",
+        "tags": [
+          "Mocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to delete an existing mock using its `uid`.",
+        "id": "operation:delete:/mocks/{mock_uid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteMock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mock_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/mocks/{mock_uid}",
+        "pointer": "#/paths/~1mocks~1{mock_uid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Mock",
+        "tags": [
+          "Mocks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint publishes the mock you have created using its `uid` > Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key ` request header or `apikey` U…",
         "id": "operation:post:/mocks/{mock_uid}/publish",
         "kind": "operation",
         "method": "post",
         "name": "publishMock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mock_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mocks/{mock_uid}/publish",
         "pointer": "#/paths/~1mocks~1{mock_uid}~1publish/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Publish Mock"
+        "summary": "Publish Mock",
+        "tags": [
+          "Mocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint unpublishes the mock you have created using its `uid` > Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key ` request header or `apikey`…",
         "id": "operation:delete:/mocks/{mock_uid}/unpublish",
         "kind": "operation",
         "method": "delete",
         "name": "unpublishMock",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mock_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mocks/{mock_uid}/unpublish",
         "pointer": "#/paths/~1mocks~1{mock_uid}~1unpublish/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Unpublish Mock"
+        "summary": "Unpublish Mock",
+        "tags": [
+          "Mocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `/monitors` endpoint returns a list of all [monitors](https://monitor.getpostman.com/) that are accessible by you.",
         "id": "operation:get:/monitors",
         "kind": "operation",
         "method": "get",
         "name": "allMonitors",
         "path": "/monitors",
         "pointer": "#/paths/~1monitors/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "All Monitors"
+        "summary": "All Monitors",
+        "tags": [
+          "Monitors"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a monitor.",
         "id": "operation:post:/monitors",
         "kind": "operation",
         "method": "post",
         "name": "createMonitor",
         "path": "/monitors",
         "pointer": "#/paths/~1monitors/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Monitor"
+        "summary": "Create Monitor",
+        "tags": [
+          "Monitors"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/monitors/{monitor_uid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteMonitor",
-        "path": "/monitors/{monitor_uid}",
-        "pointer": "#/paths/~1monitors~1{monitor_uid}/delete",
-        "security": [],
-        "summary": "Delete Monitor"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint fetches you basic information about the monitor using its `uid`.",
         "id": "operation:get:/monitors/{monitor_uid}",
         "kind": "operation",
         "method": "get",
         "name": "singleMonitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "monitor_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/monitors/{monitor_uid}",
         "pointer": "#/paths/~1monitors~1{monitor_uid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Single Monitor"
+        "summary": "Single Monitor",
+        "tags": [
+          "Monitors"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to update a monitor using its `uid`.",
         "id": "operation:put:/monitors/{monitor_uid}",
         "kind": "operation",
         "method": "put",
         "name": "updateMonitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "monitor_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/monitors/{monitor_uid}",
         "pointer": "#/paths/~1monitors~1{monitor_uid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Monitor"
+        "summary": "Update Monitor",
+        "tags": [
+          "Monitors"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint can be used to delete an existing monitor using its `uid`.",
+        "id": "operation:delete:/monitors/{monitor_uid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteMonitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "monitor_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/monitors/{monitor_uid}",
+        "pointer": "#/paths/~1monitors~1{monitor_uid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Monitor",
+        "tags": [
+          "Monitors"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint will run the monitor instantly and wait for the monitor to run completely.",
         "id": "operation:post:/monitors/{monitor_uid}/run",
         "kind": "operation",
         "method": "post",
         "name": "runAMonitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "monitor_uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/monitors/{monitor_uid}/run",
         "pointer": "#/paths/~1monitors~1{monitor_uid}~1run/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Run a Monitor"
+        "summary": "Run a Monitor",
+        "tags": [
+          "Monitors"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a webhook that triggers a collection with your custom payload.",
         "id": "operation:post:/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "createWebhook",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "workspace",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Webhook"
+        "summary": "Create Webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The `/workspaces` endpoint returns a list of all [workspaces](https://www.getpostman.com/docs/v6/postman/workspaces/intro_to_workspaces) that is accessible by…",
         "id": "operation:get:/workspaces",
         "kind": "operation",
         "method": "get",
         "name": "allWorkspaces",
         "path": "/workspaces",
         "pointer": "#/paths/~1workspaces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "All workspaces"
+        "summary": "All workspaces",
+        "tags": [
+          "Workspaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a workspace and populate it with entities like `collections`, `environments`, `mocks` and `monitors` using their `uid`.",
         "id": "operation:post:/workspaces",
         "kind": "operation",
         "method": "post",
         "name": "createWorkspace",
         "path": "/workspaces",
         "pointer": "#/paths/~1workspaces/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create Workspace"
+        "summary": "Create Workspace",
+        "tags": [
+          "Workspaces"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/workspaces/{workspace_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteWorkspace",
-        "path": "/workspaces/{workspace_id}",
-        "pointer": "#/paths/~1workspaces~1{workspace_id}/delete",
-        "security": [],
-        "summary": "Delete Workspace"
-      },
-      {
-        "deprecated": false,
+        "description": "Access the contents of a workspace that is accessible to you using its id (`id`).",
         "id": "operation:get:/workspaces/{workspace_id}",
         "kind": "operation",
         "method": "get",
         "name": "singleWorkspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/workspaces/{workspace_id}",
         "pointer": "#/paths/~1workspaces~1{workspace_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Single workspace"
+        "summary": "Single workspace",
+        "tags": [
+          "Workspaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to update a workspace and update it's association to entities like `collections`, `environments`, `mocks` and `monitors` using their `…",
         "id": "operation:put:/workspaces/{workspace_id}",
         "kind": "operation",
         "method": "put",
         "name": "updateWorkspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/workspaces/{workspace_id}",
         "pointer": "#/paths/~1workspaces~1{workspace_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update Workspace"
+        "summary": "Update Workspace",
+        "tags": [
+          "Workspaces"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint allows you to delete an existing workspace.",
+        "id": "operation:delete:/workspaces/{workspace_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteWorkspace",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/workspaces/{workspace_id}",
+        "pointer": "#/paths/~1workspaces~1{workspace_id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Workspace",
+        "tags": [
+          "Workspaces"
+        ]
       }
     ]
   },

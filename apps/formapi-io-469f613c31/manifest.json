@@ -22,12 +22,12 @@
       {
         "from": "formapi-io-469f613c31",
         "kind": "EXPOSES",
-        "to": "operation:delete:/combined_submissions/{combined_submission_id}"
+        "to": "operation:get:/combined_submissions/{combined_submission_id}"
       },
       {
         "from": "formapi-io-469f613c31",
         "kind": "EXPOSES",
-        "to": "operation:get:/combined_submissions/{combined_submission_id}"
+        "to": "operation:delete:/combined_submissions/{combined_submission_id}"
       },
       {
         "from": "formapi-io-469f613c31",
@@ -97,12 +97,12 @@
       {
         "from": "formapi-io-469f613c31",
         "kind": "EXPOSES",
-        "to": "operation:delete:/submissions/{submission_id}"
+        "to": "operation:get:/submissions/{submission_id}"
       },
       {
         "from": "formapi-io-469f613c31",
         "kind": "EXPOSES",
-        "to": "operation:get:/submissions/{submission_id}"
+        "to": "operation:delete:/submissions/{submission_id}"
       },
       {
         "from": "formapi-io-469f613c31",
@@ -178,6 +178,31 @@
         "from": "formapi-io-469f613c31",
         "kind": "EXPOSES",
         "to": "operation:get:/uploads/presign"
+      },
+      {
+        "from": "operation:get:/data_requests/{data_request_id}",
+        "kind": "RETURNS",
+        "to": "schema:submission_data_request"
+      },
+      {
+        "from": "operation:get:/submissions/{submission_id}",
+        "kind": "RETURNS",
+        "to": "schema:submission"
+      },
+      {
+        "from": "operation:delete:/submissions/{submission_id}",
+        "kind": "RETURNS",
+        "to": "schema:submission"
+      },
+      {
+        "from": "schema:submission",
+        "kind": "REFERENCES",
+        "to": "schema:submission_action"
+      },
+      {
+        "from": "schema:submission",
+        "kind": "REFERENCES",
+        "to": "schema:submission_data_request"
       }
     ],
     "nodes": [
@@ -193,12 +218,26 @@
         "name": "testAuthentication",
         "path": "/authentication",
         "pointer": "#/paths/~1authentication/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Test Authentication"
+        "summary": "Test Authentication",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -206,14 +245,44 @@
         "kind": "operation",
         "method": "get",
         "name": "listCombinedSubmissions",
+        "parameters": [
+          {
+            "description": "Default: 1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Default: 50",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/combined_submissions",
         "pointer": "#/paths/~1combined_submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Get a list of all combined submissions"
+        "summary": "Get a list of all combined submissions",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -223,27 +292,41 @@
         "name": "combineSubmissions",
         "path": "/combined_submissions",
         "pointer": "#/paths/~1combined_submissions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "422",
+            "type": "invalid_request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Merge generated PDFs together"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/combined_submissions/{combined_submission_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "expireCombinedSubmission",
-        "path": "/combined_submissions/{combined_submission_id}",
-        "pointer": "#/paths/~1combined_submissions~1{combined_submission_id}/delete",
-        "security": [
-          {
-            "api_token_basic": []
-          }
-        ],
-        "summary": "Expire a combined submission"
+        "summary": "Merge generated PDFs together",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -251,14 +334,85 @@
         "kind": "operation",
         "method": "get",
         "name": "getCombinedSubmission",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "combined_submission_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/combined_submissions/{combined_submission_id}",
         "pointer": "#/paths/~1combined_submissions~1{combined_submission_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Check the status of a combined submission (merged PDFs)"
+        "summary": "Check the status of a combined submission (merged PDFs)",
+        "tags": [
+          "PDF"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/combined_submissions/{combined_submission_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "expireCombinedSubmission",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "combined_submission_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/combined_submissions/{combined_submission_id}",
+        "pointer": "#/paths/~1combined_submissions~1{combined_submission_id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "403",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_token_basic": []
+          }
+        ],
+        "summary": "Expire a combined submission",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -268,12 +422,41 @@
         "name": "combinePdfs",
         "path": "/combined_submissions?v=2",
         "pointer": "#/paths/~1combined_submissions?v=2/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "422",
+            "type": "invalid_request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Merge submission PDFs, template PDFs, or custom files"
+        "summary": "Merge submission PDFs, template PDFs, or custom files",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -283,12 +466,33 @@
         "name": "createCustomFileFromUpload",
         "path": "/custom_files",
         "pointer": "#/paths/~1custom_files/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Create a new custom file from a cached presign upload"
+        "summary": "Create a new custom file from a cached presign upload",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -296,14 +500,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getDataRequest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "data_request_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/data_requests/{data_request_id}",
         "pointer": "#/paths/~1data_requests~1{data_request_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "submission_data_request"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Look up a submission data request"
+        "summary": "Look up a submission data request",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -311,14 +541,51 @@
         "kind": "operation",
         "method": "put",
         "name": "updateDataRequest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "data_request_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/data_requests/{data_request_id}",
         "pointer": "#/paths/~1data_requests~1{data_request_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "invalid_request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Update a submission data request"
+        "summary": "Update a submission data request",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -326,14 +593,36 @@
         "kind": "operation",
         "method": "post",
         "name": "createDataRequestToken",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "data_request_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/data_requests/{data_request_id}/tokens",
         "pointer": "#/paths/~1data_requests~1{data_request_id}~1tokens/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Creates a new data request token for form authentication"
+        "summary": "Creates a new data request token for form authentication",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -341,14 +630,37 @@
         "kind": "operation",
         "method": "get",
         "name": "listFolders",
+        "parameters": [
+          {
+            "description": "Filter By Folder Id",
+            "in": "query",
+            "name": "parent_folder_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/folders/",
         "pointer": "#/paths/~1folders~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Get a list of all folders"
+        "summary": "Get a list of all folders",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -358,12 +670,41 @@
         "name": "createFolder",
         "path": "/folders/",
         "pointer": "#/paths/~1folders~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Create a folder"
+        "summary": "Create a folder",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -371,14 +712,44 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteFolder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "folder_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/folders/{folder_id}",
         "pointer": "#/paths/~1folders~1{folder_id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Delete a folder"
+        "summary": "Delete a folder",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -386,14 +757,47 @@
         "kind": "operation",
         "method": "post",
         "name": "moveFolderToFolder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "folder_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/folders/{folder_id}/move",
         "pointer": "#/paths/~1folders~1{folder_id}~1move/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Move a folder"
+        "summary": "Move a folder",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -401,14 +805,48 @@
         "kind": "operation",
         "method": "post",
         "name": "renameFolder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "folder_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/folders/{folder_id}/rename",
         "pointer": "#/paths/~1folders~1{folder_id}~1rename/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Rename a folder"
+        "summary": "Rename a folder",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -416,14 +854,70 @@
         "kind": "operation",
         "method": "get",
         "name": "listSubmissions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "created_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include_data",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/submissions",
         "pointer": "#/paths/~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "List all submissions"
+        "summary": "List all submissions",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -433,12 +927,41 @@
         "name": "batchGeneratePdfs",
         "path": "/submissions/batches",
         "pointer": "#/paths/~1submissions~1batches/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Generates multiple PDFs"
+        "summary": "Generates multiple PDFs",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -446,29 +969,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getSubmissionBatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "submission_batch_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include_submissions",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/submissions/batches/{submission_batch_id}",
         "pointer": "#/paths/~1submissions~1batches~1{submission_batch_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Check the status of a submission batch job"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/submissions/{submission_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "expireSubmission",
-        "path": "/submissions/{submission_id}",
-        "pointer": "#/paths/~1submissions~1{submission_id}/delete",
-        "security": [
-          {
-            "api_token_basic": []
-          }
-        ],
-        "summary": "Expire a PDF submission"
+        "summary": "Check the status of a submission batch job",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -476,14 +1016,91 @@
         "kind": "operation",
         "method": "get",
         "name": "getSubmission",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "submission_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include_data",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/submissions/{submission_id}",
         "pointer": "#/paths/~1submissions~1{submission_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "submission"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Check the status of a PDF"
+        "summary": "Check the status of a PDF",
+        "tags": [
+          "PDF"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/submissions/{submission_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "expireSubmission",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "submission_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/submissions/{submission_id}",
+        "pointer": "#/paths/~1submissions~1{submission_id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "submission"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "403",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_token_basic": []
+          }
+        ],
+        "summary": "Expire a PDF submission",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -491,14 +1108,62 @@
         "kind": "operation",
         "method": "get",
         "name": "listTemplates",
+        "parameters": [
+          {
+            "description": "Search By Name",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter By Folder Id",
+            "in": "query",
+            "name": "parent_folder_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Default: 1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Default: 50",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/templates",
         "pointer": "#/paths/~1templates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Get a list of all templates"
+        "summary": "Get a list of all templates",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -508,12 +1173,33 @@
         "name": "createPDFTemplate",
         "path": "/templates",
         "pointer": "#/paths/~1templates/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Create a new PDF template with a form POST file upload"
+        "summary": "Create a new PDF template with a form POST file upload",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -521,14 +1207,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}",
         "pointer": "#/paths/~1templates~1{template_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Check the status of an uploaded template"
+        "summary": "Check the status of an uploaded template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -536,14 +1248,39 @@
         "kind": "operation",
         "method": "put",
         "name": "updateTemplate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}",
         "pointer": "#/paths/~1templates~1{template_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Update a Template"
+        "summary": "Update a Template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -551,14 +1288,43 @@
         "kind": "operation",
         "method": "put",
         "name": "addFieldsToTemplate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}/add_fields",
         "pointer": "#/paths/~1templates~1{template_id}~1add_fields/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Add new fields to a Template"
+        "summary": "Add new fields to a Template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -566,14 +1332,43 @@
         "kind": "operation",
         "method": "post",
         "name": "copyTemplate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}/copy",
         "pointer": "#/paths/~1templates~1{template_id}~1copy/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Copy a Template"
+        "summary": "Copy a Template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -581,14 +1376,43 @@
         "kind": "operation",
         "method": "post",
         "name": "moveTemplateToFolder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}/move",
         "pointer": "#/paths/~1templates~1{template_id}~1move/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Move Template to folder"
+        "summary": "Move Template to folder",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -596,14 +1420,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplateSchema",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}/schema",
         "pointer": "#/paths/~1templates~1{template_id}~1schema/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Fetch the JSON schema for a template"
+        "summary": "Fetch the JSON schema for a template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -611,14 +1461,72 @@
         "kind": "operation",
         "method": "get",
         "name": "get /templates/{template_id}/submissions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "created_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include_data",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/templates/{template_id}/submissions",
         "pointer": "#/paths/~1templates~1{template_id}~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "List all submissions for a given template"
+        "summary": "List all submissions for a given template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -626,14 +1534,51 @@
         "kind": "operation",
         "method": "post",
         "name": "generatePDF",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}/submissions",
         "pointer": "#/paths/~1templates~1{template_id}~1submissions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "422",
+            "type": "invalid_request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Generates a new PDF"
+        "summary": "Generates a new PDF",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -641,14 +1586,51 @@
         "kind": "operation",
         "method": "post",
         "name": "batchGeneratePdfV1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}/submissions/batch",
         "pointer": "#/paths/~1templates~1{template_id}~1submissions~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object[]"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "422",
+            "type": "invalid_request[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Generates multiple PDFs"
+        "summary": "Generates multiple PDFs",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -656,14 +1638,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getFullTemplate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{template_id}?full=true",
         "pointer": "#/paths/~1templates~1{template_id}?full=true/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Fetch the full template attributes"
+        "summary": "Fetch the full template attributes",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -673,12 +1681,33 @@
         "name": "createPDFTemplateFromUpload",
         "path": "/templates?desc=cached_upload",
         "pointer": "#/paths/~1templates?desc=cached_upload/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Create a new PDF template from a cached presign upload"
+        "summary": "Create a new PDF template from a cached presign upload",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -688,12 +1717,33 @@
         "name": "createHTMLTemplate",
         "path": "/templates?desc=html",
         "pointer": "#/paths/~1templates?desc=html/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Create a new HTML template"
+        "summary": "Create a new HTML template",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "deprecated": false,
@@ -703,47 +1753,68 @@
         "name": "getPresignUrl",
         "path": "/uploads/presign",
         "pointer": "#/paths/~1uploads~1presign/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "authentication_error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_token_basic": []
           }
         ],
-        "summary": "Get a presigned URL so that you can upload a file to our AWS S3 bucket"
+        "summary": "Get a presigned URL so that you can upload a file to our AWS S3 bucket",
+        "tags": [
+          "PDF"
+        ]
       },
       {
         "id": "schema:authentication_error",
         "kind": "schema",
-        "name": "authentication_error"
+        "name": "authentication_error",
+        "type": "object"
       },
       {
         "id": "schema:combined_submission_action",
         "kind": "schema",
-        "name": "combined_submission_action"
+        "name": "combined_submission_action",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:invalid_request",
         "kind": "schema",
-        "name": "invalid_request"
+        "name": "invalid_request",
+        "type": "object"
       },
       {
         "id": "schema:submission",
         "kind": "schema",
-        "name": "submission"
+        "name": "submission",
+        "type": "object"
       },
       {
         "id": "schema:submission_action",
         "kind": "schema",
-        "name": "submission_action"
+        "name": "submission_action",
+        "type": "object"
       },
       {
         "id": "schema:submission_data_request",
         "kind": "schema",
-        "name": "submission_data_request"
+        "name": "submission_data_request",
+        "type": "object"
       }
     ]
   },

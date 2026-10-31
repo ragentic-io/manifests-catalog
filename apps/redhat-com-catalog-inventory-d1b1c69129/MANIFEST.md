@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `31ef1e885173534c2eca8d070242d534d433f15bc0c7557bc7c078d7099119d4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,43 +34,45 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 41 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/graphql` | postGraphQL | Perform a GraphQL Query |
-| GET | `/openapi.json` | getDocumentation | Return this API document in JSON format |
-| GET | `/service_credential_types` | listServiceCredentialTypes | List ServiceCredentialTypes |
-| GET | `/service_credential_types/{id}` | showServiceCredentialType | Show an existing ServiceCredentialType |
-| GET | `/service_credentials` | listServiceCredentials | List ServiceCredentials |
-| GET | `/service_credentials/{id}` | showServiceCredential | Show an existing ServiceCredential |
-| GET | `/service_instances` | listServiceInstances | List ServiceInstances |
-| GET | `/service_instances/{id}` | showServiceInstance | Show an existing ServiceInstance |
-| GET | `/service_inventories` | listServiceInventories | List ServiceInventories |
-| GET | `/service_inventories/{id}` | showServiceInventory | Show an existing ServiceInventory |
-| POST | `/service_inventories/{id}/tag` | tagServiceInventory | Tag a ServiceInventory |
-| GET | `/service_inventories/{id}/tags` | listServiceInventoryTags | List Tags for ServiceInventory |
-| POST | `/service_inventories/{id}/untag` | untagServiceInventory | Untag a ServiceInventory |
-| GET | `/service_offering_nodes` | listServiceOfferingNodes | List ServiceOfferingNodes |
-| GET | `/service_offering_nodes/{id}` | showServiceOfferingNode | Show an existing ServiceOfferingNode |
-| GET | `/service_offerings` | listServiceOfferings | List ServiceOfferings |
-| GET | `/service_offerings/{id}` | showServiceOffering | Show an existing ServiceOffering |
-| POST | `/service_offerings/{id}/applied_inventories_tags` | appliedInventoriesTagsForServiceOffering | Invokes computing of ServiceInventories tags for given ServiceOffering |
-| POST | `/service_offerings/{id}/order` | orderServiceOffering | Order an existing ServiceOffering |
-| GET | `/service_offerings/{id}/service_instances` | listServiceOfferingServiceInstances | List ServiceInstances for ServiceOffering |
-| GET | `/service_offerings/{id}/service_offering_nodes` | listServiceOfferingServiceOfferingNodes | List ServiceOfferingNodes for ServiceOffering |
-| GET | `/service_offerings/{id}/service_plans` | listServiceOfferingServicePlans | List ServicePlans for ServiceOffering |
-| GET | `/service_plans` | listServicePlans | List ServicePlans |
-| GET | `/service_plans/{id}` | showServicePlan | Show an existing ServicePlan |
-| GET | `/sources` | listSources | List Sources |
-| GET | `/sources/{id}` | showSource | Show an existing Source |
-| PATCH | `/sources/{id}/incremental_refresh` | incrementalRefreshSource | Incremental Refresh an existing Source |
-| PATCH | `/sources/{id}/refresh` | refreshSource | Refresh an existing Source |
-| GET | `/sources/{id}/service_instances` | listSourceServiceInstances | List ServiceInstances for Source |
-| GET | `/sources/{id}/service_inventories` | listSourceServiceInventories | List ServiceInventories for Source |
-| GET | `/sources/{id}/service_offering_nodes` | listSourceServiceOfferingNodes | List ServiceOfferingNodes for Source |
-| GET | `/sources/{id}/service_offerings` | listSourceServiceOfferings | List ServiceOfferings for Source |
-| GET | `/sources/{id}/service_plans` | listSourceServicePlans | List ServicePlans for Source |
-| GET | `/sources/{id}/tasks` | listSourceTasks | List Tasks for Source |
-| GET | `/tags` | listTags | List Tags |
-| GET | `/tasks` | listTasks | List Tasks |
-| GET | `/tasks/{id}` | showTask | Show an existing Task |
-| PATCH | `/tasks/{id}` | updateTask | Update an existing Task |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/graphql` | postGraphQL | body*: GraphQLRequest | GraphQLResponse |  | Perform a GraphQL Query |
+| GET | `/openapi.json` | getDocumentation | — | object | yes | Return this API document in JSON format |
+| GET | `/service_credential_types` | listServiceCredentialTypes | `limit`, `offset`, `filter`, `sort_by` | ServiceCredentialTypesCollection | yes | List ServiceCredentialTypes |
+| GET | `/service_credential_types/{id}` | showServiceCredentialType | `id`* | ServiceCredentialType | yes | Show an existing ServiceCredentialType |
+| GET | `/service_credentials` | listServiceCredentials | `limit`, `offset`, `filter`, `sort_by` | ServiceCredentialsCollection | yes | List ServiceCredentials |
+| GET | `/service_credentials/{id}` | showServiceCredential | `id`* | ServiceCredential | yes | Show an existing ServiceCredential |
+| GET | `/service_instances` | listServiceInstances | `limit`, `offset`, `filter`, `sort_by` | ServiceInstancesCollection | yes | List ServiceInstances |
+| GET | `/service_instances/{id}` | showServiceInstance | `id`* | ServiceInstance | yes | Show an existing ServiceInstance |
+| GET | `/service_inventories` | listServiceInventories | `limit`, `offset`, `filter`, `sort_by` | ServiceInventoriesCollection | yes | List ServiceInventories |
+| GET | `/service_inventories/{id}` | showServiceInventory | `id`* | ServiceInventory | yes | Show an existing ServiceInventory |
+| POST | `/service_inventories/{id}/tag` | tagServiceInventory | `id`*, body*: Tag[] | Tag[] |  | Tag a ServiceInventory |
+| GET | `/service_inventories/{id}/tags` | listServiceInventoryTags | `limit`, `offset`, `filter`, `sort_by`, `id`* | TagsCollection | yes | List Tags for ServiceInventory |
+| POST | `/service_inventories/{id}/untag` | untagServiceInventory | `id`*, body*: Tag[] | — |  | Untag a ServiceInventory |
+| GET | `/service_offering_nodes` | listServiceOfferingNodes | `limit`, `offset`, `filter`, `sort_by` | ServiceOfferingNodesCollection | yes | List ServiceOfferingNodes |
+| GET | `/service_offering_nodes/{id}` | showServiceOfferingNode | `id`* | ServiceOfferingNode | yes | Show an existing ServiceOfferingNode |
+| GET | `/service_offerings` | listServiceOfferings | `limit`, `offset`, `filter`, `sort_by` | ServiceOfferingsCollection | yes | List ServiceOfferings |
+| GET | `/service_offerings/{id}` | showServiceOffering | `id`* | ServiceOffering | yes | Show an existing ServiceOffering |
+| POST | `/service_offerings/{id}/applied_inventories_tags` | appliedInventoriesTagsForServiceOffering | `id`*, body*: AppliedInventoriesParametersServicePlan | Tag[] |  | Invokes computing of ServiceInventories tags for given ServiceOffering |
+| POST | `/service_offerings/{id}/order` | orderServiceOffering | `id`*, body*: OrderParametersServiceOffering | object |  | Order an existing ServiceOffering |
+| GET | `/service_offerings/{id}/service_instances` | listServiceOfferingServiceInstances | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServiceInstancesCollection | yes | List ServiceInstances for ServiceOffering |
+| GET | `/service_offerings/{id}/service_offering_nodes` | listServiceOfferingServiceOfferingNodes | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServiceOfferingNodesCollection | yes | List ServiceOfferingNodes for ServiceOffering |
+| GET | `/service_offerings/{id}/service_plans` | listServiceOfferingServicePlans | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServicePlansCollection | yes | List ServicePlans for ServiceOffering |
+| GET | `/service_plans` | listServicePlans | `limit`, `offset`, `filter`, `sort_by` | ServicePlansCollection | yes | List ServicePlans |
+| GET | `/service_plans/{id}` | showServicePlan | `id`* | ServicePlan | yes | Show an existing ServicePlan |
+| GET | `/sources` | listSources | `limit`, `offset`, `filter`, `sort_by` | SourcesCollection | yes | List Sources |
+| GET | `/sources/{id}` | showSource | `id`* | Source | yes | Show an existing Source |
+| PATCH | `/sources/{id}/incremental_refresh` | incrementalRefreshSource | `id`* | — |  | Incremental Refresh an existing Source |
+| PATCH | `/sources/{id}/refresh` | refreshSource | `id`* | — |  | Refresh an existing Source |
+| GET | `/sources/{id}/service_instances` | listSourceServiceInstances | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServiceInstancesCollection | yes | List ServiceInstances for Source |
+| GET | `/sources/{id}/service_inventories` | listSourceServiceInventories | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServiceInventoriesCollection | yes | List ServiceInventories for Source |
+| GET | `/sources/{id}/service_offering_nodes` | listSourceServiceOfferingNodes | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServiceOfferingNodesCollection | yes | List ServiceOfferingNodes for Source |
+| GET | `/sources/{id}/service_offerings` | listSourceServiceOfferings | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServiceOfferingsCollection | yes | List ServiceOfferings for Source |
+| GET | `/sources/{id}/service_plans` | listSourceServicePlans | `limit`, `offset`, `filter`, `sort_by`, `id`* | ServicePlansCollection | yes | List ServicePlans for Source |
+| GET | `/sources/{id}/tasks` | listSourceTasks | `limit`, `offset`, `filter`, `sort_by`, `id`* | TasksCollection | yes | List Tasks for Source |
+| GET | `/tags` | listTags | `limit`, `offset`, `filter`, `sort_by` | TagsCollection | yes | List Tags |
+| GET | `/tasks` | listTasks | `limit`, `offset`, `filter`, `sort_by` | TasksCollection | yes | List Tasks |
+| GET | `/tasks/{id}` | showTask | `id`* | Task | yes | Show an existing Task |
+| PATCH | `/tasks/{id}` | updateTask | `id`*, body*: Task | — |  | Update an existing Task |

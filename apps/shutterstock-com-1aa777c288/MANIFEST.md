@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Shutterstock_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `d38eda59762b9629e6cc3f2e0f0ec3273acb7522ec1cdfd4ad84d22df50b7674` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,123 +34,125 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Shutterstock_profil
 
 167 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v2/ai/audio/descriptors` | listCustomDescriptors | List computer audio descriptors |
-| GET | `/v2/ai/audio/instruments` | listCustomInstruments | List computer audio instruments |
-| GET | `/v2/ai/audio/renders` | fetchRenders | Get details about audio renders |
-| POST | `/v2/ai/audio/renders` | createAudioRenders | Create rendered audio |
-| GET | `/v2/audio` | getTrackList | List audio tracks |
-| GET | `/v2/audio/collections` | getTrackCollectionList | List audio collections |
-| POST | `/v2/audio/collections` | createTrackCollection | Create audio collections |
-| DELETE | `/v2/audio/collections/{id}` | deleteTrackCollection | Delete audio collections |
-| GET | `/v2/audio/collections/{id}` | getTrackCollection | Get the details of audio collections |
-| POST | `/v2/audio/collections/{id}` | renameTrackCollection | Rename audio collections |
-| DELETE | `/v2/audio/collections/{id}/items` | deleteTrackCollectionItems | Remove audio tracks from collections |
-| GET | `/v2/audio/collections/{id}/items` | getTrackCollectionItems | Get the contents of audio collections |
-| POST | `/v2/audio/collections/{id}/items` | addTrackCollectionItems | Add audio tracks to collections |
-| GET | `/v2/audio/genres` | listGenres | List audio genres |
-| GET | `/v2/audio/instruments` | listInstruments | List audio instruments |
-| GET | `/v2/audio/licenses` | getTrackLicenseList | List audio licenses |
-| POST | `/v2/audio/licenses` | licenseTrack | License audio tracks |
-| POST | `/v2/audio/licenses/{id}/downloads` | downloadTracks | Download audio tracks |
-| GET | `/v2/audio/moods` | listMoods | List audio moods |
-| GET | `/v2/audio/search` | searchTracks | Search for tracks |
-| GET | `/v2/audio/{id}` | getTrack | Get details about audio tracks |
-| POST | `/v2/bulk_search/images` | bulkSearchImages | Run multiple image searches |
-| GET | `/v2/catalog/collections` | getCollections | List catalog collections |
-| POST | `/v2/catalog/collections` | createCollection | Create catalog collections |
-| DELETE | `/v2/catalog/collections/{collection_id}` | deleteCollection | Delete catalog collections |
-| PATCH | `/v2/catalog/collections/{collection_id}` | updateCollection | Update collection metadata |
-| DELETE | `/v2/catalog/collections/{collection_id}/items` | deleteFromCollection | Remove items from catalog collection |
-| POST | `/v2/catalog/collections/{collection_id}/items` | addToCollection | Add items to catalog collections |
-| GET | `/v2/catalog/search` | searchCatalog | Search catalogs for assets |
-| GET | `/v2/contributors` | getContributorList | Get details about multiple contributors |
-| GET | `/v2/contributors/{contributor_id}` | getContributor | Get details about a single contributor |
-| GET | `/v2/contributors/{contributor_id}/collections` | getContributorCollectionsList | List contributors' collections |
-| GET | `/v2/contributors/{contributor_id}/collections/{id}` | getContributorCollections | Get details about contributors' collections |
-| GET | `/v2/contributors/{contributor_id}/collections/{id}/items` | getContributorCollectionItems | Get the items in contributors' collections |
-| POST | `/v2/cv/images` | uploadImage | Upload images |
-| GET | `/v2/cv/keywords` | getKeywords | List suggested keywords |
-| GET | `/v2/cv/similar/images` | getSimilarImages | List similar images |
-| GET | `/v2/cv/similar/videos` | getSimilarVideos | List similar videos |
-| GET | `/v2/editorial/categories` | getEditorialCategories | (Deprecated) List editorial categories |
-| GET | `/v2/editorial/images/categories` | listEditorialImageCategories | List editorial categories |
-| GET | `/v2/editorial/images/licenses` | getEditorialImageLicenseList | List editorial image licenses |
-| POST | `/v2/editorial/images/licenses` | licenseEditorialImages | License editorial content |
-| GET | `/v2/editorial/images/livefeeds` | getEditorialImageLivefeedList | Get editorial livefeed list |
-| GET | `/v2/editorial/images/livefeeds/{id}` | getEditorialImageLivefeed | Get editorial livefeed |
-| GET | `/v2/editorial/images/livefeeds/{id}/items` | getEditorialImageLivefeedItems | Get editorial livefeed items |
-| GET | `/v2/editorial/images/search` | searchEditorialImages | Search editorial images |
-| GET | `/v2/editorial/images/updated` | getUpdatedEditorialImages | List updated content |
-| GET | `/v2/editorial/images/{id}` | getEditorialImage | Get editorial content details |
-| POST | `/v2/editorial/licenses` | licenseEditorialImage | (Deprecated) License editorial content |
-| GET | `/v2/editorial/livefeeds` | getEditorialLivefeedList | (Deprecated) Get editorial livefeed list |
-| GET | `/v2/editorial/livefeeds/{id}` | getEditorialLivefeed | (Deprecated) Get editorial livefeed |
-| GET | `/v2/editorial/livefeeds/{id}/items` | getEditorialLivefeedItems | (Deprecated) Get editorial livefeed items |
-| GET | `/v2/editorial/search` | searchEditorial | (Deprecated) Search editorial content |
-| GET | `/v2/editorial/updated` | getUpdatedEditorialImage | (Deprecated) List updated content |
-| GET | `/v2/editorial/videos/categories` | listEditorialVideoCategories | List editorial video categories |
-| GET | `/v2/editorial/videos/licenses` | getEditorialVideoLicenseList | List editorial video licenses |
-| POST | `/v2/editorial/videos/licenses` | licenseEditorialVideo | License editorial video content |
-| GET | `/v2/editorial/videos/search` | searchEditorialVideos | Search editorial video content |
-| GET | `/v2/editorial/videos/{id}` | getEditorialVideo | Get editorial video content details |
-| GET | `/v2/editorial/{id}` | get /v2/editorial/{id} | (Deprecated) Get editorial content details |
-| GET | `/v2/images` | getImageList | List images |
-| POST | `/v2/images` | uploadEphemeralImage | Upload ephemeral images |
-| GET | `/v2/images/categories` | listImageCategories | List image categories |
-| GET | `/v2/images/collections` | getImageCollectionList | List image collections |
-| POST | `/v2/images/collections` | createImageCollection | Create image collections |
-| GET | `/v2/images/collections/featured` | getFeaturedImageCollectionList | List featured image collections |
-| GET | `/v2/images/collections/featured/{id}` | getFeaturedImageCollection | Get the details of featured image collections |
-| GET | `/v2/images/collections/featured/{id}/items` | getFeaturedImageCollectionItems | Get the contents of featured image collections |
-| DELETE | `/v2/images/collections/{id}` | deleteImageCollection | Delete image collections |
-| GET | `/v2/images/collections/{id}` | getImageCollection | Get the details of image collections |
-| POST | `/v2/images/collections/{id}` | renameImageCollection | Rename image collections |
-| DELETE | `/v2/images/collections/{id}/items` | deleteImageCollectionItems | Remove images from collections |
-| GET | `/v2/images/collections/{id}/items` | getImageCollectionItems | Get the contents of image collections |
-| POST | `/v2/images/collections/{id}/items` | addImageCollectionItems | Add images to collections |
-| GET | `/v2/images/licenses` | getImageLicenseList | List image licenses |
-| POST | `/v2/images/licenses` | licenseImages | License images |
-| POST | `/v2/images/licenses/{id}/downloads` | downloadImage | Download images |
-| GET | `/v2/images/recommendations` | getImageRecommendations | List recommended images |
-| GET | `/v2/images/search` | searchImages | Search for images |
-| GET | `/v2/images/search/suggestions` | getImageSuggestions | Get suggestions for a search term |
-| POST | `/v2/images/search/suggestions` | getImageKeywordSuggestions | Get keywords from text |
-| GET | `/v2/images/updated` | getUpdatedImages | List updated images |
-| GET | `/v2/images/{id}` | getImage | Get details about images |
-| GET | `/v2/images/{id}/similar` | listSimilarImages | List similar images |
-| POST | `/v2/oauth/access_token` | createAccessToken | Get access tokens |
-| GET | `/v2/oauth/authorize` | authorize | Authorize applications |
-| GET | `/v2/sfx` | getSfxListDetails | List details about sound effects |
-| GET | `/v2/sfx/licenses` | getSfxLicenseList | List sound effects licenses |
-| POST | `/v2/sfx/licenses` | licensesSFX | License sound effects |
-| POST | `/v2/sfx/licenses/{id}/downloads` | downloadSfx | Download sound effects |
-| GET | `/v2/sfx/search` | searchSFX | Search for sound effects |
-| GET | `/v2/sfx/{id}` | getSfxDetails | Get details about sound effects |
-| GET | `/v2/test` | echo | Echo text |
-| GET | `/v2/test/validate` | validate | Validate input |
-| GET | `/v2/user` | getUser | Get user details |
-| GET | `/v2/user/access_token` | getAccessToken | Get access token details |
-| GET | `/v2/user/subscriptions` | getUserSubscriptionList | List user subscriptions |
-| GET | `/v2/videos` | getVideoList | List videos |
-| GET | `/v2/videos/categories` | listVideoCategories | List video categories |
-| GET | `/v2/videos/collections` | getVideoCollectionList | List video collections |
-| POST | `/v2/videos/collections` | createVideoCollection | Create video collections |
-| GET | `/v2/videos/collections/featured` | getFeaturedVideoCollectionList | List featured video collections |
-| GET | `/v2/videos/collections/featured/{id}` | getFeaturedVideoCollection | Get the details of featured video collections |
-| GET | `/v2/videos/collections/featured/{id}/items` | getFeaturedVideoCollectionItems | Get the contents of featured video collections |
-| DELETE | `/v2/videos/collections/{id}` | deleteVideoCollection | Delete video collections |
-| GET | `/v2/videos/collections/{id}` | getVideoCollection | Get the details of video collections |
-| POST | `/v2/videos/collections/{id}` | renameVideoCollection | Rename video collections |
-| DELETE | `/v2/videos/collections/{id}/items` | deleteVideoCollectionItems | Remove videos from collections |
-| GET | `/v2/videos/collections/{id}/items` | getVideoCollectionItems | Get the contents of video collections |
-| POST | `/v2/videos/collections/{id}/items` | addVideoCollectionItems | Add videos to collections |
-| GET | `/v2/videos/licenses` | getVideoLicenseList | List video licenses |
-| POST | `/v2/videos/licenses` | licenseVideos | License videos |
-| POST | `/v2/videos/licenses/{id}/downloads` | downloadVideos | Download videos |
-| GET | `/v2/videos/search` | searchVideos | Search for videos |
-| GET | `/v2/videos/search/suggestions` | getVideoSuggestions | Get suggestions for a search term |
-| GET | `/v2/videos/updated` | getUpdatedVideos | List updated videos |
-| GET | `/v2/videos/{id}` | getVideo | Get details about videos |
-| GET | `/v2/videos/{id}/similar` | findSimilarVideos | List similar videos |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v2/ai/audio/descriptors` | listCustomDescriptors | `render_speed_over`, `band_id`, `band_name`, `page`, `per_page`, `id`, `instrument_name`, `instrument_id`, `tempo`, `tempo_to`, `tempo_from`, `name`, `tag` | DescriptorsListResult | yes | List computer audio descriptors |
+| GET | `/v2/ai/audio/instruments` | listCustomInstruments | `id`, `per_page`, `page`, `name`, `tag` | InstrumentsListResult | yes | List computer audio instruments |
+| GET | `/v2/ai/audio/renders` | fetchRenders | `id`* | AudioRendersListResults | yes | Get details about audio renders |
+| POST | `/v2/ai/audio/renders` | createAudioRenders | body*: CreateAudioRendersRequest | AudioRendersListResults |  | Create rendered audio |
+| GET | `/v2/audio` | getTrackList | `id`*, `view`, `search_id` | AudioDataList | yes | List audio tracks |
+| GET | `/v2/audio/collections` | getTrackCollectionList | `page`, `per_page`, `embed` | CollectionDataList | yes | List audio collections |
+| POST | `/v2/audio/collections` | createTrackCollection | body*: CollectionCreateRequest | CollectionCreateResponse |  | Create audio collections |
+| GET | `/v2/audio/collections/{id}` | getTrackCollection | `id`*, `embed`, `share_code` | Collection | yes | Get the details of audio collections |
+| POST | `/v2/audio/collections/{id}` | renameTrackCollection | `id`*, body*: CollectionUpdateRequest | — |  | Rename audio collections |
+| DELETE | `/v2/audio/collections/{id}` | deleteTrackCollection | `id`* | — |  | Delete audio collections |
+| GET | `/v2/audio/collections/{id}/items` | getTrackCollectionItems | `id`*, `page`, `per_page`, `share_code`, `sort` | CollectionItemDataList | yes | Get the contents of audio collections |
+| POST | `/v2/audio/collections/{id}/items` | addTrackCollectionItems | `id`*, body*: CollectionItemRequest | — |  | Add audio tracks to collections |
+| DELETE | `/v2/audio/collections/{id}/items` | deleteTrackCollectionItems | `id`*, `item_id` | — |  | Remove audio tracks from collections |
+| GET | `/v2/audio/genres` | listGenres | `language` | GenreList | yes | List audio genres |
+| GET | `/v2/audio/instruments` | listInstruments | `language` | InstrumentList | yes | List audio instruments |
+| GET | `/v2/audio/licenses` | getTrackLicenseList | `audio_id`, `license`, `page`, `per_page`, `sort`, `username`, `start_date`, `end_date`, `download_availability`, `team_history` | DownloadHistoryDataList | yes | List audio licenses |
+| POST | `/v2/audio/licenses` | licenseTrack | `license`, `search_id`, body*: LicenseAudioRequest | LicenseAudioResultDataList |  | License audio tracks |
+| POST | `/v2/audio/licenses/{id}/downloads` | downloadTracks | `id`* | AudioUrl |  | Download audio tracks |
+| GET | `/v2/audio/moods` | listMoods | `language` | MoodList | yes | List audio moods |
+| GET | `/v2/audio/search` | searchTracks | `artists`, `bpm`, `bpm_from`, `bpm_to`, `duration`, `duration_from`, `duration_to`, `genre`, `is_instrumental`, `instruments`, `moods`, `page`, `per_page`, `query`, `sort`, `sort_order`, `vocal_description`, `view`, `fields`, `library`, `language` | AudioSearchResults | yes | Search for tracks |
+| GET | `/v2/audio/{id}` | getTrack | `id`*, `view`, `search_id` | Audio | yes | Get details about audio tracks |
+| POST | `/v2/bulk_search/images` | bulkSearchImages | `added_date`, `added_date_start`, `aspect_ratio_min`, `aspect_ratio_max`, `aspect_ratio`, `added_date_end`, `category`, `color`, `contributor`, `contributor_country`, `fields`, `height`, `height_from`, `height_to`, `image_type`, `keyword_safe_search`, `language`, `license`, `model`, `orientation`, `page`, `per_page`, `people_model_released`, `people_age`, `people_ethnicity`, `people_gender`, `people_number`, `region`, `safe`, `sort`, `spellcheck_query`, `view`, `width`, `width_from`, `width_to`, body*: BulkImageSearchRequest | BulkImageSearchResults |  | Run multiple image searches |
+| GET | `/v2/catalog/collections` | getCollections | `page`, `per_page`, `sort`, `shared` | CatalogCollectionDataList | yes | List catalog collections |
+| POST | `/v2/catalog/collections` | createCollection | body*: CreateCatalogCollection | CatalogCollection |  | Create catalog collections |
+| DELETE | `/v2/catalog/collections/{collection_id}` | deleteCollection | `collection_id`* | — |  | Delete catalog collections |
+| PATCH | `/v2/catalog/collections/{collection_id}` | updateCollection | `collection_id`*, body*: UpdateCatalogCollection | CatalogCollection |  | Update collection metadata |
+| POST | `/v2/catalog/collections/{collection_id}/items` | addToCollection | `collection_id`*, body*: CreateCatalogCollectionItems | CatalogCollection |  | Add items to catalog collections |
+| DELETE | `/v2/catalog/collections/{collection_id}/items` | deleteFromCollection | `collection_id`*, body*: RemoveCatalogCollectionItems | CatalogCollection |  | Remove items from catalog collection |
+| GET | `/v2/catalog/search` | searchCatalog | `sort`, `page`, `per_page`, `query`, `collection_id`, `asset_type` | CatalogCollectionItemDataList | yes | Search catalogs for assets |
+| GET | `/v2/contributors` | getContributorList | `id`* | ContributorProfileDataList | yes | Get details about multiple contributors |
+| GET | `/v2/contributors/{contributor_id}` | getContributor | `contributor_id`* | ContributorProfile | yes | Get details about a single contributor |
+| GET | `/v2/contributors/{contributor_id}/collections` | getContributorCollectionsList | `contributor_id`*, `sort` | CollectionDataList | yes | List contributors' collections |
+| GET | `/v2/contributors/{contributor_id}/collections/{id}` | getContributorCollections | `contributor_id`*, `id`* | Collection | yes | Get details about contributors' collections |
+| GET | `/v2/contributors/{contributor_id}/collections/{id}/items` | getContributorCollectionItems | `contributor_id`*, `id`*, `page`, `per_page`, `sort` | CollectionItemDataList | yes | Get the items in contributors' collections |
+| POST | `/v2/cv/images` | uploadImage | body*: ImageCreateRequest | ComputerVisionImageCreateResponse |  | Upload images |
+| GET | `/v2/cv/keywords` | getKeywords | `asset_id`* | KeywordDataList | yes | List suggested keywords |
+| GET | `/v2/cv/similar/images` | getSimilarImages | `asset_id`*, `license`, `safe`, `language`, `page`, `per_page`, `view` | ImageSearchResults | yes | List similar images |
+| GET | `/v2/cv/similar/videos` | getSimilarVideos | `asset_id`*, `license`, `safe`, `language`, `page`, `per_page`, `view` | VideoSearchResults | yes | List similar videos |
+| GET | `/v2/editorial/categories` | getEditorialCategories | — | EditorialCategoryResults | yes | (Deprecated) List editorial categories |
+| GET | `/v2/editorial/images/categories` | listEditorialImageCategories | — | EditorialImageCategoryResults | yes | List editorial categories |
+| GET | `/v2/editorial/images/licenses` | getEditorialImageLicenseList | `image_id`, `license`, `page`, `per_page`, `sort`, `username`, `start_date`, `end_date`, `download_availability`, `team_history` | DownloadHistoryDataList | yes | List editorial image licenses |
+| POST | `/v2/editorial/images/licenses` | licenseEditorialImages | body*: LicenseEditorialContentRequest | LicenseEditorialContentResults |  | License editorial content |
+| GET | `/v2/editorial/images/livefeeds` | getEditorialImageLivefeedList | `country`*, `page`, `per_page` | EditorialImageLivefeedList | yes | Get editorial livefeed list |
+| GET | `/v2/editorial/images/livefeeds/{id}` | getEditorialImageLivefeed | `id`*, `country`* | EditorialImageLivefeed | yes | Get editorial livefeed |
+| GET | `/v2/editorial/images/livefeeds/{id}/items` | getEditorialImageLivefeedItems | `id`*, `country`* | EditorialImageContentDataList | yes | Get editorial livefeed items |
+| GET | `/v2/editorial/images/search` | searchEditorialImages | `query`, `sort`, `category`, `country`*, `supplier_code`, `date_start`, `date_end`, `per_page`, `cursor` | EditorialSearchResults | yes | Search editorial images |
+| GET | `/v2/editorial/images/updated` | getUpdatedEditorialImages | `type`*, `date_updated_start`*, `date_updated_end`*, `date_taken_start`, `date_taken_end`, `cursor`, `sort`, `supplier_code`, `country`*, `per_page` | EditorialUpdatedResults | yes | List updated content |
+| GET | `/v2/editorial/images/{id}` | getEditorialImage | `id`*, `country`* | EditorialContent | yes | Get editorial content details |
+| POST | `/v2/editorial/licenses` | licenseEditorialImage | body*: LicenseEditorialContentRequest | LicenseEditorialContentResults |  | (Deprecated) License editorial content |
+| GET | `/v2/editorial/livefeeds` | getEditorialLivefeedList | `country`*, `page`, `per_page` | EditorialLivefeedList | yes | (Deprecated) Get editorial livefeed list |
+| GET | `/v2/editorial/livefeeds/{id}` | getEditorialLivefeed | `id`*, `country`* | EditorialLivefeed | yes | (Deprecated) Get editorial livefeed |
+| GET | `/v2/editorial/livefeeds/{id}/items` | getEditorialLivefeedItems | `id`*, `country`* | EditorialContentDataList | yes | (Deprecated) Get editorial livefeed items |
+| GET | `/v2/editorial/search` | searchEditorial | `query`, `sort`, `category`, `country`*, `supplier_code`, `date_start`, `date_end`, `per_page`, `cursor` | EditorialSearchResults | yes | (Deprecated) Search editorial content |
+| GET | `/v2/editorial/updated` | getUpdatedEditorialImage | `type`*, `date_updated_start`*, `date_updated_end`*, `date_taken_start`, `date_taken_end`, `cursor`, `sort`, `supplier_code`, `country`*, `per_page` | EditorialUpdatedResults | yes | (Deprecated) List updated content |
+| GET | `/v2/editorial/videos/categories` | listEditorialVideoCategories | — | EditorialVideoCategoryResults | yes | List editorial video categories |
+| GET | `/v2/editorial/videos/licenses` | getEditorialVideoLicenseList | `video_id`, `license`, `page`, `per_page`, `sort`, `username`, `start_date`, `end_date`, `download_availability`, `team_history` | DownloadHistoryDataList | yes | List editorial video licenses |
+| POST | `/v2/editorial/videos/licenses` | licenseEditorialVideo | body*: LicenseEditorialVideoContentRequest | LicenseEditorialContentResults |  | License editorial video content |
+| GET | `/v2/editorial/videos/search` | searchEditorialVideos | `query`, `sort`, `category`, `country`*, `supplier_code`, `date_start`, `date_end`, `resolution`, `fps`, `per_page`, `cursor` | EditorialVideoSearchResults | yes | Search editorial video content |
+| GET | `/v2/editorial/videos/{id}` | getEditorialVideo | `id`*, `country`*, `search_id` | EditorialVideoContent | yes | Get editorial video content details |
+| GET | `/v2/editorial/{id}` | get /v2/editorial/{id} | `id`*, `country`*, `search_id` | EditorialContent | yes | (Deprecated) Get editorial content details |
+| GET | `/v2/images` | getImageList | `id`*, `view`, `search_id` | ImageDataList | yes | List images |
+| POST | `/v2/images` | uploadEphemeralImage | body*: ImageCreateRequest | ImageCreateResponse |  | Upload ephemeral images |
+| GET | `/v2/images/categories` | listImageCategories | `language` | CategoryDataList | yes | List image categories |
+| GET | `/v2/images/collections` | getImageCollectionList | `embed`, `page`, `per_page` | CollectionDataList | yes | List image collections |
+| POST | `/v2/images/collections` | createImageCollection | body*: CollectionCreateRequest | CollectionCreateResponse |  | Create image collections |
+| GET | `/v2/images/collections/featured` | getFeaturedImageCollectionList | `embed`, `type`, `asset_hint` | FeaturedCollectionDataList | yes | List featured image collections |
+| GET | `/v2/images/collections/featured/{id}` | getFeaturedImageCollection | `id`*, `embed`, `asset_hint` | FeaturedCollection | yes | Get the details of featured image collections |
+| GET | `/v2/images/collections/featured/{id}/items` | getFeaturedImageCollectionItems | `id`*, `page`, `per_page` | CollectionItemDataList | yes | Get the contents of featured image collections |
+| GET | `/v2/images/collections/{id}` | getImageCollection | `id`*, `embed`, `share_code` | Collection | yes | Get the details of image collections |
+| POST | `/v2/images/collections/{id}` | renameImageCollection | `id`*, body*: CollectionUpdateRequest | — |  | Rename image collections |
+| DELETE | `/v2/images/collections/{id}` | deleteImageCollection | `id`* | — |  | Delete image collections |
+| GET | `/v2/images/collections/{id}/items` | getImageCollectionItems | `id`*, `page`, `per_page`, `share_code`, `sort` | CollectionItemDataList | yes | Get the contents of image collections |
+| POST | `/v2/images/collections/{id}/items` | addImageCollectionItems | `id`*, body*: CollectionItemRequest | — |  | Add images to collections |
+| DELETE | `/v2/images/collections/{id}/items` | deleteImageCollectionItems | `id`*, `item_id` | — |  | Remove images from collections |
+| GET | `/v2/images/licenses` | getImageLicenseList | `image_id`, `license`, `page`, `per_page`, `sort`, `username`, `start_date`, `end_date`, `download_availability`, `team_history` | DownloadHistoryDataList | yes | List image licenses |
+| POST | `/v2/images/licenses` | licenseImages | `subscription_id`, `format`, `size`, `search_id`, body*: LicenseImageRequest | LicenseImageResultDataList |  | License images |
+| POST | `/v2/images/licenses/{id}/downloads` | downloadImage | `id`*, body*: RedownloadImage | Url |  | Download images |
+| GET | `/v2/images/recommendations` | getImageRecommendations | `id`*, `max_items`, `safe` | RecommendationDataList | yes | List recommended images |
+| GET | `/v2/images/search` | searchImages | `added_date`, `added_date_start`, `aspect_ratio_min`, `aspect_ratio_max`, `aspect_ratio`, `ai_search`, `ai_labels_limit`, `ai_industry`, `ai_objective`, `added_date_end`, `category`, `color`, `contributor`, `contributor_country`, `fields`, `height`, `height_from`, `height_to`, `image_type`, `keyword_safe_search`, `language`, `license`, `model`, `orientation`, `page`, `per_page`, `people_model_released`, `people_age`, `people_ethnicity`, `people_gender`, `people_number`, `query`, `region`, `safe`, `sort`, `spellcheck_query`, `view`, `width`, `width_from`, `width_to` | ImageSearchResults | yes | Search for images |
+| GET | `/v2/images/search/suggestions` | getImageSuggestions | `query`*, `limit` | Suggestions | yes | Get suggestions for a search term |
+| POST | `/v2/images/search/suggestions` | getImageKeywordSuggestions | body*: SearchEntitiesRequest | SearchEntitiesResponse |  | Get keywords from text |
+| GET | `/v2/images/updated` | getUpdatedImages | `type`, `start_date`, `end_date`, `interval`, `page`, `per_page`, `sort` | UpdatedMediaDataList | yes | List updated images |
+| GET | `/v2/images/{id}` | getImage | `id`*, `language`, `view`, `search_id` | Image | yes | Get details about images |
+| GET | `/v2/images/{id}/similar` | listSimilarImages | `id`*, `language`, `page`, `per_page`, `view` | ImageSearchResults | yes | List similar images |
+| POST | `/v2/oauth/access_token` | createAccessToken | body: object | OauthAccessTokenResponse |  | Get access tokens |
+| GET | `/v2/oauth/authorize` | authorize | `client_id`*, `realm`, `redirect_uri`*, `response_type`*, `scope`, `state`* | — | yes | Authorize applications |
+| GET | `/v2/sfx` | getSfxListDetails | `id`*, `view`, `language`, `library`, `search_id` | SFXDataList | yes | List details about sound effects |
+| GET | `/v2/sfx/licenses` | getSfxLicenseList | `sfx_id`, `license`, `page`, `per_page`, `sort`, `username`, `start_date`, `end_date`, `license_id`, `download_availability`, `team_history` | DownloadHistoryDataList | yes | List sound effects licenses |
+| POST | `/v2/sfx/licenses` | licensesSFX | body*: LicenseSFXRequest | LicenseSFXResultDataList |  | License sound effects |
+| POST | `/v2/sfx/licenses/{id}/downloads` | downloadSfx | `id`* | SfxUrl |  | Download sound effects |
+| GET | `/v2/sfx/search` | searchSFX | `added_date`, `added_date_start`, `added_date_end`, `duration`, `duration_from`, `duration_to`, `page`, `per_page`, `query`, `safe`, `sort`, `view`, `language` | SFXSearchResults | yes | Search for sound effects |
+| GET | `/v2/sfx/{id}` | getSfxDetails | `id`*, `language`, `view`, `library`, `search_id` | SFX | yes | Get details about sound effects |
+| GET | `/v2/test` | echo | `text` | TestEcho | yes | Echo text |
+| GET | `/v2/test/validate` | validate | `id`*, `tag`, `user-agent` | TestValidate | yes | Validate input |
+| GET | `/v2/user` | getUser | — | UserDetails | yes | Get user details |
+| GET | `/v2/user/access_token` | getAccessToken | — | AccessTokenDetails | yes | Get access token details |
+| GET | `/v2/user/subscriptions` | getUserSubscriptionList | — | SubscriptionDataList | yes | List user subscriptions |
+| GET | `/v2/videos` | getVideoList | `id`*, `view`, `search_id` | VideoDataList | yes | List videos |
+| GET | `/v2/videos/categories` | listVideoCategories | `language` | CategoryDataList | yes | List video categories |
+| GET | `/v2/videos/collections` | getVideoCollectionList | `page`, `per_page`, `embed` | CollectionDataList | yes | List video collections |
+| POST | `/v2/videos/collections` | createVideoCollection | body*: CollectionCreateRequest | CollectionCreateResponse |  | Create video collections |
+| GET | `/v2/videos/collections/featured` | getFeaturedVideoCollectionList | `embed` | FeaturedCollectionDataList | yes | List featured video collections |
+| GET | `/v2/videos/collections/featured/{id}` | getFeaturedVideoCollection | `id`*, `embed` | FeaturedCollection | yes | Get the details of featured video collections |
+| GET | `/v2/videos/collections/featured/{id}/items` | getFeaturedVideoCollectionItems | `id`*, `page`, `per_page` | VideoCollectionItemDataList | yes | Get the contents of featured video collections |
+| GET | `/v2/videos/collections/{id}` | getVideoCollection | `id`*, `embed`, `share_code` | Collection | yes | Get the details of video collections |
+| POST | `/v2/videos/collections/{id}` | renameVideoCollection | `id`*, body*: CollectionUpdateRequest | — |  | Rename video collections |
+| DELETE | `/v2/videos/collections/{id}` | deleteVideoCollection | `id`* | — |  | Delete video collections |
+| GET | `/v2/videos/collections/{id}/items` | getVideoCollectionItems | `id`*, `page`, `per_page`, `share_code`, `sort` | CollectionItemDataList | yes | Get the contents of video collections |
+| POST | `/v2/videos/collections/{id}/items` | addVideoCollectionItems | `id`*, body*: CollectionItemRequest | — |  | Add videos to collections |
+| DELETE | `/v2/videos/collections/{id}/items` | deleteVideoCollectionItems | `id`*, `item_id` | — |  | Remove videos from collections |
+| GET | `/v2/videos/licenses` | getVideoLicenseList | `video_id`, `license`, `page`, `per_page`, `sort`, `username`, `start_date`, `end_date`, `download_availability`, `team_history` | DownloadHistoryDataList | yes | List video licenses |
+| POST | `/v2/videos/licenses` | licenseVideos | `subscription_id`, `size`, `search_id`, body*: LicenseVideoRequest | LicenseVideoResultDataList |  | License videos |
+| POST | `/v2/videos/licenses/{id}/downloads` | downloadVideos | `id`*, body*: RedownloadVideo | Url |  | Download videos |
+| GET | `/v2/videos/search` | searchVideos | `added_date`, `added_date_start`, `added_date_end`, `aspect_ratio`, `category`, `contributor`, `contributor_country`, `duration`, `duration_from`, `duration_to`, `fps`, `fps_from`, `fps_to`, `keyword_safe_search`, `language`, `license`, `model`, `page`, `per_page`, `people_age`, `people_ethnicity`, `people_gender`, `people_number`, `people_model_released`, `query`, `resolution`, `safe`, `sort`, `view` | VideoSearchResults | yes | Search for videos |
+| GET | `/v2/videos/search/suggestions` | getVideoSuggestions | `query`*, `limit` | Suggestions | yes | Get suggestions for a search term |
+| GET | `/v2/videos/updated` | getUpdatedVideos | `start_date`, `end_date`, `interval`, `page`, `per_page`, `sort` | UpdatedMediaDataList | yes | List updated videos |
+| GET | `/v2/videos/{id}` | getVideo | `id`*, `language`, `view`, `search_id` | Video | yes | Get details about videos |
+| GET | `/v2/videos/{id}/similar` | findSimilarVideos | `id`*, `language`, `page`, `per_page`, `view` | VideoSearchResults | yes | List similar videos |

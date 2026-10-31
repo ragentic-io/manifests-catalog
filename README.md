@@ -25,6 +25,30 @@ Signed objects are canonical JSON wrapped in `{"payload", "signature"}` envelope
 signature is Ed25519 over `ragentic.manifests/v1\n` followed by the payload bytes. A
 bundle's file name is the SHA-256 of its payload bytes.
 
+## The operation graph
+
+Each OpenAPI application's `graph` is generated from its embedded definition by
+`python tools/catalog.py graph <id>`, and `validate` checks that it is current.
+
+| Node | Fields |
+| --- | --- |
+| `application` | `id` |
+| `operation` | `name` (operationId), `method`, `path`, `summary`, `description` (first sentence), `tags`, `security`, `deprecated`, `pointer` into the definition, `parameters` (`name`, `in`, `required`, `type`, `description`, `enum`, `default`), `request` (`content_types`, `required`, `type`), `responses` (`status`, `type`), and `safe` |
+| `schema` | `name`, `type`, `description` |
+
+| Edge | Meaning |
+| --- | --- |
+| `EXPOSES` | application → operation |
+| `ACCEPTS` | operation → schema of its request body |
+| `RETURNS` | operation → schema of a 2xx response |
+| `REFERENCES` | schema → schema it refers to |
+
+Types are compact: `Pet`, `Pet[]`, `string:date-time`, `A|B`. `safe` is true for
+`GET`, `HEAD` and `OPTIONS`, the operations that only read. These fields are what a
+tool-calling model such as Ragentic's Needle needs to pick an operation and fill its
+arguments. `safe` marks the operations a future Needle-powered preview call can run
+against a connection without side effects.
+
 ## Register a new service
 
 You need Python 3.10+ and a public OpenAPI 3 or Swagger 2 definition published by the

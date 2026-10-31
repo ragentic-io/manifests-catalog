@@ -73,6 +73,86 @@
         "from": "domainsdb-info-e32ca676df",
         "kind": "EXPOSES",
         "to": "operation:get:/info/tld/{zone}"
+      },
+      {
+        "from": "operation:get:/domains/search",
+        "kind": "RETURNS",
+        "to": "schema:Search_Results"
+      },
+      {
+        "from": "operation:get:/domains/tld/{zone_id}",
+        "kind": "RETURNS",
+        "to": "schema:Search_Results"
+      },
+      {
+        "from": "operation:get:/domains/tld/{zone_id}/search",
+        "kind": "RETURNS",
+        "to": "schema:Search_Results"
+      },
+      {
+        "from": "operation:get:/domains/updates/added",
+        "kind": "RETURNS",
+        "to": "schema:Search_Results"
+      },
+      {
+        "from": "operation:get:/domains/updates/deleted",
+        "kind": "RETURNS",
+        "to": "schema:Search_Results"
+      },
+      {
+        "from": "operation:get:/domains/updates/list",
+        "kind": "RETURNS",
+        "to": "schema:Update_model"
+      },
+      {
+        "from": "operation:get:/info/api",
+        "kind": "RETURNS",
+        "to": "schema:API_Key_Info"
+      },
+      {
+        "from": "operation:get:/info/stat/",
+        "kind": "RETURNS",
+        "to": "schema:Zone_stats"
+      },
+      {
+        "from": "operation:get:/info/stat/{zone}",
+        "kind": "RETURNS",
+        "to": "schema:Zone_stats"
+      },
+      {
+        "from": "operation:get:/info/tld/",
+        "kind": "RETURNS",
+        "to": "schema:Zone_info"
+      },
+      {
+        "from": "operation:get:/info/tld/{zone}",
+        "kind": "RETURNS",
+        "to": "schema:Zone_info"
+      },
+      {
+        "from": "schema:Domains",
+        "kind": "REFERENCES",
+        "to": "schema:MX_records"
+      },
+      {
+        "from": "schema:Search_Results",
+        "kind": "REFERENCES",
+        "to": "schema:Domains"
+      },
+      {
+        "from": "schema:Search_Results",
+        "kind": "REFERENCES",
+        "to": "schema:Response_Parameters"
+      },
+      {
+        "from": "schema:Zone_stats",
+        "kind": "REFERENCES",
+        "to": "schema:Response_Parameters"
+      },
+      {
+        "from": "schema:Zone_stats",
+        "kind": "REFERENCES",
+        "to": "schema:Zone_statistics"
       }
     ],
     "nodes": [
@@ -86,10 +166,120 @@
         "kind": "operation",
         "method": "get",
         "name": "get_search_domain_item",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Domain includes",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "In Zone",
+            "in": "query",
+            "name": "zone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Hosting Country",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Dead or Not, default not",
+            "in": "query",
+            "name": "isDead",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A record includes",
+            "in": "query",
+            "name": "A",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "NS record includes",
+            "in": "query",
+            "name": "NS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CNAME record includes",
+            "in": "query",
+            "name": "CNAME",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "MX record includes",
+            "in": "query",
+            "name": "MX",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TXT record includes",
+            "in": "query",
+            "name": "TXT",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/search",
         "pointer": "#/paths/~1domains~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Search_Results"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Domains Database Search"
+        "summary": "Domains Database Search",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -97,10 +287,119 @@
         "kind": "operation",
         "method": "get",
         "name": "get_tld_domain_item",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Domain includes",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Hosting Country",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Dead or Not, default not",
+            "in": "query",
+            "name": "isDead",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A record includes",
+            "in": "query",
+            "name": "A",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "NS record includes",
+            "in": "query",
+            "name": "NS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CNAME record includes",
+            "in": "query",
+            "name": "CNAME",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "MX record includes",
+            "in": "query",
+            "name": "MX",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TXT record includes",
+            "in": "query",
+            "name": "TXT",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/tld/{zone_id}",
         "pointer": "#/paths/~1domains~1tld~1{zone_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Search_Results"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get TLD records"
+        "summary": "Get TLD records",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -108,10 +407,44 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/tld/{zone_id}/download",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/tld/{zone_id}/download",
         "pointer": "#/paths/~1domains~1tld~1{zone_id}~1download/get",
+        "responses": [
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download Whole Dataset for TLD"
+        "summary": "Download Whole Dataset for TLD",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -119,10 +452,119 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/tld/{zone_id}/search",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Domain includes",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Hosting Country",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Dead or Not, default not",
+            "in": "query",
+            "name": "isDead",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A record includes",
+            "in": "query",
+            "name": "A",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "NS record includes",
+            "in": "query",
+            "name": "NS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CNAME record includes",
+            "in": "query",
+            "name": "CNAME",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "MX record includes",
+            "in": "query",
+            "name": "MX",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "TXT record includes",
+            "in": "query",
+            "name": "TXT",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/tld/{zone_id}/search",
         "pointer": "#/paths/~1domains~1tld~1{zone_id}~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Search_Results"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Domains Search for TLD"
+        "summary": "Domains Search for TLD",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -130,10 +572,57 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/updates/added",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/updates/added",
         "pointer": "#/paths/~1domains~1updates~1added/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Search_Results"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get added domains, latest if date not specified"
+        "summary": "Get added domains, latest if date not specified",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -141,10 +630,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/updates/added/download",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/updates/added/download",
         "pointer": "#/paths/~1domains~1updates~1added~1download/get",
+        "responses": [
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download added domains, latest if date not specified"
+        "summary": "Download added domains, latest if date not specified",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -152,10 +669,57 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/updates/deleted",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/domains/updates/deleted",
         "pointer": "#/paths/~1domains~1updates~1deleted/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Search_Results"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get deleted domains, latest if date not specified"
+        "summary": "Get deleted domains, latest if date not specified",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -163,10 +727,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/updates/deleted/download",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Request date",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/updates/deleted/download",
         "pointer": "#/paths/~1domains~1updates~1deleted~1download/get",
+        "responses": [
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download deleted domains, latest if date not specified"
+        "summary": "Download deleted domains, latest if date not specified",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -174,10 +766,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /domains/updates/list",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/updates/list",
         "pointer": "#/paths/~1domains~1updates~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Update_model"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List of updates"
+        "summary": "List of updates",
+        "tags": [
+          "domains/"
+        ]
       },
       {
         "deprecated": false,
@@ -185,10 +802,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get_api_info_item",
+        "parameters": [
+          {
+            "description": "API key",
+            "in": "query",
+            "name": "api_key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/info/api",
         "pointer": "#/paths/~1info~1api/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "API_Key_Info"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "info/"
+        ]
       },
       {
         "deprecated": false,
@@ -196,10 +832,37 @@
         "kind": "operation",
         "method": "get",
         "name": "get_statistics_collection",
+        "parameters": [
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/info/stat/",
         "pointer": "#/paths/~1info~1stat~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zone_stats[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns overall stagtistics"
+        "summary": "Returns overall stagtistics",
+        "tags": [
+          "info/"
+        ]
       },
       {
         "deprecated": false,
@@ -207,10 +870,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get_statistics_item",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/info/stat/{zone}",
         "pointer": "#/paths/~1info~1stat~1{zone}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zone_stats"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns statistics for specific zone"
+        "summary": "Returns statistics for specific zone",
+        "tags": [
+          "info/"
+        ]
       },
       {
         "deprecated": false,
@@ -220,8 +919,18 @@
         "name": "get /info/tld/",
         "path": "/info/tld/",
         "pointer": "#/paths/~1info~1tld~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zone_info[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns overall Tld info"
+        "summary": "Returns overall Tld info",
+        "tags": [
+          "info/"
+        ]
       },
       {
         "deprecated": false,
@@ -229,55 +938,100 @@
         "kind": "operation",
         "method": "get",
         "name": "get /info/tld/{zone}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search page to request",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/info/tld/{zone}",
         "pointer": "#/paths/~1info~1tld~1{zone}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Zone_info"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns statistics for specific zone"
+        "summary": "Returns statistics for specific zone",
+        "tags": [
+          "info/"
+        ]
       },
       {
         "id": "schema:API_Key_Info",
         "kind": "schema",
-        "name": "API_Key_Info"
+        "name": "API_Key_Info",
+        "type": "object"
       },
       {
         "id": "schema:Domains",
         "kind": "schema",
-        "name": "Domains"
+        "name": "Domains",
+        "type": "object"
       },
       {
         "id": "schema:MX_records",
         "kind": "schema",
-        "name": "MX_records"
+        "name": "MX_records",
+        "type": "object"
       },
       {
         "id": "schema:Response_Parameters",
         "kind": "schema",
-        "name": "Response_Parameters"
+        "name": "Response_Parameters",
+        "type": "object"
       },
       {
         "id": "schema:Search_Results",
         "kind": "schema",
-        "name": "Search_Results"
+        "name": "Search_Results",
+        "type": "Response_Parameters|object"
       },
       {
         "id": "schema:Update_model",
         "kind": "schema",
-        "name": "Update_model"
+        "name": "Update_model",
+        "type": "object"
       },
       {
         "id": "schema:Zone_info",
         "kind": "schema",
-        "name": "Zone_info"
+        "name": "Zone_info",
+        "type": "object"
       },
       {
         "id": "schema:Zone_statistics",
         "kind": "schema",
-        "name": "Zone_statistics"
+        "name": "Zone_statistics",
+        "type": "object"
       },
       {
         "id": "schema:Zone_stats",
         "kind": "schema",
-        "name": "Zone_stats"
+        "name": "Zone_stats",
+        "type": "Response_Parameters|object"
       }
     ]
   },

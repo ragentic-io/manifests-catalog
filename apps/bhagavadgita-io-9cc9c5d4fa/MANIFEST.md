@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_bhagavadgita.io_static_images_r
 
 | | |
 | --- | --- |
-| Signed bundle | `0e3ef572ef11afd84bc1c4cc20f655d0e7e5e746c0d512141330e632bcee8cdc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_bhagavadgita.io_static_images_r
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/chapters` | get /api/v1/chapters | Get all the 18 Chapters of the Bhagavad Gita. |
-| GET | `/api/v1/chapters/{chapter_number}` | get /api/v1/chapters/{chapter_number} | Get a specific chapter from the Bhagavad Gita. |
-| GET | `/api/v1/chapters/{chapter_number}/verses` | get /api/v1/chapters/{chapter_number}/verses | Get all the Verses from a Chapter. |
-| GET | `/api/v1/chapters/{chapter_number}/verses/{verse_number}` | get /api/v1/chapters/{chapter_number}/verses/{verse_number} | Get a particular verse from a chapter. |
-| GET | `/api/v1/verses` | get /api/v1/verses | Get all the Verses. |
-| POST | `/auth/oauth/token` | post /auth/oauth/token | Send client credentials and get an access token. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/chapters` | get /api/v1/chapters | `access_token`*, `language` | ChapterSchema | yes | Get all the 18 Chapters of the Bhagavad Gita. |
+| GET | `/api/v1/chapters/{chapter_number}` | get /api/v1/chapters/{chapter_number} | `access_token`*, `chapter_number`*, `language` | ChapterSchema | yes | Get a specific chapter from the Bhagavad Gita. |
+| GET | `/api/v1/chapters/{chapter_number}/verses` | get /api/v1/chapters/{chapter_number}/verses | `access_token`*, `chapter_number`*, `language` | VerseSchema | yes | Get all the Verses from a Chapter. |
+| GET | `/api/v1/chapters/{chapter_number}/verses/{verse_number}` | get /api/v1/chapters/{chapter_number}/verses/{verse_number} | `access_token`*, `chapter_number`*, `verse_number`*, `language` | VerseSchema | yes | Get a particular verse from a chapter. |
+| GET | `/api/v1/verses` | get /api/v1/verses | `access_token`*, `language` | VerseSchema | yes | Get all the Verses. |
+| POST | `/auth/oauth/token` | post /auth/oauth/token | body*: object | — |  | Send client credentials and get an access token. |

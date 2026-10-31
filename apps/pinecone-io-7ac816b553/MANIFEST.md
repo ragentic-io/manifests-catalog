@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.pinecone.io_images_pinecone
 
 | | |
 | --- | --- |
-| Signed bundle | `d81b4ddd1e8b7096ac43d7bae1d829595d6141a0560ae508b3b49a5599bf17d2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,20 +34,22 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.pinecone.io_images_pinecone
 
 40 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/collections` | list_collections | List collections |
-| POST | `/collections` | create_collection | Create collection |
-| DELETE | `/collections/{collectionName}` | delete_collection | Delete Collection |
-| GET | `/collections/{collectionName}` | describe_collection | Describe collection |
-| POST | `/describe_index_stats` | DescribeIndexStats | Describe Index Stats |
-| GET | `/indexes` | list_indexes | List indexes |
-| POST | `/indexes` | create_index | Create index |
-| DELETE | `/indexes/{indexName}` | delete_index | Delete Index |
-| GET | `/indexes/{indexName}` | describe_index | Describe index |
-| PATCH | `/indexes/{indexName}` | configure_index | Configure index |
-| POST | `/query` | Query | Query |
-| POST | `/vectors/delete` | Delete | Delete |
-| POST | `/vectors/fetch` | Fetch | Fetch |
-| POST | `/vectors/update` | Update | Fetch |
-| POST | `/vectors/upsert` | Upsert | Upsert |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/collections` | list_collections | — | CollectionsList | yes | List collections |
+| POST | `/collections` | create_collection | body*: CollectionDefinition | string |  | Create collection |
+| GET | `/collections/{collectionName}` | describe_collection | `collectionName`* | Collection | yes | Describe collection |
+| DELETE | `/collections/{collectionName}` | delete_collection | `collectionName`* | string |  | Delete Collection |
+| POST | `/describe_index_stats` | DescribeIndexStats | body*: DescribeIndexStatsRequest | DescribeIndexStatsResponse |  | Describe Index Stats |
+| GET | `/indexes` | list_indexes | — | IndexesList | yes | List indexes |
+| POST | `/indexes` | create_index | body*: IndexDefinition | string |  | Create index |
+| GET | `/indexes/{indexName}` | describe_index | `indexName`* | Index | yes | Describe index |
+| DELETE | `/indexes/{indexName}` | delete_index | `indexName`* | string |  | Delete Index |
+| PATCH | `/indexes/{indexName}` | configure_index | `indexName`*, body*: IndexConfiguration | string |  | Configure index |
+| POST | `/query` | Query | body*: QueryRequest | QueryResponse |  | Query |
+| POST | `/vectors/delete` | Delete | body*: DeleteRequest | DeleteResponse |  | Delete |
+| POST | `/vectors/fetch` | Fetch | body*: FetchRequest | FetchResponse |  | Fetch |
+| POST | `/vectors/update` | Update | body*: UpdateRequest | UpdateResponse |  | Fetch |
+| POST | `/vectors/upsert` | Upsert | body*: UpsertRequest | UpsertResponse |  | Upsert |

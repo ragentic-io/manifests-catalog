@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.redeal.se_APIDefinitions
 
 | | |
 | --- | --- |
-| Signed bundle | `b8b23be13170f08f3740870d675afd770d2dd69b28435504807d1e29ba0c8f80` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.redeal.se_APIDefinitions
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/events` | getEvents | get events for analytics |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/events` | getEvents | `company`, `site`, `deal`, `type`, `nexttoken`, `queryexecutionid` | EventRecord[] | yes | get events for analytics |

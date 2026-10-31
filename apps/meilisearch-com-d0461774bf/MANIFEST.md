@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_meilisearch.com_apple-touch-ico
 
 | | |
 | --- | --- |
-| Signed bundle | `df24d7da3a603769d3709a660d972a8fc556ec70688f3049127bee1c51346017` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,70 +32,72 @@ logo: "https://api.apis.guru/v2/cache/logo/https_meilisearch.com_apple-touch-ico
 
 ## Operations (65)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/dumps` | createADump | Create a dump |
-| GET | `/health` | health | Health |
-| GET | `/indexes` | getIndexes | Get indexes |
-| POST | `/indexes` | createIndexWithPrimaryKey | Create index with primary key |
-| DELETE | `/indexes/books` | deleteAnIndex | Delete an index |
-| GET | `/indexes/books` | showIndex | Show index |
-| PATCH | `/indexes/books` | udpateIndex | Udpate index |
-| DELETE | `/indexes/books/documents` | deleteAllDocuments | Delete all documents |
-| GET | `/indexes/books/documents` | getDocuments | Get documents |
-| POST | `/indexes/books/documents` | addOrReplaceDocuments | Add or replace documents |
-| PUT | `/indexes/books/documents` | addOrUpdateDocuments | Add or update documents |
-| DELETE | `/indexes/books/documents/1` | deleteOneDocument | Delete one document |
-| GET | `/indexes/books/documents/2` | getOneDocument | Get one document |
-| POST | `/indexes/books/documents/delete-batch` | deleteDocuments | Delete documents |
-| GET | `/indexes/books/search` | searchInIndex | Search in index |
-| POST | `/indexes/books/search` | searchInIndex1 | Search in index |
-| DELETE | `/indexes/books/settings` | resetAllSettings | Reset all settings |
-| GET | `/indexes/books/settings` | getAllSettings | Get all settings |
-| PATCH | `/indexes/books/settings` | updateSettings | Update settings |
-| DELETE | `/indexes/books/settings/displayed-attributes` | resetDisplayedAttributes | Reset displayed attributes |
-| GET | `/indexes/books/settings/displayed-attributes` | getDisplayedAttributes | Get displayed attributes |
-| PUT | `/indexes/books/settings/displayed-attributes` | updateDisplayedAttributes | Update displayed attributes |
-| DELETE | `/indexes/books/settings/distinct-attribute` | resetDistinctAttribute | Reset distinct attribute |
-| GET | `/indexes/books/settings/distinct-attribute` | getDistinctAttribute | Get distinct attribute |
-| PUT | `/indexes/books/settings/distinct-attribute` | updateDistinctAttribute | Update distinct attribute |
-| DELETE | `/indexes/books/settings/faceting` | resetFaceting | Reset faceting |
-| GET | `/indexes/books/settings/faceting` | getFaceting | Get faceting |
-| PATCH | `/indexes/books/settings/faceting` | updateFaceting | Update faceting |
-| DELETE | `/indexes/books/settings/filterable-attributes` | resetFilterableAttributes | Reset filterable attributes |
-| GET | `/indexes/books/settings/filterable-attributes` | getFilterableAttributes | Get filterable attributes |
-| PUT | `/indexes/books/settings/filterable-attributes` | updateFilterableAttributes | Update filterable attributes |
-| DELETE | `/indexes/books/settings/pagination` | resetPagination | Reset pagination |
-| GET | `/indexes/books/settings/pagination` | getPagination | Get pagination |
-| PATCH | `/indexes/books/settings/pagination` | updatePagination | Update pagination |
-| DELETE | `/indexes/books/settings/ranking-rules` | resetRankingRules | Reset ranking rules |
-| GET | `/indexes/books/settings/ranking-rules` | getRankingRules | Get ranking rules |
-| PUT | `/indexes/books/settings/ranking-rules` | updateRankingRules | Update ranking rules |
-| DELETE | `/indexes/books/settings/searchable-attributes` | resetSearchableAttributes | Reset searchable attributes |
-| GET | `/indexes/books/settings/searchable-attributes` | getSearchableAttributes | Get searchable attributes |
-| PUT | `/indexes/books/settings/searchable-attributes` | updateSearchableAttributes | Update searchable attributes |
-| DELETE | `/indexes/books/settings/sortable-attributes` | resetSortableAttributes | Reset sortable attributes |
-| GET | `/indexes/books/settings/sortable-attributes` | getSortableAttributes | Get sortable attributes |
-| PUT | `/indexes/books/settings/sortable-attributes` | updateSortableAttributes | Update sortable attributes |
-| DELETE | `/indexes/books/settings/stop-words` | resetStopWords | Reset stop-words |
-| GET | `/indexes/books/settings/stop-words` | getStopWords | Get stop-words |
-| PUT | `/indexes/books/settings/stop-words` | updateStopWords | Update stop-words |
-| DELETE | `/indexes/books/settings/synonyms` | resetSynonyms | Reset synonyms |
-| GET | `/indexes/books/settings/synonyms` | getSynonyms | Get synonyms |
-| PUT | `/indexes/books/settings/synonyms` | updateSynonyms | Update synonyms |
-| DELETE | `/indexes/books/settings/typo-tolerance` | resetTypoTolerance | Reset typo-tolerance |
-| GET | `/indexes/books/settings/typo-tolerance` | getTypoTolerance | Get typo-tolerance |
-| PATCH | `/indexes/books/settings/typo-tolerance` | updateTypoTolerance | Update typo-tolerance |
-| GET | `/indexes/books/stats` | statsOfAnIndex | Stats of an index |
-| POST | `/indexes/swap-indexes` | swapIndexes | Swap indexes |
-| GET | `/keys` | getKeys | Get keys |
-| POST | `/keys` | createAKey | Create a key |
-| GET | `/keys/L8l05tFb188aab693735bbaf1f898b9902fb39f865160d39dddba2b47b940115a0430705` | getOneKey | Get one key |
-| DELETE | `/keys/kN2aK9EO8a7b627e425717d9196c8081552ca004e513545ed178f8a56981dbd3080d4a5b` | deleteAKey | Delete a key |
-| PATCH | `/keys/wYZjGJyBcdb0621b97999c233246a8ec0a35d0fcd9a6417ef8ccee0c8978b64b123af2dd` | updateAKey | Update a key |
-| GET | `/stats` | globalStats | Global stats |
-| DELETE | `/tasks` | deleteTasks | Delete tasks |
-| GET | `/tasks` | getAllTasks | Get all tasks |
-| GET | `/tasks/0` | getOneTask | Get one task |
-| POST | `/tasks/cancel` | cancelTasks | Cancel tasks |
-| GET | `/version` | version | Version |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/dumps` | createADump | — | — |  | Create a dump |
+| GET | `/health` | health | — | — | yes | Health |
+| GET | `/indexes` | getIndexes | `offset`, `limit` | — | yes | Get indexes |
+| POST | `/indexes` | createIndexWithPrimaryKey | body: object | — |  | Create index with primary key |
+| GET | `/indexes/books` | showIndex | — | — | yes | Show index |
+| DELETE | `/indexes/books` | deleteAnIndex | — | — |  | Delete an index |
+| PATCH | `/indexes/books` | udpateIndex | body: object | — |  | Udpate index |
+| GET | `/indexes/books/documents` | getDocuments | `limit`, `offset`, `fields` | — | yes | Get documents |
+| PUT | `/indexes/books/documents` | addOrUpdateDocuments | `primaryKey`, body: object[] | — |  | Add or update documents |
+| POST | `/indexes/books/documents` | addOrReplaceDocuments | `primaryKey`, body: object[] | — |  | Add or replace documents |
+| DELETE | `/indexes/books/documents` | deleteAllDocuments | — | — |  | Delete all documents |
+| DELETE | `/indexes/books/documents/1` | deleteOneDocument | body: — | — |  | Delete one document |
+| GET | `/indexes/books/documents/2` | getOneDocument | `fields` | — | yes | Get one document |
+| POST | `/indexes/books/documents/delete-batch` | deleteDocuments | body: number[] | — |  | Delete documents |
+| GET | `/indexes/books/search` | searchInIndex | `q`, `offset`, `limit`, `attributesToRetrieve`, `attributesToCrop`, `attributesToHighlight`, `cropLength`, `cropMarker`, `filter`, `showMatchesPosition`, `facets`, `sort`, `highlightPreTag`, `highlightPostTag`, `matchingStrategy`, `page`, `hitsPerPage` | — | yes | Search in index |
+| POST | `/indexes/books/search` | searchInIndex1 | body: object | — |  | Search in index |
+| GET | `/indexes/books/settings` | getAllSettings | — | — | yes | Get all settings |
+| DELETE | `/indexes/books/settings` | resetAllSettings | — | — |  | Reset all settings |
+| PATCH | `/indexes/books/settings` | updateSettings | body: object | — |  | Update settings |
+| GET | `/indexes/books/settings/displayed-attributes` | getDisplayedAttributes | — | — | yes | Get displayed attributes |
+| PUT | `/indexes/books/settings/displayed-attributes` | updateDisplayedAttributes | body: string[] | — |  | Update displayed attributes |
+| DELETE | `/indexes/books/settings/displayed-attributes` | resetDisplayedAttributes | — | — |  | Reset displayed attributes |
+| GET | `/indexes/books/settings/distinct-attribute` | getDistinctAttribute | — | — | yes | Get distinct attribute |
+| PUT | `/indexes/books/settings/distinct-attribute` | updateDistinctAttribute | body: — | — |  | Update distinct attribute |
+| DELETE | `/indexes/books/settings/distinct-attribute` | resetDistinctAttribute | — | — |  | Reset distinct attribute |
+| GET | `/indexes/books/settings/faceting` | getFaceting | — | — | yes | Get faceting |
+| DELETE | `/indexes/books/settings/faceting` | resetFaceting | — | — |  | Reset faceting |
+| PATCH | `/indexes/books/settings/faceting` | updateFaceting | body: object | — |  | Update faceting |
+| GET | `/indexes/books/settings/filterable-attributes` | getFilterableAttributes | — | — | yes | Get filterable attributes |
+| PUT | `/indexes/books/settings/filterable-attributes` | updateFilterableAttributes | body: string[] | — |  | Update filterable attributes |
+| DELETE | `/indexes/books/settings/filterable-attributes` | resetFilterableAttributes | — | — |  | Reset filterable attributes |
+| GET | `/indexes/books/settings/pagination` | getPagination | — | — | yes | Get pagination |
+| DELETE | `/indexes/books/settings/pagination` | resetPagination | — | — |  | Reset pagination |
+| PATCH | `/indexes/books/settings/pagination` | updatePagination | body: object | — |  | Update pagination |
+| GET | `/indexes/books/settings/ranking-rules` | getRankingRules | — | — | yes | Get ranking rules |
+| PUT | `/indexes/books/settings/ranking-rules` | updateRankingRules | body: string[] | — |  | Update ranking rules |
+| DELETE | `/indexes/books/settings/ranking-rules` | resetRankingRules | — | — |  | Reset ranking rules |
+| GET | `/indexes/books/settings/searchable-attributes` | getSearchableAttributes | — | — | yes | Get searchable attributes |
+| PUT | `/indexes/books/settings/searchable-attributes` | updateSearchableAttributes | body: string[] | — |  | Update searchable attributes |
+| DELETE | `/indexes/books/settings/searchable-attributes` | resetSearchableAttributes | — | — |  | Reset searchable attributes |
+| GET | `/indexes/books/settings/sortable-attributes` | getSortableAttributes | — | — | yes | Get sortable attributes |
+| PUT | `/indexes/books/settings/sortable-attributes` | updateSortableAttributes | body: string[] | — |  | Update sortable attributes |
+| DELETE | `/indexes/books/settings/sortable-attributes` | resetSortableAttributes | — | — |  | Reset sortable attributes |
+| GET | `/indexes/books/settings/stop-words` | getStopWords | body: string[] | — | yes | Get stop-words |
+| PUT | `/indexes/books/settings/stop-words` | updateStopWords | body: string[] | — |  | Update stop-words |
+| DELETE | `/indexes/books/settings/stop-words` | resetStopWords | — | — |  | Reset stop-words |
+| GET | `/indexes/books/settings/synonyms` | getSynonyms | — | — | yes | Get synonyms |
+| PUT | `/indexes/books/settings/synonyms` | updateSynonyms | body: object | — |  | Update synonyms |
+| DELETE | `/indexes/books/settings/synonyms` | resetSynonyms | body: — | — |  | Reset synonyms |
+| GET | `/indexes/books/settings/typo-tolerance` | getTypoTolerance | — | — | yes | Get typo-tolerance |
+| DELETE | `/indexes/books/settings/typo-tolerance` | resetTypoTolerance | — | — |  | Reset typo-tolerance |
+| PATCH | `/indexes/books/settings/typo-tolerance` | updateTypoTolerance | body: object | — |  | Update typo-tolerance |
+| GET | `/indexes/books/stats` | statsOfAnIndex | — | — | yes | Stats of an index |
+| POST | `/indexes/swap-indexes` | swapIndexes | body: object[] | — |  | Swap indexes |
+| GET | `/keys` | getKeys | `offset`, `limit` | — | yes | Get keys |
+| POST | `/keys` | createAKey | body: object | — |  | Create a key |
+| GET | `/keys/L8l05tFb188aab693735bbaf1f898b9902fb39f865160d39dddba2b47b940115a0430705` | getOneKey | — | — | yes | Get one key |
+| DELETE | `/keys/kN2aK9EO8a7b627e425717d9196c8081552ca004e513545ed178f8a56981dbd3080d4a5b` | deleteAKey | — | — |  | Delete a key |
+| PATCH | `/keys/wYZjGJyBcdb0621b97999c233246a8ec0a35d0fcd9a6417ef8ccee0c8978b64b123af2dd` | updateAKey | body: object | — |  | Update a key |
+| GET | `/stats` | globalStats | — | — | yes | Global stats |
+| GET | `/tasks` | getAllTasks | `uids`, `indexUids`, `types`, `statuses`, `beforeEnqueuedAt`, `afterEnqueuedAt`, `beforeStartedAt`, `afterStartedAt`, `beforeFinishedAt`, `afterFinishedAt`, `canceledBy`, `limit`, `from` | — | yes | Get all tasks |
+| DELETE | `/tasks` | deleteTasks | `uids`, `indexUids`, `types`, `statuses`, `beforeEnqueuedAt`, `afterEnqueuedAt`, `beforeStartedAt`, `afterStartedAt`, `beforeFinishedAt`, `afterFinishedAt`, `canceledBy`, `limit`, `from` | — |  | Delete tasks |
+| GET | `/tasks/0` | getOneTask | — | — | yes | Get one task |
+| POST | `/tasks/cancel` | cancelTasks | `uids`, `indexUids`, `types`, `statuses`, `beforeEnqueuedAt`, `afterEnqueuedAt`, `beforeStartedAt`, `afterStartedAt`, `beforeFinishedAt`, `afterFinishedAt`, `canceledBy`, `limit`, `from` | — |  | Cancel tasks |
+| GET | `/version` | version | — | — | yes | Version |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_ynab_profile_image.
 
 | | |
 | --- | --- |
-| Signed bundle | `df021a7aff9267107e65f25c448bae7aed1d92ce145627a048ca3dbb17b162e0` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,36 +34,38 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_ynab_profile_image.
 
 60 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/budgets` | getBudgets | List budgets |
-| GET | `/budgets/{budget_id}` | getBudgetById | Single budget |
-| GET | `/budgets/{budget_id}/accounts` | getAccounts | Account list |
-| POST | `/budgets/{budget_id}/accounts` | createAccount | Create a new account |
-| GET | `/budgets/{budget_id}/accounts/{account_id}` | getAccountById | Single account |
-| GET | `/budgets/{budget_id}/accounts/{account_id}/transactions` | getTransactionsByAccount | List account transactions |
-| GET | `/budgets/{budget_id}/categories` | getCategories | List categories |
-| GET | `/budgets/{budget_id}/categories/{category_id}` | getCategoryById | Single category |
-| GET | `/budgets/{budget_id}/categories/{category_id}/transactions` | getTransactionsByCategory | List category transactions |
-| GET | `/budgets/{budget_id}/months` | getBudgetMonths | List budget months |
-| GET | `/budgets/{budget_id}/months/{month}` | getBudgetMonth | Single budget month |
-| GET | `/budgets/{budget_id}/months/{month}/categories/{category_id}` | getMonthCategoryById | Single category for a specific budget month |
-| PATCH | `/budgets/{budget_id}/months/{month}/categories/{category_id}` | updateMonthCategory | Update a category for a specific month |
-| GET | `/budgets/{budget_id}/payee_locations` | getPayeeLocations | List payee locations |
-| GET | `/budgets/{budget_id}/payee_locations/{payee_location_id}` | getPayeeLocationById | Single payee location |
-| GET | `/budgets/{budget_id}/payees` | getPayees | List payees |
-| GET | `/budgets/{budget_id}/payees/{payee_id}` | getPayeeById | Single payee |
-| GET | `/budgets/{budget_id}/payees/{payee_id}/payee_locations` | getPayeeLocationsByPayee | List locations for a payee |
-| GET | `/budgets/{budget_id}/payees/{payee_id}/transactions` | getTransactionsByPayee | List payee transactions |
-| GET | `/budgets/{budget_id}/scheduled_transactions` | getScheduledTransactions | List scheduled transactions |
-| GET | `/budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}` | getScheduledTransactionById | Single scheduled transaction |
-| GET | `/budgets/{budget_id}/settings` | getBudgetSettingsById | Budget Settings |
-| GET | `/budgets/{budget_id}/transactions` | getTransactions | List transactions |
-| PATCH | `/budgets/{budget_id}/transactions` | updateTransactions | Update multiple transactions |
-| POST | `/budgets/{budget_id}/transactions` | createTransaction | Create a single transaction or multiple transactions |
-| POST | `/budgets/{budget_id}/transactions/bulk` | bulkCreateTransactions | Bulk create transactions |
-| POST | `/budgets/{budget_id}/transactions/import` | importTransactions | Import transactions |
-| DELETE | `/budgets/{budget_id}/transactions/{transaction_id}` | deleteTransaction | Deletes an existing transaction |
-| GET | `/budgets/{budget_id}/transactions/{transaction_id}` | getTransactionById | Single transaction |
-| PUT | `/budgets/{budget_id}/transactions/{transaction_id}` | updateTransaction | Updates an existing transaction |
-| GET | `/user` | getUser | User info |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/budgets` | getBudgets | `include_accounts` | BudgetSummaryResponse | yes | List budgets |
+| GET | `/budgets/{budget_id}` | getBudgetById | `budget_id`*, `last_knowledge_of_server` | BudgetDetailResponse | yes | Single budget |
+| GET | `/budgets/{budget_id}/accounts` | getAccounts | `budget_id`*, `last_knowledge_of_server` | AccountsResponse | yes | Account list |
+| POST | `/budgets/{budget_id}/accounts` | createAccount | `budget_id`*, body*: PostAccountWrapper | AccountResponse |  | Create a new account |
+| GET | `/budgets/{budget_id}/accounts/{account_id}` | getAccountById | `budget_id`*, `account_id`* | AccountResponse | yes | Single account |
+| GET | `/budgets/{budget_id}/accounts/{account_id}/transactions` | getTransactionsByAccount | `budget_id`*, `account_id`*, `since_date`, `type`, `last_knowledge_of_server` | TransactionsResponse | yes | List account transactions |
+| GET | `/budgets/{budget_id}/categories` | getCategories | `budget_id`*, `last_knowledge_of_server` | CategoriesResponse | yes | List categories |
+| GET | `/budgets/{budget_id}/categories/{category_id}` | getCategoryById | `budget_id`*, `category_id`* | CategoryResponse | yes | Single category |
+| GET | `/budgets/{budget_id}/categories/{category_id}/transactions` | getTransactionsByCategory | `budget_id`*, `category_id`*, `since_date`, `type`, `last_knowledge_of_server` | HybridTransactionsResponse | yes | List category transactions |
+| GET | `/budgets/{budget_id}/months` | getBudgetMonths | `budget_id`*, `last_knowledge_of_server` | MonthSummariesResponse | yes | List budget months |
+| GET | `/budgets/{budget_id}/months/{month}` | getBudgetMonth | `budget_id`*, `month`* | MonthDetailResponse | yes | Single budget month |
+| GET | `/budgets/{budget_id}/months/{month}/categories/{category_id}` | getMonthCategoryById | `budget_id`*, `month`*, `category_id`* | CategoryResponse | yes | Single category for a specific budget month |
+| PATCH | `/budgets/{budget_id}/months/{month}/categories/{category_id}` | updateMonthCategory | `budget_id`*, `month`*, `category_id`*, body*: PatchMonthCategoryWrapper | SaveCategoryResponse |  | Update a category for a specific month |
+| GET | `/budgets/{budget_id}/payee_locations` | getPayeeLocations | `budget_id`* | PayeeLocationsResponse | yes | List payee locations |
+| GET | `/budgets/{budget_id}/payee_locations/{payee_location_id}` | getPayeeLocationById | `budget_id`*, `payee_location_id`* | PayeeLocationResponse | yes | Single payee location |
+| GET | `/budgets/{budget_id}/payees` | getPayees | `budget_id`*, `last_knowledge_of_server` | PayeesResponse | yes | List payees |
+| GET | `/budgets/{budget_id}/payees/{payee_id}` | getPayeeById | `budget_id`*, `payee_id`* | PayeeResponse | yes | Single payee |
+| GET | `/budgets/{budget_id}/payees/{payee_id}/payee_locations` | getPayeeLocationsByPayee | `budget_id`*, `payee_id`* | PayeeLocationsResponse | yes | List locations for a payee |
+| GET | `/budgets/{budget_id}/payees/{payee_id}/transactions` | getTransactionsByPayee | `budget_id`*, `payee_id`*, `since_date`, `type`, `last_knowledge_of_server` | HybridTransactionsResponse | yes | List payee transactions |
+| GET | `/budgets/{budget_id}/scheduled_transactions` | getScheduledTransactions | `budget_id`*, `last_knowledge_of_server` | ScheduledTransactionsResponse | yes | List scheduled transactions |
+| GET | `/budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}` | getScheduledTransactionById | `budget_id`*, `scheduled_transaction_id`* | ScheduledTransactionResponse | yes | Single scheduled transaction |
+| GET | `/budgets/{budget_id}/settings` | getBudgetSettingsById | `budget_id`* | BudgetSettingsResponse | yes | Budget Settings |
+| GET | `/budgets/{budget_id}/transactions` | getTransactions | `budget_id`*, `since_date`, `type`, `last_knowledge_of_server` | TransactionsResponse | yes | List transactions |
+| POST | `/budgets/{budget_id}/transactions` | createTransaction | `budget_id`*, body*: PostTransactionsWrapper | SaveTransactionsResponse |  | Create a single transaction or multiple transactions |
+| PATCH | `/budgets/{budget_id}/transactions` | updateTransactions | `budget_id`*, body*: PatchTransactionsWrapper | SaveTransactionsResponse |  | Update multiple transactions |
+| POST | `/budgets/{budget_id}/transactions/bulk` | bulkCreateTransactions | `budget_id`*, body*: BulkTransactions | BulkResponse |  | Bulk create transactions |
+| POST | `/budgets/{budget_id}/transactions/import` | importTransactions | `budget_id`* | TransactionsImportResponse |  | Import transactions |
+| GET | `/budgets/{budget_id}/transactions/{transaction_id}` | getTransactionById | `budget_id`*, `transaction_id`* | TransactionResponse | yes | Single transaction |
+| PUT | `/budgets/{budget_id}/transactions/{transaction_id}` | updateTransaction | `budget_id`*, `transaction_id`*, body*: PutTransactionWrapper | TransactionResponse |  | Updates an existing transaction |
+| DELETE | `/budgets/{budget_id}/transactions/{transaction_id}` | deleteTransaction | `budget_id`*, `transaction_id`* | TransactionResponse |  | Deletes an existing transaction |
+| GET | `/user` | getUser | — | UserResponse | yes | User info |

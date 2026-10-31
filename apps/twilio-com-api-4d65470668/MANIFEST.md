@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static1.twilio.com_marketing_bu
 
 | | |
 | --- | --- |
-| Signed bundle | `432889f4d02dcda21227451e7ffbb318c20cba0a8b795a4882ad9562006512d9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,204 +34,206 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static1.twilio.com_marketing_bu
 
 152 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/2010-04-01/Accounts.json` | ListAccount | — |
-| POST | `/2010-04-01/Accounts.json` | CreateAccount | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Addresses.json` | ListAddress | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Addresses.json` | CreateAddress | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Addresses/{AddressSid}/DependentPhoneNumbers.json` | ListDependentPhoneNumber | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json` | DeleteAddress | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json` | FetchAddress | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json` | UpdateAddress | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Applications.json` | ListApplication | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Applications.json` | CreateApplication | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json` | DeleteApplication | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json` | FetchApplication | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json` | UpdateApplication | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps.json` | ListAuthorizedConnectApp | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}.json` | FetchAuthorizedConnectApp | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers.json` | ListAvailablePhoneNumberCountry | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}.json` | FetchAvailablePhoneNumberCountry | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Local.json` | ListAvailablePhoneNumberLocal | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/MachineToMachine.json` | ListAvailablePhoneNumberMachineToMachine | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Mobile.json` | ListAvailablePhoneNumberMobile | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/National.json` | ListAvailablePhoneNumberNational | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/SharedCost.json` | ListAvailablePhoneNumberSharedCost | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/TollFree.json` | ListAvailablePhoneNumberTollFree | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Voip.json` | ListAvailablePhoneNumberVoip | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Balance.json` | FetchBalance | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls.json` | ListCall | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls.json` | CreateCall | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/FeedbackSummary.json` | CreateCallFeedbackSummary | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/FeedbackSummary/{Sid}.json` | DeleteCallFeedbackSummary | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/FeedbackSummary/{Sid}.json` | FetchCallFeedbackSummary | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Events.json` | ListCallEvent | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Feedback.json` | FetchCallFeedback | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Feedback.json` | UpdateCallFeedback | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications.json` | ListCallNotification | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications/{Sid}.json` | FetchCallNotification | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json` | CreatePayments | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json` | UpdatePayments | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json` | ListCallRecording | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json` | CreateCallRecording | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json` | DeleteCallRecording | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json` | FetchCallRecording | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json` | UpdateCallRecording | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec.json` | CreateSiprec | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec/{Sid}.json` | UpdateSiprec | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams.json` | CreateStream | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams/{Sid}.json` | UpdateStream | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions.json` | CreateUserDefinedMessageSubscription | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions/{Sid}.json` | DeleteUserDefinedMessageSubscription | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessages.json` | CreateUserDefinedMessage | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json` | DeleteCall | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json` | FetchCall | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json` | UpdateCall | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences.json` | ListConference | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json` | ListParticipant | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json` | CreateParticipant | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json` | DeleteParticipant | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json` | FetchParticipant | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json` | UpdateParticipant | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings.json` | ListConferenceRecording | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json` | DeleteConferenceRecording | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json` | FetchConferenceRecording | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json` | UpdateConferenceRecording | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json` | FetchConference | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json` | UpdateConference | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/ConnectApps.json` | ListConnectApp | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json` | DeleteConnectApp | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json` | FetchConnectApp | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json` | UpdateConnectApp | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json` | ListIncomingPhoneNumber | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json` | CreateIncomingPhoneNumber | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Local.json` | ListIncomingPhoneNumberLocal | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Local.json` | CreateIncomingPhoneNumberLocal | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile.json` | ListIncomingPhoneNumberMobile | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile.json` | CreateIncomingPhoneNumberMobile | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json` | ListIncomingPhoneNumberTollFree | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json` | CreateIncomingPhoneNumberTollFree | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json` | ListIncomingPhoneNumberAssignedAddOn | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json` | CreateIncomingPhoneNumberAssignedAddOn | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{AssignedAddOnSid}/Extensions.json` | ListIncomingPhoneNumberAssignedAddOnExtension | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{AssignedAddOnSid}/Extensions/{Sid}.json` | FetchIncomingPhoneNumberAssignedAddOnExtension | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json` | DeleteIncomingPhoneNumberAssignedAddOn | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json` | FetchIncomingPhoneNumberAssignedAddOn | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json` | DeleteIncomingPhoneNumber | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json` | FetchIncomingPhoneNumber | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json` | UpdateIncomingPhoneNumber | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Keys.json` | ListKey | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Keys.json` | CreateNewKey | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json` | DeleteKey | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json` | FetchKey | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json` | UpdateKey | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Messages.json` | ListMessage | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Messages.json` | CreateMessage | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Feedback.json` | CreateMessageFeedback | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media.json` | ListMedia | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json` | DeleteMedia | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json` | FetchMedia | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json` | DeleteMessage | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json` | FetchMessage | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json` | UpdateMessage | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Notifications.json` | ListNotification | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Notifications/{Sid}.json` | FetchNotification | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json` | ListOutgoingCallerId | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json` | CreateValidationRequest | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json` | DeleteOutgoingCallerId | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json` | FetchOutgoingCallerId | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json` | UpdateOutgoingCallerId | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Queues.json` | ListQueue | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Queues.json` | CreateQueue | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members.json` | ListMember | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json` | FetchMember | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json` | UpdateMember | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json` | DeleteQueue | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json` | FetchQueue | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json` | UpdateQueue | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings.json` | ListRecording | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions.json` | ListRecordingTranscription | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json` | DeleteRecordingTranscription | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json` | FetchRecordingTranscription | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults.json` | ListRecordingAddOnResult | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads.json` | ListRecordingAddOnResultPayload | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json` | DeleteRecordingAddOnResultPayload | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json` | FetchRecordingAddOnResultPayload | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json` | DeleteRecordingAddOnResult | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json` | FetchRecordingAddOnResult | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json` | DeleteRecording | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json` | FetchRecording | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json` | ListSipCredentialList | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json` | CreateSipCredentialList | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials.json` | ListSipCredential | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials.json` | CreateSipCredential | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json` | DeleteSipCredential | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json` | FetchSipCredential | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json` | UpdateSipCredential | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json` | DeleteSipCredentialList | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json` | FetchSipCredentialList | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json` | UpdateSipCredentialList | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains.json` | ListSipDomain | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains.json` | CreateSipDomain | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings.json` | ListSipAuthCallsCredentialListMapping | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings.json` | CreateSipAuthCallsCredentialListMapping | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings/{Sid}.json` | DeleteSipAuthCallsCredentialListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings/{Sid}.json` | FetchSipAuthCallsCredentialListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json` | ListSipAuthCallsIpAccessControlListMapping | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json` | CreateSipAuthCallsIpAccessControlListMapping | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json` | DeleteSipAuthCallsIpAccessControlListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json` | FetchSipAuthCallsIpAccessControlListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings.json` | ListSipAuthRegistrationsCredentialListMapping | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings.json` | CreateSipAuthRegistrationsCredentialListMapping | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings/{Sid}.json` | DeleteSipAuthRegistrationsCredentialListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings/{Sid}.json` | FetchSipAuthRegistrationsCredentialListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json` | ListSipCredentialListMapping | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json` | CreateSipCredentialListMapping | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json` | DeleteSipCredentialListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json` | FetchSipCredentialListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings.json` | ListSipIpAccessControlListMapping | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings.json` | CreateSipIpAccessControlListMapping | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings/{Sid}.json` | DeleteSipIpAccessControlListMapping | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings/{Sid}.json` | FetchSipIpAccessControlListMapping | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json` | DeleteSipDomain | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json` | FetchSipDomain | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json` | UpdateSipDomain | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json` | ListSipIpAccessControlList | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json` | CreateSipIpAccessControlList | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses.json` | ListSipIpAddress | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses.json` | CreateSipIpAddress | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json` | DeleteSipIpAddress | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json` | FetchSipIpAddress | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json` | UpdateSipIpAddress | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json` | DeleteSipIpAccessControlList | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json` | FetchSipIpAccessControlList | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json` | UpdateSipIpAccessControlList | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json` | ListShortCode | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json` | FetchShortCode | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json` | UpdateShortCode | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SigningKeys.json` | ListSigningKey | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SigningKeys.json` | CreateNewSigningKey | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json` | DeleteSigningKey | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json` | FetchSigningKey | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json` | UpdateSigningKey | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Tokens.json` | CreateToken | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Transcriptions.json` | ListTranscription | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json` | DeleteTranscription | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json` | FetchTranscription | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records.json` | ListUsageRecord | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/AllTime.json` | ListUsageRecordAllTime | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Daily.json` | ListUsageRecordDaily | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/LastMonth.json` | ListUsageRecordLastMonth | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Monthly.json` | ListUsageRecordMonthly | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/ThisMonth.json` | ListUsageRecordThisMonth | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Today.json` | ListUsageRecordToday | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Yearly.json` | ListUsageRecordYearly | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Yesterday.json` | ListUsageRecordYesterday | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json` | ListUsageTrigger | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json` | CreateUsageTrigger | — |
-| DELETE | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json` | DeleteUsageTrigger | — |
-| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json` | FetchUsageTrigger | — |
-| POST | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json` | UpdateUsageTrigger | — |
-| GET | `/2010-04-01/Accounts/{Sid}.json` | FetchAccount | — |
-| POST | `/2010-04-01/Accounts/{Sid}.json` | UpdateAccount | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/2010-04-01/Accounts.json` | ListAccount | `FriendlyName`, `Status`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts.json` | CreateAccount | body: object | api.v2010.account |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Addresses.json` | ListAddress | `AccountSid`*, `CustomerName`, `FriendlyName`, `IsoCountry`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Addresses.json` | CreateAddress | `AccountSid`*, body: object | api.v2010.account.address |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Addresses/{AddressSid}/DependentPhoneNumbers.json` | ListDependentPhoneNumber | `AccountSid`*, `AddressSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json` | FetchAddress | `AccountSid`*, `Sid`* | api.v2010.account.address | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json` | UpdateAddress | `AccountSid`*, `Sid`*, body: object | api.v2010.account.address |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json` | DeleteAddress | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Applications.json` | ListApplication | `AccountSid`*, `FriendlyName`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Applications.json` | CreateApplication | `AccountSid`*, body: object | api.v2010.account.application |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json` | FetchApplication | `AccountSid`*, `Sid`* | api.v2010.account.application | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json` | UpdateApplication | `AccountSid`*, `Sid`*, body: object | api.v2010.account.application |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json` | DeleteApplication | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps.json` | ListAuthorizedConnectApp | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}.json` | FetchAuthorizedConnectApp | `AccountSid`*, `ConnectAppSid`* | api.v2010.account.authorized_connect_app | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers.json` | ListAvailablePhoneNumberCountry | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}.json` | FetchAvailablePhoneNumberCountry | `AccountSid`*, `CountryCode`* | api.v2010.account.available_phone_number_country | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Local.json` | ListAvailablePhoneNumberLocal | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/MachineToMachine.json` | ListAvailablePhoneNumberMachineToMachine | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Mobile.json` | ListAvailablePhoneNumberMobile | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/National.json` | ListAvailablePhoneNumberNational | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/SharedCost.json` | ListAvailablePhoneNumberSharedCost | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/TollFree.json` | ListAvailablePhoneNumberTollFree | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Voip.json` | ListAvailablePhoneNumberVoip | `AccountSid`*, `CountryCode`*, `AreaCode`, `Contains`, `SmsEnabled`, `MmsEnabled`, `VoiceEnabled`, `ExcludeAllAddressRequired`, `ExcludeLocalAddressRequired`, `ExcludeForeignAddressRequired`, `Beta`, `NearNumber`, `NearLatLong`, `Distance`, `InPostalCode`, `InRegion`, `InRateCenter`, `InLata`, `InLocality`, `FaxEnabled`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Balance.json` | FetchBalance | `AccountSid`* | api.v2010.account.balance | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls.json` | ListCall | `AccountSid`*, `To`, `From`, `ParentCallSid`, `Status`, `StartTime`, `StartTime<`, `StartTime>`, `EndTime`, `EndTime<`, `EndTime>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls.json` | CreateCall | `AccountSid`*, body: object | api.v2010.account.call |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/FeedbackSummary.json` | CreateCallFeedbackSummary | `AccountSid`*, body: object | api.v2010.account.call.call_feedback_summary |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/FeedbackSummary/{Sid}.json` | FetchCallFeedbackSummary | `AccountSid`*, `Sid`* | api.v2010.account.call.call_feedback_summary | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/FeedbackSummary/{Sid}.json` | DeleteCallFeedbackSummary | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Events.json` | ListCallEvent | `AccountSid`*, `CallSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Feedback.json` | FetchCallFeedback | `AccountSid`*, `CallSid`* | api.v2010.account.call.call_feedback | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Feedback.json` | UpdateCallFeedback | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.call_feedback |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications.json` | ListCallNotification | `AccountSid`*, `CallSid`*, `Log`, `MessageDate`, `MessageDate<`, `MessageDate>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications/{Sid}.json` | FetchCallNotification | `AccountSid`*, `CallSid`*, `Sid`* | api.v2010.account.call.call_notification-instance | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json` | CreatePayments | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.payments |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json` | UpdatePayments | `AccountSid`*, `CallSid`*, `Sid`*, body: object | api.v2010.account.call.payments |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json` | ListCallRecording | `AccountSid`*, `CallSid`*, `DateCreated`, `DateCreated<`, `DateCreated>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json` | CreateCallRecording | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.call_recording |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json` | FetchCallRecording | `AccountSid`*, `CallSid`*, `Sid`* | api.v2010.account.call.call_recording | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json` | UpdateCallRecording | `AccountSid`*, `CallSid`*, `Sid`*, body: object | api.v2010.account.call.call_recording |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json` | DeleteCallRecording | `AccountSid`*, `CallSid`*, `Sid`* | — |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec.json` | CreateSiprec | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.siprec |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Siprec/{Sid}.json` | UpdateSiprec | `AccountSid`*, `CallSid`*, `Sid`*, body: object | api.v2010.account.call.siprec |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams.json` | CreateStream | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.stream |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams/{Sid}.json` | UpdateStream | `AccountSid`*, `CallSid`*, `Sid`*, body: object | api.v2010.account.call.stream |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions.json` | CreateUserDefinedMessageSubscription | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.user_defined_message_subscription |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions/{Sid}.json` | DeleteUserDefinedMessageSubscription | `AccountSid`*, `CallSid`*, `Sid`* | — |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessages.json` | CreateUserDefinedMessage | `AccountSid`*, `CallSid`*, body: object | api.v2010.account.call.user_defined_message |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json` | FetchCall | `AccountSid`*, `Sid`* | api.v2010.account.call | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json` | UpdateCall | `AccountSid`*, `Sid`*, body: object | api.v2010.account.call |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json` | DeleteCall | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences.json` | ListConference | `AccountSid`*, `DateCreated`, `DateCreated<`, `DateCreated>`, `DateUpdated`, `DateUpdated<`, `DateUpdated>`, `FriendlyName`, `Status`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json` | ListParticipant | `AccountSid`*, `ConferenceSid`*, `Muted`, `Hold`, `Coaching`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json` | CreateParticipant | `AccountSid`*, `ConferenceSid`*, body: object | api.v2010.account.conference.participant |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json` | FetchParticipant | `AccountSid`*, `ConferenceSid`*, `CallSid`* | api.v2010.account.conference.participant | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json` | UpdateParticipant | `AccountSid`*, `ConferenceSid`*, `CallSid`*, body: object | api.v2010.account.conference.participant |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json` | DeleteParticipant | `AccountSid`*, `ConferenceSid`*, `CallSid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings.json` | ListConferenceRecording | `AccountSid`*, `ConferenceSid`*, `DateCreated`, `DateCreated<`, `DateCreated>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json` | FetchConferenceRecording | `AccountSid`*, `ConferenceSid`*, `Sid`* | api.v2010.account.conference.conference_recording | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json` | UpdateConferenceRecording | `AccountSid`*, `ConferenceSid`*, `Sid`*, body: object | api.v2010.account.conference.conference_recording |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Recordings/{Sid}.json` | DeleteConferenceRecording | `AccountSid`*, `ConferenceSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json` | FetchConference | `AccountSid`*, `Sid`* | api.v2010.account.conference | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Conferences/{Sid}.json` | UpdateConference | `AccountSid`*, `Sid`*, body: object | api.v2010.account.conference |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/ConnectApps.json` | ListConnectApp | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json` | FetchConnectApp | `AccountSid`*, `Sid`* | api.v2010.account.connect_app | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json` | UpdateConnectApp | `AccountSid`*, `Sid`*, body: object | api.v2010.account.connect_app |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json` | DeleteConnectApp | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json` | ListIncomingPhoneNumber | `AccountSid`*, `Beta`, `FriendlyName`, `PhoneNumber`, `Origin`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json` | CreateIncomingPhoneNumber | `AccountSid`*, body: object | api.v2010.account.incoming_phone_number |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Local.json` | ListIncomingPhoneNumberLocal | `AccountSid`*, `Beta`, `FriendlyName`, `PhoneNumber`, `Origin`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Local.json` | CreateIncomingPhoneNumberLocal | `AccountSid`*, body: object | api.v2010.account.incoming_phone_number.incoming_phone_number_local |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile.json` | ListIncomingPhoneNumberMobile | `AccountSid`*, `Beta`, `FriendlyName`, `PhoneNumber`, `Origin`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile.json` | CreateIncomingPhoneNumberMobile | `AccountSid`*, body: object | api.v2010.account.incoming_phone_number.incoming_phone_number_mobile |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json` | ListIncomingPhoneNumberTollFree | `AccountSid`*, `Beta`, `FriendlyName`, `PhoneNumber`, `Origin`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json` | CreateIncomingPhoneNumberTollFree | `AccountSid`*, body: object | api.v2010.account.incoming_phone_number.incoming_phone_number_toll_free |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json` | ListIncomingPhoneNumberAssignedAddOn | `AccountSid`*, `ResourceSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json` | CreateIncomingPhoneNumberAssignedAddOn | `AccountSid`*, `ResourceSid`*, body: object | api.v2010.account.incoming_phone_number.incoming_phone_number_assigned_add_on |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{AssignedAddOnSid}/Extensions.json` | ListIncomingPhoneNumberAssignedAddOnExtension | `AccountSid`*, `ResourceSid`*, `AssignedAddOnSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{AssignedAddOnSid}/Extensions/{Sid}.json` | FetchIncomingPhoneNumberAssignedAddOnExtension | `AccountSid`*, `ResourceSid`*, `AssignedAddOnSid`*, `Sid`* | api.v2010.account.incoming_phone_number.incoming_phone_number_assigned_add_on.incoming_phone_number_assigned_add_on_extension | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json` | FetchIncomingPhoneNumberAssignedAddOn | `AccountSid`*, `ResourceSid`*, `Sid`* | api.v2010.account.incoming_phone_number.incoming_phone_number_assigned_add_on | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json` | DeleteIncomingPhoneNumberAssignedAddOn | `AccountSid`*, `ResourceSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json` | FetchIncomingPhoneNumber | `AccountSid`*, `Sid`* | api.v2010.account.incoming_phone_number | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json` | UpdateIncomingPhoneNumber | `AccountSid`*, `Sid`*, body: object | api.v2010.account.incoming_phone_number |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json` | DeleteIncomingPhoneNumber | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Keys.json` | ListKey | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Keys.json` | CreateNewKey | `AccountSid`*, body: object | api.v2010.account.new_key |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json` | FetchKey | `AccountSid`*, `Sid`* | api.v2010.account.key | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json` | UpdateKey | `AccountSid`*, `Sid`*, body: object | api.v2010.account.key |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json` | DeleteKey | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Messages.json` | ListMessage | `AccountSid`*, `To`, `From`, `DateSent`, `DateSent<`, `DateSent>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Messages.json` | CreateMessage | `AccountSid`*, body: object | api.v2010.account.message |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Feedback.json` | CreateMessageFeedback | `AccountSid`*, `MessageSid`*, body: object | api.v2010.account.message.message_feedback |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media.json` | ListMedia | `AccountSid`*, `MessageSid`*, `DateCreated`, `DateCreated<`, `DateCreated>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json` | FetchMedia | `AccountSid`*, `MessageSid`*, `Sid`* | api.v2010.account.message.media | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json` | DeleteMedia | `AccountSid`*, `MessageSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json` | FetchMessage | `AccountSid`*, `Sid`* | api.v2010.account.message | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json` | UpdateMessage | `AccountSid`*, `Sid`*, body: object | api.v2010.account.message |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json` | DeleteMessage | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Notifications.json` | ListNotification | `AccountSid`*, `Log`, `MessageDate`, `MessageDate<`, `MessageDate>`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Notifications/{Sid}.json` | FetchNotification | `AccountSid`*, `Sid`* | api.v2010.account.notification-instance | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json` | ListOutgoingCallerId | `AccountSid`*, `PhoneNumber`, `FriendlyName`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json` | CreateValidationRequest | `AccountSid`*, body: object | api.v2010.account.validation_request |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json` | FetchOutgoingCallerId | `AccountSid`*, `Sid`* | api.v2010.account.outgoing_caller_id | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json` | UpdateOutgoingCallerId | `AccountSid`*, `Sid`*, body: object | api.v2010.account.outgoing_caller_id |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json` | DeleteOutgoingCallerId | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Queues.json` | ListQueue | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Queues.json` | CreateQueue | `AccountSid`*, body: object | api.v2010.account.queue |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members.json` | ListMember | `AccountSid`*, `QueueSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json` | FetchMember | `AccountSid`*, `QueueSid`*, `CallSid`* | api.v2010.account.queue.member | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json` | UpdateMember | `AccountSid`*, `QueueSid`*, `CallSid`*, body: object | api.v2010.account.queue.member |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json` | FetchQueue | `AccountSid`*, `Sid`* | api.v2010.account.queue | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json` | UpdateQueue | `AccountSid`*, `Sid`*, body: object | api.v2010.account.queue |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json` | DeleteQueue | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings.json` | ListRecording | `AccountSid`*, `DateCreated`, `DateCreated<`, `DateCreated>`, `CallSid`, `ConferenceSid`, `IncludeSoftDeleted`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions.json` | ListRecordingTranscription | `AccountSid`*, `RecordingSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json` | FetchRecordingTranscription | `AccountSid`*, `RecordingSid`*, `Sid`* | api.v2010.account.recording.recording_transcription | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json` | DeleteRecordingTranscription | `AccountSid`*, `RecordingSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults.json` | ListRecordingAddOnResult | `AccountSid`*, `ReferenceSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads.json` | ListRecordingAddOnResultPayload | `AccountSid`*, `ReferenceSid`*, `AddOnResultSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json` | FetchRecordingAddOnResultPayload | `AccountSid`*, `ReferenceSid`*, `AddOnResultSid`*, `Sid`* | api.v2010.account.recording.recording_add_on_result.recording_add_on_result_payload | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json` | DeleteRecordingAddOnResultPayload | `AccountSid`*, `ReferenceSid`*, `AddOnResultSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json` | FetchRecordingAddOnResult | `AccountSid`*, `ReferenceSid`*, `Sid`* | api.v2010.account.recording.recording_add_on_result | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json` | DeleteRecordingAddOnResult | `AccountSid`*, `ReferenceSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json` | FetchRecording | `AccountSid`*, `Sid`*, `IncludeSoftDeleted` | api.v2010.account.recording | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json` | DeleteRecording | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json` | ListSipCredentialList | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json` | CreateSipCredentialList | `AccountSid`*, body: object | api.v2010.account.sip.sip_credential_list |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials.json` | ListSipCredential | `AccountSid`*, `CredentialListSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials.json` | CreateSipCredential | `AccountSid`*, `CredentialListSid`*, body: object | api.v2010.account.sip.sip_credential_list.sip_credential |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json` | FetchSipCredential | `AccountSid`*, `CredentialListSid`*, `Sid`* | api.v2010.account.sip.sip_credential_list.sip_credential | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json` | UpdateSipCredential | `AccountSid`*, `CredentialListSid`*, `Sid`*, body: object | api.v2010.account.sip.sip_credential_list.sip_credential |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json` | DeleteSipCredential | `AccountSid`*, `CredentialListSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json` | FetchSipCredentialList | `AccountSid`*, `Sid`* | api.v2010.account.sip.sip_credential_list | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json` | UpdateSipCredentialList | `AccountSid`*, `Sid`*, body: object | api.v2010.account.sip.sip_credential_list |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json` | DeleteSipCredentialList | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains.json` | ListSipDomain | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains.json` | CreateSipDomain | `AccountSid`*, body: object | api.v2010.account.sip.sip_domain |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings.json` | ListSipAuthCallsCredentialListMapping | `AccountSid`*, `DomainSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings.json` | CreateSipAuthCallsCredentialListMapping | `AccountSid`*, `DomainSid`*, body: object | api.v2010.account.sip.sip_domain.sip_auth.sip_auth_calls.sip_auth_calls_credential_list_mapping |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings/{Sid}.json` | FetchSipAuthCallsCredentialListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | api.v2010.account.sip.sip_domain.sip_auth.sip_auth_calls.sip_auth_calls_credential_list_mapping | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/CredentialListMappings/{Sid}.json` | DeleteSipAuthCallsCredentialListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json` | ListSipAuthCallsIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json` | CreateSipAuthCallsIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, body: object | api.v2010.account.sip.sip_domain.sip_auth.sip_auth_calls.sip_auth_calls_ip_access_control_list_mapping |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json` | FetchSipAuthCallsIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | api.v2010.account.sip.sip_domain.sip_auth.sip_auth_calls.sip_auth_calls_ip_access_control_list_mapping | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json` | DeleteSipAuthCallsIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings.json` | ListSipAuthRegistrationsCredentialListMapping | `AccountSid`*, `DomainSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings.json` | CreateSipAuthRegistrationsCredentialListMapping | `AccountSid`*, `DomainSid`*, body: object | api.v2010.account.sip.sip_domain.sip_auth.sip_auth_registrations.sip_auth_registrations_credential_list_mapping |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings/{Sid}.json` | FetchSipAuthRegistrationsCredentialListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | api.v2010.account.sip.sip_domain.sip_auth.sip_auth_registrations.sip_auth_registrations_credential_list_mapping | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Registrations/CredentialListMappings/{Sid}.json` | DeleteSipAuthRegistrationsCredentialListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json` | ListSipCredentialListMapping | `AccountSid`*, `DomainSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings.json` | CreateSipCredentialListMapping | `AccountSid`*, `DomainSid`*, body: object | api.v2010.account.sip.sip_domain.sip_credential_list_mapping |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json` | FetchSipCredentialListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | api.v2010.account.sip.sip_domain.sip_credential_list_mapping | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/CredentialListMappings/{Sid}.json` | DeleteSipCredentialListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings.json` | ListSipIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings.json` | CreateSipIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, body: object | api.v2010.account.sip.sip_domain.sip_ip_access_control_list_mapping |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings/{Sid}.json` | FetchSipIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | api.v2010.account.sip.sip_domain.sip_ip_access_control_list_mapping | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings/{Sid}.json` | DeleteSipIpAccessControlListMapping | `AccountSid`*, `DomainSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json` | FetchSipDomain | `AccountSid`*, `Sid`* | api.v2010.account.sip.sip_domain | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json` | UpdateSipDomain | `AccountSid`*, `Sid`*, body: object | api.v2010.account.sip.sip_domain |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json` | DeleteSipDomain | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json` | ListSipIpAccessControlList | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json` | CreateSipIpAccessControlList | `AccountSid`*, body: object | api.v2010.account.sip.sip_ip_access_control_list |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses.json` | ListSipIpAddress | `AccountSid`*, `IpAccessControlListSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses.json` | CreateSipIpAddress | `AccountSid`*, `IpAccessControlListSid`*, body: object | api.v2010.account.sip.sip_ip_access_control_list.sip_ip_address |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json` | FetchSipIpAddress | `AccountSid`*, `IpAccessControlListSid`*, `Sid`* | api.v2010.account.sip.sip_ip_access_control_list.sip_ip_address | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json` | UpdateSipIpAddress | `AccountSid`*, `IpAccessControlListSid`*, `Sid`*, body: object | api.v2010.account.sip.sip_ip_access_control_list.sip_ip_address |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{Sid}.json` | DeleteSipIpAddress | `AccountSid`*, `IpAccessControlListSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json` | FetchSipIpAccessControlList | `AccountSid`*, `Sid`* | api.v2010.account.sip.sip_ip_access_control_list | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json` | UpdateSipIpAccessControlList | `AccountSid`*, `Sid`*, body: object | api.v2010.account.sip.sip_ip_access_control_list |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json` | DeleteSipIpAccessControlList | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json` | ListShortCode | `AccountSid`*, `FriendlyName`, `ShortCode`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json` | FetchShortCode | `AccountSid`*, `Sid`* | api.v2010.account.short_code | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json` | UpdateShortCode | `AccountSid`*, `Sid`*, body: object | api.v2010.account.short_code |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SigningKeys.json` | ListSigningKey | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SigningKeys.json` | CreateNewSigningKey | `AccountSid`*, body: object | api.v2010.account.new_signing_key |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json` | FetchSigningKey | `AccountSid`*, `Sid`* | api.v2010.account.signing_key | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json` | UpdateSigningKey | `AccountSid`*, `Sid`*, body: object | api.v2010.account.signing_key |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json` | DeleteSigningKey | `AccountSid`*, `Sid`* | — |  | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Tokens.json` | CreateToken | `AccountSid`*, body: object | api.v2010.account.token |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Transcriptions.json` | ListTranscription | `AccountSid`*, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json` | FetchTranscription | `AccountSid`*, `Sid`* | api.v2010.account.transcription | yes | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json` | DeleteTranscription | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records.json` | ListUsageRecord | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/AllTime.json` | ListUsageRecordAllTime | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Daily.json` | ListUsageRecordDaily | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/LastMonth.json` | ListUsageRecordLastMonth | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Monthly.json` | ListUsageRecordMonthly | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/ThisMonth.json` | ListUsageRecordThisMonth | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Today.json` | ListUsageRecordToday | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Yearly.json` | ListUsageRecordYearly | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Records/Yesterday.json` | ListUsageRecordYesterday | `AccountSid`*, `Category`, `StartDate`, `EndDate`, `IncludeSubaccounts`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json` | ListUsageTrigger | `AccountSid`*, `Recurring`, `TriggerBy`, `UsageCategory`, `PageSize`, `Page`, `PageToken` | object | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json` | CreateUsageTrigger | `AccountSid`*, body: object | api.v2010.account.usage.usage_trigger |  | — |
+| GET | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json` | FetchUsageTrigger | `AccountSid`*, `Sid`* | api.v2010.account.usage.usage_trigger | yes | — |
+| POST | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json` | UpdateUsageTrigger | `AccountSid`*, `Sid`*, body: object | api.v2010.account.usage.usage_trigger |  | — |
+| DELETE | `/2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json` | DeleteUsageTrigger | `AccountSid`*, `Sid`* | — |  | — |
+| GET | `/2010-04-01/Accounts/{Sid}.json` | FetchAccount | `Sid`* | api.v2010.account | yes | — |
+| POST | `/2010-04-01/Accounts/{Sid}.json` | UpdateAccount | `Sid`*, body: object | api.v2010.account |  | — |

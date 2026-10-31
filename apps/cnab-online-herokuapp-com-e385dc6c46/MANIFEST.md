@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_cnab-online.github.io_img_logo.p
 
 | | |
 | --- | --- |
-| Signed bundle | `df5927b719c4c62c809f5973de10abad4badb30cd1548bb5c92ecd182d20924c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/http_cnab-online.github.io_img_logo.p
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/file` | post /file | Faz o upload de um arquivo |
-| GET | `/file/{fileId}` | get /file/{fileId} | Retorna as informações básicas de um arquivo previamente processado |
-| GET | `/file/{fileId}/lines` | get /file/{fileId}/lines | Retorna todas as linhas e seus respectivos campos (de forma não processada, apenas indicando os campos reconhecidos) |
-| GET | `/file/{fileId}/occurrences` | get /file/{fileId}/occurrences | Retorna as informações de baixa de boletos e outros tipos de ocorrências |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/file` | post /file | `file`* | object |  | Faz o upload de um arquivo |
+| GET | `/file/{fileId}` | get /file/{fileId} | `fileId`* | object | yes | Retorna as informações básicas de um arquivo previamente processado |
+| GET | `/file/{fileId}/lines` | get /file/{fileId}/lines | `fileId`* | object | yes | Retorna todas as linhas e seus respectivos campos (de forma não processada, apenas indicando os campos reconhecidos) |
+| GET | `/file/{fileId}/occurrences` | get /file/{fileId}/occurrences | `fileId`* | object | yes | Retorna as informações de baixa de boletos e outros tipos de ocorrências |

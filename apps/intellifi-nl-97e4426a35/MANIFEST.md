@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `3201474215eb0843b1c303a9582150d8176b71a2fa260e7aa0a08ebe118e6cbb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,82 +34,84 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 76 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/authinfo` | getAuthinfo | Authentication information |
-| GET | `/blobs` | getBlobs | Get all binary large objects (blob) |
-| POST | `/blobs` | addBlob | Create binary large object (blob) metadata |
-| DELETE | `/blobs/{id}` | deleteBlob | Delete binary large object (blob) |
-| GET | `/blobs/{id}` | getBlobMetadataById | Get binary large object (blob) |
-| GET | `/blobs/{id}/download/{filename}` | getBlobById | Download a binary large object (blob) |
-| POST | `/blobs/{id}/upload` | uploadBlobById | Create binary large object (blob) |
-| GET | `/events` | getEvents | Get all events |
-| GET | `/events/{id}` | getEventById | Get event |
-| GET | `/items` | getItems | Get all items |
-| POST | `/items` | addItem | Create item |
-| DELETE | `/items/{id}` | deleteItem | Delete item |
-| GET | `/items/{id}` | getItemById | Get item |
-| PUT | `/items/{id}` | updateItem | Update existing item |
-| GET | `/keys` | getKeys | Get all keys |
-| POST | `/keys` | addKey | Create key |
-| DELETE | `/keys/{id}` | deleteKey | Delete key |
-| GET | `/keys/{id}` | getKeyById | Get key |
-| PUT | `/keys/{id}` | updateKey | Update existing key |
-| GET | `/kvpairs` | getKvPairs | Get all key-value pairs |
-| POST | `/kvpairs` | addKvPairs | Create key-value pair |
-| DELETE | `/kvpairs/{id}` | deleteKvPair | Delete key-value pair |
-| GET | `/kvpairs/{id}` | getKvPairsById | Get key-value pair |
-| PUT | `/kvpairs/{id}` | updateKvPair | Update existing Key-value pair |
-| GET | `/locationrules` | getLocationRules | Get all location rules |
-| POST | `/locationrules` | addLocationRule | Create location rule |
-| DELETE | `/locationrules/{id}` | deleteLocationRule | Delete location rule |
-| GET | `/locationrules/{id}` | getLocationRuleById | Get location rule |
-| PUT | `/locationrules/{id}` | updateLocationRule | Update existing location rule |
-| GET | `/locations` | getLocations | Get all locations |
-| POST | `/locations` | addLocation | Create location |
-| DELETE | `/locations/{id}` | deleteLocation | Delete location |
-| GET | `/locations/{id}` | getLocationById | Get location |
-| PUT | `/locations/{id}` | updateLocation | Update existing location |
-| GET | `/presences` | getPresences | Get all presences |
-| GET | `/presences/{id}` | getPresenceById | Get presence |
-| GET | `/services` | getServices | Get all services |
-| GET | `/services/{id}` | getServiceById | Get service |
-| PUT | `/services/{id}` | updateService | Update existing service |
-| GET | `/sets/itemlists` | getItemLists | Get all item lists |
-| POST | `/sets/itemlists` | addItemList | Create item list |
-| DELETE | `/sets/itemlists/{id}` | deleteItemSet | Delete item list |
-| GET | `/sets/itemlists/{id}` | getItemListById | Get item list |
-| PUT | `/sets/itemlists/{id}` | updateItemList | Update existing item list |
-| GET | `/sets/itemlists/{id}/ids` | getItemListIdsById | Get item ids for this list |
-| POST | `/sets/itemlists/{id}/ids` | addItemIdsList | Add items to an existing list |
-| DELETE | `/sets/itemlists/{id}/ids/{itemId}` | deleteItemIdFromItemList | Delete item from list |
-| GET | `/sets/spotlists` | getSpotLists | Get all spot lists |
-| POST | `/sets/spotlists` | addSpotList | Create spot list |
-| DELETE | `/sets/spotlists/{id}` | deleteSpotList | Delete spot list |
-| GET | `/sets/spotlists/{id}` | getSpotListById | Info for a specific spot list |
-| PUT | `/sets/spotlists/{id}` | updateSpotList | Update existing spot list |
-| GET | `/sets/spotlists/{id}/ids` | getSpotListIdsById | Get spot ids for this list |
-| POST | `/sets/spotlists/{id}/ids` | addItemIdsSpotList | Add spots to an existing list |
-| DELETE | `/sets/spotlists/{id}/ids/{itemId}` | deleteItemIdFromSpotList | Delete spot from list |
-| GET | `/spots` | getSpots | Get all spots |
-| GET | `/spots/{id}` | getSpotById | Get spot |
-| PUT | `/spots/{id}` | updateSpot | Update existing spot |
-| GET | `/spots/{id}/sets` | getSpotSetsById | Get spotsets |
-| POST | `/spots/{id}/sets` | addSpotSet | Create spotset |
-| GET | `/spots/{id}/sets/{setId}` | getSpotSetById | Get spotset |
-| PUT | `/spots/{id}/sets/{setId}` | updateSpotSet | Update existing spotset |
-| GET | `/spotsets` | get /spotsets | Get spotsets |
-| POST | `/spotsets` | post /spotsets | Create spotset |
-| GET | `/spotsets/{id}` | get /spotsets/{id} | Get spotset |
-| PUT | `/spotsets/{id}` | put /spotsets/{id} | Update existing spotset |
-| GET | `/subscriptions` | getSubscriptions | Get all subscriptions |
-| POST | `/subscriptions` | addSubscription | Create subscription |
-| DELETE | `/subscriptions/{id}` | deleteSubscription | Delete subscription |
-| GET | `/subscriptions/{id}` | getSubscriptionById | Get subscription |
-| PUT | `/subscriptions/{id}` | updateSubscription | Update existing subscription |
-| GET | `/subscriptions/{id}/events` | getEventsForSubscriptionById | Get subscription events |
-| GET | `/users` | getUsers | Get all users |
-| POST | `/users` | addUser | Create user |
-| DELETE | `/users/{id}` | deleteUser | Delete user |
-| GET | `/users/{id}` | getUserById | Get user |
-| PUT | `/users/{id}` | updateUser | Update existing user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/authinfo` | getAuthinfo | — | object | yes | Authentication information |
+| GET | `/blobs` | getBlobs | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `hash`, `blob_key`, `content_type`, `filename`, `time_last_accessed` | ResponseEnvelope\|object | yes | Get all binary large objects (blob) |
+| POST | `/blobs` | addBlob | body*: Blob | ResponseDefaultResource |  | Create binary large object (blob) metadata |
+| GET | `/blobs/{id}` | getBlobMetadataById | `id`* | Blob | yes | Get binary large object (blob) |
+| DELETE | `/blobs/{id}` | deleteBlob | `id`* | ResponseDefaultResource |  | Delete binary large object (blob) |
+| GET | `/blobs/{id}/download/{filename}` | getBlobById | `id`*, `filename`* | string:binary | yes | Download a binary large object (blob) |
+| POST | `/blobs/{id}/upload` | uploadBlobById | `id`*, body: object | — |  | Create binary large object (blob) |
+| GET | `/events` | getEvents | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `topic.resource_type`, `topic.action`, `topic.resource`, `time_event`, `time_expire` | ResponseEnvelope\|object | yes | Get all events |
+| GET | `/events/{id}` | getEventById | `id`* | Event | yes | Get event |
+| GET | `/items` | getItems | `after`, `after_id`, `after_code`, `before`, `before_id`, `before_code`, `from`, `from_id`, `from_code`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `until_code`, `id`, `time_created`, `time_updated`, `code_hex`, `is_present`, `label`, `location`, `metadata`, `move_count`, `protocol`, `sets`, `technology`, `text`, `time_last_present`, `time_moved`, `type` | ResponseEnvelope\|object | yes | Get all items |
+| POST | `/items` | addItem | body*: Item | ResponseDefaultResource |  | Create item |
+| GET | `/items/{id}` | getItemById | `id`* | Item | yes | Get item |
+| PUT | `/items/{id}` | updateItem | `id`*, body*: ItemUpdate | ResponseDefaultResource |  | Update existing item |
+| DELETE | `/items/{id}` | deleteItem | `id`* | ResponseDefaultResource |  | Delete item |
+| GET | `/keys` | getKeys | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `secret`, `label`, `is_read_only` | ResponseEnvelope\|object | yes | Get all keys |
+| POST | `/keys` | addKey | body*: Key | ResponseDefaultResource |  | Create key |
+| GET | `/keys/{id}` | getKeyById | `id`* | Key | yes | Get key |
+| PUT | `/keys/{id}` | updateKey | `id`*, body*: Key | ResponseDefaultResource |  | Update existing key |
+| DELETE | `/keys/{id}` | deleteKey | `id`* | ResponseDefaultResource |  | Delete key |
+| GET | `/kvpairs` | getKvPairs | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `kv_key` | ResponseEnvelope\|object | yes | Get all key-value pairs |
+| POST | `/kvpairs` | addKvPairs | body*: KeyValuePair | ResponseDefaultResource |  | Create key-value pair |
+| GET | `/kvpairs/{id}` | getKvPairsById | `id`* | KeyValuePair | yes | Get key-value pair |
+| PUT | `/kvpairs/{id}` | updateKvPair | `id`*, body*: KeyValuePairUpdate | ResponseDefaultResource |  | Update existing Key-value pair |
+| DELETE | `/kvpairs/{id}` | deleteKvPair | `id`* | ResponseDefaultResource |  | Delete key-value pair |
+| GET | `/locationrules` | getLocationRules | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `label`, `type`, `enabled` | ResponseEnvelope\|object | yes | Get all location rules |
+| POST | `/locationrules` | addLocationRule | body*: LocationRuleUpdate | ResponseDefaultResource |  | Create location rule |
+| GET | `/locationrules/{id}` | getLocationRuleById | `id`* | LocationRule | yes | Get location rule |
+| PUT | `/locationrules/{id}` | updateLocationRule | `id`*, body*: LocationRuleUpdate | ResponseDefaultResource |  | Update existing location rule |
+| DELETE | `/locationrules/{id}` | deleteLocationRule | `id`* | ResponseDefaultResource |  | Delete location rule |
+| GET | `/locations` | getLocations | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `label`, `metadata`, `text` | ResponseEnvelope\|object | yes | Get all locations |
+| POST | `/locations` | addLocation | body*: Location | ResponseDefaultResource |  | Create location |
+| GET | `/locations/{id}` | getLocationById | `id`* | Location | yes | Get location |
+| PUT | `/locations/{id}` | updateLocation | `id`*, body*: Location | ResponseDefaultResource |  | Update existing location |
+| DELETE | `/locations/{id}` | deleteLocation | `id`* | ResponseDefaultResource |  | Delete location |
+| GET | `/presences` | getPresences | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `item`, `location`, `proximity`, `technology` | ResponseEnvelope\|object | yes | Get all presences |
+| GET | `/presences/{id}` | getPresenceById | `id`* | Presence | yes | Get presence |
+| GET | `/services` | getServices | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `name` | ResponseEnvelope\|object | yes | Get all services |
+| GET | `/services/{id}` | getServiceById | `id`* | Service | yes | Get service |
+| PUT | `/services/{id}` | updateService | `id`*, body*: Service | ResponseDefaultResource |  | Update existing service |
+| GET | `/sets/itemlists` | getItemLists | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `label`, `metadata`, `text`, `total`, `sha1` | ResponseEnvelope\|object | yes | Get all item lists |
+| POST | `/sets/itemlists` | addItemList | body*: ItemList | ResponseDefaultResource |  | Create item list |
+| GET | `/sets/itemlists/{id}` | getItemListById | `id`* | ItemList | yes | Get item list |
+| PUT | `/sets/itemlists/{id}` | updateItemList | `id`*, body*: ItemList | ResponseDefaultResource |  | Update existing item list |
+| DELETE | `/sets/itemlists/{id}` | deleteItemSet | `id`* | ResponseDefaultResource |  | Delete item list |
+| GET | `/sets/itemlists/{id}/ids` | getItemListIdsById | `id`* | ListOfItemIds | yes | Get item ids for this list |
+| POST | `/sets/itemlists/{id}/ids` | addItemIdsList | `id`*, body*: ListOfItemIds | ResponseListResource |  | Add items to an existing list |
+| DELETE | `/sets/itemlists/{id}/ids/{itemId}` | deleteItemIdFromItemList | `id`*, `itemId`* | ResponseListResource |  | Delete item from list |
+| GET | `/sets/spotlists` | getSpotLists | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `label`, `metadata`, `text`, `total` | ResponseEnvelope\|object | yes | Get all spot lists |
+| POST | `/sets/spotlists` | addSpotList | body*: ItemList | ResponseDefaultResource |  | Create spot list |
+| GET | `/sets/spotlists/{id}` | getSpotListById | `id`* | SpotList | yes | Info for a specific spot list |
+| PUT | `/sets/spotlists/{id}` | updateSpotList | `id`*, body*: SpotList | ResponseDefaultResource |  | Update existing spot list |
+| DELETE | `/sets/spotlists/{id}` | deleteSpotList | `id`* | ResponseDefaultResource |  | Delete spot list |
+| GET | `/sets/spotlists/{id}/ids` | getSpotListIdsById | `id`* | ListOfItemIds | yes | Get spot ids for this list |
+| POST | `/sets/spotlists/{id}/ids` | addItemIdsSpotList | `id`*, body*: ListOfItemIds | ResponseListResource |  | Add spots to an existing list |
+| DELETE | `/sets/spotlists/{id}/ids/{itemId}` | deleteItemIdFromSpotList | `id`*, `itemId`* | ResponseListResource |  | Delete spot from list |
+| GET | `/spots` | getSpots | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `is_online`, `request_counter`, `serial_number` | ResponseEnvelope\|object | yes | Get all spots |
+| GET | `/spots/{id}` | getSpotById | `id`* | SpotGet | yes | Get spot |
+| PUT | `/spots/{id}` | updateSpot | `id`*, body*: SpotUpdate | ResponseDefaultResource |  | Update existing spot |
+| GET | `/spots/{id}/sets` | getSpotSetsById | `id`* | SpotSet | yes | Get spotsets |
+| POST | `/spots/{id}/sets` | addSpotSet | `id`*, body*: SpotSetCreate | ResponseDefaultResource |  | Create spotset |
+| GET | `/spots/{id}/sets/{setId}` | getSpotSetById | `id`*, `setId`* | SpotSet | yes | Get spotset |
+| PUT | `/spots/{id}/sets/{setId}` | updateSpotSet | `id`*, `setId`*, body*: SpotSetUpdate | ResponseDefaultResource |  | Update existing spotset |
+| GET | `/spotsets` | get /spotsets | — | SpotSet | yes | Get spotsets |
+| POST | `/spotsets` | post /spotsets | body*: SpotSetCreate | ResponseDefaultResource |  | Create spotset |
+| GET | `/spotsets/{id}` | get /spotsets/{id} | `id`* | SpotSet | yes | Get spotset |
+| PUT | `/spotsets/{id}` | put /spotsets/{id} | `id`*, body*: SpotSetUpdate | ResponseDefaultResource |  | Update existing spotset |
+| GET | `/subscriptions` | getSubscriptions | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `topic_filter`, `description`, `database_hold_time_h`, `populate_events`, `verify_target_certificate` | ResponseEnvelope\|object | yes | Get all subscriptions |
+| POST | `/subscriptions` | addSubscription | body*: Subscription | ResponseDefaultResource |  | Create subscription |
+| GET | `/subscriptions/{id}` | getSubscriptionById | `id`* | Subscription | yes | Get subscription |
+| PUT | `/subscriptions/{id}` | updateSubscription | `id`*, body*: Subscription | ResponseDefaultResource |  | Update existing subscription |
+| DELETE | `/subscriptions/{id}` | deleteSubscription | `id`* | ResponseDefaultResource |  | Delete subscription |
+| GET | `/subscriptions/{id}/events` | getEventsForSubscriptionById | `id`*, `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `topic.resource_type`, `topic.action`, `topic.resource`, `time_event`, `time_expire` | ResponseEnvelope\|object | yes | Get subscription events |
+| GET | `/users` | getUsers | `after`, `after_id`, `before`, `before_id`, `from`, `from_id`, `id_only`, `limit`, `populate`, `results_only`, `select`, `sort`, `until`, `until_id`, `timeout_s`, `id`, `time_created`, `time_updated`, `email`, `first_name`, `last_name`, `is_admin`, `is_locked` | ResponseEnvelope\|object | yes | Get all users |
+| POST | `/users` | addUser | body*: User | ResponseDefaultResource |  | Create user |
+| GET | `/users/{id}` | getUserById | `id`* | User | yes | Get user |
+| PUT | `/users/{id}` | updateUser | `id`*, body*: User | ResponseDefaultResource |  | Update existing user |
+| DELETE | `/users/{id}` | deleteUser | `id`* | ResponseDefaultResource |  | Delete user |

@@ -188,6 +188,451 @@
         "from": "credas-co-uk-pi-88bd05e53d",
         "kind": "EXPOSES",
         "to": "operation:post:/api/web-verifications/by-registrationid"
+      },
+      {
+        "from": "operation:post:/api/bank-accounts/verify",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.BankAccounts.AccountVerificationRequest"
+      },
+      {
+        "from": "operation:post:/api/bank-accounts/verify",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.BankAccounts.AccountVerificationResponse"
+      },
+      {
+        "from": "operation:post:/api/companies",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Companies.CompanyDetail"
+      },
+      {
+        "from": "operation:get:/api/companies/{companyId}",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Companies.CompanyDetail"
+      },
+      {
+        "from": "operation:post:/api/credit-status/perform",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.StatusChecks.StatusCheckRequest"
+      },
+      {
+        "from": "operation:post:/api/credit-status/perform",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.StatusChecks.StatusCheck"
+      },
+      {
+        "from": "operation:post:/api/datachecks",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.DataCheck.AddDataCheckRequest"
+      },
+      {
+        "from": "operation:post:/api/datachecks",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.DataCheck.AddDataCheckResponse"
+      },
+      {
+        "from": "operation:post:/api/images/id-document",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Images.AddIdDocumentImageRequest"
+      },
+      {
+        "from": "operation:post:/api/images/id-document",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Images.AddIdDocumentImageResponse"
+      },
+      {
+        "from": "operation:get:/api/images/id-document/{registrationId}",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Images.GetIdDocumentImageResponse"
+      },
+      {
+        "from": "operation:post:/api/images/liveness",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Images.AddLivenessImageRequest"
+      },
+      {
+        "from": "operation:get:/api/images/liveness-performed/{registrationId}",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Images.GetLivenessPerformedImageResponse"
+      },
+      {
+        "from": "operation:get:/api/images/liveness/{registrationId}",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Images.GetLivenessImageResponse"
+      },
+      {
+        "from": "operation:post:/api/images/selfie",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Images.AddSelfieImageRequest"
+      },
+      {
+        "from": "operation:post:/api/images/selfie",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Images.AddSelfieImageResponse"
+      },
+      {
+        "from": "operation:get:/api/images/selfie/{registrationId}",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Images.GetSelfieImageResponse"
+      },
+      {
+        "from": "operation:post:/api/property-register",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest"
+      },
+      {
+        "from": "operation:post:/api/property-register",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse"
+      },
+      {
+        "from": "operation:get:/api/property-register/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse"
+      },
+      {
+        "from": "operation:get:/api/reg-types",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.RegTypes.RegType"
+      },
+      {
+        "from": "operation:post:/api/registrations",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Registrations.AddRegistrationRequest"
+      },
+      {
+        "from": "operation:post:/api/registrations",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.AddRegistrationResponse"
+      },
+      {
+        "from": "operation:post:/api/registrations/instant",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Registrations.AddInstantRegistrationRequest"
+      },
+      {
+        "from": "operation:post:/api/registrations/instant",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.AddInstantRegistrationResponse"
+      },
+      {
+        "from": "operation:get:/api/registrations/referenceid/{referenceId}/summary",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationSummary"
+      },
+      {
+        "from": "operation:get:/api/registrations/regcode/{regCode}/summary",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationSummary"
+      },
+      {
+        "from": "operation:get:/api/registrations/search",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.PagedRegistrationSummary"
+      },
+      {
+        "from": "operation:get:/api/registrations/{id}/check-submitted-id-documents",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.CheckSubmittedIdDocumentsResponse"
+      },
+      {
+        "from": "operation:put:/api/registrations/{id}/contact-details",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Registrations.UpdateContactDetailsRequest"
+      },
+      {
+        "from": "operation:put:/api/registrations/{id}/override-check-status",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.StatusOverrides.OverrideCheckStatusRequest"
+      },
+      {
+        "from": "operation:put:/api/registrations/{id}/settings",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationSettings"
+      },
+      {
+        "from": "operation:put:/api/registrations/{id}/status",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.Registrations.UpdateRegistrationStatusRequest"
+      },
+      {
+        "from": "operation:get:/api/registrations/{id}/summary",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationSummary"
+      },
+      {
+        "from": "operation:get:/api/registrations/{id}/supported-id-documents",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.Registrations.SupportedIdDocument"
+      },
+      {
+        "from": "operation:post:/api/report-view/by-referenceid",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.ReportView.GetReportViewByReferenceIdRequest"
+      },
+      {
+        "from": "operation:post:/api/report-view/by-referenceid",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.ReportView.GetReportViewResponse"
+      },
+      {
+        "from": "operation:post:/api/report-view/by-registrationid",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.ReportView.GetReportViewByRegistrationIdRequest"
+      },
+      {
+        "from": "operation:post:/api/report-view/by-registrationid",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.ReportView.GetReportViewResponse"
+      },
+      {
+        "from": "operation:post:/api/web-verifications/by-referenceid",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest"
+      },
+      {
+        "from": "operation:post:/api/web-verifications/by-referenceid",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsResponse"
+      },
+      {
+        "from": "operation:post:/api/web-verifications/by-registrationid",
+        "kind": "ACCEPTS",
+        "to": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest"
+      },
+      {
+        "from": "operation:post:/api/web-verifications/by-registrationid",
+        "kind": "RETURNS",
+        "to": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsResponse"
+      },
+      {
+        "from": "schema:Credas.Api.Models.BankAccounts.AccountVerificationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.BankAccounts.AccountDetails"
+      },
+      {
+        "from": "schema:Credas.Api.Models.BankAccounts.AccountVerificationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.BankAccounts.Person"
+      },
+      {
+        "from": "schema:Credas.Api.Models.BankAccounts.AccountVerificationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Companies.CompanyDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Companies.SignificantPerson"
+      },
+      {
+        "from": "schema:Credas.Api.Models.DataCheck.AddDataCheckRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.DataCheck.AddDataCheckRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Person"
+      },
+      {
+        "from": "schema:Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.PepSanctions.SanctionAddress"
+      },
+      {
+        "from": "schema:Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.PepSanctions.SanctionDate"
+      },
+      {
+        "from": "schema:Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.PepSanctions.SanctionPosition"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Images.AddIdDocumentImageRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.KeyValueItem"
+      },
+      {
+        "from": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.PropertyRegister.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.PropertyRegister.Person"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.AddInstantRegistrationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.KeyValueItem"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.AddRegistrationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.KeyValueItem"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.AddRegistrationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationSettings"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.AddRegistrationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.ReturnUrls"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.AddRegistrationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.JourneyUrl"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.DataCheckSourceSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.DataCheckSourceSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.CheckRemark"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.DataCheckSourceSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.DataCheckSourceSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Person"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.PagedRegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationSummary"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.PersonalDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.BankAccounts.AccountVerificationResponse"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.DataCheckSourceSummary"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.IdDocumentSummary"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.IdVerification"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.PersonalDetails"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.RegistrationComment"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.SettlementStatus"
+      },
+      {
+        "from": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.StatusChecks.StatusCheck"
+      },
+      {
+        "from": "schema:Credas.Api.Models.ReportView.GetReportViewResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.ReportView.ReportViewItem"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.CompanyDirector.CompanyDirectorResult",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.StatusChecks.CompanyDirector.CompanyAppointment"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.Insolvency.InsolvencyResult",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.StatusChecks.Insolvency.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheck",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheck",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Person"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheck",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.StatusChecks.CCJ.CcjResult"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheck",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.StatusChecks.CompanyDirector.CompanyDirectorResult"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheck",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.StatusChecks.Insolvency.InsolvencyResult"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheckRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Address"
+      },
+      {
+        "from": "schema:Credas.Api.Models.StatusChecks.StatusCheckRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.DataCheck.Person"
+      },
+      {
+        "from": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.ReturnUrls"
+      },
+      {
+        "from": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.ReturnUrls"
+      },
+      {
+        "from": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.WebVerifications.WebVerificationsItem"
+      },
+      {
+        "from": "schema:Credas.Api.Models.WebVerifications.WebVerificationsItem",
+        "kind": "REFERENCES",
+        "to": "schema:Credas.Api.Models.Registrations.JourneyUrl"
       }
     ],
     "nodes": [
@@ -201,21 +646,112 @@
         "kind": "operation",
         "method": "post",
         "name": "Verify",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/bank-accounts/verify",
         "pointer": "#/paths/~1api~1bank-accounts~1verify/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.BankAccounts.AccountVerificationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.BankAccounts.AccountVerificationResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Verifies bank account details."
+        "summary": "Verifies bank account details.",
+        "tags": [
+          "BankAccounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If a company appears multiple times within the structure, it will only be detailed in full (i.e.",
         "id": "operation:post:/api/companies",
         "kind": "operation",
         "method": "post",
         "name": "SearchCompany",
+        "parameters": [
+          {
+            "description": "The company registration number of the company that should be searched.",
+            "in": "query",
+            "name": "companyNumber",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/companies",
         "pointer": "#/paths/~1api~1companies/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Companies.CompanyDetail"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Searches for a company based on its Company Number and returns its details."
+        "summary": "Searches for a company based on its Company Number and returns its details.",
+        "tags": [
+          "Companies"
+        ]
       },
       {
         "deprecated": false,
@@ -223,10 +759,51 @@
         "kind": "operation",
         "method": "get",
         "name": "GetCompany",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "companyId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/companies/{companyId}",
         "pointer": "#/paths/~1api~1companies~1{companyId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Companies.CompanyDetail"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Companies"
+        ]
       },
       {
         "deprecated": false,
@@ -234,10 +811,58 @@
         "kind": "operation",
         "method": "post",
         "name": "CheckCreditStatus",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/credit-status/perform",
         "pointer": "#/paths/~1api~1credit-status~1perform/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.StatusChecks.StatusCheckRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.StatusChecks.StatusCheck"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Check includes identifying bankruptcy, insolvency, CCJ's or Company Directorship."
+        "summary": "Check includes identifying bankruptcy, insolvency, CCJ's or Company Directorship.",
+        "tags": [
+          "CreditStatus"
+        ]
       },
       {
         "deprecated": false,
@@ -245,10 +870,58 @@
         "kind": "operation",
         "method": "post",
         "name": "AddDataCheck",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/datachecks",
         "pointer": "#/paths/~1api~1datachecks/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.DataCheck.AddDataCheckRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.DataCheck.AddDataCheckResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates new data check against a specified registration."
+        "summary": "Creates new data check against a specified registration.",
+        "tags": [
+          "DataChecks"
+        ]
       },
       {
         "deprecated": false,
@@ -256,10 +929,58 @@
         "kind": "operation",
         "method": "post",
         "name": "AddIdDocumentImage",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/id-document",
         "pointer": "#/paths/~1api~1images~1id-document/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Images.AddIdDocumentImageRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Images.AddIdDocumentImageResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add an id document image to the specified registration."
+        "summary": "Add an id document image to the specified registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -267,10 +988,52 @@
         "kind": "operation",
         "method": "get",
         "name": "GetIdDocumentImages",
+        "parameters": [
+          {
+            "description": "The id of the registration.",
+            "in": "path",
+            "name": "registrationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/id-document/{registrationId}",
         "pointer": "#/paths/~1api~1images~1id-document~1{registrationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Images.GetIdDocumentImageResponse[]"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all id document images associated with a registration."
+        "summary": "Get all id document images associated with a registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -278,10 +1041,53 @@
         "kind": "operation",
         "method": "post",
         "name": "AddLivenessImage",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/liveness",
         "pointer": "#/paths/~1api~1images~1liveness/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Images.AddLivenessImageRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a liveness image (UAP) to the specified registration."
+        "summary": "Add a liveness image (UAP) to the specified registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -289,10 +1095,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetLivenessPerformedImage",
+        "parameters": [
+          {
+            "description": "The id of the registration.",
+            "in": "path",
+            "name": "registrationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/liveness-performed/{registrationId}",
         "pointer": "#/paths/~1api~1images~1liveness-performed~1{registrationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Images.GetLivenessPerformedImageResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the liveness performed image associated with a registration."
+        "summary": "Retrieve the liveness performed image associated with a registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -300,10 +1152,52 @@
         "kind": "operation",
         "method": "get",
         "name": "GetLivenessImage",
+        "parameters": [
+          {
+            "description": "The id of the registration.",
+            "in": "path",
+            "name": "registrationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/liveness/{registrationId}",
         "pointer": "#/paths/~1api~1images~1liveness~1{registrationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Images.GetLivenessImageResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the liveness action image (UAP) associated with a registration."
+        "summary": "Retrieve the liveness action image (UAP) associated with a registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -311,10 +1205,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetScanReportPdf",
+        "parameters": [
+          {
+            "description": "Id of the individual scanned document",
+            "in": "path",
+            "name": "scanId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/scan-report-pdf/{scanId}",
         "pointer": "#/paths/~1api~1images~1scan-report-pdf~1{scanId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a detailed report on the analysis that has taken place of a scanned document"
+        "summary": "Returns a detailed report on the analysis that has taken place of a scanned document",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -322,10 +1262,54 @@
         "kind": "operation",
         "method": "post",
         "name": "AddSelfieImage",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/selfie",
         "pointer": "#/paths/~1api~1images~1selfie/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Images.AddSelfieImageRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Images.AddSelfieImageResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add a selfie image to the registration."
+        "summary": "Add a selfie image to the registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -333,10 +1317,52 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSelfieImage",
+        "parameters": [
+          {
+            "description": "The id of the registration.",
+            "in": "path",
+            "name": "registrationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/images/selfie/{registrationId}",
         "pointer": "#/paths/~1api~1images~1selfie~1{registrationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Images.GetSelfieImageResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve the selfie image associated with a registration."
+        "summary": "Retrieve the selfie image associated with a registration.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -344,10 +1370,58 @@
         "kind": "operation",
         "method": "post",
         "name": "AddPropertyRegisterCheck",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/property-register",
         "pointer": "#/paths/~1api~1property-register/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates new property registry check against the registration."
+        "summary": "Creates new property registry check against the registration.",
+        "tags": [
+          "PropertyRegister"
+        ]
       },
       {
         "deprecated": false,
@@ -355,10 +1429,52 @@
         "kind": "operation",
         "method": "get",
         "name": "GetPropertyRegisterCheckResult",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/property-register/{id}",
         "pointer": "#/paths/~1api~1property-register~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves property registry check associated with the registration."
+        "summary": "Retrieves property registry check associated with the registration.",
+        "tags": [
+          "PropertyRegister"
+        ]
       },
       {
         "deprecated": false,
@@ -366,10 +1482,37 @@
         "kind": "operation",
         "method": "get",
         "name": "GetAll",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/reg-types",
         "pointer": "#/paths/~1api~1reg-types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.RegTypes.RegType[]"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all available RegTypes."
+        "summary": "Gets all available RegTypes.",
+        "tags": [
+          "RegTypes"
+        ]
       },
       {
         "deprecated": false,
@@ -377,21 +1520,114 @@
         "kind": "operation",
         "method": "post",
         "name": "AddRegistration",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations",
         "pointer": "#/paths/~1api~1registrations/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Registrations.AddRegistrationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.AddRegistrationResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates new registration."
+        "summary": "Creates new registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It's designed to provide a quick integration path for external systems which capture these details.",
         "id": "operation:post:/api/registrations/instant",
         "kind": "operation",
         "method": "post",
         "name": "AddInstantRegistration",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/instant",
         "pointer": "#/paths/~1api~1registrations~1instant/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Registrations.AddInstantRegistrationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.AddInstantRegistrationResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates new registration record, adds an ID document and optional selfie image in one go."
+        "summary": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -399,10 +1635,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationSummariesByReferenceId",
+        "parameters": [
+          {
+            "description": "ReferenceId - from external system to match Registrations on.",
+            "in": "path",
+            "name": "referenceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/referenceid/{referenceId}/summary",
         "pointer": "#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.RegistrationSummary[]"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds registrations by the ReferenceId."
+        "summary": "Finds registrations by the ReferenceId.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -410,10 +1692,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationSummaryByRegCode",
+        "parameters": [
+          {
+            "description": "RegCode - short unique identifier.",
+            "in": "path",
+            "name": "regCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/regcode/{regCode}/summary",
         "pointer": "#/paths/~1api~1registrations~1regcode~1{regCode}~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.RegistrationSummary"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds a registration by the RegCode."
+        "summary": "Finds a registration by the RegCode.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -421,10 +1749,93 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationSearch",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "Zero-based page number to retrieve.",
+            "in": "query",
+            "name": "pageNum",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 50,
+            "description": "Number of records to return on each request (Maximum value is 50).",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search by forename.",
+            "in": "query",
+            "name": "forename",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search by surname.",
+            "in": "query",
+            "name": "surname",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search by user email.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Date of birth in (yyyy-MM-dd) format",
+            "in": "query",
+            "name": "dob",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/search",
         "pointer": "#/paths/~1api~1registrations~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.PagedRegistrationSummary"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets paged registration list by search criteria or nothing if there are no matching fields.\r\nOptional parameters may be appended to the query string.\r\nMaximum page size is 50."
+        "summary": "Gets paged registration list by search criteria or nothing if there are no matching fields.\r\nOptional parameters may be appended to the query string.\r\nMaximum page size is 50.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -432,10 +1843,48 @@
         "kind": "operation",
         "method": "get",
         "name": "CheckSubmittedIdDocuments",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/check-submitted-id-documents",
         "pointer": "#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.CheckSubmittedIdDocumentsResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Checks if submitted documents are sufficient to complete registration."
+        "summary": "Checks if submitted documents are sufficient to complete registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -443,10 +1892,68 @@
         "kind": "operation",
         "method": "put",
         "name": "UpdateContactDetails",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/contact-details",
         "pointer": "#/paths/~1api~1registrations~1{id}~1contact-details/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Registrations.UpdateContactDetailsRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates a registration's contact details."
+        "summary": "Updates a registration's contact details.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -454,10 +1961,68 @@
         "kind": "operation",
         "method": "put",
         "name": "OverrideCheckStatus",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/override-check-status",
         "pointer": "#/paths/~1api~1registrations~1{id}~1override-check-status/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.StatusOverrides.OverrideCheckStatusRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sets an override for a specific check on the registration."
+        "summary": "Sets an override for a specific check on the registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -465,10 +2030,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationPdfExport",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/pdf-export",
         "pointer": "#/paths/~1api~1registrations~1{id}~1pdf-export/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns PDF export for a given registration."
+        "summary": "Returns PDF export for a given registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -476,10 +2087,122 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/registrations/{id}/pdf-export-sections",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "in": "query",
+            "name": "Comments",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "ContactDetails",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "StandardChecks",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "PepSanctionChecks",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "ProofOfOwnership",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "BankAccountCheck",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "CreditStatusCheck",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "Liveness",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "ExcludeSelfie",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "ExcludeIDDocuments",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "DIATFSection",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/pdf-export-sections",
         "pointer": "#/paths/~1api~1registrations~1{id}~1pdf-export-sections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a PDF report for a given registration containing specified sections"
+        "summary": "Returns a PDF report for a given registration containing specified sections",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -487,10 +2210,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetShareCodePdfExport",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/pdf-settlement-status",
         "pointer": "#/paths/~1api~1registrations~1{id}~1pdf-settlement-status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:byte"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns settlement status PDF (Share Code) for a given registration."
+        "summary": "Returns settlement status PDF (Share Code) for a given registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -498,10 +2267,55 @@
         "kind": "operation",
         "method": "post",
         "name": "ResendInvitation",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/resend-invitation",
         "pointer": "#/paths/~1api~1registrations~1{id}~1resend-invitation/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Resends any invitation for the specified registration."
+        "summary": "Resends any invitation for the specified registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -509,10 +2323,55 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationSettings",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/settings",
         "pointer": "#/paths/~1api~1registrations~1{id}~1settings/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets registration settings or nothing if there are no settings associated with the registration."
+        "summary": "Gets registration settings or nothing if there are no settings associated with the registration.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -520,10 +2379,68 @@
         "kind": "operation",
         "method": "put",
         "name": "UpdateRegistrationSettings",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/settings",
         "pointer": "#/paths/~1api~1registrations~1{id}~1settings/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Registrations.RegistrationSettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates registration settings."
+        "summary": "Updates registration settings.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -531,10 +2448,64 @@
         "kind": "operation",
         "method": "put",
         "name": "UpdateRegistrationStatus",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/status",
         "pointer": "#/paths/~1api~1registrations~1{id}~1status/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.Registrations.UpdateRegistrationStatusRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates the status of the registration to one specified in the request."
+        "summary": "Updates the status of the registration to one specified in the request.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -542,10 +2513,56 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationSummary",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/summary",
         "pointer": "#/paths/~1api~1registrations~1{id}~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.RegistrationSummary"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Finds a registration by the Id."
+        "summary": "Finds a registration by the Id.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
@@ -553,384 +2570,676 @@
         "kind": "operation",
         "method": "get",
         "name": "GetRegistrationSupportedIdDocuments",
+        "parameters": [
+          {
+            "description": "Id of the registration.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/registrations/{id}/supported-id-documents",
         "pointer": "#/paths/~1api~1registrations~1{id}~1supported-id-documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.Registrations.SupportedIdDocument"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of supported id document for the specified registration id."
+        "summary": "Get a list of supported id document for the specified registration id.",
+        "tags": [
+          "Registrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It may return none, one or many (up to 20) matching results.",
         "id": "operation:post:/api/report-view/by-referenceid",
         "kind": "operation",
         "method": "post",
         "name": "GetReportViewByReferenceId",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/report-view/by-referenceid",
         "pointer": "#/paths/~1api~1report-view~1by-referenceid/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.ReportView.GetReportViewByReferenceIdRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.ReportView.GetReportViewResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieves secure links to registration details pages searching by the Reference Id."
+        "summary": "Retrieves secure links to registration details pages searching by the Reference Id.",
+        "tags": [
+          "ReportView"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It may return none or one matching result.",
         "id": "operation:post:/api/report-view/by-registrationid",
         "kind": "operation",
         "method": "post",
         "name": "GetReportViewByRegistrationId",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/report-view/by-registrationid",
         "pointer": "#/paths/~1api~1report-view~1by-registrationid/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.ReportView.GetReportViewByRegistrationIdRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.ReportView.GetReportViewResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieves secure link to registration details page searching by the Registration Id."
+        "summary": "Retrieves secure link to registration details page searching by the Registration Id.",
+        "tags": [
+          "ReportView"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It may return none, one or many (up to 20) matching results.",
         "id": "operation:post:/api/web-verifications/by-referenceid",
         "kind": "operation",
         "method": "post",
         "name": "GetWebVerificationsByReferenceId",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/web-verifications/by-referenceid",
         "pointer": "#/paths/~1api~1web-verifications~1by-referenceid/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.WebVerifications.GetWebVerificationsResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieves secure links to web verification pages searching by the Reference Id."
+        "summary": "Retrieves secure links to web verification pages searching by the Reference Id.",
+        "tags": [
+          "WebVerifications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It may return none or one matching result.",
         "id": "operation:post:/api/web-verifications/by-registrationid",
         "kind": "operation",
         "method": "post",
         "name": "GetWebVerificationsByRegistrationId",
+        "parameters": [
+          {
+            "description": "ApiKey supplied.",
+            "in": "header",
+            "name": "apikey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/web-verifications/by-registrationid",
         "pointer": "#/paths/~1api~1web-verifications~1by-registrationid/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/*+xml",
+            "application/json",
+            "application/json-patch+json",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": false,
+          "type": "Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Credas.Api.Models.WebVerifications.GetWebVerificationsResponse"
+          },
+          {
+            "status": "400",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "Credas.Api.Models.Errors.ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieves secure link to web verification page searching by the Registration Id."
+        "summary": "Retrieves secure link to web verification page searching by the Registration Id.",
+        "tags": [
+          "WebVerifications"
+        ]
       },
       {
         "id": "schema:Credas.Api.Models.BankAccounts.AccountDetails",
         "kind": "schema",
-        "name": "Credas.Api.Models.BankAccounts.AccountDetails"
+        "name": "Credas.Api.Models.BankAccounts.AccountDetails",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.BankAccounts.AccountVerificationRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.BankAccounts.AccountVerificationRequest"
+        "name": "Credas.Api.Models.BankAccounts.AccountVerificationRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.BankAccounts.AccountVerificationResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.BankAccounts.AccountVerificationResponse"
+        "name": "Credas.Api.Models.BankAccounts.AccountVerificationResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.BankAccounts.Person",
         "kind": "schema",
-        "name": "Credas.Api.Models.BankAccounts.Person"
+        "name": "Credas.Api.Models.BankAccounts.Person",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Companies.CompanyDetail",
         "kind": "schema",
-        "name": "Credas.Api.Models.Companies.CompanyDetail"
+        "name": "Credas.Api.Models.Companies.CompanyDetail",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Companies.SignificantPerson",
         "kind": "schema",
-        "name": "Credas.Api.Models.Companies.SignificantPerson"
+        "name": "Credas.Api.Models.Companies.SignificantPerson",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.AddDataCheckRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.AddDataCheckRequest"
+        "name": "Credas.Api.Models.DataCheck.AddDataCheckRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.AddDataCheckResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.AddDataCheckResponse"
+        "name": "Credas.Api.Models.DataCheck.AddDataCheckResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.Address",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.Address"
+        "name": "Credas.Api.Models.DataCheck.Address",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.CheckRemark",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.CheckRemark"
+        "name": "Credas.Api.Models.DataCheck.CheckRemark",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem"
+        "name": "Credas.Api.Models.DataCheck.PepSanctions.PepSanctionItem",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.PepSanctions.SanctionAddress",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.PepSanctions.SanctionAddress"
+        "name": "Credas.Api.Models.DataCheck.PepSanctions.SanctionAddress",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.PepSanctions.SanctionDate",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.PepSanctions.SanctionDate"
+        "name": "Credas.Api.Models.DataCheck.PepSanctions.SanctionDate",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.PepSanctions.SanctionPosition",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.PepSanctions.SanctionPosition"
+        "name": "Credas.Api.Models.DataCheck.PepSanctions.SanctionPosition",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.DataCheck.Person",
         "kind": "schema",
-        "name": "Credas.Api.Models.DataCheck.Person"
+        "name": "Credas.Api.Models.DataCheck.Person",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Errors.ErrorResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Errors.ErrorResponse"
+        "name": "Credas.Api.Models.Errors.ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.AddIdDocumentImageRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.AddIdDocumentImageRequest"
+        "name": "Credas.Api.Models.Images.AddIdDocumentImageRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.AddIdDocumentImageResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.AddIdDocumentImageResponse"
+        "name": "Credas.Api.Models.Images.AddIdDocumentImageResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.AddLivenessImageRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.AddLivenessImageRequest"
+        "name": "Credas.Api.Models.Images.AddLivenessImageRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.AddSelfieImageRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.AddSelfieImageRequest"
+        "name": "Credas.Api.Models.Images.AddSelfieImageRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.AddSelfieImageResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.AddSelfieImageResponse"
+        "name": "Credas.Api.Models.Images.AddSelfieImageResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.GetIdDocumentImageResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.GetIdDocumentImageResponse"
+        "name": "Credas.Api.Models.Images.GetIdDocumentImageResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.GetLivenessImageResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.GetLivenessImageResponse"
+        "name": "Credas.Api.Models.Images.GetLivenessImageResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.GetLivenessPerformedImageResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.GetLivenessPerformedImageResponse"
+        "name": "Credas.Api.Models.Images.GetLivenessPerformedImageResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Images.GetSelfieImageResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Images.GetSelfieImageResponse"
+        "name": "Credas.Api.Models.Images.GetSelfieImageResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.PropertyRegister.Address",
         "kind": "schema",
-        "name": "Credas.Api.Models.PropertyRegister.Address"
+        "name": "Credas.Api.Models.PropertyRegister.Address",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.PropertyRegister.Person",
         "kind": "schema",
-        "name": "Credas.Api.Models.PropertyRegister.Person"
+        "name": "Credas.Api.Models.PropertyRegister.Person",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest"
+        "name": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse"
+        "name": "Credas.Api.Models.PropertyRegister.PropertyRegisterCheckResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.RegTypes.RegType",
         "kind": "schema",
-        "name": "Credas.Api.Models.RegTypes.RegType"
+        "name": "Credas.Api.Models.RegTypes.RegType",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.AddInstantRegistrationRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.AddInstantRegistrationRequest"
+        "name": "Credas.Api.Models.Registrations.AddInstantRegistrationRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.AddInstantRegistrationResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.AddInstantRegistrationResponse"
+        "name": "Credas.Api.Models.Registrations.AddInstantRegistrationResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.AddRegistrationRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.AddRegistrationRequest"
+        "name": "Credas.Api.Models.Registrations.AddRegistrationRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.AddRegistrationResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.AddRegistrationResponse"
+        "name": "Credas.Api.Models.Registrations.AddRegistrationResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.CheckSubmittedIdDocumentsResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.CheckSubmittedIdDocumentsResponse"
+        "name": "Credas.Api.Models.Registrations.CheckSubmittedIdDocumentsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.DataCheckSourceSummary",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.DataCheckSourceSummary"
+        "name": "Credas.Api.Models.Registrations.DataCheckSourceSummary",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.IdDocumentSummary",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.IdDocumentSummary"
+        "name": "Credas.Api.Models.Registrations.IdDocumentSummary",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.IdVerification",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.IdVerification"
+        "name": "Credas.Api.Models.Registrations.IdVerification",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.JourneyUrl",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.JourneyUrl"
+        "name": "Credas.Api.Models.Registrations.JourneyUrl",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.KeyValueItem",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.KeyValueItem"
+        "name": "Credas.Api.Models.Registrations.KeyValueItem",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.PagedRegistrationSummary",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.PagedRegistrationSummary"
+        "name": "Credas.Api.Models.Registrations.PagedRegistrationSummary",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.PersonalDetails",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.PersonalDetails"
+        "name": "Credas.Api.Models.Registrations.PersonalDetails",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.RegistrationComment",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.RegistrationComment"
+        "name": "Credas.Api.Models.Registrations.RegistrationComment",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.RegistrationSettings",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.RegistrationSettings"
+        "name": "Credas.Api.Models.Registrations.RegistrationSettings",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.RegistrationSummary",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.RegistrationSummary"
+        "name": "Credas.Api.Models.Registrations.RegistrationSummary",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.ReturnUrls",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.ReturnUrls"
+        "name": "Credas.Api.Models.Registrations.ReturnUrls",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.SettlementStatus",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.SettlementStatus"
+        "name": "Credas.Api.Models.Registrations.SettlementStatus",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.SupportedIdDocument",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.SupportedIdDocument"
+        "name": "Credas.Api.Models.Registrations.SupportedIdDocument",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.UpdateContactDetailsRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.UpdateContactDetailsRequest"
+        "name": "Credas.Api.Models.Registrations.UpdateContactDetailsRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.Registrations.UpdateRegistrationStatusRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.Registrations.UpdateRegistrationStatusRequest"
+        "name": "Credas.Api.Models.Registrations.UpdateRegistrationStatusRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.ReportView.GetReportViewByReferenceIdRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.ReportView.GetReportViewByReferenceIdRequest"
+        "name": "Credas.Api.Models.ReportView.GetReportViewByReferenceIdRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.ReportView.GetReportViewByRegistrationIdRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.ReportView.GetReportViewByRegistrationIdRequest"
+        "name": "Credas.Api.Models.ReportView.GetReportViewByRegistrationIdRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.ReportView.GetReportViewResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.ReportView.GetReportViewResponse"
+        "name": "Credas.Api.Models.ReportView.GetReportViewResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.ReportView.ReportViewItem",
         "kind": "schema",
-        "name": "Credas.Api.Models.ReportView.ReportViewItem"
+        "name": "Credas.Api.Models.ReportView.ReportViewItem",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.CCJ.CcjResult",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.CCJ.CcjResult"
+        "name": "Credas.Api.Models.StatusChecks.CCJ.CcjResult",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.CompanyDirector.CompanyAppointment",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.CompanyDirector.CompanyAppointment"
+        "name": "Credas.Api.Models.StatusChecks.CompanyDirector.CompanyAppointment",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.CompanyDirector.CompanyDirectorResult",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.CompanyDirector.CompanyDirectorResult"
+        "name": "Credas.Api.Models.StatusChecks.CompanyDirector.CompanyDirectorResult",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.Insolvency.Address",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.Insolvency.Address"
+        "name": "Credas.Api.Models.StatusChecks.Insolvency.Address",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.Insolvency.InsolvencyResult",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.Insolvency.InsolvencyResult"
+        "name": "Credas.Api.Models.StatusChecks.Insolvency.InsolvencyResult",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.StatusCheck",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.StatusCheck"
+        "name": "Credas.Api.Models.StatusChecks.StatusCheck",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusChecks.StatusCheckRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusChecks.StatusCheckRequest"
+        "name": "Credas.Api.Models.StatusChecks.StatusCheckRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.StatusOverrides.OverrideCheckStatusRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.StatusOverrides.OverrideCheckStatusRequest"
+        "name": "Credas.Api.Models.StatusOverrides.OverrideCheckStatusRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest"
+        "name": "Credas.Api.Models.WebVerifications.GetWebVerificationsByReferenceIdRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest",
         "kind": "schema",
-        "name": "Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest"
+        "name": "Credas.Api.Models.WebVerifications.GetWebVerificationsByRegistrationIdRequest",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.WebVerifications.GetWebVerificationsResponse",
         "kind": "schema",
-        "name": "Credas.Api.Models.WebVerifications.GetWebVerificationsResponse"
+        "name": "Credas.Api.Models.WebVerifications.GetWebVerificationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Credas.Api.Models.WebVerifications.WebVerificationsItem",
         "kind": "schema",
-        "name": "Credas.Api.Models.WebVerifications.WebVerificationsItem"
+        "name": "Credas.Api.Models.WebVerifications.WebVerificationsItem",
+        "type": "object"
       }
     ]
   },

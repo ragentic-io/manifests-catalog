@@ -103,6 +103,661 @@
         "from": "adyen-com-accountservice-c646f56f31",
         "kind": "EXPOSES",
         "to": "operation:post:/uploadDocument"
+      },
+      {
+        "from": "operation:post:/checkAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:PerformVerificationRequest"
+      },
+      {
+        "from": "operation:post:/checkAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/closeAccount",
+        "kind": "ACCEPTS",
+        "to": "schema:CloseAccountRequest"
+      },
+      {
+        "from": "operation:post:/closeAccount",
+        "kind": "RETURNS",
+        "to": "schema:CloseAccountResponse"
+      },
+      {
+        "from": "operation:post:/closeAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:CloseAccountHolderRequest"
+      },
+      {
+        "from": "operation:post:/closeAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:CloseAccountHolderResponse"
+      },
+      {
+        "from": "operation:post:/closeStores",
+        "kind": "ACCEPTS",
+        "to": "schema:CloseStoresRequest"
+      },
+      {
+        "from": "operation:post:/closeStores",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/createAccount",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAccountRequest"
+      },
+      {
+        "from": "operation:post:/createAccount",
+        "kind": "RETURNS",
+        "to": "schema:CreateAccountResponse"
+      },
+      {
+        "from": "operation:post:/createAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAccountHolderRequest"
+      },
+      {
+        "from": "operation:post:/createAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:CreateAccountHolderResponse"
+      },
+      {
+        "from": "operation:post:/deleteBankAccounts",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteBankAccountRequest"
+      },
+      {
+        "from": "operation:post:/deleteBankAccounts",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/deleteLegalArrangements",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteLegalArrangementRequest"
+      },
+      {
+        "from": "operation:post:/deleteLegalArrangements",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/deletePayoutMethods",
+        "kind": "ACCEPTS",
+        "to": "schema:DeletePayoutMethodRequest"
+      },
+      {
+        "from": "operation:post:/deletePayoutMethods",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/deleteShareholders",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteShareholderRequest"
+      },
+      {
+        "from": "operation:post:/deleteShareholders",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/deleteSignatories",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteSignatoriesRequest"
+      },
+      {
+        "from": "operation:post:/deleteSignatories",
+        "kind": "RETURNS",
+        "to": "schema:GenericResponse"
+      },
+      {
+        "from": "operation:post:/getAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:GetAccountHolderRequest"
+      },
+      {
+        "from": "operation:post:/getAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:GetAccountHolderResponse"
+      },
+      {
+        "from": "operation:post:/getTaxForm",
+        "kind": "ACCEPTS",
+        "to": "schema:GetTaxFormRequest"
+      },
+      {
+        "from": "operation:post:/getTaxForm",
+        "kind": "RETURNS",
+        "to": "schema:GetTaxFormResponse"
+      },
+      {
+        "from": "operation:post:/getUploadedDocuments",
+        "kind": "ACCEPTS",
+        "to": "schema:GetUploadedDocumentsRequest"
+      },
+      {
+        "from": "operation:post:/getUploadedDocuments",
+        "kind": "RETURNS",
+        "to": "schema:GetUploadedDocumentsResponse"
+      },
+      {
+        "from": "operation:post:/suspendAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:SuspendAccountHolderRequest"
+      },
+      {
+        "from": "operation:post:/suspendAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:SuspendAccountHolderResponse"
+      },
+      {
+        "from": "operation:post:/unSuspendAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:UnSuspendAccountHolderRequest"
+      },
+      {
+        "from": "operation:post:/unSuspendAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:UnSuspendAccountHolderResponse"
+      },
+      {
+        "from": "operation:post:/updateAccount",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateAccountRequest"
+      },
+      {
+        "from": "operation:post:/updateAccount",
+        "kind": "RETURNS",
+        "to": "schema:UpdateAccountResponse"
+      },
+      {
+        "from": "operation:post:/updateAccountHolder",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateAccountHolderRequest"
+      },
+      {
+        "from": "operation:post:/updateAccountHolder",
+        "kind": "RETURNS",
+        "to": "schema:UpdateAccountHolderResponse"
+      },
+      {
+        "from": "operation:post:/updateAccountHolderState",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateAccountHolderStateRequest"
+      },
+      {
+        "from": "operation:post:/updateAccountHolderState",
+        "kind": "RETURNS",
+        "to": "schema:GetAccountHolderStatusResponse"
+      },
+      {
+        "from": "operation:post:/uploadDocument",
+        "kind": "ACCEPTS",
+        "to": "schema:UploadDocumentRequest"
+      },
+      {
+        "from": "operation:post:/uploadDocument",
+        "kind": "RETURNS",
+        "to": "schema:UpdateAccountHolderResponse"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:PayoutScheduleResponse"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:BankAccountDetail"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessDetails"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:IndividualDetails"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:LegalArrangementDetail"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:PayoutMethod"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:StoreDetail"
+      },
+      {
+        "from": "schema:AccountHolderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:AccountHolderStatus",
+        "kind": "REFERENCES",
+        "to": "schema:AccountEvent"
+      },
+      {
+        "from": "schema:AccountHolderStatus",
+        "kind": "REFERENCES",
+        "to": "schema:AccountPayoutState"
+      },
+      {
+        "from": "schema:AccountHolderStatus",
+        "kind": "REFERENCES",
+        "to": "schema:AccountProcessingState"
+      },
+      {
+        "from": "schema:AccountPayoutState",
+        "kind": "REFERENCES",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:AccountProcessingState",
+        "kind": "REFERENCES",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:BusinessDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ShareholderContact"
+      },
+      {
+        "from": "schema:BusinessDetails",
+        "kind": "REFERENCES",
+        "to": "schema:SignatoryContact"
+      },
+      {
+        "from": "schema:BusinessDetails",
+        "kind": "REFERENCES",
+        "to": "schema:UltimateParentCompany"
+      },
+      {
+        "from": "schema:CloseAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:CloseAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:CloseAccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:CreateAccountHolderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderDetails"
+      },
+      {
+        "from": "schema:CreateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderDetails"
+      },
+      {
+        "from": "schema:CreateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:CreateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:CreateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:KYCVerificationResult"
+      },
+      {
+        "from": "schema:CreateAccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:CreateAccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PayoutScheduleResponse"
+      },
+      {
+        "from": "schema:DeleteLegalArrangementRequest",
+        "kind": "REFERENCES",
+        "to": "schema:LegalArrangementRequest"
+      },
+      {
+        "from": "schema:ErrorFieldType",
+        "kind": "REFERENCES",
+        "to": "schema:FieldType"
+      },
+      {
+        "from": "schema:GenericResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:GetAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:GetAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderDetails"
+      },
+      {
+        "from": "schema:GetAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:GetAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:GetAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:KYCVerificationResult"
+      },
+      {
+        "from": "schema:GetAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationData"
+      },
+      {
+        "from": "schema:GetAccountHolderStatusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:GetAccountHolderStatusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:GetTaxFormResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:GetUploadedDocumentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentDetail"
+      },
+      {
+        "from": "schema:GetUploadedDocumentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:IndividualDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ViasName"
+      },
+      {
+        "from": "schema:IndividualDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPersonalData"
+      },
+      {
+        "from": "schema:KYCCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCCheckStatusData",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckSummary"
+      },
+      {
+        "from": "schema:KYCLegalArrangementCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCLegalArrangementEntityCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCPayoutMethodCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCShareholderCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCSignatoryCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCUltimateParentCompanyCheckResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckStatusData"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCCheckResult"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCLegalArrangementCheckResult"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCLegalArrangementEntityCheckResult"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCPayoutMethodCheckResult"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCShareholderCheckResult"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCSignatoryCheckResult"
+      },
+      {
+        "from": "schema:KYCVerificationResult",
+        "kind": "REFERENCES",
+        "to": "schema:KYCUltimateParentCompanyCheckResult"
+      },
+      {
+        "from": "schema:LegalArrangementDetail",
+        "kind": "REFERENCES",
+        "to": "schema:LegalArrangementEntityDetail"
+      },
+      {
+        "from": "schema:LegalArrangementDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:LegalArrangementEntityDetail",
+        "kind": "REFERENCES",
+        "to": "schema:BusinessDetails"
+      },
+      {
+        "from": "schema:LegalArrangementEntityDetail",
+        "kind": "REFERENCES",
+        "to": "schema:IndividualDetails"
+      },
+      {
+        "from": "schema:LegalArrangementEntityDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:LegalArrangementEntityDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPhoneNumber"
+      },
+      {
+        "from": "schema:MigrationData",
+        "kind": "REFERENCES",
+        "to": "schema:MigratedAccounts"
+      },
+      {
+        "from": "schema:MigrationData",
+        "kind": "REFERENCES",
+        "to": "schema:MigratedStores"
+      },
+      {
+        "from": "schema:ShareholderContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:ShareholderContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasName"
+      },
+      {
+        "from": "schema:ShareholderContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPersonalData"
+      },
+      {
+        "from": "schema:ShareholderContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPhoneNumber"
+      },
+      {
+        "from": "schema:SignatoryContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:SignatoryContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasName"
+      },
+      {
+        "from": "schema:SignatoryContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPersonalData"
+      },
+      {
+        "from": "schema:SignatoryContact",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPhoneNumber"
+      },
+      {
+        "from": "schema:StoreDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:StoreDetail",
+        "kind": "REFERENCES",
+        "to": "schema:ViasPhoneNumber"
+      },
+      {
+        "from": "schema:SuspendAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:SuspendAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:UltimateParentCompany",
+        "kind": "REFERENCES",
+        "to": "schema:UltimateParentCompanyBusinessDetails"
+      },
+      {
+        "from": "schema:UltimateParentCompany",
+        "kind": "REFERENCES",
+        "to": "schema:ViasAddress"
+      },
+      {
+        "from": "schema:UnSuspendAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:UnSuspendAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:UpdateAccountHolderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderDetails"
+      },
+      {
+        "from": "schema:UpdateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderDetails"
+      },
+      {
+        "from": "schema:UpdateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AccountHolderStatus"
+      },
+      {
+        "from": "schema:UpdateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:UpdateAccountHolderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:KYCVerificationResult"
+      },
+      {
+        "from": "schema:UpdateAccountRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UpdatePayoutScheduleRequest"
+      },
+      {
+        "from": "schema:UpdateAccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorFieldType"
+      },
+      {
+        "from": "schema:UpdateAccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PayoutScheduleResponse"
+      },
+      {
+        "from": "schema:UploadDocumentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentDetail"
+      },
+      {
+        "from": "schema:ViasPersonalData",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalDocumentData"
       }
     ],
     "nodes": [
@@ -112,12 +767,51 @@
       },
       {
         "deprecated": false,
+        "description": "Triggers the verification of an account holder even if the checks are not yet required for the volume that they are currently processing.",
         "id": "operation:post:/checkAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-checkAccountHolder",
         "path": "/checkAccountHolder",
         "pointer": "#/paths/~1checkAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "PerformVerificationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "202",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -126,16 +820,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Trigger verification"
+        "summary": "Trigger verification",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Closes an account.",
         "id": "operation:post:/closeAccount",
         "kind": "operation",
         "method": "post",
         "name": "post-closeAccount",
         "path": "/closeAccount",
         "pointer": "#/paths/~1closeAccount/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CloseAccountRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CloseAccountResponse"
+          },
+          {
+            "status": "202",
+            "type": "CloseAccountResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -144,16 +880,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Close an account"
+        "summary": "Close an account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Changes the [status of an account holder](https://docs.adyen.com/marketplaces-and-platforms/classic/account-holders-and-accounts#account-holder-statuses) to **…",
         "id": "operation:post:/closeAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-closeAccountHolder",
         "path": "/closeAccountHolder",
         "pointer": "#/paths/~1closeAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CloseAccountHolderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CloseAccountHolderResponse"
+          },
+          {
+            "status": "202",
+            "type": "CloseAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -162,16 +940,54 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Close an account holder"
+        "summary": "Close an account holder",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Closes stores associated with an account holder.",
         "id": "operation:post:/closeStores",
         "kind": "operation",
         "method": "post",
         "name": "post-closeStores",
         "path": "/closeStores",
         "pointer": "#/paths/~1closeStores/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CloseStoresRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -180,16 +996,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Close stores"
+        "summary": "Close stores",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an account under an account holder.",
         "id": "operation:post:/createAccount",
         "kind": "operation",
         "method": "post",
         "name": "post-createAccount",
         "path": "/createAccount",
         "pointer": "#/paths/~1createAccount/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateAccountRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateAccountResponse"
+          },
+          {
+            "status": "202",
+            "type": "CreateAccountResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -198,16 +1056,54 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Create an account"
+        "summary": "Create an account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an account holder that [represents the sub-merchant's entity](https://docs.adyen.com/marketplaces-and-platforms/classic/account-structure#your-platform…",
         "id": "operation:post:/createAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-createAccountHolder",
         "path": "/createAccountHolder",
         "pointer": "#/paths/~1createAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CreateAccountHolderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -216,16 +1112,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Create an account holder"
+        "summary": "Create an account holder",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes bank accounts associated with an account holder.",
         "id": "operation:post:/deleteBankAccounts",
         "kind": "operation",
         "method": "post",
         "name": "post-deleteBankAccounts",
         "path": "/deleteBankAccounts",
         "pointer": "#/paths/~1deleteBankAccounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DeleteBankAccountRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "202",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -234,16 +1172,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete bank accounts"
+        "summary": "Delete bank accounts",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes legal arrangements and/or legal arrangement entities associated with an account holder.",
         "id": "operation:post:/deleteLegalArrangements",
         "kind": "operation",
         "method": "post",
         "name": "post-deleteLegalArrangements",
         "path": "/deleteLegalArrangements",
         "pointer": "#/paths/~1deleteLegalArrangements/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DeleteLegalArrangementRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "202",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -252,16 +1232,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete legal arrangements"
+        "summary": "Delete legal arrangements",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes payout methods associated with an account holder.",
         "id": "operation:post:/deletePayoutMethods",
         "kind": "operation",
         "method": "post",
         "name": "post-deletePayoutMethods",
         "path": "/deletePayoutMethods",
         "pointer": "#/paths/~1deletePayoutMethods/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DeletePayoutMethodRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "202",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -270,16 +1292,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete payout methods"
+        "summary": "Delete payout methods",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes shareholders associated with an account holder.",
         "id": "operation:post:/deleteShareholders",
         "kind": "operation",
         "method": "post",
         "name": "post-deleteShareholders",
         "path": "/deleteShareholders",
         "pointer": "#/paths/~1deleteShareholders/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DeleteShareholderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "202",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -288,16 +1352,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete shareholders"
+        "summary": "Delete shareholders",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes signatories associated with an account holder.",
         "id": "operation:post:/deleteSignatories",
         "kind": "operation",
         "method": "post",
         "name": "post-deleteSignatories",
         "path": "/deleteSignatories",
         "pointer": "#/paths/~1deleteSignatories/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DeleteSignatoriesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "202",
+            "type": "GenericResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -306,16 +1412,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete signatories"
+        "summary": "Delete signatories",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the details of an account holder.",
         "id": "operation:post:/getAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-getAccountHolder",
         "path": "/getAccountHolder",
         "pointer": "#/paths/~1getAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GetAccountHolderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAccountHolderResponse"
+          },
+          {
+            "status": "202",
+            "type": "GetAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -324,16 +1472,54 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get an account holder"
+        "summary": "Get an account holder",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generates a tax form for account holders operating in the US.",
         "id": "operation:post:/getTaxForm",
         "kind": "operation",
         "method": "post",
         "name": "post-getTaxForm",
         "path": "/getTaxForm",
         "pointer": "#/paths/~1getTaxForm/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GetTaxFormRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetTaxFormResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -342,16 +1528,54 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get a tax form"
+        "summary": "Get a tax form",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns documents that were previously uploaded for an account holder.",
         "id": "operation:post:/getUploadedDocuments",
         "kind": "operation",
         "method": "post",
         "name": "post-getUploadedDocuments",
         "path": "/getUploadedDocuments",
         "pointer": "#/paths/~1getUploadedDocuments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GetUploadedDocumentsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetUploadedDocumentsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -360,16 +1584,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get documents"
+        "summary": "Get documents",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Changes the [status of an account holder](https://docs.adyen.com/marketplaces-and-platforms/classic/account-holders-and-accounts#account-holder-statuses) to **…",
         "id": "operation:post:/suspendAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-suspendAccountHolder",
         "path": "/suspendAccountHolder",
         "pointer": "#/paths/~1suspendAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SuspendAccountHolderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SuspendAccountHolderResponse"
+          },
+          {
+            "status": "202",
+            "type": "SuspendAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -378,16 +1644,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Suspend an account holder"
+        "summary": "Suspend an account holder",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Changes the [status of an account holder](https://docs.adyen.com/marketplaces-and-platforms/classic/account-holders-and-accounts#account-holder-statuses) from…",
         "id": "operation:post:/unSuspendAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-unSuspendAccountHolder",
         "path": "/unSuspendAccountHolder",
         "pointer": "#/paths/~1unSuspendAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UnSuspendAccountHolderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UnSuspendAccountHolderResponse"
+          },
+          {
+            "status": "202",
+            "type": "UnSuspendAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -396,16 +1704,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Unsuspend an account holder"
+        "summary": "Unsuspend an account holder",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the description or payout schedule of an account.",
         "id": "operation:post:/updateAccount",
         "kind": "operation",
         "method": "post",
         "name": "post-updateAccount",
         "path": "/updateAccount",
         "pointer": "#/paths/~1updateAccount/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateAccountRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateAccountResponse"
+          },
+          {
+            "status": "202",
+            "type": "UpdateAccountResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -414,16 +1764,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Update an account"
+        "summary": "Update an account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the `accountHolderDetails` and `processingTier` of an account holder, and adds bank accounts and shareholders.",
         "id": "operation:post:/updateAccountHolder",
         "kind": "operation",
         "method": "post",
         "name": "post-updateAccountHolder",
         "path": "/updateAccountHolder",
         "pointer": "#/paths/~1updateAccountHolder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateAccountHolderRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateAccountHolderResponse"
+          },
+          {
+            "status": "202",
+            "type": "UpdateAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -432,16 +1824,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Update an account holder"
+        "summary": "Update an account holder",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Disables or enables the processing or payout state of an account holder.",
         "id": "operation:post:/updateAccountHolderState",
         "kind": "operation",
         "method": "post",
         "name": "post-updateAccountHolderState",
         "path": "/updateAccountHolderState",
         "pointer": "#/paths/~1updateAccountHolderState/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UpdateAccountHolderStateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAccountHolderStatusResponse"
+          },
+          {
+            "status": "202",
+            "type": "GetAccountHolderStatusResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -450,16 +1884,58 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Update payout or processing state"
+        "summary": "Update payout or processing state",
+        "tags": [
+          "Account holders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Uploads a document for an account holder.",
         "id": "operation:post:/uploadDocument",
         "kind": "operation",
         "method": "post",
         "name": "post-uploadDocument",
         "path": "/uploadDocument",
         "pointer": "#/paths/~1uploadDocument/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UploadDocumentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateAccountHolderResponse"
+          },
+          {
+            "status": "202",
+            "type": "UpdateAccountHolderResponse"
+          },
+          {
+            "status": "400",
+            "type": "ServiceError"
+          },
+          {
+            "status": "401",
+            "type": "ServiceError"
+          },
+          {
+            "status": "403",
+            "type": "ServiceError"
+          },
+          {
+            "status": "422",
+            "type": "ServiceError"
+          },
+          {
+            "status": "500",
+            "type": "ServiceError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []
@@ -468,387 +1944,466 @@
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Upload a document"
+        "summary": "Upload a document",
+        "tags": [
+          "Verification"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:AccountEvent",
         "kind": "schema",
-        "name": "AccountEvent"
+        "name": "AccountEvent",
+        "type": "object"
       },
       {
         "id": "schema:AccountHolderDetails",
         "kind": "schema",
-        "name": "AccountHolderDetails"
+        "name": "AccountHolderDetails",
+        "type": "object"
       },
       {
         "id": "schema:AccountHolderStatus",
         "kind": "schema",
-        "name": "AccountHolderStatus"
+        "name": "AccountHolderStatus",
+        "type": "object"
       },
       {
         "id": "schema:AccountPayoutState",
         "kind": "schema",
-        "name": "AccountPayoutState"
+        "name": "AccountPayoutState",
+        "type": "object"
       },
       {
         "id": "schema:AccountProcessingState",
         "kind": "schema",
-        "name": "AccountProcessingState"
+        "name": "AccountProcessingState",
+        "type": "object"
       },
       {
         "id": "schema:Amount",
         "kind": "schema",
-        "name": "Amount"
+        "name": "Amount",
+        "type": "object"
       },
       {
         "id": "schema:BankAccountDetail",
         "kind": "schema",
-        "name": "BankAccountDetail"
+        "name": "BankAccountDetail",
+        "type": "object"
       },
       {
         "id": "schema:BusinessDetails",
         "kind": "schema",
-        "name": "BusinessDetails"
+        "name": "BusinessDetails",
+        "type": "object"
       },
       {
         "id": "schema:CloseAccountHolderRequest",
         "kind": "schema",
-        "name": "CloseAccountHolderRequest"
+        "name": "CloseAccountHolderRequest",
+        "type": "object"
       },
       {
         "id": "schema:CloseAccountHolderResponse",
         "kind": "schema",
-        "name": "CloseAccountHolderResponse"
+        "name": "CloseAccountHolderResponse",
+        "type": "object"
       },
       {
         "id": "schema:CloseAccountRequest",
         "kind": "schema",
-        "name": "CloseAccountRequest"
+        "name": "CloseAccountRequest",
+        "type": "object"
       },
       {
         "id": "schema:CloseAccountResponse",
         "kind": "schema",
-        "name": "CloseAccountResponse"
+        "name": "CloseAccountResponse",
+        "type": "object"
       },
       {
         "id": "schema:CloseStoresRequest",
         "kind": "schema",
-        "name": "CloseStoresRequest"
+        "name": "CloseStoresRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateAccountHolderRequest",
         "kind": "schema",
-        "name": "CreateAccountHolderRequest"
+        "name": "CreateAccountHolderRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateAccountHolderResponse",
         "kind": "schema",
-        "name": "CreateAccountHolderResponse"
+        "name": "CreateAccountHolderResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateAccountRequest",
         "kind": "schema",
-        "name": "CreateAccountRequest"
+        "name": "CreateAccountRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateAccountResponse",
         "kind": "schema",
-        "name": "CreateAccountResponse"
+        "name": "CreateAccountResponse",
+        "type": "object"
       },
       {
         "id": "schema:DeleteBankAccountRequest",
         "kind": "schema",
-        "name": "DeleteBankAccountRequest"
+        "name": "DeleteBankAccountRequest",
+        "type": "object"
       },
       {
         "id": "schema:DeleteLegalArrangementRequest",
         "kind": "schema",
-        "name": "DeleteLegalArrangementRequest"
+        "name": "DeleteLegalArrangementRequest",
+        "type": "object"
       },
       {
         "id": "schema:DeletePayoutMethodRequest",
         "kind": "schema",
-        "name": "DeletePayoutMethodRequest"
+        "name": "DeletePayoutMethodRequest",
+        "type": "object"
       },
       {
         "id": "schema:DeleteShareholderRequest",
         "kind": "schema",
-        "name": "DeleteShareholderRequest"
+        "name": "DeleteShareholderRequest",
+        "type": "object"
       },
       {
         "id": "schema:DeleteSignatoriesRequest",
         "kind": "schema",
-        "name": "DeleteSignatoriesRequest"
+        "name": "DeleteSignatoriesRequest",
+        "type": "object"
       },
       {
         "id": "schema:DocumentDetail",
         "kind": "schema",
-        "name": "DocumentDetail"
+        "name": "DocumentDetail",
+        "type": "object"
       },
       {
         "id": "schema:ErrorFieldType",
         "kind": "schema",
-        "name": "ErrorFieldType"
+        "name": "ErrorFieldType",
+        "type": "object"
       },
       {
         "id": "schema:FieldType",
         "kind": "schema",
-        "name": "FieldType"
+        "name": "FieldType",
+        "type": "object"
       },
       {
         "id": "schema:GenericResponse",
         "kind": "schema",
-        "name": "GenericResponse"
+        "name": "GenericResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAccountHolderRequest",
         "kind": "schema",
-        "name": "GetAccountHolderRequest"
+        "name": "GetAccountHolderRequest",
+        "type": "object"
       },
       {
         "id": "schema:GetAccountHolderResponse",
         "kind": "schema",
-        "name": "GetAccountHolderResponse"
+        "name": "GetAccountHolderResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetAccountHolderStatusResponse",
         "kind": "schema",
-        "name": "GetAccountHolderStatusResponse"
+        "name": "GetAccountHolderStatusResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetTaxFormRequest",
         "kind": "schema",
-        "name": "GetTaxFormRequest"
+        "name": "GetTaxFormRequest",
+        "type": "object"
       },
       {
         "id": "schema:GetTaxFormResponse",
         "kind": "schema",
-        "name": "GetTaxFormResponse"
+        "name": "GetTaxFormResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetUploadedDocumentsRequest",
         "kind": "schema",
-        "name": "GetUploadedDocumentsRequest"
+        "name": "GetUploadedDocumentsRequest",
+        "type": "object"
       },
       {
         "id": "schema:GetUploadedDocumentsResponse",
         "kind": "schema",
-        "name": "GetUploadedDocumentsResponse"
+        "name": "GetUploadedDocumentsResponse",
+        "type": "object"
       },
       {
         "id": "schema:IndividualDetails",
         "kind": "schema",
-        "name": "IndividualDetails"
+        "name": "IndividualDetails",
+        "type": "object"
       },
       {
         "id": "schema:KYCCheckResult",
         "kind": "schema",
-        "name": "KYCCheckResult"
+        "name": "KYCCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCCheckStatusData",
         "kind": "schema",
-        "name": "KYCCheckStatusData"
+        "name": "KYCCheckStatusData",
+        "type": "object"
       },
       {
         "id": "schema:KYCCheckSummary",
         "kind": "schema",
-        "name": "KYCCheckSummary"
+        "name": "KYCCheckSummary",
+        "type": "object"
       },
       {
         "id": "schema:KYCLegalArrangementCheckResult",
         "kind": "schema",
-        "name": "KYCLegalArrangementCheckResult"
+        "name": "KYCLegalArrangementCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCLegalArrangementEntityCheckResult",
         "kind": "schema",
-        "name": "KYCLegalArrangementEntityCheckResult"
+        "name": "KYCLegalArrangementEntityCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCPayoutMethodCheckResult",
         "kind": "schema",
-        "name": "KYCPayoutMethodCheckResult"
+        "name": "KYCPayoutMethodCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCShareholderCheckResult",
         "kind": "schema",
-        "name": "KYCShareholderCheckResult"
+        "name": "KYCShareholderCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCSignatoryCheckResult",
         "kind": "schema",
-        "name": "KYCSignatoryCheckResult"
+        "name": "KYCSignatoryCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCUltimateParentCompanyCheckResult",
         "kind": "schema",
-        "name": "KYCUltimateParentCompanyCheckResult"
+        "name": "KYCUltimateParentCompanyCheckResult",
+        "type": "object"
       },
       {
         "id": "schema:KYCVerificationResult",
         "kind": "schema",
-        "name": "KYCVerificationResult"
+        "name": "KYCVerificationResult",
+        "type": "object"
       },
       {
         "id": "schema:LegalArrangementDetail",
         "kind": "schema",
-        "name": "LegalArrangementDetail"
+        "name": "LegalArrangementDetail",
+        "type": "object"
       },
       {
         "id": "schema:LegalArrangementEntityDetail",
         "kind": "schema",
-        "name": "LegalArrangementEntityDetail"
+        "name": "LegalArrangementEntityDetail",
+        "type": "object"
       },
       {
         "id": "schema:LegalArrangementRequest",
         "kind": "schema",
-        "name": "LegalArrangementRequest"
+        "name": "LegalArrangementRequest",
+        "type": "object"
       },
       {
         "id": "schema:MigratedAccounts",
         "kind": "schema",
-        "name": "MigratedAccounts"
+        "name": "MigratedAccounts",
+        "type": "object"
       },
       {
         "id": "schema:MigratedStores",
         "kind": "schema",
-        "name": "MigratedStores"
+        "name": "MigratedStores",
+        "type": "object"
       },
       {
         "id": "schema:MigrationData",
         "kind": "schema",
-        "name": "MigrationData"
+        "name": "MigrationData",
+        "type": "object"
       },
       {
         "id": "schema:PayoutMethod",
         "kind": "schema",
-        "name": "PayoutMethod"
+        "name": "PayoutMethod",
+        "type": "object"
       },
       {
         "id": "schema:PayoutScheduleResponse",
         "kind": "schema",
-        "name": "PayoutScheduleResponse"
+        "name": "PayoutScheduleResponse",
+        "type": "object"
       },
       {
         "id": "schema:PerformVerificationRequest",
         "kind": "schema",
-        "name": "PerformVerificationRequest"
+        "name": "PerformVerificationRequest",
+        "type": "object"
       },
       {
         "id": "schema:PersonalDocumentData",
         "kind": "schema",
-        "name": "PersonalDocumentData"
+        "name": "PersonalDocumentData",
+        "type": "object"
       },
       {
         "id": "schema:ServiceError",
         "kind": "schema",
-        "name": "ServiceError"
+        "name": "ServiceError",
+        "type": "object"
       },
       {
         "id": "schema:ShareholderContact",
         "kind": "schema",
-        "name": "ShareholderContact"
+        "name": "ShareholderContact",
+        "type": "object"
       },
       {
         "id": "schema:SignatoryContact",
         "kind": "schema",
-        "name": "SignatoryContact"
+        "name": "SignatoryContact",
+        "type": "object"
       },
       {
         "id": "schema:StoreDetail",
         "kind": "schema",
-        "name": "StoreDetail"
+        "name": "StoreDetail",
+        "type": "object"
       },
       {
         "id": "schema:SuspendAccountHolderRequest",
         "kind": "schema",
-        "name": "SuspendAccountHolderRequest"
+        "name": "SuspendAccountHolderRequest",
+        "type": "object"
       },
       {
         "id": "schema:SuspendAccountHolderResponse",
         "kind": "schema",
-        "name": "SuspendAccountHolderResponse"
+        "name": "SuspendAccountHolderResponse",
+        "type": "object"
       },
       {
         "id": "schema:UltimateParentCompany",
         "kind": "schema",
-        "name": "UltimateParentCompany"
+        "name": "UltimateParentCompany",
+        "type": "object"
       },
       {
         "id": "schema:UltimateParentCompanyBusinessDetails",
         "kind": "schema",
-        "name": "UltimateParentCompanyBusinessDetails"
+        "name": "UltimateParentCompanyBusinessDetails",
+        "type": "object"
       },
       {
         "id": "schema:UnSuspendAccountHolderRequest",
         "kind": "schema",
-        "name": "UnSuspendAccountHolderRequest"
+        "name": "UnSuspendAccountHolderRequest",
+        "type": "object"
       },
       {
         "id": "schema:UnSuspendAccountHolderResponse",
         "kind": "schema",
-        "name": "UnSuspendAccountHolderResponse"
+        "name": "UnSuspendAccountHolderResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAccountHolderRequest",
         "kind": "schema",
-        "name": "UpdateAccountHolderRequest"
+        "name": "UpdateAccountHolderRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAccountHolderResponse",
         "kind": "schema",
-        "name": "UpdateAccountHolderResponse"
+        "name": "UpdateAccountHolderResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAccountHolderStateRequest",
         "kind": "schema",
-        "name": "UpdateAccountHolderStateRequest"
+        "name": "UpdateAccountHolderStateRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAccountRequest",
         "kind": "schema",
-        "name": "UpdateAccountRequest"
+        "name": "UpdateAccountRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateAccountResponse",
         "kind": "schema",
-        "name": "UpdateAccountResponse"
+        "name": "UpdateAccountResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePayoutScheduleRequest",
         "kind": "schema",
-        "name": "UpdatePayoutScheduleRequest"
+        "name": "UpdatePayoutScheduleRequest",
+        "type": "object"
       },
       {
         "id": "schema:UploadDocumentRequest",
         "kind": "schema",
-        "name": "UploadDocumentRequest"
+        "name": "UploadDocumentRequest",
+        "type": "object"
       },
       {
         "id": "schema:ViasAddress",
         "kind": "schema",
-        "name": "ViasAddress"
+        "name": "ViasAddress",
+        "type": "object"
       },
       {
         "id": "schema:ViasName",
         "kind": "schema",
-        "name": "ViasName"
+        "name": "ViasName",
+        "type": "object"
       },
       {
         "id": "schema:ViasPersonalData",
         "kind": "schema",
-        "name": "ViasPersonalData"
+        "name": "ViasPersonalData",
+        "type": "object"
       },
       {
         "id": "schema:ViasPhoneNumber",
         "kind": "schema",
-        "name": "ViasPhoneNumber"
+        "name": "ViasPhoneNumber",
+        "type": "object"
       }
     ]
   },

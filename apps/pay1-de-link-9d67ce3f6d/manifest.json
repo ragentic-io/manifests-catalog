@@ -23,6 +23,86 @@
         "from": "pay1-de-link-9d67ce3f6d",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/payment-links/{linkId}"
+      },
+      {
+        "from": "operation:get:/v1/payment-links",
+        "kind": "RETURNS",
+        "to": "schema:PageLinkResponse"
+      },
+      {
+        "from": "operation:post:/v1/payment-links",
+        "kind": "ACCEPTS",
+        "to": "schema:LinkCreateRequest"
+      },
+      {
+        "from": "operation:post:/v1/payment-links",
+        "kind": "RETURNS",
+        "to": "schema:LinkResponse"
+      },
+      {
+        "from": "operation:get:/v1/payment-links/{linkId}",
+        "kind": "RETURNS",
+        "to": "schema:LinkResponse"
+      },
+      {
+        "from": "operation:put:/v1/payment-links/{linkId}",
+        "kind": "ACCEPTS",
+        "to": "schema:LinkCreateRequest"
+      },
+      {
+        "from": "operation:put:/v1/payment-links/{linkId}",
+        "kind": "RETURNS",
+        "to": "schema:LinkResponse"
+      },
+      {
+        "from": "schema:LinkCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AddressDataDto"
+      },
+      {
+        "from": "schema:LinkCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CartItemDto"
+      },
+      {
+        "from": "schema:LinkCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceInformationDto"
+      },
+      {
+        "from": "schema:LinkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:AddressDataDto"
+      },
+      {
+        "from": "schema:LinkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CartItemDto"
+      },
+      {
+        "from": "schema:LinkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceInformationDto"
+      },
+      {
+        "from": "schema:PageLinkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:LinkResponse"
+      },
+      {
+        "from": "schema:PageLinkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Pageable"
+      },
+      {
+        "from": "schema:PageLinkResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Sort"
+      },
+      {
+        "from": "schema:Pageable",
+        "kind": "REFERENCES",
+        "to": "schema:Sort"
       }
     ],
     "nodes": [
@@ -36,14 +116,64 @@
         "kind": "operation",
         "method": "get",
         "name": "getPaymentLinks",
+        "parameters": [
+          {
+            "default": 0,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 25,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "merchantId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "portalId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "mode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payment-links",
         "pointer": "#/paths/~1v1~1payment-links/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PageLinkResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "getMultipleAuth": []
           }
         ],
-        "summary": "List all payment links."
+        "summary": "List all payment links.",
+        "tags": [
+          "Link Management"
+        ]
       },
       {
         "deprecated": false,
@@ -53,12 +183,29 @@
         "name": "createPaymentLink",
         "path": "/v1/payment-links",
         "pointer": "#/paths/~1v1~1payment-links/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "LinkCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "createAuth": []
           }
         ],
-        "summary": "Create a payment link."
+        "summary": "Create a payment link.",
+        "tags": [
+          "Link Management"
+        ]
       },
       {
         "deprecated": false,
@@ -66,14 +213,32 @@
         "kind": "operation",
         "method": "get",
         "name": "getPaymentLink",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payment-links/{linkId}",
         "pointer": "#/paths/~1v1~1payment-links~1{linkId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinkResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "getSingleAuth": []
           }
         ],
-        "summary": "Get payment link by id."
+        "summary": "Get payment link by id.",
+        "tags": [
+          "Link Management"
+        ]
       },
       {
         "deprecated": false,
@@ -81,54 +246,89 @@
         "kind": "operation",
         "method": "put",
         "name": "updatePaymentLink",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payment-links/{linkId}",
         "pointer": "#/paths/~1v1~1payment-links~1{linkId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "LinkCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LinkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "createAuth": []
           }
         ],
-        "summary": "Update a payment link."
+        "summary": "Update a payment link.",
+        "tags": [
+          "Link Management"
+        ]
       },
       {
         "id": "schema:AddressDataDto",
         "kind": "schema",
-        "name": "AddressDataDto"
+        "name": "AddressDataDto",
+        "type": "object"
       },
       {
         "id": "schema:CartItemDto",
         "kind": "schema",
-        "name": "CartItemDto"
+        "name": "CartItemDto",
+        "type": "object"
       },
       {
+        "description": "relevant information for the invoice module",
         "id": "schema:InvoiceInformationDto",
         "kind": "schema",
-        "name": "InvoiceInformationDto"
+        "name": "InvoiceInformationDto",
+        "type": "object"
       },
       {
+        "description": "a link create request",
         "id": "schema:LinkCreateRequest",
         "kind": "schema",
-        "name": "LinkCreateRequest"
+        "name": "LinkCreateRequest",
+        "type": "object"
       },
       {
         "id": "schema:LinkResponse",
         "kind": "schema",
-        "name": "LinkResponse"
+        "name": "LinkResponse",
+        "type": "object"
       },
       {
         "id": "schema:PageLinkResponse",
         "kind": "schema",
-        "name": "PageLinkResponse"
+        "name": "PageLinkResponse",
+        "type": "object"
       },
       {
         "id": "schema:Pageable",
         "kind": "schema",
-        "name": "Pageable"
+        "name": "Pageable",
+        "type": "object"
       },
       {
         "id": "schema:Sort",
         "kind": "schema",
-        "name": "Sort"
+        "name": "Sort",
+        "type": "object"
       }
     ]
   },

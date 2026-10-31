@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `76d8c78a885ad37ee3ea0b089a5d8207ddfc7992c3b7c94d7a5f0870cb1ebcb8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/mbus/api` | mbus_api | — |
-| POST | `/mbus/get/{device}/{baudrate}/{address}` | get | — |
-| POST | `/mbus/getMulti/{device}/{baudrate}/{address}/{maxframes}` | getMulti | — |
-| GET | `/mbus/hat` | hat | — |
-| POST | `/mbus/hat/off` | hatOff | — |
-| POST | `/mbus/hat/on` | hatOn | — |
-| POST | `/mbus/scan/{device}/{baudrate}` | scan | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/mbus/api` | mbus_api | — | yaml | yes | — |
+| POST | `/mbus/get/{device}/{baudrate}/{address}` | get | `device`*, `baudrate`*, `address`* | mbusData |  | — |
+| POST | `/mbus/getMulti/{device}/{baudrate}/{address}/{maxframes}` | getMulti | `device`*, `baudrate`*, `address`*, `maxframes`* | mbusData |  | — |
+| GET | `/mbus/hat` | hat | — | hat | yes | — |
+| POST | `/mbus/hat/off` | hatOff | — | — |  | — |
+| POST | `/mbus/hat/on` | hatOn | — | — |  | — |
+| POST | `/mbus/scan/{device}/{baudrate}` | scan | `device`*, `baudrate`* | slaves |  | — |

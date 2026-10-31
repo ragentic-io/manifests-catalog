@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.moderatecontent.com_img_mdr
 
 | | |
 | --- | --- |
-| Signed bundle | `23cd996b8699fe1bd1b20e1dc1e24a56d76267c008d198dbc896f3b75995f44f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.moderatecontent.com_img_mdr
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | get / | Blocks images with nudity |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | get / | `url`* | — | yes | Blocks images with nudity |

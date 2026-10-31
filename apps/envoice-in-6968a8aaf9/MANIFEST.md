@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_envoicein_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `4e6a15fd60ba36473d5a12ee1e98fbdec1dfd3574115875b08dd8ef241ac6b44` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,66 +34,68 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_envoicein_profile_i
 
 110 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/client/all` | ClientApi_All | Return all clients for the account |
-| GET | `/api/client/candelete` | ClientApi_CanDelete | Check if the provided client can be deleted |
-| POST | `/api/client/delete` | ClientApi_Delete | Delete an existing client |
-| GET | `/api/client/details` | ClientApi_Details | Return client details. Activities and invoices included. |
-| POST | `/api/client/new` | ClientApi_New | Create a client |
-| POST | `/api/client/update` | ClientApi_Update | Update an existing client |
-| GET | `/api/estimation/all` | EstimationApi_All | Return all estimation for the account |
-| POST | `/api/estimation/changestatus` | EstimationApi_ChangeStatus | Change estimation status |
-| POST | `/api/estimation/convert` | EstimationApi_Convert | Convert the estimation to an invoice |
-| POST | `/api/estimation/delete` | EstimationApi_Delete | Delete an existing estimation |
-| GET | `/api/estimation/details` | EstimationApi_Details | Return estimation data |
-| POST | `/api/estimation/new` | EstimationApi_New | Create an estimation |
-| POST | `/api/estimation/sendtoclient` | EstimationApi_SendToClient | Send the provided estimation to the client |
-| GET | `/api/estimation/status` | EstimationApi_Status | Retrieve the status of the estimation |
-| POST | `/api/estimation/update` | EstimationApi_Update | Update an existing estimation |
-| GET | `/api/estimation/uri` | EstimationApi_Uri | Return the unique url to the client's invoice |
-| GET | `/api/general/countries` | GeneralApi_Countries | Return all of the platform supported countries |
-| GET | `/api/general/currencies` | GeneralApi_Currencies | Return all of the platform supported currencies |
-| GET | `/api/general/dateformats` | GeneralApi_DateFormats | Return all of the platform supported Date Formats |
-| GET | `/api/general/uilanguages` | GeneralApi_UiLanguages | Return all of the platform supported UI languages |
-| GET | `/api/invoice/all` | InvoiceApi_All | Return all invoices for the account |
-| GET | `/api/invoice/allcategories` | get /api/invoice/allcategories | Return all invoice categories for the account |
-| POST | `/api/invoice/changestatus` | InvoiceApi_ChangeStatus | Change invoice status |
-| POST | `/api/invoice/delete` | InvoiceApi_Delete | Delete an existing invoice |
-| POST | `/api/invoice/deletecategory` | post /api/invoice/deletecategory | Delete an existing invoice category |
-| GET | `/api/invoice/details` | InvoiceApi_Details | Return invoice data |
-| POST | `/api/invoice/new` | InvoiceApi_New | Create an invoice |
-| POST | `/api/invoice/newcategory` | post /api/invoice/newcategory | Create an invoice category |
-| GET | `/api/invoice/pdf` | InvoiceApi_Pdf | Return the PDF for the invoice |
-| POST | `/api/invoice/sendtoaccountant` | InvoiceApi_SendToAccountant | Send the provided invoice to the accountant |
-| POST | `/api/invoice/sendtoclient` | InvoiceApi_SendToClient | Send the provided invoice to the client |
-| GET | `/api/invoice/status` | InvoiceApi_Status | Retrieve the status of the invoice |
-| POST | `/api/invoice/update` | InvoiceApi_Update | Update an existing invoice |
-| POST | `/api/invoice/updatecategory` | post /api/invoice/updatecategory | Update an existing invoice category |
-| GET | `/api/invoice/uri` | InvoiceApi_Uri | Return the unique url to the client's invoice |
-| GET | `/api/order/all` | OrderApi_All | Return all orders for the account |
-| POST | `/api/order/changeshippingdetails` | OrderApi_ChangeShippingDetails | Change order shipping details |
-| POST | `/api/order/changestatus` | OrderApi_ChangeStatus | Change order status |
-| POST | `/api/order/delete` | OrderApi_Delete | Delete an existing order |
-| GET | `/api/order/details` | OrderApi_Details | Return order details |
-| POST | `/api/order/new` | OrderApi_New | Create an order |
-| GET | `/api/payment/supported` | PaymentApi_Supported | Return all supported payment gateways (no currencies means all are supported) |
-| GET | `/api/paymentlink/all` | PaymentLinkApi_All | Create a payment link |
-| POST | `/api/paymentlink/delete` | PaymentLinkApi_Delete | Delete an existing payment link |
-| POST | `/api/paymentlink/new` | PaymentLinkApi_New | Create a payment link |
-| GET | `/api/paymentlink/uri` | PaymentLinkApi_Uri | Return the unique url to the client's payment link |
-| GET | `/api/product/all` | ProductApi_All | Return all products for the account |
-| POST | `/api/product/delete` | ProductApi_Delete | Delete an existing product |
-| GET | `/api/product/details` | ProductApi_Details | Return product details |
-| POST | `/api/product/new` | ProductApi_New | Create a product |
-| POST | `/api/product/update` | ProductApi_Update | Update an existing product |
-| GET | `/api/tax/all` | TaxApi_All | Return all taxes for the account |
-| POST | `/api/tax/delete` | TaxApi_Delete | Delete an existing tax |
-| POST | `/api/tax/new` | TaxApi_New | Create a tax |
-| POST | `/api/tax/update` | TaxApi_Update | Update an existing tax |
-| GET | `/api/worktype/all` | WorkTypeApi_All | Return all work types for the account |
-| POST | `/api/worktype/delete` | WorkTypeApi_Delete | Delete an existing work type |
-| GET | `/api/worktype/details` | WorkTypeApi_Details | Return work type details |
-| POST | `/api/worktype/new` | WorkTypeApi_New | Create a work type |
-| GET | `/api/worktype/search` | WorkTypeApi_Search | Return all work types for the account that match the query param |
-| POST | `/api/worktype/update` | WorkTypeApi_Update | Update an existing work type |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/client/all` | ClientApi_All | `x-auth-key`*, `x-auth-secret`* | ClientDetailsApiModel[] | yes | Return all clients for the account |
+| GET | `/api/client/candelete` | ClientApi_CanDelete | `id`*, `x-auth-key`*, `x-auth-secret`* | boolean | yes | Check if the provided client can be deleted |
+| POST | `/api/client/delete` | ClientApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: ClientDeleteApiModel | integer:int32 |  | Delete an existing client |
+| GET | `/api/client/details` | ClientApi_Details | `id`*, `x-auth-key`*, `x-auth-secret`* | ClientDetailsApiModel | yes | Return client details. Activities and invoices included. |
+| POST | `/api/client/new` | ClientApi_New | `x-auth-key`*, `x-auth-secret`*, body*: ClientCreateApiModel | integer:int32 |  | Create a client |
+| POST | `/api/client/update` | ClientApi_Update | `x-auth-key`*, `x-auth-secret`*, body*: ClientUpdateApiModel | — |  | Update an existing client |
+| GET | `/api/estimation/all` | EstimationApi_All | `queryOptions.page`, `queryOptions.pageSize`, `x-auth-key`*, `x-auth-secret`* | ListResult_EstimationDetailsApiModel_ | yes | Return all estimation for the account |
+| POST | `/api/estimation/changestatus` | EstimationApi_ChangeStatus | `x-auth-key`*, `x-auth-secret`*, body*: EstimationChangeStatusApiModel | boolean |  | Change estimation status |
+| POST | `/api/estimation/convert` | EstimationApi_Convert | `x-auth-key`*, `x-auth-secret`*, body*: integer:int32 | InvoiceFullDetailsApiModel |  | Convert the estimation to an invoice |
+| POST | `/api/estimation/delete` | EstimationApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: EstimationDeleteApiModel | integer:int32 |  | Delete an existing estimation |
+| GET | `/api/estimation/details` | EstimationApi_Details | `id`*, `x-auth-key`*, `x-auth-secret`* | EstimationFullDetailsApiModel | yes | Return estimation data |
+| POST | `/api/estimation/new` | EstimationApi_New | `x-auth-key`*, `x-auth-secret`*, body*: EstimationCreateApiModel | EstimationFullDetailsApiModel |  | Create an estimation |
+| POST | `/api/estimation/sendtoclient` | EstimationApi_SendToClient | `x-auth-key`*, `x-auth-secret`*, body*: SendEstimationToClientApiModel | integer:int32 |  | Send the provided estimation to the client |
+| GET | `/api/estimation/status` | EstimationApi_Status | `id`*, `x-auth-key`*, `x-auth-secret`* | string | yes | Retrieve the status of the estimation |
+| POST | `/api/estimation/update` | EstimationApi_Update | `x-auth-key`*, `x-auth-secret`*, body*: EstimationUpdateApiModel | EstimationFullDetailsApiModel |  | Update an existing estimation |
+| GET | `/api/estimation/uri` | EstimationApi_Uri | `id`*, `x-auth-key`*, `x-auth-secret`* | EstimationUriApiModel | yes | Return the unique url to the client's invoice |
+| GET | `/api/general/countries` | GeneralApi_Countries | `x-auth-key`*, `x-auth-secret`* | CountryDetailsApiModel[] | yes | Return all of the platform supported countries |
+| GET | `/api/general/currencies` | GeneralApi_Currencies | `x-auth-key`*, `x-auth-secret`* | CurrencyDetailsApiModel[] | yes | Return all of the platform supported currencies |
+| GET | `/api/general/dateformats` | GeneralApi_DateFormats | `x-auth-key`*, `x-auth-secret`* | string[] | yes | Return all of the platform supported Date Formats |
+| GET | `/api/general/uilanguages` | GeneralApi_UiLanguages | `x-auth-key`*, `x-auth-secret`* | UILanguageDetailsApiModel[] | yes | Return all of the platform supported UI languages |
+| GET | `/api/invoice/all` | InvoiceApi_All | `queryOptions.page`, `queryOptions.pageSize`, `x-auth-key`*, `x-auth-secret`* | ListResult_InvoiceDetailsApiModel_ | yes | Return all invoices for the account |
+| GET | `/api/invoice/allcategories` | get /api/invoice/allcategories | `query`, `x-auth-key`*, `x-auth-secret`* | ListResult_InvoiceCategoryApiModel_ | yes | Return all invoice categories for the account |
+| POST | `/api/invoice/changestatus` | InvoiceApi_ChangeStatus | `x-auth-key`*, `x-auth-secret`*, body*: ChangeStatusApiModel | boolean |  | Change invoice status |
+| POST | `/api/invoice/delete` | InvoiceApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: InvoiceDeleteApiModel | integer:int32 |  | Delete an existing invoice |
+| POST | `/api/invoice/deletecategory` | post /api/invoice/deletecategory | `x-auth-key`*, `x-auth-secret`*, body*: InvoiceCategoryDeleteApiModel | integer:int32 |  | Delete an existing invoice category |
+| GET | `/api/invoice/details` | InvoiceApi_Details | `id`*, `x-auth-key`*, `x-auth-secret`* | InvoiceFullDetailsApiModel | yes | Return invoice data |
+| POST | `/api/invoice/new` | InvoiceApi_New | `x-auth-key`*, `x-auth-secret`*, body*: InvoiceCreateApiModel | InvoiceFullDetailsApiModel |  | Create an invoice |
+| POST | `/api/invoice/newcategory` | post /api/invoice/newcategory | `x-auth-key`*, `x-auth-secret`*, body*: InvoiceCategoryCreateApiModel | InvoiceCategoryApiModel |  | Create an invoice category |
+| GET | `/api/invoice/pdf` | InvoiceApi_Pdf | `id`*, `signedVersion`, `x-auth-key`*, `x-auth-secret`* | InvoiceUriApiModel | yes | Return the PDF for the invoice |
+| POST | `/api/invoice/sendtoaccountant` | InvoiceApi_SendToAccountant | `x-auth-key`*, `x-auth-secret`*, body*: SendInvoiceToAccountantApiModel | integer:int32 |  | Send the provided invoice to the accountant |
+| POST | `/api/invoice/sendtoclient` | InvoiceApi_SendToClient | `x-auth-key`*, `x-auth-secret`*, body*: SendInvoiceToClientApiModel | integer:int32 |  | Send the provided invoice to the client |
+| GET | `/api/invoice/status` | InvoiceApi_Status | `id`*, `x-auth-key`*, `x-auth-secret`* | string | yes | Retrieve the status of the invoice |
+| POST | `/api/invoice/update` | InvoiceApi_Update | `x-auth-key`*, `x-auth-secret`*, body*: InvoiceUpdateApiModel | InvoiceFullDetailsApiModel |  | Update an existing invoice |
+| POST | `/api/invoice/updatecategory` | post /api/invoice/updatecategory | `x-auth-key`*, `x-auth-secret`*, body*: InvoiceCategoryUpdateApiModel | InvoiceCategoryApiModel |  | Update an existing invoice category |
+| GET | `/api/invoice/uri` | InvoiceApi_Uri | `id`*, `x-auth-key`*, `x-auth-secret`* | InvoiceUriApiModel | yes | Return the unique url to the client's invoice |
+| GET | `/api/order/all` | OrderApi_All | `queryOptions.page`, `queryOptions.pageSize`, `x-auth-key`*, `x-auth-secret`* | ListResult_OrderDetailsApiModel_ | yes | Return all orders for the account |
+| POST | `/api/order/changeshippingdetails` | OrderApi_ChangeShippingDetails | `orderId`*, `x-auth-key`*, `x-auth-secret`*, body*: OrderShippingDetailsApiModel | — |  | Change order shipping details |
+| POST | `/api/order/changestatus` | OrderApi_ChangeStatus | `x-auth-key`*, `x-auth-secret`*, body*: ChangeOrderStatusApiModel | — |  | Change order status |
+| POST | `/api/order/delete` | OrderApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: OrderDeleteApiModel | integer:int32 |  | Delete an existing order |
+| GET | `/api/order/details` | OrderApi_Details | `id`*, `x-auth-key`*, `x-auth-secret`* | OrderFullDetailsApiModel | yes | Return order details |
+| POST | `/api/order/new` | OrderApi_New | `x-auth-key`*, `x-auth-secret`*, body*: OrderCreateApiModel | integer:int32 |  | Create an order |
+| GET | `/api/payment/supported` | PaymentApi_Supported | `x-auth-key`*, `x-auth-secret`* | PaymentGatewayDetailsApiModel[] | yes | Return all supported payment gateways (no currencies means all are supported) |
+| GET | `/api/paymentlink/all` | PaymentLinkApi_All | `queryOptions.page`, `queryOptions.pageSize`, `x-auth-key`*, `x-auth-secret`* | ListResult_PaymentLink_ | yes | Create a payment link |
+| POST | `/api/paymentlink/delete` | PaymentLinkApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: PaymentLink | integer:int32 |  | Delete an existing payment link |
+| POST | `/api/paymentlink/new` | PaymentLinkApi_New | `x-auth-key`*, `x-auth-secret`*, body*: PaymentLink | integer:int32 |  | Create a payment link |
+| GET | `/api/paymentlink/uri` | PaymentLinkApi_Uri | `id`*, `x-auth-key`*, `x-auth-secret`* | PaymentLinkUriApiModel | yes | Return the unique url to the client's payment link |
+| GET | `/api/product/all` | ProductApi_All | `queryOptions.page`, `queryOptions.pageSize`, `x-auth-key`*, `x-auth-secret`* | ListResult_ProductDetailsApiModel_ | yes | Return all products for the account |
+| POST | `/api/product/delete` | ProductApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: ProductDeleteApiModel | integer:int32 |  | Delete an existing product |
+| GET | `/api/product/details` | ProductApi_Details | `id`*, `x-auth-key`*, `x-auth-secret`* | ProductFullDetailsApiModel | yes | Return product details |
+| POST | `/api/product/new` | ProductApi_New | `x-auth-key`*, `x-auth-secret`*, body*: ProductCreateApiModel | integer:int32 |  | Create a product |
+| POST | `/api/product/update` | ProductApi_Update | `x-auth-key`*, `x-auth-secret`*, body*: ProductUpdateApiModel | — |  | Update an existing product |
+| GET | `/api/tax/all` | TaxApi_All | `x-auth-key`*, `x-auth-secret`* | TaxDetailsApiModel[] | yes | Return all taxes for the account |
+| POST | `/api/tax/delete` | TaxApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: TaxDeleteApiModel | integer:int32 |  | Delete an existing tax |
+| POST | `/api/tax/new` | TaxApi_New | `x-auth-key`*, `x-auth-secret`*, body*: TaxCreateApiModel | integer:int32 |  | Create a tax |
+| POST | `/api/tax/update` | TaxApi_Update | `x-auth-key`*, `x-auth-secret`*, body*: TaxUpdateApiModel | — |  | Update an existing tax |
+| GET | `/api/worktype/all` | WorkTypeApi_All | `x-auth-key`*, `x-auth-secret`* | WorkTypeDetailsApiModel[] | yes | Return all work types for the account |
+| POST | `/api/worktype/delete` | WorkTypeApi_Delete | `x-auth-key`*, `x-auth-secret`*, body*: WorkTypeDeleteApiModel | integer:int32 |  | Delete an existing work type |
+| GET | `/api/worktype/details` | WorkTypeApi_Details | `workTypeId`*, `x-auth-key`*, `x-auth-secret`* | WorkTypeDetailsApiModel | yes | Return work type details |
+| POST | `/api/worktype/new` | WorkTypeApi_New | `x-auth-key`*, `x-auth-secret`*, body*: WorkTypeCreateApiModel | integer:int32 |  | Create a work type |
+| GET | `/api/worktype/search` | WorkTypeApi_Search | `queryOptions.query`, `queryOptions.orderBy`, `queryOptions.order`, `queryOptions.page`, `queryOptions.pageSize`, `x-auth-key`*, `x-auth-secret`* | WorkTypeDetailsApiModel[] | yes | Return all work types for the account that match the query param |
+| POST | `/api/worktype/update` | WorkTypeApi_Update | `x-auth-key`*, `x-auth-secret`*, body*: WorkTypeUpdateApiModel | — |  | Update an existing work type |

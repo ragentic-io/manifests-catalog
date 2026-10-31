@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_web.archive.org_web_20180313153
 
 | | |
 | --- | --- |
-| Signed bundle | `195cdfa81429a282ec16ef760e797ce4a4825a7cbbf541f7a536927a17ac09c1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_web.archive.org_web_20180313153
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/application/newID` | get /application/newID | Create a new WeGA ID |
-| GET | `/application/status` | get /application/status | Get status information about the running WeGA-WebApp |
-| GET | `/code/findByElement/{element}` | get /code/findByElement/{element} | Finds code samples by XML element |
-| GET | `/documents` | get /documents | Lists all documents |
-| GET | `/documents/findByAuthor/{authorID}` | get /documents/findByAuthor/{authorID} | Finds documents by author |
-| GET | `/documents/findByDate` | get /documents/findByDate | Finds documents by date |
-| GET | `/documents/findByMention/{docID}` | get /documents/findByMention/{docID} | Finds documents by reference |
-| GET | `/documents/{docID}` | get /documents/{docID} | Returns documents by ID |
-| GET | `/facets/{facet}` | get /facets/{facet} | Returns facets |
-| GET | `/search/entity` | get /search/entity | Search for a WeGA entity |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/application/newID` | get /application/newID | `docType`* | object | yes | Create a new WeGA ID |
+| GET | `/application/status` | get /application/status | — | object | yes | Get status information about the running WeGA-WebApp |
+| GET | `/code/findByElement/{element}` | get /code/findByElement/{element} | `element`*, `namespace`, `docType`, `offset`, `limit` | CodeSample[] | yes | Finds code samples by XML element |
+| GET | `/documents` | get /documents | `docType`, `offset`, `limit` | Document[] | yes | Lists all documents |
+| GET | `/documents/findByAuthor/{authorID}` | get /documents/findByAuthor/{authorID} | `authorID`*, `docType`, `offset`, `limit` | Document[] | yes | Finds documents by author |
+| GET | `/documents/findByDate` | get /documents/findByDate | `fromDate`*, `toDate`, `docType`, `offset`, `limit` | Document[] | yes | Finds documents by date |
+| GET | `/documents/findByMention/{docID}` | get /documents/findByMention/{docID} | `docID`*, `docType`, `offset`, `limit` | Document[] | yes | Finds documents by reference |
+| GET | `/documents/{docID}` | get /documents/{docID} | `docID`* | Document[] | yes | Returns documents by ID |
+| GET | `/facets/{facet}` | get /facets/{facet} | `facet`*, `scope`*, `term`, `docType`*, `offset`, `limit` | Facet[] | yes | Returns facets |
+| GET | `/search/entity` | get /search/entity | `docType`, `q`, `offset`, `limit` | Document[] | yes | Search for a WeGA entity |

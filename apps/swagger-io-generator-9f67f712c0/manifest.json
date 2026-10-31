@@ -38,6 +38,41 @@
         "from": "swagger-io-generator-9f67f712c0",
         "kind": "EXPOSES",
         "to": "operation:post:/gen/servers/{framework}"
+      },
+      {
+        "from": "operation:post:/gen/clients/{language}",
+        "kind": "ACCEPTS",
+        "to": "schema:GeneratorInput"
+      },
+      {
+        "from": "operation:post:/gen/clients/{language}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseCode"
+      },
+      {
+        "from": "operation:post:/gen/servers/{framework}",
+        "kind": "ACCEPTS",
+        "to": "schema:GeneratorInput"
+      },
+      {
+        "from": "operation:post:/gen/servers/{framework}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseCode"
+      },
+      {
+        "from": "schema:AuthorizationValue",
+        "kind": "REFERENCES",
+        "to": "schema:UrlMatcher"
+      },
+      {
+        "from": "schema:GeneratorInput",
+        "kind": "REFERENCES",
+        "to": "schema:AuthorizationValue"
+      },
+      {
+        "from": "schema:GeneratorInput",
+        "kind": "REFERENCES",
+        "to": "schema:SecuritySchemeDefinition"
       }
     ],
     "nodes": [
@@ -53,8 +88,18 @@
         "name": "clientOptions",
         "path": "/gen/clients",
         "pointer": "#/paths/~1gen~1clients/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets languages supported by the client generator"
+        "summary": "Gets languages supported by the client generator",
+        "tags": [
+          "clients"
+        ]
       },
       {
         "deprecated": false,
@@ -62,32 +107,152 @@
         "kind": "operation",
         "method": "get",
         "name": "getClientOptions",
+        "parameters": [
+          {
+            "description": "The target language for the client library",
+            "enum": [
+              "ada",
+              "akka-scala",
+              "android",
+              "apex",
+              "bash",
+              "clojure",
+              "cpprest",
+              "csharp",
+              "csharp-dotnet2",
+              "cwiki",
+              "dart",
+              "dart-jaguar",
+              "dynamic-html",
+              "eiffel",
+              "elixir",
+              "elm",
+              "erlang-client",
+              "flash",
+              "go",
+              "groovy",
+              "haskell-http-client",
+              "html",
+              "html2",
+              "java",
+              "javascript"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/gen/clients/{language}",
         "pointer": "#/paths/~1gen~1clients~1{language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns options for a client library"
+        "summary": "Returns options for a client library",
+        "tags": [
+          "clients"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Accepts a `GeneratorInput` options map for spec location and generation options",
         "id": "operation:post:/gen/clients/{language}",
         "kind": "operation",
         "method": "post",
         "name": "generateClient",
+        "parameters": [
+          {
+            "description": "The target language for the client library",
+            "enum": [
+              "ada",
+              "akka-scala",
+              "android",
+              "apex",
+              "bash",
+              "clojure",
+              "cpprest",
+              "csharp",
+              "csharp-dotnet2",
+              "cwiki",
+              "dart",
+              "dart-jaguar",
+              "dynamic-html",
+              "eiffel",
+              "elixir",
+              "elm",
+              "erlang-client",
+              "flash",
+              "go",
+              "groovy",
+              "haskell-http-client",
+              "html",
+              "html2",
+              "java",
+              "javascript"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/gen/clients/{language}",
         "pointer": "#/paths/~1gen~1clients~1{language}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "GeneratorInput"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseCode"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Generates a client library"
+        "summary": "Generates a client library",
+        "tags": [
+          "clients"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A valid `fileId` is generated by the `/clients/{language}` or `/servers/{language}` POST operations.",
         "id": "operation:get:/gen/download/{fileId}",
         "kind": "operation",
         "method": "get",
         "name": "downloadFile",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/gen/download/{fileId}",
         "pointer": "#/paths/~1gen~1download~1{fileId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Downloads a pre-generated file"
+        "summary": "Downloads a pre-generated file",
+        "tags": [
+          "clients",
+          "servers"
+        ]
       },
       {
         "deprecated": false,
@@ -97,8 +262,18 @@
         "name": "serverOptions",
         "path": "/gen/servers",
         "pointer": "#/paths/~1gen~1servers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets languages supported by the server generator"
+        "summary": "Gets languages supported by the server generator",
+        "tags": [
+          "servers"
+        ]
       },
       {
         "deprecated": false,
@@ -106,51 +281,157 @@
         "kind": "operation",
         "method": "get",
         "name": "getServerOptions",
+        "parameters": [
+          {
+            "description": "The target language for the server framework",
+            "enum": [
+              "ada-server",
+              "aspnetcore",
+              "erlang-server",
+              "finch",
+              "go-server",
+              "haskell",
+              "inflector",
+              "java-pkmst",
+              "java-play-framework",
+              "java-vertx",
+              "jaxrs",
+              "jaxrs-cxf",
+              "jaxrs-cxf-cdi",
+              "jaxrs-resteasy",
+              "jaxrs-resteasy-eap",
+              "jaxrs-spec",
+              "kotlin-server",
+              "lumen",
+              "msf4j",
+              "nancyfx",
+              "nodejs-server",
+              "php-silex",
+              "php-symfony",
+              "pistache-server",
+              "python-flask"
+            ],
+            "in": "path",
+            "name": "framework",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/gen/servers/{framework}",
         "pointer": "#/paths/~1gen~1servers~1{framework}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns options for a server framework"
+        "summary": "Returns options for a server framework",
+        "tags": [
+          "servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Accepts a `GeneratorInput` options map for spec location and generation options.",
         "id": "operation:post:/gen/servers/{framework}",
         "kind": "operation",
         "method": "post",
         "name": "generateServerForLanguage",
+        "parameters": [
+          {
+            "description": "framework",
+            "enum": [
+              "ada-server",
+              "aspnetcore",
+              "erlang-server",
+              "finch",
+              "go-server",
+              "haskell",
+              "inflector",
+              "java-pkmst",
+              "java-play-framework",
+              "java-vertx",
+              "jaxrs",
+              "jaxrs-cxf",
+              "jaxrs-cxf-cdi",
+              "jaxrs-resteasy",
+              "jaxrs-resteasy-eap",
+              "jaxrs-spec",
+              "kotlin-server",
+              "lumen",
+              "msf4j",
+              "nancyfx",
+              "nodejs-server",
+              "php-silex",
+              "php-symfony",
+              "pistache-server",
+              "python-flask"
+            ],
+            "in": "path",
+            "name": "framework",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/gen/servers/{framework}",
         "pointer": "#/paths/~1gen~1servers~1{framework}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "GeneratorInput"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseCode"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Generates a server library"
+        "summary": "Generates a server library",
+        "tags": [
+          "servers"
+        ]
       },
       {
         "id": "schema:AuthorizationValue",
         "kind": "schema",
-        "name": "AuthorizationValue"
+        "name": "AuthorizationValue",
+        "type": "object"
       },
       {
         "id": "schema:CliOption",
         "kind": "schema",
-        "name": "CliOption"
+        "name": "CliOption",
+        "type": "object"
       },
       {
         "id": "schema:GeneratorInput",
         "kind": "schema",
-        "name": "GeneratorInput"
+        "name": "GeneratorInput",
+        "type": "object"
       },
       {
         "id": "schema:ResponseCode",
         "kind": "schema",
-        "name": "ResponseCode"
+        "name": "ResponseCode",
+        "type": "object"
       },
       {
         "id": "schema:SecuritySchemeDefinition",
         "kind": "schema",
-        "name": "SecuritySchemeDefinition"
+        "name": "SecuritySchemeDefinition",
+        "type": "object"
       },
       {
         "id": "schema:UrlMatcher",
         "kind": "schema",
-        "name": "UrlMatcher"
+        "name": "UrlMatcher",
+        "type": "object"
       }
     ]
   },

@@ -133,6 +133,56 @@
         "from": "corrently-io-5f679f3b65",
         "kind": "EXPOSES",
         "to": "operation:get:/wim/status"
+      },
+      {
+        "from": "operation:get:/alternative/easee/lastSessions",
+        "kind": "RETURNS",
+        "to": "schema:easee-charger"
+      },
+      {
+        "from": "operation:get:/alternative/ocpp/lastSessions",
+        "kind": "RETURNS",
+        "to": "schema:easee-charger"
+      },
+      {
+        "from": "operation:get:/alternative/openmeter/activities",
+        "kind": "RETURNS",
+        "to": "schema:ommeters"
+      },
+      {
+        "from": "operation:get:/alternative/openmeter/meters",
+        "kind": "RETURNS",
+        "to": "schema:ommeters"
+      },
+      {
+        "from": "operation:get:/alternative/openmeter/readings",
+        "kind": "RETURNS",
+        "to": "schema:ommeters"
+      },
+      {
+        "from": "operation:get:/stromkonto/balances",
+        "kind": "RETURNS",
+        "to": "schema:Balance"
+      },
+      {
+        "from": "operation:get:/stromkonto/choices",
+        "kind": "RETURNS",
+        "to": "schema:Balance"
+      },
+      {
+        "from": "operation:get:/tariff/components",
+        "kind": "RETURNS",
+        "to": "schema:componentsh0"
+      },
+      {
+        "from": "operation:get:/tariff/slph0",
+        "kind": "RETURNS",
+        "to": "schema:Tariffh0"
+      },
+      {
+        "from": "schema:Balance",
+        "kind": "REFERENCES",
+        "to": "schema:Transactions"
       }
     ],
     "nodes": [
@@ -142,334 +192,884 @@
       },
       {
         "deprecated": false,
+        "description": "Refer to easee.cloud API for details.",
         "id": "operation:get:/alternative/easee/lastSessions",
         "kind": "operation",
         "method": "get",
         "name": "easeeSessions",
+        "parameters": [
+          {
+            "description": "Username as used on easy.cloud",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Password as used on easy.cloud",
+            "in": "query",
+            "name": "password",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/alternative/easee/lastSessions",
         "pointer": "#/paths/~1alternative~1easee~1lastSessions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "easee-charger[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns lastSession info for all easee wallboxes (chargers) given user has access to."
+        "summary": "Returns lastSession info for all easee wallboxes (chargers) given user has access to.",
+        "tags": [
+          "easee"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns lastSession info of OCCP Cloud service for clearing in corrently ecosystem.",
         "id": "operation:get:/alternative/ocpp/lastSessions",
         "kind": "operation",
         "method": "get",
         "name": "ocppSessions",
         "path": "/alternative/ocpp/lastSessions",
         "pointer": "#/paths/~1alternative~1ocpp~1lastSessions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "easee-charger[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Last Session Info"
+        "summary": "Last Session Info",
+        "tags": [
+          "OCPP"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides a list of available meterrs in the OpenMETER project ( https://www.openmeter.de/ ) which grants access for analytics as data discovery.",
         "id": "operation:get:/alternative/openmeter/activities",
         "kind": "operation",
         "method": "get",
         "name": "omActivities",
         "path": "/alternative/openmeter/activities",
         "pointer": "#/paths/~1alternative~1openmeter~1activities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ommeters[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Public shared smart meters installed in Germany and available for subservices and exploration."
+        "summary": "Public shared smart meters installed in Germany and available for subservices and exploration.",
+        "tags": [
+          "OpenMETER"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides a list of available meterrs in the OpenMETER project ( https://www.openmeter.de/ ) which grants access for analytics as data discovery.",
         "id": "operation:get:/alternative/openmeter/meters",
         "kind": "operation",
         "method": "get",
         "name": "omMeters",
         "path": "/alternative/openmeter/meters",
         "pointer": "#/paths/~1alternative~1openmeter~1meters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ommeters[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Public shared smart meters installed in Germany and available for subservices and exploration."
+        "summary": "Public shared smart meters installed in Germany and available for subservices and exploration.",
+        "tags": [
+          "OpenMETER"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides a list of available meterrs in the OpenMETER project ( https://www.openmeter.de/ ) which grants access for analytics as data discovery.",
         "id": "operation:get:/alternative/openmeter/readings",
         "kind": "operation",
         "method": "get",
         "name": "omReadings",
         "path": "/alternative/openmeter/readings",
         "pointer": "#/paths/~1alternative~1openmeter~1readings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ommeters[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Public shared smart meters installed in Germany and available for subservices and exploration."
+        "summary": "Public shared smart meters installed in Germany and available for subservices and exploration.",
+        "tags": [
+          "OpenMETER"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simple Wrapper around the GreenPowerIndex for easy integration into almost any SmartHome system that allows access to a JSON/REST Service This endpoint is desi…",
         "id": "operation:get:/gsi/bestHour",
         "kind": "operation",
         "method": "get",
         "name": "gsiBesthour",
+        "parameters": [
+          {
+            "description": "Zipcode (Postleitzahl) of a city in Germany.",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Any valid Stromkonto account (address).",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of hours to check (default 24 hours from now).",
+            "in": "query",
+            "name": "timeframe",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "How many hours in row do you need the device turned on?",
+            "in": "query",
+            "name": "hours",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/gsi/bestHour",
         "pointer": "#/paths/~1gsi~1bestHour/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get best hour (with most regional green energy) in a given timeframe."
+        "summary": "Get best hour (with most regional green energy) in a given timeframe.",
+        "tags": [
+          "GreenPowerIndex (GrünstromIndex)",
+          "SmartHome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Dispatch of green energy has two aspects to consider: - Availability of gerneration facility (depends on weather and installed capacity) - Demand of energy Usi…",
         "id": "operation:get:/gsi/dispatch",
         "kind": "operation",
         "method": "get",
         "name": "gsiDispatch",
+        "parameters": [
+          {
+            "description": "Zipcode (Postleitzahl) of a city in Germany.",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Any valid Stromkonto account (address).",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gsi/dispatch",
         "pointer": "#/paths/~1gsi~1dispatch/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Dispatch (Green Energy Distribution Schedule)"
+        "summary": "Dispatch (Green Energy Distribution Schedule)",
+        "tags": [
+          "GreenPowerIndex (GrünstromIndex)",
+          "Dispatch (Green Energy Distribution API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compatible to awattar (https://api.awattar.de/v1/marketdata) API interface but data comes from GreenPowerIndex instead of EPEXSpot.",
         "id": "operation:get:/gsi/marketdata",
         "kind": "operation",
         "method": "get",
         "name": "gsiMarketdata",
+        "parameters": [
+          {
+            "description": "Zipcode (Postleitzahl) of a city in Germany.",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gsi/marketdata",
         "pointer": "#/paths/~1gsi~1marketdata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Marketdata"
+        "summary": "Marketdata",
+        "tags": [
+          "GreenPowerIndex (GrünstromIndex)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieval the GreenPowerIndex (GrünstromIndex) for a given city (by zipcode) in Germany.",
         "id": "operation:get:/gsi/prediction",
         "kind": "operation",
         "method": "get",
         "name": "gsiPrediction",
+        "parameters": [
+          {
+            "description": "Zipcode (Postleitzahl) of a city in Germany.",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Any valid Stromkonto account (address).",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/gsi/prediction",
         "pointer": "#/paths/~1gsi~1prediction/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prediction"
+        "summary": "Prediction",
+        "tags": [
+          "GreenPowerIndex (GrünstromIndex)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a metered reading using account (Stromkonto).",
         "id": "operation:get:/metering/reading",
         "kind": "operation",
         "method": "get",
         "name": "meteringGet",
+        "parameters": [
+          {
+            "description": "Account/Address (Stromkonto) to retrieve reading for.",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/metering/reading",
         "pointer": "#/paths/~1metering~1reading/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Meter Reading"
+        "summary": "Meter Reading",
+        "tags": [
+          "Metering (Decorator)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Post meter reading and get it decorated.",
         "id": "operation:post:/metering/reading",
         "kind": "operation",
         "method": "post",
         "name": "meteringPost",
         "path": "/metering/reading",
         "pointer": "#/paths/~1metering~1reading/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Meter Reading"
+        "summary": "Meter Reading",
+        "tags": [
+          "Metering (Decorator)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Uses collected fields or provided fields to create a final receipt (Strom-Quittung).",
         "id": "operation:post:/quittung/commit",
         "kind": "operation",
         "method": "post",
         "name": "quittungComit",
         "path": "/quittung/commit",
         "pointer": "#/paths/~1quittung~1commit/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Finishs a collection of data and finalizes receipt. Use this method after collecting all data via quittung/prepare"
+        "summary": "Finishs a collection of data and finalizes receipt. Use this method after collecting all data via quittung/prepare",
+        "tags": [
+          "Strom-Quittung"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a full featured receipt (Quittung) for an energy delivery as it appears on a charging session or similar events.",
         "id": "operation:post:/quittung/create",
         "kind": "operation",
         "method": "post",
         "name": "quittungCreate",
         "path": "/quittung/create",
         "pointer": "#/paths/~1quittung~1create/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a receipt for an energy delivery (only valid in Germany)."
+        "summary": "Create a receipt for an energy delivery (only valid in Germany).",
+        "tags": [
+          "Strom-Quittung"
+        ]
       },
       {
         "deprecated": false,
+        "description": "During the first call an account parameter will be returned within the result object.",
         "id": "operation:post:/quittung/prepare",
         "kind": "operation",
         "method": "post",
         "name": "quittungPrepare",
         "path": "/quittung/prepare",
         "pointer": "#/paths/~1quittung~1prepare/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Allows to collect data with several requests (or a single) for a receipt."
+        "summary": "Allows to collect data with several requests (or a single) for a receipt.",
+        "tags": [
+          "Strom-Quittung"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows to retrieve all relevant data assiciated to a TSE service call.",
         "id": "operation:post:/quittung/tse",
         "kind": "operation",
         "method": "post",
         "name": "quittungTSE",
+        "parameters": [
+          {
+            "description": "Quittung Identifier (serialnumber generated during receipt generation process)",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/quittung/tse",
         "pointer": "#/paths/~1quittung~1tse/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve TSE (Technische Sicherheitseinrichtung) Data for a given receipt (Strom-Quittung)."
+        "summary": "Retrieve TSE (Technische Sicherheitseinrichtung) Data for a given receipt (Strom-Quittung).",
+        "tags": [
+          "Strom-Quittung",
+          "TSE"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows to retrieve input string for a signing process.",
         "id": "operation:post:/quittung/tsedata",
         "kind": "operation",
         "method": "post",
         "name": "quittungTSEData",
+        "parameters": [
+          {
+            "description": "Quittung Identifier (serialnumber generated during receipt generation process)",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/quittung/tsedata",
         "pointer": "#/paths/~1quittung~1tsedata/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve TSE (Technische Sicherheitseinrichtung) raw data  only for a given receipt (Strom-Quittung)."
+        "summary": "Retrieve TSE (Technische Sicherheitseinrichtung) raw data  only for a given receipt (Strom-Quittung).",
+        "tags": [
+          "Strom-Quittung",
+          "TSE"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows to retrieve digital signature for a given receipt.",
         "id": "operation:post:/quittung/tsesignature",
         "kind": "operation",
         "method": "post",
         "name": "quittungTSEsignature",
+        "parameters": [
+          {
+            "description": "Quittung Identifier (serialnumber generated during receipt generation process)",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/quittung/tsesignature",
         "pointer": "#/paths/~1quittung~1tsesignature/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve TSE (Technische Sicherheitseinrichtung) Signature only for a given receipt (Strom-Quittung)."
+        "summary": "Retrieve TSE (Technische Sicherheitseinrichtung) Signature only for a given receipt (Strom-Quittung).",
+        "tags": [
+          "Strom-Quittung",
+          "TSE"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows to retrieve XML of the zugferd invoice.",
         "id": "operation:get:/quittung/zugferd",
         "kind": "operation",
         "method": "get",
         "name": "quittungZugferd",
+        "parameters": [
+          {
+            "description": "Quittung Identifier (serialnumber generated during receipt generation process)",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/quittung/zugferd",
         "pointer": "#/paths/~1quittung~1zugferd/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve Zugferd XML for a given receipt (Strom-Quittung)."
+        "summary": "Retrieve Zugferd XML for a given receipt (Strom-Quittung).",
+        "tags": [
+          "Strom-Quittung",
+          "TSE"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stromkonto represents a core component of the Corrently Ecosystem.",
         "id": "operation:get:/stromkonto/balances",
         "kind": "operation",
         "method": "get",
         "name": "stromkontoBalances",
+        "parameters": [
+          {
+            "description": "Ethereum style address referencing a valid account (AKA Stromkonto).",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stromkonto/balances",
         "pointer": "#/paths/~1stromkonto~1balances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Balance[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Balances"
+        "summary": "Balances",
+        "tags": [
+          "Stromkonto (Ledger)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Signable choices (contract changes) for customer.",
         "id": "operation:get:/stromkonto/choices",
         "kind": "operation",
         "method": "get",
         "name": "stromkontoChoices",
+        "parameters": [
+          {
+            "description": "Ethereum style address referencing a valid account alias (never use Stromkonto directly!).",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stromkonto/choices",
         "pointer": "#/paths/~1stromkonto~1choices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Balance[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Selectable Choices for customer"
+        "summary": "Selectable Choices for customer",
+        "tags": [
+          "Stromkonto (Ledger)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends a mail to a given email address to login this user.",
         "id": "operation:post:/stromkonto/login",
         "kind": "operation",
         "method": "post",
         "name": "stromkontoLogin",
         "path": "/stromkonto/login",
         "pointer": "#/paths/~1stromkonto~1login/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Login (via Mail)"
+        "summary": "Login (via Mail)",
+        "tags": [
+          "Stromkonto (Ledger)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Prepares and inques a transaction (transfer) between two accounts (Stromkonten).",
         "id": "operation:post:/stromkonto/prepareTransaction",
         "kind": "operation",
         "method": "post",
         "name": "prepareTransaction",
         "path": "/stromkonto/prepareTransaction",
         "pointer": "#/paths/~1stromkonto~1prepareTransaction/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Prepare Transaction"
+        "summary": "Prepare Transaction",
+        "tags": [
+          "Stromkonto (Ledger)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calling this method with an unregistered (new) email will create a new account (Stromkonto) with all balances having a value of `0` and no transaction history.",
         "id": "operation:post:/stromkonto/register",
         "kind": "operation",
         "method": "post",
         "name": "stromkontoRegister",
         "path": "/stromkonto/register",
         "pointer": "#/paths/~1stromkonto~1register/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Register (new Stromkonto)"
+        "summary": "Register (new Stromkonto)",
+        "tags": [
+          "Stromkonto (Ledger)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides insides into the different cost components of energy for a private household.",
         "id": "operation:get:/tariff/components",
         "kind": "operation",
         "method": "get",
         "name": "tariffcomponents",
+        "parameters": [
+          {
+            "description": "Zipcode (Postzleitzahl) of a city in Germany.",
+            "in": "query",
+            "name": "zipcode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Valid email address to assign request to (pre offer generation).",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Total amount of energy in kilo-watt-hours per year.",
+            "in": "query",
+            "name": "kwha",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "If provided all results will be scaled to this timeframe",
+            "in": "query",
+            "name": "milliseconds",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "If provided together with milliseconds, a cost component stament for a particular event (like charging a car) will be created.",
+            "in": "query",
+            "name": "wh",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/tariff/components",
         "pointer": "#/paths/~1tariff~1components/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "componentsh0"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Energy Tariff price components"
+        "summary": "Energy Tariff price components",
+        "tags": [
+          "Tariff (Price API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides pricing data for private households with standard load profiles (Standardlastprofil H0).",
         "id": "operation:get:/tariff/slph0",
         "kind": "operation",
         "method": "get",
         "name": "tariffSLPH0",
+        "parameters": [
+          {
+            "description": "Zipcode (Postzleitzahl) of a city in Germany.",
+            "in": "query",
+            "name": "zipcode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tariff/slph0",
         "pointer": "#/paths/~1tariff~1slph0/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tariffh0[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Energy Tariff information"
+        "summary": "Energy Tariff information",
+        "tags": [
+          "Tariff (Price API)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Access to status information of an existing metering change and allocation process.",
         "id": "operation:get:/wim/status",
         "kind": "operation",
         "method": "get",
         "name": "wimstatus",
+        "parameters": [
+          {
+            "description": "VID key of the process.",
+            "in": "query",
+            "name": "vid",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/wim/status",
         "pointer": "#/paths/~1wim~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "WiM Proess Informtion"
+        "summary": "WiM Proess Informtion",
+        "tags": [
+          "WiM (Wechselprozesse im Messwesen Strom - Status API)"
+        ]
       },
       {
         "id": "schema:Balance",
         "kind": "schema",
-        "name": "Balance"
+        "name": "Balance",
+        "type": "object"
       },
       {
         "id": "schema:DispatchLocation",
         "kind": "schema",
-        "name": "DispatchLocation"
+        "name": "DispatchLocation",
+        "type": "object"
       },
       {
         "id": "schema:ForecastItem",
         "kind": "schema",
-        "name": "ForecastItem"
+        "name": "ForecastItem",
+        "type": "object"
       },
       {
         "id": "schema:MarketData",
         "kind": "schema",
-        "name": "MarketData"
+        "name": "MarketData",
+        "type": "object"
       },
       {
         "id": "schema:Tariffh0",
         "kind": "schema",
-        "name": "Tariffh0"
+        "name": "Tariffh0",
+        "type": "object"
       },
       {
         "id": "schema:Transactions",
         "kind": "schema",
-        "name": "Transactions"
+        "name": "Transactions",
+        "type": "object"
       },
       {
         "id": "schema:componentsh0",
         "kind": "schema",
-        "name": "componentsh0"
+        "name": "componentsh0",
+        "type": "object"
       },
       {
         "id": "schema:easee-charger",
         "kind": "schema",
-        "name": "easee-charger"
+        "name": "easee-charger",
+        "type": "object"
       },
       {
         "id": "schema:ommeters",
         "kind": "schema",
-        "name": "ommeters"
+        "name": "ommeters",
+        "type": "object"
       }
     ]
   },

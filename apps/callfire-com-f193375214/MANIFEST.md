@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_53
 
 | | |
 | --- | --- |
-| Signed bundle | `411264bc9113ed8c22e714dd89c1db361bf9a1235272ee02eb2079651816c997` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,127 +34,129 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_53
 
 125 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/calls` | findCalls | Find calls |
-| POST | `/calls` | sendCalls | Send calls |
-| GET | `/calls/broadcasts` | findCallBroadcasts | Find call broadcasts |
-| POST | `/calls/broadcasts` | createCallBroadcast | Create a call broadcast |
-| GET | `/calls/broadcasts/{id}` | getCallBroadcast | Find a specific call broadcast |
-| PUT | `/calls/broadcasts/{id}` | updateCallBroadcast | Update a call broadcast |
-| POST | `/calls/broadcasts/{id}/archive` | archiveVoiceBroadcast | Archive voice broadcast |
-| GET | `/calls/broadcasts/{id}/batches` | getCallBroadcastBatches | Find batches in a call broadcast |
-| POST | `/calls/broadcasts/{id}/batches` | addCallBroadcastBatch | Add batches to a call broadcast |
-| GET | `/calls/broadcasts/{id}/calls` | getCallBroadcastCalls | Find calls in a call broadcast |
-| POST | `/calls/broadcasts/{id}/recipients` | addCallBroadcastRecipients | Add recipients to a call broadcast |
-| POST | `/calls/broadcasts/{id}/start` | startVoiceBroadcast | Start voice broadcast |
-| GET | `/calls/broadcasts/{id}/stats` | getCallBroadcastStats | Get statistics on call broadcast |
-| POST | `/calls/broadcasts/{id}/stop` | stopVoiceBroadcast | Stop voice broadcast |
-| POST | `/calls/broadcasts/{id}/toggleRecipientsStatus` | toggleCallBroadcastRecipientsStatus | Disable/enable undialed recipients in broadcast |
-| GET | `/calls/recordings/{id}` | getCallRecording | Get call recording by id |
-| GET | `/calls/recordings/{id}.mp3` | getCallRecordingMp3 | Get call recording in mp3 format |
-| GET | `/calls/{id}` | getCall | Find a specific call |
-| GET | `/calls/{id}/recordings` | getCallRecordings | Get call recordings for a call |
-| GET | `/calls/{id}/recordings/{name}` | getCallRecordingByName | Get call recording by name |
-| GET | `/calls/{id}/recordings/{name}.mp3` | getCallRecordingMp3ByName | Get call mp3 recording by name |
-| GET | `/campaigns/batches/{id}` | getCampaignBatch | Find a specific batch |
-| PUT | `/campaigns/batches/{id}` | updateCampaignBatch | Update a batch |
-| GET | `/campaigns/sounds` | findCampaignSounds | Find sounds |
-| POST | `/campaigns/sounds/calls` | postCallCampaignSound | Add sound via call |
-| POST | `/campaigns/sounds/files` | postFileCampaignSound | Add sound via file |
-| POST | `/campaigns/sounds/tts` | postTTSCampaignSound | Add sound via text-to-speech |
-| DELETE | `/campaigns/sounds/{id}` | deleteCampaignSound | Delete a specific sound |
-| GET | `/campaigns/sounds/{id}` | getCampaignSound | Find a specific sound |
-| GET | `/campaigns/sounds/{id}.mp3` | getCampaignSoundDataMp3 | Download a MP3 sound |
-| GET | `/campaigns/sounds/{id}.wav` | getCampaignSoundDataWav | Download a WAV sound |
-| GET | `/contacts` | findContacts | Find contacts |
-| POST | `/contacts` | createContacts | Create contacts |
-| GET | `/contacts/dncs` | findDoNotContacts | Find do not contact (dnc) items |
-| POST | `/contacts/dncs` | addDoNotContacts | Add do not contact (dnc) numbers |
-| DELETE | `/contacts/dncs/sources/{source}` | deleteDoNotContactsBySource | Delete do not contact (dnc) numbers contained in source. |
-| GET | `/contacts/dncs/universals/{toNumber}` | getUniversalDoNotContacts | Find universal do not contacts (udnc) associated with toNumber |
-| DELETE | `/contacts/dncs/{number}` | deleteDoNotContact | Delete do not contact (dnc) number. If number contains commas treat as list of numbers |
-| GET | `/contacts/dncs/{number}` | getDoNotContact | Get do not contact (dnc) |
-| PUT | `/contacts/dncs/{number}` | updateDoNotContact | Update an individual do not contact (dnc) number |
-| GET | `/contacts/lists` | findContactLists | Find contact lists |
-| POST | `/contacts/lists` | createContactList | Create contact lists |
-| POST | `/contacts/lists/upload` | createContactListFromFile | Create contact list from file |
-| DELETE | `/contacts/lists/{id}` | deleteContactList | Delete a contact list |
-| GET | `/contacts/lists/{id}` | getContactList | Find a specific contact list |
-| PUT | `/contacts/lists/{id}` | updateContactList | Update a contact list |
-| DELETE | `/contacts/lists/{id}/items` | removeContactListItems | Delete contacts from a contact list |
-| GET | `/contacts/lists/{id}/items` | getContactListItems | Find contacts in a contact list |
-| POST | `/contacts/lists/{id}/items` | addContactListItems | Add contacts to a contact list |
-| DELETE | `/contacts/lists/{id}/items/{contactId}` | removeContactListItem | Delete a contact from a contact list |
-| DELETE | `/contacts/{id}` | deleteContact | Delete a contact |
-| GET | `/contacts/{id}` | getContact | Find a specific contact |
-| PUT | `/contacts/{id}` | updateContact | Update a contact |
-| GET | `/contacts/{id}/history` | getContactHistory | Find a contact's history |
-| GET | `/keywords` | findKeywords | Find keywords |
-| GET | `/keywords/leases` | findKeywordLeases | Find keyword leases |
-| GET | `/keywords/leases/configs` | findKeywordLeaseConfigs | Find keyword lease configs |
-| GET | `/keywords/leases/configs/{keyword}` | getKeywordLeaseConfig | Find a specific keyword lease config |
-| PUT | `/keywords/leases/configs/{keyword}` | updateKeywordLeaseConfig | Update a keyword lease config |
-| GET | `/keywords/leases/id/{id}` | getKeywordLeaseById | Find a keyword by id |
-| GET | `/keywords/leases/{keyword}` | getKeywordLease | Find a specific lease |
-| PUT | `/keywords/leases/{keyword}` | updateKeywordLease | Update a lease |
-| GET | `/keywords/{keyword}/available` | isKeywordAvailable | Check for a specific keyword |
-| GET | `/me/account` | getAccount | Find account details |
-| GET | `/me/api/credentials` | findApiCredentials | Find api credentials |
-| POST | `/me/api/credentials` | createApiCredential | Create api credentials |
-| DELETE | `/me/api/credentials/{id}` | deleteApiCredential | Delete api credentials |
-| GET | `/me/api/credentials/{id}` | getApiCredential | Find a specific api credential |
-| POST | `/me/api/credentials/{id}/disable` | disableApiCredentials | Disable specified API credentials |
-| POST | `/me/api/credentials/{id}/enable` | enableApiCredentials | Enable specified API credentials |
-| GET | `/me/billing/credit-usage` | getCreditUsage | Find credit usage |
-| GET | `/me/billing/plan-usage` | getBillingPlanUsage | Find plan usage |
-| GET | `/me/callerids` | getCallerIds | Find caller ids |
-| POST | `/me/callerids/{callerid}` | sendVerificationCodeToCallerId | Create a caller id |
-| POST | `/me/callerids/{callerid}/verification-code` | verifyCallerId | Verify a caller id |
-| GET | `/media` | findMedia | Find media |
-| POST | `/media` | createMedia | Create media |
-| GET | `/media/public/{key}.{extension}` | getMediaDataByKey | Download media by extension |
-| GET | `/media/{id}` | getMedia | Get a specific media |
-| GET | `/media/{id}.{extension}` | getMediaData | Download media by extension |
-| GET | `/media/{id}/file` | getMediaDataBinary | Download a MP3 media |
-| GET | `/numbers/leases` | findNumberLeases | Find leases |
-| GET | `/numbers/leases/configs` | findNumberLeaseConfigs | Find lease configs |
-| GET | `/numbers/leases/configs/{number}` | getNumberLeaseConfig | Find a specific lease config |
-| PUT | `/numbers/leases/configs/{number}` | updateNumberLeaseConfig | Update a lease config |
-| GET | `/numbers/leases/{number}` | getNumberLease | Find a specific lease |
-| PUT | `/numbers/leases/{number}` | updateNumberLease | Update a lease |
-| GET | `/numbers/local` | findNumbersLocal | Find local numbers |
-| GET | `/numbers/regions` | findNumberRegions | Find number regions |
-| GET | `/numbers/tollfree` | findNumbersTollfree | Find tollfree numbers |
-| GET | `/orders` | findOrders | Find orders |
-| POST | `/orders/keywords` | orderKeywords | Purchase keywords |
-| POST | `/orders/numbers` | orderNumbers | Purchase numbers |
-| GET | `/orders/{id}` | getOrder | Find a specific order |
-| GET | `/reports/delivery` | getDeliveryReports | Get delivery reports by ad hoc criteria |
-| GET | `/texts` | findTexts | Find texts |
-| POST | `/texts` | sendTexts | Send texts |
-| GET | `/texts/auto-replys` | findTextAutoReplys | Find auto replies |
-| POST | `/texts/auto-replys` | createTextAutoReply | Create an auto reply |
-| DELETE | `/texts/auto-replys/{id}` | deleteTextAutoReply | Delete an auto reply |
-| GET | `/texts/auto-replys/{id}` | getTextAutoReply | Find a specific auto reply |
-| GET | `/texts/broadcasts` | findTextBroadcasts | Find text broadcasts |
-| POST | `/texts/broadcasts` | createTextBroadcast | Create a text broadcast |
-| GET | `/texts/broadcasts/{id}` | getTextBroadcast | Find a specific text broadcast |
-| PUT | `/texts/broadcasts/{id}` | updateTextBroadcast | Update a text broadcast |
-| POST | `/texts/broadcasts/{id}/archive` | archiveTextBroadcast | Archive text broadcast |
-| GET | `/texts/broadcasts/{id}/batches` | getTextBroadcastBatches | Find batches in a text broadcast |
-| POST | `/texts/broadcasts/{id}/batches` | addTextBroadcastBatch | Add batches to a text broadcast |
-| POST | `/texts/broadcasts/{id}/recipients` | addTextBroadcastRecipients | Add recipients to a text broadcast |
-| POST | `/texts/broadcasts/{id}/start` | startTextBroadcast | Start text broadcast |
-| GET | `/texts/broadcasts/{id}/stats` | getTextBroadcastStats | Get statistics on text broadcast |
-| POST | `/texts/broadcasts/{id}/stop` | stopTextBroadcast | Stop text broadcast |
-| GET | `/texts/broadcasts/{id}/texts` | getTextBroadcastTexts | Find texts in a text broadcast |
-| POST | `/texts/broadcasts/{id}/toggleRecipientsStatus` | toggleTextBroadcastRecipientsStatus | Disable/enable undialed recipients in broadcast |
-| GET | `/texts/{id}` | getText | Find a specific text |
-| GET | `/webhooks` | findWebhooks | Find webhooks |
-| POST | `/webhooks` | createWebhook | Create a webhook |
-| GET | `/webhooks/resources` | findWebhookResources | Find webhook resources |
-| GET | `/webhooks/resources/{resource}` | getWebhookResource | Find specific webhook resource |
-| DELETE | `/webhooks/{id}` | deleteWebhook | Delete a webhook |
-| GET | `/webhooks/{id}` | getWebhook | Find a specific webhook |
-| PUT | `/webhooks/{id}` | updateWebhook | Update a webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/calls` | findCalls | `fields`, `limit`, `offset`, `id`, `campaignId`, `batchId`, `fromNumber`, `toNumber`, `label`, `states`, `results`, `inbound`, `intervalBegin`, `intervalEnd` | CallPage | yes | Find calls |
+| POST | `/calls` | sendCalls | `fields`, `campaignId`, `defaultLiveMessage`, `defaultMachineMessage`, `defaultLiveMessageSoundId`, `defaultMachineMessageSoundId`, `defaultVoice`, `strictValidation`, body: CallRecipient[] | CallList |  | Send calls |
+| GET | `/calls/broadcasts` | findCallBroadcasts | `fields`, `limit`, `offset`, `label`, `name`, `running`, `scheduled`, `intervalBegin`, `intervalEnd` | CallBroadcastPage | yes | Find call broadcasts |
+| POST | `/calls/broadcasts` | createCallBroadcast | `start`, `strictValidation`, body: CallBroadcast | ResourceId |  | Create a call broadcast |
+| GET | `/calls/broadcasts/{id}` | getCallBroadcast | `id`*, `fields` | CallBroadcast | yes | Find a specific call broadcast |
+| PUT | `/calls/broadcasts/{id}` | updateCallBroadcast | `id`*, `strictValidation`, body: CallBroadcast | — |  | Update a call broadcast |
+| POST | `/calls/broadcasts/{id}/archive` | archiveVoiceBroadcast | `id`* | — |  | Archive voice broadcast |
+| GET | `/calls/broadcasts/{id}/batches` | getCallBroadcastBatches | `id`*, `fields`, `limit`, `offset` | BatchPage | yes | Find batches in a call broadcast |
+| POST | `/calls/broadcasts/{id}/batches` | addCallBroadcastBatch | `id`*, `strictValidation`, body: BatchRequest | ResourceId |  | Add batches to a call broadcast |
+| GET | `/calls/broadcasts/{id}/calls` | getCallBroadcastCalls | `id`*, `batchId`, `fields`, `limit`, `offset` | CallPage | yes | Find calls in a call broadcast |
+| POST | `/calls/broadcasts/{id}/recipients` | addCallBroadcastRecipients | `id`*, `fields`, `strictValidation`, body: Recipient[] | CallList |  | Add recipients to a call broadcast |
+| POST | `/calls/broadcasts/{id}/start` | startVoiceBroadcast | `id`* | — |  | Start voice broadcast |
+| GET | `/calls/broadcasts/{id}/stats` | getCallBroadcastStats | `id`*, `fields`, `begin`, `end` | CallBroadcastStats | yes | Get statistics on call broadcast |
+| POST | `/calls/broadcasts/{id}/stop` | stopVoiceBroadcast | `id`* | — |  | Stop voice broadcast |
+| POST | `/calls/broadcasts/{id}/toggleRecipientsStatus` | toggleCallBroadcastRecipientsStatus | `id`*, `enable`, body: Recipient[] | — |  | Disable/enable undialed recipients in broadcast |
+| GET | `/calls/recordings/{id}` | getCallRecording | `id`*, `fields` | CallRecording | yes | Get call recording by id |
+| GET | `/calls/recordings/{id}.mp3` | getCallRecordingMp3 | `id`* | InputStream | yes | Get call recording in mp3 format |
+| GET | `/calls/{id}` | getCall | `id`*, `fields` | Call | yes | Find a specific call |
+| GET | `/calls/{id}/recordings` | getCallRecordings | `id`*, `fields` | CallRecordingList | yes | Get call recordings for a call |
+| GET | `/calls/{id}/recordings/{name}` | getCallRecordingByName | `id`*, `name`*, `fields` | CallRecording | yes | Get call recording by name |
+| GET | `/calls/{id}/recordings/{name}.mp3` | getCallRecordingMp3ByName | `id`*, `name`* | InputStream | yes | Get call mp3 recording by name |
+| GET | `/campaigns/batches/{id}` | getCampaignBatch | `id`*, `fields` | Batch | yes | Find a specific batch |
+| PUT | `/campaigns/batches/{id}` | updateCampaignBatch | `id`*, body: Batch | — |  | Update a batch |
+| GET | `/campaigns/sounds` | findCampaignSounds | `limit`, `offset`, `filter`, `includeArchived`, `includePending`, `includeScrubbed`, `fields` | CampaignSoundPage | yes | Find sounds |
+| POST | `/campaigns/sounds/calls` | postCallCampaignSound | `fields`, body: CallCreateSound | CampaignSound |  | Add sound via call |
+| POST | `/campaigns/sounds/files` | postFileCampaignSound | `fields`, body*: object | CampaignSound |  | Add sound via file |
+| POST | `/campaigns/sounds/tts` | postTTSCampaignSound | `fields`, body: TextToSpeech | CampaignSound |  | Add sound via text-to-speech |
+| GET | `/campaigns/sounds/{id}` | getCampaignSound | `id`*, `fields` | CampaignSound | yes | Find a specific sound |
+| DELETE | `/campaigns/sounds/{id}` | deleteCampaignSound | `id`* | — |  | Delete a specific sound |
+| GET | `/campaigns/sounds/{id}.mp3` | getCampaignSoundDataMp3 | `id`* | StreamingOutput | yes | Download a MP3 sound |
+| GET | `/campaigns/sounds/{id}.wav` | getCampaignSoundDataWav | `id`* | StreamingOutput | yes | Download a WAV sound |
+| GET | `/contacts` | findContacts | `fields`, `limit`, `offset`, `id`, `number`, `contactListId`, `propertyName`, `propertyValue` | ContactPage | yes | Find contacts |
+| POST | `/contacts` | createContacts | body: Contact[] | ResourceIdList |  | Create contacts |
+| GET | `/contacts/dncs` | findDoNotContacts | `fields`, `limit`, `offset`, `prefix`, `campaignId`, `source`, `call`, `text`, `inboundCall`, `inboundText`, `number` | DoNotContactPage | yes | Find do not contact (dnc) items |
+| POST | `/contacts/dncs` | addDoNotContacts | body: AddDoNotContactRequest | — |  | Add do not contact (dnc) numbers |
+| DELETE | `/contacts/dncs/sources/{source}` | deleteDoNotContactsBySource | `source`* | — |  | Delete do not contact (dnc) numbers contained in source. |
+| GET | `/contacts/dncs/universals/{toNumber}` | getUniversalDoNotContacts | `toNumber`*, `fromNumber`, `fields` | ItemListUniversalDoNotContact | yes | Find universal do not contacts (udnc) associated with toNumber |
+| GET | `/contacts/dncs/{number}` | getDoNotContact | `number`* | DoNotContact | yes | Get do not contact (dnc) |
+| PUT | `/contacts/dncs/{number}` | updateDoNotContact | `number`*, body: DoNotContact | — |  | Update an individual do not contact (dnc) number |
+| DELETE | `/contacts/dncs/{number}` | deleteDoNotContact | `number`* | — |  | Delete do not contact (dnc) number. If number contains commas treat as list of numbers |
+| GET | `/contacts/lists` | findContactLists | `fields`, `limit`, `offset`, `name`, `exactMatch`, `contactCount`, `orderBy` | ContactListPage | yes | Find contact lists |
+| POST | `/contacts/lists` | createContactList | `fields`, body: CreateContactListRequest | ContactList |  | Create contact lists |
+| POST | `/contacts/lists/upload` | createContactListFromFile | body*: object | ResourceId |  | Create contact list from file |
+| GET | `/contacts/lists/{id}` | getContactList | `id`*, `fields` | ContactList | yes | Find a specific contact list |
+| PUT | `/contacts/lists/{id}` | updateContactList | `id`*, body: UpdateContactListRequest | — |  | Update a contact list |
+| DELETE | `/contacts/lists/{id}` | deleteContactList | `id`* | — |  | Delete a contact list |
+| GET | `/contacts/lists/{id}/items` | getContactListItems | `id`*, `fields`, `limit`, `offset` | ContactPage | yes | Find contacts in a contact list |
+| POST | `/contacts/lists/{id}/items` | addContactListItems | `id`*, body: AddContactListContactsRequest | — |  | Add contacts to a contact list |
+| DELETE | `/contacts/lists/{id}/items` | removeContactListItems | `id`*, `contactId` | — |  | Delete contacts from a contact list |
+| DELETE | `/contacts/lists/{id}/items/{contactId}` | removeContactListItem | `id`*, `contactId`* | — |  | Delete a contact from a contact list |
+| GET | `/contacts/{id}` | getContact | `id`*, `fields` | Contact | yes | Find a specific contact |
+| PUT | `/contacts/{id}` | updateContact | `id`*, body: Contact | — |  | Update a contact |
+| DELETE | `/contacts/{id}` | deleteContact | `id`* | — |  | Delete a contact |
+| GET | `/contacts/{id}/history` | getContactHistory | `id`*, `limit`, `offset`, `fields` | ContactHistory | yes | Find a contact's history |
+| GET | `/keywords` | findKeywords | `keywords` | KeywordList | yes | Find keywords |
+| GET | `/keywords/leases` | findKeywordLeases | `limit`, `offset`, `filter`, `labelName`, `fields` | KeywordLeasePage | yes | Find keyword leases |
+| GET | `/keywords/leases/configs` | findKeywordLeaseConfigs | `limit`, `offset`, `filter`, `labelName`, `fields` | Page | yes | Find keyword lease configs |
+| GET | `/keywords/leases/configs/{keyword}` | getKeywordLeaseConfig | `keyword`*, `fields` | KeywordConfig | yes | Find a specific keyword lease config |
+| PUT | `/keywords/leases/configs/{keyword}` | updateKeywordLeaseConfig | `keyword`*, body: KeywordConfig | — |  | Update a keyword lease config |
+| GET | `/keywords/leases/id/{id}` | getKeywordLeaseById | `id`*, `fields` | KeywordLease | yes | Find a keyword by id |
+| GET | `/keywords/leases/{keyword}` | getKeywordLease | `keyword`*, `fields` | KeywordLease | yes | Find a specific lease |
+| PUT | `/keywords/leases/{keyword}` | updateKeywordLease | `keyword`*, body: KeywordLease | — |  | Update a lease |
+| GET | `/keywords/{keyword}/available` | isKeywordAvailable | `keyword`* | boolean | yes | Check for a specific keyword |
+| GET | `/me/account` | getAccount | `fields` | Account | yes | Find account details |
+| GET | `/me/api/credentials` | findApiCredentials | `name`, `fields`, `limit`, `offset` | ApiCredentialPage | yes | Find api credentials |
+| POST | `/me/api/credentials` | createApiCredential | body: ApiCredential | ApiCredential |  | Create api credentials |
+| GET | `/me/api/credentials/{id}` | getApiCredential | `id`*, `fields` | ApiCredential | yes | Find a specific api credential |
+| DELETE | `/me/api/credentials/{id}` | deleteApiCredential | `id`* | — |  | Delete api credentials |
+| POST | `/me/api/credentials/{id}/disable` | disableApiCredentials | `id`* | — |  | Disable specified API credentials |
+| POST | `/me/api/credentials/{id}/enable` | enableApiCredentials | `id`* | — |  | Enable specified API credentials |
+| GET | `/me/billing/credit-usage` | getCreditUsage | `intervalBegin`, `intervalEnd` | CreditUsage | yes | Find credit usage |
+| GET | `/me/billing/plan-usage` | getBillingPlanUsage | — | BillingPlanUsage | yes | Find plan usage |
+| GET | `/me/callerids` | getCallerIds | — | CallerIdList | yes | Find caller ids |
+| POST | `/me/callerids/{callerid}` | sendVerificationCodeToCallerId | `callerid`* | — |  | Create a caller id |
+| POST | `/me/callerids/{callerid}/verification-code` | verifyCallerId | `callerid`*, body: CallerIdVerificationRequest | boolean |  | Verify a caller id |
+| GET | `/media` | findMedia | `limit`, `offset`, `filter`, `fields` | MediaPage | yes | Find media |
+| POST | `/media` | createMedia | body*: object | ResourceId |  | Create media |
+| GET | `/media/public/{key}.{extension}` | getMediaDataByKey | `key`*, `extension`* | InputStream | yes | Download media by extension |
+| GET | `/media/{id}` | getMedia | `id`*, `fields` | Media | yes | Get a specific media |
+| GET | `/media/{id}.{extension}` | getMediaData | `id`*, `extension`* | InputStream | yes | Download media by extension |
+| GET | `/media/{id}/file` | getMediaDataBinary | `id`* | InputStream | yes | Download a MP3 media |
+| GET | `/numbers/leases` | findNumberLeases | `limit`, `offset`, `prefix`, `city`, `state`, `zipcode`, `labelName`, `tollFree`, `fields` | NumberLeasePage | yes | Find leases |
+| GET | `/numbers/leases/configs` | findNumberLeaseConfigs | `limit`, `offset`, `prefix`, `city`, `state`, `zipcode`, `labelName`, `fields` | NumberConfigPage | yes | Find lease configs |
+| GET | `/numbers/leases/configs/{number}` | getNumberLeaseConfig | `number`*, `fields` | NumberConfig | yes | Find a specific lease config |
+| PUT | `/numbers/leases/configs/{number}` | updateNumberLeaseConfig | `number`*, body: NumberConfig | — |  | Update a lease config |
+| GET | `/numbers/leases/{number}` | getNumberLease | `number`*, `fields` | NumberLease | yes | Find a specific lease |
+| PUT | `/numbers/leases/{number}` | updateNumberLease | `number`*, body: NumberLease | — |  | Update a lease |
+| GET | `/numbers/local` | findNumbersLocal | `limit`, `prefix`, `city`, `state`, `zipcode`, `fields` | NumberList | yes | Find local numbers |
+| GET | `/numbers/regions` | findNumberRegions | `limit`, `offset`, `prefix`, `city`, `cityPrefix`, `state`, `zipcode`, `country`, `fields` | RegionPage | yes | Find number regions |
+| GET | `/numbers/tollfree` | findNumbersTollfree | `pattern`, `limit`, `fields` | NumberList | yes | Find tollfree numbers |
+| GET | `/orders` | findOrders | `limit`, `offset`, `fields`, `status`, `intervalBegin`, `intervalEnd` | PageNumberOrder | yes | Find orders |
+| POST | `/orders/keywords` | orderKeywords | `fields`, body: KeywordPurchaseRequest | ResourceId |  | Purchase keywords |
+| POST | `/orders/numbers` | orderNumbers | `fields`, body: NumberPurchaseRequest | ResourceId |  | Purchase numbers |
+| GET | `/orders/{id}` | getOrder | `id`*, `fields` | NumberOrder | yes | Find a specific order |
+| GET | `/reports/delivery` | getDeliveryReports | `startDate`, `endDate`, `limit`, `offset`, `campaignId`, `fromNumber`, `toNumber`, `deliveryCategory`, `deliveryState`, `carrier`, `messageText` | PageDeliveryReport | yes | Get delivery reports by ad hoc criteria |
+| GET | `/texts` | findTexts | `id`, `campaignId`, `batchId`, `fromNumber`, `toNumber`, `label`, `states`, `results`, `inbound`, `intervalBegin`, `intervalEnd`, `limit`, `offset`, `fields` | TextPage | yes | Find texts |
+| POST | `/texts` | sendTexts | `fields`, `campaignId`, `defaultMessage`, `strictValidation`, body: TextRecipient[] | TextList |  | Send texts |
+| GET | `/texts/auto-replys` | findTextAutoReplys | `fields`, `limit`, `offset`, `number` | TextAutoReplyPage | yes | Find auto replies |
+| POST | `/texts/auto-replys` | createTextAutoReply | body: TextAutoReply | ResourceId |  | Create an auto reply |
+| GET | `/texts/auto-replys/{id}` | getTextAutoReply | `id`*, `fields` | TextAutoReply | yes | Find a specific auto reply |
+| DELETE | `/texts/auto-replys/{id}` | deleteTextAutoReply | `id`* | — |  | Delete an auto reply |
+| GET | `/texts/broadcasts` | findTextBroadcasts | `name`, `label`, `running`, `scheduled`, `intervalBegin`, `intervalEnd`, `limit`, `offset`, `fields` | TextBroadcastPage | yes | Find text broadcasts |
+| POST | `/texts/broadcasts` | createTextBroadcast | `start`, `strictValidation`, body: TextBroadcast | ResourceId |  | Create a text broadcast |
+| GET | `/texts/broadcasts/{id}` | getTextBroadcast | `id`*, `fields` | TextBroadcast | yes | Find a specific text broadcast |
+| PUT | `/texts/broadcasts/{id}` | updateTextBroadcast | `id`*, `strictValidation`, body: TextBroadcast | TextBroadcastCreateResponse |  | Update a text broadcast |
+| POST | `/texts/broadcasts/{id}/archive` | archiveTextBroadcast | `id`* | — |  | Archive text broadcast |
+| GET | `/texts/broadcasts/{id}/batches` | getTextBroadcastBatches | `id`*, `fields`, `limit`, `offset` | BatchPage | yes | Find batches in a text broadcast |
+| POST | `/texts/broadcasts/{id}/batches` | addTextBroadcastBatch | `id`*, `strictValidation`, body: BatchRequest | ResourceId |  | Add batches to a text broadcast |
+| POST | `/texts/broadcasts/{id}/recipients` | addTextBroadcastRecipients | `id`*, `fields`, `strictValidation`, body: TextRecipient[] | TextList |  | Add recipients to a text broadcast |
+| POST | `/texts/broadcasts/{id}/start` | startTextBroadcast | `id`* | — |  | Start text broadcast |
+| GET | `/texts/broadcasts/{id}/stats` | getTextBroadcastStats | `id`*, `fields`, `begin`, `end` | TextBroadcastStatsDto | yes | Get statistics on text broadcast |
+| POST | `/texts/broadcasts/{id}/stop` | stopTextBroadcast | `id`* | — |  | Stop text broadcast |
+| GET | `/texts/broadcasts/{id}/texts` | getTextBroadcastTexts | `id`*, `batchId`, `fields`, `limit`, `offset` | TextPage | yes | Find texts in a text broadcast |
+| POST | `/texts/broadcasts/{id}/toggleRecipientsStatus` | toggleTextBroadcastRecipientsStatus | `id`*, `enable`, body: Recipient[] | — |  | Disable/enable undialed recipients in broadcast |
+| GET | `/texts/{id}` | getText | `id`*, `fields` | Text | yes | Find a specific text |
+| GET | `/webhooks` | findWebhooks | `fields`, `limit`, `offset`, `name`, `resource`, `event`, `callback`, `enabled` | WebhookPage | yes | Find webhooks |
+| POST | `/webhooks` | createWebhook | body: Webhook | ResourceId |  | Create a webhook |
+| GET | `/webhooks/resources` | findWebhookResources | `fields` | ItemListWebhookResource | yes | Find webhook resources |
+| GET | `/webhooks/resources/{resource}` | getWebhookResource | `resource`*, `fields` | WebhookResource | yes | Find specific webhook resource |
+| GET | `/webhooks/{id}` | getWebhook | `id`*, `fields` | Webhook | yes | Find a specific webhook |
+| PUT | `/webhooks/{id}` | updateWebhook | `id`*, body: Webhook | — |  | Update a webhook |
+| DELETE | `/webhooks/{id}` | deleteWebhook | `id`* | — |  | Delete a webhook |

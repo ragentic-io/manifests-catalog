@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_microsoft_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `31ad1b0675eb4c207046f7d21d9480f1c0bd64082fb7ae5433961e080c1a6271` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,357 +34,359 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_microsoft_profile_i
 
 783 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v0.1/account/test/export` | test_gdprExportAccounts | — |
-| GET | `/v0.1/account/test/export/accounts` | test_gdprExportAccount | — |
-| GET | `/v0.1/account/test/export/featureFlags` | test_gdprExportFeatureFlag | — |
-| GET | `/v0.1/administeredOrgs` | organizations_listAdministered | — |
-| GET | `/v0.1/api_tokens` | userApiTokens_list | — |
-| POST | `/v0.1/api_tokens` | userApiTokens_new | — |
-| DELETE | `/v0.1/api_tokens/{api_token_id}` | userApiTokens_delete | — |
-| GET | `/v0.1/apps` | apps_list | — |
-| POST | `/v0.1/apps` | apps_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}` | apps_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}` | apps_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}` | apps_update | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/active_device_counts` | Analytics_DeviceCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences` | Analytics_ListAudiences | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/definition/test` | Analytics_TestAudience | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/metadata/custom_properties` | Analytics_ListCustomProperties | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/metadata/device_properties` | Analytics_ListDeviceProperties | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/metadata/device_properties/{property_name}/values` | Analytics_ListDevicePropertyValues | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_DeleteAudience | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_GetAudience | — |
-| HEAD | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_AudienceNameExists | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_CreateOrUpdateAudience | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_counts` | Analytics_CrashCounts | Available for UWP apps only. |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups` | Analytics_CrashGroupsTotals | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/crash_counts` | Analytics_CrashGroupCounts | Available for UWP apps only. |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/models` | Analytics_CrashGroupModelCounts | Available for UWP apps only. |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/operating_systems` | Analytics_CrashGroupOperatingSystemCounts | Available for UWP apps only. |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/overall` | Analytics_CrashGroupTotals | Available for UWP apps only. |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crashfree_device_percentages` | Analytics_CrashFreeDevicePercentages | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/analytics/distribution/release_counts` | Analytics_DistributionReleaseCounts | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/analytics/event_logs/{event_name}` | Analytics_EventsDeleteLogs | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events` | Analytics_Events | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}` | Analytics_EventsDelete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/count_per_device` | Analytics_EventPerDeviceCount | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/count_per_session` | Analytics_EventPerSessionCount | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/device_count` | Analytics_EventDeviceCount | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/event_count` | Analytics_EventCount | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/properties` | Analytics_EventProperties | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/properties/{event_property_name}/counts` | Analytics_EventPropertyCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/generic_log_flow` | Analytics_GenericLogFlow | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/languages` | Analytics_LanguageCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/log_flow` | Analytics_LogFlow | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/models` | Analytics_ModelCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/oses` | Analytics_OperatingSystemCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/places` | Analytics_PlaceCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/session_counts` | Analytics_SessionCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/session_durations_distribution` | Analytics_SessionDurationsDistribution | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/sessions_per_device` | Analytics_PerDeviceCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/versions` | Analytics_Versions | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/api_tokens` | appApiTokens_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/api_tokens` | appApiTokens_new | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/api_tokens/{api_token_id}` | appApiTokens_delete | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/apple_mapping` | appleMapping_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/apple_mapping` | appleMapping_get | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/apple_mapping` | appleMapping_create | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/apple_test_flight_groups` | appleMapping_TestFlightGroups | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/avatar` | apps_deleteAvatar | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/avatar` | apps_updateAvatar | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/azure_subscriptions` | azureSubscription_listForApp | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/azure_subscriptions` | azureSubscription_linkForApp | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/azure_subscriptions/{azure_subscription_id}` | azureSubscription_deleteForApp | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/billing/aggregated` | billingAggregatedInformation_getByApp | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/branches` | builds_listBranches | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/builds` | builds_listByBranch | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/builds` | builds_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_get | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_create | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_update | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/export_config` | buildConfigurations_get | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/toolset_projects` | builds_listToolsetProjects | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/bugtracker` | bugtracker_getSettings | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/bugtracker/crashGroup/{crash_group_id}` | bugTracker_getRepoIssueFromCrash | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/build_service_status` | builds_getStatusByAppId | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}` | builds_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}` | builds_update | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}/distribute` | builds_distribute | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}/downloads/{download_type}` | builds_getDownloadUri | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}/logs` | builds_getLog | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/commits/batch` | commits_listByShaList | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups` | crashGroups_list | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}` | crashGroups_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}` | crashGroups_update | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes` | crashes_list | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}` | crashes_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}` | crashes_get | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/native` | crashes_getNativeCrash | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/native/download` | crashes_getNativeCrashDownload | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/raw/location` | crashes_getRawCrashLocation | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/stacktrace` | crashes_getStacktrace | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/stacktrace` | crashGroups_getStacktrace | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/attachments` | crashes_listAttachments | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/attachments/{attachment_id}/location` | crashes_getCrashAttachmentLocation | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/attachments/{attachment_id}/text` | crashes_getCrashTextAttachmentContent | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/session_logs` | Crashes_ListSessionLogs | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes_info` | crashes_getAppCrashesInfo | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments` | codePushDeployments_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments` | codePushDeployments_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}` | codePushDeployments_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}` | codePushDeployments_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}` | codePushDeployments_update | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/metrics` | codePushDeploymentMetrics_get | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/promote_release/{promote_deployment_name}` | codePushDeployments_promote | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases` | codePushDeploymentReleases_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases` | codePushDeploymentReleases_get | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases` | codePushDeploymentReleases_create | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases/{release_label}` | deploymentReleases_update | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/rollback_release` | codePushDeploymentRelease_rollback | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/uploads` | codePushDeploymentUpload_create | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/device_configurations` | test_getDeviceConfigurations | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/device_selection` | test_createDeviceSelection | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/devices/block_logs` | App_BlockLogs | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/devices/block_logs/{install_id}` | Devices_BlockLogs | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/diagnostics/symbol_groups` | missingSymbolGroups_list | Gets top N (ordered by crash count) of crash groups by missing symbol |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/diagnostics/symbol_groups/{symbol_group_id}` | missingSymbolGroups_get | Gets missing symbol crash group by its id |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/diagnostics/symbol_groups_info` | missingSymbolGroups_info | Gets application level statistics for all missing symbol groups |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups` | distributionGroups_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups` | distributionGroups_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}` | distributionGroups_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}` | distributionGroups_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}` | distributionGroups_update | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/devices` | devices_list | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/devices/download_devices_list` | devices_listCsvFormat | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_listUsers | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_addUser | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/members/bulk_delete` | distributionGroups_removeUser | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/releases` | releases_listByDistributionGroup | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/releases/{release_id}` | releases_deleteWithDistributionGroupId | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/releases/{release_id}` | releases_getLatestByDistributionGroup | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/resend_invite` | distributionGroups_resendInvite | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores` | stores_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores` | stores_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}` | stores_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}` | stores_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}` | stores_patch | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/latest_release` | storeReleases_getLatest | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases` | storeReleases_list | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}` | storeReleases_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}` | storeReleases_get | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}/publish_error_details` | storeReleases_getPublishError | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}/publish_logs` | storeReleasePublishLogs_get | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}/realtimestatus` | storeReleases_getRealTimeStatusByReleaseId | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/availableAppBuilds` | Errors_AppBuildsList | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/available_versions` | Errors_AvailableVersions | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorCountsPerDay` | Errors_CountsPerDay | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups` | Errors_GroupList | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/search` | Errors_ErrorGroupsSearch | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}` | Errors_GroupDetails | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}` | Errors_UpdateState | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errorCountsPerDay` | Errors_GroupCountsPerDay | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errorfreeDevicePercentages` | Errors_GroupErrorFreeDevicePercentages | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors` | Errors_ListForGroup | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/latest` | Errors_LatestErrorDetails | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}` | Errors_DeleteError | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}` | Errors_GetErrorDetails | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}/download` | Errors_ErrorDownload | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}/location` | Errors_ErrorLocation | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}/stacktrace` | Errors_ErrorStackTrace | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/models` | Errors_GroupModelCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/operatingSystems` | Errors_GroupOperatingSystemCounts | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/stacktrace` | Errors_GroupErrorStackTrace | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorfreeDevicePercentages` | Errors_ErrorFreeDevicePercentages | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/retention_settings` | errors_getRetentionSettings | gets the retention settings in days |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/search` | Errors_ErrorSearch | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/attachments` | Errors_ErrorAttachments | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/attachments/{attachmentId}/location` | Errors_ErrorAttachmentLocation | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/attachments/{attachmentId}/text` | Errors_ErrorAttachmentText | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/sessionLogs` | Errors_ListSessionLogs | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/export_configurations` | ExportConfigurations_List | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/export_configurations` | ExportConfigurations_Create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}` | ExportConfigurations_Delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}` | ExportConfigurations_Get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}` | ExportConfigurations_PartialUpdate | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}/disable` | ExportConfigurations_Disable | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}/enable` | ExportConfigurations_Enable | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/file_asset` | fileAssets_create | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/invitations` | appInvitations_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/invitations` | appInvitations_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/invitations/{user_email}` | appInvitations_delete | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/invitations/{user_email}` | appInvitations_updatePermissions | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/invitations/{user_email}` | appInvitations_createByEmail | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/notifications/emailSettings` | notifications_getAppEmailSettings | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets` | test_listDeviceSetsOfOwner | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets` | test_createDeviceSetOfOwner | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets/{id}` | test_deleteDeviceSetOfOwner | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets/{id}` | test_getDeviceSetOfOwner | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets/{id}` | test_updateDeviceSetOfOwner | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/recent_releases` | releases_listLatest | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/releases` | releases_list | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/filter_by_tester` | releases_availableToTester | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_getLatestByUser | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_update | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_updateDetails | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/groups` | releases_addDistributionGroup | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/groups/{group_id}` | releases_deleteDistributionGroup | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/groups/{group_id}` | releases_putDistributionGroup | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/provisioning_profile` | provisioning_profile | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/stores` | releases_addStore | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/stores/{store_id}` | releases_deleteDistributionStore | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/testers` | releases_addTesters | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/testers/{tester_id}` | releases_deleteDistributionTester | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/testers/{tester_id}` | releases_putDistributionTester | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/update_devices/{resign_id}` | devices_getReleaseUpdateDevicesStatus | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/repo_config` | repositoryConfigurations_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/repo_config` | repositoryConfigurations_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/repo_config` | repositoryConfigurations_createOrUpdate | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/source_hosts/{source_host}/repositories` | repositories_list | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/store_service_status` | storeNotifications_getNotificationByAppId | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/subscriptions` | test_getSubscriptions | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/subscriptions` | test_createSubscription | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads` | symbolUploads_list | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads` | symbolUploads_create | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}` | symbolUploads_delete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}` | symbolUploads_get | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}` | symbolUploads_complete | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}/location` | symbolUploads_getLocation | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols` | symbols_list | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}` | symbols_get | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}/ignore` | symbols_ignore | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}/location` | symbols_getLocation | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}/status` | symbols_getStatus | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/teams` | apps_getTeams | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export` | test_gdprExportApps | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/apps` | test_gdprExportApp | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/fileSetFiles` | test_gdprExportFileSetFile | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/hashFiles` | test_gdprExportHashFile | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/pipelineTests` | test_gdprExportPipelineTest | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/testRuns` | test_gdprExportTestRun | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs` | test_getTestRuns | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs` | test_createTestRun | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}` | test_archiveTestRun | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}` | test_getTestRun | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/files` | test_startUploadingFile | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/hashes` | test_uploadHash | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/hashes/batch` | test_uploadHashesBatch | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/report` | test_getTestReport | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/start` | test_startTestRun | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/state` | test_getTestRunState | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/stop` | test_stopTestRun | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test_series` | test_getAllTestSeries | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/test_series` | test_createTestSeries | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/test_series/{test_series_slug}` | test_deleteTestSeries | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/test_series/{test_series_slug}` | test_patchTestSeries | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/test_series/{test_series_slug}/test_runs` | test_getAllTestRunsForSeries | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/testers` | apps_listTesters | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/testers/{tester_id}` | releases_deleteTesterFromDestinations | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/toolsets` | builds_listToolsets | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/transfer/{destination_owner_name}` | apps_transferOwnership | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/transfer_to_org` | apps_transferToOrg | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/uploads/releases` | releases_createReleaseUpload | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/uploads/releases/{upload_id}` | releases_getReleaseUploadStatus | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/uploads/releases/{upload_id}` | releases_updateReleaseUploadStatus | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets` | test_listDeviceSetsOfUser | — |
-| POST | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets` | test_createDeviceSetOfUser | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets/{id}` | test_deleteDeviceSetOfUser | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets/{id}` | test_getDeviceSetOfUser | — |
-| PUT | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets/{id}` | test_updateDeviceSetOfUser | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/users` | users_list | — |
-| DELETE | `/v0.1/apps/{owner_name}/{app_name}/users/{user_email}` | apps_removeUser | — |
-| PATCH | `/v0.1/apps/{owner_name}/{app_name}/users/{user_email}` | apps_updateUserPermissions | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/versions` | crashes_getAppVersions | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/webhooks` | webhooks_list | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/xamarin_sdk_bundles` | builds_listXamarinSDKBundles | — |
-| GET | `/v0.1/apps/{owner_name}/{app_name}/xcode_versions` | builds_listXcodeVersions | — |
-| GET | `/v0.1/azure_subscriptions` | azureSubscription_listForUser | — |
-| GET | `/v0.1/billing/allAccountsAggregated` | billingAggregatedInformation_getAll | — |
-| GET | `/v0.1/invitations/sent` | invitations_sent | — |
-| POST | `/v0.1/legacy/reportStatus/deploy` | legacyCodePushAcquisition_updateInstallsStatus | — |
-| POST | `/v0.1/legacy/reportStatus/download` | legacyCodePushAcquisition_updateDownloadStatus | — |
-| GET | `/v0.1/legacy/updateCheck` | legacyCodePushAcquisition_updateCheck | — |
-| GET | `/v0.1/orgs` | organizations_list | — |
-| POST | `/v0.1/orgs` | organizations_createOrUpdate | — |
-| GET | `/v0.1/orgs/{orgName}/billing/aggregated` | billingAggregatedInformation_getForOrg | — |
-| DELETE | `/v0.1/orgs/{org_name}` | organizations_delete | — |
-| GET | `/v0.1/orgs/{org_name}` | organizations_get | — |
-| PATCH | `/v0.1/orgs/{org_name}` | organizations_update | — |
-| GET | `/v0.1/orgs/{org_name}/apps` | apps_listForOrg | — |
-| POST | `/v0.1/orgs/{org_name}/apps` | apps_createForOrg | — |
-| DELETE | `/v0.1/orgs/{org_name}/avatar` | organization_deleteAvatar | — |
-| POST | `/v0.1/orgs/{org_name}/avatar` | organization_updateAvatar | — |
-| GET | `/v0.1/orgs/{org_name}/azure_subscriptions` | azureSubscription_listForOrg | — |
-| GET | `/v0.1/orgs/{org_name}/distribution_groups` | distributionGroups_listForOrg | — |
-| POST | `/v0.1/orgs/{org_name}/distribution_groups` | distributionGroups_createForOrg | — |
-| DELETE | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}` | distributionGroups_deleteForOrg | — |
-| GET | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}` | distributionGroups_getForOrg | — |
-| PATCH | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}` | distributionGroups_patchForOrg | — |
-| GET | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/apps` | distributionGroups_getApps | — |
-| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/apps` | distributionGroups_addApps | — |
-| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/apps/bulk_delete` | distributionGroups_bulkDeleteApps | — |
-| GET | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_listUsersForOrg | — |
-| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_addUsersForOrg | — |
-| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/members/bulk_delete` | distributionGroups_bulkDeleteUsers | — |
-| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/resend_invite` | distributionGroups_resendSharedInvite | — |
-| GET | `/v0.1/orgs/{org_name}/distribution_groups_details` | distributionGroups_detailsForOrg | — |
-| DELETE | `/v0.1/orgs/{org_name}/invitations` | orgInvitations_delete | — |
-| GET | `/v0.1/orgs/{org_name}/invitations` | orgInvitations_listPending | — |
-| POST | `/v0.1/orgs/{org_name}/invitations` | orgInvitations_create | — |
-| PATCH | `/v0.1/orgs/{org_name}/invitations/{email}` | orgInvitations_update | — |
-| POST | `/v0.1/orgs/{org_name}/invitations/{email}/resend` | orgInvitations_sendNewInvitation | — |
-| POST | `/v0.1/orgs/{org_name}/invitations/{email}/revoke` | orgInvitations_ | — |
-| GET | `/v0.1/orgs/{org_name}/teams` | teams_listAll | — |
-| POST | `/v0.1/orgs/{org_name}/teams` | teams_createTeam | — |
-| DELETE | `/v0.1/orgs/{org_name}/teams/{team_name}` | teams_delete | — |
-| GET | `/v0.1/orgs/{org_name}/teams/{team_name}` | teams_getTeam | — |
-| PATCH | `/v0.1/orgs/{org_name}/teams/{team_name}` | teams_update | — |
-| GET | `/v0.1/orgs/{org_name}/teams/{team_name}/apps` | teams_listApps | — |
-| POST | `/v0.1/orgs/{org_name}/teams/{team_name}/apps` | teams_addApp | — |
-| DELETE | `/v0.1/orgs/{org_name}/teams/{team_name}/apps/{app_name}` | teams_removeApp | — |
-| PATCH | `/v0.1/orgs/{org_name}/teams/{team_name}/apps/{app_name}` | teams_updatePermissions | — |
-| GET | `/v0.1/orgs/{org_name}/teams/{team_name}/users` | teams_getUsers | — |
-| POST | `/v0.1/orgs/{org_name}/teams/{team_name}/users` | teams_addUser | — |
-| DELETE | `/v0.1/orgs/{org_name}/teams/{team_name}/users/{user_name}` | teams_removeUser | — |
-| GET | `/v0.1/orgs/{org_name}/testers` | distributionGroups_listAllTestersForOrg | — |
-| GET | `/v0.1/orgs/{org_name}/users` | users_listForOrg | — |
-| DELETE | `/v0.1/orgs/{org_name}/users/{user_name}` | users_removeFromOrg | — |
-| GET | `/v0.1/orgs/{org_name}/users/{user_name}` | users_getForOrg | — |
-| PATCH | `/v0.1/orgs/{org_name}/users/{user_name}` | users_updateOrgRole | — |
-| GET | `/v0.1/orgs/{org_name}/users/{user_name}/apps` | apps_getForOrgUser | — |
-| GET | `/v0.1/public/apps/{app_id}/releases/{release_id}/ios_manifest` | releases_getIosManifest | — |
-| POST | `/v0.1/public/apps/{owner_name}/{app_name}/install_analytics` | distibutionReleases_installAnalytics | — |
-| POST | `/v0.1/public/codepush/report_status/deploy` | codePushAcquisition_updateDeployStatus | — |
-| POST | `/v0.1/public/codepush/report_status/download` | codePushAcquisition_updateDownloadStatus | — |
-| GET | `/v0.1/public/codepush/status` | codePushAcquisition_getAcquisitionStatus | — |
-| GET | `/v0.1/public/codepush/update_check` | codePushAcquisition_updateCheck | — |
-| POST | `/v0.1/public/hooks` | builds_webhook | — |
-| GET | `/v0.1/public/sdk/apps/{app_secret}/distribution_groups/{distribution_group_id}/releases/latest` | releases_getLatestByPublicDistributionGroup | — |
-| GET | `/v0.1/public/sdk/apps/{app_secret}/releases/latest` | releases_getLatestPublicRelease | — |
-| GET | `/v0.1/public/sdk/apps/{app_secret}/releases/{release_hash}/public_distribution_groups` | releases_getPublicGroupsForReleaseByHash | — |
-| GET | `/v0.1/public/sparkle/apps/{app_secret}` | releases_getSparkleFeed | — |
-| GET | `/v0.1/sdk/apps/{app_secret}/releases/private/latest` | releases_getLatestPrivateRelease | — |
-| GET | `/v0.1/sdk/apps/{app_secret}/releases/{release_hash}` | releases_getLatestByHash | — |
-| GET | `/v0.1/user` | users_get | — |
-| PATCH | `/v0.1/user` | users_update | — |
-| GET | `/v0.1/user/devices` | devices_userDevicesList | — |
-| DELETE | `/v0.1/user/devices/{device_udid}` | devices_removeUserDevice | — |
-| GET | `/v0.1/user/devices/{device_udid}` | devices_deviceDetails | — |
-| POST | `/v0.1/user/dsr/delete` | DataSubjectRight_DeleteRequest | — |
-| GET | `/v0.1/user/dsr/delete/{token}` | DataSubjectRight_DeleteStatusRequest | — |
-| POST | `/v0.1/user/dsr/delete/{token}/cancel` | DataSubjectRight_CancelDeleteRequest | — |
-| POST | `/v0.1/user/dsr/export` | DataSubjectRight_ExportRequest | — |
-| GET | `/v0.1/user/dsr/export/{token}` | DataSubjectRight_ExportStatusRequest | — |
-| POST | `/v0.1/user/dsr/export/{token}/cancel` | DataSubjectRight_CancelExportRequest | — |
-| GET | `/v0.1/user/export/serviceConnections` | sharedconnection_Connections | — |
-| POST | `/v0.1/user/invitations/apps/{invitation_token}/accept` | appInvitations_accept | — |
-| POST | `/v0.1/user/invitations/apps/{invitation_token}/reject` | appInvitations_reject | — |
-| POST | `/v0.1/user/invitations/distribution_groups/accept` | distributionGroupInvitations_acceptAll | — |
-| POST | `/v0.1/user/invitations/orgs/{invitation_token}/accept` | orgInvitations_accept | — |
-| POST | `/v0.1/user/invitations/orgs/{invitation_token}/reject` | orgInvitations_reject | — |
-| GET | `/v0.1/user/metadata/optimizely` | Users_getUserMetadata | — |
-| GET | `/v0.1/user/notifications/emailSettings` | notifications_getUserEmailSettings | — |
-| POST | `/v0.1/users/{user_id}/devices/register` | devices_registerUserForDevice | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v0.1/account/test/export` | test_gdprExportAccounts | — | object | yes | — |
+| GET | `/v0.1/account/test/export/accounts` | test_gdprExportAccount | — | object | yes | — |
+| GET | `/v0.1/account/test/export/featureFlags` | test_gdprExportFeatureFlag | — | object | yes | — |
+| GET | `/v0.1/administeredOrgs` | organizations_listAdministered | — | object | yes | — |
+| GET | `/v0.1/api_tokens` | userApiTokens_list | — | object[] | yes | — |
+| POST | `/v0.1/api_tokens` | userApiTokens_new | body: object | object |  | — |
+| DELETE | `/v0.1/api_tokens/{api_token_id}` | userApiTokens_delete | `api_token_id`* | — |  | — |
+| GET | `/v0.1/apps` | apps_list | `$orderBy` | object[] | yes | — |
+| POST | `/v0.1/apps` | apps_create | body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}` | apps_get | `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}` | apps_delete | `app_name`*, `owner_name`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}` | apps_update | `app_name`*, `owner_name`*, body: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/active_device_counts` | Analytics_DeviceCounts | `start`*, `end`, `versions`, `app_build`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences` | Analytics_ListAudiences | `include_disabled`, `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/definition/test` | Analytics_TestAudience | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/metadata/custom_properties` | Analytics_ListCustomProperties | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/metadata/device_properties` | Analytics_ListDeviceProperties | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/metadata/device_properties/{property_name}/values` | Analytics_ListDevicePropertyValues | `property_name`*, `contains`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_GetAudience | `audience_name`*, `owner_name`*, `app_name`* | object | yes | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_CreateOrUpdateAudience | `audience_name`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_DeleteAudience | `audience_name`*, `owner_name`*, `app_name`* | — |  | — |
+| HEAD | `/v0.1/apps/{owner_name}/{app_name}/analytics/audiences/{audience_name}` | Analytics_AudienceNameExists | `audience_name`*, `owner_name`*, `app_name`* | — | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_counts` | Analytics_CrashCounts | `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | Available for UWP apps only. |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups` | Analytics_CrashGroupsTotals | `owner_name`*, `app_name`*, body*: object | object[] |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/crash_counts` | Analytics_CrashGroupCounts | `crash_group_id`*, `version`*, `start`*, `end`, `owner_name`*, `app_name`* | object | yes | Available for UWP apps only. |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/models` | Analytics_CrashGroupModelCounts | `crash_group_id`*, `version`*, `$top`, `owner_name`*, `app_name`* | object | yes | Available for UWP apps only. |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/operating_systems` | Analytics_CrashGroupOperatingSystemCounts | `crash_group_id`*, `version`*, `$top`, `owner_name`*, `app_name`* | object | yes | Available for UWP apps only. |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crash_groups/{crash_group_id}/overall` | Analytics_CrashGroupTotals | `crash_group_id`*, `version`*, `owner_name`*, `app_name`* | object | yes | Available for UWP apps only. |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/crashfree_device_percentages` | Analytics_CrashFreeDevicePercentages | `start`*, `end`, `version`*, `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/analytics/distribution/release_counts` | Analytics_DistributionReleaseCounts | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/analytics/event_logs/{event_name}` | Analytics_EventsDeleteLogs | `event_name`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events` | Analytics_Events | `start`*, `end`, `versions`, `event_name`, `$top`, `$skip`, `$inlinecount`, `$orderby`, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}` | Analytics_EventsDelete | `event_name`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/count_per_device` | Analytics_EventPerDeviceCount | `event_name`*, `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/count_per_session` | Analytics_EventPerSessionCount | `event_name`*, `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/device_count` | Analytics_EventDeviceCount | `event_name`*, `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/event_count` | Analytics_EventCount | `event_name`*, `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/properties` | Analytics_EventProperties | `event_name`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/events/{event_name}/properties/{event_property_name}/counts` | Analytics_EventPropertyCounts | `event_name`*, `event_property_name`*, `start`*, `end`, `versions`, `$top`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/generic_log_flow` | Analytics_GenericLogFlow | `start`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/languages` | Analytics_LanguageCounts | `start`*, `end`, `$top`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/log_flow` | Analytics_LogFlow | `start`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/models` | Analytics_ModelCounts | `start`*, `end`, `$top`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/oses` | Analytics_OperatingSystemCounts | `start`*, `end`, `$top`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/places` | Analytics_PlaceCounts | `start`*, `end`, `$top`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/session_counts` | Analytics_SessionCounts | `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/session_durations_distribution` | Analytics_SessionDurationsDistribution | `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/sessions_per_device` | Analytics_PerDeviceCounts | `start`*, `end`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/analytics/versions` | Analytics_Versions | `start`*, `end`, `$top`, `versions`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/api_tokens` | appApiTokens_list | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/api_tokens` | appApiTokens_new | `owner_name`*, `app_name`*, body: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/api_tokens/{api_token_id}` | appApiTokens_delete | `owner_name`*, `app_name`*, `api_token_id`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/apple_mapping` | appleMapping_get | `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/apple_mapping` | appleMapping_create | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/apple_mapping` | appleMapping_delete | `owner_name`*, `app_name`*, body: string | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/apple_test_flight_groups` | appleMapping_TestFlightGroups | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/avatar` | apps_updateAvatar | `owner_name`*, `app_name`*, body: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/avatar` | apps_deleteAvatar | `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/azure_subscriptions` | azureSubscription_listForApp | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/azure_subscriptions` | azureSubscription_linkForApp | `owner_name`*, `app_name`*, body*: object | — |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/azure_subscriptions/{azure_subscription_id}` | azureSubscription_deleteForApp | `azure_subscription_id`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/billing/aggregated` | billingAggregatedInformation_getByApp | `service`, `period`, `showOriginalPlans`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/branches` | builds_listBranches | `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/builds` | builds_listByBranch | `branch`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/builds` | builds_create | `branch`*, `owner_name`*, `app_name`*, body: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_get | `branch`*, `owner_name`*, `app_name`* | object | yes | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_update | `branch`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_create | `branch`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/config` | branchConfigurations_delete | `branch`*, `owner_name`*, `app_name`*, body: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/export_config` | buildConfigurations_get | `branch`*, `format`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/branches/{branch}/toolset_projects` | builds_listToolsetProjects | `branch`*, `os`*, `platform`*, `maxSearchDepth`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/bugtracker` | bugtracker_getSettings | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/bugtracker/crashGroup/{crash_group_id}` | bugTracker_getRepoIssueFromCrash | `crash_group_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/build_service_status` | builds_getStatusByAppId | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}` | builds_get | `build_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}` | builds_update | `build_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}/distribute` | builds_distribute | `build_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}/downloads/{download_type}` | builds_getDownloadUri | `build_id`*, `download_type`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/builds/{build_id}/logs` | builds_getLog | `build_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/commits/batch` | commits_listByShaList | `hashes`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups` | crashGroups_list | `last_occurrence_from`, `last_occurrence_to`, `app_version`, `group_type`, `group_status`, `group_text_search`, `$orderby`, `continuation_token`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}` | crashGroups_get | `crash_group_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}` | crashGroups_update | `crash_group_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes` | crashes_list | `crash_group_id`*, `include_report`, `include_log`, `date_from`, `date_to`, `app_version`, `error_type`, `owner_name`*, `app_name`* | Crash[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}` | crashes_get | `crash_group_id`*, `crash_id`*, `include_report`, `include_log`, `include_details`, `include_stacktrace`, `grouping_only`, `owner_name`*, `app_name`* | Crash | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}` | crashes_delete | `crash_group_id`*, `crash_id`*, `retention_delete`, `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/native` | crashes_getNativeCrash | `crash_group_id`*, `crash_id`*, `owner_name`*, `app_name`* | string | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/native/download` | crashes_getNativeCrashDownload | `crash_group_id`*, `crash_id`*, `owner_name`*, `app_name`* | string | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/raw/location` | crashes_getRawCrashLocation | `crash_group_id`*, `crash_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/crashes/{crash_id}/stacktrace` | crashes_getStacktrace | `crash_group_id`*, `crash_id`*, `grouping_only`, `owner_name`*, `app_name`* | Stacktrace | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crash_groups/{crash_group_id}/stacktrace` | crashGroups_getStacktrace | `crash_group_id`*, `grouping_only`, `owner_name`*, `app_name`* | Stacktrace | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/attachments` | crashes_listAttachments | `crash_id`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/attachments/{attachment_id}/location` | crashes_getCrashAttachmentLocation | `crash_id`*, `attachment_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/attachments/{attachment_id}/text` | crashes_getCrashTextAttachmentContent | `crash_id`*, `attachment_id`*, `owner_name`*, `app_name`* | string | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes/{crash_id}/session_logs` | Crashes_ListSessionLogs | `crash_id`*, `date`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/crashes_info` | crashes_getAppCrashesInfo | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments` | codePushDeployments_list | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments` | codePushDeployments_create | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}` | codePushDeployments_get | `deployment_name`*, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}` | codePushDeployments_delete | `deployment_name`*, `owner_name`*, `app_name`*, body: object | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}` | codePushDeployments_update | `deployment_name`*, `owner_name`*, `app_name`*, body*: object | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/metrics` | codePushDeploymentMetrics_get | `deployment_name`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/promote_release/{promote_deployment_name}` | codePushDeployments_promote | `deployment_name`*, `promote_deployment_name`*, `owner_name`*, `app_name`*, body: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases` | codePushDeploymentReleases_get | `deployment_name`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases` | codePushDeploymentReleases_create | `deployment_name`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases` | codePushDeploymentReleases_delete | `deployment_name`*, `owner_name`*, `app_name`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/releases/{release_label}` | deploymentReleases_update | `deployment_name`*, `release_label`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/rollback_release` | codePushDeploymentRelease_rollback | `deployment_name`*, `owner_name`*, `app_name`*, body: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/deployments/{deployment_name}/uploads` | codePushDeploymentUpload_create | `deployment_name`*, `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/device_configurations` | test_getDeviceConfigurations | `app_upload_id`, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/device_selection` | test_createDeviceSelection | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/devices/block_logs` | App_BlockLogs | `owner_name`*, `app_name`* | string:string |  | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/devices/block_logs/{install_id}` | Devices_BlockLogs | `install_id`*, `owner_name`*, `app_name`* | string:string |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/diagnostics/symbol_groups` | missingSymbolGroups_list | `top`*, `owner_name`*, `app_name`* | object | yes | Gets top N (ordered by crash count) of crash groups by missing symbol |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/diagnostics/symbol_groups/{symbol_group_id}` | missingSymbolGroups_get | `symbol_group_id`*, `owner_name`*, `app_name`* | object | yes | Gets missing symbol crash group by its id |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/diagnostics/symbol_groups_info` | missingSymbolGroups_info | `owner_name`*, `app_name`* | object | yes | Gets application level statistics for all missing symbol groups |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups` | distributionGroups_list | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups` | distributionGroups_create | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}` | distributionGroups_get | `owner_name`*, `app_name`*, `distribution_group_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}` | distributionGroups_delete | `app_name`*, `owner_name`*, `distribution_group_name`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}` | distributionGroups_update | `owner_name`*, `app_name`*, `distribution_group_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/devices` | devices_list | `distribution_group_name`*, `release_id`, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/devices/download_devices_list` | devices_listCsvFormat | `distribution_group_name`*, `unprovisioned_only`, `udids`, `owner_name`*, `app_name`* | — | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_listUsers | `owner_name`*, `app_name`*, `distribution_group_name`*, `exclude_pending_invitations` | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_addUser | `owner_name`*, `app_name`*, `distribution_group_name`*, body*: object | object[] |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/members/bulk_delete` | distributionGroups_removeUser | `owner_name`*, `app_name`*, `distribution_group_name`*, body*: object | object[] |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/releases` | releases_listByDistributionGroup | `distribution_group_name`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/releases/{release_id}` | releases_getLatestByDistributionGroup | `owner_name`*, `app_name`*, `distribution_group_name`*, `release_id`*, `is_install_page` | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/releases/{release_id}` | releases_deleteWithDistributionGroupId | `owner_name`*, `app_name`*, `distribution_group_name`*, `release_id`* | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_groups/{distribution_group_name}/resend_invite` | distributionGroups_resendInvite | `owner_name`*, `app_name`*, `distribution_group_name`*, body*: object | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores` | stores_list | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores` | stores_create | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}` | stores_get | `store_name`*, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}` | stores_delete | `store_name`*, `owner_name`*, `app_name`*, body: string | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}` | stores_patch | `store_name`*, `owner_name`*, `app_name`*, body*: object | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/latest_release` | storeReleases_getLatest | `store_name`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases` | storeReleases_list | `store_name`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}` | storeReleases_get | `store_name`*, `release_id`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}` | storeReleases_delete | `store_name`*, `release_id`*, `owner_name`*, `app_name`*, body: string | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}/publish_error_details` | storeReleases_getPublishError | `store_name`*, `release_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}/publish_logs` | storeReleasePublishLogs_get | `store_name`*, `release_id`*, `owner_name`*, `app_name`* | — | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/distribution_stores/{store_name}/releases/{release_id}/realtimestatus` | storeReleases_getRealTimeStatusByReleaseId | `store_name`*, `release_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/availableAppBuilds` | Errors_AppBuildsList | `version`*, `start`*, `end`, `$top`, `errorType`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/available_versions` | Errors_AvailableVersions | `start`*, `end`, `$top`, `$skip`, `$filter`, `$inlinecount`, `errorType`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorCountsPerDay` | Errors_CountsPerDay | `version`, `start`*, `end`, `app_build`, `errorType`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups` | Errors_GroupList | `version`, `app_build`, `groupState`, `start`*, `end`, `$orderby`, `$top`, `errorType`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/search` | Errors_ErrorGroupsSearch | `filter`, `q`, `order`, `sort`, `$top`, `$skip`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}` | Errors_GroupDetails | `errorGroupId`*, `owner_name`*, `app_name`* | object | yes | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}` | Errors_UpdateState | `errorGroupId`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errorCountsPerDay` | Errors_GroupCountsPerDay | `errorGroupId`*, `version`, `start`*, `end`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errorfreeDevicePercentages` | Errors_GroupErrorFreeDevicePercentages | `errorGroupId`*, `start`*, `end`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors` | Errors_ListForGroup | `errorGroupId`*, `start`*, `end`, `$top`, `model`, `os`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/latest` | Errors_LatestErrorDetails | `errorGroupId`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}` | Errors_GetErrorDetails | `errorGroupId`*, `errorId`*, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}` | Errors_DeleteError | `errorGroupId`*, `errorId`*, `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}/download` | Errors_ErrorDownload | `errorGroupId`*, `errorId`*, `format`, `owner_name`*, `app_name`* | object:file | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}/location` | Errors_ErrorLocation | `errorGroupId`*, `errorId`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/errors/{errorId}/stacktrace` | Errors_ErrorStackTrace | `errorGroupId`*, `errorId`*, `owner_name`*, `app_name`* | DiagnosticsStackTrace | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/models` | Errors_GroupModelCounts | `errorGroupId`*, `$top`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/operatingSystems` | Errors_GroupOperatingSystemCounts | `errorGroupId`*, `$top`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorGroups/{errorGroupId}/stacktrace` | Errors_GroupErrorStackTrace | `errorGroupId`*, `owner_name`*, `app_name`* | DiagnosticsStackTrace | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/errorfreeDevicePercentages` | Errors_ErrorFreeDevicePercentages | `start`*, `end`, `versions`, `app_build`, `errorType`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/retention_settings` | errors_getRetentionSettings | `owner_name`*, `app_name`* | object | yes | gets the retention settings in days |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/search` | Errors_ErrorSearch | `filter`, `q`, `order`, `sort`, `$top`, `$skip`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/attachments` | Errors_ErrorAttachments | `errorId`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/attachments/{attachmentId}/location` | Errors_ErrorAttachmentLocation | `errorId`*, `attachmentId`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/attachments/{attachmentId}/text` | Errors_ErrorAttachmentText | `errorId`*, `attachmentId`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/errors/{errorId}/sessionLogs` | Errors_ListSessionLogs | `errorId`*, `date`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/export_configurations` | ExportConfigurations_List | `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/export_configurations` | ExportConfigurations_Create | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}` | ExportConfigurations_Get | `export_configuration_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}` | ExportConfigurations_Delete | `export_configuration_id`*, `owner_name`*, `app_name`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}` | ExportConfigurations_PartialUpdate | `export_configuration_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}/disable` | ExportConfigurations_Disable | `export_configuration_id`*, `owner_name`*, `app_name`* | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/export_configurations/{export_configuration_id}/enable` | ExportConfigurations_Enable | `export_configuration_id`*, `owner_name`*, `app_name`* | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/file_asset` | fileAssets_create | `owner_name`*, `app_name`*, body: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/invitations` | appInvitations_list | `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/invitations` | appInvitations_create | `owner_name`*, `app_name`*, body: object | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/invitations/{user_email}` | appInvitations_createByEmail | `owner_name`*, `app_name`*, `user_email`*, body: object | — |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/invitations/{user_email}` | appInvitations_delete | `owner_name`*, `app_name`*, `user_email`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/invitations/{user_email}` | appInvitations_updatePermissions | `owner_name`*, `app_name`*, `user_email`*, body*: object | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/notifications/emailSettings` | notifications_getAppEmailSettings | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets` | test_listDeviceSetsOfOwner | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets` | test_createDeviceSetOfOwner | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets/{id}` | test_getDeviceSetOfOwner | `id`*, `owner_name`*, `app_name`* | object | yes | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets/{id}` | test_updateDeviceSetOfOwner | `id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/owner/device_sets/{id}` | test_deleteDeviceSetOfOwner | `id`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/recent_releases` | releases_listLatest | `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/releases` | releases_list | `published_only`, `scope`, `top`, `releaseId`, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/filter_by_tester` | releases_availableToTester | `published_only`, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_getLatestByUser | `release_id`*, `udid`, `is_install_page`, `owner_name`*, `app_name`* | object | yes | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_updateDetails | `release_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_delete | `release_id`*, `owner_name`*, `app_name`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}` | releases_update | `release_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/groups` | releases_addDistributionGroup | `release_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/groups/{group_id}` | releases_putDistributionGroup | `release_id`*, `group_id`*, `owner_name`*, `app_name`*, body: object | — |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/groups/{group_id}` | releases_deleteDistributionGroup | `release_id`*, `group_id`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/provisioning_profile` | provisioning_profile | `release_id`*, `owner_name`*, `app_name`* | ProvisioningProfileResponse | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/stores` | releases_addStore | `release_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/stores/{store_id}` | releases_deleteDistributionStore | `release_id`*, `store_id`*, `owner_name`*, `app_name`* | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/testers` | releases_addTesters | `release_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/testers/{tester_id}` | releases_putDistributionTester | `release_id`*, `tester_id`*, `owner_name`*, `app_name`*, body: object | — |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/testers/{tester_id}` | releases_deleteDistributionTester | `release_id`*, `tester_id`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/releases/{release_id}/update_devices/{resign_id}` | devices_getReleaseUpdateDevicesStatus | `release_id`*, `resign_id`*, `include_provisioning_profile`, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/repo_config` | repositoryConfigurations_list | `includeInactive`, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/repo_config` | repositoryConfigurations_createOrUpdate | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/repo_config` | repositoryConfigurations_delete | `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/source_hosts/{source_host}/repositories` | repositories_list | `source_host`*, `vstsAccountName`, `vstsProjectId`, `service_connection_id`, `form`, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/store_service_status` | storeNotifications_getNotificationByAppId | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/subscriptions` | test_getSubscriptions | `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/subscriptions` | test_createSubscription | `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads` | symbolUploads_list | `top`, `status`, `symbol_type`, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads` | symbolUploads_create | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}` | symbolUploads_get | `symbol_upload_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}` | symbolUploads_delete | `symbol_upload_id`*, `owner_name`*, `app_name`* | object |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}` | symbolUploads_complete | `symbol_upload_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbol_uploads/{symbol_upload_id}/location` | symbolUploads_getLocation | `symbol_upload_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols` | symbols_list | `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}` | symbols_get | `symbol_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}/ignore` | symbols_ignore | `symbol_id`*, `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}/location` | symbols_getLocation | `symbol_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/symbols/{symbol_id}/status` | symbols_getStatus | `symbol_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/teams` | apps_getTeams | `app_name`*, `owner_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export` | test_gdprExportApps | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/apps` | test_gdprExportApp | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/fileSetFiles` | test_gdprExportFileSetFile | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/hashFiles` | test_gdprExportHashFile | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/pipelineTests` | test_gdprExportPipelineTest | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test/export/testRuns` | test_gdprExportTestRun | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs` | test_getTestRuns | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs` | test_createTestRun | `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}` | test_getTestRun | `test_run_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}` | test_archiveTestRun | `test_run_id`*, `owner_name`*, `app_name`* | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/files` | test_startUploadingFile | `test_run_id`*, `owner_name`*, `app_name`* | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/hashes` | test_uploadHash | `test_run_id`*, `owner_name`*, `app_name`*, body*: object | — |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/hashes/batch` | test_uploadHashesBatch | `test_run_id`*, `owner_name`*, `app_name`*, body*: object[] | object[] |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/report` | test_getTestReport | `test_run_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/start` | test_startTestRun | `test_run_id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/state` | test_getTestRunState | `test_run_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/test_runs/{test_run_id}/stop` | test_stopTestRun | `test_run_id`*, `owner_name`*, `app_name`* | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test_series` | test_getAllTestSeries | `query`, `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/test_series` | test_createTestSeries | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/test_series/{test_series_slug}` | test_deleteTestSeries | `test_series_slug`*, `owner_name`*, `app_name`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/test_series/{test_series_slug}` | test_patchTestSeries | `test_series_slug`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/test_series/{test_series_slug}/test_runs` | test_getAllTestRunsForSeries | `test_series_slug`*, `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/testers` | apps_listTesters | `owner_name`*, `app_name`* | object[] | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/testers/{tester_id}` | releases_deleteTesterFromDestinations | `tester_id`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/toolsets` | builds_listToolsets | `tools`, `owner_name`*, `app_name`* | object | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/transfer/{destination_owner_name}` | apps_transferOwnership | `owner_name`*, `app_name`*, `destination_owner_name`*, body: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/transfer_to_org` | apps_transferToOrg | `owner_name`*, `app_name`*, body: object | object |  | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/uploads/releases` | releases_createReleaseUpload | `owner_name`*, `app_name`*, body: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/uploads/releases/{upload_id}` | releases_getReleaseUploadStatus | `upload_id`*, `owner_name`*, `app_name`* | object | yes | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/uploads/releases/{upload_id}` | releases_updateReleaseUploadStatus | `upload_id`*, `extract`, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets` | test_listDeviceSetsOfUser | `owner_name`*, `app_name`* | object[] | yes | — |
+| POST | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets` | test_createDeviceSetOfUser | `owner_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets/{id}` | test_getDeviceSetOfUser | `id`*, `owner_name`*, `app_name`* | object | yes | — |
+| PUT | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets/{id}` | test_updateDeviceSetOfUser | `id`*, `owner_name`*, `app_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/user/device_sets/{id}` | test_deleteDeviceSetOfUser | `id`*, `owner_name`*, `app_name`* | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/users` | users_list | `owner_name`*, `app_name`* | object[] | yes | — |
+| DELETE | `/v0.1/apps/{owner_name}/{app_name}/users/{user_email}` | apps_removeUser | `owner_name`*, `app_name`*, `user_email`* | — |  | — |
+| PATCH | `/v0.1/apps/{owner_name}/{app_name}/users/{user_email}` | apps_updateUserPermissions | `owner_name`*, `app_name`*, `user_email`*, body*: object | — |  | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/versions` | crashes_getAppVersions | `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/webhooks` | webhooks_list | `owner_name`*, `app_name`* | object | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/xamarin_sdk_bundles` | builds_listXamarinSDKBundles | `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/apps/{owner_name}/{app_name}/xcode_versions` | builds_listXcodeVersions | `owner_name`*, `app_name`* | object[] | yes | — |
+| GET | `/v0.1/azure_subscriptions` | azureSubscription_listForUser | — | object[] | yes | — |
+| GET | `/v0.1/billing/allAccountsAggregated` | billingAggregatedInformation_getAll | `service`, `period`, `showOriginalPlans` | object | yes | — |
+| GET | `/v0.1/invitations/sent` | invitations_sent | — | object[] | yes | — |
+| POST | `/v0.1/legacy/reportStatus/deploy` | legacyCodePushAcquisition_updateInstallsStatus | body*: object | — |  | — |
+| POST | `/v0.1/legacy/reportStatus/download` | legacyCodePushAcquisition_updateDownloadStatus | body*: object | — |  | — |
+| GET | `/v0.1/legacy/updateCheck` | legacyCodePushAcquisition_updateCheck | `deploymentKey`, `appVersion`, `packageHash`, `label`, `clientUniqueId`, `isCompanion` | object | yes | — |
+| GET | `/v0.1/orgs` | organizations_list | — | object[] | yes | — |
+| POST | `/v0.1/orgs` | organizations_createOrUpdate | body*: object | object |  | — |
+| GET | `/v0.1/orgs/{orgName}/billing/aggregated` | billingAggregatedInformation_getForOrg | `orgName`*, `service`, `period`, `showOriginalPlans` | object | yes | — |
+| GET | `/v0.1/orgs/{org_name}` | organizations_get | `org_name`* | object | yes | — |
+| DELETE | `/v0.1/orgs/{org_name}` | organizations_delete | `org_name`* | — |  | — |
+| PATCH | `/v0.1/orgs/{org_name}` | organizations_update | `org_name`*, body*: object | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/apps` | apps_listForOrg | `org_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/apps` | apps_createForOrg | `org_name`*, body*: object | object |  | — |
+| POST | `/v0.1/orgs/{org_name}/avatar` | organization_updateAvatar | `org_name`*, body: object | object |  | — |
+| DELETE | `/v0.1/orgs/{org_name}/avatar` | organization_deleteAvatar | `org_name`* | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/azure_subscriptions` | azureSubscription_listForOrg | `org_name`* | object[] | yes | — |
+| GET | `/v0.1/orgs/{org_name}/distribution_groups` | distributionGroups_listForOrg | `org_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/distribution_groups` | distributionGroups_createForOrg | `org_name`*, body*: object | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}` | distributionGroups_getForOrg | `org_name`*, `distribution_group_name`* | object | yes | — |
+| DELETE | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}` | distributionGroups_deleteForOrg | `org_name`*, `distribution_group_name`* | — |  | — |
+| PATCH | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}` | distributionGroups_patchForOrg | `org_name`*, `distribution_group_name`*, body: object | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/apps` | distributionGroups_getApps | `org_name`*, `distribution_group_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/apps` | distributionGroups_addApps | `org_name`*, `distribution_group_name`*, body*: object | — |  | — |
+| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/apps/bulk_delete` | distributionGroups_bulkDeleteApps | `org_name`*, `distribution_group_name`*, body*: object | — |  | — |
+| GET | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_listUsersForOrg | `org_name`*, `distribution_group_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/members` | distributionGroups_addUsersForOrg | `org_name`*, `distribution_group_name`*, body*: object | object[] |  | — |
+| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/members/bulk_delete` | distributionGroups_bulkDeleteUsers | `org_name`*, `distribution_group_name`*, body*: object | — |  | — |
+| POST | `/v0.1/orgs/{org_name}/distribution_groups/{distribution_group_name}/resend_invite` | distributionGroups_resendSharedInvite | `org_name`*, `distribution_group_name`*, body*: object | — |  | — |
+| GET | `/v0.1/orgs/{org_name}/distribution_groups_details` | distributionGroups_detailsForOrg | `org_name`*, `apps_limit` | object[] | yes | — |
+| GET | `/v0.1/orgs/{org_name}/invitations` | orgInvitations_listPending | `org_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/invitations` | orgInvitations_create | `org_name`*, body*: object | — |  | — |
+| DELETE | `/v0.1/orgs/{org_name}/invitations` | orgInvitations_delete | `org_name`*, body*: object | — |  | — |
+| PATCH | `/v0.1/orgs/{org_name}/invitations/{email}` | orgInvitations_update | `org_name`*, `email`*, body*: object | — |  | — |
+| POST | `/v0.1/orgs/{org_name}/invitations/{email}/resend` | orgInvitations_sendNewInvitation | `org_name`*, `email`*, body: object | — |  | — |
+| POST | `/v0.1/orgs/{org_name}/invitations/{email}/revoke` | orgInvitations_ | `org_name`*, `email`*, body: object | — |  | — |
+| GET | `/v0.1/orgs/{org_name}/teams` | teams_listAll | `org_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/teams` | teams_createTeam | `org_name`*, body*: object | object[] |  | — |
+| GET | `/v0.1/orgs/{org_name}/teams/{team_name}` | teams_getTeam | `org_name`*, `team_name`* | object | yes | — |
+| DELETE | `/v0.1/orgs/{org_name}/teams/{team_name}` | teams_delete | `org_name`*, `team_name`* | — |  | — |
+| PATCH | `/v0.1/orgs/{org_name}/teams/{team_name}` | teams_update | `org_name`*, `team_name`*, body*: object | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/teams/{team_name}/apps` | teams_listApps | `org_name`*, `team_name`* | object[] | yes | — |
+| POST | `/v0.1/orgs/{org_name}/teams/{team_name}/apps` | teams_addApp | `org_name`*, `team_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/orgs/{org_name}/teams/{team_name}/apps/{app_name}` | teams_removeApp | `org_name`*, `team_name`*, `app_name`* | — |  | — |
+| PATCH | `/v0.1/orgs/{org_name}/teams/{team_name}/apps/{app_name}` | teams_updatePermissions | `org_name`*, `team_name`*, `app_name`*, body*: object | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/teams/{team_name}/users` | teams_getUsers | `org_name`*, `team_name`* | object | yes | — |
+| POST | `/v0.1/orgs/{org_name}/teams/{team_name}/users` | teams_addUser | `org_name`*, `team_name`*, body*: object | object |  | — |
+| DELETE | `/v0.1/orgs/{org_name}/teams/{team_name}/users/{user_name}` | teams_removeUser | `org_name`*, `team_name`*, `user_name`* | — |  | — |
+| GET | `/v0.1/orgs/{org_name}/testers` | distributionGroups_listAllTestersForOrg | `org_name`* | object[] | yes | — |
+| GET | `/v0.1/orgs/{org_name}/users` | users_listForOrg | `org_name`* | object[] | yes | — |
+| GET | `/v0.1/orgs/{org_name}/users/{user_name}` | users_getForOrg | `org_name`*, `user_name`* | object | yes | — |
+| DELETE | `/v0.1/orgs/{org_name}/users/{user_name}` | users_removeFromOrg | `org_name`*, `user_name`* | — |  | — |
+| PATCH | `/v0.1/orgs/{org_name}/users/{user_name}` | users_updateOrgRole | `org_name`*, `user_name`*, body*: object | object |  | — |
+| GET | `/v0.1/orgs/{org_name}/users/{user_name}/apps` | apps_getForOrgUser | `org_name`*, `user_name`* | object[] | yes | — |
+| GET | `/v0.1/public/apps/{app_id}/releases/{release_id}/ios_manifest` | releases_getIosManifest | `app_id`*, `release_id`*, `token`* | — | yes | — |
+| POST | `/v0.1/public/apps/{owner_name}/{app_name}/install_analytics` | distibutionReleases_installAnalytics | `owner_name`*, `app_name`*, body*: object | — |  | — |
+| POST | `/v0.1/public/codepush/report_status/deploy` | codePushAcquisition_updateDeployStatus | body*: object | — |  | — |
+| POST | `/v0.1/public/codepush/report_status/download` | codePushAcquisition_updateDownloadStatus | body*: object | — |  | — |
+| GET | `/v0.1/public/codepush/status` | codePushAcquisition_getAcquisitionStatus | — | object | yes | — |
+| GET | `/v0.1/public/codepush/update_check` | codePushAcquisition_updateCheck | `deployment_key`*, `app_version`*, `package_hash`, `label`, `client_unique_id`, `is_companion`, `previous_label_or_app_version`, `previous_deployment_key` | object | yes | — |
+| POST | `/v0.1/public/hooks` | builds_webhook | body: object | — |  | — |
+| GET | `/v0.1/public/sdk/apps/{app_secret}/distribution_groups/{distribution_group_id}/releases/latest` | releases_getLatestByPublicDistributionGroup | `app_secret`*, `distribution_group_id`*, `is_install_page` | object | yes | — |
+| GET | `/v0.1/public/sdk/apps/{app_secret}/releases/latest` | releases_getLatestPublicRelease | `app_secret`* | object | yes | — |
+| GET | `/v0.1/public/sdk/apps/{app_secret}/releases/{release_hash}/public_distribution_groups` | releases_getPublicGroupsForReleaseByHash | `app_secret`*, `release_hash`* | object[] | yes | — |
+| GET | `/v0.1/public/sparkle/apps/{app_secret}` | releases_getSparkleFeed | `app_secret`* | — | yes | — |
+| GET | `/v0.1/sdk/apps/{app_secret}/releases/private/latest` | releases_getLatestPrivateRelease | `app_secret`*, `udid` | object | yes | — |
+| GET | `/v0.1/sdk/apps/{app_secret}/releases/{release_hash}` | releases_getLatestByHash | `app_secret`*, `release_hash`*, `udid` | object | yes | — |
+| GET | `/v0.1/user` | users_get | — | object | yes | — |
+| PATCH | `/v0.1/user` | users_update | body*: object | object |  | — |
+| GET | `/v0.1/user/devices` | devices_userDevicesList | — | object[] | yes | — |
+| GET | `/v0.1/user/devices/{device_udid}` | devices_deviceDetails | `device_udid`* | object | yes | — |
+| DELETE | `/v0.1/user/devices/{device_udid}` | devices_removeUserDevice | `device_udid`* | — |  | — |
+| POST | `/v0.1/user/dsr/delete` | DataSubjectRight_DeleteRequest | — | object |  | — |
+| GET | `/v0.1/user/dsr/delete/{token}` | DataSubjectRight_DeleteStatusRequest | `token`*, `email`* | object | yes | — |
+| POST | `/v0.1/user/dsr/delete/{token}/cancel` | DataSubjectRight_CancelDeleteRequest | `token`*, body: object | object |  | — |
+| POST | `/v0.1/user/dsr/export` | DataSubjectRight_ExportRequest | — | object |  | — |
+| GET | `/v0.1/user/dsr/export/{token}` | DataSubjectRight_ExportStatusRequest | `token`* | object | yes | — |
+| POST | `/v0.1/user/dsr/export/{token}/cancel` | DataSubjectRight_CancelExportRequest | `token`* | object |  | — |
+| GET | `/v0.1/user/export/serviceConnections` | sharedconnection_Connections | — | object[] | yes | — |
+| POST | `/v0.1/user/invitations/apps/{invitation_token}/accept` | appInvitations_accept | `invitation_token`*, body: object | — |  | — |
+| POST | `/v0.1/user/invitations/apps/{invitation_token}/reject` | appInvitations_reject | `invitation_token`*, body: object | — |  | — |
+| POST | `/v0.1/user/invitations/distribution_groups/accept` | distributionGroupInvitations_acceptAll | body: object | — |  | — |
+| POST | `/v0.1/user/invitations/orgs/{invitation_token}/accept` | orgInvitations_accept | `invitation_token`*, body: object | — |  | — |
+| POST | `/v0.1/user/invitations/orgs/{invitation_token}/reject` | orgInvitations_reject | `invitation_token`*, body: object | — |  | — |
+| GET | `/v0.1/user/metadata/optimizely` | Users_getUserMetadata | — | object | yes | — |
+| GET | `/v0.1/user/notifications/emailSettings` | notifications_getUserEmailSettings | — | object | yes | — |
+| POST | `/v0.1/users/{user_id}/devices/register` | devices_registerUserForDevice | `user_id`*, body*: object | object |  | — |

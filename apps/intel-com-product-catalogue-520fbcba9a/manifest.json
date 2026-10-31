@@ -32,12 +32,60 @@
       },
       {
         "deprecated": false,
+        "description": "Use this to get codename details for Intel products.",
         "id": "operation:get:/api/products/get-codename",
         "kind": "operation",
         "method": "get",
         "name": "getCodeName",
+        "parameters": [
+          {
+            "description": "Locale and Geo code used to get localised data.<br/><br/>",
+            "enum": [
+              "zh-TW",
+              "de-DE",
+              "en-US",
+              "es-ES",
+              "fr-FR",
+              "it-IT",
+              "ja-JP",
+              "ko-KR",
+              "nl-NL",
+              "pl-PL",
+              "pt-BR",
+              "ru-RU",
+              "sv-SE",
+              "th-TH",
+              "tr-TR",
+              "ur-PK",
+              "id-ID",
+              "uk-UA",
+              "vi-VN",
+              "si-LK",
+              "en-NE",
+              "zh-CN",
+              "en-UK",
+              "es-MX",
+              "pt-PT"
+            ],
+            "in": "query",
+            "name": "locale_geo_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/products/get-codename",
         "pointer": "#/paths/~1api~1products~1get-codename/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BasicAuth": []
@@ -46,16 +94,74 @@
             "ClientId": []
           }
         ],
-        "summary": "5. Get list of codename details for Intel products."
+        "summary": "5. Get list of codename details for Intel products.",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to fetch ordering info details for Intel products.",
         "id": "operation:get:/api/products/get-ordering-info",
         "kind": "operation",
         "method": "get",
         "name": "getorderinginfo",
+        "parameters": [
+          {
+            "description": "Filter ordering info details based on one or multiple product id's.",
+            "in": "query",
+            "name": "product_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Locale and Geo code used to get localised data.<br/><br/>",
+            "enum": [
+              "zh-TW",
+              "de-DE",
+              "en-US",
+              "es-ES",
+              "fr-FR",
+              "it-IT",
+              "ja-JP",
+              "ko-KR",
+              "nl-NL",
+              "pl-PL",
+              "pt-BR",
+              "ru-RU",
+              "sv-SE",
+              "th-TH",
+              "tr-TR",
+              "ur-PK",
+              "id-ID",
+              "uk-UA",
+              "vi-VN",
+              "si-LK",
+              "en-NE",
+              "zh-CN",
+              "en-UK",
+              "es-MX",
+              "pt-PT"
+            ],
+            "in": "query",
+            "name": "locale_geo_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/products/get-ordering-info",
         "pointer": "#/paths/~1api~1products~1get-ordering-info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BasicAuth": []
@@ -64,16 +170,116 @@
             "ClientId": []
           }
         ],
-        "summary": "3. Get ordering info for product id's requested."
+        "summary": "3. Get ordering info for product id's requested.",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to get basic details of products with pagination.",
         "id": "operation:get:/api/products/get-products",
         "kind": "operation",
         "method": "get",
         "name": "getProductList",
+        "parameters": [
+          {
+            "description": "Locale and Geo code used to get localised data.<br/><br/>",
+            "enum": [
+              "zh-TW",
+              "de-DE",
+              "en-US",
+              "es-ES",
+              "fr-FR",
+              "it-IT",
+              "ja-JP",
+              "ko-KR",
+              "nl-NL",
+              "pl-PL",
+              "pt-BR",
+              "ru-RU",
+              "sv-SE",
+              "th-TH",
+              "tr-TR",
+              "ur-PK",
+              "id-ID",
+              "uk-UA",
+              "vi-VN",
+              "si-LK",
+              "en-NE",
+              "zh-CN",
+              "en-UK",
+              "es-MX",
+              "pt-PT"
+            ],
+            "in": "query",
+            "name": "locale_geo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter products based on one or multiple category id.",
+            "in": "query",
+            "name": "category_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter products based on one or multiple product id.",
+            "in": "query",
+            "name": "product_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specification values which needs to be pulled from product data.",
+            "in": "query",
+            "name": "highlights",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates sorting fields.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allows to filter data.<br/><br/>Format of filter: [{\"type\":\"specvalue\",\"name\":\"ThreadCount\",\"gteq\":\"4\"}]<br/><br/><b>Available operators are:</b> \"eq\": equal t…",
+            "in": "query",
+            "name": "filters",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter number of products in response to desired size.",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicates page number for pagination of results.",
+            "in": "query",
+            "name": "page_no",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/products/get-products",
         "pointer": "#/paths/~1api~1products~1get-products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BasicAuth": []
@@ -82,16 +288,81 @@
             "ClientId": []
           }
         ],
-        "summary": "1. Find products by product id or category id"
+        "summary": "1. Find products by product id or category id",
+        "tags": [
+          "products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to get complete product info.",
         "id": "operation:get:/api/products/get-products-info",
         "kind": "operation",
         "method": "get",
         "name": "getProductInfo",
+        "parameters": [
+          {
+            "description": "Locale and Geo code used to get localised data.<br/><br/>",
+            "enum": [
+              "zh-TW",
+              "de-DE",
+              "en-US",
+              "es-ES",
+              "fr-FR",
+              "it-IT",
+              "ja-JP",
+              "ko-KR",
+              "nl-NL",
+              "pl-PL",
+              "pt-BR",
+              "ru-RU",
+              "sv-SE",
+              "th-TH",
+              "tr-TR",
+              "ur-PK",
+              "id-ID",
+              "uk-UA",
+              "vi-VN",
+              "si-LK",
+              "en-NE",
+              "zh-CN",
+              "en-UK",
+              "es-MX",
+              "pt-PT"
+            ],
+            "in": "query",
+            "name": "locale_geo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Product id's that needs to be filtered.",
+            "in": "query",
+            "name": "product_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If send \"true\", this will fetch variant/compatible info into result set.",
+            "in": "query",
+            "name": "include_reference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/products/get-products-info",
         "pointer": "#/paths/~1api~1products~1get-products-info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BasicAuth": []
@@ -100,7 +371,10 @@
             "ClientId": []
           }
         ],
-        "summary": "2. Get complete product info with product id."
+        "summary": "2. Get complete product info with product id.",
+        "tags": [
+          "products"
+        ]
       }
     ]
   },

@@ -8,6 +8,11 @@
         "from": "regcheck-org-uk-5b89c209bd",
         "kind": "EXPOSES",
         "to": "operation:get:/Check"
+      },
+      {
+        "from": "operation:get:/Check",
+        "kind": "RETURNS",
+        "to": "schema:Car"
       }
     ],
     "nodes": [
@@ -21,15 +26,35 @@
         "kind": "operation",
         "method": "get",
         "name": "Check",
+        "parameters": [
+          {
+            "description": "A registration number",
+            "in": "query",
+            "name": "searchString",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Check",
         "pointer": "#/paths/~1Check/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Car[]"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Gets details of a UK Vehicle"
       },
       {
         "id": "schema:Car",
         "kind": "schema",
-        "name": "Car"
+        "name": "Car",
+        "type": "object"
       }
     ]
   },

@@ -21,14 +21,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /search",
+        "parameters": [
+          {
+            "description": "Company name or stock symbol",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all company ESG Ratings"
+        "summary": "List all company ESG Ratings",
+        "tags": [
+          "rating"
+        ]
       }
     ]
   },

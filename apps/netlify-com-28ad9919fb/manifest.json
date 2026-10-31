@@ -22,17 +22,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{account_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/accounts/{account_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/accounts/{account_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/accounts/{account_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -52,22 +52,22 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{account_id}/env/{key}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/accounts/{account_id}/env/{key}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:patch:/accounts/{account_id}/env/{key}"
+        "to": "operation:put:/accounts/{account_id}/env/{key}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:put:/accounts/{account_id}/env/{key}"
+        "to": "operation:delete:/accounts/{account_id}/env/{key}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/accounts/{account_id}/env/{key}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -107,22 +107,22 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/deploy_keys/{key_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/deploy_keys/{key_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/deploys/{deploy_id}"
+        "to": "operation:delete:/deploy_keys/{key_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:get:/deploys/{deploy_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/deploys/{deploy_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -167,12 +167,12 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/dns_zones/{zone_id}"
+        "to": "operation:get:/dns_zones/{zone_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:get:/dns_zones/{zone_id}"
+        "to": "operation:delete:/dns_zones/{zone_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -187,12 +187,12 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/dns_zones/{zone_id}/dns_records/{dns_record_id}"
+        "to": "operation:get:/dns_zones/{zone_id}/dns_records/{dns_record_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:get:/dns_zones/{zone_id}/dns_records/{dns_record_id}"
+        "to": "operation:delete:/dns_zones/{zone_id}/dns_records/{dns_record_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -222,17 +222,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/hooks/{hook_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/hooks/{hook_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/hooks/{hook_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/hooks/{hook_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -282,12 +282,12 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sites/{site_id}"
+        "to": "operation:get:/sites/{site_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:get:/sites/{site_id}"
+        "to": "operation:delete:/sites/{site_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -307,17 +307,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sites/{site_id}/assets/{asset_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/sites/{site_id}/assets/{asset_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/sites/{site_id}/assets/{asset_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/sites/{site_id}/assets/{asset_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -337,17 +337,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sites/{site_id}/build_hooks/{id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/sites/{site_id}/build_hooks/{id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/sites/{site_id}/build_hooks/{id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/sites/{site_id}/build_hooks/{id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -377,17 +377,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sites/{site_id}/deploys/{deploy_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/sites/{site_id}/deploys/{deploy_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/sites/{site_id}/deploys/{deploy_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/sites/{site_id}/deploys/{deploy_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -462,17 +462,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sites/{site_id}/services/{addon}/instances/{instance_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/sites/{site_id}/services/{addon}/instances/{instance_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/sites/{site_id}/services/{addon}/instances/{instance_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/sites/{site_id}/services/{addon}/instances/{instance_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -487,17 +487,17 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sites/{site_id}/snippets/{snippet_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/sites/{site_id}/snippets/{snippet_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:put:/sites/{site_id}/snippets/{snippet_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/sites/{site_id}/snippets/{snippet_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -552,12 +552,12 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/submissions/{submission_id}"
+        "to": "operation:get:/submissions/{submission_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:get:/submissions/{submission_id}"
+        "to": "operation:delete:/submissions/{submission_id}"
       },
       {
         "from": "netlify-com-28ad9919fb",
@@ -582,11 +582,6 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{account_slug}/members/{member_id}"
-      },
-      {
-        "from": "netlify-com-28ad9919fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/{account_slug}/members/{member_id}"
       },
       {
@@ -597,12 +592,692 @@
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
+        "to": "operation:delete:/{account_slug}/members/{member_id}"
+      },
+      {
+        "from": "netlify-com-28ad9919fb",
+        "kind": "EXPOSES",
         "to": "operation:get:/{account_slug}/sites"
       },
       {
         "from": "netlify-com-28ad9919fb",
         "kind": "EXPOSES",
         "to": "operation:post:/{account_slug}/sites"
+      },
+      {
+        "from": "operation:get:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:accountMembership"
+      },
+      {
+        "from": "operation:post:/accounts",
+        "kind": "ACCEPTS",
+        "to": "schema:accountSetup"
+      },
+      {
+        "from": "operation:post:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:accountMembership"
+      },
+      {
+        "from": "operation:get:/accounts/types",
+        "kind": "RETURNS",
+        "to": "schema:accountType"
+      },
+      {
+        "from": "operation:get:/accounts/{account_id}",
+        "kind": "RETURNS",
+        "to": "schema:accountMembership"
+      },
+      {
+        "from": "operation:put:/accounts/{account_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:accountUpdateSetup"
+      },
+      {
+        "from": "operation:put:/accounts/{account_id}",
+        "kind": "RETURNS",
+        "to": "schema:accountMembership"
+      },
+      {
+        "from": "operation:get:/accounts/{account_id}/audit",
+        "kind": "RETURNS",
+        "to": "schema:auditLog"
+      },
+      {
+        "from": "operation:get:/accounts/{account_id}/env",
+        "kind": "RETURNS",
+        "to": "schema:envVar"
+      },
+      {
+        "from": "operation:post:/accounts/{account_id}/env",
+        "kind": "RETURNS",
+        "to": "schema:envVar"
+      },
+      {
+        "from": "operation:get:/accounts/{account_id}/env/{key}",
+        "kind": "RETURNS",
+        "to": "schema:envVar"
+      },
+      {
+        "from": "operation:put:/accounts/{account_id}/env/{key}",
+        "kind": "RETURNS",
+        "to": "schema:envVar"
+      },
+      {
+        "from": "operation:patch:/accounts/{account_id}/env/{key}",
+        "kind": "RETURNS",
+        "to": "schema:envVar"
+      },
+      {
+        "from": "operation:get:/billing/payment_methods",
+        "kind": "RETURNS",
+        "to": "schema:paymentMethod"
+      },
+      {
+        "from": "operation:get:/builds/{build_id}",
+        "kind": "RETURNS",
+        "to": "schema:build"
+      },
+      {
+        "from": "operation:post:/builds/{build_id}/log",
+        "kind": "ACCEPTS",
+        "to": "schema:buildLogMsg"
+      },
+      {
+        "from": "operation:get:/deploy_keys",
+        "kind": "RETURNS",
+        "to": "schema:deployKey"
+      },
+      {
+        "from": "operation:post:/deploy_keys",
+        "kind": "RETURNS",
+        "to": "schema:deployKey"
+      },
+      {
+        "from": "operation:get:/deploy_keys/{key_id}",
+        "kind": "RETURNS",
+        "to": "schema:deployKey"
+      },
+      {
+        "from": "operation:get:/deploys/{deploy_id}",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:post:/deploys/{deploy_id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:put:/deploys/{deploy_id}/files/{path}",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:put:/deploys/{deploy_id}/functions/{name}",
+        "kind": "RETURNS",
+        "to": "schema:function"
+      },
+      {
+        "from": "operation:post:/deploys/{deploy_id}/lock",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:post:/deploys/{deploy_id}/plugin_runs",
+        "kind": "ACCEPTS",
+        "to": "schema:pluginRunData"
+      },
+      {
+        "from": "operation:post:/deploys/{deploy_id}/plugin_runs",
+        "kind": "RETURNS",
+        "to": "schema:pluginRun"
+      },
+      {
+        "from": "operation:post:/deploys/{deploy_id}/unlock",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:get:/dns_zones",
+        "kind": "RETURNS",
+        "to": "schema:dnsZones"
+      },
+      {
+        "from": "operation:post:/dns_zones",
+        "kind": "ACCEPTS",
+        "to": "schema:dnsZoneSetup"
+      },
+      {
+        "from": "operation:post:/dns_zones",
+        "kind": "RETURNS",
+        "to": "schema:dnsZone"
+      },
+      {
+        "from": "operation:get:/dns_zones/{zone_id}",
+        "kind": "RETURNS",
+        "to": "schema:dnsZone"
+      },
+      {
+        "from": "operation:get:/dns_zones/{zone_id}/dns_records",
+        "kind": "RETURNS",
+        "to": "schema:dnsRecords"
+      },
+      {
+        "from": "operation:post:/dns_zones/{zone_id}/dns_records",
+        "kind": "ACCEPTS",
+        "to": "schema:dnsRecordCreate"
+      },
+      {
+        "from": "operation:post:/dns_zones/{zone_id}/dns_records",
+        "kind": "RETURNS",
+        "to": "schema:dnsRecord"
+      },
+      {
+        "from": "operation:get:/dns_zones/{zone_id}/dns_records/{dns_record_id}",
+        "kind": "RETURNS",
+        "to": "schema:dnsRecord"
+      },
+      {
+        "from": "operation:put:/dns_zones/{zone_id}/transfer",
+        "kind": "RETURNS",
+        "to": "schema:dnsZone"
+      },
+      {
+        "from": "operation:get:/forms/{form_id}/submissions",
+        "kind": "RETURNS",
+        "to": "schema:submission"
+      },
+      {
+        "from": "operation:get:/hooks",
+        "kind": "RETURNS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:post:/hooks",
+        "kind": "ACCEPTS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:post:/hooks",
+        "kind": "RETURNS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:get:/hooks/types",
+        "kind": "RETURNS",
+        "to": "schema:hookType"
+      },
+      {
+        "from": "operation:get:/hooks/{hook_id}",
+        "kind": "RETURNS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:put:/hooks/{hook_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:put:/hooks/{hook_id}",
+        "kind": "RETURNS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:post:/hooks/{hook_id}/enable",
+        "kind": "RETURNS",
+        "to": "schema:hook"
+      },
+      {
+        "from": "operation:post:/oauth/tickets",
+        "kind": "RETURNS",
+        "to": "schema:ticket"
+      },
+      {
+        "from": "operation:get:/oauth/tickets/{ticket_id}",
+        "kind": "RETURNS",
+        "to": "schema:ticket"
+      },
+      {
+        "from": "operation:post:/oauth/tickets/{ticket_id}/exchange",
+        "kind": "RETURNS",
+        "to": "schema:accessToken"
+      },
+      {
+        "from": "operation:get:/services/",
+        "kind": "RETURNS",
+        "to": "schema:service"
+      },
+      {
+        "from": "operation:get:/services/{addonName}",
+        "kind": "RETURNS",
+        "to": "schema:service"
+      },
+      {
+        "from": "operation:get:/sites",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "operation:post:/sites",
+        "kind": "ACCEPTS",
+        "to": "schema:siteSetup"
+      },
+      {
+        "from": "operation:post:/sites",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "operation:patch:/sites/{site_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:siteSetup"
+      },
+      {
+        "from": "operation:patch:/sites/{site_id}",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/assets",
+        "kind": "RETURNS",
+        "to": "schema:asset"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/assets",
+        "kind": "RETURNS",
+        "to": "schema:assetSignature"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/assets/{asset_id}",
+        "kind": "RETURNS",
+        "to": "schema:asset"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/assets/{asset_id}",
+        "kind": "RETURNS",
+        "to": "schema:asset"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/assets/{asset_id}/public_signature",
+        "kind": "RETURNS",
+        "to": "schema:assetPublicSignature"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/build_hooks",
+        "kind": "RETURNS",
+        "to": "schema:buildHook"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/build_hooks",
+        "kind": "ACCEPTS",
+        "to": "schema:buildHookSetup"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/build_hooks",
+        "kind": "RETURNS",
+        "to": "schema:buildHook"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/build_hooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:buildHook"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/build_hooks/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:buildHookSetup"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/builds",
+        "kind": "RETURNS",
+        "to": "schema:build"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/builds",
+        "kind": "ACCEPTS",
+        "to": "schema:buildSetup"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/builds",
+        "kind": "RETURNS",
+        "to": "schema:build"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/deployed-branches",
+        "kind": "RETURNS",
+        "to": "schema:deployedBranch"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/deploys",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/deploys",
+        "kind": "ACCEPTS",
+        "to": "schema:deployFiles"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/deploys",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/deploys/{deploy_id}",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/deploys/{deploy_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:deployFiles"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/deploys/{deploy_id}",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/deploys/{deploy_id}/restore",
+        "kind": "RETURNS",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/dns",
+        "kind": "RETURNS",
+        "to": "schema:dnsZone"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/dns",
+        "kind": "RETURNS",
+        "to": "schema:dnsZone"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/files",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/files/{file_path}",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/forms",
+        "kind": "RETURNS",
+        "to": "schema:form"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/metadata",
+        "kind": "RETURNS",
+        "to": "schema:metadata"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/metadata",
+        "kind": "ACCEPTS",
+        "to": "schema:metadata"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/plugin_runs/latest",
+        "kind": "RETURNS",
+        "to": "schema:pluginRun"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/plugins/{package}",
+        "kind": "ACCEPTS",
+        "to": "schema:pluginParams"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/plugins/{package}",
+        "kind": "RETURNS",
+        "to": "schema:plugin"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/service-instances",
+        "kind": "RETURNS",
+        "to": "schema:serviceInstance"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/services/{addon}/instances",
+        "kind": "RETURNS",
+        "to": "schema:serviceInstance"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/services/{addon}/instances/{instance_id}",
+        "kind": "RETURNS",
+        "to": "schema:serviceInstance"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/snippets",
+        "kind": "RETURNS",
+        "to": "schema:snippet"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/snippets",
+        "kind": "ACCEPTS",
+        "to": "schema:snippet"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/snippets",
+        "kind": "RETURNS",
+        "to": "schema:snippet"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/snippets/{snippet_id}",
+        "kind": "RETURNS",
+        "to": "schema:snippet"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/snippets/{snippet_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:snippet"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/ssl",
+        "kind": "RETURNS",
+        "to": "schema:sniCertificate"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/ssl",
+        "kind": "RETURNS",
+        "to": "schema:sniCertificate"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/submissions",
+        "kind": "RETURNS",
+        "to": "schema:submission"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/traffic_splits",
+        "kind": "RETURNS",
+        "to": "schema:splitTests"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/traffic_splits",
+        "kind": "ACCEPTS",
+        "to": "schema:splitTestSetup"
+      },
+      {
+        "from": "operation:post:/sites/{site_id}/traffic_splits",
+        "kind": "RETURNS",
+        "to": "schema:splitTest"
+      },
+      {
+        "from": "operation:get:/sites/{site_id}/traffic_splits/{split_test_id}",
+        "kind": "RETURNS",
+        "to": "schema:splitTest"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/traffic_splits/{split_test_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:splitTestSetup"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/traffic_splits/{split_test_id}",
+        "kind": "RETURNS",
+        "to": "schema:splitTest"
+      },
+      {
+        "from": "operation:put:/sites/{site_id}/unlink_repo",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "operation:get:/submissions/{submission_id}",
+        "kind": "RETURNS",
+        "to": "schema:submission"
+      },
+      {
+        "from": "operation:get:/user",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:get:/{account_id}/builds/status",
+        "kind": "RETURNS",
+        "to": "schema:buildStatus"
+      },
+      {
+        "from": "operation:get:/{account_slug}/members",
+        "kind": "RETURNS",
+        "to": "schema:member"
+      },
+      {
+        "from": "operation:post:/{account_slug}/members",
+        "kind": "ACCEPTS",
+        "to": "schema:accountAddMemberSetup"
+      },
+      {
+        "from": "operation:post:/{account_slug}/members",
+        "kind": "RETURNS",
+        "to": "schema:member"
+      },
+      {
+        "from": "operation:get:/{account_slug}/members/{member_id}",
+        "kind": "RETURNS",
+        "to": "schema:member"
+      },
+      {
+        "from": "operation:put:/{account_slug}/members/{member_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:accountUpdateMemberSetup"
+      },
+      {
+        "from": "operation:put:/{account_slug}/members/{member_id}",
+        "kind": "RETURNS",
+        "to": "schema:member"
+      },
+      {
+        "from": "operation:get:/{account_slug}/sites",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "operation:post:/{account_slug}/sites",
+        "kind": "ACCEPTS",
+        "to": "schema:siteSetup"
+      },
+      {
+        "from": "operation:post:/{account_slug}/sites",
+        "kind": "RETURNS",
+        "to": "schema:site"
+      },
+      {
+        "from": "schema:accountMembership",
+        "kind": "REFERENCES",
+        "to": "schema:accountUsageCapability"
+      },
+      {
+        "from": "schema:assetSignature",
+        "kind": "REFERENCES",
+        "to": "schema:asset"
+      },
+      {
+        "from": "schema:assetSignature",
+        "kind": "REFERENCES",
+        "to": "schema:assetForm"
+      },
+      {
+        "from": "schema:deploy",
+        "kind": "REFERENCES",
+        "to": "schema:functionSchedule"
+      },
+      {
+        "from": "schema:deployFiles",
+        "kind": "REFERENCES",
+        "to": "schema:functionConfig"
+      },
+      {
+        "from": "schema:deployFiles",
+        "kind": "REFERENCES",
+        "to": "schema:functionSchedule"
+      },
+      {
+        "from": "schema:dnsRecords",
+        "kind": "REFERENCES",
+        "to": "schema:dnsRecord"
+      },
+      {
+        "from": "schema:dnsZone",
+        "kind": "REFERENCES",
+        "to": "schema:dnsRecord"
+      },
+      {
+        "from": "schema:dnsZones",
+        "kind": "REFERENCES",
+        "to": "schema:dnsZone"
+      },
+      {
+        "from": "schema:envVar",
+        "kind": "REFERENCES",
+        "to": "schema:envVarUser"
+      },
+      {
+        "from": "schema:envVar",
+        "kind": "REFERENCES",
+        "to": "schema:envVarValue"
+      },
+      {
+        "from": "schema:pluginRun",
+        "kind": "REFERENCES",
+        "to": "schema:pluginRunData"
+      },
+      {
+        "from": "schema:site",
+        "kind": "REFERENCES",
+        "to": "schema:deploy"
+      },
+      {
+        "from": "schema:site",
+        "kind": "REFERENCES",
+        "to": "schema:minifyOptions"
+      },
+      {
+        "from": "schema:site",
+        "kind": "REFERENCES",
+        "to": "schema:repoInfo"
+      },
+      {
+        "from": "schema:siteSetup",
+        "kind": "REFERENCES",
+        "to": "schema:repoInfo"
+      },
+      {
+        "from": "schema:siteSetup",
+        "kind": "REFERENCES",
+        "to": "schema:site"
+      },
+      {
+        "from": "schema:splitTests",
+        "kind": "REFERENCES",
+        "to": "schema:splitTest"
       }
     ],
     "nodes": [
@@ -618,12 +1293,26 @@
         "name": "listAccountsForUser",
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "accountMembership[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accountMembership"
+        ]
       },
       {
         "deprecated": false,
@@ -633,12 +1322,33 @@
         "name": "createAccount",
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "accountSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "accountMembership"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accountMembership"
+        ]
       },
       {
         "deprecated": false,
@@ -648,27 +1358,26 @@
         "name": "listAccountTypesForUser",
         "path": "/accounts/types",
         "pointer": "#/paths/~1accounts~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "accountType[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/accounts/{account_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "cancelAccount",
-        "path": "/accounts/{account_id}",
-        "pointer": "#/paths/~1accounts~1{account_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accountType"
+        ]
       },
       {
         "deprecated": false,
@@ -676,14 +1385,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}",
         "pointer": "#/paths/~1accounts~1{account_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "accountMembership[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accountMembership"
+        ]
       },
       {
         "deprecated": false,
@@ -691,14 +1422,79 @@
         "kind": "operation",
         "method": "put",
         "name": "updateAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}",
         "pointer": "#/paths/~1accounts~1{account_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "accountUpdateSetup"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "accountMembership"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accountMembership"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/accounts/{account_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "cancelAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/accounts/{account_id}",
+        "pointer": "#/paths/~1accounts~1{account_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "accountMembership"
+        ]
       },
       {
         "deprecated": false,
@@ -706,119 +1502,470 @@
         "kind": "operation",
         "method": "get",
         "name": "listAccountAuditEvents",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "log_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/accounts/{account_id}/audit",
         "pointer": "#/paths/~1accounts~1{account_id}~1audit/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "auditLog[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "auditLog"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all environment variables for an account or site.",
         "id": "operation:get:/accounts/{account_id}/env",
         "kind": "operation",
         "method": "get",
         "name": "getEnvVars",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter by deploy context",
+            "enum": [
+              "all",
+              "dev",
+              "branch-deploy",
+              "deploy-preview",
+              "production"
+            ],
+            "in": "query",
+            "name": "context_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by scope",
+            "enum": [
+              "builds",
+              "functions",
+              "runtime",
+              "post-processing"
+            ],
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If specified, only return environment variables set on this site",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/env",
         "pointer": "#/paths/~1accounts~1{account_id}~1env/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "envVar[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates new environment variables.",
         "id": "operation:post:/accounts/{account_id}/env",
         "kind": "operation",
         "method": "post",
         "name": "createEnvVars",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If provided, create an environment variable on the site level, not the account level",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/env",
         "pointer": "#/paths/~1accounts~1{account_id}~1env/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "envVar[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/accounts/{account_id}/env/{key}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteEnvVar",
-        "path": "/accounts/{account_id}/env/{key}",
-        "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Returns an individual environment variable.",
         "id": "operation:get:/accounts/{account_id}/env/{key}",
         "kind": "operation",
         "method": "get",
         "name": "getEnvVar",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The environment variable key (case-sensitive)",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If provided, return the environment variable for a specific site (no merging is performed)",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/env/{key}",
         "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "envVar"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/accounts/{account_id}/env/{key}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "setEnvVarValue",
-        "path": "/accounts/{account_id}/env/{key}",
-        "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}/patch",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Updates an existing environment variable and all of its values.",
         "id": "operation:put:/accounts/{account_id}/env/{key}",
         "kind": "operation",
         "method": "put",
         "name": "updateEnvVar",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The existing environment variable key name (case-sensitive)",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If provided, update an environment variable set on this site",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/env/{key}",
         "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "envVar"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an environment variable.",
+        "id": "operation:delete:/accounts/{account_id}/env/{key}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteEnvVar",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The environment variable key (case-sensitive)",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If provided, delete the environment variable from this site",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/accounts/{account_id}/env/{key}",
+        "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates or creates a new value for an existing environment variable.",
+        "id": "operation:patch:/accounts/{account_id}/env/{key}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "setEnvVarValue",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The existing environment variable key name (case-sensitive)",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If provided, update an environment variable set on this site",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/accounts/{account_id}/env/{key}",
+        "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "envVar"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Deletes a specific environment variable value.",
         "id": "operation:delete:/accounts/{account_id}/env/{key}/value/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteEnvVarValue",
+        "parameters": [
+          {
+            "description": "Scope response to account_id",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The environment variable value's ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The environment variable key name (case-sensitive)",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If provided, delete the value from an environment variable on this site",
+            "in": "query",
+            "name": "site_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/env/{key}/value/{id}",
         "pointer": "#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "environmentVariables"
+        ]
       },
       {
         "deprecated": false,
@@ -828,12 +1975,26 @@
         "name": "listPaymentMethodsForUser",
         "path": "/billing/payment_methods",
         "pointer": "#/paths/~1billing~1payment_methods/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "paymentMethod[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "paymentMethod"
+        ]
       },
       {
         "deprecated": false,
@@ -841,14 +2002,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteBuild",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "build_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/builds/{build_id}",
         "pointer": "#/paths/~1builds~1{build_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "build"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "build"
+        ]
       },
       {
         "deprecated": false,
@@ -856,14 +2039,42 @@
         "kind": "operation",
         "method": "post",
         "name": "updateSiteBuildLog",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "build_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/builds/{build_id}/log",
         "pointer": "#/paths/~1builds~1{build_id}~1log/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "buildLogMsg"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "buildLogMsg"
+        ]
       },
       {
         "deprecated": false,
@@ -871,14 +2082,35 @@
         "kind": "operation",
         "method": "post",
         "name": "notifyBuildStart",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "build_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/builds/{build_id}/start",
         "pointer": "#/paths/~1builds~1{build_id}~1start/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "build"
+        ]
       },
       {
         "deprecated": false,
@@ -888,12 +2120,26 @@
         "name": "listDeployKeys",
         "path": "/deploy_keys",
         "pointer": "#/paths/~1deploy_keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deployKey[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deployKey"
+        ]
       },
       {
         "deprecated": false,
@@ -903,27 +2149,26 @@
         "name": "createDeployKey",
         "path": "/deploy_keys",
         "pointer": "#/paths/~1deploy_keys/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "deployKey"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/deploy_keys/{key_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDeployKey",
-        "path": "/deploy_keys/{key_id}",
-        "pointer": "#/paths/~1deploy_keys~1{key_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deployKey"
+        ]
       },
       {
         "deprecated": false,
@@ -931,29 +2176,72 @@
         "kind": "operation",
         "method": "get",
         "name": "getDeployKey",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deploy_keys/{key_id}",
         "pointer": "#/paths/~1deploy_keys~1{key_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deployKey"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deployKey"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/deploys/{deploy_id}",
+        "id": "operation:delete:/deploy_keys/{key_id}",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteDeploy",
-        "path": "/deploys/{deploy_id}",
-        "pointer": "#/paths/~1deploys~1{deploy_id}/delete",
+        "name": "deleteDeployKey",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/deploy_keys/{key_id}",
+        "pointer": "#/paths/~1deploy_keys~1{key_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deployKey"
+        ]
       },
       {
         "deprecated": false,
@@ -961,14 +2249,72 @@
         "kind": "operation",
         "method": "get",
         "name": "getDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deploys/{deploy_id}",
         "pointer": "#/paths/~1deploys~1{deploy_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/deploys/{deploy_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/deploys/{deploy_id}",
+        "pointer": "#/paths/~1deploys~1{deploy_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -976,14 +2322,36 @@
         "kind": "operation",
         "method": "post",
         "name": "cancelSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deploys/{deploy_id}/cancel",
         "pointer": "#/paths/~1deploys~1{deploy_id}~1cancel/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -991,14 +2359,55 @@
         "kind": "operation",
         "method": "put",
         "name": "uploadDeployFile",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/deploys/{deploy_id}/files/{path}",
         "pointer": "#/paths/~1deploys~1{deploy_id}~1files~1{path}/put",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "file"
+        ]
       },
       {
         "deprecated": false,
@@ -1006,14 +2415,67 @@
         "kind": "operation",
         "method": "put",
         "name": "uploadDeployFunction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "runtime",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "X-Nf-Retry-Count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/deploys/{deploy_id}/functions/{name}",
         "pointer": "#/paths/~1deploys~1{deploy_id}~1functions~1{name}/put",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "function"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "function"
+        ]
       },
       {
         "deprecated": false,
@@ -1021,29 +2483,81 @@
         "kind": "operation",
         "method": "post",
         "name": "lockDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deploys/{deploy_id}/lock",
         "pointer": "#/paths/~1deploys~1{deploy_id}~1lock/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is an internal-only endpoint.",
         "id": "operation:post:/deploys/{deploy_id}/plugin_runs",
         "kind": "operation",
         "method": "post",
         "name": "createPluginRun",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deploys/{deploy_id}/plugin_runs",
         "pointer": "#/paths/~1deploys~1{deploy_id}~1plugin_runs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "pluginRunData"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "pluginRun"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "x-internal"
+        ]
       },
       {
         "deprecated": false,
@@ -1051,14 +2565,36 @@
         "kind": "operation",
         "method": "post",
         "name": "unlockDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deploys/{deploy_id}/unlock",
         "pointer": "#/paths/~1deploys~1{deploy_id}~1unlock/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1066,14 +2602,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getDnsZones",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "account_slug",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/dns_zones",
         "pointer": "#/paths/~1dns_zones/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsZones"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1083,27 +2641,33 @@
         "name": "createDnsZone",
         "path": "/dns_zones",
         "pointer": "#/paths/~1dns_zones/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "dnsZoneSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "dnsZone"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/dns_zones/{zone_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDnsZone",
-        "path": "/dns_zones/{zone_id}",
-        "pointer": "#/paths/~1dns_zones~1{zone_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1111,14 +2675,72 @@
         "kind": "operation",
         "method": "get",
         "name": "getDnsZone",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns_zones/{zone_id}",
         "pointer": "#/paths/~1dns_zones~1{zone_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsZone"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/dns_zones/{zone_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDnsZone",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/dns_zones/{zone_id}",
+        "pointer": "#/paths/~1dns_zones~1{zone_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1126,14 +2748,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getDnsRecords",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns_zones/{zone_id}/dns_records",
         "pointer": "#/paths/~1dns_zones~1{zone_id}~1dns_records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsRecords"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1141,29 +2785,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createDnsRecord",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns_zones/{zone_id}/dns_records",
         "pointer": "#/paths/~1dns_zones~1{zone_id}~1dns_records/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "dnsRecordCreate"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "dnsRecord"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/dns_zones/{zone_id}/dns_records/{dns_record_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDnsRecord",
-        "path": "/dns_zones/{zone_id}/dns_records/{dns_record_id}",
-        "pointer": "#/paths/~1dns_zones~1{zone_id}~1dns_records~1{dns_record_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1171,14 +2829,84 @@
         "kind": "operation",
         "method": "get",
         "name": "getIndividualDnsRecord",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dns_record_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns_zones/{zone_id}/dns_records/{dns_record_id}",
         "pointer": "#/paths/~1dns_zones~1{zone_id}~1dns_records~1{dns_record_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsRecord"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/dns_zones/{zone_id}/dns_records/{dns_record_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDnsRecord",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dns_record_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/dns_zones/{zone_id}/dns_records/{dns_record_id}",
+        "pointer": "#/paths/~1dns_zones~1{zone_id}~1dns_records~1{dns_record_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1186,14 +2914,57 @@
         "kind": "operation",
         "method": "put",
         "name": "transferDnsZone",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the account of the dns zone",
+            "in": "query",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the account you want to transfer the dns zone to",
+            "in": "query",
+            "name": "transfer_account_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the user you want to transfer the dns zone to",
+            "in": "query",
+            "name": "transfer_user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/dns_zones/{zone_id}/transfer",
         "pointer": "#/paths/~1dns_zones~1{zone_id}~1transfer/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsZone"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1201,14 +2972,48 @@
         "kind": "operation",
         "method": "get",
         "name": "listFormSubmissions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "form_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/forms/{form_id}/submissions",
         "pointer": "#/paths/~1forms~1{form_id}~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "submission[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "submission"
+        ]
       },
       {
         "deprecated": false,
@@ -1216,14 +3021,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listHooksBySiteId",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hooks",
         "pointer": "#/paths/~1hooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "hook[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hook"
+        ]
       },
       {
         "deprecated": false,
@@ -1231,14 +3058,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createHookBySiteId",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hooks",
         "pointer": "#/paths/~1hooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "hook"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "hook"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hook"
+        ]
       },
       {
         "deprecated": false,
@@ -1248,27 +3104,26 @@
         "name": "listHookTypes",
         "path": "/hooks/types",
         "pointer": "#/paths/~1hooks~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "hookType[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/hooks/{hook_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteHook",
-        "path": "/hooks/{hook_id}",
-        "pointer": "#/paths/~1hooks~1{hook_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hookType"
+        ]
       },
       {
         "deprecated": false,
@@ -1276,14 +3131,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hook_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hooks/{hook_id}",
         "pointer": "#/paths/~1hooks~1{hook_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "hook"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hook"
+        ]
       },
       {
         "deprecated": false,
@@ -1291,14 +3168,75 @@
         "kind": "operation",
         "method": "put",
         "name": "updateHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hook_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hooks/{hook_id}",
         "pointer": "#/paths/~1hooks~1{hook_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "hook"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "hook"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hook"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/hooks/{hook_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hook_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/hooks/{hook_id}",
+        "pointer": "#/paths/~1hooks~1{hook_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "hook"
+        ]
       },
       {
         "deprecated": false,
@@ -1306,14 +3244,36 @@
         "kind": "operation",
         "method": "post",
         "name": "enableHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hook_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hooks/{hook_id}/enable",
         "pointer": "#/paths/~1hooks~1{hook_id}~1enable/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "hook"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "hook"
+        ]
       },
       {
         "deprecated": false,
@@ -1321,14 +3281,36 @@
         "kind": "operation",
         "method": "post",
         "name": "createTicket",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/tickets",
         "pointer": "#/paths/~1oauth~1tickets/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "ticket"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ticket"
+        ]
       },
       {
         "deprecated": false,
@@ -1336,14 +3318,36 @@
         "kind": "operation",
         "method": "get",
         "name": "showTicket",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/tickets/{ticket_id}",
         "pointer": "#/paths/~1oauth~1tickets~1{ticket_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ticket"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "ticket"
+        ]
       },
       {
         "deprecated": false,
@@ -1351,14 +3355,36 @@
         "kind": "operation",
         "method": "post",
         "name": "exchangeTicket",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/tickets/{ticket_id}/exchange",
         "pointer": "#/paths/~1oauth~1tickets~1{ticket_id}~1exchange/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "accessToken"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accessToken"
+        ]
       },
       {
         "deprecated": false,
@@ -1366,14 +3392,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getServices",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/services/",
         "pointer": "#/paths/~1services~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "service[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "service"
+        ]
       },
       {
         "deprecated": false,
@@ -1381,14 +3429,36 @@
         "kind": "operation",
         "method": "get",
         "name": "showService",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addonName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/services/{addonName}",
         "pointer": "#/paths/~1services~1{addonName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "service"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "service"
+        ]
       },
       {
         "deprecated": false,
@@ -1396,44 +3466,180 @@
         "kind": "operation",
         "method": "get",
         "name": "showServiceManifest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addonName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/services/{addonName}/manifest",
         "pointer": "#/paths/~1services~1{addonName}~1manifest/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "service"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint.",
         "id": "operation:get:/sites",
         "kind": "operation",
         "method": "get",
         "name": "listSites",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "all",
+              "owner",
+              "guest"
+            ],
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sites",
         "pointer": "#/paths/~1sites/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "site[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint.",
         "id": "operation:post:/sites",
         "kind": "operation",
         "method": "post",
         "name": "createSite",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "configure_dns",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/sites",
         "pointer": "#/paths/~1sites/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "siteSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "site"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint.",
+        "id": "operation:get:/sites/{site_id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getSite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sites/{site_id}",
+        "pointer": "#/paths/~1sites~1{site_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "site"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "deprecated": false,
@@ -1441,44 +3647,80 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteSite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}",
         "pointer": "#/paths/~1sites~1{site_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/sites/{site_id}",
-        "kind": "operation",
-        "method": "get",
-        "name": "getSite",
-        "path": "/sites/{site_id}",
-        "pointer": "#/paths/~1sites~1{site_id}/get",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint.",
         "id": "operation:patch:/sites/{site_id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateSite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}",
         "pointer": "#/paths/~1sites~1{site_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "siteSetup"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "site"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "deprecated": false,
@@ -1486,14 +3728,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteAssets",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/assets",
         "pointer": "#/paths/~1sites~1{site_id}~1assets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "asset[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "asset"
+        ]
       },
       {
         "deprecated": false,
@@ -1501,29 +3765,60 @@
         "kind": "operation",
         "method": "post",
         "name": "createSiteAsset",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "content_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/assets",
         "pointer": "#/paths/~1sites~1{site_id}~1assets/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "assetSignature"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/sites/{site_id}/assets/{asset_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSiteAsset",
-        "path": "/sites/{site_id}/assets/{asset_id}",
-        "pointer": "#/paths/~1sites~1{site_id}~1assets~1{asset_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "asset"
+        ]
       },
       {
         "deprecated": false,
@@ -1531,14 +3826,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteAssetInfo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/assets/{asset_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1assets~1{asset_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "asset"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "asset"
+        ]
       },
       {
         "deprecated": false,
@@ -1546,14 +3869,90 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSiteAsset",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/assets/{asset_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1assets~1{asset_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "asset"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "asset"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/sites/{site_id}/assets/{asset_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSiteAsset",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sites/{site_id}/assets/{asset_id}",
+        "pointer": "#/paths/~1sites~1{site_id}~1assets~1{asset_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "asset"
+        ]
       },
       {
         "deprecated": false,
@@ -1561,14 +3960,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteAssetPublicSignature",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/assets/{asset_id}/public_signature",
         "pointer": "#/paths/~1sites~1{site_id}~1assets~1{asset_id}~1public_signature/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "assetPublicSignature"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "assetPublicSignature"
+        ]
       },
       {
         "deprecated": false,
@@ -1576,14 +4003,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteBuildHooks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/build_hooks",
         "pointer": "#/paths/~1sites~1{site_id}~1build_hooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "buildHook[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "buildHook"
+        ]
       },
       {
         "deprecated": false,
@@ -1591,29 +4040,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createSiteBuildHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/build_hooks",
         "pointer": "#/paths/~1sites~1{site_id}~1build_hooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "buildHookSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "buildHook"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/sites/{site_id}/build_hooks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSiteBuildHook",
-        "path": "/sites/{site_id}/build_hooks/{id}",
-        "pointer": "#/paths/~1sites~1{site_id}~1build_hooks~1{id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "buildHook"
+        ]
       },
       {
         "deprecated": false,
@@ -1621,14 +4084,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteBuildHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/build_hooks/{id}",
         "pointer": "#/paths/~1sites~1{site_id}~1build_hooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "buildHook"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "buildHook"
+        ]
       },
       {
         "deprecated": false,
@@ -1636,14 +4127,90 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSiteBuildHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/build_hooks/{id}",
         "pointer": "#/paths/~1sites~1{site_id}~1build_hooks~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "buildHookSetup"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "buildHook"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/sites/{site_id}/build_hooks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSiteBuildHook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sites/{site_id}/build_hooks/{id}",
+        "pointer": "#/paths/~1sites~1{site_id}~1build_hooks~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "buildHook"
+        ]
       },
       {
         "deprecated": false,
@@ -1651,14 +4218,48 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteBuilds",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sites/{site_id}/builds",
         "pointer": "#/paths/~1sites~1{site_id}~1builds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "build[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "build"
+        ]
       },
       {
         "deprecated": false,
@@ -1666,14 +4267,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createSiteBuild",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/builds",
         "pointer": "#/paths/~1sites~1{site_id}~1builds/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "buildSetup"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "build"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "build"
+        ]
       },
       {
         "deprecated": false,
@@ -1681,14 +4311,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteDeployedBranches",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/deployed-branches",
         "pointer": "#/paths/~1sites~1{site_id}~1deployed-branches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deployedBranch[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deployedBranch"
+        ]
       },
       {
         "deprecated": false,
@@ -1696,14 +4348,94 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteDeploys",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "deploy-previews",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "production",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "enum": [
+              "new",
+              "pending_review",
+              "accepted",
+              "rejected",
+              "enqueued",
+              "building",
+              "uploading",
+              "uploaded",
+              "preparing",
+              "prepared",
+              "processing",
+              "ready",
+              "error",
+              "retrying"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "branch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "latest-published",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sites/{site_id}/deploys",
         "pointer": "#/paths/~1sites~1{site_id}~1deploys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1711,29 +4443,95 @@
         "kind": "operation",
         "method": "post",
         "name": "createSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "deploy-previews",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "production",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "enum": [
+              "new",
+              "pending_review",
+              "accepted",
+              "rejected",
+              "enqueued",
+              "building",
+              "uploading",
+              "uploaded",
+              "preparing",
+              "prepared",
+              "processing",
+              "ready",
+              "error",
+              "retrying"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "branch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "latest-published",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/deploys",
         "pointer": "#/paths/~1sites~1{site_id}~1deploys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "deployFiles"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/sites/{site_id}/deploys/{deploy_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSiteDeploy",
-        "path": "/sites/{site_id}/deploys/{deploy_id}",
-        "pointer": "#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1741,14 +4539,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/deploys/{deploy_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1756,14 +4582,91 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/deploys/{deploy_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "deployFiles"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/sites/{site_id}/deploys/{deploy_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sites/{site_id}/deploys/{deploy_id}",
+        "pointer": "#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1771,14 +4674,42 @@
         "kind": "operation",
         "method": "post",
         "name": "restoreSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "deploy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/deploys/{deploy_id}/restore",
         "pointer": "#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}~1restore/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "deploy"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1786,14 +4717,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getDNSForSite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/dns",
         "pointer": "#/paths/~1sites~1{site_id}~1dns/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsZone[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1801,14 +4754,36 @@
         "kind": "operation",
         "method": "put",
         "name": "configureDNSForSite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/dns",
         "pointer": "#/paths/~1sites~1{site_id}~1dns/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "dnsZone[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "dnsZone"
+        ]
       },
       {
         "deprecated": false,
@@ -1816,14 +4791,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteFiles",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/files",
         "pointer": "#/paths/~1sites~1{site_id}~1files/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "file"
+        ]
       },
       {
         "deprecated": false,
@@ -1831,14 +4828,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteFileByPathName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "file_path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/files/{file_path}",
         "pointer": "#/paths/~1sites~1{site_id}~1files~1{file_path}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "file"
+        ]
       },
       {
         "deprecated": false,
@@ -1846,14 +4871,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteForms",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/forms",
         "pointer": "#/paths/~1sites~1{site_id}~1forms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "form[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -1861,14 +4908,41 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteSiteForm",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "form_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/forms/{form_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1forms~1{form_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "form"
+        ]
       },
       {
         "deprecated": false,
@@ -1876,14 +4950,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteMetadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/metadata",
         "pointer": "#/paths/~1sites~1{site_id}~1metadata/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "metadata"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "metadata"
+        ]
       },
       {
         "deprecated": false,
@@ -1891,44 +4987,143 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSiteMetadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/metadata",
         "pointer": "#/paths/~1sites~1{site_id}~1metadata/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "metadata"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is an internal-only endpoint.",
         "id": "operation:get:/sites/{site_id}/plugin_runs/latest",
         "kind": "operation",
         "method": "get",
         "name": "getLatestPluginRuns",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "packages",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/plugin_runs/latest",
         "pointer": "#/paths/~1sites~1{site_id}~1plugin_runs~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "pluginRun[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "x-internal"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is an internal-only endpoint.",
         "id": "operation:put:/sites/{site_id}/plugins/{package}",
         "kind": "operation",
         "method": "put",
         "name": "updatePlugin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "package",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/plugins/{package}",
         "pointer": "#/paths/~1sites~1{site_id}~1plugins~1{package}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "pluginParams"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "plugin"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "x-internal"
+        ]
       },
       {
         "deprecated": false,
@@ -1936,14 +5131,35 @@
         "kind": "operation",
         "method": "put",
         "name": "rollbackSiteDeploy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/rollback",
         "pointer": "#/paths/~1sites~1{site_id}~1rollback/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "deploy"
+        ]
       },
       {
         "deprecated": false,
@@ -1951,14 +5167,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listServiceInstancesForSite",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/service-instances",
         "pointer": "#/paths/~1sites~1{site_id}~1service-instances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "serviceInstance[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "serviceInstance"
+        ]
       },
       {
         "deprecated": false,
@@ -1966,29 +5204,49 @@
         "kind": "operation",
         "method": "post",
         "name": "createServiceInstance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "addon",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/services/{addon}/instances",
         "pointer": "#/paths/~1sites~1{site_id}~1services~1{addon}~1instances/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "serviceInstance"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/sites/{site_id}/services/{addon}/instances/{instance_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteServiceInstance",
-        "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}",
-        "pointer": "#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "serviceInstance"
+        ]
       },
       {
         "deprecated": false,
@@ -1996,14 +5254,48 @@
         "kind": "operation",
         "method": "get",
         "name": "showServiceInstance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "addon",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "instance_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "serviceInstance"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "serviceInstance"
+        ]
       },
       {
         "deprecated": false,
@@ -2011,14 +5303,102 @@
         "kind": "operation",
         "method": "put",
         "name": "updateServiceInstance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "addon",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "instance_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "serviceInstance"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/sites/{site_id}/services/{addon}/instances/{instance_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteServiceInstance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "addon",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "instance_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}",
+        "pointer": "#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "serviceInstance"
+        ]
       },
       {
         "deprecated": false,
@@ -2026,14 +5406,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteSnippets",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/snippets",
         "pointer": "#/paths/~1sites~1{site_id}~1snippets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "snippet[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "snippet"
+        ]
       },
       {
         "deprecated": false,
@@ -2041,29 +5443,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createSiteSnippet",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/snippets",
         "pointer": "#/paths/~1sites~1{site_id}~1snippets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "snippet"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "snippet"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/sites/{site_id}/snippets/{snippet_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSiteSnippet",
-        "path": "/sites/{site_id}/snippets/{snippet_id}",
-        "pointer": "#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "snippet"
+        ]
       },
       {
         "deprecated": false,
@@ -2071,14 +5487,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSiteSnippet",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "snippet_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/snippets/{snippet_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "snippet"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "snippet"
+        ]
       },
       {
         "deprecated": false,
@@ -2086,14 +5530,90 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSiteSnippet",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "snippet_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/snippets/{snippet_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "snippet"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "snippet"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/sites/{site_id}/snippets/{snippet_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSiteSnippet",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "snippet_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sites/{site_id}/snippets/{snippet_id}",
+        "pointer": "#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "snippet"
+        ]
       },
       {
         "deprecated": false,
@@ -2101,14 +5621,36 @@
         "kind": "operation",
         "method": "get",
         "name": "showSiteTLSCertificate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/ssl",
         "pointer": "#/paths/~1sites~1{site_id}~1ssl/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "sniCertificate"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sniCertificate"
+        ]
       },
       {
         "deprecated": false,
@@ -2116,14 +5658,54 @@
         "kind": "operation",
         "method": "post",
         "name": "provisionSiteTLSCertificate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "certificate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ca_certificates",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/ssl",
         "pointer": "#/paths/~1sites~1{site_id}~1ssl/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "sniCertificate"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sniCertificate"
+        ]
       },
       {
         "deprecated": false,
@@ -2131,14 +5713,48 @@
         "kind": "operation",
         "method": "get",
         "name": "listSiteSubmissions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sites/{site_id}/submissions",
         "pointer": "#/paths/~1sites~1{site_id}~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "submission[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "submission"
+        ]
       },
       {
         "deprecated": false,
@@ -2146,14 +5762,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getSplitTests",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/traffic_splits",
         "pointer": "#/paths/~1sites~1{site_id}~1traffic_splits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "splitTests"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "splitTest"
+        ]
       },
       {
         "deprecated": false,
@@ -2161,14 +5799,43 @@
         "kind": "operation",
         "method": "post",
         "name": "createSplitTest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/traffic_splits",
         "pointer": "#/paths/~1sites~1{site_id}~1traffic_splits/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "splitTestSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "splitTest"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "splitTest"
+        ]
       },
       {
         "deprecated": false,
@@ -2176,14 +5843,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSplitTest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "split_test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/traffic_splits/{split_test_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "splitTest"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "splitTest"
+        ]
       },
       {
         "deprecated": false,
@@ -2191,14 +5886,49 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSplitTest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "split_test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/traffic_splits/{split_test_id}",
         "pointer": "#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "splitTestSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "splitTest"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "splitTest"
+        ]
       },
       {
         "deprecated": false,
@@ -2206,14 +5936,41 @@
         "kind": "operation",
         "method": "post",
         "name": "enableSplitTest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "split_test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/traffic_splits/{split_test_id}/publish",
         "pointer": "#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1publish/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "splitTest"
+        ]
       },
       {
         "deprecated": false,
@@ -2221,44 +5978,78 @@
         "kind": "operation",
         "method": "post",
         "name": "disableSplitTest",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "split_test_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/traffic_splits/{split_test_id}/unpublish",
         "pointer": "#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1unpublish/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "splitTest"
+        ]
       },
       {
         "deprecated": false,
+        "description": "[Beta] Unlinks the repo from the site.",
         "id": "operation:put:/sites/{site_id}/unlink_repo",
         "kind": "operation",
         "method": "put",
         "name": "unlinkSiteRepo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "site_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sites/{site_id}/unlink_repo",
         "pointer": "#/paths/~1sites~1{site_id}~1unlink_repo/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "site"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/submissions/{submission_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSubmission",
-        "path": "/submissions/{submission_id}",
-        "pointer": "#/paths/~1submissions~1{submission_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "deprecated": false,
@@ -2266,14 +6057,90 @@
         "kind": "operation",
         "method": "get",
         "name": "listFormSubmission",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "submission_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/submissions/{submission_id}",
         "pointer": "#/paths/~1submissions~1{submission_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "submission[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "submission"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/submissions/{submission_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSubmission",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "submission_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/submissions/{submission_id}",
+        "pointer": "#/paths/~1submissions~1{submission_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "submission"
+        ]
       },
       {
         "deprecated": false,
@@ -2283,12 +6150,26 @@
         "name": "getCurrentUser",
         "path": "/user",
         "pointer": "#/paths/~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "user[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -2296,14 +6177,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getAccountBuildStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{account_id}/builds/status",
         "pointer": "#/paths/~1{account_id}~1builds~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "buildStatus[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "build"
+        ]
       },
       {
         "deprecated": false,
@@ -2311,14 +6214,36 @@
         "kind": "operation",
         "method": "get",
         "name": "listMembersForAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{account_slug}/members",
         "pointer": "#/paths/~1{account_slug}~1members/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "member[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "member"
+        ]
       },
       {
         "deprecated": false,
@@ -2326,29 +6251,43 @@
         "kind": "operation",
         "method": "post",
         "name": "addMemberToAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{account_slug}/members",
         "pointer": "#/paths/~1{account_slug}~1members/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "accountAddMemberSetup"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "member[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{account_slug}/members/{member_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "removeAccountMember",
-        "path": "/{account_slug}/members/{member_id}",
-        "pointer": "#/paths/~1{account_slug}~1members~1{member_id}/delete",
-        "security": [
-          {
-            "netlifyAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "member"
+        ]
       },
       {
         "deprecated": false,
@@ -2356,14 +6295,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getAccountMember",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{account_slug}/members/{member_id}",
         "pointer": "#/paths/~1{account_slug}~1members~1{member_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "member"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "member"
+        ]
       },
       {
         "deprecated": false,
@@ -2371,349 +6338,566 @@
         "kind": "operation",
         "method": "put",
         "name": "updateAccountMember",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{account_slug}/members/{member_id}",
         "pointer": "#/paths/~1{account_slug}~1members~1{member_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "accountUpdateMemberSetup"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "member"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "member"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/{account_slug}/members/{member_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "removeAccountMember",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "member_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{account_slug}/members/{member_id}",
+        "pointer": "#/paths/~1{account_slug}~1members~1{member_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "netlifyAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "member"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint.",
         "id": "operation:get:/{account_slug}/sites",
         "kind": "operation",
         "method": "get",
         "name": "listSitesForAccount",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/{account_slug}/sites",
         "pointer": "#/paths/~1{account_slug}~1sites/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "site[]"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "deprecated": false,
+        "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint.",
         "id": "operation:post:/{account_slug}/sites",
         "kind": "operation",
         "method": "post",
         "name": "createSiteInTeam",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "configure_dns",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "path",
+            "name": "account_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{account_slug}/sites",
         "pointer": "#/paths/~1{account_slug}~1sites/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "siteSetup"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "site"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "netlifyAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "site"
+        ]
       },
       {
         "id": "schema:accessToken",
         "kind": "schema",
-        "name": "accessToken"
+        "name": "accessToken",
+        "type": "object"
       },
       {
         "id": "schema:accountAddMemberSetup",
         "kind": "schema",
-        "name": "accountAddMemberSetup"
+        "name": "accountAddMemberSetup",
+        "type": "object"
       },
       {
         "id": "schema:accountMembership",
         "kind": "schema",
-        "name": "accountMembership"
+        "name": "accountMembership",
+        "type": "object"
       },
       {
         "id": "schema:accountSetup",
         "kind": "schema",
-        "name": "accountSetup"
+        "name": "accountSetup",
+        "type": "object"
       },
       {
         "id": "schema:accountType",
         "kind": "schema",
-        "name": "accountType"
+        "name": "accountType",
+        "type": "object"
       },
       {
         "id": "schema:accountUpdateMemberSetup",
         "kind": "schema",
-        "name": "accountUpdateMemberSetup"
+        "name": "accountUpdateMemberSetup",
+        "type": "object"
       },
       {
         "id": "schema:accountUpdateSetup",
         "kind": "schema",
-        "name": "accountUpdateSetup"
+        "name": "accountUpdateSetup",
+        "type": "object"
       },
       {
         "id": "schema:accountUsageCapability",
         "kind": "schema",
-        "name": "accountUsageCapability"
+        "name": "accountUsageCapability",
+        "type": "object"
       },
       {
         "id": "schema:asset",
         "kind": "schema",
-        "name": "asset"
+        "name": "asset",
+        "type": "object"
       },
       {
         "id": "schema:assetForm",
         "kind": "schema",
-        "name": "assetForm"
+        "name": "assetForm",
+        "type": "object"
       },
       {
         "id": "schema:assetPublicSignature",
         "kind": "schema",
-        "name": "assetPublicSignature"
+        "name": "assetPublicSignature",
+        "type": "object"
       },
       {
         "id": "schema:assetSignature",
         "kind": "schema",
-        "name": "assetSignature"
+        "name": "assetSignature",
+        "type": "object"
       },
       {
         "id": "schema:auditLog",
         "kind": "schema",
-        "name": "auditLog"
+        "name": "auditLog",
+        "type": "object"
       },
       {
         "id": "schema:build",
         "kind": "schema",
-        "name": "build"
+        "name": "build",
+        "type": "object"
       },
       {
         "id": "schema:buildHook",
         "kind": "schema",
-        "name": "buildHook"
+        "name": "buildHook",
+        "type": "object"
       },
       {
         "id": "schema:buildHookSetup",
         "kind": "schema",
-        "name": "buildHookSetup"
+        "name": "buildHookSetup",
+        "type": "object"
       },
       {
         "id": "schema:buildLogMsg",
         "kind": "schema",
-        "name": "buildLogMsg"
+        "name": "buildLogMsg",
+        "type": "object"
       },
       {
         "id": "schema:buildSetup",
         "kind": "schema",
-        "name": "buildSetup"
+        "name": "buildSetup",
+        "type": "object"
       },
       {
         "id": "schema:buildStatus",
         "kind": "schema",
-        "name": "buildStatus"
+        "name": "buildStatus",
+        "type": "object"
       },
       {
         "id": "schema:deploy",
         "kind": "schema",
-        "name": "deploy"
+        "name": "deploy",
+        "type": "object"
       },
       {
         "id": "schema:deployFiles",
         "kind": "schema",
-        "name": "deployFiles"
+        "name": "deployFiles",
+        "type": "object"
       },
       {
         "id": "schema:deployKey",
         "kind": "schema",
-        "name": "deployKey"
+        "name": "deployKey",
+        "type": "object"
       },
       {
         "id": "schema:deployedBranch",
         "kind": "schema",
-        "name": "deployedBranch"
+        "name": "deployedBranch",
+        "type": "object"
       },
       {
         "id": "schema:dnsRecord",
         "kind": "schema",
-        "name": "dnsRecord"
+        "name": "dnsRecord",
+        "type": "object"
       },
       {
         "id": "schema:dnsRecordCreate",
         "kind": "schema",
-        "name": "dnsRecordCreate"
+        "name": "dnsRecordCreate",
+        "type": "object"
       },
       {
         "id": "schema:dnsRecords",
         "kind": "schema",
-        "name": "dnsRecords"
+        "name": "dnsRecords",
+        "type": "dnsRecord[]"
       },
       {
         "id": "schema:dnsZone",
         "kind": "schema",
-        "name": "dnsZone"
+        "name": "dnsZone",
+        "type": "object"
       },
       {
         "id": "schema:dnsZoneSetup",
         "kind": "schema",
-        "name": "dnsZoneSetup"
+        "name": "dnsZoneSetup",
+        "type": "object"
       },
       {
         "id": "schema:dnsZones",
         "kind": "schema",
-        "name": "dnsZones"
+        "name": "dnsZones",
+        "type": "dnsZone[]"
       },
       {
+        "description": "Environment variable model definition",
         "id": "schema:envVar",
         "kind": "schema",
-        "name": "envVar"
+        "name": "envVar",
+        "type": "object"
       },
       {
         "id": "schema:envVarUser",
         "kind": "schema",
-        "name": "envVarUser"
+        "name": "envVarUser",
+        "type": "object"
       },
       {
+        "description": "Environment variable value model definition",
         "id": "schema:envVarValue",
         "kind": "schema",
-        "name": "envVarValue"
+        "name": "envVarValue",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:file",
         "kind": "schema",
-        "name": "file"
+        "name": "file",
+        "type": "object"
       },
       {
         "id": "schema:form",
         "kind": "schema",
-        "name": "form"
+        "name": "form",
+        "type": "object"
       },
       {
         "id": "schema:function",
         "kind": "schema",
-        "name": "function"
+        "name": "function",
+        "type": "object"
       },
       {
         "id": "schema:functionConfig",
         "kind": "schema",
-        "name": "functionConfig"
+        "name": "functionConfig",
+        "type": "object"
       },
       {
         "id": "schema:functionSchedule",
         "kind": "schema",
-        "name": "functionSchedule"
+        "name": "functionSchedule",
+        "type": "object"
       },
       {
         "id": "schema:hook",
         "kind": "schema",
-        "name": "hook"
+        "name": "hook",
+        "type": "object"
       },
       {
         "id": "schema:hookType",
         "kind": "schema",
-        "name": "hookType"
+        "name": "hookType",
+        "type": "object"
       },
       {
         "id": "schema:member",
         "kind": "schema",
-        "name": "member"
+        "name": "member",
+        "type": "object"
       },
       {
         "id": "schema:metadata",
         "kind": "schema",
-        "name": "metadata"
+        "name": "metadata",
+        "type": "object"
       },
       {
         "id": "schema:minifyOptions",
         "kind": "schema",
-        "name": "minifyOptions"
+        "name": "minifyOptions",
+        "type": "object"
       },
       {
         "id": "schema:paymentMethod",
         "kind": "schema",
-        "name": "paymentMethod"
+        "name": "paymentMethod",
+        "type": "object"
       },
       {
         "id": "schema:plugin",
         "kind": "schema",
-        "name": "plugin"
+        "name": "plugin",
+        "type": "object"
       },
       {
         "id": "schema:pluginParams",
         "kind": "schema",
-        "name": "pluginParams"
+        "name": "pluginParams",
+        "type": "object"
       },
       {
         "id": "schema:pluginRun",
         "kind": "schema",
-        "name": "pluginRun"
+        "name": "pluginRun",
+        "type": "pluginRunData|object"
       },
       {
         "id": "schema:pluginRunData",
         "kind": "schema",
-        "name": "pluginRunData"
+        "name": "pluginRunData",
+        "type": "object"
       },
       {
         "id": "schema:repoInfo",
         "kind": "schema",
-        "name": "repoInfo"
+        "name": "repoInfo",
+        "type": "object"
       },
       {
         "id": "schema:service",
         "kind": "schema",
-        "name": "service"
+        "name": "service",
+        "type": "object"
       },
       {
         "id": "schema:serviceInstance",
         "kind": "schema",
-        "name": "serviceInstance"
+        "name": "serviceInstance",
+        "type": "object"
       },
       {
         "id": "schema:site",
         "kind": "schema",
-        "name": "site"
+        "name": "site",
+        "type": "object"
       },
       {
         "id": "schema:siteSetup",
         "kind": "schema",
-        "name": "siteSetup"
+        "name": "siteSetup",
+        "type": "site|object"
       },
       {
         "id": "schema:sniCertificate",
         "kind": "schema",
-        "name": "sniCertificate"
+        "name": "sniCertificate",
+        "type": "object"
       },
       {
         "id": "schema:snippet",
         "kind": "schema",
-        "name": "snippet"
+        "name": "snippet",
+        "type": "object"
       },
       {
         "id": "schema:splitTest",
         "kind": "schema",
-        "name": "splitTest"
+        "name": "splitTest",
+        "type": "object"
       },
       {
         "id": "schema:splitTestSetup",
         "kind": "schema",
-        "name": "splitTestSetup"
+        "name": "splitTestSetup",
+        "type": "object"
       },
       {
         "id": "schema:splitTests",
         "kind": "schema",
-        "name": "splitTests"
+        "name": "splitTests",
+        "type": "splitTest[]"
       },
       {
         "id": "schema:submission",
         "kind": "schema",
-        "name": "submission"
+        "name": "submission",
+        "type": "object"
       },
       {
         "id": "schema:ticket",
         "kind": "schema",
-        "name": "ticket"
+        "name": "ticket",
+        "type": "object"
       },
       {
         "id": "schema:user",
         "kind": "schema",
-        "name": "user"
+        "name": "user",
+        "type": "object"
       }
     ]
   },

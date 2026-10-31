@@ -47,219 +47,676 @@
       },
       {
         "deprecated": false,
+        "description": "Updates inventory for items in bulk.",
         "id": "operation:post:/v3/feeds",
         "kind": "operation",
         "method": "post",
         "name": "updateBulkInventory",
+        "parameters": [
+          {
+            "description": "The feed Type",
+            "enum": [
+              "inventory",
+              "MP_INVENTORY"
+            ],
+            "in": "query",
+            "name": "feedType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The shipNode for which the inventory is to be updated.",
+            "in": "query",
+            "name": "shipNode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/feeds",
         "pointer": "#/paths/~1v3~1feeds/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {}
         ],
-        "summary": "Bulk Item Inventory Update"
+        "summary": "Bulk Item Inventory Update",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this API to get the current Available to Sell inventory quantities for all WFS items in your catalog.",
         "id": "operation:get:/v3/fulfillment/inventory",
         "kind": "operation",
         "method": "get",
         "name": "getWFSInventory",
+        "parameters": [
+          {
+            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item.",
+            "in": "query",
+            "name": "sku",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "last inventory modified date - starting range.",
+            "in": "query",
+            "name": "fromModifiedDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "last inventory modified date - starting range.",
+            "in": "query",
+            "name": "toModifiedDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "10",
+            "description": "Number of Sku to be returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "0",
+            "description": "Offset is the number of records you wish to skip before selecting records.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/fulfillment/inventory",
         "pointer": "#/paths/~1v3~1fulfillment~1inventory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "WFS Inventory"
+        "summary": "WFS Inventory",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API will retrieve the inventory count for all of a seller's items across all ship nodes by item to ship node mapping.",
         "id": "operation:get:/v3/inventories",
         "kind": "operation",
         "method": "get",
         "name": "getMultiNodeInventoryForAllSkuAndAllShipNodes",
+        "parameters": [
+          {
+            "default": "10",
+            "description": "The number of items returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "String returned from initial API call to indicate pagination.",
+            "in": "query",
+            "name": "nextCursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/inventories",
         "pointer": "#/paths/~1v3~1inventories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Multiple Item Inventory for All Ship Nodes"
+        "summary": "Multiple Item Inventory for All Ship Nodes",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API will retrieve the inventory count for an item across all ship nodes or one specific ship node.",
         "id": "operation:get:/v3/inventories/{sku}",
         "kind": "operation",
         "method": "get",
         "name": "getMultiNodeInventoryForSkuAndAllShipnodes",
+        "parameters": [
+          {
+            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item.",
+            "in": "path",
+            "name": "sku",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ShipNode Id of the ship node for which the inventory is requested",
+            "in": "query",
+            "name": "shipNode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/inventories/{sku}",
         "pointer": "#/paths/~1v3~1inventories~1{sku}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Single Item Inventory by Ship Node"
+        "summary": "Single Item Inventory by Ship Node",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API will update the inventory for an item across one or more fulfillment centers, known as ship nodes.",
         "id": "operation:put:/v3/inventories/{sku}",
         "kind": "operation",
         "method": "put",
         "name": "updateMultiNodeInventory",
+        "parameters": [
+          {
+            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item.",
+            "in": "path",
+            "name": "sku",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/inventories/{sku}",
         "pointer": "#/paths/~1v3~1inventories~1{sku}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {}
         ],
-        "summary": "Update Item Inventory per Ship Node"
+        "summary": "Update Item Inventory per Ship Node",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this API to get the inventory for a given item.",
         "id": "operation:get:/v3/inventory",
         "kind": "operation",
         "method": "get",
         "name": "getInventory",
+        "parameters": [
+          {
+            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item.",
+            "in": "query",
+            "name": "sku",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The shipNode for which the inventory is requested",
+            "in": "query",
+            "name": "shipNode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/inventory",
         "pointer": "#/paths/~1v3~1inventory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Inventory"
+        "summary": "Inventory",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the inventory for a given item.",
         "id": "operation:put:/v3/inventory",
         "kind": "operation",
         "method": "put",
         "name": "updateInventoryForAnItem",
+        "parameters": [
+          {
+            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item.",
+            "in": "query",
+            "name": "sku",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The shipNode for which the inventory is to be updated.",
+            "in": "query",
+            "name": "shipNode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The access token retrieved in the Token API call",
+            "in": "header",
+            "name": "WM_SEC.ACCESS_TOKEN",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID to track the consumer request by channel.",
+            "in": "header",
+            "name": "WM_CONSUMER.CHANNEL.TYPE",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+            "in": "header",
+            "name": "WM_QOS.CORRELATION_ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Walmart Service Name",
+            "in": "header",
+            "name": "WM_SVC.NAME",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/inventory",
         "pointer": "#/paths/~1v3~1inventory/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {}
         ],
-        "summary": "Update inventory"
+        "summary": "Update inventory",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
+        "description": "Quantity of an item that is available to be allocated to orders",
         "id": "schema:AvailToSellQty",
         "kind": "schema",
-        "name": "AvailToSellQty"
+        "name": "AvailToSellQty",
+        "type": "object"
       },
       {
         "id": "schema:Cause",
         "kind": "schema",
-        "name": "Cause"
+        "name": "Cause",
+        "type": "object"
       },
       {
         "id": "schema:Elements",
         "kind": "schema",
-        "name": "Elements"
+        "name": "Elements",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:FeedId",
         "kind": "schema",
-        "name": "FeedId"
+        "name": "FeedId",
+        "type": "object"
       },
       {
         "id": "schema:GetAllInventoriesDTO",
         "kind": "schema",
-        "name": "GetAllInventoriesDTO"
+        "name": "GetAllInventoriesDTO",
+        "type": "object"
       },
       {
         "id": "schema:GetAllInventoriesNodeDTO",
         "kind": "schema",
-        "name": "GetAllInventoriesNodeDTO"
+        "name": "GetAllInventoriesNodeDTO",
+        "type": "object"
       },
       {
         "id": "schema:Headers",
         "kind": "schema",
-        "name": "Headers"
+        "name": "Headers",
+        "type": "object"
       },
       {
+        "description": "Quantity of an item that is input by the seller",
         "id": "schema:InputQty",
         "kind": "schema",
-        "name": "InputQty"
+        "name": "InputQty",
+        "type": "object"
       },
       {
         "id": "schema:InventoriesDTO",
         "kind": "schema",
-        "name": "InventoriesDTO"
+        "name": "InventoriesDTO",
+        "type": "object"
       },
       {
         "id": "schema:Inventory",
         "kind": "schema",
-        "name": "Inventory"
+        "name": "Inventory",
+        "type": "object"
       },
       {
         "id": "schema:InventoryWFS",
         "kind": "schema",
-        "name": "InventoryWFS"
+        "name": "InventoryWFS",
+        "type": "object"
       },
       {
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
         "id": "schema:MultiNodeInventoryFetchResponseDTO",
         "kind": "schema",
-        "name": "MultiNodeInventoryFetchResponseDTO"
+        "name": "MultiNodeInventoryFetchResponseDTO",
+        "type": "object"
       },
       {
         "id": "schema:MultiNodeInventoryUpdateRequestDTO",
         "kind": "schema",
-        "name": "MultiNodeInventoryUpdateRequestDTO"
+        "name": "MultiNodeInventoryUpdateRequestDTO",
+        "type": "object"
       },
       {
         "id": "schema:MultiNodeInventoryUpdateResponseDTO",
         "kind": "schema",
-        "name": "MultiNodeInventoryUpdateResponseDTO"
+        "name": "MultiNodeInventoryUpdateResponseDTO",
+        "type": "object"
       },
       {
         "id": "schema:NodeDTO",
         "kind": "schema",
-        "name": "NodeDTO"
+        "name": "NodeDTO",
+        "type": "object"
       },
       {
         "id": "schema:Payload",
         "kind": "schema",
-        "name": "Payload"
+        "name": "Payload",
+        "type": "object"
       },
       {
+        "description": "Quantity that has been ordered by the customers but not yet shipped",
         "id": "schema:ReservedQty",
         "kind": "schema",
-        "name": "ReservedQty"
+        "name": "ReservedQty",
+        "type": "object"
       },
       {
         "id": "schema:ShipNodes",
         "kind": "schema",
-        "name": "ShipNodes"
+        "name": "ShipNodes",
+        "type": "object"
       },
       {
+        "description": "Quantity that has been ordered by the customers but not yet shipped",
         "id": "schema:SupplyQuantity",
         "kind": "schema",
-        "name": "SupplyQuantity"
+        "name": "SupplyQuantity",
+        "type": "object"
       },
       {
         "id": "schema:UpdateInventoriesRequestDTO",
         "kind": "schema",
-        "name": "UpdateInventoriesRequestDTO"
+        "name": "UpdateInventoriesRequestDTO",
+        "type": "object"
       },
       {
         "id": "schema:UpdateInventoriesRequestNodeDTO",
         "kind": "schema",
-        "name": "UpdateInventoriesRequestNodeDTO"
+        "name": "UpdateInventoriesRequestNodeDTO",
+        "type": "object"
       },
       {
         "id": "schema:UpdateInventoriesResponseNodeDTO",
         "kind": "schema",
-        "name": "UpdateInventoriesResponseNodeDTO"
+        "name": "UpdateInventoriesResponseNodeDTO",
+        "type": "object"
       },
       {
         "id": "schema:WfsInventoryDTO",
         "kind": "schema",
-        "name": "WfsInventoryDTO"
+        "name": "WfsInventoryDTO",
+        "type": "object"
       }
     ]
   },

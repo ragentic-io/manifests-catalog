@@ -17,22 +17,22 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/application/deploy"
-      },
-      {
-        "from": "meshery-local-7c5633eeaa",
-        "kind": "EXPOSES",
         "to": "operation:post:/api/application/deploy"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/application/{id}"
+        "to": "operation:delete:/api/application/deploy"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
         "to": "operation:get:/api/application/{id}"
+      },
+      {
+        "from": "meshery-local-7c5633eeaa",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/application/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -52,12 +52,12 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/filter/{id}"
+        "to": "operation:get:/api/filter/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/filter/{id}"
+        "to": "operation:delete:/api/filter/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -82,22 +82,22 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/pattern/deploy"
-      },
-      {
-        "from": "meshery-local-7c5633eeaa",
-        "kind": "EXPOSES",
         "to": "operation:post:/api/pattern/deploy"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/pattern/{id}"
+        "to": "operation:delete:/api/pattern/deploy"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
         "to": "operation:get:/api/pattern/{id}"
+      },
+      {
+        "from": "meshery-local-7c5633eeaa",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/pattern/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -137,12 +137,12 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/system/adapter/manage"
+        "to": "operation:post:/api/system/adapter/manage"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/system/adapter/manage"
+        "to": "operation:delete:/api/system/adapter/manage"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -157,12 +157,12 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/system/kubernetes"
+        "to": "operation:post:/api/system/kubernetes"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/system/kubernetes"
+        "to": "operation:delete:/api/system/kubernetes"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -207,17 +207,17 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/telemetry/metrics/config"
-      },
-      {
-        "from": "meshery-local-7c5633eeaa",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/telemetry/metrics/config"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
         "to": "operation:post:/api/telemetry/metrics/config"
+      },
+      {
+        "from": "meshery-local-7c5633eeaa",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/telemetry/metrics/config"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -232,17 +232,17 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/telemetry/metrics/grafana/config"
-      },
-      {
-        "from": "meshery-local-7c5633eeaa",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/telemetry/metrics/grafana/config"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
         "to": "operation:post:/api/telemetry/metrics/grafana/config"
+      },
+      {
+        "from": "meshery-local-7c5633eeaa",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/telemetry/metrics/grafana/config"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -302,12 +302,12 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/user/performance/profiles/{id}"
+        "to": "operation:get:/api/user/performance/profiles/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/user/performance/profiles/{id}"
+        "to": "operation:delete:/api/user/performance/profiles/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -332,17 +332,17 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/user/prefs/perf"
-      },
-      {
-        "from": "meshery-local-7c5633eeaa",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/user/prefs/perf"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
         "to": "operation:post:/api/user/prefs/perf"
+      },
+      {
+        "from": "meshery-local-7c5633eeaa",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/user/prefs/perf"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -357,12 +357,12 @@
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/user/schedules/{id}"
+        "to": "operation:get:/api/user/schedules/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/user/schedules/{id}"
+        "to": "operation:delete:/api/user/schedules/{id}"
       },
       {
         "from": "meshery-local-7c5633eeaa",
@@ -378,6 +378,796 @@
         "from": "meshery-local-7c5633eeaa",
         "kind": "EXPOSES",
         "to": "operation:get:/provider"
+      },
+      {
+        "from": "operation:get:/api/application/",
+        "kind": "RETURNS",
+        "to": "schema:ApplicationsAPIResponse"
+      },
+      {
+        "from": "operation:post:/api/application/",
+        "kind": "RETURNS",
+        "to": "schema:MesheryApplication"
+      },
+      {
+        "from": "operation:post:/api/application/deploy",
+        "kind": "RETURNS",
+        "to": "schema:MesheryApplication"
+      },
+      {
+        "from": "operation:get:/api/application/{id}",
+        "kind": "RETURNS",
+        "to": "schema:MesheryApplication"
+      },
+      {
+        "from": "operation:get:/api/filter",
+        "kind": "RETURNS",
+        "to": "schema:FiltersAPIResponse"
+      },
+      {
+        "from": "operation:post:/api/filter",
+        "kind": "RETURNS",
+        "to": "schema:MesheryFilter"
+      },
+      {
+        "from": "operation:get:/api/filter/file/{id}",
+        "kind": "RETURNS",
+        "to": "schema:MesheryFilter"
+      },
+      {
+        "from": "operation:get:/api/filter/{id}",
+        "kind": "RETURNS",
+        "to": "schema:MesheryFilter"
+      },
+      {
+        "from": "operation:get:/api/pattern",
+        "kind": "RETURNS",
+        "to": "schema:PatternsAPIResponse"
+      },
+      {
+        "from": "operation:post:/api/pattern",
+        "kind": "RETURNS",
+        "to": "schema:MesheryPattern"
+      },
+      {
+        "from": "operation:get:/api/pattern/{id}",
+        "kind": "RETURNS",
+        "to": "schema:MesheryPattern"
+      },
+      {
+        "from": "operation:get:/api/perf/profile",
+        "kind": "ACCEPTS",
+        "to": "schema:PerformanceTestConfig"
+      },
+      {
+        "from": "operation:get:/api/perf/profile/result",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceResultsAPIResponse"
+      },
+      {
+        "from": "operation:get:/api/perf/profile/result/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceSpec"
+      },
+      {
+        "from": "operation:post:/api/system/adapter/manage",
+        "kind": "RETURNS",
+        "to": "schema:Adapter"
+      },
+      {
+        "from": "operation:get:/api/system/adapters",
+        "kind": "RETURNS",
+        "to": "schema:Adapter"
+      },
+      {
+        "from": "operation:post:/api/system/kubernetes",
+        "kind": "RETURNS",
+        "to": "schema:K8SConfig"
+      },
+      {
+        "from": "operation:post:/api/system/kubernetes/contexts",
+        "kind": "RETURNS",
+        "to": "schema:K8SContext"
+      },
+      {
+        "from": "operation:get:/api/system/sync",
+        "kind": "RETURNS",
+        "to": "schema:Preference"
+      },
+      {
+        "from": "operation:get:/api/system/version",
+        "kind": "RETURNS",
+        "to": "schema:Version"
+      },
+      {
+        "from": "operation:post:/api/telemetry/metrics/board_import",
+        "kind": "RETURNS",
+        "to": "schema:GrafanaBoard"
+      },
+      {
+        "from": "operation:post:/api/telemetry/metrics/boards",
+        "kind": "ACCEPTS",
+        "to": "schema:SelectedGrafanaConfig"
+      },
+      {
+        "from": "operation:get:/api/telemetry/metrics/config",
+        "kind": "RETURNS",
+        "to": "schema:Prometheus"
+      },
+      {
+        "from": "operation:get:/api/telemetry/metrics/grafana/boards",
+        "kind": "RETURNS",
+        "to": "schema:GrafanaBoard"
+      },
+      {
+        "from": "operation:get:/api/telemetry/metrics/grafana/config",
+        "kind": "RETURNS",
+        "to": "schema:Grafana"
+      },
+      {
+        "from": "operation:post:/api/telemetry/metrics/grafana/config",
+        "kind": "ACCEPTS",
+        "to": "schema:GrafanaConfigParams"
+      },
+      {
+        "from": "operation:get:/api/user/performance/profiles",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceProfilesAPIResponse"
+      },
+      {
+        "from": "operation:post:/api/user/performance/profiles",
+        "kind": "ACCEPTS",
+        "to": "schema:PerformanceProfileParameters"
+      },
+      {
+        "from": "operation:post:/api/user/performance/profiles",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceProfile"
+      },
+      {
+        "from": "operation:get:/api/user/performance/profiles/results",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceResultsAPIResponse"
+      },
+      {
+        "from": "operation:get:/api/user/performance/profiles/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceProfile"
+      },
+      {
+        "from": "operation:get:/api/user/performance/profiles/{id}/results",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceResultsAPIResponse"
+      },
+      {
+        "from": "operation:get:/api/user/prefs",
+        "kind": "RETURNS",
+        "to": "schema:Preference"
+      },
+      {
+        "from": "operation:post:/api/user/prefs",
+        "kind": "RETURNS",
+        "to": "schema:Preference"
+      },
+      {
+        "from": "operation:get:/api/user/prefs/perf",
+        "kind": "RETURNS",
+        "to": "schema:PerformanceTestConfig"
+      },
+      {
+        "from": "operation:post:/api/user/prefs/perf",
+        "kind": "ACCEPTS",
+        "to": "schema:PerformanceTestConfig"
+      },
+      {
+        "from": "operation:get:/api/user/schedules",
+        "kind": "RETURNS",
+        "to": "schema:SchedulesAPIResponse"
+      },
+      {
+        "from": "operation:post:/api/user/schedules",
+        "kind": "RETURNS",
+        "to": "schema:Schedule"
+      },
+      {
+        "from": "operation:get:/api/user/schedules/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Schedule"
+      },
+      {
+        "from": "operation:delete:/api/user/schedules/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SchedulesAPIResponse"
+      },
+      {
+        "from": "schema:Adapter",
+        "kind": "REFERENCES",
+        "to": "schema:SupportedOperation"
+      },
+      {
+        "from": "schema:Alert",
+        "kind": "REFERENCES",
+        "to": "schema:AlertCondition"
+      },
+      {
+        "from": "schema:Alert",
+        "kind": "REFERENCES",
+        "to": "schema:AlertNotification"
+      },
+      {
+        "from": "schema:AlertCondition",
+        "kind": "REFERENCES",
+        "to": "schema:AlertEvaluator"
+      },
+      {
+        "from": "schema:AlertCondition",
+        "kind": "REFERENCES",
+        "to": "schema:AlertOperator"
+      },
+      {
+        "from": "schema:AlertCondition",
+        "kind": "REFERENCES",
+        "to": "schema:AlertQuery"
+      },
+      {
+        "from": "schema:AlertCondition",
+        "kind": "REFERENCES",
+        "to": "schema:AlertReducer"
+      },
+      {
+        "from": "schema:ApplicationsAPIResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MesheryApplication"
+      },
+      {
+        "from": "schema:Axis",
+        "kind": "REFERENCES",
+        "to": "schema:FloatString"
+      },
+      {
+        "from": "schema:Capabilities",
+        "kind": "REFERENCES",
+        "to": "schema:Capability"
+      },
+      {
+        "from": "schema:Capability",
+        "kind": "REFERENCES",
+        "to": "schema:Feature"
+      },
+      {
+        "from": "schema:ColumnStyle",
+        "kind": "REFERENCES",
+        "to": "schema:ValueMap"
+      },
+      {
+        "from": "schema:ContainerWaitOKBody",
+        "kind": "REFERENCES",
+        "to": "schema:ContainerWaitOKBodyError"
+      },
+      {
+        "from": "schema:Extensions",
+        "kind": "REFERENCES",
+        "to": "schema:GraphQLExtensions"
+      },
+      {
+        "from": "schema:Extensions",
+        "kind": "REFERENCES",
+        "to": "schema:NavigatorExtensions"
+      },
+      {
+        "from": "schema:Extensions",
+        "kind": "REFERENCES",
+        "to": "schema:UserPrefsExtensions"
+      },
+      {
+        "from": "schema:FiltersAPIResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MesheryFilter"
+      },
+      {
+        "from": "schema:Grafana",
+        "kind": "REFERENCES",
+        "to": "schema:SelectedGrafanaConfig"
+      },
+      {
+        "from": "schema:GrafanaBoard",
+        "kind": "REFERENCES",
+        "to": "schema:GrafanaTemplateVars"
+      },
+      {
+        "from": "schema:GrafanaBoard",
+        "kind": "REFERENCES",
+        "to": "schema:Panel"
+      },
+      {
+        "from": "schema:GrafanaTemplateVars",
+        "kind": "REFERENCES",
+        "to": "schema:GrafanaDataSource"
+      },
+      {
+        "from": "schema:GraphQLExtensions",
+        "kind": "REFERENCES",
+        "to": "schema:GraphQLExtension"
+      },
+      {
+        "from": "schema:IntOrString",
+        "kind": "REFERENCES",
+        "to": "schema:Type"
+      },
+      {
+        "from": "schema:K8SConfig",
+        "kind": "REFERENCES",
+        "to": "schema:K8SNode"
+      },
+      {
+        "from": "schema:LoadBalancerStatus",
+        "kind": "REFERENCES",
+        "to": "schema:LoadBalancerIngress"
+      },
+      {
+        "from": "schema:ManagedFieldsEntry",
+        "kind": "REFERENCES",
+        "to": "schema:FieldsV1"
+      },
+      {
+        "from": "schema:ManagedFieldsEntry",
+        "kind": "REFERENCES",
+        "to": "schema:ManagedFieldsOperationType"
+      },
+      {
+        "from": "schema:ManagedFieldsEntry",
+        "kind": "REFERENCES",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:MesheryApplication",
+        "kind": "REFERENCES",
+        "to": "schema:Map"
+      },
+      {
+        "from": "schema:MesheryApplication",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:MesheryFilter",
+        "kind": "REFERENCES",
+        "to": "schema:Map"
+      },
+      {
+        "from": "schema:MesheryFilter",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:MesheryPattern",
+        "kind": "REFERENCES",
+        "to": "schema:Map"
+      },
+      {
+        "from": "schema:MesheryPattern",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:NavigatorExtension",
+        "kind": "REFERENCES",
+        "to": "schema:Href"
+      },
+      {
+        "from": "schema:NavigatorExtension",
+        "kind": "REFERENCES",
+        "to": "schema:NavigatorExtensions"
+      },
+      {
+        "from": "schema:NavigatorExtensions",
+        "kind": "REFERENCES",
+        "to": "schema:NavigatorExtension"
+      },
+      {
+        "from": "schema:OwnerReference",
+        "kind": "REFERENCES",
+        "to": "schema:UID"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Alert"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Axis"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Column"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:ColumnStyle"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:FieldConfig"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Gauge"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:IntString"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Legend"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:MapType"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Options"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:RangeMap"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:SeriesOverride"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Sort"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:SparkLine"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Target"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Threshold"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:Tooltip"
+      },
+      {
+        "from": "schema:Panel",
+        "kind": "REFERENCES",
+        "to": "schema:ValueMap"
+      },
+      {
+        "from": "schema:PatternsAPIResponse",
+        "kind": "REFERENCES",
+        "to": "schema:MesheryPattern"
+      },
+      {
+        "from": "schema:PerformanceProfile",
+        "kind": "REFERENCES",
+        "to": "schema:StringArray"
+      },
+      {
+        "from": "schema:PerformanceProfile",
+        "kind": "REFERENCES",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PerformanceProfile",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:PerformanceProfilesAPIResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PerformanceProfile"
+      },
+      {
+        "from": "schema:PerformanceResult",
+        "kind": "REFERENCES",
+        "to": "schema:RunnerResults"
+      },
+      {
+        "from": "schema:PerformanceResult",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:PerformanceResultsAPIResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PerformanceResult"
+      },
+      {
+        "from": "schema:PerformanceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:LatenciesMs"
+      },
+      {
+        "from": "schema:PerformanceTestConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PerformanceTestConfig_Client"
+      },
+      {
+        "from": "schema:PerformanceTestConfig_Client",
+        "kind": "REFERENCES",
+        "to": "schema:PerformanceTestConfig_Client_Protocol"
+      },
+      {
+        "from": "schema:Plugin",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfig"
+      },
+      {
+        "from": "schema:Plugin",
+        "kind": "REFERENCES",
+        "to": "schema:PluginSettings"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfigArgs"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfigInterface"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfigLinux"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfigNetwork"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfigRootfs"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginConfigUser"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginEnv"
+      },
+      {
+        "from": "schema:PluginConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PluginMount"
+      },
+      {
+        "from": "schema:PluginConfigInterface",
+        "kind": "REFERENCES",
+        "to": "schema:PluginInterfaceType"
+      },
+      {
+        "from": "schema:PluginConfigLinux",
+        "kind": "REFERENCES",
+        "to": "schema:PluginDevice"
+      },
+      {
+        "from": "schema:PluginSettings",
+        "kind": "REFERENCES",
+        "to": "schema:PluginDevice"
+      },
+      {
+        "from": "schema:PluginSettings",
+        "kind": "REFERENCES",
+        "to": "schema:PluginMount"
+      },
+      {
+        "from": "schema:Preference",
+        "kind": "REFERENCES",
+        "to": "schema:Adapter"
+      },
+      {
+        "from": "schema:Preference",
+        "kind": "REFERENCES",
+        "to": "schema:Grafana"
+      },
+      {
+        "from": "schema:Preference",
+        "kind": "REFERENCES",
+        "to": "schema:K8SConfig"
+      },
+      {
+        "from": "schema:Preference",
+        "kind": "REFERENCES",
+        "to": "schema:LoadTestPreferences"
+      },
+      {
+        "from": "schema:Preference",
+        "kind": "REFERENCES",
+        "to": "schema:Prometheus"
+      },
+      {
+        "from": "schema:Prometheus",
+        "kind": "REFERENCES",
+        "to": "schema:SelectedGrafanaConfig"
+      },
+      {
+        "from": "schema:ProviderProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Capabilities"
+      },
+      {
+        "from": "schema:ProviderProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Extensions"
+      },
+      {
+        "from": "schema:ProviderProperties",
+        "kind": "REFERENCES",
+        "to": "schema:ProviderType"
+      },
+      {
+        "from": "schema:Schedule",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:SchedulesAPIResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Schedule"
+      },
+      {
+        "from": "schema:SelectedGrafanaConfig",
+        "kind": "REFERENCES",
+        "to": "schema:GrafanaBoard"
+      },
+      {
+        "from": "schema:SelectedGrafanaConfig",
+        "kind": "REFERENCES",
+        "to": "schema:Panel"
+      },
+      {
+        "from": "schema:SeriesOverride",
+        "kind": "REFERENCES",
+        "to": "schema:BoolString"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ManagedFieldsEntry"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:OwnerReference"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceSpec"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceStatus"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:UID"
+      },
+      {
+        "from": "schema:ServicePort",
+        "kind": "REFERENCES",
+        "to": "schema:IntOrString"
+      },
+      {
+        "from": "schema:ServicePort",
+        "kind": "REFERENCES",
+        "to": "schema:Protocol"
+      },
+      {
+        "from": "schema:ServiceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:IPFamily"
+      },
+      {
+        "from": "schema:ServiceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceAffinity"
+      },
+      {
+        "from": "schema:ServiceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceExternalTrafficPolicyType"
+      },
+      {
+        "from": "schema:ServiceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:ServicePort"
+      },
+      {
+        "from": "schema:ServiceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceType"
+      },
+      {
+        "from": "schema:ServiceSpec",
+        "kind": "REFERENCES",
+        "to": "schema:SessionAffinityConfig"
+      },
+      {
+        "from": "schema:ServiceStatus",
+        "kind": "REFERENCES",
+        "to": "schema:LoadBalancerStatus"
+      },
+      {
+        "from": "schema:SessionAffinityConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ClientIPConfig"
+      },
+      {
+        "from": "schema:StackdriverAlignOptions",
+        "kind": "REFERENCES",
+        "to": "schema:StackdriverAlignOption"
+      },
+      {
+        "from": "schema:SupportedOperation",
+        "kind": "REFERENCES",
+        "to": "schema:OpCategory"
+      },
+      {
+        "from": "schema:Target",
+        "kind": "REFERENCES",
+        "to": "schema:StackdriverAlignOptions"
+      },
+      {
+        "from": "schema:UserPrefsExtensions",
+        "kind": "REFERENCES",
+        "to": "schema:UserPrefsExtension"
+      },
+      {
+        "from": "schema:Volume",
+        "kind": "REFERENCES",
+        "to": "schema:VolumeUsageData"
+      },
+      {
+        "from": "schema:VolumeListOKBody",
+        "kind": "REFERENCES",
+        "to": "schema:Volume"
       }
     ],
     "nodes": [
@@ -387,1808 +1177,3125 @@
       },
       {
         "deprecated": false,
+        "description": "Returns requests for all Meshery Applications",
         "id": "operation:get:/api/application/",
         "kind": "operation",
         "method": "get",
         "name": "idGetApplicationFileRequest",
         "path": "/api/application/",
         "pointer": "#/paths/~1api~1application~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApplicationsAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Application Files"
+        "summary": "Handle GET request for Application Files",
+        "tags": [
+          "ApplicationsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save attached Meshery Application File",
         "id": "operation:post:/api/application/",
         "kind": "operation",
         "method": "post",
         "name": "idPostApplicationFileRequest",
         "path": "/api/application/",
         "pointer": "#/paths/~1api~1application~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryApplication"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Application Files"
+        "summary": "Handle POST request for Application Files",
+        "tags": [
+          "ApplicationsAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/application/deploy",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteApplicationFile",
-        "path": "/api/application/deploy",
-        "pointer": "#/paths/~1api~1application~1deploy/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE request for Application File Deploy"
-      },
-      {
-        "deprecated": false,
+        "description": "Deploy an attached application file with the request",
         "id": "operation:post:/api/application/deploy",
         "kind": "operation",
         "method": "post",
         "name": "idPostDeployApplicationFile",
         "path": "/api/application/deploy",
         "pointer": "#/paths/~1api~1application~1deploy/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryApplication"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Application File Deploy"
+        "summary": "Handle POST request for Application File Deploy",
+        "tags": [
+          "ApplicationsAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/application/{id}",
+        "description": "Delete a deployed application file with the request",
+        "id": "operation:delete:/api/application/deploy",
         "kind": "operation",
         "method": "delete",
-        "name": "idDeleteMesheryApplicationFile",
-        "path": "/api/application/{id}",
-        "pointer": "#/paths/~1api~1application~1{id}/delete",
+        "name": "idDeleteApplicationFile",
+        "path": "/api/application/deploy",
+        "pointer": "#/paths/~1api~1application~1deploy/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle Delete for a Meshery Application File"
+        "summary": "Handle DELETE request for Application File Deploy",
+        "tags": [
+          "ApplicationsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches the list of all applications saved by the current user",
         "id": "operation:get:/api/application/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetMesheryApplication",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/application/{id}",
         "pointer": "#/paths/~1api~1application~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryApplication"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Meshery Application with the given id"
+        "summary": "Handle GET request for Meshery Application with the given id",
+        "tags": [
+          "ApplicationsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a meshery application file with ID: id",
+        "id": "operation:delete:/api/application/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteMesheryApplicationFile",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/application/{id}",
+        "pointer": "#/paths/~1api~1application~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle Delete for a Meshery Application File",
+        "tags": [
+          "ApplicationsAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns all the Meshery Filters saved by the current user",
         "id": "operation:get:/api/filter",
         "kind": "operation",
         "method": "get",
         "name": "idGetFilterFile",
         "path": "/api/filter",
         "pointer": "#/paths/~1api~1filter/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FiltersAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for all filters"
+        "summary": "Handle GET request for all filters",
+        "tags": [
+          "FiltersAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to save/update a Meshery Filter",
         "id": "operation:post:/api/filter",
         "kind": "operation",
         "method": "post",
         "name": "idPostFilterFile",
         "path": "/api/filter",
         "pointer": "#/paths/~1api~1filter/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryFilter"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST requests for Meshery Filters"
+        "summary": "Handle POST requests for Meshery Filters",
+        "tags": [
+          "FiltersAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the Meshery Filter file saved by the current user with the given id",
         "id": "operation:get:/api/filter/file/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetFilterFiles",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/filter/file/{id}",
         "pointer": "#/paths/~1api~1filter~1file~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryFilter"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for filter file with given id"
+        "summary": "Handle GET request for filter file with given id",
+        "tags": [
+          "FiltersAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/filter/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteMesheryFilter",
-        "path": "/api/filter/{id}",
-        "pointer": "#/paths/~1api~1filter~1{id}/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle Delete for a Meshery Filter"
-      },
-      {
-        "deprecated": false,
+        "description": "Fetches the Meshery Filter with the given id",
         "id": "operation:get:/api/filter/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetMesheryFilter",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/filter/{id}",
         "pointer": "#/paths/~1api~1filter~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryFilter"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for a Meshery Filter"
+        "summary": "Handle GET request for a Meshery Filter",
+        "tags": [
+          "FiltersAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a meshery filter with ID: id",
+        "id": "operation:delete:/api/filter/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteMesheryFilter",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/filter/{id}",
+        "pointer": "#/paths/~1api~1filter~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle Delete for a Meshery Filter",
+        "tags": [
+          "FiltersAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Getting list of workloads/traits/scopes {type} being of either trait, scope, workload; registration of adapter capabilities.",
         "id": "operation:get:/api/oam/{type}",
         "kind": "operation",
         "method": "get",
         "name": "idGETOAMMesheryPattern",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/oam/{type}",
         "pointer": "#/paths/~1api~1oam~1{type}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handles the get requests for the OAM objects"
+        "summary": "Handles the get requests for the OAM objects",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adding a workload/trait/scope {type} being of either trait, scope, workload; registration of adapter capabilities.",
         "id": "operation:post:/api/oam/{type}",
         "kind": "operation",
         "method": "post",
         "name": "idPOSTOAMMesheryPattern",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/oam/{type}",
         "pointer": "#/paths/~1api~1oam~1{type}/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handles registering OMA objects"
+        "summary": "Handles registering OMA objects",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of all the patterns saved by the current user This will return all the patterns with their details",
         "id": "operation:get:/api/pattern",
         "kind": "operation",
         "method": "get",
         "name": "idGetPatternFiles",
         "path": "/api/pattern",
         "pointer": "#/paths/~1api~1pattern/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PatternsAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for patterns"
+        "summary": "Handle GET request for patterns",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Edit/update a meshery pattern",
         "id": "operation:post:/api/pattern",
         "kind": "operation",
         "method": "post",
         "name": "idPostPatternFile",
         "path": "/api/pattern",
         "pointer": "#/paths/~1api~1pattern/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryPattern"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST requests for patterns"
+        "summary": "Handle POST requests for patterns",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/pattern/deploy",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteDeployPattern",
-        "path": "/api/pattern/deploy",
-        "pointer": "#/paths/~1api~1pattern~1deploy/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE request for Pattern Deploy"
-      },
-      {
-        "deprecated": false,
+        "description": "Deploy an attached pattern with the request",
         "id": "operation:post:/api/pattern/deploy",
         "kind": "operation",
         "method": "post",
         "name": "idPostDeployPattern",
         "path": "/api/pattern/deploy",
         "pointer": "#/paths/~1api~1pattern~1deploy/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Pattern Deploy"
+        "summary": "Handle POST request for Pattern Deploy",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/pattern/{id}",
+        "description": "Delete a deployed pattern with the request",
+        "id": "operation:delete:/api/pattern/deploy",
         "kind": "operation",
         "method": "delete",
-        "name": "idDeleteMesheryPattern",
-        "path": "/api/pattern/{id}",
-        "pointer": "#/paths/~1api~1pattern~1{id}/delete",
+        "name": "idDeleteDeployPattern",
+        "path": "/api/pattern/deploy",
+        "pointer": "#/paths/~1api~1pattern~1deploy/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle Delete for a Meshery Pattern"
+        "summary": "Handle DELETE request for Pattern Deploy",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches the pattern with the given id",
         "id": "operation:get:/api/pattern/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetMesheryPattern",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/pattern/{id}",
         "pointer": "#/paths/~1api~1pattern~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MesheryPattern"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET for a Meshery Pattern"
+        "summary": "Handle GET for a Meshery Pattern",
+        "tags": [
+          "PatternsAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a meshery pattern with ID: id",
+        "id": "operation:delete:/api/pattern/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteMesheryPattern",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/pattern/{id}",
+        "pointer": "#/paths/~1api~1pattern~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle Delete for a Meshery Pattern",
+        "tags": [
+          "PatternsAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Runs the load test with the given parameters",
         "id": "operation:get:/api/perf/profile",
         "kind": "operation",
         "method": "get",
         "name": "idRunPerfTest",
         "path": "/api/perf/profile",
         "pointer": "#/paths/~1api~1perf~1profile/get",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PerformanceTestConfig"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request to run a test"
+        "summary": "Handle GET request to run a test",
+        "tags": [
+          "PerfAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns pages of all the perf results from Remote Provider",
         "id": "operation:get:/api/perf/profile/result",
         "kind": "operation",
         "method": "get",
         "name": "idGetAllPerfResults",
         "path": "/api/perf/profile/result",
         "pointer": "#/paths/~1api~1perf~1profile~1result/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceResultsAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handles GET requests for perf results"
+        "summary": "Handles GET requests for perf results",
+        "tags": [
+          "PerfAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an individual result from provider",
         "id": "operation:get:/api/perf/profile/result/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetSinglePerfResult",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/perf/profile/result/{id}",
         "pointer": "#/paths/~1api~1perf~1profile~1result~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceSpec"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handles GET requests for perf result"
+        "summary": "Handles GET requests for perf result",
+        "tags": [
+          "PerfAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the choice of provider in system",
         "id": "operation:get:/api/provider",
         "kind": "operation",
         "method": "get",
         "name": "idChoiceProvider",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/provider",
         "pointer": "#/paths/~1api~1provider/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for the choice of provider"
+        "summary": "Handle GET request for the choice of provider",
+        "tags": [
+          "ProvidersAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the capabilities.json for the provider",
         "id": "operation:get:/api/provider/capabilities",
         "kind": "operation",
         "method": "get",
         "name": "idGetProviderCapabilities",
         "path": "/api/provider/capabilities",
         "pointer": "#/paths/~1api~1provider~1capabilities/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET requests for Provider"
+        "summary": "Handle GET requests for Provider",
+        "tags": [
+          "ProvidersAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "handles the requests to serve react components from the provider package",
         "id": "operation:get:/api/provider/extension",
         "kind": "operation",
         "method": "get",
         "name": "idReactComponents",
         "path": "/api/provider/extension",
         "pointer": "#/paths/~1api~1provider~1extension/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for React Components"
+        "summary": "Handle GET request for React Components",
+        "tags": [
+          "ProvidersAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the available list of providers",
         "id": "operation:get:/api/providers",
         "kind": "operation",
         "method": "get",
         "name": "idGetProvidersList",
         "path": "/api/providers",
         "pointer": "#/paths/~1api~1providers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for list of providers"
+        "summary": "Handle GET request for list of providers",
+        "tags": [
+          "ProvidersAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/system/adapter/manage",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteAdapterConfig",
-        "path": "/api/system/adapter/manage",
-        "pointer": "#/paths/~1api~1system~1adapter~1manage/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE requests to delete adapter config"
-      },
-      {
-        "deprecated": false,
+        "description": "Used to persist adapter config",
         "id": "operation:post:/api/system/adapter/manage",
         "kind": "operation",
         "method": "post",
         "name": "idPostAdapterConfig",
         "path": "/api/system/adapter/manage",
         "pointer": "#/paths/~1api~1system~1adapter~1manage/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Adapter[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST requests to persist adapter config"
+        "summary": "Handle POST requests to persist adapter config",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to delete adapter configuration",
+        "id": "operation:delete:/api/system/adapter/manage",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteAdapterConfig",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "adapter",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/api/system/adapter/manage",
+        "pointer": "#/paths/~1api~1system~1adapter~1manage/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle DELETE requests to delete adapter config",
+        "tags": [
+          "SystemAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Used to send operations to the adapters",
         "id": "operation:post:/api/system/adapter/operation",
         "kind": "operation",
         "method": "post",
         "name": "idPostAdapterOperation",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "adapter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "customBody",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "namespace",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "deleteOp",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/system/adapter/operation",
         "pointer": "#/paths/~1api~1system~1adapter~1operation/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST requests for Adapter Operations"
+        "summary": "Handle POST requests for Adapter Operations",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches and returns all the adapters and ping adapters",
         "id": "operation:get:/api/system/adapters",
         "kind": "operation",
         "method": "get",
         "name": "idGetSystemAdapters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "adapter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/system/adapters",
         "pointer": "#/paths/~1api~1system~1adapters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Adapter[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for adapters"
+        "summary": "Handle GET request for adapters",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/system/kubernetes",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteK8SConfig",
-        "path": "/api/system/kubernetes",
-        "pointer": "#/paths/~1api~1system~1kubernetes/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE request for Kubernetes Config"
-      },
-      {
-        "deprecated": false,
+        "description": "Used to add kubernetes config to System",
         "id": "operation:post:/api/system/kubernetes",
         "kind": "operation",
         "method": "post",
         "name": "idPostK8SConfig",
         "path": "/api/system/kubernetes",
         "pointer": "#/paths/~1api~1system~1kubernetes/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "K8SConfig"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Kubernetes Config"
+        "summary": "Handle POST request for Kubernetes Config",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to delete kubernetes config to System",
+        "id": "operation:delete:/api/system/kubernetes",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteK8SConfig",
+        "path": "/api/system/kubernetes",
+        "pointer": "#/paths/~1api~1system~1kubernetes/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle DELETE request for Kubernetes Config",
+        "tags": [
+          "SystemAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns the context list for a given k8s config",
         "id": "operation:post:/api/system/kubernetes/contexts",
         "kind": "operation",
         "method": "post",
         "name": "idPostK8SContexts",
         "path": "/api/system/kubernetes/contexts",
         "pointer": "#/paths/~1api~1system~1kubernetes~1contexts/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "K8SContext[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST requests for Kubernetes Context list"
+        "summary": "Handle POST requests for Kubernetes Context list",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches server version to simulate ping",
         "id": "operation:get:/api/system/kubernetes/ping",
         "kind": "operation",
         "method": "get",
         "name": "idGetKubernetesPing",
         "path": "/api/system/kubernetes/ping",
         "pointer": "#/paths/~1api~1system~1kubernetes~1ping/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Kubernetes ping"
+        "summary": "Handle GET request for Kubernetes ping",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches Prometheus and Grafana",
         "id": "operation:get:/api/system/meshsync/grafana",
         "kind": "operation",
         "method": "get",
         "name": "idMeshSyncGrafana",
         "path": "/api/system/meshsync/grafana",
         "pointer": "#/paths/~1api~1system~1meshsync~1grafana/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for mesh-sync grafana"
+        "summary": "Handle GET request for mesh-sync grafana",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches Prometheus",
         "id": "operation:get:/api/system/meshsync/prometheus",
         "kind": "operation",
         "method": "get",
         "name": "idMeshSyncPrometheus",
         "path": "/api/system/meshsync/prometheus",
         "pointer": "#/paths/~1api~1system~1meshsync~1prometheus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for fetching prometheus"
+        "summary": "Handle GET request for fetching prometheus",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to send session data to the UI for initial sync",
         "id": "operation:get:/api/system/sync",
         "kind": "operation",
         "method": "get",
         "name": "idSystemSync",
         "path": "/api/system/sync",
         "pointer": "#/paths/~1api~1system~1sync/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Preference"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for config sync"
+        "summary": "Handle GET request for config sync",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the running Meshery version",
         "id": "operation:get:/api/system/version",
         "kind": "operation",
         "method": "get",
         "name": "idGetSystemVersion",
         "path": "/api/system/version",
         "pointer": "#/paths/~1api~1system~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Version"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for system/server version"
+        "summary": "Handle GET request for system/server version",
+        "tags": [
+          "SystemAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for importing Grafana board for Prometheus",
         "id": "operation:post:/api/telemetry/metrics/board_import",
         "kind": "operation",
         "method": "post",
         "name": "idPostPrometheusBoardImport",
         "path": "/api/telemetry/metrics/board_import",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1board_import/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GrafanaBoard"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Prometheus board import"
+        "summary": "Handle POST request for Prometheus board import",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to persist selected board and panels",
         "id": "operation:post:/api/telemetry/metrics/boards",
         "kind": "operation",
         "method": "post",
         "name": "idPostPrometheusBoard",
         "path": "/api/telemetry/metrics/boards",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1boards/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "SelectedGrafanaConfig[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Prometheus board"
+        "summary": "Handle POST request for Prometheus board",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/telemetry/metrics/config",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeletePrometheusConfig",
-        "path": "/api/telemetry/metrics/config",
-        "pointer": "#/paths/~1api~1telemetry~1metrics~1config/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE for Prometheus configuration"
-      },
-      {
-        "deprecated": false,
+        "description": "Used for fetching Prometheus configuration",
         "id": "operation:get:/api/telemetry/metrics/config",
         "kind": "operation",
         "method": "get",
         "name": "idGetPrometheusConfig",
         "path": "/api/telemetry/metrics/config",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Prometheus"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET for Prometheus configuration"
+        "summary": "Handle GET for Prometheus configuration",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for persisting Prometheus configuration",
         "id": "operation:post:/api/telemetry/metrics/config",
         "kind": "operation",
         "method": "post",
         "name": "idPostPrometheusConfig",
         "path": "/api/telemetry/metrics/config",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1config/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST for Prometheus configuration"
+        "summary": "Handle POST for Prometheus configuration",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for deleting Prometheus configuration",
+        "id": "operation:delete:/api/telemetry/metrics/config",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeletePrometheusConfig",
+        "path": "/api/telemetry/metrics/config",
+        "pointer": "#/paths/~1api~1telemetry~1metrics~1config/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle DELETE for Prometheus configuration",
+        "tags": [
+          "PrometheusAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Used for fetching Grafana boards and panels",
         "id": "operation:get:/api/telemetry/metrics/grafana/boards",
         "kind": "operation",
         "method": "get",
         "name": "idGetGrafanaBoards",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "dashboardSearch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/telemetry/metrics/grafana/boards",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1boards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GrafanaBoard[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Grafana boards"
+        "summary": "Handle GET request for Grafana boards",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for persist Grafana boards and panel selections",
         "id": "operation:post:/api/telemetry/metrics/grafana/boards",
         "kind": "operation",
         "method": "post",
         "name": "idPostGrafanaBoards",
         "path": "/api/telemetry/metrics/grafana/boards",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1boards/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Grafana boards"
+        "summary": "Handle POST request for Grafana boards",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/telemetry/metrics/grafana/config",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteGrafanaConfig",
-        "path": "/api/telemetry/metrics/grafana/config",
-        "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1config/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE request for Grafana configuration"
-      },
-      {
-        "deprecated": false,
+        "description": "Used for fetching Grafana configuration",
         "id": "operation:get:/api/telemetry/metrics/grafana/config",
         "kind": "operation",
         "method": "get",
         "name": "idGetGrafanaConfig",
         "path": "/api/telemetry/metrics/grafana/config",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Grafana"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Grafana configuration"
+        "summary": "Handle GET request for Grafana configuration",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for persisting Grafana configuration",
         "id": "operation:post:/api/telemetry/metrics/grafana/config",
         "kind": "operation",
         "method": "post",
         "name": "idPostGrafanaConfig",
         "path": "/api/telemetry/metrics/grafana/config",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1config/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "GrafanaConfigParams"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for Grafana configuration"
+        "summary": "Handle POST request for Grafana configuration",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for Delete Grafana configuration",
+        "id": "operation:delete:/api/telemetry/metrics/grafana/config",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteGrafanaConfig",
+        "path": "/api/telemetry/metrics/grafana/config",
+        "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1config/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle DELETE request for Grafana configuration",
+        "tags": [
+          "GrafanaAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Used to initiate a Grafana ping",
         "id": "operation:get:/api/telemetry/metrics/grafana/ping",
         "kind": "operation",
         "method": "get",
         "name": "idGetGrafanaPing",
         "path": "/api/telemetry/metrics/grafana/ping",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1ping/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Grafana ping"
+        "summary": "Handle GET request for Grafana ping",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for handling Grafana queries",
         "id": "operation:get:/api/telemetry/metrics/grafana/query",
         "kind": "operation",
         "method": "get",
         "name": "idGetGrafanaQuery",
         "path": "/api/telemetry/metrics/grafana/query",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1query/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Grafana queries"
+        "summary": "Handle GET request for Grafana queries",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetches and returns Grafana",
         "id": "operation:get:/api/telemetry/metrics/grafana/scan",
         "kind": "operation",
         "method": "get",
         "name": "idGetGrafana",
         "path": "/api/telemetry/metrics/grafana/scan",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1grafana~1scan/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Grafana"
+        "summary": "Handle GET request for Grafana",
+        "tags": [
+          "GrafanaAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to ping prometheus",
         "id": "operation:get:/api/telemetry/metrics/ping",
         "kind": "operation",
         "method": "get",
         "name": "idGetPrometheusPing",
         "path": "/api/telemetry/metrics/ping",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1ping/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Prometheus Ping"
+        "summary": "Handle GET request for Prometheus Ping",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to prometheus queries",
         "id": "operation:get:/api/telemetry/metrics/query",
         "kind": "operation",
         "method": "get",
         "name": "idGetPrometheusQuery",
         "path": "/api/telemetry/metrics/query",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1query/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Prometheus Query"
+        "summary": "Handle GET request for Prometheus Query",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to fetch the static board",
         "id": "operation:get:/api/telemetry/metrics/static-board",
         "kind": "operation",
         "method": "get",
         "name": "idGetPrometheusStaticBoard",
         "path": "/api/telemetry/metrics/static-board",
         "pointer": "#/paths/~1api~1telemetry~1metrics~1static-board/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for Prometheus static board"
+        "summary": "Handle GET request for Prometheus static board",
+        "tags": [
+          "PrometheusAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Redirects user for auth or issues session",
         "id": "operation:get:/api/user/login",
         "kind": "operation",
         "method": "get",
         "name": "idGetUserLogin",
         "path": "/api/user/login",
         "pointer": "#/paths/~1api~1user~1login/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handlers GET request for User login"
+        "summary": "Handlers GET request for User login",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Redirects user for auth or issues session",
         "id": "operation:get:/api/user/logout",
         "kind": "operation",
         "method": "get",
         "name": "idGetUserLogout",
         "path": "/api/user/logout",
         "pointer": "#/paths/~1api~1user~1logout/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handlers GET request for User logout"
+        "summary": "Handlers GET request for User logout",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of all the performance profiles saved by the current user",
         "id": "operation:get:/api/user/performance/profiles",
         "kind": "operation",
         "method": "get",
         "name": "idGetPerformanceProfiles",
         "path": "/api/user/performance/profiles",
         "pointer": "#/paths/~1api~1user~1performance~1profiles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceProfilesAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET requests for performance profiles"
+        "summary": "Handle GET requests for performance profiles",
+        "tags": [
+          "PerformanceAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save performance profile using the current provider's persistence mechanism",
         "id": "operation:post:/api/user/performance/profiles",
         "kind": "operation",
         "method": "post",
         "name": "idSavePerformanceProfile",
         "path": "/api/user/performance/profiles",
         "pointer": "#/paths/~1api~1user~1performance~1profiles/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PerformanceProfileParameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceProfile"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST requests for saving performance profile"
+        "summary": "Handle POST requests for saving performance profile",
+        "tags": [
+          "PerformanceAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns pages of all the performance results from Remote Provider",
         "id": "operation:get:/api/user/performance/profiles/results",
         "kind": "operation",
         "method": "get",
         "name": "idGetAllPerformanceResults",
         "path": "/api/user/performance/profiles/results",
         "pointer": "#/paths/~1api~1user~1performance~1profiles~1results/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceResultsAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handles GET requests for performance results"
+        "summary": "Handles GET requests for performance results",
+        "tags": [
+          "PerformanceAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/user/performance/profiles/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeletePerformanceProfile",
-        "path": "/api/user/performance/profiles/{id}",
-        "pointer": "#/paths/~1api~1user~1performance~1profiles~1{id}/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle Delete requests for performance profiles"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns single performance profile with the given id",
         "id": "operation:get:/api/user/performance/profiles/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetSinglePerformanceProfile",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/user/performance/profiles/{id}",
         "pointer": "#/paths/~1api~1user~1performance~1profiles~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceProfile"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET requests for performance results of a profile"
+        "summary": "Handle GET requests for performance results of a profile",
+        "tags": [
+          "PerformanceAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a performance profile with the given id",
+        "id": "operation:delete:/api/user/performance/profiles/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeletePerformanceProfile",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/user/performance/profiles/{id}",
+        "pointer": "#/paths/~1api~1user~1performance~1profiles~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle Delete requests for performance profiles",
+        "tags": [
+          "PerformanceAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Fetchs pages of results from Remote Provider for the given id",
         "id": "operation:get:/api/user/performance/profiles/{id}/results",
         "kind": "operation",
         "method": "get",
         "name": "idGETProfileResults",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/user/performance/profiles/{id}/results",
         "pointer": "#/paths/~1api~1user~1performance~1profiles~1{id}~1results/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceResultsAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for results of a profile"
+        "summary": "Handle GET request for results of a profile",
+        "tags": [
+          "PerformanceAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Runs the load test with the given parameters",
         "id": "operation:get:/api/user/performance/profiles/{id}/run",
         "kind": "operation",
         "method": "get",
         "name": "idRunPerformanceTest",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/user/performance/profiles/{id}/run",
         "pointer": "#/paths/~1api~1user~1performance~1profiles~1{id}~1run/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request to run a performance test"
+        "summary": "Handle GET request to run a performance test",
+        "tags": [
+          "PerformanceAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns User Load Test Preferences",
         "id": "operation:get:/api/user/prefs",
         "kind": "operation",
         "method": "get",
         "name": "idGetUserTestPrefs",
         "path": "/api/user/prefs",
         "pointer": "#/paths/~1api~1user~1prefs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Preference"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET for User Load Test Preferences"
+        "summary": "Handle GET for User Load Test Preferences",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates User Load Test Preferences",
         "id": "operation:post:/api/user/prefs",
         "kind": "operation",
         "method": "post",
         "name": "idPostUserTestPrefs",
         "path": "/api/user/prefs",
         "pointer": "#/paths/~1api~1user~1prefs/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Preference"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET for User Load Test Preferences"
+        "summary": "Handle GET for User Load Test Preferences",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/user/prefs/perf",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteLoadPreferences",
-        "path": "/api/user/prefs/perf",
-        "pointer": "#/paths/~1api~1user~1prefs~1perf/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE request for load test preferences"
-      },
-      {
-        "deprecated": false,
+        "description": "Used for fetching load test preferences",
         "id": "operation:get:/api/user/prefs/perf",
         "kind": "operation",
         "method": "get",
         "name": "idGetLoadPreferences",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uuid",
+            "required": false,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/user/prefs/perf",
         "pointer": "#/paths/~1api~1user~1prefs~1perf/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PerformanceTestConfig"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for load test preferences"
+        "summary": "Handle GET request for load test preferences",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for persisting load test preferences",
         "id": "operation:post:/api/user/prefs/perf",
         "kind": "operation",
         "method": "post",
         "name": "idPostLoadPreferences",
         "path": "/api/user/prefs/perf",
         "pointer": "#/paths/~1api~1user~1prefs~1perf/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PerformanceTestConfig"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for load test preferences"
+        "summary": "Handle POST request for load test preferences",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used for deleting load test preferences",
+        "id": "operation:delete:/api/user/prefs/perf",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteLoadPreferences",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uuid",
+            "required": false,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/user/prefs/perf",
+        "pointer": "#/paths/~1api~1user~1prefs~1perf/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle DELETE request for load test preferences",
+        "tags": [
+          "UserAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns the list of all the schedules saved by the current user",
         "id": "operation:get:/api/user/schedules",
         "kind": "operation",
         "method": "get",
         "name": "idGetSchedules",
         "path": "/api/user/schedules",
         "pointer": "#/paths/~1api~1user~1schedules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchedulesAPIResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET reqeuest for Schedules"
+        "summary": "Handle GET reqeuest for Schedules",
+        "tags": [
+          "SchedulesAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save schedule using the current provider's persistence mechanism",
         "id": "operation:post:/api/user/schedules",
         "kind": "operation",
         "method": "post",
         "name": "idPostSchedules",
         "path": "/api/user/schedules",
         "pointer": "#/paths/~1api~1user~1schedules/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Schedule"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST reqeuest for Schedules"
+        "summary": "Handle POST reqeuest for Schedules",
+        "tags": [
+          "SchedulesAPI"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/user/schedules/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "idDeleteSchedules",
-        "path": "/api/user/schedules/{id}",
-        "pointer": "#/paths/~1api~1user~1schedules~1{id}/delete",
-        "security": [
-          {
-            "token": []
-          }
-        ],
-        "summary": "Handle DELETE reqeuest for Schedules"
-      },
-      {
-        "deprecated": false,
+        "description": "Fetches and returns the schedule with the given id",
         "id": "operation:get:/api/user/schedules/{id}",
         "kind": "operation",
         "method": "get",
         "name": "idGetSingleSchedule",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/api/user/schedules/{id}",
         "pointer": "#/paths/~1api~1user~1schedules~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Schedule"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET reqeuest for Schedules"
+        "summary": "Handle GET reqeuest for Schedules",
+        "tags": [
+          "SchedulesAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a schedule with the given id",
+        "id": "operation:delete:/api/user/schedules/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "idDeleteSchedules",
+        "parameters": [
+          {
+            "description": "id for a specific",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/api/user/schedules/{id}",
+        "pointer": "#/paths/~1api~1user~1schedules~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SchedulesAPIResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "summary": "Handle DELETE reqeuest for Schedules",
+        "tags": [
+          "SchedulesAPI"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns token from the actual provider in a file resposese: 200:",
         "id": "operation:get:/api/user/token",
         "kind": "operation",
         "method": "get",
         "name": "idGetTokenProvider",
         "path": "/api/user/token",
         "pointer": "#/paths/~1api~1user~1token/get",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request for tokens"
+        "summary": "Handle GET request for tokens",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Receives token from the actual provider resposese: 200:",
         "id": "operation:post:/api/user/token",
         "kind": "operation",
         "method": "post",
         "name": "idPostTokenProvider",
         "path": "/api/user/token",
         "pointer": "#/paths/~1api~1user~1token/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle POST request for tokens"
+        "summary": "Handle POST request for tokens",
+        "tags": [
+          "UserAPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Servers providers UI",
         "id": "operation:get:/provider",
         "kind": "operation",
         "method": "get",
         "name": "idProvider",
         "path": "/provider",
         "pointer": "#/paths/~1provider/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "token": []
           }
         ],
-        "summary": "Handle GET request to provider UI"
+        "summary": "Handle GET request to provider UI",
+        "tags": [
+          "ProvidersAPI"
+        ]
       },
       {
+        "description": "Adapter represents an adapter in Meshery",
         "id": "schema:Adapter",
         "kind": "schema",
-        "name": "Adapter"
+        "name": "Adapter",
+        "type": "object"
       },
       {
         "id": "schema:Alert",
         "kind": "schema",
-        "name": "Alert"
+        "name": "Alert",
+        "type": "object"
       },
       {
         "id": "schema:AlertCondition",
         "kind": "schema",
-        "name": "AlertCondition"
+        "name": "AlertCondition",
+        "type": "object"
       },
       {
         "id": "schema:AlertEvaluator",
         "kind": "schema",
-        "name": "AlertEvaluator"
+        "name": "AlertEvaluator",
+        "type": "object"
       },
       {
+        "description": "AlertNotification as described in the doc https://grafana.com/docs/grafana/latest/http_api/alerting_notification_channels/",
         "id": "schema:AlertNotification",
         "kind": "schema",
-        "name": "AlertNotification"
+        "name": "AlertNotification",
+        "type": "object"
       },
       {
         "id": "schema:AlertOperator",
         "kind": "schema",
-        "name": "AlertOperator"
+        "name": "AlertOperator",
+        "type": "object"
       },
       {
         "id": "schema:AlertQuery",
         "kind": "schema",
-        "name": "AlertQuery"
+        "name": "AlertQuery",
+        "type": "object"
       },
       {
         "id": "schema:AlertReducer",
         "kind": "schema",
-        "name": "AlertReducer"
+        "name": "AlertReducer",
+        "type": "object"
       },
       {
+        "description": "ApplicationsAPIResponse response retruned by patternfile endpoint on meshery server",
         "id": "schema:ApplicationsAPIResponse",
         "kind": "schema",
-        "name": "ApplicationsAPIResponse"
+        "name": "ApplicationsAPIResponse",
+        "type": "object"
       },
       {
+        "description": "AuthenticateOKBody authenticate o k body",
         "id": "schema:AuthenticateOKBody",
         "kind": "schema",
-        "name": "AuthenticateOKBody"
+        "name": "AuthenticateOKBody",
+        "type": "object"
       },
       {
+        "description": "for a graph panel",
         "id": "schema:Axis",
         "kind": "schema",
-        "name": "Axis"
+        "name": "Axis",
+        "type": "object"
       },
       {
         "id": "schema:BoolString",
         "kind": "schema",
-        "name": "BoolString"
+        "name": "BoolString",
+        "type": "object"
       },
       {
+        "description": "Capabilities is the collection of capability",
         "id": "schema:Capabilities",
         "kind": "schema",
-        "name": "Capabilities"
+        "name": "Capabilities",
+        "type": "Capability[]"
       },
       {
+        "description": "Capability is a capability of Provider indicating whether a feature is present",
         "id": "schema:Capability",
         "kind": "schema",
-        "name": "Capability"
+        "name": "Capability",
+        "type": "object"
       },
       {
         "id": "schema:ClientIPConfig",
         "kind": "schema",
-        "name": "ClientIPConfig"
+        "name": "ClientIPConfig",
+        "type": "object"
       },
       {
+        "description": "for a table",
         "id": "schema:Column",
         "kind": "schema",
-        "name": "Column"
+        "name": "Column",
+        "type": "object"
       },
       {
+        "description": "for a table",
         "id": "schema:ColumnStyle",
         "kind": "schema",
-        "name": "ColumnStyle"
+        "name": "ColumnStyle",
+        "type": "object"
       },
       {
+        "description": "ContainerChangeResponseItem change item in response to ContainerChanges operation",
         "id": "schema:ContainerChangeResponseItem",
         "kind": "schema",
-        "name": "ContainerChangeResponseItem"
+        "name": "ContainerChangeResponseItem",
+        "type": "object"
       },
       {
+        "description": "ContainerCreateCreatedBody OK response to ContainerCreate operation",
         "id": "schema:ContainerCreateCreatedBody",
         "kind": "schema",
-        "name": "ContainerCreateCreatedBody"
+        "name": "ContainerCreateCreatedBody",
+        "type": "object"
       },
       {
+        "description": "ContainerTopOKBody OK response to ContainerTop operation",
         "id": "schema:ContainerTopOKBody",
         "kind": "schema",
-        "name": "ContainerTopOKBody"
+        "name": "ContainerTopOKBody",
+        "type": "object"
       },
       {
+        "description": "ContainerUpdateOKBody OK response to ContainerUpdate operation",
         "id": "schema:ContainerUpdateOKBody",
         "kind": "schema",
-        "name": "ContainerUpdateOKBody"
+        "name": "ContainerUpdateOKBody",
+        "type": "object"
       },
       {
+        "description": "ContainerWaitOKBody OK response to ContainerWait operation",
         "id": "schema:ContainerWaitOKBody",
         "kind": "schema",
-        "name": "ContainerWaitOKBody"
+        "name": "ContainerWaitOKBody",
+        "type": "object"
       },
       {
+        "description": "ContainerWaitOKBodyError container waiting error, if any",
         "id": "schema:ContainerWaitOKBodyError",
         "kind": "schema",
-        "name": "ContainerWaitOKBodyError"
+        "name": "ContainerWaitOKBodyError",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
+        "description": "Extensions defines the UI extension points",
         "id": "schema:Extensions",
         "kind": "schema",
-        "name": "Extensions"
+        "name": "Extensions",
+        "type": "object"
       },
       {
+        "description": "Feature is a type to store the features of the provider",
         "id": "schema:Feature",
         "kind": "schema",
-        "name": "Feature"
+        "name": "Feature",
+        "type": "string"
       },
       {
         "id": "schema:FieldConfig",
         "kind": "schema",
-        "name": "FieldConfig"
+        "name": "FieldConfig",
+        "type": "object"
       },
       {
+        "description": "Each key is either a '.' representing the field itself, and will always map to an empty set, or a string representing a sub-field or item.",
         "id": "schema:FieldsV1",
         "kind": "schema",
-        "name": "FieldsV1"
+        "name": "FieldsV1",
+        "type": "object"
       },
       {
+        "description": "FiltersAPIResponse response retruned by filterfile endpoint on meshery server",
         "id": "schema:FiltersAPIResponse",
         "kind": "schema",
-        "name": "FiltersAPIResponse"
+        "name": "FiltersAPIResponse",
+        "type": "object"
       },
       {
         "id": "schema:FloatString",
         "kind": "schema",
-        "name": "FloatString"
+        "name": "FloatString",
+        "type": "object"
       },
       {
+        "description": "for a stat",
         "id": "schema:Gauge",
         "kind": "schema",
-        "name": "Gauge"
+        "name": "Gauge",
+        "type": "object"
       },
       {
+        "description": "Grafana represents the Grafana session config",
         "id": "schema:Grafana",
         "kind": "schema",
-        "name": "Grafana"
+        "name": "Grafana",
+        "type": "object"
       },
       {
+        "description": "GrafanaBoard represents a Grafana board",
         "id": "schema:GrafanaBoard",
         "kind": "schema",
-        "name": "GrafanaBoard"
+        "name": "GrafanaBoard",
+        "type": "object"
       },
       {
+        "description": "Parameters to save Grafana configuration",
         "id": "schema:GrafanaConfigParams",
         "kind": "schema",
-        "name": "GrafanaConfigParams"
+        "name": "GrafanaConfigParams",
+        "type": "object"
       },
       {
+        "description": "GrafanaDataSource represents a Grafana datasource like Prometheus",
         "id": "schema:GrafanaDataSource",
         "kind": "schema",
-        "name": "GrafanaDataSource"
+        "name": "GrafanaDataSource",
+        "type": "object"
       },
       {
+        "description": "GrafanaTemplateVars represents template variables in a bboard",
         "id": "schema:GrafanaTemplateVars",
         "kind": "schema",
-        "name": "GrafanaTemplateVars"
+        "name": "GrafanaTemplateVars",
+        "type": "object"
       },
       {
         "id": "schema:GraphDriverData",
         "kind": "schema",
-        "name": "GraphDriverData"
+        "name": "GraphDriverData",
+        "type": "object"
       },
       {
+        "description": "GraphQLExtension describes the graphql server extension point in the backend",
         "id": "schema:GraphQLExtension",
         "kind": "schema",
-        "name": "GraphQLExtension"
+        "name": "GraphQLExtension",
+        "type": "object"
       },
       {
+        "description": "GraphQLExtensions is a collection of GraphQLExtension endpoints",
         "id": "schema:GraphQLExtensions",
         "kind": "schema",
-        "name": "GraphQLExtensions"
+        "name": "GraphQLExtensions",
+        "type": "GraphQLExtension[]"
       },
       {
+        "description": "HistoryResponseItem individual image layer information in response to ImageHistory operation",
         "id": "schema:HistoryResponseItem",
         "kind": "schema",
-        "name": "HistoryResponseItem"
+        "name": "HistoryResponseItem",
+        "type": "object"
       },
       {
+        "description": "Href describes a link along with its type",
         "id": "schema:Href",
         "kind": "schema",
-        "name": "Href"
+        "name": "Href",
+        "type": "object"
       },
       {
+        "description": "IPFamily represents the IP Family (IPv4 or IPv6).",
         "id": "schema:IPFamily",
         "kind": "schema",
-        "name": "IPFamily"
+        "name": "IPFamily",
+        "type": "string"
       },
       {
+        "description": "IDResponse Response to an API call that returns just an Id",
         "id": "schema:IdResponse",
         "kind": "schema",
-        "name": "IdResponse"
+        "name": "IdResponse",
+        "type": "object"
       },
       {
+        "description": "ImageDeleteResponseItem image delete response item",
         "id": "schema:ImageDeleteResponseItem",
         "kind": "schema",
-        "name": "ImageDeleteResponseItem"
+        "name": "ImageDeleteResponseItem",
+        "type": "object"
       },
       {
+        "description": "ImageSummary image summary",
         "id": "schema:ImageSummary",
         "kind": "schema",
-        "name": "ImageSummary"
+        "name": "ImageSummary",
+        "type": "object"
       },
       {
+        "description": "+protobuf=true +protobuf.options.(gogoproto.goproto_stringer)=false +k8s:openapi-gen=true",
         "id": "schema:IntOrString",
         "kind": "schema",
-        "name": "IntOrString"
+        "name": "IntOrString",
+        "type": "object"
       },
       {
         "id": "schema:IntString",
         "kind": "schema",
-        "name": "IntString"
+        "name": "IntString",
+        "type": "object"
       },
       {
+        "description": "K8SConfig represents all the k8s session config",
         "id": "schema:K8SConfig",
         "kind": "schema",
-        "name": "K8SConfig"
+        "name": "K8SConfig",
+        "type": "object"
       },
       {
+        "description": "K8SContext is just used to send contexts to the UI",
         "id": "schema:K8SContext",
         "kind": "schema",
-        "name": "K8SContext"
+        "name": "K8SContext",
+        "type": "object"
       },
       {
+        "description": "K8SNode - represents a kubernetes node",
         "id": "schema:K8SNode",
         "kind": "schema",
-        "name": "K8SNode"
+        "name": "K8SNode",
+        "type": "object"
       },
       {
+        "description": "LatenciesMs - represents a collection of important latencies",
         "id": "schema:LatenciesMs",
         "kind": "schema",
-        "name": "LatenciesMs"
+        "name": "LatenciesMs",
+        "type": "object"
       },
       {
+        "description": "for a graph panel",
         "id": "schema:Legend",
         "kind": "schema",
-        "name": "Legend"
+        "name": "Legend",
+        "type": "object"
       },
       {
         "id": "schema:Link",
         "kind": "schema",
-        "name": "Link"
+        "name": "Link",
+        "type": "object"
       },
       {
+        "description": "traffic intended for the service should be sent to an ingress point.",
         "id": "schema:LoadBalancerIngress",
         "kind": "schema",
-        "name": "LoadBalancerIngress"
+        "name": "LoadBalancerIngress",
+        "type": "object"
       },
       {
         "id": "schema:LoadBalancerStatus",
         "kind": "schema",
-        "name": "LoadBalancerStatus"
+        "name": "LoadBalancerStatus",
+        "type": "object"
       },
       {
+        "description": "LoadTestPreferences represents the load test preferences",
         "id": "schema:LoadTestPreferences",
         "kind": "schema",
-        "name": "LoadTestPreferences"
+        "name": "LoadTestPreferences",
+        "type": "object"
       },
       {
+        "description": "ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.",
         "id": "schema:ManagedFieldsEntry",
         "kind": "schema",
-        "name": "ManagedFieldsEntry"
+        "name": "ManagedFieldsEntry",
+        "type": "object"
       },
       {
         "id": "schema:ManagedFieldsOperationType",
         "kind": "schema",
-        "name": "ManagedFieldsOperationType"
+        "name": "ManagedFieldsOperationType",
+        "type": "string"
       },
       {
+        "description": "It implements native SQL driver interfaces and hence can be used for SQL json or jsonb types as a drop in replacement of golang native maps",
         "id": "schema:Map",
         "kind": "schema",
-        "name": "Map"
+        "name": "Map",
+        "type": "object"
       },
       {
         "id": "schema:MapType",
         "kind": "schema",
-        "name": "MapType"
+        "name": "MapType",
+        "type": "object"
       },
       {
+        "description": "MesheryApplication represents the applications that needs to be saved",
         "id": "schema:MesheryApplication",
         "kind": "schema",
-        "name": "MesheryApplication"
+        "name": "MesheryApplication",
+        "type": "object"
       },
       {
+        "description": "MesheryFilter represents the filters that needs to be saved",
         "id": "schema:MesheryFilter",
         "kind": "schema",
-        "name": "MesheryFilter"
+        "name": "MesheryFilter",
+        "type": "object"
       },
       {
+        "description": "MesheryPattern represents the patterns that needs to be saved",
         "id": "schema:MesheryPattern",
         "kind": "schema",
-        "name": "MesheryPattern"
+        "name": "MesheryPattern",
+        "type": "object"
       },
       {
+        "description": "NavigatorExtension describes the Navigator extension point in the UI",
         "id": "schema:NavigatorExtension",
         "kind": "schema",
-        "name": "NavigatorExtension"
+        "name": "NavigatorExtension",
+        "type": "object"
       },
       {
+        "description": "NavigatorExtensions is a collection of NavigatorExtension",
         "id": "schema:NavigatorExtensions",
         "kind": "schema",
-        "name": "NavigatorExtensions"
+        "name": "NavigatorExtensions",
+        "type": "NavigatorExtension[]"
       },
       {
         "id": "schema:OpCategory",
         "kind": "schema",
-        "name": "OpCategory"
+        "name": "OpCategory",
+        "type": "integer:int32"
       },
       {
         "id": "schema:Options",
         "kind": "schema",
-        "name": "Options"
+        "name": "Options",
+        "type": "object"
       },
       {
+        "description": "OwnerReference contains enough information to let you identify an owning object.",
         "id": "schema:OwnerReference",
         "kind": "schema",
-        "name": "OwnerReference"
+        "name": "OwnerReference",
+        "type": "object"
       },
       {
         "id": "schema:Panel",
         "kind": "schema",
-        "name": "Panel"
+        "name": "Panel",
+        "type": "object"
       },
       {
+        "description": "PatternsAPIResponse response retruned by patternfile endpoint on meshery server",
         "id": "schema:PatternsAPIResponse",
         "kind": "schema",
-        "name": "PatternsAPIResponse"
+        "name": "PatternsAPIResponse",
+        "type": "object"
       },
       {
+        "description": "PerformanceProfile represents the performance profile that needs to be saved",
         "id": "schema:PerformanceProfile",
         "kind": "schema",
-        "name": "PerformanceProfile"
+        "name": "PerformanceProfile",
+        "type": "object"
       },
       {
+        "description": "PerformanceProfileParameters structs contains parameters to save a performance profile",
         "id": "schema:PerformanceProfileParameters",
         "kind": "schema",
-        "name": "PerformanceProfileParameters"
+        "name": "PerformanceProfileParameters",
+        "type": "object"
       },
       {
+        "description": "PerformanceProfilesAPIResponse response retruned by performance endpoint on meshery server",
         "id": "schema:PerformanceProfilesAPIResponse",
         "kind": "schema",
-        "name": "PerformanceProfilesAPIResponse"
+        "name": "PerformanceProfilesAPIResponse",
+        "type": "object"
       },
       {
+        "description": "PerformanceResult represents the result of a performance test",
         "id": "schema:PerformanceResult",
         "kind": "schema",
-        "name": "PerformanceResult"
+        "name": "PerformanceResult",
+        "type": "object"
       },
       {
+        "description": "PerformanceResultsAPIResponse response retruned by performance endpoint on meshery server",
         "id": "schema:PerformanceResultsAPIResponse",
         "kind": "schema",
-        "name": "PerformanceResultsAPIResponse"
+        "name": "PerformanceResultsAPIResponse",
+        "type": "object"
       },
       {
+        "description": "PerformanceSpec - represents SMP, see here https://github.com/layer5io/service-mesh-performance-specification",
         "id": "schema:PerformanceSpec",
         "kind": "schema",
-        "name": "PerformanceSpec"
+        "name": "PerformanceSpec",
+        "type": "object"
       },
       {
         "id": "schema:PerformanceTestConfig",
         "kind": "schema",
-        "name": "PerformanceTestConfig"
+        "name": "PerformanceTestConfig",
+        "type": "object"
       },
       {
         "id": "schema:PerformanceTestConfig_Client",
         "kind": "schema",
-        "name": "PerformanceTestConfig_Client"
+        "name": "PerformanceTestConfig_Client",
+        "type": "object"
       },
       {
         "id": "schema:PerformanceTestConfig_Client_Protocol",
         "kind": "schema",
-        "name": "PerformanceTestConfig_Client_Protocol"
+        "name": "PerformanceTestConfig_Client_Protocol",
+        "type": "integer:int32"
       },
       {
+        "description": "PerformanceTestParameters contains parameters to run a performance test",
         "id": "schema:PerformanceTestParameters",
         "kind": "schema",
-        "name": "PerformanceTestParameters"
+        "name": "PerformanceTestParameters",
+        "type": "object"
       },
       {
+        "description": "Plugin A plugin for the Engine API",
         "id": "schema:Plugin",
         "kind": "schema",
-        "name": "Plugin"
+        "name": "Plugin",
+        "type": "object"
       },
       {
         "id": "schema:PluginConfig",
         "kind": "schema",
-        "name": "PluginConfig"
+        "name": "PluginConfig",
+        "type": "object"
       },
       {
+        "description": "PluginConfigArgs plugin config args",
         "id": "schema:PluginConfigArgs",
         "kind": "schema",
-        "name": "PluginConfigArgs"
+        "name": "PluginConfigArgs",
+        "type": "object"
       },
       {
+        "description": "PluginConfigInterface The interface between Docker and the plugin",
         "id": "schema:PluginConfigInterface",
         "kind": "schema",
-        "name": "PluginConfigInterface"
+        "name": "PluginConfigInterface",
+        "type": "object"
       },
       {
+        "description": "PluginConfigLinux plugin config linux",
         "id": "schema:PluginConfigLinux",
         "kind": "schema",
-        "name": "PluginConfigLinux"
+        "name": "PluginConfigLinux",
+        "type": "object"
       },
       {
+        "description": "PluginConfigNetwork plugin config network",
         "id": "schema:PluginConfigNetwork",
         "kind": "schema",
-        "name": "PluginConfigNetwork"
+        "name": "PluginConfigNetwork",
+        "type": "object"
       },
       {
+        "description": "PluginConfigRootfs plugin config rootfs",
         "id": "schema:PluginConfigRootfs",
         "kind": "schema",
-        "name": "PluginConfigRootfs"
+        "name": "PluginConfigRootfs",
+        "type": "object"
       },
       {
+        "description": "PluginConfigUser plugin config user",
         "id": "schema:PluginConfigUser",
         "kind": "schema",
-        "name": "PluginConfigUser"
+        "name": "PluginConfigUser",
+        "type": "object"
       },
       {
+        "description": "PluginDevice plugin device",
         "id": "schema:PluginDevice",
         "kind": "schema",
-        "name": "PluginDevice"
+        "name": "PluginDevice",
+        "type": "object"
       },
       {
+        "description": "PluginEnv plugin env",
         "id": "schema:PluginEnv",
         "kind": "schema",
-        "name": "PluginEnv"
+        "name": "PluginEnv",
+        "type": "object"
       },
       {
+        "description": "PluginInterfaceType plugin interface type",
         "id": "schema:PluginInterfaceType",
         "kind": "schema",
-        "name": "PluginInterfaceType"
+        "name": "PluginInterfaceType",
+        "type": "object"
       },
       {
+        "description": "PluginMount plugin mount",
         "id": "schema:PluginMount",
         "kind": "schema",
-        "name": "PluginMount"
+        "name": "PluginMount",
+        "type": "object"
       },
       {
         "id": "schema:PluginSettings",
         "kind": "schema",
-        "name": "PluginSettings"
+        "name": "PluginSettings",
+        "type": "object"
       },
       {
+        "description": "Port An open port on a container",
         "id": "schema:Port",
         "kind": "schema",
-        "name": "Port"
+        "name": "Port",
+        "type": "object"
       },
       {
+        "description": "Preference represents the data stored in session / local DB",
         "id": "schema:Preference",
         "kind": "schema",
-        "name": "Preference"
+        "name": "Preference",
+        "type": "object"
       },
       {
+        "description": "Parameters to updates Anonymous stats",
         "id": "schema:PreferenceParams",
         "kind": "schema",
-        "name": "PreferenceParams"
+        "name": "PreferenceParams",
+        "type": "object"
       },
       {
+        "description": "Prometheus represents the prometheus session config",
         "id": "schema:Prometheus",
         "kind": "schema",
-        "name": "Prometheus"
+        "name": "Prometheus",
+        "type": "object"
       },
       {
         "id": "schema:Protocol",
         "kind": "schema",
-        "name": "Protocol"
+        "name": "Protocol",
+        "type": "string"
       },
       {
+        "description": "ProviderProperties represents the structure of properties that a provider has",
         "id": "schema:ProviderProperties",
         "kind": "schema",
-        "name": "ProviderProperties"
+        "name": "ProviderProperties",
+        "type": "object"
       },
       {
+        "description": "ProviderType - for representing provider types",
         "id": "schema:ProviderType",
         "kind": "schema",
-        "name": "ProviderType"
+        "name": "ProviderType",
+        "type": "string"
       },
       {
         "id": "schema:RangeMap",
         "kind": "schema",
-        "name": "RangeMap"
+        "name": "RangeMap",
+        "type": "object"
       },
       {
         "id": "schema:RunnerResults",
         "kind": "schema",
-        "name": "RunnerResults"
+        "name": "RunnerResults",
+        "type": "object"
       },
       {
+        "description": "Schedule is the struct for representing schedules",
         "id": "schema:Schedule",
         "kind": "schema",
-        "name": "Schedule"
+        "name": "Schedule",
+        "type": "object"
       },
       {
+        "description": "API response model for SchedulesAPI",
         "id": "schema:SchedulesAPIResponse",
         "kind": "schema",
-        "name": "SchedulesAPIResponse"
+        "name": "SchedulesAPIResponse",
+        "type": "object"
       },
       {
+        "description": "SelectedGrafanaConfig represents the selected boards, panels, and template variables",
         "id": "schema:SelectedGrafanaConfig",
         "kind": "schema",
-        "name": "SelectedGrafanaConfig"
+        "name": "SelectedGrafanaConfig",
+        "type": "object"
       },
       {
+        "description": "for a graph panel",
         "id": "schema:SeriesOverride",
         "kind": "schema",
-        "name": "SeriesOverride"
+        "name": "SeriesOverride",
+        "type": "object"
       },
       {
+        "description": "Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector…",
         "id": "schema:Service",
         "kind": "schema",
-        "name": "Service"
+        "name": "Service",
+        "type": "object"
       },
       {
+        "description": "Session Affinity Type string",
         "id": "schema:ServiceAffinity",
         "kind": "schema",
-        "name": "ServiceAffinity"
+        "name": "ServiceAffinity",
+        "type": "string"
       },
       {
+        "description": "Service External Traffic Policy Type string",
         "id": "schema:ServiceExternalTrafficPolicyType",
         "kind": "schema",
-        "name": "ServiceExternalTrafficPolicyType"
+        "name": "ServiceExternalTrafficPolicyType",
+        "type": "string"
       },
       {
         "id": "schema:ServicePort",
         "kind": "schema",
-        "name": "ServicePort"
+        "name": "ServicePort",
+        "type": "object"
       },
       {
         "id": "schema:ServiceSpec",
         "kind": "schema",
-        "name": "ServiceSpec"
+        "name": "ServiceSpec",
+        "type": "object"
       },
       {
         "id": "schema:ServiceStatus",
         "kind": "schema",
-        "name": "ServiceStatus"
+        "name": "ServiceStatus",
+        "type": "object"
       },
       {
+        "description": "Service Type string describes ingress methods for a service",
         "id": "schema:ServiceType",
         "kind": "schema",
-        "name": "ServiceType"
+        "name": "ServiceType",
+        "type": "string"
       },
       {
+        "description": "ServiceUpdateResponse service update response",
         "id": "schema:ServiceUpdateResponse",
         "kind": "schema",
-        "name": "ServiceUpdateResponse"
+        "name": "ServiceUpdateResponse",
+        "type": "object"
       },
       {
         "id": "schema:SessionAffinityConfig",
         "kind": "schema",
-        "name": "SessionAffinityConfig"
+        "name": "SessionAffinityConfig",
+        "type": "object"
       },
       {
+        "description": "for a graph panel",
         "id": "schema:Sort",
         "kind": "schema",
-        "name": "Sort"
+        "name": "Sort",
+        "type": "object"
       },
       {
+        "description": "for a stat",
         "id": "schema:SparkLine",
         "kind": "schema",
-        "name": "SparkLine"
+        "name": "SparkLine",
+        "type": "object"
       },
       {
+        "description": "StackdriverAlignOption defines a single alignment option shown in Grafana during query configuration.",
         "id": "schema:StackdriverAlignOption",
         "kind": "schema",
-        "name": "StackdriverAlignOption"
+        "name": "StackdriverAlignOption",
+        "type": "object"
       },
       {
+        "description": "StackdriverAlignOptions defines the list of alignment options shown in Grafana during query configuration.",
         "id": "schema:StackdriverAlignOptions",
         "kind": "schema",
-        "name": "StackdriverAlignOptions"
+        "name": "StackdriverAlignOptions",
+        "type": "object"
       },
       {
         "id": "schema:StringArray",
         "kind": "schema",
-        "name": "StringArray"
+        "name": "StringArray",
+        "type": "string[]"
       },
       {
         "id": "schema:SupportedOperation",
         "kind": "schema",
-        "name": "SupportedOperation"
+        "name": "SupportedOperation",
+        "type": "object"
       },
       {
+        "description": "for an any panel",
         "id": "schema:Target",
         "kind": "schema",
-        "name": "Target"
+        "name": "Target",
+        "type": "object"
       },
       {
         "id": "schema:Threshold",
         "kind": "schema",
-        "name": "Threshold"
+        "name": "Threshold",
+        "type": "object"
       },
       {
+        "description": "+protobuf.options.marshal=false +protobuf.as=Timestamp +protobuf.options.(gogoproto.goproto_stringer)=false",
         "id": "schema:Time",
         "kind": "schema",
-        "name": "Time"
+        "name": "Time",
+        "type": "object"
       },
       {
         "id": "schema:Tooltip",
         "kind": "schema",
-        "name": "Tooltip"
+        "name": "Tooltip",
+        "type": "object"
       },
       {
         "id": "schema:Type",
         "kind": "schema",
-        "name": "Type"
+        "name": "Type",
+        "type": "integer:int64"
       },
       {
+        "description": "UID is a type that holds unique ID values, including UUIDs.",
         "id": "schema:UID",
         "kind": "schema",
-        "name": "UID"
+        "name": "UID",
+        "type": "string"
       },
       {
         "id": "schema:UUID",
         "kind": "schema",
-        "name": "UUID"
+        "name": "UUID",
+        "type": "integer:uint8[]"
       },
       {
+        "description": "UserPrefsExtension describes the user preference extension point in the UI",
         "id": "schema:UserPrefsExtension",
         "kind": "schema",
-        "name": "UserPrefsExtension"
+        "name": "UserPrefsExtension",
+        "type": "object"
       },
       {
+        "description": "UserPrefsExtensions is a collection of UserPrefsExtension",
         "id": "schema:UserPrefsExtensions",
         "kind": "schema",
-        "name": "UserPrefsExtensions"
+        "name": "UserPrefsExtensions",
+        "type": "UserPrefsExtension[]"
       },
       {
+        "description": "for a stat",
         "id": "schema:ValueMap",
         "kind": "schema",
-        "name": "ValueMap"
+        "name": "ValueMap",
+        "type": "object"
       },
       {
         "id": "schema:Version",
         "kind": "schema",
-        "name": "Version"
+        "name": "Version",
+        "type": "object"
       },
       {
+        "description": "Volume volume",
         "id": "schema:Volume",
         "kind": "schema",
-        "name": "Volume"
+        "name": "Volume",
+        "type": "object"
       },
       {
+        "description": "VolumeCreateBody Volume configuration",
         "id": "schema:VolumeCreateBody",
         "kind": "schema",
-        "name": "VolumeCreateBody"
+        "name": "VolumeCreateBody",
+        "type": "object"
       },
       {
+        "description": "VolumeListOKBody Volume list response",
         "id": "schema:VolumeListOKBody",
         "kind": "schema",
-        "name": "VolumeListOKBody"
+        "name": "VolumeListOKBody",
+        "type": "object"
       },
       {
+        "description": "VolumeUsageData Usage details about the volume.",
         "id": "schema:VolumeUsageData",
         "kind": "schema",
-        "name": "VolumeUsageData"
+        "name": "VolumeUsageData",
+        "type": "object"
       }
     ]
   },

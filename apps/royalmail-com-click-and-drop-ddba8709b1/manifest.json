@@ -42,12 +42,12 @@
       {
         "from": "royalmail-com-click-and-drop-ddba8709b1",
         "kind": "EXPOSES",
-        "to": "operation:delete:/orders/{orderIdentifiers}"
+        "to": "operation:get:/orders/{orderIdentifiers}"
       },
       {
         "from": "royalmail-com-click-and-drop-ddba8709b1",
         "kind": "EXPOSES",
-        "to": "operation:get:/orders/{orderIdentifiers}"
+        "to": "operation:delete:/orders/{orderIdentifiers}"
       },
       {
         "from": "royalmail-com-click-and-drop-ddba8709b1",
@@ -63,6 +63,226 @@
         "from": "royalmail-com-click-and-drop-ddba8709b1",
         "kind": "EXPOSES",
         "to": "operation:get:/version"
+      },
+      {
+        "from": "operation:post:/manifests",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateManifestsRequest"
+      },
+      {
+        "from": "operation:post:/manifests",
+        "kind": "RETURNS",
+        "to": "schema:CreateManifestsResponse"
+      },
+      {
+        "from": "operation:get:/manifests/{manifestGuid}",
+        "kind": "RETURNS",
+        "to": "schema:GetManifestResponse"
+      },
+      {
+        "from": "operation:get:/orders",
+        "kind": "RETURNS",
+        "to": "schema:GetOrdersResponse"
+      },
+      {
+        "from": "operation:post:/orders",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateOrdersRequest"
+      },
+      {
+        "from": "operation:post:/orders",
+        "kind": "RETURNS",
+        "to": "schema:CreateOrdersResponse"
+      },
+      {
+        "from": "operation:get:/orders/full",
+        "kind": "RETURNS",
+        "to": "schema:GetOrdersDetailsResponse"
+      },
+      {
+        "from": "operation:put:/orders/status",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateOrdersStatusRequest"
+      },
+      {
+        "from": "operation:put:/orders/status",
+        "kind": "RETURNS",
+        "to": "schema:UpdateOrderStatusResponse"
+      },
+      {
+        "from": "operation:get:/orders/{orderIdentifiers}",
+        "kind": "RETURNS",
+        "to": "schema:GetOrderInfoResource"
+      },
+      {
+        "from": "operation:delete:/orders/{orderIdentifiers}",
+        "kind": "RETURNS",
+        "to": "schema:DeleteOrdersResource"
+      },
+      {
+        "from": "operation:get:/orders/{orderIdentifiers}/full",
+        "kind": "RETURNS",
+        "to": "schema:GetOrderDetailsResource"
+      },
+      {
+        "from": "operation:get:/version",
+        "kind": "RETURNS",
+        "to": "schema:GetVersionResource"
+      },
+      {
+        "from": "schema:BillingDetailsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AddressRequest"
+      },
+      {
+        "from": "schema:CreateManifestsErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateManifestsError"
+      },
+      {
+        "from": "schema:CreateOrderErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OrderFieldResponse"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:BillingDetailsRequest"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:LabelGenerationRequest"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PostageDetailsRequest"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RecipientDetailsRequest"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SenderDetailsRequest"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ShipmentPackageRequest"
+      },
+      {
+        "from": "schema:CreateOrderRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TagRequest"
+      },
+      {
+        "from": "schema:CreateOrderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrderLabelErrorResponse"
+      },
+      {
+        "from": "schema:CreateOrdersRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrderRequest"
+      },
+      {
+        "from": "schema:CreateOrdersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrderResponse"
+      },
+      {
+        "from": "schema:CreateOrdersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FailedOrderResponse"
+      },
+      {
+        "from": "schema:DeleteOrdersResource",
+        "kind": "REFERENCES",
+        "to": "schema:DeletedOrderInfo"
+      },
+      {
+        "from": "schema:DeleteOrdersResource",
+        "kind": "REFERENCES",
+        "to": "schema:OrderErrorInfo"
+      },
+      {
+        "from": "schema:FailedOrderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrderErrorResponse"
+      },
+      {
+        "from": "schema:FailedOrderResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrderRequest"
+      },
+      {
+        "from": "schema:GetManifestResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GetManifestOrder"
+      },
+      {
+        "from": "schema:GetOrderDetailsResource",
+        "kind": "REFERENCES",
+        "to": "schema:GetOrderLineResult"
+      },
+      {
+        "from": "schema:GetOrderDetailsResource",
+        "kind": "REFERENCES",
+        "to": "schema:GetPostalDetailsResult"
+      },
+      {
+        "from": "schema:GetOrderDetailsResource",
+        "kind": "REFERENCES",
+        "to": "schema:GetShippingDetailsResult"
+      },
+      {
+        "from": "schema:GetOrderDetailsResource",
+        "kind": "REFERENCES",
+        "to": "schema:GetTagDetailsResult"
+      },
+      {
+        "from": "schema:GetOrdersDetailsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GetOrderDetailsResource"
+      },
+      {
+        "from": "schema:GetOrdersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GetOrderInfoResource"
+      },
+      {
+        "from": "schema:RecipientDetailsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AddressRequest"
+      },
+      {
+        "from": "schema:ShipmentPackageRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DimensionsRequest"
+      },
+      {
+        "from": "schema:ShipmentPackageRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProductItemRequest"
+      },
+      {
+        "from": "schema:UpdateOrderStatusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OrderUpdateError"
+      },
+      {
+        "from": "schema:UpdateOrderStatusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:UpdatedOrderInfo"
+      },
+      {
+        "from": "schema:UpdateOrdersStatusRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateOrderStatusRequest"
       }
     ],
     "nodes": [
@@ -72,18 +292,57 @@
       },
       {
         "deprecated": false,
+        "description": "For more information on how to manifest orders using the API, including examples of different use-cases please visit either the <a href=\"https://help.parcel.ro…",
         "id": "operation:post:/manifests",
         "kind": "operation",
         "method": "post",
         "name": "CreateManifestsAsync",
         "path": "/manifests",
         "pointer": "#/paths/~1manifests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateManifestsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateManifestsResponse"
+          },
+          {
+            "status": "202",
+            "type": "CreateManifestsResponse"
+          },
+          {
+            "status": "400",
+            "type": "CreateManifestsErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Manifest orders"
+        "summary": "Manifest orders",
+        "tags": [
+          "Manifests"
+        ]
       },
       {
         "deprecated": false,
@@ -91,29 +350,96 @@
         "kind": "operation",
         "method": "get",
         "name": "GetManifestAsync",
+        "parameters": [
+          {
+            "description": "GUID of manifest",
+            "in": "path",
+            "name": "manifestGuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/manifests/{manifestGuid}",
         "pointer": "#/paths/~1manifests~1{manifestGuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetManifestResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Retrieve manifest status and documentation"
+        "summary": "Retrieve manifest status and documentation",
+        "tags": [
+          "Manifests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Request will result in a 400 response if called within 30 mins of a previously failed manifest or retry attempt.",
         "id": "operation:post:/manifests/{manifestGuid}/retry",
         "kind": "operation",
         "method": "post",
         "name": "RetryManifestAsync",
+        "parameters": [
+          {
+            "description": "GUID of manifest",
+            "in": "path",
+            "name": "manifestGuid",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/manifests/{manifestGuid}/retry",
         "pointer": "#/paths/~1manifests~1{manifestGuid}~1retry/post",
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Retry failed manifest"
+        "summary": "Retry failed manifest",
+        "tags": [
+          "Manifests"
+        ]
       },
       {
         "deprecated": false,
@@ -121,14 +447,69 @@
         "kind": "operation",
         "method": "get",
         "name": "GetOrdersAsync",
+        "parameters": [
+          {
+            "default": 25,
+            "description": "The number of items to return",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Date and time lower bound for items filtering",
+            "in": "query",
+            "name": "startDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Date and time upper bound for items filtering",
+            "in": "query",
+            "name": "endDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The token for retrieving the next page of items",
+            "in": "query",
+            "name": "continuationToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/orders",
         "pointer": "#/paths/~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrdersResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Retrieve pageable list of orders"
+        "summary": "Retrieve pageable list of orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -138,27 +519,114 @@
         "name": "CreateOrdersAsync",
         "path": "/orders",
         "pointer": "#/paths/~1orders/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateOrdersRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateOrdersResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Create orders"
+        "summary": "Create orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<b>Reserved for ChannelShipper customers only - please visit <a href=\"https://channelshipper.com/\" target=\"_self\">ChannelShipper.com</a> for more information</…",
         "id": "operation:get:/orders/full",
         "kind": "operation",
         "method": "get",
         "name": "GetOrdersWithDetailsAsync",
+        "parameters": [
+          {
+            "default": 25,
+            "description": "The number of items to return",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Date and time lower bound for items filtering",
+            "in": "query",
+            "name": "startDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Date and time upper bound for items filtering",
+            "in": "query",
+            "name": "endDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The token for retrieving the next page of items",
+            "in": "query",
+            "name": "continuationToken",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/orders/full",
         "pointer": "#/paths/~1orders~1full/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrdersDetailsResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Retrieve pageable list of orders with details"
+        "summary": "Retrieve pageable list of orders with details",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -168,27 +636,43 @@
         "name": "UpdateOrdersStatusAsync",
         "path": "/orders/status",
         "pointer": "#/paths/~1orders~1status/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateOrdersStatusRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateOrderStatusResponse"
+          },
+          {
+            "status": "400",
+            "type": "OrderUpdateError[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Set order status"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/orders/{orderIdentifiers}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteOrdersAsync",
-        "path": "/orders/{orderIdentifiers}",
-        "pointer": "#/paths/~1orders~1{orderIdentifiers}/delete",
-        "security": [
-          {
-            "Bearer": []
-          }
-        ],
-        "summary": "Delete orders"
+        "summary": "Set order status",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -196,44 +680,230 @@
         "kind": "operation",
         "method": "get",
         "name": "GetSpecificOrdersAsync",
+        "parameters": [
+          {
+            "description": "One or several Order Identifiers or Order References separated by semicolon.",
+            "in": "path",
+            "name": "orderIdentifiers",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/orders/{orderIdentifiers}",
         "pointer": "#/paths/~1orders~1{orderIdentifiers}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrderInfoResource[]"
+          },
+          {
+            "status": "400",
+            "type": "OrderErrorResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Retrieve specific orders"
+        "summary": "Retrieve specific orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<b>Reserved for ChannelShipper customers only - please visit <a href=\"https://channelshipper.com/\" target=\"_self\">ChannelShipper.com</a> for more information</…",
+        "id": "operation:delete:/orders/{orderIdentifiers}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteOrdersAsync",
+        "parameters": [
+          {
+            "description": "One or several Order Identifiers or Order References separated by semicolon.",
+            "in": "path",
+            "name": "orderIdentifiers",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/orders/{orderIdentifiers}",
+        "pointer": "#/paths/~1orders~1{orderIdentifiers}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteOrdersResource"
+          },
+          {
+            "status": "400",
+            "type": "OrderErrorInfo[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete orders",
+        "tags": [
+          "Orders"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "<b>Reserved for ChannelShipper customers only - please visit <a href=\"https://channelshipper.com/\" target=\"_self\">ChannelShipper.com</a> for more information</…",
         "id": "operation:get:/orders/{orderIdentifiers}/full",
         "kind": "operation",
         "method": "get",
         "name": "GetSpecificOrdersWithDetailsAsync",
+        "parameters": [
+          {
+            "description": "One or several Order Identifiers or Order References separated by semicolon.",
+            "in": "path",
+            "name": "orderIdentifiers",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/orders/{orderIdentifiers}/full",
         "pointer": "#/paths/~1orders~1{orderIdentifiers}~1full/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrderDetailsResource[]"
+          },
+          {
+            "status": "400",
+            "type": "OrderErrorResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Retrieve details of the specific orders"
+        "summary": "Retrieve details of the specific orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<b>Reserved for OBA customers only</b> The account \"Label format\" settings page will control the page format settings used to print the postage label and assoc…",
         "id": "operation:get:/orders/{orderIdentifiers}/label",
         "kind": "operation",
         "method": "get",
         "name": "GetOrdersLabelAsync",
+        "parameters": [
+          {
+            "description": "One or several Order Identifiers or Order References separated by semicolon.",
+            "in": "path",
+            "name": "orderIdentifiers",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Document generation mode.",
+            "enum": [
+              "postageLabel",
+              "despatchNote",
+              "CN22",
+              "CN23"
+            ],
+            "in": "query",
+            "name": "documentType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Include returns label.",
+            "in": "query",
+            "name": "includeReturnsLabel",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Include CN22/CN23 with label.",
+            "in": "query",
+            "name": "includeCN",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/orders/{orderIdentifiers}/label",
         "pointer": "#/paths/~1orders~1{orderIdentifiers}~1label/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "400",
+            "type": "OrderErrorResponse[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Return a single PDF file with generated label and/or associated document(s)"
+        "summary": "Return a single PDF file with generated label and/or associated document(s)",
+        "tags": [
+          "Labels"
+        ]
       },
       {
         "deprecated": false,
@@ -243,223 +913,283 @@
         "name": "GetVersionAsync",
         "path": "/version",
         "pointer": "#/paths/~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetVersionResource"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get API version details."
+        "summary": "Get API version details.",
+        "tags": [
+          "Version"
+        ]
       },
       {
         "id": "schema:AddressRequest",
         "kind": "schema",
-        "name": "AddressRequest"
+        "name": "AddressRequest",
+        "type": "object"
       },
       {
+        "description": "<b>Billing</b> along with <b>billing.address</b> objects are required in specific case when 'Use shipping address for billing address' setting is set to 'false…",
         "id": "schema:BillingDetailsRequest",
         "kind": "schema",
-        "name": "BillingDetailsRequest"
+        "name": "BillingDetailsRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateManifestsError",
         "kind": "schema",
-        "name": "CreateManifestsError"
+        "name": "CreateManifestsError",
+        "type": "object"
       },
       {
         "id": "schema:CreateManifestsErrorResponse",
         "kind": "schema",
-        "name": "CreateManifestsErrorResponse"
+        "name": "CreateManifestsErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateManifestsRequest",
         "kind": "schema",
-        "name": "CreateManifestsRequest"
+        "name": "CreateManifestsRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateManifestsResponse",
         "kind": "schema",
-        "name": "CreateManifestsResponse"
+        "name": "CreateManifestsResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrderErrorResponse",
         "kind": "schema",
-        "name": "CreateOrderErrorResponse"
+        "name": "CreateOrderErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrderLabelErrorResponse",
         "kind": "schema",
-        "name": "CreateOrderLabelErrorResponse"
+        "name": "CreateOrderLabelErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrderRequest",
         "kind": "schema",
-        "name": "CreateOrderRequest"
+        "name": "CreateOrderRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrderResponse",
         "kind": "schema",
-        "name": "CreateOrderResponse"
+        "name": "CreateOrderResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrdersRequest",
         "kind": "schema",
-        "name": "CreateOrdersRequest"
+        "name": "CreateOrdersRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrdersResponse",
         "kind": "schema",
-        "name": "CreateOrdersResponse"
+        "name": "CreateOrdersResponse",
+        "type": "object"
       },
       {
         "id": "schema:DeleteOrdersResource",
         "kind": "schema",
-        "name": "DeleteOrdersResource"
+        "name": "DeleteOrdersResource",
+        "type": "object"
       },
       {
         "id": "schema:DeletedOrderInfo",
         "kind": "schema",
-        "name": "DeletedOrderInfo"
+        "name": "DeletedOrderInfo",
+        "type": "object"
       },
       {
+        "description": "It is not mandatory to include the dimensions field.",
         "id": "schema:DimensionsRequest",
         "kind": "schema",
-        "name": "DimensionsRequest"
+        "name": "DimensionsRequest",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:FailedOrderResponse",
         "kind": "schema",
-        "name": "FailedOrderResponse"
+        "name": "FailedOrderResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetManifestOrder",
         "kind": "schema",
-        "name": "GetManifestOrder"
+        "name": "GetManifestOrder",
+        "type": "object"
       },
       {
         "id": "schema:GetManifestResponse",
         "kind": "schema",
-        "name": "GetManifestResponse"
+        "name": "GetManifestResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetOrderDetailsResource",
         "kind": "schema",
-        "name": "GetOrderDetailsResource"
+        "name": "GetOrderDetailsResource",
+        "type": "object"
       },
       {
         "id": "schema:GetOrderInfoResource",
         "kind": "schema",
-        "name": "GetOrderInfoResource"
+        "name": "GetOrderInfoResource",
+        "type": "object"
       },
       {
         "id": "schema:GetOrderLineResult",
         "kind": "schema",
-        "name": "GetOrderLineResult"
+        "name": "GetOrderLineResult",
+        "type": "object"
       },
       {
         "id": "schema:GetOrdersDetailsResponse",
         "kind": "schema",
-        "name": "GetOrdersDetailsResponse"
+        "name": "GetOrdersDetailsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetOrdersResponse",
         "kind": "schema",
-        "name": "GetOrdersResponse"
+        "name": "GetOrdersResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetPostalDetailsResult",
         "kind": "schema",
-        "name": "GetPostalDetailsResult"
+        "name": "GetPostalDetailsResult",
+        "type": "object"
       },
       {
         "id": "schema:GetShippingDetailsResult",
         "kind": "schema",
-        "name": "GetShippingDetailsResult"
+        "name": "GetShippingDetailsResult",
+        "type": "object"
       },
       {
         "id": "schema:GetTagDetailsResult",
         "kind": "schema",
-        "name": "GetTagDetailsResult"
+        "name": "GetTagDetailsResult",
+        "type": "object"
       },
       {
         "id": "schema:GetVersionResource",
         "kind": "schema",
-        "name": "GetVersionResource"
+        "name": "GetVersionResource",
+        "type": "object"
       },
       {
+        "description": "<b>Reserved for OBA customers only</b>",
         "id": "schema:LabelGenerationRequest",
         "kind": "schema",
-        "name": "LabelGenerationRequest"
+        "name": "LabelGenerationRequest",
+        "type": "object"
       },
       {
         "id": "schema:OrderErrorInfo",
         "kind": "schema",
-        "name": "OrderErrorInfo"
+        "name": "OrderErrorInfo",
+        "type": "object"
       },
       {
         "id": "schema:OrderErrorResponse",
         "kind": "schema",
-        "name": "OrderErrorResponse"
+        "name": "OrderErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:OrderFieldResponse",
         "kind": "schema",
-        "name": "OrderFieldResponse"
+        "name": "OrderFieldResponse",
+        "type": "object"
       },
       {
         "id": "schema:OrderUpdateError",
         "kind": "schema",
-        "name": "OrderUpdateError"
+        "name": "OrderUpdateError",
+        "type": "object"
       },
       {
         "id": "schema:PostageDetailsRequest",
         "kind": "schema",
-        "name": "PostageDetailsRequest"
+        "name": "PostageDetailsRequest",
+        "type": "object"
       },
       {
         "id": "schema:ProductItemRequest",
         "kind": "schema",
-        "name": "ProductItemRequest"
+        "name": "ProductItemRequest",
+        "type": "object"
       },
       {
         "id": "schema:RecipientDetailsRequest",
         "kind": "schema",
-        "name": "RecipientDetailsRequest"
+        "name": "RecipientDetailsRequest",
+        "type": "object"
       },
       {
         "id": "schema:SenderDetailsRequest",
         "kind": "schema",
-        "name": "SenderDetailsRequest"
+        "name": "SenderDetailsRequest",
+        "type": "object"
       },
       {
         "id": "schema:ShipmentPackageRequest",
         "kind": "schema",
-        "name": "ShipmentPackageRequest"
+        "name": "ShipmentPackageRequest",
+        "type": "object"
       },
       {
         "id": "schema:TagRequest",
         "kind": "schema",
-        "name": "TagRequest"
+        "name": "TagRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateOrderStatusRequest",
         "kind": "schema",
-        "name": "UpdateOrderStatusRequest"
+        "name": "UpdateOrderStatusRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateOrderStatusResponse",
         "kind": "schema",
-        "name": "UpdateOrderStatusResponse"
+        "name": "UpdateOrderStatusResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdateOrdersStatusRequest",
         "kind": "schema",
-        "name": "UpdateOrdersStatusRequest"
+        "name": "UpdateOrdersStatusRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdatedOrderInfo",
         "kind": "schema",
-        "name": "UpdatedOrderInfo"
+        "name": "UpdatedOrderInfo",
+        "type": "object"
       }
     ]
   },

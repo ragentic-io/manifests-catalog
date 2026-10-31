@@ -67,12 +67,12 @@
       {
         "from": "lgtm-com-080c155f0f",
         "kind": "EXPOSES",
-        "to": "operation:delete:/projects/{project-id}"
+        "to": "operation:get:/projects/{project-id}"
       },
       {
         "from": "lgtm-com-080c155f0f",
         "kind": "EXPOSES",
-        "to": "operation:get:/projects/{project-id}"
+        "to": "operation:delete:/projects/{project-id}"
       },
       {
         "from": "lgtm-com-080c155f0f",
@@ -112,7 +112,7 @@
       {
         "from": "lgtm-com-080c155f0f",
         "kind": "EXPOSES",
-        "to": "operation:delete:/snapshots/uploads/{session-id}"
+        "to": "operation:put:/snapshots/uploads/{session-id}"
       },
       {
         "from": "lgtm-com-080c155f0f",
@@ -122,7 +122,7 @@
       {
         "from": "lgtm-com-080c155f0f",
         "kind": "EXPOSES",
-        "to": "operation:put:/snapshots/uploads/{session-id}"
+        "to": "operation:delete:/snapshots/uploads/{session-id}"
       },
       {
         "from": "lgtm-com-080c155f0f",
@@ -148,6 +148,221 @@
         "from": "lgtm-com-080c155f0f",
         "kind": "EXPOSES",
         "to": "operation:get:/system/metrics/{metric-id}"
+      },
+      {
+        "from": "operation:get:/",
+        "kind": "RETURNS",
+        "to": "schema:version"
+      },
+      {
+        "from": "operation:get:/analyses/{analysis-id}",
+        "kind": "RETURNS",
+        "to": "schema:analysis"
+      },
+      {
+        "from": "operation:post:/analyses/{project-id}",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:get:/analyses/{project-id}/commits/{commit-id}",
+        "kind": "RETURNS",
+        "to": "schema:analysis"
+      },
+      {
+        "from": "operation:post:/codereviews/{project-id}",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:get:/codereviews/{review-id}",
+        "kind": "RETURNS",
+        "to": "schema:code-review"
+      },
+      {
+        "from": "operation:get:/operations/{operation-id}",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:get:/projects",
+        "kind": "RETURNS",
+        "to": "schema:project-list"
+      },
+      {
+        "from": "operation:post:/projects",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:get:/projects/{project-id}",
+        "kind": "RETURNS",
+        "to": "schema:project-details"
+      },
+      {
+        "from": "operation:delete:/projects/{project-id}",
+        "kind": "RETURNS",
+        "to": "schema:project-details"
+      },
+      {
+        "from": "operation:get:/projects/{provider}/{org}/{name}",
+        "kind": "RETURNS",
+        "to": "schema:project-details"
+      },
+      {
+        "from": "operation:post:/queryjobs",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:get:/queryjobs/{queryjob-id}",
+        "kind": "RETURNS",
+        "to": "schema:queryjob"
+      },
+      {
+        "from": "operation:get:/queryjobs/{queryjob-id}/results",
+        "kind": "RETURNS",
+        "to": "schema:queryjob-results-overview"
+      },
+      {
+        "from": "operation:get:/queryjobs/{queryjob-id}/results/{project-id}",
+        "kind": "RETURNS",
+        "to": "schema:queryjob-project-results"
+      },
+      {
+        "from": "operation:post:/snapshots/uploads/{session-id}",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:delete:/snapshots/uploads/{session-id}",
+        "kind": "RETURNS",
+        "to": "schema:operation"
+      },
+      {
+        "from": "operation:post:/snapshots/{project-id}/{language}",
+        "kind": "RETURNS",
+        "to": "schema:upload-session"
+      },
+      {
+        "from": "operation:get:/system/health",
+        "kind": "RETURNS",
+        "to": "schema:health"
+      },
+      {
+        "from": "operation:get:/system/metrics",
+        "kind": "RETURNS",
+        "to": "schema:metrics-list"
+      },
+      {
+        "from": "operation:get:/system/metrics/{metric-id}",
+        "kind": "RETURNS",
+        "to": "schema:metric"
+      },
+      {
+        "from": "schema:analysis",
+        "kind": "REFERENCES",
+        "to": "schema:language-stats"
+      },
+      {
+        "from": "schema:analysis",
+        "kind": "REFERENCES",
+        "to": "schema:project"
+      },
+      {
+        "from": "schema:code-review",
+        "kind": "REFERENCES",
+        "to": "schema:codereview_languages"
+      },
+      {
+        "from": "schema:codereview_alerts",
+        "kind": "REFERENCES",
+        "to": "schema:query"
+      },
+      {
+        "from": "schema:codereview_languages",
+        "kind": "REFERENCES",
+        "to": "schema:codereview_alerts"
+      },
+      {
+        "from": "schema:metric",
+        "kind": "REFERENCES",
+        "to": "schema:measurement"
+      },
+      {
+        "from": "schema:metrics-list",
+        "kind": "REFERENCES",
+        "to": "schema:metric-name"
+      },
+      {
+        "from": "schema:operation",
+        "kind": "REFERENCES",
+        "to": "schema:analysis"
+      },
+      {
+        "from": "schema:operation",
+        "kind": "REFERENCES",
+        "to": "schema:code-review"
+      },
+      {
+        "from": "schema:operation",
+        "kind": "REFERENCES",
+        "to": "schema:queryjob"
+      },
+      {
+        "from": "schema:operation",
+        "kind": "REFERENCES",
+        "to": "schema:upload-session"
+      },
+      {
+        "from": "schema:project-details",
+        "kind": "REFERENCES",
+        "to": "schema:project"
+      },
+      {
+        "from": "schema:project-details",
+        "kind": "REFERENCES",
+        "to": "schema:project-language-stats"
+      },
+      {
+        "from": "schema:project-language-stats",
+        "kind": "REFERENCES",
+        "to": "schema:language-stats"
+      },
+      {
+        "from": "schema:project-list",
+        "kind": "REFERENCES",
+        "to": "schema:project"
+      },
+      {
+        "from": "schema:query",
+        "kind": "REFERENCES",
+        "to": "schema:query_properties"
+      },
+      {
+        "from": "schema:queryjob",
+        "kind": "REFERENCES",
+        "to": "schema:queryjob_stats"
+      },
+      {
+        "from": "schema:queryjob-project-results",
+        "kind": "REFERENCES",
+        "to": "schema:project"
+      },
+      {
+        "from": "schema:queryjob-project-results",
+        "kind": "REFERENCES",
+        "to": "schema:query-result-entry"
+      },
+      {
+        "from": "schema:queryjob-results-overview",
+        "kind": "REFERENCES",
+        "to": "schema:queryjob-results-overview-entry"
+      },
+      {
+        "from": "schema:queryjob-results-overview-entry",
+        "kind": "REFERENCES",
+        "to": "schema:project"
       }
     ],
     "nodes": [
@@ -157,559 +372,1418 @@
       },
       {
         "deprecated": false,
+        "description": "Get the version information of this API.",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "getVersion",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "version"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Version information"
+        "summary": "Version information",
+        "tags": [
+          "API root"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a summary of the analysis results for a specific analysis identifier.",
         "id": "operation:get:/analyses/{analysis-id}",
         "kind": "operation",
         "method": "get",
         "name": "getAnalysis",
+        "parameters": [
+          {
+            "description": "The analysis identifier.",
+            "in": "path",
+            "name": "analysis-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{analysis-id}",
         "pointer": "#/paths/~1analyses~1{analysis-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "analysis"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get analysis summary"
+        "summary": "Get analysis summary",
+        "tags": [
+          "Analyses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download all the alerts found by an analysis.",
         "id": "operation:get:/analyses/{analysis-id}/alerts",
         "kind": "operation",
         "method": "get",
         "name": "getAlerts",
+        "parameters": [
+          {
+            "description": "The analysis identifier.",
+            "in": "path",
+            "name": "analysis-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The desired version of the SARIF format.",
+            "in": "query",
+            "name": "sarif-version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set `true` to include results in files that are excluded from the output by default.",
+            "in": "query",
+            "name": "excluded-files",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/analyses/{analysis-id}/alerts",
         "pointer": "#/paths/~1analyses~1{analysis-id}~1alerts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get detailed alert information"
+        "summary": "Get detailed alert information",
+        "tags": [
+          "Analyses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Trigger the analysis of a specific commit to a project.",
         "id": "operation:post:/analyses/{project-id}",
         "kind": "operation",
         "method": "post",
         "name": "requestAnalysis",
+        "parameters": [
+          {
+            "description": "The numeric project identifier.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The identifier of the commit to analyze.",
+            "in": "query",
+            "name": "commit",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language codes of the languages to analyze.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/analyses/{project-id}",
         "pointer": "#/paths/~1analyses~1{project-id}/post",
+        "responses": [
+          {
+            "status": "202",
+            "type": "operation"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Run analysis of a specific commit"
+        "summary": "Run analysis of a specific commit",
+        "tags": [
+          "Analyses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a summary of the analysis results for a specific commit, or the latest commit, to a project.",
         "id": "operation:get:/analyses/{project-id}/commits/{commit-id}",
         "kind": "operation",
         "method": "get",
         "name": "getAnalysisForCommit",
+        "parameters": [
+          {
+            "description": "The numeric project identifier.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The identifier of a specific commit.",
+            "in": "path",
+            "name": "commit-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/analyses/{project-id}/commits/{commit-id}",
         "pointer": "#/paths/~1analyses~1{project-id}~1commits~1{commit-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "analysis"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get analysis summary for a specific commit"
+        "summary": "Get analysis summary for a specific commit",
+        "tags": [
+          "Analyses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Trigger the code review of a patch.",
         "id": "operation:post:/codereviews/{project-id}",
         "kind": "operation",
         "method": "post",
         "name": "requestReview",
+        "parameters": [
+          {
+            "description": "The numeric project identifier.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The identifier for the base commit.",
+            "in": "query",
+            "name": "base",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your reference number for the code review.",
+            "in": "query",
+            "name": "external-id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "An informative back-link to an external system.",
+            "in": "query",
+            "name": "review-url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The callback URL for LGTM to post to on completion of the review.",
+            "in": "query",
+            "name": "callback-url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The `callback-secret` is used to compute a signature which is included in the `x-lgtm-signature` header of the callback response.",
+            "in": "query",
+            "name": "callback-secret",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/codereviews/{project-id}",
         "pointer": "#/paths/~1codereviews~1{project-id}/post",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "operation"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Run code review for a patch"
+        "summary": "Run code review for a patch",
+        "tags": [
+          "Code reviews"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the results of a code review using the review identifier for the task.",
         "id": "operation:get:/codereviews/{review-id}",
         "kind": "operation",
         "method": "get",
         "name": "getCodeReview",
+        "parameters": [
+          {
+            "description": "The identifier for the review (from the `task-result-url`).",
+            "in": "path",
+            "name": "review-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/codereviews/{review-id}",
         "pointer": "#/paths/~1codereviews~1{review-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "code-review[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get results of code review"
+        "summary": "Get results of code review",
+        "tags": [
+          "Code reviews"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch the alert information for an issue in [SARIF](https://lgtm.com/help/lgtm/sarif-results-file) format.",
         "id": "operation:get:/issues/{project-id}/{alert-key}",
         "kind": "operation",
         "method": "get",
         "name": "getIssue",
+        "parameters": [
+          {
+            "description": "The numeric project identifier.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The alert key is generated by LGTM when it posts an issue `create` webhook request to an external system using the [issue tracker Webhook API](https://lgtm.com…",
+            "in": "path",
+            "name": "alert-key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/issues/{project-id}/{alert-key}",
         "pointer": "#/paths/~1issues~1{project-id}~1{alert-key}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get detailed alert information for an issue"
+        "summary": "Get detailed alert information for an issue",
+        "tags": [
+          "Issues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the specification of this API in [OpenAPI](https://github.com/OAI/OpenAPI-Specification) format.",
         "id": "operation:get:/openapi",
         "kind": "operation",
         "method": "get",
         "name": "getSpec",
         "path": "/openapi",
         "pointer": "#/paths/~1openapi/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "API specification"
+        "summary": "API specification",
+        "tags": [
+          "API root"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Track progress of a long-running operation using the operations identifier returned when you created the operation.",
         "id": "operation:get:/operations/{operation-id}",
         "kind": "operation",
         "method": "get",
         "name": "getOperation",
+        "parameters": [
+          {
+            "description": "The operation identifier returned on creating the task.",
+            "in": "path",
+            "name": "operation-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/operations/{operation-id}",
         "pointer": "#/paths/~1operations~1{operation-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "operation"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get operation status"
+        "summary": "Get operation status",
+        "tags": [
+          "Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all the projects the current user has authorization to view.",
         "id": "operation:get:/projects",
         "kind": "operation",
         "method": "get",
         "name": "getProjects",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The maximum number of projects to return in each response (1-100).",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "An opaque identifier generated by the API.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects",
         "pointer": "#/paths/~1projects/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "project-list"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "List projects"
+        "summary": "List projects",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "LGTM administrators can add a new project to LGTM by providing a repository URL.",
         "id": "operation:post:/projects",
         "kind": "operation",
         "method": "post",
         "name": "addProject",
+        "parameters": [
+          {
+            "description": "The URL of the repository to analyze.",
+            "in": "query",
+            "name": "repository",
+            "required": true,
+            "type": "string:uri"
+          },
+          {
+            "description": "Optional, a [language code](https://lgtm.com/help/lgtm/analysis-faqs#which-languages-are-supported) to specify which language to analyze.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The analysis mode of the new project.",
+            "enum": [
+              "full",
+              "sparse",
+              "upload"
+            ],
+            "in": "query",
+            "name": "mode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required when `mode=upload`, specify the identifier of the commit used to generate the database.",
+            "in": "query",
+            "name": "commit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional when `mode=upload`, specify the date and time of the commit used to generate the database; defaults to the current time.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional, any [labels](https://lgtm.com/admin/help/defining-worker-labels) required by workers to analyze this project.",
+            "in": "query",
+            "name": "worker-label",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/projects",
         "pointer": "#/paths/~1projects/post",
+        "request": {
+          "content_types": [
+            "application/x-yaml"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "operation"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Add a project to LGTM"
+        "summary": "Add a project to LGTM",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/projects/{project-id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteProject",
-        "path": "/projects/{project-id}",
-        "pointer": "#/paths/~1projects~1{project-id}/delete",
-        "security": [
-          {
-            "access-token": []
-          }
-        ],
-        "summary": "Delete project by numeric identifier"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the latest summary for a specific project using the numeric project identifier.",
         "id": "operation:get:/projects/{project-id}",
         "kind": "operation",
         "method": "get",
         "name": "getProject",
+        "parameters": [
+          {
+            "description": "The numeric project identifier",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/projects/{project-id}",
         "pointer": "#/paths/~1projects~1{project-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "project-details"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get project by numeric identifier"
+        "summary": "Get project by numeric identifier",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a project with a particular numeric project identifier.",
+        "id": "operation:delete:/projects/{project-id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteProject",
+        "parameters": [
+          {
+            "description": "The numeric project identifier",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/projects/{project-id}",
+        "pointer": "#/paths/~1projects~1{project-id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "project-details"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "Delete project by numeric identifier",
+        "tags": [
+          "Projects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the latest configuration for a specific project using the numeric project identifier.",
         "id": "operation:get:/projects/{project-id}/settings/analysis-configuration",
         "kind": "operation",
         "method": "get",
         "name": "getProjectConfig",
+        "parameters": [
+          {
+            "description": "The numeric project identifier",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The type of project configuration to retrieve.",
+            "enum": [
+              "repository",
+              "administrator"
+            ],
+            "in": "query",
+            "name": "source",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{project-id}/settings/analysis-configuration",
         "pointer": "#/paths/~1projects~1{project-id}~1settings~1analysis-configuration/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get configuration for a project identified by numeric identifier"
+        "summary": "Get configuration for a project identified by numeric identifier",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the administrator configuration for a specific project using the numeric project identifier.",
         "id": "operation:put:/projects/{project-id}/settings/analysis-configuration",
         "kind": "operation",
         "method": "put",
         "name": "setProjectConfig",
+        "parameters": [
+          {
+            "description": "The numeric project identifier",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/projects/{project-id}/settings/analysis-configuration",
         "pointer": "#/paths/~1projects~1{project-id}~1settings~1analysis-configuration/put",
+        "request": {
+          "content_types": [
+            "application/x-yaml"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Set the administrator configuration for a project identified by numeric identifier"
+        "summary": "Set the administrator configuration for a project identified by numeric identifier",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the latest summary for a specific project using the project's URL identifier `{provider}/{org}/{name}`.",
         "id": "operation:get:/projects/{provider}/{org}/{name}",
         "kind": "operation",
         "method": "get",
         "name": "getProjectByUrlIdentifier",
+        "parameters": [
+          {
+            "description": "The first part of the URL identifier of a project, which represents the repository host.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The second part of the URL identifier of a project, the organization.",
+            "in": "path",
+            "name": "org",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The third part of the URL identifier of a project, the repository name.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{provider}/{org}/{name}",
         "pointer": "#/paths/~1projects~1{provider}~1{org}~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "project-details"
+          },
+          {
+            "status": "307"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get project by URL identifier"
+        "summary": "Get project by URL identifier",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submit a query to run on one or more projects on LGTM.",
         "id": "operation:post:/queryjobs",
         "kind": "operation",
         "method": "post",
         "name": "createQueryJob",
+        "parameters": [
+          {
+            "description": "The [language](https://lgtm.com/help/lgtm/analysis-faqs#which-languages-are-supported) you want to analyze.",
+            "in": "query",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The identifier of the project to analyze.",
+            "in": "query",
+            "name": "project-id",
+            "required": false,
+            "type": "integer:int64[]"
+          },
+          {
+            "description": "Name of the list containing the projects to analyze.",
+            "in": "query",
+            "name": "projects-list",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/queryjobs",
         "pointer": "#/paths/~1queryjobs/post",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "operation"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Run a CodeQL query on one or more projects"
+        "summary": "Run a CodeQL query on one or more projects",
+        "tags": [
+          "Query jobs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the status of a query job using the query job identifier for the task.",
         "id": "operation:get:/queryjobs/{queryjob-id}",
         "kind": "operation",
         "method": "get",
         "name": "getQueryJob",
+        "parameters": [
+          {
+            "description": "The identifier of the query job, from the `task-result` given in the response to the initial `POST /queryjobs` request.",
+            "in": "path",
+            "name": "queryjob-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/queryjobs/{queryjob-id}",
         "pointer": "#/paths/~1queryjobs~1{queryjob-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "queryjob"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get the status of a query job"
+        "summary": "Get the status of a query job",
+        "tags": [
+          "Query jobs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides a summary of the results generated by completed query runs for each project specified in the the POST /queryjobs endpoint.",
         "id": "operation:get:/queryjobs/{queryjob-id}/results",
         "kind": "operation",
         "method": "get",
         "name": "getQueryJobResultsOverview",
+        "parameters": [
+          {
+            "description": "The identifier of the query job, from the `task-result` given in the response to the initial `POST /queryjobs` request.",
+            "in": "path",
+            "name": "queryjob-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An opaque identifier generated by the API used for pagination.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Only return a subset of results.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/queryjobs/{queryjob-id}/results",
         "pointer": "#/paths/~1queryjobs~1{queryjob-id}~1results/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "queryjob-results-overview"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Provide a summary of results for the projects in the query job"
+        "summary": "Provide a summary of results for the projects in the query job",
+        "tags": [
+          "Query jobs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch the results for a specific project.",
         "id": "operation:get:/queryjobs/{queryjob-id}/results/{project-id}",
         "kind": "operation",
         "method": "get",
         "name": "getQueryJobResultsForProject",
+        "parameters": [
+          {
+            "description": "The identifier of the query job, from the `task-result` given in the response to the initial `POST /queryjobs` request.",
+            "in": "path",
+            "name": "queryjob-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The identifier for the project.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start point for the page of results.",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "The maximum number of results to display (less than 100).",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "Include results that are not part of the source tree.",
+            "in": "query",
+            "name": "nofilter",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/queryjobs/{queryjob-id}/results/{project-id}",
         "pointer": "#/paths/~1queryjobs~1{queryjob-id}~1results~1{project-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "queryjob-project-results"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Fetch the results of a query job for a specific project"
+        "summary": "Fetch the results of a query job for a specific project",
+        "tags": [
+          "Query jobs"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/snapshots/uploads/{session-id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "abortUpload",
-        "path": "/snapshots/uploads/{session-id}",
-        "pointer": "#/paths/~1snapshots~1uploads~1{session-id}/delete",
-        "security": [
-          {
-            "access-token": []
-          }
-        ],
-        "summary": "Abort database upload process"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/snapshots/uploads/{session-id}",
-        "kind": "operation",
-        "method": "post",
-        "name": "completeUpload",
-        "path": "/snapshots/uploads/{session-id}",
-        "pointer": "#/paths/~1snapshots~1uploads~1{session-id}/post",
-        "security": [
-          {
-            "access-token": []
-          }
-        ],
-        "summary": "Complete snapshot upload session"
-      },
-      {
-        "deprecated": false,
+        "description": "Upload a database representing a snapshot of a codebase.",
         "id": "operation:put:/snapshots/uploads/{session-id}",
         "kind": "operation",
         "method": "put",
         "name": "uploadPart",
+        "parameters": [
+          {
+            "description": "The id of the upload session.",
+            "in": "path",
+            "name": "session-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/snapshots/uploads/{session-id}",
         "pointer": "#/paths/~1snapshots~1uploads~1{session-id}/put",
+        "request": {
+          "content_types": [
+            "application/octet-stream",
+            "application/zip"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Upload snapshot"
+        "summary": "Upload snapshot",
+        "tags": [
+          "Snapshots"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Completes the database upload by closing the upload session, upgrading the database if appropriate, and scheduling analysis of that snapshot of the codebase.",
+        "id": "operation:post:/snapshots/uploads/{session-id}",
+        "kind": "operation",
+        "method": "post",
+        "name": "completeUpload",
+        "parameters": [
+          {
+            "description": "The id of the upload session.",
+            "in": "path",
+            "name": "session-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/snapshots/uploads/{session-id}",
+        "pointer": "#/paths/~1snapshots~1uploads~1{session-id}/post",
+        "responses": [
+          {
+            "status": "202",
+            "type": "operation"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "Complete snapshot upload session",
+        "tags": [
+          "Snapshots"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Aborts the specified upload session and deletes any uploaded parts.",
+        "id": "operation:delete:/snapshots/uploads/{session-id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "abortUpload",
+        "parameters": [
+          {
+            "description": "The id of the upload session.",
+            "in": "path",
+            "name": "session-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/snapshots/uploads/{session-id}",
+        "pointer": "#/paths/~1snapshots~1uploads~1{session-id}/delete",
+        "responses": [
+          {
+            "status": "202",
+            "type": "operation"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "Abort database upload process",
+        "tags": [
+          "Snapshots"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Download a CodeQL database from LGTM, representing a snapshot of the codebase, to run queries in your IDE.",
         "id": "operation:get:/snapshots/{project-id}/{language}",
         "kind": "operation",
         "method": "get",
         "name": "getSnapshot",
+        "parameters": [
+          {
+            "description": "The numeric project identifier.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The language of the database to download.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/snapshots/{project-id}/{language}",
         "pointer": "#/paths/~1snapshots~1{project-id}~1{language}/get",
+        "responses": [
+          {
+            "status": "303"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Download a snapshot"
+        "summary": "Download a snapshot",
+        "tags": [
+          "Snapshots"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Start a session to upload an externally-built database (which represents a snapshot of a codebase) to a project on LGTM.",
         "id": "operation:post:/snapshots/{project-id}/{language}",
         "kind": "operation",
         "method": "post",
         "name": "initSnapshotUpload",
+        "parameters": [
+          {
+            "description": "The numeric project identifier.",
+            "in": "path",
+            "name": "project-id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The language of the database to upload.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The identifier of the analyzed commit.",
+            "in": "query",
+            "name": "commit",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date and time of the analyzed commit (default the current time).",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/snapshots/{project-id}/{language}",
         "pointer": "#/paths/~1snapshots~1{project-id}~1{language}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "upload-session"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Start snapshot upload session"
+        "summary": "Start snapshot upload session",
+        "tags": [
+          "Snapshots"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return an indication of whether the application is working as expected (up) or needs attention (down).",
         "id": "operation:get:/system/health",
         "kind": "operation",
         "method": "get",
         "name": "getHealth",
         "path": "/system/health",
         "pointer": "#/paths/~1system~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "health"
+          },
+          {
+            "status": "503",
+            "type": "health"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get a summary of the application's health"
+        "summary": "Get a summary of the application's health",
+        "tags": [
+          "System"
+        ]
       },
       {
         "deprecated": false,
+        "description": "LGTM administrators can use this endpoint to list the usage metrics that are available to download.",
         "id": "operation:get:/system/metrics",
         "kind": "operation",
         "method": "get",
         "name": "getMetrics",
         "path": "/system/metrics",
         "pointer": "#/paths/~1system~1metrics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "metrics-list"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get the identifiers and descriptions of the usage metrics"
+        "summary": "Get the identifiers and descriptions of the usage metrics",
+        "tags": [
+          "System"
+        ]
       },
       {
         "deprecated": false,
+        "description": "LGTM administrators can download usage data using this endpoint.",
         "id": "operation:get:/system/metrics/{metric-id}",
         "kind": "operation",
         "method": "get",
         "name": "getMetric",
+        "parameters": [
+          {
+            "description": "The identifier of the metric.",
+            "in": "path",
+            "name": "metric-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/system/metrics/{metric-id}",
         "pointer": "#/paths/~1system~1metrics~1{metric-id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "metric"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "access-token": []
           }
         ],
-        "summary": "Get the computed values of the specified metric"
+        "summary": "Get the computed values of the specified metric",
+        "tags": [
+          "System"
+        ]
       },
       {
         "id": "schema:analysis",
         "kind": "schema",
-        "name": "analysis"
+        "name": "analysis",
+        "type": "object"
       },
       {
         "id": "schema:code-review",
         "kind": "schema",
-        "name": "code-review"
+        "name": "code-review",
+        "type": "object"
       },
       {
         "id": "schema:codereview_alerts",
         "kind": "schema",
-        "name": "codereview_alerts"
+        "name": "codereview_alerts",
+        "type": "object"
       },
       {
         "id": "schema:codereview_languages",
         "kind": "schema",
-        "name": "codereview_languages"
+        "name": "codereview_languages",
+        "type": "object"
       },
       {
         "id": "schema:health",
         "kind": "schema",
-        "name": "health"
+        "name": "health",
+        "type": "object"
       },
       {
         "id": "schema:language-stats",
         "kind": "schema",
-        "name": "language-stats"
+        "name": "language-stats",
+        "type": "object"
       },
       {
         "id": "schema:measurement",
         "kind": "schema",
-        "name": "measurement"
+        "name": "measurement",
+        "type": "object"
       },
       {
         "id": "schema:metric",
         "kind": "schema",
-        "name": "metric"
+        "name": "metric",
+        "type": "object"
       },
       {
         "id": "schema:metric-name",
         "kind": "schema",
-        "name": "metric-name"
+        "name": "metric-name",
+        "type": "object"
       },
       {
         "id": "schema:metrics-list",
         "kind": "schema",
-        "name": "metrics-list"
+        "name": "metrics-list",
+        "type": "object"
       },
       {
         "id": "schema:operation",
         "kind": "schema",
-        "name": "operation"
+        "name": "operation",
+        "type": "object"
       },
       {
         "id": "schema:project",
         "kind": "schema",
-        "name": "project"
+        "name": "project",
+        "type": "object"
       },
       {
         "id": "schema:project-details",
         "kind": "schema",
-        "name": "project-details"
+        "name": "project-details",
+        "type": "project|object"
       },
       {
         "id": "schema:project-language-stats",
         "kind": "schema",
-        "name": "project-language-stats"
+        "name": "project-language-stats",
+        "type": "language-stats|object"
       },
       {
         "id": "schema:project-list",
         "kind": "schema",
-        "name": "project-list"
+        "name": "project-list",
+        "type": "object"
       },
       {
         "id": "schema:query",
         "kind": "schema",
-        "name": "query"
+        "name": "query",
+        "type": "object"
       },
       {
         "id": "schema:query-result-entry",
         "kind": "schema",
-        "name": "query-result-entry"
+        "name": "query-result-entry",
+        "type": "object"
       },
       {
         "id": "schema:query_properties",
         "kind": "schema",
-        "name": "query_properties"
+        "name": "query_properties",
+        "type": "object"
       },
       {
         "id": "schema:queryjob",
         "kind": "schema",
-        "name": "queryjob"
+        "name": "queryjob",
+        "type": "object"
       },
       {
         "id": "schema:queryjob-project-results",
         "kind": "schema",
-        "name": "queryjob-project-results"
+        "name": "queryjob-project-results",
+        "type": "object"
       },
       {
         "id": "schema:queryjob-results-overview",
         "kind": "schema",
-        "name": "queryjob-results-overview"
+        "name": "queryjob-results-overview",
+        "type": "object"
       },
       {
         "id": "schema:queryjob-results-overview-entry",
         "kind": "schema",
-        "name": "queryjob-results-overview-entry"
+        "name": "queryjob-results-overview-entry",
+        "type": "object"
       },
       {
         "id": "schema:queryjob_stats",
         "kind": "schema",
-        "name": "queryjob_stats"
+        "name": "queryjob_stats",
+        "type": "object"
       },
       {
         "id": "schema:upload-session",
         "kind": "schema",
-        "name": "upload-session"
+        "name": "upload-session",
+        "type": "object"
       },
       {
         "id": "schema:version",
         "kind": "schema",
-        "name": "version"
+        "name": "version",
+        "type": "object"
       }
     ]
   },

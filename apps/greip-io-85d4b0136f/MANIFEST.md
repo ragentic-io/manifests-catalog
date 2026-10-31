@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_greip.io_img_xapp-icon-180.png.
 
 | | |
 | --- | --- |
-| Signed bundle | `040a959aca976ebc6e1ac7a030adc9b1cb93b15252c0dde67e2f751f9e2a26e6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,10 +32,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_greip.io_img_xapp-icon-180.png.
 
 ## Operations (5)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/BulkLookup` | get /BulkLookup | — |
-| GET | `/Country` | get /Country | — |
-| GET | `/GeoIP` | get /GeoIP | — |
-| GET | `/IPLookup` | get /IPLookup | — |
-| GET | `/badWords` | get /badWords | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/BulkLookup` | get /BulkLookup | `key`*, `ips`*, `params`, `lang`, `format` | — | yes | — |
+| GET | `/Country` | get /Country | `key`*, `CountryCode`*, `params`, `lang`, `format` | — | yes | — |
+| GET | `/GeoIP` | get /GeoIP | `key`*, `params`, `lang`, `format` | — | yes | — |
+| GET | `/IPLookup` | get /IPLookup | `key`*, `ip`*, `params`, `lang`, `format` | — | yes | — |
+| GET | `/badWords` | get /badWords | `key`*, `text`*, `listBadWords`, `scoreOnly`, `format` | — | yes | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_59
 
 | | |
 | --- | --- |
-| Signed bundle | `8af22f3fd708d47fe8c637ec9cdb35ad430e40bf6eeb22615fdf3dc22b279c43` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,18 +34,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_59
 
 18 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/jobs` | get /jobs | Job Titles and Descriptions |
-| GET | `/jobs/autocomplete` | get /jobs/autocomplete | Job Title Autocomplete |
-| GET | `/jobs/normalize` | get /jobs/normalize | Job Title Normalization |
-| GET | `/jobs/unusual_titles` | get /jobs/unusual_titles | Unusual Job Titles |
-| GET | `/jobs/{id}` | get /jobs/{id} | Job Title and Description |
-| GET | `/jobs/{id}/related_jobs` | get /jobs/{id}/related_jobs | Jobs Associated with a Job |
-| GET | `/jobs/{id}/related_skills` | get /jobs/{id}/related_skills | Skills Associated with a Job |
-| GET | `/skills` | get /skills | Skill Names and Descriptions |
-| GET | `/skills/autocomplete` | get /skills/autocomplete | Skill Name Autocomplete |
-| GET | `/skills/normalize` | get /skills/normalize | Skill Name Normalization |
-| GET | `/skills/{id}` | get /skills/{id} | Skill Name and Description |
-| GET | `/skills/{id}/related_jobs` | get /skills/{id}/related_jobs | Jobs Associated with a Skill |
-| GET | `/skills/{id}/related_skills` | get /skills/{id}/related_skills | Skills Associated with a Skill |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/jobs` | get /jobs | `offset`, `limit` | Jobs | yes | Job Titles and Descriptions |
+| GET | `/jobs/autocomplete` | get /jobs/autocomplete | `begins_with`, `contains`, `ends_with` | Jobs | yes | Job Title Autocomplete |
+| GET | `/jobs/normalize` | get /jobs/normalize | `job_title`*, `limit` | NormalizedJobs | yes | Job Title Normalization |
+| GET | `/jobs/unusual_titles` | get /jobs/unusual_titles | — | NormalizedJobs | yes | Unusual Job Titles |
+| GET | `/jobs/{id}` | get /jobs/{id} | `id`*, `fips` | Job | yes | Job Title and Description |
+| GET | `/jobs/{id}/related_jobs` | get /jobs/{id}/related_jobs | `id`* | JobRelatedJobs | yes | Jobs Associated with a Job |
+| GET | `/jobs/{id}/related_skills` | get /jobs/{id}/related_skills | `id`* | JobSkills | yes | Skills Associated with a Job |
+| GET | `/skills` | get /skills | `offset`, `limit` | Skills | yes | Skill Names and Descriptions |
+| GET | `/skills/autocomplete` | get /skills/autocomplete | `begins_with`, `contains`, `ends_with` | SkillJobs | yes | Skill Name Autocomplete |
+| GET | `/skills/normalize` | get /skills/normalize | `skill_name`* | NormalizedSkills | yes | Skill Name Normalization |
+| GET | `/skills/{id}` | get /skills/{id} | `id`* | Skill | yes | Skill Name and Description |
+| GET | `/skills/{id}/related_jobs` | get /skills/{id}/related_jobs | `id`* | SkillJobs | yes | Jobs Associated with a Skill |
+| GET | `/skills/{id}/related_skills` | get /skills/{id}/related_skills | `id`* | SkillRelatedSkills | yes | Skills Associated with a Skill |

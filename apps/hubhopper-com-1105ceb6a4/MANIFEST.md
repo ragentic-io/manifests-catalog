@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `24445fdea1166ce703e2c20e2d963719ead51607bff1bf57ad5cc182905e4cac` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/categories` | get /categories | — |
-| GET | `/categories/{categoryId}` | get /categories/{categoryId} | — |
-| GET | `/categories/{categoryId}/podcasts` | get /categories/{categoryId}/podcasts | — |
-| GET | `/podcasts` | get /podcasts | — |
-| GET | `/podcasts/{podcastId}` | get /podcasts/{podcastId} | — |
-| GET | `/podcasts/{podcastId}/episodes` | get /podcasts/{podcastId}/episodes | — |
-| GET | `/util/languages` | get /util/languages | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/categories` | get /categories | `pageSize`, `page` | CategoryList | yes | — |
+| GET | `/categories/{categoryId}` | get /categories/{categoryId} | `categoryId`* | SingleCategory | yes | — |
+| GET | `/categories/{categoryId}/podcasts` | get /categories/{categoryId}/podcasts | `categoryId`*, `page`, `pageSize`, `order`, `filters` | PodcastList | yes | — |
+| GET | `/podcasts` | get /podcasts | `page`, `pageSize`, `order`, `filters` | PodcastList | yes | — |
+| GET | `/podcasts/{podcastId}` | get /podcasts/{podcastId} | `podcastId`* | SinglePodcast | yes | — |
+| GET | `/podcasts/{podcastId}/episodes` | get /podcasts/{podcastId}/episodes | `page`, `pageSize`, `order`, `filters`, `podcastId`* | PodcastEpisodeList | yes | — |
+| GET | `/util/languages` | get /util/languages | `pageSize`, `page` | LanguageList | yes | — |

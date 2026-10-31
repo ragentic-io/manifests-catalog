@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Handwrytten_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `50f2ff2272d7d43d1978ef4f6036b0bd63548a51d4b01e5f1da21990c46ae477` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Handwrytten_profile
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/auth/authorization` | login | Logs in to an existing account |
-| POST | `/auth/changePassword` | changePassword | changes a user's password |
-| POST | `/auth/logout` | logout | logs out a session uid |
-| POST | `/auth/register` | register | Registers a new account |
-| POST | `/auth/resetPasswordRequest` | resetPasswordRequest | resets a user's password |
-| POST | `/cards/createCustomCard` | CreateCustomCard | Create a new custom card |
-| GET | `/cards/list` | simpleListCards | Lists information on cards |
-| POST | `/cards/list` | listCards | Lists information on cards |
-| POST | `/cards/uploadCustomLogo` | uploadCustomLogo | upload logo or cover image for card |
-| POST | `/cards/view` | filterableCardDetails | Provides full information on a specific card |
-| GET | `/countries/list` | get /countries/list | — |
-| GET | `/fonts/list` | fontsList | Lists Handwryting styles available for use |
-| GET | `/fonts/listForCustomizer` | fontsListForCustomizer | Lists fonts available for use with the card customizer |
-| GET | `/giftCards/view` | getGiftCardDetails | Lists information on gift cards |
-| POST | `/giftCards/view` | giftCardDetails | Lists information on gift cards |
-| POST | `/orders/singleStepOrder` | singleStepOrder | sends an order in a single step. This is much easier than using other order commands |
-| POST | `/profile/address` | userAddress | gets the user's return address information |
-| POST | `/profile/deleteRecipient` | deleteRecipient | deletes an existing recipient address |
-| POST | `/profile/profileAddRecipient` | addRecipientAddress | add a new recipient address |
-| POST | `/profile/recipientsList` | recipientsList | list the addresses in the user's account |
-| POST | `/profile/updateAddress` | updateUserAddress | update the user's return address information |
-| POST | `/profile/updateRecipient` | updateRecipient | updates an existing new recipient address |
-| GET | `/templateCategories/list` | getTemplateCategories | List template categories |
-| POST | `/templateCategories/list` | getTemplateCategoriesAuthorized | List template categories |
-| POST | `/templates/create` | createTemplate | Creates a New Template in the User’s Account |
-| POST | `/templates/delete` | deleteTemplate | Deletes a users template |
-| GET | `/templates/list` | getTemplates | List template categories |
-| POST | `/templates/list` | getTemplatessAuthorized | List template categories |
-| POST | `/templates/update` | updateTemplate | Updates an Existing Template in the User’s Account |
-| POST | `/templates/view` | getTemplateDetail | Get all info on a template |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/auth/authorization` | login | body*: Login | object |  | Logs in to an existing account |
+| POST | `/auth/changePassword` | changePassword | body*: object | object |  | changes a user's password |
+| POST | `/auth/logout` | logout | body*: object | object |  | logs out a session uid |
+| POST | `/auth/register` | register | body*: Registration | object |  | Registers a new account |
+| POST | `/auth/resetPasswordRequest` | resetPasswordRequest | body*: object | object |  | resets a user's password |
+| POST | `/cards/createCustomCard` | CreateCustomCard | body*: object | object |  | Create a new custom card |
+| GET | `/cards/list` | simpleListCards | — | object | yes | Lists information on cards |
+| POST | `/cards/list` | listCards | body: object | Card[] |  | Lists information on cards |
+| POST | `/cards/uploadCustomLogo` | uploadCustomLogo | `file`*, `type`*, `uid`* | object |  | upload logo or cover image for card |
+| POST | `/cards/view` | filterableCardDetails | body: object | CardDetails |  | Provides full information on a specific card |
+| GET | `/countries/list` | get /countries/list | — | Country[] | yes | — |
+| GET | `/fonts/list` | fontsList | — | Font[] | yes | Lists Handwryting styles available for use |
+| GET | `/fonts/listForCustomizer` | fontsListForCustomizer | — | FontForCustomizer[] | yes | Lists fonts available for use with the card customizer |
+| GET | `/giftCards/view` | getGiftCardDetails | — | GiftCard[] | yes | Lists information on gift cards |
+| POST | `/giftCards/view` | giftCardDetails | — | GiftCard[] |  | Lists information on gift cards |
+| POST | `/orders/singleStepOrder` | singleStepOrder | body*: object | object |  | sends an order in a single step. This is much easier than using other order commands |
+| POST | `/profile/address` | userAddress | body: object | object |  | gets the user's return address information |
+| POST | `/profile/deleteRecipient` | deleteRecipient | body*: object | object |  | deletes an existing recipient address |
+| POST | `/profile/profileAddRecipient` | addRecipientAddress | body: object | object |  | add a new recipient address |
+| POST | `/profile/recipientsList` | recipientsList | body*: object | recipientAddress[] |  | list the addresses in the user's account |
+| POST | `/profile/updateAddress` | updateUserAddress | body*: object | object |  | update the user's return address information |
+| POST | `/profile/updateRecipient` | updateRecipient | body*: object | object |  | updates an existing new recipient address |
+| GET | `/templateCategories/list` | getTemplateCategories | — | TemplateCategory[] | yes | List template categories |
+| POST | `/templateCategories/list` | getTemplateCategoriesAuthorized | body: object | TemplateCategory[] |  | List template categories |
+| POST | `/templates/create` | createTemplate | body*: object | Template[] |  | Creates a New Template in the User’s Account |
+| POST | `/templates/delete` | deleteTemplate | body*: object | object |  | Deletes a users template |
+| GET | `/templates/list` | getTemplates | — | Template[] | yes | List template categories |
+| POST | `/templates/list` | getTemplatessAuthorized | body: object | Template[] |  | List template categories |
+| POST | `/templates/update` | updateTemplate | body*: object | Template[] |  | Updates an Existing Template in the User’s Account |
+| POST | `/templates/view` | getTemplateDetail | body*: object | Template |  | Get all info on a template |

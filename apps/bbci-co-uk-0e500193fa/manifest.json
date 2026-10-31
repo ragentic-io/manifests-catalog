@@ -153,6 +153,241 @@
         "from": "bbci-co-uk-0e500193fa",
         "kind": "EXPOSES",
         "to": "operation:get:/user/watching"
+      },
+      {
+        "from": "operation:get:/atoz/{letter}/programmes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/categories",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/categories/{category}",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/categories/{category}/episodes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/categories/{category}/highlights",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/categories/{category}/programmes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/channels",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/channels/{channel}/broadcasts",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/channels/{channel}/highlights",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/channels/{channel}/programmes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/channels/{channel}/schedule/{date}",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/clips/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/episodes/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/episodes/{pid}/next",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/episodes/{pid}/postrolls",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/episodes/{pid}/prerolls",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/episodes/{pid}/recommendations",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/groups/popular/episodes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/groups/{pid}/episodes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/home/highlights",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/programmes/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/programmes/{pid}/episodes",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/regions",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/schema/ibl.json",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/search",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/search-suggest",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/status",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/user/purchases",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/user/recommendations",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "operation:get:/user/watching",
+        "kind": "RETURNS",
+        "to": "schema:ibl"
+      },
+      {
+        "from": "schema:added",
+        "kind": "REFERENCES",
+        "to": "schema:programme"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:interaction"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:interaction"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand"
+      },
+      {
+        "from": "schema:group",
+        "kind": "REFERENCES",
+        "to": "schema:broadcast"
+      },
+      {
+        "from": "schema:group",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:group",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand"
+      },
+      {
+        "from": "schema:programme",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:programme",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand"
+      },
+      {
+        "from": "schema:search_group",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:user_recommendation",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:version",
+        "kind": "REFERENCES",
+        "to": "schema:interaction"
+      },
+      {
+        "from": "schema:watching",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:watching",
+        "kind": "REFERENCES",
+        "to": "schema:programme"
+      },
+      {
+        "from": "schema:watching",
+        "kind": "REFERENCES",
+        "to": "schema:version"
       }
     ],
     "nodes": [
@@ -162,25 +397,140 @@
       },
       {
         "deprecated": false,
+        "description": "Get the Programmes whose title begins with the given initial character.",
         "id": "operation:get:/atoz/{letter}/programmes",
         "kind": "operation",
         "method": "get",
         "name": "Get_Programmes AtoZ search_",
+        "parameters": [
+          {
+            "description": "Letter to search by, a to z or the string '0-9'",
+            "in": "path",
+            "name": "letter",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": 4,
+            "description": "The depth to return child entities.",
+            "in": "query",
+            "name": "initial_child_count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The sort order of the results.",
+            "enum": [
+              "title"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether to sort ascending or descending",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/atoz/{letter}/programmes",
         "pointer": "#/paths/~1atoz~1{letter}~1programmes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Programmes by initial title character"
+        "summary": "Programmes by initial title character",
+        "tags": [
+          "A to Z"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of all the categories in TV & iPlayer.",
         "id": "operation:get:/categories",
         "kind": "operation",
         "method": "get",
         "name": "Get_Categories_",
+        "parameters": [
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/categories",
         "pointer": "#/paths/~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get categories"
+        "summary": "Get categories",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
@@ -188,54 +538,348 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Sub-categories_",
+        "parameters": [
+          {
+            "description": "The category identifier to return results from.",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/categories/{category}",
         "pointer": "#/paths/~1categories~1{category}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get sub-categories"
+        "summary": "Get sub-categories",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of all the episodes for a given category in TV & iPlayer.",
         "id": "operation:get:/categories/{category}/episodes",
         "kind": "operation",
         "method": "get",
         "name": "Get_Episodes by category_",
+        "parameters": [
+          {
+            "description": "The category identifier to return results from.",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The sort order of the results.",
+            "enum": [
+              "recent",
+              "popular"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/categories/{category}/episodes",
         "pointer": "#/paths/~1categories~1{category}~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all the episodes for a category."
+        "summary": "List all the episodes for a category.",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the editorial highlights of a given category in TV & iPlayer.",
         "id": "operation:get:/categories/{category}/highlights",
         "kind": "operation",
         "method": "get",
         "name": "Get_Highlights by category_",
+        "parameters": [
+          {
+            "description": "The category identifier to return results from.",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/categories/{category}/highlights",
         "pointer": "#/paths/~1categories~1{category}~1highlights/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List the highlights for a category."
+        "summary": "List the highlights for a category.",
+        "tags": [
+          "Programmes (TLEOs)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of all the Programmes (TLEOs) for a given category in TV & iPlayer.",
         "id": "operation:get:/categories/{category}/programmes",
         "kind": "operation",
         "method": "get",
         "name": "Get_Programmes by category_",
+        "parameters": [
+          {
+            "description": "The category identifier to return results from.",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/categories/{category}/programmes",
         "pointer": "#/paths/~1categories~1{category}~1programmes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all the programmes for a category."
+        "summary": "List all the programmes for a category.",
+        "tags": [
+          "Programmes (TLEOs)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of all the channels TV & iPlayer.",
         "id": "operation:get:/channels",
         "kind": "operation",
         "method": "get",
         "name": "Get_Channels_",
+        "parameters": [
+          {
+            "description": "The region to get the channels for.",
+            "in": "query",
+            "name": "region",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/channels",
         "pointer": "#/paths/~1channels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all the channels."
+        "summary": "List all the channels.",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
@@ -243,21 +887,181 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Broadcasts by channel_",
+        "parameters": [
+          {
+            "description": "The channel identifier to limit results to.",
+            "in": "path",
+            "name": "channel",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Time to return results from, e.g.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/channels/{channel}/broadcasts",
         "pointer": "#/paths/~1channels~1{channel}~1broadcasts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get broadcasts by channel"
+        "summary": "Get broadcasts by channel",
+        "tags": [
+          "Programmes (TLEOs)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the editorial highlights of a given channel in TV & iPlayer.",
         "id": "operation:get:/channels/{channel}/highlights",
         "kind": "operation",
         "method": "get",
         "name": "Get_Highlights by channel_",
+        "parameters": [
+          {
+            "description": "The channel identifier to limit results to.",
+            "in": "path",
+            "name": "channel",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether to include live programmes",
+            "in": "query",
+            "name": "live",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/channels/{channel}/highlights",
         "pointer": "#/paths/~1channels~1{channel}~1highlights/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List the highlights for a channel."
+        "summary": "List the highlights for a channel.",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
@@ -265,10 +1069,82 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Programmes by channel_",
+        "parameters": [
+          {
+            "description": "The channel identifier to limit results to.",
+            "in": "path",
+            "name": "channel",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/channels/{channel}/programmes",
         "pointer": "#/paths/~1channels~1{channel}~1programmes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get programmes by channel"
+        "summary": "Get programmes by channel",
+        "tags": [
+          "Programmes (TLEOs)"
+        ]
       },
       {
         "deprecated": false,
@@ -276,10 +1152,75 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Schedule by channel_",
+        "parameters": [
+          {
+            "description": "The channel identifier to limit results to.",
+            "in": "path",
+            "name": "channel",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date to return the schedule for, yyyy-mm-dd format",
+            "in": "path",
+            "name": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/channels/{channel}/schedule/{date}",
         "pointer": "#/paths/~1channels~1{channel}~1schedule~1{date}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get schedule by channel"
+        "summary": "Get schedule by channel",
+        "tags": [
+          "Channels"
+        ]
       },
       {
         "deprecated": false,
@@ -287,32 +1228,177 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Clips_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/clips/{pid}",
         "pointer": "#/paths/~1clips~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Clips"
+        "summary": "Get Clips",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the episode for a given episode identifier.",
         "id": "operation:get:/episodes/{pid}",
         "kind": "operation",
         "method": "get",
         "name": "Get_Programme by PID_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/episodes/{pid}",
         "pointer": "#/paths/~1episodes~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Episode for a given pid."
+        "summary": "Episode for a given pid.",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Onward Journey (next programme)",
         "id": "operation:get:/episodes/{pid}/next",
         "kind": "operation",
         "method": "get",
         "name": "Get_Onward_Journey",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/episodes/{pid}/next",
         "pointer": "#/paths/~1episodes~1{pid}~1next/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Onward Journey"
+        "summary": "Get Onward Journey",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -320,10 +1406,54 @@
         "kind": "operation",
         "method": "get",
         "name": "getPostRolls",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/episodes/{pid}/postrolls",
         "pointer": "#/paths/~1episodes~1{pid}~1postrolls/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Follow-ups (post-rolls)"
+        "summary": "Get Follow-ups (post-rolls)",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -331,10 +1461,54 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Trailers (pre-rolls)_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/episodes/{pid}/prerolls",
         "pointer": "#/paths/~1episodes~1{pid}~1prerolls/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Trailers (pre-rolls)"
+        "summary": "Get Trailers (pre-rolls)",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -342,10 +1516,68 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Programme recommendations_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/episodes/{pid}/recommendations",
         "pointer": "#/paths/~1episodes~1{pid}~1recommendations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get programme recommendations"
+        "summary": "Get programme recommendations",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -353,10 +1585,98 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Programmes popular_",
+        "parameters": [
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": 4,
+            "description": "The depth to return child entities.",
+            "in": "query",
+            "name": "initial_child_count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The sort order of the results.",
+            "in": "query",
+            "name": "sort",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether to sort ascending or descending",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/groups/popular/episodes",
         "pointer": "#/paths/~1groups~1popular~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get programmes popular"
+        "summary": "Get programmes popular",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -364,10 +1684,105 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Episodes by group_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page index.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The number of results to return.",
+            "in": "query",
+            "name": "per_page",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "default": 4,
+            "description": "The depth to return child entities.",
+            "in": "query",
+            "name": "initial_child_count",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The sort order of the results.",
+            "in": "query",
+            "name": "sort",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Whether to sort ascending or descending",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/groups/{pid}/episodes",
         "pointer": "#/paths/~1groups~1{pid}~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get episodes by group, brand or series"
+        "summary": "Get episodes by group, brand or series",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -375,43 +1790,238 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Programme highlights_",
+        "parameters": [
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request additional data in the output",
+            "enum": [
+              "live",
+              "promotions"
+            ],
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/home/highlights",
         "pointer": "#/paths/~1home~1highlights/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get programme highlights"
+        "summary": "Get programme highlights",
+        "tags": [
+          "Programmes (TLEOs)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the programme for a given programme identifier.",
         "id": "operation:get:/programmes/{pid}",
         "kind": "operation",
         "method": "get",
         "name": "Get_Programmes by parent PID_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 4,
+            "description": "The depth to return child entities.",
+            "in": "query",
+            "name": "initial_child_count",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/programmes/{pid}",
         "pointer": "#/paths/~1programmes~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Programme for a given pid."
+        "summary": "Programme for a given pid.",
+        "tags": [
+          "Programmes (TLEOs)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the child episodes belonging to a given programme identifier.",
         "id": "operation:get:/programmes/{pid}/episodes",
         "kind": "operation",
         "method": "get",
         "name": "Get_Episodes by parent PID_",
+        "parameters": [
+          {
+            "description": "The programme identifier.",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 4,
+            "description": "The depth to return child entities.",
+            "in": "query",
+            "name": "initial_child_count",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/programmes/{pid}/episodes",
         "pointer": "#/paths/~1programmes~1{pid}~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Child episodes for a given programme pid."
+        "summary": "Child episodes for a given programme pid.",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of all the regions TV & iPlayer.",
         "id": "operation:get:/regions",
         "kind": "operation",
         "method": "get",
         "name": "Get_Regions_",
+        "parameters": [
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/regions",
         "pointer": "#/paths/~1regions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all regions"
+        "summary": "List all regions",
+        "tags": [
+          "Regions"
+        ]
       },
       {
         "deprecated": false,
@@ -421,8 +2031,18 @@
         "name": "Get_Schema_",
         "path": "/schema/ibl.json",
         "pointer": "#/paths/~1schema~1ibl.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get schema"
+        "summary": "Get schema",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
@@ -430,10 +2050,68 @@
         "kind": "operation",
         "method": "get",
         "name": "Search_",
+        "parameters": [
+          {
+            "description": "The term to search for.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search"
+        "summary": "Search",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -441,21 +2119,90 @@
         "kind": "operation",
         "method": "get",
         "name": "Search-suggest_",
+        "parameters": [
+          {
+            "description": "The term to search for.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The language for any applicable localised strings.",
+            "enum": [
+              "en",
+              "cy",
+              "ga",
+              "gd",
+              "pi"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "web",
+            "description": "The rights group to limit results to.",
+            "enum": [
+              "mobile",
+              "tv",
+              "web"
+            ],
+            "in": "query",
+            "name": "rights",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "available",
+            "description": "Whether to return all, or available programmes",
+            "enum": [
+              "all",
+              "available"
+            ],
+            "in": "query",
+            "name": "availability",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search-suggest",
         "pointer": "#/paths/~1search-suggest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search-suggest"
+        "summary": "Search-suggest",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the current iPlayer business layer status.",
         "id": "operation:get:/status",
         "kind": "operation",
         "method": "get",
         "name": "Get_Status_",
         "path": "/status",
         "pointer": "#/paths/~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get status"
+        "summary": "Get status",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
@@ -463,14 +2210,33 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_User store purchases_",
+        "parameters": [
+          {
+            "description": "The BBC-id cookie value",
+            "in": "query",
+            "name": "identity_cookie",
+            "required": true,
+            "type": "number:double"
+          }
+        ],
         "path": "/user/purchases",
         "pointer": "#/paths/~1user~1purchases/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basic": []
           }
         ],
-        "summary": "Get user store purchases"
+        "summary": "Get user store purchases",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -478,10 +2244,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_User store recommendations_",
+        "parameters": [
+          {
+            "description": "The BBC-id cookie value",
+            "in": "query",
+            "name": "identity_cookie",
+            "required": true,
+            "type": "number:double"
+          }
+        ],
         "path": "/user/recommendations",
         "pointer": "#/paths/~1user~1recommendations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get user store recommendations"
+        "summary": "Get user store recommendations",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -489,45 +2274,71 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_User watching_",
+        "parameters": [
+          {
+            "description": "The BBC-id cookie value",
+            "in": "query",
+            "name": "identity_cookie",
+            "required": true,
+            "type": "number:double"
+          }
+        ],
         "path": "/user/watching",
         "pointer": "#/paths/~1user~1watching/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ibl"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get user watching"
+        "summary": "Get user watching",
+        "tags": [
+          "User"
+        ]
       },
       {
         "id": "schema:added",
         "kind": "schema",
-        "name": "added"
+        "name": "added",
+        "type": "object"
       },
       {
         "id": "schema:broadcast",
         "kind": "schema",
-        "name": "broadcast"
+        "name": "broadcast",
+        "type": "object"
       },
       {
         "id": "schema:category",
         "kind": "schema",
-        "name": "category"
+        "name": "category",
+        "type": "object"
       },
       {
         "id": "schema:channel",
         "kind": "schema",
-        "name": "channel"
+        "name": "channel",
+        "type": "object"
       },
       {
         "id": "schema:clip",
         "kind": "schema",
-        "name": "clip"
+        "name": "clip",
+        "type": "object"
       },
       {
         "id": "schema:episode",
         "kind": "schema",
-        "name": "episode"
+        "name": "episode",
+        "type": "object"
       },
       {
         "id": "schema:group",
         "kind": "schema",
-        "name": "group"
+        "name": "group",
+        "type": "object"
       },
       {
         "id": "schema:ibl",
@@ -537,57 +2348,68 @@
       {
         "id": "schema:interaction",
         "kind": "schema",
-        "name": "interaction"
+        "name": "interaction",
+        "type": "object"
       },
       {
         "id": "schema:master_brand",
         "kind": "schema",
-        "name": "master_brand"
+        "name": "master_brand",
+        "type": "object"
       },
       {
         "id": "schema:programme",
         "kind": "schema",
-        "name": "programme"
+        "name": "programme",
+        "type": "object"
       },
       {
         "id": "schema:promotion",
         "kind": "schema",
-        "name": "promotion"
+        "name": "promotion",
+        "type": "object"
       },
       {
         "id": "schema:region",
         "kind": "schema",
-        "name": "region"
+        "name": "region",
+        "type": "object"
       },
       {
         "id": "schema:search_group",
         "kind": "schema",
-        "name": "search_group"
+        "name": "search_group",
+        "type": "object"
       },
       {
         "id": "schema:store_version",
         "kind": "schema",
-        "name": "store_version"
+        "name": "store_version",
+        "type": "object"
       },
       {
         "id": "schema:trailer",
         "kind": "schema",
-        "name": "trailer"
+        "name": "trailer",
+        "type": "object"
       },
       {
         "id": "schema:user_recommendation",
         "kind": "schema",
-        "name": "user_recommendation"
+        "name": "user_recommendation",
+        "type": "object"
       },
       {
         "id": "schema:version",
         "kind": "schema",
-        "name": "version"
+        "name": "version",
+        "type": "object"
       },
       {
         "id": "schema:watching",
         "kind": "schema",
-        "name": "watching"
+        "name": "watching",
+        "type": "object"
       }
     ]
   },

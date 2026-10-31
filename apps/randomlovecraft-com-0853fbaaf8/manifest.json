@@ -23,6 +23,11 @@
         "from": "randomlovecraft-com-0853fbaaf8",
         "kind": "EXPOSES",
         "to": "operation:get:/sentences/{id}"
+      },
+      {
+        "from": "schema:sentence",
+        "kind": "REFERENCES",
+        "to": "schema:book"
       }
     ],
     "nodes": [
@@ -38,8 +43,18 @@
         "name": "get-books",
         "path": "/books",
         "pointer": "#/paths/~1books/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all books"
+        "summary": "List all books",
+        "tags": [
+          "Books"
+        ]
       },
       {
         "deprecated": false,
@@ -47,10 +62,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get-sentences-from-book",
+        "parameters": [
+          {
+            "description": "Book ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/books/{id}/sentences",
         "pointer": "#/paths/~1books~1{id}~1sentences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Random sentences from a specific book"
+        "summary": "Random sentences from a specific book",
+        "tags": [
+          "Sentences"
+        ]
       },
       {
         "deprecated": false,
@@ -58,10 +99,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get-sentences",
+        "parameters": [
+          {
+            "default": 1,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/sentences",
         "pointer": "#/paths/~1sentences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "A random sentence"
+        "summary": "A random sentence",
+        "tags": [
+          "Sentences"
+        ]
       },
       {
         "deprecated": false,
@@ -69,20 +129,41 @@
         "kind": "operation",
         "method": "get",
         "name": "get-specific-sentence",
+        "parameters": [
+          {
+            "description": "Sentence ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sentences/{id}",
         "pointer": "#/paths/~1sentences~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "A specific sentence"
+        "summary": "A specific sentence",
+        "tags": [
+          "Sentences"
+        ]
       },
       {
         "id": "schema:book",
         "kind": "schema",
-        "name": "book"
+        "name": "book",
+        "type": "object"
       },
       {
         "id": "schema:sentence",
         "kind": "schema",
-        "name": "sentence"
+        "name": "sentence",
+        "type": "object"
       }
     ]
   },

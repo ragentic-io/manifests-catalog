@@ -17,12 +17,12 @@
       {
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/deployments/{id}"
+        "to": "operation:get:/v3/deployments/{id}"
       },
       {
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
-        "to": "operation:get:/v3/deployments/{id}"
+        "to": "operation:delete:/v3/deployments/{id}"
       },
       {
         "from": "elmah-io-b51946df5c",
@@ -62,17 +62,17 @@
       {
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/messages/{logId}"
-      },
-      {
-        "from": "elmah-io-b51946df5c",
-        "kind": "EXPOSES",
         "to": "operation:get:/v3/messages/{logId}"
       },
       {
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
         "to": "operation:post:/v3/messages/{logId}"
+      },
+      {
+        "from": "elmah-io-b51946df5c",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v3/messages/{logId}"
       },
       {
         "from": "elmah-io-b51946df5c",
@@ -87,12 +87,12 @@
       {
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v3/messages/{logId}/{id}"
+        "to": "operation:get:/v3/messages/{logId}/{id}"
       },
       {
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
-        "to": "operation:get:/v3/messages/{logId}/{id}"
+        "to": "operation:delete:/v3/messages/{logId}/{id}"
       },
       {
         "from": "elmah-io-b51946df5c",
@@ -113,6 +113,131 @@
         "from": "elmah-io-b51946df5c",
         "kind": "EXPOSES",
         "to": "operation:get:/v3/uptimechecks"
+      },
+      {
+        "from": "operation:get:/v3/deployments",
+        "kind": "RETURNS",
+        "to": "schema:Deployment"
+      },
+      {
+        "from": "operation:post:/v3/deployments",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateDeployment"
+      },
+      {
+        "from": "operation:post:/v3/deployments",
+        "kind": "RETURNS",
+        "to": "schema:CreateDeploymentResult"
+      },
+      {
+        "from": "operation:get:/v3/deployments/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Deployment"
+      },
+      {
+        "from": "operation:post:/v3/heartbeats/{logId}/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateHeartbeat"
+      },
+      {
+        "from": "operation:get:/v3/logs",
+        "kind": "RETURNS",
+        "to": "schema:Log"
+      },
+      {
+        "from": "operation:post:/v3/logs",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateLog"
+      },
+      {
+        "from": "operation:post:/v3/logs",
+        "kind": "RETURNS",
+        "to": "schema:CreateLogResult"
+      },
+      {
+        "from": "operation:get:/v3/logs/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Log"
+      },
+      {
+        "from": "operation:get:/v3/messages/{logId}",
+        "kind": "RETURNS",
+        "to": "schema:MessagesResult"
+      },
+      {
+        "from": "operation:post:/v3/messages/{logId}",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateMessage"
+      },
+      {
+        "from": "operation:post:/v3/messages/{logId}",
+        "kind": "RETURNS",
+        "to": "schema:CreateMessageResult"
+      },
+      {
+        "from": "operation:delete:/v3/messages/{logId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Search"
+      },
+      {
+        "from": "operation:post:/v3/messages/{logId}/_bulk",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateMessage"
+      },
+      {
+        "from": "operation:post:/v3/messages/{logId}/_bulk",
+        "kind": "RETURNS",
+        "to": "schema:CreateBulkMessageResult"
+      },
+      {
+        "from": "operation:post:/v3/messages/{logId}/_fix",
+        "kind": "ACCEPTS",
+        "to": "schema:Search"
+      },
+      {
+        "from": "operation:get:/v3/messages/{logId}/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/v3/uptimechecks",
+        "kind": "RETURNS",
+        "to": "schema:UptimeCheck"
+      },
+      {
+        "from": "schema:CreateMessage",
+        "kind": "REFERENCES",
+        "to": "schema:Breadcrumb"
+      },
+      {
+        "from": "schema:CreateMessage",
+        "kind": "REFERENCES",
+        "to": "schema:Item"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Breadcrumb"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Item"
+      },
+      {
+        "from": "schema:MessageOverview",
+        "kind": "REFERENCES",
+        "to": "schema:Breadcrumb"
+      },
+      {
+        "from": "schema:MessageOverview",
+        "kind": "REFERENCES",
+        "to": "schema:Item"
+      },
+      {
+        "from": "schema:MessagesResult",
+        "kind": "REFERENCES",
+        "to": "schema:MessageOverview"
       }
     ],
     "nodes": [
@@ -122,418 +247,1285 @@
       },
       {
         "deprecated": false,
+        "description": "Required permission: `deployments_read`",
         "id": "operation:get:/v3/deployments",
         "kind": "operation",
         "method": "get",
         "name": "Deployments_GetAll",
         "path": "/v3/deployments",
         "pointer": "#/paths/~1v3~1deployments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deployment[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch a list of deployments."
+        "summary": "Fetch a list of deployments.",
+        "tags": [
+          "Deployments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `deployments_write`",
         "id": "operation:post:/v3/deployments",
         "kind": "operation",
         "method": "post",
         "name": "Deployments_Create",
         "path": "/v3/deployments",
         "pointer": "#/paths/~1v3~1deployments/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CreateDeployment"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateDeploymentResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a new deployment."
+        "summary": "Create a new deployment.",
+        "tags": [
+          "Deployments"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v3/deployments/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Deployments_Delete",
-        "path": "/v3/deployments/{id}",
-        "pointer": "#/paths/~1v3~1deployments~1{id}/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Delete a deployment by its ID."
-      },
-      {
-        "deprecated": false,
+        "description": "Required permission: `deployments_read`",
         "id": "operation:get:/v3/deployments/{id}",
         "kind": "operation",
         "method": "get",
         "name": "Deployments_Get",
+        "parameters": [
+          {
+            "description": "The ID of the deployment to fetch.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/deployments/{id}",
         "pointer": "#/paths/~1v3~1deployments~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deployment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch a deployment by its ID."
+        "summary": "Fetch a deployment by its ID.",
+        "tags": [
+          "Deployments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint doesn't clear the version number of messages already annotated with this deployment version.<br/><br/>Required permission: `deployments_delete`",
+        "id": "operation:delete:/v3/deployments/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Deployments_Delete",
+        "parameters": [
+          {
+            "description": "The ID of the deployment to delete.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v3/deployments/{id}",
+        "pointer": "#/paths/~1v3~1deployments~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Delete a deployment by its ID.",
+        "tags": [
+          "Deployments"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Required permission: `heartbeats_write`",
         "id": "operation:post:/v3/heartbeats/{logId}/{id}",
         "kind": "operation",
         "method": "post",
         "name": "Heartbeats_Create",
+        "parameters": [
+          {
+            "description": "The ID of the heartbeat check.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the log containing the heartbeat check.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/heartbeats/{logId}/{id}",
         "pointer": "#/paths/~1v3~1heartbeats~1{logId}~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CreateHeartbeat"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a new heartbeat."
+        "summary": "Create a new heartbeat.",
+        "tags": [
+          "Heartbeats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `logs_read`",
         "id": "operation:get:/v3/logs",
         "kind": "operation",
         "method": "get",
         "name": "Logs_GetAll",
         "path": "/v3/logs",
         "pointer": "#/paths/~1v3~1logs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Log[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch a list of logs."
+        "summary": "Fetch a list of logs.",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `logs_write`",
         "id": "operation:post:/v3/logs",
         "kind": "operation",
         "method": "post",
         "name": "Logs_Create",
         "path": "/v3/logs",
         "pointer": "#/paths/~1v3~1logs/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CreateLog"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateLogResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a new log."
+        "summary": "Create a new log.",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `logs_read`",
         "id": "operation:get:/v3/logs/{id}",
         "kind": "operation",
         "method": "get",
         "name": "Logs_Get",
+        "parameters": [
+          {
+            "description": "The ID of the log to fetch.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/logs/{id}",
         "pointer": "#/paths/~1v3~1logs~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Log"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch a log by its ID."
+        "summary": "Fetch a log by its ID.",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `messages_write`",
         "id": "operation:get:/v3/logs/{id}/_diagnose",
         "kind": "operation",
         "method": "get",
         "name": "Logs_Diagnose",
+        "parameters": [
+          {
+            "description": "The ID of the log to diagnose.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/logs/{id}/_diagnose",
         "pointer": "#/paths/~1v3~1logs~1{id}~1_diagnose/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Help diagnose logging problems."
+        "summary": "Help diagnose logging problems.",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `logs_write`",
         "id": "operation:post:/v3/logs/{id}/_disable",
         "kind": "operation",
         "method": "post",
         "name": "Logs_Disable",
+        "parameters": [
+          {
+            "description": "The ID of the log to disable.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/logs/{id}/_disable",
         "pointer": "#/paths/~1v3~1logs~1{id}~1_disable/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Disable a log by its ID."
+        "summary": "Disable a log by its ID.",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `logs_write`",
         "id": "operation:post:/v3/logs/{id}/_enable",
         "kind": "operation",
         "method": "post",
         "name": "Logs_Enable",
+        "parameters": [
+          {
+            "description": "The ID of the log to enable.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/logs/{id}/_enable",
         "pointer": "#/paths/~1v3~1logs~1{id}~1_enable/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Enable a log by its ID."
+        "summary": "Enable a log by its ID.",
+        "tags": [
+          "Logs"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v3/messages/{logId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Messages_DeleteAll",
-        "path": "/v3/messages/{logId}",
-        "pointer": "#/paths/~1v3~1messages~1{logId}/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Deletes a list of messages by logid and query."
-      },
-      {
-        "deprecated": false,
+        "description": "Required permission: `messages_read`",
         "id": "operation:get:/v3/messages/{logId}",
         "kind": "operation",
         "method": "get",
         "name": "Messages_GetAll",
+        "parameters": [
+          {
+            "description": "The ID of the log containing the messages.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "The page number of the result.",
+            "in": "query",
+            "name": "pageIndex",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 15,
+            "description": "The number of messages to load (max 100) or 15 if not set.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A full-text or Lucene query to limit the messages by.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A start date and time to search from (not included).",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "An end date and time to search to (not included).",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "default": false,
+            "description": "Include headers like server variables and cookies in the result (slower).",
+            "in": "query",
+            "name": "includeHeaders",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/messages/{logId}",
         "pointer": "#/paths/~1v3~1messages~1{logId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessagesResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch messages from a log."
+        "summary": "Fetch messages from a log.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `messages_write`",
         "id": "operation:post:/v3/messages/{logId}",
         "kind": "operation",
         "method": "post",
         "name": "Messages_Create",
+        "parameters": [
+          {
+            "description": "The ID of the log which should contain the new message.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/messages/{logId}",
         "pointer": "#/paths/~1v3~1messages~1{logId}/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CreateMessage"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateMessageResult"
+          },
+          {
+            "status": "201",
+            "type": "CreateMessageResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "413"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a new message."
+        "summary": "Create a new message.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `messages_delete`",
+        "id": "operation:delete:/v3/messages/{logId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Messages_DeleteAll",
+        "parameters": [
+          {
+            "description": "The ID of the log containing the message.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v3/messages/{logId}",
+        "pointer": "#/paths/~1v3~1messages~1{logId}/delete",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "Search"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Deletes a list of messages by logid and query.",
+        "tags": [
+          "Messages"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Required permission: `messages_write`",
         "id": "operation:post:/v3/messages/{logId}/_bulk",
         "kind": "operation",
         "method": "post",
         "name": "Messages_CreateBulk",
+        "parameters": [
+          {
+            "description": "The ID of the log which should contain the new messages.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/messages/{logId}/_bulk",
         "pointer": "#/paths/~1v3~1messages~1{logId}~1_bulk/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "CreateMessage[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateBulkMessageResult[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create one or more new messages."
+        "summary": "Create one or more new messages.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `messages_write`",
         "id": "operation:post:/v3/messages/{logId}/_fix",
         "kind": "operation",
         "method": "post",
         "name": "Messages_FixAll",
+        "parameters": [
+          {
+            "description": "The ID of the log containing the messages.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/messages/{logId}/_fix",
         "pointer": "#/paths/~1v3~1messages~1{logId}~1_fix/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "application/json-patch+json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "Search"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Mark a list of messages as fixed by logid and query."
+        "summary": "Mark a list of messages as fixed by logid and query.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v3/messages/{logId}/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Messages_Delete",
-        "path": "/v3/messages/{logId}/{id}",
-        "pointer": "#/paths/~1v3~1messages~1{logId}~1{id}/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Delete a message by its ID."
-      },
-      {
-        "deprecated": false,
+        "description": "Required permission: `messages_read`",
         "id": "operation:get:/v3/messages/{logId}/{id}",
         "kind": "operation",
         "method": "get",
         "name": "Messages_Get",
+        "parameters": [
+          {
+            "description": "The ID of the message to fetch.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the log containing the message.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/messages/{logId}/{id}",
         "pointer": "#/paths/~1v3~1messages~1{logId}~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Message"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch a message by its ID."
+        "summary": "Fetch a message by its ID.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `messages_delete`",
+        "id": "operation:delete:/v3/messages/{logId}/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Messages_Delete",
+        "parameters": [
+          {
+            "description": "The ID of the message to delete.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the log containing the message.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v3/messages/{logId}/{id}",
+        "pointer": "#/paths/~1v3~1messages~1{logId}~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Delete a message by its ID.",
+        "tags": [
+          "Messages"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Required permission: `messages_write`",
         "id": "operation:post:/v3/messages/{logId}/{id}/_fix",
         "kind": "operation",
         "method": "post",
         "name": "Messages_Fix",
+        "parameters": [
+          {
+            "description": "The ID of the message to fix.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the log containing the message.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If set to true, all instances of the log message are set to fixed.",
+            "in": "query",
+            "name": "markAllAsFixed",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v3/messages/{logId}/{id}/_fix",
         "pointer": "#/paths/~1v3~1messages~1{logId}~1{id}~1_fix/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fix a message by its ID."
+        "summary": "Fix a message by its ID.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `messages_write`",
         "id": "operation:post:/v3/messages/{logId}/{id}/_hide",
         "kind": "operation",
         "method": "post",
         "name": "Messages_Hide",
+        "parameters": [
+          {
+            "description": "The ID of the message to hide.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the log containing the message.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/messages/{logId}/{id}/_hide",
         "pointer": "#/paths/~1v3~1messages~1{logId}~1{id}~1_hide/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Hide a message by its ID."
+        "summary": "Hide a message by its ID.",
+        "tags": [
+          "Messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `sourcemaps_write`",
         "id": "operation:post:/v3/sourcemaps/{logId}",
         "kind": "operation",
         "method": "post",
         "name": "SourceMaps_CreateOrUpdate",
+        "parameters": [
+          {
+            "description": "The ID of the log which should contain the minified JavaScript and source map.",
+            "in": "path",
+            "name": "logId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v3/sourcemaps/{logId}",
         "pointer": "#/paths/~1v3~1sourcemaps~1{logId}/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create or update a translation between a minified JavaScript path to the minified JavaScript and source map files."
+        "summary": "Create or update a translation between a minified JavaScript path to the minified JavaScript and source map files.",
+        "tags": [
+          "SourceMaps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Required permission: `uptimechecks_read`",
         "id": "operation:get:/v3/uptimechecks",
         "kind": "operation",
         "method": "get",
         "name": "UptimeChecks_GetAll",
         "path": "/v3/uptimechecks",
         "pointer": "#/paths/~1v3~1uptimechecks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UptimeCheck[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Fetch a list of uptime checks. Currently in closed beta. Get in contact to get access to this endpoint."
+        "summary": "Fetch a list of uptime checks. Currently in closed beta. Get in contact to get access to this endpoint.",
+        "tags": [
+          "UptimeChecks"
+        ]
       },
       {
+        "description": "A breadcrumb represent a step preceding a log message.",
         "id": "schema:Breadcrumb",
         "kind": "schema",
-        "name": "Breadcrumb"
+        "name": "Breadcrumb",
+        "type": "object"
       },
       {
         "id": "schema:CreateBulkMessageResult",
         "kind": "schema",
-        "name": "CreateBulkMessageResult"
+        "name": "CreateBulkMessageResult",
+        "type": "object"
       },
       {
         "id": "schema:CreateDeployment",
         "kind": "schema",
-        "name": "CreateDeployment"
+        "name": "CreateDeployment",
+        "type": "object"
       },
       {
         "id": "schema:CreateDeploymentResult",
         "kind": "schema",
-        "name": "CreateDeploymentResult"
+        "name": "CreateDeploymentResult",
+        "type": "object"
       },
       {
         "id": "schema:CreateHeartbeat",
         "kind": "schema",
-        "name": "CreateHeartbeat"
+        "name": "CreateHeartbeat",
+        "type": "object"
       },
       {
         "id": "schema:CreateLog",
         "kind": "schema",
-        "name": "CreateLog"
+        "name": "CreateLog",
+        "type": "object"
       },
       {
         "id": "schema:CreateLogResult",
         "kind": "schema",
-        "name": "CreateLogResult"
+        "name": "CreateLogResult",
+        "type": "object"
       },
       {
         "id": "schema:CreateMessage",
         "kind": "schema",
-        "name": "CreateMessage"
+        "name": "CreateMessage",
+        "type": "object"
       },
       {
         "id": "schema:CreateMessageResult",
         "kind": "schema",
-        "name": "CreateMessageResult"
+        "name": "CreateMessageResult",
+        "type": "object"
       },
       {
         "id": "schema:Deployment",
         "kind": "schema",
-        "name": "Deployment"
+        "name": "Deployment",
+        "type": "object"
       },
       {
+        "description": "Represents a key value pair.",
         "id": "schema:Item",
         "kind": "schema",
-        "name": "Item"
+        "name": "Item",
+        "type": "object"
       },
       {
         "id": "schema:Log",
         "kind": "schema",
-        "name": "Log"
+        "name": "Log",
+        "type": "object"
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:MessageOverview",
         "kind": "schema",
-        "name": "MessageOverview"
+        "name": "MessageOverview",
+        "type": "object"
       },
       {
         "id": "schema:MessagesResult",
         "kind": "schema",
-        "name": "MessagesResult"
+        "name": "MessagesResult",
+        "type": "object"
       },
       {
         "id": "schema:Search",
         "kind": "schema",
-        "name": "Search"
+        "name": "Search",
+        "type": "object"
       },
       {
         "id": "schema:UptimeCheck",
         "kind": "schema",
-        "name": "UptimeCheck"
+        "name": "UptimeCheck",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Europeanaeu_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `a7ae59c5bda784b12db97cc1bb193800b9b953d7f7bc13d7083b42b3e01e505f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Europeanaeu_profile
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/record/v2/opensearch.rss` | openSearch | basic search function following the OpenSearch specification |
-| GET | `/record/v2/search.json` | searchRecords | search for records |
-| POST | `/record/v2/search.json` | searchRecordsPost | search for records post |
-| GET | `/record/v2/translateQuery.json` | translateQueryUsingGET | translate a term to different languages |
-| GET | `/record/v2/{collectionId}/{recordId}.json` | getSingleRecordJson | get a single record in JSON format |
-| GET | `/record/v2/{collectionId}/{recordId}.jsonld` | getSingleRecordJsonLD | get single record in JSON LD format |
-| GET | `/record/v2/{collectionId}/{recordId}.rdf` | getSingleRecordRDF | get single record in RDF format) |
-| GET | `/record/v2/{collectionId}/{recordId}.schema.jsonld` | getSingleRecordSchemaOrg | get single record in Schema.org JSON LD format |
-| GET | `/record/v2/{collectionId}/{recordId}.ttl` | getSingleRecordTurtle | get single record in turtle format) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/record/v2/opensearch.rss` | openSearch | `count`, `searchTerms`*, `startIndex` | ModelAndView | yes | basic search function following the OpenSearch specification |
+| GET | `/record/v2/search.json` | searchRecords | `boost`, `callback`, `colourpalette`, `cursor`, `facet`, `hit.fl`, `hit.selectors`, `landingpage`, `lang`, `media`, `profile`, `q.source`, `q.target`, `qf`, `query`*, `reusability`, `rows`, `sort`, `start`, `text_fulltext`, `theme`, `thumbnail`, `wskey`* | ModelAndView | yes | search for records |
+| POST | `/record/v2/search.json` | searchRecordsPost | `wskey`*, body*: SearchRequest | ModelAndView |  | search for records post |
+| GET | `/record/v2/translateQuery.json` | translateQueryUsingGET | `callback`, `languageCodes`*, `profile`, `term`*, `wskey`* | ModelAndView | yes | translate a term to different languages |
+| GET | `/record/v2/{collectionId}/{recordId}.json` | getSingleRecordJson | `callback`, `collectionId`*, `lang`, `profile`, `recordId`*, `wskey`* | ModelAndView | yes | get a single record in JSON format |
+| GET | `/record/v2/{collectionId}/{recordId}.jsonld` | getSingleRecordJsonLD | `callback`, `collectionId`*, `lang`, `profile`, `recordId`*, `wskey`* | ModelAndView | yes | get single record in JSON LD format |
+| GET | `/record/v2/{collectionId}/{recordId}.rdf` | getSingleRecordRDF | `collectionId`*, `lang`, `profile`, `recordId`*, `wskey`* | ModelAndView | yes | get single record in RDF format) |
+| GET | `/record/v2/{collectionId}/{recordId}.schema.jsonld` | getSingleRecordSchemaOrg | `callback`, `collectionId`*, `lang`, `profile`, `recordId`*, `wskey`* | ModelAndView | yes | get single record in Schema.org JSON LD format |
+| GET | `/record/v2/{collectionId}/{recordId}.ttl` | getSingleRecordTurtle | `collectionId`*, `lang`, `profile`, `recordId`*, `wskey`* | ModelAndView | yes | get single record in turtle format) |

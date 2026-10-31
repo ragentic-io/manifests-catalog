@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_getsandbox.com_lib_img_logo-whi
 
 | | |
 | --- | --- |
-| Signed bundle | `37e20067b46c6aed8d44c66ef20b993284d4f4db8c20514f18c24ff5eedca17a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,14 +34,16 @@ logo: "https://api.apis.guru/v2/cache/logo/https_getsandbox.com_lib_img_logo-whi
 
 9 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/1/activity/search` | getSandboxesActivity | searchActivity |
-| GET | `/1/sandboxes` | getSandboxes | getSandboxes |
-| POST | `/1/sandboxes` | createSandbox | createSandbox |
-| DELETE | `/1/sandboxes/{sandboxName}` | deleteSandbox | deleteSandbox |
-| GET | `/1/sandboxes/{sandboxName}` | getSandbox | getSandbox |
-| PUT | `/1/sandboxes/{sandboxName}` | updateSandbox | updateSandbox |
-| GET | `/1/sandboxes/{sandboxName}/fork` | forkSandbox | forkSandbox |
-| DELETE | `/1/sandboxes/{sandboxName}/state` | deleteSandboxState | deleteSandboxState |
-| GET | `/1/sandboxes/{sandboxName}/state` | getSandboxState | getSandboxState |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/1/activity/search` | getSandboxesActivity | `fromTimestamp`, `sourceSandboxes`, `keyword`, `allTypes`, `maxResults` | ActivityMessage[] | yes | searchActivity |
+| GET | `/1/sandboxes` | getSandboxes | `filterType` | Sandbox[] | yes | getSandboxes |
+| POST | `/1/sandboxes` | createSandbox | body*: CreateSandbox | Sandbox |  | createSandbox |
+| GET | `/1/sandboxes/{sandboxName}` | getSandbox | `sandboxName`* | Sandbox | yes | getSandbox |
+| PUT | `/1/sandboxes/{sandboxName}` | updateSandbox | `sandboxName`*, body*: Sandbox | Sandbox |  | updateSandbox |
+| DELETE | `/1/sandboxes/{sandboxName}` | deleteSandbox | `sandboxName`* | — |  | deleteSandbox |
+| GET | `/1/sandboxes/{sandboxName}/fork` | forkSandbox | `sandboxName`* | Sandbox | yes | forkSandbox |
+| GET | `/1/sandboxes/{sandboxName}/state` | getSandboxState | `sandboxName`* | — | yes | getSandboxState |
+| DELETE | `/1/sandboxes/{sandboxName}/state` | deleteSandboxState | `sandboxName`* | — |  | deleteSandboxState |

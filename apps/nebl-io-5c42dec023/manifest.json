@@ -253,6 +253,316 @@
         "from": "nebl-io-5c42dec023",
         "kind": "EXPOSES",
         "to": "operation:get:/testnet/ntp1/transactioninfo/{txid}"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "ACCEPTS",
+        "to": "schema:rpcRequest"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "RETURNS",
+        "to": "schema:rpcResponse"
+      },
+      {
+        "from": "operation:get:/ins/addr/{address}",
+        "kind": "RETURNS",
+        "to": "schema:getAddressResponse"
+      },
+      {
+        "from": "operation:get:/ins/addr/{address}/balance",
+        "kind": "RETURNS",
+        "to": "schema:getAddressBalanceResponse"
+      },
+      {
+        "from": "operation:get:/ins/addr/{address}/totalReceived",
+        "kind": "RETURNS",
+        "to": "schema:getAddressTotalReceivedResponse"
+      },
+      {
+        "from": "operation:get:/ins/addr/{address}/totalSent",
+        "kind": "RETURNS",
+        "to": "schema:getAddressTotalSentResponse"
+      },
+      {
+        "from": "operation:get:/ins/addr/{address}/unconfirmedBalance",
+        "kind": "RETURNS",
+        "to": "schema:getAddressUnconfirmedBalanceResponse"
+      },
+      {
+        "from": "operation:get:/ins/addr/{address}/utxo",
+        "kind": "RETURNS",
+        "to": "schema:getAddressUtxosResponse"
+      },
+      {
+        "from": "operation:get:/ins/block-index/{blockindex}",
+        "kind": "RETURNS",
+        "to": "schema:getBlockIndexResponse"
+      },
+      {
+        "from": "operation:get:/ins/block/{blockhash}",
+        "kind": "RETURNS",
+        "to": "schema:getBlockResponse"
+      },
+      {
+        "from": "operation:get:/ins/rawtx/{txid}",
+        "kind": "RETURNS",
+        "to": "schema:getRawTxResponse"
+      },
+      {
+        "from": "operation:get:/ins/status",
+        "kind": "RETURNS",
+        "to": "schema:getStatusResponse"
+      },
+      {
+        "from": "operation:get:/ins/sync",
+        "kind": "RETURNS",
+        "to": "schema:getSyncResponse"
+      },
+      {
+        "from": "operation:post:/ins/tx/send",
+        "kind": "ACCEPTS",
+        "to": "schema:sendTxRequest"
+      },
+      {
+        "from": "operation:post:/ins/tx/send",
+        "kind": "RETURNS",
+        "to": "schema:broadcastTxResponse"
+      },
+      {
+        "from": "operation:get:/ins/tx/{txid}",
+        "kind": "RETURNS",
+        "to": "schema:getTxResponse"
+      },
+      {
+        "from": "operation:get:/ins/txs",
+        "kind": "RETURNS",
+        "to": "schema:getTxsResponse"
+      },
+      {
+        "from": "operation:get:/ntp1/addressinfo/{address}",
+        "kind": "RETURNS",
+        "to": "schema:getAddressInfoResponse"
+      },
+      {
+        "from": "operation:post:/ntp1/broadcast",
+        "kind": "ACCEPTS",
+        "to": "schema:broadcastTxRequest"
+      },
+      {
+        "from": "operation:post:/ntp1/broadcast",
+        "kind": "RETURNS",
+        "to": "schema:broadcastTxResponse"
+      },
+      {
+        "from": "operation:post:/ntp1/burntoken",
+        "kind": "ACCEPTS",
+        "to": "schema:burnTokenRequest"
+      },
+      {
+        "from": "operation:post:/ntp1/burntoken",
+        "kind": "RETURNS",
+        "to": "schema:burnTokenResponse"
+      },
+      {
+        "from": "operation:post:/ntp1/issue",
+        "kind": "ACCEPTS",
+        "to": "schema:issueTokenRequest"
+      },
+      {
+        "from": "operation:post:/ntp1/issue",
+        "kind": "RETURNS",
+        "to": "schema:issueTokenResponse"
+      },
+      {
+        "from": "operation:post:/ntp1/sendtoken",
+        "kind": "ACCEPTS",
+        "to": "schema:sendTokenRequest"
+      },
+      {
+        "from": "operation:post:/ntp1/sendtoken",
+        "kind": "RETURNS",
+        "to": "schema:sendTokenResponse"
+      },
+      {
+        "from": "operation:get:/ntp1/stakeholders/{tokenid}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenHoldersResponse"
+      },
+      {
+        "from": "operation:get:/ntp1/tokenid/{tokensymbol}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenIdResponse"
+      },
+      {
+        "from": "operation:get:/ntp1/tokenmetadata/{tokenid}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenMetadataResponse"
+      },
+      {
+        "from": "operation:get:/ntp1/tokenmetadata/{tokenid}/{utxo}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenMetadataResponse"
+      },
+      {
+        "from": "operation:get:/ntp1/transactioninfo/{txid}",
+        "kind": "RETURNS",
+        "to": "schema:getTransactionInfoResponse"
+      },
+      {
+        "from": "operation:get:/testnet/faucet",
+        "kind": "RETURNS",
+        "to": "schema:getFaucetResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/addr/{address}",
+        "kind": "RETURNS",
+        "to": "schema:getAddressResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/addr/{address}/balance",
+        "kind": "RETURNS",
+        "to": "schema:getAddressBalanceResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/addr/{address}/totalReceived",
+        "kind": "RETURNS",
+        "to": "schema:getAddressTotalReceivedResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/addr/{address}/totalSent",
+        "kind": "RETURNS",
+        "to": "schema:getAddressTotalSentResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/addr/{address}/unconfirmedBalance",
+        "kind": "RETURNS",
+        "to": "schema:getAddressUnconfirmedBalanceResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/addr/{address}/utxo",
+        "kind": "RETURNS",
+        "to": "schema:getAddressUtxosResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/block-index/{blockindex}",
+        "kind": "RETURNS",
+        "to": "schema:getBlockIndexResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/block/{blockhash}",
+        "kind": "RETURNS",
+        "to": "schema:getBlockResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/rawtx/{txid}",
+        "kind": "RETURNS",
+        "to": "schema:getRawTxResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/status",
+        "kind": "RETURNS",
+        "to": "schema:getStatusResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/sync",
+        "kind": "RETURNS",
+        "to": "schema:getSyncResponse"
+      },
+      {
+        "from": "operation:post:/testnet/ins/tx/send",
+        "kind": "ACCEPTS",
+        "to": "schema:sendTxRequest"
+      },
+      {
+        "from": "operation:post:/testnet/ins/tx/send",
+        "kind": "RETURNS",
+        "to": "schema:broadcastTxResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/tx/{txid}",
+        "kind": "RETURNS",
+        "to": "schema:getTxResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ins/txs",
+        "kind": "RETURNS",
+        "to": "schema:getTxsResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ntp1/addressinfo/{address}",
+        "kind": "RETURNS",
+        "to": "schema:getAddressInfoResponse"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/broadcast",
+        "kind": "ACCEPTS",
+        "to": "schema:broadcastTxRequest"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/broadcast",
+        "kind": "RETURNS",
+        "to": "schema:broadcastTxResponse"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/burntoken",
+        "kind": "ACCEPTS",
+        "to": "schema:burnTokenRequest"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/burntoken",
+        "kind": "RETURNS",
+        "to": "schema:burnTokenResponse"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/issue",
+        "kind": "ACCEPTS",
+        "to": "schema:issueTokenRequest"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/issue",
+        "kind": "RETURNS",
+        "to": "schema:issueTokenResponse"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/sendtoken",
+        "kind": "ACCEPTS",
+        "to": "schema:sendTokenRequest"
+      },
+      {
+        "from": "operation:post:/testnet/ntp1/sendtoken",
+        "kind": "RETURNS",
+        "to": "schema:sendTokenResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ntp1/stakeholders/{tokenid}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenHoldersResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ntp1/tokenid/{tokensymbol}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenIdResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ntp1/tokenmetadata/{tokenid}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenMetadataResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ntp1/tokenmetadata/{tokenid}/{utxo}",
+        "kind": "RETURNS",
+        "to": "schema:getTokenMetadataResponse"
+      },
+      {
+        "from": "operation:get:/testnet/ntp1/transactioninfo/{txid}",
+        "kind": "RETURNS",
+        "to": "schema:getTransactionInfoResponse"
+      },
+      {
+        "from": "schema:getTxsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:getTxResponse"
       }
     ],
     "nodes": [
@@ -262,712 +572,1872 @@
       },
       {
         "deprecated": false,
+        "description": "Call any Neblio RPC command from the Neblio API libraries.",
         "id": "operation:post:/",
         "kind": "operation",
         "method": "post",
         "name": "json_rpc",
         "path": "/",
         "pointer": "#/paths/~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "rpcRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "rpcResponse"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "rpcAuth": []
           }
         ],
-        "summary": "Send a JSON-RPC call to a localhost neblio-Qt or nebliod node"
+        "summary": "Send a JSON-RPC call to a localhost neblio-Qt or nebliod node",
+        "tags": [
+          "JSON-RPC"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL address object containing information on a specific address",
         "id": "operation:get:/ins/addr/{address}",
         "kind": "operation",
         "method": "get",
         "name": "getAddress",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/addr/{address}",
         "pointer": "#/paths/~1ins~1addr~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns address object"
+        "summary": "Returns address object",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL address balance in satoshis",
         "id": "operation:get:/ins/addr/{address}/balance",
         "kind": "operation",
         "method": "get",
         "name": "getAddressBalance",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/addr/{address}/balance",
         "pointer": "#/paths/~1ins~1addr~1{address}~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressBalanceResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns address balance in sats"
+        "summary": "Returns address balance in sats",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns total NEBL received by address in satoshis",
         "id": "operation:get:/ins/addr/{address}/totalReceived",
         "kind": "operation",
         "method": "get",
         "name": "getAddressTotalReceived",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/addr/{address}/totalReceived",
         "pointer": "#/paths/~1ins~1addr~1{address}~1totalReceived/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressTotalReceivedResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns total received by address in sats"
+        "summary": "Returns total received by address in sats",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns total NEBL sent by address in satoshis",
         "id": "operation:get:/ins/addr/{address}/totalSent",
         "kind": "operation",
         "method": "get",
         "name": "getAddressTotalSent",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/addr/{address}/totalSent",
         "pointer": "#/paths/~1ins~1addr~1{address}~1totalSent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressTotalSentResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns total sent by address in sats"
+        "summary": "Returns total sent by address in sats",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL address unconfirmed balance in satoshis",
         "id": "operation:get:/ins/addr/{address}/unconfirmedBalance",
         "kind": "operation",
         "method": "get",
         "name": "getAddressUnconfirmedBalance",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/addr/{address}/unconfirmedBalance",
         "pointer": "#/paths/~1ins~1addr~1{address}~1unconfirmedBalance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressUnconfirmedBalanceResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns address unconfirmed balance in sats"
+        "summary": "Returns address unconfirmed balance in sats",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information on each Unspent Transaction Output contained at an address",
         "id": "operation:get:/ins/addr/{address}/utxo",
         "kind": "operation",
         "method": "get",
         "name": "getAddressUtxos",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/addr/{address}/utxo",
         "pointer": "#/paths/~1ins~1addr~1{address}~1utxo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressUtxosResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all UTXOs at a given address"
+        "summary": "Returns all UTXOs at a given address",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the block hash of a block at a given block index",
         "id": "operation:get:/ins/block-index/{blockindex}",
         "kind": "operation",
         "method": "get",
         "name": "getBlockIndex",
+        "parameters": [
+          {
+            "description": "Block Index",
+            "in": "path",
+            "name": "blockindex",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/ins/block-index/{blockindex}",
         "pointer": "#/paths/~1ins~1block-index~1{blockindex}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getBlockIndexResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns block hash of block"
+        "summary": "Returns block hash of block",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns blockchain data for a given block based upon the block hash",
         "id": "operation:get:/ins/block/{blockhash}",
         "kind": "operation",
         "method": "get",
         "name": "getBlock",
+        "parameters": [
+          {
+            "description": "Block Hash",
+            "in": "path",
+            "name": "blockhash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/block/{blockhash}",
         "pointer": "#/paths/~1ins~1block~1{blockhash}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getBlockResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns information regarding a Neblio block"
+        "summary": "Returns information regarding a Neblio block",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns raw transaction hex representing a NEBL transaction",
         "id": "operation:get:/ins/rawtx/{txid}",
         "kind": "operation",
         "method": "get",
         "name": "getRawTx",
+        "parameters": [
+          {
+            "description": "Transaction ID",
+            "in": "path",
+            "name": "txid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/rawtx/{txid}",
         "pointer": "#/paths/~1ins~1rawtx~1{txid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getRawTxResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns raw transaction hex"
+        "summary": "Returns raw transaction hex",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Utility API for calling several blockchain node functions - getInfo, getDifficulty, getBestBlockHash, getLastBlockHash",
         "id": "operation:get:/ins/status",
         "kind": "operation",
         "method": "get",
         "name": "getStatus",
+        "parameters": [
+          {
+            "description": "Function to call, getInfo, getDifficulty, getBestBlockHash, or getLastBlockHash",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ins/status",
         "pointer": "#/paths/~1ins~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getStatusResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Utility API for calling several blockchain node functions"
+        "summary": "Utility API for calling several blockchain node functions",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information on the node's sync progress",
         "id": "operation:get:/ins/sync",
         "kind": "operation",
         "method": "get",
         "name": "getSync",
         "path": "/ins/sync",
         "pointer": "#/paths/~1ins~1sync/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getSyncResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get node sync status"
+        "summary": "Get node sync status",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Broadcasts a signed raw transaction to the network.",
         "id": "operation:post:/ins/tx/send",
         "kind": "operation",
         "method": "post",
         "name": "sendTx",
         "path": "/ins/tx/send",
         "pointer": "#/paths/~1ins~1tx~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sendTxRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "broadcastTxResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Broadcasts a signed raw transaction to the network (not NTP1 specific)"
+        "summary": "Broadcasts a signed raw transaction to the network (not NTP1 specific)",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL transaction object representing a NEBL transaction",
         "id": "operation:get:/ins/tx/{txid}",
         "kind": "operation",
         "method": "get",
         "name": "getTx",
+        "parameters": [
+          {
+            "description": "Transaction ID",
+            "in": "path",
+            "name": "txid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ins/tx/{txid}",
         "pointer": "#/paths/~1ins~1tx~1{txid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTxResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns transaction object"
+        "summary": "Returns transaction object",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all transactions by block or address",
         "id": "operation:get:/ins/txs",
         "kind": "operation",
         "method": "get",
         "name": "getTxs",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "query",
+            "name": "address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Block Hash",
+            "in": "query",
+            "name": "block",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number to display",
+            "in": "query",
+            "name": "pageNum",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/ins/txs",
         "pointer": "#/paths/~1ins~1txs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTxsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get transactions by block or address"
+        "summary": "Get transactions by block or address",
+        "tags": [
+          "Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns both NEBL and NTP1 token UTXOs held at the given address.",
         "id": "operation:get:/ntp1/addressinfo/{address}",
         "kind": "operation",
         "method": "get",
         "name": "getAddressInfo",
+        "parameters": [
+          {
+            "description": "Neblio Address to get information on.",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ntp1/addressinfo/{address}",
         "pointer": "#/paths/~1ntp1~1addressinfo~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressInfoResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Information On a Neblio Address"
+        "summary": "Information On a Neblio Address",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Broadcasts a signed raw transaction to the network.",
         "id": "operation:post:/ntp1/broadcast",
         "kind": "operation",
         "method": "post",
         "name": "broadcastTx",
         "path": "/ntp1/broadcast",
         "pointer": "#/paths/~1ntp1~1broadcast/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "broadcastTxRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "broadcastTxResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Broadcasts a signed raw transaction to the network"
+        "summary": "Broadcasts a signed raw transaction to the network",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Builds an unsigned raw transaction that burns an NTP1 token on the Neblio blockchain.",
         "id": "operation:post:/ntp1/burntoken",
         "kind": "operation",
         "method": "post",
         "name": "burnToken",
         "path": "/ntp1/burntoken",
         "pointer": "#/paths/~1ntp1~1burntoken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "burnTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "burnTokenResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Builds a transaction that burns an NTP1 Token"
+        "summary": "Builds a transaction that burns an NTP1 Token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Builds an unsigned raw transaction that issues a new NTP1 token on the Neblio blockchain.",
         "id": "operation:post:/ntp1/issue",
         "kind": "operation",
         "method": "post",
         "name": "issueToken",
         "path": "/ntp1/issue",
         "pointer": "#/paths/~1ntp1~1issue/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "issueTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "issueTokenResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Builds a transaction that issues a new NTP1 Token"
+        "summary": "Builds a transaction that issues a new NTP1 Token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Builds an unsigned raw transaction that sends an NTP1 token on the Neblio blockchain.",
         "id": "operation:post:/ntp1/sendtoken",
         "kind": "operation",
         "method": "post",
         "name": "sendToken",
         "path": "/ntp1/sendtoken",
         "pointer": "#/paths/~1ntp1~1sendtoken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sendTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "sendTokenResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Builds a transaction that sends an NTP1 Token"
+        "summary": "Builds a transaction that sends an NTP1 Token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the the the addresses holding a token and how many tokens are held",
         "id": "operation:get:/ntp1/stakeholders/{tokenid}",
         "kind": "operation",
         "method": "get",
         "name": "getTokenHolders",
+        "parameters": [
+          {
+            "description": "TokenId to request metadata for",
+            "in": "path",
+            "name": "tokenid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ntp1/stakeholders/{tokenid}",
         "pointer": "#/paths/~1ntp1~1stakeholders~1{tokenid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenHoldersResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Addresses Holding a Token"
+        "summary": "Get Addresses Holding a Token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Translates a token symbol to a tokenId if a token exists with that symbol on the network",
         "id": "operation:get:/ntp1/tokenid/{tokensymbol}",
         "kind": "operation",
         "method": "get",
         "name": "getTokenId",
+        "parameters": [
+          {
+            "description": "Token symbol",
+            "in": "path",
+            "name": "tokensymbol",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ntp1/tokenid/{tokensymbol}",
         "pointer": "#/paths/~1ntp1~1tokenid~1{tokensymbol}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenIdResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the tokenId representing a token"
+        "summary": "Returns the tokenId representing a token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the metadata associated with a token.",
         "id": "operation:get:/ntp1/tokenmetadata/{tokenid}",
         "kind": "operation",
         "method": "get",
         "name": "getTokenMetadata",
+        "parameters": [
+          {
+            "description": "TokenId to request metadata for",
+            "in": "path",
+            "name": "tokenid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses",
+            "in": "query",
+            "name": "verbosity",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/ntp1/tokenmetadata/{tokenid}",
         "pointer": "#/paths/~1ntp1~1tokenmetadata~1{tokenid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenMetadataResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Metadata of Token"
+        "summary": "Get Metadata of Token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the metadata associated with a token for that specific utxo instead of the issuance transaction.",
         "id": "operation:get:/ntp1/tokenmetadata/{tokenid}/{utxo}",
         "kind": "operation",
         "method": "get",
         "name": "getTokenMetadataOfUtxo",
+        "parameters": [
+          {
+            "description": "TokenId to request metadata for",
+            "in": "path",
+            "name": "tokenid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specific UTXO to request metadata for",
+            "in": "path",
+            "name": "utxo",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses",
+            "in": "query",
+            "name": "verbosity",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/ntp1/tokenmetadata/{tokenid}/{utxo}",
         "pointer": "#/paths/~1ntp1~1tokenmetadata~1{tokenid}~1{utxo}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenMetadataResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get UTXO Metadata of Token"
+        "summary": "Get UTXO Metadata of Token",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns detailed information regarding an NTP1 transaction.",
         "id": "operation:get:/ntp1/transactioninfo/{txid}",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionInfo",
+        "parameters": [
+          {
+            "description": "Neblio txid to get information on.",
+            "in": "path",
+            "name": "txid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ntp1/transactioninfo/{txid}",
         "pointer": "#/paths/~1ntp1~1transactioninfo~1{txid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTransactionInfoResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Information On an NTP1 Transaction"
+        "summary": "Information On an NTP1 Transaction",
+        "tags": [
+          "NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Withdraw testnet NEBL to your Neblio Testnet address.",
         "id": "operation:get:/testnet/faucet",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getFaucet",
+        "parameters": [
+          {
+            "description": "Your Neblio Testnet Address",
+            "in": "query",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Amount of NEBL to withdrawal in satoshis",
+            "in": "query",
+            "name": "amount",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/testnet/faucet",
         "pointer": "#/paths/~1testnet~1faucet/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getFaucetResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Withdraws testnet NEBL to the specified address"
+        "summary": "Withdraws testnet NEBL to the specified address",
+        "tags": [
+          "Testnet-Faucet"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL address object containing information on a specific address",
         "id": "operation:get:/testnet/ins/addr/{address}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddress",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/addr/{address}",
         "pointer": "#/paths/~1testnet~1ins~1addr~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns address object"
+        "summary": "Returns address object",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL address balance in satoshis",
         "id": "operation:get:/testnet/ins/addr/{address}/balance",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddressBalance",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/addr/{address}/balance",
         "pointer": "#/paths/~1testnet~1ins~1addr~1{address}~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressBalanceResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns address balance in sats"
+        "summary": "Returns address balance in sats",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns total NEBL received by address in satoshis",
         "id": "operation:get:/testnet/ins/addr/{address}/totalReceived",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddressTotalReceived",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/addr/{address}/totalReceived",
         "pointer": "#/paths/~1testnet~1ins~1addr~1{address}~1totalReceived/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressTotalReceivedResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns total received by address in sats"
+        "summary": "Returns total received by address in sats",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns total NEBL sent by address in satoshis",
         "id": "operation:get:/testnet/ins/addr/{address}/totalSent",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddressTotalSent",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/addr/{address}/totalSent",
         "pointer": "#/paths/~1testnet~1ins~1addr~1{address}~1totalSent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressTotalSentResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns total sent by address in sats"
+        "summary": "Returns total sent by address in sats",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL address unconfirmed balance in satoshis",
         "id": "operation:get:/testnet/ins/addr/{address}/unconfirmedBalance",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddressUnconfirmedBalance",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/addr/{address}/unconfirmedBalance",
         "pointer": "#/paths/~1testnet~1ins~1addr~1{address}~1unconfirmedBalance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressUnconfirmedBalanceResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns address unconfirmed balance in sats"
+        "summary": "Returns address unconfirmed balance in sats",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information on each Unspent Transaction Output contained at an address",
         "id": "operation:get:/testnet/ins/addr/{address}/utxo",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddressUtxos",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/addr/{address}/utxo",
         "pointer": "#/paths/~1testnet~1ins~1addr~1{address}~1utxo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressUtxosResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns all UTXOs at a given address"
+        "summary": "Returns all UTXOs at a given address",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the block hash of a block at a given block index",
         "id": "operation:get:/testnet/ins/block-index/{blockindex}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getBlockIndex",
+        "parameters": [
+          {
+            "description": "Block Index",
+            "in": "path",
+            "name": "blockindex",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/testnet/ins/block-index/{blockindex}",
         "pointer": "#/paths/~1testnet~1ins~1block-index~1{blockindex}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getBlockIndexResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns block hash of block"
+        "summary": "Returns block hash of block",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns blockchain data for a given block based upon the block hash",
         "id": "operation:get:/testnet/ins/block/{blockhash}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getBlock",
+        "parameters": [
+          {
+            "description": "Block Hash",
+            "in": "path",
+            "name": "blockhash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/block/{blockhash}",
         "pointer": "#/paths/~1testnet~1ins~1block~1{blockhash}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getBlockResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns information regarding a Neblio block"
+        "summary": "Returns information regarding a Neblio block",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns raw transaction hex representing a NEBL transaction",
         "id": "operation:get:/testnet/ins/rawtx/{txid}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getRawTx",
+        "parameters": [
+          {
+            "description": "Transaction ID",
+            "in": "path",
+            "name": "txid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/rawtx/{txid}",
         "pointer": "#/paths/~1testnet~1ins~1rawtx~1{txid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getRawTxResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns raw transaction hex"
+        "summary": "Returns raw transaction hex",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Utility API for calling several blockchain node functions - getInfo, getDifficulty, getBestBlockHash, getLastBlockHash",
         "id": "operation:get:/testnet/ins/status",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getStatus",
+        "parameters": [
+          {
+            "description": "Function to call, getInfo, getDifficulty, getBestBlockHash, or getLastBlockHash",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/status",
         "pointer": "#/paths/~1testnet~1ins~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getStatusResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Utility API for calling several blockchain node functions"
+        "summary": "Utility API for calling several blockchain node functions",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information on the node's sync progress",
         "id": "operation:get:/testnet/ins/sync",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getSync",
         "path": "/testnet/ins/sync",
         "pointer": "#/paths/~1testnet~1ins~1sync/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getSyncResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get node sync status"
+        "summary": "Get node sync status",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Broadcasts a signed raw transaction to the network.",
         "id": "operation:post:/testnet/ins/tx/send",
         "kind": "operation",
         "method": "post",
         "name": "testnet_sendTx",
         "path": "/testnet/ins/tx/send",
         "pointer": "#/paths/~1testnet~1ins~1tx~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sendTxRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "broadcastTxResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Broadcasts a signed raw transaction to the network (not NTP1 specific)"
+        "summary": "Broadcasts a signed raw transaction to the network (not NTP1 specific)",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns NEBL transaction object representing a NEBL transaction",
         "id": "operation:get:/testnet/ins/tx/{txid}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTx",
+        "parameters": [
+          {
+            "description": "Transaction ID",
+            "in": "path",
+            "name": "txid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ins/tx/{txid}",
         "pointer": "#/paths/~1testnet~1ins~1tx~1{txid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTxResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns transaction object"
+        "summary": "Returns transaction object",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all transactions by block or address",
         "id": "operation:get:/testnet/ins/txs",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTxs",
+        "parameters": [
+          {
+            "description": "Address",
+            "in": "query",
+            "name": "address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Block Hash",
+            "in": "query",
+            "name": "block",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number to display",
+            "in": "query",
+            "name": "pageNum",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/testnet/ins/txs",
         "pointer": "#/paths/~1testnet~1ins~1txs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTxsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get transactions by block or address"
+        "summary": "Get transactions by block or address",
+        "tags": [
+          "Testnet-Insight"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns both NEBL and NTP1 token UTXOs held at the given address.",
         "id": "operation:get:/testnet/ntp1/addressinfo/{address}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getAddressInfo",
+        "parameters": [
+          {
+            "description": "Neblio Address to get information on.",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ntp1/addressinfo/{address}",
         "pointer": "#/paths/~1testnet~1ntp1~1addressinfo~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getAddressInfoResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Information On a Neblio Address"
+        "summary": "Information On a Neblio Address",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Broadcasts a signed raw transaction to the network.",
         "id": "operation:post:/testnet/ntp1/broadcast",
         "kind": "operation",
         "method": "post",
         "name": "testnet_broadcastTx",
         "path": "/testnet/ntp1/broadcast",
         "pointer": "#/paths/~1testnet~1ntp1~1broadcast/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "broadcastTxRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "broadcastTxResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Broadcasts a signed raw transaction to the network"
+        "summary": "Broadcasts a signed raw transaction to the network",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Builds an unsigned raw transaction that burns an NTP1 token on the Neblio blockchain.",
         "id": "operation:post:/testnet/ntp1/burntoken",
         "kind": "operation",
         "method": "post",
         "name": "testnet_burnToken",
         "path": "/testnet/ntp1/burntoken",
         "pointer": "#/paths/~1testnet~1ntp1~1burntoken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "burnTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "burnTokenResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Builds a transaction that burns an NTP1 Token"
+        "summary": "Builds a transaction that burns an NTP1 Token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Builds an unsigned raw transaction that issues a new NTP1 token on the Neblio blockchain.",
         "id": "operation:post:/testnet/ntp1/issue",
         "kind": "operation",
         "method": "post",
         "name": "testnet_issueToken",
         "path": "/testnet/ntp1/issue",
         "pointer": "#/paths/~1testnet~1ntp1~1issue/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "issueTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "issueTokenResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Builds a transaction that issues a new NTP1 Token"
+        "summary": "Builds a transaction that issues a new NTP1 Token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Builds an unsigned raw transaction that sends an NTP1 token on the Neblio blockchain.",
         "id": "operation:post:/testnet/ntp1/sendtoken",
         "kind": "operation",
         "method": "post",
         "name": "testnet_sendToken",
         "path": "/testnet/ntp1/sendtoken",
         "pointer": "#/paths/~1testnet~1ntp1~1sendtoken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sendTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "sendTokenResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Builds a transaction that sends an NTP1 Token"
+        "summary": "Builds a transaction that sends an NTP1 Token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the the the addresses holding a token and how many tokens are held",
         "id": "operation:get:/testnet/ntp1/stakeholders/{tokenid}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTokenHolders",
+        "parameters": [
+          {
+            "description": "TokenId to request metadata for",
+            "in": "path",
+            "name": "tokenid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ntp1/stakeholders/{tokenid}",
         "pointer": "#/paths/~1testnet~1ntp1~1stakeholders~1{tokenid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenHoldersResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Addresses Holding a Token"
+        "summary": "Get Addresses Holding a Token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Translates a token symbol to a tokenId if a token exists with that symbol on the network",
         "id": "operation:get:/testnet/ntp1/tokenid/{tokensymbol}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTokenId",
+        "parameters": [
+          {
+            "description": "Token symbol",
+            "in": "path",
+            "name": "tokensymbol",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ntp1/tokenid/{tokensymbol}",
         "pointer": "#/paths/~1testnet~1ntp1~1tokenid~1{tokensymbol}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenIdResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the tokenId representing a token"
+        "summary": "Returns the tokenId representing a token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the metadata associated with a token.",
         "id": "operation:get:/testnet/ntp1/tokenmetadata/{tokenid}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTokenMetadata",
+        "parameters": [
+          {
+            "description": "TokenId to request metadata for",
+            "in": "path",
+            "name": "tokenid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses",
+            "in": "query",
+            "name": "verbosity",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/testnet/ntp1/tokenmetadata/{tokenid}",
         "pointer": "#/paths/~1testnet~1ntp1~1tokenmetadata~1{tokenid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenMetadataResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Metadata of Token"
+        "summary": "Get Metadata of Token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the metadata associated with a token for that specific utxo instead of the issuance transaction.",
         "id": "operation:get:/testnet/ntp1/tokenmetadata/{tokenid}/{utxo}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTokenMetadataOfUtxo",
+        "parameters": [
+          {
+            "description": "TokenId to request metadata for",
+            "in": "path",
+            "name": "tokenid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specific UTXO to request metadata for",
+            "in": "path",
+            "name": "utxo",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses",
+            "in": "query",
+            "name": "verbosity",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/testnet/ntp1/tokenmetadata/{tokenid}/{utxo}",
         "pointer": "#/paths/~1testnet~1ntp1~1tokenmetadata~1{tokenid}~1{utxo}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTokenMetadataResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get UTXO Metadata of Token"
+        "summary": "Get UTXO Metadata of Token",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns detailed information regarding an NTP1 transaction.",
         "id": "operation:get:/testnet/ntp1/transactioninfo/{txid}",
         "kind": "operation",
         "method": "get",
         "name": "testnet_getTransactionInfo",
+        "parameters": [
+          {
+            "description": "Neblio txid to get information on.",
+            "in": "path",
+            "name": "txid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/testnet/ntp1/transactioninfo/{txid}",
         "pointer": "#/paths/~1testnet~1ntp1~1transactioninfo~1{txid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "getTransactionInfoResponse"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Information On an NTP1 Transaction"
+        "summary": "Information On an NTP1 Transaction",
+        "tags": [
+          "Testnet-NTP1"
+        ]
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:broadcastTxRequest",
         "kind": "schema",
-        "name": "broadcastTxRequest"
+        "name": "broadcastTxRequest",
+        "type": "object"
       },
       {
         "id": "schema:broadcastTxResponse",
         "kind": "schema",
-        "name": "broadcastTxResponse"
+        "name": "broadcastTxResponse",
+        "type": "object"
       },
       {
         "id": "schema:burnTokenRequest",
         "kind": "schema",
-        "name": "burnTokenRequest"
+        "name": "burnTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:burnTokenResponse",
         "kind": "schema",
-        "name": "burnTokenResponse"
+        "name": "burnTokenResponse",
+        "type": "object"
       },
       {
+        "description": "Address balance in satoshis",
         "id": "schema:getAddressBalanceResponse",
         "kind": "schema",
-        "name": "getAddressBalanceResponse"
+        "name": "getAddressBalanceResponse",
+        "type": "number"
       },
       {
         "id": "schema:getAddressInfoResponse",
         "kind": "schema",
-        "name": "getAddressInfoResponse"
+        "name": "getAddressInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:getAddressResponse",
         "kind": "schema",
-        "name": "getAddressResponse"
+        "name": "getAddressResponse",
+        "type": "object"
       },
       {
+        "description": "Address total received in satoshis",
         "id": "schema:getAddressTotalReceivedResponse",
         "kind": "schema",
-        "name": "getAddressTotalReceivedResponse"
+        "name": "getAddressTotalReceivedResponse",
+        "type": "number"
       },
       {
+        "description": "Address total sent in satoshis",
         "id": "schema:getAddressTotalSentResponse",
         "kind": "schema",
-        "name": "getAddressTotalSentResponse"
+        "name": "getAddressTotalSentResponse",
+        "type": "number"
       },
       {
+        "description": "Address unconfirmed balance in satoshis",
         "id": "schema:getAddressUnconfirmedBalanceResponse",
         "kind": "schema",
-        "name": "getAddressUnconfirmedBalanceResponse"
+        "name": "getAddressUnconfirmedBalanceResponse",
+        "type": "number"
       },
       {
+        "description": "Array of objects representing this address' UTXOs",
         "id": "schema:getAddressUtxosResponse",
         "kind": "schema",
-        "name": "getAddressUtxosResponse"
+        "name": "getAddressUtxosResponse",
+        "type": "object[]"
       },
       {
         "id": "schema:getBlockIndexResponse",
         "kind": "schema",
-        "name": "getBlockIndexResponse"
+        "name": "getBlockIndexResponse",
+        "type": "object"
       },
       {
         "id": "schema:getBlockResponse",
         "kind": "schema",
-        "name": "getBlockResponse"
+        "name": "getBlockResponse",
+        "type": "object"
       },
       {
         "id": "schema:getFaucetResponse",
         "kind": "schema",
-        "name": "getFaucetResponse"
+        "name": "getFaucetResponse",
+        "type": "object"
       },
       {
         "id": "schema:getRawTxResponse",
         "kind": "schema",
-        "name": "getRawTxResponse"
+        "name": "getRawTxResponse",
+        "type": "object"
       },
       {
+        "description": "Depending on the function called, the structure and information contained in this object will vary",
         "id": "schema:getStatusResponse",
         "kind": "schema",
-        "name": "getStatusResponse"
+        "name": "getStatusResponse",
+        "type": "object"
       },
       {
+        "description": "Object containing node sync status",
         "id": "schema:getSyncResponse",
         "kind": "schema",
-        "name": "getSyncResponse"
+        "name": "getSyncResponse",
+        "type": "object"
       },
       {
         "id": "schema:getTokenHoldersResponse",
         "kind": "schema",
-        "name": "getTokenHoldersResponse"
+        "name": "getTokenHoldersResponse",
+        "type": "object"
       },
       {
         "id": "schema:getTokenIdResponse",
         "kind": "schema",
-        "name": "getTokenIdResponse"
+        "name": "getTokenIdResponse",
+        "type": "object"
       },
       {
         "id": "schema:getTokenMetadataResponse",
         "kind": "schema",
-        "name": "getTokenMetadataResponse"
+        "name": "getTokenMetadataResponse",
+        "type": "object"
       },
       {
         "id": "schema:getTransactionInfoResponse",
         "kind": "schema",
-        "name": "getTransactionInfoResponse"
+        "name": "getTransactionInfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:getTxResponse",
         "kind": "schema",
-        "name": "getTxResponse"
+        "name": "getTxResponse",
+        "type": "object"
       },
       {
+        "description": "Object containing an array of transaction objects",
         "id": "schema:getTxsResponse",
         "kind": "schema",
-        "name": "getTxsResponse"
+        "name": "getTxsResponse",
+        "type": "object"
       },
       {
         "id": "schema:issueTokenRequest",
         "kind": "schema",
-        "name": "issueTokenRequest"
+        "name": "issueTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:issueTokenResponse",
         "kind": "schema",
-        "name": "issueTokenResponse"
+        "name": "issueTokenResponse",
+        "type": "object"
       },
       {
         "id": "schema:rpcRequest",
         "kind": "schema",
-        "name": "rpcRequest"
+        "name": "rpcRequest",
+        "type": "object"
       },
       {
+        "description": "Object containing the JSON response from the Neblio node.",
         "id": "schema:rpcResponse",
         "kind": "schema",
-        "name": "rpcResponse"
+        "name": "rpcResponse",
+        "type": "object"
       },
       {
         "id": "schema:sendTokenRequest",
         "kind": "schema",
-        "name": "sendTokenRequest"
+        "name": "sendTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:sendTokenResponse",
         "kind": "schema",
-        "name": "sendTokenResponse"
+        "name": "sendTokenResponse",
+        "type": "object"
       },
       {
         "id": "schema:sendTxRequest",
         "kind": "schema",
-        "name": "sendTxRequest"
+        "name": "sendTxRequest",
+        "type": "object"
       }
     ]
   },

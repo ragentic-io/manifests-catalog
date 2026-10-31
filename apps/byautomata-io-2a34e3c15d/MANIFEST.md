@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_api.specs.byau
 
 | | |
 | --- | --- |
-| Signed bundle | `4870752909fb58474e545271cd9bc45846ba634da54b01659354d96de20bfbd3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_api.specs.byau
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/contentpro-search` | get /contentpro-search | Send search terms to receive the most relevant articles and companies. |
-| POST | `/contentpro-similar-text` | post /contentpro-similar-text | The /contentpro-similar-text endpoint accepts and arbitrary piece of text and returns similar articles and blogs written by companies. |
-| GET | `/search` | get /search | Send search terms to receive the most relevant companies along with text snippets. |
-| GET | `/similar` | get /similar | Send a company website to receive a list of companies related to them. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/contentpro-search` | get /contentpro-search | `terms`* | object | yes | Send search terms to receive the most relevant articles and companies. |
+| POST | `/contentpro-similar-text` | post /contentpro-similar-text | body*: object | object |  | The /contentpro-similar-text endpoint accepts and arbitrary piece of text and returns similar articles and blogs written by companies. |
+| GET | `/search` | get /search | `terms`*, `page` | object | yes | Send search terms to receive the most relevant companies along with text snippets. |
+| GET | `/similar` | get /similar | `link`*, `page` | object | yes | Send a company website to receive a list of companies related to them. |

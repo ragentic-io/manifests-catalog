@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars.githubusercontent.com_u
 
 | | |
 | --- | --- |
-| Signed bundle | `a808146d442ab3fd318546777aa9c44c0a56ec623b8d96779b45774b1dfbd7c7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,38 +34,40 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars.githubusercontent.com_u
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/user` | get /user | Get info about the current user |
-| GET | `/workspaces` | get /workspaces | Get all workspaces for the current user |
-| GET | `/workspaces/{workspace_slug}` | get /workspaces/{workspace_slug} | Get a workspace |
-| GET | `/{workspace_slug}/activities` | get /{workspace_slug}/activities | List activities for a workspace |
-| POST | `/{workspace_slug}/activities` | post /{workspace_slug}/activities | Create a Custom or a Content activity for a new or existing member |
-| GET | `/{workspace_slug}/activities/{id}` | get /{workspace_slug}/activities/{id} | Get an activity in the workspace |
-| GET | `/{workspace_slug}/activity_types` | get /{workspace_slug}/activity_types | List all activity types for a workspace |
-| GET | `/{workspace_slug}/members` | get /{workspace_slug}/members | List members in a workspace |
-| POST | `/{workspace_slug}/members` | post /{workspace_slug}/members | Create or update a member |
-| GET | `/{workspace_slug}/members/find` | get /{workspace_slug}/members/find | Find a member by an identity |
-| DELETE | `/{workspace_slug}/members/{member_slug}` | delete /{workspace_slug}/members/{member_slug} | Delete a member |
-| GET | `/{workspace_slug}/members/{member_slug}` | get /{workspace_slug}/members/{member_slug} | Get a member |
-| PUT | `/{workspace_slug}/members/{member_slug}` | put /{workspace_slug}/members/{member_slug} | Update a member |
-| GET | `/{workspace_slug}/members/{member_slug}/activities` | get /{workspace_slug}/members/{member_slug}/activities | List activities for a member |
-| POST | `/{workspace_slug}/members/{member_slug}/activities` | post /{workspace_slug}/members/{member_slug}/activities | Create a Custom or a Content activity for a member |
-| DELETE | `/{workspace_slug}/members/{member_slug}/activities/{id}` | delete /{workspace_slug}/members/{member_slug}/activities/{id} | Delete a post activity |
-| PUT | `/{workspace_slug}/members/{member_slug}/activities/{id}` | put /{workspace_slug}/members/{member_slug}/activities/{id} | Update a custom activity for a member |
-| DELETE | `/{workspace_slug}/members/{member_slug}/identities` | delete /{workspace_slug}/members/{member_slug}/identities | Remove identity from a member |
-| POST | `/{workspace_slug}/members/{member_slug}/identities` | post /{workspace_slug}/members/{member_slug}/identities | Add identity to a member |
-| GET | `/{workspace_slug}/members/{member_slug}/notes` | get /{workspace_slug}/members/{member_slug}/notes | Get the member's notes |
-| POST | `/{workspace_slug}/members/{member_slug}/notes` | post /{workspace_slug}/members/{member_slug}/notes | Create a note |
-| PUT | `/{workspace_slug}/members/{member_slug}/notes/{id}` | put /{workspace_slug}/members/{member_slug}/notes/{id} | Update a note |
-| GET | `/{workspace_slug}/organizations` | get /{workspace_slug}/organizations | List organizations in a workspace |
-| GET | `/{workspace_slug}/organizations/{organization_id}` | get /{workspace_slug}/organizations/{organization_id} | Get an organization |
-| PUT | `/{workspace_slug}/organizations/{organization_id}` | put /{workspace_slug}/organizations/{organization_id} | Update an organization |
-| GET | `/{workspace_slug}/organizations/{organization_id}/activities` | get /{workspace_slug}/organizations/{organization_id}/activities | List member activities in an organization |
-| GET | `/{workspace_slug}/organizations/{organization_id}/members` | get /{workspace_slug}/organizations/{organization_id}/members | List members in an organization |
-| GET | `/{workspace_slug}/reports` | get /{workspace_slug}/reports | Get a workspace stats |
-| GET | `/{workspace_slug}/webhooks` | get /{workspace_slug}/webhooks | List webhooks in a workspace |
-| POST | `/{workspace_slug}/webhooks` | post /{workspace_slug}/webhooks | Create a webhook |
-| DELETE | `/{workspace_slug}/webhooks/{id}` | delete /{workspace_slug}/webhooks/{id} | Delete a webhook |
-| GET | `/{workspace_slug}/webhooks/{id}` | get /{workspace_slug}/webhooks/{id} | Get a webhook |
-| PUT | `/{workspace_slug}/webhooks/{id}` | put /{workspace_slug}/webhooks/{id} | Update a webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/user` | get /user | — | — | yes | Get info about the current user |
+| GET | `/workspaces` | get /workspaces | — | — | yes | Get all workspaces for the current user |
+| GET | `/workspaces/{workspace_slug}` | get /workspaces/{workspace_slug} | `workspace_slug`*, `include_orbit_level_counts` | — | yes | Get a workspace |
+| GET | `/{workspace_slug}/activities` | get /{workspace_slug}/activities | `workspace_slug`*, `affiliation`, `member_tags`, `orbit`, `activity_type`, `identity`, `company[]`, `title[]`, `regions[]`, `countries[]`, `cities[]`, `start_date`, `end_date`, `relative`, `page`, `direction`, `items`, `sort`, `type` | — | yes | List activities for a workspace |
+| POST | `/{workspace_slug}/activities` | post /{workspace_slug}/activities | `workspace_slug`*, body: activity_and_identity | — |  | Create a Custom or a Content activity for a new or existing member |
+| GET | `/{workspace_slug}/activities/{id}` | get /{workspace_slug}/activities/{id} | `workspace_slug`*, `id`* | — | yes | Get an activity in the workspace |
+| GET | `/{workspace_slug}/activity_types` | get /{workspace_slug}/activity_types | `workspace_slug`* | — | yes | List all activity types for a workspace |
+| GET | `/{workspace_slug}/members` | get /{workspace_slug}/members | `workspace_slug`*, `affiliation`, `member_tags`, `orbit`, `activity_type`, `identity`, `company[]`, `title[]`, `regions[]`, `countries[]`, `cities[]`, `start_date`, `end_date`, `relative`, `query`, `page`, `direction`, `items`, `activities_count_min`, `activities_count_max`, `sort`, `type` | — | yes | List members in a workspace |
+| POST | `/{workspace_slug}/members` | post /{workspace_slug}/members | `workspace_slug`*, body: member_and_identity | — |  | Create or update a member |
+| GET | `/{workspace_slug}/members/find` | get /{workspace_slug}/members/find | `workspace_slug`*, `source`, `source_host`, `uid`, `username`, `email`, `github` | — | yes | Find a member by an identity |
+| GET | `/{workspace_slug}/members/{member_slug}` | get /{workspace_slug}/members/{member_slug} | `workspace_slug`*, `member_slug`* | — | yes | Get a member |
+| PUT | `/{workspace_slug}/members/{member_slug}` | put /{workspace_slug}/members/{member_slug} | `workspace_slug`*, `member_slug`*, body: member | — |  | Update a member |
+| DELETE | `/{workspace_slug}/members/{member_slug}` | delete /{workspace_slug}/members/{member_slug} | `workspace_slug`*, `member_slug`* | — |  | Delete a member |
+| GET | `/{workspace_slug}/members/{member_slug}/activities` | get /{workspace_slug}/members/{member_slug}/activities | `workspace_slug`*, `member_slug`*, `page`, `direction`, `items`, `sort`, `activity_type`, `type` | — | yes | List activities for a member |
+| POST | `/{workspace_slug}/members/{member_slug}/activities` | post /{workspace_slug}/members/{member_slug}/activities | `workspace_slug`*, `member_slug`*, body: custom_or_post_activity | — |  | Create a Custom or a Content activity for a member |
+| PUT | `/{workspace_slug}/members/{member_slug}/activities/{id}` | put /{workspace_slug}/members/{member_slug}/activities/{id} | `workspace_slug`*, `member_slug`*, `id`*, body: activity | — |  | Update a custom activity for a member |
+| DELETE | `/{workspace_slug}/members/{member_slug}/activities/{id}` | delete /{workspace_slug}/members/{member_slug}/activities/{id} | `workspace_slug`*, `member_slug`*, `id`* | — |  | Delete a post activity |
+| POST | `/{workspace_slug}/members/{member_slug}/identities` | post /{workspace_slug}/members/{member_slug}/identities | `workspace_slug`*, `member_slug`*, body: identity | — |  | Add identity to a member |
+| DELETE | `/{workspace_slug}/members/{member_slug}/identities` | delete /{workspace_slug}/members/{member_slug}/identities | `workspace_slug`*, `member_slug`*, body: identity | — |  | Remove identity from a member |
+| GET | `/{workspace_slug}/members/{member_slug}/notes` | get /{workspace_slug}/members/{member_slug}/notes | `workspace_slug`*, `member_slug`*, `page` | — | yes | Get the member's notes |
+| POST | `/{workspace_slug}/members/{member_slug}/notes` | post /{workspace_slug}/members/{member_slug}/notes | `workspace_slug`*, `member_slug`*, body: note | — |  | Create a note |
+| PUT | `/{workspace_slug}/members/{member_slug}/notes/{id}` | put /{workspace_slug}/members/{member_slug}/notes/{id} | `workspace_slug`*, `member_slug`*, `id`*, body: note | — |  | Update a note |
+| GET | `/{workspace_slug}/organizations` | get /{workspace_slug}/organizations | `workspace_slug`*, `query`, `page`, `direction`, `items`, `sort` | — | yes | List organizations in a workspace |
+| GET | `/{workspace_slug}/organizations/{organization_id}` | get /{workspace_slug}/organizations/{organization_id} | `workspace_slug`*, `organization_id`* | — | yes | Get an organization |
+| PUT | `/{workspace_slug}/organizations/{organization_id}` | put /{workspace_slug}/organizations/{organization_id} | `workspace_slug`*, `organization_id`*, body: organization | — |  | Update an organization |
+| GET | `/{workspace_slug}/organizations/{organization_id}/activities` | get /{workspace_slug}/organizations/{organization_id}/activities | `workspace_slug`*, `organization_id`*, `page`, `direction`, `items`, `sort`, `activity_type` | — | yes | List member activities in an organization |
+| GET | `/{workspace_slug}/organizations/{organization_id}/members` | get /{workspace_slug}/organizations/{organization_id}/members | `workspace_slug`*, `organization_id`*, `page`, `items` | — | yes | List members in an organization |
+| GET | `/{workspace_slug}/reports` | get /{workspace_slug}/reports | `workspace_slug`*, `start_date`, `end_date`, `relative`, `properties`, `activity_type`, `type` | — | yes | Get a workspace stats |
+| GET | `/{workspace_slug}/webhooks` | get /{workspace_slug}/webhooks | `workspace_slug`* | — | yes | List webhooks in a workspace |
+| POST | `/{workspace_slug}/webhooks` | post /{workspace_slug}/webhooks | `workspace_slug`*, body: webhook_subscription | — |  | Create a webhook |
+| GET | `/{workspace_slug}/webhooks/{id}` | get /{workspace_slug}/webhooks/{id} | `workspace_slug`*, `id`* | — | yes | Get a webhook |
+| PUT | `/{workspace_slug}/webhooks/{id}` | put /{workspace_slug}/webhooks/{id} | `workspace_slug`*, `id`*, body: webhook_subscription | — |  | Update a webhook |
+| DELETE | `/{workspace_slug}/webhooks/{id}` | delete /{workspace_slug}/webhooks/{id} | `workspace_slug`*, `id`* | — |  | Delete a webhook |

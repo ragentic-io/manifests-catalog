@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_clickmeter.com
 
 | | |
 | --- | --- |
-| Signed bundle | `319b8b96ea4eede88dbd05ab93b89d47a9746f38e45177868f104307472789d8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,109 +34,111 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_clickmeter.com
 
 55 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | Account_Get | Retrieve current account data |
-| POST | `/account` | Account_Post | Update current account data |
-| GET | `/account/domainwhitelist` | Account_GetDomainWhitelist | Retrieve list of a domains allowed to redirect in DDU mode |
-| POST | `/account/domainwhitelist` | Account_PutDomainWhitelist | Create an domain entry |
-| DELETE | `/account/domainwhitelist/{whitelistId}` | Account_DeleteDomainWhitelist | Delete an domain entry |
-| GET | `/account/guests` | Account_GetGuests | Retrieve list of a guest |
-| POST | `/account/guests` | Account_PutGuest | Create a guest |
-| GET | `/account/guests/count` | Account_GetGuestsCount | Retrieve count of guests |
-| DELETE | `/account/guests/{guestId}` | Account_DeleteGuest | Delete a guest |
-| GET | `/account/guests/{guestId}` | Account_GetGuest | Retrieve a guest |
-| POST | `/account/guests/{guestId}` | Account_PostGuest | Update a guest |
-| GET | `/account/guests/{guestId}/permissions` | Account_GetPermissions | Retrieve permissions for a guest |
-| GET | `/account/guests/{guestId}/permissions/count` | Account_GetPermissionsCount | Retrieve count of the permissions for a guest |
-| POST | `/account/guests/{guestId}/{type}/permissions/patch` | post /account/guests/{guestId}/{type}/permissions/patch | Change the permission on a shared object |
-| PUT | `/account/guests/{guestId}/{type}/permissions/patch` | Account_PatchPermissions | Change the permission on a shared object |
-| GET | `/account/ipblacklist` | Account_GetIpBlacklist | Retrieve list of a ip to exclude from event tracking |
-| POST | `/account/ipblacklist` | Account_PutIpBlacklist | Create an ip blacklist entry |
-| DELETE | `/account/ipblacklist/{blacklistId}` | Account_DeleteIpBlacklist | Delete an ip blacklist entry |
-| GET | `/account/plan` | Account_GetPlan | Retrieve current account plan |
-| GET | `/aggregated` | Aggregated_GetStatisticsSingle | Retrieve statistics about this customer for a timeframe |
-| GET | `/aggregated/list` | Aggregated_GetStatisticsList | Retrieve statistics about this customer for a timeframe grouped by some temporal entity (day/week/month) |
-| GET | `/aggregated/summary/conversions` | Aggregated_GetConversionsSummary | Retrieve statistics about a subset of conversions for a timeframe with conversions data |
-| GET | `/aggregated/summary/datapoints` | Aggregated_GetDatapointsSummary | Retrieve statistics about a subset of datapoints for a timeframe with datapoints data |
-| GET | `/aggregated/summary/groups` | Aggregated_GetGroupsSummary | Retrieve statistics about a subset of groups for a timeframe with groups data |
-| GET | `/clickstream` | ClickStream_Get | Retrieve the latest list of events of this account. Limited to last 100. |
-| GET | `/conversions` | Conversions_Get | Retrieve a list of conversions |
-| POST | `/conversions` | Conversions_Put | Create a conversion |
-| GET | `/conversions/aggregated/list` | Conversions_GetStatisticsAllList | Retrieve statistics about this customer for a timeframe related to a subset of conversions grouped by some temporal entity (day/week/month) |
-| GET | `/conversions/count` | Conversions_Count | Retrieve a count of conversions |
-| DELETE | `/conversions/{conversionId}` | Conversions_Delete | Delete conversion specified by id |
-| GET | `/conversions/{conversionId}` | get /conversions/{conversionId} | Retrieve conversion specified by id |
-| POST | `/conversions/{conversionId}` | Conversions_Post | Update conversion specified by id |
-| GET | `/conversions/{conversionId}/aggregated` | Conversions_GetStatisticsSingle | Retrieve statistics about this conversion for a timeframe |
-| GET | `/conversions/{conversionId}/aggregated/list` | Conversions_GetStatisticsList | Retrieve statistics about this conversion for a timeframe grouped by some temporal entity (day/week/month) |
-| GET | `/conversions/{conversionId}/datapoints` | Conversions_GetDatapoints | Retrieve a list of datapoints connected to this conversion |
-| PUT | `/conversions/{conversionId}/datapoints/batch/patch` | put /conversions/{conversionId}/datapoints/batch/patch | Modify the association between a conversion and multiple datapoints |
-| GET | `/conversions/{conversionId}/datapoints/count` | Conversions_GetDatapointsCount | Retrieve a count of datapoints connected to this conversion |
-| PUT | `/conversions/{conversionId}/datapoints/patch` | Conversions_Patch | Modify the association between a conversion and a datapoint |
-| GET | `/conversions/{conversionId}/hits` | Conversions_GetHits | Retrieve the list of events related to this conversion. |
-| PUT | `/conversions/{conversionId}/notes` | Conversions_PatchNotes | Fast patch the "notes" field of a conversion |
-| GET | `/datapoints` | DataPoints_Get | List of all the datapoints associated to the user |
-| POST | `/datapoints` | DataPoints_Put | Create a datapoint |
-| GET | `/datapoints/aggregated` | DataPoints_GetStatisticsAggregatedSingle | Retrieve statistics about this customer for a timeframe by groups |
-| GET | `/datapoints/aggregated/list` | DataPoints_GetStatisticsAllList | Retrieve statistics about all datapoints of this customer for a timeframe grouped by some temporal entity (day/week/month) |
-| DELETE | `/datapoints/batch` | DataPoints_BatchDelete | Delete multiple datapoints |
-| POST | `/datapoints/batch` | DataPoints_BatchPost | Update multiple datapoints |
-| PUT | `/datapoints/batch` | DataPoints_BatchPut | Create multiple datapoints |
-| GET | `/datapoints/count` | DataPoints_Count | Count the datapoints associated to the user |
-| DELETE | `/datapoints/{id}` | DataPoints_Delete | Delete a datapoint |
-| GET | `/datapoints/{id}` | get /datapoints/{id} | Get a datapoint |
-| POST | `/datapoints/{id}` | DataPoints_Post | Update a datapoint |
-| GET | `/datapoints/{id}/aggregated` | DataPoints_GetStatisticsSingle | Retrieve statistics about this datapoint for a timeframe |
-| GET | `/datapoints/{id}/aggregated/list` | DataPoints_GetStatisticsList | Retrieve statistics about this datapoint for a timeframe grouped by some temporal entity (day/week/month) |
-| PUT | `/datapoints/{id}/favourite` | DataPoints_PatchFavourite | Fast switch the "favourite" field of a datapoint |
-| GET | `/datapoints/{id}/hits` | DataPoints_GetHits | Retrieve the list of events related to this datapoint. |
-| PUT | `/datapoints/{id}/notes` | DataPoints_PatchNotes | Fast patch the "notes" field of a datapoint |
-| GET | `/domains` | Domains_Get | Retrieve a list of domains |
-| POST | `/domains` | Domains_Put | Create a domain |
-| GET | `/domains/count` | Domains_Count | Retrieve count of domains |
-| DELETE | `/domains/{id}` | Domains_Delete | Delete a domain |
-| GET | `/domains/{id}` | get /domains/{id} | Get a domain |
-| POST | `/domains/{id}` | Domains_Update | Update a domain |
-| GET | `/groups` | Groups_Get | List of all the groups associated to the user. |
-| POST | `/groups` | Groups_Put | Create a group |
-| GET | `/groups/aggregated` | Groups_GetStatisticsAggregatedSingle | Retrieve statistics about this customer for a timeframe by groups |
-| GET | `/groups/aggregated/list` | Groups_GetStatisticsAllList | Retrieve statistics about all groups of this customer for a timeframe grouped by some temporal entity (day/week/month) |
-| GET | `/groups/count` | Groups_Count | Count the groups associated to the user. |
-| DELETE | `/groups/{id}` | Groups_Delete | Delete group specified by id |
-| GET | `/groups/{id}` | get /groups/{id} | Get a group |
-| POST | `/groups/{id}` | Groups_Post | Update a group |
-| GET | `/groups/{id}/aggregated` | Groups_GetStatisticsSingle | Retrieve statistics about this group for a timeframe |
-| GET | `/groups/{id}/aggregated/list` | Groups_GetStatisticsList | Retrieve statistics about this group for a timeframe grouped by some temporal entity (day/week/month) |
-| GET | `/groups/{id}/aggregated/summary` | Groups_GetDatapointsSummary | Retrieve statistics about a subset of datapoints for a timeframe with datapoints data |
-| GET | `/groups/{id}/datapoints` | Groups_GetDatapoints | List of all the datapoints associated to the user in this group. |
-| POST | `/groups/{id}/datapoints` | Groups_PutDatapoint | Create a datapoint in this group |
-| GET | `/groups/{id}/datapoints/count` | Groups_GetDatapointsCount | Count the datapoints associated to the user in this group. |
-| PUT | `/groups/{id}/favourite` | Groups_PatchFavourite | Fast switch the "favourite" field of a group |
-| GET | `/groups/{id}/hits` | Groups_GetHits | Retrieve the list of events related to this group. |
-| PUT | `/groups/{id}/notes` | Groups_PatchNotes | Fast patch the "notes" field of a group |
-| GET | `/hits` | Hits_GetHits | Retrieve the list of events related to this account. |
-| GET | `/me` | Me_GetMe | Retrieve current account data |
-| GET | `/me/plan` | Me_GetMePlan | Retrieve current account plan |
-| GET | `/retargeting` | Retargeting_Get | List of all the retargeting scripts associated to the user |
-| POST | `/retargeting` | Retargeting_Put | Creates a retargeting script |
-| GET | `/retargeting/count` | Retargeting_Count | Retrieve count of retargeting scripts |
-| DELETE | `/retargeting/{id}` | Retargeting_Delete | Deletes a retargeting script (and remove associations) |
-| GET | `/retargeting/{id}` | get /retargeting/{id} | Get a retargeting script object |
-| POST | `/retargeting/{id}` | Retargeting_Post | Updates a retargeting script |
-| GET | `/retargeting/{id}/datapoints` | Retargeting_GetDatapoints | List of all the datapoints associated to the retargeting script. |
-| GET | `/retargeting/{id}/datapoints/count` | Retargeting_GetDatapointsCount | Count the datapoints associated to the retargeting script. |
-| GET | `/tags` | Tags_Get | List of all the groups associated to the user filtered by this tag. |
-| POST | `/tags` | Tags_Put | Create a tag |
-| GET | `/tags/count` | Tags_Count | List of all the groups associated to the user filtered by this tag. |
-| DELETE | `/tags/{tagId}` | Tags_Delete | Delete a tag |
-| GET | `/tags/{tagId}` | get /tags/{tagId} | Retrieve a tag |
-| DELETE | `/tags/{tagId}/datapoints` | Tags_DeleteRelatedDatapoints | Delete the association of this tag with all datapoints |
-| GET | `/tags/{tagId}/datapoints` | Tags_GetDatapoints | List of all the datapoints associated to the user filtered by this tag |
-| GET | `/tags/{tagId}/datapoints/count` | Tags_GetDatapointsCount | Count the datapoints associated to the user filtered by this tag |
-| PUT | `/tags/{tagId}/datapoints/patch` | Tags_PatchDataPoint | Associate/Deassociate a tag with a datapoint |
-| DELETE | `/tags/{tagId}/groups` | Tags_DeleteRelatedGroups | Delete the association of this tag with all groups |
-| GET | `/tags/{tagId}/groups` | Tags_GetGroups | List of all the groups associated to the user filtered by this tag. |
-| GET | `/tags/{tagId}/groups/count` | Tags_GetGroupsCount | Count the groups associated to the user filtered by this tag |
-| PUT | `/tags/{tagId}/groups/patch` | Tags_PatchGroup | Associate/Deassociate a tag with a group |
-| PUT | `/tags/{tagId}/name` | Tags_PatchTagName | Fast patch a tag name |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | Account_Get | — | Api.Core.Dto.Accounting.User | yes | Retrieve current account data |
+| POST | `/account` | Account_Post | body*: Api.Core.Dto.Accounting.User | Api.Core.Dto.Accounting.User |  | Update current account data |
+| GET | `/account/domainwhitelist` | Account_GetDomainWhitelist | `offset`, `limit` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Accounting.DomainWhitelistEntry_ | yes | Retrieve list of a domains allowed to redirect in DDU mode |
+| POST | `/account/domainwhitelist` | Account_PutDomainWhitelist | body*: Api.Core.Dto.Accounting.DomainWhitelistEntry | Api.Core.Dto.Accounting.DomainWhitelistEntry |  | Create an domain entry |
+| DELETE | `/account/domainwhitelist/{whitelistId}` | Account_DeleteDomainWhitelist | `whitelistId`* | Api.Core.Dto.Accounting.DomainWhitelistEntry |  | Delete an domain entry |
+| GET | `/account/guests` | Account_GetGuests | `offset`, `limit`, `sortBy`, `sortDirection`, `textSearch` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | Retrieve list of a guest |
+| POST | `/account/guests` | Account_PutGuest | body*: Api.Core.Dto.Accounting.Guest | Api.Core.Dto.Accounting.Guest |  | Create a guest |
+| GET | `/account/guests/count` | Account_GetGuestsCount | `textSearch` | Api.Core.Responses.CountResponce | yes | Retrieve count of guests |
+| GET | `/account/guests/{guestId}` | Account_GetGuest | `guestId`* | Api.Core.Dto.Accounting.Guest | yes | Retrieve a guest |
+| POST | `/account/guests/{guestId}` | Account_PostGuest | `guestId`*, body*: Api.Core.Dto.Accounting.Guest | Api.Core.Dto.Accounting.Guest |  | Update a guest |
+| DELETE | `/account/guests/{guestId}` | Account_DeleteGuest | `guestId`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete a guest |
+| GET | `/account/guests/{guestId}/permissions` | Account_GetPermissions | `guestId`*, `entityType`, `offset`, `limit`, `type`, `entityId` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Grants.Grant_ | yes | Retrieve permissions for a guest |
+| GET | `/account/guests/{guestId}/permissions/count` | Account_GetPermissionsCount | `guestId`*, `entityType`, `type`, `entityId` | Api.Core.Responses.CountResponce | yes | Retrieve count of the permissions for a guest |
+| PUT | `/account/guests/{guestId}/{type}/permissions/patch` | Account_PatchPermissions | `guestId`*, `type`*, body*: Api.Core.Requests.PermissionPatchRequest | Api.Core.Responses.EntityUri_System.Int64_ |  | Change the permission on a shared object |
+| POST | `/account/guests/{guestId}/{type}/permissions/patch` | post /account/guests/{guestId}/{type}/permissions/patch | `guestId`*, `type`*, body*: Api.Core.Requests.PermissionPatchRequest | Api.Core.Responses.EntityUri_System.Int64_ |  | Change the permission on a shared object |
+| GET | `/account/ipblacklist` | Account_GetIpBlacklist | `offset`, `limit` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Accounting.IpBlacklistEntry_ | yes | Retrieve list of a ip to exclude from event tracking |
+| POST | `/account/ipblacklist` | Account_PutIpBlacklist | body*: Api.Core.Dto.Accounting.IpBlacklistEntry | Api.Core.Dto.Accounting.IpBlacklistEntry |  | Create an ip blacklist entry |
+| DELETE | `/account/ipblacklist/{blacklistId}` | Account_DeleteIpBlacklist | `blacklistId`* | Api.Core.Dto.Accounting.IpBlacklistEntry |  | Delete an ip blacklist entry |
+| GET | `/account/plan` | Account_GetPlan | — | Api.Core.Dto.Accounting.Plan | yes | Retrieve current account plan |
+| GET | `/aggregated` | Aggregated_GetStatisticsSingle | `timeFrame`*, `fromDay`, `toDay`, `hourly`, `onlyFavorites` | Api.Core.Dto.Aggregated.AggregatedResult | yes | Retrieve statistics about this customer for a timeframe |
+| GET | `/aggregated/list` | Aggregated_GetStatisticsList | `timeFrame`*, `fromDay`, `toDay`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about this customer for a timeframe grouped by some temporal entity (day/week/month) |
+| GET | `/aggregated/summary/conversions` | Aggregated_GetConversionsSummary | `timeFrame`*, `fromDay`, `toDay`, `status`, `sortBy`, `sortDirection`, `offset`, `limit`, `textSearch` | Api.Core.Dto.Aggregated.AggregatedSummaryResult | yes | Retrieve statistics about a subset of conversions for a timeframe with conversions data |
+| GET | `/aggregated/summary/datapoints` | Aggregated_GetDatapointsSummary | `timeFrame`*, `type`*, `fromDay`, `toDay`, `status`, `tag`, `favourite`, `sortBy`, `sortDirection`, `offset`, `limit`, `groupId`, `textSearch` | Api.Core.Dto.Aggregated.AggregatedSummaryResult | yes | Retrieve statistics about a subset of datapoints for a timeframe with datapoints data |
+| GET | `/aggregated/summary/groups` | Aggregated_GetGroupsSummary | `timeFrame`*, `fromDay`, `toDay`, `status`, `tag`, `favourite`, `sortBy`, `sortDirection`, `offset`, `limit`, `textSearch` | Api.Core.Dto.Aggregated.AggregatedSummaryResult | yes | Retrieve statistics about a subset of groups for a timeframe with groups data |
+| GET | `/clickstream` | ClickStream_Get | `group`, `datapoint`, `conversion`, `pageSize`, `filter` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.ClickStream.Hit_ | yes | Retrieve the latest list of events of this account. Limited to last 100. |
+| GET | `/conversions` | Conversions_Get | `offset`, `limit`, `status`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | Retrieve a list of conversions |
+| POST | `/conversions` | Conversions_Put | body*: Api.Core.Dto.Conversions.Conversion | Api.Core.Responses.EntityUri_System.Int64_ |  | Create a conversion |
+| GET | `/conversions/aggregated/list` | Conversions_GetStatisticsAllList | `timeFrame`*, `fromDay`, `toDay`, `status`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about this customer for a timeframe related to a subset of conversions grouped by some temporal entity (day/week/month) |
+| GET | `/conversions/count` | Conversions_Count | `status`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Retrieve a count of conversions |
+| GET | `/conversions/{conversionId}` | get /conversions/{conversionId} | `conversionId`* | Api.Core.Dto.Conversions.Conversion | yes | Retrieve conversion specified by id |
+| POST | `/conversions/{conversionId}` | Conversions_Post | `conversionId`*, body*: Api.Core.Dto.Conversions.Conversion | Api.Core.Responses.EntityUri_System.Int64_ |  | Update conversion specified by id |
+| DELETE | `/conversions/{conversionId}` | Conversions_Delete | `conversionId`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete conversion specified by id |
+| GET | `/conversions/{conversionId}/aggregated` | Conversions_GetStatisticsSingle | `conversionId`*, `timeFrame`*, `fromDay`, `toDay`, `tag`, `favourite`, `hourly` | Api.Core.Dto.Aggregated.AggregatedResult | yes | Retrieve statistics about this conversion for a timeframe |
+| GET | `/conversions/{conversionId}/aggregated/list` | Conversions_GetStatisticsList | `conversionId`*, `timeFrame`*, `fromDay`, `toDay`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about this conversion for a timeframe grouped by some temporal entity (day/week/month) |
+| GET | `/conversions/{conversionId}/datapoints` | Conversions_GetDatapoints | `conversionId`*, `offset`, `limit`, `type`, `status`, `tags`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | Retrieve a list of datapoints connected to this conversion |
+| PUT | `/conversions/{conversionId}/datapoints/batch/patch` | put /conversions/{conversionId}/datapoints/batch/patch | `conversionId`*, body*: Api.Core.Requests.PatchBodyBatch | Api.Core.Responses.EntityUri_System.Int64_ |  | Modify the association between a conversion and multiple datapoints |
+| GET | `/conversions/{conversionId}/datapoints/count` | Conversions_GetDatapointsCount | `conversionId`*, `type`, `status`, `tags`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Retrieve a count of datapoints connected to this conversion |
+| PUT | `/conversions/{conversionId}/datapoints/patch` | Conversions_Patch | `conversionId`*, body*: Api.Core.Requests.ConversionPatchBody | Api.Core.Responses.EntityUri_System.Int64_ |  | Modify the association between a conversion and a datapoint |
+| GET | `/conversions/{conversionId}/hits` | Conversions_GetHits | `conversionId`*, `timeframe`*, `limit`, `offset`, `fromDay`, `toDay`, `filter` | Api.Core.Dto.ClickStream.HitListPage | yes | Retrieve the list of events related to this conversion. |
+| PUT | `/conversions/{conversionId}/notes` | Conversions_PatchNotes | `conversionId`*, body*: Api.Core.Requests.GenericTextPatch | Api.Core.Responses.EntityUri_System.Int64_ |  | Fast patch the "notes" field of a conversion |
+| GET | `/datapoints` | DataPoints_Get | `offset`, `limit`, `type`, `status`, `tags`, `textSearch`, `onlyFavorites`, `sortBy`, `sortDirection`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the datapoints associated to the user |
+| POST | `/datapoints` | DataPoints_Put | body*: Api.Core.Dto.Datapoints.Datapoint | Api.Core.Responses.EntityUri_System.Int64_ |  | Create a datapoint |
+| GET | `/datapoints/aggregated` | DataPoints_GetStatisticsAggregatedSingle | `timeFrame`*, `type`, `fromDay`, `toDay`, `hourly`, `status`, `tag`, `favourite` | Api.Core.Dto.Aggregated.AggregatedResult | yes | Retrieve statistics about this customer for a timeframe by groups |
+| GET | `/datapoints/aggregated/list` | DataPoints_GetStatisticsAllList | `type`*, `timeFrame`*, `fromDay`, `toDay`, `status`, `tag`, `favourite`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about all datapoints of this customer for a timeframe grouped by some temporal entity (day/week/month) |
+| PUT | `/datapoints/batch` | DataPoints_BatchPut | body*: Api.Core.Requests.DatapointsBatch | Api.Core.Responses.ModifyBatchItemResponce_Api.Core.Dto.Datapoints.Datapoint_System.Int64_ |  | Create multiple datapoints |
+| POST | `/datapoints/batch` | DataPoints_BatchPost | body*: Api.Core.Requests.DatapointsBatch | Api.Core.Responses.ModifyBatchItemResponce_Api.Core.Dto.Datapoints.Datapoint_System.Int64_ |  | Update multiple datapoints |
+| DELETE | `/datapoints/batch` | DataPoints_BatchDelete | body*: Api.Core.Requests.DeleteBatch | Api.Core.Responses.ModifyBatchItemResponce_Api.Core.Dto.Datapoints.Datapoint_System.Int64_ |  | Delete multiple datapoints |
+| GET | `/datapoints/count` | DataPoints_Count | `type`, `status`, `tags`, `textSearch`, `onlyFavorites`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Count the datapoints associated to the user |
+| GET | `/datapoints/{id}` | get /datapoints/{id} | `id`* | Api.Core.Dto.Datapoints.Datapoint | yes | Get a datapoint |
+| POST | `/datapoints/{id}` | DataPoints_Post | `id`*, body*: Api.Core.Dto.Datapoints.Datapoint | Api.Core.Responses.EntityUri_System.Int64_ |  | Update a datapoint |
+| DELETE | `/datapoints/{id}` | DataPoints_Delete | `id`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete a datapoint |
+| GET | `/datapoints/{id}/aggregated` | DataPoints_GetStatisticsSingle | `id`*, `timeFrame`*, `fromDay`, `toDay`, `hourly` | Api.Core.Dto.Aggregated.AggregatedResult | yes | Retrieve statistics about this datapoint for a timeframe |
+| GET | `/datapoints/{id}/aggregated/list` | DataPoints_GetStatisticsList | `id`*, `timeFrame`*, `fromDay`, `toDay`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about this datapoint for a timeframe grouped by some temporal entity (day/week/month) |
+| PUT | `/datapoints/{id}/favourite` | DataPoints_PatchFavourite | `id`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Fast switch the "favourite" field of a datapoint |
+| GET | `/datapoints/{id}/hits` | DataPoints_GetHits | `id`*, `timeframe`*, `limit`, `offset`, `fromDay`, `toDay`, `filter` | Api.Core.Dto.ClickStream.HitListPage | yes | Retrieve the list of events related to this datapoint. |
+| PUT | `/datapoints/{id}/notes` | DataPoints_PatchNotes | `id`*, body*: Api.Core.Requests.GenericTextPatch | Api.Core.Responses.EntityUri_System.Int64_ |  | Fast patch the "notes" field of a datapoint |
+| GET | `/domains` | Domains_Get | `offset`, `limit`, `type`, `name` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | Retrieve a list of domains |
+| POST | `/domains` | Domains_Put | body*: Api.Core.Dto.Domains.Domain | Api.Core.Responses.EntityUri_System.Int64_ |  | Create a domain |
+| GET | `/domains/count` | Domains_Count | `type`, `name` | Api.Core.Responses.CountResponce | yes | Retrieve count of domains |
+| GET | `/domains/{id}` | get /domains/{id} | `id`* | Api.Core.Dto.Domains.Domain | yes | Get a domain |
+| POST | `/domains/{id}` | Domains_Update | `id`*, body*: Api.Core.Dto.Domains.Domain | Api.Core.Responses.EntityUri_System.Int64_ |  | Update a domain |
+| DELETE | `/domains/{id}` | Domains_Delete | `id`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete a domain |
+| GET | `/groups` | Groups_Get | `offset`, `limit`, `status`, `tags`, `textSearch`, `createdAfter`, `createdBefore`, `write` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the groups associated to the user. |
+| POST | `/groups` | Groups_Put | body*: Api.Core.Dto.Groups.Group | Api.Core.Responses.EntityUri_System.Int64_ |  | Create a group |
+| GET | `/groups/aggregated` | Groups_GetStatisticsAggregatedSingle | `timeFrame`*, `fromDay`, `toDay`, `hourly`, `status`, `tag`, `favourite` | Api.Core.Dto.Aggregated.AggregatedResult | yes | Retrieve statistics about this customer for a timeframe by groups |
+| GET | `/groups/aggregated/list` | Groups_GetStatisticsAllList | `timeFrame`*, `fromDay`, `toDay`, `status`, `tag`, `favourite`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about all groups of this customer for a timeframe grouped by some temporal entity (day/week/month) |
+| GET | `/groups/count` | Groups_Count | `status`, `tags`, `textSearch`, `createdAfter`, `createdBefore`, `write` | Api.Core.Responses.CountResponce | yes | Count the groups associated to the user. |
+| GET | `/groups/{id}` | get /groups/{id} | `id`* | Api.Core.Dto.Groups.Group | yes | Get a group |
+| POST | `/groups/{id}` | Groups_Post | `id`*, body*: Api.Core.Dto.Groups.Group | Api.Core.Responses.EntityUri_System.Int64_ |  | Update a group |
+| DELETE | `/groups/{id}` | Groups_Delete | `id`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete group specified by id |
+| GET | `/groups/{id}/aggregated` | Groups_GetStatisticsSingle | `id`*, `timeFrame`*, `fromDay`, `toDay`, `hourly` | Api.Core.Dto.Aggregated.AggregatedResult | yes | Retrieve statistics about this group for a timeframe |
+| GET | `/groups/{id}/aggregated/list` | Groups_GetStatisticsList | `id`*, `timeFrame`*, `fromDay`, `toDay`, `groupBy` | Api.Core.Responses.EntitiesResponse_Api.Core.Dto.Aggregated.AggregatedResult_ | yes | Retrieve statistics about this group for a timeframe grouped by some temporal entity (day/week/month) |
+| GET | `/groups/{id}/aggregated/summary` | Groups_GetDatapointsSummary | `id`*, `timeFrame`*, `type`, `fromDay`, `toDay`, `status`, `tag`, `favourite`, `sortBy`, `sortDirection`, `offset`, `limit`, `textSearch` | Api.Core.Dto.Aggregated.AggregatedSummaryResult | yes | Retrieve statistics about a subset of datapoints for a timeframe with datapoints data |
+| GET | `/groups/{id}/datapoints` | Groups_GetDatapoints | `id`*, `offset`, `limit`, `type`, `status`, `tags`, `textSearch`, `onlyFavorites`, `sortBy`, `sortDirection`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the datapoints associated to the user in this group. |
+| POST | `/groups/{id}/datapoints` | Groups_PutDatapoint | `id`*, body*: Api.Core.Dto.Datapoints.Datapoint | Api.Core.Responses.EntityUri_System.Int64_ |  | Create a datapoint in this group |
+| GET | `/groups/{id}/datapoints/count` | Groups_GetDatapointsCount | `id`*, `type`, `status`, `tags`, `textSearch`, `onlyFavorites`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Count the datapoints associated to the user in this group. |
+| PUT | `/groups/{id}/favourite` | Groups_PatchFavourite | `id`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Fast switch the "favourite" field of a group |
+| GET | `/groups/{id}/hits` | Groups_GetHits | `id`*, `timeframe`*, `limit`, `offset`, `fromDay`, `toDay`, `filter` | Api.Core.Dto.ClickStream.HitListPage | yes | Retrieve the list of events related to this group. |
+| PUT | `/groups/{id}/notes` | Groups_PatchNotes | `id`*, body*: Api.Core.Requests.GenericTextPatch | Api.Core.Responses.EntityUri_System.Int64_ |  | Fast patch the "notes" field of a group |
+| GET | `/hits` | Hits_GetHits | `timeframe`*, `limit`, `offset`, `fromDay`, `toDay`, `filter` | Api.Core.Dto.ClickStream.HitListPage | yes | Retrieve the list of events related to this account. |
+| GET | `/me` | Me_GetMe | — | Api.Core.Dto.Accounting.User | yes | Retrieve current account data |
+| GET | `/me/plan` | Me_GetMePlan | — | Api.Core.Dto.Accounting.Plan | yes | Retrieve current account plan |
+| GET | `/retargeting` | Retargeting_Get | `offset`, `limit` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the retargeting scripts associated to the user |
+| POST | `/retargeting` | Retargeting_Put | body*: Api.Core.Dto.Retargeting.RetargetingScript | Api.Core.Responses.EntityUri_System.Int64_ |  | Creates a retargeting script |
+| GET | `/retargeting/count` | Retargeting_Count | — | Api.Core.Responses.CountResponce | yes | Retrieve count of retargeting scripts |
+| GET | `/retargeting/{id}` | get /retargeting/{id} | `id`* | Api.Core.Dto.Retargeting.RetargetingScript | yes | Get a retargeting script object |
+| POST | `/retargeting/{id}` | Retargeting_Post | `id`*, body*: Api.Core.Dto.Retargeting.RetargetingScript | Api.Core.Responses.EntityUri_System.Int64_ |  | Updates a retargeting script |
+| DELETE | `/retargeting/{id}` | Retargeting_Delete | `id`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Deletes a retargeting script (and remove associations) |
+| GET | `/retargeting/{id}/datapoints` | Retargeting_GetDatapoints | `id`*, `offset`, `limit`, `status`, `tags`, `textSearch`, `onlyFavorites`, `sortBy`, `sortDirection`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the datapoints associated to the retargeting script. |
+| GET | `/retargeting/{id}/datapoints/count` | Retargeting_GetDatapointsCount | `id`*, `status`, `tags`, `textSearch`, `onlyFavorites`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Count the datapoints associated to the retargeting script. |
+| GET | `/tags` | Tags_Get | `offset`, `limit`, `name`, `datapoints`, `groups`, `type` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the groups associated to the user filtered by this tag. |
+| POST | `/tags` | Tags_Put | body*: Api.Core.Dto.Tags.Tag | Api.Core.Responses.EntityUri_System.Int64_ |  | Create a tag |
+| GET | `/tags/count` | Tags_Count | `name`, `datapoints`, `groups`, `type` | System.Object | yes | List of all the groups associated to the user filtered by this tag. |
+| GET | `/tags/{tagId}` | get /tags/{tagId} | `tagId`* | Api.Core.Dto.Tags.Tag | yes | Retrieve a tag |
+| DELETE | `/tags/{tagId}` | Tags_Delete | `tagId`* | System.Object |  | Delete a tag |
+| GET | `/tags/{tagId}/datapoints` | Tags_GetDatapoints | `tagId`*, `offset`, `limit`, `type`, `status`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the datapoints associated to the user filtered by this tag |
+| DELETE | `/tags/{tagId}/datapoints` | Tags_DeleteRelatedDatapoints | `tagId`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete the association of this tag with all datapoints |
+| GET | `/tags/{tagId}/datapoints/count` | Tags_GetDatapointsCount | `tagId`*, `type`, `status`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Count the datapoints associated to the user filtered by this tag |
+| PUT | `/tags/{tagId}/datapoints/patch` | Tags_PatchDataPoint | `tagId`*, body*: Api.Core.Requests.PatchBody | Api.Core.Responses.EntityUri_System.Int64_ |  | Associate/Deassociate a tag with a datapoint |
+| GET | `/tags/{tagId}/groups` | Tags_GetGroups | `tagId`*, `offset`, `limit`, `status`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.EntitiesResponse_Api.Core.Responses.EntityUri_System.Int64_ | yes | List of all the groups associated to the user filtered by this tag. |
+| DELETE | `/tags/{tagId}/groups` | Tags_DeleteRelatedGroups | `tagId`* | Api.Core.Responses.EntityUri_System.Int64_ |  | Delete the association of this tag with all groups |
+| GET | `/tags/{tagId}/groups/count` | Tags_GetGroupsCount | `tagId`*, `status`, `textSearch`, `createdAfter`, `createdBefore` | Api.Core.Responses.CountResponce | yes | Count the groups associated to the user filtered by this tag |
+| PUT | `/tags/{tagId}/groups/patch` | Tags_PatchGroup | `tagId`*, body*: Api.Core.Requests.PatchBody | Api.Core.Responses.EntityUri_System.Int64_ |  | Associate/Deassociate a tag with a group |
+| PUT | `/tags/{tagId}/name` | Tags_PatchTagName | `tagId`*, body*: Api.Core.Requests.GenericTextPatch | Api.Core.Responses.EntityUri_System.Int64_ |  | Fast patch a tag name |

@@ -67,12 +67,12 @@
       {
         "from": "elevenlabs-io-e2d214894a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/voices/{voice_id}"
+        "to": "operation:get:/v1/voices/{voice_id}"
       },
       {
         "from": "elevenlabs-io-e2d214894a",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/voices/{voice_id}"
+        "to": "operation:delete:/v1/voices/{voice_id}"
       },
       {
         "from": "elevenlabs-io-e2d214894a",
@@ -98,6 +98,161 @@
         "from": "elevenlabs-io-e2d214894a",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/voices/{voice_id}/settings/edit"
+      },
+      {
+        "from": "operation:get:/v1/history",
+        "kind": "RETURNS",
+        "to": "schema:GetHistoryResponseModel"
+      },
+      {
+        "from": "operation:post:/v1/history/delete",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_Delete_history_items_v1_history_delete_post"
+      },
+      {
+        "from": "operation:post:/v1/history/download",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_Download_history_items_v1_history_download_post"
+      },
+      {
+        "from": "operation:post:/v1/text-to-speech/{voice_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_Text_to_speech_v1_text_to_speech__voice_id__post"
+      },
+      {
+        "from": "operation:post:/v1/text-to-speech/{voice_id}/stream",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post"
+      },
+      {
+        "from": "operation:get:/v1/user",
+        "kind": "RETURNS",
+        "to": "schema:UserResponseModel"
+      },
+      {
+        "from": "operation:get:/v1/user/subscription",
+        "kind": "RETURNS",
+        "to": "schema:ExtendedSubscriptionResponseModel"
+      },
+      {
+        "from": "operation:get:/v1/voices",
+        "kind": "RETURNS",
+        "to": "schema:GetVoicesResponseModel"
+      },
+      {
+        "from": "operation:post:/v1/voices/add",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_Add_voice_v1_voices_add_post"
+      },
+      {
+        "from": "operation:post:/v1/voices/add",
+        "kind": "RETURNS",
+        "to": "schema:AddVoiceResponseModel"
+      },
+      {
+        "from": "operation:get:/v1/voices/settings/default",
+        "kind": "RETURNS",
+        "to": "schema:VoiceSettingsResponseModel"
+      },
+      {
+        "from": "operation:get:/v1/voices/{voice_id}",
+        "kind": "RETURNS",
+        "to": "schema:VoiceResponseModel"
+      },
+      {
+        "from": "operation:post:/v1/voices/{voice_id}/edit",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_Edit_voice_v1_voices__voice_id__edit_post"
+      },
+      {
+        "from": "operation:get:/v1/voices/{voice_id}/settings",
+        "kind": "RETURNS",
+        "to": "schema:VoiceSettingsResponseModel"
+      },
+      {
+        "from": "operation:post:/v1/voices/{voice_id}/settings/edit",
+        "kind": "ACCEPTS",
+        "to": "schema:VoiceSettingsResponseModel"
+      },
+      {
+        "from": "schema:Body_Text_to_speech_v1_text_to_speech__voice_id__post",
+        "kind": "REFERENCES",
+        "to": "schema:VoiceSettingsResponseModel"
+      },
+      {
+        "from": "schema:Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post",
+        "kind": "REFERENCES",
+        "to": "schema:VoiceSettingsResponseModel"
+      },
+      {
+        "from": "schema:ExtendedSubscriptionResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceResponseModel"
+      },
+      {
+        "from": "schema:ExtendedSubscriptionResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:TTSModelResponseModel"
+      },
+      {
+        "from": "schema:FineTuningResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:VerificationAttemptResponseModel"
+      },
+      {
+        "from": "schema:GetHistoryResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:HistoryItemResponseModel"
+      },
+      {
+        "from": "schema:GetVoicesResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:VoiceResponseModel"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:HistoryItemResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:FeedbackResponseModel"
+      },
+      {
+        "from": "schema:SubscriptionResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:TTSModelResponseModel"
+      },
+      {
+        "from": "schema:TTSModelResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:LanguageResponseModel"
+      },
+      {
+        "from": "schema:UserResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:SubscriptionResponseModel"
+      },
+      {
+        "from": "schema:VerificationAttemptResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:RecordingResponseModel"
+      },
+      {
+        "from": "schema:VoiceResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:FineTuningResponseModel"
+      },
+      {
+        "from": "schema:VoiceResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:SampleResponseModel"
+      },
+      {
+        "from": "schema:VoiceResponseModel",
+        "kind": "REFERENCES",
+        "to": "schema:VoiceSettingsResponseModel"
       }
     ],
     "nodes": [
@@ -107,337 +262,942 @@
       },
       {
         "deprecated": false,
+        "description": "Returns metadata about all your generated audio.",
         "id": "operation:get:/v1/history",
         "kind": "operation",
         "method": "get",
         "name": "Get_generated_items_v1_history_get",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/history",
         "pointer": "#/paths/~1v1~1history/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetHistoryResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Generated Items"
+        "summary": "Get Generated Items",
+        "tags": [
+          "history"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Delete a number of history items by their IDs.",
         "id": "operation:post:/v1/history/delete",
         "kind": "operation",
         "method": "post",
         "name": "Delete_history_items_v1_history_delete_post",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/history/delete",
         "pointer": "#/paths/~1v1~1history~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_Delete_history_items_v1_history_delete_post"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete History Items"
+        "summary": "Delete History Items",
+        "tags": [
+          "history"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download one or more history items.",
         "id": "operation:post:/v1/history/download",
         "kind": "operation",
         "method": "post",
         "name": "Download_history_items_v1_history_download_post",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/history/download",
         "pointer": "#/paths/~1v1~1history~1download/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_Download_history_items_v1_history_download_post"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Download History Items"
+        "summary": "Download History Items",
+        "tags": [
+          "history"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a history item by its ID",
         "id": "operation:delete:/v1/history/{history_item_id}",
         "kind": "operation",
         "method": "delete",
         "name": "Delete_history_item_v1_history__history_item_id__delete",
+        "parameters": [
+          {
+            "description": "History item ID to be used, you can use GET https://api.elevenlabs.io/v1/history to receive a list of history items and their IDs.",
+            "in": "path",
+            "name": "history_item_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/history/{history_item_id}",
         "pointer": "#/paths/~1v1~1history~1{history_item_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete History Item"
+        "summary": "Delete History Item",
+        "tags": [
+          "history"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the audio of an history item.",
         "id": "operation:get:/v1/history/{history_item_id}/audio",
         "kind": "operation",
         "method": "get",
         "name": "Get_audio_from_history_item_v1_history__history_item_id__audio_get",
+        "parameters": [
+          {
+            "description": "History item ID to be used, you can use GET https://api.elevenlabs.io/v1/history to receive a list of history items and their IDs.",
+            "in": "path",
+            "name": "history_item_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/history/{history_item_id}/audio",
         "pointer": "#/paths/~1v1~1history~1{history_item_id}~1audio/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Audio From History Item"
+        "summary": "Get Audio From History Item",
+        "tags": [
+          "history"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts text into speech using a voice of your choice and returns audio.",
         "id": "operation:post:/v1/text-to-speech/{voice_id}",
         "kind": "operation",
         "method": "post",
         "name": "Text_to_speech_v1_text_to_speech__voice_id__post",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/text-to-speech/{voice_id}",
         "pointer": "#/paths/~1v1~1text-to-speech~1{voice_id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_Text_to_speech_v1_text_to_speech__voice_id__post"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Text To Speech"
+        "summary": "Text To Speech",
+        "tags": [
+          "text-to-speech"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts text into speech using a voice of your choice and returns audio as an audio stream.",
         "id": "operation:post:/v1/text-to-speech/{voice_id}/stream",
         "kind": "operation",
         "method": "post",
         "name": "Text_to_speech_v1_text_to_speech__voice_id__stream_post",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/text-to-speech/{voice_id}/stream",
         "pointer": "#/paths/~1v1~1text-to-speech~1{voice_id}~1stream/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Text To Speech"
+        "summary": "Text To Speech",
+        "tags": [
+          "text-to-speech"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets information about the user",
         "id": "operation:get:/v1/user",
         "kind": "operation",
         "method": "get",
         "name": "Get_user_info_v1_user_get",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/user",
         "pointer": "#/paths/~1v1~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User Info"
+        "summary": "Get User Info",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets extended information about the users subscription",
         "id": "operation:get:/v1/user/subscription",
         "kind": "operation",
         "method": "get",
         "name": "Get_user_subscription_info_v1_user_subscription_get",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/user/subscription",
         "pointer": "#/paths/~1v1~1user~1subscription/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExtendedSubscriptionResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User Subscription Info"
+        "summary": "Get User Subscription Info",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of all available voices for a user.",
         "id": "operation:get:/v1/voices",
         "kind": "operation",
         "method": "get",
         "name": "Get_voices_v1_voices_get",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices",
         "pointer": "#/paths/~1v1~1voices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetVoicesResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Voices"
+        "summary": "Get Voices",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a new voice to your collection of voices in VoiceLab.",
         "id": "operation:post:/v1/voices/add",
         "kind": "operation",
         "method": "post",
         "name": "Add_voice_v1_voices_add_post",
+        "parameters": [
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/add",
         "pointer": "#/paths/~1v1~1voices~1add/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Body_Add_voice_v1_voices_add_post"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AddVoiceResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add Voice"
+        "summary": "Add Voice",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the default settings for voices.",
         "id": "operation:get:/v1/voices/settings/default",
         "kind": "operation",
         "method": "get",
         "name": "Get_default_voice_settings__v1_voices_settings_default_get",
         "path": "/v1/voices/settings/default",
         "pointer": "#/paths/~1v1~1voices~1settings~1default/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VoiceSettingsResponseModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Default Voice Settings."
+        "summary": "Get Default Voice Settings.",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/voices/{voice_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Delete_voice_v1_voices__voice_id__delete",
-        "path": "/v1/voices/{voice_id}",
-        "pointer": "#/paths/~1v1~1voices~1{voice_id}/delete",
-        "security": [],
-        "summary": "Delete Voice"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns metadata about a specific voice.",
         "id": "operation:get:/v1/voices/{voice_id}",
         "kind": "operation",
         "method": "get",
         "name": "Get_voice_v1_voices__voice_id__get",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If set will return settings information corresponding to the voice, requires authorization.",
+            "in": "query",
+            "name": "with_settings",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/{voice_id}",
         "pointer": "#/paths/~1v1~1voices~1{voice_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VoiceResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Voice"
+        "summary": "Get Voice",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a voice by its ID.",
+        "id": "operation:delete:/v1/voices/{voice_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Delete_voice_v1_voices__voice_id__delete",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/voices/{voice_id}",
+        "pointer": "#/paths/~1v1~1voices~1{voice_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Voice",
+        "tags": [
+          "voices"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Edit a voice created by you.",
         "id": "operation:post:/v1/voices/{voice_id}/edit",
         "kind": "operation",
         "method": "post",
         "name": "Edit_voice_v1_voices__voice_id__edit_post",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/{voice_id}/edit",
         "pointer": "#/paths/~1v1~1voices~1{voice_id}~1edit/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Body_Edit_voice_v1_voices__voice_id__edit_post"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit Voice"
+        "summary": "Edit Voice",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes a sample by its ID.",
         "id": "operation:delete:/v1/voices/{voice_id}/samples/{sample_id}",
         "kind": "operation",
         "method": "delete",
         "name": "Delete_sample_v1_voices__voice_id__samples__sample_id__delete",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Sample ID to be used, you can use GET https://api.elevenlabs.io/v1/voices/{voice_id} to list all the available samples for a voice.",
+            "in": "path",
+            "name": "sample_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/{voice_id}/samples/{sample_id}",
         "pointer": "#/paths/~1v1~1voices~1{voice_id}~1samples~1{sample_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete Sample"
+        "summary": "Delete Sample",
+        "tags": [
+          "samples"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the audio corresponding to a sample attached to a voice.",
         "id": "operation:get:/v1/voices/{voice_id}/samples/{sample_id}/audio",
         "kind": "operation",
         "method": "get",
         "name": "Get_audio_from_sample_v1_voices__voice_id__samples__sample_id__audio_get",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Sample ID to be used, you can use GET https://api.elevenlabs.io/v1/voices/{voice_id} to list all the available samples for a voice.",
+            "in": "path",
+            "name": "sample_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/{voice_id}/samples/{sample_id}/audio",
         "pointer": "#/paths/~1v1~1voices~1{voice_id}~1samples~1{sample_id}~1audio/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Audio From Sample"
+        "summary": "Get Audio From Sample",
+        "tags": [
+          "samples"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the settings for a specific voice.",
         "id": "operation:get:/v1/voices/{voice_id}/settings",
         "kind": "operation",
         "method": "get",
         "name": "Get_voice_settings_v1_voices__voice_id__settings_get",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/{voice_id}/settings",
         "pointer": "#/paths/~1v1~1voices~1{voice_id}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VoiceSettingsResponseModel"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Voice Settings"
+        "summary": "Get Voice Settings",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Edit your settings for a specific voice.",
         "id": "operation:post:/v1/voices/{voice_id}/settings/edit",
         "kind": "operation",
         "method": "post",
         "name": "Edit_voice_settings_v1_voices__voice_id__settings_edit_post",
+        "parameters": [
+          {
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "in": "path",
+            "name": "voice_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your API key.",
+            "in": "header",
+            "name": "xi-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/voices/{voice_id}/settings/edit",
         "pointer": "#/paths/~1v1~1voices~1{voice_id}~1settings~1edit/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VoiceSettingsResponseModel"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Edit Voice Settings"
+        "summary": "Edit Voice Settings",
+        "tags": [
+          "voices"
+        ]
       },
       {
         "id": "schema:AddVoiceResponseModel",
         "kind": "schema",
-        "name": "AddVoiceResponseModel"
+        "name": "AddVoiceResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:Body_Add_voice_v1_voices_add_post",
         "kind": "schema",
-        "name": "Body_Add_voice_v1_voices_add_post"
+        "name": "Body_Add_voice_v1_voices_add_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_Delete_history_items_v1_history_delete_post",
         "kind": "schema",
-        "name": "Body_Delete_history_items_v1_history_delete_post"
+        "name": "Body_Delete_history_items_v1_history_delete_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_Download_history_items_v1_history_download_post",
         "kind": "schema",
-        "name": "Body_Download_history_items_v1_history_download_post"
+        "name": "Body_Download_history_items_v1_history_download_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_Edit_voice_v1_voices__voice_id__edit_post",
         "kind": "schema",
-        "name": "Body_Edit_voice_v1_voices__voice_id__edit_post"
+        "name": "Body_Edit_voice_v1_voices__voice_id__edit_post",
+        "type": "object"
       },
       {
         "id": "schema:Body_Text_to_speech_v1_text_to_speech__voice_id__post",
         "kind": "schema",
-        "name": "Body_Text_to_speech_v1_text_to_speech__voice_id__post"
+        "name": "Body_Text_to_speech_v1_text_to_speech__voice_id__post",
+        "type": "object"
       },
       {
         "id": "schema:Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post",
         "kind": "schema",
-        "name": "Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post"
+        "name": "Body_Text_to_speech_v1_text_to_speech__voice_id__stream_post",
+        "type": "object"
       },
       {
         "id": "schema:ExtendedSubscriptionResponseModel",
         "kind": "schema",
-        "name": "ExtendedSubscriptionResponseModel"
+        "name": "ExtendedSubscriptionResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:FeedbackResponseModel",
         "kind": "schema",
-        "name": "FeedbackResponseModel"
+        "name": "FeedbackResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:FineTuningResponseModel",
         "kind": "schema",
-        "name": "FineTuningResponseModel"
+        "name": "FineTuningResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:GetHistoryResponseModel",
         "kind": "schema",
-        "name": "GetHistoryResponseModel"
+        "name": "GetHistoryResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:GetVoicesResponseModel",
         "kind": "schema",
-        "name": "GetVoicesResponseModel"
+        "name": "GetVoicesResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:HistoryItemResponseModel",
         "kind": "schema",
-        "name": "HistoryItemResponseModel"
+        "name": "HistoryItemResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceResponseModel",
         "kind": "schema",
-        "name": "InvoiceResponseModel"
+        "name": "InvoiceResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:LanguageResponseModel",
         "kind": "schema",
-        "name": "LanguageResponseModel"
+        "name": "LanguageResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:RecordingResponseModel",
         "kind": "schema",
-        "name": "RecordingResponseModel"
+        "name": "RecordingResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:SampleResponseModel",
         "kind": "schema",
-        "name": "SampleResponseModel"
+        "name": "SampleResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionResponseModel",
         "kind": "schema",
-        "name": "SubscriptionResponseModel"
+        "name": "SubscriptionResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:TTSModelResponseModel",
         "kind": "schema",
-        "name": "TTSModelResponseModel"
+        "name": "TTSModelResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:UserResponseModel",
         "kind": "schema",
-        "name": "UserResponseModel"
+        "name": "UserResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VerificationAttemptResponseModel",
         "kind": "schema",
-        "name": "VerificationAttemptResponseModel"
+        "name": "VerificationAttemptResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:VoiceResponseModel",
         "kind": "schema",
-        "name": "VoiceResponseModel"
+        "name": "VoiceResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:VoiceSettingsResponseModel",
         "kind": "schema",
-        "name": "VoiceSettingsResponseModel"
+        "name": "VoiceSettingsResponseModel",
+        "type": "object"
       }
     ]
   },

@@ -21,8 +21,23 @@
         "kind": "operation",
         "method": "get",
         "name": "getNews",
+        "parameters": [
+          {
+            "description": "Used to query news articles on their title and body.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ai/news",
         "pointer": "#/paths/~1ai~1news/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Retrieves the latest news whose content contains the query string."
       }

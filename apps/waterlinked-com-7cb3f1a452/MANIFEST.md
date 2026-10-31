@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_waterlinkedas_profi
 
 | | |
 | --- | --- |
-| Signed bundle | `e163e87be465e7c26f7f659558b4fc9be0d9ff3f1e1899ddcd5eb833af0e83ea` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,43 +34,45 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_waterlinkedas_profi
 
 36 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/` | about#ApiVersion | ApiVersion about |
-| GET | `/api/v1/about` | about#Get | Get about |
-| POST | `/api/v1/about/factoryreset` | about#FactoryReset | FactoryReset about |
-| GET | `/api/v1/about/led` | about#LED | LED about |
-| GET | `/api/v1/about/status` | about#Status | Status about |
-| GET | `/api/v1/about/temperature` | about#Temperature | Temperature about |
-| GET | `/api/v1/config/antenna` | config#GetAntennaConfig | GetAntennaConfig config |
-| PUT | `/api/v1/config/antenna` | config#ModifyAntennaConfig | ModifyAntennaConfig config |
-| GET | `/api/v1/config/generic` | config#Get | Get config |
-| PUT | `/api/v1/config/generic` | config#Modify | Modify config |
-| GET | `/api/v1/config/ip` | config#GetIP | GetIP config |
-| PUT | `/api/v1/config/ip` | config#ModifyIP | ModifyIP config |
-| GET | `/api/v1/config/receivers/` | config#ListReceiver | ListReceiver config |
-| GET | `/api/v1/config/receivers/{ID}` | config#ShowReceiver | ShowReceiver config |
-| PUT | `/api/v1/config/receivers/{ID}` | config#ModifyReceiver | ModifyReceiver config |
-| GET | `/api/v1/config/wifi` | config#GetWIFI | GetWIFI config |
-| PUT | `/api/v1/config/wifi` | config#ModifyWIFI | ModifyWIFI config |
-| PUT | `/api/v1/external/depth` | external#SetDepth | SetDepth external |
-| GET | `/api/v1/external/imu` | external#GetVehicleIMU | GetVehicleIMU external |
-| PUT | `/api/v1/external/imu` | external#SetVehicleIMU | SetVehicleIMU external |
-| PUT | `/api/v1/external/master` | external#SetMaster | SetMaster external |
-| GET | `/api/v1/external/orientation` | external#GetOrientation | GetOrientation external |
-| PUT | `/api/v1/external/orientation` | external#SetOrientation | SetOrientation external |
-| GET | `/api/v1/imu/calibrate` | imu#Get | Get imu |
-| POST | `/api/v1/imu/calibrate` | imu#Calibrate | Calibrate imu |
-| POST | `/api/v1/imu/resetgyros` | imu#ResetGyro | ResetGyro imu |
-| POST | `/api/v1/imu/setnorth` | imu#SetNorth | SetNorth imu |
-| GET | `/api/v1/poi/` | poi#List | List poi |
-| POST | `/api/v1/poi/` | poi#Create | Create poi |
-| DELETE | `/api/v1/poi/{ID}` | poi#Delete | Delete poi |
-| GET | `/api/v1/poi/{ID}` | poi#Show | Show poi |
-| PATCH | `/api/v1/poi/{ID}` | poi#Update | Update poi |
-| GET | `/api/v1/position/acoustic/filtered` | position#AcousticFiltered | AcousticFiltered position |
-| GET | `/api/v1/position/acoustic/raw` | position#AcousticRaw | AcousticRaw position |
-| GET | `/api/v1/position/global` | position#Get | Get position |
-| GET | `/api/v1/position/master` | position#GetMaster | GetMaster position |
-| GET | `/api/v1/status_report/` | status_report#Get | Get status_report |
-| GET | `/api/v1/warnings/` | warnings#Get | Get warnings |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/` | about#ApiVersion | — | WupdaterApiversion | yes | ApiVersion about |
+| GET | `/api/v1/about` | about#Get | — | WaterlinkedAbout | yes | Get about |
+| POST | `/api/v1/about/factoryreset` | about#FactoryReset | — | WaterlinkedOperation_response |  | FactoryReset about |
+| GET | `/api/v1/about/led` | about#LED | — | — | yes | LED about |
+| GET | `/api/v1/about/status` | about#Status | — | WaterlinkedStatus | yes | Status about |
+| GET | `/api/v1/about/temperature` | about#Temperature | — | WaterlinkedTemperature | yes | Temperature about |
+| GET | `/api/v1/config/antenna` | config#GetAntennaConfig | — | WaterlinkedAntenna_config | yes | GetAntennaConfig config |
+| PUT | `/api/v1/config/antenna` | config#ModifyAntennaConfig | body*: ModifyAntennaConfigConfigPayload | WaterlinkedOperation_response |  | ModifyAntennaConfig config |
+| GET | `/api/v1/config/generic` | config#Get | — | WaterlinkedConfiguration | yes | Get config |
+| PUT | `/api/v1/config/generic` | config#Modify | body*: ModifyConfigPayload | WaterlinkedOperation_response |  | Modify config |
+| GET | `/api/v1/config/ip` | config#GetIP | — | WaterlinkedIp_config | yes | GetIP config |
+| PUT | `/api/v1/config/ip` | config#ModifyIP | body*: ModifyIPConfigPayload | WaterlinkedOperation_response |  | ModifyIP config |
+| GET | `/api/v1/config/receivers/` | config#ListReceiver | — | WaterlinkedReceiverCollection | yes | ListReceiver config |
+| GET | `/api/v1/config/receivers/{ID}` | config#ShowReceiver | `ID`* | WaterlinkedReceiver | yes | ShowReceiver config |
+| PUT | `/api/v1/config/receivers/{ID}` | config#ModifyReceiver | `ID`*, body*: ModifyReceiverConfigPayload | — |  | ModifyReceiver config |
+| GET | `/api/v1/config/wifi` | config#GetWIFI | — | WaterlinkedWifi_config | yes | GetWIFI config |
+| PUT | `/api/v1/config/wifi` | config#ModifyWIFI | body*: ModifyWIFIConfigPayload | WaterlinkedOperation_response |  | ModifyWIFI config |
+| PUT | `/api/v1/external/depth` | external#SetDepth | body*: SetDepthExternalPayload | WaterlinkedOperation_response |  | SetDepth external |
+| GET | `/api/v1/external/imu` | external#GetVehicleIMU | — | WlExternalVehicleImu | yes | GetVehicleIMU external |
+| PUT | `/api/v1/external/imu` | external#SetVehicleIMU | body*: SetVehicleIMUExternalPayload | WaterlinkedOperation_response |  | SetVehicleIMU external |
+| PUT | `/api/v1/external/master` | external#SetMaster | body*: SetMasterExternalPayload | WaterlinkedOperation_response |  | SetMaster external |
+| GET | `/api/v1/external/orientation` | external#GetOrientation | — | WlExternalLocatorOrientation | yes | GetOrientation external |
+| PUT | `/api/v1/external/orientation` | external#SetOrientation | body*: SetOrientationExternalPayload | WaterlinkedOperation_response |  | SetOrientation external |
+| GET | `/api/v1/imu/calibrate` | imu#Get | — | WaterlinkedImu | yes | Get imu |
+| POST | `/api/v1/imu/calibrate` | imu#Calibrate | body*: CalibrateImuPayload | — |  | Calibrate imu |
+| POST | `/api/v1/imu/resetgyros` | imu#ResetGyro | — | — |  | ResetGyro imu |
+| POST | `/api/v1/imu/setnorth` | imu#SetNorth | body*: SetNorthImuPayload | — |  | SetNorth imu |
+| GET | `/api/v1/poi/` | poi#List | — | WaterlinkedPoiCollection | yes | List poi |
+| POST | `/api/v1/poi/` | poi#Create | body*: CreatePoiPayload | — |  | Create poi |
+| GET | `/api/v1/poi/{ID}` | poi#Show | `ID`* | WaterlinkedPoi | yes | Show poi |
+| DELETE | `/api/v1/poi/{ID}` | poi#Delete | `ID`* | — |  | Delete poi |
+| PATCH | `/api/v1/poi/{ID}` | poi#Update | `ID`*, body*: UpdatePoiPayload | — |  | Update poi |
+| GET | `/api/v1/position/acoustic/filtered` | position#AcousticFiltered | — | WaterlinkedAccousticPosition | yes | AcousticFiltered position |
+| GET | `/api/v1/position/acoustic/raw` | position#AcousticRaw | — | WaterlinkedAccousticPosition | yes | AcousticRaw position |
+| GET | `/api/v1/position/global` | position#Get | — | WlSatellitePosition | yes | Get position |
+| GET | `/api/v1/position/master` | position#GetMaster | — | WlSatellitePosition | yes | GetMaster position |
+| GET | `/api/v1/status_report/` | status_report#Get | — | WlStatusGroupCollection | yes | Get status_report |
+| GET | `/api/v1/warnings/` | warnings#Get | — | WlWarningCollection | yes | Get warnings |

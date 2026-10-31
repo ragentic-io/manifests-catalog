@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wordnik.com_img_logo-wordnik-ho
 
 | | |
 | --- | --- |
-| Signed bundle | `2a07af52e373b5e0b6de6ae76b292cf178f7d76fa1ecd52d739267dbb66417c4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wordnik.com_img_logo-wordnik-ho
 
 37 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/word.json/{word}/audio` | getAudio | Fetches audio metadata for a word. |
-| GET | `/word.json/{word}/definitions` | getDefinitions | Return definitions for a word |
-| GET | `/word.json/{word}/etymologies` | getEtymologies | Fetches etymology data |
-| GET | `/word.json/{word}/examples` | getExamples | Returns examples for a word |
-| GET | `/word.json/{word}/frequency` | getWordFrequency | Returns word usage over time |
-| GET | `/word.json/{word}/hyphenation` | getHyphenation | Returns syllable information for a word |
-| GET | `/word.json/{word}/phrases` | getPhrases | Fetches bi-gram phrases for a word |
-| GET | `/word.json/{word}/pronunciations` | getTextPronunciations | Returns text pronunciations for a given word |
-| GET | `/word.json/{word}/relatedWords` | getRelatedWords | Given a word as a string, returns relationships from the Word Graph |
-| GET | `/word.json/{word}/scrabbleScore` | getScrabbleScore | Returns the Scrabble score for a word |
-| GET | `/word.json/{word}/topExample` | getTopExample | Returns a top example for a word |
-| GET | `/words.json/randomWord` | getRandomWord | Returns a single random WordObject |
-| GET | `/words.json/randomWords` | getRandomWords | Returns an array of random WordObjects |
-| GET | `/words.json/reverseDictionary` | reverseDictionary | Reverse dictionary search |
-| GET | `/words.json/search/{query}` | searchWords | Searches words |
-| GET | `/words.json/wordOfTheDay` | getWordOfTheDay | Returns a specific WordOfTheDay |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/word.json/{word}/audio` | getAudio | `word`*, `useCanonical`, `limit` | AudioFile[] | yes | Fetches audio metadata for a word. |
+| GET | `/word.json/{word}/definitions` | getDefinitions | `word`*, `limit`, `partOfSpeech`, `includeRelated`, `sourceDictionaries`, `useCanonical`, `includeTags` | Definition[] | yes | Return definitions for a word |
+| GET | `/word.json/{word}/etymologies` | getEtymologies | `word`*, `useCanonical` | string[] | yes | Fetches etymology data |
+| GET | `/word.json/{word}/examples` | getExamples | `word`*, `includeDuplicates`, `useCanonical`, `skip`, `limit` | ExampleSearchResults | yes | Returns examples for a word |
+| GET | `/word.json/{word}/frequency` | getWordFrequency | `word`*, `useCanonical`, `startYear`, `endYear` | FrequencySummary | yes | Returns word usage over time |
+| GET | `/word.json/{word}/hyphenation` | getHyphenation | `word`*, `useCanonical`, `sourceDictionary`, `limit` | Syllable[] | yes | Returns syllable information for a word |
+| GET | `/word.json/{word}/phrases` | getPhrases | `word`*, `limit`, `wlmi`, `useCanonical` | Bigram[] | yes | Fetches bi-gram phrases for a word |
+| GET | `/word.json/{word}/pronunciations` | getTextPronunciations | `word`*, `useCanonical`, `sourceDictionary`, `typeFormat`, `limit` | TextPron[] | yes | Returns text pronunciations for a given word |
+| GET | `/word.json/{word}/relatedWords` | getRelatedWords | `word`*, `useCanonical`, `relationshipTypes`, `limitPerRelationshipType` | Related[] | yes | Given a word as a string, returns relationships from the Word Graph |
+| GET | `/word.json/{word}/scrabbleScore` | getScrabbleScore | `word`* | integer:int64 | yes | Returns the Scrabble score for a word |
+| GET | `/word.json/{word}/topExample` | getTopExample | `word`*, `useCanonical` | Example | yes | Returns a top example for a word |
+| GET | `/words.json/randomWord` | getRandomWord | `hasDictionaryDef`, `includePartOfSpeech`, `excludePartOfSpeech`, `minCorpusCount`, `maxCorpusCount`, `minDictionaryCount`, `maxDictionaryCount`, `minLength`, `maxLength` | WordObject | yes | Returns a single random WordObject |
+| GET | `/words.json/randomWords` | getRandomWords | `hasDictionaryDef`, `includePartOfSpeech`, `excludePartOfSpeech`, `minCorpusCount`, `maxCorpusCount`, `minDictionaryCount`, `maxDictionaryCount`, `minLength`, `maxLength`, `sortBy`, `sortOrder`, `limit` | WordObject[] | yes | Returns an array of random WordObjects |
+| GET | `/words.json/reverseDictionary` | reverseDictionary | `query`*, `findSenseForWord`, `includeSourceDictionaries`, `excludeSourceDictionaries`, `includePartOfSpeech`, `excludePartOfSpeech`, `minCorpusCount`, `maxCorpusCount`, `minLength`, `maxLength`, `expandTerms`, `includeTags`, `sortBy`, `sortOrder`, `skip`, `limit` | DefinitionSearchResults | yes | Reverse dictionary search |
+| GET | `/words.json/search/{query}` | searchWords | `allowRegex`, `query`*, `caseSensitive`, `includePartOfSpeech`, `excludePartOfSpeech`, `minCorpusCount`, `maxCorpusCount`, `minDictionaryCount`, `maxDictionaryCount`, `minLength`, `maxLength`, `skip`, `limit` | WordSearchResults | yes | Searches words |
+| GET | `/words.json/wordOfTheDay` | getWordOfTheDay | `date` | WordOfTheDay | yes | Returns a specific WordOfTheDay |

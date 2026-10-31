@@ -96,14 +96,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /album.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch album id",
+            "in": "query",
+            "name": "album_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/album.get",
         "pointer": "#/paths/~1album.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Album"
+        ]
       },
       {
         "deprecated": false,
@@ -111,14 +145,69 @@
         "kind": "operation",
         "method": "get",
         "name": "get /album.tracks.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch album id",
+            "in": "query",
+            "name": "album_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set, filter only contents with lyrics",
+            "in": "query",
+            "name": "f_has_lyrics",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/album.tracks.get",
         "pointer": "#/paths/~1album.tracks.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Track"
+        ]
       },
       {
         "deprecated": false,
@@ -126,14 +215,76 @@
         "kind": "operation",
         "method": "get",
         "name": "get /artist.albums.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch artist id",
+            "in": "query",
+            "name": "artist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Sort by release date (asc|desc)",
+            "in": "query",
+            "name": "s_release_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Group by Album Name",
+            "in": "query",
+            "name": "g_album_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/artist.albums.get",
         "pointer": "#/paths/~1artist.albums.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Album"
+        ]
       },
       {
         "deprecated": false,
@@ -141,14 +292,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /artist.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch artist id",
+            "in": "query",
+            "name": "artist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/artist.get",
         "pointer": "#/paths/~1artist.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Artist"
+        ]
       },
       {
         "deprecated": false,
@@ -156,14 +341,62 @@
         "kind": "operation",
         "method": "get",
         "name": "get /artist.related.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch artist id",
+            "in": "query",
+            "name": "artist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/artist.related.get",
         "pointer": "#/paths/~1artist.related.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Artist"
+        ]
       },
       {
         "deprecated": false,
@@ -171,14 +404,69 @@
         "kind": "operation",
         "method": "get",
         "name": "get /artist.search",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song artist",
+            "in": "query",
+            "name": "q_artist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set, filter by this artist id",
+            "in": "query",
+            "name": "f_artist_id",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/artist.search",
         "pointer": "#/paths/~1artist.search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Artist"
+        ]
       },
       {
         "deprecated": false,
@@ -186,14 +474,63 @@
         "kind": "operation",
         "method": "get",
         "name": "get /chart.artists.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": "us",
+            "description": "A valid ISO 3166 country code",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/chart.artists.get",
         "pointer": "#/paths/~1chart.artists.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Artist"
+        ]
       },
       {
         "deprecated": false,
@@ -201,14 +538,70 @@
         "kind": "operation",
         "method": "get",
         "name": "get /chart.tracks.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": "us",
+            "description": "A valid ISO 3166 country code",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set, filter only contents with lyrics",
+            "in": "query",
+            "name": "f_has_lyrics",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/chart.tracks.get",
         "pointer": "#/paths/~1chart.tracks.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Track"
+        ]
       },
       {
         "deprecated": false,
@@ -216,14 +609,55 @@
         "kind": "operation",
         "method": "get",
         "name": "get /matcher.lyrics.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song title",
+            "in": "query",
+            "name": "q_track",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song artist",
+            "in": "query",
+            "name": "q_artist",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/matcher.lyrics.get",
         "pointer": "#/paths/~1matcher.lyrics.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Lyrics"
+        ]
       },
       {
         "deprecated": false,
@@ -231,14 +665,69 @@
         "kind": "operation",
         "method": "get",
         "name": "get /matcher.subtitle.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song title",
+            "in": "query",
+            "name": "q_track",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song artist",
+            "in": "query",
+            "name": "q_artist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by subtitle length in seconds",
+            "in": "query",
+            "name": "f_subtitle_length",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Max deviation for a subtitle length in seconds",
+            "in": "query",
+            "name": "f_subtitle_length_max_deviation",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/matcher.subtitle.get",
         "pointer": "#/paths/~1matcher.subtitle.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Subtitle"
+        ]
       },
       {
         "deprecated": false,
@@ -246,14 +735,69 @@
         "kind": "operation",
         "method": "get",
         "name": "get /matcher.track.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song artist",
+            "in": "query",
+            "name": "q_artist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song title",
+            "in": "query",
+            "name": "q_track",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set, filter only contents with lyrics",
+            "in": "query",
+            "name": "f_has_lyrics",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "When set, filter only contents with subtitles",
+            "in": "query",
+            "name": "f_has_subtitle",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/matcher.track.get",
         "pointer": "#/paths/~1matcher.track.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Track"
+        ]
       },
       {
         "deprecated": false,
@@ -261,14 +805,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /track.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch track id",
+            "in": "query",
+            "name": "track_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/track.get",
         "pointer": "#/paths/~1track.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Track"
+        ]
       },
       {
         "deprecated": false,
@@ -276,14 +854,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /track.lyrics.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch track id",
+            "in": "query",
+            "name": "track_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/track.lyrics.get",
         "pointer": "#/paths/~1track.lyrics.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Lyrics"
+        ]
       },
       {
         "deprecated": false,
@@ -291,14 +903,126 @@
         "kind": "operation",
         "method": "get",
         "name": "get /track.search",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song title",
+            "in": "query",
+            "name": "q_track",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The song artist",
+            "in": "query",
+            "name": "q_artist",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Any word in the lyrics",
+            "in": "query",
+            "name": "q_lyrics",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set, filter by this artist id",
+            "in": "query",
+            "name": "f_artist_id",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "When set, filter by this music category id",
+            "in": "query",
+            "name": "f_music_genre_id",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Filter by the lyrics language (en,it,..)",
+            "in": "query",
+            "name": "f_lyrics_language",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "When set, filter only contents with lyrics",
+            "in": "query",
+            "name": "f_has_lyrics",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Sort by our popularity index for artists (asc|desc)",
+            "in": "query",
+            "name": "s_artist_rating",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort by our popularity index for tracks (asc|desc)",
+            "in": "query",
+            "name": "s_track_rating",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Search only a part of the given query string.Allowed range is (0.1 – 0.9)",
+            "in": "query",
+            "name": "quorum_factor",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page size for paginated results.Range is 1 to 100.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Define the page number for paginated results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/track.search",
         "pointer": "#/paths/~1track.search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Track"
+        ]
       },
       {
         "deprecated": false,
@@ -306,14 +1030,48 @@
         "kind": "operation",
         "method": "get",
         "name": "get /track.snippet.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch track id",
+            "in": "query",
+            "name": "track_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/track.snippet.get",
         "pointer": "#/paths/~1track.snippet.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Snippet"
+        ]
       },
       {
         "deprecated": false,
@@ -321,44 +1079,90 @@
         "kind": "operation",
         "method": "get",
         "name": "get /track.subtitle.get",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "output format: json, jsonp, xml.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "jsonp callback",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The musiXmatch track id",
+            "in": "query",
+            "name": "track_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/track.subtitle.get",
         "pointer": "#/paths/~1track.subtitle.get/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "key": []
           }
         ],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Subtitle"
+        ]
       },
       {
+        "description": "a album of songs in the Musixmatch database.",
         "id": "schema:Album",
         "kind": "schema",
-        "name": "Album"
+        "name": "Album",
+        "type": "object"
       },
       {
+        "description": "a artist in the Musixmatch database.",
         "id": "schema:Artist",
         "kind": "schema",
-        "name": "Artist"
+        "name": "Artist",
+        "type": "object"
       },
       {
+        "description": "a Lyrics in the Musixmatch database.",
         "id": "schema:Lyrics",
         "kind": "schema",
-        "name": "Lyrics"
+        "name": "Lyrics",
+        "type": "object"
       },
       {
+        "description": "Snippet of lyrics text in the Musixmatch database.",
         "id": "schema:Snippet",
         "kind": "schema",
-        "name": "Snippet"
+        "name": "Snippet",
+        "type": "object"
       },
       {
+        "description": "a synchronized lyrics subtitle in the Musixmatch database.",
         "id": "schema:Subtitle",
         "kind": "schema",
-        "name": "Subtitle"
+        "name": "Subtitle",
+        "type": "object"
       },
       {
+        "description": "a song in the Musixmatch database",
         "id": "schema:Track",
         "kind": "schema",
-        "name": "Track"
+        "name": "Track",
+        "type": "object"
       }
     ]
   },

@@ -37,56 +37,299 @@
       },
       {
         "deprecated": false,
+        "description": "BulkLookup endpoint: Returns the geolocation data of multiple IP Addresses.",
         "id": "operation:get:/BulkLookup",
         "kind": "operation",
         "method": "get",
         "name": "get /BulkLookup",
+        "parameters": [
+          {
+            "description": "Your API Key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The IP Addresses you want to lookup.",
+            "in": "query",
+            "name": "ips",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The modules you want to use of the request.",
+            "in": "query",
+            "name": "params",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to inform the API to retrieve the response in your native language.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sets the format of the API response.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/BulkLookup",
         "pointer": "#/paths/~1BulkLookup/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Country endpoint: Returns the information of a specific country by passing the `countrCode`.",
         "id": "operation:get:/Country",
         "kind": "operation",
         "method": "get",
         "name": "get /Country",
+        "parameters": [
+          {
+            "description": "Your API Key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Country Code of the country you want to fetch it's data.",
+            "in": "query",
+            "name": "CountryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The modules you want to use of the request.",
+            "in": "query",
+            "name": "params",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to inform the API to retrieve the response in your native language.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sets the format of the API response.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/Country",
         "pointer": "#/paths/~1Country/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "GeoIP endpoint: Returns the geolocation data of the visitor.",
         "id": "operation:get:/GeoIP",
         "kind": "operation",
         "method": "get",
         "name": "get /GeoIP",
+        "parameters": [
+          {
+            "description": "Your API Key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The modules you want to use of the request.",
+            "in": "query",
+            "name": "params",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to inform the API to retrieve the response in your native language.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sets the format of the API response.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/GeoIP",
         "pointer": "#/paths/~1GeoIP/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "IPLookup endpoint: Returns the geolocation data of a specific IP Address.",
         "id": "operation:get:/IPLookup",
         "kind": "operation",
         "method": "get",
         "name": "get /IPLookup",
+        "parameters": [
+          {
+            "description": "Your API Key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The IP Address you want to lookup.",
+            "in": "query",
+            "name": "ip",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The modules you want to use of the request.",
+            "in": "query",
+            "name": "params",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to inform the API to retrieve the response in your native language.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sets the format of the API response.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/IPLookup",
         "pointer": "#/paths/~1IPLookup/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "badWords endpoint: Detects whether user inputs contain profanity or not.",
         "id": "operation:get:/badWords",
         "kind": "operation",
         "method": "get",
         "name": "get /badWords",
+        "parameters": [
+          {
+            "description": "Your API Key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The text you want to check.",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set to `yes` to list the bad-words as an Array.",
+            "in": "query",
+            "name": "listBadWords",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Set to `yes` to return only the score of the text and whether it's safe or not.",
+            "in": "query",
+            "name": "scoreOnly",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sets the format of the API response.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/badWords",
         "pointer": "#/paths/~1badWords/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       }

@@ -31,14 +31,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/scans",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/scans",
         "pointer": "#/paths/~1api~1v1~1scans/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieves all scans"
+        "summary": "Retrieves all scans",
+        "tags": [
+          "Scans"
+        ]
       },
       {
         "deprecated": false,
@@ -46,14 +72,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/scans/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/scans/{id}",
         "pointer": "#/paths/~1api~1v1~1scans~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieves a project scan result"
+        "summary": "Retrieves a project scan result",
+        "tags": [
+          "Scans"
+        ]
       },
       {
         "deprecated": false,
@@ -61,14 +107,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/scans/{id}/files/{file_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/scans/{id}/files/{file_id}",
         "pointer": "#/paths/~1api~1v1~1scans~1{id}~1files~1{file_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieves a file object, containing information about dependencies in the file"
+        "summary": "Retrieves a file object, containing information about dependencies in the file",
+        "tags": [
+          "Scans"
+        ]
       }
     ]
   },

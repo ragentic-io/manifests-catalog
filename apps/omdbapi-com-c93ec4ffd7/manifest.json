@@ -8,6 +8,11 @@
         "from": "omdbapi-com-c93ec4ffd7",
         "kind": "EXPOSES",
         "to": "operation:get:/"
+      },
+      {
+        "from": "operation:get:/",
+        "kind": "RETURNS",
+        "to": "schema:combinedResult"
       }
     ],
     "nodes": [
@@ -17,19 +22,125 @@
       },
       {
         "deprecated": false,
+        "description": "Find a movie, series or episode from the OMDb by title, IMDb-id or by free-text search",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "Get_OMDb Search",
+        "parameters": [
+          {
+            "description": "Movie title to search for.",
+            "in": "query",
+            "name": "t",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A valid IMDb ID (e.g.",
+            "in": "query",
+            "name": "i",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Movie title to search for.",
+            "in": "query",
+            "name": "s",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Year of release.",
+            "in": "query",
+            "name": "y",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Type of result to return.",
+            "enum": [
+              "movie",
+              "series",
+              "episode"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "short",
+            "description": "Return short or full plot.",
+            "enum": [
+              "short",
+              "full"
+            ],
+            "in": "query",
+            "name": "plot",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Include Rotten Tomatoes ratings.",
+            "in": "query",
+            "name": "tomatoes",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "json",
+            "description": "The data type to return.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "r",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "API version (reserved for future use).",
+            "in": "query",
+            "name": "v",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Page number to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "JSONP callback name.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "combinedResult"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "OMDb Search"
       },
       {
         "id": "schema:combinedResult",
         "kind": "schema",
-        "name": "combinedResult"
+        "name": "combinedResult",
+        "type": "object"
       }
     ]
   },

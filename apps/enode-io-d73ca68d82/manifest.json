@@ -32,17 +32,17 @@
       {
         "from": "enode-io-d73ca68d82",
         "kind": "EXPOSES",
-        "to": "operation:delete:/charging-locations/{chargingLocationId}"
-      },
-      {
-        "from": "enode-io-d73ca68d82",
-        "kind": "EXPOSES",
         "to": "operation:get:/charging-locations/{chargingLocationId}"
       },
       {
         "from": "enode-io-d73ca68d82",
         "kind": "EXPOSES",
         "to": "operation:put:/charging-locations/{chargingLocationId}"
+      },
+      {
+        "from": "enode-io-d73ca68d82",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/charging-locations/{chargingLocationId}"
       },
       {
         "from": "enode-io-d73ca68d82",
@@ -156,8 +156,24 @@
         "kind": "operation",
         "method": "get",
         "name": "getChargers",
+        "parameters": [
+          {
+            "description": "An optional array of Charger fields that should be included in the response, for example: `?field[]=information&field[]=chargeState` By default, no optional fi…",
+            "in": "query",
+            "name": "field[]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/chargers",
         "pointer": "#/paths/~1chargers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -175,7 +191,10 @@
             ]
           }
         ],
-        "summary": "List Chargers"
+        "summary": "List Chargers",
+        "tags": [
+          "Chargers"
+        ]
       },
       {
         "deprecated": false,
@@ -183,8 +202,27 @@
         "kind": "operation",
         "method": "get",
         "name": "getCharger",
+        "parameters": [
+          {
+            "description": "ID of the Charger",
+            "in": "path",
+            "name": "chargerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "required": false
+          }
+        ],
         "path": "/chargers/{chargerId}",
         "pointer": "#/paths/~1chargers~1{chargerId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -202,16 +240,42 @@
             ]
           }
         ],
-        "summary": "Get Charger"
+        "summary": "Get Charger",
+        "tags": [
+          "Chargers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Instruct the charger to start or stop charging",
         "id": "operation:post:/chargers/{chargerId}/charging",
         "kind": "operation",
         "method": "post",
         "name": "controlChargerCharging",
+        "parameters": [
+          {
+            "description": "ID of the Charger",
+            "in": "path",
+            "name": "chargerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/chargers/{chargerId}/charging",
         "pointer": "#/paths/~1chargers~1{chargerId}~1charging/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": [
@@ -224,16 +288,27 @@
             ]
           }
         ],
-        "summary": "Control Charging"
+        "summary": "Control Charging",
+        "tags": [
+          "Chargers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of Charging Locations registered to the User",
         "id": "operation:get:/charging-locations",
         "kind": "operation",
         "method": "get",
         "name": "getCharginglocations",
         "path": "/charging-locations",
         "pointer": "#/paths/~1charging-locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -246,7 +321,10 @@
             ]
           }
         ],
-        "summary": "List Charging Locations"
+        "summary": "List Charging Locations",
+        "tags": [
+          "Charging Locations"
+        ]
       },
       {
         "deprecated": false,
@@ -256,6 +334,19 @@
         "name": "postCharginglocations",
         "path": "/charging-locations",
         "pointer": "#/paths/~1charging-locations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": [
@@ -268,29 +359,10 @@
             ]
           }
         ],
-        "summary": "Create Charging Location"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/charging-locations/{chargingLocationId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCharginglocationsCharginglocationid",
-        "path": "/charging-locations/{chargingLocationId}",
-        "pointer": "#/paths/~1charging-locations~1{chargingLocationId}/delete",
-        "security": [
-          {
-            "UserAccessToken": [
-              "all"
-            ]
-          },
-          {
-            "UserAccessToken": [
-              "charging_location"
-            ]
-          }
-        ],
-        "summary": "Delete Charging Location"
+        "summary": "Create Charging Location",
+        "tags": [
+          "Charging Locations"
+        ]
       },
       {
         "deprecated": false,
@@ -298,8 +370,23 @@
         "kind": "operation",
         "method": "get",
         "name": "getCharginglocationsCharginglocationid",
+        "parameters": [
+          {
+            "description": "ID of the Charging Location",
+            "in": "path",
+            "name": "chargingLocationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/charging-locations/{chargingLocationId}",
         "pointer": "#/paths/~1charging-locations~1{chargingLocationId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -312,16 +399,41 @@
             ]
           }
         ],
-        "summary": "Get Charging Location"
+        "summary": "Get Charging Location",
+        "tags": [
+          "Charging Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a charging location with new configuration",
         "id": "operation:put:/charging-locations/{chargingLocationId}",
         "kind": "operation",
         "method": "put",
         "name": "putCharginglocationsCharginglocationid",
+        "parameters": [
+          {
+            "description": "ID of the Charging Location",
+            "in": "path",
+            "name": "chargingLocationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/charging-locations/{chargingLocationId}",
         "pointer": "#/paths/~1charging-locations~1{chargingLocationId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": [
@@ -334,119 +446,348 @@
             ]
           }
         ],
-        "summary": "Update Charging Location"
+        "summary": "Update Charging Location",
+        "tags": [
+          "Charging Locations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a Charging Location",
+        "id": "operation:delete:/charging-locations/{chargingLocationId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCharginglocationsCharginglocationid",
+        "parameters": [
+          {
+            "description": "ID of the Charging Location",
+            "in": "path",
+            "name": "chargingLocationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/charging-locations/{chargingLocationId}",
+        "pointer": "#/paths/~1charging-locations~1{chargingLocationId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "UserAccessToken": [
+              "all"
+            ]
+          },
+          {
+            "UserAccessToken": [
+              "charging_location"
+            ]
+          }
+        ],
+        "summary": "Delete Charging Location",
+        "tags": [
+          "Charging Locations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets the combined health status of the service and all functionalities and dependencies.",
         "id": "operation:get:/health/ready",
         "kind": "operation",
         "method": "get",
         "name": "getHealthReady",
         "path": "/health/ready",
         "pointer": "#/paths/~1health~1ready/get",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "503",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check Service Readiness"
+        "summary": "Check Service Readiness",
+        "tags": [
+          "Service Health"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List the supported vendors and their current status.",
         "id": "operation:get:/health/vendors",
         "kind": "operation",
         "method": "get",
         "name": "getHealthVendors",
         "path": "/health/vendors",
         "pointer": "#/paths/~1health~1vendors/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Check Available Vendors"
+        "summary": "Check Available Vendors",
+        "tags": [
+          "Service Health"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns metadata about the authenticated User, including a list of vendors for which the user has provided credentials.",
         "id": "operation:get:/me",
         "kind": "operation",
         "method": "get",
         "name": "getMe",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": []
           }
         ],
-        "summary": "Get My User"
+        "summary": "Get My User",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Disconnect a single Vendor from the User's account.",
         "id": "operation:delete:/me/vendors/{vendor}",
         "kind": "operation",
         "method": "delete",
         "name": "disconnectVendor",
+        "parameters": [
+          {
+            "description": "Vendor to be unlinked",
+            "enum": [
+              "TESLA",
+              "BMW",
+              "AUDI",
+              "VOLKSWAGEN",
+              "HYUNDAI",
+              "PEUGEOT",
+              "NISSAN"
+            ],
+            "in": "path",
+            "name": "vendor",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/vendors/{vendor}",
         "pointer": "#/paths/~1me~1vendors~1{vendor}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": []
           }
         ],
-        "summary": "Disconnect Vendor"
+        "summary": "Disconnect Vendor",
+        "tags": [
+          "Me"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a normalized timeseries of statistics about power consumption and price for the User.",
         "id": "operation:get:/statistics/charging",
         "kind": "operation",
         "method": "get",
         "name": "getStatisticsCharging",
+        "parameters": [
+          {
+            "default": "DAY",
+            "description": "The unit of time the data will be cut into before aggregate statistics are applied.",
+            "enum": [
+              "HOUR",
+              "DAY",
+              "WEEK",
+              "MONTH",
+              "YEAR"
+            ],
+            "in": "query",
+            "name": "resolution",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Earliest date to include in the response",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "Latest date to include in the response (defaults to current date/time)",
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Filter statistics to only include this vehicle",
+            "in": "query",
+            "name": "vehicleId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter statistics to only include this charging location",
+            "in": "query",
+            "name": "chargingLocationId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/statistics/charging",
         "pointer": "#/paths/~1statistics~1charging/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": []
           }
         ],
-        "summary": "Get User Charging Statistics"
+        "summary": "Get User Charging Statistics",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a User and all of their data permanently, and invalidates any associated sessions, authorization codes, and access/refresh tokens",
         "id": "operation:delete:/users/{userId}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteUsersUserid",
+        "parameters": [
+          {
+            "description": "ID of the User",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userId}",
         "pointer": "#/paths/~1users~1{userId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ClientAccessToken": []
           }
         ],
-        "summary": "Unlink User"
+        "summary": "Unlink User",
+        "tags": [
+          "User Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the User's stored vendor authorizations and credentials, invalidates any associated sessions, authorization codes, and access/refresh tokens.",
         "id": "operation:delete:/users/{userId}/authorization",
         "kind": "operation",
         "method": "delete",
         "name": "deleteUsersUseridAuthorization",
+        "parameters": [
+          {
+            "description": "ID of the User",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userId}/authorization",
         "pointer": "#/paths/~1users~1{userId}~1authorization/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ClientAccessToken": []
           }
         ],
-        "summary": "Deauthorize User"
+        "summary": "Deauthorize User",
+        "tags": [
+          "User Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an Enode Link session attached to the provided User ID.",
         "id": "operation:post:/users/{userId}/link",
         "kind": "operation",
         "method": "post",
         "name": "postUsersUseridLink",
+        "parameters": [
+          {
+            "description": "ID of the User",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userId}/link",
         "pointer": "#/paths/~1users~1{userId}~1link/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ClientAccessToken": []
           }
         ],
-        "summary": "Link User"
+        "summary": "Link User",
+        "tags": [
+          "User Management"
+        ]
       },
       {
         "deprecated": false,
@@ -454,8 +795,24 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehicles",
+        "parameters": [
+          {
+            "description": "An optional array of Vehicle fields that should be included in the response, for example: `?field[]=information&field[]=location` By default, no fields are inc…",
+            "in": "query",
+            "name": "field[]",
+            "required": false,
+            "type": "array"
+          }
+        ],
         "path": "/vehicles",
         "pointer": "#/paths/~1vehicles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -488,7 +845,10 @@
             ]
           }
         ],
-        "summary": "List Vehicles"
+        "summary": "List Vehicles",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -496,8 +856,31 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehiclesVehicleid",
+        "parameters": [
+          {
+            "description": "ID of the Vehicle",
+            "in": "path",
+            "name": "vehicleId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional array of Vehicle fields that should be included in the response, for example: `?field[]=information&field[]=location` By default, no fields are inc…",
+            "in": "query",
+            "name": "field[]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/vehicles/{vehicleId}",
         "pointer": "#/paths/~1vehicles~1{vehicleId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -530,7 +913,10 @@
             ]
           }
         ],
-        "summary": "Get Vehicle"
+        "summary": "Get Vehicle",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -538,8 +924,20 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehicleChargestate",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/vehicles/{vehicleId}/charge-state",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1charge-state/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -552,16 +950,31 @@
             ]
           }
         ],
-        "summary": "Get Vehicle Charge State"
+        "summary": "Get Vehicle Charge State",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Instruct the vehicle to start or stop charging.",
         "id": "operation:post:/vehicles/{vehicleId}/charging",
         "kind": "operation",
         "method": "post",
         "name": "postVehiclesVehicleidCharging",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/vehicles/{vehicleId}/charging",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1charging/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": [
@@ -574,7 +987,10 @@
             ]
           }
         ],
-        "summary": "Start / Stop Charging"
+        "summary": "Start / Stop Charging",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -582,8 +998,20 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehiclesVehicleidInformation",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/vehicles/{vehicleId}/information",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1information/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -596,7 +1024,10 @@
             ]
           }
         ],
-        "summary": "Get Vehicle Information"
+        "summary": "Get Vehicle Information",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -604,8 +1035,20 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehiclesVehicleidLocation",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/vehicles/{vehicleId}/location",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1location/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -618,7 +1061,10 @@
             ]
           }
         ],
-        "summary": "Get Vehicle Location"
+        "summary": "Get Vehicle Location",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -626,8 +1072,20 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehiclesVehicleidOdometer",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/vehicles/{vehicleId}/odometer",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1odometer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -640,7 +1098,10 @@
             ]
           }
         ],
-        "summary": "Get Vehicle Odometer"
+        "summary": "Get Vehicle Odometer",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -648,8 +1109,19 @@
         "kind": "operation",
         "method": "get",
         "name": "getVehiclesVehicleidSmartchargingpolicy",
+        "parameters": [
+          {
+            "required": false
+          }
+        ],
         "path": "/vehicles/{vehicleId}/smart-charging-policy",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1smart-charging-policy/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserAccessToken": [
@@ -662,16 +1134,42 @@
             ]
           }
         ],
-        "summary": "Get Vehicle Smart Charging Policy"
+        "summary": "Get Vehicle Smart Charging Policy",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the Smart Charging settings for a vehicle",
         "id": "operation:put:/vehicles/{vehicleId}/smart-charging-policy",
         "kind": "operation",
         "method": "put",
         "name": "putVehiclesVehicleidSmartchargingpolicy",
+        "parameters": [
+          {
+            "description": "ID of the Vehicle",
+            "in": "path",
+            "name": "vehicleId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vehicles/{vehicleId}/smart-charging-policy",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1smart-charging-policy/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": [
@@ -684,16 +1182,42 @@
             ]
           }
         ],
-        "summary": "Update Vehicle Smart Charging Policy"
+        "summary": "Update Vehicle Smart Charging Policy",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Temporarily triggers high-rate updates of the vehicle's properties, and this state expires automatically.",
         "id": "operation:post:/vehicles/{vehicleId}/watch",
         "kind": "operation",
         "method": "post",
         "name": "postVehiclesVehicleidWatch",
+        "parameters": [
+          {
+            "description": "ID of the Vehicle",
+            "in": "path",
+            "name": "vehicleId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vehicles/{vehicleId}/watch",
         "pointer": "#/paths/~1vehicles~1{vehicleId}~1watch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserAccessToken": [
@@ -711,7 +1235,10 @@
             ]
           }
         ],
-        "summary": "Start Watching Vehicle"
+        "summary": "Start Watching Vehicle",
+        "tags": [
+          "Vehicles"
+        ]
       },
       {
         "deprecated": false,
@@ -721,27 +1248,54 @@
         "name": "putWebhooksFirehose",
         "path": "/webhooks/firehose",
         "pointer": "#/paths/~1webhooks~1firehose/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ClientAccessToken": []
           }
         ],
-        "summary": "Update Firehose Webhook"
+        "summary": "Update Firehose Webhook",
+        "tags": [
+          "Webhooks 🧪"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Trigger a test payload to be sent to your configured Firehose Webhook url.",
         "id": "operation:post:/webhooks/firehose/test",
         "kind": "operation",
         "method": "post",
         "name": "postWebhooksFirehoseTest",
         "path": "/webhooks/firehose/test",
         "pointer": "#/paths/~1webhooks~1firehose~1test/post",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ClientAccessToken": []
           }
         ],
-        "summary": "Test Firehose Webhook"
+        "summary": "Test Firehose Webhook",
+        "tags": [
+          "Webhooks 🧪"
+        ]
       }
     ]
   },

@@ -37,12 +37,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/email-lists/{id}"
+        "to": "operation:get:/email-lists/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/email-lists/{id}"
+        "to": "operation:delete:/email-lists/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -67,12 +67,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/forms/entries/{id}"
+        "to": "operation:get:/forms/entries/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/forms/entries/{id}"
+        "to": "operation:delete:/forms/entries/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -97,12 +97,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/notifications/{id}"
+        "to": "operation:get:/notifications/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/notifications/{id}"
+        "to": "operation:delete:/notifications/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -117,17 +117,17 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/resources"
-      },
-      {
-        "from": "exavault-com-3410475e44",
-        "kind": "EXPOSES",
         "to": "operation:get:/resources"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
         "to": "operation:post:/resources"
+      },
+      {
+        "from": "exavault-com-3410475e44",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/resources"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -177,12 +177,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/resources/{id}"
+        "to": "operation:get:/resources/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/resources/{id}"
+        "to": "operation:delete:/resources/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -207,12 +207,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/shares/{id}"
+        "to": "operation:get:/shares/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/shares/{id}"
+        "to": "operation:delete:/shares/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -232,12 +232,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/ssh-keys/{id}"
+        "to": "operation:get:/ssh-keys/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/ssh-keys/{id}"
+        "to": "operation:delete:/ssh-keys/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -252,12 +252,12 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{id}"
+        "to": "operation:get:/users/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:get:/users/{id}"
+        "to": "operation:delete:/users/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
@@ -287,17 +287,742 @@
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
-        "to": "operation:delete:/webhooks/{id}"
-      },
-      {
-        "from": "exavault-com-3410475e44",
-        "kind": "EXPOSES",
         "to": "operation:get:/webhooks/{id}"
       },
       {
         "from": "exavault-com-3410475e44",
         "kind": "EXPOSES",
+        "to": "operation:delete:/webhooks/{id}"
+      },
+      {
+        "from": "exavault-com-3410475e44",
+        "kind": "EXPOSES",
         "to": "operation:patch:/webhooks/{id}"
+      },
+      {
+        "from": "operation:get:/account",
+        "kind": "RETURNS",
+        "to": "schema:AccountResponse"
+      },
+      {
+        "from": "operation:patch:/account",
+        "kind": "RETURNS",
+        "to": "schema:AccountResponse"
+      },
+      {
+        "from": "operation:get:/activity/session",
+        "kind": "RETURNS",
+        "to": "schema:SessionActivityResponse"
+      },
+      {
+        "from": "operation:get:/activity/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:WebhookActivityResponse"
+      },
+      {
+        "from": "operation:get:/email-lists",
+        "kind": "RETURNS",
+        "to": "schema:EmailListCollectionResponse"
+      },
+      {
+        "from": "operation:post:/email-lists",
+        "kind": "RETURNS",
+        "to": "schema:EmailListResponse"
+      },
+      {
+        "from": "operation:get:/email-lists/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmailListResponse"
+      },
+      {
+        "from": "operation:delete:/email-lists/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:patch:/email-lists/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmailListResponse"
+      },
+      {
+        "from": "operation:post:/email/referral",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:post:/email/welcome/{username}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:get:/forms",
+        "kind": "RETURNS",
+        "to": "schema:FormResponse"
+      },
+      {
+        "from": "operation:get:/forms/entries/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FormEntryResponse"
+      },
+      {
+        "from": "operation:delete:/forms/entries/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:get:/forms/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FormResponse"
+      },
+      {
+        "from": "operation:patch:/forms/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FormResponse"
+      },
+      {
+        "from": "operation:get:/notifications",
+        "kind": "RETURNS",
+        "to": "schema:NotificationCollectionResponse"
+      },
+      {
+        "from": "operation:post:/notifications",
+        "kind": "RETURNS",
+        "to": "schema:NotificationResponse"
+      },
+      {
+        "from": "operation:get:/notifications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:NotificationResponse"
+      },
+      {
+        "from": "operation:delete:/notifications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:patch:/notifications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:NotificationResponse"
+      },
+      {
+        "from": "operation:post:/recipients/shares/invites/{shareId}",
+        "kind": "RETURNS",
+        "to": "schema:ShareRecipientsResponse"
+      },
+      {
+        "from": "operation:get:/resources",
+        "kind": "RETURNS",
+        "to": "schema:ResourceResponse"
+      },
+      {
+        "from": "operation:post:/resources",
+        "kind": "RETURNS",
+        "to": "schema:ResourceResponse"
+      },
+      {
+        "from": "operation:delete:/resources",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:delete:/resources",
+        "kind": "RETURNS",
+        "to": "schema:ResourceMultiResponse"
+      },
+      {
+        "from": "operation:post:/resources/compress",
+        "kind": "RETURNS",
+        "to": "schema:ResourceResponse"
+      },
+      {
+        "from": "operation:post:/resources/copy",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCopyMove"
+      },
+      {
+        "from": "operation:post:/resources/copy",
+        "kind": "RETURNS",
+        "to": "schema:ResourceMultiResponse"
+      },
+      {
+        "from": "operation:post:/resources/extract",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCollectionResponse"
+      },
+      {
+        "from": "operation:get:/resources/list",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCollectionResponse"
+      },
+      {
+        "from": "operation:get:/resources/list/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCollectionResponse"
+      },
+      {
+        "from": "operation:post:/resources/move",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCopyMove"
+      },
+      {
+        "from": "operation:post:/resources/move",
+        "kind": "RETURNS",
+        "to": "schema:ResourceMultiResponse"
+      },
+      {
+        "from": "operation:get:/resources/preview",
+        "kind": "RETURNS",
+        "to": "schema:PreviewFileResponse"
+      },
+      {
+        "from": "operation:post:/resources/upload",
+        "kind": "RETURNS",
+        "to": "schema:ResourceResponse"
+      },
+      {
+        "from": "operation:get:/resources/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceResponse"
+      },
+      {
+        "from": "operation:delete:/resources/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:patch:/resources/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceResponse"
+      },
+      {
+        "from": "operation:get:/shares",
+        "kind": "RETURNS",
+        "to": "schema:ShareCollectionResponse"
+      },
+      {
+        "from": "operation:post:/shares",
+        "kind": "RETURNS",
+        "to": "schema:ShareResponse"
+      },
+      {
+        "from": "operation:post:/shares/complete-send/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ShareResponse"
+      },
+      {
+        "from": "operation:get:/shares/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ShareResponse"
+      },
+      {
+        "from": "operation:delete:/shares/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:patch:/shares/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ShareResponse"
+      },
+      {
+        "from": "operation:get:/ssh-keys",
+        "kind": "RETURNS",
+        "to": "schema:SSHKeyCollectionResponse"
+      },
+      {
+        "from": "operation:post:/ssh-keys",
+        "kind": "RETURNS",
+        "to": "schema:SSHKeyResponse"
+      },
+      {
+        "from": "operation:get:/ssh-keys/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SSHKeyResponse"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:UserCollectionResponse"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:delete:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:patch:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UserResponse"
+      },
+      {
+        "from": "operation:get:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:WebhookCollectionResponse"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:WebhookResponse"
+      },
+      {
+        "from": "operation:post:/webhooks/regenerate-token/{id}",
+        "kind": "RETURNS",
+        "to": "schema:WebhookResponse"
+      },
+      {
+        "from": "operation:post:/webhooks/resend/{activityId}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:get:/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:WebhookResponse"
+      },
+      {
+        "from": "operation:delete:/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EmptyResponse"
+      },
+      {
+        "from": "operation:patch:/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:WebhookResponse"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:AccountAttributes"
+      },
+      {
+        "from": "schema:AccountAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:BrandingSettings"
+      },
+      {
+        "from": "schema:AccountAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:PlanDetails"
+      },
+      {
+        "from": "schema:AccountAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:Quota"
+      },
+      {
+        "from": "schema:AccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:AccountResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:EmailList",
+        "kind": "REFERENCES",
+        "to": "schema:EmailListAttributes"
+      },
+      {
+        "from": "schema:EmailList",
+        "kind": "REFERENCES",
+        "to": "schema:EmailListRelationships"
+      },
+      {
+        "from": "schema:EmailListCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EmailList"
+      },
+      {
+        "from": "schema:EmailListCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:EmailListOwnerUser",
+        "kind": "REFERENCES",
+        "to": "schema:RelationshipData"
+      },
+      {
+        "from": "schema:EmailListRelationships",
+        "kind": "REFERENCES",
+        "to": "schema:EmailListOwnerUser"
+      },
+      {
+        "from": "schema:EmailListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EmailList"
+      },
+      {
+        "from": "schema:EmailListResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Form",
+        "kind": "REFERENCES",
+        "to": "schema:FormAttributes"
+      },
+      {
+        "from": "schema:FormAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:FormField"
+      },
+      {
+        "from": "schema:FormEntry",
+        "kind": "REFERENCES",
+        "to": "schema:FormEntryField"
+      },
+      {
+        "from": "schema:FormEntryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FormEntry"
+      },
+      {
+        "from": "schema:FormResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Form"
+      },
+      {
+        "from": "schema:FormResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:Notification",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationAttributes"
+      },
+      {
+        "from": "schema:NotificationAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationRecipient"
+      },
+      {
+        "from": "schema:NotificationCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:NotificationCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:NotificationCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:NotificationCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:NotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:NotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:NotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:NotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:PreviewFileResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PreviewFile"
+      },
+      {
+        "from": "schema:Resource",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceAttributes"
+      },
+      {
+        "from": "schema:ResourceCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:ResourceCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:ResourceCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:ResourceCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:ResourceCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:ResourceCopyMove",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:ResourceMultiResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:ResourceMultiResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDelete"
+      },
+      {
+        "from": "schema:ResourceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:ResourceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:ResourceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:ResourceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:ResourceResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:SSHKey",
+        "kind": "REFERENCES",
+        "to": "schema:SSHKeyAttributes"
+      },
+      {
+        "from": "schema:SSHKeyCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SSHKey"
+      },
+      {
+        "from": "schema:SSHKeyCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:SSHKeyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SSHKey"
+      },
+      {
+        "from": "schema:SSHKeyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:SessionActivityResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SessionActivityEntry"
+      },
+      {
+        "from": "schema:Share",
+        "kind": "REFERENCES",
+        "to": "schema:ShareAttributes"
+      },
+      {
+        "from": "schema:ShareAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:AccessMode"
+      },
+      {
+        "from": "schema:ShareAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:ShareMessage"
+      },
+      {
+        "from": "schema:ShareAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:ShareRecipient"
+      },
+      {
+        "from": "schema:ShareCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:ShareCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:ShareCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:ShareCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:ShareResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:ShareResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:ShareResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Share"
+      },
+      {
+        "from": "schema:ShareResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UserAttributes"
+      },
+      {
+        "from": "schema:UserAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:UserPermissions"
+      },
+      {
+        "from": "schema:UserCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:UserCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:UserCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:UserResponse",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Webhook",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookAttributes"
+      },
+      {
+        "from": "schema:WebhookActivityAttributesV2",
+        "kind": "REFERENCES",
+        "to": "schema:AccessMode"
+      },
+      {
+        "from": "schema:WebhookActivityAttributesV2",
+        "kind": "REFERENCES",
+        "to": "schema:ShareMessage"
+      },
+      {
+        "from": "schema:WebhookActivityAttributesV2",
+        "kind": "REFERENCES",
+        "to": "schema:ShareRecipient"
+      },
+      {
+        "from": "schema:WebhookActivityEntry",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookActivityAttributesV1"
+      },
+      {
+        "from": "schema:WebhookActivityEntry",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookActivityAttributesV2"
+      },
+      {
+        "from": "schema:WebhookActivityResponse",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookActivityEntry"
+      },
+      {
+        "from": "schema:WebhookAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookTriggers"
+      },
+      {
+        "from": "schema:WebhookCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:WebhookCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:WebhookCollectionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "schema:WebhookResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:WebhookResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:WebhookResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
       }
     ],
     "nodes": [
@@ -307,977 +1032,3746 @@
       },
       {
         "deprecated": false,
+        "description": "Get settings for your account, such as current space usage, webhooks settings, welcome email content and IP address restrictions.",
         "id": "operation:get:/account",
         "kind": "operation",
         "method": "get",
         "name": "getAccount",
+        "parameters": [
+          {
+            "description": "API Key required for the request",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token for the request",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Related records to include in the response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/account",
         "pointer": "#/paths/~1account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get account settings"
+        "summary": "Get account settings",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update account settings, such as welcome email content, IP address restrictions, webhooks settings and secure password requirements.",
         "id": "operation:patch:/account",
         "kind": "operation",
         "method": "patch",
         "name": "updateAccount",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account",
         "pointer": "#/paths/~1account/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update account settings"
+        "summary": "Update account settings",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the detailed activity logs for your account.",
         "id": "operation:get:/activity/session",
         "kind": "operation",
         "method": "get",
         "name": "getSessionLogs",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start date of the filter data range",
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "End date of the filter data range",
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Used to filter session logs by ip address.",
+            "in": "query",
+            "name": "ipAddress",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Username used for filtering a list",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Path used to filter records",
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter session logs for operation type (see table above for acceptable values)",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offset of the records list",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit of the records list",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Comma separated list sort params",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/activity/session",
         "pointer": "#/paths/~1activity~1session/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SessionActivityResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get activity logs"
+        "summary": "Get activity logs",
+        "tags": [
+          "Activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the webhook logs for your account.",
         "id": "operation:get:/activity/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "getWebhookLogs",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Earliest date of entries to include in list",
+            "in": "query",
+            "name": "startDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Latest date of entries to include in list",
+            "in": "query",
+            "name": "endDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Webhook listener endpoint",
+            "in": "query",
+            "name": "endpointUrl",
+            "required": false,
+            "type": "string:uri"
+          },
+          {
+            "description": "Type of activity that triggered the webhook attempt",
+            "in": "query",
+            "name": "event",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Response code from the webhook endpoint",
+            "in": "query",
+            "name": "statusCode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Path of the resource that triggered the webhook attempt",
+            "in": "query",
+            "name": "resourcePath",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by triggering username.",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Records to skip before returning results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit of the records list",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Comma separated list sort params",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/activity/webhooks",
         "pointer": "#/paths/~1activity~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookActivityResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get webhook logs"
+        "summary": "Get webhook logs",
+        "tags": [
+          "Activity"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all email groups for authenticated user",
         "id": "operation:get:/email-lists",
         "kind": "operation",
         "method": "get",
         "name": "getEmailLists",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Related record types to include in the response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/email-lists",
         "pointer": "#/paths/~1email-lists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmailListCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all email groups"
+        "summary": "Get all email groups",
+        "tags": [
+          "Email Lists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new email list.",
         "id": "operation:post:/email-lists",
         "kind": "operation",
         "method": "post",
         "name": "addEmailList",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/email-lists",
         "pointer": "#/paths/~1email-lists/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "EmailListResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create new email list"
+        "summary": "Create new email list",
+        "tags": [
+          "Email Lists"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/email-lists/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteEmailListById",
-        "path": "/email-lists/{id}",
-        "pointer": "#/paths/~1email-lists~1{id}/delete",
-        "security": [],
-        "summary": "Delete an email group with given id"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve all the details of a specific email list including it's name, when it was created and all the email addresses that belong to the group.",
         "id": "operation:get:/email-lists/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getEmailListById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the email list to return.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Related record types to include in the response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/email-lists/{id}",
         "pointer": "#/paths/~1email-lists~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmailListResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get individual email group"
+        "summary": "Get individual email group",
+        "tags": [
+          "Email Lists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Permanently delete an email group.",
+        "id": "operation:delete:/email-lists/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteEmailListById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the email list to delete",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/email-lists/{id}",
+        "pointer": "#/paths/~1email-lists~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete an email group with given id",
+        "tags": [
+          "Email Lists"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Add or remove emails from an email list that can be used to send and share files with groups.",
         "id": "operation:patch:/email-lists/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateEmailListById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the email list to update.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/email-lists/{id}",
         "pointer": "#/paths/~1email-lists~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmailListResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an email group"
+        "summary": "Update an email group",
+        "tags": [
+          "Email Lists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Invite a friend to sign up for a free trial of ExaVault.",
         "id": "operation:post:/email/referral",
         "kind": "operation",
         "method": "post",
         "name": "sendReferralEmail",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/email/referral",
         "pointer": "#/paths/~1email~1referral/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Send referral email to a given address"
+        "summary": "Send referral email to a given address",
+        "tags": [
+          "Email"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send a welcome email to a user.",
         "id": "operation:post:/email/welcome/{username}",
         "kind": "operation",
         "method": "post",
         "name": "sendWelcomeEmail",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A username to send the welcome email to.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/email/welcome/{username}",
         "pointer": "#/paths/~1email~1welcome~1{username}/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Resend welcome email to specific user"
+        "summary": "Resend welcome email to specific user",
+        "tags": [
+          "Email"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the information for the [file upload form](/docs/account/05-file-sharing/05-form-builder) assigned to a [receive folder](/docs/account/05-file-sharing/04-r…",
         "id": "operation:get:/forms",
         "kind": "operation",
         "method": "get",
         "name": "getFormByShareHash",
+        "parameters": [
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Share hash to retrieve the form for.",
+            "in": "query",
+            "name": "shareHash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Related record types to include in the response.",
+            "enum": [
+              "share"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forms",
         "pointer": "#/paths/~1forms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get receive folder form settings"
+        "summary": "Get receive folder form settings",
+        "tags": [
+          "Form"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/forms/entries/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteFormMessageById",
-        "path": "/forms/entries/{id}",
-        "pointer": "#/paths/~1forms~1entries~1{id}/delete",
-        "security": [],
-        "summary": "Delete a receive form submission"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the form data entries for a specific form for a receive.",
         "id": "operation:get:/forms/entries/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getFormEntries",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the form to retrieve entries for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Limit of records to be returned (for pagination)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Current offset of records (for pagination)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/forms/entries/{id}",
         "pointer": "#/paths/~1forms~1entries~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormEntryResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get form data entries for a receive"
+        "summary": "Get form data entries for a receive",
+        "tags": [
+          "Form"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a form submission entry, which represents one time that a visitor filled out the form and uploaded files.",
+        "id": "operation:delete:/forms/entries/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteFormMessageById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the entry to be deleted data for",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/forms/entries/{id}",
+        "pointer": "#/paths/~1forms~1entries~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a receive form submission",
+        "tags": [
+          "Form"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns the [file upload form](/docs/account/05-file-sharing/05-form-builder) assigned to a [receive folder](/docs/account/05-file-sharing/04-receive-folders).",
         "id": "operation:get:/forms/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getFormById",
+        "parameters": [
+          {
+            "description": "Form unique ID number.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Enter \"**share**\" to get information about associated receive folder.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forms/{id}",
         "pointer": "#/paths/~1forms~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get receive folder form by Id"
+        "summary": "Get receive folder form by Id",
+        "tags": [
+          "Form"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add, update, or delete a form's parameters.",
         "id": "operation:patch:/forms/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateFormById",
+        "parameters": [
+          {
+            "description": "Form unique ID number.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/forms/{id}",
         "pointer": "#/paths/~1forms~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FormResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates a form with given parameters"
+        "summary": "Updates a form with given parameters",
+        "tags": [
+          "Form"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the [notifications](/docs/account/06-notifications) you have access to.",
         "id": "operation:get:/notifications",
         "kind": "operation",
         "method": "get",
         "name": "listNotifications",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Type of notification include in the list.",
+            "enum": [
+              "file",
+              "folder",
+              "shared_folder",
+              "send_receipt",
+              "share_receipt",
+              "file_drop"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Starting notification record in the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "What order the list of matches should be in.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "Number of notification records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Related records to include in the response.",
+            "enum": [
+              "resource",
+              "share",
+              "user"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The kind of action which triggers the notification.",
+            "enum": [
+              "connect",
+              "download",
+              "upload",
+              "delete",
+              "all"
+            ],
+            "in": "query",
+            "name": "action",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/notifications",
         "pointer": "#/paths/~1notifications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotificationCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of notifications"
+        "summary": "Get a list of notifications",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new notification for a [resource](#section/Identifying-Resources) in your account.",
         "id": "operation:post:/notifications",
         "kind": "operation",
         "method": "post",
         "name": "addNotification",
+        "parameters": [
+          {
+            "description": "API Key required to make API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/notifications",
         "pointer": "#/paths/~1notifications/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "NotificationResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new notification"
+        "summary": "Create a new notification",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/notifications/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteNotificationById",
-        "path": "/notifications/{id}",
-        "pointer": "#/paths/~1notifications~1{id}/delete",
-        "security": [],
-        "summary": "Delete a notification"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the details for a notification with a specific ID number.",
         "id": "operation:get:/notifications/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getNotificationById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the notification.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Related record types to include in the response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/notifications/{id}",
         "pointer": "#/paths/~1notifications~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotificationResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get notification details"
+        "summary": "Get notification details",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a notification.",
+        "id": "operation:delete:/notifications/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteNotificationById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the notification.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/notifications/{id}",
+        "pointer": "#/paths/~1notifications~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a notification",
+        "tags": [
+          "Notifications"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update an existing notification.",
         "id": "operation:patch:/notifications/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateNotificationById",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the notification.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/notifications/{id}",
         "pointer": "#/paths/~1notifications~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotificationResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a notification"
+        "summary": "Update a notification",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resend invitations to one or all recipients attached to specified share.",
         "id": "operation:post:/recipients/shares/invites/{shareId}",
         "kind": "operation",
         "method": "post",
         "name": "resendInvitationsForShare",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the share to resend invites for.",
+            "in": "path",
+            "name": "shareId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/recipients/shares/invites/{shareId}",
         "pointer": "#/paths/~1recipients~1shares~1invites~1{shareId}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ShareRecipientsResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Resend invitations to share recipients"
+        "summary": "Resend invitations to share recipients",
+        "tags": [
+          "Recipients"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/resources",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteResources",
-        "path": "/resources",
-        "pointer": "#/paths/~1resources/delete",
-        "security": [],
-        "summary": "Delete Resources"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns details for specified file/folder id or hash, including upload date, size and type.",
         "id": "operation:get:/resources",
         "kind": "operation",
         "method": "get",
         "name": "getResourceInfo",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Resource identifier of the file or folder to get metadata for.",
+            "in": "query",
+            "name": "resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources",
         "pointer": "#/paths/~1resources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Resource Properties"
+        "summary": "Get Resource Properties",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new empty folder at the specified path.",
         "id": "operation:post:/resources",
         "kind": "operation",
         "method": "post",
         "name": "addFolder",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources",
         "pointer": "#/paths/~1resources/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ResourceResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a folder"
+        "summary": "Create a folder",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete multiple file or folder resourcess.",
+        "id": "operation:delete:/resources",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteResources",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/resources",
+        "pointer": "#/paths/~1resources/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          },
+          {
+            "status": "207",
+            "type": "ResourceMultiResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete Resources",
+        "tags": [
+          "Resources"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Create a zip archive containing the files from given set of paths.",
         "id": "operation:post:/resources/compress",
         "kind": "operation",
         "method": "post",
         "name": "compressFiles",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/compress",
         "pointer": "#/paths/~1resources~1compress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ResourceResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Compress resources"
+        "summary": "Compress resources",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Copies a set of exisiting files/folders (provided by an array `resources`) to the requested `parentResource` in your account.",
         "id": "operation:post:/resources/copy",
         "kind": "operation",
         "method": "post",
         "name": "copyResources",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/copy",
         "pointer": "#/paths/~1resources~1copy/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCopyMove"
+          },
+          {
+            "status": "207",
+            "type": "ResourceMultiResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Copy resources"
+        "summary": "Copy resources",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Downloads a file from the server.",
         "id": "operation:get:/resources/download",
         "kind": "operation",
         "method": "get",
         "name": "download",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Path of file or folder to be downloaded, starting from the root.",
+            "in": "query",
+            "name": "resources[]",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "When downloading multiple files, this will be used as the name of the zip file that is created.",
+            "in": "query",
+            "name": "downloadArchiveName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/download",
         "pointer": "#/paths/~1resources~1download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download a file"
+        "summary": "Download a file",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Extract the contents of a zip archive to a specified directory.",
         "id": "operation:post:/resources/extract",
         "kind": "operation",
         "method": "post",
         "name": "extractFiles",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/extract",
         "pointer": "#/paths/~1resources~1extract/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ResourceCollectionResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Extract resources"
+        "summary": "Extract resources",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of files and folders in the account.",
         "id": "operation:get:/resources/list",
         "kind": "operation",
         "method": "get",
         "name": "listResources",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Resource identifier to get resources for.",
+            "in": "query",
+            "name": "resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Endpoint support multiple sort fields by allowing array of sort params.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Determines which item to start on for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of files to limit the result.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Limit types of resources returned to \"file\" or \"dir\" only.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to match resource names.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/list",
         "pointer": "#/paths/~1resources~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of all resources"
+        "summary": "Get a list of all resources",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of files/folders for the parent resource ID.",
         "id": "operation:get:/resources/list/{id}",
         "kind": "operation",
         "method": "get",
         "name": "listResourceContents",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the parent resource to get a list of resources for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Endpoint support multiple sort fields by allowing array of sort params.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Determines which item to start on for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of files to limit the result.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Limit types of resources returned to \"file\" or \"dir\" only.",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/list/{id}",
         "pointer": "#/paths/~1resources~1list~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List contents of folder"
+        "summary": "List contents of folder",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Moves a set of exisiting files/folders (provided by an array `resources`) to the requested `parentResource` in your account.",
         "id": "operation:post:/resources/move",
         "kind": "operation",
         "method": "post",
         "name": "moveResources",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/move",
         "pointer": "#/paths/~1resources~1move/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCopyMove"
+          },
+          {
+            "status": "207",
+            "type": "ResourceMultiResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Move resources"
+        "summary": "Move resources",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a resized image of the specified document for supported file types.",
         "id": "operation:get:/resources/preview",
         "kind": "operation",
         "method": "get",
         "name": "getPreviewImage",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Resource identifier for the image file.",
+            "in": "query",
+            "name": "resource",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The size of the image.",
+            "enum": [
+              "small",
+              "medium",
+              "large"
+            ],
+            "in": "query",
+            "name": "size",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Overrides sizes.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Overrides sizes.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Page number to extract from a multi-page document (0 is the first page).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/resources/preview",
         "pointer": "#/paths/~1resources~1preview/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PreviewFileResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Preview a file"
+        "summary": "Preview a file",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Uploads a file to a specified path, with optional support for resuming a partially uploaded existing file.",
         "id": "operation:post:/resources/upload",
         "kind": "operation",
         "method": "post",
         "name": "uploadFile",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Allows a file upload to resume at a certain number of bytes.",
+            "in": "header",
+            "name": "offsetBytes",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Destination path for the file being uploaded, including the file name.",
+            "in": "query",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "File size, in bits, of the file being uploaded.",
+            "in": "query",
+            "name": "fileSize",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": "true",
+            "description": "True if upload resume is supported, false if it isn't.",
+            "in": "query",
+            "name": "resume",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "false",
+            "description": "True if a file with the same name is found in the designated path, should be overwritten.",
+            "in": "query",
+            "name": "allowOverwrite",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/resources/upload",
         "pointer": "#/paths/~1resources~1upload/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ResourceResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Upload a file"
+        "summary": "Upload a file",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/resources/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteResourceById",
-        "path": "/resources/{id}",
-        "pointer": "#/paths/~1resources~1{id}/delete",
-        "security": [],
-        "summary": "Delete a Resource"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns metadata for specified file/folder path, including upload date, size and type.",
         "id": "operation:get:/resources/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getResourceInfoById",
+        "parameters": [
+          {
+            "description": "ID number of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/resources/{id}",
         "pointer": "#/paths/~1resources~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get resource metadata"
+        "summary": "Get resource metadata",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a single file or folder resource.",
+        "id": "operation:delete:/resources/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteResourceById",
+        "parameters": [
+          {
+            "description": "ID number of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/resources/{id}",
+        "pointer": "#/paths/~1resources~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a Resource",
+        "tags": [
+          "Resources"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update the specified file or folder resource record's \"name\" parameter.",
         "id": "operation:patch:/resources/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateResourceById",
+        "parameters": [
+          {
+            "description": "ID number of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/resources/{id}",
         "pointer": "#/paths/~1resources~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Rename a resource."
+        "summary": "Rename a resource.",
+        "tags": [
+          "Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of shares that you would have access to view through the web interface.",
         "id": "operation:get:/shares",
         "kind": "operation",
         "method": "get",
         "name": "listShares",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Current offset of records (for pagination)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "Limit of records to be returned (for pagination)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Set of shares to return.",
+            "enum": [
+              "all",
+              "active",
+              "currentUser"
+            ],
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "What order the list of matches should be in.",
+            "enum": [
+              "created",
+              "-created"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the list of matches to only certain types of shares.",
+            "enum": [
+              "receive",
+              "shared_folder",
+              "send"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When provided, only shares whose names include this value will be in the list.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter the results to include only shares that invited a certain email address.",
+            "in": "query",
+            "name": "recipient",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When provided, only shares with a message that contains the text will be included in the list of matches.",
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When provided, only shares created by the user with that `username` will be included in the list.",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Searches the share name, username, recipients, share messages fields for the provided value.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/shares",
         "pointer": "#/paths/~1shares/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShareCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of shares"
+        "summary": "Get a list of shares",
+        "tags": [
+          "Shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new share object for the given path in your account.",
         "id": "operation:post:/shares",
         "kind": "operation",
         "method": "post",
         "name": "addShare",
+        "parameters": [
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/shares",
         "pointer": "#/paths/~1shares/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ShareResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a share"
+        "summary": "Creates a share",
+        "tags": [
+          "Shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "After uploading the file(s) to be sent, this method will trigger invitation emails and finish the send files setup.",
         "id": "operation:post:/shares/complete-send/{id}",
         "kind": "operation",
         "method": "post",
         "name": "completeDirectSend",
+        "parameters": [
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the share to trigger invitations for.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/shares/complete-send/{id}",
         "pointer": "#/paths/~1shares~1complete-send~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShareResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Complete send files"
+        "summary": "Complete send files",
+        "tags": [
+          "Shares"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/shares/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteShareById",
-        "path": "/shares/{id}",
-        "pointer": "#/paths/~1shares~1{id}/delete",
-        "security": [],
-        "summary": "Deactivate a share"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the details for a specific share entry.",
         "id": "operation:get:/shares/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getShareById",
+        "parameters": [
+          {
+            "description": "ID of the share entry",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/shares/{id}",
         "pointer": "#/paths/~1shares~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShareResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a share"
+        "summary": "Get a share",
+        "tags": [
+          "Shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deactivate a share.",
+        "id": "operation:delete:/shares/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteShareById",
+        "parameters": [
+          {
+            "description": "ID of the share entry",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/shares/{id}",
+        "pointer": "#/paths/~1shares~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deactivate a share",
+        "tags": [
+          "Shares"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Change the settings on an active share.",
         "id": "operation:patch:/shares/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateShareById",
+        "parameters": [
+          {
+            "description": "ID of the share entry",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access Token",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/shares/{id}",
         "pointer": "#/paths/~1shares~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShareResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a share"
+        "summary": "Update a share",
+        "tags": [
+          "Shares"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of SSH Keys within the account.",
         "id": "operation:get:/ssh-keys",
         "kind": "operation",
         "method": "get",
         "name": "getSSHKeysList",
+        "parameters": [
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only return results for the given user ID.",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limits the results by the given number.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Determines which item to start on for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/ssh-keys",
         "pointer": "#/paths/~1ssh-keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SSHKeyCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get metadata for a list of SSH Keys"
+        "summary": "Get metadata for a list of SSH Keys",
+        "tags": [
+          "SSH Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new SSH Key for a user.",
         "id": "operation:post:/ssh-keys",
         "kind": "operation",
         "method": "post",
         "name": "addSSHKey",
+        "parameters": [
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ssh-keys",
         "pointer": "#/paths/~1ssh-keys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SSHKeyResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new SSH Key"
+        "summary": "Create a new SSH Key",
+        "tags": [
+          "SSH Keys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/ssh-keys/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSSHKey",
-        "path": "/ssh-keys/{id}",
-        "pointer": "#/paths/~1ssh-keys~1{id}/delete",
-        "security": [],
-        "summary": "Delete an SSH Key"
-      },
-      {
-        "deprecated": false,
+        "description": "Return the information for a single SSH Key",
         "id": "operation:get:/ssh-keys/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getSSHKey",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ssh-keys/{id}",
         "pointer": "#/paths/~1ssh-keys~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SSHKeyResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get metadata for an SSH Key"
+        "summary": "Get metadata for an SSH Key",
+        "tags": [
+          "SSH Keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete the specified SSH key.",
+        "id": "operation:delete:/ssh-keys/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSSHKey",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/ssh-keys/{id}",
+        "pointer": "#/paths/~1ssh-keys~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete an SSH Key",
+        "tags": [
+          "SSH Keys"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get a list of the users in your account.",
         "id": "operation:get:/users",
         "kind": "operation",
         "method": "get",
         "name": "listUsers",
+        "parameters": [
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The username of the user you are looking for.",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Resource identifier for user's home directory.",
+            "in": "query",
+            "name": "homeResource",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Nickname to search for.",
+            "in": "query",
+            "name": "nickname",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Email to search for.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Types of users to include the list.",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Whether a user is locked.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Searches the nickname, email, role and homeDir fields for the provided value.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting user record in the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Sort order or matching users.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of users to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Comma separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of users"
+        "summary": "Get a list of users",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a new user to the account.",
         "id": "operation:post:/users",
         "kind": "operation",
         "method": "post",
         "name": "addUser",
+        "parameters": [
+          {
+            "description": "API key required to make the API call",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "UserResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a user"
+        "summary": "Create a user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/users/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteUser",
-        "path": "/users/{id}",
-        "pointer": "#/paths/~1users~1{id}/delete",
-        "security": [],
-        "summary": "Delete a user"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the details for a specific user.",
         "id": "operation:get:/users/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getUserById",
+        "parameters": [
+          {
+            "description": "The user's ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API Key",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of relationships to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get info for a user"
+        "summary": "Get info for a user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a user from the account.",
+        "id": "operation:delete:/users/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteUser",
+        "parameters": [
+          {
+            "description": "The user's ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API Key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/users/{id}",
+        "pointer": "#/paths/~1users~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a user",
+        "tags": [
+          "Users"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates the settings for the user.",
         "id": "operation:patch:/users/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateUser",
+        "parameters": [
+          {
+            "description": "The user's ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a user"
+        "summary": "Update a user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of Webhooks.",
         "id": "operation:get:/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "getWehooksList",
+        "parameters": [
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of related record types to include.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Records to skip before returning results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Limit of the records list",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookCollectionResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Webhooks List"
+        "summary": "Get Webhooks List",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new Webhook on your account.",
         "id": "operation:post:/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "addWebhook",
+        "parameters": [
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "WebhookResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add A New Webhook"
+        "summary": "Add A New Webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will allow you to regenerate the security token for a webhook if you believe it’s been compromised in any way.",
         "id": "operation:post:/webhooks/regenerate-token/{id}",
         "kind": "operation",
         "method": "post",
         "name": "regenerateWebhookToken",
+        "parameters": [
+          {
+            "description": "Webhook ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/regenerate-token/{id}",
         "pointer": "#/paths/~1webhooks~1regenerate-token~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Regenerate security token"
+        "summary": "Regenerate security token",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will allow you to resend a webhook that was previously sent.",
         "id": "operation:post:/webhooks/resend/{activityId}",
         "kind": "operation",
         "method": "post",
         "name": "resendWebhookActivityEntry",
+        "parameters": [
+          {
+            "description": "Webhooks activity entry ID",
+            "in": "path",
+            "name": "activityId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/resend/{activityId}",
         "pointer": "#/paths/~1webhooks~1resend~1{activityId}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Resend a webhook message"
+        "summary": "Resend a webhook message",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/webhooks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteWebhook",
-        "path": "/webhooks/{id}",
-        "pointer": "#/paths/~1webhooks~1{id}/delete",
-        "security": [],
-        "summary": "Delete a webhook"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the metadata for a specific webhook.",
         "id": "operation:get:/webhooks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getWebhookById",
+        "parameters": [
+          {
+            "description": "Webhook endpoint ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Include metadata for related items; `ownerAccount` and/or `resource`",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{id}",
         "pointer": "#/paths/~1webhooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get info for a webhook"
+        "summary": "Get info for a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deleted the specified webhook.",
+        "id": "operation:delete:/webhooks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteWebhook",
+        "parameters": [
+          {
+            "description": "Webhook endpoint ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/webhooks/{id}",
+        "pointer": "#/paths/~1webhooks~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EmptyResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a webhook",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update the specified webhook.",
         "id": "operation:patch:/webhooks/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateWebhook",
+        "parameters": [
+          {
+            "description": "Webhook endpoint ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "API key required to make the API call.",
+            "in": "header",
+            "name": "ev-api-key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Access token required to make the API call.",
+            "in": "header",
+            "name": "ev-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{id}",
         "pointer": "#/paths/~1webhooks~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a webhook"
+        "summary": "Update a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
+        "description": "An object defining what a not-logged-in visitor can do with the share contents",
         "id": "schema:AccessMode",
         "kind": "schema",
-        "name": "AccessMode"
+        "name": "AccessMode",
+        "type": "object"
       },
       {
+        "description": "Object contains all account properties.",
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:AccountAttributes",
         "kind": "schema",
-        "name": "AccountAttributes"
+        "name": "AccountAttributes",
+        "type": "object"
       },
       {
         "id": "schema:AccountResponse",
         "kind": "schema",
-        "name": "AccountResponse"
+        "name": "AccountResponse",
+        "type": "object"
       },
       {
         "id": "schema:BrandingSettings",
         "kind": "schema",
-        "name": "BrandingSettings"
+        "name": "BrandingSettings",
+        "type": "object"
       },
       {
+        "description": "A single email group list",
         "id": "schema:EmailList",
         "kind": "schema",
-        "name": "EmailList"
+        "name": "EmailList",
+        "type": "object"
       },
       {
+        "description": "Information for the email list, including its short title and recipient emails",
         "id": "schema:EmailListAttributes",
         "kind": "schema",
-        "name": "EmailListAttributes"
+        "name": "EmailListAttributes",
+        "type": "object"
       },
       {
+        "description": "Response object for list of email lists",
         "id": "schema:EmailListCollectionResponse",
         "kind": "schema",
-        "name": "EmailListCollectionResponse"
+        "name": "EmailListCollectionResponse",
+        "type": "object"
       },
       {
+        "description": "Information for user who owns the email list",
         "id": "schema:EmailListOwnerUser",
         "kind": "schema",
-        "name": "EmailListOwnerUser"
+        "name": "EmailListOwnerUser",
+        "type": "object"
       },
       {
+        "description": "Related record summary info",
         "id": "schema:EmailListRelationships",
         "kind": "schema",
-        "name": "EmailListRelationships"
+        "name": "EmailListRelationships",
+        "type": "object"
       },
       {
+        "description": "Response object for a single email list.",
         "id": "schema:EmailListResponse",
         "kind": "schema",
-        "name": "EmailListResponse"
+        "name": "EmailListResponse",
+        "type": "object"
       },
       {
         "id": "schema:EmptyResponse",
         "kind": "schema",
-        "name": "EmptyResponse"
+        "name": "EmptyResponse",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "Regular form object.",
         "id": "schema:Form",
         "kind": "schema",
-        "name": "Form"
+        "name": "Form",
+        "type": "object"
       },
       {
+        "description": "Attributes of the form including it's included fields and css styles",
         "id": "schema:FormAttributes",
         "kind": "schema",
-        "name": "FormAttributes"
+        "name": "FormAttributes",
+        "type": "object"
       },
       {
+        "description": "Contains the data submitted for a form.",
         "id": "schema:FormEntry",
         "kind": "schema",
-        "name": "FormEntry"
+        "name": "FormEntry",
+        "type": "object"
       },
       {
+        "description": "Attributes of the form including its included fields and css styles",
         "id": "schema:FormEntryField",
         "kind": "schema",
-        "name": "FormEntryField"
+        "name": "FormEntryField",
+        "type": "object"
       },
       {
+        "description": "Response object of the form data.",
         "id": "schema:FormEntryResponse",
         "kind": "schema",
-        "name": "FormEntryResponse"
+        "name": "FormEntryResponse",
+        "type": "object"
       },
       {
         "id": "schema:FormField",
         "kind": "schema",
-        "name": "FormField"
+        "name": "FormField",
+        "type": "object"
       },
       {
         "id": "schema:FormFieldUploadArea",
         "kind": "schema",
-        "name": "FormFieldUploadArea"
+        "name": "FormFieldUploadArea",
+        "type": "object"
       },
       {
+        "description": "Response object for forms.",
         "id": "schema:FormResponse",
         "kind": "schema",
-        "name": "FormResponse"
+        "name": "FormResponse",
+        "type": "object"
       },
       {
+        "description": "Object containing notification properties.",
         "id": "schema:Notification",
         "kind": "schema",
-        "name": "Notification"
+        "name": "Notification",
+        "type": "object"
       },
       {
+        "description": "Attributes for the notification including the path, recipients, and share data.",
         "id": "schema:NotificationAttributes",
         "kind": "schema",
-        "name": "NotificationAttributes"
+        "name": "NotificationAttributes",
+        "type": "object"
       },
       {
+        "description": "Response object for notifications collection.",
         "id": "schema:NotificationCollectionResponse",
         "kind": "schema",
-        "name": "NotificationCollectionResponse"
+        "name": "NotificationCollectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:NotificationRecipient",
         "kind": "schema",
-        "name": "NotificationRecipient"
+        "name": "NotificationRecipient",
+        "type": "object"
       },
       {
+        "description": "Response object for notifications.",
         "id": "schema:NotificationResponse",
         "kind": "schema",
-        "name": "NotificationResponse"
+        "name": "NotificationResponse",
+        "type": "object"
       },
       {
         "id": "schema:PlanDetails",
         "kind": "schema",
-        "name": "PlanDetails"
+        "name": "PlanDetails",
+        "type": "object"
       },
       {
+        "description": "Object with preview image properties.",
         "id": "schema:PreviewFile",
         "kind": "schema",
-        "name": "PreviewFile"
+        "name": "PreviewFile",
+        "type": "object"
       },
       {
+        "description": "Response object for preview file",
         "id": "schema:PreviewFileResponse",
         "kind": "schema",
-        "name": "PreviewFileResponse"
+        "name": "PreviewFileResponse",
+        "type": "object"
       },
       {
         "id": "schema:Quota",
         "kind": "schema",
-        "name": "Quota"
+        "name": "Quota",
+        "type": "object"
       },
       {
+        "description": "Identifying info for related record",
         "id": "schema:RelationshipData",
         "kind": "schema",
-        "name": "RelationshipData"
+        "name": "RelationshipData",
+        "type": "object"
       },
       {
+        "description": "All properties of the resource.",
         "id": "schema:Resource",
         "kind": "schema",
-        "name": "Resource"
+        "name": "Resource",
+        "type": "object"
       },
       {
+        "description": "Attributes of resource",
         "id": "schema:ResourceAttributes",
         "kind": "schema",
-        "name": "ResourceAttributes"
+        "name": "ResourceAttributes",
+        "type": "object"
       },
       {
+        "description": "Response object for collection of resources.",
         "id": "schema:ResourceCollectionResponse",
         "kind": "schema",
-        "name": "ResourceCollectionResponse"
+        "name": "ResourceCollectionResponse",
+        "type": "object"
       },
       {
+        "description": "Resource which was successfully copied or moved.",
         "id": "schema:ResourceCopyMove",
         "kind": "schema",
-        "name": "ResourceCopyMove"
+        "name": "ResourceCopyMove",
+        "type": "object"
       },
       {
+        "description": "All properties of the resource delete object",
         "id": "schema:ResourceDelete",
         "kind": "schema",
-        "name": "ResourceDelete"
+        "name": "ResourceDelete",
+        "type": "object"
       },
       {
         "id": "schema:ResourceMultiResponse",
         "kind": "schema",
-        "name": "ResourceMultiResponse"
+        "name": "ResourceMultiResponse",
+        "type": "object"
       },
       {
+        "description": "Response object for resources.",
         "id": "schema:ResourceResponse",
         "kind": "schema",
-        "name": "ResourceResponse"
+        "name": "ResourceResponse",
+        "type": "object"
       },
       {
+        "description": "Object representing an SSH Key associated with a user.",
         "id": "schema:SSHKey",
         "kind": "schema",
-        "name": "SSHKey"
+        "name": "SSHKey",
+        "type": "object"
       },
       {
         "id": "schema:SSHKeyAttributes",
         "kind": "schema",
-        "name": "SSHKeyAttributes"
+        "name": "SSHKeyAttributes",
+        "type": "object"
       },
       {
         "id": "schema:SSHKeyCollectionResponse",
         "kind": "schema",
-        "name": "SSHKeyCollectionResponse"
+        "name": "SSHKeyCollectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:SSHKeyResponse",
         "kind": "schema",
-        "name": "SSHKeyResponse"
+        "name": "SSHKeyResponse",
+        "type": "object"
       },
       {
+        "description": "Single entry of session activity",
         "id": "schema:SessionActivityEntry",
         "kind": "schema",
-        "name": "SessionActivityEntry"
+        "name": "SessionActivityEntry",
+        "type": "object"
       },
       {
+        "description": "Session activity list response",
         "id": "schema:SessionActivityResponse",
         "kind": "schema",
-        "name": "SessionActivityResponse"
+        "name": "SessionActivityResponse",
+        "type": "object"
       },
       {
+        "description": "Object contains share properties.",
         "id": "schema:Share",
         "kind": "schema",
-        "name": "Share"
+        "name": "Share",
+        "type": "object"
       },
       {
+        "description": "Attributes of the share including the name, path and share recipients.",
         "id": "schema:ShareAttributes",
         "kind": "schema",
-        "name": "ShareAttributes"
+        "name": "ShareAttributes",
+        "type": "object"
       },
       {
         "id": "schema:ShareCollectionResponse",
         "kind": "schema",
-        "name": "ShareCollectionResponse"
+        "name": "ShareCollectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:ShareMessage",
         "kind": "schema",
-        "name": "ShareMessage"
+        "name": "ShareMessage",
+        "type": "object"
       },
       {
         "id": "schema:ShareRecipient",
         "kind": "schema",
-        "name": "ShareRecipient"
+        "name": "ShareRecipient",
+        "type": "object"
       },
       {
         "id": "schema:ShareRecipientsResponse",
         "kind": "schema",
-        "name": "ShareRecipientsResponse"
+        "name": "ShareRecipientsResponse",
+        "type": "object"
       },
       {
+        "description": "Response object for shares.",
         "id": "schema:ShareResponse",
         "kind": "schema",
-        "name": "ShareResponse"
+        "name": "ShareResponse",
+        "type": "object"
       },
       {
+        "description": "Object contains user properties.",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
+        "description": "Attributes of the user including expiration, home directory, and permissions.",
         "id": "schema:UserAttributes",
         "kind": "schema",
-        "name": "UserAttributes"
+        "name": "UserAttributes",
+        "type": "object"
       },
       {
         "id": "schema:UserCollectionResponse",
         "kind": "schema",
-        "name": "UserCollectionResponse"
+        "name": "UserCollectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:UserPermissions",
         "kind": "schema",
-        "name": "UserPermissions"
+        "name": "UserPermissions",
+        "type": "object"
       },
       {
+        "description": "Response object for users.",
         "id": "schema:UserResponse",
         "kind": "schema",
-        "name": "UserResponse"
+        "name": "UserResponse",
+        "type": "object"
       },
       {
         "id": "schema:Webhook",
         "kind": "schema",
-        "name": "Webhook"
+        "name": "Webhook",
+        "type": "object"
       },
       {
         "id": "schema:WebhookActivityAttributesV1",
         "kind": "schema",
-        "name": "WebhookActivityAttributesV1"
+        "name": "WebhookActivityAttributesV1",
+        "type": "object"
       },
       {
         "id": "schema:WebhookActivityAttributesV2",
         "kind": "schema",
-        "name": "WebhookActivityAttributesV2"
+        "name": "WebhookActivityAttributesV2",
+        "type": "object"
       },
       {
         "id": "schema:WebhookActivityEntry",
         "kind": "schema",
-        "name": "WebhookActivityEntry"
+        "name": "WebhookActivityEntry",
+        "type": "object"
       },
       {
+        "description": "Session activity list response",
         "id": "schema:WebhookActivityResponse",
         "kind": "schema",
-        "name": "WebhookActivityResponse"
+        "name": "WebhookActivityResponse",
+        "type": "object"
       },
       {
         "id": "schema:WebhookAttributes",
         "kind": "schema",
-        "name": "WebhookAttributes"
+        "name": "WebhookAttributes",
+        "type": "object"
       },
       {
         "id": "schema:WebhookCollectionResponse",
         "kind": "schema",
-        "name": "WebhookCollectionResponse"
+        "name": "WebhookCollectionResponse",
+        "type": "object"
       },
       {
         "id": "schema:WebhookResponse",
         "kind": "schema",
-        "name": "WebhookResponse"
+        "name": "WebhookResponse",
+        "type": "object"
       },
       {
         "id": "schema:WebhookTriggers",
         "kind": "schema",
-        "name": "WebhookTriggers"
+        "name": "WebhookTriggers",
+        "type": "object"
       }
     ]
   },

@@ -12,7 +12,7 @@ Independent integration for Flagsmith Management API. Not affiliated with or end
 
 | | |
 | --- | --- |
-| Signed bundle | `6fc01d96e05313fe5c863e12e1720579470a24d3f2d4b20901224c657d4fb5fc` in `bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.flagsmith.com` |
 | Credential | api_key_header (`Authorization` 'Api-Key') |
 | Connection test | GET `https://api.flagsmith.com/api/v1/organisations/` |
@@ -40,59 +40,61 @@ Independent integration for Flagsmith Management API. Not affiliated with or end
 
 498 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/environments/` | list_environments | — |
-| POST | `/api/v1/environments/{environment_api_key}/create-change-request/` | create_environment_feature_change_request | — |
-| GET | `/api/v1/environments/{environment_api_key}/experiment-metrics/` | list_metrics | — |
-| POST | `/api/v1/environments/{environment_api_key}/experiment-metrics/` | create_metric | — |
-| GET | `/api/v1/environments/{environment_api_key}/experiment-metrics/{id}/` | get_metric | — |
-| PUT | `/api/v1/environments/{environment_api_key}/experiment-metrics/{id}/` | update_metric | — |
-| GET | `/api/v1/environments/{environment_api_key}/experiments/` | list_experiments | — |
-| POST | `/api/v1/environments/{environment_api_key}/experiments/` | create_experiment | — |
-| GET | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/` | get_experiment | — |
-| PUT | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/` | update_experiment | — |
-| GET | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/exposures/` | get_experiment_exposures | — |
-| GET | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/results/` | get_experiment_results | — |
-| POST | `/api/v1/environments/{environment_api_key}/features/{feature_pk}/create-segment-override/` | create_segment_override | — |
-| PUT | `/api/v1/environments/{environment_api_key}/featurestates/{id}/` | update_environment_feature_state | — |
-| GET | `/api/v1/environments/{environment_api_key}/list-change-requests/` | list_environment_change_requests | — |
-| GET | `/api/v1/environments/{environment_pk}/feature-lifecycle-counts/` | get_feature_lifecycle_counts | — |
-| GET | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/` | get_environment_feature_versions | — |
-| POST | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/` | create_environment_feature_version | — |
-| GET | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{environment_feature_version_pk}/featurestates/` | get_environment_feature_version_states | — |
-| POST | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{environment_feature_version_pk}/featurestates/` | create_environment_feature_version_state | — |
-| PUT | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{environment_feature_version_pk}/featurestates/{id}/` | update_environment_feature_version_state | — |
-| POST | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{id}/publish/` | publish_environment_feature_version | — |
-| GET | `/api/v1/features/feature-segments/` | list_feature_segments | — |
-| DELETE | `/api/v1/features/feature-segments/{id}/` | delete_feature_segment | — |
-| PUT | `/api/v1/features/featurestates/{id}/` | update_feature_state | — |
-| GET | `/api/v1/organisations/` | list_organizations | — |
-| GET | `/api/v1/organisations/{id}/projects/` | list_projects_in_organization | — |
-| GET | `/api/v1/organisations/{organisation_pk}/groups/` | list_organization_groups | — |
-| GET | `/api/v1/organisations/{organisation_pk}/invites/` | list_organization_invites | — |
-| POST | `/api/v1/organisations/{organisation_pk}/invites/` | create_organization_invite | — |
-| GET | `/api/v1/organisations/{organisation_pk}/roles/` | list_organization_roles | — |
-| GET | `/api/v1/projects/{id}/` | get_project | — |
-| PUT | `/api/v1/projects/{id}/` | update_project | — |
-| GET | `/api/v1/projects/{id}/environments/` | list_project_environments | — |
-| GET | `/api/v1/projects/{project_pk}/change-requests/` | list_project_change_requests | — |
-| GET | `/api/v1/projects/{project_pk}/feature-health/events/` | get_feature_health_events | — |
-| GET | `/api/v1/projects/{project_pk}/features/` | list_project_features | — |
-| POST | `/api/v1/projects/{project_pk}/features/` | create_feature | — |
-| GET | `/api/v1/projects/{project_pk}/features/{feature_pk}/code-references/` | get_feature_code_references | — |
-| GET | `/api/v1/projects/{project_pk}/features/{feature_pk}/feature-external-resources/` | get_feature_external_resources | — |
-| GET | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/` | list_feature_multivariate_options | — |
-| POST | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/` | create_feature_multivariate_option | — |
-| DELETE | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/{id}/` | delete_feature_multivariate_option | — |
-| PUT | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/{id}/` | update_feature_multivariate_option | — |
-| GET | `/api/v1/projects/{project_pk}/features/{id}/` | get_feature_flag | — |
-| PUT | `/api/v1/projects/{project_pk}/features/{id}/` | update_feature | — |
-| GET | `/api/v1/projects/{project_pk}/features/{id}/evaluation-data/` | get_feature_evaluation_data | — |
-| GET | `/api/v1/projects/{project_pk}/release-pipelines/` | list_project_release_pipelines | — |
-| GET | `/api/v1/projects/{project_pk}/release-pipelines/{id}/` | get_release_pipeline | — |
-| POST | `/api/v1/projects/{project_pk}/release-pipelines/{id}/add-feature/` | add_feature_to_release_pipeline | — |
-| GET | `/api/v1/projects/{project_pk}/segments/` | list_project_segments | — |
-| POST | `/api/v1/projects/{project_pk}/segments/` | create_project_segment | — |
-| GET | `/api/v1/projects/{project_pk}/segments/{id}/` | get_project_segment | — |
-| PUT | `/api/v1/projects/{project_pk}/segments/{id}/` | update_project_segment | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/environments/` | list_environments | `page`, `project` | PaginatedEnvironmentSerializerWithMetadataList | yes | — |
+| POST | `/api/v1/environments/{environment_api_key}/create-change-request/` | create_environment_feature_change_request | `environment_api_key`*, body*: ChangeRequestCreate | ChangeRequestCreate |  | — |
+| GET | `/api/v1/environments/{environment_api_key}/experiment-metrics/` | list_metrics | `environment_api_key`*, `page`, `page_size`, `q` | PaginatedMetricList | yes | — |
+| POST | `/api/v1/environments/{environment_api_key}/experiment-metrics/` | create_metric | `environment_api_key`*, body*: Metric | Metric |  | — |
+| GET | `/api/v1/environments/{environment_api_key}/experiment-metrics/{id}/` | get_metric | `environment_api_key`*, `id`* | Metric | yes | — |
+| PUT | `/api/v1/environments/{environment_api_key}/experiment-metrics/{id}/` | update_metric | `environment_api_key`*, `id`*, body*: Metric | Metric |  | — |
+| GET | `/api/v1/environments/{environment_api_key}/experiments/` | list_experiments | `environment_api_key`*, `page`, `page_size`, `q`, `status` | PaginatedExperimentListList | yes | — |
+| POST | `/api/v1/environments/{environment_api_key}/experiments/` | create_experiment | `environment_api_key`*, body*: Experiment | Experiment |  | — |
+| GET | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/` | get_experiment | `environment_api_key`*, `experiment_id`* | ExperimentDetail | yes | — |
+| PUT | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/` | update_experiment | `environment_api_key`*, `experiment_id`*, body*: Experiment | Experiment |  | — |
+| GET | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/exposures/` | get_experiment_exposures | `environment_api_key`*, `experiment_id`* | Experiment | yes | — |
+| GET | `/api/v1/environments/{environment_api_key}/experiments/{experiment_id}/results/` | get_experiment_results | `environment_api_key`*, `experiment_id`* | Experiment | yes | — |
+| POST | `/api/v1/environments/{environment_api_key}/features/{feature_pk}/create-segment-override/` | create_segment_override | `environment_api_key`*, `feature_pk`*, body*: CustomCreateSegmentOverrideFeatureState | CustomCreateSegmentOverrideFeatureState |  | — |
+| PUT | `/api/v1/environments/{environment_api_key}/featurestates/{id}/` | update_environment_feature_state | `environment_api_key`*, `id`*, body*: FeatureStateSerializerBasic | FeatureStateSerializerBasic |  | — |
+| GET | `/api/v1/environments/{environment_api_key}/list-change-requests/` | list_environment_change_requests | `committed`, `environment_api_key`*, `feature_id`, `live_from_after`, `page`, `page_size`, `search`, `segment_id` | ChangeRequestList | yes | — |
+| GET | `/api/v1/environments/{environment_pk}/feature-lifecycle-counts/` | get_feature_lifecycle_counts | `environment_pk`* | FeatureLifecycleCounts | yes | — |
+| GET | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/` | get_environment_feature_versions | `environment_pk`*, `feature_pk`*, `page`, `page_size` | PaginatedEnvironmentFeatureVersionList | yes | — |
+| POST | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/` | create_environment_feature_version | `environment_pk`*, `feature_pk`*, body: EnvironmentFeatureVersionCreate | EnvironmentFeatureVersionCreate |  | — |
+| GET | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{environment_feature_version_pk}/featurestates/` | get_environment_feature_version_states | `environment_feature_version_pk`*, `environment_pk`*, `feature_pk`* | CustomEnvironmentFeatureVersionFeatureState[] | yes | — |
+| POST | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{environment_feature_version_pk}/featurestates/` | create_environment_feature_version_state | `environment_feature_version_pk`*, `environment_pk`*, `feature_pk`*, body*: CustomEnvironmentFeatureVersionFeatureState | CustomEnvironmentFeatureVersionFeatureState |  | — |
+| PUT | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{environment_feature_version_pk}/featurestates/{id}/` | update_environment_feature_version_state | `environment_feature_version_pk`*, `environment_pk`*, `feature_pk`*, `id`*, body*: CustomEnvironmentFeatureVersionFeatureState | CustomEnvironmentFeatureVersionFeatureState |  | — |
+| POST | `/api/v1/environments/{environment_pk}/features/{feature_pk}/versions/{id}/publish/` | publish_environment_feature_version | `environment_pk`*, `feature_pk`*, `id`*, body: EnvironmentFeatureVersionPublish | EnvironmentFeatureVersionPublish |  | — |
+| GET | `/api/v1/features/feature-segments/` | list_feature_segments | `environment`*, `feature`*, `page` | PaginatedFeatureSegmentListList | yes | — |
+| DELETE | `/api/v1/features/feature-segments/{id}/` | delete_feature_segment | `id`* | — |  | — |
+| PUT | `/api/v1/features/featurestates/{id}/` | update_feature_state | `id`*, body*: WritableNestedFeatureState | WritableNestedFeatureState |  | — |
+| GET | `/api/v1/organisations/` | list_organizations | `page` | PaginatedOrganisationSerializerFullList | yes | — |
+| GET | `/api/v1/organisations/{id}/projects/` | list_projects_in_organization | `id`* | OrganisationSerializerFull | yes | — |
+| GET | `/api/v1/organisations/{organisation_pk}/groups/` | list_organization_groups | `organisation_pk`*, `page` | PaginatedListUserPermissionGroupList | yes | — |
+| GET | `/api/v1/organisations/{organisation_pk}/invites/` | list_organization_invites | `organisation_pk`*, `page` | PaginatedInviteListList | yes | — |
+| POST | `/api/v1/organisations/{organisation_pk}/invites/` | create_organization_invite | `organisation_pk`*, body*: Invite | Invite |  | — |
+| GET | `/api/v1/organisations/{organisation_pk}/roles/` | list_organization_roles | `organisation_pk`*, `page` | PaginatedRoleList | yes | — |
+| GET | `/api/v1/projects/{id}/` | get_project | `id`* | ProjectRetrieve | yes | — |
+| PUT | `/api/v1/projects/{id}/` | update_project | `id`*, body*: ProjectUpdate | ProjectUpdate |  | — |
+| GET | `/api/v1/projects/{id}/environments/` | list_project_environments | `id`* | ProjectList | yes | — |
+| GET | `/api/v1/projects/{project_pk}/change-requests/` | list_project_change_requests | `committed`, `page`, `page_size`, `project_pk`*, `search`, `segment_id` | PaginatedProjectChangeRequestListList | yes | — |
+| GET | `/api/v1/projects/{project_pk}/feature-health/events/` | get_feature_health_events | `project_pk`* | FeatureHealthEvent[] | yes | — |
+| GET | `/api/v1/projects/{project_pk}/features/` | list_project_features | `environment`, `group_owners`, `identity`, `is_archived`, `is_enabled`, `lifecycle_stage`, `owners`, `page`, `page_size`, `project_pk`*, `search`, `segment`, `sort_direction`, `sort_field`, `tag_strategy`, `tags`, `type`, `value_search` | PaginatedListFeatureList | yes | — |
+| POST | `/api/v1/projects/{project_pk}/features/` | create_feature | `project_pk`*, body*: ListFeature | ListFeature |  | — |
+| GET | `/api/v1/projects/{project_pk}/features/{feature_pk}/code-references/` | get_feature_code_references | `feature_pk`*, `project_pk`* | FeatureFlagCodeReferencesRepositorySummary | yes | — |
+| GET | `/api/v1/projects/{project_pk}/features/{feature_pk}/feature-external-resources/` | get_feature_external_resources | `feature_pk`*, `page`, `project_pk`* | PaginatedFeatureExternalResourceList | yes | — |
+| GET | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/` | list_feature_multivariate_options | `feature_pk`*, `page`, `project_pk`* | PaginatedMultivariateFeatureOptionList | yes | — |
+| POST | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/` | create_feature_multivariate_option | `feature_pk`*, `project_pk`*, body*: MultivariateFeatureOption | MultivariateFeatureOption |  | — |
+| PUT | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/{id}/` | update_feature_multivariate_option | `feature_pk`*, `id`*, `project_pk`*, body*: MultivariateFeatureOption | MultivariateFeatureOption |  | — |
+| DELETE | `/api/v1/projects/{project_pk}/features/{feature_pk}/mv-options/{id}/` | delete_feature_multivariate_option | `feature_pk`*, `id`*, `project_pk`* | — |  | — |
+| GET | `/api/v1/projects/{project_pk}/features/{id}/` | get_feature_flag | `id`*, `project_pk`* | ListFeature | yes | — |
+| PUT | `/api/v1/projects/{project_pk}/features/{id}/` | update_feature | `id`*, `project_pk`*, body: UpdateFeature | UpdateFeature |  | — |
+| GET | `/api/v1/projects/{project_pk}/features/{id}/evaluation-data/` | get_feature_evaluation_data | `client_application_name`, `client_application_version`, `environment_id`*, `id`*, `period`, `project_pk`*, `user_agent` | FeatureEvaluationData | yes | — |
+| GET | `/api/v1/projects/{project_pk}/release-pipelines/` | list_project_release_pipelines | `ordering`, `page`, `page_size`, `project_pk`* | PaginatedReleasePipelineList | yes | — |
+| GET | `/api/v1/projects/{project_pk}/release-pipelines/{id}/` | get_release_pipeline | `id`*, `project_pk`* | ReleasePipelineDetail | yes | — |
+| POST | `/api/v1/projects/{project_pk}/release-pipelines/{id}/add-feature/` | add_feature_to_release_pipeline | `id`*, `project_pk`*, body*: ReleasePipeline | ReleasePipeline |  | — |
+| GET | `/api/v1/projects/{project_pk}/segments/` | list_project_segments | `identity`, `include_feature_specific`, `page`, `page_size`, `project_pk`*, `q` | PaginatedSegmentList | yes | — |
+| POST | `/api/v1/projects/{project_pk}/segments/` | create_project_segment | `project_pk`*, body*: Segment | Segment |  | — |
+| GET | `/api/v1/projects/{project_pk}/segments/{id}/` | get_project_segment | `id`*, `project_pk`* | Segment | yes | — |
+| PUT | `/api/v1/projects/{project_pk}/segments/{id}/` | update_project_segment | `id`*, `project_pk`*, body*: Segment | Segment |  | — |

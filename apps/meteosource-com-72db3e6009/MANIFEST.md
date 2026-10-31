@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_meteosource.com_static_img_appl
 
 | | |
 | --- | --- |
-| Signed bundle | `5871d00b0ddec48354f71adf62720086fa88ca7748b98a8e5895cb2e6f4ff2d5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_meteosource.com_static_img_appl
 
 59 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/air_quality` | air_quality_air_quality_get | Returns air quality data for a single point (geographic name or GPS) |
-| GET | `/find_places` | find_places_find_places_get | Search for places. Complete words required. |
-| GET | `/find_places_prefix` | find_places_prefix_find_places_prefix_get | Prefix search for places. Useful for autocomplete forms. |
-| GET | `/map` | map_map_get | Returns PNG weather map for given area and variable |
-| GET | `/nearest_place` | nearest_place_nearest_place_get | Returns the nearest named location for a given GPS coordinates. |
-| GET | `/point` | point_point_get | Returns weather data for a single point (geographic name or GPS) |
-| GET | `/time_machine` | time_machine_time_machine_get | Returns weather data for a single location and given day in the past |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/air_quality` | air_quality_air_quality_get | `place_id`, `lat`, `lon`, `timezone`, `key` | AirQuality_PointData | yes | Returns air quality data for a single point (geographic name or GPS) |
+| GET | `/find_places` | find_places_find_places_get | `text`*, `language`, `key` | FindPlacesModel[] | yes | Search for places. Complete words required. |
+| GET | `/find_places_prefix` | find_places_prefix_find_places_prefix_get | `text`*, `language`, `key` | FindPlacesModel[] | yes | Prefix search for places. Useful for autocomplete forms. |
+| GET | `/map` | map_map_get | `tile_x`, `tile_y`, `tile_zoom`, `min_lat`, `min_lon`, `max_lat`, `max_lon`, `variable`*, `datetime`*, `key` | string | yes | Returns PNG weather map for given area and variable |
+| GET | `/nearest_place` | nearest_place_nearest_place_get | `lat`*, `lon`*, `language`, `key` | FindPlacesModel | yes | Returns the nearest named location for a given GPS coordinates. |
+| GET | `/point` | point_point_get | `place_id`, `lat`, `lon`, `sections`, `timezone`, `language`, `units`, `key` | Point_PointData | yes | Returns weather data for a single point (geographic name or GPS) |
+| GET | `/time_machine` | time_machine_time_machine_get | `place_id`, `lat`, `lon`, `date`*, `timezone`, `units`, `key` | TimeMachine_TimeMachine | yes | Returns weather data for a single location and given day in the past |

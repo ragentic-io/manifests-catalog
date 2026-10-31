@@ -17,18 +17,48 @@
       },
       {
         "deprecated": false,
+        "description": "Returns the picture of the day",
         "id": "operation:get:/apod",
         "kind": "operation",
         "method": "get",
         "name": "get /apod",
+        "parameters": [
+          {
+            "description": "The date of the APOD image to retrieve",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Retrieve the URL for the high resolution image",
+            "in": "query",
+            "name": "hd",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apod",
         "pointer": "#/paths/~1apod/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "array"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Returns images"
+        "summary": "Returns images",
+        "tags": [
+          "request tag"
+        ]
       }
     ]
   },

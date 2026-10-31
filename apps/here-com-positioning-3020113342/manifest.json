@@ -18,6 +18,491 @@
         "from": "here-com-positioning-3020113342",
         "kind": "EXPOSES",
         "to": "operation:get:/version"
+      },
+      {
+        "from": "operation:get:/health",
+        "kind": "RETURNS",
+        "to": "schema:ApiHealthStatus"
+      },
+      {
+        "from": "operation:post:/locate",
+        "kind": "ACCEPTS",
+        "to": "schema:Locate"
+      },
+      {
+        "from": "operation:get:/version",
+        "kind": "RETURNS",
+        "to": "schema:ApiVersion"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:BaseLat"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:BaseLng"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:Bsid"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:CdmaLocalId"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:CdmaNmrArray"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:Nid"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:PilotPower"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:RegistrationZone"
+      },
+      {
+        "from": "schema:Cdma",
+        "kind": "REFERENCES",
+        "to": "schema:Sid"
+      },
+      {
+        "from": "schema:CdmaLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Channel"
+      },
+      {
+        "from": "schema:CdmaLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:PnOffset"
+      },
+      {
+        "from": "schema:CdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Bsid"
+      },
+      {
+        "from": "schema:CdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Channel"
+      },
+      {
+        "from": "schema:CdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:PilotPower"
+      },
+      {
+        "from": "schema:CdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:PnOffset"
+      },
+      {
+        "from": "schema:CdmaNmrArray",
+        "kind": "REFERENCES",
+        "to": "schema:CdmaNmr"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorDetail"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:GeranCid"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:GsmLocalId"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:GsmNmrArray"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:GsmTimingAdvance"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:Lac"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:Mcc"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:Mnc"
+      },
+      {
+        "from": "schema:Gsm",
+        "kind": "REFERENCES",
+        "to": "schema:RxLevel"
+      },
+      {
+        "from": "schema:GsmLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Bcch"
+      },
+      {
+        "from": "schema:GsmLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Bsic"
+      },
+      {
+        "from": "schema:GsmNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Bcch"
+      },
+      {
+        "from": "schema:GsmNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Bsic"
+      },
+      {
+        "from": "schema:GsmNmr",
+        "kind": "REFERENCES",
+        "to": "schema:GsmNmrGlobalId"
+      },
+      {
+        "from": "schema:GsmNmr",
+        "kind": "REFERENCES",
+        "to": "schema:RxLevel"
+      },
+      {
+        "from": "schema:GsmNmrArray",
+        "kind": "REFERENCES",
+        "to": "schema:GsmNmr"
+      },
+      {
+        "from": "schema:GsmNmrGlobalId",
+        "kind": "REFERENCES",
+        "to": "schema:GeranCid"
+      },
+      {
+        "from": "schema:GsmNmrGlobalId",
+        "kind": "REFERENCES",
+        "to": "schema:Lac"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:Cdma"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:ClientInfo"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:Gsm"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:Lte"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:Tdscdma"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:Wcdma"
+      },
+      {
+        "from": "schema:Locate",
+        "kind": "REFERENCES",
+        "to": "schema:WlanLocate"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:EutranCid"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:LteLocalId"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:LteNmrArray"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:LteTimingAdvance"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:Mcc"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:Mnc"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:Rsrp"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:Rsrq"
+      },
+      {
+        "from": "schema:Lte",
+        "kind": "REFERENCES",
+        "to": "schema:Tac"
+      },
+      {
+        "from": "schema:LteLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Earfcn"
+      },
+      {
+        "from": "schema:LteLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Pci"
+      },
+      {
+        "from": "schema:LteNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Earfcn"
+      },
+      {
+        "from": "schema:LteNmr",
+        "kind": "REFERENCES",
+        "to": "schema:EutranCid"
+      },
+      {
+        "from": "schema:LteNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Pci"
+      },
+      {
+        "from": "schema:LteNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Rsrp"
+      },
+      {
+        "from": "schema:LteNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Rsrq"
+      },
+      {
+        "from": "schema:LteNmrArray",
+        "kind": "REFERENCES",
+        "to": "schema:LteNmr"
+      },
+      {
+        "from": "schema:PositionLocate",
+        "kind": "REFERENCES",
+        "to": "schema:Latitude"
+      },
+      {
+        "from": "schema:PositionLocate",
+        "kind": "REFERENCES",
+        "to": "schema:Longitude"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:Lac"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:Mcc"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:Mnc"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:Pathloss"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:Rscp"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:TdscdmaLocalId"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:TdscdmaNmrArray"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:TdscdmaTimingAdvance"
+      },
+      {
+        "from": "schema:Tdscdma",
+        "kind": "REFERENCES",
+        "to": "schema:UtranCid"
+      },
+      {
+        "from": "schema:TdscdmaLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:CellParams"
+      },
+      {
+        "from": "schema:TdscdmaLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Uarfcn"
+      },
+      {
+        "from": "schema:TdscdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:CellParams"
+      },
+      {
+        "from": "schema:TdscdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Pathloss"
+      },
+      {
+        "from": "schema:TdscdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Rscp"
+      },
+      {
+        "from": "schema:TdscdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Uarfcn"
+      },
+      {
+        "from": "schema:TdscdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:UtranCid"
+      },
+      {
+        "from": "schema:TdscdmaNmrArray",
+        "kind": "REFERENCES",
+        "to": "schema:TdscdmaNmr"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:Lac"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:Mcc"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:Mnc"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:Pathloss"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:Rscp"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:UtranCid"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:WcdmaLocalId"
+      },
+      {
+        "from": "schema:Wcdma",
+        "kind": "REFERENCES",
+        "to": "schema:WcdmaNmrArray"
+      },
+      {
+        "from": "schema:WcdmaLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Psc"
+      },
+      {
+        "from": "schema:WcdmaLocalId",
+        "kind": "REFERENCES",
+        "to": "schema:Uarfcndl"
+      },
+      {
+        "from": "schema:WcdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Pathloss"
+      },
+      {
+        "from": "schema:WcdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Psc"
+      },
+      {
+        "from": "schema:WcdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Rscp"
+      },
+      {
+        "from": "schema:WcdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:Uarfcndl"
+      },
+      {
+        "from": "schema:WcdmaNmr",
+        "kind": "REFERENCES",
+        "to": "schema:UtranCid"
+      },
+      {
+        "from": "schema:WcdmaNmrArray",
+        "kind": "REFERENCES",
+        "to": "schema:WcdmaNmr"
+      },
+      {
+        "from": "schema:WlanLocate",
+        "kind": "REFERENCES",
+        "to": "schema:Rss"
       }
     ],
     "nodes": [
@@ -27,12 +512,20 @@
       },
       {
         "deprecated": false,
+        "description": "Tests basic health of the service",
         "id": "operation:get:/health",
         "kind": "operation",
         "method": "get",
         "name": "getHealth",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiHealthStatus"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKey": []
@@ -41,16 +534,122 @@
             "AccessToken": []
           }
         ],
-        "summary": "Service health"
+        "summary": "Service health",
+        "tags": [
+          "API Information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Request WGS-84 compliant geocoordinates for a location based on 2G/3G/4G cell and/or WLAN measurements.",
         "id": "operation:post:/locate",
         "kind": "operation",
         "method": "post",
         "name": "postLocate",
+        "parameters": [
+          {
+            "default": 68,
+            "description": "Confidence level in percent for the accuracy/uncertainty in the location estimate response.",
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Indicates that the data in the body is gzip-encoded.",
+            "enum": [
+              "gzip"
+            ],
+            "in": "header",
+            "name": "Content-Encoding",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Acceptable fallback options for cell and WLAN positioning.",
+            "in": "query",
+            "name": "fallback",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Comma-separated list of additional data fields that the service should include in the response if data is available.",
+            "in": "query",
+            "name": "desired",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "ID used for correlating customer requests within HERE services.",
+            "in": "header",
+            "name": "X-Request-ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of additional data fields that the service should include in the response.",
+            "in": "query",
+            "name": "required",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/locate",
         "pointer": "#/paths/~1locate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Locate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "AuthError"
+          },
+          {
+            "status": "403",
+            "type": "AuthError"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "405",
+            "type": "Error"
+          },
+          {
+            "status": "413",
+            "type": "Error"
+          },
+          {
+            "status": "414",
+            "type": "Error"
+          },
+          {
+            "status": "415",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKey": []
@@ -59,16 +658,27 @@
             "AccessToken": []
           }
         ],
-        "summary": "Location query"
+        "summary": "Location query",
+        "tags": [
+          "Location"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves API Specification version information",
         "id": "operation:get:/version",
         "kind": "operation",
         "method": "get",
         "name": "getApiVersion",
         "path": "/version",
         "pointer": "#/paths/~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiVersion"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKey": []
@@ -77,342 +687,477 @@
             "AccessToken": []
           }
         ],
-        "summary": "API version"
+        "summary": "API version",
+        "tags": [
+          "API Information"
+        ]
       },
       {
         "id": "schema:ApiHealthStatus",
         "kind": "schema",
-        "name": "ApiHealthStatus"
+        "name": "ApiHealthStatus",
+        "type": "object"
       },
       {
         "id": "schema:ApiVersion",
         "kind": "schema",
-        "name": "ApiVersion"
+        "name": "ApiVersion",
+        "type": "object"
       },
       {
+        "description": "Error object reported in case of authentication or authorization errors.",
         "id": "schema:AuthError",
         "kind": "schema",
-        "name": "AuthError"
+        "name": "AuthError",
+        "type": "object"
       },
       {
+        "description": "Base station latitude",
         "id": "schema:BaseLat",
         "kind": "schema",
-        "name": "BaseLat"
+        "name": "BaseLat",
+        "type": "number"
       },
       {
+        "description": "Base station longitude",
         "id": "schema:BaseLng",
         "kind": "schema",
-        "name": "BaseLng"
+        "name": "BaseLng",
+        "type": "number"
       },
       {
+        "description": "Broadcast Control Channel (BCCH, synonymous to ARFCN = Absolute Radio Frequency Channel)",
         "id": "schema:Bcch",
         "kind": "schema",
-        "name": "Bcch"
+        "name": "Bcch",
+        "type": "integer"
       },
       {
+        "description": "Base Station Identity Code (BSIC, for instance, color code)",
         "id": "schema:Bsic",
         "kind": "schema",
-        "name": "Bsic"
+        "name": "Bsic",
+        "type": "integer"
       },
       {
+        "description": "Base Station ID (CDMA BSID, BID)",
         "id": "schema:Bsid",
         "kind": "schema",
-        "name": "Bsid"
+        "name": "Bsid",
+        "type": "integer"
       },
       {
+        "description": "CDMA measurement",
         "id": "schema:Cdma",
         "kind": "schema",
-        "name": "Cdma"
+        "name": "Cdma",
+        "type": "object"
       },
       {
+        "description": "Local identification parameters of CDMA serving cell",
         "id": "schema:CdmaLocalId",
         "kind": "schema",
-        "name": "CdmaLocalId"
+        "name": "CdmaLocalId",
+        "type": "object"
       },
       {
+        "description": "CDMA Network measurement",
         "id": "schema:CdmaNmr",
         "kind": "schema",
-        "name": "CdmaNmr"
+        "name": "CdmaNmr",
+        "type": "object"
       },
       {
+        "description": "CDMA Network measurements",
         "id": "schema:CdmaNmrArray",
         "kind": "schema",
-        "name": "CdmaNmrArray"
+        "name": "CdmaNmrArray",
+        "type": "CdmaNmr[]"
       },
       {
+        "description": "Cell Parameters ID (CDMA Spreading Code ID)",
         "id": "schema:CellParams",
         "kind": "schema",
-        "name": "CellParams"
+        "name": "CellParams",
+        "type": "integer"
       },
       {
+        "description": "CDMA channel frequency",
         "id": "schema:Channel",
         "kind": "schema",
-        "name": "Channel"
+        "name": "Channel",
+        "type": "integer"
       },
       {
+        "description": "Information about the client",
         "id": "schema:ClientInfo",
         "kind": "schema",
-        "name": "ClientInfo"
+        "name": "ClientInfo",
+        "type": "object"
       },
       {
+        "description": "Evolved Absolute Radio Frequency Channel (E-ARFCN)",
         "id": "schema:Earfcn",
         "kind": "schema",
-        "name": "Earfcn"
+        "name": "Earfcn",
+        "type": "integer"
       },
       {
+        "description": "Object wrapper for the error response to a request.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "Detail about an error",
         "id": "schema:ErrorDetail",
         "kind": "schema",
-        "name": "ErrorDetail"
+        "name": "ErrorDetail",
+        "type": "object"
       },
       {
+        "description": "E-UTRA Cell Identifier (UC-Id), 28 bits (20 bits eNodeB and 8 bits Cell ID).",
         "id": "schema:EutranCid",
         "kind": "schema",
-        "name": "EutranCid"
+        "name": "EutranCid",
+        "type": "integer"
       },
       {
+        "description": "E-UTRA Cell Identifier (UC-Id), 28 bits (20 bits eNodeB and 8 bits Cell ID).",
         "id": "schema:EutranCidNmr",
         "kind": "schema",
-        "name": "EutranCidNmr"
+        "name": "EutranCidNmr",
+        "type": "integer"
       },
       {
+        "description": "Cell identifier (GERAN CID)",
         "id": "schema:GeranCid",
         "kind": "schema",
-        "name": "GeranCid"
+        "name": "GeranCid",
+        "type": "integer"
       },
       {
+        "description": "GSM measurement",
         "id": "schema:Gsm",
         "kind": "schema",
-        "name": "Gsm"
+        "name": "Gsm",
+        "type": "object"
       },
       {
+        "description": "Local identification parameters of GSM serving cell",
         "id": "schema:GsmLocalId",
         "kind": "schema",
-        "name": "GsmLocalId"
+        "name": "GsmLocalId",
+        "type": "object"
       },
       {
+        "description": "GSM Network measurements.",
         "id": "schema:GsmNmr",
         "kind": "schema",
-        "name": "GsmNmr"
+        "name": "GsmNmr",
+        "type": "object"
       },
       {
+        "description": "GSM Network measurements",
         "id": "schema:GsmNmrArray",
         "kind": "schema",
-        "name": "GsmNmrArray"
+        "name": "GsmNmrArray",
+        "type": "GsmNmr[]"
       },
       {
+        "description": "The `lac` and `cid` parameters of global ID for GSM neighbor measurement.",
         "id": "schema:GsmNmrGlobalId",
         "kind": "schema",
-        "name": "GsmNmrGlobalId"
+        "name": "GsmNmrGlobalId",
+        "type": "object"
       },
       {
+        "description": "Timing advance (TA).",
         "id": "schema:GsmTimingAdvance",
         "kind": "schema",
-        "name": "GsmTimingAdvance"
+        "name": "GsmTimingAdvance",
+        "type": "integer"
       },
       {
+        "description": "Location Area Code (LAC).",
         "id": "schema:Lac",
         "kind": "schema",
-        "name": "Lac"
+        "name": "Lac",
+        "type": "integer"
       },
       {
+        "description": "Latitude in WGS-84 format, decimal representation ranging from -90 to 90.",
         "id": "schema:Latitude",
         "kind": "schema",
-        "name": "Latitude"
+        "name": "Latitude",
+        "type": "number"
       },
       {
+        "description": "Object wrapping the location data submitted in a request for a position.",
         "id": "schema:Locate",
         "kind": "schema",
-        "name": "Locate"
+        "name": "Locate",
+        "type": "object"
       },
       {
+        "description": "Longitude in WGS-84 format, decimal representation ranging from -180 to 180.",
         "id": "schema:Longitude",
         "kind": "schema",
-        "name": "Longitude"
+        "name": "Longitude",
+        "type": "number"
       },
       {
+        "description": "LTE measurement",
         "id": "schema:Lte",
         "kind": "schema",
-        "name": "Lte"
+        "name": "Lte",
+        "type": "object"
       },
       {
+        "description": "Local identification parameters of LTE serving cell",
         "id": "schema:LteLocalId",
         "kind": "schema",
-        "name": "LteLocalId"
+        "name": "LteLocalId",
+        "type": "object"
       },
       {
+        "description": "LTE Network measurement",
         "id": "schema:LteNmr",
         "kind": "schema",
-        "name": "LteNmr"
+        "name": "LteNmr",
+        "type": "object"
       },
       {
+        "description": "LTE Network measurements",
         "id": "schema:LteNmrArray",
         "kind": "schema",
-        "name": "LteNmrArray"
+        "name": "LteNmrArray",
+        "type": "LteNmr[]"
       },
       {
+        "description": "Timing Advance.",
         "id": "schema:LteTimingAdvance",
         "kind": "schema",
-        "name": "LteTimingAdvance"
+        "name": "LteTimingAdvance",
+        "type": "integer"
       },
       {
+        "description": "Mobile Country Code (MCC).",
         "id": "schema:Mcc",
         "kind": "schema",
-        "name": "Mcc"
+        "name": "Mcc",
+        "type": "integer"
       },
       {
+        "description": "Mobile Network Code (MNC).",
         "id": "schema:Mnc",
         "kind": "schema",
-        "name": "Mnc"
+        "name": "Mnc",
+        "type": "integer"
       },
       {
+        "description": "Network ID (NID)",
         "id": "schema:Nid",
         "kind": "schema",
-        "name": "Nid"
+        "name": "Nid",
+        "type": "integer"
       },
       {
+        "description": "UTRAN pathloss (dBm)",
         "id": "schema:Pathloss",
         "kind": "schema",
-        "name": "Pathloss"
+        "name": "Pathloss",
+        "type": "integer"
       },
       {
+        "description": "Physical Cell Identity (PCI)",
         "id": "schema:Pci",
         "kind": "schema",
-        "name": "Pci"
+        "name": "Pci",
+        "type": "integer"
       },
       {
+        "description": "Pilot Power (dBm).",
         "id": "schema:PilotPower",
         "kind": "schema",
-        "name": "PilotPower"
+        "name": "PilotPower",
+        "type": "integer"
       },
       {
+        "description": "Pseudonoise offset.",
         "id": "schema:PnOffset",
         "kind": "schema",
-        "name": "PnOffset"
+        "name": "PnOffset",
+        "type": "integer"
       },
       {
+        "description": "Object containing information on a location where a measurement was taken.",
         "id": "schema:PositionLocate",
         "kind": "schema",
-        "name": "PositionLocate"
+        "name": "PositionLocate",
+        "type": "object"
       },
       {
+        "description": "Primary Scrambling Code (PSC, Primary CPICH, Primary Control Pilot Channel).",
         "id": "schema:Psc",
         "kind": "schema",
-        "name": "Psc"
+        "name": "Psc",
+        "type": "integer"
       },
       {
+        "description": "CDMA Registration Zone (RZ)",
         "id": "schema:RegistrationZone",
         "kind": "schema",
-        "name": "RegistrationZone"
+        "name": "RegistrationZone",
+        "type": "integer"
       },
       {
+        "description": "Received Signal Code Power (RSCP) in dBm.",
         "id": "schema:Rscp",
         "kind": "schema",
-        "name": "Rscp"
+        "name": "Rscp",
+        "type": "integer"
       },
       {
+        "description": "Reference Signal Received Power (RSRP) in dBm.",
         "id": "schema:Rsrp",
         "kind": "schema",
-        "name": "Rsrp"
+        "name": "Rsrp",
+        "type": "integer"
       },
       {
+        "description": "Reference Signal Received Quality (RSRQ) in dBm.",
         "id": "schema:Rsrq",
         "kind": "schema",
-        "name": "Rsrq"
+        "name": "Rsrq",
+        "type": "number"
       },
       {
+        "description": "Received signal level (dBm) at the terminal",
         "id": "schema:Rss",
         "kind": "schema",
-        "name": "Rss"
+        "name": "Rss",
+        "type": "integer"
       },
       {
+        "description": "Received Signal power (dBm).",
         "id": "schema:RxLevel",
         "kind": "schema",
-        "name": "RxLevel"
+        "name": "RxLevel",
+        "type": "integer"
       },
       {
+        "description": "System ID (SID)",
         "id": "schema:Sid",
         "kind": "schema",
-        "name": "Sid"
+        "name": "Sid",
+        "type": "integer"
       },
       {
+        "description": "Tracking Area Code (TAC)",
         "id": "schema:Tac",
         "kind": "schema",
-        "name": "Tac"
+        "name": "Tac",
+        "type": "integer"
       },
       {
+        "description": "TD-SCDMA measurement.",
         "id": "schema:Tdscdma",
         "kind": "schema",
-        "name": "Tdscdma"
+        "name": "Tdscdma",
+        "type": "object"
       },
       {
+        "description": "Local identification parameters of TD-SCDMA serving cell",
         "id": "schema:TdscdmaLocalId",
         "kind": "schema",
-        "name": "TdscdmaLocalId"
+        "name": "TdscdmaLocalId",
+        "type": "object"
       },
       {
+        "description": "TD-SCDMA Network measurement",
         "id": "schema:TdscdmaNmr",
         "kind": "schema",
-        "name": "TdscdmaNmr"
+        "name": "TdscdmaNmr",
+        "type": "object"
       },
       {
+        "description": "TD-SCDMA Network measurements.",
         "id": "schema:TdscdmaNmrArray",
         "kind": "schema",
-        "name": "TdscdmaNmrArray"
+        "name": "TdscdmaNmrArray",
+        "type": "TdscdmaNmr[]"
       },
       {
+        "description": "Timing advance (TA).",
         "id": "schema:TdscdmaTimingAdvance",
         "kind": "schema",
-        "name": "TdscdmaTimingAdvance"
+        "name": "TdscdmaTimingAdvance",
+        "type": "integer"
       },
       {
+        "description": "UTRAN Absolute Radio Frequency (U-ARFCN)",
         "id": "schema:Uarfcn",
         "kind": "schema",
-        "name": "Uarfcn"
+        "name": "Uarfcn",
+        "type": "integer"
       },
       {
+        "description": "UTRAN Absolute Radio Frequency Downlink (UARFCN-DL)",
         "id": "schema:Uarfcndl",
         "kind": "schema",
-        "name": "Uarfcndl"
+        "name": "Uarfcndl",
+        "type": "integer"
       },
       {
+        "description": "UTRAN Cell Identifier (UC-Id), 28 bits (12 bits RNC and 16 bits Cell ID).",
         "id": "schema:UtranCid",
         "kind": "schema",
-        "name": "UtranCid"
+        "name": "UtranCid",
+        "type": "integer"
       },
       {
+        "description": "UTRAN Cell Identifier (UC-Id), 28 bits (12 bits RNC and 16 bits Cell ID).",
         "id": "schema:UtranCidNmr",
         "kind": "schema",
-        "name": "UtranCidNmr"
+        "name": "UtranCidNmr",
+        "type": "integer"
       },
       {
+        "description": "WCDMA measurement",
         "id": "schema:Wcdma",
         "kind": "schema",
-        "name": "Wcdma"
+        "name": "Wcdma",
+        "type": "object"
       },
       {
+        "description": "Local identification parameters of WCDMA serving cell",
         "id": "schema:WcdmaLocalId",
         "kind": "schema",
-        "name": "WcdmaLocalId"
+        "name": "WcdmaLocalId",
+        "type": "object"
       },
       {
+        "description": "WCDMA Network measurement",
         "id": "schema:WcdmaNmr",
         "kind": "schema",
-        "name": "WcdmaNmr"
+        "name": "WcdmaNmr",
+        "type": "object"
       },
       {
+        "description": "WCDMA Network measurements.",
         "id": "schema:WcdmaNmrArray",
         "kind": "schema",
-        "name": "WcdmaNmrArray"
+        "name": "WcdmaNmrArray",
+        "type": "WcdmaNmr[]"
       },
       {
+        "description": "WLAN measurement",
         "id": "schema:WlanLocate",
         "kind": "schema",
-        "name": "WlanLocate"
+        "name": "WlanLocate",
+        "type": "object"
       }
     ]
   },

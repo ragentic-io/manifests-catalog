@@ -53,6 +53,81 @@
         "from": "highwaysengland-co-uk-d4909a20c3",
         "kind": "EXPOSES",
         "to": "operation:get:/v{version}/sitetypes/{siteType_Id}/sites"
+      },
+      {
+        "from": "operation:get:/v{version}/areas",
+        "kind": "RETURNS",
+        "to": "schema:AreaResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/areas/{area_Ids}",
+        "kind": "RETURNS",
+        "to": "schema:AreaResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/quality/daily",
+        "kind": "RETURNS",
+        "to": "schema:DailyQualityResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/quality/overall",
+        "kind": "RETURNS",
+        "to": "schema:OverallQualityResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/reports/{report_type}",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/v{version}/reports/{start_date}/to/{end_date}/{report_type}",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/v{version}/sites",
+        "kind": "RETURNS",
+        "to": "schema:SiteResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/sites/{site_Ids}",
+        "kind": "RETURNS",
+        "to": "schema:SiteResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/sitetypes",
+        "kind": "RETURNS",
+        "to": "schema:SiteTypeResponse"
+      },
+      {
+        "from": "operation:get:/v{version}/sitetypes/{siteType_Id}/sites",
+        "kind": "RETURNS",
+        "to": "schema:SiteTypeLayer"
+      },
+      {
+        "from": "schema:AreaResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Area"
+      },
+      {
+        "from": "schema:DailyQualityResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Qualities"
+      },
+      {
+        "from": "schema:SiteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SiteResult"
+      },
+      {
+        "from": "schema:SiteTypeLayer",
+        "kind": "REFERENCES",
+        "to": "schema:Sites"
+      },
+      {
+        "from": "schema:SiteTypeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SiteType"
       }
     ],
     "nodes": [
@@ -66,10 +141,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Areas_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/areas",
         "pointer": "#/paths/~1v{version}~1areas/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AreaResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns list of areas"
+        "summary": "Returns list of areas",
+        "tags": [
+          "Areas"
+        ]
       },
       {
         "deprecated": false,
@@ -77,10 +176,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v{version}/areas/{area_Ids}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "area_Ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/areas/{area_Ids}",
         "pointer": "#/paths/~1v{version}~1areas~1{area_Ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AreaResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns details of selected area"
+        "summary": "Returns details of selected area",
+        "tags": [
+          "Areas"
+        ]
       },
       {
         "deprecated": false,
@@ -88,10 +217,54 @@
         "kind": "operation",
         "method": "get",
         "name": "Quality_GetDailyDataQualityForSite",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "siteId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The start date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The end date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/quality/daily",
         "pointer": "#/paths/~1v{version}~1quality~1daily/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DailyQualityResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Site DailyQuality"
+        "summary": "Get Site DailyQuality",
+        "tags": [
+          "Quality"
+        ]
       },
       {
         "deprecated": false,
@@ -99,32 +272,223 @@
         "kind": "operation",
         "method": "get",
         "name": "Quality_GetOverallDataQualityForSites",
+        "parameters": [
+          {
+            "description": "Get site quality by site id delimited by ,",
+            "in": "query",
+            "name": "sites",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The start date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The end date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/quality/overall",
         "pointer": "#/paths/~1v{version}~1quality~1overall/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OverallQualityResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Site OverallQuality"
+        "summary": "Get Site OverallQuality",
+        "tags": [
+          "Quality"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get's the report.",
         "id": "operation:get:/v{version}/reports/{report_type}",
         "kind": "operation",
         "method": "get",
         "name": "Reports_Index",
+        "parameters": [
+          {
+            "description": "Report Type Id (i.e Daily, Monthly, Annual)",
+            "in": "path",
+            "name": "report_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of site Ids.",
+            "in": "query",
+            "name": "sites",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The start date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The end date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page offset to return.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of rows to return.",
+            "in": "query",
+            "name": "page_size",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "reportSubTypeId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/reports/{report_type}",
         "pointer": "#/paths/~1v{version}~1reports~1{report_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the daily report."
+        "summary": "Gets the daily report.",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get's the report.",
         "id": "operation:get:/v{version}/reports/{start_date}/to/{end_date}/{report_type}",
         "kind": "operation",
         "method": "get",
         "name": "get /v{version}/reports/{start_date}/to/{end_date}/{report_type}",
+        "parameters": [
+          {
+            "description": "Report Type Id (i.e Daily, Monthly, Annual)",
+            "in": "path",
+            "name": "report_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comma separated list of site Ids.",
+            "in": "query",
+            "name": "sites",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The start date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "path",
+            "name": "start_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The end date of the report in the format ddmmyyyy (i.e 31012016)",
+            "in": "path",
+            "name": "end_date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The page offset to return.",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The number of rows to return.",
+            "in": "query",
+            "name": "page_size",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "reportSubTypeId",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/reports/{start_date}/to/{end_date}/{report_type}",
         "pointer": "#/paths/~1v{version}~1reports~1{start_date}~1to~1{end_date}~1{report_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the daily report."
+        "summary": "Gets the daily report.",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
@@ -132,10 +496,34 @@
         "kind": "operation",
         "method": "get",
         "name": "Sites_Index",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/sites",
         "pointer": "#/paths/~1v{version}~1sites/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SiteResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of sites"
+        "summary": "Get a list of sites",
+        "tags": [
+          "Sites"
+        ]
       },
       {
         "deprecated": false,
@@ -143,10 +531,41 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v{version}/sites/{site_Ids}",
+        "parameters": [
+          {
+            "description": "site id",
+            "in": "path",
+            "name": "site_Ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/sites/{site_Ids}",
         "pointer": "#/paths/~1v{version}~1sites~1{site_Ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SiteResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get selected sites"
+        "summary": "Get selected sites",
+        "tags": [
+          "Sites"
+        ]
       },
       {
         "deprecated": false,
@@ -154,10 +573,34 @@
         "kind": "operation",
         "method": "get",
         "name": "SiteTypes_Index",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/sitetypes",
         "pointer": "#/paths/~1v{version}~1sitetypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SiteTypeResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return list of site types"
+        "summary": "Return list of site types",
+        "tags": [
+          "SiteTypes"
+        ]
       },
       {
         "deprecated": false,
@@ -165,70 +608,116 @@
         "kind": "operation",
         "method": "get",
         "name": "SiteTypes_GetSitesForPublicFacingAPI",
+        "parameters": [
+          {
+            "description": "1 = MIDAS, 2 = TAME, 3 = TMU, 4 = TRADS Legacy",
+            "in": "path",
+            "name": "siteType_Id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v{version}/sitetypes/{siteType_Id}/sites",
         "pointer": "#/paths/~1v{version}~1sitetypes~1{siteType_Id}~1sites/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SiteTypeLayer"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the layer metadata for the LayerId specified."
+        "summary": "Returns the layer metadata for the LayerId specified.",
+        "tags": [
+          "SiteTypes"
+        ]
       },
       {
         "id": "schema:Area",
         "kind": "schema",
-        "name": "Area"
+        "name": "Area",
+        "type": "object"
       },
       {
         "id": "schema:AreaResponse",
         "kind": "schema",
-        "name": "AreaResponse"
+        "name": "AreaResponse",
+        "type": "object"
       },
       {
         "id": "schema:DailyQualityResponse",
         "kind": "schema",
-        "name": "DailyQualityResponse"
+        "name": "DailyQualityResponse",
+        "type": "object"
       },
       {
         "id": "schema:Object",
         "kind": "schema",
-        "name": "Object"
+        "name": "Object",
+        "type": "object"
       },
       {
         "id": "schema:OverallQualityResponse",
         "kind": "schema",
-        "name": "OverallQualityResponse"
+        "name": "OverallQualityResponse",
+        "type": "object"
       },
       {
         "id": "schema:Qualities",
         "kind": "schema",
-        "name": "Qualities"
+        "name": "Qualities",
+        "type": "object"
       },
       {
         "id": "schema:SiteResponse",
         "kind": "schema",
-        "name": "SiteResponse"
+        "name": "SiteResponse",
+        "type": "object"
       },
       {
         "id": "schema:SiteResult",
         "kind": "schema",
-        "name": "SiteResult"
+        "name": "SiteResult",
+        "type": "object"
       },
       {
         "id": "schema:SiteType",
         "kind": "schema",
-        "name": "SiteType"
+        "name": "SiteType",
+        "type": "object"
       },
       {
         "id": "schema:SiteTypeLayer",
         "kind": "schema",
-        "name": "SiteTypeLayer"
+        "name": "SiteTypeLayer",
+        "type": "object"
       },
       {
         "id": "schema:SiteTypeResponse",
         "kind": "schema",
-        "name": "SiteTypeResponse"
+        "name": "SiteTypeResponse",
+        "type": "object"
       },
       {
         "id": "schema:Sites",
         "kind": "schema",
-        "name": "Sites"
+        "name": "Sites",
+        "type": "object"
       }
     ]
   },

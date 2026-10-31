@@ -22,22 +22,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/auths/{id}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/auths/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/auths/{id}"
+        "to": "operation:put:/api/auths/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/auths/{id}"
+        "to": "operation:delete:/api/auths/{id}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/auths/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -52,22 +52,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/certificates/{id}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/certificates/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/certificates/{id}"
+        "to": "operation:put:/api/certificates/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/certificates/{id}"
+        "to": "operation:delete:/api/certificates/{id}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/certificates/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -82,22 +82,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/client-validators/{id}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/client-validators/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/client-validators/{id}"
+        "to": "operation:put:/api/client-validators/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/client-validators/{id}"
+        "to": "operation:delete:/api/client-validators/{id}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/client-validators/{id}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -112,6 +112,16 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
+        "to": "operation:put:/api/data-exporter-configs/_bulk"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/data-exporter-configs/_bulk"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
         "to": "operation:delete:/api/data-exporter-configs/_bulk"
       },
       {
@@ -122,22 +132,7 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/data-exporter-configs/_bulk"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
-        "to": "operation:put:/api/data-exporter-configs/_bulk"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/data-exporter-configs/_template"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
-        "to": "operation:delete:/api/data-exporter-configs/{dataExporterConfigId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -147,12 +142,17 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/data-exporter-configs/{dataExporterConfigId}"
+        "to": "operation:put:/api/data-exporter-configs/{dataExporterConfigId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/data-exporter-configs/{dataExporterConfigId}"
+        "to": "operation:delete:/api/data-exporter-configs/{dataExporterConfigId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/data-exporter-configs/{dataExporterConfigId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -162,12 +162,12 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/globalconfig"
+        "to": "operation:put:/api/globalconfig"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/globalconfig"
+        "to": "operation:patch:/api/globalconfig"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -192,17 +192,7 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/groups/{groupId}/apikeys/{clientId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/api/groups/{groupId}/apikeys/{clientId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -212,7 +202,12 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}/quotas"
+        "to": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/groups/{groupId}/apikeys/{clientId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -222,7 +217,7 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/groups/{serviceGroupId}"
+        "to": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}/quotas"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -232,12 +227,17 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/groups/{serviceGroupId}"
+        "to": "operation:put:/api/groups/{serviceGroupId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/groups/{serviceGroupId}"
+        "to": "operation:delete:/api/groups/{serviceGroupId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/groups/{serviceGroupId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -287,22 +287,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/scripts/{scriptId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/scripts/{scriptId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/scripts/{scriptId}"
+        "to": "operation:put:/api/scripts/{scriptId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/scripts/{scriptId}"
+        "to": "operation:delete:/api/scripts/{scriptId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/scripts/{scriptId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -317,22 +317,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/services/{serviceId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/services/{serviceId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/services/{serviceId}"
+        "to": "operation:put:/api/services/{serviceId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/services/{serviceId}"
+        "to": "operation:delete:/api/services/{serviceId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/services/{serviceId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -347,17 +347,7 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/services/{serviceId}/apikeys/{clientId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/api/services/{serviceId}/apikeys/{clientId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -367,12 +357,17 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/services/{serviceId}/apikeys/{clientId}/group"
+        "to": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}/quotas"
+        "to": "operation:patch:/api/services/{serviceId}/apikeys/{clientId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/services/{serviceId}/apikeys/{clientId}/group"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -382,7 +377,7 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/services/{serviceId}/targets"
+        "to": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}/quotas"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -392,17 +387,17 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/services/{serviceId}/targets"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:post:/api/services/{serviceId}/targets"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/services/{serviceId}/template"
+        "to": "operation:delete:/api/services/{serviceId}/targets"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/services/{serviceId}/targets"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -412,12 +407,17 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
+        "to": "operation:put:/api/services/{serviceId}/template"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
         "to": "operation:post:/api/services/{serviceId}/template"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/services/{serviceId}/template"
+        "to": "operation:delete:/api/services/{serviceId}/template"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -437,22 +437,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/snowmonkey/config"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:put:/api/snowmonkey/config"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/snowmonkey/outages"
+        "to": "operation:patch:/api/snowmonkey/config"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
         "to": "operation:get:/api/snowmonkey/outages"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/snowmonkey/outages"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -467,22 +467,22 @@
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/verifiers/{verifierId}"
-      },
-      {
-        "from": "maif-local-otoroshi-fc34aa53a6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/verifiers/{verifierId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/verifiers/{verifierId}"
+        "to": "operation:put:/api/verifiers/{verifierId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/verifiers/{verifierId}"
+        "to": "operation:delete:/api/verifiers/{verifierId}"
+      },
+      {
+        "from": "maif-local-otoroshi-fc34aa53a6",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/api/verifiers/{verifierId}"
       },
       {
         "from": "maif-local-otoroshi-fc34aa53a6",
@@ -513,6 +513,1321 @@
         "from": "maif-local-otoroshi-fc34aa53a6",
         "kind": "EXPOSES",
         "to": "operation:get:/new/service"
+      },
+      {
+        "from": "operation:get:/api/apikeys",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/api/auths",
+        "kind": "RETURNS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:get:/api/auths",
+        "kind": "RETURNS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:get:/api/auths",
+        "kind": "RETURNS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:post:/api/auths",
+        "kind": "ACCEPTS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:post:/api/auths",
+        "kind": "ACCEPTS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:post:/api/auths",
+        "kind": "ACCEPTS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:post:/api/auths",
+        "kind": "RETURNS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:post:/api/auths",
+        "kind": "RETURNS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:post:/api/auths",
+        "kind": "RETURNS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:get:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:get:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:get:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:put:/api/auths/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:put:/api/auths/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:put:/api/auths/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:put:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:put:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:put:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:delete:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/auths/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GenericOauth2ModuleConfig"
+      },
+      {
+        "from": "operation:patch:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:InMemoryAuthModuleConfig"
+      },
+      {
+        "from": "operation:patch:/api/auths/{id}",
+        "kind": "RETURNS",
+        "to": "schema:LdapAuthModuleConfig"
+      },
+      {
+        "from": "operation:get:/api/certificates",
+        "kind": "RETURNS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:post:/api/certificates",
+        "kind": "ACCEPTS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:post:/api/certificates",
+        "kind": "RETURNS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:get:/api/certificates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:put:/api/certificates/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:put:/api/certificates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:delete:/api/certificates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/certificates/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/certificates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Certificate"
+      },
+      {
+        "from": "operation:get:/api/client-validators",
+        "kind": "RETURNS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:post:/api/client-validators",
+        "kind": "ACCEPTS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:post:/api/client-validators",
+        "kind": "RETURNS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:get:/api/client-validators/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:put:/api/client-validators/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:put:/api/client-validators/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:delete:/api/client-validators/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/client-validators/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/client-validators/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ValidationAuthority"
+      },
+      {
+        "from": "operation:get:/api/data-exporter-configs",
+        "kind": "RETURNS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:post:/api/data-exporter-configs",
+        "kind": "ACCEPTS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:post:/api/data-exporter-configs",
+        "kind": "RETURNS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:put:/api/data-exporter-configs/_bulk",
+        "kind": "ACCEPTS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:post:/api/data-exporter-configs/_bulk",
+        "kind": "ACCEPTS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:delete:/api/data-exporter-configs/_bulk",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/data-exporter-configs/_bulk",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:get:/api/data-exporter-configs/_template",
+        "kind": "RETURNS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:get:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "RETURNS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:put:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "ACCEPTS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:put:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "RETURNS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:delete:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "RETURNS",
+        "to": "schema:DataExporterConfig"
+      },
+      {
+        "from": "operation:get:/api/globalconfig",
+        "kind": "RETURNS",
+        "to": "schema:GlobalConfig"
+      },
+      {
+        "from": "operation:put:/api/globalconfig",
+        "kind": "ACCEPTS",
+        "to": "schema:GlobalConfig"
+      },
+      {
+        "from": "operation:put:/api/globalconfig",
+        "kind": "RETURNS",
+        "to": "schema:GlobalConfig"
+      },
+      {
+        "from": "operation:patch:/api/globalconfig",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/globalconfig",
+        "kind": "RETURNS",
+        "to": "schema:GlobalConfig"
+      },
+      {
+        "from": "operation:get:/api/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/api/groups",
+        "kind": "ACCEPTS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/api/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/api/groups/{groupId}/apikeys",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/api/groups/{groupId}/apikeys",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/api/groups/{groupId}/apikeys",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:put:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:put:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/api/groups/{groupId}/apikeys/{clientId}/quotas",
+        "kind": "RETURNS",
+        "to": "schema:Quotas"
+      },
+      {
+        "from": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}/quotas",
+        "kind": "RETURNS",
+        "to": "schema:Quotas"
+      },
+      {
+        "from": "operation:get:/api/groups/{serviceGroupId}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/api/groups/{serviceGroupId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/api/groups/{serviceGroupId}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:delete:/api/groups/{serviceGroupId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/groups/{serviceGroupId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/groups/{serviceGroupId}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/api/groups/{serviceGroupId}/services",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/api/import",
+        "kind": "ACCEPTS",
+        "to": "schema:ImportExport"
+      },
+      {
+        "from": "operation:post:/api/import",
+        "kind": "RETURNS",
+        "to": "schema:Done"
+      },
+      {
+        "from": "operation:get:/api/live",
+        "kind": "RETURNS",
+        "to": "schema:Stats"
+      },
+      {
+        "from": "operation:get:/api/live/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Stats"
+      },
+      {
+        "from": "operation:get:/api/otoroshi.json",
+        "kind": "RETURNS",
+        "to": "schema:ImportExport"
+      },
+      {
+        "from": "operation:post:/api/otoroshi.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ImportExport"
+      },
+      {
+        "from": "operation:post:/api/otoroshi.json",
+        "kind": "RETURNS",
+        "to": "schema:Done"
+      },
+      {
+        "from": "operation:get:/api/scripts",
+        "kind": "RETURNS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:post:/api/scripts",
+        "kind": "ACCEPTS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:post:/api/scripts",
+        "kind": "RETURNS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:post:/api/scripts/_compile",
+        "kind": "ACCEPTS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:post:/api/scripts/_compile",
+        "kind": "RETURNS",
+        "to": "schema:ScriptCompilationResult"
+      },
+      {
+        "from": "operation:get:/api/scripts/{scriptId}",
+        "kind": "RETURNS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:put:/api/scripts/{scriptId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:put:/api/scripts/{scriptId}",
+        "kind": "RETURNS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:delete:/api/scripts/{scriptId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/scripts/{scriptId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/scripts/{scriptId}",
+        "kind": "RETURNS",
+        "to": "schema:Script"
+      },
+      {
+        "from": "operation:get:/api/services",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:post:/api/services",
+        "kind": "ACCEPTS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:post:/api/services",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:put:/api/services/{serviceId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:put:/api/services/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:delete:/api/services/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/services/{serviceId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/services/{serviceId}",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}/apikeys",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/api/services/{serviceId}/apikeys",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:post:/api/services/{serviceId}/apikeys",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:put:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "ACCEPTS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:put:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}/apikeys/{clientId}/group",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}/apikeys/{clientId}/quotas",
+        "kind": "RETURNS",
+        "to": "schema:Quotas"
+      },
+      {
+        "from": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}/quotas",
+        "kind": "RETURNS",
+        "to": "schema:Quotas"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}/targets",
+        "kind": "RETURNS",
+        "to": "schema:Target"
+      },
+      {
+        "from": "operation:post:/api/services/{serviceId}/targets",
+        "kind": "ACCEPTS",
+        "to": "schema:Target"
+      },
+      {
+        "from": "operation:post:/api/services/{serviceId}/targets",
+        "kind": "RETURNS",
+        "to": "schema:Target"
+      },
+      {
+        "from": "operation:delete:/api/services/{serviceId}/targets",
+        "kind": "RETURNS",
+        "to": "schema:Target"
+      },
+      {
+        "from": "operation:patch:/api/services/{serviceId}/targets",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/services/{serviceId}/targets",
+        "kind": "RETURNS",
+        "to": "schema:Target"
+      },
+      {
+        "from": "operation:get:/api/services/{serviceId}/template",
+        "kind": "RETURNS",
+        "to": "schema:ErrorTemplate"
+      },
+      {
+        "from": "operation:put:/api/services/{serviceId}/template",
+        "kind": "ACCEPTS",
+        "to": "schema:ErrorTemplate"
+      },
+      {
+        "from": "operation:put:/api/services/{serviceId}/template",
+        "kind": "RETURNS",
+        "to": "schema:ErrorTemplate"
+      },
+      {
+        "from": "operation:post:/api/services/{serviceId}/template",
+        "kind": "ACCEPTS",
+        "to": "schema:ErrorTemplate"
+      },
+      {
+        "from": "operation:post:/api/services/{serviceId}/template",
+        "kind": "RETURNS",
+        "to": "schema:ErrorTemplate"
+      },
+      {
+        "from": "operation:delete:/api/services/{serviceId}/template",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:post:/api/snowmonkey/_start",
+        "kind": "RETURNS",
+        "to": "schema:Done"
+      },
+      {
+        "from": "operation:post:/api/snowmonkey/_stop",
+        "kind": "RETURNS",
+        "to": "schema:Done"
+      },
+      {
+        "from": "operation:get:/api/snowmonkey/config",
+        "kind": "RETURNS",
+        "to": "schema:SnowMonkeyConfig"
+      },
+      {
+        "from": "operation:put:/api/snowmonkey/config",
+        "kind": "ACCEPTS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/api/snowmonkey/config",
+        "kind": "RETURNS",
+        "to": "schema:SnowMonkeyConfig"
+      },
+      {
+        "from": "operation:patch:/api/snowmonkey/config",
+        "kind": "ACCEPTS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:patch:/api/snowmonkey/config",
+        "kind": "RETURNS",
+        "to": "schema:SnowMonkeyConfig"
+      },
+      {
+        "from": "operation:get:/api/snowmonkey/outages",
+        "kind": "RETURNS",
+        "to": "schema:Outage"
+      },
+      {
+        "from": "operation:delete:/api/snowmonkey/outages",
+        "kind": "RETURNS",
+        "to": "schema:Done"
+      },
+      {
+        "from": "operation:get:/api/verifiers",
+        "kind": "RETURNS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:post:/api/verifiers",
+        "kind": "ACCEPTS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:post:/api/verifiers",
+        "kind": "RETURNS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:get:/api/verifiers/{verifierId}",
+        "kind": "RETURNS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:put:/api/verifiers/{verifierId}",
+        "kind": "ACCEPTS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:put:/api/verifiers/{verifierId}",
+        "kind": "RETURNS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:delete:/api/verifiers/{verifierId}",
+        "kind": "RETURNS",
+        "to": "schema:Deleted"
+      },
+      {
+        "from": "operation:patch:/api/verifiers/{verifierId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/api/verifiers/{verifierId}",
+        "kind": "RETURNS",
+        "to": "schema:GlobalJwtVerifier"
+      },
+      {
+        "from": "operation:get:/health",
+        "kind": "RETURNS",
+        "to": "schema:OtoroshiHealth"
+      },
+      {
+        "from": "operation:get:/lines",
+        "kind": "RETURNS",
+        "to": "schema:Environment"
+      },
+      {
+        "from": "operation:get:/lines/{line}/services",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "operation:get:/new/apikey",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/new/group",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/new/service",
+        "kind": "RETURNS",
+        "to": "schema:Service"
+      },
+      {
+        "from": "schema:BadResponsesFaultConfig",
+        "kind": "REFERENCES",
+        "to": "schema:BadResponse"
+      },
+      {
+        "from": "schema:Canary",
+        "kind": "REFERENCES",
+        "to": "schema:Target"
+      },
+      {
+        "from": "schema:ChaosConfig",
+        "kind": "REFERENCES",
+        "to": "schema:BadResponsesFaultConfig"
+      },
+      {
+        "from": "schema:ChaosConfig",
+        "kind": "REFERENCES",
+        "to": "schema:LargeRequestFaultConfig"
+      },
+      {
+        "from": "schema:ChaosConfig",
+        "kind": "REFERENCES",
+        "to": "schema:LargeResponseFaultConfig"
+      },
+      {
+        "from": "schema:ChaosConfig",
+        "kind": "REFERENCES",
+        "to": "schema:LatencyInjectionFaultConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ConsoleDataExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:CustomDataExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ElasticConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:FileDataExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:Filtering"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:KafkaConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:Location"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:MailerConsoleExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:MailerGenericExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:MailerMailgunExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:MailerMailjetExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:MailerSendgridExporterConfig"
+      },
+      {
+        "from": "schema:DataExporterConfig",
+        "kind": "REFERENCES",
+        "to": "schema:PulsarDataExporterConfig"
+      },
+      {
+        "from": "schema:GenericOauth2ModuleConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:GenericOauth2ModuleConfig",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:GenericOauth2ModuleConfig",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:GenericOauth2ModuleConfig",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:GlobalConfig",
+        "kind": "REFERENCES",
+        "to": "schema:Auth0Config"
+      },
+      {
+        "from": "schema:GlobalConfig",
+        "kind": "REFERENCES",
+        "to": "schema:CleverSettings"
+      },
+      {
+        "from": "schema:GlobalConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ElasticConfig"
+      },
+      {
+        "from": "schema:GlobalConfig",
+        "kind": "REFERENCES",
+        "to": "schema:IpFiltering"
+      },
+      {
+        "from": "schema:GlobalConfig",
+        "kind": "REFERENCES",
+        "to": "schema:MailerSettings"
+      },
+      {
+        "from": "schema:GlobalConfig",
+        "kind": "REFERENCES",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:InCookie"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:InHeader"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:InQueryParam"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:PassThrough"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:Sign"
+      },
+      {
+        "from": "schema:GlobalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:Transform"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:Canary"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:ChaosConfig"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:ClientConfig"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:CorsSettings"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:ExposedApi"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:GlobalConfig"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:Gzip"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:HealthCheck"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:ImportExportStats"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:IpFiltering"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:LocalJwtVerifier"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:RedirectionSettings"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:RefJwtVerifier"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:StatsdConfig"
+      },
+      {
+        "from": "schema:ImportExport",
+        "kind": "REFERENCES",
+        "to": "schema:Target"
+      },
+      {
+        "from": "schema:InMemoryAuthModuleConfig",
+        "kind": "REFERENCES",
+        "to": "schema:InMemoryUser"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:InCookie"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:InHeader"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:InQueryParam"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:PassThrough"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:Sign"
+      },
+      {
+        "from": "schema:LocalJwtVerifier",
+        "kind": "REFERENCES",
+        "to": "schema:Transform"
+      },
+      {
+        "from": "schema:PassThrough",
+        "kind": "REFERENCES",
+        "to": "schema:VerificationSettings"
+      },
+      {
+        "from": "schema:ScriptCompilationResult",
+        "kind": "REFERENCES",
+        "to": "schema:ScriptCompilationError"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Canary"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ChaosConfig"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ClientConfig"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:CorsSettings"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:ExposedApi"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Gzip"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:HealthCheck"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:IpFiltering"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:LocalJwtVerifier"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:RedirectionSettings"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:RefJwtVerifier"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:StatsdConfig"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Target"
+      },
+      {
+        "from": "schema:Sign",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:Sign",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:Sign",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:Sign",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:Sign",
+        "kind": "REFERENCES",
+        "to": "schema:VerificationSettings"
+      },
+      {
+        "from": "schema:SnowMonkeyConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ChaosConfig"
+      },
+      {
+        "from": "schema:SnowMonkeyConfig",
+        "kind": "REFERENCES",
+        "to": "schema:OutageStrategy"
+      },
+      {
+        "from": "schema:Transform",
+        "kind": "REFERENCES",
+        "to": "schema:ESAlgoSettings"
+      },
+      {
+        "from": "schema:Transform",
+        "kind": "REFERENCES",
+        "to": "schema:HSAlgoSettings"
+      },
+      {
+        "from": "schema:Transform",
+        "kind": "REFERENCES",
+        "to": "schema:JWKSAlgoSettings"
+      },
+      {
+        "from": "schema:Transform",
+        "kind": "REFERENCES",
+        "to": "schema:RSAlgoSettings"
+      },
+      {
+        "from": "schema:Transform",
+        "kind": "REFERENCES",
+        "to": "schema:TransformSettings"
+      },
+      {
+        "from": "schema:Transform",
+        "kind": "REFERENCES",
+        "to": "schema:VerificationSettings"
+      },
+      {
+        "from": "schema:TransformSettings",
+        "kind": "REFERENCES",
+        "to": "schema:InCookie"
+      },
+      {
+        "from": "schema:TransformSettings",
+        "kind": "REFERENCES",
+        "to": "schema:InHeader"
+      },
+      {
+        "from": "schema:TransformSettings",
+        "kind": "REFERENCES",
+        "to": "schema:InQueryParam"
+      },
+      {
+        "from": "schema:TransformSettings",
+        "kind": "REFERENCES",
+        "to": "schema:MappingSettings"
+      },
+      {
+        "from": "schema:VerificationSettings",
+        "kind": "REFERENCES",
+        "to": "schema:MappingSettings"
       }
     ],
     "nodes": [
@@ -528,12 +1843,31 @@
         "name": "allApiKeys",
         "path": "/api/apikeys",
         "pointer": "#/paths/~1api~1apikeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all api keys"
+        "summary": "Get all api keys",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -543,12 +1877,31 @@
         "name": "findAllGlobalAuthModules",
         "path": "/api/auths",
         "pointer": "#/paths/~1api~1auths/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all global auth. module configs"
+        "summary": "Get all global auth. module configs",
+        "tags": [
+          "auth-config"
+        ]
       },
       {
         "deprecated": false,
@@ -558,27 +1911,38 @@
         "name": "createGlobalAuthModule",
         "path": "/api/auths",
         "pointer": "#/paths/~1api~1auths/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create one global auth. module config"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/auths/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteGlobalAuthModule",
-        "path": "/api/auths/{id}",
-        "pointer": "#/paths/~1api~1auths~1{id}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete one global auth. module config"
+        "summary": "Create one global auth. module config",
+        "tags": [
+          "auth-config"
+        ]
       },
       {
         "deprecated": false,
@@ -586,29 +1950,42 @@
         "kind": "operation",
         "method": "get",
         "name": "findGlobalAuthModuleById",
+        "parameters": [
+          {
+            "description": "The auth.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/auths/{id}",
         "pointer": "#/paths/~1api~1auths~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get one global auth. module configs"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/auths/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchGlobalAuthModule",
-        "path": "/api/auths/{id}",
-        "pointer": "#/paths/~1api~1auths~1{id}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update one global auth. module config"
+        "summary": "Get one global auth. module configs",
+        "tags": [
+          "auth-config"
+        ]
       },
       {
         "deprecated": false,
@@ -616,14 +1993,142 @@
         "kind": "operation",
         "method": "put",
         "name": "updateGlobalAuthModule",
+        "parameters": [
+          {
+            "description": "The auth.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/auths/{id}",
         "pointer": "#/paths/~1api~1auths~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update one global auth. module config"
+        "summary": "Update one global auth. module config",
+        "tags": [
+          "auth-config"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/auths/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteGlobalAuthModule",
+        "parameters": [
+          {
+            "description": "The auth.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/auths/{id}",
+        "pointer": "#/paths/~1api~1auths~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete one global auth. module config",
+        "tags": [
+          "auth-config"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/auths/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchGlobalAuthModule",
+        "parameters": [
+          {
+            "description": "The auth.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/auths/{id}",
+        "pointer": "#/paths/~1api~1auths~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LdapAuthModuleConfig|InMemoryAuthModuleConfig|GenericOauth2ModuleConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update one global auth. module config",
+        "tags": [
+          "auth-config"
+        ]
       },
       {
         "deprecated": false,
@@ -633,12 +2138,31 @@
         "name": "allCerts",
         "path": "/api/certificates",
         "pointer": "#/paths/~1api~1certificates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Certificate[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all certificates"
+        "summary": "Get all certificates",
+        "tags": [
+          "certificates"
+        ]
       },
       {
         "deprecated": false,
@@ -648,27 +2172,38 @@
         "name": "createCert",
         "path": "/api/certificates",
         "pointer": "#/paths/~1api~1certificates/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Certificate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Certificate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create one certificate"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/certificates/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCert",
-        "path": "/api/certificates/{id}",
-        "pointer": "#/paths/~1api~1certificates~1{id}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete one certificate by id"
+        "summary": "Create one certificate",
+        "tags": [
+          "certificates"
+        ]
       },
       {
         "deprecated": false,
@@ -676,29 +2211,42 @@
         "kind": "operation",
         "method": "get",
         "name": "oneCert",
+        "parameters": [
+          {
+            "description": "The auth.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/certificates/{id}",
         "pointer": "#/paths/~1api~1certificates~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Certificate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get one certificate by id"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/certificates/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchCert",
-        "path": "/api/certificates/{id}",
-        "pointer": "#/paths/~1api~1certificates~1{id}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update one certificate by id"
+        "summary": "Get one certificate by id",
+        "tags": [
+          "certificates"
+        ]
       },
       {
         "deprecated": false,
@@ -706,14 +2254,142 @@
         "kind": "operation",
         "method": "put",
         "name": "putCert",
+        "parameters": [
+          {
+            "description": "The certificate id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/certificates/{id}",
         "pointer": "#/paths/~1api~1certificates~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Certificate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Certificate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update one certificate by id"
+        "summary": "Update one certificate by id",
+        "tags": [
+          "certificates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/certificates/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCert",
+        "parameters": [
+          {
+            "description": "The certificate id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/certificates/{id}",
+        "pointer": "#/paths/~1api~1certificates~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete one certificate by id",
+        "tags": [
+          "certificates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/certificates/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchCert",
+        "parameters": [
+          {
+            "description": "The certificate id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/certificates/{id}",
+        "pointer": "#/paths/~1api~1certificates~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Certificate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update one certificate by id",
+        "tags": [
+          "certificates"
+        ]
       },
       {
         "deprecated": false,
@@ -723,12 +2399,31 @@
         "name": "findAllClientValidators",
         "path": "/api/client-validators",
         "pointer": "#/paths/~1api~1client-validators/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidationAuthority[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all validation authoritiess"
+        "summary": "Get all validation authoritiess",
+        "tags": [
+          "validation-authorities"
+        ]
       },
       {
         "deprecated": false,
@@ -738,27 +2433,38 @@
         "name": "createClientValidator",
         "path": "/api/client-validators",
         "pointer": "#/paths/~1api~1client-validators/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ValidationAuthority"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidationAuthority"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create one validation authorities"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/client-validators/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteClientValidator",
-        "path": "/api/client-validators/{id}",
-        "pointer": "#/paths/~1api~1client-validators~1{id}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete one validation authorities by id"
+        "summary": "Create one validation authorities",
+        "tags": [
+          "validation-authorities"
+        ]
       },
       {
         "deprecated": false,
@@ -766,29 +2472,42 @@
         "kind": "operation",
         "method": "get",
         "name": "findClientValidatorById",
+        "parameters": [
+          {
+            "description": "The auth.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client-validators/{id}",
         "pointer": "#/paths/~1api~1client-validators~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidationAuthority"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get one validation authorities by id"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/client-validators/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchClientValidator",
-        "path": "/api/client-validators/{id}",
-        "pointer": "#/paths/~1api~1client-validators~1{id}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update one validation authorities by id"
+        "summary": "Get one validation authorities by id",
+        "tags": [
+          "validation-authorities"
+        ]
       },
       {
         "deprecated": false,
@@ -796,14 +2515,142 @@
         "kind": "operation",
         "method": "put",
         "name": "updateClientValidator",
+        "parameters": [
+          {
+            "description": "The validation authorities id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/client-validators/{id}",
         "pointer": "#/paths/~1api~1client-validators~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ValidationAuthority"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidationAuthority"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update one validation authorities by id"
+        "summary": "Update one validation authorities by id",
+        "tags": [
+          "validation-authorities"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/client-validators/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteClientValidator",
+        "parameters": [
+          {
+            "description": "The validation authorities id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/client-validators/{id}",
+        "pointer": "#/paths/~1api~1client-validators~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete one validation authorities by id",
+        "tags": [
+          "validation-authorities"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/client-validators/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchClientValidator",
+        "parameters": [
+          {
+            "description": "The validation authorities id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/client-validators/{id}",
+        "pointer": "#/paths/~1api~1client-validators~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidationAuthority"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update one validation authorities by id",
+        "tags": [
+          "validation-authorities"
+        ]
       },
       {
         "deprecated": false,
@@ -813,12 +2660,31 @@
         "name": "findAllDataExporters",
         "path": "/api/data-exporter-configs",
         "pointer": "#/paths/~1api~1data-exporter-configs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataExporterConfig[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all data exporter configs"
+        "summary": "Get all data exporter configs",
+        "tags": [
+          "data-exporter-configs"
+        ]
       },
       {
         "deprecated": false,
@@ -828,57 +2694,38 @@
         "name": "createDataExporterConfig",
         "path": "/api/data-exporter-configs",
         "pointer": "#/paths/~1api~1data-exporter-configs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DataExporterConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataExporterConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create a new data exporter config"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/data-exporter-configs/_bulk",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletebulkDataExporterConfig",
-        "path": "/api/data-exporter-configs/_bulk",
-        "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete a data exporter config"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/data-exporter-configs/_bulk",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchBulkDataExporterConfig",
-        "path": "/api/data-exporter-configs/_bulk",
-        "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update a data exporter configs with a diff"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/api/data-exporter-configs/_bulk",
-        "kind": "operation",
-        "method": "post",
-        "name": "createBulkDataExporterConfigs",
-        "path": "/api/data-exporter-configs/_bulk",
-        "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/post",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Create a new data exporter configs"
+        "summary": "Create a new data exporter config",
+        "tags": [
+          "data-exporter-configs"
+        ]
       },
       {
         "deprecated": false,
@@ -888,12 +2735,161 @@
         "name": "updateBulkDataExporterConfig",
         "path": "/api/data-exporter-configs/_bulk",
         "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/put",
+        "request": {
+          "content_types": [
+            "application/ndjson"
+          ],
+          "required": false,
+          "type": "DataExporterConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update a data exporter configs"
+        "summary": "Update a data exporter configs",
+        "tags": [
+          "data-exporter-configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/data-exporter-configs/_bulk",
+        "kind": "operation",
+        "method": "post",
+        "name": "createBulkDataExporterConfigs",
+        "path": "/api/data-exporter-configs/_bulk",
+        "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/post",
+        "request": {
+          "content_types": [
+            "application/ndjson"
+          ],
+          "required": false,
+          "type": "DataExporterConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Create a new data exporter configs",
+        "tags": [
+          "data-exporter-configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/data-exporter-configs/_bulk",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletebulkDataExporterConfig",
+        "path": "/api/data-exporter-configs/_bulk",
+        "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/delete",
+        "request": {
+          "content_types": [
+            "application/ndjson"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete a data exporter config",
+        "tags": [
+          "data-exporter-configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/data-exporter-configs/_bulk",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchBulkDataExporterConfig",
+        "path": "/api/data-exporter-configs/_bulk",
+        "pointer": "#/paths/~1api~1data-exporter-configs~1_bulk/patch",
+        "request": {
+          "content_types": [
+            "application/ndjson"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update a data exporter configs with a diff",
+        "tags": [
+          "data-exporter-configs"
+        ]
       },
       {
         "deprecated": false,
@@ -901,29 +2897,42 @@
         "kind": "operation",
         "method": "get",
         "name": "DataExporterTemplate",
+        "parameters": [
+          {
+            "description": "The data exporter config type",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/data-exporter-configs/_template",
         "pointer": "#/paths/~1api~1data-exporter-configs~1_template/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataExporterConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all data exporter configs"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/data-exporter-configs/{dataExporterConfigId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDataExporterConfig",
-        "path": "/api/data-exporter-configs/{dataExporterConfigId}",
-        "pointer": "#/paths/~1api~1data-exporter-configs~1{dataExporterConfigId}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete a data exporter config"
+        "summary": "Get all data exporter configs",
+        "tags": [
+          "data-exporter-configs"
+        ]
       },
       {
         "deprecated": false,
@@ -931,29 +2940,42 @@
         "kind": "operation",
         "method": "get",
         "name": "findDataExporterConfigById",
+        "parameters": [
+          {
+            "description": "The data exporter config id",
+            "in": "path",
+            "name": "dataExporterConfigId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/data-exporter-configs/{dataExporterConfigId}",
         "pointer": "#/paths/~1api~1data-exporter-configs~1{dataExporterConfigId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataExporterConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a data exporter config"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/data-exporter-configs/{dataExporterConfigId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchDataExporterConfig",
-        "path": "/api/data-exporter-configs/{dataExporterConfigId}",
-        "pointer": "#/paths/~1api~1data-exporter-configs~1{dataExporterConfigId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update a data exporter config with a diff"
+        "summary": "Get a data exporter config",
+        "tags": [
+          "data-exporter-configs"
+        ]
       },
       {
         "deprecated": false,
@@ -961,14 +2983,142 @@
         "kind": "operation",
         "method": "put",
         "name": "updateDataExporterConfig",
+        "parameters": [
+          {
+            "description": "The data exporter config id",
+            "in": "path",
+            "name": "dataExporterConfigId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/data-exporter-configs/{dataExporterConfigId}",
         "pointer": "#/paths/~1api~1data-exporter-configs~1{dataExporterConfigId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DataExporterConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataExporterConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update a data exporter config"
+        "summary": "Update a data exporter config",
+        "tags": [
+          "data-exporter-configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDataExporterConfig",
+        "parameters": [
+          {
+            "description": "The data exporter config id",
+            "in": "path",
+            "name": "dataExporterConfigId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/data-exporter-configs/{dataExporterConfigId}",
+        "pointer": "#/paths/~1api~1data-exporter-configs~1{dataExporterConfigId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete a data exporter config",
+        "tags": [
+          "data-exporter-configs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/data-exporter-configs/{dataExporterConfigId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchDataExporterConfig",
+        "parameters": [
+          {
+            "description": "The data exporter config id",
+            "in": "path",
+            "name": "dataExporterConfigId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/data-exporter-configs/{dataExporterConfigId}",
+        "pointer": "#/paths/~1api~1data-exporter-configs~1{dataExporterConfigId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DataExporterConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update a data exporter config with a diff",
+        "tags": [
+          "data-exporter-configs"
+        ]
       },
       {
         "deprecated": false,
@@ -978,27 +3128,31 @@
         "name": "globalConfig",
         "path": "/api/globalconfig",
         "pointer": "#/paths/~1api~1globalconfig/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get the full configuration of Otoroshi"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/globalconfig",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchGlobalConfig",
-        "path": "/api/globalconfig",
-        "pointer": "#/paths/~1api~1globalconfig/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update the global configuration with a diff"
+        "summary": "Get the full configuration of Otoroshi",
+        "tags": [
+          "configuration"
+        ]
       },
       {
         "deprecated": false,
@@ -1008,12 +3162,79 @@
         "name": "putGlobalConfig",
         "path": "/api/globalconfig",
         "pointer": "#/paths/~1api~1globalconfig/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GlobalConfig"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update the global configuration"
+        "summary": "Update the global configuration",
+        "tags": [
+          "configuration"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/globalconfig",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchGlobalConfig",
+        "path": "/api/globalconfig",
+        "pointer": "#/paths/~1api~1globalconfig/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update the global configuration with a diff",
+        "tags": [
+          "configuration"
+        ]
       },
       {
         "deprecated": false,
@@ -1023,12 +3244,31 @@
         "name": "allServiceGroups",
         "path": "/api/groups",
         "pointer": "#/paths/~1api~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all service groups"
+        "summary": "Get all service groups",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1038,12 +3278,38 @@
         "name": "createGroup",
         "path": "/api/groups",
         "pointer": "#/paths/~1api~1groups/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Group"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create a new service group"
+        "summary": "Create a new service group",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1051,14 +3317,42 @@
         "kind": "operation",
         "method": "get",
         "name": "apiKeysFromGroup",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{groupId}/apikeys",
         "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all api keys for the group of a service"
+        "summary": "Get all api keys for the group of a service",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1066,89 +3360,267 @@
         "kind": "operation",
         "method": "post",
         "name": "createApiKeyFromGroup",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{groupId}/apikeys",
         "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ApiKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create a new api key for a group"
+        "summary": "Create a new api key for a group",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteApiKeyFromGroup",
-        "path": "/api/groups/{groupId}/apikeys/{clientId}",
-        "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete an api key"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an api key for a specified service group",
         "id": "operation:get:/api/groups/{groupId}/apikeys/{clientId}",
         "kind": "operation",
         "method": "get",
         "name": "apiKeyFromGroup",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{groupId}/apikeys/{clientId}",
         "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get an api key"
+        "summary": "Get an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/api/groups/{groupId}/apikeys/{clientId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchApiKeyFromGroup",
-        "path": "/api/groups/{groupId}/apikeys/{clientId}",
-        "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update an api key with a diff"
-      },
-      {
-        "deprecated": false,
+        "description": "Update an api key for a specified service group",
         "id": "operation:put:/api/groups/{groupId}/apikeys/{clientId}",
         "kind": "operation",
         "method": "put",
         "name": "updateApiKeyFromGroup",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{groupId}/apikeys/{clientId}",
         "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ApiKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update an api key"
+        "summary": "Update an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}/quotas",
+        "description": "Delete an api key for a specified service group",
+        "id": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}",
         "kind": "operation",
         "method": "delete",
-        "name": "resetApiKeyFromGroupQuotas",
-        "path": "/api/groups/{groupId}/apikeys/{clientId}/quotas",
-        "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}~1quotas/delete",
+        "name": "deleteApiKeyFromGroup",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/groups/{groupId}/apikeys/{clientId}",
+        "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Reset the quota state of an api key"
+        "summary": "Delete an api key",
+        "tags": [
+          "apikeys"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update an api key for a specified service descriptor with a diff",
+        "id": "operation:patch:/api/groups/{groupId}/apikeys/{clientId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchApiKeyFromGroup",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/groups/{groupId}/apikeys/{clientId}",
+        "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update an api key with a diff",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1156,29 +3628,99 @@
         "kind": "operation",
         "method": "get",
         "name": "apiKeyFromGroupQuotas",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{groupId}/apikeys/{clientId}/quotas",
         "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}~1quotas/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Quotas"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get the quota state of an api key"
+        "summary": "Get the quota state of an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/groups/{serviceGroupId}",
+        "id": "operation:delete:/api/groups/{groupId}/apikeys/{clientId}/quotas",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteGroup",
-        "path": "/api/groups/{serviceGroupId}",
-        "pointer": "#/paths/~1api~1groups~1{serviceGroupId}/delete",
+        "name": "resetApiKeyFromGroupQuotas",
+        "parameters": [
+          {
+            "description": "The api key group id",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/groups/{groupId}/apikeys/{clientId}/quotas",
+        "pointer": "#/paths/~1api~1groups~1{groupId}~1apikeys~1{clientId}~1quotas/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Quotas"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Delete a service group"
+        "summary": "Reset the quota state of an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1186,29 +3728,42 @@
         "kind": "operation",
         "method": "get",
         "name": "serviceGroup",
+        "parameters": [
+          {
+            "description": "The service group id",
+            "in": "path",
+            "name": "serviceGroupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{serviceGroupId}",
         "pointer": "#/paths/~1api~1groups~1{serviceGroupId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a service group"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/groups/{serviceGroupId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchGroup",
-        "path": "/api/groups/{serviceGroupId}",
-        "pointer": "#/paths/~1api~1groups~1{serviceGroupId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update a service group with a diff"
+        "summary": "Get a service group",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1216,14 +3771,142 @@
         "kind": "operation",
         "method": "put",
         "name": "updateGroup",
+        "parameters": [
+          {
+            "description": "The service group id",
+            "in": "path",
+            "name": "serviceGroupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{serviceGroupId}",
         "pointer": "#/paths/~1api~1groups~1{serviceGroupId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Group"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update a service group"
+        "summary": "Update a service group",
+        "tags": [
+          "groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/groups/{serviceGroupId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteGroup",
+        "parameters": [
+          {
+            "description": "The service group id",
+            "in": "path",
+            "name": "serviceGroupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/groups/{serviceGroupId}",
+        "pointer": "#/paths/~1api~1groups~1{serviceGroupId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete a service group",
+        "tags": [
+          "groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/groups/{serviceGroupId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchGroup",
+        "parameters": [
+          {
+            "description": "The service group id",
+            "in": "path",
+            "name": "serviceGroupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/groups/{serviceGroupId}",
+        "pointer": "#/paths/~1api~1groups~1{serviceGroupId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update a service group with a diff",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -1231,14 +3914,42 @@
         "kind": "operation",
         "method": "get",
         "name": "serviceGroupServices",
+        "parameters": [
+          {
+            "description": "The service group id",
+            "in": "path",
+            "name": "serviceGroupId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/groups/{serviceGroupId}/services",
         "pointer": "#/paths/~1api~1groups~1{serviceGroupId}~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all services descriptor for a group"
+        "summary": "Get all services descriptor for a group",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1248,12 +3959,38 @@
         "name": "fullImportFromFile",
         "path": "/api/import",
         "pointer": "#/paths/~1api~1import/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ImportExport"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Done"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Import the full state of Otoroshi as a file"
+        "summary": "Import the full state of Otoroshi as a file",
+        "tags": [
+          "import"
+        ]
       },
       {
         "deprecated": false,
@@ -1263,27 +4000,75 @@
         "name": "globalLiveStats",
         "path": "/api/live",
         "pointer": "#/paths/~1api~1live/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Stats"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get global otoroshi stats"
+        "summary": "Get global otoroshi stats",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get live feed of global otoroshi stats (global) or for a service {id}",
         "id": "operation:get:/api/live/{id}",
         "kind": "operation",
         "method": "get",
         "name": "serviceLiveStats",
+        "parameters": [
+          {
+            "description": "The service id or global for otoroshi stats",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/live/{id}",
         "pointer": "#/paths/~1api~1live~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Stats"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get live feed of otoroshi stats"
+        "summary": "Get live feed of otoroshi stats",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
@@ -1293,12 +4078,31 @@
         "name": "fullExport",
         "path": "/api/otoroshi.json",
         "pointer": "#/paths/~1api~1otoroshi.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportExport"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Export the full state of Otoroshi"
+        "summary": "Export the full state of Otoroshi",
+        "tags": [
+          "import"
+        ]
       },
       {
         "deprecated": false,
@@ -1308,12 +4112,38 @@
         "name": "fullImport",
         "path": "/api/otoroshi.json",
         "pointer": "#/paths/~1api~1otoroshi.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ImportExport"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Done"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Import the full state of Otoroshi"
+        "summary": "Import the full state of Otoroshi",
+        "tags": [
+          "import"
+        ]
       },
       {
         "deprecated": false,
@@ -1323,12 +4153,31 @@
         "name": "findAllScripts",
         "path": "/api/scripts",
         "pointer": "#/paths/~1api~1scripts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Script[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all scripts"
+        "summary": "Get all scripts",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -1338,12 +4187,38 @@
         "name": "createScript",
         "path": "/api/scripts",
         "pointer": "#/paths/~1api~1scripts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Script"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Script"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create a new script"
+        "summary": "Create a new script",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -1353,27 +4228,38 @@
         "name": "compileScript",
         "path": "/api/scripts/_compile",
         "pointer": "#/paths/~1api~1scripts~1_compile/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Script"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScriptCompilationResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Compile a script"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/scripts/{scriptId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScript",
-        "path": "/api/scripts/{scriptId}",
-        "pointer": "#/paths/~1api~1scripts~1{scriptId}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete a script"
+        "summary": "Compile a script",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -1381,29 +4267,42 @@
         "kind": "operation",
         "method": "get",
         "name": "findScriptById",
+        "parameters": [
+          {
+            "description": "The script id",
+            "in": "path",
+            "name": "scriptId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/scripts/{scriptId}",
         "pointer": "#/paths/~1api~1scripts~1{scriptId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Script"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a script"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/scripts/{scriptId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchScript",
-        "path": "/api/scripts/{scriptId}",
-        "pointer": "#/paths/~1api~1scripts~1{scriptId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update a script with a diff"
+        "summary": "Get a script",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -1411,14 +4310,142 @@
         "kind": "operation",
         "method": "put",
         "name": "updateScript",
+        "parameters": [
+          {
+            "description": "The script id",
+            "in": "path",
+            "name": "scriptId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/scripts/{scriptId}",
         "pointer": "#/paths/~1api~1scripts~1{scriptId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Script"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Script"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update a script"
+        "summary": "Update a script",
+        "tags": [
+          "scripts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/scripts/{scriptId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteScript",
+        "parameters": [
+          {
+            "description": "The script id",
+            "in": "path",
+            "name": "scriptId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/scripts/{scriptId}",
+        "pointer": "#/paths/~1api~1scripts~1{scriptId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete a script",
+        "tags": [
+          "scripts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/scripts/{scriptId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchScript",
+        "parameters": [
+          {
+            "description": "The script id",
+            "in": "path",
+            "name": "scriptId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/scripts/{scriptId}",
+        "pointer": "#/paths/~1api~1scripts~1{scriptId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Script"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update a script with a diff",
+        "tags": [
+          "scripts"
+        ]
       },
       {
         "deprecated": false,
@@ -1428,12 +4455,31 @@
         "name": "allServices",
         "path": "/api/services",
         "pointer": "#/paths/~1api~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all services"
+        "summary": "Get all services",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1443,27 +4489,38 @@
         "name": "createService",
         "path": "/api/services",
         "pointer": "#/paths/~1api~1services/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Service"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create a new service descriptor"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/services/{serviceId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteService",
-        "path": "/api/services/{serviceId}",
-        "pointer": "#/paths/~1api~1services~1{serviceId}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete a service descriptor"
+        "summary": "Create a new service descriptor",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1471,29 +4528,42 @@
         "kind": "operation",
         "method": "get",
         "name": "service",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}",
         "pointer": "#/paths/~1api~1services~1{serviceId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a service descriptor"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/services/{serviceId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchService",
-        "path": "/api/services/{serviceId}",
-        "pointer": "#/paths/~1api~1services~1{serviceId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update a service descriptor with a diff"
+        "summary": "Get a service descriptor",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1501,14 +4571,142 @@
         "kind": "operation",
         "method": "put",
         "name": "updateService",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}",
         "pointer": "#/paths/~1api~1services~1{serviceId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Service"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update a service descriptor"
+        "summary": "Update a service descriptor",
+        "tags": [
+          "services"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/services/{serviceId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteService",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}",
+        "pointer": "#/paths/~1api~1services~1{serviceId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete a service descriptor",
+        "tags": [
+          "services"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/services/{serviceId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchService",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}",
+        "pointer": "#/paths/~1api~1services~1{serviceId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update a service descriptor with a diff",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1516,14 +4714,42 @@
         "kind": "operation",
         "method": "get",
         "name": "apiKeys",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/apikeys",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all api keys for the group of a service"
+        "summary": "Get all api keys for the group of a service",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1531,74 +4757,267 @@
         "kind": "operation",
         "method": "post",
         "name": "createApiKey",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/apikeys",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ApiKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create a new api key for a service"
+        "summary": "Create a new api key for a service",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteApiKey",
-        "path": "/api/services/{serviceId}/apikeys/{clientId}",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete an api key"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an api key for a specified service descriptor",
         "id": "operation:get:/api/services/{serviceId}/apikeys/{clientId}",
         "kind": "operation",
         "method": "get",
         "name": "apiKey",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/apikeys/{clientId}",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get an api key"
+        "summary": "Get an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/api/services/{serviceId}/apikeys/{clientId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchApiKey",
-        "path": "/api/services/{serviceId}/apikeys/{clientId}",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update an api key with a diff"
-      },
-      {
-        "deprecated": false,
+        "description": "Update an api key for a specified service descriptor",
         "id": "operation:put:/api/services/{serviceId}/apikeys/{clientId}",
         "kind": "operation",
         "method": "put",
         "name": "updateApiKey",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/apikeys/{clientId}",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ApiKey"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update an api key"
+        "summary": "Update an api key",
+        "tags": [
+          "apikeys"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete an api key for a specified service descriptor",
+        "id": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteApiKey",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/apikeys/{clientId}",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete an api key",
+        "tags": [
+          "apikeys"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update an api key for a specified service descriptor with a diff",
+        "id": "operation:patch:/api/services/{serviceId}/apikeys/{clientId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchApiKey",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/apikeys/{clientId}",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update an api key with a diff",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1606,29 +5025,49 @@
         "kind": "operation",
         "method": "get",
         "name": "apiKeyGroup",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/apikeys/{clientId}/group",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}~1group/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get the group of an api key"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}/quotas",
-        "kind": "operation",
-        "method": "delete",
-        "name": "resetApiKeyQuotas",
-        "path": "/api/services/{serviceId}/apikeys/{clientId}/quotas",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}~1quotas/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Reset the quota state of an api key"
+        "summary": "Get the group of an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1636,29 +5075,99 @@
         "kind": "operation",
         "method": "get",
         "name": "apiKeyQuotas",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/apikeys/{clientId}/quotas",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}~1quotas/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Quotas"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get the quota state of an api key"
+        "summary": "Get the quota state of an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/services/{serviceId}/targets",
+        "id": "operation:delete:/api/services/{serviceId}/apikeys/{clientId}/quotas",
         "kind": "operation",
         "method": "delete",
-        "name": "serviceDeleteTarget",
-        "path": "/api/services/{serviceId}/targets",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1targets/delete",
+        "name": "resetApiKeyQuotas",
+        "parameters": [
+          {
+            "description": "The api key service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the api key id",
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/apikeys/{clientId}/quotas",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1apikeys~1{clientId}~1quotas/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Quotas"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Delete a service descriptor target"
+        "summary": "Reset the quota state of an api key",
+        "tags": [
+          "apikeys"
+        ]
       },
       {
         "deprecated": false,
@@ -1666,29 +5175,42 @@
         "kind": "operation",
         "method": "get",
         "name": "serviceTargets",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/targets",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1targets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Target[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a service descriptor targets"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/services/{serviceId}/targets",
-        "kind": "operation",
-        "method": "patch",
-        "name": "updateServiceTargets",
-        "path": "/api/services/{serviceId}/targets",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1targets/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update a service descriptor targets"
+        "summary": "Get a service descriptor targets",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1696,29 +5218,142 @@
         "kind": "operation",
         "method": "post",
         "name": "serviceAddTarget",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/targets",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1targets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Target"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Target[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Add a target to a service descriptor"
+        "summary": "Add a target to a service descriptor",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/services/{serviceId}/template",
+        "id": "operation:delete:/api/services/{serviceId}/targets",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteServiceTemplate",
-        "path": "/api/services/{serviceId}/template",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1template/delete",
+        "name": "serviceDeleteTarget",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/targets",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1targets/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Target[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Delete a service descriptor error template"
+        "summary": "Delete a service descriptor target",
+        "tags": [
+          "services"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/services/{serviceId}/targets",
+        "kind": "operation",
+        "method": "patch",
+        "name": "updateServiceTargets",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/targets",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1targets/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Target[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update a service descriptor targets",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1726,29 +5361,42 @@
         "kind": "operation",
         "method": "get",
         "name": "serviceTemplate",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/template",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1template/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErrorTemplate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a service descriptor error template"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/api/services/{serviceId}/template",
-        "kind": "operation",
-        "method": "post",
-        "name": "createServiceTemplate",
-        "path": "/api/services/{serviceId}/template",
-        "pointer": "#/paths/~1api~1services~1{serviceId}~1template/post",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Create a service descriptor error template"
+        "summary": "Get a service descriptor error template",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1756,14 +5404,143 @@
         "kind": "operation",
         "method": "put",
         "name": "updateServiceTemplate",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/services/{serviceId}/template",
         "pointer": "#/paths/~1api~1services~1{serviceId}~1template/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ErrorTemplate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErrorTemplate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update an error template to a service descriptor"
+        "summary": "Update an error template to a service descriptor",
+        "tags": [
+          "services"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a service descriptor targets",
+        "id": "operation:post:/api/services/{serviceId}/template",
+        "kind": "operation",
+        "method": "post",
+        "name": "createServiceTemplate",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/template",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1template/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ErrorTemplate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ErrorTemplate"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Create a service descriptor error template",
+        "tags": [
+          "services"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/services/{serviceId}/template",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteServiceTemplate",
+        "parameters": [
+          {
+            "description": "The service id",
+            "in": "path",
+            "name": "serviceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/services/{serviceId}/template",
+        "pointer": "#/paths/~1api~1services~1{serviceId}~1template/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete a service descriptor error template",
+        "tags": [
+          "services"
+        ]
       },
       {
         "deprecated": false,
@@ -1773,12 +5550,31 @@
         "name": "startSnowMonkey",
         "path": "/api/snowmonkey/_start",
         "pointer": "#/paths/~1api~1snowmonkey~1_start/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Done"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Start the Snow Monkey"
+        "summary": "Start the Snow Monkey",
+        "tags": [
+          "snowmonkey"
+        ]
       },
       {
         "deprecated": false,
@@ -1788,12 +5584,31 @@
         "name": "stopSnowMonkey",
         "path": "/api/snowmonkey/_stop",
         "pointer": "#/paths/~1api~1snowmonkey~1_stop/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Done"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Stop the Snow Monkey"
+        "summary": "Stop the Snow Monkey",
+        "tags": [
+          "snowmonkey"
+        ]
       },
       {
         "deprecated": false,
@@ -1803,27 +5618,31 @@
         "name": "getSnowMonkeyConfig",
         "path": "/api/snowmonkey/config",
         "pointer": "#/paths/~1api~1snowmonkey~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnowMonkeyConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get current Snow Monkey config"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/snowmonkey/config",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchSnowMonkey",
-        "path": "/api/snowmonkey/config",
-        "pointer": "#/paths/~1api~1snowmonkey~1config/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update current Snow Monkey config"
+        "summary": "Get current Snow Monkey config",
+        "tags": [
+          "snowmonkey"
+        ]
       },
       {
         "deprecated": false,
@@ -1833,27 +5652,79 @@
         "name": "updateSnowMonkey",
         "path": "/api/snowmonkey/config",
         "pointer": "#/paths/~1api~1snowmonkey~1config/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Group"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnowMonkeyConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update current Snow Monkey config"
+        "summary": "Update current Snow Monkey config",
+        "tags": [
+          "snowmonkey"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/snowmonkey/outages",
+        "id": "operation:patch:/api/snowmonkey/config",
         "kind": "operation",
-        "method": "delete",
-        "name": "resetSnowMonkey",
-        "path": "/api/snowmonkey/outages",
-        "pointer": "#/paths/~1api~1snowmonkey~1outages/delete",
+        "method": "patch",
+        "name": "patchSnowMonkey",
+        "path": "/api/snowmonkey/config",
+        "pointer": "#/paths/~1api~1snowmonkey~1config/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Group"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SnowMonkeyConfig"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Reset Snow Monkey Outages for the day"
+        "summary": "Update current Snow Monkey config",
+        "tags": [
+          "snowmonkey"
+        ]
       },
       {
         "deprecated": false,
@@ -1863,12 +5734,65 @@
         "name": "getSnowMonkeyOutages",
         "path": "/api/snowmonkey/outages",
         "pointer": "#/paths/~1api~1snowmonkey~1outages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Outage[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all current Snow Monkey ourages"
+        "summary": "Get all current Snow Monkey ourages",
+        "tags": [
+          "snowmonkey"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/snowmonkey/outages",
+        "kind": "operation",
+        "method": "delete",
+        "name": "resetSnowMonkey",
+        "path": "/api/snowmonkey/outages",
+        "pointer": "#/paths/~1api~1snowmonkey~1outages/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Done"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Reset Snow Monkey Outages for the day",
+        "tags": [
+          "snowmonkey"
+        ]
       },
       {
         "deprecated": false,
@@ -1878,12 +5802,31 @@
         "name": "findAllGlobalJwtVerifiers",
         "path": "/api/verifiers",
         "pointer": "#/paths/~1api~1verifiers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalJwtVerifier[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all global JWT verifiers"
+        "summary": "Get all global JWT verifiers",
+        "tags": [
+          "jwt-verifiers"
+        ]
       },
       {
         "deprecated": false,
@@ -1893,27 +5836,38 @@
         "name": "createGlobalJwtVerifier",
         "path": "/api/verifiers",
         "pointer": "#/paths/~1api~1verifiers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GlobalJwtVerifier"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalJwtVerifier"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Create one global JWT verifiers"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/verifiers/{verifierId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteGlobalJwtVerifier",
-        "path": "/api/verifiers/{verifierId}",
-        "pointer": "#/paths/~1api~1verifiers~1{verifierId}/delete",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Delete one global JWT verifiers"
+        "summary": "Create one global JWT verifiers",
+        "tags": [
+          "jwt-verifiers"
+        ]
       },
       {
         "deprecated": false,
@@ -1921,29 +5875,42 @@
         "kind": "operation",
         "method": "get",
         "name": "findGlobalJwtVerifiersById",
+        "parameters": [
+          {
+            "description": "The jwt verifier id",
+            "in": "path",
+            "name": "verifierId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/verifiers/{verifierId}",
         "pointer": "#/paths/~1api~1verifiers~1{verifierId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalJwtVerifier"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get one global JWT verifiers"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/api/verifiers/{verifierId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchGlobalJwtVerifier",
-        "path": "/api/verifiers/{verifierId}",
-        "pointer": "#/paths/~1api~1verifiers~1{verifierId}/patch",
-        "security": [
-          {
-            "otoroshi_auth": []
-          }
-        ],
-        "summary": "Update one global JWT verifiers"
+        "summary": "Get one global JWT verifiers",
+        "tags": [
+          "jwt-verifiers"
+        ]
       },
       {
         "deprecated": false,
@@ -1951,500 +5918,901 @@
         "kind": "operation",
         "method": "put",
         "name": "updateGlobalJwtVerifier",
+        "parameters": [
+          {
+            "description": "The jwt verifier id",
+            "in": "path",
+            "name": "verifierId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/verifiers/{verifierId}",
         "pointer": "#/paths/~1api~1verifiers~1{verifierId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "GlobalJwtVerifier"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalJwtVerifier"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Update one global JWT verifiers"
+        "summary": "Update one global JWT verifiers",
+        "tags": [
+          "jwt-verifiers"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/verifiers/{verifierId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteGlobalJwtVerifier",
+        "parameters": [
+          {
+            "description": "The jwt verifier id",
+            "in": "path",
+            "name": "verifierId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/verifiers/{verifierId}",
+        "pointer": "#/paths/~1api~1verifiers~1{verifierId}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deleted"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Delete one global JWT verifiers",
+        "tags": [
+          "jwt-verifiers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/api/verifiers/{verifierId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchGlobalJwtVerifier",
+        "parameters": [
+          {
+            "description": "The jwt verifier id",
+            "in": "path",
+            "name": "verifierId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/verifiers/{verifierId}",
+        "pointer": "#/paths/~1api~1verifiers~1{verifierId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GlobalJwtVerifier"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "otoroshi_auth": []
+          }
+        ],
+        "summary": "Update one global JWT verifiers",
+        "tags": [
+          "jwt-verifiers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Import the full state of Otoroshi as a file",
         "id": "operation:get:/health",
         "kind": "operation",
         "method": "get",
         "name": "health",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OtoroshiHealth"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return current Otoroshi health"
+        "summary": "Return current Otoroshi health",
+        "tags": [
+          "health"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all environments provided by the current Otoroshi instance",
         "id": "operation:get:/lines",
         "kind": "operation",
         "method": "get",
         "name": "allLines",
         "path": "/lines",
         "pointer": "#/paths/~1lines/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Environment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all environments"
+        "summary": "Get all environments",
+        "tags": [
+          "environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get all services for an environment provided by the current Otoroshi instance",
         "id": "operation:get:/lines/{line}/services",
         "kind": "operation",
         "method": "get",
         "name": "servicesForALine",
+        "parameters": [
+          {
+            "description": "The environment where to find services",
+            "in": "path",
+            "name": "line",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lines/{line}/services",
         "pointer": "#/paths/~1lines~1{line}~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get all services for an environment"
+        "summary": "Get all services for an environment",
+        "tags": [
+          "environments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a template of an Otoroshi Api Key.",
         "id": "operation:get:/new/apikey",
         "kind": "operation",
         "method": "get",
         "name": "initiateApiKey",
         "path": "/new/apikey",
         "pointer": "#/paths/~1new~1apikey/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a template of an Otoroshi Api Key"
+        "summary": "Get a template of an Otoroshi Api Key",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a template of an Otoroshi service group.",
         "id": "operation:get:/new/group",
         "kind": "operation",
         "method": "get",
         "name": "initiateServiceGroup",
         "path": "/new/group",
         "pointer": "#/paths/~1new~1group/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a template of an Otoroshi service group"
+        "summary": "Get a template of an Otoroshi service group",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a template of an Otoroshi service descriptor.",
         "id": "operation:get:/new/service",
         "kind": "operation",
         "method": "get",
         "name": "initiateService",
         "path": "/new/service",
         "pointer": "#/paths/~1new~1service/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Service"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "otoroshi_auth": []
           }
         ],
-        "summary": "Get a template of an Otoroshi service descriptor"
+        "summary": "Get a template of an Otoroshi service descriptor",
+        "tags": [
+          "templates"
+        ]
       },
       {
+        "description": "An Otoroshi Api Key.",
         "id": "schema:ApiKey",
         "kind": "schema",
-        "name": "ApiKey"
+        "name": "ApiKey",
+        "type": "object"
       },
       {
+        "description": "Configuration for Auth0 domain",
         "id": "schema:Auth0Config",
         "kind": "schema",
-        "name": "Auth0Config"
+        "name": "Auth0Config",
+        "type": "object"
       },
       {
+        "description": "An HTTP response that is not supposed to be returned by a service",
         "id": "schema:BadResponse",
         "kind": "schema",
-        "name": "BadResponse"
+        "name": "BadResponse",
+        "type": "object"
       },
       {
+        "description": "Config for bad requests injection fault",
         "id": "schema:BadResponsesFaultConfig",
         "kind": "schema",
-        "name": "BadResponsesFaultConfig"
+        "name": "BadResponsesFaultConfig",
+        "type": "object"
       },
       {
+        "description": "The configuration of the canary mode for a service descriptor",
         "id": "schema:Canary",
         "kind": "schema",
-        "name": "Canary"
+        "name": "Canary",
+        "type": "object"
       },
       {
+        "description": "A SSL/TLS X509 certificate",
         "id": "schema:Certificate",
         "kind": "schema",
-        "name": "Certificate"
+        "name": "Certificate",
+        "type": "object"
       },
       {
+        "description": "Configuration for the faults that can be injected in requests",
         "id": "schema:ChaosConfig",
         "kind": "schema",
-        "name": "ChaosConfig"
+        "name": "ChaosConfig",
+        "type": "object"
       },
       {
+        "description": "Configuration for CleverCloud client",
         "id": "schema:CleverSettings",
         "kind": "schema",
-        "name": "CleverSettings"
+        "name": "CleverSettings",
+        "type": "object"
       },
       {
+        "description": "The configuration of the circuit breaker for a service descriptor",
         "id": "schema:ClientConfig",
         "kind": "schema",
-        "name": "ClientConfig"
+        "name": "ClientConfig",
+        "type": "object"
       },
       {
         "id": "schema:ConsoleDataExporterConfig",
         "kind": "schema",
-        "name": "ConsoleDataExporterConfig"
+        "name": "ConsoleDataExporterConfig",
+        "type": "object"
       },
       {
+        "description": "The configuration for cors support",
         "id": "schema:CorsSettings",
         "kind": "schema",
-        "name": "CorsSettings"
+        "name": "CorsSettings",
+        "type": "object"
       },
       {
         "id": "schema:CustomDataExporterConfig",
         "kind": "schema",
-        "name": "CustomDataExporterConfig"
+        "name": "CustomDataExporterConfig",
+        "type": "object"
       },
       {
+        "description": "Settings to export Otorshi events",
         "id": "schema:DataExporterConfig",
         "kind": "schema",
-        "name": "DataExporterConfig"
+        "name": "DataExporterConfig",
+        "type": "object"
       },
       {
         "id": "schema:Deleted",
         "kind": "schema",
-        "name": "Deleted"
+        "name": "Deleted",
+        "type": "object"
       },
       {
         "id": "schema:Done",
         "kind": "schema",
-        "name": "Done"
+        "name": "Done",
+        "type": "object"
       },
       {
+        "description": "Settings for an EC + SHA signing algorithm",
         "id": "schema:ESAlgoSettings",
         "kind": "schema",
-        "name": "ESAlgoSettings"
+        "name": "ESAlgoSettings",
+        "type": "object"
       },
       {
+        "description": "The configuration for elastic access",
         "id": "schema:ElasticConfig",
         "kind": "schema",
-        "name": "ElasticConfig"
+        "name": "ElasticConfig",
+        "type": "object"
       },
       {
+        "description": "The name of the environment for service descriptors",
         "id": "schema:Environment",
         "kind": "schema",
-        "name": "Environment"
+        "name": "Environment",
+        "type": "string"
       },
       {
+        "description": "Error templates for a service descriptor",
         "id": "schema:ErrorTemplate",
         "kind": "schema",
-        "name": "ErrorTemplate"
+        "name": "ErrorTemplate",
+        "type": "object"
       },
       {
+        "description": "The Open API configuration for your service (if one)",
         "id": "schema:ExposedApi",
         "kind": "schema",
-        "name": "ExposedApi"
+        "name": "ExposedApi",
+        "type": "object"
       },
       {
         "id": "schema:FileDataExporterConfig",
         "kind": "schema",
-        "name": "FileDataExporterConfig"
+        "name": "FileDataExporterConfig",
+        "type": "object"
       },
       {
         "id": "schema:Filtering",
         "kind": "schema",
-        "name": "Filtering"
+        "name": "Filtering",
+        "type": "object"
       },
       {
+        "description": "Settings to authenticate users using a generic OAuth2 provider",
         "id": "schema:GenericOauth2ModuleConfig",
         "kind": "schema",
-        "name": "GenericOauth2ModuleConfig"
+        "name": "GenericOauth2ModuleConfig",
+        "type": "object"
       },
       {
+        "description": "The global config object of Otoroshi, used to customize settings of the current Otoroshi instance",
         "id": "schema:GlobalConfig",
         "kind": "schema",
-        "name": "GlobalConfig"
+        "name": "GlobalConfig",
+        "type": "object"
       },
       {
+        "description": "A JWT verifier used by multiple service descriptor",
         "id": "schema:GlobalJwtVerifier",
         "kind": "schema",
-        "name": "GlobalJwtVerifier"
+        "name": "GlobalJwtVerifier",
+        "type": "object"
       },
       {
+        "description": "An Otoroshi service group is just a group of service descriptor.",
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
+        "description": "Configuration for gzip of service responses",
         "id": "schema:Gzip",
         "kind": "schema",
-        "name": "Gzip"
+        "name": "Gzip",
+        "type": "object"
       },
       {
+        "description": "Settings for an HMAC + SHA signing algorithm",
         "id": "schema:HSAlgoSettings",
         "kind": "schema",
-        "name": "HSAlgoSettings"
+        "name": "HSAlgoSettings",
+        "type": "object"
       },
       {
+        "description": "The configuration for checking health of a service.",
         "id": "schema:HealthCheck",
         "kind": "schema",
-        "name": "HealthCheck"
+        "name": "HealthCheck",
+        "type": "object"
       },
       {
+        "description": "The structure that can be imported to or exported from Otoroshi.",
         "id": "schema:ImportExport",
         "kind": "schema",
-        "name": "ImportExport"
+        "name": "ImportExport",
+        "type": "object"
       },
       {
+        "description": "Global stats for the current Otoroshi instances",
         "id": "schema:ImportExportStats",
         "kind": "schema",
-        "name": "ImportExportStats"
+        "name": "ImportExportStats",
+        "type": "object"
       },
       {
+        "description": "JWT location in a cookie",
         "id": "schema:InCookie",
         "kind": "schema",
-        "name": "InCookie"
+        "name": "InCookie",
+        "type": "object"
       },
       {
+        "description": "JWT location in a header",
         "id": "schema:InHeader",
         "kind": "schema",
-        "name": "InHeader"
+        "name": "InHeader",
+        "type": "object"
       },
       {
+        "description": "Settings to authenticate users using the in memory user store",
         "id": "schema:InMemoryAuthModuleConfig",
         "kind": "schema",
-        "name": "InMemoryAuthModuleConfig"
+        "name": "InMemoryAuthModuleConfig",
+        "type": "object"
       },
       {
+        "description": "A user",
         "id": "schema:InMemoryUser",
         "kind": "schema",
-        "name": "InMemoryUser"
+        "name": "InMemoryUser",
+        "type": "object"
       },
       {
+        "description": "JWT location in a query param",
         "id": "schema:InQueryParam",
         "kind": "schema",
-        "name": "InQueryParam"
+        "name": "InQueryParam",
+        "type": "object"
       },
       {
+        "description": "The filtering configuration block for a service of globally.",
         "id": "schema:IpFiltering",
         "kind": "schema",
-        "name": "IpFiltering"
+        "name": "IpFiltering",
+        "type": "object"
       },
       {
+        "description": "Settings for a JWK set",
         "id": "schema:JWKSAlgoSettings",
         "kind": "schema",
-        "name": "JWKSAlgoSettings"
+        "name": "JWKSAlgoSettings",
+        "type": "object"
       },
       {
+        "description": "The configuration for kafka access",
         "id": "schema:KafkaConfig",
         "kind": "schema",
-        "name": "KafkaConfig"
+        "name": "KafkaConfig",
+        "type": "object"
       },
       {
+        "description": "Config for large request injection fault",
         "id": "schema:LargeRequestFaultConfig",
         "kind": "schema",
-        "name": "LargeRequestFaultConfig"
+        "name": "LargeRequestFaultConfig",
+        "type": "object"
       },
       {
+        "description": "Config for large response injection fault",
         "id": "schema:LargeResponseFaultConfig",
         "kind": "schema",
-        "name": "LargeResponseFaultConfig"
+        "name": "LargeResponseFaultConfig",
+        "type": "object"
       },
       {
+        "description": "Config for large latency injection fault",
         "id": "schema:LatencyInjectionFaultConfig",
         "kind": "schema",
-        "name": "LatencyInjectionFaultConfig"
+        "name": "LatencyInjectionFaultConfig",
+        "type": "object"
       },
       {
+        "description": "Settings to authenticate users using a generic OAuth2 provider",
         "id": "schema:LdapAuthModuleConfig",
         "kind": "schema",
-        "name": "LdapAuthModuleConfig"
+        "name": "LdapAuthModuleConfig",
+        "type": "object"
       },
       {
+        "description": "A user",
         "id": "schema:LdapUser",
         "kind": "schema",
-        "name": "LdapUser"
+        "name": "LdapUser",
+        "type": "object"
       },
       {
+        "description": "A JWT verifier used only for the current service descriptor",
         "id": "schema:LocalJwtVerifier",
         "kind": "schema",
-        "name": "LocalJwtVerifier"
+        "name": "LocalJwtVerifier",
+        "type": "object"
       },
       {
         "id": "schema:Location",
         "kind": "schema",
-        "name": "Location"
+        "name": "Location",
+        "type": "object"
       },
       {
         "id": "schema:MailerConsoleExporterConfig",
         "kind": "schema",
-        "name": "MailerConsoleExporterConfig"
+        "name": "MailerConsoleExporterConfig",
+        "type": "object"
       },
       {
         "id": "schema:MailerGenericExporterConfig",
         "kind": "schema",
-        "name": "MailerGenericExporterConfig"
+        "name": "MailerGenericExporterConfig",
+        "type": "object"
       },
       {
         "id": "schema:MailerMailgunExporterConfig",
         "kind": "schema",
-        "name": "MailerMailgunExporterConfig"
+        "name": "MailerMailgunExporterConfig",
+        "type": "object"
       },
       {
         "id": "schema:MailerMailjetExporterConfig",
         "kind": "schema",
-        "name": "MailerMailjetExporterConfig"
+        "name": "MailerMailjetExporterConfig",
+        "type": "object"
       },
       {
         "id": "schema:MailerSendgridExporterConfig",
         "kind": "schema",
-        "name": "MailerSendgridExporterConfig"
+        "name": "MailerSendgridExporterConfig",
+        "type": "object"
       },
       {
+        "description": "Configuration for mailgun api client",
         "id": "schema:MailerSettings",
         "kind": "schema",
-        "name": "MailerSettings"
+        "name": "MailerSettings",
+        "type": "object"
       },
       {
+        "description": "Settings to change fields of a JWT token",
         "id": "schema:MappingSettings",
         "kind": "schema",
-        "name": "MappingSettings"
+        "name": "MappingSettings",
+        "type": "object"
       },
       {
+        "description": "The structure that represent current Otoroshi health",
         "id": "schema:OtoroshiHealth",
         "kind": "schema",
-        "name": "OtoroshiHealth"
+        "name": "OtoroshiHealth",
+        "type": "object"
       },
       {
+        "description": "An outage by the Snow Monkey on a service",
         "id": "schema:Outage",
         "kind": "schema",
-        "name": "Outage"
+        "name": "Outage",
+        "type": "object"
       },
       {
         "id": "schema:OutageStrategy",
         "kind": "schema",
-        "name": "OutageStrategy"
+        "name": "OutageStrategy",
+        "type": "string"
       },
       {
+        "description": "Strategy where only signature and field values are verified",
         "id": "schema:PassThrough",
         "kind": "schema",
-        "name": "PassThrough"
+        "name": "PassThrough",
+        "type": "object"
       },
       {
+        "description": "A set of changes described in JSON Patch format: http://jsonpatch.com/ (RFC 6902)",
         "id": "schema:Patch",
         "kind": "schema",
-        "name": "Patch"
+        "name": "Patch",
+        "type": "object[]"
       },
       {
+        "description": "The configuration for kafka access",
         "id": "schema:PulsarDataExporterConfig",
         "kind": "schema",
-        "name": "PulsarDataExporterConfig"
+        "name": "PulsarDataExporterConfig",
+        "type": "object"
       },
       {
+        "description": "Quotas state for an api key on a service group",
         "id": "schema:Quotas",
         "kind": "schema",
-        "name": "Quotas"
+        "name": "Quotas",
+        "type": "object"
       },
       {
+        "description": "Settings for an HMAC + SHA signing algorithm",
         "id": "schema:RSAlgoSettings",
         "kind": "schema",
-        "name": "RSAlgoSettings"
+        "name": "RSAlgoSettings",
+        "type": "object"
       },
       {
+        "description": "The configuration for redirection per service",
         "id": "schema:RedirectionSettings",
         "kind": "schema",
-        "name": "RedirectionSettings"
+        "name": "RedirectionSettings",
+        "type": "object"
       },
       {
+        "description": "Reference to a global JWT verifier",
         "id": "schema:RefJwtVerifier",
         "kind": "schema",
-        "name": "RefJwtVerifier"
+        "name": "RefJwtVerifier",
+        "type": "object"
       },
       {
+        "description": "A script to transformer otoroshi requests",
         "id": "schema:Script",
         "kind": "schema",
-        "name": "Script"
+        "name": "Script",
+        "type": "object"
       },
       {
+        "description": "The error of the compilation of a Script",
         "id": "schema:ScriptCompilationError",
         "kind": "schema",
-        "name": "ScriptCompilationError"
+        "name": "ScriptCompilationError",
+        "type": "object"
       },
       {
+        "description": "The result of the compilation of a Script",
         "id": "schema:ScriptCompilationResult",
         "kind": "schema",
-        "name": "ScriptCompilationResult"
+        "name": "ScriptCompilationResult",
+        "type": "object"
       },
       {
+        "description": "An otoroshi service descriptor.",
         "id": "schema:Service",
         "kind": "schema",
-        "name": "Service"
+        "name": "Service",
+        "type": "object"
       },
       {
+        "description": "Strategy where signature and field values are verified, and then token si re-signed",
         "id": "schema:Sign",
         "kind": "schema",
-        "name": "Sign"
+        "name": "Sign",
+        "type": "object"
       },
       {
+        "description": "Administrator using just login/password tuple to access Otoroshi",
         "id": "schema:SimpleAdmin",
         "kind": "schema",
-        "name": "SimpleAdmin"
+        "name": "SimpleAdmin",
+        "type": "object"
       },
       {
+        "description": "Configuration for the faults that can be injected in requests.",
         "id": "schema:SnowMonkeyConfig",
         "kind": "schema",
-        "name": "SnowMonkeyConfig"
+        "name": "SnowMonkeyConfig",
+        "type": "object"
       },
       {
+        "description": "Live stats for a service or globally",
         "id": "schema:Stats",
         "kind": "schema",
-        "name": "Stats"
+        "name": "Stats",
+        "type": "object"
       },
       {
+        "description": "The configuration for statsd metrics push",
         "id": "schema:StatsdConfig",
         "kind": "schema",
-        "name": "StatsdConfig"
+        "name": "StatsdConfig",
+        "type": "object"
       },
       {
+        "description": "A Target is where an HTTP call will be forwarded in the end from a service domain",
         "id": "schema:Target",
         "kind": "schema",
-        "name": "Target"
+        "name": "Target",
+        "type": "object"
       },
       {
+        "description": "Strategy where signature and field values are verified, trasnformed and then token si re-signed",
         "id": "schema:Transform",
         "kind": "schema",
-        "name": "Transform"
+        "name": "Transform",
+        "type": "object"
       },
       {
+        "description": "Settings to transform a JWT token and its location",
         "id": "schema:TransformSettings",
         "kind": "schema",
-        "name": "TransformSettings"
+        "name": "TransformSettings",
+        "type": "object"
       },
       {
+        "description": "Administrator using FIDO U2F device to access Otoroshi",
         "id": "schema:U2FAdmin",
         "kind": "schema",
-        "name": "U2FAdmin"
+        "name": "U2FAdmin",
+        "type": "object"
       },
       {
+        "description": "Settings to access a validation authority server",
         "id": "schema:ValidationAuthority",
         "kind": "schema",
-        "name": "ValidationAuthority"
+        "name": "ValidationAuthority",
+        "type": "object"
       },
       {
+        "description": "Settings to verify the value of JWT token fields",
         "id": "schema:VerificationSettings",
         "kind": "schema",
-        "name": "VerificationSettings"
+        "name": "VerificationSettings",
+        "type": "object"
       },
       {
+        "description": "A callback URL where events are posted",
         "id": "schema:Webhook",
         "kind": "schema",
-        "name": "Webhook"
+        "name": "Webhook",
+        "type": "object"
       },
       {
+        "description": "The configuration for webhook",
         "id": "schema:whebhookConfig",
         "kind": "schema",
-        "name": "whebhookConfig"
+        "name": "whebhookConfig",
+        "type": "object"
       }
     ]
   },

@@ -67,17 +67,112 @@
       {
         "from": "bulksms-com-fefe281aa1",
         "kind": "EXPOSES",
-        "to": "operation:delete:/webhooks/{id}"
-      },
-      {
-        "from": "bulksms-com-fefe281aa1",
-        "kind": "EXPOSES",
         "to": "operation:get:/webhooks/{id}"
       },
       {
         "from": "bulksms-com-fefe281aa1",
         "kind": "EXPOSES",
         "to": "operation:post:/webhooks/{id}"
+      },
+      {
+        "from": "bulksms-com-fefe281aa1",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/webhooks/{id}"
+      },
+      {
+        "from": "operation:get:/blocked-numbers",
+        "kind": "RETURNS",
+        "to": "schema:BlockedNumber"
+      },
+      {
+        "from": "operation:post:/blocked-numbers",
+        "kind": "ACCEPTS",
+        "to": "schema:PhoneNumber"
+      },
+      {
+        "from": "operation:post:/credit/transfer",
+        "kind": "ACCEPTS",
+        "to": "schema:TransferEntry"
+      },
+      {
+        "from": "operation:get:/messages",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:post:/messages",
+        "kind": "ACCEPTS",
+        "to": "schema:SubmissionEntry"
+      },
+      {
+        "from": "operation:post:/messages",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/messages/send",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/messages/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/messages/{id}/relatedReceivedMessages",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/profile",
+        "kind": "RETURNS",
+        "to": "schema:Profile"
+      },
+      {
+        "from": "operation:post:/rmm/pre-sign-attachment",
+        "kind": "ACCEPTS",
+        "to": "schema:PreSignRequest"
+      },
+      {
+        "from": "operation:post:/rmm/pre-sign-attachment",
+        "kind": "RETURNS",
+        "to": "schema:PreSignInfo"
+      },
+      {
+        "from": "operation:get:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "ACCEPTS",
+        "to": "schema:WebhookEntry"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "operation:get:/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "operation:post:/webhooks/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:WebhookEntry"
+      },
+      {
+        "from": "operation:post:/webhooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Webhook"
+      },
+      {
+        "from": "schema:BlockedNumber",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneNumber"
       }
     ],
     "nodes": [
@@ -91,194 +186,499 @@
         "kind": "operation",
         "method": "get",
         "name": "get /blocked-numbers",
+        "parameters": [
+          {
+            "description": "Records with an `id` that is greater or equal to min-id will be returned.",
+            "in": "query",
+            "name": "min-id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/blocked-numbers",
         "pointer": "#/paths/~1blocked-numbers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BlockedNumber"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List blocked numbers"
+        "summary": "List blocked numbers",
+        "tags": [
+          "Blocked Numbers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Blocked numbers are phone numbers to which your account is not permitted to send messages.",
         "id": "operation:post:/blocked-numbers",
         "kind": "operation",
         "method": "post",
         "name": "post /blocked-numbers",
         "path": "/blocked-numbers",
         "pointer": "#/paths/~1blocked-numbers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PhoneNumber[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a blocked number"
+        "summary": "Create a blocked number",
+        "tags": [
+          "Blocked Numbers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Before you can use the transfer credits endpoint, the _credit-transfer facility_ must be activated for your account.",
         "id": "operation:post:/credit/transfer",
         "kind": "operation",
         "method": "post",
         "name": "post /credit/transfer",
         "path": "/credit/transfer",
         "pointer": "#/paths/~1credit~1transfer/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TransferEntry"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Transfer credits to another account"
+        "summary": "Transfer credits to another account",
+        "tags": [
+          "Credits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the messages you have sent or received.",
         "id": "operation:get:/messages",
         "kind": "operation",
         "method": "get",
         "name": "get /messages",
+        "parameters": [
+          {
+            "description": "The maximum number of messages that are returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number:int"
+          },
+          {
+            "description": "See the message filtering for more information.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The default value is DESCENDING If the `sortOrder` is DESCENDING, the newest messages be first in the result.",
+            "enum": [
+              "ASCENDING"
+            ],
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/messages",
         "pointer": "#/paths/~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Message[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Retrieve Messages"
+        "summary": "Retrieve Messages",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send messages to one or more recipients.",
         "id": "operation:post:/messages",
         "kind": "operation",
         "method": "post",
         "name": "post /messages",
+        "parameters": [
+          {
+            "description": "Safeguards against the possibility of sending the same messages more than once.",
+            "in": "query",
+            "name": "deduplication-id",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.",
+            "in": "query",
+            "name": "auto-unicode",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Allows you to send a message in the future.",
+            "in": "query",
+            "name": "schedule-date",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A note that is stored together with a scheduled submission, which could be used to more easily identify the scheduled submission at a later date.",
+            "in": "query",
+            "name": "schedule-description",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/messages",
         "pointer": "#/paths/~1messages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubmissionEntry[]"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Message[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Send Messages"
+        "summary": "Send Messages",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A really simple interface for people who require a GET mechanism to submit a single message.",
         "id": "operation:get:/messages/send",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/send",
+        "parameters": [
+          {
+            "description": "The phone number of the recipient.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The text you want to send.",
+            "in": "query",
+            "name": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Refer to the `deduplication-id` parameter.",
+            "in": "query",
+            "name": "deduplication-id",
+            "required": false,
+            "type": "integer:int-32"
+          }
+        ],
         "path": "/messages/send",
         "pointer": "#/paths/~1messages~1send/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Message[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Send message by simple GET or POST"
+        "summary": "Send message by simple GET or POST",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a the message by `id`.",
         "id": "operation:get:/messages/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/{id}",
+        "parameters": [
+          {
+            "description": "The `id` of the message you want to retrieve",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/messages/{id}",
         "pointer": "#/paths/~1messages~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Message"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Show Message"
+        "summary": "Show Message",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the messages related to a sent message identified by `id`.",
         "id": "operation:get:/messages/{id}/relatedReceivedMessages",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/{id}/relatedReceivedMessages",
+        "parameters": [
+          {
+            "description": "The `id` of the sent message",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/messages/{id}/relatedReceivedMessages",
         "pointer": "#/paths/~1messages~1{id}~1relatedReceivedMessages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Message[]"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List Related Messages"
+        "summary": "List Related Messages",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about your user profile",
         "id": "operation:get:/profile",
         "kind": "operation",
         "method": "get",
         "name": "get /profile",
         "path": "/profile",
         "pointer": "#/paths/~1profile/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Profile"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get profile"
+        "summary": "Get profile",
+        "tags": [
+          "Profile"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When composing an SMS, you can add SMS attachments by adding a URL to your text.",
         "id": "operation:post:/rmm/pre-sign-attachment",
         "kind": "operation",
         "method": "post",
         "name": "post /rmm/pre-sign-attachment",
         "path": "/rmm/pre-sign-attachment",
         "pointer": "#/paths/~1rmm~1pre-sign-attachment/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PreSignRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PreSignInfo"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Upload an attachment via a signed URL"
+        "summary": "Upload an attachment via a signed URL",
+        "tags": [
+          "Attachments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Contains a list of your webhooks",
         "id": "operation:get:/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "get /webhooks",
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Webhook[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "List webhooks"
+        "summary": "List webhooks",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A webhook is an URL that you can register when you want the BulkSMS system to notify you about your messages.",
         "id": "operation:post:/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks",
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "WebhookEntry"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Webhook"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a webhook"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/webhooks/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /webhooks/{id}",
-        "path": "/webhooks/{id}",
-        "pointer": "#/paths/~1webhooks~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a webhook"
+        "summary": "Create a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -286,14 +686,41 @@
         "kind": "operation",
         "method": "get",
         "name": "get /webhooks/{id}",
+        "parameters": [
+          {
+            "description": "The `id` of the webhook",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{id}",
         "pointer": "#/paths/~1webhooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Webhook"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Read a webhook"
+        "summary": "Read a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
@@ -301,69 +728,150 @@
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/{id}",
+        "parameters": [
+          {
+            "description": "The `id` of the webhook",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{id}",
         "pointer": "#/paths/~1webhooks~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "WebhookEntry"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Webhook"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a webhook"
+        "summary": "Update a webhook",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/webhooks/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /webhooks/{id}",
+        "parameters": [
+          {
+            "description": "The `id` of the webhook",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/webhooks/{id}",
+        "pointer": "#/paths/~1webhooks~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "id": "schema:BlockedNumber",
         "kind": "schema",
-        "name": "BlockedNumber"
+        "name": "BlockedNumber",
+        "type": "object"
       },
       {
+        "description": "See the [errors page](errors/) for more detail on what kind of errors you can get.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
+        "description": "A phone number in E.164 format",
         "id": "schema:PhoneNumber",
         "kind": "schema",
-        "name": "PhoneNumber"
+        "name": "PhoneNumber",
+        "type": "string"
       },
       {
         "id": "schema:PreSignInfo",
         "kind": "schema",
-        "name": "PreSignInfo"
+        "name": "PreSignInfo",
+        "type": "object"
       },
       {
         "id": "schema:PreSignRequest",
         "kind": "schema",
-        "name": "PreSignRequest"
+        "name": "PreSignRequest",
+        "type": "object"
       },
       {
         "id": "schema:Profile",
         "kind": "schema",
-        "name": "Profile"
+        "name": "Profile",
+        "type": "object"
       },
       {
+        "description": "An object that you use when posting messages.",
         "id": "schema:SubmissionEntry",
         "kind": "schema",
-        "name": "SubmissionEntry"
+        "name": "SubmissionEntry",
+        "type": "object"
       },
       {
         "id": "schema:TransferEntry",
         "kind": "schema",
-        "name": "TransferEntry"
+        "name": "TransferEntry",
+        "type": "object"
       },
       {
         "id": "schema:Webhook",
         "kind": "schema",
-        "name": "Webhook"
+        "name": "Webhook",
+        "type": "object"
       },
       {
         "id": "schema:WebhookEntry",
         "kind": "schema",
-        "name": "WebhookEntry"
+        "name": "WebhookEntry",
+        "type": "object"
       }
     ]
   },

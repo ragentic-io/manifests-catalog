@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `335fe3ca1b47f82b44d57a833008b15df061c950aca9ff64c030efc35cea1125` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,23 +32,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (18)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/asset` | listAssets | Asset Collection |
-| GET | `/asset/{assetId}` | getAsset | Asset Detail |
-| GET | `/asset/{assetId}/contributor` | getAssetContributors | Asset Contributors |
-| GET | `/catalogue` | listCatalogues | Catalogue Collection |
-| GET | `/catalogue/{catalogueId}` | getCatalogue | Catalogue Detail |
-| GET | `/catalogue/{catalogueId}/asset` | getCatalogueAsset | Catalogue Asset Collection |
-| GET | `/catalogue/{catalogueId}/asset/{assetId}` | getCatalogueAssetDetail | Catalogue Asset Detail |
-| GET | `/channel` | listChannels | Channel Collection |
-| GET | `/channel/{channelId}` | getChannel | Channel Detail |
-| GET | `/contributor` | listContributor | Contributor Collection |
-| GET | `/contributor/{contributorId}` | getContributor | Contributor Detail |
-| GET | `/feature` | listFeatures | Feature Collection |
-| GET | `/feature-type` | listFeatureTypes | Feature Type Collection |
-| GET | `/feature/{featureId}` | getFeature | Feature Detail |
-| GET | `/platform` | listPlatforms | Platform Collection |
-| GET | `/platform/{platformId}` | getPlatform | Platform Detail |
-| GET | `/platform/{platformId}/region` | listPlatformRegions | Platform Region Collection |
-| GET | `/schedule` | listSchedule | Schedule Collection |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/asset` | listAssets | `updatedAfter`, `limit`, `aliases` | object | yes | Asset Collection |
+| GET | `/asset/{assetId}` | getAsset | `assetId`*, `aliases` | object | yes | Asset Detail |
+| GET | `/asset/{assetId}/contributor` | getAssetContributors | `assetId`*, `aliases` | object | yes | Asset Contributors |
+| GET | `/catalogue` | listCatalogues | — | object | yes | Catalogue Collection |
+| GET | `/catalogue/{catalogueId}` | getCatalogue | `catalogueId`* | object | yes | Catalogue Detail |
+| GET | `/catalogue/{catalogueId}/asset` | getCatalogueAsset | `catalogueId`*, `title`, `start`, `end`, `updatedAfter`, `limit`, `aliases` | object | yes | Catalogue Asset Collection |
+| GET | `/catalogue/{catalogueId}/asset/{assetId}` | getCatalogueAssetDetail | `catalogueId`*, `assetId`* | object | yes | Catalogue Asset Detail |
+| GET | `/channel` | listChannels | `platformId`, `regionId`, `aliases`, `date`, `scheduleStart`, `scheduleEnd`, `scheduleUpdatedSince` | object | yes | Channel Collection |
+| GET | `/channel/{channelId}` | getChannel | `channelId`*, `aliases` | object | yes | Channel Detail |
+| GET | `/contributor` | listContributor | `updatedAfter`, `limit`, `aliases` | object | yes | Contributor Collection |
+| GET | `/contributor/{contributorId}` | getContributor | `contributorId`*, `aliases` | object | yes | Contributor Detail |
+| GET | `/feature` | listFeatures | `type`, `date`, `start`, `end` | object | yes | Feature Collection |
+| GET | `/feature-type` | listFeatureTypes | — | object | yes | Feature Type Collection |
+| GET | `/feature/{featureId}` | getFeature | `featureId`* | object | yes | Feature Detail |
+| GET | `/platform` | listPlatforms | `aliases` | object | yes | Platform Collection |
+| GET | `/platform/{platformId}` | getPlatform | `platformId`* | object | yes | Platform Detail |
+| GET | `/platform/{platformId}/region` | listPlatformRegions | `platformId`*, `aliases` | object | yes | Platform Region Collection |
+| GET | `/schedule` | listSchedule | `channelId`*, `start`*, `end`, `aliases` | object | yes | Schedule Collection |

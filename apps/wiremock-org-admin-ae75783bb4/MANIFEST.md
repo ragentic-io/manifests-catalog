@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `8bde7ec5650a79cf53dd4c39433ea8c8cb763811c6177b10dc036f0b423a9c60` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,38 +32,40 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (33)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/__admin/mappings` | delete /__admin/mappings | Delete all stub mappings |
-| GET | `/__admin/mappings` | get /__admin/mappings | Get all stub mappings |
-| POST | `/__admin/mappings` | post /__admin/mappings | Create a new stub mapping |
-| POST | `/__admin/mappings/find-by-metadata` | post /__admin/mappings/find-by-metadata | — |
-| POST | `/__admin/mappings/import` | post /__admin/mappings/import | Import stub mappings |
-| POST | `/__admin/mappings/remove-by-metadata` | post /__admin/mappings/remove-by-metadata | Delete stub mappings matching metadata |
-| POST | `/__admin/mappings/reset` | post /__admin/mappings/reset | Reset stub mappings |
-| POST | `/__admin/mappings/save` | post /__admin/mappings/save | Persist stub mappings |
-| DELETE | `/__admin/mappings/{stubMappingId}` | delete /__admin/mappings/{stubMappingId} | Delete a stub mapping |
-| GET | `/__admin/mappings/{stubMappingId}` | get /__admin/mappings/{stubMappingId} | Get stub mapping by ID |
-| PUT | `/__admin/mappings/{stubMappingId}` | put /__admin/mappings/{stubMappingId} | Update a stub mapping |
-| POST | `/__admin/near-misses/request` | post /__admin/near-misses/request | Find near misses matching specific request |
-| POST | `/__admin/near-misses/request-pattern` | post /__admin/near-misses/request-pattern | Find near misses matching request pattern |
-| POST | `/__admin/recordings/snapshot` | post /__admin/recordings/snapshot | Take a snapshot recording |
-| POST | `/__admin/recordings/start` | post /__admin/recordings/start | Start recording |
-| GET | `/__admin/recordings/status` | get /__admin/recordings/status | Get recording status |
-| POST | `/__admin/recordings/stop` | post /__admin/recordings/stop | Stop recording |
-| DELETE | `/__admin/requests` | delete /__admin/requests | Delete all requests in journal |
-| GET | `/__admin/requests` | get /__admin/requests | Get all requests in journal |
-| POST | `/__admin/requests/count` | post /__admin/requests/count | Count requests by criteria |
-| POST | `/__admin/requests/find` | post /__admin/requests/find | Find requests by criteria |
-| POST | `/__admin/requests/remove` | post /__admin/requests/remove | Remove requests by criteria |
-| POST | `/__admin/requests/remove-by-metadata` | post /__admin/requests/remove-by-metadata | Delete requests mappings matching metadata |
-| POST | `/__admin/requests/reset` | post /__admin/requests/reset | Empty the request journal |
-| GET | `/__admin/requests/unmatched` | get /__admin/requests/unmatched | Find unmatched requests |
-| GET | `/__admin/requests/unmatched/near-misses` | get /__admin/requests/unmatched/near-misses | — |
-| DELETE | `/__admin/requests/{requestId}` | delete /__admin/requests/{requestId} | Delete request by ID |
-| GET | `/__admin/requests/{requestId}` | get /__admin/requests/{requestId} | Get request by ID |
-| POST | `/__admin/reset` | post /__admin/reset | Reset mappings and request journal |
-| GET | `/__admin/scenarios` | get /__admin/scenarios | Get all scenarios |
-| POST | `/__admin/scenarios/reset` | post /__admin/scenarios/reset | Reset the state of all scenarios |
-| POST | `/__admin/settings` | post /__admin/settings | Update global settings |
-| POST | `/__admin/shutdown` | post /__admin/shutdown | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/__admin/mappings` | get /__admin/mappings | `limit`, `offset` | object | yes | Get all stub mappings |
+| POST | `/__admin/mappings` | post /__admin/mappings | body: object | object |  | Create a new stub mapping |
+| DELETE | `/__admin/mappings` | delete /__admin/mappings | — | — |  | Delete all stub mappings |
+| POST | `/__admin/mappings/find-by-metadata` | post /__admin/mappings/find-by-metadata | body*: object | object |  | — |
+| POST | `/__admin/mappings/import` | post /__admin/mappings/import | — | — |  | Import stub mappings |
+| POST | `/__admin/mappings/remove-by-metadata` | post /__admin/mappings/remove-by-metadata | body: object | — |  | Delete stub mappings matching metadata |
+| POST | `/__admin/mappings/reset` | post /__admin/mappings/reset | — | — |  | Reset stub mappings |
+| POST | `/__admin/mappings/save` | post /__admin/mappings/save | — | — |  | Persist stub mappings |
+| GET | `/__admin/mappings/{stubMappingId}` | get /__admin/mappings/{stubMappingId} | `stubMappingId`* | object | yes | Get stub mapping by ID |
+| PUT | `/__admin/mappings/{stubMappingId}` | put /__admin/mappings/{stubMappingId} | `stubMappingId`*, body: object | object |  | Update a stub mapping |
+| DELETE | `/__admin/mappings/{stubMappingId}` | delete /__admin/mappings/{stubMappingId} | `stubMappingId`* | — |  | Delete a stub mapping |
+| POST | `/__admin/near-misses/request` | post /__admin/near-misses/request | body*: object | object |  | Find near misses matching specific request |
+| POST | `/__admin/near-misses/request-pattern` | post /__admin/near-misses/request-pattern | body*: object | object |  | Find near misses matching request pattern |
+| POST | `/__admin/recordings/snapshot` | post /__admin/recordings/snapshot | body*: object | object |  | Take a snapshot recording |
+| POST | `/__admin/recordings/start` | post /__admin/recordings/start | body*: object | — |  | Start recording |
+| GET | `/__admin/recordings/status` | get /__admin/recordings/status | — | object | yes | Get recording status |
+| POST | `/__admin/recordings/stop` | post /__admin/recordings/stop | — | object |  | Stop recording |
+| GET | `/__admin/requests` | get /__admin/requests | `limit`, `since` | — | yes | Get all requests in journal |
+| DELETE | `/__admin/requests` | delete /__admin/requests | — | — |  | Delete all requests in journal |
+| POST | `/__admin/requests/count` | post /__admin/requests/count | body*: object | object |  | Count requests by criteria |
+| POST | `/__admin/requests/find` | post /__admin/requests/find | body*: object | — |  | Find requests by criteria |
+| POST | `/__admin/requests/remove` | post /__admin/requests/remove | body*: object | — |  | Remove requests by criteria |
+| POST | `/__admin/requests/remove-by-metadata` | post /__admin/requests/remove-by-metadata | body: object | — |  | Delete requests mappings matching metadata |
+| POST | `/__admin/requests/reset` | post /__admin/requests/reset | — | — |  | Empty the request journal |
+| GET | `/__admin/requests/unmatched` | get /__admin/requests/unmatched | — | — | yes | Find unmatched requests |
+| GET | `/__admin/requests/unmatched/near-misses` | get /__admin/requests/unmatched/near-misses | — | object | yes | — |
+| GET | `/__admin/requests/{requestId}` | get /__admin/requests/{requestId} | `requestId`* | — | yes | Get request by ID |
+| DELETE | `/__admin/requests/{requestId}` | delete /__admin/requests/{requestId} | `requestId`* | — |  | Delete request by ID |
+| POST | `/__admin/reset` | post /__admin/reset | — | — |  | Reset mappings and request journal |
+| GET | `/__admin/scenarios` | get /__admin/scenarios | — | object | yes | Get all scenarios |
+| POST | `/__admin/scenarios/reset` | post /__admin/scenarios/reset | — | — |  | Reset the state of all scenarios |
+| POST | `/__admin/settings` | post /__admin/settings | body*: object | — |  | Update global settings |
+| POST | `/__admin/shutdown` | post /__admin/shutdown | — | — |  | — |

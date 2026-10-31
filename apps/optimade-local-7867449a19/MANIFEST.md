@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `f3dbc4a2227803df7444f433721296089a077d0a27f158a369e5d3d7b2b87e49` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 53 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/info` | get_info_info_get | Get Info |
-| GET | `/info/{entry}` | get_entry_info_info__entry__get | Get Entry Info |
-| GET | `/links` | get_links_links_get | Get Links |
-| GET | `/references` | get_references_references_get | Get References |
-| GET | `/references/{entry_id}` | get_single_reference_references__entry_id__get | Get Single Reference |
-| GET | `/structures` | get_structures_structures_get | Get Structures |
-| GET | `/structures/{entry_id}` | get_single_structure_structures__entry_id__get | Get Single Structure |
-| GET | `/versions` | get_versions_versions_get | Get Versions |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/info` | get_info_info_get | — | InfoResponse | yes | Get Info |
+| GET | `/info/{entry}` | get_entry_info_info__entry__get | `entry`* | EntryInfoResponse | yes | Get Entry Info |
+| GET | `/links` | get_links_links_get | `filter`, `response_format`, `email_address`, `response_fields`, `sort`, `page_limit`, `page_offset`, `page_number`, `page_cursor`, `page_above`, `page_below`, `include`, `api_hint` | LinksResponse | yes | Get Links |
+| GET | `/references` | get_references_references_get | `filter`, `response_format`, `email_address`, `response_fields`, `sort`, `page_limit`, `page_offset`, `page_number`, `page_cursor`, `page_above`, `page_below`, `include`, `api_hint` | ReferenceResponseMany | yes | Get References |
+| GET | `/references/{entry_id}` | get_single_reference_references__entry_id__get | `entry_id`*, `response_format`, `email_address`, `response_fields`, `include`, `api_hint` | ReferenceResponseOne | yes | Get Single Reference |
+| GET | `/structures` | get_structures_structures_get | `filter`, `response_format`, `email_address`, `response_fields`, `sort`, `page_limit`, `page_offset`, `page_number`, `page_cursor`, `page_above`, `page_below`, `include`, `api_hint` | StructureResponseMany | yes | Get Structures |
+| GET | `/structures/{entry_id}` | get_single_structure_structures__entry_id__get | `entry_id`*, `response_format`, `email_address`, `response_fields`, `include`, `api_hint` | StructureResponseOne | yes | Get Single Structure |
+| GET | `/versions` | get_versions_versions_get | — | string | yes | Get Versions |

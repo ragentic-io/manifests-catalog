@@ -193,6 +193,476 @@
         "from": "redhat-com-catalog-inventory-d1b1c69129",
         "kind": "EXPOSES",
         "to": "operation:patch:/tasks/{id}"
+      },
+      {
+        "from": "operation:post:/graphql",
+        "kind": "ACCEPTS",
+        "to": "schema:GraphQLRequest"
+      },
+      {
+        "from": "operation:post:/graphql",
+        "kind": "RETURNS",
+        "to": "schema:GraphQLResponse"
+      },
+      {
+        "from": "operation:get:/service_credential_types",
+        "kind": "RETURNS",
+        "to": "schema:ServiceCredentialTypesCollection"
+      },
+      {
+        "from": "operation:get:/service_credential_types/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceCredentialType"
+      },
+      {
+        "from": "operation:get:/service_credentials",
+        "kind": "RETURNS",
+        "to": "schema:ServiceCredentialsCollection"
+      },
+      {
+        "from": "operation:get:/service_credentials/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceCredential"
+      },
+      {
+        "from": "operation:get:/service_instances",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInstancesCollection"
+      },
+      {
+        "from": "operation:get:/service_instances/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInstance"
+      },
+      {
+        "from": "operation:get:/service_inventories",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInventoriesCollection"
+      },
+      {
+        "from": "operation:get:/service_inventories/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInventory"
+      },
+      {
+        "from": "operation:post:/service_inventories/{id}/tag",
+        "kind": "ACCEPTS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:post:/service_inventories/{id}/tag",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:get:/service_inventories/{id}/tags",
+        "kind": "RETURNS",
+        "to": "schema:TagsCollection"
+      },
+      {
+        "from": "operation:post:/service_inventories/{id}/untag",
+        "kind": "ACCEPTS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:get:/service_offering_nodes",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOfferingNodesCollection"
+      },
+      {
+        "from": "operation:get:/service_offering_nodes/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOfferingNode"
+      },
+      {
+        "from": "operation:get:/service_offerings",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOfferingsCollection"
+      },
+      {
+        "from": "operation:get:/service_offerings/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOffering"
+      },
+      {
+        "from": "operation:post:/service_offerings/{id}/applied_inventories_tags",
+        "kind": "ACCEPTS",
+        "to": "schema:AppliedInventoriesParametersServicePlan"
+      },
+      {
+        "from": "operation:post:/service_offerings/{id}/applied_inventories_tags",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:post:/service_offerings/{id}/order",
+        "kind": "ACCEPTS",
+        "to": "schema:OrderParametersServiceOffering"
+      },
+      {
+        "from": "operation:get:/service_offerings/{id}/service_instances",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInstancesCollection"
+      },
+      {
+        "from": "operation:get:/service_offerings/{id}/service_offering_nodes",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOfferingNodesCollection"
+      },
+      {
+        "from": "operation:get:/service_offerings/{id}/service_plans",
+        "kind": "RETURNS",
+        "to": "schema:ServicePlansCollection"
+      },
+      {
+        "from": "operation:get:/service_plans",
+        "kind": "RETURNS",
+        "to": "schema:ServicePlansCollection"
+      },
+      {
+        "from": "operation:get:/service_plans/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ServicePlan"
+      },
+      {
+        "from": "operation:get:/sources",
+        "kind": "RETURNS",
+        "to": "schema:SourcesCollection"
+      },
+      {
+        "from": "operation:get:/sources/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Source"
+      },
+      {
+        "from": "operation:get:/sources/{id}/service_instances",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInstancesCollection"
+      },
+      {
+        "from": "operation:get:/sources/{id}/service_inventories",
+        "kind": "RETURNS",
+        "to": "schema:ServiceInventoriesCollection"
+      },
+      {
+        "from": "operation:get:/sources/{id}/service_offering_nodes",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOfferingNodesCollection"
+      },
+      {
+        "from": "operation:get:/sources/{id}/service_offerings",
+        "kind": "RETURNS",
+        "to": "schema:ServiceOfferingsCollection"
+      },
+      {
+        "from": "operation:get:/sources/{id}/service_plans",
+        "kind": "RETURNS",
+        "to": "schema:ServicePlansCollection"
+      },
+      {
+        "from": "operation:get:/sources/{id}/tasks",
+        "kind": "RETURNS",
+        "to": "schema:TasksCollection"
+      },
+      {
+        "from": "operation:get:/tags",
+        "kind": "RETURNS",
+        "to": "schema:TagsCollection"
+      },
+      {
+        "from": "operation:get:/tasks",
+        "kind": "RETURNS",
+        "to": "schema:TasksCollection"
+      },
+      {
+        "from": "operation:get:/tasks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Task"
+      },
+      {
+        "from": "operation:patch:/tasks/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:CheckAvailabilityTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:FullRefreshPersisterTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:FullRefreshUploadTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:IncrementalRefreshUploadTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:LaunchJobTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:OrderParametersServiceOffering",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceCredential",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceCredentialType",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceCredentialTypesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceCredentialTypesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceCredentialTypesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceCredentialType"
+      },
+      {
+        "from": "schema:ServiceCredentialsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceCredentialsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceCredentialsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceCredential"
+      },
+      {
+        "from": "schema:ServiceInstance",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceInstanceNode",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceInstanceNodesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceInstanceNodesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceInstanceNodesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceInstanceNode"
+      },
+      {
+        "from": "schema:ServiceInstancesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceInstancesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceInstancesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceInstance"
+      },
+      {
+        "from": "schema:ServiceInventoriesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceInventoriesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceInventoriesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceInventory"
+      },
+      {
+        "from": "schema:ServiceInventory",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceOffering",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceOfferingIcon",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceOfferingIconsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceOfferingIconsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceOfferingIconsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceOfferingIcon"
+      },
+      {
+        "from": "schema:ServiceOfferingNode",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServiceOfferingNodesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceOfferingNodesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceOfferingNodesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceOfferingNode"
+      },
+      {
+        "from": "schema:ServiceOfferingsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServiceOfferingsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServiceOfferingsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceOffering"
+      },
+      {
+        "from": "schema:ServicePlan",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ServicePlansCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:ServicePlansCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:ServicePlansCollection",
+        "kind": "REFERENCES",
+        "to": "schema:ServicePlan"
+      },
+      {
+        "from": "schema:Source",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SourcesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:SourcesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:SourcesCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:TagsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:TagsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:TagsCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:TasksCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionLinks"
+      },
+      {
+        "from": "schema:TasksCollection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionMetadata"
+      },
+      {
+        "from": "schema:TasksCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:Tenant",
+        "kind": "REFERENCES",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:TowingTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
       }
     ],
     "nodes": [
@@ -202,12 +672,27 @@
       },
       {
         "deprecated": false,
+        "description": "Performs a GraphQL Query",
         "id": "operation:post:/graphql",
         "kind": "operation",
         "method": "post",
         "name": "postGraphQL",
         "path": "/graphql",
         "pointer": "#/paths/~1graphql/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "GraphQLRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GraphQLResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
@@ -223,6 +708,13 @@
         "name": "getDocumentation",
         "path": "/openapi.json",
         "pointer": "#/paths/~1openapi.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
@@ -232,548 +724,1940 @@
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceCredentialType objects",
         "id": "operation:get:/service_credential_types",
         "kind": "operation",
         "method": "get",
         "name": "listServiceCredentialTypes",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_credential_types",
         "pointer": "#/paths/~1service_credential_types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceCredentialTypesCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceCredentialTypes"
+        "summary": "List ServiceCredentialTypes",
+        "tags": [
+          "ServiceCredentialType"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServiceCredentialType object",
         "id": "operation:get:/service_credential_types/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServiceCredentialType",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_credential_types/{id}",
         "pointer": "#/paths/~1service_credential_types~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceCredentialType"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServiceCredentialType"
+        "summary": "Show an existing ServiceCredentialType",
+        "tags": [
+          "ServiceCredentialType"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceCredential objects",
         "id": "operation:get:/service_credentials",
         "kind": "operation",
         "method": "get",
         "name": "listServiceCredentials",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_credentials",
         "pointer": "#/paths/~1service_credentials/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceCredentialsCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceCredentials"
+        "summary": "List ServiceCredentials",
+        "tags": [
+          "ServiceCredential"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServiceCredential object",
         "id": "operation:get:/service_credentials/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServiceCredential",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_credentials/{id}",
         "pointer": "#/paths/~1service_credentials~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceCredential"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServiceCredential"
+        "summary": "Show an existing ServiceCredential",
+        "tags": [
+          "ServiceCredential"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceInstance objects",
         "id": "operation:get:/service_instances",
         "kind": "operation",
         "method": "get",
         "name": "listServiceInstances",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_instances",
         "pointer": "#/paths/~1service_instances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInstancesCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceInstances"
+        "summary": "List ServiceInstances",
+        "tags": [
+          "ServiceInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServiceInstance object",
         "id": "operation:get:/service_instances/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServiceInstance",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_instances/{id}",
         "pointer": "#/paths/~1service_instances~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInstance"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServiceInstance"
+        "summary": "Show an existing ServiceInstance",
+        "tags": [
+          "ServiceInstance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceInventory objects",
         "id": "operation:get:/service_inventories",
         "kind": "operation",
         "method": "get",
         "name": "listServiceInventories",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_inventories",
         "pointer": "#/paths/~1service_inventories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInventoriesCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceInventories"
+        "summary": "List ServiceInventories",
+        "tags": [
+          "ServiceInventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServiceInventory object",
         "id": "operation:get:/service_inventories/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServiceInventory",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_inventories/{id}",
         "pointer": "#/paths/~1service_inventories~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInventory"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServiceInventory"
+        "summary": "Show an existing ServiceInventory",
+        "tags": [
+          "ServiceInventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Tags a ServiceInventory object",
         "id": "operation:post:/service_inventories/{id}/tag",
         "kind": "operation",
         "method": "post",
         "name": "tagServiceInventory",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_inventories/{id}/tag",
         "pointer": "#/paths/~1service_inventories~1{id}~1tag/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Tag[]"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Tag[]"
+          },
+          {
+            "status": "304"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Tag a ServiceInventory"
+        "summary": "Tag a ServiceInventory",
+        "tags": [
+          "ServiceInventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of Tag objects",
         "id": "operation:get:/service_inventories/{id}/tags",
         "kind": "operation",
         "method": "get",
         "name": "listServiceInventoryTags",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_inventories/{id}/tags",
         "pointer": "#/paths/~1service_inventories~1{id}~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagsCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List Tags for ServiceInventory"
+        "summary": "List Tags for ServiceInventory",
+        "tags": [
+          "ServiceInventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Untags a ServiceInventory object",
         "id": "operation:post:/service_inventories/{id}/untag",
         "kind": "operation",
         "method": "post",
         "name": "untagServiceInventory",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_inventories/{id}/untag",
         "pointer": "#/paths/~1service_inventories~1{id}~1untag/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Tag[]"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Untag a ServiceInventory"
+        "summary": "Untag a ServiceInventory",
+        "tags": [
+          "ServiceInventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceOfferingNode objects",
         "id": "operation:get:/service_offering_nodes",
         "kind": "operation",
         "method": "get",
         "name": "listServiceOfferingNodes",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_offering_nodes",
         "pointer": "#/paths/~1service_offering_nodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOfferingNodesCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceOfferingNodes"
+        "summary": "List ServiceOfferingNodes",
+        "tags": [
+          "ServiceOfferingNode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServiceOfferingNode object",
         "id": "operation:get:/service_offering_nodes/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServiceOfferingNode",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offering_nodes/{id}",
         "pointer": "#/paths/~1service_offering_nodes~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOfferingNode"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServiceOfferingNode"
+        "summary": "Show an existing ServiceOfferingNode",
+        "tags": [
+          "ServiceOfferingNode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceOffering objects",
         "id": "operation:get:/service_offerings",
         "kind": "operation",
         "method": "get",
         "name": "listServiceOfferings",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_offerings",
         "pointer": "#/paths/~1service_offerings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOfferingsCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceOfferings"
+        "summary": "List ServiceOfferings",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServiceOffering object",
         "id": "operation:get:/service_offerings/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServiceOffering",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offerings/{id}",
         "pointer": "#/paths/~1service_offerings~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOffering"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServiceOffering"
+        "summary": "Show an existing ServiceOffering",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of inventories tags",
         "id": "operation:post:/service_offerings/{id}/applied_inventories_tags",
         "kind": "operation",
         "method": "post",
         "name": "appliedInventoriesTagsForServiceOffering",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offerings/{id}/applied_inventories_tags",
         "pointer": "#/paths/~1service_offerings~1{id}~1applied_inventories_tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AppliedInventoriesParametersServicePlan"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Invokes computing of ServiceInventories tags for given ServiceOffering"
+        "summary": "Invokes computing of ServiceInventories tags for given ServiceOffering",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Task id",
         "id": "operation:post:/service_offerings/{id}/order",
         "kind": "operation",
         "method": "post",
         "name": "orderServiceOffering",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offerings/{id}/order",
         "pointer": "#/paths/~1service_offerings~1{id}~1order/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OrderParametersServiceOffering"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Order an existing ServiceOffering"
+        "summary": "Order an existing ServiceOffering",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceInstance objects",
         "id": "operation:get:/service_offerings/{id}/service_instances",
         "kind": "operation",
         "method": "get",
         "name": "listServiceOfferingServiceInstances",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offerings/{id}/service_instances",
         "pointer": "#/paths/~1service_offerings~1{id}~1service_instances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInstancesCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceInstances for ServiceOffering"
+        "summary": "List ServiceInstances for ServiceOffering",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceOfferingNode objects",
         "id": "operation:get:/service_offerings/{id}/service_offering_nodes",
         "kind": "operation",
         "method": "get",
         "name": "listServiceOfferingServiceOfferingNodes",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offerings/{id}/service_offering_nodes",
         "pointer": "#/paths/~1service_offerings~1{id}~1service_offering_nodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOfferingNodesCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceOfferingNodes for ServiceOffering"
+        "summary": "List ServiceOfferingNodes for ServiceOffering",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServicePlan objects",
         "id": "operation:get:/service_offerings/{id}/service_plans",
         "kind": "operation",
         "method": "get",
         "name": "listServiceOfferingServicePlans",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_offerings/{id}/service_plans",
         "pointer": "#/paths/~1service_offerings~1{id}~1service_plans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServicePlansCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServicePlans for ServiceOffering"
+        "summary": "List ServicePlans for ServiceOffering",
+        "tags": [
+          "ServiceOffering"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServicePlan objects",
         "id": "operation:get:/service_plans",
         "kind": "operation",
         "method": "get",
         "name": "listServicePlans",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/service_plans",
         "pointer": "#/paths/~1service_plans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServicePlansCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServicePlans"
+        "summary": "List ServicePlans",
+        "tags": [
+          "ServicePlan"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a ServicePlan object",
         "id": "operation:get:/service_plans/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showServicePlan",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/service_plans/{id}",
         "pointer": "#/paths/~1service_plans~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServicePlan"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing ServicePlan"
+        "summary": "Show an existing ServicePlan",
+        "tags": [
+          "ServicePlan"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of Source objects",
         "id": "operation:get:/sources",
         "kind": "operation",
         "method": "get",
         "name": "listSources",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/sources",
         "pointer": "#/paths/~1sources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SourcesCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List Sources"
+        "summary": "List Sources",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Source object",
         "id": "operation:get:/sources/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showSource",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}",
         "pointer": "#/paths/~1sources~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Source"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing Source"
+        "summary": "Show an existing Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Incremental Refresh a source object",
         "id": "operation:patch:/sources/{id}/incremental_refresh",
         "kind": "operation",
         "method": "patch",
         "name": "incrementalRefreshSource",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/incremental_refresh",
         "pointer": "#/paths/~1sources~1{id}~1incremental_refresh/patch",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Incremental Refresh an existing Source"
+        "summary": "Incremental Refresh an existing Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Refresh a source object",
         "id": "operation:patch:/sources/{id}/refresh",
         "kind": "operation",
         "method": "patch",
         "name": "refreshSource",
+        "parameters": [
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/refresh",
         "pointer": "#/paths/~1sources~1{id}~1refresh/patch",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": " Refresh an existing Source"
+        "summary": " Refresh an existing Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceInstance objects",
         "id": "operation:get:/sources/{id}/service_instances",
         "kind": "operation",
         "method": "get",
         "name": "listSourceServiceInstances",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/service_instances",
         "pointer": "#/paths/~1sources~1{id}~1service_instances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInstancesCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceInstances for Source"
+        "summary": "List ServiceInstances for Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceInventory objects",
         "id": "operation:get:/sources/{id}/service_inventories",
         "kind": "operation",
         "method": "get",
         "name": "listSourceServiceInventories",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/service_inventories",
         "pointer": "#/paths/~1sources~1{id}~1service_inventories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceInventoriesCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceInventories for Source"
+        "summary": "List ServiceInventories for Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceOfferingNode objects",
         "id": "operation:get:/sources/{id}/service_offering_nodes",
         "kind": "operation",
         "method": "get",
         "name": "listSourceServiceOfferingNodes",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/service_offering_nodes",
         "pointer": "#/paths/~1sources~1{id}~1service_offering_nodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOfferingNodesCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceOfferingNodes for Source"
+        "summary": "List ServiceOfferingNodes for Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServiceOffering objects",
         "id": "operation:get:/sources/{id}/service_offerings",
         "kind": "operation",
         "method": "get",
         "name": "listSourceServiceOfferings",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/service_offerings",
         "pointer": "#/paths/~1sources~1{id}~1service_offerings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServiceOfferingsCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServiceOfferings for Source"
+        "summary": "List ServiceOfferings for Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of ServicePlan objects",
         "id": "operation:get:/sources/{id}/service_plans",
         "kind": "operation",
         "method": "get",
         "name": "listSourceServicePlans",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/service_plans",
         "pointer": "#/paths/~1sources~1{id}~1service_plans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ServicePlansCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List ServicePlans for Source"
+        "summary": "List ServicePlans for Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of Task objects",
         "id": "operation:get:/sources/{id}/tasks",
         "kind": "operation",
         "method": "get",
         "name": "listSourceTasks",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sources/{id}/tasks",
         "pointer": "#/paths/~1sources~1{id}~1tasks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TasksCollection"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List Tasks for Source"
+        "summary": "List Tasks for Source",
+        "tags": [
+          "Source"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of Tag objects",
         "id": "operation:get:/tags",
         "kind": "operation",
         "method": "get",
         "name": "listTags",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/tags",
         "pointer": "#/paths/~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagsCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List Tags"
+        "summary": "List Tags",
+        "tags": [
+          "Tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of Task objects",
         "id": "operation:get:/tasks",
         "kind": "operation",
         "method": "get",
         "name": "listTasks",
+        "parameters": [
+          {
+            "default": 100,
+            "description": "The numbers of items to return per page.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for querying collections.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "The list of attribute and order to sort the result set by.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "object"
+          }
+        ],
         "path": "/tasks",
         "pointer": "#/paths/~1tasks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TasksCollection"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "List Tasks"
+        "summary": "List Tasks",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a Task object",
         "id": "operation:get:/tasks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "showTask",
+        "parameters": [
+          {
+            "description": "UUID of task",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tasks/{id}",
         "pointer": "#/paths/~1tasks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Task"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Show an existing Task"
+        "summary": "Show an existing Task",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a Task object",
         "id": "operation:patch:/tasks/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateTask",
+        "parameters": [
+          {
+            "description": "UUID of task",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tasks/{id}",
         "pointer": "#/paths/~1tasks~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Task"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404",
+            "type": "ErrorNotFound"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "UserSecurity": []
           }
         ],
-        "summary": "Update an existing Task"
+        "summary": "Update an existing Task",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "id": "schema:AppliedInventoriesParametersServicePlan",
         "kind": "schema",
-        "name": "AppliedInventoriesParametersServicePlan"
+        "name": "AppliedInventoriesParametersServicePlan",
+        "type": "object"
       },
       {
         "id": "schema:CheckAvailabilityTask",
@@ -783,17 +2667,20 @@
       {
         "id": "schema:CollectionLinks",
         "kind": "schema",
-        "name": "CollectionLinks"
+        "name": "CollectionLinks",
+        "type": "object"
       },
       {
         "id": "schema:CollectionMetadata",
         "kind": "schema",
-        "name": "CollectionMetadata"
+        "name": "CollectionMetadata",
+        "type": "object"
       },
       {
         "id": "schema:ErrorNotFound",
         "kind": "schema",
-        "name": "ErrorNotFound"
+        "name": "ErrorNotFound",
+        "type": "object"
       },
       {
         "id": "schema:FullRefreshPersisterTask",
@@ -808,17 +2695,21 @@
       {
         "id": "schema:GraphQLRequest",
         "kind": "schema",
-        "name": "GraphQLRequest"
+        "name": "GraphQLRequest",
+        "type": "object"
       },
       {
         "id": "schema:GraphQLResponse",
         "kind": "schema",
-        "name": "GraphQLResponse"
+        "name": "GraphQLResponse",
+        "type": "object"
       },
       {
+        "description": "ID of the resource",
         "id": "schema:ID",
         "kind": "schema",
-        "name": "ID"
+        "name": "ID",
+        "type": "string"
       },
       {
         "id": "schema:IncrementalRefreshUploadTask",
@@ -833,137 +2724,164 @@
       {
         "id": "schema:OrderParametersServiceOffering",
         "kind": "schema",
-        "name": "OrderParametersServiceOffering"
+        "name": "OrderParametersServiceOffering",
+        "type": "object"
       },
       {
         "id": "schema:OrderParametersServicePlan",
         "kind": "schema",
-        "name": "OrderParametersServicePlan"
+        "name": "OrderParametersServicePlan",
+        "type": "object"
       },
       {
         "id": "schema:ServiceCredential",
         "kind": "schema",
-        "name": "ServiceCredential"
+        "name": "ServiceCredential",
+        "type": "object"
       },
       {
         "id": "schema:ServiceCredentialType",
         "kind": "schema",
-        "name": "ServiceCredentialType"
+        "name": "ServiceCredentialType",
+        "type": "object"
       },
       {
         "id": "schema:ServiceCredentialTypesCollection",
         "kind": "schema",
-        "name": "ServiceCredentialTypesCollection"
+        "name": "ServiceCredentialTypesCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceCredentialsCollection",
         "kind": "schema",
-        "name": "ServiceCredentialsCollection"
+        "name": "ServiceCredentialsCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceInstance",
         "kind": "schema",
-        "name": "ServiceInstance"
+        "name": "ServiceInstance",
+        "type": "object"
       },
       {
         "id": "schema:ServiceInstanceNode",
         "kind": "schema",
-        "name": "ServiceInstanceNode"
+        "name": "ServiceInstanceNode",
+        "type": "object"
       },
       {
         "id": "schema:ServiceInstanceNodesCollection",
         "kind": "schema",
-        "name": "ServiceInstanceNodesCollection"
+        "name": "ServiceInstanceNodesCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceInstancesCollection",
         "kind": "schema",
-        "name": "ServiceInstancesCollection"
+        "name": "ServiceInstancesCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceInventoriesCollection",
         "kind": "schema",
-        "name": "ServiceInventoriesCollection"
+        "name": "ServiceInventoriesCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceInventory",
         "kind": "schema",
-        "name": "ServiceInventory"
+        "name": "ServiceInventory",
+        "type": "object"
       },
       {
         "id": "schema:ServiceOffering",
         "kind": "schema",
-        "name": "ServiceOffering"
+        "name": "ServiceOffering",
+        "type": "object"
       },
       {
         "id": "schema:ServiceOfferingIcon",
         "kind": "schema",
-        "name": "ServiceOfferingIcon"
+        "name": "ServiceOfferingIcon",
+        "type": "object"
       },
       {
         "id": "schema:ServiceOfferingIconsCollection",
         "kind": "schema",
-        "name": "ServiceOfferingIconsCollection"
+        "name": "ServiceOfferingIconsCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceOfferingNode",
         "kind": "schema",
-        "name": "ServiceOfferingNode"
+        "name": "ServiceOfferingNode",
+        "type": "object"
       },
       {
         "id": "schema:ServiceOfferingNodesCollection",
         "kind": "schema",
-        "name": "ServiceOfferingNodesCollection"
+        "name": "ServiceOfferingNodesCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServiceOfferingsCollection",
         "kind": "schema",
-        "name": "ServiceOfferingsCollection"
+        "name": "ServiceOfferingsCollection",
+        "type": "object"
       },
       {
         "id": "schema:ServicePlan",
         "kind": "schema",
-        "name": "ServicePlan"
+        "name": "ServicePlan",
+        "type": "object"
       },
       {
         "id": "schema:ServicePlansCollection",
         "kind": "schema",
-        "name": "ServicePlansCollection"
+        "name": "ServicePlansCollection",
+        "type": "object"
       },
       {
         "id": "schema:Source",
         "kind": "schema",
-        "name": "Source"
+        "name": "Source",
+        "type": "object"
       },
       {
         "id": "schema:SourcesCollection",
         "kind": "schema",
-        "name": "SourcesCollection"
+        "name": "SourcesCollection",
+        "type": "object"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:TagsCollection",
         "kind": "schema",
-        "name": "TagsCollection"
+        "name": "TagsCollection",
+        "type": "object"
       },
       {
         "id": "schema:Task",
         "kind": "schema",
-        "name": "Task"
+        "name": "Task",
+        "type": "object"
       },
       {
         "id": "schema:TasksCollection",
         "kind": "schema",
-        "name": "TasksCollection"
+        "name": "TasksCollection",
+        "type": "object"
       },
       {
         "id": "schema:Tenant",
         "kind": "schema",
-        "name": "Tenant"
+        "name": "Tenant",
+        "type": "object"
       },
       {
         "id": "schema:TowingTask",
@@ -971,9 +2889,11 @@
         "name": "TowingTask"
       },
       {
+        "description": "UUID of task",
         "id": "schema:UUID",
         "kind": "schema",
-        "name": "UUID"
+        "name": "UUID",
+        "type": "string:uuid"
       }
     ]
   },

@@ -361,6 +361,396 @@
         "from": "govuk-pay",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/refunds"
+      },
+      {
+        "from": "operation:get:/v1/agreements",
+        "kind": "RETURNS",
+        "to": "schema:AgreementSearchResults"
+      },
+      {
+        "from": "operation:post:/v1/agreements",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAgreementRequest"
+      },
+      {
+        "from": "operation:post:/v1/agreements",
+        "kind": "RETURNS",
+        "to": "schema:Agreement"
+      },
+      {
+        "from": "operation:get:/v1/agreements/{agreementId}",
+        "kind": "RETURNS",
+        "to": "schema:Agreement"
+      },
+      {
+        "from": "operation:post:/v1/auth",
+        "kind": "ACCEPTS",
+        "to": "schema:AuthorisationRequest"
+      },
+      {
+        "from": "operation:get:/v1/disputes",
+        "kind": "RETURNS",
+        "to": "schema:DisputesSearchResults"
+      },
+      {
+        "from": "operation:get:/v1/payments",
+        "kind": "RETURNS",
+        "to": "schema:PaymentSearchResults"
+      },
+      {
+        "from": "operation:post:/v1/payments",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCardPaymentRequest"
+      },
+      {
+        "from": "operation:post:/v1/payments",
+        "kind": "RETURNS",
+        "to": "schema:CreatePaymentResult"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}",
+        "kind": "RETURNS",
+        "to": "schema:PaymentWithAllLinks"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}/events",
+        "kind": "RETURNS",
+        "to": "schema:PaymentEvents"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}/refunds",
+        "kind": "RETURNS",
+        "to": "schema:RefundForSearchResult"
+      },
+      {
+        "from": "operation:post:/v1/payments/{paymentId}/refunds",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentRefundRequest"
+      },
+      {
+        "from": "operation:post:/v1/payments/{paymentId}/refunds",
+        "kind": "RETURNS",
+        "to": "schema:Refund"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}/refunds/{refundId}",
+        "kind": "RETURNS",
+        "to": "schema:Refund"
+      },
+      {
+        "from": "operation:get:/v1/refunds",
+        "kind": "RETURNS",
+        "to": "schema:RefundSearchResults"
+      },
+      {
+        "from": "schema:Agreement",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentInstrument"
+      },
+      {
+        "from": "schema:AgreementSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:Agreement"
+      },
+      {
+        "from": "schema:AgreementSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchNavigationLinks"
+      },
+      {
+        "from": "schema:AuthorisationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:ThreeDSecure"
+      },
+      {
+        "from": "schema:CardDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:CardDetailsFromResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:CreateCardPaymentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalMetadata"
+      },
+      {
+        "from": "schema:CreateCardPaymentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PrefilledCardholderDetails"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetailsFromResponse"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalMetadata"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinks"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentSettlementSummary"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSummary"
+      },
+      {
+        "from": "schema:DisputeDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:DisputeLinksForSearch"
+      },
+      {
+        "from": "schema:DisputeDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:SettlementSummary"
+      },
+      {
+        "from": "schema:DisputeLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:DisputesSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:DisputeDetailForSearch"
+      },
+      {
+        "from": "schema:DisputesSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchNavigationLinks"
+      },
+      {
+        "from": "schema:EmbeddedRefunds",
+        "kind": "REFERENCES",
+        "to": "schema:Refund"
+      },
+      {
+        "from": "schema:Exemption",
+        "kind": "REFERENCES",
+        "to": "schema:Outcome"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:AuthorisationSummary"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetails"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:Exemption"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalMetadata"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinksForSearch"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentSettlementSummary"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSummary"
+      },
+      {
+        "from": "schema:PaymentEvent",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentEventLink"
+      },
+      {
+        "from": "schema:PaymentEvent",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:PaymentEventLink",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentEvents",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentEvent"
+      },
+      {
+        "from": "schema:PaymentEvents",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinksForEvents"
+      },
+      {
+        "from": "schema:PaymentInstrument",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetailsFromResponse"
+      },
+      {
+        "from": "schema:PaymentLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentLinks",
+        "kind": "REFERENCES",
+        "to": "schema:PostLink"
+      },
+      {
+        "from": "schema:PaymentLinksForEvents",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PostLink"
+      },
+      {
+        "from": "schema:PaymentSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentDetailForSearch"
+      },
+      {
+        "from": "schema:PaymentSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchNavigationLinks"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:AuthorisationSummary"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetails"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Exemption"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalMetadata"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinks"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentSettlementSummary"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:PaymentWithAllLinks",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSummary"
+      },
+      {
+        "from": "schema:PrefilledCardholderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Refund",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:Refund",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSettlementSummary"
+      },
+      {
+        "from": "schema:RefundDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:RefundDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSettlementSummary"
+      },
+      {
+        "from": "schema:RefundForSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedRefunds"
+      },
+      {
+        "from": "schema:RefundForSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:RefundLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:RefundSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RefundDetailForSearch"
+      },
+      {
+        "from": "schema:RefundSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchNavigationLinks"
+      },
+      {
+        "from": "schema:RefundsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:SearchNavigationLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
       }
     ],
     "nodes": [
@@ -370,469 +760,1365 @@
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to search for recurring payments agreements.",
         "id": "operation:get:/v1/agreements",
         "kind": "operation",
         "method": "get",
         "name": "Search agreements",
+        "parameters": [
+          {
+            "description": "Returns agreements with a `reference` that exactly matches the value you sent.",
+            "in": "query",
+            "name": "reference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns agreements in a matching `status`.",
+            "enum": [
+              "created",
+              "active",
+              "cancelled",
+              "inactive"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns a specific page of results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of agreements returned per results page.",
+            "in": "query",
+            "name": "display_size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/agreements",
         "pointer": "#/paths/~1v1~1agreements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AgreementSearchResults"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "422",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Search agreements for recurring payments"
+        "summary": "Search agreements for recurring payments",
+        "tags": [
+          "Agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to create a new agreement.",
         "id": "operation:post:/v1/agreements",
         "kind": "operation",
         "method": "post",
         "name": "Create an agreement",
         "path": "/v1/agreements",
         "pointer": "#/paths/~1v1~1agreements/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateAgreementRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Agreement"
+          },
+          {
+            "status": "400",
+            "type": "RequestError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Create an agreement for recurring payments"
+        "summary": "Create an agreement for recurring payments",
+        "tags": [
+          "Agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to get information about a single recurring payments agreement.",
         "id": "operation:get:/v1/agreements/{agreementId}",
         "kind": "operation",
         "method": "get",
         "name": "Get an agreement",
+        "parameters": [
+          {
+            "description": "Returns the agreement with the matching `agreement_id`.",
+            "in": "path",
+            "name": "agreementId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/agreements/{agreementId}",
         "pointer": "#/paths/~1v1~1agreements~1{agreementId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Agreement"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Get information about a single agreement for recurring payments"
+        "summary": "Get information about a single agreement for recurring payments",
+        "tags": [
+          "Agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to cancel a recurring payments agreement in the `active` status.",
         "id": "operation:post:/v1/agreements/{agreementId}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "Cancel an agreement",
+        "parameters": [
+          {
+            "description": "The `agreement_id` of the agreement you are cancelling",
+            "in": "path",
+            "name": "agreementId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/agreements/{agreementId}/cancel",
         "pointer": "#/paths/~1v1~1agreements~1{agreementId}~1cancel/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "RequestError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Cancel an agreement for recurring payments"
+        "summary": "Cancel an agreement for recurring payments",
+        "tags": [
+          "Agreements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [authorise payments](https://docs.payments.service.gov.uk/moto_payments/moto_send_card_details_api/) you have created with `author…",
         "id": "operation:post:/v1/auth",
         "kind": "operation",
         "method": "post",
         "name": "Authorise a MOTO payment",
         "path": "/v1/auth",
         "pointer": "#/paths/~1v1~1auth/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AuthorisationRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "RequestError"
+          },
+          {
+            "status": "402",
+            "type": "RequestError"
+          },
+          {
+            "status": "422",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Send card details to authorise a MOTO payment"
+        "summary": "Send card details to authorise a MOTO payment",
+        "tags": [
+          "Authorise card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to search disputes.",
         "id": "operation:get:/v1/disputes",
         "kind": "operation",
         "method": "get",
         "name": "Search disputes",
+        "parameters": [
+          {
+            "description": "Returns disputes raised on or after the `from_date`.",
+            "in": "query",
+            "name": "from_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns disputes raised before the `to_date`.",
+            "in": "query",
+            "name": "to_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns disputes settled on or after the `from_settled_date`.",
+            "in": "query",
+            "name": "from_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns disputes settled before the `to_settled_date`.",
+            "in": "query",
+            "name": "to_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns disputes with a matching `status`.",
+            "enum": [
+              "needs_response",
+              "under_review",
+              "lost",
+              "won"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns a specific page of results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of disputes returned per results page.",
+            "in": "query",
+            "name": "display_size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/disputes",
         "pointer": "#/paths/~1v1~1disputes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DisputesSearchResults"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Search disputes"
+        "summary": "Search disputes",
+        "tags": [
+          "Disputes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [search for payments you’ve previously created](https://docs.payments.service.gov.uk/reporting/#search-payments/).",
         "id": "operation:get:/v1/payments",
         "kind": "operation",
         "method": "get",
         "name": "Search payments",
+        "parameters": [
+          {
+            "description": "Returns payments with `reference` values exactly matching your specified value.",
+            "in": "query",
+            "name": "reference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments with matching `email` values.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments in a matching `state`.",
+            "enum": [
+              "created",
+              "started",
+              "submitted",
+              "success",
+              "failed",
+              "cancelled",
+              "error"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments paid with a particular card brand.",
+            "in": "query",
+            "name": "card_brand",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments created on or after the `from_date`.",
+            "in": "query",
+            "name": "from_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments created before the `to_date`.",
+            "in": "query",
+            "name": "to_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns a [specific page of results](https://docs.payments.service.gov.uk/api_reference/#pagination).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of payments returned [per results page](https://docs.payments.service.gov.uk/api_reference/#pagination).",
+            "in": "query",
+            "name": "display_size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments paid with cards under this cardholder name.",
+            "in": "query",
+            "name": "cardholder_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments paid by cards beginning with the `first_digits_card_number` value.",
+            "in": "query",
+            "name": "first_digits_card_number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments paid by cards ending with the `last_digits_card_number` value.",
+            "in": "query",
+            "name": "last_digits_card_number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments settled on or after the `from_settled_date` value.",
+            "in": "query",
+            "name": "from_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments settled before the `to_settled_date` value.",
+            "in": "query",
+            "name": "to_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns payments that were authorised using the agreement with this `agreement_id`.",
+            "in": "query",
+            "name": "agreement_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments",
         "pointer": "#/paths/~1v1~1payments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentSearchResults"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Search payments"
+        "summary": "Search payments",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [create a new payment](https://docs.payments.service.gov.uk/making_payments/).",
         "id": "operation:post:/v1/payments",
         "kind": "operation",
         "method": "post",
         "name": "Create a payment",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments",
         "pointer": "#/paths/~1v1~1payments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateCardPaymentRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreatePaymentResult"
+          },
+          {
+            "status": "400",
+            "type": "RequestError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Create a payment"
+        "summary": "Create a payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [get details about a single payment you’ve previously created](https://docs.payments.service.gov.uk/reporting/#get-information-abo…",
         "id": "operation:get:/v1/payments/{paymentId}",
         "kind": "operation",
         "method": "get",
         "name": "Get a payment",
+        "parameters": [
+          {
+            "description": "Returns the payment with the matching `payment_id`.",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentWithAllLinks"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Get information about a single payment"
+        "summary": "Get information about a single payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint [to cancel an unfinished payment](https://docs.payments.service.gov.uk/making_payments/#cancel-a-payment-that-s-in-progress).",
         "id": "operation:post:/v1/payments/{paymentId}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "Cancel a payment",
+        "parameters": [
+          {
+            "description": "The `payment_id` of the payment you’re cancelling.",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/cancel",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1cancel/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "RequestError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "409",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Cancel payment"
+        "summary": "Cancel payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [take (‘capture’) a delayed payment from the paying user’s bank account](https://docs.payments.service.gov.uk/delayed_capture/).",
         "id": "operation:post:/v1/payments/{paymentId}/capture",
         "kind": "operation",
         "method": "post",
         "name": "Capture a payment",
+        "parameters": [
+          {
+            "description": "The `payment_id` of the payment you’re capturing.",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/capture",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1capture/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "RequestError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "409",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Take a delayed payment"
+        "summary": "Take a delayed payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [get a list of a payment’s events](https://docs.payments.service.gov.uk/reporting/#get-a-payment-s-events).",
         "id": "operation:get:/v1/payments/{paymentId}/events",
         "kind": "operation",
         "method": "get",
         "name": "Get events for a payment",
+        "parameters": [
+          {
+            "description": "Payment identifier",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/events",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentEvents"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Get a payment's events"
+        "summary": "Get a payment's events",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [get a list of refunds for a payment](https://docs.payments.service.gov.uk/refunding_payments/#get-all-refunds-for-a-single-paymen…",
         "id": "operation:get:/v1/payments/{paymentId}/refunds",
         "kind": "operation",
         "method": "get",
         "name": "Get all refunds for a payment",
+        "parameters": [
+          {
+            "description": "The unique `payment_id` of the payment you want a list of refunds for.",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/refunds",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RefundForSearchResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Get information about a payment’s refunds"
+        "summary": "Get information about a payment’s refunds",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [fully or partially refund a payment](https://docs.payments.service.gov.uk/refunding_payments).",
         "id": "operation:post:/v1/payments/{paymentId}/refunds",
         "kind": "operation",
         "method": "post",
         "name": "Submit a refund for a payment",
+        "parameters": [
+          {
+            "description": "The unique `payment_id` of the payment you want to refund.",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/refunds",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PaymentRefundRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Refund"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Refund a payment"
+        "summary": "Refund a payment",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [get details about an individual refund](https://docs.payments.service.gov.uk/refunding_payments/#checking-the-status-of-a-refund).",
         "id": "operation:get:/v1/payments/{paymentId}/refunds/{refundId}",
         "kind": "operation",
         "method": "get",
         "name": "Get a payment refund",
+        "parameters": [
+          {
+            "description": "The unique `payment_id` of the payment you want to view a refund of.",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique `refund_id` of the refund you want to view.",
+            "in": "path",
+            "name": "refundId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/refunds/{refundId}",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds~1{refundId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Refund"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "RequestError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Check the status of a refund"
+        "summary": "Check the status of a refund",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to [search refunds you’ve previously created](https://docs.payments.service.gov.uk/refunding_payments/#searching-refunds).",
         "id": "operation:get:/v1/refunds",
         "kind": "operation",
         "method": "get",
         "name": "Search refunds",
+        "parameters": [
+          {
+            "description": "Returns refunds created on or after the `from_date`.",
+            "in": "query",
+            "name": "from_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns refunds created before the `to_date`.",
+            "in": "query",
+            "name": "to_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns refunds settled on or after the `from_settled_date` value.",
+            "in": "query",
+            "name": "from_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns refunds settled before the `to_settled_date` value.",
+            "in": "query",
+            "name": "to_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns a [specific page of results](https://docs.payments.service.gov.uk/api_reference/#pagination).",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of refunds returned [per results page](https://docs.payments.service.gov.uk/api_reference/#pagination).",
+            "in": "query",
+            "name": "display_size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/refunds",
         "pointer": "#/paths/~1v1~1refunds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RefundSearchResults"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "RequestError"
+          },
+          {
+            "status": "500",
+            "type": "RequestError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "BearerAuth": []
           }
         ],
-        "summary": "Search refunds"
+        "summary": "Search refunds",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
+        "description": "A structure representing the billing address of a card",
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
+        "description": "Contains information about a user's agreement for recurring payments.",
         "id": "schema:Agreement",
         "kind": "schema",
-        "name": "Agreement"
+        "name": "Agreement",
+        "type": "object"
       },
       {
         "id": "schema:AgreementSearchResults",
         "kind": "schema",
-        "name": "AgreementSearchResults"
+        "name": "AgreementSearchResults",
+        "type": "object"
       },
       {
+        "description": "Contains the user's payment information.",
         "id": "schema:AuthorisationRequest",
         "kind": "schema",
-        "name": "AuthorisationRequest"
+        "name": "AuthorisationRequest",
+        "type": "object"
       },
       {
+        "description": "Object containing information about the authentication of the payment.",
         "id": "schema:AuthorisationSummary",
         "kind": "schema",
-        "name": "AuthorisationSummary"
+        "name": "AuthorisationSummary",
+        "type": "object"
       },
       {
+        "description": "A structure representing the payment card",
         "id": "schema:CardDetails",
         "kind": "schema",
-        "name": "CardDetails"
+        "name": "CardDetails",
+        "type": "object"
       },
       {
         "id": "schema:CardDetailsFromResponse",
         "kind": "schema",
-        "name": "CardDetailsFromResponse"
+        "name": "CardDetailsFromResponse",
+        "type": "object"
       },
       {
+        "description": "The Agreement Request Payload",
         "id": "schema:CreateAgreementRequest",
         "kind": "schema",
-        "name": "CreateAgreementRequest"
+        "name": "CreateAgreementRequest",
+        "type": "object"
       },
       {
+        "description": "The create payment request body",
         "id": "schema:CreateCardPaymentRequest",
         "kind": "schema",
-        "name": "CreateCardPaymentRequest"
+        "name": "CreateCardPaymentRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreatePaymentResult",
         "kind": "schema",
-        "name": "CreatePaymentResult"
+        "name": "CreatePaymentResult",
+        "type": "object"
       },
       {
+        "description": "Contains disputes matching your search criteria.",
         "id": "schema:DisputeDetailForSearch",
         "kind": "schema",
-        "name": "DisputeDetailForSearch"
+        "name": "DisputeDetailForSearch",
+        "type": "object"
       },
       {
+        "description": "links for search dispute resource",
         "id": "schema:DisputeLinksForSearch",
         "kind": "schema",
-        "name": "DisputeLinksForSearch"
+        "name": "DisputeLinksForSearch",
+        "type": "object"
       },
       {
         "id": "schema:DisputesSearchResults",
         "kind": "schema",
-        "name": "DisputesSearchResults"
+        "name": "DisputesSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:EmbeddedRefunds",
         "kind": "schema",
-        "name": "EmbeddedRefunds"
+        "name": "EmbeddedRefunds",
+        "type": "object"
       },
       {
+        "description": "An error response",
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
+        "description": "A structure representing that 3DS exemption was requested and the outcome of the exemption, if applicable.",
         "id": "schema:Exemption",
         "kind": "schema",
-        "name": "Exemption"
+        "name": "Exemption",
+        "type": "object"
       },
       {
         "id": "schema:ExternalMetadata",
         "kind": "schema",
-        "name": "ExternalMetadata"
+        "name": "ExternalMetadata",
+        "type": "object"
       },
       {
+        "description": "A link related to a payment",
         "id": "schema:Link",
         "kind": "schema",
-        "name": "Link"
+        "name": "Link",
+        "type": "object"
       },
       {
+        "description": "A structure representing the outcome of a 3DS exemption, if known.",
         "id": "schema:Outcome",
         "kind": "schema",
-        "name": "Outcome"
+        "name": "Outcome",
+        "type": "object"
       },
       {
+        "description": "Contains payments matching your search criteria.",
         "id": "schema:PaymentDetailForSearch",
         "kind": "schema",
-        "name": "PaymentDetailForSearch"
+        "name": "PaymentDetailForSearch",
+        "type": "object"
       },
       {
+        "description": "A List of Payment Events information",
         "id": "schema:PaymentEvent",
         "kind": "schema",
-        "name": "PaymentEvent"
+        "name": "PaymentEvent",
+        "type": "object"
       },
       {
+        "description": "Resource link for a payment of a payment event",
         "id": "schema:PaymentEventLink",
         "kind": "schema",
-        "name": "PaymentEventLink"
+        "name": "PaymentEventLink",
+        "type": "object"
       },
       {
+        "description": "A List of Payment Events information",
         "id": "schema:PaymentEvents",
         "kind": "schema",
-        "name": "PaymentEvents"
+        "name": "PaymentEvents",
+        "type": "object"
       },
       {
         "id": "schema:PaymentInstrument",
         "kind": "schema",
-        "name": "PaymentInstrument"
+        "name": "PaymentInstrument",
+        "type": "object"
       },
       {
+        "description": "links for payment",
         "id": "schema:PaymentLinks",
         "kind": "schema",
-        "name": "PaymentLinks"
+        "name": "PaymentLinks",
+        "type": "object"
       },
       {
+        "description": "links for events resource",
         "id": "schema:PaymentLinksForEvents",
         "kind": "schema",
-        "name": "PaymentLinksForEvents"
+        "name": "PaymentLinksForEvents",
+        "type": "object"
       },
       {
+        "description": "links for search payment resource",
         "id": "schema:PaymentLinksForSearch",
         "kind": "schema",
-        "name": "PaymentLinksForSearch"
+        "name": "PaymentLinksForSearch",
+        "type": "object"
       },
       {
+        "description": "The Payment Refund Request Payload",
         "id": "schema:PaymentRefundRequest",
         "kind": "schema",
-        "name": "PaymentRefundRequest"
+        "name": "PaymentRefundRequest",
+        "type": "object"
       },
       {
         "id": "schema:PaymentSearchResults",
         "kind": "schema",
-        "name": "PaymentSearchResults"
+        "name": "PaymentSearchResults",
+        "type": "object"
       },
       {
+        "description": "A structure representing information about a settlement",
         "id": "schema:PaymentSettlementSummary",
         "kind": "schema",
-        "name": "PaymentSettlementSummary"
+        "name": "PaymentSettlementSummary",
+        "type": "object"
       },
       {
+        "description": "A structure representing the current state of the payment in its lifecycle.",
         "id": "schema:PaymentState",
         "kind": "schema",
-        "name": "PaymentState"
+        "name": "PaymentState",
+        "type": "object"
       },
       {
         "id": "schema:PaymentWithAllLinks",
         "kind": "schema",
-        "name": "PaymentWithAllLinks"
+        "name": "PaymentWithAllLinks",
+        "type": "object"
       },
       {
+        "description": "A POST link related to a payment",
         "id": "schema:PostLink",
         "kind": "schema",
-        "name": "PostLink"
+        "name": "PostLink",
+        "type": "object"
       },
       {
+        "description": "prefilled_cardholder_details",
         "id": "schema:PrefilledCardholderDetails",
         "kind": "schema",
-        "name": "PrefilledCardholderDetails"
+        "name": "PrefilledCardholderDetails",
+        "type": "object"
       },
       {
         "id": "schema:Refund",
         "kind": "schema",
-        "name": "Refund"
+        "name": "Refund",
+        "type": "object"
       },
       {
+        "description": "Contains the refunds matching your search criteria.",
         "id": "schema:RefundDetailForSearch",
         "kind": "schema",
-        "name": "RefundDetailForSearch"
+        "name": "RefundDetailForSearch",
+        "type": "object"
       },
       {
         "id": "schema:RefundForSearchResult",
         "kind": "schema",
-        "name": "RefundForSearchResult"
+        "name": "RefundForSearchResult",
+        "type": "object"
       },
       {
+        "description": "links for search refunds resource",
         "id": "schema:RefundLinksForSearch",
         "kind": "schema",
-        "name": "RefundLinksForSearch"
+        "name": "RefundLinksForSearch",
+        "type": "object"
       },
       {
         "id": "schema:RefundSearchResults",
         "kind": "schema",
-        "name": "RefundSearchResults"
+        "name": "RefundSearchResults",
+        "type": "object"
       },
       {
+        "description": "A structure representing information about a settlement for refunds",
         "id": "schema:RefundSettlementSummary",
         "kind": "schema",
-        "name": "RefundSettlementSummary"
+        "name": "RefundSettlementSummary",
+        "type": "object"
       },
       {
+        "description": "A structure representing the refunds availability",
         "id": "schema:RefundSummary",
         "kind": "schema",
-        "name": "RefundSummary"
+        "name": "RefundSummary",
+        "type": "object"
       },
       {
         "id": "schema:RefundsResponse",
         "kind": "schema",
-        "name": "RefundsResponse"
+        "name": "RefundsResponse",
+        "type": "object"
       },
       {
+        "description": "A Request Error response",
         "id": "schema:RequestError",
         "kind": "schema",
-        "name": "RequestError"
+        "name": "RequestError",
+        "type": "object"
       },
       {
+        "description": "Links to navigate through pages of your search.",
         "id": "schema:SearchNavigationLinks",
         "kind": "schema",
-        "name": "SearchNavigationLinks"
+        "name": "SearchNavigationLinks",
+        "type": "object"
       },
       {
+        "description": "Contains information about when a lost dispute was settled.",
         "id": "schema:SettlementSummary",
         "kind": "schema",
-        "name": "SettlementSummary"
+        "name": "SettlementSummary",
+        "type": "object"
       },
       {
+        "description": "Object containing information about the 3D Secure authentication of the payment.",
         "id": "schema:ThreeDSecure",
         "kind": "schema",
-        "name": "ThreeDSecure"
+        "name": "ThreeDSecure",
+        "type": "object"
       }
     ]
   },

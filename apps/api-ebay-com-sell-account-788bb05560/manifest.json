@@ -47,17 +47,17 @@
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
-        "to": "operation:delete:/fulfillment_policy/{fulfillmentPolicyId}"
-      },
-      {
-        "from": "api-ebay-com-sell-account-788bb05560",
-        "kind": "EXPOSES",
         "to": "operation:get:/fulfillment_policy/{fulfillmentPolicyId}"
       },
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
         "to": "operation:put:/fulfillment_policy/{fulfillmentPolicyId}"
+      },
+      {
+        "from": "api-ebay-com-sell-account-788bb05560",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/fulfillment_policy/{fulfillmentPolicyId}"
       },
       {
         "from": "api-ebay-com-sell-account-788bb05560",
@@ -82,17 +82,17 @@
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
-        "to": "operation:delete:/payment_policy/{payment_policy_id}"
-      },
-      {
-        "from": "api-ebay-com-sell-account-788bb05560",
-        "kind": "EXPOSES",
         "to": "operation:get:/payment_policy/{payment_policy_id}"
       },
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
         "to": "operation:put:/payment_policy/{payment_policy_id}"
+      },
+      {
+        "from": "api-ebay-com-sell-account-788bb05560",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/payment_policy/{payment_policy_id}"
       },
       {
         "from": "api-ebay-com-sell-account-788bb05560",
@@ -147,11 +147,6 @@
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
-        "to": "operation:delete:/return_policy/{return_policy_id}"
-      },
-      {
-        "from": "api-ebay-com-sell-account-788bb05560",
-        "kind": "EXPOSES",
         "to": "operation:get:/return_policy/{return_policy_id}"
       },
       {
@@ -162,12 +157,12 @@
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
-        "to": "operation:get:/sales_tax"
+        "to": "operation:delete:/return_policy/{return_policy_id}"
       },
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
-        "to": "operation:delete:/sales_tax/{countryCode}/{jurisdictionId}"
+        "to": "operation:get:/sales_tax"
       },
       {
         "from": "api-ebay-com-sell-account-788bb05560",
@@ -182,7 +177,507 @@
       {
         "from": "api-ebay-com-sell-account-788bb05560",
         "kind": "EXPOSES",
+        "to": "operation:delete:/sales_tax/{countryCode}/{jurisdictionId}"
+      },
+      {
+        "from": "api-ebay-com-sell-account-788bb05560",
+        "kind": "EXPOSES",
         "to": "operation:get:/subscription"
+      },
+      {
+        "from": "operation:get:/advertising_eligibility",
+        "kind": "RETURNS",
+        "to": "schema:SellerEligibilityMultiProgramResponse"
+      },
+      {
+        "from": "operation:get:/custom_policy/",
+        "kind": "RETURNS",
+        "to": "schema:CustomPolicyResponse"
+      },
+      {
+        "from": "operation:post:/custom_policy/",
+        "kind": "ACCEPTS",
+        "to": "schema:CustomPolicyCreateRequest"
+      },
+      {
+        "from": "operation:get:/custom_policy/{custom_policy_id}",
+        "kind": "RETURNS",
+        "to": "schema:CustomPolicy"
+      },
+      {
+        "from": "operation:put:/custom_policy/{custom_policy_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:CustomPolicyRequest"
+      },
+      {
+        "from": "operation:get:/fulfillment_policy",
+        "kind": "RETURNS",
+        "to": "schema:FulfillmentPolicyResponse"
+      },
+      {
+        "from": "operation:post:/fulfillment_policy/",
+        "kind": "ACCEPTS",
+        "to": "schema:FulfillmentPolicyRequest"
+      },
+      {
+        "from": "operation:post:/fulfillment_policy/",
+        "kind": "RETURNS",
+        "to": "schema:SetFulfillmentPolicyResponse"
+      },
+      {
+        "from": "operation:get:/fulfillment_policy/get_by_policy_name",
+        "kind": "RETURNS",
+        "to": "schema:FulfillmentPolicy"
+      },
+      {
+        "from": "operation:get:/fulfillment_policy/{fulfillmentPolicyId}",
+        "kind": "RETURNS",
+        "to": "schema:FulfillmentPolicy"
+      },
+      {
+        "from": "operation:put:/fulfillment_policy/{fulfillmentPolicyId}",
+        "kind": "ACCEPTS",
+        "to": "schema:FulfillmentPolicyRequest"
+      },
+      {
+        "from": "operation:put:/fulfillment_policy/{fulfillmentPolicyId}",
+        "kind": "RETURNS",
+        "to": "schema:SetFulfillmentPolicyResponse"
+      },
+      {
+        "from": "operation:get:/kyc",
+        "kind": "RETURNS",
+        "to": "schema:KycResponse"
+      },
+      {
+        "from": "operation:get:/payment_policy",
+        "kind": "RETURNS",
+        "to": "schema:PaymentPolicyResponse"
+      },
+      {
+        "from": "operation:post:/payment_policy",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentPolicyRequest"
+      },
+      {
+        "from": "operation:post:/payment_policy",
+        "kind": "RETURNS",
+        "to": "schema:SetPaymentPolicyResponse"
+      },
+      {
+        "from": "operation:get:/payment_policy/get_by_policy_name",
+        "kind": "RETURNS",
+        "to": "schema:PaymentPolicy"
+      },
+      {
+        "from": "operation:get:/payment_policy/{payment_policy_id}",
+        "kind": "RETURNS",
+        "to": "schema:PaymentPolicy"
+      },
+      {
+        "from": "operation:put:/payment_policy/{payment_policy_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentPolicyRequest"
+      },
+      {
+        "from": "operation:put:/payment_policy/{payment_policy_id}",
+        "kind": "RETURNS",
+        "to": "schema:SetPaymentPolicyResponse"
+      },
+      {
+        "from": "operation:get:/payments_program/{marketplace_id}/{payments_program_type}",
+        "kind": "RETURNS",
+        "to": "schema:PaymentsProgramResponse"
+      },
+      {
+        "from": "operation:get:/payments_program/{marketplace_id}/{payments_program_type}/onboarding",
+        "kind": "RETURNS",
+        "to": "schema:PaymentsProgramOnboardingResponse"
+      },
+      {
+        "from": "operation:get:/privilege",
+        "kind": "RETURNS",
+        "to": "schema:SellingPrivileges"
+      },
+      {
+        "from": "operation:get:/program/get_opted_in_programs",
+        "kind": "RETURNS",
+        "to": "schema:Programs"
+      },
+      {
+        "from": "operation:post:/program/opt_in",
+        "kind": "ACCEPTS",
+        "to": "schema:Program"
+      },
+      {
+        "from": "operation:post:/program/opt_out",
+        "kind": "ACCEPTS",
+        "to": "schema:Program"
+      },
+      {
+        "from": "operation:get:/rate_table",
+        "kind": "RETURNS",
+        "to": "schema:RateTableResponse"
+      },
+      {
+        "from": "operation:get:/return_policy",
+        "kind": "RETURNS",
+        "to": "schema:ReturnPolicyResponse"
+      },
+      {
+        "from": "operation:post:/return_policy",
+        "kind": "ACCEPTS",
+        "to": "schema:ReturnPolicyRequest"
+      },
+      {
+        "from": "operation:post:/return_policy",
+        "kind": "RETURNS",
+        "to": "schema:SetReturnPolicyResponse"
+      },
+      {
+        "from": "operation:get:/return_policy/get_by_policy_name",
+        "kind": "RETURNS",
+        "to": "schema:ReturnPolicy"
+      },
+      {
+        "from": "operation:get:/return_policy/{return_policy_id}",
+        "kind": "RETURNS",
+        "to": "schema:ReturnPolicy"
+      },
+      {
+        "from": "operation:put:/return_policy/{return_policy_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:ReturnPolicyRequest"
+      },
+      {
+        "from": "operation:put:/return_policy/{return_policy_id}",
+        "kind": "RETURNS",
+        "to": "schema:SetReturnPolicyResponse"
+      },
+      {
+        "from": "operation:get:/sales_tax",
+        "kind": "RETURNS",
+        "to": "schema:SalesTaxes"
+      },
+      {
+        "from": "operation:get:/sales_tax/{countryCode}/{jurisdictionId}",
+        "kind": "RETURNS",
+        "to": "schema:SalesTax"
+      },
+      {
+        "from": "operation:put:/sales_tax/{countryCode}/{jurisdictionId}",
+        "kind": "ACCEPTS",
+        "to": "schema:SalesTaxBase"
+      },
+      {
+        "from": "operation:get:/subscription",
+        "kind": "RETURNS",
+        "to": "schema:SubscriptionResponse"
+      },
+      {
+        "from": "schema:CustomPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CompactCustomPolicyResponse"
+      },
+      {
+        "from": "schema:Deposit",
+        "kind": "REFERENCES",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:Deposit",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:Deposit",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorParameter"
+      },
+      {
+        "from": "schema:FulfillmentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:FulfillmentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:RegionSet"
+      },
+      {
+        "from": "schema:FulfillmentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:ShippingOption"
+      },
+      {
+        "from": "schema:FulfillmentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:FulfillmentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:FulfillmentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RegionSet"
+      },
+      {
+        "from": "schema:FulfillmentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ShippingOption"
+      },
+      {
+        "from": "schema:FulfillmentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:FulfillmentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FulfillmentPolicy"
+      },
+      {
+        "from": "schema:InternationalReturnOverrideType",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:KycResponse",
+        "kind": "REFERENCES",
+        "to": "schema:KycCheck"
+      },
+      {
+        "from": "schema:PaymentMethod",
+        "kind": "REFERENCES",
+        "to": "schema:RecipientAccountReference"
+      },
+      {
+        "from": "schema:PaymentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:PaymentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:Deposit"
+      },
+      {
+        "from": "schema:PaymentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:PaymentPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:PaymentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:PaymentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Deposit"
+      },
+      {
+        "from": "schema:PaymentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:PaymentPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:PaymentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentPolicy"
+      },
+      {
+        "from": "schema:PaymentsProgramOnboardingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentsProgramOnboardingSteps"
+      },
+      {
+        "from": "schema:Programs",
+        "kind": "REFERENCES",
+        "to": "schema:Program"
+      },
+      {
+        "from": "schema:RateTableResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RateTable"
+      },
+      {
+        "from": "schema:RegionSet",
+        "kind": "REFERENCES",
+        "to": "schema:Region"
+      },
+      {
+        "from": "schema:ReturnPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:ReturnPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:InternationalReturnOverrideType"
+      },
+      {
+        "from": "schema:ReturnPolicy",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:ReturnPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:ReturnPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:InternationalReturnOverrideType"
+      },
+      {
+        "from": "schema:ReturnPolicyRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:ReturnPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ReturnPolicy"
+      },
+      {
+        "from": "schema:SalesTaxes",
+        "kind": "REFERENCES",
+        "to": "schema:SalesTax"
+      },
+      {
+        "from": "schema:SellerEligibilityMultiProgramResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SellerEligibilityResponse"
+      },
+      {
+        "from": "schema:SellingLimit",
+        "kind": "REFERENCES",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:SellingPrivileges",
+        "kind": "REFERENCES",
+        "to": "schema:SellingLimit"
+      },
+      {
+        "from": "schema:SetFulfillmentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:SetFulfillmentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:SetFulfillmentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RegionSet"
+      },
+      {
+        "from": "schema:SetFulfillmentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ShippingOption"
+      },
+      {
+        "from": "schema:SetFulfillmentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:SetPaymentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:SetPaymentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Deposit"
+      },
+      {
+        "from": "schema:SetPaymentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:SetPaymentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:SetPaymentPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:SetReturnPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryType"
+      },
+      {
+        "from": "schema:SetReturnPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:SetReturnPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:InternationalReturnOverrideType"
+      },
+      {
+        "from": "schema:SetReturnPolicyResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:ShippingOption",
+        "kind": "REFERENCES",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:ShippingOption",
+        "kind": "REFERENCES",
+        "to": "schema:ShippingService"
+      },
+      {
+        "from": "schema:ShippingService",
+        "kind": "REFERENCES",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:ShippingService",
+        "kind": "REFERENCES",
+        "to": "schema:RegionSet"
+      },
+      {
+        "from": "schema:Subscription",
+        "kind": "REFERENCES",
+        "to": "schema:TimeDuration"
+      },
+      {
+        "from": "schema:SubscriptionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Subscription"
       }
     ],
     "nodes": [
@@ -192,12 +687,42 @@
       },
       {
         "deprecated": false,
+        "description": "This method allows developers to check the seller eligibility status for eBay advertising programs.",
         "id": "operation:get:/advertising_eligibility",
         "kind": "operation",
         "method": "get",
         "name": "getAdvertisingEligibility",
+        "parameters": [
+          {
+            "description": "A comma-separated list of eBay advertising programs.<br /><br /><span class=\"tablenote\"><b>Tip:</b> See the <a href=\"/api-docs/sell/account/types/plser:Adverti…",
+            "in": "query",
+            "name": "program_types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique identifier of the eBay marketplace for which the seller eligibility status shall be checked.<br /><br /><span class=\"tablenote\"><b>Note:</b> This va…",
+            "in": "header",
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/advertising_eligibility",
         "pointer": "#/paths/~1advertising_eligibility/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SellerEligibilityMultiProgramResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -206,16 +731,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "advertising_eligibility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves the list of custom policies specified by the <b>policy_types</b> query parameter for the selected eBay marketplace.<br/> <br/> <span clas…",
         "id": "operation:get:/custom_policy/",
         "kind": "operation",
         "method": "get",
         "name": "getCustomPolicies",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the type of custom policies to be returned.<br /><br />Multiple policy types may be requested in a single call by providing a co…",
+            "in": "query",
+            "name": "policy_types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This header parameter specifies the eBay marketplace for the custom policy that is being created.",
+            "in": "header",
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/custom_policy/",
         "pointer": "#/paths/~1custom_policy~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -224,16 +782,52 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method creates a new custom policy in which a seller specifies their terms for complying with local governmental regulations.",
         "id": "operation:post:/custom_policy/",
         "kind": "operation",
         "method": "post",
         "name": "createCustomPolicy",
+        "parameters": [
+          {
+            "description": "This header parameter specifies the eBay marketplace for the custom policy that is being created.",
+            "in": "header",
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/custom_policy/",
         "pointer": "#/paths/~1custom_policy~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CustomPolicyCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -241,16 +835,52 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves the custom policy specified by the <b>custom_policy_id</b> path parameter for the selected eBay marketplace.<br/> <br/> <span class=\"tabl…",
         "id": "operation:get:/custom_policy/{custom_policy_id}",
         "kind": "operation",
         "method": "get",
         "name": "getCustomPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter is the unique custom policy identifier for the policy to be returned.<br/><br/><span class=\"tablenote\"><strong>Note:</strong> This value is…",
+            "in": "path",
+            "name": "custom_policy_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This header parameter specifies the eBay marketplace for the custom policy that is being created.",
+            "in": "header",
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/custom_policy/{custom_policy_id}",
         "pointer": "#/paths/~1custom_policy~1{custom_policy_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -259,16 +889,61 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method updates an existing custom policy specified by the <b>custom_policy_id</b> path parameter for the selected marketplace.",
         "id": "operation:put:/custom_policy/{custom_policy_id}",
         "kind": "operation",
         "method": "put",
         "name": "updateCustomPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter is the unique custom policy identifier for the policy to be returned.<br/><br/><span class=\"tablenote\"><strong>Note:</strong> This value is…",
+            "in": "path",
+            "name": "custom_policy_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This header parameter specifies the eBay marketplace for the custom policy that is being created.",
+            "in": "header",
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/custom_policy/{custom_policy_id}",
         "pointer": "#/paths/~1custom_policy~1{custom_policy_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CustomPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -276,16 +951,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves all the fulfillment policies configured for the marketplace you specify using the <code>marketplace_id</code> query parameter.",
         "id": "operation:get:/fulfillment_policy",
         "kind": "operation",
         "method": "get",
         "name": "getFulfillmentPolicies",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the eBay marketplace of the policies you want to retrieve.",
+            "in": "query",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fulfillment_policy",
         "pointer": "#/paths/~1fulfillment_policy/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FulfillmentPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -294,16 +995,40 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fulfillment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method creates a new fulfillment policy where the policy encapsulates seller's terms for fulfilling item purchases.",
         "id": "operation:post:/fulfillment_policy/",
         "kind": "operation",
         "method": "post",
         "name": "createFulfillmentPolicy",
         "path": "/fulfillment_policy/",
         "pointer": "#/paths/~1fulfillment_policy~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FulfillmentPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SetFulfillmentPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -311,16 +1036,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fulfillment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves the details for a specific fulfillment policy.",
         "id": "operation:get:/fulfillment_policy/get_by_policy_name",
         "kind": "operation",
         "method": "get",
         "name": "getFulfillmentPolicyByName",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the eBay marketplace of the policy you want to retrieve.",
+            "in": "query",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This query parameter specifies the seller-defined name of the fulfillment policy you want to retrieve.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fulfillment_policy/get_by_policy_name",
         "pointer": "#/paths/~1fulfillment_policy~1get_by_policy_name/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FulfillmentPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -329,33 +1087,45 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fulfillment_policy"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/fulfillment_policy/{fulfillmentPolicyId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteFulfillmentPolicy",
-        "path": "/fulfillment_policy/{fulfillmentPolicyId}",
-        "pointer": "#/paths/~1fulfillment_policy~1{fulfillmentPolicyId}/delete",
-        "security": [
-          {
-            "api_auth": [
-              "https://api.ebay.com/oauth/api_scope/sell.account"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "This method retrieves the complete details of a fulfillment policy.",
         "id": "operation:get:/fulfillment_policy/{fulfillmentPolicyId}",
         "kind": "operation",
         "method": "get",
         "name": "getFulfillmentPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the fulfillment policy you want to retrieve.",
+            "in": "path",
+            "name": "fulfillmentPolicyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fulfillment_policy/{fulfillmentPolicyId}",
         "pointer": "#/paths/~1fulfillment_policy~1{fulfillmentPolicyId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FulfillmentPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -364,16 +1134,52 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fulfillment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method updates an existing fulfillment policy.",
         "id": "operation:put:/fulfillment_policy/{fulfillmentPolicyId}",
         "kind": "operation",
         "method": "put",
         "name": "updateFulfillmentPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the fulfillment policy you want to update.",
+            "in": "path",
+            "name": "fulfillmentPolicyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/fulfillment_policy/{fulfillmentPolicyId}",
         "pointer": "#/paths/~1fulfillment_policy~1{fulfillmentPolicyId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FulfillmentPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SetFulfillmentPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -381,16 +1187,84 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "fulfillment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method deletes a fulfillment policy.",
+        "id": "operation:delete:/fulfillment_policy/{fulfillmentPolicyId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteFulfillmentPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the fulfillment policy to delete.",
+            "in": "path",
+            "name": "fulfillmentPolicyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/fulfillment_policy/{fulfillmentPolicyId}",
+        "pointer": "#/paths/~1fulfillment_policy~1{fulfillmentPolicyId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/sell.account"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "fulfillment_policy"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "<span class=\"tablenote\"><b>Note:</b>This method was originally created to see which onboarding requirements were still pending for sellers being onboarded for…",
         "id": "operation:get:/kyc",
         "kind": "operation",
         "method": "get",
         "name": "getKYC",
         "path": "/kyc",
         "pointer": "#/paths/~1kyc/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "KycResponse"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -399,16 +1273,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "kyc"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves all the payment policies configured for the marketplace you specify using the <code>marketplace_id</code> query parameter.",
         "id": "operation:get:/payment_policy",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentPolicies",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the eBay marketplace of the policies you want to retrieve.",
+            "in": "query",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payment_policy",
         "pointer": "#/paths/~1payment_policy/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -417,16 +1317,40 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method creates a new payment policy where the policy encapsulates seller's terms for order payments.",
         "id": "operation:post:/payment_policy",
         "kind": "operation",
         "method": "post",
         "name": "createPaymentPolicy",
         "path": "/payment_policy",
         "pointer": "#/paths/~1payment_policy/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PaymentPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SetPaymentPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -434,16 +1358,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves the details of a specific payment policy.",
         "id": "operation:get:/payment_policy/get_by_policy_name",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentPolicyByName",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the eBay marketplace of the policy you want to retrieve.",
+            "in": "query",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This query parameter specifies the seller-defined name of the payment policy you want to retrieve.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payment_policy/get_by_policy_name",
         "pointer": "#/paths/~1payment_policy~1get_by_policy_name/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -452,33 +1409,45 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payment_policy"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/payment_policy/{payment_policy_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletePaymentPolicy",
-        "path": "/payment_policy/{payment_policy_id}",
-        "pointer": "#/paths/~1payment_policy~1{payment_policy_id}/delete",
-        "security": [
-          {
-            "api_auth": [
-              "https://api.ebay.com/oauth/api_scope/sell.account"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "This method retrieves the complete details of a payment policy.",
         "id": "operation:get:/payment_policy/{payment_policy_id}",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the payment policy you want to retrieve.",
+            "in": "path",
+            "name": "payment_policy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payment_policy/{payment_policy_id}",
         "pointer": "#/paths/~1payment_policy~1{payment_policy_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -487,16 +1456,52 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method updates an existing payment policy.",
         "id": "operation:put:/payment_policy/{payment_policy_id}",
         "kind": "operation",
         "method": "put",
         "name": "updatePaymentPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the payment policy you want to update.",
+            "in": "path",
+            "name": "payment_policy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payment_policy/{payment_policy_id}",
         "pointer": "#/paths/~1payment_policy~1{payment_policy_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PaymentPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SetPaymentPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -504,16 +1509,100 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payment_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method deletes a payment policy.",
+        "id": "operation:delete:/payment_policy/{payment_policy_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePaymentPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the payment policy you want to delete.",
+            "in": "path",
+            "name": "payment_policy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/payment_policy/{payment_policy_id}",
+        "pointer": "#/paths/~1payment_policy~1{payment_policy_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/sell.account"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "payment_policy"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "<span class=\"tablenote\"><b>Note:</b> This method is no longer applicable, as all seller accounts globally have been enabled for the new eBay payment and checko…",
         "id": "operation:get:/payments_program/{marketplace_id}/{payments_program_type}",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentsProgram",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the eBay marketplace of the payments program for which you want to retrieve the seller's status.",
+            "in": "path",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This path parameter specifies the payments program whose status is returned by the call.",
+            "in": "path",
+            "name": "payments_program_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payments_program/{marketplace_id}/{payments_program_type}",
         "pointer": "#/paths/~1payments_program~1{marketplace_id}~1{payments_program_type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentsProgramResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -522,16 +1611,52 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "payments_program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "<span class=\"tablenote\"><b>Note:</b> This method is no longer applicable, as all seller accounts globally have been enabled for the new eBay payment and checko…",
         "id": "operation:get:/payments_program/{marketplace_id}/{payments_program_type}/onboarding",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentsProgramOnboarding",
+        "parameters": [
+          {
+            "description": "The eBay marketplace ID associated with the onboarding status to retrieve.",
+            "in": "path",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type of payments program whose status is returned by the method.",
+            "in": "path",
+            "name": "payments_program_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/payments_program/{marketplace_id}/{payments_program_type}/onboarding",
         "pointer": "#/paths/~1payments_program~1{marketplace_id}~1{payments_program_type}~1onboarding/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentsProgramOnboardingResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -540,16 +1665,33 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "onboarding"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves the seller's current set of privileges, including whether or not the seller's eBay registration has been completed, as well as the detail…",
         "id": "operation:get:/privilege",
         "kind": "operation",
         "method": "get",
         "name": "getPrivileges",
         "path": "/privilege",
         "pointer": "#/paths/~1privilege/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SellingPrivileges"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -558,16 +1700,36 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "privilege"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method gets a list of the seller programs that the seller has opted-in to.",
         "id": "operation:get:/program/get_opted_in_programs",
         "kind": "operation",
         "method": "get",
         "name": "getOptedInPrograms",
         "path": "/program/get_opted_in_programs",
         "pointer": "#/paths/~1program~1get_opted_in_programs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Programs"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -576,16 +1738,46 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method opts the seller in to an eBay seller program.",
         "id": "operation:post:/program/opt_in",
         "kind": "operation",
         "method": "post",
         "name": "optInToProgram",
         "path": "/program/opt_in",
         "pointer": "#/paths/~1program~1opt_in/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Program"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -593,16 +1785,46 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method opts the seller out of a seller program to which you have previously opted-in to.",
         "id": "operation:post:/program/opt_out",
         "kind": "operation",
         "method": "post",
         "name": "optOutOfProgram",
         "path": "/program/opt_out",
         "pointer": "#/paths/~1program~1opt_out/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Program"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -610,16 +1832,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves a seller's <i>shipping rate tables</i> for the country specified in the <b>country_code</b> query parameter.",
         "id": "operation:get:/rate_table",
         "kind": "operation",
         "method": "get",
         "name": "getRateTables",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" title=\"https://www.iso.org \" target=\"_blank\">ISO 3166<…",
+            "in": "query",
+            "name": "country_code",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rate_table",
         "pointer": "#/paths/~1rate_table/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RateTableResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -628,16 +1876,42 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "rate_table"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves all the return policies configured for the marketplace you specify using the <code>marketplace_id</code> query parameter.",
         "id": "operation:get:/return_policy",
         "kind": "operation",
         "method": "get",
         "name": "getReturnPolicies",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the ID of the eBay marketplace of the policy you want to retrieve.",
+            "in": "query",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/return_policy",
         "pointer": "#/paths/~1return_policy/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReturnPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -646,16 +1920,40 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "return_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method creates a new return policy where the policy encapsulates seller's terms for returning items.",
         "id": "operation:post:/return_policy",
         "kind": "operation",
         "method": "post",
         "name": "createReturnPolicy",
         "path": "/return_policy",
         "pointer": "#/paths/~1return_policy/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReturnPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SetReturnPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -663,16 +1961,49 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "return_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method retrieves the details of a specific return policy.",
         "id": "operation:get:/return_policy/get_by_policy_name",
         "kind": "operation",
         "method": "get",
         "name": "getReturnPolicyByName",
+        "parameters": [
+          {
+            "description": "This query parameter specifies the ID of the eBay marketplace of the policy you want to retrieve.",
+            "in": "query",
+            "name": "marketplace_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This query parameter specifies the seller-defined name of the return policy you want to retrieve.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/return_policy/get_by_policy_name",
         "pointer": "#/paths/~1return_policy~1get_by_policy_name/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReturnPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -681,33 +2012,45 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "return_policy"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/return_policy/{return_policy_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteReturnPolicy",
-        "path": "/return_policy/{return_policy_id}",
-        "pointer": "#/paths/~1return_policy~1{return_policy_id}/delete",
-        "security": [
-          {
-            "api_auth": [
-              "https://api.ebay.com/oauth/api_scope/sell.account"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "This method retrieves the complete details of the return policy specified by the <b>returnPolicyId</b> path parameter.",
         "id": "operation:get:/return_policy/{return_policy_id}",
         "kind": "operation",
         "method": "get",
         "name": "getReturnPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the of the return policy you want to retrieve.",
+            "in": "path",
+            "name": "return_policy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/return_policy/{return_policy_id}",
         "pointer": "#/paths/~1return_policy~1{return_policy_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReturnPolicy"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -716,16 +2059,52 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "return_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method updates an existing return policy.",
         "id": "operation:put:/return_policy/{return_policy_id}",
         "kind": "operation",
         "method": "put",
         "name": "updateReturnPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the return policy you want to update.",
+            "in": "path",
+            "name": "return_policy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/return_policy/{return_policy_id}",
         "pointer": "#/paths/~1return_policy~1{return_policy_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReturnPolicyRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SetReturnPolicyResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -733,16 +2112,90 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "return_policy"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method deletes a return policy.",
+        "id": "operation:delete:/return_policy/{return_policy_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteReturnPolicy",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the ID of the return policy you want to delete.",
+            "in": "path",
+            "name": "return_policy_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/return_policy/{return_policy_id}",
+        "pointer": "#/paths/~1return_policy~1{return_policy_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/sell.account"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "return_policy"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this call to retrieve all sales tax table entries that the seller has defined for a specific country.",
         "id": "operation:get:/sales_tax",
         "kind": "operation",
         "method": "get",
         "name": "getSalesTaxes",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" title=\"https://www.iso.org \" target=\"_blank\">ISO 3166</…",
+            "in": "query",
+            "name": "country_code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sales_tax",
         "pointer": "#/paths/~1sales_tax/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SalesTaxes"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -751,33 +2204,55 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sales_tax"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/sales_tax/{countryCode}/{jurisdictionId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSalesTax",
-        "path": "/sales_tax/{countryCode}/{jurisdictionId}",
-        "pointer": "#/paths/~1sales_tax~1{countryCode}~1{jurisdictionId}/delete",
-        "security": [
-          {
-            "api_auth": [
-              "https://api.ebay.com/oauth/api_scope/sell.account"
-            ]
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "This call gets the current sales tax table entry for a specific tax jurisdiction.",
         "id": "operation:get:/sales_tax/{countryCode}/{jurisdictionId}",
         "kind": "operation",
         "method": "get",
         "name": "getSalesTax",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" title=\"https://www.iso.org \" target=\"_blank\">ISO 3166</…",
+            "in": "path",
+            "name": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This path parameter specifies the ID of the sales tax jurisdiction for the tax table entry you want to retrieve.",
+            "in": "path",
+            "name": "jurisdictionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sales_tax/{countryCode}/{jurisdictionId}",
         "pointer": "#/paths/~1sales_tax~1{countryCode}~1{jurisdictionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SalesTax"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -786,16 +2261,58 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sales_tax"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method creates or updates a sales tax table entry for a jurisdiction.",
         "id": "operation:put:/sales_tax/{countryCode}/{jurisdictionId}",
         "kind": "operation",
         "method": "put",
         "name": "createOrReplaceSalesTax",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" title=\"https://www.iso.org \" target=\"_blank\">ISO 3166</…",
+            "in": "path",
+            "name": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This path parameter specifies the ID of the tax jurisdiction for the table entry you want to create.",
+            "in": "path",
+            "name": "jurisdictionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sales_tax/{countryCode}/{jurisdictionId}",
         "pointer": "#/paths/~1sales_tax~1{countryCode}~1{jurisdictionId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SalesTaxBase"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_auth": [
@@ -803,16 +2320,101 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sales_tax"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This call deletes a sales tax table entry for a jurisdiction.",
+        "id": "operation:delete:/sales_tax/{countryCode}/{jurisdictionId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSalesTax",
+        "parameters": [
+          {
+            "description": "This path parameter specifies the two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" title=\"https://www.iso.org \" target=\"_blank\">ISO 3166</…",
+            "in": "path",
+            "name": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This path parameter specifies the ID of the sales tax jurisdiction whose table entry you want to delete.",
+            "in": "path",
+            "name": "jurisdictionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sales_tax/{countryCode}/{jurisdictionId}",
+        "pointer": "#/paths/~1sales_tax~1{countryCode}~1{jurisdictionId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/sell.account"
+            ]
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "sales_tax"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This method retrieves a list of subscriptions associated with the seller account.",
         "id": "operation:get:/subscription",
         "kind": "operation",
         "method": "get",
         "name": "getSubscription",
+        "parameters": [
+          {
+            "description": "This field is for future use.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field is for future use.",
+            "in": "query",
+            "name": "continuation_token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/subscription",
         "pointer": "#/paths/~1subscription/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubscriptionResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_auth": [
@@ -821,247 +2423,344 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "subscription"
+        ]
       },
       {
+        "description": "A complex type that describes the value of a monetary amount as represented by a global currency.",
         "id": "schema:Amount",
         "kind": "schema",
-        "name": "Amount"
+        "name": "Amount",
+        "type": "object"
       },
       {
+        "description": "The category type discerns whether the policy applies to motor vehicle listings, or to any other items except motor vehicle listings.",
         "id": "schema:CategoryType",
         "kind": "schema",
-        "name": "CategoryType"
+        "name": "CategoryType",
+        "type": "object"
       },
       {
+        "description": "The response payload for requests that return a list of custom policies.",
         "id": "schema:CompactCustomPolicyResponse",
         "kind": "schema",
-        "name": "CompactCustomPolicyResponse"
+        "name": "CompactCustomPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "This container defines a seller's custom policy identified by policy ID for the selected eBay marketplace.",
         "id": "schema:CustomPolicy",
         "kind": "schema",
-        "name": "CustomPolicy"
+        "name": "CustomPolicy",
+        "type": "object"
       },
       {
+        "description": "This type is used by the request payload of the createCustomPolicy method to define a new custom policy for a specific marketplace.",
         "id": "schema:CustomPolicyCreateRequest",
         "kind": "schema",
-        "name": "CustomPolicyCreateRequest"
+        "name": "CustomPolicyCreateRequest",
+        "type": "object"
       },
       {
         "id": "schema:CustomPolicyRequest",
         "kind": "schema",
-        "name": "CustomPolicyRequest"
+        "name": "CustomPolicyRequest",
+        "type": "object"
       },
       {
         "id": "schema:CustomPolicyResponse",
         "kind": "schema",
-        "name": "CustomPolicyResponse"
+        "name": "CustomPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "This type is used to specify/indicate that an initial deposit is required for a motor vehicle listing.",
         "id": "schema:Deposit",
         "kind": "schema",
-        "name": "Deposit"
+        "name": "Deposit",
+        "type": "object"
       },
       {
+        "description": "A container that defines the elements of error and warning messages.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "A complex type that indicates a parameter that caused an error and the value of the parameter which caused the error.",
         "id": "schema:ErrorParameter",
         "kind": "schema",
-        "name": "ErrorParameter"
+        "name": "ErrorParameter",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <b>fulfillmentPolicy</b> response container, a container which defines a seller's fulfillment policy for a specific marketplace.",
         "id": "schema:FulfillmentPolicy",
         "kind": "schema",
-        "name": "FulfillmentPolicy"
+        "name": "FulfillmentPolicy",
+        "type": "object"
       },
       {
+        "description": "This root container defines a seller's fulfillment policy for a specific marketplace and category group.",
         "id": "schema:FulfillmentPolicyRequest",
         "kind": "schema",
-        "name": "FulfillmentPolicyRequest"
+        "name": "FulfillmentPolicyRequest",
+        "type": "object"
       },
       {
+        "description": "The response payload for the <b>getFulfillmentPolicies</b> method.<br /><br /><span class=\"tablenote\"><b>Note</b>: Pagination has not yet been enabled for <b>g…",
         "id": "schema:FulfillmentPolicyResponse",
         "kind": "schema",
-        "name": "FulfillmentPolicyResponse"
+        "name": "FulfillmentPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "This type defines the fields for a seller's international return policy.",
         "id": "schema:InternationalReturnOverrideType",
         "kind": "schema",
-        "name": "InternationalReturnOverrideType"
+        "name": "InternationalReturnOverrideType",
+        "type": "object"
       },
       {
+        "description": "This type is used to provide details about any KYC check that is applicable to the managed payments seller.",
         "id": "schema:KycCheck",
         "kind": "schema",
-        "name": "KycCheck"
+        "name": "KycCheck",
+        "type": "object"
       },
       {
+        "description": "This is the base response type of the <b>getKYC</b> method.",
         "id": "schema:KycResponse",
         "kind": "schema",
-        "name": "KycResponse"
+        "name": "KycResponse",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <b>paymentMethods</b> container, which is used by the seller to specify one or more offline payment methods.",
         "id": "schema:PaymentMethod",
         "kind": "schema",
-        "name": "PaymentMethod"
+        "name": "PaymentMethod",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <b>paymentPolicy</b> response container, a container which defines a seller's payment business policy for a specific marketplace.",
         "id": "schema:PaymentPolicy",
         "kind": "schema",
-        "name": "PaymentPolicy"
+        "name": "PaymentPolicy",
+        "type": "object"
       },
       {
+        "description": "This root container defines a seller's payment business policy for a specific marketplace and category group.",
         "id": "schema:PaymentPolicyRequest",
         "kind": "schema",
-        "name": "PaymentPolicyRequest"
+        "name": "PaymentPolicyRequest",
+        "type": "object"
       },
       {
+        "description": "The response payload for the <b>getPaymentPolicies</b> method.",
         "id": "schema:PaymentPolicyResponse",
         "kind": "schema",
-        "name": "PaymentPolicyResponse"
+        "name": "PaymentPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "Type used by the payments program onboarding response",
         "id": "schema:PaymentsProgramOnboardingResponse",
         "kind": "schema",
-        "name": "PaymentsProgramOnboardingResponse"
+        "name": "PaymentsProgramOnboardingResponse",
+        "type": "object"
       },
       {
+        "description": "The payments program onboarding steps, status, and link.",
         "id": "schema:PaymentsProgramOnboardingSteps",
         "kind": "schema",
-        "name": "PaymentsProgramOnboardingSteps"
+        "name": "PaymentsProgramOnboardingSteps",
+        "type": "object"
       },
       {
+        "description": "The response object containing the sellers status with regards to the specified payment program.",
         "id": "schema:PaymentsProgramResponse",
         "kind": "schema",
-        "name": "PaymentsProgramResponse"
+        "name": "PaymentsProgramResponse",
+        "type": "object"
       },
       {
+        "description": "A seller program in to which a seller can opt-in.",
         "id": "schema:Program",
         "kind": "schema",
-        "name": "Program"
+        "name": "Program",
+        "type": "object"
       },
       {
+        "description": "The base response type of the <b>getOptedInPrograms</b> method.",
         "id": "schema:Programs",
         "kind": "schema",
-        "name": "Programs"
+        "name": "Programs",
+        "type": "object"
       },
       {
+        "description": "This type is used to provide details about each shipping rate table that is returned in the <b>getRateTables</b> response.",
         "id": "schema:RateTable",
         "kind": "schema",
-        "name": "RateTable"
+        "name": "RateTable",
+        "type": "object"
       },
       {
+        "description": "This type is the base response of the <b>getRateTables</b> method.",
         "id": "schema:RateTableResponse",
         "kind": "schema",
-        "name": "RateTableResponse"
+        "name": "RateTableResponse",
+        "type": "object"
       },
       {
+        "description": "<span class=\"tablenote\"><b>Note</b>: This type is no longer applicable.",
         "id": "schema:RecipientAccountReference",
         "kind": "schema",
-        "name": "RecipientAccountReference"
+        "name": "RecipientAccountReference",
+        "type": "object"
       },
       {
+        "description": "This type is used to define specific shipping regions.",
         "id": "schema:Region",
         "kind": "schema",
-        "name": "Region"
+        "name": "Region",
+        "type": "object"
       },
       {
+        "description": "This type consists of the <b>regionIncluded</b> and <b>regionExcluded</b> arrays, which indicate the areas to where the seller does and doesn't ship.",
         "id": "schema:RegionSet",
         "kind": "schema",
-        "name": "RegionSet"
+        "name": "RegionSet",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <b>returnPolicy</b> response container, a container which defines a seller's return business policy for a specific marketplace.",
         "id": "schema:ReturnPolicy",
         "kind": "schema",
-        "name": "ReturnPolicy"
+        "name": "ReturnPolicy",
+        "type": "object"
       },
       {
+        "description": "This root container defines a seller's return business policy for a specific marketplace and category group.",
         "id": "schema:ReturnPolicyRequest",
         "kind": "schema",
-        "name": "ReturnPolicyRequest"
+        "name": "ReturnPolicyRequest",
+        "type": "object"
       },
       {
+        "description": "The response payload for the <b>getReturnPolicies</b> method.",
         "id": "schema:ReturnPolicyResponse",
         "kind": "schema",
-        "name": "ReturnPolicyResponse"
+        "name": "ReturnPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "This type is used to provide sales tax settings for a specific tax jurisdiction.",
         "id": "schema:SalesTax",
         "kind": "schema",
-        "name": "SalesTax"
+        "name": "SalesTax",
+        "type": "object"
       },
       {
+        "description": "This type is used by the base request of the <b>createOrReplaceSalesTax</b>.",
         "id": "schema:SalesTaxBase",
         "kind": "schema",
-        "name": "SalesTaxBase"
+        "name": "SalesTaxBase",
+        "type": "object"
       },
       {
+        "description": "This type is used by the root response of the <b>getSalesTaxes</b> method.",
         "id": "schema:SalesTaxes",
         "kind": "schema",
-        "name": "SalesTaxes"
+        "name": "SalesTaxes",
+        "type": "object"
       },
       {
+        "description": "The base response of the <b>getAdvertisingEligibility</b> method that contains the seller eligibility information for one or more advertising programs.",
         "id": "schema:SellerEligibilityMultiProgramResponse",
         "kind": "schema",
-        "name": "SellerEligibilityMultiProgramResponse"
+        "name": "SellerEligibilityMultiProgramResponse",
+        "type": "object"
       },
       {
+        "description": "A type that is used to provide the seller's eligibility status for an eBay advertising program.",
         "id": "schema:SellerEligibilityResponse",
         "kind": "schema",
-        "name": "SellerEligibilityResponse"
+        "name": "SellerEligibilityResponse",
+        "type": "object"
       },
       {
+        "description": "Type used by the <b>sellingLimit</b> container, a container that lists the monthly cap for the quantity of items sold and total sales amount allowed for the se…",
         "id": "schema:SellingLimit",
         "kind": "schema",
-        "name": "SellingLimit"
+        "name": "SellingLimit",
+        "type": "object"
       },
       {
+        "description": "This type is used by the base response of the <b>getPrivileges</b> method.",
         "id": "schema:SellingPrivileges",
         "kind": "schema",
-        "name": "SellingPrivileges"
+        "name": "SellingPrivileges",
+        "type": "object"
       },
       {
+        "description": "A complex type that is populated with a response containing a fulfillment policy.",
         "id": "schema:SetFulfillmentPolicyResponse",
         "kind": "schema",
-        "name": "SetFulfillmentPolicyResponse"
+        "name": "SetFulfillmentPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "A complex type that is populated with a response containing a payment policy.",
         "id": "schema:SetPaymentPolicyResponse",
         "kind": "schema",
-        "name": "SetPaymentPolicyResponse"
+        "name": "SetPaymentPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "A complex type that is populated with a response containing a return policies.",
         "id": "schema:SetReturnPolicyResponse",
         "kind": "schema",
-        "name": "SetReturnPolicyResponse"
+        "name": "SetReturnPolicyResponse",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <b>shippingOptions</b> array, which is used to provide detailed information on the domestic and international shipping options availab…",
         "id": "schema:ShippingOption",
         "kind": "schema",
-        "name": "ShippingOption"
+        "name": "ShippingOption",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <b>shippingServices</b> array, an array that provides details about every domestic and international shipping service option that is d…",
         "id": "schema:ShippingService",
         "kind": "schema",
-        "name": "ShippingService"
+        "name": "ShippingService",
+        "type": "object"
       },
       {
+        "description": "This type is used by the <strong>getSubscription</strong> response container, which defines the subscription types and levels for the seller account.",
         "id": "schema:Subscription",
         "kind": "schema",
-        "name": "Subscription"
+        "name": "Subscription",
+        "type": "object"
       },
       {
+        "description": "This type is used by the response payload for the <b>getSubscription</b> method.<br /><br /><span class=\"tablenote\"><b>Note</b>: Pagination has not yet been en…",
         "id": "schema:SubscriptionResponse",
         "kind": "schema",
-        "name": "SubscriptionResponse"
+        "name": "SubscriptionResponse",
+        "type": "object"
       },
       {
+        "description": "A type used to specify a period of time using a specified time-measurement unit.",
         "id": "schema:TimeDuration",
         "kind": "schema",
-        "name": "TimeDuration"
+        "name": "TimeDuration",
+        "type": "object"
       }
     ]
   },

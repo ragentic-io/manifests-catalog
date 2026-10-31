@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2daf22e4db763b2c06d1c0d5d44c71f351326d8353589810a9b820eecf1a1214` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,41 +34,43 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v2/broadcastservices` | get /api/v2/broadcastservices | Gets broadcast services matching the given criteria. |
-| GET | `/api/v2/broadcastservices/{id}` | get /api/v2/broadcastservices/{id} | Returns the broadcast service matching the given ID. |
-| POST | `/api/v2/cddrive/files/content` | post /api/v2/cddrive/files/content | Upload a file. |
-| DELETE | `/api/v2/cddrive/files/{file-id}` | delete /api/v2/cddrive/files/{file-id} | Delete a file. |
-| GET | `/api/v2/cddrive/files/{file-id}` | get /api/v2/cddrive/files/{file-id} | Get file information. |
-| GET | `/api/v2/cddrive/files/{file-id}/content` | get /api/v2/cddrive/files/{file-id}/content | UNDER DEVELOPMENT - Download a file. |
-| POST | `/api/v2/cddrive/folders` | post /api/v2/cddrive/folders | Create a folder. |
-| DELETE | `/api/v2/cddrive/folders/{folder-id}` | delete /api/v2/cddrive/folders/{folder-id} | UNDER DEVELOPMENT - Delete a folder. |
-| GET | `/api/v2/cddrive/folders/{folder-id}` | get /api/v2/cddrive/folders/{folder-id} | UNDER DEVELOPMENT - Get folder information. |
-| GET | `/api/v2/cddrive/folders/{folder-id}/items` | get /api/v2/cddrive/folders/{folder-id}/items | Get the items in the folder. |
-| GET | `/api/v2/episodes` | get /api/v2/episodes | Gets episodes matching the given criteria. |
-| GET | `/api/v2/episodes/{id}` | get /api/v2/episodes/{id} | Returns the episode matching the given ID. |
-| POST | `/api/v2/metapub/program-information/batch` | post /api/v2/metapub/program-information/batch | Create a batch operation on EPG information. |
-| GET | `/api/v2/metapub/program-information/batch/{batch-id}` | get /api/v2/metapub/program-information/batch/{batch-id} | Get an EPG batch operation. |
-| GET | `/api/v2/pieces` | get /api/v2/pieces | Returns the pieces matching the query parameters. |
-| POST | `/api/v2/pieces` | post /api/v2/pieces | Create a new piece. |
-| DELETE | `/api/v2/pieces/{id}` | delete /api/v2/pieces/{id} | Deletes the piece with the given ID. |
-| GET | `/api/v2/pieces/{id}` | get /api/v2/pieces/{id} | Returns the piece matching the given ID. |
-| GET | `/api/v2/programs/search` | get /api/v2/programs/search | Optimized free-text search for programs using various filters. |
-| GET | `/api/v2/programs/{id}` | get /api/v2/programs/{id} | Returns the program matching the given ID. |
-| GET | `/api/v2/segments` | get /api/v2/segments | Returns the segments matching the query parameters. |
-| POST | `/api/v2/segments` | post /api/v2/segments | Creates a new segment. |
-| DELETE | `/api/v2/segments/{id}` | delete /api/v2/segments/{id} | Deletes the segment with the given ID. |
-| GET | `/api/v2/segments/{id}` | get /api/v2/segments/{id} | Returns the segment matching the given ID. |
-| GET | `/api/v2/segments/{id}/content` | get /api/v2/segments/{id}/content | UNDER DEVELOPMENT - Returns the audio content segment matching the given ID. |
-| GET | `/api/v2/spotinsertions` | get /api/v2/spotinsertions | Returns the spot insertions matching the query parameters. |
-| POST | `/api/v2/spotinsertions` | post /api/v2/spotinsertions | Creates a new spot insertion. |
-| DELETE | `/api/v2/spotinsertions/{id}` | delete /api/v2/spotinsertions/{id} | Deletes the spot insertion with the given ID. |
-| GET | `/api/v2/spotinsertions/{id}` | get /api/v2/spotinsertions/{id} | Returns the spot insertion matching the given ID. |
-| GET | `/api/v2/spots` | get /api/v2/spots | Returns the spots matching the query parameters. |
-| POST | `/api/v2/spots` | post /api/v2/spots | Creates a new spot. |
-| DELETE | `/api/v2/spots/{id}` | delete /api/v2/spots/{id} | Deletes the spot with the given ID. |
-| GET | `/api/v2/spots/{id}` | get /api/v2/spots/{id} | Returns the spot matching the given ID. |
-| GET | `/radiodns/spi/3.1/GI.xml` | get /radiodns/spi/3.1/GI.xml | Get the group information document. |
-| GET | `/radiodns/spi/3.1/SI.xml` | get /radiodns/spi/3.1/SI.xml | Get the service information document. |
-| GET | `/radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml` | get /radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml | Get the program information document. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v2/broadcastservices` | get /api/v2/broadcastservices | `pageStart`, `pageSize`, `orderById` | Episode[] | yes | Gets broadcast services matching the given criteria. |
+| GET | `/api/v2/broadcastservices/{id}` | get /api/v2/broadcastservices/{id} | `id`* | BroadcastService | yes | Returns the broadcast service matching the given ID. |
+| POST | `/api/v2/cddrive/files/content` | post /api/v2/cddrive/files/content | `Content-MD5`, body: object | CDDriveFile |  | Upload a file. |
+| GET | `/api/v2/cddrive/files/{file-id}` | get /api/v2/cddrive/files/{file-id} | `file-id`* | CDDriveFile | yes | Get file information. |
+| DELETE | `/api/v2/cddrive/files/{file-id}` | delete /api/v2/cddrive/files/{file-id} | `file-id`* | — |  | Delete a file. |
+| GET | `/api/v2/cddrive/files/{file-id}/content` | get /api/v2/cddrive/files/{file-id}/content | `file-id`*, `Range` | string:binary | yes | UNDER DEVELOPMENT - Download a file. |
+| POST | `/api/v2/cddrive/folders` | post /api/v2/cddrive/folders | body: object | CDDriveFolder |  | Create a folder. |
+| GET | `/api/v2/cddrive/folders/{folder-id}` | get /api/v2/cddrive/folders/{folder-id} | `folder-id`* | CDDriveFolder | yes | UNDER DEVELOPMENT - Get folder information. |
+| DELETE | `/api/v2/cddrive/folders/{folder-id}` | delete /api/v2/cddrive/folders/{folder-id} | `folder-id`*, `recursive` | — |  | UNDER DEVELOPMENT - Delete a folder. |
+| GET | `/api/v2/cddrive/folders/{folder-id}/items` | get /api/v2/cddrive/folders/{folder-id}/items | `folder-id`*, `offset`, `limit` | object | yes | Get the items in the folder. |
+| GET | `/api/v2/episodes` | get /api/v2/episodes | `id`, `beginAirDateAfter`, `endAirDateBefore`, `programId`*, `pageStart`, `pageSize`, `orderById` | Episode[] | yes | Gets episodes matching the given criteria. |
+| GET | `/api/v2/episodes/{id}` | get /api/v2/episodes/{id} | `id`* | Episode | yes | Returns the episode matching the given ID. |
+| POST | `/api/v2/metapub/program-information/batch` | post /api/v2/metapub/program-information/batch | body: object | ProgramInformationBatch |  | Create a batch operation on EPG information. |
+| GET | `/api/v2/metapub/program-information/batch/{batch-id}` | get /api/v2/metapub/program-information/batch/{batch-id} | `batch-id`* | ProgramInformationBatch | yes | Get an EPG batch operation. |
+| GET | `/api/v2/pieces` | get /api/v2/pieces | `episodeId`* | Piece[] | yes | Returns the pieces matching the query parameters. |
+| POST | `/api/v2/pieces` | post /api/v2/pieces | body: Piece | Piece |  | Create a new piece. |
+| GET | `/api/v2/pieces/{id}` | get /api/v2/pieces/{id} | `id`* | Piece | yes | Returns the piece matching the given ID. |
+| DELETE | `/api/v2/pieces/{id}` | delete /api/v2/pieces/{id} | `id`* | — |  | Deletes the piece with the given ID. |
+| GET | `/api/v2/programs/search` | get /api/v2/programs/search | `keywords`, `pageStart`, `pageSize` | Program[] | yes | Optimized free-text search for programs using various filters. |
+| GET | `/api/v2/programs/{id}` | get /api/v2/programs/{id} | `id`* | Program | yes | Returns the program matching the given ID. |
+| GET | `/api/v2/segments` | get /api/v2/segments | `episodeId`*, `segmentNumber`, `pageStart`, `pageSize`, `orderById` | Segment[] | yes | Returns the segments matching the query parameters. |
+| POST | `/api/v2/segments` | post /api/v2/segments | body: object | Segment |  | Creates a new segment. |
+| GET | `/api/v2/segments/{id}` | get /api/v2/segments/{id} | `id`* | Segment | yes | Returns the segment matching the given ID. |
+| DELETE | `/api/v2/segments/{id}` | delete /api/v2/segments/{id} | `id`* | — |  | Deletes the segment with the given ID. |
+| GET | `/api/v2/segments/{id}/content` | get /api/v2/segments/{id}/content | `id`* | string:binary | yes | UNDER DEVELOPMENT - Returns the audio content segment matching the given ID. |
+| GET | `/api/v2/spotinsertions` | get /api/v2/spotinsertions | `pageStart`, `pageSize`, `orderById` | SpotInsertion[] | yes | Returns the spot insertions matching the query parameters. |
+| POST | `/api/v2/spotinsertions` | post /api/v2/spotinsertions | body: SpotInsertion | SpotInsertion |  | Creates a new spot insertion. |
+| GET | `/api/v2/spotinsertions/{id}` | get /api/v2/spotinsertions/{id} | `id`* | SpotInsertion | yes | Returns the spot insertion matching the given ID. |
+| DELETE | `/api/v2/spotinsertions/{id}` | delete /api/v2/spotinsertions/{id} | `id`* | — |  | Deletes the spot insertion with the given ID. |
+| GET | `/api/v2/spots` | get /api/v2/spots | `pageStart`, `pageSize`, `orderById` | Spot[] | yes | Returns the spots matching the query parameters. |
+| POST | `/api/v2/spots` | post /api/v2/spots | body: object | Spot |  | Creates a new spot. |
+| GET | `/api/v2/spots/{id}` | get /api/v2/spots/{id} | `id`* | Spot | yes | Returns the spot matching the given ID. |
+| DELETE | `/api/v2/spots/{id}` | delete /api/v2/spots/{id} | `id`* | — |  | Deletes the spot with the given ID. |
+| GET | `/radiodns/spi/3.1/GI.xml` | get /radiodns/spi/3.1/GI.xml | — | string:RadioDNS Group Information (GI) as defined in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 8 | yes | Get the group information document. |
+| GET | `/radiodns/spi/3.1/SI.xml` | get /radiodns/spi/3.1/SI.xml | — | string:RadioDNS Service Information (SI) as defined in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 6 | yes | Get the service information document. |
+| GET | `/radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml` | get /radiodns/spi/3.1/id/{fqdn}/{sid}/{date}_PI.xml | `fqdn`*, `sid`*, `date`*, `x-radiodnsspi-api-key` | string:RadioDNS Program Information (PI) as defined in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 7 | yes | Get the program information document. |

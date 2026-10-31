@@ -17,17 +17,17 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apis/{owner}/{api}"
-      },
-      {
-        "from": "swaggerhub-com-0409d1f446",
-        "kind": "EXPOSES",
         "to": "operation:get:/apis/{owner}/{api}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
         "to": "operation:post:/apis/{owner}/{api}"
+      },
+      {
+        "from": "swaggerhub-com-0409d1f446",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/apis/{owner}/{api}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -47,12 +47,12 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apis/{owner}/{api}/{version}"
+        "to": "operation:get:/apis/{owner}/{api}/{version}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:get:/apis/{owner}/{api}/{version}"
+        "to": "operation:delete:/apis/{owner}/{api}/{version}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -122,22 +122,22 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
-      },
-      {
-        "from": "swaggerhub-com-0409d1f446",
-        "kind": "EXPOSES",
         "to": "operation:get:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:patch:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
+        "to": "operation:put:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:put:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
+        "to": "operation:delete:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
+      },
+      {
+        "from": "swaggerhub-com-0409d1f446",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/apis/{owner}/{api}/{version}/integrations/{integrationId}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -197,17 +197,17 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/domains/{owner}/{domain}"
-      },
-      {
-        "from": "swaggerhub-com-0409d1f446",
-        "kind": "EXPOSES",
         "to": "operation:get:/domains/{owner}/{domain}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
         "to": "operation:post:/domains/{owner}/{domain}"
+      },
+      {
+        "from": "swaggerhub-com-0409d1f446",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/domains/{owner}/{domain}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -227,12 +227,12 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/domains/{owner}/{domain}/{version}"
+        "to": "operation:get:/domains/{owner}/{domain}/{version}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:get:/domains/{owner}/{domain}/{version}"
+        "to": "operation:delete:/domains/{owner}/{domain}/{version}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -337,17 +337,17 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/projects/{owner}/{projectId}"
-      },
-      {
-        "from": "swaggerhub-com-0409d1f446",
-        "kind": "EXPOSES",
         "to": "operation:get:/projects/{owner}/{projectId}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
         "to": "operation:put:/projects/{owner}/{projectId}"
+      },
+      {
+        "from": "swaggerhub-com-0409d1f446",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/projects/{owner}/{projectId}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -377,11 +377,6 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/templates/{owner}/{templateId}"
-      },
-      {
-        "from": "swaggerhub-com-0409d1f446",
-        "kind": "EXPOSES",
         "to": "operation:get:/templates/{owner}/{templateId}"
       },
       {
@@ -392,17 +387,22 @@
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
+        "to": "operation:delete:/templates/{owner}/{templateId}"
+      },
+      {
+        "from": "swaggerhub-com-0409d1f446",
+        "kind": "EXPOSES",
         "to": "operation:post:/templates/{owner}/{templateId}/rename"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:delete:/templates/{owner}/{templateId}/{version}"
+        "to": "operation:get:/templates/{owner}/{templateId}/{version}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
-        "to": "operation:get:/templates/{owner}/{templateId}/{version}"
+        "to": "operation:delete:/templates/{owner}/{templateId}/{version}"
       },
       {
         "from": "swaggerhub-com-0409d1f446",
@@ -438,6 +438,516 @@
         "from": "swaggerhub-com-0409d1f446",
         "kind": "EXPOSES",
         "to": "operation:put:/templates/{owner}/{templateId}/{version}/settings/private"
+      },
+      {
+        "from": "operation:get:/apis/{owner}",
+        "kind": "RETURNS",
+        "to": "schema:ApisJson"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}",
+        "kind": "RETURNS",
+        "to": "schema:ApisJson"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/settings/default",
+        "kind": "RETURNS",
+        "to": "schema:DefaultVersion"
+      },
+      {
+        "from": "operation:put:/apis/{owner}/{api}/settings/default",
+        "kind": "ACCEPTS",
+        "to": "schema:DefaultVersion"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/clone",
+        "kind": "ACCEPTS",
+        "to": "schema:NewVersion"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/comments",
+        "kind": "ACCEPTS",
+        "to": "schema:NewComment"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/comments/batch",
+        "kind": "ACCEPTS",
+        "to": "schema:CommentsBatch"
+      },
+      {
+        "from": "operation:patch:/apis/{owner}/{api}/{version}/comments/{comment}",
+        "kind": "ACCEPTS",
+        "to": "schema:ClosableCommentPatch"
+      },
+      {
+        "from": "operation:patch:/apis/{owner}/{api}/{version}/comments/{comment}",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/comments/{comment}/replies",
+        "kind": "ACCEPTS",
+        "to": "schema:NewReply"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/comments/{comment}/replies",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:patch:/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}",
+        "kind": "ACCEPTS",
+        "to": "schema:CommentPatch"
+      },
+      {
+        "from": "operation:patch:/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/fork",
+        "kind": "ACCEPTS",
+        "to": "schema:ForkVersion"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/integrations",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationConfigurations"
+      },
+      {
+        "from": "operation:post:/apis/{owner}/{api}/{version}/integrations",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/settings/lifecycle",
+        "kind": "RETURNS",
+        "to": "schema:LifecycleSettings"
+      },
+      {
+        "from": "operation:put:/apis/{owner}/{api}/{version}/settings/lifecycle",
+        "kind": "ACCEPTS",
+        "to": "schema:LifecycleSettings"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/settings/private",
+        "kind": "RETURNS",
+        "to": "schema:VisibilitySettings"
+      },
+      {
+        "from": "operation:put:/apis/{owner}/{api}/{version}/settings/private",
+        "kind": "ACCEPTS",
+        "to": "schema:VisibilitySettings"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/standardization",
+        "kind": "RETURNS",
+        "to": "schema:StandardizationResult"
+      },
+      {
+        "from": "operation:get:/apis/{owner}/{api}/{version}/validation",
+        "kind": "RETURNS",
+        "to": "schema:ValidationResult"
+      },
+      {
+        "from": "operation:get:/domains/{owner}",
+        "kind": "RETURNS",
+        "to": "schema:ApisJson"
+      },
+      {
+        "from": "operation:get:/domains/{owner}/{domain}",
+        "kind": "RETURNS",
+        "to": "schema:ApisJson"
+      },
+      {
+        "from": "operation:get:/domains/{owner}/{domain}/settings/default",
+        "kind": "RETURNS",
+        "to": "schema:DefaultVersion"
+      },
+      {
+        "from": "operation:put:/domains/{owner}/{domain}/settings/default",
+        "kind": "ACCEPTS",
+        "to": "schema:DefaultVersion"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/clone",
+        "kind": "ACCEPTS",
+        "to": "schema:NewVersion"
+      },
+      {
+        "from": "operation:get:/domains/{owner}/{domain}/{version}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/comments",
+        "kind": "ACCEPTS",
+        "to": "schema:NewComment"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/comments/batch",
+        "kind": "ACCEPTS",
+        "to": "schema:CommentsBatch"
+      },
+      {
+        "from": "operation:patch:/domains/{owner}/{domain}/{version}/comments/{comment}",
+        "kind": "ACCEPTS",
+        "to": "schema:ClosableCommentPatch"
+      },
+      {
+        "from": "operation:patch:/domains/{owner}/{domain}/{version}/comments/{comment}",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/comments/{comment}/replies",
+        "kind": "ACCEPTS",
+        "to": "schema:NewReply"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/comments/{comment}/replies",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:patch:/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}",
+        "kind": "ACCEPTS",
+        "to": "schema:CommentPatch"
+      },
+      {
+        "from": "operation:patch:/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:post:/domains/{owner}/{domain}/{version}/fork",
+        "kind": "ACCEPTS",
+        "to": "schema:ForkVersion"
+      },
+      {
+        "from": "operation:get:/domains/{owner}/{domain}/{version}/settings/lifecycle",
+        "kind": "RETURNS",
+        "to": "schema:LifecycleSettings"
+      },
+      {
+        "from": "operation:put:/domains/{owner}/{domain}/{version}/settings/lifecycle",
+        "kind": "ACCEPTS",
+        "to": "schema:LifecycleSettings"
+      },
+      {
+        "from": "operation:get:/domains/{owner}/{domain}/{version}/settings/private",
+        "kind": "RETURNS",
+        "to": "schema:VisibilitySettings"
+      },
+      {
+        "from": "operation:put:/domains/{owner}/{domain}/{version}/settings/private",
+        "kind": "ACCEPTS",
+        "to": "schema:VisibilitySettings"
+      },
+      {
+        "from": "operation:get:/projects",
+        "kind": "RETURNS",
+        "to": "schema:ProjectsJson"
+      },
+      {
+        "from": "operation:get:/projects/{owner}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectsJson"
+      },
+      {
+        "from": "operation:post:/projects/{owner}",
+        "kind": "ACCEPTS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:get:/projects/{owner}/{projectId}",
+        "kind": "RETURNS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:put:/projects/{owner}/{projectId}",
+        "kind": "ACCEPTS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:get:/projects/{owner}/{projectId}/members",
+        "kind": "RETURNS",
+        "to": "schema:ProjectMemberList"
+      },
+      {
+        "from": "operation:put:/projects/{owner}/{projectId}/members",
+        "kind": "ACCEPTS",
+        "to": "schema:ProjectMemberList"
+      },
+      {
+        "from": "operation:get:/specs",
+        "kind": "RETURNS",
+        "to": "schema:ApisJson"
+      },
+      {
+        "from": "operation:get:/templates",
+        "kind": "RETURNS",
+        "to": "schema:TemplateWrapper"
+      },
+      {
+        "from": "operation:get:/templates/{owner}/{templateId}",
+        "kind": "RETURNS",
+        "to": "schema:ApisJson"
+      },
+      {
+        "from": "operation:get:/templates/{owner}/{templateId}/{version}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "operation:post:/templates/{owner}/{templateId}/{version}/comments/batch",
+        "kind": "ACCEPTS",
+        "to": "schema:CommentsBatch"
+      },
+      {
+        "from": "operation:post:/templates/{owner}/{templateId}/{version}/fork",
+        "kind": "ACCEPTS",
+        "to": "schema:ForkVersion"
+      },
+      {
+        "from": "operation:get:/templates/{owner}/{templateId}/{version}/settings/lifecycle",
+        "kind": "RETURNS",
+        "to": "schema:LifecycleSettings"
+      },
+      {
+        "from": "operation:put:/templates/{owner}/{templateId}/{version}/settings/lifecycle",
+        "kind": "ACCEPTS",
+        "to": "schema:LifecycleSettings"
+      },
+      {
+        "from": "operation:get:/templates/{owner}/{templateId}/{version}/settings/private",
+        "kind": "RETURNS",
+        "to": "schema:VisibilitySettings"
+      },
+      {
+        "from": "operation:put:/templates/{owner}/{templateId}/{version}/settings/private",
+        "kind": "ACCEPTS",
+        "to": "schema:VisibilitySettings"
+      },
+      {
+        "from": "schema:AmazonApiGatewayIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:AmazonIntegration"
+      },
+      {
+        "from": "schema:AmazonApiGatewayLambdaIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:AmazonIntegration"
+      },
+      {
+        "from": "schema:AmazonIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:ApiMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:ApiMetadataLink"
+      },
+      {
+        "from": "schema:ApigeeEdgeIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:ApisJson",
+        "kind": "REFERENCES",
+        "to": "schema:ApisJsonApi"
+      },
+      {
+        "from": "schema:ApisJsonApi",
+        "kind": "REFERENCES",
+        "to": "schema:ApisJsonProperty"
+      },
+      {
+        "from": "schema:AutoMockingIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:AzureApiManagementIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:AzureDevopsServicesIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:SCMIntegrationConfiguration"
+      },
+      {
+        "from": "schema:BitbucketCloudIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:SCMIntegrationConfiguration"
+      },
+      {
+        "from": "schema:BitbucketServerIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:SCMIntegrationConfiguration"
+      },
+      {
+        "from": "schema:ClosableComment",
+        "kind": "REFERENCES",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "schema:ClosableCommentPatch",
+        "kind": "REFERENCES",
+        "to": "schema:CommentPatch"
+      },
+      {
+        "from": "schema:Collaboration",
+        "kind": "REFERENCES",
+        "to": "schema:CollaborationMembership"
+      },
+      {
+        "from": "schema:Collaboration",
+        "kind": "REFERENCES",
+        "to": "schema:CollaborationTeamMembership"
+      },
+      {
+        "from": "schema:Collaboration",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationOwner"
+      },
+      {
+        "from": "schema:CollaborationMembership",
+        "kind": "REFERENCES",
+        "to": "schema:CollaborationMember"
+      },
+      {
+        "from": "schema:CollaborationTeamMembership",
+        "kind": "REFERENCES",
+        "to": "schema:CollaborationMember"
+      },
+      {
+        "from": "schema:CollaborationTeamMembership",
+        "kind": "REFERENCES",
+        "to": "schema:CollaborationMembership"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:CommentsBatch",
+        "kind": "REFERENCES",
+        "to": "schema:ClosableCommentPatch"
+      },
+      {
+        "from": "schema:CommentsBatch",
+        "kind": "REFERENCES",
+        "to": "schema:CommentPatch"
+      },
+      {
+        "from": "schema:CommentsBatch",
+        "kind": "REFERENCES",
+        "to": "schema:NewComment"
+      },
+      {
+        "from": "schema:CommentsBatch",
+        "kind": "REFERENCES",
+        "to": "schema:NewReply"
+      },
+      {
+        "from": "schema:DraftModel",
+        "kind": "REFERENCES",
+        "to": "schema:ClosableComment"
+      },
+      {
+        "from": "schema:GitHubEnterpriseIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:SCMIntegrationConfiguration"
+      },
+      {
+        "from": "schema:GitHubIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:SCMIntegrationConfiguration"
+      },
+      {
+        "from": "schema:GitLabIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:SCMIntegrationConfiguration"
+      },
+      {
+        "from": "schema:IBMApiConnectIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:IntegrationConfigurationSummary",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:IntegrationConfigurations",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfigurationSummary"
+      },
+      {
+        "from": "schema:NewComment",
+        "kind": "REFERENCES",
+        "to": "schema:NewReply"
+      },
+      {
+        "from": "schema:ProjectMemberList",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectMember"
+      },
+      {
+        "from": "schema:ProjectsJson",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:SCMIntegrationConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
+      },
+      {
+        "from": "schema:StandardizationError",
+        "kind": "REFERENCES",
+        "to": "schema:StandardizationRuleSeverity"
+      },
+      {
+        "from": "schema:StandardizationResult",
+        "kind": "REFERENCES",
+        "to": "schema:StandardizationError"
+      },
+      {
+        "from": "schema:ValidationResult",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationErrors"
+      },
+      {
+        "from": "schema:WebhookIntegration",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationConfiguration"
       }
     ],
     "nodes": [
@@ -447,19 +957,95 @@
       },
       {
         "deprecated": false,
+        "description": "This is a convenience alias for `GET /specs?specType=API`.",
         "id": "operation:get:/apis",
         "kind": "operation",
         "method": "get",
         "name": "searchApis",
+        "parameters": [
+          {
+            "description": "Free text query to match",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Matches against published state of the spec: * UNPUBLISHED - spec is a draft, a work in progress * PUBLISHED - spec is a stable version ready for consuming fro…",
+            "enum": [
+              "ALL",
+              "PUBLISHED",
+              "UNPUBLISHED"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "NAME",
+            "description": "Sort criteria of result set: * NAME * UPDATED * CREATED * OWNER * BEST_MATCH - by relevance * TITLE - by `info.title`",
+            "enum": [
+              "NAME",
+              "UPDATED",
+              "CREATED",
+              "OWNER",
+              "BEST_MATCH",
+              "TITLE"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apis",
         "pointer": "#/paths/~1apis/get",
+        "responses": [
+          {
+            "status": "303"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Search APIs"
+        "summary": "Search APIs",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -467,30 +1053,78 @@
         "kind": "operation",
         "method": "get",
         "name": "getOwnerApis",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "NAME",
+            "description": "Sort criteria of result set: * NAME * UPDATED * CREATED * OWNER * BEST_MATCH - by relevance * TITLE - by `info.title`",
+            "enum": [
+              "NAME",
+              "UPDATED",
+              "CREATED",
+              "OWNER",
+              "BEST_MATCH",
+              "TITLE"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}",
         "pointer": "#/paths/~1apis~1{owner}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApisJson"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get a list of APIs of the specified owner"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/apis/{owner}/{api}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteApi",
-        "path": "/apis/{owner}/{api}",
-        "pointer": "#/paths/~1apis~1{owner}~1{api}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete an API"
+        "summary": "Get a list of APIs of the specified owner",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -498,61 +1132,294 @@
         "kind": "operation",
         "method": "get",
         "name": "getApiVersions",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApisJson"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get a list of API versions"
+        "summary": "Get a list of API versions",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this operation to create a new API or update an existing API by uploading its OpenAPI definition in YAML or JSON format.",
         "id": "operation:post:/apis/{owner}/{api}",
         "kind": "operation",
         "method": "post",
         "name": "saveDefinition",
+        "parameters": [
+          {
+            "description": "API owner name (organization or user name, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Whether to make the API private (`true`) or public (`false`)",
+            "in": "query",
+            "name": "isPrivate",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "API version to create or update.",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Force update",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apis/{owner}/{api}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/yaml"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "205"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create or update an API"
+        "summary": "Create or update an API",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/apis/{owner}/{api}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteApi",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apis/{owner}/{api}",
+        "pointer": "#/paths/~1apis~1{owner}~1{api}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Delete an API",
+        "tags": [
+          "APIs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The new name must follow the [naming rules](https://support.smartbear.com/swaggerhub/docs/apis/creating-api.html).",
         "id": "operation:post:/apis/{owner}/{api}/rename",
         "kind": "operation",
         "method": "post",
         "name": "renameApi",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "New name",
+            "in": "query",
+            "name": "newName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/rename",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1rename/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Rename an API"
+        "summary": "Rename an API",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation returns the version identifier, such as `1.0.0`.",
         "id": "operation:get:/apis/{owner}/{api}/settings/default",
         "kind": "operation",
         "method": "get",
         "name": "getApiDefaultVersion",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/settings/default",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1settings~1default/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DefaultVersion"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the default version of an API"
+        "summary": "Get the default version of an API",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -560,29 +1427,55 @@
         "kind": "operation",
         "method": "put",
         "name": "setApiDefaultVersion",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/settings/default",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1settings~1default/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DefaultVersion"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Set the default API version"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/apis/{owner}/{api}/{version}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteApiVersion",
-        "path": "/apis/{owner}/{api}/{version}",
-        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete an API version"
+        "summary": "Set the default API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -590,30 +1483,193 @@
         "kind": "operation",
         "method": "get",
         "name": "getDefinition",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set to true to get the resolved version of the API definition.",
+            "in": "query",
+            "name": "resolved",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "If set to `true`, it creates models from inline schemas in OpenAPI definition.",
+            "in": "query",
+            "name": "flatten",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the OpenAPI definition of the specified API version"
+        "summary": "Get the OpenAPI definition of the specified API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/apis/{owner}/{api}/{version}/clone",
+        "id": "operation:delete:/apis/{owner}/{api}/{version}",
         "kind": "operation",
-        "method": "post",
-        "name": "cloneApi",
-        "path": "/apis/{owner}/{api}/{version}/clone",
-        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1clone/post",
+        "method": "delete",
+        "name": "deleteApiVersion",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apis/{owner}/{api}/{version}",
+        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create a new API version"
+        "summary": "Delete an API version",
+        "tags": [
+          "APIs"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this operation to clone an existing API version as a new version.",
+        "id": "operation:post:/apis/{owner}/{api}/{version}/clone",
+        "kind": "operation",
+        "method": "post",
+        "name": "cloneApi",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version to clone (case-sensitive)",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apis/{owner}/{api}/{version}/clone",
+        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1clone/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewVersion"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Create a new API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -621,14 +1677,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getApiCommentsV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClosableComment[]"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get comments for the specified API version"
+        "summary": "Get comments for the specified API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -636,14 +1737,66 @@
         "kind": "operation",
         "method": "post",
         "name": "addApiCommentV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewComment"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ClosableComment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Add a new comment"
+        "summary": "Add a new comment",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -651,14 +1804,65 @@
         "kind": "operation",
         "method": "post",
         "name": "updateApiCommentsV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/batch",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CommentsBatch"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Bulk update comments"
+        "summary": "Bulk update comments",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -666,14 +1870,62 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteApiCommentV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/{comment}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1{comment}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Delete a comment"
+        "summary": "Delete a comment",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -681,14 +1933,73 @@
         "kind": "operation",
         "method": "patch",
         "name": "updateApiCommentV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/{comment}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1{comment}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ClosableCommentPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClosableComment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update a comment"
+        "summary": "Update a comment",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -696,14 +2007,73 @@
         "kind": "operation",
         "method": "post",
         "name": "addApiCommentReplyV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/{comment}/replies",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1{comment}~1replies/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewReply"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Comment[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Reply to a comment"
+        "summary": "Reply to a comment",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -711,14 +2081,69 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteApiCommentReplyV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Reply identifier",
+            "in": "path",
+            "name": "reply",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1{comment}~1replies~1{reply}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Delete a comment reply"
+        "summary": "Delete a comment reply",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -726,14 +2151,80 @@
         "kind": "operation",
         "method": "patch",
         "name": "updateApiCommentReplyV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Reply identifier",
+            "in": "path",
+            "name": "reply",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/{comment}/replies/{reply}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1{comment}~1replies~1{reply}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CommentPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update a comment reply"
+        "summary": "Update a comment reply",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -741,134 +2232,641 @@
         "kind": "operation",
         "method": "put",
         "name": "setApiCommentStatusV2",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment status",
+            "enum": [
+              "OPEN",
+              "RESOLVED"
+            ],
+            "in": "path",
+            "name": "status",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/comments/{comment}/status/{status}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1comments~1{comment}~1status~1{status}/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Resolve or reopen a comment"
+        "summary": "Resolve or reopen a comment",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a [fork](https://support.smartbear.com/swaggerhub/docs/apis/forking-api.html) of the specified API definition and version.",
         "id": "operation:post:/apis/{owner}/{api}/{version}/fork",
         "kind": "operation",
         "method": "post",
         "name": "forkApi",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/fork",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1fork/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ForkVersion"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Fork an API"
+        "summary": "Fork an API",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The returned information includes integration types, names, unique IDs, and enabled/disabled status.",
         "id": "operation:get:/apis/{owner}/{api}/{version}/integrations",
         "kind": "operation",
         "method": "get",
         "name": "getIntegrations",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/integrations",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationConfigurations"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get all integrations configured for the specified API version"
+        "summary": "Get all integrations configured for the specified API version",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this operation to configure an integration for a specific API version.",
         "id": "operation:post:/apis/{owner}/{api}/{version}/integrations",
         "kind": "operation",
         "method": "post",
         "name": "createIntegration",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/integrations",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "IntegrationConfiguration"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create an integration for the specified API and version"
+        "summary": "Create an integration for the specified API and version",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteIntegration",
-        "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}",
-        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete an integration"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the configuration of the specified integration.",
         "id": "operation:get:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
         "kind": "operation",
         "method": "get",
         "name": "getIntegrationById",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Integration ID (case-sensitive).",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationConfiguration"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get integration settings"
+        "summary": "Get integration settings",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchIntegration",
-        "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}",
-        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}/patch",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Partially update integration settings"
-      },
-      {
-        "deprecated": false,
+        "description": "Updates integration settings for the specified API and integration ID.",
         "id": "operation:put:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
         "kind": "operation",
         "method": "put",
         "name": "updateIntegration",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Integration ID (case-sensitive).",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update integration settings"
+        "summary": "Update integration settings",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an existing integration specified by its ID.",
+        "id": "operation:delete:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteIntegration",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Integration ID (case-sensitive).",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}",
+        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Delete an integration",
+        "tags": [
+          "Integrations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this operation to partially update integration settings for the specified API and integration ID.",
+        "id": "operation:patch:/apis/{owner}/{api}/{version}/integrations/{integrationId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchIntegration",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Integration ID (case-sensitive).",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
+        "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}",
+        "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Partially update integration settings",
+        "tags": [
+          "Integrations"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this operation to trigger an existing integration.",
         "id": "operation:post:/apis/{owner}/{api}/{version}/integrations/{integrationId}/execute",
         "kind": "operation",
         "method": "post",
         "name": "executeIntegration",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Integration ID (case-sensitive).",
+            "in": "path",
+            "name": "integrationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Commit message for source control integrations",
+            "in": "query",
+            "name": "commitMessage",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/integrations/{integrationId}/execute",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1integrations~1{integrationId}~1execute/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "205"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Run an integration"
+        "summary": "Run an integration",
+        "tags": [
+          "Integrations"
+        ]
       },
       {
         "deprecated": false,
@@ -876,14 +2874,53 @@
         "kind": "operation",
         "method": "get",
         "name": "getLifecycleSettings",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/settings/lifecycle",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1settings~1lifecycle/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LifecycleSettings"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get the published status for the specified API and version"
+        "summary": "Get the published status for the specified API and version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -891,14 +2928,76 @@
         "kind": "operation",
         "method": "put",
         "name": "setLifecycleSettings",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "To publish an API that references _unpublished_ domains, this parameter must be `true`.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/settings/lifecycle",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1settings~1lifecycle/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LifecycleSettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "424"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Publish or unpublish an API version"
+        "summary": "Publish or unpublish an API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -906,14 +3005,53 @@
         "kind": "operation",
         "method": "get",
         "name": "getPrivateSettings",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/settings/private",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1settings~1private/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VisibilitySettings"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get the visibility (public or private) of API version"
+        "summary": "Get the visibility (public or private) of API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -921,14 +3059,62 @@
         "kind": "operation",
         "method": "put",
         "name": "setPrivateSettings",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/settings/private",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1settings~1private/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VisibilitySettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Set the visibility (public or private) of an API version"
+        "summary": "Set the visibility (public or private) of an API version",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -936,14 +3122,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getStandardizationErrors",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/standardization",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1standardization/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StandardizationResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Retrieve the standardization errors for a given API definition"
+        "summary": "Retrieve the standardization errors for a given API definition",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -951,15 +3175,70 @@
         "kind": "operation",
         "method": "get",
         "name": "getJsonDefinition",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set to true to get the resolved version of the API definition.",
+            "in": "query",
+            "name": "resolved",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "If set to `true`, it creates models from inline schemas in OpenAPI definition.",
+            "in": "query",
+            "name": "flatten",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/swagger.json",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1swagger.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the OpenAPI definition for the specified API version in JSON format"
+        "summary": "Get the OpenAPI definition for the specified API version in JSON format",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
@@ -967,46 +3246,217 @@
         "kind": "operation",
         "method": "get",
         "name": "getYamlDefinition",
+        "parameters": [
+          {
+            "description": "API owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Set to true to get the resolved version of the API definition.",
+            "in": "query",
+            "name": "resolved",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "If set to `true`, it creates models from inline schemas in OpenAPI definition.",
+            "in": "query",
+            "name": "flatten",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/swagger.yaml",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1swagger.yaml/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the OpenAPI definition for the specified API version in YAML format"
+        "summary": "Get the OpenAPI definition for the specified API version in YAML format",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": true,
+        "description": "**Note:** This endpoint is deprecated.",
         "id": "operation:get:/apis/{owner}/{api}/{version}/validation",
         "kind": "operation",
         "method": "get",
         "name": "getValidation",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API name (case-sensitive)",
+            "in": "path",
+            "name": "api",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apis/{owner}/{api}/{version}/validation",
         "pointer": "#/paths/~1apis~1{owner}~1{api}~1{version}~1validation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValidationResult"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Deprecated Get API Standardization errors and warnings"
+        "summary": "Deprecated Get API Standardization errors and warnings",
+        "tags": [
+          "APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is a convenience alias for `GET /specs?specType=DOMAIN`.",
         "id": "operation:get:/domains",
         "kind": "operation",
         "method": "get",
         "name": "searchDomains",
+        "parameters": [
+          {
+            "description": "Free text query to match",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Matches against published state of the spec: * UNPUBLISHED - spec is a draft, a work in progress * PUBLISHED - spec is a stable version ready for consuming fro…",
+            "enum": [
+              "ALL",
+              "PUBLISHED",
+              "UNPUBLISHED"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "NAME",
+            "description": "Sort criteria of result set: * NAME * UPDATED * CREATED * OWNER * BEST_MATCH - by relevance * TITLE - by `info.title`",
+            "enum": [
+              "NAME",
+              "UPDATED",
+              "CREATED",
+              "OWNER",
+              "BEST_MATCH",
+              "TITLE"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains",
         "pointer": "#/paths/~1domains/get",
+        "responses": [
+          {
+            "status": "303"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Search domains"
+        "summary": "Search domains",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1014,30 +3464,78 @@
         "kind": "operation",
         "method": "get",
         "name": "getOwnerDomains",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "NAME",
+            "description": "Sort criteria of result set: * NAME * UPDATED * CREATED * OWNER * BEST_MATCH - by relevance * TITLE - by `info.title`",
+            "enum": [
+              "NAME",
+              "UPDATED",
+              "CREATED",
+              "OWNER",
+              "BEST_MATCH",
+              "TITLE"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}",
         "pointer": "#/paths/~1domains~1{owner}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApisJson"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get a list of domains of the specified owner"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/domains/{owner}/{domain}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDomain",
-        "path": "/domains/{owner}/{domain}",
-        "pointer": "#/paths/~1domains~1{owner}~1{domain}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete a domain"
+        "summary": "Get a list of domains of the specified owner",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1045,15 +3543,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainVersions",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApisJson"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get a list of domain versions"
+        "summary": "Get a list of domain versions",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1061,45 +3588,262 @@
         "kind": "operation",
         "method": "post",
         "name": "saveDomainDefinition",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Specifies whether the domain has to be private",
+            "in": "query",
+            "name": "isPrivate",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Domain version.",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Force update",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/domains/{owner}/{domain}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/yaml"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "205"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create or update a domain"
+        "summary": "Create or update a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/domains/{owner}/{domain}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDomain",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If this domain is referenced from other APIs and domains, this parameter must be `true`.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/domains/{owner}/{domain}",
+        "pointer": "#/paths/~1domains~1{owner}~1{domain}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "424"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Delete a domain",
+        "tags": [
+          "Domains"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The new name must follow the [naming rules](https://support.smartbear.com/swaggerhub/docs/apis/creating-api.html).",
         "id": "operation:post:/domains/{owner}/{domain}/rename",
         "kind": "operation",
         "method": "post",
         "name": "renameDomain",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "New name",
+            "in": "query",
+            "name": "newName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If this domain is referenced from other APIs and domains, this parameter must be true.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/rename",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1rename/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "424",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Rename a domain"
+        "summary": "Rename a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation returns the version identifier, such as `1.0.0`.",
         "id": "operation:get:/domains/{owner}/{domain}/settings/default",
         "kind": "operation",
         "method": "get",
         "name": "getDomainDefaultVersion",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/settings/default",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1settings~1default/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DefaultVersion"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the default version of a domain"
+        "summary": "Get the default version of a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1107,29 +3851,55 @@
         "kind": "operation",
         "method": "put",
         "name": "setDomainDefaultVersion",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/settings/default",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1settings~1default/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DefaultVersion"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Set the default version for a domain"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/domains/{owner}/{domain}/{version}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDomainVersion",
-        "path": "/domains/{owner}/{domain}/{version}",
-        "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete a domain version"
+        "summary": "Set the default version for a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1137,30 +3907,185 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainDefinition",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the OpenAPI definition of the specified domain version"
+        "summary": "Get the OpenAPI definition of the specified domain version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/domains/{owner}/{domain}/{version}/clone",
+        "id": "operation:delete:/domains/{owner}/{domain}/{version}",
         "kind": "operation",
-        "method": "post",
-        "name": "cloneDomain",
-        "path": "/domains/{owner}/{domain}/{version}/clone",
-        "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1clone/post",
+        "method": "delete",
+        "name": "deleteDomainVersion",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If this domain version is referenced from other APIs and domains, this parameter must be `true`.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/domains/{owner}/{domain}/{version}",
+        "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "424"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create a new domain version"
+        "summary": "Delete a domain version",
+        "tags": [
+          "Domains"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this operation to clone an existing domain version as a new version.",
+        "id": "operation:post:/domains/{owner}/{domain}/{version}/clone",
+        "kind": "operation",
+        "method": "post",
+        "name": "cloneDomain",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version to clone (case-sensitive)",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/domains/{owner}/{domain}/{version}/clone",
+        "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1clone/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewVersion"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Create a new domain version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1168,14 +4093,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainCommentsV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClosableComment[]"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get comments for the specified domain version"
+        "summary": "Get comments for the specified domain version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1183,14 +4153,66 @@
         "kind": "operation",
         "method": "post",
         "name": "addDomainCommentV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewComment"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClosableComment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Add a new comment"
+        "summary": "Add a new comment",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1198,14 +4220,65 @@
         "kind": "operation",
         "method": "post",
         "name": "updateDomainCommentsV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/batch",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CommentsBatch"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Bulk update comments"
+        "summary": "Bulk update comments",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1213,14 +4286,62 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteDomainCommentV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/{comment}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1{comment}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Delete a comment"
+        "summary": "Delete a comment",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1228,14 +4349,73 @@
         "kind": "operation",
         "method": "patch",
         "name": "updateDomainCommentV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/{comment}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1{comment}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ClosableCommentPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClosableComment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update a comment"
+        "summary": "Update a comment",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1243,14 +4423,73 @@
         "kind": "operation",
         "method": "post",
         "name": "addDomainCommentReplyV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/{comment}/replies",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1{comment}~1replies/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NewReply"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment[]"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Reply to a comment"
+        "summary": "Reply to a comment",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1258,14 +4497,69 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteDomainCommentReplyV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Reply identifier",
+            "in": "path",
+            "name": "reply",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1{comment}~1replies~1{reply}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Delete a comment reply"
+        "summary": "Delete a comment reply",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1273,14 +4567,80 @@
         "kind": "operation",
         "method": "patch",
         "name": "updateDomainCommentReplyV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Reply identifier",
+            "in": "path",
+            "name": "reply",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/{comment}/replies/{reply}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1{comment}~1replies~1{reply}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CommentPatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update a comment reply"
+        "summary": "Update a comment reply",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1288,14 +4648,76 @@
         "kind": "operation",
         "method": "put",
         "name": "setDomainCommentStatusV2",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment identifier",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Comment status",
+            "enum": [
+              "OPEN",
+              "RESOLVED"
+            ],
+            "in": "path",
+            "name": "status",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/comments/{comment}/status/{status}",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1comments~1{comment}~1status~1{status}/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Resolve or reopen a comment"
+        "summary": "Resolve or reopen a comment",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1303,15 +4725,51 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainJsonDefinition",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/domain.json",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1domain.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the OpenAPI definition for the specified domain version in JSON format"
+        "summary": "Get the OpenAPI definition for the specified domain version in JSON format",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1319,30 +4777,121 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainYamlDefinition",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/domain.yaml",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1domain.yaml/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Get the OpenAPI definition for the specified domain version in YAML format"
+        "summary": "Get the OpenAPI definition for the specified domain version in YAML format",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a [fork](https://support.smartbear.com/swaggerhub/docs/apis/forking-api.html) of the specified domain definition and version.",
         "id": "operation:post:/domains/{owner}/{domain}/{version}/fork",
         "kind": "operation",
         "method": "post",
         "name": "forkDomain",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/fork",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1fork/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ForkVersion"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Fork a domain"
+        "summary": "Fork a domain",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1350,14 +4899,53 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainLifecycleSettings",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/settings/lifecycle",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1settings~1lifecycle/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LifecycleSettings"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get the published status for the specified domain and version"
+        "summary": "Get the published status for the specified domain and version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1365,14 +4953,73 @@
         "kind": "operation",
         "method": "put",
         "name": "setDomainLifecycleSettings",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "To publish a domain that references other _unpublished_ domains, this parameter must be `true`.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/settings/lifecycle",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1settings~1lifecycle/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LifecycleSettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "424"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Publish or unpublish a domain version"
+        "summary": "Publish or unpublish a domain version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1380,14 +5027,53 @@
         "kind": "operation",
         "method": "get",
         "name": "getDomainPrivateSettings",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/settings/private",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1settings~1private/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VisibilitySettings"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get the visibility (public or private) of a domain version"
+        "summary": "Get the visibility (public or private) of a domain version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
@@ -1395,29 +5081,152 @@
         "kind": "operation",
         "method": "put",
         "name": "setDomainPrivateSettings",
+        "parameters": [
+          {
+            "description": "Domain owner (organization or user, case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Domain name (case-sensitive)",
+            "in": "path",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "To change the visibility from _public_ to _private_ in case this domain is referenced from other _public_ definitions, this parameter must be `true`.",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/domains/{owner}/{domain}/{version}/settings/private",
         "pointer": "#/paths/~1domains~1{owner}~1{domain}~1{version}~1settings~1private/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VisibilitySettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "424"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Set the visibility (public or private) of a domain version"
+        "summary": "Set the visibility (public or private) of a domain version",
+        "tags": [
+          "Domains"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all projects that the authenticating user has access to.",
         "id": "operation:get:/projects",
         "kind": "operation",
         "method": "get",
         "name": "getUserProjects",
+        "parameters": [
+          {
+            "default": "false - DELETE",
+            "description": "Return the project information excluding APIs and domains",
+            "in": "query",
+            "name": "nameOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "NAME",
+            "description": "Sort criteria or result set: * NAME * OWNER",
+            "enum": [
+              "NAME",
+              "OWNER"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects",
         "pointer": "#/paths/~1projects/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectsJson"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get all projects that a user has access to"
+        "summary": "Get all projects that a user has access to",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1425,14 +5234,75 @@
         "kind": "operation",
         "method": "get",
         "name": "getOrgProjectsV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false - DELETE",
+            "description": "Return the project information excluding APIs and domains",
+            "in": "query",
+            "name": "nameOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}",
         "pointer": "#/paths/~1projects~1{owner}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectsJson"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get all projects of an organization"
+        "summary": "Get all projects of an organization",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1440,29 +5310,54 @@
         "kind": "operation",
         "method": "post",
         "name": "createProject",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}",
         "pointer": "#/paths/~1projects~1{owner}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Project"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create a project in an organization"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/projects/{owner}/{projectId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteProjectV2",
-        "path": "/projects/{owner}/{projectId}",
-        "pointer": "#/paths/~1projects~1{owner}~1{projectId}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete a project"
+        "summary": "Create a project in an organization",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1470,29 +5365,158 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project name (case-sensitive)",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}/{projectId}",
         "pointer": "#/paths/~1projects~1{owner}~1{projectId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Project"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get project information"
+        "summary": "Get project information",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this operation to update an existing project, for example, add or remove APIs, or change the project description.",
         "id": "operation:put:/projects/{owner}/{projectId}",
         "kind": "operation",
         "method": "put",
         "name": "saveProjectV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project name (case-sensitive)",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}/{projectId}",
         "pointer": "#/paths/~1projects~1{owner}~1{projectId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Project"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update a project"
+        "summary": "Update a project",
+        "tags": [
+          "Projects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/projects/{owner}/{projectId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteProjectV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project name (case-sensitive)",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/projects/{owner}/{projectId}",
+        "pointer": "#/paths/~1projects~1{owner}~1{projectId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Delete a project",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1500,44 +5524,174 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectMembersV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project name (case-sensitive)",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}/{projectId}/members",
         "pointer": "#/paths/~1projects~1{owner}~1{projectId}~1members/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectMemberList"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Get project members"
+        "summary": "Get project members",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When updating a project, the `members` list _replaces_ the existing one.",
         "id": "operation:put:/projects/{owner}/{projectId}/members",
         "kind": "operation",
         "method": "put",
         "name": "updateProjectMembersV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project name (case-sensitive)",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}/{projectId}/members",
         "pointer": "#/paths/~1projects~1{owner}~1{projectId}~1members/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProjectMemberList"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update a project's members list"
+        "summary": "Update a project's members list",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this operation to add a single API or domain to the specified project.",
         "id": "operation:put:/projects/{owner}/{projectId}/{specType}/{name}",
         "kind": "operation",
         "method": "put",
         "name": "addSpecToProjectV2",
+        "parameters": [
+          {
+            "description": "Organization name (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project name (case-sensitive)",
+            "in": "path",
+            "name": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Definition type - `apis` or `domains`.",
+            "enum": [
+              "apis",
+              "domains"
+            ],
+            "in": "path",
+            "name": "specType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of an API or domain that you want to add to the project.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{owner}/{projectId}/{specType}/{name}",
         "pointer": "#/paths/~1projects~1{owner}~1{projectId}~1{specType}~1{name}/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Add an API or domain to a project"
+        "summary": "Add an API or domain to a project",
+        "tags": [
+          "Projects"
+        ]
       },
       {
         "deprecated": false,
@@ -1545,15 +5699,127 @@
         "kind": "operation",
         "method": "get",
         "name": "searchApisAndDomains",
+        "parameters": [
+          {
+            "default": "ANY",
+            "description": "Type of definitions to search: * API - APIs only * DOMAIN - domains only * TEMPLATE - templates only * ANY - APIs, domains, and templates",
+            "enum": [
+              "API",
+              "DOMAIN",
+              "TEMPLATE",
+              "ANY"
+            ],
+            "in": "query",
+            "name": "specType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ANY",
+            "description": "The visibility of a definition in SwaggerHub: * PUBLIC - can be viewed by anyone * PRIVATE - can only be viewed by you or your organization and those that you…",
+            "enum": [
+              "PUBLIC",
+              "PRIVATE",
+              "ANY"
+            ],
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Matches against published state of the spec: * UNPUBLISHED - spec is a draft, a work in progress * PUBLISHED - spec is a stable version ready for consuming fro…",
+            "enum": [
+              "ALL",
+              "PUBLISHED",
+              "UNPUBLISHED"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API or domain owner.",
+            "in": "query",
+            "name": "owner",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Free text query to match",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Page to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Number of results per page (1 ..",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "NAME",
+            "description": "Sort criteria of result set: * NAME * UPDATED * CREATED * OWNER * BEST_MATCH - by relevance * TITLE - by `info.title`",
+            "enum": [
+              "NAME",
+              "UPDATED",
+              "CREATED",
+              "OWNER",
+              "BEST_MATCH",
+              "TITLE"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Sort order",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/specs",
         "pointer": "#/paths/~1specs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApisJson"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Retrieve a list of currently defined APIs, domains, and templates in APIs.json format"
+        "summary": "Retrieve a list of currently defined APIs, domains, and templates in APIs.json format",
+        "tags": [
+          "APIs",
+          "Domains",
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1561,29 +5827,33 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplates",
+        "parameters": [
+          {
+            "description": "Owner name",
+            "in": "query",
+            "name": "owner",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates",
         "pointer": "#/paths/~1templates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplateWrapper"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Retrieve a list of templates for an owner"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/templates/{owner}/{templateId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTemplate",
-        "path": "/templates/{owner}/{templateId}",
-        "pointer": "#/paths/~1templates~1{owner}~1{templateId}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete a template"
+        "summary": "Retrieve a list of templates for an owner",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1591,30 +5861,186 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplateVersions",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApisJson"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           },
           {}
         ],
-        "summary": "Retrieve an APIs.json listing for all template versions for an owner and template"
+        "summary": "Retrieve an APIs.json listing for all template versions for an owner and template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Saves the provided template definition; the owner must match the token owner.",
         "id": "operation:post:/templates/{owner}/{templateId}",
         "kind": "operation",
         "method": "post",
         "name": "saveTemplateDefinition",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Defines whether the API or template has to be private",
+            "in": "query",
+            "name": "isPrivate",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Template version to create or update.",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Force update",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The project to add the API, domain, or template to",
+            "in": "query",
+            "name": "projectName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/yaml"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "205"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "415"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create or update a template"
+        "summary": "Create or update a template",
+        "tags": [
+          "Templates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/templates/{owner}/{templateId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTemplate",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/templates/{owner}/{templateId}",
+        "pointer": "#/paths/~1templates~1{owner}~1{templateId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Delete a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1622,29 +6048,55 @@
         "kind": "operation",
         "method": "post",
         "name": "renameTemplate",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "New name",
+            "in": "query",
+            "name": "newName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/rename",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1rename/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Rename a template"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/templates/{owner}/{templateId}/{version}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTemplateVersion",
-        "path": "/templates/{owner}/{templateId}/{version}",
-        "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}/delete",
-        "security": [
-          {
-            "TokenSecured": []
-          }
-        ],
-        "summary": "Delete a particular version of a template"
+        "summary": "Rename a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1652,14 +6104,111 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplateDefinition",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If set to `true`, it creates models from inline schemas in OpenAPI definition.",
+            "in": "query",
+            "name": "flatten",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Retrieve a template definition"
+        "summary": "Retrieve a template definition",
+        "tags": [
+          "Templates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/templates/{owner}/{templateId}/{version}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTemplateVersion",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/templates/{owner}/{templateId}/{version}",
+        "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "TokenSecured": []
+          }
+        ],
+        "summary": "Delete a particular version of a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1667,14 +6216,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplateComments",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/comments",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClosableComment[]"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Return the list of comments for a template"
+        "summary": "Return the list of comments for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1682,14 +6276,65 @@
         "kind": "operation",
         "method": "post",
         "name": "updateTemplateComments",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/comments/batch",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1comments~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CommentsBatch"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update the list of comments for a template"
+        "summary": "Update the list of comments for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1697,14 +6342,62 @@
         "kind": "operation",
         "method": "post",
         "name": "forkTemplate",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/fork",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1fork/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ForkVersion"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Create a fork for a template"
+        "summary": "Create a fork for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1712,14 +6405,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplateLifecycleSettings",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/settings/lifecycle",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1settings~1lifecycle/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LifecycleSettings"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Retrieve lifecycle settings for a template"
+        "summary": "Retrieve lifecycle settings for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1727,14 +6456,69 @@
         "kind": "operation",
         "method": "put",
         "name": "setTemplateLifecycleSettings",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Force update",
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/settings/lifecycle",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1settings~1lifecycle/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LifecycleSettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Update lifecycle settings for a template"
+        "summary": "Update lifecycle settings for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1742,14 +6526,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getTemplatePrivateSettings",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/settings/private",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1settings~1private/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VisibilitySettings"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "TokenSecured": []
           }
         ],
-        "summary": "Retrieve visibility settings for a template"
+        "summary": "Retrieve visibility settings for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -1757,285 +6577,409 @@
         "kind": "operation",
         "method": "put",
         "name": "setTemplatePrivateSettings",
+        "parameters": [
+          {
+            "description": "API, domain, or template owner identifier (case-sensitive)",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Template identifier",
+            "in": "path",
+            "name": "templateId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Version identifier",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{owner}/{templateId}/{version}/settings/private",
         "pointer": "#/paths/~1templates~1{owner}~1{templateId}~1{version}~1settings~1private/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VisibilitySettings"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update visibility settings for a template"
+        "summary": "Update visibility settings for a template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
+        "description": "Configuration details for the [Amazon API Gateway](https://support.smartbear.com/swaggerhub/docs/integrations/amazon-api-gateway.html) integration",
         "id": "schema:AmazonApiGatewayIntegration",
         "kind": "schema",
-        "name": "AmazonApiGatewayIntegration"
+        "name": "AmazonApiGatewayIntegration",
+        "type": "AmazonIntegration|object"
       },
       {
+        "description": "Configuration details for the [Amazon API Gateway Lambda Sync](https://support.smartbear.com/swaggerhub/docs/integrations/amazon-api-gateway-lambda-sync.html)…",
         "id": "schema:AmazonApiGatewayLambdaIntegration",
         "kind": "schema",
-        "name": "AmazonApiGatewayLambdaIntegration"
+        "name": "AmazonApiGatewayLambdaIntegration",
+        "type": "AmazonIntegration|object"
       },
       {
+        "description": "Common configuration details for Amazon integrations",
         "id": "schema:AmazonIntegration",
         "kind": "schema",
-        "name": "AmazonIntegration"
+        "name": "AmazonIntegration",
+        "type": "IntegrationConfiguration|object"
       },
       {
         "id": "schema:ApiMetadata",
         "kind": "schema",
-        "name": "ApiMetadata"
+        "name": "ApiMetadata",
+        "type": "object"
       },
       {
         "id": "schema:ApiMetadataLink",
         "kind": "schema",
-        "name": "ApiMetadataLink"
+        "name": "ApiMetadataLink",
+        "type": "object"
       },
       {
+        "description": "The API definition could not be found",
         "id": "schema:ApiNotFound",
         "kind": "schema",
         "name": "ApiNotFound"
       },
       {
+        "description": "Configuration details for the [Apigee Edge](https://support.smartbear.com/swaggerhub/docs/integrations/apigee-edge.html) integration",
         "id": "schema:ApigeeEdgeIntegration",
         "kind": "schema",
-        "name": "ApigeeEdgeIntegration"
+        "name": "ApigeeEdgeIntegration",
+        "type": "IntegrationConfiguration|object"
       },
       {
         "id": "schema:ApisJson",
         "kind": "schema",
-        "name": "ApisJson"
+        "name": "ApisJson",
+        "type": "object"
       },
       {
         "id": "schema:ApisJsonApi",
         "kind": "schema",
-        "name": "ApisJsonApi"
+        "name": "ApisJsonApi",
+        "type": "object"
       },
       {
+        "description": "An API property.",
         "id": "schema:ApisJsonProperty",
         "kind": "schema",
-        "name": "ApisJsonProperty"
+        "name": "ApisJsonProperty",
+        "type": "object"
       },
       {
+        "description": "Configuration details for the [API Auto Mocking](https://support.smartbear.com/swaggerhub/docs/integrations/api-auto-mocking.html) integration",
         "id": "schema:AutoMockingIntegration",
         "kind": "schema",
-        "name": "AutoMockingIntegration"
+        "name": "AutoMockingIntegration",
+        "type": "IntegrationConfiguration|object"
       },
       {
+        "description": "Configuration details for the [Azure API Management](https://support.smartbear.com/swaggerhub/docs/integrations/azure-api-management.html) integration",
         "id": "schema:AzureApiManagementIntegration",
         "kind": "schema",
-        "name": "AzureApiManagementIntegration"
+        "name": "AzureApiManagementIntegration",
+        "type": "IntegrationConfiguration|object"
       },
       {
+        "description": "Configuration details for the Azure DevOps Services integration",
         "id": "schema:AzureDevopsServicesIntegration",
         "kind": "schema",
-        "name": "AzureDevopsServicesIntegration"
+        "name": "AzureDevopsServicesIntegration",
+        "type": "SCMIntegrationConfiguration|object"
       },
       {
+        "description": "Bad request",
         "id": "schema:BadRequest",
         "kind": "schema",
         "name": "BadRequest"
       },
       {
+        "description": "Configuration details for the Bitbucket Cloud integration",
         "id": "schema:BitbucketCloudIntegration",
         "kind": "schema",
-        "name": "BitbucketCloudIntegration"
+        "name": "BitbucketCloudIntegration",
+        "type": "SCMIntegrationConfiguration|object"
       },
       {
+        "description": "Configuration details for the Bitbucket Server integration",
         "id": "schema:BitbucketServerIntegration",
         "kind": "schema",
-        "name": "BitbucketServerIntegration"
+        "name": "BitbucketServerIntegration",
+        "type": "SCMIntegrationConfiguration|object"
       },
       {
         "id": "schema:ClosableComment",
         "kind": "schema",
-        "name": "ClosableComment"
+        "name": "ClosableComment",
+        "type": "Comment|object"
       },
       {
         "id": "schema:ClosableCommentPatch",
         "kind": "schema",
-        "name": "ClosableCommentPatch"
+        "name": "ClosableCommentPatch",
+        "type": "CommentPatch|object"
       },
       {
         "id": "schema:Collaboration",
         "kind": "schema",
-        "name": "Collaboration"
+        "name": "Collaboration",
+        "type": "object"
       },
       {
+        "description": "Represents a collaborator (user or team)",
         "id": "schema:CollaborationMember",
         "kind": "schema",
-        "name": "CollaborationMember"
+        "name": "CollaborationMember",
+        "type": "object"
       },
       {
         "id": "schema:CollaborationMembership",
         "kind": "schema",
-        "name": "CollaborationMembership"
+        "name": "CollaborationMembership",
+        "type": "CollaborationMember|object"
       },
       {
         "id": "schema:CollaborationTeamMembership",
         "kind": "schema",
-        "name": "CollaborationTeamMembership"
+        "name": "CollaborationTeamMembership",
+        "type": "CollaborationMembership|object"
       },
       {
         "id": "schema:Comment",
         "kind": "schema",
-        "name": "Comment"
+        "name": "Comment",
+        "type": "object"
       },
       {
         "id": "schema:CommentPatch",
         "kind": "schema",
-        "name": "CommentPatch"
+        "name": "CommentPatch",
+        "type": "object"
       },
       {
         "id": "schema:CommentsBatch",
         "kind": "schema",
-        "name": "CommentsBatch"
+        "name": "CommentsBatch",
+        "type": "object"
       },
       {
         "id": "schema:DefaultVersion",
         "kind": "schema",
-        "name": "DefaultVersion"
+        "name": "DefaultVersion",
+        "type": "object"
       },
       {
         "id": "schema:DraftModel",
         "kind": "schema",
-        "name": "DraftModel"
+        "name": "DraftModel",
+        "type": "object"
       },
       {
         "id": "schema:ForkVersion",
         "kind": "schema",
-        "name": "ForkVersion"
+        "name": "ForkVersion",
+        "type": "object"
       },
       {
+        "description": "Configuration details for the GitHub Enterprise integration",
         "id": "schema:GitHubEnterpriseIntegration",
         "kind": "schema",
-        "name": "GitHubEnterpriseIntegration"
+        "name": "GitHubEnterpriseIntegration",
+        "type": "SCMIntegrationConfiguration|object"
       },
       {
+        "description": "Configuration details for the GitHub.com integration",
         "id": "schema:GitHubIntegration",
         "kind": "schema",
-        "name": "GitHubIntegration"
+        "name": "GitHubIntegration",
+        "type": "SCMIntegrationConfiguration|object"
       },
       {
+        "description": "Configuration details for the GitLab integration",
         "id": "schema:GitLabIntegration",
         "kind": "schema",
-        "name": "GitLabIntegration"
+        "name": "GitLabIntegration",
+        "type": "SCMIntegrationConfiguration|object"
       },
       {
+        "description": "Configuration details for the [IBM API Connect](https://support.smartbear.com/swaggerhub/docs/integrations/ibm-api-connect.html) integration",
         "id": "schema:IBMApiConnectIntegration",
         "kind": "schema",
-        "name": "IBMApiConnectIntegration"
+        "name": "IBMApiConnectIntegration",
+        "type": "IntegrationConfiguration|object"
       },
       {
+        "description": "Common configuration details for all integrations",
         "id": "schema:IntegrationConfiguration",
         "kind": "schema",
-        "name": "IntegrationConfiguration"
+        "name": "IntegrationConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationConfigurationSummary",
         "kind": "schema",
-        "name": "IntegrationConfigurationSummary"
+        "name": "IntegrationConfigurationSummary",
+        "type": "IntegrationConfiguration|object"
       },
       {
         "id": "schema:IntegrationConfigurations",
         "kind": "schema",
-        "name": "IntegrationConfigurations"
+        "name": "IntegrationConfigurations",
+        "type": "object"
       },
       {
         "id": "schema:LifecycleSettings",
         "kind": "schema",
-        "name": "LifecycleSettings"
+        "name": "LifecycleSettings",
+        "type": "object"
       },
       {
         "id": "schema:NewComment",
         "kind": "schema",
-        "name": "NewComment"
+        "name": "NewComment",
+        "type": "object"
       },
       {
         "id": "schema:NewReply",
         "kind": "schema",
-        "name": "NewReply"
+        "name": "NewReply",
+        "type": "object"
       },
       {
         "id": "schema:NewVersion",
         "kind": "schema",
-        "name": "NewVersion"
+        "name": "NewVersion",
+        "type": "object"
       },
       {
         "id": "schema:NotificationPreferences",
         "kind": "schema",
-        "name": "NotificationPreferences"
+        "name": "NotificationPreferences",
+        "type": "object"
       },
       {
         "id": "schema:OrganizationOwner",
         "kind": "schema",
-        "name": "OrganizationOwner"
+        "name": "OrganizationOwner",
+        "type": "object"
       },
       {
         "id": "schema:Project",
         "kind": "schema",
-        "name": "Project"
+        "name": "Project",
+        "type": "object"
       },
       {
         "id": "schema:ProjectMember",
         "kind": "schema",
-        "name": "ProjectMember"
+        "name": "ProjectMember",
+        "type": "object"
       },
       {
         "id": "schema:ProjectMemberList",
         "kind": "schema",
-        "name": "ProjectMemberList"
+        "name": "ProjectMemberList",
+        "type": "object"
       },
       {
         "id": "schema:ProjectsJson",
         "kind": "schema",
-        "name": "ProjectsJson"
+        "name": "ProjectsJson",
+        "type": "object"
       },
       {
+        "description": "Common configuration details for source control integrations",
         "id": "schema:SCMIntegrationConfiguration",
         "kind": "schema",
-        "name": "SCMIntegrationConfiguration"
+        "name": "SCMIntegrationConfiguration",
+        "type": "IntegrationConfiguration|object"
       },
       {
         "id": "schema:StandardizationError",
         "kind": "schema",
-        "name": "StandardizationError"
+        "name": "StandardizationError",
+        "type": "object"
       },
       {
         "id": "schema:StandardizationResult",
         "kind": "schema",
-        "name": "StandardizationResult"
+        "name": "StandardizationResult",
+        "type": "object"
       },
       {
         "id": "schema:StandardizationRuleSeverity",
         "kind": "schema",
-        "name": "StandardizationRuleSeverity"
+        "name": "StandardizationRuleSeverity",
+        "type": "string"
       },
       {
+        "description": "A list of Templates.",
         "id": "schema:TemplateWrapper",
         "kind": "schema",
-        "name": "TemplateWrapper"
+        "name": "TemplateWrapper",
+        "type": "object"
       },
       {
+        "description": "The user who added a comment",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
+        "description": "Represents a [standardization](https://support.smartbear.com/swaggerhub/docs/organizations/api-standardization.html) error or warning",
         "id": "schema:ValidationErrors",
         "kind": "schema",
-        "name": "ValidationErrors"
+        "name": "ValidationErrors",
+        "type": "object"
       },
       {
         "id": "schema:ValidationResult",
         "kind": "schema",
-        "name": "ValidationResult"
+        "name": "ValidationResult",
+        "type": "object"
       },
       {
         "id": "schema:VisibilitySettings",
         "kind": "schema",
-        "name": "VisibilitySettings"
+        "name": "VisibilitySettings",
+        "type": "object"
       },
       {
+        "description": "Configuration details for [webhooks](https://support.smartbear.com/swaggerhub/docs/integrations/webhook.html)",
         "id": "schema:WebhookIntegration",
         "kind": "schema",
-        "name": "WebhookIntegration"
+        "name": "WebhookIntegration",
+        "type": "IntegrationConfiguration|object"
       }
     ]
   },

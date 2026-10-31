@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `554ebfe05ad504bc76404ea51b28edc2358eb5d967aab59f5e3cfd8e5e1688da` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,13 +32,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (8)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/donations/carbon_calculate` | get /api/v1/donations/carbon_calculate | Calculate shipping carbon offset |
-| GET | `/api/v1/donations/carbon_stats` | get /api/v1/donations/carbon_stats | Retrieve carbon offset stats |
-| POST | `/api/v1/donations/create` | post /api/v1/donations/create | Create a donation |
-| GET | `/api/v1/donations/crypto_calculate` | get /api/v1/donations/crypto_calculate | Calculate crypto carbon offset |
-| GET | `/api/v1/donations/index` | get /api/v1/donations/index | List your donations |
-| GET | `/api/v1/donations/show` | get /api/v1/donations/show | Retrieve a donation |
-| GET | `/api/v1/nonprofits/list` | get /api/v1/nonprofits/list | Search a nonprofit |
-| GET | `/api/v1/nonprofits/show` | get /api/v1/nonprofits/show | Show a nonprofit |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/donations/carbon_calculate` | get /api/v1/donations/carbon_calculate | `origin_address`, `destination_address`, `distance_mi`, `weight_lb`*, `transportation_method` | — | yes | Calculate shipping carbon offset |
+| GET | `/api/v1/donations/carbon_stats` | get /api/v1/donations/carbon_stats | `id` | — | yes | Retrieve carbon offset stats |
+| POST | `/api/v1/donations/create` | post /api/v1/donations/create | `amount`*, `nonprofit_id`*, `funding_source`*, `zip_code` | — |  | Create a donation |
+| GET | `/api/v1/donations/crypto_calculate` | get /api/v1/donations/crypto_calculate | `count`, `currency`* | — | yes | Calculate crypto carbon offset |
+| GET | `/api/v1/donations/index` | get /api/v1/donations/index | `page` | — | yes | List your donations |
+| GET | `/api/v1/donations/show` | get /api/v1/donations/show | `id`* | — | yes | Retrieve a donation |
+| GET | `/api/v1/nonprofits/list` | get /api/v1/nonprofits/list | `name`, `page` | — | yes | Search a nonprofit |
+| GET | `/api/v1/nonprofits/show` | get /api/v1/nonprofits/show | `id`* | — | yes | Show a nonprofit |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.unicourt.com_uc-website_res
 
 | | |
 | --- | --- |
-| Signed bundle | `3b6d0cdf581a1234b569127e002ceab391f876dacc62df427b0579ea7677ce34` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,163 +34,165 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.unicourt.com_uc-website_res
 
 220 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/attorney/{attorneyId}` | getAttorneyById | Gets details for a requested Attorney ID. |
-| GET | `/attorney/{attorneyId}/associatedParties` | getAttorneyAssociatedParties | Gets Associated Party details for a requested Attorney ID. |
-| GET | `/billingCycleUsage/{billingCycle}` | getBillingUsageByBillingCycle | Specify the billing cycle to know the API usage. |
-| GET | `/billingCycles` | getBillingCycles | Get all the previous 12 billing cycles. |
-| GET | `/callbacks` | getCallbacks | Get list of callback types with count for a requested Date. |
-| GET | `/case/{caseId}` | getCase | Gets case information for a requested Case ID. |
-| GET | `/case/{caseId}/attorneys` | getCaseAttorneys | Gets Attorneys for a requested Case ID. |
-| GET | `/case/{caseId}/docketEntries` | getCaseDocketEntries | Gets Docket Entries for a requested Case ID. |
-| GET | `/case/{caseId}/docketEntries/primaryDocuments` | getPrimaryDocumentsForDocketEntries | Gets Primary Documents of Docket Entries. |
-| GET | `/case/{caseId}/docketEntries/secondaryDocuments` | getSecondaryDocumentsForDocketEntries | Gets Secondary Documents of Docket Entries. |
-| GET | `/case/{caseId}/documents` | getCaseDocuments | Gets Documents for a requested Case ID. |
-| GET | `/case/{caseId}/hearings` | getCaseHearings | Gets Hearings for a requested Case ID. |
-| GET | `/case/{caseId}/judges` | getCaseJudges | Gets Judges for a requested Case ID. |
-| GET | `/case/{caseId}/parties` | getCaseParties | Gets Parties for a requested Case ID. |
-| GET | `/case/{caseId}/relatedCases` | getCaseRelatedCases | Gets Related Cases for a requested Case ID. |
-| GET | `/caseCountAnalyticsByAreaOfLaw` | getCaseCountAnalyticsByAreaOfLaw | Case Count Analytics by Area Of Law. |
-| GET | `/caseCountAnalyticsByCaseClass` | getCaseCountAnalyticsByCaseClass | Case Count Analytics by Case Class. |
-| GET | `/caseCountAnalyticsByCaseFiledDate` | getCaseCountAnalyticsByCaseFiledDate | Case Count Analytics by Case Filed Date. |
-| GET | `/caseCountAnalyticsByCaseType` | getCaseCountAnalyticsByCaseType | Case Count Analytics by Case Type. |
-| GET | `/caseCountAnalyticsByCaseTypeGroup` | getCaseCountAnalyticsByCaseTypeGroup | Case Count Analytics by Case Type Group. |
-| GET | `/caseCountAnalyticsByCourt` | getCaseCountAnalyticsByCourt | Case Count Analytics by Court. |
-| GET | `/caseCountAnalyticsByCourtLocation` | getCaseCountAnalyticsByCourtLocation | Case Count Analytics by Court Location. |
-| GET | `/caseCountAnalyticsByCourtSystem` | getCaseCountAnalyticsByCourtSystem | Case Count Analytics by Court System. |
-| GET | `/caseCountAnalyticsByCourtType` | getCaseCountAnalyticsByCourtType | Case Count Analytics by CourtType. |
-| GET | `/caseCountAnalyticsByJurisdictionGeo` | getCaseCountAnalyticsByJurisdictionGeo | Case Count Analytics by Jurisdiction Geo. |
-| GET | `/caseCountAnalyticsByNormAttorney` | getCaseCountAnalyticsByNormAttorney | Case Count Analytics by Attorney. |
-| GET | `/caseCountAnalyticsByNormJudge` | getCaseCountAnalyticsByNormJudge | Case Count Analytics by Judge. |
-| GET | `/caseCountAnalyticsByNormLawFirm` | getCaseCountAnalyticsByNormLawFirm | Case Count Analytics by Norm Law Firm. |
-| GET | `/caseCountAnalyticsByNormParty` | getCaseCountAnalyticsByNormParty | Case Count Analytics by Party. |
-| GET | `/caseCountAnalyticsByPartyRole` | getCaseCountAnalyticsByPartyRole | Case Count Analytics by Party Role. |
-| GET | `/caseCountAnalyticsByPartyRoleGroup` | getCaseCountAnalyticsByPartyRoleGroup | Case Count Analytics by Party Role Group. |
-| GET | `/caseDocument/{caseDocumentId}` | getDocumentById | Gets details for a requested Document ID. |
-| GET | `/caseDocumentDownload/{caseDocumentId}` | getCaseDocumentDownloadById | Gets downloadable URL for a requested Document ID. |
-| PUT | `/caseDocumentOrder` | orderCaseDocument | Add Case Document Order for requested Document Ids. |
-| GET | `/caseDocumentOrder/callbacks` | getCaseDocumentOrderCallbacks | Get Case Document Order Callback list for a requested Date. |
-| GET | `/caseDocumentOrder/callbacks/{caseDocumentOrderCallbackId}` | getCaseDocumentOrderCallbackById | Get Case Document Order Callback for a requested Case Document Order Callback Id. |
-| GET | `/caseExport/callbacks` | getCaseExportCallbacks | Get Case Export Callback list for a requested Date. |
-| GET | `/caseExport/callbacks/{caseExportCallbackId}` | getCaseExportCallbackById | Get Case Export Callback for a requested Case Export Callback Id. |
-| GET | `/caseExport/{caseId}` | exportCase | Gets case exported for a requested Case ID. |
-| GET | `/caseSearch` | searchCases | Case search. |
-| GET | `/caseSearch/{caseSearchId}` | searchCasesById | Case search results for a given caseSearchId. |
-| PUT | `/caseTrack` | trackCase | Add Case Track for the requested Case Id. |
-| DELETE | `/caseTrack/{caseId}` | removeCaseTrackById | Remove Case Track for a specific Case Id. |
-| GET | `/caseTrack/{caseId}` | getCaseTrackById | Get Case Track for a requested Case Id. |
-| GET | `/caseTracks` | getCaseTracks | Get Case Track list. |
-| PUT | `/caseUpdate` | updateCase | Add Case Update for the requested Case Id. |
-| GET | `/caseUpdate/{caseId}` | getCaseUpdateByCaseId | Get Case Updates for a requested CaseId. |
-| GET | `/caseUpdates` | getCaseUpdates | Get Case Update list for a requested Date. |
-| GET | `/courtCoverage/{courtId}` | getCourtCoverage | Gets Court Coverage of all courts of specific type. |
-| GET | `/dailyUsage/{date}` | getDailyUsageByDate | Get API usage for a requested Date. |
-| POST | `/generateNewToken` | generateNewToken | Generate new token to access API. |
-| PUT | `/invalidateAllTokens` | invalidateAllTokens | API to invalidate all access tokens. |
-| PUT | `/invalidateToken` | invalidateToken | API to invalidate the access token. |
-| GET | `/judge/{judgeId}` | getJudgeById | Gets details for a requested Judge ID. |
-| PUT | `/listAllTokenIds` | listAllTokenIds | API to list all the access tokens Id. |
-| GET | `/masterData/areaOfLaw` | getAreasOfLaw | AreaOfLaw Object. |
-| GET | `/masterData/areaOfLaw/{areaOfLawId}` | getAreaOfLaw | AreaOfLaw Object for the given AreaOfLaw Id. |
-| GET | `/masterData/attorneyRepresentationType` | getAttorneyRepresentationTypes | Attorney Representation Type Object. |
-| GET | `/masterData/attorneyRepresentationType/{attorneyRepresentationTypeId}` | getAttorneyRepresentationType | Attorney Representation Type Object for the given attorneyRepresentationTypeId. |
-| GET | `/masterData/attorneyType` | getAttorneyTypes | Attorney Type Object. |
-| GET | `/masterData/attorneyType/{attorneyTypeId}` | getAttorneyType | Attorney Type Object for given Attorney Type Id. |
-| GET | `/masterData/caseClass` | getCasesClass | Case Class Object. |
-| GET | `/masterData/caseClass/{caseClassId}` | getCaseClass | Case Class Object for the given Case Class Id. |
-| GET | `/masterData/caseRelationshipType` | getCaseRelationshipTypes | Case Relationship Type Object. |
-| GET | `/masterData/caseRelationshipType/{caseRelationshipTypeId}` | getCaseRelationshipType | Case Relationship Type Object for the given caseRelationshipTypeId. |
-| GET | `/masterData/caseStatus` | getCasesStatus | Case Status Object. |
-| GET | `/masterData/caseStatus/{caseStatusId}` | getCaseStatus | Returns the caseStatus information for the given caseStatusId. |
-| GET | `/masterData/caseStatusGroup` | getCaseStatusGroups | Case Status Group Object. |
-| GET | `/masterData/caseStatusGroup/{caseStatusGroupId}` | getCaseStatusGroup | Returns the caseStatusGroup information for the given caseStatusGroupId. |
-| GET | `/masterData/caseType` | getCaseTypes | Case Type Object. |
-| GET | `/masterData/caseType/{caseTypeId}` | getCaseType | CaseType Object for given Case Type Id. |
-| GET | `/masterData/caseTypeGroup` | getCaseTypeGroups | CaseTypeGroup Object. |
-| GET | `/masterData/caseTypeGroup/{caseTypeGroupId}` | getCaseTypeGroup | CaseType Group for the given CaseType Group Id. |
-| GET | `/masterData/causeOfAction` | getCausesOfAction | CauseOfAction Object. |
-| GET | `/masterData/causeOfAction/{causeOfActionId}` | getCauseOfAction | CauseOfAction Object for the given causeOfActionId. |
-| GET | `/masterData/causeOfActionAdditionalData` | getCausesOfActionAdditionalData | CauseOfActionAdditionaData Object. |
-| GET | `/masterData/causeOfActionAdditionalData/{causeOfActionAdditionalDataId}` | getCauseOfActionAdditionalData | CauseOfActionAdditionalData Object for the given causeOfActionAdditionalDataId. |
-| GET | `/masterData/causeOfActionGroup` | getCausesOfActionGroup | CauseOfActionGroup Object. |
-| GET | `/masterData/causeOfActionGroup/{causeOfActionGroupId}` | getCauseOfActionGroup | CauseOfActionGroup Object for the given causeOfActionGroupId. |
-| GET | `/masterData/charge` | getCharges | Charge Object. |
-| GET | `/masterData/charge/{chargeId}` | getCharge | Charge Object for the given chargeId. |
-| GET | `/masterData/chargeAdditionalData` | getChargesAdditionalData | Charge Additional Data Object. |
-| GET | `/masterData/chargeAdditionalData/{chargeAdditionalDataId}` | getChargeAdditionalData | Charge Additional Data Object for the given chargeAdditionalDataId. |
-| GET | `/masterData/chargeDegree` | getChargesDegree | ChargeDegree Object. |
-| GET | `/masterData/chargeDegree/{chargeDegreeId}` | getChargeDegree | ChargeDegree Object for the given chargeDegreeId. |
-| GET | `/masterData/chargeGroup` | getChargeGroups | Charge Group Object. |
-| GET | `/masterData/chargeGroup/{chargeGroupId}` | getChargeGroup | Charge Group Object for the given chargeGroupId. |
-| GET | `/masterData/chargeSeverity` | getChargesSeverity | ChargeSeverity Object. |
-| GET | `/masterData/chargeSeverity/{chargeSeverityId}` | getChargeSeverity | ChargeSeverity Object for the given chargeSeverityId. |
-| GET | `/masterData/court` | getCourts | Court Objects. |
-| GET | `/masterData/court/{courtId}` | getCourt | Court Object for given courtId. |
-| GET | `/masterData/court/{courtId}/appealCourts` | getAppealCourtsForCourt | Appeal Court Objects for given courtId. |
-| GET | `/masterData/court/{courtId}/courtLocations` | getCourtLocationsForCourt | Associated Court Location for given courtId. |
-| GET | `/masterData/court/{courtId}/jurisdictionGeo` | getJurisdictionGeoForCourt | Jurisdiction Geo Objects for given courtId. |
-| GET | `/masterData/courtLocation` | getCourtLocations | Courthouse Object. |
-| GET | `/masterData/courtLocation/{courtLocationId}` | getCourtLocation | Courthouse Object for given Court Location Id. |
-| GET | `/masterData/courtLocation/{courtLocationId}/courts` | getCourtsForCourtLocation | Associated Court for given Court Location. |
-| GET | `/masterData/courtServiceStatus` | getCourtsServiceStatus | Court Service Status Object. |
-| GET | `/masterData/courtServiceStatus/{courtServiceStatusId}` | getCourtServiceStatus | Court Service Status Object for the given courtServiceStatusId. |
-| GET | `/masterData/courtSystem` | getCourtSystems | Court System Objects. |
-| GET | `/masterData/courtSystem/{courtSystemId}` | getCourtSystem | Court System Object for given courtSystemId. |
-| GET | `/masterData/courtType` | getCourtTypes | Court Type Objects. |
-| GET | `/masterData/courtType/{courtTypeId}` | getCourtType | Court Type Object for given courtTypeId. |
-| GET | `/masterData/judgeType` | getJudgeTypes | Judge Type Object. |
-| GET | `/masterData/judgeType/{judgeTypeId}` | getJudgeType | Judge Type Object for the given judgeTypeId. |
-| GET | `/masterData/jurisdictionGeo` | getJurisdictionsGeo | Jurisdiction Geo Object. |
-| GET | `/masterData/jurisdictionGeo/{jurisdictionGeoId}` | getJurisdictionGeo | Jurisdiction Geo Object for given Jurisdiction Geo Id. |
-| GET | `/masterData/jurisdictionGeo/{jurisdictionGeoId}/courts` | getCourtsForJurisdictionGeo | Associated Court for given Jurisdiction Geo. |
-| GET | `/masterData/partyRole` | getPartyRoles | Party Role Object. |
-| GET | `/masterData/partyRole/{partyRoleId}` | getPartyRole | Party Role Object. |
-| GET | `/masterData/partyRoleGroup` | getPartyRoleGroups | Party Role Group Object. |
-| GET | `/masterData/partyRoleGroup/{partyRoleGroupId}` | getPartyRoleGroup | Party Role Group Object. |
-| GET | `/normAttorney/{normAttorneyId}` | getNormAttorneyById | Norm Attorney Details. |
-| GET | `/normAttorney/{normAttorneyId}/associatedNormJudges` | getNormJudgesAssociatedWithNormAttorney | Judges faced by the Attorney. |
-| GET | `/normAttorney/{normAttorneyId}/associatedNormLawFirms` | getNormLawFirmsAssociatedWithNormAttorney | Law Firms the attorney has worked for. |
-| GET | `/normAttorney/{normAttorneyId}/associatedNormParties` | getNormPartiesAssociatedWithNormAttorney | Parties Represented By the Attorney. |
-| GET | `/normAttorney/{normAttorneyId}/caseCountAnalyticsByOpposingNormAttorney` | getCaseCountAnalyticsByOpposingNormAttorneyForANormAttorney | Case Count Analytics by Opposing Norm Attorney. |
-| GET | `/normAttorneySearch` | searchNormalizedAttorneys | Attorney search. |
-| GET | `/normAttorneySearch/{normAttorneySearchId}` | searchNormalizedAttorneysById | Norm attorney search results for a given normAttorneySearchId. |
-| GET | `/normJudge/{normJudgeId}` | getNormJudgeById | Norm Judge Details. |
-| GET | `/normJudge/{normJudgeId}/associatedNormAttorneys` | getNormAttorneysAssociatedWithNormJudge | Attorneys Associated with the Judge. |
-| GET | `/normJudge/{normJudgeId}/associatedNormLawFirms` | getNormLawFirmsAssociatedWithNormJudge | Law Firms Associated With the Judge. |
-| GET | `/normJudge/{normJudgeId}/associatedNormParties` | getNormPartiesAssociatedWithNormJudge | Parties Associated with the Judge. |
-| GET | `/normJudgeSearch` | searchNormalizedJudges | Judge search. |
-| GET | `/normJudgeSearch/{normJudgeSearchId}` | searchNormalizedJudgesById | Norm judge search results for a given normJudgeSearchId. |
-| GET | `/normLawFirm/{normLawFirmId}` | getNormLawFirmById | Norm LawFirm Details. |
-| GET | `/normLawFirm/{normLawFirmId}/associatedNormAttorneys` | getNormAttorneysAssociatedWithNormLawFirm | Attorneys working for the Law Firm. |
-| GET | `/normLawFirm/{normLawFirmId}/associatedNormJudges` | getNormJudgesAssociatedWithNormLawFirm | Judges Faced By the Law Firm. |
-| GET | `/normLawFirm/{normLawFirmId}/associatedNormParties` | getNormPartiesAssociatedWithNormLawFirm | Parties Represented by the Law Firm. |
-| GET | `/normLawFirm/{normLawFirmId}/caseCountAnalyticsByOpposingNormLawFirm` | getCaseCountAnalyticsByOpposingNormLawFirmForANormLawFirm | Case Count Analytics by Opposing Norm Law Firm. |
-| GET | `/normLawFirmSearch` | searchNormalizedLawFirms | Law firm search. |
-| GET | `/normLawFirmSearch/{normLawFirmSearchId}` | searchNormalizedLawFirmsById | Norm law firm search result for a given normLawFirmSearchId. |
-| GET | `/normParty/{normPartyId}` | getNormPartyById | Norm Party Details. |
-| GET | `/normParty/{normPartyId}/associatedNormAttorneys` | getNormAttorneysAssociatedWithNormParty | Attorneys that represented the Party. |
-| GET | `/normParty/{normPartyId}/associatedNormJudges` | getNormJudgesAssociatedWithNormParty | Judges Faced By the Party. |
-| GET | `/normParty/{normPartyId}/associatedNormLawFirms` | getNormLawFirmsAssociatedWithNormParty | Law Firms that represented the Party. |
-| GET | `/normParty/{normPartyId}/caseCountAnalyticsByOpposingNormParty` | getCaseCountAnalyticsByOpposingNormPartyForANormParty | Case Count Analytics by Opposing Norm Party. |
-| GET | `/normPartySearch` | searchNormalizedParties | Party search. |
-| GET | `/normPartySearch/{normPartySearchId}` | searchNormalizedPartiesById | Norm party search results for a given normPartySearchId. |
-| GET | `/pacer/importCaseByCourtUsingCaseNumber` | importPacerCaseByCourtUsingCaseNumber | Find PACER Case for a requested Case Number and Court. |
-| GET | `/pacerCaseLocator/caseSearch/allCourts` | AllCourtsPacerCaseLocatorCaseSearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/caseSearch/appealCourts` | AppealCourtsPacerCaseLocatorCaseSearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/caseSearch/bankruptcyCourts` | BankruptcyCourtsPacerCaseLocatorCaseSearch | PACER Case Locator Search API for Bankruptcy Courts. |
-| GET | `/pacerCaseLocator/caseSearch/civilCourts` | CivilCourtsPacerCaseLocatorCaseSearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/caseSearch/criminalCourts` | CriminalCourtsPacerCaseLocatorCaseSearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/caseSearch/multiDistrictCourts` | MultiDistrictCourtsPacerCaseLocatorCaseSearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/partySearch/allCourts` | AllCourtsPacerCaseLocatorPartySearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/partySearch/appealCourts` | AppealCourtsPacerCaseLocatorPartySearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/partySearch/bankruptcyCourts` | BankruptcyCourtsPacerCaseLocatorPartySearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/partySearch/civilCourts` | CivilCourtsPacerCaseLocatorPartySearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/partySearch/criminalCourts` | CriminalCourtsPacerCaseLocatorPartySearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCaseLocator/partySearch/multiDistrictCourts` | MultiDistrictCourtsPacerCaseLocatorPartySearch | PACER Case Locator Search API for All Courts. |
-| GET | `/pacerCredential` | getPacerCredential | Get Pacer Credential List. |
-| PUT | `/pacerCredential` | addPacerCredential | Add Pacer Credential. |
-| DELETE | `/pacerCredential/{pacerUserId}` | removePacerCredentialById | Remove Pacer credential for a specific Pacer User Id. |
-| GET | `/pacerCredential/{pacerUserId}` | getPacerCredentialById | Get Pacer Credential for a requested pacer User Id. |
-| GET | `/party/{partyId}` | getPartyById | Gets details for a requested Party ID. |
-| GET | `/party/{partyId}/associatedAttorneys` | getPartyAssociatedAttorneys | Gets Associated Attorney details for a requested Party ID. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/attorney/{attorneyId}` | getAttorneyById | `attorneyId`* | Attorney | yes | Gets details for a requested Attorney ID. |
+| GET | `/attorney/{attorneyId}/associatedParties` | getAttorneyAssociatedParties | `attorneyId`*, `pageNumber` | PartyAttorneyAssociations | yes | Gets Associated Party details for a requested Attorney ID. |
+| GET | `/billingCycleUsage/{billingCycle}` | getBillingUsageByBillingCycle | `billingCycle`* | BillingCycleUsageResponse | yes | Specify the billing cycle to know the API usage. |
+| GET | `/billingCycles` | getBillingCycles | — | BillingCyclesResponse | yes | Get all the previous 12 billing cycles. |
+| GET | `/callbacks` | getCallbacks | `date`, `status` | CallbackListResponse | yes | Get list of callback types with count for a requested Date. |
+| GET | `/case/{caseId}` | getCase | `caseId`* | Case | yes | Gets case information for a requested Case ID. |
+| GET | `/case/{caseId}/attorneys` | getCaseAttorneys | `caseId`*, `isVisible`, `pageNumber` | Attorneys | yes | Gets Attorneys for a requested Case ID. |
+| GET | `/case/{caseId}/docketEntries` | getCaseDocketEntries | `caseId`*, `docketNumber`, `sortBy`, `pageNumber` | DocketEntries | yes | Gets Docket Entries for a requested Case ID. |
+| GET | `/case/{caseId}/docketEntries/primaryDocuments` | getPrimaryDocumentsForDocketEntries | `caseId`*, `docketNumber`*, `inLibrary`, `afterFirstFetchDate`, `libraryDate`, `pageNumber` | DocketEntryPrimaryDocuments | yes | Gets Primary Documents of Docket Entries. |
+| GET | `/case/{caseId}/docketEntries/secondaryDocuments` | getSecondaryDocumentsForDocketEntries | `caseId`*, `docketNumber`*, `inLibrary`, `afterFirstFetchDate`, `libraryDate`, `pageNumber` | DocketEntrySecondaryDocuments | yes | Gets Secondary Documents of Docket Entries. |
+| GET | `/case/{caseId}/documents` | getCaseDocuments | `caseId`*, `inLibrary`, `afterFirstFetchDate`, `libraryDate`, `firstFetchDate`, `sortBy`, `pageNumber` | CaseDocuments | yes | Gets Documents for a requested Case ID. |
+| GET | `/case/{caseId}/hearings` | getCaseHearings | `caseId`*, `sortBy`, `pageNumber` | Hearings | yes | Gets Hearings for a requested Case ID. |
+| GET | `/case/{caseId}/judges` | getCaseJudges | `caseId`*, `isVisible`, `pageNumber` | Judges | yes | Gets Judges for a requested Case ID. |
+| GET | `/case/{caseId}/parties` | getCaseParties | `caseId`*, `isVisible`, `pageNumber`, `partyRoleId`, `partyRoleGroupId`, `attorneyRepresentationTypeId`, `partyClassificationType` | Parties | yes | Gets Parties for a requested Case ID. |
+| GET | `/case/{caseId}/relatedCases` | getCaseRelatedCases | `caseId`*, `pageNumber` | RelatedCases | yes | Gets Related Cases for a requested Case ID. |
+| GET | `/caseCountAnalyticsByAreaOfLaw` | getCaseCountAnalyticsByAreaOfLaw | `q`, `pageNumber`* | CaseCountAnalyticsByAreaOfLawResponse | yes | Case Count Analytics by Area Of Law. |
+| GET | `/caseCountAnalyticsByCaseClass` | getCaseCountAnalyticsByCaseClass | `q`, `pageNumber`* | CaseCountAnalyticsByCaseClassResponse | yes | Case Count Analytics by Case Class. |
+| GET | `/caseCountAnalyticsByCaseFiledDate` | getCaseCountAnalyticsByCaseFiledDate | `q`, `pageNumber`*, `groupBy`* | CaseCountAnalyticsByCaseFiledDateResponse | yes | Case Count Analytics by Case Filed Date. |
+| GET | `/caseCountAnalyticsByCaseType` | getCaseCountAnalyticsByCaseType | `q`, `pageNumber`* | CaseCountAnalyticsByCaseTypeResponse | yes | Case Count Analytics by Case Type. |
+| GET | `/caseCountAnalyticsByCaseTypeGroup` | getCaseCountAnalyticsByCaseTypeGroup | `q`, `pageNumber`* | CaseCountAnalyticsByCaseTypeGroupResponse | yes | Case Count Analytics by Case Type Group. |
+| GET | `/caseCountAnalyticsByCourt` | getCaseCountAnalyticsByCourt | `q`, `pageNumber`* | CaseCountAnalyticsByCourtResponse | yes | Case Count Analytics by Court. |
+| GET | `/caseCountAnalyticsByCourtLocation` | getCaseCountAnalyticsByCourtLocation | `q`, `pageNumber`* | CaseCountAnalyticsByCourtLocationResponse | yes | Case Count Analytics by Court Location. |
+| GET | `/caseCountAnalyticsByCourtSystem` | getCaseCountAnalyticsByCourtSystem | `q`, `pageNumber`* | CaseCountAnalyticsByCourtSystemResponse | yes | Case Count Analytics by Court System. |
+| GET | `/caseCountAnalyticsByCourtType` | getCaseCountAnalyticsByCourtType | `q`, `pageNumber`* | CaseCountAnalyticsByCourtTypeResponse | yes | Case Count Analytics by CourtType. |
+| GET | `/caseCountAnalyticsByJurisdictionGeo` | getCaseCountAnalyticsByJurisdictionGeo | `q`, `pageNumber`* | CaseCountAnalyticsByJurisdictionGeoResponse | yes | Case Count Analytics by Jurisdiction Geo. |
+| GET | `/caseCountAnalyticsByNormAttorney` | getCaseCountAnalyticsByNormAttorney | `q`, `pageNumber`* | CaseCountAnalyticsByNormAttorneyResponse | yes | Case Count Analytics by Attorney. |
+| GET | `/caseCountAnalyticsByNormJudge` | getCaseCountAnalyticsByNormJudge | `q`, `pageNumber`* | CaseCountAnalyticsByNormJudgeResponse | yes | Case Count Analytics by Judge. |
+| GET | `/caseCountAnalyticsByNormLawFirm` | getCaseCountAnalyticsByNormLawFirm | `q`, `pageNumber`* | CaseCountAnalyticsByNormLawFirmResponse | yes | Case Count Analytics by Norm Law Firm. |
+| GET | `/caseCountAnalyticsByNormParty` | getCaseCountAnalyticsByNormParty | `q`, `pageNumber`* | CaseCountAnalyticsByNormPartyResponse | yes | Case Count Analytics by Party. |
+| GET | `/caseCountAnalyticsByPartyRole` | getCaseCountAnalyticsByPartyRole | `q`, `pageNumber`* | CaseCountAnalyticsByPartyRoleResponse | yes | Case Count Analytics by Party Role. |
+| GET | `/caseCountAnalyticsByPartyRoleGroup` | getCaseCountAnalyticsByPartyRoleGroup | `q`, `pageNumber`* | CaseCountAnalyticsByPartyRoleGroupResponse | yes | Case Count Analytics by Party Role Group. |
+| GET | `/caseDocument/{caseDocumentId}` | getDocumentById | `caseDocumentId`* | CaseDocument | yes | Gets details for a requested Document ID. |
+| GET | `/caseDocumentDownload/{caseDocumentId}` | getCaseDocumentDownloadById | `caseDocumentId`*, `isPreviewDocument` | DocumentDownload\|Exception | yes | Gets downloadable URL for a requested Document ID. |
+| PUT | `/caseDocumentOrder` | orderCaseDocument | body: CaseDocumentOrderRequest | CaseDocumentOrderCallback |  | Add Case Document Order for requested Document Ids. |
+| GET | `/caseDocumentOrder/callbacks` | getCaseDocumentOrderCallbacks | `date`, `status`, `pageNumber` | CaseDocumentOrderCallbackListResponse | yes | Get Case Document Order Callback list for a requested Date. |
+| GET | `/caseDocumentOrder/callbacks/{caseDocumentOrderCallbackId}` | getCaseDocumentOrderCallbackById | `caseDocumentOrderCallbackId`* | CaseDocumentOrderCallback | yes | Get Case Document Order Callback for a requested Case Document Order Callback Id. |
+| GET | `/caseExport/callbacks` | getCaseExportCallbacks | `date`, `status`, `pageNumber` | CaseExportCallbackListResponse | yes | Get Case Export Callback list for a requested Date. |
+| GET | `/caseExport/callbacks/{caseExportCallbackId}` | getCaseExportCallbackById | `caseExportCallbackId`* | CaseExportCallback | yes | Get Case Export Callback for a requested Case Export Callback Id. |
+| GET | `/caseExport/{caseId}` | exportCase | `caseId`* | CaseExportCallback | yes | Gets case exported for a requested Case ID. |
+| GET | `/caseSearch` | searchCases | `q`*, `sort`, `order`, `pageNumber` | CaseSearchResponse | yes | Case search. |
+| GET | `/caseSearch/{caseSearchId}` | searchCasesById | `caseSearchId`*, `pageNumber` | CaseSearchResponse | yes | Case search results for a given caseSearchId. |
+| PUT | `/caseTrack` | trackCase | body: CaseTrackRequest | Success |  | Add Case Track for the requested Case Id. |
+| GET | `/caseTrack/{caseId}` | getCaseTrackById | `caseId`* | CaseTrack | yes | Get Case Track for a requested Case Id. |
+| DELETE | `/caseTrack/{caseId}` | removeCaseTrackById | `caseId`* | Success |  | Remove Case Track for a specific Case Id. |
+| GET | `/caseTracks` | getCaseTracks | `lastFetchDate`, `lastFetchDateWithUpdates`, `pageNumber` | CaseTrackListResponse | yes | Get Case Track list. |
+| PUT | `/caseUpdate` | updateCase | body: CaseUpdateRequest | CaseUpdate |  | Add Case Update for the requested Case Id. |
+| GET | `/caseUpdate/{caseId}` | getCaseUpdateByCaseId | `caseId`* | CaseUpdate | yes | Get Case Updates for a requested CaseId. |
+| GET | `/caseUpdates` | getCaseUpdates | `caseId`, `requestedDate`, `status`, `pageNumber` | CaseUpdateListResponse | yes | Get Case Update list for a requested Date. |
+| GET | `/courtCoverage/{courtId}` | getCourtCoverage | `courtId`* | CourtCoverage | yes | Gets Court Coverage of all courts of specific type. |
+| GET | `/dailyUsage/{date}` | getDailyUsageByDate | `date`* | DailyUsageResponse | yes | Get API usage for a requested Date. |
+| POST | `/generateNewToken` | generateNewToken | body: AccessTokenRequest | AccessTokenResponse |  | Generate new token to access API. |
+| PUT | `/invalidateAllTokens` | invalidateAllTokens | body: AccessTokenRequest | Success |  | API to invalidate all access tokens. |
+| PUT | `/invalidateToken` | invalidateToken | body: InvalidateAccessTokenRequest | Success |  | API to invalidate the access token. |
+| GET | `/judge/{judgeId}` | getJudgeById | `judgeId`* | Judge | yes | Gets details for a requested Judge ID. |
+| PUT | `/listAllTokenIds` | listAllTokenIds | body: AccessTokenRequest | AccessTokenIdListResponse |  | API to list all the access tokens Id. |
+| GET | `/masterData/areaOfLaw` | getAreasOfLaw | `q`, `pageNumber`, `sort`, `order` | AreaOfLawResponse | yes | AreaOfLaw Object. |
+| GET | `/masterData/areaOfLaw/{areaOfLawId}` | getAreaOfLaw | `areaOfLawId`* | AreaOfLaw | yes | AreaOfLaw Object for the given AreaOfLaw Id. |
+| GET | `/masterData/attorneyRepresentationType` | getAttorneyRepresentationTypes | `q`, `pageNumber`, `sort`, `order` | AttorneyRepresentationTypeResponse | yes | Attorney Representation Type Object. |
+| GET | `/masterData/attorneyRepresentationType/{attorneyRepresentationTypeId}` | getAttorneyRepresentationType | `attorneyRepresentationTypeId`* | AttorneyRepresentationType | yes | Attorney Representation Type Object for the given attorneyRepresentationTypeId. |
+| GET | `/masterData/attorneyType` | getAttorneyTypes | `q`, `pageNumber`, `sort`, `order` | AttorneyTypeResponse | yes | Attorney Type Object. |
+| GET | `/masterData/attorneyType/{attorneyTypeId}` | getAttorneyType | `attorneyTypeId`* | AttorneyType | yes | Attorney Type Object for given Attorney Type Id. |
+| GET | `/masterData/caseClass` | getCasesClass | `q`, `pageNumber`, `sort`, `order` | CaseClassResponse | yes | Case Class Object. |
+| GET | `/masterData/caseClass/{caseClassId}` | getCaseClass | `caseClassId`* | CaseClass | yes | Case Class Object for the given Case Class Id. |
+| GET | `/masterData/caseRelationshipType` | getCaseRelationshipTypes | `q`, `pageNumber`, `sort`, `order` | CaseRelationshipTypeResponse | yes | Case Relationship Type Object. |
+| GET | `/masterData/caseRelationshipType/{caseRelationshipTypeId}` | getCaseRelationshipType | `caseRelationshipTypeId`* | CaseRelationshipType | yes | Case Relationship Type Object for the given caseRelationshipTypeId. |
+| GET | `/masterData/caseStatus` | getCasesStatus | `q`, `pageNumber`, `sort`, `order` | CaseStatusResponse | yes | Case Status Object. |
+| GET | `/masterData/caseStatus/{caseStatusId}` | getCaseStatus | `caseStatusId`* | CaseStatus | yes | Returns the caseStatus information for the given caseStatusId. |
+| GET | `/masterData/caseStatusGroup` | getCaseStatusGroups | `q`, `pageNumber`, `sort`, `order` | CaseStatusGroupResponse | yes | Case Status Group Object. |
+| GET | `/masterData/caseStatusGroup/{caseStatusGroupId}` | getCaseStatusGroup | `caseStatusGroupId`* | CaseStatusGroup | yes | Returns the caseStatusGroup information for the given caseStatusGroupId. |
+| GET | `/masterData/caseType` | getCaseTypes | `q`, `pageNumber`, `sort`, `order` | CaseTypeResponse | yes | Case Type Object. |
+| GET | `/masterData/caseType/{caseTypeId}` | getCaseType | `caseTypeId`* | CaseType | yes | CaseType Object for given Case Type Id. |
+| GET | `/masterData/caseTypeGroup` | getCaseTypeGroups | `q`, `pageNumber`, `sort`, `order` | CaseTypeGroupResponse | yes | CaseTypeGroup Object. |
+| GET | `/masterData/caseTypeGroup/{caseTypeGroupId}` | getCaseTypeGroup | `caseTypeGroupId`* | CaseTypeGroup | yes | CaseType Group for the given CaseType Group Id. |
+| GET | `/masterData/causeOfAction` | getCausesOfAction | `q`, `pageNumber`, `sort`, `order` | CauseOfActionResponse | yes | CauseOfAction Object. |
+| GET | `/masterData/causeOfAction/{causeOfActionId}` | getCauseOfAction | `causeOfActionId`* | CauseOfAction | yes | CauseOfAction Object for the given causeOfActionId. |
+| GET | `/masterData/causeOfActionAdditionalData` | getCausesOfActionAdditionalData | `q`, `pageNumber`, `sort`, `order` | CauseOfActionAdditionalDataResponse | yes | CauseOfActionAdditionaData Object. |
+| GET | `/masterData/causeOfActionAdditionalData/{causeOfActionAdditionalDataId}` | getCauseOfActionAdditionalData | `causeOfActionAdditionalDataId`* | CauseOfActionAdditionalData | yes | CauseOfActionAdditionalData Object for the given causeOfActionAdditionalDataId. |
+| GET | `/masterData/causeOfActionGroup` | getCausesOfActionGroup | `q`, `pageNumber`, `sort`, `order` | CauseOfActionGroupResponse | yes | CauseOfActionGroup Object. |
+| GET | `/masterData/causeOfActionGroup/{causeOfActionGroupId}` | getCauseOfActionGroup | `causeOfActionGroupId`* | CauseOfActionGroup | yes | CauseOfActionGroup Object for the given causeOfActionGroupId. |
+| GET | `/masterData/charge` | getCharges | `q`, `pageNumber`, `sort`, `order` | ChargeResponse | yes | Charge Object. |
+| GET | `/masterData/charge/{chargeId}` | getCharge | `chargeId`* | Charge | yes | Charge Object for the given chargeId. |
+| GET | `/masterData/chargeAdditionalData` | getChargesAdditionalData | `q`, `pageNumber`, `sort`, `order` | ChargeAdditionalDataResponse | yes | Charge Additional Data Object. |
+| GET | `/masterData/chargeAdditionalData/{chargeAdditionalDataId}` | getChargeAdditionalData | `chargeAdditionalDataId`* | ChargeAdditionalData | yes | Charge Additional Data Object for the given chargeAdditionalDataId. |
+| GET | `/masterData/chargeDegree` | getChargesDegree | `q`, `pageNumber`, `sort`, `order` | ChargeDegreeResponse | yes | ChargeDegree Object. |
+| GET | `/masterData/chargeDegree/{chargeDegreeId}` | getChargeDegree | `chargeDegreeId`* | ChargeDegree | yes | ChargeDegree Object for the given chargeDegreeId. |
+| GET | `/masterData/chargeGroup` | getChargeGroups | `q`, `pageNumber`, `sort`, `order` | ChargeGroupResponse | yes | Charge Group Object. |
+| GET | `/masterData/chargeGroup/{chargeGroupId}` | getChargeGroup | `chargeGroupId`* | ChargeGroup | yes | Charge Group Object for the given chargeGroupId. |
+| GET | `/masterData/chargeSeverity` | getChargesSeverity | `q`, `pageNumber`, `sort`, `order` | ChargeSeverityResponse | yes | ChargeSeverity Object. |
+| GET | `/masterData/chargeSeverity/{chargeSeverityId}` | getChargeSeverity | `chargeSeverityId`* | ChargeSeverity | yes | ChargeSeverity Object for the given chargeSeverityId. |
+| GET | `/masterData/court` | getCourts | `q`, `pageNumber`, `sort`, `order` | CourtResponse | yes | Court Objects. |
+| GET | `/masterData/court/{courtId}` | getCourt | `courtId`* | Court | yes | Court Object for given courtId. |
+| GET | `/masterData/court/{courtId}/appealCourts` | getAppealCourtsForCourt | `courtId`*, `pageNumber`, `sort`, `order` | CourtResponse | yes | Appeal Court Objects for given courtId. |
+| GET | `/masterData/court/{courtId}/courtLocations` | getCourtLocationsForCourt | `courtId`*, `pageNumber`, `sort`, `order` | CourtLocationResponse | yes | Associated Court Location for given courtId. |
+| GET | `/masterData/court/{courtId}/jurisdictionGeo` | getJurisdictionGeoForCourt | `courtId`*, `pageNumber`, `sort`, `order` | JurisdictionGeoResponse | yes | Jurisdiction Geo Objects for given courtId. |
+| GET | `/masterData/courtLocation` | getCourtLocations | `q`, `pageNumber`, `sort`, `order` | CourtLocationResponse | yes | Courthouse Object. |
+| GET | `/masterData/courtLocation/{courtLocationId}` | getCourtLocation | `courtLocationId`* | CourtLocation | yes | Courthouse Object for given Court Location Id. |
+| GET | `/masterData/courtLocation/{courtLocationId}/courts` | getCourtsForCourtLocation | `courtLocationId`*, `pageNumber`, `sort`, `order` | CourtResponse | yes | Associated Court for given Court Location. |
+| GET | `/masterData/courtServiceStatus` | getCourtsServiceStatus | `q`, `pageNumber`, `sort`, `order` | CourtServiceStatusResponse | yes | Court Service Status Object. |
+| GET | `/masterData/courtServiceStatus/{courtServiceStatusId}` | getCourtServiceStatus | `courtServiceStatusId`* | CourtServiceStatus | yes | Court Service Status Object for the given courtServiceStatusId. |
+| GET | `/masterData/courtSystem` | getCourtSystems | `q`, `pageNumber`, `sort`, `order` | CourtSystemResponse | yes | Court System Objects. |
+| GET | `/masterData/courtSystem/{courtSystemId}` | getCourtSystem | `courtSystemId`* | CourtSystem | yes | Court System Object for given courtSystemId. |
+| GET | `/masterData/courtType` | getCourtTypes | `q`, `pageNumber`, `sort`, `order` | CourtTypeResponse | yes | Court Type Objects. |
+| GET | `/masterData/courtType/{courtTypeId}` | getCourtType | `courtTypeId`* | CourtType | yes | Court Type Object for given courtTypeId. |
+| GET | `/masterData/judgeType` | getJudgeTypes | `q`, `pageNumber`, `sort`, `order` | JudgeTypeResponse | yes | Judge Type Object. |
+| GET | `/masterData/judgeType/{judgeTypeId}` | getJudgeType | `judgeTypeId`* | JudgeType | yes | Judge Type Object for the given judgeTypeId. |
+| GET | `/masterData/jurisdictionGeo` | getJurisdictionsGeo | `q`, `pageNumber`, `sort`, `order` | JurisdictionGeoResponse | yes | Jurisdiction Geo Object. |
+| GET | `/masterData/jurisdictionGeo/{jurisdictionGeoId}` | getJurisdictionGeo | `jurisdictionGeoId`* | JurisdictionGeo | yes | Jurisdiction Geo Object for given Jurisdiction Geo Id. |
+| GET | `/masterData/jurisdictionGeo/{jurisdictionGeoId}/courts` | getCourtsForJurisdictionGeo | `jurisdictionGeoId`*, `pageNumber`, `sort`, `order` | CourtResponse | yes | Associated Court for given Jurisdiction Geo. |
+| GET | `/masterData/partyRole` | getPartyRoles | `q`, `pageNumber`, `sort`, `order` | PartyRoleResponse | yes | Party Role Object. |
+| GET | `/masterData/partyRole/{partyRoleId}` | getPartyRole | `partyRoleId`* | PartyRole | yes | Party Role Object. |
+| GET | `/masterData/partyRoleGroup` | getPartyRoleGroups | `q`, `pageNumber`, `sort`, `order` | PartyRoleGroupResponse | yes | Party Role Group Object. |
+| GET | `/masterData/partyRoleGroup/{partyRoleGroupId}` | getPartyRoleGroup | `partyRoleGroupId`* | PartyRoleGroup | yes | Party Role Group Object. |
+| GET | `/normAttorney/{normAttorneyId}` | getNormAttorneyById | `normAttorneyId`* | NormAttorney | yes | Norm Attorney Details. |
+| GET | `/normAttorney/{normAttorneyId}/associatedNormJudges` | getNormJudgesAssociatedWithNormAttorney | `normAttorneyId`*, `q`, `pageNumber`* | AssociatedNormJudgeResponse | yes | Judges faced by the Attorney. |
+| GET | `/normAttorney/{normAttorneyId}/associatedNormLawFirms` | getNormLawFirmsAssociatedWithNormAttorney | `normAttorneyId`*, `q`, `pageNumber`* | AssociatedNormLawFirmResponse | yes | Law Firms the attorney has worked for. |
+| GET | `/normAttorney/{normAttorneyId}/associatedNormParties` | getNormPartiesAssociatedWithNormAttorney | `normAttorneyId`*, `q`, `pageNumber`* | AssociatedNormPartyResponse | yes | Parties Represented By the Attorney. |
+| GET | `/normAttorney/{normAttorneyId}/caseCountAnalyticsByOpposingNormAttorney` | getCaseCountAnalyticsByOpposingNormAttorneyForANormAttorney | `normAttorneyId`*, `q`, `pageNumber`* | CaseCountAnalyticsByNormAttorneyResponse | yes | Case Count Analytics by Opposing Norm Attorney. |
+| GET | `/normAttorneySearch` | searchNormalizedAttorneys | `q`, `pageNumber` | NormAttorneySearchResponse | yes | Attorney search. |
+| GET | `/normAttorneySearch/{normAttorneySearchId}` | searchNormalizedAttorneysById | `normAttorneySearchId`*, `pageNumber` | NormAttorneySearchResponse | yes | Norm attorney search results for a given normAttorneySearchId. |
+| GET | `/normJudge/{normJudgeId}` | getNormJudgeById | `normJudgeId`* | NormJudge | yes | Norm Judge Details. |
+| GET | `/normJudge/{normJudgeId}/associatedNormAttorneys` | getNormAttorneysAssociatedWithNormJudge | `normJudgeId`*, `q`, `pageNumber`* | AssociatedNormAttorneyResponse | yes | Attorneys Associated with the Judge. |
+| GET | `/normJudge/{normJudgeId}/associatedNormLawFirms` | getNormLawFirmsAssociatedWithNormJudge | `normJudgeId`*, `q`, `pageNumber`* | AssociatedNormLawFirmResponse | yes | Law Firms Associated With the Judge. |
+| GET | `/normJudge/{normJudgeId}/associatedNormParties` | getNormPartiesAssociatedWithNormJudge | `normJudgeId`*, `q`, `pageNumber`* | AssociatedNormPartyResponse | yes | Parties Associated with the Judge. |
+| GET | `/normJudgeSearch` | searchNormalizedJudges | `q`, `pageNumber` | NormJudgeSearchResponse | yes | Judge search. |
+| GET | `/normJudgeSearch/{normJudgeSearchId}` | searchNormalizedJudgesById | `normJudgeSearchId`*, `pageNumber` | NormJudgeSearchResponse | yes | Norm judge search results for a given normJudgeSearchId. |
+| GET | `/normLawFirm/{normLawFirmId}` | getNormLawFirmById | `normLawFirmId`* | NormLawFirm | yes | Norm LawFirm Details. |
+| GET | `/normLawFirm/{normLawFirmId}/associatedNormAttorneys` | getNormAttorneysAssociatedWithNormLawFirm | `normLawFirmId`*, `q`, `pageNumber`* | AssociatedNormAttorneyResponse | yes | Attorneys working for the Law Firm. |
+| GET | `/normLawFirm/{normLawFirmId}/associatedNormJudges` | getNormJudgesAssociatedWithNormLawFirm | `normLawFirmId`*, `q`, `pageNumber`* | AssociatedNormJudgeResponse | yes | Judges Faced By the Law Firm. |
+| GET | `/normLawFirm/{normLawFirmId}/associatedNormParties` | getNormPartiesAssociatedWithNormLawFirm | `normLawFirmId`*, `q`, `pageNumber`* | AssociatedNormPartyResponse | yes | Parties Represented by the Law Firm. |
+| GET | `/normLawFirm/{normLawFirmId}/caseCountAnalyticsByOpposingNormLawFirm` | getCaseCountAnalyticsByOpposingNormLawFirmForANormLawFirm | `normLawFirmId`*, `q`, `pageNumber`* | CaseCountAnalyticsByNormLawFirmResponse | yes | Case Count Analytics by Opposing Norm Law Firm. |
+| GET | `/normLawFirmSearch` | searchNormalizedLawFirms | `q`, `pageNumber` | NormLawFirmSearchResponse | yes | Law firm search. |
+| GET | `/normLawFirmSearch/{normLawFirmSearchId}` | searchNormalizedLawFirmsById | `normLawFirmSearchId`*, `pageNumber` | NormLawFirmSearchResponse | yes | Norm law firm search result for a given normLawFirmSearchId. |
+| GET | `/normParty/{normPartyId}` | getNormPartyById | `normPartyId`* | NormParty | yes | Norm Party Details. |
+| GET | `/normParty/{normPartyId}/associatedNormAttorneys` | getNormAttorneysAssociatedWithNormParty | `normPartyId`*, `q`, `pageNumber`* | AssociatedNormAttorneyResponse | yes | Attorneys that represented the Party. |
+| GET | `/normParty/{normPartyId}/associatedNormJudges` | getNormJudgesAssociatedWithNormParty | `normPartyId`*, `q`, `pageNumber`* | AssociatedNormJudgeResponse | yes | Judges Faced By the Party. |
+| GET | `/normParty/{normPartyId}/associatedNormLawFirms` | getNormLawFirmsAssociatedWithNormParty | `normPartyId`*, `q`, `pageNumber`* | AssociatedNormLawFirmResponse | yes | Law Firms that represented the Party. |
+| GET | `/normParty/{normPartyId}/caseCountAnalyticsByOpposingNormParty` | getCaseCountAnalyticsByOpposingNormPartyForANormParty | `normPartyId`*, `q`, `pageNumber`* | CaseCountAnalyticsByNormPartyResponse | yes | Case Count Analytics by Opposing Norm Party. |
+| GET | `/normPartySearch` | searchNormalizedParties | `q`, `pageNumber` | NormPartySearchResponse | yes | Party search. |
+| GET | `/normPartySearch/{normPartySearchId}` | searchNormalizedPartiesById | `normPartySearchId`*, `pageNumber` | NormPartySearchResponse | yes | Norm party search results for a given normPartySearchId. |
+| GET | `/pacer/importCaseByCourtUsingCaseNumber` | importPacerCaseByCourtUsingCaseNumber | `pacerUserId`*, `pacerClientCode`*, `caseNumber`*, `courtId`* | PACERImportCase | yes | Find PACER Case for a requested Case Number and Court. |
+| GET | `/pacerCaseLocator/caseSearch/allCourts` | AllCourtsPacerCaseLocatorCaseSearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLCase | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/caseSearch/appealCourts` | AppealCourtsPacerCaseLocatorCaseSearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `natureOfSuitsArray`, `courtRegionIdArray`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLCase | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/caseSearch/bankruptcyCourts` | BankruptcyCourtsPacerCaseLocatorCaseSearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `federalBankruptcyChapterArray`, `courtRegionIdArray`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `caseDischargedStartDate`, `caseDischargedEndDate`, `caseDismissedStartDate`, `caseDismissedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLCase | yes | PACER Case Locator Search API for Bankruptcy Courts. |
+| GET | `/pacerCaseLocator/caseSearch/civilCourts` | CivilCourtsPacerCaseLocatorCaseSearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `natureOfSuitsArray`, `courtRegionIdArray`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLCase | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/caseSearch/criminalCourts` | CriminalCourtsPacerCaseLocatorCaseSearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLCase | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/caseSearch/multiDistrictCourts` | MultiDistrictCourtsPacerCaseLocatorCaseSearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `jpmlNumber`, `pacerCaseId`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLCase | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/partySearch/allCourts` | AllCourtsPacerCaseLocatorPartySearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `lastName`, `firstName`, `middleName`, `generation`, `partyType`, `partyExactNameMatch`, `partyRoleArray`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseYearFrom`, `caseYearTo`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLParty | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/partySearch/appealCourts` | AppealCourtsPacerCaseLocatorPartySearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `lastName`, `firstName`, `middleName`, `generation`, `partyType`, `partyExactNameMatch`, `partyRoleArray`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseYearFrom`, `caseYearTo`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLParty | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/partySearch/bankruptcyCourts` | BankruptcyCourtsPacerCaseLocatorPartySearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `lastName`, `firstName`, `middleName`, `generation`, `partyType`, `partyExactNameMatch`, `partyRoleArray`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseYearFrom`, `caseYearTo`, `ssnOrEin`, `fourDigitSsn`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `caseDischargedStartDate`, `caseDischargedEndDate`, `caseDismissedStartDate`, `caseDismissedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLParty | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/partySearch/civilCourts` | CivilCourtsPacerCaseLocatorPartySearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `lastName`, `firstName`, `middleName`, `generation`, `partyType`, `partyExactNameMatch`, `partyRoleArray`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseYearFrom`, `caseYearTo`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLParty | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/partySearch/criminalCourts` | CriminalCourtsPacerCaseLocatorPartySearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `pacerCaseId`, `lastName`, `firstName`, `middleName`, `generation`, `partyType`, `partyExactNameMatch`, `partyRoleArray`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseYearFrom`, `caseYearTo`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLParty | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCaseLocator/partySearch/multiDistrictCourts` | MultiDistrictCourtsPacerCaseLocatorPartySearch | `pacerUserId`*, `pacerClientCode`*, `caseNumber`, `jpmlNumber`, `pacerCaseId`, `lastName`, `firstName`, `middleName`, `generation`, `partyType`, `partyExactNameMatch`, `partyRoleArray`, `caseTitle`, `caseOffice`, `caseSequenceNumber`, `caseYear`, `caseTypeArray`, `courtRegionIdArray`, `caseYearFrom`, `caseYearTo`, `caseFiledStartDate`, `caseFiledEndDate`, `caseTerminatedStartDate`, `caseTerminatedEndDate`, `sortParameterQuery`, `caseStatus`, `pageNumber` | PCLParty | yes | PACER Case Locator Search API for All Courts. |
+| GET | `/pacerCredential` | getPacerCredential | `pageNumber` | PacerCredentialListResponse | yes | Get Pacer Credential List. |
+| PUT | `/pacerCredential` | addPacerCredential | body: PacerCredentialRequest | Success |  | Add Pacer Credential. |
+| GET | `/pacerCredential/{pacerUserId}` | getPacerCredentialById | `pacerUserId`* | PacerCredential | yes | Get Pacer Credential for a requested pacer User Id. |
+| DELETE | `/pacerCredential/{pacerUserId}` | removePacerCredentialById | `pacerUserId`* | Success |  | Remove Pacer credential for a specific Pacer User Id. |
+| GET | `/party/{partyId}` | getPartyById | `partyId`* | Party | yes | Gets details for a requested Party ID. |
+| GET | `/party/{partyId}/associatedAttorneys` | getPartyAssociatedAttorneys | `partyId`*, `pageNumber` | PartyAttorneyAssociations | yes | Gets Associated Attorney details for a requested Party ID. |

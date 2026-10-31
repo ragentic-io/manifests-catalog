@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_paypi-default-images.s3.eu-west
 
 | | |
 | --- | --- |
-| Signed bundle | `96668e03f30d72903e18a9e1f225acb1bbc0b5f2baac9008d5642183c9109ffd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_paypi-default-images.s3.eu-west
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/checkCode` | post /checkCode | Check verification code |
-| POST | `/sendCode` | post /sendCode | Send verification code |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/checkCode` | post /checkCode | body*: object | object |  | Check verification code |
+| POST | `/sendCode` | post /sendCode | body*: object | object |  | Send verification code |

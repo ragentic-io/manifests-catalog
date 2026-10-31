@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `c03650b8d4c621d8031cc08be8e3dc9c93b41674db3c7975cbb2ee414e977fb4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,41 +34,43 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 52 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/order/{orderId}` | get /order/{orderId} | Returns all details of a order |
-| POST | `/order/{orderId}/shipment/cancel` | post /order/{orderId}/shipment/cancel | Confirm shipment canceletion (when requested by the customer) or failure to deliver |
-| POST | `/order/{orderId}/shipment/delivered` | post /order/{orderId}/shipment/delivered | Confirms that a shipment was delivered |
-| POST | `/order/{orderId}/shipment/exchange` | post /order/{orderId}/shipment/exchange | Confirm item exchange |
-| POST | `/order/{orderId}/shipment/return` | post /order/{orderId}/shipment/return | Confirm order item return and refund |
-| POST | `/order/{orderId}/shipment/sent` | post /order/{orderId}/shipment/sent | Update new order to include shipment information |
-| GET | `/orders` | get /orders | Returns orders details |
-| GET | `/orders/shipments/delivered` | get /orders/shipments/delivered | Returns list of shipments |
-| POST | `/orders/shipments/delivered` | post /orders/shipments/delivered | Bulk update of order shipments |
-| GET | `/orders/shipments/shipped` | get /orders/shipments/shipped | Returns a list of shipments shipped |
-| POST | `/orders/shipments/shipped` | post /orders/shipments/shipped | Bulk update of order shipments |
-| GET | `/orders/status/approved` | get /orders/status/approved | Return list of approved orders |
-| GET | `/orders/status/canceled` | get /orders/status/canceled | Returns lists of canceled orders |
-| GET | `/orders/status/delivered` | get /orders/status/delivered | Returns a list of orders successfully delivered associated with this seller. |
-| GET | `/orders/status/new` | get /orders/status/new | Returns a list of orders flagged as new. |
-| GET | `/orders/status/partiallyDelivered` | get /orders/status/partiallyDelivered | Returns a list of partially deliverd orders |
-| GET | `/orders/status/partiallySent` | get /orders/status/partiallySent | Returns a list of orders partially fullfiled |
-| GET | `/orders/status/sent` | get /orders/status/sent | Returns a list with orders fully sent |
-| POST | `/product` | post /product | Create a new product to the marketplace |
-| GET | `/product/{skuSellerId}` | get /product/{skuSellerId} | Returns details of a single product using the seller `skuSellerId` |
-| PUT | `/product/{skuSellerId}` | put /product/{skuSellerId} | Update product details |
-| PUT | `/product/{skuSellerId}/prices` | put /product/{skuSellerId}/prices | Allows seller to update prices of a single SKU |
-| PUT | `/product/{skuSellerId}/status` | put /product/{skuSellerId}/status | Enable/disable a single product in the Marketplace |
-| PUT | `/product/{skuSellerId}/stock` | put /product/{skuSellerId}/stock | Update a single product stock |
-| GET | `/products` | get /products | Returns a list of products loaded into BrandLovers Marketplace |
-| POST | `/products` | post /products | Allows new products from the seller to be loaded into the marketplace |
-| PUT | `/products/prices` | put /products/prices | Allows bulk update of product prices. |
-| GET | `/products/status` | get /products/status | Returns seller products status in the marketplace |
-| PUT | `/products/status` | put /products/status | Bulk enable/disable products in the marketplace |
-| GET | `/products/status/selling` | get /products/status/selling | Returns products that are successfully listed for sale. |
-| PUT | `/products/stocks` | put /products/stocks | Bulk product stock update |
-| POST | `/ticket` | post /ticket | Creates a new trouble ticket |
-| POST | `/ticket/{ticketId}/message` | post /ticket/{ticketId}/message | Add new message to trouble ticket |
-| GET | `/ticket/{ticketId}/messages` | get /ticket/{ticketId}/messages | Get trouble ticket messages |
-| PUT | `/ticket/{ticketId}/status` | put /ticket/{ticketId}/status | Update trouble ticket status |
-| GET | `/tickets` | get /tickets | Get customers trouble tickets |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/order/{orderId}` | get /order/{orderId} | `authorization`*, `orderId`* | Order | yes | Returns all details of a order |
+| POST | `/order/{orderId}/shipment/cancel` | post /order/{orderId}/shipment/cancel | `authorization`*, `orderId`*, body*: NewTrackingRefund | — |  | Confirm shipment canceletion (when requested by the customer) or failure to deliver |
+| POST | `/order/{orderId}/shipment/delivered` | post /order/{orderId}/shipment/delivered | `authorization`*, `orderId`*, body*: Newshipmentstatus | — |  | Confirms that a shipment was delivered |
+| POST | `/order/{orderId}/shipment/exchange` | post /order/{orderId}/shipment/exchange | `authorization`*, `orderId`*, body*: NewTrackingRefund | — |  | Confirm item exchange |
+| POST | `/order/{orderId}/shipment/return` | post /order/{orderId}/shipment/return | `authorization`*, `orderId`*, body*: NewTrackingRefund | — |  | Confirm order item return and refund |
+| POST | `/order/{orderId}/shipment/sent` | post /order/{orderId}/shipment/sent | `authorization`*, `orderId`*, body*: Newshipmentstatus | — |  | Update new order to include shipment information |
+| GET | `/orders` | get /orders | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns orders details |
+| GET | `/orders/shipments/delivered` | get /orders/shipments/delivered | `authorization`*, `status`, `offset`, `limit` | GetOrdersShipments | yes | Returns list of shipments |
+| POST | `/orders/shipments/delivered` | post /orders/shipments/delivered | `authorization`*, body*: OrdersShipments | — |  | Bulk update of order shipments |
+| GET | `/orders/shipments/shipped` | get /orders/shipments/shipped | `authorization`*, `status`, `offset`, `limit` | GetOrdersShipments | yes | Returns a list of shipments shipped |
+| POST | `/orders/shipments/shipped` | post /orders/shipments/shipped | body*: OrdersShipments | — |  | Bulk update of order shipments |
+| GET | `/orders/status/approved` | get /orders/status/approved | `authorization`*, `offset`, `limit` | GetOrders | yes | Return list of approved orders |
+| GET | `/orders/status/canceled` | get /orders/status/canceled | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns lists of canceled orders |
+| GET | `/orders/status/delivered` | get /orders/status/delivered | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns a list of orders successfully delivered associated with this seller. |
+| GET | `/orders/status/new` | get /orders/status/new | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns a list of orders flagged as new. |
+| GET | `/orders/status/partiallyDelivered` | get /orders/status/partiallyDelivered | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns a list of partially deliverd orders |
+| GET | `/orders/status/partiallySent` | get /orders/status/partiallySent | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns a list of orders partially fullfiled |
+| GET | `/orders/status/sent` | get /orders/status/sent | `authorization`*, `offset`, `limit` | GetOrders | yes | Returns a list with orders fully sent |
+| POST | `/product` | post /product | `authorization`*, body*: Product | — |  | Create a new product to the marketplace |
+| GET | `/product/{skuSellerId}` | get /product/{skuSellerId} | `authorization`*, `skuSellerId`* | GetProduct | yes | Returns details of a single product using the seller `skuSellerId` |
+| PUT | `/product/{skuSellerId}` | put /product/{skuSellerId} | `authorization`*, `skuSellerId`*, body*: ProductUpdate | — |  | Update product details |
+| PUT | `/product/{skuSellerId}/prices` | put /product/{skuSellerId}/prices | `authorization`*, `skuSellerId`*, body*: ProductPrice | — |  | Allows seller to update prices of a single SKU |
+| PUT | `/product/{skuSellerId}/status` | put /product/{skuSellerId}/status | `authorization`*, `skuSellerId`*, body*: SellerItemStatus | — |  | Enable/disable a single product in the Marketplace |
+| PUT | `/product/{skuSellerId}/stock` | put /product/{skuSellerId}/stock | `authorization`*, `skuSellerId`*, body*: Stock | — |  | Update a single product stock |
+| GET | `/products` | get /products | `authorization`*, `offset`, `limit` | GetProductsResponse | yes | Returns a list of products loaded into BrandLovers Marketplace |
+| POST | `/products` | post /products | `authorization`*, body*: Product[] | — |  | Allows new products from the seller to be loaded into the marketplace |
+| PUT | `/products/prices` | put /products/prices | `authorization`*, body*: SellerItemPrices[] | — |  | Allows bulk update of product prices. |
+| GET | `/products/status` | get /products/status | `authorization`*, `offset`, `limit` | GetSellerProductsStatus | yes | Returns seller products status in the marketplace |
+| PUT | `/products/status` | put /products/status | `authorization`*, body*: ProductStatusUpdate[] | — |  | Bulk enable/disable products in the marketplace |
+| GET | `/products/status/selling` | get /products/status/selling | `authorization`*, `offset`, `limit` | GetProductsStatusSelling | yes | Returns products that are successfully listed for sale. |
+| PUT | `/products/stocks` | put /products/stocks | `authorization`*, body*: ProductStock[] | — |  | Bulk product stock update |
+| POST | `/ticket` | post /ticket | `authorization`*, body*: NewTicket | — |  | Creates a new trouble ticket |
+| POST | `/ticket/{ticketId}/message` | post /ticket/{ticketId}/message | `authorization`*, `ticketId`*, body*: NewTicketMessage | — |  | Add new message to trouble ticket |
+| GET | `/ticket/{ticketId}/messages` | get /ticket/{ticketId}/messages | `authorization`*, `ticketId`*, `offset`, `limit` | GetTicketMessages | yes | Get trouble ticket messages |
+| PUT | `/ticket/{ticketId}/status` | put /ticket/{ticketId}/status | `authorization`*, `ticketId`*, body*: TicketStatus | — |  | Update trouble ticket status |
+| GET | `/tickets` | get /tickets | `authorization`*, `status`, `offset`, `limit` | GetTickets | yes | Get customers trouble tickets |

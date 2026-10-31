@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `876d67d62d76c3790e20b49178f6d01d285f4448b978f0e079e5be4d2b733941` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,27 +32,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 ## Operations (22)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/action/organization_activity_list` | get /action/organization_activity_list | Get the activity stream of an organization |
-| GET | `/action/organization_activity_list_html` | get /action/organization_activity_list_html | Get the activity stream of an organization, HTML format |
-| GET | `/action/organization_autocomplete` | get /action/organization_autocomplete | Get names of organizations that match a query string |
-| GET | `/action/organization_follower_count` | get /action/organization_follower_count | Get number of followers of an organization |
-| GET | `/action/organization_follower_list` | get /action/organization_follower_list | Get users following an organization |
-| GET | `/action/organization_list` | get /action/organization_list | Get names of all organizations |
-| GET | `/action/organization_list_for_user` | get /action/organization_list_for_user | Get organizations that a user has a given permission for |
-| GET | `/action/organization_revision_list` | get /action/organization_revision_list | Get organization revisions |
-| GET | `/action/organization_show` | get /action/organization_show | Get details of a specific organization |
-| GET | `/action/package_activity_list` | get /action/package_activity_list | Get the activity stream of a package (dataset) |
-| GET | `/action/package_activity_list_html` | get /action/package_activity_list_html | Get the activity stream of a package (dataset), HTML format |
-| GET | `/action/package_autocomplete` | get /action/package_autocomplete | Find packages (datasets) matching a query |
-| GET | `/action/package_list` | get /action/package_list | Get a list of all packages (datasets) |
-| GET | `/action/package_relationships_list` | get /action/package_relationships_list | Get package (dataset) relationships |
-| GET | `/action/package_revision_list` | get /action/package_revision_list | Get list of revisions for a package (dataset) |
-| GET | `/action/package_search` | get /action/package_search | Find packages (datasets) matching query terms |
-| GET | `/action/package_show` | get /action/package_show | Get metadata about one specific package (dataset) |
-| GET | `/action/related_list` | get /action/related_list | Gets items related to a package (dataset) |
-| GET | `/action/resource_search` | get /action/resource_search | Find resources |
-| GET | `/action/resource_show` | get /action/resource_show | Get metadata for a specific resource |
-| GET | `/action/status_show` | get /action/status_show | Get the site status |
-| GET | `/action/tag_list` | get /action/tag_list | Get a list of tags |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/action/organization_activity_list` | get /action/organization_activity_list | `id` | — | yes | Get the activity stream of an organization |
+| GET | `/action/organization_activity_list_html` | get /action/organization_activity_list_html | `id` | — | yes | Get the activity stream of an organization, HTML format |
+| GET | `/action/organization_autocomplete` | get /action/organization_autocomplete | `q`, `limit` | — | yes | Get names of organizations that match a query string |
+| GET | `/action/organization_follower_count` | get /action/organization_follower_count | `id` | — | yes | Get number of followers of an organization |
+| GET | `/action/organization_follower_list` | get /action/organization_follower_list | `id` | — | yes | Get users following an organization |
+| GET | `/action/organization_list` | get /action/organization_list | `offset`, `limit` | — | yes | Get names of all organizations |
+| GET | `/action/organization_list_for_user` | get /action/organization_list_for_user | `permission` | — | yes | Get organizations that a user has a given permission for |
+| GET | `/action/organization_revision_list` | get /action/organization_revision_list | `id` | — | yes | Get organization revisions |
+| GET | `/action/organization_show` | get /action/organization_show | `id`, `include_datasets` | — | yes | Get details of a specific organization |
+| GET | `/action/package_activity_list` | get /action/package_activity_list | `id`, `offset`, `limit` | — | yes | Get the activity stream of a package (dataset) |
+| GET | `/action/package_activity_list_html` | get /action/package_activity_list_html | `id`, `offset`, `limit` | — | yes | Get the activity stream of a package (dataset), HTML format |
+| GET | `/action/package_autocomplete` | get /action/package_autocomplete | `q`, `limit` | — | yes | Find packages (datasets) matching a query |
+| GET | `/action/package_list` | get /action/package_list | `offset`, `limit` | — | yes | Get a list of all packages (datasets) |
+| GET | `/action/package_relationships_list` | get /action/package_relationships_list | `id`, `id2`, `rel` | — | yes | Get package (dataset) relationships |
+| GET | `/action/package_revision_list` | get /action/package_revision_list | `id` | — | yes | Get list of revisions for a package (dataset) |
+| GET | `/action/package_search` | get /action/package_search | `q` | — | yes | Find packages (datasets) matching query terms |
+| GET | `/action/package_show` | get /action/package_show | `id` | — | yes | Get metadata about one specific package (dataset) |
+| GET | `/action/related_list` | get /action/related_list | `id`, `dataset`, `type_filter`, `sort`, `featured` | — | yes | Gets items related to a package (dataset) |
+| GET | `/action/resource_search` | get /action/resource_search | `query`, `fields`, `order_by`, `offset`, `limit` | — | yes | Find resources |
+| GET | `/action/resource_show` | get /action/resource_show | `id`, `include_tracking` | — | yes | Get metadata for a specific resource |
+| GET | `/action/status_show` | get /action/status_show | — | — | yes | Get the site status |
+| GET | `/action/tag_list` | get /action/tag_list | `offset`, `limit` | — | yes | Get a list of tags |

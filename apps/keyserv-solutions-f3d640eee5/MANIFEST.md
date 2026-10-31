@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_theTechComp_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `1f1c377f7e737d43e654a37bafdb1c2a50b92a25e23d397fa096a81746c730bb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,29 +34,31 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_theTechComp_profile
 
 11 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/KeysApi/Current/{serial}` | KeysApi_Current | — |
-| GET | `/v1/KeysApi/Custom/{serial}` | KeysApi_Custom | — |
-| GET | `/v1/KeysApi/Expiry/{serial}` | KeysApi_Expiry | — |
-| GET | `/v1/KeysApi/Find/{serial}` | KeysApi_Find | — |
-| PATCH | `/v1/ProductsApi` | ProductsApi_PatchProduct | — |
-| POST | `/v1/ProductsApi` | ProductsApi_PatchProduct2 | — |
-| POST | `/v1/ProductsApi/Count` | ProductsApi_Count | — |
-| POST | `/v1/ProductsApi/Find` | ProductsApi_Find | — |
-| POST | `/v1/ProductsApi/List` | ProductsApi_List | — |
-| POST | `/v1/ProductsApi/Save` | ProductsApi_Save | — |
-| DELETE | `/v1/ProductsApi/{serial}` | ProductsApi_DeleteProduct | — |
-| POST | `/v1/ProductsApi/{serial}` | ProductsApi_DeleteProduct2 | — |
-| POST | `/v1/SubscriptionsApi` | SubscriptionsApi_PutSubscription2 | — |
-| PUT | `/v1/SubscriptionsApi` | SubscriptionsApi_PutSubscription | — |
-| POST | `/v1/SubscriptionsApi/Count` | SubscriptionsApi_Count | — |
-| PATCH | `/v1/SubscriptionsApi/Disable` | SubscriptionsApi_Disable | — |
-| POST | `/v1/SubscriptionsApi/Disable` | SubscriptionsApi_Disable2 | — |
-| PATCH | `/v1/SubscriptionsApi/Enable` | SubscriptionsApi_Enable | — |
-| POST | `/v1/SubscriptionsApi/Enable` | SubscriptionsApi_Enable2 | — |
-| POST | `/v1/SubscriptionsApi/Find` | SubscriptionsApi_Find | — |
-| POST | `/v1/SubscriptionsApi/List` | SubscriptionsApi_List | — |
-| POST | `/v1/SubscriptionsApi/Save` | SubscriptionsApi_Save | — |
-| DELETE | `/v1/SubscriptionsApi/{serial}` | SubscriptionsApi_DeleteSubscription | — |
-| POST | `/v1/SubscriptionsApi/{serial}` | SubscriptionsApi_DeleteSubscription2 | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/KeysApi/Current/{serial}` | KeysApi_Current | `serial`* | CurrentKey | yes | — |
+| GET | `/v1/KeysApi/Custom/{serial}` | KeysApi_Custom | `serial`* | string:binary | yes | — |
+| GET | `/v1/KeysApi/Expiry/{serial}` | KeysApi_Expiry | `serial`* | Expiry | yes | — |
+| GET | `/v1/KeysApi/Find/{serial}` | KeysApi_Find | `serial`* | KeyView | yes | — |
+| POST | `/v1/ProductsApi` | ProductsApi_PatchProduct2 | body*: ProductCreateModify | — |  | — |
+| PATCH | `/v1/ProductsApi` | ProductsApi_PatchProduct | body*: ProductCreateModify | — |  | — |
+| POST | `/v1/ProductsApi/Count` | ProductsApi_Count | body*: ApiKey | CountOf |  | — |
+| POST | `/v1/ProductsApi/Find` | ProductsApi_Find | `page`, body*: FindCredentials | ProductView |  | — |
+| POST | `/v1/ProductsApi/List` | ProductsApi_List | `page`, body*: ApiKey | ProductView[] |  | — |
+| POST | `/v1/ProductsApi/Save` | ProductsApi_Save | body*: ProductCreateModify | ProductView |  | — |
+| POST | `/v1/ProductsApi/{serial}` | ProductsApi_DeleteProduct2 | `X-Api-Key`*, `serial`* | — |  | — |
+| DELETE | `/v1/ProductsApi/{serial}` | ProductsApi_DeleteProduct | `X-Api-Key`*, `serial`* | — |  | — |
+| PUT | `/v1/SubscriptionsApi` | SubscriptionsApi_PutSubscription | body*: SubscriptionCreateModify | — |  | — |
+| POST | `/v1/SubscriptionsApi` | SubscriptionsApi_PutSubscription2 | body*: SubscriptionCreateModify | — |  | — |
+| POST | `/v1/SubscriptionsApi/Count` | SubscriptionsApi_Count | body*: ApiCredentials | CountOf |  | — |
+| POST | `/v1/SubscriptionsApi/Disable` | SubscriptionsApi_Disable2 | body*: FindCredentials | — |  | — |
+| PATCH | `/v1/SubscriptionsApi/Disable` | SubscriptionsApi_Disable | body*: FindCredentials | — |  | — |
+| POST | `/v1/SubscriptionsApi/Enable` | SubscriptionsApi_Enable2 | body*: FindCredentials | — |  | — |
+| PATCH | `/v1/SubscriptionsApi/Enable` | SubscriptionsApi_Enable | body*: FindCredentials | — |  | — |
+| POST | `/v1/SubscriptionsApi/Find` | SubscriptionsApi_Find | body*: FindCredentials | SubscriptionView |  | — |
+| POST | `/v1/SubscriptionsApi/List` | SubscriptionsApi_List | `page`, body*: FindCredentials | SubscriptionView[] |  | — |
+| POST | `/v1/SubscriptionsApi/Save` | SubscriptionsApi_Save | body*: SubscriptionCreateModify | KeyView |  | — |
+| POST | `/v1/SubscriptionsApi/{serial}` | SubscriptionsApi_DeleteSubscription2 | `X-Api-Key`*, `serial`*, `keep`* | — |  | — |
+| DELETE | `/v1/SubscriptionsApi/{serial}` | SubscriptionsApi_DeleteSubscription | `X-Api-Key`*, `serial`*, `keep`* | — |  | — |

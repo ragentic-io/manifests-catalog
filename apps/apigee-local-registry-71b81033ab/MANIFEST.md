@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `aecb6d73534e42b3eb62855036d66a87a8e5d4fc775ceaa5cfc039430a3e35e1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,40 +34,42 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 18 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/projects/{project}/locations/{location}/apis` | Registry_ListApis | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis` | Registry_CreateApi | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}` | Registry_DeleteApi | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}` | Registry_GetApi | — |
-| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}` | Registry_UpdateApi | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments` | Registry_ListApiDeployments | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments` | Registry_CreateApiDeployment | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}` | Registry_DeleteApiDeployment | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}` | Registry_GetApiDeployment | — |
-| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}` | Registry_UpdateApiDeployment | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:deleteRevision` | Registry_DeleteApiDeploymentRevision | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:listRevisions` | Registry_ListApiDeploymentRevisions | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:rollback` | Registry_RollbackApiDeployment | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:tagRevision` | Registry_TagApiDeploymentRevision | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions` | Registry_ListApiVersions | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions` | Registry_CreateApiVersion | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}` | Registry_DeleteApiVersion | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}` | Registry_GetApiVersion | — |
-| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}` | Registry_UpdateApiVersion | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs` | Registry_ListApiSpecs | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs` | Registry_CreateApiSpec | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` | Registry_DeleteApiSpec | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` | Registry_GetApiSpec | — |
-| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` | Registry_UpdateApiSpec | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:deleteRevision` | Registry_DeleteApiSpecRevision | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:getContents` | Registry_GetApiSpecContents | — |
-| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:listRevisions` | Registry_ListApiSpecRevisions | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:rollback` | Registry_RollbackApiSpec | — |
-| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:tagRevision` | Registry_TagApiSpecRevision | — |
-| GET | `/v1/projects/{project}/locations/{location}/artifacts` | Registry_ListArtifacts | — |
-| POST | `/v1/projects/{project}/locations/{location}/artifacts` | Registry_CreateArtifact | — |
-| DELETE | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}` | Registry_DeleteArtifact | — |
-| GET | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}` | Registry_GetArtifact | — |
-| PUT | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}` | Registry_ReplaceArtifact | — |
-| GET | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}:getContents` | Registry_GetArtifactContents | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/projects/{project}/locations/{location}/apis` | Registry_ListApis | `project`*, `location`*, `pageSize`, `pageToken`, `filter` | ListApisResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis` | Registry_CreateApi | `project`*, `location`*, `apiId`, body*: Api | Api |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}` | Registry_GetApi | `project`*, `location`*, `api`* | Api | yes | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}` | Registry_DeleteApi | `project`*, `location`*, `api`*, `force` | — |  | — |
+| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}` | Registry_UpdateApi | `project`*, `location`*, `api`*, `updateMask`, `allowMissing`, body*: Api | Api |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments` | Registry_ListApiDeployments | `project`*, `location`*, `api`*, `pageSize`, `pageToken`, `filter` | ListApiDeploymentsResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments` | Registry_CreateApiDeployment | `project`*, `location`*, `api`*, `apiDeploymentId`, body*: ApiDeployment | ApiDeployment |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}` | Registry_GetApiDeployment | `project`*, `location`*, `api`*, `deployment`* | ApiDeployment | yes | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}` | Registry_DeleteApiDeployment | `project`*, `location`*, `api`*, `deployment`*, `force` | — |  | — |
+| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}` | Registry_UpdateApiDeployment | `project`*, `location`*, `api`*, `deployment`*, `updateMask`, `allowMissing`, body*: ApiDeployment | ApiDeployment |  | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:deleteRevision` | Registry_DeleteApiDeploymentRevision | `project`*, `location`*, `api`*, `deployment`* | ApiDeployment |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:listRevisions` | Registry_ListApiDeploymentRevisions | `project`*, `location`*, `api`*, `deployment`*, `pageSize`, `pageToken` | ListApiDeploymentRevisionsResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:rollback` | Registry_RollbackApiDeployment | `project`*, `location`*, `api`*, `deployment`*, body*: RollbackApiDeploymentRequest | ApiDeployment |  | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}:tagRevision` | Registry_TagApiDeploymentRevision | `project`*, `location`*, `api`*, `deployment`*, body*: TagApiDeploymentRevisionRequest | ApiDeployment |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions` | Registry_ListApiVersions | `project`*, `location`*, `api`*, `pageSize`, `pageToken`, `filter` | ListApiVersionsResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions` | Registry_CreateApiVersion | `project`*, `location`*, `api`*, `apiVersionId`, body*: ApiVersion | ApiVersion |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}` | Registry_GetApiVersion | `project`*, `location`*, `api`*, `version`* | ApiVersion | yes | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}` | Registry_DeleteApiVersion | `project`*, `location`*, `api`*, `version`*, `force` | — |  | — |
+| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}` | Registry_UpdateApiVersion | `project`*, `location`*, `api`*, `version`*, `updateMask`, `allowMissing`, body*: ApiVersion | ApiVersion |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs` | Registry_ListApiSpecs | `project`*, `location`*, `api`*, `version`*, `pageSize`, `pageToken`, `filter` | ListApiSpecsResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs` | Registry_CreateApiSpec | `project`*, `location`*, `api`*, `version`*, `apiSpecId`, body*: ApiSpec | ApiSpec |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` | Registry_GetApiSpec | `project`*, `location`*, `api`*, `version`*, `spec`* | ApiSpec | yes | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` | Registry_DeleteApiSpec | `project`*, `location`*, `api`*, `version`*, `spec`*, `force` | — |  | — |
+| PATCH | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` | Registry_UpdateApiSpec | `project`*, `location`*, `api`*, `version`*, `spec`*, `updateMask`, `allowMissing`, body*: ApiSpec | ApiSpec |  | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:deleteRevision` | Registry_DeleteApiSpecRevision | `project`*, `location`*, `api`*, `version`*, `spec`* | ApiSpec |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:getContents` | Registry_GetApiSpecContents | `project`*, `location`*, `api`*, `version`*, `spec`* | — | yes | — |
+| GET | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:listRevisions` | Registry_ListApiSpecRevisions | `project`*, `location`*, `api`*, `version`*, `spec`*, `pageSize`, `pageToken` | ListApiSpecRevisionsResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:rollback` | Registry_RollbackApiSpec | `project`*, `location`*, `api`*, `version`*, `spec`*, body*: RollbackApiSpecRequest | ApiSpec |  | — |
+| POST | `/v1/projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}:tagRevision` | Registry_TagApiSpecRevision | `project`*, `location`*, `api`*, `version`*, `spec`*, body*: TagApiSpecRevisionRequest | ApiSpec |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/artifacts` | Registry_ListArtifacts | `project`*, `location`*, `pageSize`, `pageToken`, `filter` | ListArtifactsResponse | yes | — |
+| POST | `/v1/projects/{project}/locations/{location}/artifacts` | Registry_CreateArtifact | `project`*, `location`*, `artifactId`, body*: Artifact | Artifact |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}` | Registry_GetArtifact | `project`*, `location`*, `artifact`* | Artifact | yes | — |
+| PUT | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}` | Registry_ReplaceArtifact | `project`*, `location`*, `artifact`*, body*: Artifact | Artifact |  | — |
+| DELETE | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}` | Registry_DeleteArtifact | `project`*, `location`*, `artifact`* | — |  | — |
+| GET | `/v1/projects/{project}/locations/{location}/artifacts/{artifact}:getContents` | Registry_GetArtifactContents | `project`*, `location`*, `artifact`* | — | yes | — |

@@ -13,6 +13,21 @@
         "from": "codesearch-debian-net-715c51c8ba",
         "kind": "EXPOSES",
         "to": "operation:get:/searchperpackage"
+      },
+      {
+        "from": "operation:get:/search",
+        "kind": "RETURNS",
+        "to": "schema:SearchResult"
+      },
+      {
+        "from": "operation:get:/searchperpackage",
+        "kind": "RETURNS",
+        "to": "schema:PackageSearchResult"
+      },
+      {
+        "from": "schema:PackageSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:SearchResult"
       }
     ],
     "nodes": [
@@ -22,43 +37,116 @@
       },
       {
         "deprecated": false,
+        "description": "Performs a search through the full Debian Code Search corpus, blocking until all results are available (might take a few seconds depending on the search query).",
         "id": "operation:get:/search",
         "kind": "operation",
         "method": "get",
         "name": "search",
+        "parameters": [
+          {
+            "description": "The search query, for example `who knows...` (literal) or `who knows\\.\\.\\.` (regular expression).",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "regexp",
+            "description": "Whether the query is to be interpreted as a literal (`literal`) instead of as an RE2 regular expression (`regexp`).",
+            "enum": [
+              "literal",
+              "regexp"
+            ],
+            "in": "query",
+            "name": "match_mode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SearchResult[]"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Searches through source code"
+        "summary": "Searches through source code",
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The search results are currently sorted arbitrarily, but we intend to sort them by ranking eventually: https://github.com/Debian/dcs/blob/51338e934eb7ee18d00c5…",
         "id": "operation:get:/searchperpackage",
         "kind": "operation",
         "method": "get",
         "name": "searchperpackage",
+        "parameters": [
+          {
+            "description": "The search query, for example `who knows...` (literal) or `who knows\\.\\.\\.` (regular expression).",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "regexp",
+            "description": "Whether the query is to be interpreted as a literal (`literal`) instead of as an RE2 regular expression (`regexp`).",
+            "enum": [
+              "literal",
+              "regexp"
+            ],
+            "in": "query",
+            "name": "match_mode",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/searchperpackage",
         "pointer": "#/paths/~1searchperpackage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PackageSearchResult[]"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Like /search, but aggregates per package"
+        "summary": "Like /search, but aggregates per package",
+        "tags": [
+          "search"
+        ]
       },
       {
         "id": "schema:PackageSearchResult",
         "kind": "schema",
-        "name": "PackageSearchResult"
+        "name": "PackageSearchResult",
+        "type": "object"
       },
       {
+        "description": "A search result matching the specified query.",
         "id": "schema:SearchResult",
         "kind": "schema",
-        "name": "SearchResult"
+        "name": "SearchResult",
+        "type": "object"
       }
     ]
   },

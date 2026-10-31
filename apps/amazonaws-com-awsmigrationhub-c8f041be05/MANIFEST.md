@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `57d89f8792802344796ed97522bcd349aad00a8e6f69a4e8494e0627a513beb3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,22 +34,24 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_im
 
 81 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact` | AssociateCreatedArtifact | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource` | AssociateDiscoveredResource | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream` | CreateProgressUpdateStream | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream` | DeleteProgressUpdateStream | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.DescribeApplicationState` | DescribeApplicationState | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask` | DescribeMigrationTask | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact` | DisassociateCreatedArtifact | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource` | DisassociateDiscoveredResource | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.ImportMigrationTask` | ImportMigrationTask | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.ListApplicationStates` | ListApplicationStates | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts` | ListCreatedArtifacts | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources` | ListDiscoveredResources | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.ListMigrationTasks` | ListMigrationTasks | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams` | ListProgressUpdateStreams | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.NotifyApplicationState` | NotifyApplicationState | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState` | NotifyMigrationTaskState | — |
-| POST | `/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes` | PutResourceAttributes | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact` | AssociateCreatedArtifact | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: AssociateCreatedArtifactRequest | AssociateCreatedArtifactResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource` | AssociateDiscoveredResource | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: AssociateDiscoveredResourceRequest | AssociateDiscoveredResourceResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream` | CreateProgressUpdateStream | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: CreateProgressUpdateStreamRequest | CreateProgressUpdateStreamResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream` | DeleteProgressUpdateStream | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: DeleteProgressUpdateStreamRequest | DeleteProgressUpdateStreamResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.DescribeApplicationState` | DescribeApplicationState | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: DescribeApplicationStateRequest | DescribeApplicationStateResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask` | DescribeMigrationTask | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: DescribeMigrationTaskRequest | DescribeMigrationTaskResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact` | DisassociateCreatedArtifact | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: DisassociateCreatedArtifactRequest | DisassociateCreatedArtifactResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource` | DisassociateDiscoveredResource | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: DisassociateDiscoveredResourceRequest | DisassociateDiscoveredResourceResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.ImportMigrationTask` | ImportMigrationTask | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: ImportMigrationTaskRequest | ImportMigrationTaskResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.ListApplicationStates` | ListApplicationStates | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `MaxResults`, `NextToken`, `X-Amz-Target`*, body*: ListApplicationStatesRequest | ListApplicationStatesResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts` | ListCreatedArtifacts | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `MaxResults`, `NextToken`, `X-Amz-Target`*, body*: ListCreatedArtifactsRequest | ListCreatedArtifactsResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources` | ListDiscoveredResources | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `MaxResults`, `NextToken`, `X-Amz-Target`*, body*: ListDiscoveredResourcesRequest | ListDiscoveredResourcesResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.ListMigrationTasks` | ListMigrationTasks | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `MaxResults`, `NextToken`, `X-Amz-Target`*, body*: ListMigrationTasksRequest | ListMigrationTasksResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams` | ListProgressUpdateStreams | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `MaxResults`, `NextToken`, `X-Amz-Target`*, body*: ListProgressUpdateStreamsRequest | ListProgressUpdateStreamsResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.NotifyApplicationState` | NotifyApplicationState | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: NotifyApplicationStateRequest | NotifyApplicationStateResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState` | NotifyMigrationTaskState | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: NotifyMigrationTaskStateRequest | NotifyMigrationTaskStateResult |  | — |
+| POST | `/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes` | PutResourceAttributes | `X-Amz-Content-Sha256`, `X-Amz-Date`, `X-Amz-Algorithm`, `X-Amz-Credential`, `X-Amz-Security-Token`, `X-Amz-Signature`, `X-Amz-SignedHeaders`, `X-Amz-Target`*, body*: PutResourceAttributesRequest | PutResourceAttributesResult |  | — |

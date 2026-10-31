@@ -128,6 +128,2316 @@
         "from": "bbc-com-48de9242cd",
         "kind": "EXPOSES",
         "to": "operation:get:/versions"
+      },
+      {
+        "from": "operation:get:/availabilities",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/broadcasts",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/groups",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/images",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/items",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/master_brands",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/people",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/pips",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/programme_details",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/programmes",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/promotions",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/schedules",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/services",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/brands/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/brands/{pid}/franchises/",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/episodes/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/episodes/{pid}/ancestors/",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/episodes/{pid}/formats/",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/episodes/{pid}/genre_groups/",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/images/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/master_brands/{mbid}",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/v1/promotions/{pid}",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "operation:get:/versions",
+        "kind": "RETURNS",
+        "to": "schema:nitro"
+      },
+      {
+        "from": "schema:accurate_programme_time",
+        "kind": "REFERENCES",
+        "to": "schema:dateRange"
+      },
+      {
+        "from": "schema:accurate_time",
+        "kind": "REFERENCES",
+        "to": "schema:broadcastTime"
+      },
+      {
+        "from": "schema:ancestor_titles",
+        "kind": "REFERENCES",
+        "to": "schema:containers_title"
+      },
+      {
+        "from": "schema:ancestor_titles",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:ancestor_titles",
+        "kind": "REFERENCES",
+        "to": "schema:presentation_title"
+      },
+      {
+        "from": "schema:ancestor_titles",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:ancestors",
+        "kind": "REFERENCES",
+        "to": "schema:reference"
+      },
+      {
+        "from": "schema:ancestors_titles",
+        "kind": "REFERENCES",
+        "to": "schema:containers_title"
+      },
+      {
+        "from": "schema:ancestors_titles",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:ancestors_titles",
+        "kind": "REFERENCES",
+        "to": "schema:presentation_title"
+      },
+      {
+        "from": "schema:ancestors_titles",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:accurate_programme_time"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:actual_start"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:availability-debug"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:availability_of"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:availability_type"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:media_availability_time"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:media_set"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:revocation_status"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:scheduled_time"
+      },
+      {
+        "from": "schema:availability",
+        "kind": "REFERENCES",
+        "to": "schema:status"
+      },
+      {
+        "from": "schema:availability-debug",
+        "kind": "REFERENCES",
+        "to": "schema:media_profile_groups"
+      },
+      {
+        "from": "schema:availability-debug",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:availability-debug",
+        "kind": "REFERENCES",
+        "to": "schema:serviceReference"
+      },
+      {
+        "from": "schema:availability_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:status"
+      },
+      {
+        "from": "schema:availability_of",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:available_mixins",
+        "kind": "REFERENCES",
+        "to": "schema:available_versions_media_sets"
+      },
+      {
+        "from": "schema:available_simulcasts",
+        "kind": "REFERENCES",
+        "to": "schema:available_versions_element"
+      },
+      {
+        "from": "schema:available_versions",
+        "kind": "REFERENCES",
+        "to": "schema:available_versions_element"
+      },
+      {
+        "from": "schema:available_versions_element",
+        "kind": "REFERENCES",
+        "to": "schema:available_mixins"
+      },
+      {
+        "from": "schema:available_versions_element",
+        "kind": "REFERENCES",
+        "to": "schema:guidance_warnings"
+      },
+      {
+        "from": "schema:available_versions_element",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:available_webcasts",
+        "kind": "REFERENCES",
+        "to": "schema:available_versions_element"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:alternate_images_mixin"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:availability_mixin"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:embargoed"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:expected_child_count"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:franchises"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:genre_groupings"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:is_embeddable"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:items_for"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand_link"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:previous_next_mixin"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:programme_formats"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:programme_type"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:related_links"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:release_date_group"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:brand",
+        "kind": "REFERENCES",
+        "to": "schema:uri"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:ancestor_titles"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors_titles"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:broadcast_of"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:is_audio_described"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:is_blanked"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:is_critical"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:is_repeat"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:is_simulcast"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:published_time"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:serviceReference"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:tx_time"
+      },
+      {
+        "from": "schema:broadcast",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:broadcastTime",
+        "kind": "REFERENCES",
+        "to": "schema:dateRange"
+      },
+      {
+        "from": "schema:broadcast_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:broadcaster",
+        "kind": "REFERENCES",
+        "to": "schema:sid"
+      },
+      {
+        "from": "schema:chapter",
+        "kind": "REFERENCES",
+        "to": "schema:item"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:advertising_allowed"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:alternate_images_mixin"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:ancestor_titles"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors_titles"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:availability_mixin"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:caption"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:clip_of"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:embargoed"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:genre_groupings"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:genre_groups"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:is_embeddable"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:items_for"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand_link"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:media_type"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:original_version_duration"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:previous_next_mixin"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:programme_formats"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:related_links"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:release_date_group"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:uri"
+      },
+      {
+        "from": "schema:clip",
+        "kind": "REFERENCES",
+        "to": "schema:versions_mixin"
+      },
+      {
+        "from": "schema:clip_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:collection",
+        "kind": "REFERENCES",
+        "to": "schema:group-body"
+      },
+      {
+        "from": "schema:context",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:contributions_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin_contribution"
+      },
+      {
+        "from": "schema:contributions_mixin_contribution",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin_contributor"
+      },
+      {
+        "from": "schema:contributions_mixin_contributor",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin_contributor_name"
+      },
+      {
+        "from": "schema:contributions_mixin_contributor",
+        "kind": "REFERENCES",
+        "to": "schema:type"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:contributor_name"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:contributor_to"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:disambiguation"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:contributor",
+        "kind": "REFERENCES",
+        "to": "schema:type"
+      },
+      {
+        "from": "schema:data",
+        "kind": "REFERENCES",
+        "to": "schema:datum"
+      },
+      {
+        "from": "schema:date_range",
+        "kind": "REFERENCES",
+        "to": "schema:dateRange"
+      },
+      {
+        "from": "schema:deprecatedReferenceElement",
+        "kind": "REFERENCES",
+        "to": "schema:deprecationAttributes"
+      },
+      {
+        "from": "schema:deprecatedReferenceElement",
+        "kind": "REFERENCES",
+        "to": "schema:referenceAttributes"
+      },
+      {
+        "from": "schema:deprecations",
+        "kind": "REFERENCES",
+        "to": "schema:deprecated"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:advertising_allowed"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:alternate_images_mixin"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:ancestor_titles"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors_titles"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:availability_mixin"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:embargoed"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:episode_of"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:genre_groupings"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:genre_groups"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:has_guidance"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:is_embeddable"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:is_stacked"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:items_for"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand_link"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:media_type"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:original_version_duration"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:presentation_title"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:previous_next_mixin"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:programme_formats"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:programme_type"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:related_links"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:release_date_group"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:uri"
+      },
+      {
+        "from": "schema:episode",
+        "kind": "REFERENCES",
+        "to": "schema:versions_mixin"
+      },
+      {
+        "from": "schema:episode_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:code"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:data"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:error-name"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:expr"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:format-string"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:message"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:retryable"
+      },
+      {
+        "from": "schema:error",
+        "kind": "REFERENCES",
+        "to": "schema:xquery-version"
+      },
+      {
+        "from": "schema:errors",
+        "kind": "REFERENCES",
+        "to": "schema:error"
+      },
+      {
+        "from": "schema:feed",
+        "kind": "REFERENCES",
+        "to": "schema:deprecations"
+      },
+      {
+        "from": "schema:feed",
+        "kind": "REFERENCES",
+        "to": "schema:filters"
+      },
+      {
+        "from": "schema:feed",
+        "kind": "REFERENCES",
+        "to": "schema:mixins"
+      },
+      {
+        "from": "schema:feed",
+        "kind": "REFERENCES",
+        "to": "schema:release_status_type"
+      },
+      {
+        "from": "schema:feed",
+        "kind": "REFERENCES",
+        "to": "schema:sorts"
+      },
+      {
+        "from": "schema:feeds",
+        "kind": "REFERENCES",
+        "to": "schema:deprecations"
+      },
+      {
+        "from": "schema:feeds",
+        "kind": "REFERENCES",
+        "to": "schema:feed"
+      },
+      {
+        "from": "schema:filter",
+        "kind": "REFERENCES",
+        "to": "schema:option"
+      },
+      {
+        "from": "schema:filter",
+        "kind": "REFERENCES",
+        "to": "schema:prohibits"
+      },
+      {
+        "from": "schema:filter",
+        "kind": "REFERENCES",
+        "to": "schema:release_status_type"
+      },
+      {
+        "from": "schema:filters",
+        "kind": "REFERENCES",
+        "to": "schema:filter"
+      },
+      {
+        "from": "schema:filters",
+        "kind": "REFERENCES",
+        "to": "schema:unstable_filters"
+      },
+      {
+        "from": "schema:for_programmes",
+        "kind": "REFERENCES",
+        "to": "schema:for_programme"
+      },
+      {
+        "from": "schema:franchise",
+        "kind": "REFERENCES",
+        "to": "schema:group-body"
+      },
+      {
+        "from": "schema:franchises",
+        "kind": "REFERENCES",
+        "to": "schema:reference"
+      },
+      {
+        "from": "schema:gallery",
+        "kind": "REFERENCES",
+        "to": "schema:group-body"
+      },
+      {
+        "from": "schema:genreGroupingsType",
+        "kind": "REFERENCES",
+        "to": "schema:genre_group"
+      },
+      {
+        "from": "schema:genreGroupsType",
+        "kind": "REFERENCES",
+        "to": "schema:deprecatedReferenceElement"
+      },
+      {
+        "from": "schema:genreGroupsType",
+        "kind": "REFERENCES",
+        "to": "schema:genre_group"
+      },
+      {
+        "from": "schema:genre_group",
+        "kind": "REFERENCES",
+        "to": "schema:genre"
+      },
+      {
+        "from": "schema:genre_groupings",
+        "kind": "REFERENCES",
+        "to": "schema:genreGroupingsType"
+      },
+      {
+        "from": "schema:genre_groups",
+        "kind": "REFERENCES",
+        "to": "schema:genreGroupsType"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:alternate_images_mixin"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:embargoed"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:for_programmes"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand_link"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:related_links"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:scheduled"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:group-body",
+        "kind": "REFERENCES",
+        "to": "schema:url_key"
+      },
+      {
+        "from": "schema:guidance_warnings",
+        "kind": "REFERENCES",
+        "to": "schema:warning_items"
+      },
+      {
+        "from": "schema:guidance_warnings",
+        "kind": "REFERENCES",
+        "to": "schema:warning_texts"
+      },
+      {
+        "from": "schema:highlight",
+        "kind": "REFERENCES",
+        "to": "schema:item"
+      },
+      {
+        "from": "schema:identifiers",
+        "kind": "REFERENCES",
+        "to": "schema:identifier"
+      },
+      {
+        "from": "schema:ids",
+        "kind": "REFERENCES",
+        "to": "schema:id"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:embargoed"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:source_asset"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:image",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:image_link",
+        "kind": "REFERENCES",
+        "to": "schema:deprecationAttributes"
+      },
+      {
+        "from": "schema:image_link",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:catalogue_number"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:item_of"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:music_code"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:offsets"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:play_events"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:publisher"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:record_label"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:recording_date"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:release_title"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:snippet_url"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:source_media"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:track_number"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:track_side"
+      },
+      {
+        "from": "schema:item",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:item_of",
+        "kind": "REFERENCES",
+        "to": "schema:reference"
+      },
+      {
+        "from": "schema:items_for",
+        "kind": "REFERENCES",
+        "to": "schema:reference"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:long"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:medium"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:mid"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:name"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:position"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:short"
+      },
+      {
+        "from": "schema:master_brand",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:master_brand_link",
+        "kind": "REFERENCES",
+        "to": "schema:mid"
+      },
+      {
+        "from": "schema:media_availability_time",
+        "kind": "REFERENCES",
+        "to": "schema:dateRange"
+      },
+      {
+        "from": "schema:media_profile_group",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:media_profile_groups",
+        "kind": "REFERENCES",
+        "to": "schema:media_profile_group"
+      },
+      {
+        "from": "schema:mixin",
+        "kind": "REFERENCES",
+        "to": "schema:affected_by"
+      },
+      {
+        "from": "schema:mixin",
+        "kind": "REFERENCES",
+        "to": "schema:dependency_on"
+      },
+      {
+        "from": "schema:mixin",
+        "kind": "REFERENCES",
+        "to": "schema:prohibits"
+      },
+      {
+        "from": "schema:mixin",
+        "kind": "REFERENCES",
+        "to": "schema:release_status_type"
+      },
+      {
+        "from": "schema:mixins",
+        "kind": "REFERENCES",
+        "to": "schema:mixin"
+      },
+      {
+        "from": "schema:mixins",
+        "kind": "REFERENCES",
+        "to": "schema:unstable_mixins"
+      },
+      {
+        "from": "schema:music",
+        "kind": "REFERENCES",
+        "to": "schema:item"
+      },
+      {
+        "from": "schema:nitro",
+        "kind": "REFERENCES",
+        "to": "schema:deprecations"
+      },
+      {
+        "from": "schema:nitro",
+        "kind": "REFERENCES",
+        "to": "schema:filters"
+      },
+      {
+        "from": "schema:nitro",
+        "kind": "REFERENCES",
+        "to": "schema:mixins"
+      },
+      {
+        "from": "schema:nitro",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:nitro",
+        "kind": "REFERENCES",
+        "to": "schema:results"
+      },
+      {
+        "from": "schema:nitro",
+        "kind": "REFERENCES",
+        "to": "schema:sorts"
+      },
+      {
+        "from": "schema:offset_in",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:offsets",
+        "kind": "REFERENCES",
+        "to": "schema:offset_in"
+      },
+      {
+        "from": "schema:option",
+        "kind": "REFERENCES",
+        "to": "schema:release_status_type"
+      },
+      {
+        "from": "schema:original_version_duration",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:other",
+        "kind": "REFERENCES",
+        "to": "schema:item"
+      },
+      {
+        "from": "schema:pagination",
+        "kind": "REFERENCES",
+        "to": "schema:next"
+      },
+      {
+        "from": "schema:pagination",
+        "kind": "REFERENCES",
+        "to": "schema:previous"
+      },
+      {
+        "from": "schema:partner",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:pidReference",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:play_event",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:play_event",
+        "kind": "REFERENCES",
+        "to": "schema:played_in_links"
+      },
+      {
+        "from": "schema:play_event",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:play_events",
+        "kind": "REFERENCES",
+        "to": "schema:play_event"
+      },
+      {
+        "from": "schema:previous_next_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:reference"
+      },
+      {
+        "from": "schema:programme_formats",
+        "kind": "REFERENCES",
+        "to": "schema:format"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:context"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:end_time"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:priority"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:promoted_by"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:promoted_for"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:promotion_of"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:related_links"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:start_time"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:status"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:uri"
+      },
+      {
+        "from": "schema:promotion",
+        "kind": "REFERENCES",
+        "to": "schema:url"
+      },
+      {
+        "from": "schema:promotion_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:published_time",
+        "kind": "REFERENCES",
+        "to": "schema:broadcastTime"
+      },
+      {
+        "from": "schema:reference",
+        "kind": "REFERENCES",
+        "to": "schema:referenceAttributes"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:is_external"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:position"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:type"
+      },
+      {
+        "from": "schema:related_link",
+        "kind": "REFERENCES",
+        "to": "schema:uri"
+      },
+      {
+        "from": "schema:related_links",
+        "kind": "REFERENCES",
+        "to": "schema:related_link"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:availability"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:brand"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:broadcast"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:chapter"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:clip"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:collection"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:contributor"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:episode"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:franchise"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:gallery"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:highlight"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:image"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:music"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:other"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:promotion"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:season"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:series"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:service"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:speech"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:version_group"
+      },
+      {
+        "from": "schema:results",
+        "kind": "REFERENCES",
+        "to": "schema:window"
+      },
+      {
+        "from": "schema:scheduled_publication_rights",
+        "kind": "REFERENCES",
+        "to": "schema:publication_rights"
+      },
+      {
+        "from": "schema:season",
+        "kind": "REFERENCES",
+        "to": "schema:group-body"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:alternate_images_mixin"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:ancestor_titles"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors_titles"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:availability_mixin"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:contributions_mixin"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:embargoed"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:expected_child_count"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:genre_groupings"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:is_embeddable"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:items_for"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand_link"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:previous_next_mixin"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:programme_formats"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:programme_type"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:related_links"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:release_date_group"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:series_of"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:synopses"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:title"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:series",
+        "kind": "REFERENCES",
+        "to": "schema:uri"
+      },
+      {
+        "from": "schema:series_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:date_range"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:description"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:is_concrete"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:is_downloadable"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:is_streamable"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:master_brand_link"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:media_type"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:name"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:region"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:sid"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:type"
+      },
+      {
+        "from": "schema:service",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:sort",
+        "kind": "REFERENCES",
+        "to": "schema:release_status_type"
+      },
+      {
+        "from": "schema:sort",
+        "kind": "REFERENCES",
+        "to": "schema:sort_direction"
+      },
+      {
+        "from": "schema:sorts",
+        "kind": "REFERENCES",
+        "to": "schema:sort"
+      },
+      {
+        "from": "schema:sorts",
+        "kind": "REFERENCES",
+        "to": "schema:unstable_sorts"
+      },
+      {
+        "from": "schema:source_asset",
+        "kind": "REFERENCES",
+        "to": "schema:dimensions"
+      },
+      {
+        "from": "schema:source_asset",
+        "kind": "REFERENCES",
+        "to": "schema:focus_point"
+      },
+      {
+        "from": "schema:source_asset",
+        "kind": "REFERENCES",
+        "to": "schema:size"
+      },
+      {
+        "from": "schema:speech",
+        "kind": "REFERENCES",
+        "to": "schema:item"
+      },
+      {
+        "from": "schema:synopses",
+        "kind": "REFERENCES",
+        "to": "schema:long"
+      },
+      {
+        "from": "schema:synopses",
+        "kind": "REFERENCES",
+        "to": "schema:medium"
+      },
+      {
+        "from": "schema:synopses",
+        "kind": "REFERENCES",
+        "to": "schema:short"
+      },
+      {
+        "from": "schema:unstable_filters",
+        "kind": "REFERENCES",
+        "to": "schema:filter"
+      },
+      {
+        "from": "schema:unstable_mixins",
+        "kind": "REFERENCES",
+        "to": "schema:mixin"
+      },
+      {
+        "from": "schema:unstable_sorts",
+        "kind": "REFERENCES",
+        "to": "schema:sort"
+      },
+      {
+        "from": "schema:version_availability",
+        "kind": "REFERENCES",
+        "to": "schema:available_media_sets"
+      },
+      {
+        "from": "schema:version_availability_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:guidance_warnings"
+      },
+      {
+        "from": "schema:version_availability_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:version_availability_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:version_availability"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:competition_warning"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:types_with_id"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:version_of"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:version_types_with_id"
+      },
+      {
+        "from": "schema:version_group",
+        "kind": "REFERENCES",
+        "to": "schema:warnings"
+      },
+      {
+        "from": "schema:version_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
+      },
+      {
+        "from": "schema:versions",
+        "kind": "REFERENCES",
+        "to": "schema:version_availability_mixin"
+      },
+      {
+        "from": "schema:versions_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:available_simulcasts"
+      },
+      {
+        "from": "schema:versions_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:available_versions"
+      },
+      {
+        "from": "schema:versions_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:available_webcasts"
+      },
+      {
+        "from": "schema:versions_mixin",
+        "kind": "REFERENCES",
+        "to": "schema:versions"
+      },
+      {
+        "from": "schema:warnings",
+        "kind": "REFERENCES",
+        "to": "schema:warning"
+      },
+      {
+        "from": "schema:warnings",
+        "kind": "REFERENCES",
+        "to": "schema:warning_text"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:accurate_programme_time"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:ancestor_titles"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:ancestors_titles"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:identifiers"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:ids"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:image_link"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:images_mixin"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:media_availability_time"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:partner"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:pid"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:scheduled_publication_rights"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:scheduled_time"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:serviceReference"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:updated_time"
+      },
+      {
+        "from": "schema:window",
+        "kind": "REFERENCES",
+        "to": "schema:window_of"
+      },
+      {
+        "from": "schema:window_of",
+        "kind": "REFERENCES",
+        "to": "schema:pidReference"
       }
     ],
     "nodes": [
@@ -143,12 +2453,25 @@
         "name": "getAPI",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get API definition"
+        "summary": "Get API definition",
+        "tags": [
+          "schema"
+        ]
       },
       {
         "deprecated": false,
@@ -156,59 +2479,599 @@
         "kind": "operation",
         "method": "get",
         "name": "listAvailability",
+        "parameters": [
+          {
+            "description": "Sorts: * scheduled_start: sort chronologically by scheduled start time/date, ascending",
+            "enum": [
+              "scheduled_start"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "ascending",
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of availabilities",
+            "in": "query",
+            "name": "availability",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of availabilities that have PID as ancestor",
+            "in": "query",
+            "name": "descendants_of",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of availabilities with media set",
+            "in": "query",
+            "name": "media_set",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for availabilities in given territory",
+            "in": "query",
+            "name": "territory",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Turn on debug information (undocumented)",
+            "in": "query",
+            "name": "debug",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/availabilities",
         "pointer": "#/paths/~1availabilities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Discover details of on-demand availability for programmes and their versions"
+        "summary": "Discover details of on-demand availability for programmes and their versions",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch metadata about linear Broadcasts and Services, allowing the generation of Television and Radio schedules and other datasets for broadcast items.",
         "id": "operation:get:/broadcasts",
         "kind": "operation",
         "method": "get",
         "name": "listBroadcasts",
+        "parameters": [
+          {
+            "description": "Sorts: * start_date: sort chronologically by scheduled start time/date, ascending",
+            "enum": [
+              "start_date"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "ascending",
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Mixins: * titles: return ancestor programme titles",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that have given authority",
+            "in": "query",
+            "name": "authority",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that are descendants of the given programme PID",
+            "in": "query",
+            "name": "descendants_of",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that end on or later than the specified datetime",
+            "in": "query",
+            "name": "end_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts that end on or earlier than the specified datetime",
+            "in": "query",
+            "name": "end_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts that are classified in the given format ID",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that are classified in the given genre ID",
+            "in": "query",
+            "name": "genre",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that have given identifier",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts with the given item performed on it",
+            "in": "query",
+            "name": "item",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for subset of broadcasts that have given contributor",
+            "in": "query",
+            "name": "people",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of broadcasts having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of broadcasts that start on the specified day (BBC time)",
+            "in": "query",
+            "name": "schedule_day",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "filter for subset of broadcasts that start on or after the specified day (BBC time)",
+            "in": "query",
+            "name": "schedule_day_from",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "filter for subset of broadcasts that start on or before the specified day (BBC time)",
+            "in": "query",
+            "name": "schedule_day_to",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "filter for subset of broadcasts with given service master brand",
+            "in": "query",
+            "name": "service_master_brand",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that are on the specified linear service",
+            "in": "query",
+            "name": "sid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts that start on or later than the specified datetime",
+            "in": "query",
+            "name": "start_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts that start on or earlier than the specified datetime",
+            "in": "query",
+            "name": "start_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts with given PID as their parent version",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/broadcasts",
         "pointer": "#/paths/~1broadcasts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Build schedules and find metadata for TV and radio broadcasts"
+        "summary": "Build schedules and find metadata for TV and radio broadcasts",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Long-lived curated collections of programmes and more, including Collections, Seasons, Franchises and Galleries",
         "id": "operation:get:/groups",
         "kind": "operation",
         "method": "get",
         "name": "listGroups",
+        "parameters": [
+          {
+            "description": "Sorts: * pid: sort alphabetically by PID",
+            "enum": [
+              "pid"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Mixins: * alternate_images: mixin to return the alternate images for a group * group_for: mixin to return links to programme entities that group belongs to * i…",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for groups related to given programme or its descendants",
+            "in": "query",
+            "name": "for_descendants_of",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of groups directly related to a given programme",
+            "in": "query",
+            "name": "for_programme",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of groups which belong to the given group pid",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of groups that have the given group type",
+            "in": "query",
+            "name": "group_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of groups which contain an entity with the given pid as a member",
+            "in": "query",
+            "name": "member",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for groups by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for groups by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of seasons, collections, galleries or franchises having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of groups matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Control return of embargoed items (undocumented)",
+            "enum": [
+              "include",
+              "exclude",
+              "only"
+            ],
+            "in": "query",
+            "name": "embargoed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/groups",
         "pointer": "#/paths/~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Find metadata for curated groups: seasons, collections, galleries or franchises"
+        "summary": "Find metadata for curated groups: seasons, collections, galleries or franchises",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Find metadata for images, particularly those in galleries",
         "id": "operation:get:/images",
         "kind": "operation",
         "method": "get",
         "name": "listImages",
+        "parameters": [
+          {
+            "description": "Sorts: * group_position: sort numerically by position, ascending only * pid: sort alphabetically by PID",
+            "enum": [
+              "group_position",
+              "pid"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "ascending",
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for images belonging to the given group (i.e.",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for images by type",
+            "in": "query",
+            "name": "image_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for alternate images by entity PID",
+            "in": "query",
+            "name": "is_alternate_image_for",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for images by entity PID",
+            "in": "query",
+            "name": "is_image_for",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for images by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for images by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of images having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of images matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Control return of embargoed items (undocumented)",
+            "enum": [
+              "include",
+              "exclude",
+              "only"
+            ],
+            "in": "query",
+            "name": "embargoed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/images",
         "pointer": "#/paths/~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Find metadata for images"
+        "summary": "Find metadata for images",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -216,14 +3079,150 @@
         "kind": "operation",
         "method": "get",
         "name": "listItems",
+        "parameters": [
+          {
+            "description": "Sorts: * pid: sort by pid, descending",
+            "enum": [
+              "pid"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Mixins: * contributions: mixin to return information about contributors to items * images: mixin to add image information for an item * offset: mixin to return…",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of items that have an ID issued by the given authority",
+            "in": "query",
+            "name": "authority",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of items having given ID",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of items that have given an ID of the given type",
+            "in": "query",
+            "name": "id_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for specific type(s) of items",
+            "in": "query",
+            "name": "item_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for items by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for items by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of items that have specified person involved",
+            "in": "query",
+            "name": "people",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of items matching one of the given PIDs",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of items that are part of the given programme",
+            "in": "query",
+            "name": "programme",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of items matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for item with the given segment_event",
+            "in": "query",
+            "name": "segment_event",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/items",
         "pointer": "#/paths/~1items/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Look inside programmes to find segments: chapters, tracks and more"
+        "summary": "Look inside programmes to find segments: chapters, tracks and more",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -231,29 +3230,212 @@
         "kind": "operation",
         "method": "get",
         "name": "listMasterbrands",
+        "parameters": [
+          {
+            "description": "Sorts: * mid: sort by mid, ascending",
+            "enum": [
+              "mid"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "ascending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Mixins: * images: mixin to add image information for a masterbrand",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of masterbrands that have given identifier",
+            "in": "query",
+            "name": "mid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for masterbrands by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for masterbrands by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of masterbrands matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/master_brands",
         "pointer": "#/paths/~1master_brands/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all Master Brands"
+        "summary": "List all Master Brands",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The People feed allows you to search for the people and groups that contribute to programmes.",
         "id": "operation:get:/people",
         "kind": "operation",
         "method": "get",
         "name": "listPeople",
+        "parameters": [
+          {
+            "description": "filter for subset of people that have an ID issued by the given authority",
+            "in": "query",
+            "name": "authority",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for people who have an external identifier",
+            "in": "query",
+            "name": "has_external_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of people having given ID",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of people that have given an ID of the given type",
+            "in": "query",
+            "name": "id_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for people by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for people by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of people having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of people that have contributed to the given programme pid",
+            "in": "query",
+            "name": "programme",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of people matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/people",
         "pointer": "#/paths/~1people/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Find the people behind and in programmes: cast, crew, guests and more"
+        "summary": "Find the people behind and in programmes: cast, crew, guests and more",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -261,14 +3443,53 @@
         "kind": "operation",
         "method": "get",
         "name": "listPips",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for subset of programmes matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pips",
         "pointer": "#/paths/~1pips/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Look inside pips entities"
+        "summary": "Look inside pips entities",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -276,59 +3497,736 @@
         "kind": "operation",
         "method": "get",
         "name": "listProgrammeDetails",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter for programme information by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter for programme information for the provided PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/programme_details",
         "pointer": "#/paths/~1programme_details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Exposes programme information for a single pid"
+        "summary": "Exposes programme information for a single pid",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch metadata about Programmes (brands, series, episodes, clips).",
         "id": "operation:get:/programmes",
         "kind": "operation",
         "method": "get",
         "name": "listProgrammes",
+        "parameters": [
+          {
+            "description": "Sorts: * group_position: sort numerically by position in group, ascending * pid: sort alphabetically by PID, descending * position: sort numerically by positio…",
+            "enum": [
+              "group_position",
+              "pid",
+              "position",
+              "promotion",
+              "release_date",
+              "relevance",
+              "scheduled_start",
+              "strict_title",
+              "title",
+              "tree"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "ascending",
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Mixins: * alternate_images: mixin to return the alternate images for a programme * ancestor_titles: mixin to return ancestor programme titles * availability: m…",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that are audio-described",
+            "in": "query",
+            "name": "audio_described",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that have availability",
+            "in": "query",
+            "name": "availability",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "additional filter when availability=available",
+            "in": "query",
+            "name": "availability_entity_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that are available after or at the specified datetime",
+            "in": "query",
+            "name": "availability_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for a subset of programmes that are available for a given type",
+            "in": "query",
+            "name": "availability_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that have PID as immediate parent",
+            "in": "query",
+            "name": "children_of",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that have PID as ancestor",
+            "in": "query",
+            "name": "descendants_of",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that have given duration",
+            "in": "query",
+            "name": "duration",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes that have given entity type",
+            "in": "query",
+            "name": "entity_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with format",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with genre",
+            "in": "query",
+            "name": "genre",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes which belong to the given group pid",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes with title beginning with initial letter librarian style (ignoring leading 'The', 'An' (Welsh), etc) 0-9 a-z",
+            "in": "query",
+            "name": "initial_letter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Programmes with (librarian) titles whose initial letter is equal/before given letter.",
+            "in": "query",
+            "name": "initial_letter_end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Programmes with (librarian) titles whose initial letter is equal/after given letter.",
+            "in": "query",
+            "name": "initial_letter_start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes with title beginning with initial letter",
+            "in": "query",
+            "name": "initial_letter_strict",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with linked to versions which have the given item pids",
+            "in": "query",
+            "name": "item",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with master_brand",
+            "in": "query",
+            "name": "master_brand",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with media set",
+            "in": "query",
+            "name": "media_set",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes with media type",
+            "in": "query",
+            "name": "media_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for programmes by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for programmes by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for a subset of programmes that are of the given payment_type",
+            "in": "query",
+            "name": "payment_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with contributions by given people PID",
+            "in": "query",
+            "name": "people",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes which are promoted for given service",
+            "in": "query",
+            "name": "promoted_for",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes that are signed",
+            "in": "query",
+            "name": "signed",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with tag",
+            "in": "query",
+            "name": "tag_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes with a tag",
+            "in": "query",
+            "name": "tag_scheme",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of programmes that are TLEOs",
+            "in": "query",
+            "name": "tleo",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of programmes with given PID as one of their versions",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Control return of embargoed items (undocumented)",
+            "enum": [
+              "include",
+              "exclude",
+              "only"
+            ],
+            "in": "query",
+            "name": "embargoed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/programmes",
         "pointer": "#/paths/~1programmes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Start here for programmes metadata: Brands, Series, Episodes and Clips"
+        "summary": "Start here for programmes metadata: Brands, Series, Episodes and Clips",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Details of short-term editorially curated \"promotions\", for instance those programmes featured on iPlayer today",
         "id": "operation:get:/promotions",
         "kind": "operation",
         "method": "get",
         "name": "listPromotions",
+        "parameters": [
+          {
+            "description": "Mixins: * related_links: mixin to return information about related links to a promotion",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of promotions belonging to a given context",
+            "in": "query",
+            "name": "context",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for promotions by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for promotions by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of promotions having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of promotions having given promoted by",
+            "in": "query",
+            "name": "promoted_by",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of promotions having given promoted for",
+            "in": "query",
+            "name": "promoted_for",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of promotions matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of promotions with status",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/promotions",
         "pointer": "#/paths/~1promotions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Discover metadata for content promotions"
+        "summary": "Discover metadata for content promotions",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Dates, Times, Schedules: when and where are programmes being shown?",
         "id": "operation:get:/schedules",
         "kind": "operation",
         "method": "get",
         "name": "listSchedules",
+        "parameters": [
+          {
+            "description": "Sorts: * start_date: sort chronologically by scheduled start time/date, ascending",
+            "enum": [
+              "start_date"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "ascending",
+              "descending"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Mixins: * ancestor_titles: return ancestor programme titles * images: mixin to add image information for broadcasts and webcasts * titles: return ancestor prog…",
+            "in": "query",
+            "name": "mixin",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that have given authority",
+            "in": "query",
+            "name": "authority",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that are descendants of the given programme PID",
+            "in": "query",
+            "name": "descendants_of",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that end on or later than the specified datetime",
+            "in": "query",
+            "name": "end_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that end on or earlier than the specified datetime",
+            "in": "query",
+            "name": "end_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that are classified in the given format ID",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that are classified in the given genre ID",
+            "in": "query",
+            "name": "genre",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that have programmes in the given group",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that have given identifier",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that have given id type",
+            "in": "query",
+            "name": "id_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts with the given item performed on it",
+            "in": "query",
+            "name": "item",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for broadcasts and webcasts by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for broadcasts and webcasts by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that have given contributor",
+            "in": "query",
+            "name": "people",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter to show either only repeats or non-repeats",
+            "in": "query",
+            "name": "repeat",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that start on the specified day (BBC time)",
+            "in": "query",
+            "name": "schedule_day",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that start on or after the specified day (BBC time)",
+            "in": "query",
+            "name": "schedule_day_from",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that start on or before the specified day (BBC time)",
+            "in": "query",
+            "name": "schedule_day_to",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts with given service master brand",
+            "in": "query",
+            "name": "service_master_brand",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that are on the specified linear service",
+            "in": "query",
+            "name": "sid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that start on or later than the specified datetime",
+            "in": "query",
+            "name": "start_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts that start on or earlier than the specified datetime",
+            "in": "query",
+            "name": "start_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts and webcasts with given PID as their parent version",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/schedules",
         "pointer": "#/paths/~1schedules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Build schedules and find metadata for TV and radio broadcasts and webcasts"
+        "summary": "Build schedules and find metadata for TV and radio broadcasts and webcasts",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -338,27 +4236,143 @@
         "name": "getXSD",
         "path": "/schema",
         "pointer": "#/paths/~1schema/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get Schema definition"
+        "summary": "Get Schema definition",
+        "tags": [
+          "schema"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The services feed exposes the linear broadcast \"services\" from PIPs.",
         "id": "operation:get:/services",
         "kind": "operation",
         "method": "get",
         "name": "listServices",
+        "parameters": [
+          {
+            "description": "Return services that end on or later than the specified datetime",
+            "in": "query",
+            "name": "end_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for subset of broadcasts that end on or earlier than the specified datetime",
+            "in": "query",
+            "name": "end_to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "filter for services by masterbrand MID",
+            "in": "query",
+            "name": "mid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for services by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for services by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of services matching supplied keyword/phrase (boolean operators permitted)",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "filter for specified type of linear services",
+            "in": "query",
+            "name": "service_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for specified linear service",
+            "in": "query",
+            "name": "sid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Return services that start on or later than the specified datetime",
+            "in": "query",
+            "name": "start_from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Return services that start earlier than the specified datetime",
+            "in": "query",
+            "name": "start_to",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/services",
         "pointer": "#/paths/~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Information about the linear services used for broadcast transmissions"
+        "summary": "Information about the linear services used for broadcast transmissions",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "deprecated": false,
@@ -366,29 +4380,66 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_brand",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/brands/{pid}",
         "pointer": "#/paths/~1v1~1brands~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw brand"
+        "summary": "Get raw brand",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get raw brand franchises",
         "id": "operation:get:/v1/brands/{pid}/franchises/",
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_brand franchises",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/brands/{pid}/franchises/",
         "pointer": "#/paths/~1v1~1brands~1{pid}~1franchises~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw brand franchise"
+        "summary": "Get raw brand franchise",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -396,14 +4447,32 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_episode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/episodes/{pid}",
         "pointer": "#/paths/~1v1~1episodes~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw episode"
+        "summary": "Get raw episode",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -411,14 +4480,32 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_ancestors",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/episodes/{pid}/ancestors/",
         "pointer": "#/paths/~1v1~1episodes~1{pid}~1ancestors~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw ancestors"
+        "summary": "Get raw ancestors",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -426,14 +4513,32 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_formats",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/episodes/{pid}/formats/",
         "pointer": "#/paths/~1v1~1episodes~1{pid}~1formats~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw formats"
+        "summary": "Get raw formats",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -441,14 +4546,32 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_genre_groups",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/episodes/{pid}/genre_groups/",
         "pointer": "#/paths/~1v1~1episodes~1{pid}~1genre_groups~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw genre groups"
+        "summary": "Get raw genre groups",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -456,14 +4579,32 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_image",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/images/{pid}",
         "pointer": "#/paths/~1v1~1images~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw image"
+        "summary": "Get raw image",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -471,14 +4612,32 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_masterbrand",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mbid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/master_brands/{mbid}",
         "pointer": "#/paths/~1v1~1master_brands~1{mbid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw masterbrand"
+        "summary": "Get raw masterbrand",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
@@ -486,34 +4645,147 @@
         "kind": "operation",
         "method": "get",
         "name": "Get_Raw_promotion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/promotions/{pid}",
         "pointer": "#/paths/~1v1~1promotions~1{pid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get raw promotion"
+        "summary": "Get raw promotion",
+        "tags": [
+          "Raw"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The versions feed exposes editorial \"Versions\" of programmes.",
         "id": "operation:get:/versions",
         "kind": "operation",
         "method": "get",
         "name": "listVersions",
+        "parameters": [
+          {
+            "description": "filter for subset of versions that have availability",
+            "in": "query",
+            "name": "availability",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of versions having given programme PID",
+            "in": "query",
+            "name": "descendants_of",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of versions with availability in the given media set",
+            "in": "query",
+            "name": "media_set",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "which page of results to return",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "number of results in each page",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "filter for versions by partner ID",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for versions by partner PID",
+            "in": "query",
+            "name": "partner_pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for a subset of versions that are of the given payment_type",
+            "in": "query",
+            "name": "payment_type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "filter for subset of versions having given PID",
+            "in": "query",
+            "name": "pid",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Control return of embargoed items (undocumented)",
+            "enum": [
+              "include",
+              "exclude",
+              "only"
+            ],
+            "in": "query",
+            "name": "embargoed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/versions",
         "pointer": "#/paths/~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "nitro"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Metadata on editorial programme versions: original, signed, audio-described, etc"
+        "summary": "Metadata on editorial programme versions: original, signed, audio-described, etc",
+        "tags": [
+          "feeds"
+        ]
       },
       {
         "id": "schema:ErrorModel",
         "kind": "schema",
-        "name": "ErrorModel"
+        "name": "ErrorModel",
+        "type": "object"
       },
       {
         "id": "schema:accurate_programme_time",
@@ -528,27 +4800,32 @@
       {
         "id": "schema:actual_start",
         "kind": "schema",
-        "name": "actual_start"
+        "name": "actual_start",
+        "type": "string:date-time"
       },
       {
         "id": "schema:advertising_allowed",
         "kind": "schema",
-        "name": "advertising_allowed"
+        "name": "advertising_allowed",
+        "type": "string"
       },
       {
         "id": "schema:affected_by",
         "kind": "schema",
-        "name": "affected_by"
+        "name": "affected_by",
+        "type": "object"
       },
       {
         "id": "schema:alternate_images_mixin",
         "kind": "schema",
-        "name": "alternate_images_mixin"
+        "name": "alternate_images_mixin",
+        "type": "object"
       },
       {
         "id": "schema:ancestor_titles",
         "kind": "schema",
-        "name": "ancestor_titles"
+        "name": "ancestor_titles",
+        "type": "object"
       },
       {
         "id": "schema:ancestors",
@@ -558,82 +4835,98 @@
       {
         "id": "schema:ancestors_titles",
         "kind": "schema",
-        "name": "ancestors_titles"
+        "name": "ancestors_titles",
+        "type": "object"
       },
       {
         "id": "schema:availability",
         "kind": "schema",
-        "name": "availability"
+        "name": "availability",
+        "type": "object"
       },
       {
         "id": "schema:availability-debug",
         "kind": "schema",
-        "name": "availability-debug"
+        "name": "availability-debug",
+        "type": "object"
       },
       {
         "id": "schema:availability_mixin",
         "kind": "schema",
-        "name": "availability_mixin"
+        "name": "availability_mixin",
+        "type": "object"
       },
       {
         "id": "schema:availability_of",
         "kind": "schema",
-        "name": "availability_of"
+        "name": "availability_of",
+        "type": "object"
       },
       {
         "id": "schema:availability_type",
         "kind": "schema",
-        "name": "availability_type"
+        "name": "availability_type",
+        "type": "string"
       },
       {
         "id": "schema:available_media_sets",
         "kind": "schema",
-        "name": "available_media_sets"
+        "name": "available_media_sets",
+        "type": "object"
       },
       {
         "id": "schema:available_mixins",
         "kind": "schema",
-        "name": "available_mixins"
+        "name": "available_mixins",
+        "type": "object"
       },
       {
         "id": "schema:available_simulcasts",
         "kind": "schema",
-        "name": "available_simulcasts"
+        "name": "available_simulcasts",
+        "type": "object"
       },
       {
         "id": "schema:available_versions",
         "kind": "schema",
-        "name": "available_versions"
+        "name": "available_versions",
+        "type": "object"
       },
       {
         "id": "schema:available_versions_element",
         "kind": "schema",
-        "name": "available_versions_element"
+        "name": "available_versions_element",
+        "type": "object"
       },
       {
         "id": "schema:available_versions_media_sets",
         "kind": "schema",
-        "name": "available_versions_media_sets"
+        "name": "available_versions_media_sets",
+        "type": "object"
       },
       {
         "id": "schema:available_webcasts",
         "kind": "schema",
-        "name": "available_webcasts"
+        "name": "available_webcasts",
+        "type": "object"
       },
       {
         "id": "schema:brand",
         "kind": "schema",
-        "name": "brand"
+        "name": "brand",
+        "type": "object"
       },
       {
         "id": "schema:broadcast",
         "kind": "schema",
-        "name": "broadcast"
+        "name": "broadcast",
+        "type": "object"
       },
       {
         "id": "schema:broadcastTime",
         "kind": "schema",
-        "name": "broadcastTime"
+        "name": "broadcastTime",
+        "type": "dateRange|object"
       },
       {
         "id": "schema:broadcast_of",
@@ -643,17 +4936,20 @@
       {
         "id": "schema:broadcaster",
         "kind": "schema",
-        "name": "broadcaster"
+        "name": "broadcaster",
+        "type": "object"
       },
       {
         "id": "schema:caption",
         "kind": "schema",
-        "name": "caption"
+        "name": "caption",
+        "type": "string"
       },
       {
         "id": "schema:catalogue_number",
         "kind": "schema",
-        "name": "catalogue_number"
+        "name": "catalogue_number",
+        "type": "string"
       },
       {
         "id": "schema:chapter",
@@ -663,7 +4959,8 @@
       {
         "id": "schema:clip",
         "kind": "schema",
-        "name": "clip"
+        "name": "clip",
+        "type": "object"
       },
       {
         "id": "schema:clip_of",
@@ -673,7 +4970,8 @@
       {
         "id": "schema:code",
         "kind": "schema",
-        "name": "code"
+        "name": "code",
+        "type": "string"
       },
       {
         "id": "schema:collection",
@@ -683,67 +4981,80 @@
       {
         "id": "schema:competition_warning",
         "kind": "schema",
-        "name": "competition_warning"
+        "name": "competition_warning",
+        "type": "boolean"
       },
       {
         "id": "schema:containers_title",
         "kind": "schema",
-        "name": "containers_title"
+        "name": "containers_title",
+        "type": "string"
       },
       {
         "id": "schema:context",
         "kind": "schema",
-        "name": "context"
+        "name": "context",
+        "type": "object"
       },
       {
         "id": "schema:contributions_mixin",
         "kind": "schema",
-        "name": "contributions_mixin"
+        "name": "contributions_mixin",
+        "type": "object"
       },
       {
         "id": "schema:contributions_mixin_contribution",
         "kind": "schema",
-        "name": "contributions_mixin_contribution"
+        "name": "contributions_mixin_contribution",
+        "type": "object"
       },
       {
         "id": "schema:contributions_mixin_contributor",
         "kind": "schema",
-        "name": "contributions_mixin_contributor"
+        "name": "contributions_mixin_contributor",
+        "type": "object"
       },
       {
         "id": "schema:contributions_mixin_contributor_name",
         "kind": "schema",
-        "name": "contributions_mixin_contributor_name"
+        "name": "contributions_mixin_contributor_name",
+        "type": "object"
       },
       {
         "id": "schema:contributor",
         "kind": "schema",
-        "name": "contributor"
+        "name": "contributor",
+        "type": "object"
       },
       {
         "id": "schema:contributor_name",
         "kind": "schema",
-        "name": "contributor_name"
+        "name": "contributor_name",
+        "type": "object"
       },
       {
         "id": "schema:contributor_to",
         "kind": "schema",
-        "name": "contributor_to"
+        "name": "contributor_to",
+        "type": "object"
       },
       {
         "id": "schema:credits_time",
         "kind": "schema",
-        "name": "credits_time"
+        "name": "credits_time",
+        "type": "object"
       },
       {
         "id": "schema:data",
         "kind": "schema",
-        "name": "data"
+        "name": "data",
+        "type": "object"
       },
       {
         "id": "schema:dateRange",
         "kind": "schema",
-        "name": "dateRange"
+        "name": "dateRange",
+        "type": "object"
       },
       {
         "id": "schema:date_range",
@@ -753,67 +5064,80 @@
       {
         "id": "schema:datum",
         "kind": "schema",
-        "name": "datum"
+        "name": "datum",
+        "type": "string"
       },
       {
         "id": "schema:dependency_on",
         "kind": "schema",
-        "name": "dependency_on"
+        "name": "dependency_on",
+        "type": "object"
       },
       {
         "id": "schema:deprecated",
         "kind": "schema",
-        "name": "deprecated"
+        "name": "deprecated",
+        "type": "object"
       },
       {
         "id": "schema:deprecatedReferenceElement",
         "kind": "schema",
-        "name": "deprecatedReferenceElement"
+        "name": "deprecatedReferenceElement",
+        "type": "referenceAttributes|deprecationAttributes"
       },
       {
         "id": "schema:deprecationAttributes",
         "kind": "schema",
-        "name": "deprecationAttributes"
+        "name": "deprecationAttributes",
+        "type": "object"
       },
       {
         "id": "schema:deprecations",
         "kind": "schema",
-        "name": "deprecations"
+        "name": "deprecations",
+        "type": "object"
       },
       {
         "id": "schema:description",
         "kind": "schema",
-        "name": "description"
+        "name": "description",
+        "type": "string"
       },
       {
         "id": "schema:dimensions",
         "kind": "schema",
-        "name": "dimensions"
+        "name": "dimensions",
+        "type": "object"
       },
       {
         "id": "schema:disambiguation",
         "kind": "schema",
-        "name": "disambiguation"
+        "name": "disambiguation",
+        "type": "string"
       },
       {
         "id": "schema:embargoed",
         "kind": "schema",
-        "name": "embargoed"
+        "name": "embargoed",
+        "type": "string"
       },
       {
         "id": "schema:end",
         "kind": "schema",
-        "name": "end"
+        "name": "end",
+        "type": "string:date-time"
       },
       {
         "id": "schema:end_time",
         "kind": "schema",
-        "name": "end_time"
+        "name": "end_time",
+        "type": "string:date-time"
       },
       {
         "id": "schema:episode",
         "kind": "schema",
-        "name": "episode"
+        "name": "episode",
+        "type": "object"
       },
       {
         "id": "schema:episode_of",
@@ -823,72 +5147,86 @@
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:error-name",
         "kind": "schema",
-        "name": "error-name"
+        "name": "error-name",
+        "type": "string"
       },
       {
         "id": "schema:errors",
         "kind": "schema",
-        "name": "errors"
+        "name": "errors",
+        "type": "object"
       },
       {
         "id": "schema:expected_child_count",
         "kind": "schema",
-        "name": "expected_child_count"
+        "name": "expected_child_count",
+        "type": "integer"
       },
       {
         "id": "schema:expr",
         "kind": "schema",
-        "name": "expr"
+        "name": "expr",
+        "type": "string"
       },
       {
         "id": "schema:feed",
         "kind": "schema",
-        "name": "feed"
+        "name": "feed",
+        "type": "object"
       },
       {
         "id": "schema:feeds",
         "kind": "schema",
-        "name": "feeds"
+        "name": "feeds",
+        "type": "object"
       },
       {
         "id": "schema:filter",
         "kind": "schema",
-        "name": "filter"
+        "name": "filter",
+        "type": "object"
       },
       {
         "id": "schema:filters",
         "kind": "schema",
-        "name": "filters"
+        "name": "filters",
+        "type": "object"
       },
       {
         "id": "schema:focus_point",
         "kind": "schema",
-        "name": "focus_point"
+        "name": "focus_point",
+        "type": "object"
       },
       {
         "id": "schema:for_programme",
         "kind": "schema",
-        "name": "for_programme"
+        "name": "for_programme",
+        "type": "object"
       },
       {
         "id": "schema:for_programmes",
         "kind": "schema",
-        "name": "for_programmes"
+        "name": "for_programmes",
+        "type": "object"
       },
       {
         "id": "schema:format",
         "kind": "schema",
-        "name": "format"
+        "name": "format",
+        "type": "object"
       },
       {
         "id": "schema:format-string",
         "kind": "schema",
-        "name": "format-string"
+        "name": "format-string",
+        "type": "string"
       },
       {
         "id": "schema:franchise",
@@ -908,22 +5246,26 @@
       {
         "id": "schema:genre",
         "kind": "schema",
-        "name": "genre"
+        "name": "genre",
+        "type": "object"
       },
       {
         "id": "schema:genreGroupingsType",
         "kind": "schema",
-        "name": "genreGroupingsType"
+        "name": "genreGroupingsType",
+        "type": "object"
       },
       {
         "id": "schema:genreGroupsType",
         "kind": "schema",
-        "name": "genreGroupsType"
+        "name": "genreGroupsType",
+        "type": "deprecatedReferenceElement|object"
       },
       {
         "id": "schema:genre_group",
         "kind": "schema",
-        "name": "genre_group"
+        "name": "genre_group",
+        "type": "object"
       },
       {
         "id": "schema:genre_groupings",
@@ -938,17 +5280,20 @@
       {
         "id": "schema:group-body",
         "kind": "schema",
-        "name": "group-body"
+        "name": "group-body",
+        "type": "object"
       },
       {
         "id": "schema:guidance_warnings",
         "kind": "schema",
-        "name": "guidance_warnings"
+        "name": "guidance_warnings",
+        "type": "object"
       },
       {
         "id": "schema:has_guidance",
         "kind": "schema",
-        "name": "has_guidance"
+        "name": "has_guidance",
+        "type": "boolean"
       },
       {
         "id": "schema:highlight",
@@ -958,102 +5303,122 @@
       {
         "id": "schema:id",
         "kind": "schema",
-        "name": "id"
+        "name": "id",
+        "type": "object"
       },
       {
         "id": "schema:identifier",
         "kind": "schema",
-        "name": "identifier"
+        "name": "identifier",
+        "type": "object"
       },
       {
         "id": "schema:identifiers",
         "kind": "schema",
-        "name": "identifiers"
+        "name": "identifiers",
+        "type": "object"
       },
       {
         "id": "schema:ids",
         "kind": "schema",
-        "name": "ids"
+        "name": "ids",
+        "type": "object"
       },
       {
         "id": "schema:image",
         "kind": "schema",
-        "name": "image"
+        "name": "image",
+        "type": "object"
       },
       {
         "id": "schema:image_link",
         "kind": "schema",
-        "name": "image_link"
+        "name": "image_link",
+        "type": "object"
       },
       {
         "id": "schema:images_mixin",
         "kind": "schema",
-        "name": "images_mixin"
+        "name": "images_mixin",
+        "type": "object"
       },
       {
         "id": "schema:is_audio_described",
         "kind": "schema",
-        "name": "is_audio_described"
+        "name": "is_audio_described",
+        "type": "boolean"
       },
       {
         "id": "schema:is_blanked",
         "kind": "schema",
-        "name": "is_blanked"
+        "name": "is_blanked",
+        "type": "boolean"
       },
       {
         "id": "schema:is_concrete",
         "kind": "schema",
-        "name": "is_concrete"
+        "name": "is_concrete",
+        "type": "boolean"
       },
       {
         "id": "schema:is_critical",
         "kind": "schema",
-        "name": "is_critical"
+        "name": "is_critical",
+        "type": "boolean"
       },
       {
         "id": "schema:is_downloadable",
         "kind": "schema",
-        "name": "is_downloadable"
+        "name": "is_downloadable",
+        "type": "boolean"
       },
       {
         "id": "schema:is_embeddable",
         "kind": "schema",
-        "name": "is_embeddable"
+        "name": "is_embeddable",
+        "type": "boolean"
       },
       {
         "id": "schema:is_external",
         "kind": "schema",
-        "name": "is_external"
+        "name": "is_external",
+        "type": "boolean"
       },
       {
         "id": "schema:is_repeat",
         "kind": "schema",
-        "name": "is_repeat"
+        "name": "is_repeat",
+        "type": "boolean"
       },
       {
         "id": "schema:is_signed",
         "kind": "schema",
-        "name": "is_signed"
+        "name": "is_signed",
+        "type": "boolean"
       },
       {
         "id": "schema:is_simulcast",
         "kind": "schema",
-        "name": "is_simulcast"
+        "name": "is_simulcast",
+        "type": "boolean"
       },
       {
         "id": "schema:is_stacked",
         "kind": "schema",
-        "name": "is_stacked"
+        "name": "is_stacked",
+        "type": "boolean"
       },
       {
         "id": "schema:is_streamable",
         "kind": "schema",
-        "name": "is_streamable"
+        "name": "is_streamable",
+        "type": "boolean"
       },
       {
         "id": "schema:item",
         "kind": "schema",
-        "name": "item"
+        "name": "item",
+        "type": "object"
       },
       {
         "id": "schema:item_of",
@@ -1068,17 +5433,20 @@
       {
         "id": "schema:long",
         "kind": "schema",
-        "name": "long"
+        "name": "long",
+        "type": "string"
       },
       {
         "id": "schema:master_brand",
         "kind": "schema",
-        "name": "master_brand"
+        "name": "master_brand",
+        "type": "object"
       },
       {
         "id": "schema:master_brand_link",
         "kind": "schema",
-        "name": "master_brand_link"
+        "name": "master_brand_link",
+        "type": "object"
       },
       {
         "id": "schema:media_availability_time",
@@ -1088,47 +5456,56 @@
       {
         "id": "schema:media_profile_group",
         "kind": "schema",
-        "name": "media_profile_group"
+        "name": "media_profile_group",
+        "type": "object"
       },
       {
         "id": "schema:media_profile_groups",
         "kind": "schema",
-        "name": "media_profile_groups"
+        "name": "media_profile_groups",
+        "type": "object"
       },
       {
         "id": "schema:media_set",
         "kind": "schema",
-        "name": "media_set"
+        "name": "media_set",
+        "type": "string"
       },
       {
         "id": "schema:media_type",
         "kind": "schema",
-        "name": "media_type"
+        "name": "media_type",
+        "type": "string"
       },
       {
         "id": "schema:medium",
         "kind": "schema",
-        "name": "medium"
+        "name": "medium",
+        "type": "string"
       },
       {
         "id": "schema:message",
         "kind": "schema",
-        "name": "message"
+        "name": "message",
+        "type": "string"
       },
       {
         "id": "schema:mid",
         "kind": "schema",
-        "name": "mid"
+        "name": "mid",
+        "type": "string"
       },
       {
         "id": "schema:mixin",
         "kind": "schema",
-        "name": "mixin"
+        "name": "mixin",
+        "type": "object"
       },
       {
         "id": "schema:mixins",
         "kind": "schema",
-        "name": "mixins"
+        "name": "mixins",
+        "type": "object"
       },
       {
         "id": "schema:music",
@@ -1138,42 +5515,50 @@
       {
         "id": "schema:music_code",
         "kind": "schema",
-        "name": "music_code"
+        "name": "music_code",
+        "type": "string"
       },
       {
         "id": "schema:name",
         "kind": "schema",
-        "name": "name"
+        "name": "name",
+        "type": "string"
       },
       {
         "id": "schema:next",
         "kind": "schema",
-        "name": "next"
+        "name": "next",
+        "type": "object"
       },
       {
         "id": "schema:nitro",
         "kind": "schema",
-        "name": "nitro"
+        "name": "nitro",
+        "type": "object"
       },
       {
         "id": "schema:offset_in",
         "kind": "schema",
-        "name": "offset_in"
+        "name": "offset_in",
+        "type": "object"
       },
       {
         "id": "schema:offsets",
         "kind": "schema",
-        "name": "offsets"
+        "name": "offsets",
+        "type": "object"
       },
       {
         "id": "schema:option",
         "kind": "schema",
-        "name": "option"
+        "name": "option",
+        "type": "object"
       },
       {
         "id": "schema:original_version_duration",
         "kind": "schema",
-        "name": "original_version_duration"
+        "name": "original_version_duration",
+        "type": "object"
       },
       {
         "id": "schema:other",
@@ -1183,7 +5568,8 @@
       {
         "id": "schema:pagination",
         "kind": "schema",
-        "name": "pagination"
+        "name": "pagination",
+        "type": "object"
       },
       {
         "id": "schema:partner",
@@ -1193,82 +5579,98 @@
       {
         "id": "schema:pid",
         "kind": "schema",
-        "name": "pid"
+        "name": "pid",
+        "type": "string"
       },
       {
         "id": "schema:pidReference",
         "kind": "schema",
-        "name": "pidReference"
+        "name": "pidReference",
+        "type": "object"
       },
       {
         "id": "schema:play_event",
         "kind": "schema",
-        "name": "play_event"
+        "name": "play_event",
+        "type": "object"
       },
       {
         "id": "schema:play_events",
         "kind": "schema",
-        "name": "play_events"
+        "name": "play_events",
+        "type": "object"
       },
       {
         "id": "schema:played_in_links",
         "kind": "schema",
-        "name": "played_in_links"
+        "name": "played_in_links",
+        "type": "object"
       },
       {
         "id": "schema:position",
         "kind": "schema",
-        "name": "position"
+        "name": "position",
+        "type": "integer"
       },
       {
         "id": "schema:presentation_title",
         "kind": "schema",
-        "name": "presentation_title"
+        "name": "presentation_title",
+        "type": "string"
       },
       {
         "id": "schema:previous",
         "kind": "schema",
-        "name": "previous"
+        "name": "previous",
+        "type": "object"
       },
       {
         "id": "schema:previous_next_mixin",
         "kind": "schema",
-        "name": "previous_next_mixin"
+        "name": "previous_next_mixin",
+        "type": "object"
       },
       {
         "id": "schema:priority",
         "kind": "schema",
-        "name": "priority"
+        "name": "priority",
+        "type": "integer"
       },
       {
         "id": "schema:programme_formats",
         "kind": "schema",
-        "name": "programme_formats"
+        "name": "programme_formats",
+        "type": "object"
       },
       {
         "id": "schema:programme_type",
         "kind": "schema",
-        "name": "programme_type"
+        "name": "programme_type",
+        "type": "object"
       },
       {
         "id": "schema:prohibits",
         "kind": "schema",
-        "name": "prohibits"
+        "name": "prohibits",
+        "type": "object"
       },
       {
         "id": "schema:promoted_by",
         "kind": "schema",
-        "name": "promoted_by"
+        "name": "promoted_by",
+        "type": "string"
       },
       {
         "id": "schema:promoted_for",
         "kind": "schema",
-        "name": "promoted_for"
+        "name": "promoted_for",
+        "type": "string"
       },
       {
         "id": "schema:promotion",
         "kind": "schema",
-        "name": "promotion"
+        "name": "promotion",
+        "type": "object"
       },
       {
         "id": "schema:promotion_of",
@@ -1278,7 +5680,8 @@
       {
         "id": "schema:publication_rights",
         "kind": "schema",
-        "name": "publication_rights"
+        "name": "publication_rights",
+        "type": "object"
       },
       {
         "id": "schema:published_time",
@@ -1288,92 +5691,110 @@
       {
         "id": "schema:publisher",
         "kind": "schema",
-        "name": "publisher"
+        "name": "publisher",
+        "type": "string"
       },
       {
         "id": "schema:record_label",
         "kind": "schema",
-        "name": "record_label"
+        "name": "record_label",
+        "type": "string"
       },
       {
         "id": "schema:recording_date",
         "kind": "schema",
-        "name": "recording_date"
+        "name": "recording_date",
+        "type": "string"
       },
       {
         "id": "schema:reference",
         "kind": "schema",
-        "name": "reference"
+        "name": "reference",
+        "type": "referenceAttributes|object"
       },
       {
         "id": "schema:referenceAttributes",
         "kind": "schema",
-        "name": "referenceAttributes"
+        "name": "referenceAttributes",
+        "type": "object"
       },
       {
         "id": "schema:region",
         "kind": "schema",
-        "name": "region"
+        "name": "region",
+        "type": "string"
       },
       {
         "id": "schema:related_link",
         "kind": "schema",
-        "name": "related_link"
+        "name": "related_link",
+        "type": "object"
       },
       {
         "id": "schema:related_links",
         "kind": "schema",
-        "name": "related_links"
+        "name": "related_links",
+        "type": "object"
       },
       {
         "id": "schema:release_date_group",
         "kind": "schema",
-        "name": "release_date_group"
+        "name": "release_date_group",
+        "type": "object"
       },
       {
         "id": "schema:release_status_type",
         "kind": "schema",
-        "name": "release_status_type"
+        "name": "release_status_type",
+        "type": "string"
       },
       {
         "id": "schema:release_title",
         "kind": "schema",
-        "name": "release_title"
+        "name": "release_title",
+        "type": "string"
       },
       {
         "id": "schema:results",
         "kind": "schema",
-        "name": "results"
+        "name": "results",
+        "type": "object"
       },
       {
         "id": "schema:retryable",
         "kind": "schema",
-        "name": "retryable"
+        "name": "retryable",
+        "type": "boolean"
       },
       {
         "id": "schema:revocation_status",
         "kind": "schema",
-        "name": "revocation_status"
+        "name": "revocation_status",
+        "type": "string"
       },
       {
         "id": "schema:schedule_date",
         "kind": "schema",
-        "name": "schedule_date"
+        "name": "schedule_date",
+        "type": "string"
       },
       {
         "id": "schema:scheduled",
         "kind": "schema",
-        "name": "scheduled"
+        "name": "scheduled",
+        "type": "object"
       },
       {
         "id": "schema:scheduled_publication_rights",
         "kind": "schema",
-        "name": "scheduled_publication_rights"
+        "name": "scheduled_publication_rights",
+        "type": "object"
       },
       {
         "id": "schema:scheduled_time",
         "kind": "schema",
-        "name": "scheduled_time"
+        "name": "scheduled_time",
+        "type": "object"
       },
       {
         "id": "schema:season",
@@ -1383,7 +5804,8 @@
       {
         "id": "schema:series",
         "kind": "schema",
-        "name": "series"
+        "name": "series",
+        "type": "object"
       },
       {
         "id": "schema:series_of",
@@ -1393,57 +5815,68 @@
       {
         "id": "schema:service",
         "kind": "schema",
-        "name": "service"
+        "name": "service",
+        "type": "object"
       },
       {
         "id": "schema:serviceReference",
         "kind": "schema",
-        "name": "serviceReference"
+        "name": "serviceReference",
+        "type": "object"
       },
       {
         "id": "schema:short",
         "kind": "schema",
-        "name": "short"
+        "name": "short",
+        "type": "string"
       },
       {
         "id": "schema:sid",
         "kind": "schema",
-        "name": "sid"
+        "name": "sid",
+        "type": "string"
       },
       {
         "id": "schema:size",
         "kind": "schema",
-        "name": "size"
+        "name": "size",
+        "type": "object"
       },
       {
         "id": "schema:snippet_url",
         "kind": "schema",
-        "name": "snippet_url"
+        "name": "snippet_url",
+        "type": "string"
       },
       {
         "id": "schema:sort",
         "kind": "schema",
-        "name": "sort"
+        "name": "sort",
+        "type": "object"
       },
       {
         "id": "schema:sort_direction",
         "kind": "schema",
-        "name": "sort_direction"
+        "name": "sort_direction",
+        "type": "object"
       },
       {
         "id": "schema:sorts",
         "kind": "schema",
-        "name": "sorts"
+        "name": "sorts",
+        "type": "object"
       },
       {
         "id": "schema:source_asset",
         "kind": "schema",
-        "name": "source_asset"
+        "name": "source_asset",
+        "type": "object"
       },
       {
         "id": "schema:source_media",
         "kind": "schema",
-        "name": "source_media"
+        "name": "source_media",
+        "type": "string"
       },
       {
         "id": "schema:speech",
@@ -1453,97 +5886,116 @@
       {
         "id": "schema:start_time",
         "kind": "schema",
-        "name": "start_time"
+        "name": "start_time",
+        "type": "string:date-time"
       },
       {
         "id": "schema:status",
         "kind": "schema",
-        "name": "status"
+        "name": "status",
+        "type": "string"
       },
       {
         "id": "schema:synopses",
         "kind": "schema",
-        "name": "synopses"
+        "name": "synopses",
+        "type": "object"
       },
       {
         "id": "schema:title",
         "kind": "schema",
-        "name": "title"
+        "name": "title",
+        "type": "string"
       },
       {
         "id": "schema:track_number",
         "kind": "schema",
-        "name": "track_number"
+        "name": "track_number",
+        "type": "string"
       },
       {
         "id": "schema:track_side",
         "kind": "schema",
-        "name": "track_side"
+        "name": "track_side",
+        "type": "string"
       },
       {
         "id": "schema:tx_time",
         "kind": "schema",
-        "name": "tx_time"
+        "name": "tx_time",
+        "type": "object"
       },
       {
         "id": "schema:type",
         "kind": "schema",
-        "name": "type"
+        "name": "type",
+        "type": "string"
       },
       {
         "id": "schema:types_with_id",
         "kind": "schema",
-        "name": "types_with_id"
+        "name": "types_with_id",
+        "type": "object"
       },
       {
         "id": "schema:unstable_filters",
         "kind": "schema",
-        "name": "unstable_filters"
+        "name": "unstable_filters",
+        "type": "object"
       },
       {
         "id": "schema:unstable_mixins",
         "kind": "schema",
-        "name": "unstable_mixins"
+        "name": "unstable_mixins",
+        "type": "object"
       },
       {
         "id": "schema:unstable_sorts",
         "kind": "schema",
-        "name": "unstable_sorts"
+        "name": "unstable_sorts",
+        "type": "object"
       },
       {
         "id": "schema:updated_time",
         "kind": "schema",
-        "name": "updated_time"
+        "name": "updated_time",
+        "type": "string:date-time"
       },
       {
         "id": "schema:uri",
         "kind": "schema",
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
         "id": "schema:url",
         "kind": "schema",
-        "name": "url"
+        "name": "url",
+        "type": "string"
       },
       {
         "id": "schema:url_key",
         "kind": "schema",
-        "name": "url_key"
+        "name": "url_key",
+        "type": "string"
       },
       {
         "id": "schema:version_availability",
         "kind": "schema",
-        "name": "version_availability"
+        "name": "version_availability",
+        "type": "object"
       },
       {
         "id": "schema:version_availability_mixin",
         "kind": "schema",
-        "name": "version_availability_mixin"
+        "name": "version_availability_mixin",
+        "type": "object"
       },
       {
         "id": "schema:version_group",
         "kind": "schema",
-        "name": "version_group"
+        "name": "version_group",
+        "type": "object"
       },
       {
         "id": "schema:version_of",
@@ -1553,47 +6005,56 @@
       {
         "id": "schema:version_types_with_id",
         "kind": "schema",
-        "name": "version_types_with_id"
+        "name": "version_types_with_id",
+        "type": "object"
       },
       {
         "id": "schema:versions",
         "kind": "schema",
-        "name": "versions"
+        "name": "versions",
+        "type": "object"
       },
       {
         "id": "schema:versions_mixin",
         "kind": "schema",
-        "name": "versions_mixin"
+        "name": "versions_mixin",
+        "type": "object"
       },
       {
         "id": "schema:warning",
         "kind": "schema",
-        "name": "warning"
+        "name": "warning",
+        "type": "object"
       },
       {
         "id": "schema:warning_items",
         "kind": "schema",
-        "name": "warning_items"
+        "name": "warning_items",
+        "type": "object"
       },
       {
         "id": "schema:warning_text",
         "kind": "schema",
-        "name": "warning_text"
+        "name": "warning_text",
+        "type": "object"
       },
       {
         "id": "schema:warning_texts",
         "kind": "schema",
-        "name": "warning_texts"
+        "name": "warning_texts",
+        "type": "object"
       },
       {
         "id": "schema:warnings",
         "kind": "schema",
-        "name": "warnings"
+        "name": "warnings",
+        "type": "object"
       },
       {
         "id": "schema:window",
         "kind": "schema",
-        "name": "window"
+        "name": "window",
+        "type": "object"
       },
       {
         "id": "schema:window_of",
@@ -1601,9 +6062,11 @@
         "name": "window_of"
       },
       {
+        "description": "The XQuery language version.",
         "id": "schema:xquery-version",
         "kind": "schema",
-        "name": "xquery-version"
+        "name": "xquery-version",
+        "type": "string"
       }
     ]
   },

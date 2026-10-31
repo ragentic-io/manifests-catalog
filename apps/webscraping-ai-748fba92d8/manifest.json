@@ -23,6 +23,16 @@
         "from": "webscraping-ai-748fba92d8",
         "kind": "EXPOSES",
         "to": "operation:get:/selected-multiple"
+      },
+      {
+        "from": "operation:get:/account",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/selected-multiple",
+        "kind": "RETURNS",
+        "to": "schema:SelectedAreas"
       }
     ],
     "nodes": [
@@ -32,83 +42,537 @@
       },
       {
         "deprecated": false,
+        "description": "Always returns JSON",
         "id": "operation:get:/account",
         "kind": "operation",
         "method": "get",
         "name": "account",
         "path": "/account",
         "pointer": "#/paths/~1account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Information about your account calls quota"
+        "summary": "Information about your account calls quota",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns just HTML on success, JSON on error",
         "id": "operation:get:/html",
         "kind": "operation",
         "method": "get",
         "name": "getHTML",
+        "parameters": [
+          {
+            "description": "URL of the target page",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "HTTP headers to pass to the target page.",
+            "in": "query",
+            "name": "headers",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 10000,
+            "description": "Maximum processing time in ms.",
+            "in": "query",
+            "name": "timeout",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "description": "Execute on-page JavaScript using a headless browser (true by default)",
+            "in": "query",
+            "name": "js",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 2000,
+            "description": "Maximum JavaScript rendering time in ms.",
+            "in": "query",
+            "name": "js_timeout",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "datacenter",
+            "description": "Type of proxy, use residential proxies if your site restricts traffic from datacenters (datacenter by default).",
+            "enum": [
+              "datacenter",
+              "residential"
+            ],
+            "in": "query",
+            "name": "proxy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "us",
+            "description": "Country of the proxy to use (US by default).",
+            "enum": [
+              "us",
+              "gb",
+              "de",
+              "it",
+              "fr",
+              "ca",
+              "es",
+              "ru",
+              "jp",
+              "kr"
+            ],
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "desktop",
+            "description": "Type of device emulation.",
+            "enum": [
+              "desktop",
+              "mobile",
+              "tablet"
+            ],
+            "in": "query",
+            "name": "device",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return error on 404 HTTP status on the target page (false by default).",
+            "in": "query",
+            "name": "error_on_404",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return error on redirect on the target page (false by default).",
+            "in": "query",
+            "name": "error_on_redirect",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/html",
         "pointer": "#/paths/~1html/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "402",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "502",
+            "type": "PageError"
+          },
+          {
+            "status": "504",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Page HTML by URL"
+        "summary": "Page HTML by URL",
+        "tags": [
+          "HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns just HTML on success, JSON on error",
         "id": "operation:get:/selected",
         "kind": "operation",
         "method": "get",
         "name": "getSelected",
+        "parameters": [
+          {
+            "description": "CSS selector (null by default, returns whole page HTML)",
+            "in": "query",
+            "name": "selector",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "URL of the target page",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "HTTP headers to pass to the target page.",
+            "in": "query",
+            "name": "headers",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 10000,
+            "description": "Maximum processing time in ms.",
+            "in": "query",
+            "name": "timeout",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "description": "Execute on-page JavaScript using a headless browser (true by default)",
+            "in": "query",
+            "name": "js",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 2000,
+            "description": "Maximum JavaScript rendering time in ms.",
+            "in": "query",
+            "name": "js_timeout",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "datacenter",
+            "description": "Type of proxy, use residential proxies if your site restricts traffic from datacenters (datacenter by default).",
+            "enum": [
+              "datacenter",
+              "residential"
+            ],
+            "in": "query",
+            "name": "proxy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "us",
+            "description": "Country of the proxy to use (US by default).",
+            "enum": [
+              "us",
+              "gb",
+              "de",
+              "it",
+              "fr",
+              "ca",
+              "es",
+              "ru",
+              "jp",
+              "kr"
+            ],
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "desktop",
+            "description": "Type of device emulation.",
+            "enum": [
+              "desktop",
+              "mobile",
+              "tablet"
+            ],
+            "in": "query",
+            "name": "device",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return error on 404 HTTP status on the target page (false by default).",
+            "in": "query",
+            "name": "error_on_404",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return error on redirect on the target page (false by default).",
+            "in": "query",
+            "name": "error_on_redirect",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/selected",
         "pointer": "#/paths/~1selected/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "402",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "502",
+            "type": "PageError"
+          },
+          {
+            "status": "504",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "HTML of a selected page area by URL and CSS selector"
+        "summary": "HTML of a selected page area by URL and CSS selector",
+        "tags": [
+          "Selected HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Always returns JSON",
         "id": "operation:get:/selected-multiple",
         "kind": "operation",
         "method": "get",
         "name": "getSelectedMultiple",
+        "parameters": [
+          {
+            "description": "Multiple CSS selectors (null by default, returns whole page HTML)",
+            "in": "query",
+            "name": "selectors",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "URL of the target page",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "HTTP headers to pass to the target page.",
+            "in": "query",
+            "name": "headers",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "default": 10000,
+            "description": "Maximum processing time in ms.",
+            "in": "query",
+            "name": "timeout",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": true,
+            "description": "Execute on-page JavaScript using a headless browser (true by default)",
+            "in": "query",
+            "name": "js",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 2000,
+            "description": "Maximum JavaScript rendering time in ms.",
+            "in": "query",
+            "name": "js_timeout",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "datacenter",
+            "description": "Type of proxy, use residential proxies if your site restricts traffic from datacenters (datacenter by default).",
+            "enum": [
+              "datacenter",
+              "residential"
+            ],
+            "in": "query",
+            "name": "proxy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "us",
+            "description": "Country of the proxy to use (US by default).",
+            "enum": [
+              "us",
+              "gb",
+              "de",
+              "it",
+              "fr",
+              "ca",
+              "es",
+              "ru",
+              "jp",
+              "kr"
+            ],
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "desktop",
+            "description": "Type of device emulation.",
+            "enum": [
+              "desktop",
+              "mobile",
+              "tablet"
+            ],
+            "in": "query",
+            "name": "device",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return error on 404 HTTP status on the target page (false by default).",
+            "in": "query",
+            "name": "error_on_404",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return error on redirect on the target page (false by default).",
+            "in": "query",
+            "name": "error_on_redirect",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/selected-multiple",
         "pointer": "#/paths/~1selected-multiple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SelectedAreas"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "402",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "502",
+            "type": "PageError"
+          },
+          {
+            "status": "504",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "HTML of multiple page areas by URL and CSS selectors"
+        "summary": "HTML of multiple page areas by URL and CSS selectors",
+        "tags": [
+          "Selected HTML"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:PageError",
         "kind": "schema",
-        "name": "PageError"
+        "name": "PageError",
+        "type": "object"
       },
       {
+        "description": "Array of elements matched by selectors",
         "id": "schema:SelectedAreas",
         "kind": "schema",
-        "name": "SelectedAreas"
+        "name": "SelectedAreas",
+        "type": "string[]"
       }
     ]
   },

@@ -18,6 +18,26 @@
         "from": "afterbanks-com-13b0a66f26",
         "kind": "EXPOSES",
         "to": "operation:post:/serviceV3"
+      },
+      {
+        "from": "operation:get:/forms",
+        "kind": "RETURNS",
+        "to": "schema:Forms"
+      },
+      {
+        "from": "operation:post:/me",
+        "kind": "RETURNS",
+        "to": "schema:me"
+      },
+      {
+        "from": "operation:post:/serviceV3",
+        "kind": "RETURNS",
+        "to": "schema:serviceV3"
+      },
+      {
+        "from": "schema:serviceV3",
+        "kind": "REFERENCES",
+        "to": "schema:Transactions"
       }
     ],
     "nodes": [
@@ -27,61 +47,187 @@
       },
       {
         "deprecated": false,
+        "description": "Obtén una lista completa de los bancos soportados, así como los nombres de los campos necesarios para dibujar un formulario de login similar al oritinal del ba…",
         "id": "operation:get:/forms",
         "kind": "operation",
         "method": "get",
         "name": "get /forms",
+        "parameters": [
+          {
+            "description": "Código del país, formato ISO 3166-1 alpha-2 (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).",
+            "in": "query",
+            "name": "country_code",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forms",
         "pointer": "#/paths/~1forms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Forms[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lista de bancos soportados"
+        "summary": "Lista de bancos soportados",
+        "tags": [
+          "forms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Devuelve información sobre mi licencia y uso de llamadas",
         "id": "operation:post:/me",
         "kind": "operation",
         "method": "post",
         "name": "post /me",
+        "parameters": [
+          {
+            "description": "Licencia que identifica al cliente.",
+            "in": "query",
+            "name": "servicekey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me",
         "pointer": "#/paths/~1me/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "me"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Información de uso de mi licencia"
+        "summary": "Información de uso de mi licencia",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Este endpoint devuelve el listado de productos y los movimientos para cada uno de los productos desde la fecha solicidata hasta el día actual.",
         "id": "operation:post:/serviceV3",
         "kind": "operation",
         "method": "post",
         "name": "post /serviceV3",
+        "parameters": [
+          {
+            "description": "Licencia que identifica al cliente.",
+            "in": "query",
+            "name": "servicekey",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Identificador único para cada banco.",
+            "in": "query",
+            "name": "service",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Algunos bancos, en su formulario de login, solicitan el tipo de documento.",
+            "in": "query",
+            "name": "documentType",
+            "required": false,
+            "type": "number:int32"
+          },
+          {
+            "description": "Usuario",
+            "in": "query",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Contraseña",
+            "in": "query",
+            "name": "pass",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Algunos bancos utilizan una segunda contraseña.",
+            "in": "query",
+            "name": "pass2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Nombres de productos bancarios (cuentas corrientes, tarjetas, etc), separados por coma.",
+            "in": "query",
+            "name": "products",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fecha desde la que queremos obtener los movimientos en formato dd-mm-aaaa.",
+            "in": "query",
+            "name": "startdate",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/serviceV3",
         "pointer": "#/paths/~1serviceV3/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "serviceV3[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Posición global y movimientos hasta una fecha dada."
+        "summary": "Posición global y movimientos hasta una fecha dada.",
+        "tags": [
+          "serviceV3"
+        ]
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Forms",
         "kind": "schema",
-        "name": "Forms"
+        "name": "Forms",
+        "type": "object"
       },
       {
         "id": "schema:Transactions",
         "kind": "schema",
-        "name": "Transactions"
+        "name": "Transactions",
+        "type": "object"
       },
       {
         "id": "schema:me",
         "kind": "schema",
-        "name": "me"
+        "name": "me",
+        "type": "object"
       },
       {
         "id": "schema:serviceV3",
         "kind": "schema",
-        "name": "serviceV3"
+        "name": "serviceV3",
+        "type": "object"
       }
     ]
   },

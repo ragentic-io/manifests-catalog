@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_logo-core_clearbit_com_spotify.
 
 | | |
 | --- | --- |
-| Signed bundle | `d894b7156fa43d50f026a4c7077969c48b0b909ad907ff8fbfd2a250c59d9d8c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -35,93 +35,95 @@ logo: "https://api.apis.guru/v2/cache/logo/https_logo-core_clearbit_com_spotify.
 
 91 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/albums` | get-multiple-albums | Get Several Albums |
-| GET | `/albums/{id}` | get-an-album | Get Album |
-| GET | `/albums/{id}/tracks` | get-an-albums-tracks | Get Album Tracks |
-| GET | `/artists` | get-multiple-artists | Get Several Artists |
-| GET | `/artists/{id}` | get-an-artist | Get Artist |
-| GET | `/artists/{id}/albums` | get-an-artists-albums | Get Artist's Albums |
-| GET | `/artists/{id}/related-artists` | get-an-artists-related-artists | Get Artist's Related Artists |
-| GET | `/artists/{id}/top-tracks` | get-an-artists-top-tracks | Get Artist's Top Tracks |
-| GET | `/audio-analysis/{id}` | get-audio-analysis | Get Track's Audio Analysis |
-| GET | `/audio-features` | get-several-audio-features | Get Tracks' Audio Features |
-| GET | `/audio-features/{id}` | get-audio-features | Get Track's Audio Features |
-| GET | `/audiobooks` | get-multiple-audiobooks | Get Several Audiobooks |
-| GET | `/audiobooks/{id}` | get-an-audiobook | Get an Audiobook |
-| GET | `/audiobooks/{id}/chapters` | get-audiobook-chapters | Get Audiobook Chapters |
-| GET | `/browse/categories` | get-categories | Get Several Browse Categories |
-| GET | `/browse/categories/{category_id}` | get-a-category | Get Single Browse Category |
-| GET | `/browse/categories/{category_id}/playlists` | get-a-categories-playlists | Get Category's Playlists |
-| GET | `/browse/featured-playlists` | get-featured-playlists | Get Featured Playlists |
-| GET | `/browse/new-releases` | get-new-releases | Get New Releases |
-| GET | `/chapters` | get-several-chapters | Get Several Chapters |
-| GET | `/chapters/{id}` | get-a-chapter | Get a Chapter |
-| GET | `/episodes` | get-multiple-episodes | Get Several Episodes |
-| GET | `/episodes/{id}` | get-an-episode | Get Episode |
-| GET | `/markets` | get-available-markets | Get Available Markets |
-| GET | `/me` | get-current-users-profile | Get Current User's Profile |
-| DELETE | `/me/albums` | remove-albums-user | Remove Users' Saved Albums |
-| GET | `/me/albums` | get-users-saved-albums | Get User's Saved Albums |
-| PUT | `/me/albums` | save-albums-user | Save Albums for Current User |
-| GET | `/me/albums/contains` | check-users-saved-albums | Check User's Saved Albums |
-| DELETE | `/me/audiobooks` | remove-audiobooks-user | Remove User's Saved Audiobooks |
-| GET | `/me/audiobooks` | get-users-saved-audiobooks | Get User's Saved Audiobooks |
-| PUT | `/me/audiobooks` | save-audiobooks-user | Save Audiobooks for Current User |
-| GET | `/me/audiobooks/contains` | check-users-saved-audiobooks | Check User's Saved Audiobooks |
-| DELETE | `/me/episodes` | remove-episodes-user | Remove User's Saved Episodes |
-| GET | `/me/episodes` | get-users-saved-episodes | Get User's Saved Episodes |
-| PUT | `/me/episodes` | save-episodes-user | Save Episodes for Current User |
-| GET | `/me/episodes/contains` | check-users-saved-episodes | Check User's Saved Episodes |
-| DELETE | `/me/following` | unfollow-artists-users | Unfollow Artists or Users |
-| GET | `/me/following` | get-followed | Get Followed Artists |
-| PUT | `/me/following` | follow-artists-users | Follow Artists or Users |
-| GET | `/me/following/contains` | check-current-user-follows | Check If User Follows Artists or Users |
-| GET | `/me/player` | get-information-about-the-users-current-playback | Get Playback State |
-| PUT | `/me/player` | transfer-a-users-playback | Transfer Playback |
-| GET | `/me/player/currently-playing` | get-the-users-currently-playing-track | Get Currently Playing Track |
-| GET | `/me/player/devices` | get-a-users-available-devices | Get Available Devices |
-| POST | `/me/player/next` | skip-users-playback-to-next-track | Skip To Next |
-| PUT | `/me/player/pause` | pause-a-users-playback | Pause Playback |
-| PUT | `/me/player/play` | start-a-users-playback | Start/Resume Playback |
-| POST | `/me/player/previous` | skip-users-playback-to-previous-track | Skip To Previous |
-| GET | `/me/player/queue` | get-queue | Get the User's Queue |
-| POST | `/me/player/queue` | add-to-queue | Add Item to Playback Queue |
-| GET | `/me/player/recently-played` | get-recently-played | Get Recently Played Tracks |
-| PUT | `/me/player/repeat` | set-repeat-mode-on-users-playback | Set Repeat Mode |
-| PUT | `/me/player/seek` | seek-to-position-in-currently-playing-track | Seek To Position |
-| PUT | `/me/player/shuffle` | toggle-shuffle-for-users-playback | Toggle Playback Shuffle |
-| PUT | `/me/player/volume` | set-volume-for-users-playback | Set Playback Volume |
-| GET | `/me/playlists` | get-a-list-of-current-users-playlists | Get Current User's Playlists |
-| DELETE | `/me/shows` | remove-shows-user | Remove User's Saved Shows |
-| GET | `/me/shows` | get-users-saved-shows | Get User's Saved Shows |
-| PUT | `/me/shows` | save-shows-user | Save Shows for Current User |
-| GET | `/me/shows/contains` | check-users-saved-shows | Check User's Saved Shows |
-| GET | `/me/top/{type}` | get-users-top-artists-and-tracks | Get User's Top Items |
-| DELETE | `/me/tracks` | remove-tracks-user | Remove User's Saved Tracks |
-| GET | `/me/tracks` | get-users-saved-tracks | Get User's Saved Tracks |
-| PUT | `/me/tracks` | save-tracks-user | Save Tracks for Current User |
-| GET | `/me/tracks/contains` | check-users-saved-tracks | Check User's Saved Tracks |
-| GET | `/playlists/{playlist_id}` | get-playlist | Get Playlist |
-| PUT | `/playlists/{playlist_id}` | change-playlist-details | Change Playlist Details |
-| DELETE | `/playlists/{playlist_id}/followers` | unfollow-playlist | Unfollow Playlist |
-| PUT | `/playlists/{playlist_id}/followers` | follow-playlist | Follow Playlist |
-| GET | `/playlists/{playlist_id}/followers/contains` | check-if-user-follows-playlist | Check if Users Follow Playlist |
-| GET | `/playlists/{playlist_id}/images` | get-playlist-cover | Get Playlist Cover Image |
-| PUT | `/playlists/{playlist_id}/images` | upload-custom-playlist-cover | Add Custom Playlist Cover Image |
-| DELETE | `/playlists/{playlist_id}/tracks` | remove-tracks-playlist | Remove Playlist Items |
-| GET | `/playlists/{playlist_id}/tracks` | get-playlists-tracks | Get Playlist Items |
-| POST | `/playlists/{playlist_id}/tracks` | add-tracks-to-playlist | Add Items to Playlist |
-| PUT | `/playlists/{playlist_id}/tracks` | reorder-or-replace-playlists-tracks | Update Playlist Items |
-| GET | `/recommendations` | get-recommendations | Get Recommendations |
-| GET | `/recommendations/available-genre-seeds` | get-recommendation-genres | Get Available Genre Seeds |
-| GET | `/search` | search | Search for Item |
-| GET | `/shows` | get-multiple-shows | Get Several Shows |
-| GET | `/shows/{id}` | get-a-show | Get Show |
-| GET | `/shows/{id}/episodes` | get-a-shows-episodes | Get Show Episodes |
-| GET | `/tracks` | get-several-tracks | Get Several Tracks |
-| GET | `/tracks/{id}` | get-track | Get Track |
-| GET | `/users/{user_id}` | get-users-profile | Get User's Profile |
-| GET | `/users/{user_id}/playlists` | get-list-users-playlists | Get User's Playlists |
-| POST | `/users/{user_id}/playlists` | create-playlist | Create Playlist |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/albums` | get-multiple-albums | `ids`*, `market` | object | yes | Get Several Albums |
+| GET | `/albums/{id}` | get-an-album | `id`*, `market` | AlbumObject | yes | Get Album |
+| GET | `/albums/{id}/tracks` | get-an-albums-tracks | `id`*, `market`, `limit`, `offset` | PagingSimplifiedTrackObject | yes | Get Album Tracks |
+| GET | `/artists` | get-multiple-artists | `ids`* | object | yes | Get Several Artists |
+| GET | `/artists/{id}` | get-an-artist | `id`* | ArtistObject | yes | Get Artist |
+| GET | `/artists/{id}/albums` | get-an-artists-albums | `id`*, `include_groups`, `market`, `limit`, `offset` | PagingSimplifiedAlbumObject | yes | Get Artist's Albums |
+| GET | `/artists/{id}/related-artists` | get-an-artists-related-artists | `id`* | object | yes | Get Artist's Related Artists |
+| GET | `/artists/{id}/top-tracks` | get-an-artists-top-tracks | `id`*, `market` | object | yes | Get Artist's Top Tracks |
+| GET | `/audio-analysis/{id}` | get-audio-analysis | `id`* | AudioAnalysisObject | yes | Get Track's Audio Analysis |
+| GET | `/audio-features` | get-several-audio-features | `ids`* | object | yes | Get Tracks' Audio Features |
+| GET | `/audio-features/{id}` | get-audio-features | `id`* | AudioFeaturesObject | yes | Get Track's Audio Features |
+| GET | `/audiobooks` | get-multiple-audiobooks | `ids`*, `market` | object | yes | Get Several Audiobooks |
+| GET | `/audiobooks/{id}` | get-an-audiobook | `id`*, `market` | AudiobookObject | yes | Get an Audiobook |
+| GET | `/audiobooks/{id}/chapters` | get-audiobook-chapters | `id`*, `market`, `limit`, `offset` | PagingSimplifiedChapterObject | yes | Get Audiobook Chapters |
+| GET | `/browse/categories` | get-categories | `country`, `locale`, `limit`, `offset` | object | yes | Get Several Browse Categories |
+| GET | `/browse/categories/{category_id}` | get-a-category | `category_id`*, `country`, `locale` | CategoryObject | yes | Get Single Browse Category |
+| GET | `/browse/categories/{category_id}/playlists` | get-a-categories-playlists | `category_id`*, `country`, `limit`, `offset` | PagingFeaturedPlaylistObject | yes | Get Category's Playlists |
+| GET | `/browse/featured-playlists` | get-featured-playlists | `country`, `locale`, `timestamp`, `limit`, `offset` | PagingFeaturedPlaylistObject | yes | Get Featured Playlists |
+| GET | `/browse/new-releases` | get-new-releases | `country`, `limit`, `offset` | object | yes | Get New Releases |
+| GET | `/chapters` | get-several-chapters | `ids`*, `market` | object | yes | Get Several Chapters |
+| GET | `/chapters/{id}` | get-a-chapter | `id`*, `market` | ChapterObject | yes | Get a Chapter |
+| GET | `/episodes` | get-multiple-episodes | `ids`*, `market` | object | yes | Get Several Episodes |
+| GET | `/episodes/{id}` | get-an-episode | `id`*, `market` | EpisodeObject | yes | Get Episode |
+| GET | `/markets` | get-available-markets | — | object | yes | Get Available Markets |
+| GET | `/me` | get-current-users-profile | — | PrivateUserObject | yes | Get Current User's Profile |
+| GET | `/me/albums` | get-users-saved-albums | `limit`, `offset`, `market` | PagingSavedAlbumObject | yes | Get User's Saved Albums |
+| PUT | `/me/albums` | save-albums-user | `ids`*, body: object | — |  | Save Albums for Current User |
+| DELETE | `/me/albums` | remove-albums-user | `ids`*, body: object | — |  | Remove Users' Saved Albums |
+| GET | `/me/albums/contains` | check-users-saved-albums | `ids`* | boolean[] | yes | Check User's Saved Albums |
+| GET | `/me/audiobooks` | get-users-saved-audiobooks | `limit`, `offset` | PagingSimplifiedAudiobookObject | yes | Get User's Saved Audiobooks |
+| PUT | `/me/audiobooks` | save-audiobooks-user | `ids`* | — |  | Save Audiobooks for Current User |
+| DELETE | `/me/audiobooks` | remove-audiobooks-user | `ids`* | — |  | Remove User's Saved Audiobooks |
+| GET | `/me/audiobooks/contains` | check-users-saved-audiobooks | `ids`* | boolean[] | yes | Check User's Saved Audiobooks |
+| GET | `/me/episodes` | get-users-saved-episodes | `market`, `limit`, `offset` | PagingSavedEpisodeObject | yes | Get User's Saved Episodes |
+| PUT | `/me/episodes` | save-episodes-user | `ids`*, body: object | — |  | Save Episodes for Current User |
+| DELETE | `/me/episodes` | remove-episodes-user | `ids`*, body: object | — |  | Remove User's Saved Episodes |
+| GET | `/me/episodes/contains` | check-users-saved-episodes | `ids`* | boolean[] | yes | Check User's Saved Episodes |
+| GET | `/me/following` | get-followed | `type`*, `after`, `limit` | object | yes | Get Followed Artists |
+| PUT | `/me/following` | follow-artists-users | `type`*, `ids`*, body: object | — |  | Follow Artists or Users |
+| DELETE | `/me/following` | unfollow-artists-users | `type`*, `ids`*, body: object | — |  | Unfollow Artists or Users |
+| GET | `/me/following/contains` | check-current-user-follows | `type`*, `ids`* | boolean[] | yes | Check If User Follows Artists or Users |
+| GET | `/me/player` | get-information-about-the-users-current-playback | `market`, `additional_types` | CurrentlyPlayingContextObject | yes | Get Playback State |
+| PUT | `/me/player` | transfer-a-users-playback | body: object | — |  | Transfer Playback |
+| GET | `/me/player/currently-playing` | get-the-users-currently-playing-track | `market`, `additional_types` | CurrentlyPlayingContextObject | yes | Get Currently Playing Track |
+| GET | `/me/player/devices` | get-a-users-available-devices | — | object | yes | Get Available Devices |
+| POST | `/me/player/next` | skip-users-playback-to-next-track | `device_id` | — |  | Skip To Next |
+| PUT | `/me/player/pause` | pause-a-users-playback | `device_id` | — |  | Pause Playback |
+| PUT | `/me/player/play` | start-a-users-playback | `device_id`, body: object | — |  | Start/Resume Playback |
+| POST | `/me/player/previous` | skip-users-playback-to-previous-track | `device_id` | — |  | Skip To Previous |
+| GET | `/me/player/queue` | get-queue | — | QueueObject | yes | Get the User's Queue |
+| POST | `/me/player/queue` | add-to-queue | `uri`*, `device_id` | — |  | Add Item to Playback Queue |
+| GET | `/me/player/recently-played` | get-recently-played | `limit`, `after`, `before` | CursorPagingPlayHistoryObject | yes | Get Recently Played Tracks |
+| PUT | `/me/player/repeat` | set-repeat-mode-on-users-playback | `state`*, `device_id` | — |  | Set Repeat Mode |
+| PUT | `/me/player/seek` | seek-to-position-in-currently-playing-track | `position_ms`*, `device_id` | — |  | Seek To Position |
+| PUT | `/me/player/shuffle` | toggle-shuffle-for-users-playback | `state`*, `device_id` | — |  | Toggle Playback Shuffle |
+| PUT | `/me/player/volume` | set-volume-for-users-playback | `volume_percent`*, `device_id` | — |  | Set Playback Volume |
+| GET | `/me/playlists` | get-a-list-of-current-users-playlists | `limit`, `offset` | PagingPlaylistObject | yes | Get Current User's Playlists |
+| GET | `/me/shows` | get-users-saved-shows | `limit`, `offset` | PagingSavedShowObject | yes | Get User's Saved Shows |
+| PUT | `/me/shows` | save-shows-user | `ids`* | — |  | Save Shows for Current User |
+| DELETE | `/me/shows` | remove-shows-user | `ids`*, `market` | — |  | Remove User's Saved Shows |
+| GET | `/me/shows/contains` | check-users-saved-shows | `ids`* | boolean[] | yes | Check User's Saved Shows |
+| GET | `/me/top/{type}` | get-users-top-artists-and-tracks | `type`*, `time_range`, `limit`, `offset` | PagingObject\|object | yes | Get User's Top Items |
+| GET | `/me/tracks` | get-users-saved-tracks | `market`, `limit`, `offset` | PagingSavedTrackObject | yes | Get User's Saved Tracks |
+| PUT | `/me/tracks` | save-tracks-user | `ids`*, body: object | — |  | Save Tracks for Current User |
+| DELETE | `/me/tracks` | remove-tracks-user | `ids`*, body: object | — |  | Remove User's Saved Tracks |
+| GET | `/me/tracks/contains` | check-users-saved-tracks | `ids`* | boolean[] | yes | Check User's Saved Tracks |
+| GET | `/playlists/{playlist_id}` | get-playlist | `playlist_id`*, `market`, `fields`, `additional_types` | PlaylistObject | yes | Get Playlist |
+| PUT | `/playlists/{playlist_id}` | change-playlist-details | `playlist_id`*, body: object | — |  | Change Playlist Details |
+| PUT | `/playlists/{playlist_id}/followers` | follow-playlist | `playlist_id`*, body: object | — |  | Follow Playlist |
+| DELETE | `/playlists/{playlist_id}/followers` | unfollow-playlist | `playlist_id`* | — |  | Unfollow Playlist |
+| GET | `/playlists/{playlist_id}/followers/contains` | check-if-user-follows-playlist | `playlist_id`*, `ids`* | boolean[] | yes | Check if Users Follow Playlist |
+| GET | `/playlists/{playlist_id}/images` | get-playlist-cover | `playlist_id`* | ImageObject[] | yes | Get Playlist Cover Image |
+| PUT | `/playlists/{playlist_id}/images` | upload-custom-playlist-cover | `playlist_id`* | — |  | Add Custom Playlist Cover Image |
+| GET | `/playlists/{playlist_id}/tracks` | get-playlists-tracks | `playlist_id`*, `market`, `fields`, `limit`, `offset`, `additional_types` | PagingPlaylistTrackObject | yes | Get Playlist Items |
+| PUT | `/playlists/{playlist_id}/tracks` | reorder-or-replace-playlists-tracks | `playlist_id`*, `uris`, body: object | object |  | Update Playlist Items |
+| POST | `/playlists/{playlist_id}/tracks` | add-tracks-to-playlist | `playlist_id`*, `position`, `uris`, body: object | object |  | Add Items to Playlist |
+| DELETE | `/playlists/{playlist_id}/tracks` | remove-tracks-playlist | `playlist_id`*, body: object | object |  | Remove Playlist Items |
+| GET | `/recommendations` | get-recommendations | `limit`, `market`, `seed_artists`*, `seed_genres`*, `seed_tracks`*, `min_acousticness`, `max_acousticness`, `target_acousticness`, `min_danceability`, `max_danceability`, `target_danceability`, `min_duration_ms`, `max_duration_ms`, `target_duration_ms`, `min_energy`, `max_energy`, `target_energy`, `min_instrumentalness`, `max_instrumentalness`, `target_instrumentalness`, `min_key`, `max_key`, `target_key`, `min_liveness`, `max_liveness`, `target_liveness`, `min_loudness`, `max_loudness`, `target_loudness`, `min_mode`, `max_mode`, `target_mode`, `min_popularity`, `max_popularity`, `target_popularity`, `min_speechiness`, `max_speechiness`, `target_speechiness`, `min_tempo`, `max_tempo`, `target_tempo`, `min_time_signature`, `max_time_signature`, `target_time_signature`, `min_valence`, `max_valence`, `target_valence` | RecommendationsObject | yes | Get Recommendations |
+| GET | `/recommendations/available-genre-seeds` | get-recommendation-genres | — | object | yes | Get Available Genre Seeds |
+| GET | `/search` | search | `q`*, `type`*, `market`, `limit`, `offset`, `include_external` | object | yes | Search for Item |
+| GET | `/shows` | get-multiple-shows | `market`, `ids`* | object | yes | Get Several Shows |
+| GET | `/shows/{id}` | get-a-show | `market`, `id`* | ShowObject | yes | Get Show |
+| GET | `/shows/{id}/episodes` | get-a-shows-episodes | `id`*, `market`, `limit`, `offset` | PagingSimplifiedEpisodeObject | yes | Get Show Episodes |
+| GET | `/tracks` | get-several-tracks | `market`, `ids`* | object | yes | Get Several Tracks |
+| GET | `/tracks/{id}` | get-track | `id`*, `market` | TrackObject | yes | Get Track |
+| GET | `/users/{user_id}` | get-users-profile | `user_id`* | PublicUserObject | yes | Get User's Profile |
+| GET | `/users/{user_id}/playlists` | get-list-users-playlists | `user_id`*, `limit`, `offset` | PagingPlaylistObject | yes | Get User's Playlists |
+| POST | `/users/{user_id}/playlists` | create-playlist | `user_id`*, body: object | PlaylistObject |  | Create Playlist |

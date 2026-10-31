@@ -47,22 +47,22 @@
       {
         "from": "1password-local-connect-f8c78b4d73",
         "kind": "EXPOSES",
-        "to": "operation:delete:/vaults/{vaultUuid}/items/{itemUuid}"
-      },
-      {
-        "from": "1password-local-connect-f8c78b4d73",
-        "kind": "EXPOSES",
         "to": "operation:get:/vaults/{vaultUuid}/items/{itemUuid}"
       },
       {
         "from": "1password-local-connect-f8c78b4d73",
         "kind": "EXPOSES",
-        "to": "operation:patch:/vaults/{vaultUuid}/items/{itemUuid}"
+        "to": "operation:put:/vaults/{vaultUuid}/items/{itemUuid}"
       },
       {
         "from": "1password-local-connect-f8c78b4d73",
         "kind": "EXPOSES",
-        "to": "operation:put:/vaults/{vaultUuid}/items/{itemUuid}"
+        "to": "operation:delete:/vaults/{vaultUuid}/items/{itemUuid}"
+      },
+      {
+        "from": "1password-local-connect-f8c78b4d73",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/vaults/{vaultUuid}/items/{itemUuid}"
       },
       {
         "from": "1password-local-connect-f8c78b4d73",
@@ -78,6 +78,91 @@
         "from": "1password-local-connect-f8c78b4d73",
         "kind": "EXPOSES",
         "to": "operation:get:/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content"
+      },
+      {
+        "from": "operation:get:/activity",
+        "kind": "RETURNS",
+        "to": "schema:APIRequest"
+      },
+      {
+        "from": "operation:get:/vaults",
+        "kind": "RETURNS",
+        "to": "schema:Vault"
+      },
+      {
+        "from": "operation:get:/vaults/{vaultUuid}",
+        "kind": "RETURNS",
+        "to": "schema:Vault"
+      },
+      {
+        "from": "operation:get:/vaults/{vaultUuid}/items",
+        "kind": "RETURNS",
+        "to": "schema:Item"
+      },
+      {
+        "from": "operation:post:/vaults/{vaultUuid}/items",
+        "kind": "ACCEPTS",
+        "to": "schema:FullItem"
+      },
+      {
+        "from": "operation:post:/vaults/{vaultUuid}/items",
+        "kind": "RETURNS",
+        "to": "schema:FullItem"
+      },
+      {
+        "from": "operation:get:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "RETURNS",
+        "to": "schema:FullItem"
+      },
+      {
+        "from": "operation:put:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:FullItem"
+      },
+      {
+        "from": "operation:put:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "RETURNS",
+        "to": "schema:FullItem"
+      },
+      {
+        "from": "operation:patch:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:Patch"
+      },
+      {
+        "from": "operation:patch:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "RETURNS",
+        "to": "schema:FullItem"
+      },
+      {
+        "from": "operation:get:/vaults/{vaultUuid}/items/{itemUuid}/files",
+        "kind": "RETURNS",
+        "to": "schema:File"
+      },
+      {
+        "from": "operation:get:/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}",
+        "kind": "RETURNS",
+        "to": "schema:File"
+      },
+      {
+        "from": "schema:Field",
+        "kind": "REFERENCES",
+        "to": "schema:GeneratorRecipe"
+      },
+      {
+        "from": "schema:FullItem",
+        "kind": "REFERENCES",
+        "to": "schema:Field"
+      },
+      {
+        "from": "schema:FullItem",
+        "kind": "REFERENCES",
+        "to": "schema:File"
+      },
+      {
+        "from": "schema:FullItem",
+        "kind": "REFERENCES",
+        "to": "schema:Item"
       }
     ],
     "nodes": [
@@ -91,14 +176,46 @@
         "kind": "operation",
         "method": "get",
         "name": "GetApiActivity",
+        "parameters": [
+          {
+            "default": 50,
+            "description": "How many API Events should be retrieved in a single request.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "How far into the collection of API Events should the response start",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/activity",
         "pointer": "#/paths/~1activity/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIRequest[]"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Retrieve a list of API Requests that have been made."
+        "summary": "Retrieve a list of API Requests that have been made.",
+        "tags": [
+          "Activity"
+        ]
       },
       {
         "deprecated": false,
@@ -108,8 +225,18 @@
         "name": "GetServerHealth",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get state of the server and its dependencies."
+        "summary": "Get state of the server and its dependencies.",
+        "tags": [
+          "Health"
+        ]
       },
       {
         "deprecated": false,
@@ -119,19 +246,40 @@
         "name": "GetHeartbeat",
         "path": "/heartbeat",
         "pointer": "#/paths/~1heartbeat/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Ping the server for liveness"
+        "summary": "Ping the server for liveness",
+        "tags": [
+          "Health"
+        ]
       },
       {
         "deprecated": false,
+        "description": "See Prometheus documentation for a complete data model.",
         "id": "operation:get:/metrics",
         "kind": "operation",
         "method": "get",
         "name": "GetPrometheusMetrics",
         "path": "/metrics",
         "pointer": "#/paths/~1metrics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Query server for exposed Prometheus metrics"
+        "summary": "Query server for exposed Prometheus metrics",
+        "tags": [
+          "Metrics"
+        ]
       },
       {
         "deprecated": false,
@@ -139,14 +287,37 @@
         "kind": "operation",
         "method": "get",
         "name": "GetVaults",
+        "parameters": [
+          {
+            "description": "Filter the Vault collection based on Vault name using SCIM eq filter",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/vaults",
         "pointer": "#/paths/~1vaults/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Vault[]"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get all Vaults"
+        "summary": "Get all Vaults",
+        "tags": [
+          "Vaults"
+        ]
       },
       {
         "deprecated": false,
@@ -154,14 +325,45 @@
         "kind": "operation",
         "method": "get",
         "name": "GetVaultById",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault to fetch Items from",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vaults/{vaultUuid}",
         "pointer": "#/paths/~1vaults~1{vaultUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Vault"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get Vault details and metadata"
+        "summary": "Get Vault details and metadata",
+        "tags": [
+          "Vaults"
+        ]
       },
       {
         "deprecated": false,
@@ -169,14 +371,48 @@
         "kind": "operation",
         "method": "get",
         "name": "GetVaultItems",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault to fetch Items from",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter the Item collection based on Item name using SCIM eq filter",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Item[]"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get all items for inside a Vault"
+        "summary": "Get all items for inside a Vault",
+        "tags": [
+          "Items"
+        ]
       },
       {
         "deprecated": false,
@@ -184,29 +420,56 @@
         "kind": "operation",
         "method": "post",
         "name": "CreateVaultItem",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault to create an Item in",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "FullItem"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FullItem"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Create a new Item"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/vaults/{vaultUuid}/items/{itemUuid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteVaultItem",
-        "path": "/vaults/{vaultUuid}/items/{itemUuid}",
-        "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/delete",
-        "security": [
-          {
-            "ConnectToken": []
-          }
-        ],
-        "summary": "Delete an Item"
+        "summary": "Create a new Item",
+        "tags": [
+          "Items"
+        ]
       },
       {
         "deprecated": false,
@@ -214,29 +477,52 @@
         "kind": "operation",
         "method": "get",
         "name": "GetVaultItemById",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault to fetch Item from",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the Item to fetch",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items/{itemUuid}",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FullItem"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get the details of an Item"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/vaults/{vaultUuid}/items/{itemUuid}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "PatchVaultItem",
-        "path": "/vaults/{vaultUuid}/items/{itemUuid}",
-        "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/patch",
-        "security": [
-          {
-            "ConnectToken": []
-          }
-        ],
-        "summary": "Update a subset of Item attributes"
+        "summary": "Get the details of an Item",
+        "tags": [
+          "Items"
+        ]
       },
       {
         "deprecated": false,
@@ -244,14 +530,176 @@
         "kind": "operation",
         "method": "put",
         "name": "UpdateVaultItem",
+        "parameters": [
+          {
+            "description": "The UUID of the Item's Vault",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the Item to update",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items/{itemUuid}",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "FullItem"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FullItem"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Update an Item"
+        "summary": "Update an Item",
+        "tags": [
+          "Items"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteVaultItem",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault the item is in",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the Item to update",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/vaults/{vaultUuid}/items/{itemUuid}",
+        "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ConnectToken": []
+          }
+        ],
+        "summary": "Delete an Item",
+        "tags": [
+          "Items"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Applies a modified [RFC6902 JSON Patch](https://tools.ietf.org/html/rfc6902) document to an Item or ItemField.",
+        "id": "operation:patch:/vaults/{vaultUuid}/items/{itemUuid}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "PatchVaultItem",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault the item is in",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UUID of the Item to update",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/vaults/{vaultUuid}/items/{itemUuid}",
+        "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FullItem"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ConnectToken": []
+          }
+        ],
+        "summary": "Update a subset of Item attributes",
+        "tags": [
+          "Items"
+        ]
       },
       {
         "deprecated": false,
@@ -259,14 +707,59 @@
         "kind": "operation",
         "method": "get",
         "name": "GetItemFiles",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault to fetch Items from",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The UUID of the Item to fetch files from",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Tells server to return the base64-encoded file contents in the response.",
+            "in": "query",
+            "name": "inline_files",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items/{itemUuid}/files",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "File[]"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "413",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get all the files inside an Item"
+        "summary": "Get all the files inside an Item",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
@@ -274,14 +767,70 @@
         "kind": "operation",
         "method": "get",
         "name": "GetDetailsOfFileById",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault to fetch Item from",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The UUID of the Item to fetch File from",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The UUID of the File to fetch",
+            "in": "path",
+            "name": "fileUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Tells server to return the base64-encoded file contents in the response.",
+            "in": "query",
+            "name": "inline_files",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "File"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "413",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get the details of a File"
+        "summary": "Get the details of a File",
+        "tags": [
+          "Files"
+        ]
       },
       {
         "deprecated": false,
@@ -289,64 +838,118 @@
         "kind": "operation",
         "method": "get",
         "name": "DownloadFileByID",
+        "parameters": [
+          {
+            "description": "The UUID of the Vault the item is in",
+            "in": "path",
+            "name": "vaultUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The UUID of the Item the File is in",
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "UUID of the file to get content from",
+            "in": "path",
+            "name": "fileUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content",
         "pointer": "#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ConnectToken": []
           }
         ],
-        "summary": "Get the content of a File"
+        "summary": "Get the content of a File",
+        "tags": [
+          "Files"
+        ]
       },
       {
+        "description": "Represents a request that was made to the API.",
         "id": "schema:APIRequest",
         "kind": "schema",
-        "name": "APIRequest"
+        "name": "APIRequest",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:Field",
         "kind": "schema",
-        "name": "Field"
+        "name": "Field",
+        "type": "object"
       },
       {
         "id": "schema:File",
         "kind": "schema",
-        "name": "File"
+        "name": "File",
+        "type": "object"
       },
       {
         "id": "schema:FullItem",
         "kind": "schema",
-        "name": "FullItem"
+        "name": "FullItem",
+        "type": "Item|object"
       },
       {
+        "description": "The recipe is used in conjunction with the \"generate\" property to set the character set used to generate a new secure value",
         "id": "schema:GeneratorRecipe",
         "kind": "schema",
-        "name": "GeneratorRecipe"
+        "name": "GeneratorRecipe",
+        "type": "object"
       },
       {
         "id": "schema:Item",
         "kind": "schema",
-        "name": "Item"
+        "name": "Item",
+        "type": "object"
       },
       {
         "id": "schema:Patch",
         "kind": "schema",
-        "name": "Patch"
+        "name": "Patch",
+        "type": "object[]"
       },
       {
+        "description": "The state of a registered server dependency.",
         "id": "schema:ServiceDependency",
         "kind": "schema",
-        "name": "ServiceDependency"
+        "name": "ServiceDependency",
+        "type": "object"
       },
       {
         "id": "schema:Vault",
         "kind": "schema",
-        "name": "Vault"
+        "name": "Vault",
+        "type": "object"
       }
     ]
   },

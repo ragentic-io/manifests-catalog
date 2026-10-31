@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.hubspot.com_hubfs_assets_hu
 
 | | |
 | --- | --- |
-| Signed bundle | `828adc8efc2e0340bdebbc78e960d9a264a45531939962cc8d1d0f506f462190` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.hubspot.com_hubfs_assets_hu
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/events/v3/send` | post-/events/v3/send | Sends Custom Behavioral Event |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/events/v3/send` | post-/events/v3/send | body*: BehavioralEventHttpCompletionRequest | — |  | Sends Custom Behavioral Event |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.botify.com_images_logos_
 
 | | |
 | --- | --- |
-| Signed bundle | `0436f7cec038e86cd3852d2a86d56a451f4c2efb5f3be333043041b1449efd92` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.botify.com_images_logos_
 
 38 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/analyses/{username}/{project_slug}` | getProjectAnalyses | List all analyses for a project |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}` | getAnalysisSummary | Get an Analysis detail |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics` | getCrawlStatistics | Return global statistics for an analysis |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time` | getCrawlStatisticsByFrequency | Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min) |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/urls/{list_type}` | getCrawlStatisticsUrls | Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors) |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/ganalytics/orphan_urls/{medium}/{source}` | getGanalyticsOrphanURLs | List of Orphan URLs |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/links/percentiles` | getLinksPercentiles | Get inlinks percentiles |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/pagerank/lost` | getPageRankLost | Lost pagerank |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/report` | getSitemapsReport | Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config` | getSitemapsSamplesOutOfConfig | Sample list of URLs which were found in your sitemaps but outside of the |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/sitemap_only` | getSitemapsSamplesSitemapsOnly | Sample list of URLs which were found in your sitemaps, within the project |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/domains` | getLinksTopDomains | Top domains |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/subdomains` | getLinksTopSubdomains | Top subddomains |
-| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls` | getUrls | Executes a query and returns a paginated response |
-| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs` | getUrlsAggs | Query aggregator |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel` | getUrlsDatamodel | Gets an Analysis datamodel |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/export` | getUrlsExports | A list of the CSV Exports requests and their current status |
-| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/export` | createUrlsExport | Creates a new UrlExport object and starts a task that will export the results into a csv |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/export/{url_export_id}` | getUrlsExportStatus | Checks the status of an CSVUrlExportJob object |
-| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/suggested_filters` | getUrlsSuggestedFilters | Return most frequent segments (= suggested patterns in the previous version) |
-| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/{url}` | getUrlDetail | Gets the detail of an URL for an analysis |
-| GET | `/projects/{username}` | getUserProjects | List all active projects for the user |
-| POST | `/projects/{username}/{project_slug}/features/url_rewriting/rules_validator` | testUrlRewritingRules | Match and replace parts of a URL based on rules passed in POST data |
-| GET | `/projects/{username}/{project_slug}/filters` | getSavedFilters | List all the project's saved filters (each filter's name, ID and filter value) |
-| GET | `/projects/{username}/{project_slug}/filters/{identifier}` | getSavedFilter | Retrieves a specific saved filter's name, ID and filter value |
-| POST | `/projects/{username}/{project_slug}/urls/aggs` | getProjectUrlsAggs | Project Query aggregator |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/analyses/{username}/{project_slug}` | getProjectAnalyses | `username`*, `project_slug`*, `page`, `size` | object | yes | List all analyses for a project |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}` | getAnalysisSummary | `username`*, `project_slug`*, `analysis_slug`* | AnalysisDetail | yes | Get an Analysis detail |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics` | getCrawlStatistics | `username`*, `project_slug`*, `analysis_slug`* | CrawlStatistics | yes | Return global statistics for an analysis |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time` | getCrawlStatisticsByFrequency | `username`*, `project_slug`*, `analysis_slug`*, `limit`, `frequency`* | CrawlStatisticsTime | yes | Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min) |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/urls/{list_type}` | getCrawlStatisticsUrls | `username`*, `project_slug`*, `analysis_slug`*, `list_type`* | array | yes | Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors) |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/ganalytics/orphan_urls/{medium}/{source}` | getGanalyticsOrphanURLs | `username`*, `project_slug`*, `analysis_slug`*, `medium`*, `source`*, `page`, `size` | object | yes | List of Orphan URLs |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/links/percentiles` | getLinksPercentiles | `username`*, `project_slug`*, `analysis_slug`* | LinksPercentiles | yes | Get inlinks percentiles |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/pagerank/lost` | getPageRankLost | `username`*, `project_slug`*, `analysis_slug`* | PageRankLost | yes | Lost pagerank |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/report` | getSitemapsReport | `username`*, `project_slug`*, `analysis_slug`* | SitemapsReport | yes | Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config` | getSitemapsSamplesOutOfConfig | `username`*, `project_slug`*, `analysis_slug`*, `page`, `size` | object | yes | Sample list of URLs which were found in your sitemaps but outside of the |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/sitemap_only` | getSitemapsSamplesSitemapsOnly | `username`*, `project_slug`*, `analysis_slug`*, `page`, `size` | object | yes | Sample list of URLs which were found in your sitemaps, within the project |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/domains` | getLinksTopDomains | `username`*, `project_slug`*, `analysis_slug`*, `page`, `size` | object | yes | Top domains |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/subdomains` | getLinksTopSubdomains | `username`*, `project_slug`*, `analysis_slug`*, `page`, `size` | object | yes | Top subddomains |
+| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls` | getUrls | `username`*, `project_slug`*, `analysis_slug`*, `area`, `page`, `size`, body: UrlsQuery | object |  | Executes a query and returns a paginated response |
+| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs` | getUrlsAggs | `username`*, `project_slug`*, `analysis_slug`*, `area`, body: UrlsAggsQueries | array |  | Query aggregator |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel` | getUrlsDatamodel | `username`*, `project_slug`*, `analysis_slug`*, `area` | CrawlDatamodel | yes | Gets an Analysis datamodel |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/export` | getUrlsExports | `username`*, `project_slug`*, `analysis_slug`*, `page`, `size` | object | yes | A list of the CSV Exports requests and their current status |
+| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/export` | createUrlsExport | `username`*, `project_slug`*, `analysis_slug`*, `area`, body: UrlsQuery | CsvExportStatus |  | Creates a new UrlExport object and starts a task that will export the results into a csv |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/export/{url_export_id}` | getUrlsExportStatus | `username`*, `project_slug`*, `analysis_slug`*, `url_export_id`* | CsvExportStatus | yes | Checks the status of an CSVUrlExportJob object |
+| POST | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/suggested_filters` | getUrlsSuggestedFilters | `username`*, `project_slug`*, `analysis_slug`*, `area`, body: UrlsAggsQuery | UrlsAggsQuery |  | Return most frequent segments (= suggested patterns in the previous version) |
+| GET | `/analyses/{username}/{project_slug}/{analysis_slug}/urls/{url}` | getUrlDetail | `username`*, `project_slug`*, `analysis_slug`*, `url`*, `fields` | UrlDetail | yes | Gets the detail of an URL for an analysis |
+| GET | `/projects/{username}` | getUserProjects | `username`*, `page`, `size` | object | yes | List all active projects for the user |
+| POST | `/projects/{username}/{project_slug}/features/url_rewriting/rules_validator` | testUrlRewritingRules | `username`*, `project_slug`* | URLRewritingRulesSerializer |  | Match and replace parts of a URL based on rules passed in POST data |
+| GET | `/projects/{username}/{project_slug}/filters` | getSavedFilters | `username`*, `project_slug`*, `page`, `size` | object | yes | List all the project's saved filters (each filter's name, ID and filter value) |
+| GET | `/projects/{username}/{project_slug}/filters/{identifier}` | getSavedFilter | `username`*, `project_slug`*, `identifier`* | ProjectSavedFilter | yes | Retrieves a specific saved filter's name, ID and filter value |
+| POST | `/projects/{username}/{project_slug}/urls/aggs` | getProjectUrlsAggs | `username`*, `project_slug`*, `area`, `last_analysis_slug`, `nb_analyses`, body: UrlsAggsQueries | Default |  | Project Query aggregator |

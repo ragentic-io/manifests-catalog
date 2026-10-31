@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `b1bbf14bf4d2b71d987aaa60ba2de1d2f1a950c0e736110795bc41db6d0022cd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,46 +34,48 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/authenticators` | getAuthenticators | Details about which authenticators are on the Conjur Server |
-| POST | `/authn-azure/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaAzure | Gets a short-lived access token for applications running in Azure. |
-| POST | `/authn-gcp/{account}/authenticate` | getAccessTokenViaGCP | Gets a short-lived access token for applications running in Google Cloud Platform. |
-| GET | `/authn-gcp/{account}/status` | getGCPAuthenticatorStatus | Details whether an authentication service has been configured properly |
-| POST | `/authn-iam/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaAWS | Get a short-lived access token for applications running in AWS. |
-| POST | `/authn-jwt/{service_id}/{account}/authenticate` | getAccessTokenViaJWT | Gets a short-lived access token for applications using JSON Web Token (JWT) to access the Conjur API. |
-| POST | `/authn-jwt/{service_id}/{account}/{id}/authenticate` | getAccessTokenViaJWTWithId | Gets a short-lived access token for applications using JSON Web Token (JWT) to access the Conjur API. Covers the case of use of optional URL parameter "ID" |
-| POST | `/authn-k8s/{service_id}/inject_client_cert` | k8sInjectClientCert | For applications running in Kubernetes; sends Conjur a certificate signing request (CSR) and requests a client certificate injected into the application's Kubernetes pod. |
-| POST | `/authn-k8s/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaKubernetes | Gets a short-lived access token for applications running in Kubernetes. |
-| GET | `/authn-ldap/{service_id}/{account}/login` | getAPIKeyViaLDAP | Gets the Conjur API key of a user given the LDAP username and password via HTTP Basic Authentication. |
-| POST | `/authn-ldap/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaLDAP | Gets a short-lived access token for users and hosts using their LDAP identity to access the Conjur API. |
-| POST | `/authn-oidc/{service_id}/{account}/authenticate` | getAccessTokenViaOIDC | Gets a short-lived access token for applications using OpenID Connect (OIDC) to access the Conjur API. |
-| PUT | `/authn/{account}/api_key` | rotateApiKey | Rotates a role's API key. |
-| GET | `/authn/{account}/login` | getAPIKey | Gets the API key of a user given the username and password via HTTP Basic Authentication. |
-| PUT | `/authn/{account}/password` | changePassword | Changes a user’s password. |
-| POST | `/authn/{account}/{login}/authenticate` | getAccessToken | Gets a short-lived access token, which is required in the header of most subsequent API requests. |
-| POST | `/ca/{account}/{service_id}/sign` | sign | Gets a signed certificate from the configured Certificate Authority service. |
-| GET | `/health` | health | Health info about conjur |
-| POST | `/host_factories/hosts` | createHost | Creates a Host using the Host Factory. |
-| POST | `/host_factory_tokens` | createToken | Creates one or more host identity tokens. |
-| DELETE | `/host_factory_tokens/{token}` | revokeToken | Revokes a token, immediately disabling it. |
-| GET | `/info` | info | Basic information about the Conjur Enterprise server |
-| PATCH | `/policies/{account}/policy/{identifier}` | updatePolicy | Modifies an existing Conjur policy. |
-| POST | `/policies/{account}/policy/{identifier}` | loadPolicy | Adds data to the existing Conjur policy. |
-| PUT | `/policies/{account}/policy/{identifier}` | replacePolicy | Loads or replaces a Conjur policy document. |
-| GET | `/public_keys/{account}/{kind}/{identifier}` | showPublicKeys | Shows all public keys for a resource. |
-| GET | `/remote_health/{remote}` | remoteHealth | Health info about a given Conjur Enterprise server |
-| GET | `/resources` | showResourcesForAllAccounts | Lists resources within an organization account. |
-| GET | `/resources/{account}` | showResourcesForAccount | Lists resources within an organization account. |
-| GET | `/resources/{account}/{kind}` | showResourcesForKind | Lists resources of the same kind within an organization account. |
-| GET | `/resources/{account}/{kind}/{identifier}` | showResource | Shows a description of a single resource. |
-| DELETE | `/roles/{account}/{kind}/{identifier}` | removeMemberFromRole | Deletes an existing role membership |
-| GET | `/roles/{account}/{kind}/{identifier}` | showRole | Get role information |
-| POST | `/roles/{account}/{kind}/{identifier}` | addMemberToRole | Update or modify an existing role membership |
-| GET | `/secrets` | getSecrets | Fetch multiple secrets |
-| GET | `/secrets/{account}/{kind}/{identifier}` | getSecret | Fetches the value of a secret from the specified Secret. |
-| POST | `/secrets/{account}/{kind}/{identifier}` | createSecret | Creates a secret value within the specified variable. |
-| GET | `/whoami` | whoAmI | Provides information about the client making an API request. |
-| PATCH | `/{authenticator}/{account}` | enableAuthenticator | Enables or disables authenticator defined without service_id. |
-| PATCH | `/{authenticator}/{service_id}/{account}` | enableAuthenticatorInstance | Enables or disables authenticator service instances. |
-| GET | `/{authenticator}/{service_id}/{account}/status` | getServiceAuthenticatorStatus | Details whether an authentication service has been configured properly |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/authenticators` | getAuthenticators | `X-Request-Id` | object | yes | Details about which authenticators are on the Conjur Server |
+| POST | `/authn-azure/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaAzure | `X-Request-Id`, `service_id`*, `account`*, `login`*, `Accept-Encoding`, body*: object | string |  | Gets a short-lived access token for applications running in Azure. |
+| POST | `/authn-gcp/{account}/authenticate` | getAccessTokenViaGCP | `X-Request-Id`, `account`*, `Accept-Encoding`, body*: object | string |  | Gets a short-lived access token for applications running in Google Cloud Platform. |
+| GET | `/authn-gcp/{account}/status` | getGCPAuthenticatorStatus | `X-Request-Id`, `account`* | object | yes | Details whether an authentication service has been configured properly |
+| POST | `/authn-iam/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaAWS | `X-Request-Id`, `service_id`*, `account`*, `login`*, `Accept-Encoding`, body*: string | string |  | Get a short-lived access token for applications running in AWS. |
+| POST | `/authn-jwt/{service_id}/{account}/authenticate` | getAccessTokenViaJWT | `X-Request-Id`, `account`*, `service_id`*, body*: object | string |  | Gets a short-lived access token for applications using JSON Web Token (JWT) to access the Conjur API. |
+| POST | `/authn-jwt/{service_id}/{account}/{id}/authenticate` | getAccessTokenViaJWTWithId | `X-Request-Id`, `account`*, `id`*, `service_id`*, body*: — | string |  | Gets a short-lived access token for applications using JSON Web Token (JWT) to access the Conjur API. Covers the case of use of optional URL parameter "ID" |
+| POST | `/authn-k8s/{service_id}/inject_client_cert` | k8sInjectClientCert | `X-Request-Id`, `service_id`*, `Host-Id-Prefix`, body*: string | — |  | For applications running in Kubernetes; sends Conjur a certificate signing request (CSR) and requests a client certificate injected into the application's Kubernetes pod. |
+| POST | `/authn-k8s/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaKubernetes | `X-Request-Id`, `service_id`*, `account`*, `login`*, `Accept-Encoding` | string |  | Gets a short-lived access token for applications running in Kubernetes. |
+| GET | `/authn-ldap/{service_id}/{account}/login` | getAPIKeyViaLDAP | `X-Request-Id`, `service_id`*, `account`* | string | yes | Gets the Conjur API key of a user given the LDAP username and password via HTTP Basic Authentication. |
+| POST | `/authn-ldap/{service_id}/{account}/{login}/authenticate` | getAccessTokenViaLDAP | `X-Request-Id`, `service_id`*, `account`*, `login`*, `Accept-Encoding`, body: — | string |  | Gets a short-lived access token for users and hosts using their LDAP identity to access the Conjur API. |
+| POST | `/authn-oidc/{service_id}/{account}/authenticate` | getAccessTokenViaOIDC | `X-Request-Id`, `service_id`*, `account`*, body*: object | string |  | Gets a short-lived access token for applications using OpenID Connect (OIDC) to access the Conjur API. |
+| PUT | `/authn/{account}/api_key` | rotateApiKey | `X-Request-Id`, `account`*, `role` | string |  | Rotates a role's API key. |
+| GET | `/authn/{account}/login` | getAPIKey | `X-Request-Id`, `account`* | string | yes | Gets the API key of a user given the username and password via HTTP Basic Authentication. |
+| PUT | `/authn/{account}/password` | changePassword | `X-Request-Id`, `account`*, body*: string:password | — |  | Changes a user’s password. |
+| POST | `/authn/{account}/{login}/authenticate` | getAccessToken | `X-Request-Id`, `account`*, `login`*, `Accept-Encoding`, body*: — | string |  | Gets a short-lived access token, which is required in the header of most subsequent API requests. |
+| POST | `/ca/{account}/{service_id}/sign` | sign | `X-Request-Id`, `account`*, `service_id`*, `Accept`, body*: object | object |  | Gets a signed certificate from the configured Certificate Authority service. |
+| GET | `/health` | health | — | object | yes | Health info about conjur |
+| POST | `/host_factories/hosts` | createHost | `X-Request-Id`, body*: object | object |  | Creates a Host using the Host Factory. |
+| POST | `/host_factory_tokens` | createToken | `X-Request-Id`, body*: object | object[] |  | Creates one or more host identity tokens. |
+| DELETE | `/host_factory_tokens/{token}` | revokeToken | `X-Request-Id`, `token`* | — |  | Revokes a token, immediately disabling it. |
+| GET | `/info` | info | — | object | yes | Basic information about the Conjur Enterprise server |
+| PUT | `/policies/{account}/policy/{identifier}` | replacePolicy | `X-Request-Id`, `account`*, `identifier`*, body*: — | object |  | Loads or replaces a Conjur policy document. |
+| POST | `/policies/{account}/policy/{identifier}` | loadPolicy | `X-Request-Id`, `account`*, `identifier`*, body*: — | object |  | Adds data to the existing Conjur policy. |
+| PATCH | `/policies/{account}/policy/{identifier}` | updatePolicy | `X-Request-Id`, `account`*, `identifier`*, body*: — | object |  | Modifies an existing Conjur policy. |
+| GET | `/public_keys/{account}/{kind}/{identifier}` | showPublicKeys | `X-Request-Id`, `account`*, `kind`*, `identifier`* | string | yes | Shows all public keys for a resource. |
+| GET | `/remote_health/{remote}` | remoteHealth | `remote`* | object | yes | Health info about a given Conjur Enterprise server |
+| GET | `/resources` | showResourcesForAllAccounts | `X-Request-Id`, `account`, `kind`, `search`, `offset`, `limit`, `count`, `role`, `acting_as` | object[] | yes | Lists resources within an organization account. |
+| GET | `/resources/{account}` | showResourcesForAccount | `X-Request-Id`, `account`*, `kind`, `search`, `offset`, `limit`, `count`, `role`, `acting_as` | object[] | yes | Lists resources within an organization account. |
+| GET | `/resources/{account}/{kind}` | showResourcesForKind | `X-Request-Id`, `account`*, `kind`*, `search`, `offset`, `limit`, `count`, `role`, `acting_as` | object[] | yes | Lists resources of the same kind within an organization account. |
+| GET | `/resources/{account}/{kind}/{identifier}` | showResource | `X-Request-Id`, `account`*, `kind`*, `identifier`*, `permitted_roles`, `privilege`, `check`, `role` | — | yes | Shows a description of a single resource. |
+| GET | `/roles/{account}/{kind}/{identifier}` | showRole | `X-Request-Id`, `account`*, `kind`*, `identifier`*, `all`, `memberships`, `members`, `offset`, `limit`, `count`, `search`, `graph` | object | yes | Get role information |
+| POST | `/roles/{account}/{kind}/{identifier}` | addMemberToRole | `X-Request-Id`, `account`*, `kind`*, `identifier`*, `members`*, `member`* | — |  | Update or modify an existing role membership |
+| DELETE | `/roles/{account}/{kind}/{identifier}` | removeMemberFromRole | `X-Request-Id`, `account`*, `kind`*, `identifier`*, `members`*, `member`* | — |  | Deletes an existing role membership |
+| GET | `/secrets` | getSecrets | `X-Request-Id`, `variable_ids`*, `Accept-Encoding` | object | yes | Fetch multiple secrets |
+| GET | `/secrets/{account}/{kind}/{identifier}` | getSecret | `X-Request-Id`, `account`*, `kind`*, `identifier`*, `version` | string | yes | Fetches the value of a secret from the specified Secret. |
+| POST | `/secrets/{account}/{kind}/{identifier}` | createSecret | `X-Request-Id`, `account`*, `kind`*, `identifier`*, `expirations`, body: string | — |  | Creates a secret value within the specified variable. |
+| GET | `/whoami` | whoAmI | `X-Request-Id` | object | yes | Provides information about the client making an API request. |
+| PATCH | `/{authenticator}/{account}` | enableAuthenticator | `X-Request-Id`, `authenticator`*, `account`*, body*: object | — |  | Enables or disables authenticator defined without service_id. |
+| PATCH | `/{authenticator}/{service_id}/{account}` | enableAuthenticatorInstance | `X-Request-Id`, `authenticator`*, `service_id`*, `account`*, body*: — | — |  | Enables or disables authenticator service instances. |
+| GET | `/{authenticator}/{service_id}/{account}/status` | getServiceAuthenticatorStatus | `X-Request-Id`, `authenticator`*, `service_id`*, `account`* | object | yes | Details whether an authentication service has been configured properly |

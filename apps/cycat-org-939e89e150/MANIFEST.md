@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cycat.org_images_illustrations_
 
 | | |
 | --- | --- |
-| Signed bundle | `beef215df839b8515ccabdacb4f6450ac50c7895adf31bd66657bf8581750700` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,19 +32,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cycat.org_images_illustrations_
 
 ## Operations (14)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/child/{uuid}` | get_child | — |
-| GET | `/generate/uuid` | get_generate_uuid | — |
-| GET | `/info` | get_info | — |
-| GET | `/list/project/{start}/{end}` | get_list_project | — |
-| GET | `/list/publisher/{start}/{end}` | get_list_publisher | — |
-| GET | `/lookup/{uuid}` | get_lookup | — |
-| GET | `/namespace/finduuid/{namespace}/{namespaceid}` | get_namespacefinduuid | — |
-| GET | `/namespace/getall` | get_namespacegetall | — |
-| GET | `/namespace/getid/{namespace}` | get_namespacegetid | — |
-| GET | `/parent/{uuid}` | get_parent | — |
-| POST | `/propose` | post_propose | — |
-| GET | `/relationships/expanded/{uuid}` | get_relationshipsexpanded | — |
-| GET | `/relationships/{uuid}` | get_relationships | — |
-| GET | `/search/{searchquery}` | get_search | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/child/{uuid}` | get_child | `uuid`* | — | yes | — |
+| GET | `/generate/uuid` | get_generate_uuid | — | — | yes | — |
+| GET | `/info` | get_info | — | — | yes | — |
+| GET | `/list/project/{start}/{end}` | get_list_project | `start`*, `end`* | — | yes | — |
+| GET | `/list/publisher/{start}/{end}` | get_list_publisher | `start`*, `end`* | — | yes | — |
+| GET | `/lookup/{uuid}` | get_lookup | `uuid`* | — | yes | — |
+| GET | `/namespace/finduuid/{namespace}/{namespaceid}` | get_namespacefinduuid | `namespace`*, `namespaceid`* | — | yes | — |
+| GET | `/namespace/getall` | get_namespacegetall | — | — | yes | — |
+| GET | `/namespace/getid/{namespace}` | get_namespacegetid | `namespace`* | — | yes | — |
+| GET | `/parent/{uuid}` | get_parent | `uuid`* | — | yes | — |
+| POST | `/propose` | post_propose | — | — |  | — |
+| GET | `/relationships/expanded/{uuid}` | get_relationshipsexpanded | `uuid`* | — | yes | — |
+| GET | `/relationships/{uuid}` | get_relationships | `uuid`* | — | yes | — |
+| GET | `/search/{searchquery}` | get_search | `searchquery`* | — | yes | — |

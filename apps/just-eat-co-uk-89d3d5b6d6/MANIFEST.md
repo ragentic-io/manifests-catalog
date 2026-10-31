@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_JustEatUK_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `3fca93fe9cb9c8066cb64064895fa3603fa8bebf31215a0b4911b3bd9e503a8c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,103 +34,105 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_JustEatUK_profile_i
 
 671 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/acceptance-requested` | post /acceptance-requested | Acceptance requested |
-| PUT | `/attempted-delivery-query-resolved` | put /attempted-delivery-query-resolved | Attempted delivery query resolved |
-| GET | `/checkout/{tenant}/{checkoutId}` | get /checkout/{tenant}/{checkoutId} | Get Checkout |
-| PATCH | `/checkout/{tenant}/{checkoutId}` | patch /checkout/{tenant}/{checkoutId} | Update Checkout |
-| GET | `/checkout/{tenant}/{checkoutId}/fulfilment/availabletimes` | get /checkout/{tenant}/{checkoutId}/fulfilment/availabletimes | Get Available Fulfilment Times |
-| GET | `/consumers/{tenant}` | get /consumers/{tenant} | Get consumers details |
-| POST | `/consumers/{tenant}` | post /consumers/{tenant} | Create consumer |
-| GET | `/consumers/{tenant}/me/communication-preferences` | get /consumers/{tenant}/me/communication-preferences | Get communication preferences |
-| GET | `/consumers/{tenant}/me/communication-preferences/{type}` | get /consumers/{tenant}/me/communication-preferences/{type} | Get channel subscriptions for a given consumer's communication preference type |
-| PUT | `/consumers/{tenant}/me/communication-preferences/{type}` | put /consumers/{tenant}/me/communication-preferences/{type} | Set only the channel subscriptions for a given consumer's communication preference type |
-| DELETE | `/consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel}` | delete /consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel} | Remove subscription of a specific communication preference channel |
-| POST | `/consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel}` | post /consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel} | Subscribe to a specific communication preference channel |
-| PUT | `/delivery-failed` | put /delivery-failed | Delivery Attempt Failed |
-| GET | `/delivery-fees/{tenant}` | get /delivery-fees/{tenant} | Get restaurant delivery fees |
-| GET | `/delivery/estimate` | get /delivery/estimate | Get delivery estimate |
-| GET | `/delivery/pools` | get /delivery/pools | Get your delivery pools |
-| POST | `/delivery/pools` | post /delivery/pools | Create a new delivery pool |
-| DELETE | `/delivery/pools/{deliveryPoolId}` | delete /delivery/pools/{deliveryPoolId} | Delete a delivery pool |
-| GET | `/delivery/pools/{deliveryPoolId}` | get /delivery/pools/{deliveryPoolId} | Get an individual delivery pool |
-| PATCH | `/delivery/pools/{deliveryPoolId}` | patch /delivery/pools/{deliveryPoolId} | Modify a delivery pool |
-| PUT | `/delivery/pools/{deliveryPoolId}` | put /delivery/pools/{deliveryPoolId} | Replace an existing delivery pool |
-| GET | `/delivery/pools/{deliveryPoolId}/availability/relative` | get /delivery/pools/{deliveryPoolId}/availability/relative | Get availability for pickup |
-| PUT | `/delivery/pools/{deliveryPoolId}/availability/relative` | put /delivery/pools/{deliveryPoolId}/availability/relative | Set availability for pickup |
-| PUT | `/delivery/pools/{deliveryPoolId}/hours` | put /delivery/pools/{deliveryPoolId}/hours | Set the delivery pools daily start and end times |
-| DELETE | `/delivery/pools/{deliveryPoolId}/restaurants` | delete /delivery/pools/{deliveryPoolId}/restaurants | Remove restaurants from a delivery pool |
-| PUT | `/delivery/pools/{deliveryPoolId}/restaurants` | put /delivery/pools/{deliveryPoolId}/restaurants | Add restaurants to an existing delivery pool |
-| PUT | `/driver-assigned-to-delivery` | put /driver-assigned-to-delivery | Driver Assigned to Delivery |
-| PUT | `/driver-at-delivery-address` | put /driver-at-delivery-address | Driver at delivery address |
-| PUT | `/driver-at-restaurant` | put /driver-at-restaurant | Driver at restaurant |
-| PUT | `/driver-has-delivered-order` | put /driver-has-delivered-order | Driver has delivered order |
-| PUT | `/driver-location` | put /driver-location | Driver Location |
-| PUT | `/driver-on-their-way-to-delivery-address` | put /driver-on-their-way-to-delivery-address | Driver on their way to delivery address |
-| POST | `/late-order-compensation-query` | post /late-order-compensation-query | late order compensation query, restaurant response required |
-| POST | `/late-order-query` | post /late-order-query | late order query, restaurant response required |
-| POST | `/menu-ingestion-complete` | post /menu-ingestion-complete | Menu ingestion complete |
-| POST | `/order-accepted` | post /order-accepted | Order accepted |
-| POST | `/order-cancelled` | post /order-cancelled | Order cancelled |
-| POST | `/order-eligible-for-restaurant-compensation` | post /order-eligible-for-restaurant-compensation | Order Eligible For Restaurant Compensation |
-| PUT | `/order-is-ready-for-pickup` | put /order-is-ready-for-pickup | Order ready for pickup |
-| POST | `/order-ready-for-preparation-async` | post /order-ready-for-preparation-async | Order ready for preparation (async) |
-| POST | `/order-ready-for-preparation-sync` | post /order-ready-for-preparation-sync | Order ready for preparation (sync) |
-| POST | `/order-rejected` | post /order-rejected | Order rejected |
-| PUT | `/order-requires-delivery-acceptance` | put /order-requires-delivery-acceptance | Order requires delivery acceptance |
-| POST | `/order-time-updated` | post /order-time-updated | Order time updated |
-| POST | `/orders` | post /orders | Create order |
-| PUT | `/orders/deliverystate/driverlocation` | put /orders/deliverystate/driverlocation | Update current driver locations (bulk upload) |
-| PUT | `/orders/{orderId}/accept` | put /orders/{orderId}/accept | Accept order |
-| PUT | `/orders/{orderId}/cancel` | put /orders/{orderId}/cancel | Cancel order |
-| POST | `/orders/{orderId}/complete` | post /orders/{orderId}/complete | Complete order |
-| PUT | `/orders/{orderId}/deliverystate/atdeliveryaddress` | put /orders/{orderId}/deliverystate/atdeliveryaddress | Update order with driver at delivery address details |
-| PUT | `/orders/{orderId}/deliverystate/atrestaurant` | put /orders/{orderId}/deliverystate/atrestaurant | Update order with driver at restaurant details |
-| PUT | `/orders/{orderId}/deliverystate/atrestauranteta` | put /orders/{orderId}/deliverystate/atrestauranteta | Update the driver's estimated time to arrive at the Restaurant |
-| PUT | `/orders/{orderId}/deliverystate/delivered` | put /orders/{orderId}/deliverystate/delivered | Update order with delivered details |
-| PUT | `/orders/{orderId}/deliverystate/driverassigned` | put /orders/{orderId}/deliverystate/driverassigned | Update order with driver assigned details |
-| PUT | `/orders/{orderId}/deliverystate/driverlocation` | put /orders/{orderId}/deliverystate/driverlocation | Update the driver's current location |
-| PUT | `/orders/{orderId}/deliverystate/driverunassigned` | put /orders/{orderId}/deliverystate/driverunassigned | Update order with driver unassigned details |
-| PUT | `/orders/{orderId}/deliverystate/onitsway` | put /orders/{orderId}/deliverystate/onitsway | Update order with driver on its way details |
-| PUT | `/orders/{orderId}/duedate` | put /orders/{orderId}/duedate | Update order ETA |
-| PUT | `/orders/{orderId}/ignore` | put /orders/{orderId}/ignore | Ignore order |
-| POST | `/orders/{orderId}/readyforcollection` | post /orders/{orderId}/readyforcollection | Mark order as ready for collection |
-| PUT | `/orders/{orderId}/reject` | put /orders/{orderId}/reject | Reject order |
-| POST | `/orders/{tenant}/{orderId}/consumerqueries/lateorder/restaurantresponse` | post /orders/{tenant}/{orderId}/consumerqueries/lateorder/restaurantresponse | Response to Late Order Update Request |
-| POST | `/orders/{tenant}/{orderId}/consumerqueries/lateordercompensation/restaurantresponse` | post /orders/{tenant}/{orderId}/consumerqueries/lateordercompensation/restaurantresponse | Update late order compensation request with Restaurant response |
-| POST | `/orders/{tenant}/{orderId}/restaurantqueries/compensation` | post /orders/{tenant}/{orderId}/restaurantqueries/compensation | Create Compensation requests |
-| PUT | `/redelivery-requested` | put /redelivery-requested | Customer Requested Redelivery |
-| PUT | `/restaurant-offline-status` | put /restaurant-offline-status | Restaurant Offline Status |
-| PUT | `/restaurant-online-status` | put /restaurant-online-status | Restaurant Online Status |
-| GET | `/restaurants/bylatlong` | SearchByLocation | Get restaurants by location |
-| GET | `/restaurants/bypostcode/{postcode}` | SearchByPostcode | Get restaurants by postcode |
-| PUT | `/restaurants/driver/eta` | put /restaurants/driver/eta | Set ETA for pickup |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue` | get /restaurants/{tenant}/{restaurantId}/catalogue | Get product catalogue |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/availabilities` | get /restaurants/{tenant}/{restaurantId}/catalogue/availabilities | Get all availabilities |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/categories` | get /restaurants/{tenant}/{restaurantId}/catalogue/categories | Get all categories |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/categories/{categoryId}/items` | get /restaurants/{tenant}/{restaurantId}/catalogue/categories/{categoryId}/items | Get all category item IDs |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items` | get /restaurants/{tenant}/{restaurantId}/catalogue/items | Get all menu items |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups | Get all menu item deal groups |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups/{dealGroupId}/dealitemvariations` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups/{dealGroupId}/dealitemvariations | Get all deal item variations for a deal group |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/modifiergroups` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/modifiergroups | Get all menu item modifier groups |
-| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/variations` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/variations | Get all menu item variations |
-| GET | `/restaurants/{tenant}/{restaurantId}/customerclaims` | get /restaurants/{tenant}/{restaurantId}/customerclaims | Get claims |
-| GET | `/restaurants/{tenant}/{restaurantId}/customerclaims/{id}` | get /restaurants/{tenant}/{restaurantId}/customerclaims/{id} | Get order claim |
-| POST | `/restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse` | post /restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse | Submit a restaurant response for the claim |
-| PUT | `/restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse/justification` | put /restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse/justification | Add reason and comments to the response |
-| GET | `/restaurants/{tenant}/{restaurantId}/fees` | get /restaurants/{tenant}/{restaurantId}/fees | Get Restaurant Fees |
-| PUT | `/restaurants/{tenant}/{restaurantId}/fees` | put /restaurants/{tenant}/{restaurantId}/fees | Create or Update Restaurant Fees |
-| GET | `/restaurants/{tenant}/{restaurantId}/menu` | get /restaurants/{tenant}/{restaurantId}/menu | Get the latest version of the restaurant's full menu |
-| PUT | `/restaurants/{tenant}/{restaurantId}/menu` | putMenuForIngestion | Create or update a menu |
-| GET | `/restaurants/{tenant}/{restaurantId}/ordertimes` | GetOrderTimes | Get the restaurant's delivery and collection lead times |
-| PUT | `/restaurants/{tenant}/{restaurantId}/ordertimes/{dayOfWeek}/{serviceType}` | UpdateOrderTime | Update the restaurant's delivery and collection lead times |
-| GET | `/restaurants/{tenant}/{restaurantId}/servicetimes` | getRestaurantServiceTimes | Get service times |
-| PUT | `/restaurants/{tenant}/{restaurantId}/servicetimes` | putRestaurantServiceTimes | Create or update service times |
-| GET | `/search/autocomplete/{tenant}` | get /search/autocomplete/{tenant} | Get auto-completed search terms |
-| GET | `/search/restaurants/{tenant}` | get /search/restaurants/{tenant} | Search restaurants |
-| POST | `/send-to-pos-failed` | post /send-to-pos-failed | Send to POS failed |
-| POST | `/v1/{tenant}/restaurants/event/offline` | post /v1/{tenant}/restaurants/event/offline | Create Offline Event |
-| DELETE | `/v1/{tenant}/restaurants/{id}/event/offline` | delete /v1/{tenant}/restaurants/{id}/event/offline | Delete Offline Event |
-| POST | `/{tenant}/orders/{orderId}/queries/attempteddelivery` | post /{tenant}/orders/{orderId}/queries/attempteddelivery | Delivery Attempt Failed |
-| POST | `/{tenant}/orders/{orderId}/queries/attempteddelivery/resolution/redeliverorder` | post /{tenant}/orders/{orderId}/queries/attempteddelivery/resolution/redeliverorder | Request Redelivery of the Order |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/acceptance-requested` | post /acceptance-requested | body*: acceptance-requested | — |  | Acceptance requested |
+| PUT | `/attempted-delivery-query-resolved` | put /attempted-delivery-query-resolved | body*: attempted-delivery-resolved | — |  | Attempted delivery query resolved |
+| GET | `/checkout/{tenant}/{checkoutId}` | get /checkout/{tenant}/{checkoutId} | `tenant`*, `checkoutId`*, `User-Agent`* | CheckoutGetResponse | yes | Get Checkout |
+| PATCH | `/checkout/{tenant}/{checkoutId}` | patch /checkout/{tenant}/{checkoutId} | `tenant`*, `checkoutId`*, `User-Agent`*, body*: CheckoutUpdateRequest | CheckoutUpdateResponse |  | Update Checkout |
+| GET | `/checkout/{tenant}/{checkoutId}/fulfilment/availabletimes` | get /checkout/{tenant}/{checkoutId}/fulfilment/availabletimes | `tenant`*, `checkoutId`*, `User-Agent`* | GetAvailableFulfilmentTimesResponse | yes | Get Available Fulfilment Times |
+| GET | `/consumers/{tenant}` | get /consumers/{tenant} | `tenant`*, `emailAddress`*, `accountType`*, `count`* | integer | yes | Get consumers details |
+| POST | `/consumers/{tenant}` | post /consumers/{tenant} | `tenant`*, body*: ConsumerCreate | ConsumerCreateResponse |  | Create consumer |
+| GET | `/consumers/{tenant}/me/communication-preferences` | get /consumers/{tenant}/me/communication-preferences | `tenant`* | CommunicationPreferences | yes | Get communication preferences |
+| GET | `/consumers/{tenant}/me/communication-preferences/{type}` | get /consumers/{tenant}/me/communication-preferences/{type} | `tenant`*, `type`* | ChannelSubscriptionsWithDerivedField | yes | Get channel subscriptions for a given consumer's communication preference type |
+| PUT | `/consumers/{tenant}/me/communication-preferences/{type}` | put /consumers/{tenant}/me/communication-preferences/{type} | `tenant`*, `type`*, body*: ChannelSubscriptions | — |  | Set only the channel subscriptions for a given consumer's communication preference type |
+| POST | `/consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel}` | post /consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel} | `tenant`*, `type`*, `channel`*, body: — | — |  | Subscribe to a specific communication preference channel |
+| DELETE | `/consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel}` | delete /consumers/{tenant}/me/communication-preferences/{type}/subscribedChannels/{channel} | `tenant`*, `type`*, `channel`*, body: — | — |  | Remove subscription of a specific communication preference channel |
+| PUT | `/delivery-failed` | put /delivery-failed | body*: attempted-delivery-created | — |  | Delivery Attempt Failed |
+| GET | `/delivery-fees/{tenant}` | get /delivery-fees/{tenant} | `tenant`*, `restaurantIds`*, `deliveryTime`*, `zone`, `latlong` | object | yes | Get restaurant delivery fees |
+| GET | `/delivery/estimate` | get /delivery/estimate | `restaurantReference`*, `toLat`, `toLon`, `toPostcode` | estimated-delivery-time | yes | Get delivery estimate |
+| GET | `/delivery/pools` | get /delivery/pools | — | object | yes | Get your delivery pools |
+| POST | `/delivery/pools` | post /delivery/pools | body*: create-delivery-pool | — |  | Create a new delivery pool |
+| GET | `/delivery/pools/{deliveryPoolId}` | get /delivery/pools/{deliveryPoolId} | `deliveryPoolId`* | object | yes | Get an individual delivery pool |
+| PUT | `/delivery/pools/{deliveryPoolId}` | put /delivery/pools/{deliveryPoolId} | `deliveryPoolId`*, body*: create-delivery-pool | object |  | Replace an existing delivery pool |
+| DELETE | `/delivery/pools/{deliveryPoolId}` | delete /delivery/pools/{deliveryPoolId} | `deliveryPoolId`* | — |  | Delete a delivery pool |
+| PATCH | `/delivery/pools/{deliveryPoolId}` | patch /delivery/pools/{deliveryPoolId} | `deliveryPoolId`*, body*: patch-delivery-pool | object |  | Modify a delivery pool |
+| GET | `/delivery/pools/{deliveryPoolId}/availability/relative` | get /delivery/pools/{deliveryPoolId}/availability/relative | `deliveryPoolId`* | object | yes | Get availability for pickup |
+| PUT | `/delivery/pools/{deliveryPoolId}/availability/relative` | put /delivery/pools/{deliveryPoolId}/availability/relative | `deliveryPoolId`*, body*: estimated-time | — |  | Set availability for pickup |
+| PUT | `/delivery/pools/{deliveryPoolId}/hours` | put /delivery/pools/{deliveryPoolId}/hours | `deliveryPoolId`*, body*: delivery-pool-hours | — |  | Set the delivery pools daily start and end times |
+| PUT | `/delivery/pools/{deliveryPoolId}/restaurants` | put /delivery/pools/{deliveryPoolId}/restaurants | `deliveryPoolId`* | delivery-restaurantslist |  | Add restaurants to an existing delivery pool |
+| DELETE | `/delivery/pools/{deliveryPoolId}/restaurants` | delete /delivery/pools/{deliveryPoolId}/restaurants | `deliveryPoolId`*, body*: object | — |  | Remove restaurants from a delivery pool |
+| PUT | `/driver-assigned-to-delivery` | put /driver-assigned-to-delivery | body*: driver-status | — |  | Driver Assigned to Delivery |
+| PUT | `/driver-at-delivery-address` | put /driver-at-delivery-address | body*: driver-status | — |  | Driver at delivery address |
+| PUT | `/driver-at-restaurant` | put /driver-at-restaurant | body*: driver-status | — |  | Driver at restaurant |
+| PUT | `/driver-has-delivered-order` | put /driver-has-delivered-order | body*: driver-status | — |  | Driver has delivered order |
+| PUT | `/driver-location` | put /driver-location | body*: driver-location | — |  | Driver Location |
+| PUT | `/driver-on-their-way-to-delivery-address` | put /driver-on-their-way-to-delivery-address | body*: driver-status | — |  | Driver on their way to delivery address |
+| POST | `/late-order-compensation-query` | post /late-order-compensation-query | body*: late-order-compensation-query | — |  | late order compensation query, restaurant response required |
+| POST | `/late-order-query` | post /late-order-query | body*: late-order-query | — |  | late order query, restaurant response required |
+| POST | `/menu-ingestion-complete` | post /menu-ingestion-complete | body*: menu-ingestion-complete | — |  | Menu ingestion complete |
+| POST | `/order-accepted` | post /order-accepted | body*: order-accepted | — |  | Order accepted |
+| POST | `/order-cancelled` | post /order-cancelled | body*: order-cancelled | — |  | Order cancelled |
+| POST | `/order-eligible-for-restaurant-compensation` | post /order-eligible-for-restaurant-compensation | body*: OrderEligibleForRestaurantCompensation | — |  | Order Eligible For Restaurant Compensation |
+| PUT | `/order-is-ready-for-pickup` | put /order-is-ready-for-pickup | body*: ready-for-pickup | — |  | Order ready for pickup |
+| POST | `/order-ready-for-preparation-async` | post /order-ready-for-preparation-async | body*: order-ready-for-preparation | — |  | Order ready for preparation (async) |
+| POST | `/order-ready-for-preparation-sync` | post /order-ready-for-preparation-sync | body*: order-ready-for-preparation | — |  | Order ready for preparation (sync) |
+| POST | `/order-rejected` | post /order-rejected | body*: order-rejected | — |  | Order rejected |
+| PUT | `/order-requires-delivery-acceptance` | put /order-requires-delivery-acceptance | body*: connectorder-list | — |  | Order requires delivery acceptance |
+| POST | `/order-time-updated` | post /order-time-updated | body*: order-time-updated | — |  | Order time updated |
+| POST | `/orders` | post /orders | `x-je-api-version`, body*: order-request-v2 | object |  | Create order |
+| PUT | `/orders/deliverystate/driverlocation` | put /orders/deliverystate/driverlocation | body*: bulk-delivery-details-list | — |  | Update current driver locations (bulk upload) |
+| PUT | `/orders/{orderId}/accept` | put /orders/{orderId}/accept | `orderId`*, body*: order-accept-request | — |  | Accept order |
+| PUT | `/orders/{orderId}/cancel` | put /orders/{orderId}/cancel | `orderId`*, body*: order-cancel-request | — |  | Cancel order |
+| POST | `/orders/{orderId}/complete` | post /orders/{orderId}/complete | `orderId`* | — |  | Complete order |
+| PUT | `/orders/{orderId}/deliverystate/atdeliveryaddress` | put /orders/{orderId}/deliverystate/atdeliveryaddress | `orderId`*, body*: delivery-details | — |  | Update order with driver at delivery address details |
+| PUT | `/orders/{orderId}/deliverystate/atrestaurant` | put /orders/{orderId}/deliverystate/atrestaurant | `orderId`*, body*: delivery-driver-details-with-eta | — |  | Update order with driver at restaurant details |
+| PUT | `/orders/{orderId}/deliverystate/atrestauranteta` | put /orders/{orderId}/deliverystate/atrestauranteta | `orderId`*, body*: eta-estimate | — |  | Update the driver's estimated time to arrive at the Restaurant |
+| PUT | `/orders/{orderId}/deliverystate/delivered` | put /orders/{orderId}/deliverystate/delivered | `orderId`*, body*: delivery-details | — |  | Update order with delivered details |
+| PUT | `/orders/{orderId}/deliverystate/driverassigned` | put /orders/{orderId}/deliverystate/driverassigned | `orderId`*, body*: delivery-driver-assigned-details | — |  | Update order with driver assigned details |
+| PUT | `/orders/{orderId}/deliverystate/driverlocation` | put /orders/{orderId}/deliverystate/driverlocation | `orderId`*, body*: delivery-driver-location | — |  | Update the driver's current location |
+| PUT | `/orders/{orderId}/deliverystate/driverunassigned` | put /orders/{orderId}/deliverystate/driverunassigned | `orderId`*, body*: delivery-driver-unassigned-details | — |  | Update order with driver unassigned details |
+| PUT | `/orders/{orderId}/deliverystate/onitsway` | put /orders/{orderId}/deliverystate/onitsway | `orderId`*, body*: on-its-way-details | — |  | Update order with driver on its way details |
+| PUT | `/orders/{orderId}/duedate` | put /orders/{orderId}/duedate | `orderId`*, body*: order-due-date-request | — |  | Update order ETA |
+| PUT | `/orders/{orderId}/ignore` | put /orders/{orderId}/ignore | `orderId`* | — |  | Ignore order |
+| POST | `/orders/{orderId}/readyforcollection` | post /orders/{orderId}/readyforcollection | `orderId`* | — |  | Mark order as ready for collection |
+| PUT | `/orders/{orderId}/reject` | put /orders/{orderId}/reject | `orderId`*, body*: order-reject-request | — |  | Reject order |
+| POST | `/orders/{tenant}/{orderId}/consumerqueries/lateorder/restaurantresponse` | post /orders/{tenant}/{orderId}/consumerqueries/lateorder/restaurantresponse | `tenant`*, `orderId`*, `Authorization`*, body*: LateOrderRestaurantResponse | — |  | Response to Late Order Update Request |
+| POST | `/orders/{tenant}/{orderId}/consumerqueries/lateordercompensation/restaurantresponse` | post /orders/{tenant}/{orderId}/consumerqueries/lateordercompensation/restaurantresponse | `tenant`*, `orderId`*, `Authorization`*, body*: LateOrderCompensationRestaurantResolution | — |  | Update late order compensation request with Restaurant response |
+| POST | `/orders/{tenant}/{orderId}/restaurantqueries/compensation` | post /orders/{tenant}/{orderId}/restaurantqueries/compensation | `tenant`*, `orderId`*, `Authorization`*, body*: CreateRestaurantCompensationQuery | — |  | Create Compensation requests |
+| PUT | `/redelivery-requested` | put /redelivery-requested | body*: attempted-delivery-response-received | — |  | Customer Requested Redelivery |
+| PUT | `/restaurant-offline-status` | put /restaurant-offline-status | body*: RestaurantOfflineStatus | — |  | Restaurant Offline Status |
+| PUT | `/restaurant-online-status` | put /restaurant-online-status | body*: RestaurantOfflineStatus | — |  | Restaurant Online Status |
+| GET | `/restaurants/bylatlong` | SearchByLocation | `Authorization`*, `Accept-Tenant`, `latitude`*, `longitude`*, `cuisine`, `restaurantName`, `brandName` | SearchResponse\|ExternalSearchResponse\|SearchWebResponse | yes | Get restaurants by location |
+| GET | `/restaurants/bypostcode/{postcode}` | SearchByPostcode | `Authorization`, `Accept-Tenant`, `postcode`*, `cuisine`, `restaurantName`, `brandName` | SearchResponse\|ExternalSearchResponse\|SearchWebResponse | yes | Get restaurants by postcode |
+| PUT | `/restaurants/driver/eta` | put /restaurants/driver/eta | body*: RestaurantETAs | IgnoredRestaurantIds |  | Set ETA for pickup |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue` | get /restaurants/{tenant}/{restaurantId}/catalogue | `tenant`*, `restaurantId`* | MenuBase | yes | Get product catalogue |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/availabilities` | get /restaurants/{tenant}/{restaurantId}/catalogue/availabilities | `tenant`*, `restaurantId`*, `limit`*, `after` | PagedAvailabilitiesResponse | yes | Get all availabilities |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/categories` | get /restaurants/{tenant}/{restaurantId}/catalogue/categories | `tenant`*, `restaurantId`*, `limit`*, `after` | PagedCategoriesResponse | yes | Get all categories |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/categories/{categoryId}/items` | get /restaurants/{tenant}/{restaurantId}/catalogue/categories/{categoryId}/items | `tenant`*, `restaurantId`*, `categoryId`*, `limit`*, `after` | PagedCategoryItemsResponse | yes | Get all category item IDs |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items` | get /restaurants/{tenant}/{restaurantId}/catalogue/items | `tenant`*, `restaurantId`*, `limit`*, `after` | PagedMenuItemsResponse | yes | Get all menu items |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups | `tenant`*, `restaurantId`*, `itemId`*, `limit`*, `after` | PagedMenuDealGroupsResponse | yes | Get all menu item deal groups |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups/{dealGroupId}/dealitemvariations` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/dealgroups/{dealGroupId}/dealitemvariations | `tenant`*, `restaurantId`*, `itemId`*, `dealGroupId`*, `limit`*, `after` | PagedDealItemVariationResponse | yes | Get all deal item variations for a deal group |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/modifiergroups` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/modifiergroups | `tenant`*, `restaurantId`*, `itemId`*, `limit`*, `after` | PagedMenuModifierGroupsResponse | yes | Get all menu item modifier groups |
+| GET | `/restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/variations` | get /restaurants/{tenant}/{restaurantId}/catalogue/items/{itemId}/variations | `tenant`*, `restaurantId`*, `itemId`*, `limit`*, `after` | PagedVariationsResponse | yes | Get all menu item variations |
+| GET | `/restaurants/{tenant}/{restaurantId}/customerclaims` | get /restaurants/{tenant}/{restaurantId}/customerclaims | `tenant`*, `restaurantId`*, `fromDate`, `toDate`, `limit`, `offset`, `Accept` | ClaimsResponse | yes | Get claims |
+| GET | `/restaurants/{tenant}/{restaurantId}/customerclaims/{id}` | get /restaurants/{tenant}/{restaurantId}/customerclaims/{id} | `tenant`*, `restaurantId`*, `id`*, `Accept` | OrderClaim | yes | Get order claim |
+| POST | `/restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse` | post /restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse | `tenant`*, `restaurantId`*, `id`*, `Content-Type`*, body: OrderClaimRestaurantResponse | — |  | Submit a restaurant response for the claim |
+| PUT | `/restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse/justification` | put /restaurants/{tenant}/{restaurantId}/customerclaims/{id}/restaurantresponse/justification | `tenant`*, `restaurantId`*, `id`*, `Content-Type`*, body: Justification | — |  | Add reason and comments to the response |
+| GET | `/restaurants/{tenant}/{restaurantId}/fees` | get /restaurants/{tenant}/{restaurantId}/fees | `tenant`*, `restaurantId`*, `User-Agent` | RestaurantFees | yes | Get Restaurant Fees |
+| PUT | `/restaurants/{tenant}/{restaurantId}/fees` | put /restaurants/{tenant}/{restaurantId}/fees | `tenant`*, `restaurantId`*, `User-Agent`, body*: RestaurantFees | RestaurantFees |  | Create or Update Restaurant Fees |
+| GET | `/restaurants/{tenant}/{restaurantId}/menu` | get /restaurants/{tenant}/{restaurantId}/menu | `tenant`*, `restaurantId`*, `Authorization`* | — | yes | Get the latest version of the restaurant's full menu |
+| PUT | `/restaurants/{tenant}/{restaurantId}/menu` | putMenuForIngestion | `tenant`*, `restaurantId`*, `Authorization`*, `Content-Type`, body: Menu | MenuIngestionResponse |  | Create or update a menu |
+| GET | `/restaurants/{tenant}/{restaurantId}/ordertimes` | GetOrderTimes | `tenant`*, `restaurantId`*, `Authorization`* | orderTime[] | yes | Get the restaurant's delivery and collection lead times |
+| PUT | `/restaurants/{tenant}/{restaurantId}/ordertimes/{dayOfWeek}/{serviceType}` | UpdateOrderTime | `tenant`*, `restaurantId`*, `dayOfWeek`*, `serviceType`*, `Authorization`*, body*: updateOrderTimeRequest | — |  | Update the restaurant's delivery and collection lead times |
+| GET | `/restaurants/{tenant}/{restaurantId}/servicetimes` | getRestaurantServiceTimes | `tenant`*, `restaurantId`* | ServiceTimes | yes | Get service times |
+| PUT | `/restaurants/{tenant}/{restaurantId}/servicetimes` | putRestaurantServiceTimes | `tenant`*, `restaurantId`*, body: ServiceTimes | ServiceTimes |  | Create or update service times |
+| GET | `/search/autocomplete/{tenant}` | get /search/autocomplete/{tenant} | `tenant`*, `searchTerm`*, `latlong`*, `limit` | AutoCompleteSearchResponse | yes | Get auto-completed search terms |
+| GET | `/search/restaurants/{tenant}` | get /search/restaurants/{tenant} | `tenant`*, `searchTerm`*, `latlong`*, `limit` | RestaurantSearchResponse | yes | Search restaurants |
+| POST | `/send-to-pos-failed` | post /send-to-pos-failed | body*: send-to-pos-failed | — |  | Send to POS failed |
+| POST | `/v1/{tenant}/restaurants/event/offline` | post /v1/{tenant}/restaurants/event/offline | `tenant`*, `X-JE-Requester`*, `X-JE-User-Role`*, body*: OfflineRestaurantsRequestModel | object |  | Create Offline Event |
+| DELETE | `/v1/{tenant}/restaurants/{id}/event/offline` | delete /v1/{tenant}/restaurants/{id}/event/offline | `tenant`*, `id`*, `X-JE-Requester`*, `X-JE-User-Role`* | — |  | Delete Offline Event |
+| POST | `/{tenant}/orders/{orderId}/queries/attempteddelivery` | post /{tenant}/orders/{orderId}/queries/attempteddelivery | `tenant`*, `orderId`*, `Authorization`*, body*: create-attempted-delivery | — |  | Delivery Attempt Failed |
+| POST | `/{tenant}/orders/{orderId}/queries/attempteddelivery/resolution/redeliverorder` | post /{tenant}/orders/{orderId}/queries/attempteddelivery/resolution/redeliverorder | `tenant`*, `orderId`*, `Authorization`*, body*: resolve-attempted-delivery-redeliver | — |  | Request Redelivery of the Order |

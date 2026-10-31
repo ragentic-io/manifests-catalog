@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_rapidapi-prod-
 
 | | |
 | --- | --- |
-| Signed bundle | `3e41894239772fdb7877e8bfda3d867b3c344605ea7d491e28a21d1e5cb30051` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_rapidapi-prod-
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/batch` | getBatches | — |
-| POST | `/batch` | createBatch | — |
-| DELETE | `/batch/{id}` | deleteBatch | — |
-| GET | `/batch/{id}` | getBatch | — |
-| GET | `/db` | queryDb | — |
-| GET | `/domains/{domain}/check` | checkDomain | — |
-| GET | `/domains/{domain}/rank` | domainRank | — |
-| GET | `/domains/{domain}/whois` | whois | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/batch` | getBatches | — | ArrayOfBatch | yes | — |
+| POST | `/batch` | createBatch | body*: object | Batch |  | — |
+| GET | `/batch/{id}` | getBatch | `id`* | Batch | yes | — |
+| DELETE | `/batch/{id}` | deleteBatch | `id`* | — |  | — |
+| GET | `/db` | queryDb | `query`* | object | yes | — |
+| GET | `/domains/{domain}/check` | checkDomain | `domain`* | object | yes | — |
+| GET | `/domains/{domain}/rank` | domainRank | `domain`* | object | yes | — |
+| GET | `/domains/{domain}/whois` | whois | `domain`*, `format` | — | yes | — |

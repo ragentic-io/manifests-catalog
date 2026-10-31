@@ -37,73 +37,179 @@
       },
       {
         "deprecated": false,
+        "description": "apply given YARA rules to the given executable.",
         "id": "operation:post:/apply-yara-rules",
         "kind": "operation",
         "method": "post",
         "name": "applyYaraRules",
         "path": "/apply-yara-rules",
         "pointer": "#/paths/~1apply-yara-rules/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "clean up the uploaded files",
         "id": "operation:head:/clean",
         "kind": "operation",
         "method": "head",
         "name": "clean",
         "path": "/clean",
         "pointer": "#/paths/~1clean/head",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "try to get the emulation output after unpacking the file",
         "id": "operation:post:/emulation-output",
         "kind": "operation",
         "method": "post",
         "name": "emulationOutput",
         "path": "/emulation-output",
         "pointer": "#/paths/~1emulation-output/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "generate partial YARA rules for give executable.",
         "id": "operation:post:/generate-partial-yara-rules",
         "kind": "operation",
         "method": "post",
         "name": "generatePartialYaraRule",
         "path": "/generate-partial-yara-rules",
         "pointer": "#/paths/~1generate-partial-yara-rules/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "try to unpack the given file",
         "id": "operation:post:/unpack",
         "kind": "operation",
         "method": "post",
         "name": "unpack",
         "path": "/unpack",
         "pointer": "#/paths/~1unpack/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:apply_yara_rule",
         "kind": "schema",
-        "name": "apply_yara_rule"
+        "name": "apply_yara_rule",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:yara",
         "kind": "schema",
-        "name": "yara"
+        "name": "yara",
+        "type": "object"
       }
     ]
   },

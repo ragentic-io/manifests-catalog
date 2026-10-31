@@ -8,6 +8,16 @@
         "from": "opencagedata-com-e1532a6c2d",
         "kind": "EXPOSES",
         "to": "operation:get:/v{version}/{format}"
+      },
+      {
+        "from": "operation:get:/v{version}/{format}",
+        "kind": "RETURNS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:Response",
+        "kind": "REFERENCES",
+        "to": "schema:LatLng"
       }
     ],
     "nodes": [
@@ -17,24 +27,213 @@
       },
       {
         "deprecated": false,
+        "description": "geocode a query",
         "id": "operation:get:/v{version}/{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /v{version}/{format}",
+        "parameters": [
+          {
+            "description": "API version.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "format of the response.",
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "string or lat,lng to be geocoded.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "an application key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "when true we attempt to abbreviate the formatted field of results.",
+            "in": "query",
+            "name": "abbrv",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "when true we include only address details in the formatted field of results.",
+            "in": "query",
+            "name": "address_only",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "if true the request is included in the response.",
+            "in": "query",
+            "name": "add_request",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "four coordinate points forming the south-west and north-east corners of a bounding box (min long, min lat, max long, max lat).",
+            "in": "query",
+            "name": "bounds",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "two letter code ISO 3166-1 Alpha 2 code to limit results to that country.",
+            "in": "query",
+            "name": "countrycode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "wraps the returned JSON with a function name.",
+            "in": "query",
+            "name": "jsonp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "an IETF format language code (ex: 'es' or 'pt-BR').",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "integer from 1-10.",
+            "in": "query",
+            "name": "min_confidence",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "when true annotations are not added to results.",
+            "in": "query",
+            "name": "no_annotations",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "when true results are not deduplicated.",
+            "in": "query",
+            "name": "no_dedupe",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "when true query content is not logged.",
+            "in": "query",
+            "name": "no_record",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "when true results are pretty printed.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "lat,lng to bias results.",
+            "in": "query",
+            "name": "proximity",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "match nearest road, include roadinfo annotation",
+            "in": "query",
+            "name": "roadinfo",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v{version}/{format}",
         "pointer": "#/paths/~1v{version}~1{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Response"
+          },
+          {
+            "status": "400",
+            "type": "Response"
+          },
+          {
+            "status": "401",
+            "type": "Response"
+          },
+          {
+            "status": "402",
+            "type": "Response"
+          },
+          {
+            "status": "403",
+            "type": "Response"
+          },
+          {
+            "status": "404",
+            "type": "Response"
+          },
+          {
+            "status": "405",
+            "type": "Response"
+          },
+          {
+            "status": "408",
+            "type": "Response"
+          },
+          {
+            "status": "410",
+            "type": "Response"
+          },
+          {
+            "status": "426",
+            "type": "Response"
+          },
+          {
+            "status": "429",
+            "type": "Response"
+          },
+          {
+            "status": "503",
+            "type": "Response"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:LatLng",
         "kind": "schema",
-        "name": "LatLng"
+        "name": "LatLng",
+        "type": "object"
       },
       {
         "id": "schema:Response",
         "kind": "schema",
-        "name": "Response"
+        "name": "Response",
+        "type": "object"
       }
     ]
   },

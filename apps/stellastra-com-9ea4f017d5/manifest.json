@@ -21,8 +21,64 @@
         "kind": "operation",
         "method": "post",
         "name": "post /post-review",
+        "parameters": [
+          {
+            "description": "User's email to which the review verification will be sent.",
+            "in": "query",
+            "name": "user_email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The user's name, defaults to empty string \"\".",
+            "in": "query",
+            "name": "user_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's star rating, must be a single integer from [1, 2, 3, 4, 5]",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "in": "query",
+            "name": "rating",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/post-review",
         "pointer": "#/paths/~1post-review/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "BasicAuth": []

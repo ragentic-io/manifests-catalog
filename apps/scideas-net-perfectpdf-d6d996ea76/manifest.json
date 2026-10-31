@@ -8,6 +8,26 @@
         "from": "scideas-net-perfectpdf-d6d996ea76",
         "kind": "EXPOSES",
         "to": "operation:post:/perfectpdf/api"
+      },
+      {
+        "from": "operation:post:/perfectpdf/api",
+        "kind": "ACCEPTS",
+        "to": "schema:perfectpdf_api_body"
+      },
+      {
+        "from": "operation:post:/perfectpdf/api",
+        "kind": "RETURNS",
+        "to": "schema:inline_response_200"
+      },
+      {
+        "from": "schema:inline_response_200",
+        "kind": "REFERENCES",
+        "to": "schema:error"
+      },
+      {
+        "from": "schema:inline_response_200",
+        "kind": "REFERENCES",
+        "to": "schema:result"
       }
     ],
     "nodes": [
@@ -23,28 +43,48 @@
         "name": "post /perfectpdf/api",
         "path": "/perfectpdf/api",
         "pointer": "#/paths/~1perfectpdf~1api/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "perfectpdf_api_body"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inline_response_200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Returns PDF document."
       },
       {
+        "description": "an error message",
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "string"
       },
       {
         "id": "schema:inline_response_200",
         "kind": "schema",
-        "name": "inline_response_200"
+        "name": "inline_response_200",
+        "type": "error|result"
       },
       {
         "id": "schema:perfectpdf_api_body",
         "kind": "schema",
-        "name": "perfectpdf_api_body"
+        "name": "perfectpdf_api_body",
+        "type": "object"
       },
       {
+        "description": "PDF document",
         "id": "schema:result",
         "kind": "schema",
-        "name": "result"
+        "name": "result",
+        "type": "string"
       }
     ]
   },

@@ -453,6 +453,901 @@
         "from": "mandrillapp-com-0c6ef759e0",
         "kind": "EXPOSES",
         "to": "operation:post:/whitelists/list.json"
+      },
+      {
+        "from": "operation:post:/exports/activity.json",
+        "kind": "ACCEPTS",
+        "to": "schema:exports_activity"
+      },
+      {
+        "from": "operation:post:/exports/activity.json",
+        "kind": "RETURNS",
+        "to": "schema:exports_satus"
+      },
+      {
+        "from": "operation:post:/exports/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/exports/info.json",
+        "kind": "RETURNS",
+        "to": "schema:exports_info-response"
+      },
+      {
+        "from": "operation:post:/exports/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/exports/list.json",
+        "kind": "RETURNS",
+        "to": "schema:exports_list-response"
+      },
+      {
+        "from": "operation:post:/exports/rejects.json",
+        "kind": "ACCEPTS",
+        "to": "schema:notify_email"
+      },
+      {
+        "from": "operation:post:/exports/rejects.json",
+        "kind": "RETURNS",
+        "to": "schema:exports_satus"
+      },
+      {
+        "from": "operation:post:/exports/whitelist.json",
+        "kind": "ACCEPTS",
+        "to": "schema:notify_email"
+      },
+      {
+        "from": "operation:post:/exports/whitelist.json",
+        "kind": "RETURNS",
+        "to": "schema:exports_satus"
+      },
+      {
+        "from": "operation:post:/inbound/add-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/inbound/add-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:inbound_info"
+      },
+      {
+        "from": "operation:post:/inbound/add-route.json",
+        "kind": "ACCEPTS",
+        "to": "schema:inbound_add-route"
+      },
+      {
+        "from": "operation:post:/inbound/add-route.json",
+        "kind": "RETURNS",
+        "to": "schema:route"
+      },
+      {
+        "from": "operation:post:/inbound/check-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/inbound/check-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:inbound_info"
+      },
+      {
+        "from": "operation:post:/inbound/delete-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/inbound/delete-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:inbound_info"
+      },
+      {
+        "from": "operation:post:/inbound/delete-route.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/inbound/delete-route.json",
+        "kind": "RETURNS",
+        "to": "schema:route"
+      },
+      {
+        "from": "operation:post:/inbound/domains.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/inbound/domains.json",
+        "kind": "RETURNS",
+        "to": "schema:inbound_domains-response"
+      },
+      {
+        "from": "operation:post:/inbound/routes.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/inbound/routes.json",
+        "kind": "RETURNS",
+        "to": "schema:inbound_routes-response"
+      },
+      {
+        "from": "operation:post:/inbound/send-raw.json",
+        "kind": "ACCEPTS",
+        "to": "schema:inbound_send-raw"
+      },
+      {
+        "from": "operation:post:/inbound/send-raw.json",
+        "kind": "RETURNS",
+        "to": "schema:inbound_send-raw-response"
+      },
+      {
+        "from": "operation:post:/inbound/update-route.json",
+        "kind": "ACCEPTS",
+        "to": "schema:inbound_update-route"
+      },
+      {
+        "from": "operation:post:/inbound/update-route.json",
+        "kind": "RETURNS",
+        "to": "schema:route"
+      },
+      {
+        "from": "operation:post:/ips/cancel-warmup.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ip"
+      },
+      {
+        "from": "operation:post:/ips/cancel-warmup.json",
+        "kind": "RETURNS",
+        "to": "schema:ip_info"
+      },
+      {
+        "from": "operation:post:/ips/check-custom-dns.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ip_domain"
+      },
+      {
+        "from": "operation:post:/ips/check-custom-dns.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_check-custom-dns-response"
+      },
+      {
+        "from": "operation:post:/ips/create-pool.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ips_pool-key"
+      },
+      {
+        "from": "operation:post:/ips/create-pool.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_pool"
+      },
+      {
+        "from": "operation:post:/ips/delete-pool.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ips_pool-key"
+      },
+      {
+        "from": "operation:post:/ips/delete-pool.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_delete-pool-response"
+      },
+      {
+        "from": "operation:post:/ips/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ip"
+      },
+      {
+        "from": "operation:post:/ips/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_delete-response"
+      },
+      {
+        "from": "operation:post:/ips/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ip"
+      },
+      {
+        "from": "operation:post:/ips/info.json",
+        "kind": "RETURNS",
+        "to": "schema:ip_info"
+      },
+      {
+        "from": "operation:post:/ips/list-pools.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/ips/list-pools.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_list-pools-response"
+      },
+      {
+        "from": "operation:post:/ips/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/ips/list.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_list-response"
+      },
+      {
+        "from": "operation:post:/ips/pool-info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ips_pool-key"
+      },
+      {
+        "from": "operation:post:/ips/pool-info.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_pool"
+      },
+      {
+        "from": "operation:post:/ips/provision.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ips_provision"
+      },
+      {
+        "from": "operation:post:/ips/provision.json",
+        "kind": "RETURNS",
+        "to": "schema:ips_provision-response"
+      },
+      {
+        "from": "operation:post:/ips/set-custom-dns.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ip_domain"
+      },
+      {
+        "from": "operation:post:/ips/set-custom-dns.json",
+        "kind": "RETURNS",
+        "to": "schema:ip_info"
+      },
+      {
+        "from": "operation:post:/ips/set-pool.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ips_set-pool"
+      },
+      {
+        "from": "operation:post:/ips/set-pool.json",
+        "kind": "RETURNS",
+        "to": "schema:ip_info"
+      },
+      {
+        "from": "operation:post:/ips/start-warmup.json",
+        "kind": "ACCEPTS",
+        "to": "schema:ip"
+      },
+      {
+        "from": "operation:post:/ips/start-warmup.json",
+        "kind": "RETURNS",
+        "to": "schema:ip_info"
+      },
+      {
+        "from": "operation:post:/messages/cancel-scheduled.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_cancel-scheduled"
+      },
+      {
+        "from": "operation:post:/messages/cancel-scheduled.json",
+        "kind": "RETURNS",
+        "to": "schema:schedulingchange_info"
+      },
+      {
+        "from": "operation:post:/messages/content.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/messages/content.json",
+        "kind": "RETURNS",
+        "to": "schema:messages_content-response"
+      },
+      {
+        "from": "operation:post:/messages/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/messages/info.json",
+        "kind": "RETURNS",
+        "to": "schema:messages_info-response"
+      },
+      {
+        "from": "operation:post:/messages/list-scheduled.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_list-scheduled"
+      },
+      {
+        "from": "operation:post:/messages/list-scheduled.json",
+        "kind": "RETURNS",
+        "to": "schema:messages_list-scheduled-response"
+      },
+      {
+        "from": "operation:post:/messages/parse.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_parse"
+      },
+      {
+        "from": "operation:post:/messages/parse.json",
+        "kind": "RETURNS",
+        "to": "schema:messages_parse-response"
+      },
+      {
+        "from": "operation:post:/messages/reschedule.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_reschedule"
+      },
+      {
+        "from": "operation:post:/messages/reschedule.json",
+        "kind": "RETURNS",
+        "to": "schema:schedulingchange_info"
+      },
+      {
+        "from": "operation:post:/messages/search-time-series.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_search-time-series"
+      },
+      {
+        "from": "operation:post:/messages/search-time-series.json",
+        "kind": "RETURNS",
+        "to": "schema:timeseries"
+      },
+      {
+        "from": "operation:post:/messages/search.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_search"
+      },
+      {
+        "from": "operation:post:/messages/search.json",
+        "kind": "RETURNS",
+        "to": "schema:messages_search-response"
+      },
+      {
+        "from": "operation:post:/messages/send-raw.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_send-raw"
+      },
+      {
+        "from": "operation:post:/messages/send-raw.json",
+        "kind": "RETURNS",
+        "to": "schema:message_send-status"
+      },
+      {
+        "from": "operation:post:/messages/send-template.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_send-template"
+      },
+      {
+        "from": "operation:post:/messages/send-template.json",
+        "kind": "RETURNS",
+        "to": "schema:message_send-status"
+      },
+      {
+        "from": "operation:post:/messages/send.json",
+        "kind": "ACCEPTS",
+        "to": "schema:messages_send"
+      },
+      {
+        "from": "operation:post:/messages/send.json",
+        "kind": "RETURNS",
+        "to": "schema:message_send-status"
+      },
+      {
+        "from": "operation:post:/metadata/add.json",
+        "kind": "ACCEPTS",
+        "to": "schema:metadata_template"
+      },
+      {
+        "from": "operation:post:/metadata/add.json",
+        "kind": "RETURNS",
+        "to": "schema:metadata_info"
+      },
+      {
+        "from": "operation:post:/metadata/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:name"
+      },
+      {
+        "from": "operation:post:/metadata/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:metadata_info"
+      },
+      {
+        "from": "operation:post:/metadata/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/metadata/list.json",
+        "kind": "RETURNS",
+        "to": "schema:metadata_list-response"
+      },
+      {
+        "from": "operation:post:/metadata/update.json",
+        "kind": "ACCEPTS",
+        "to": "schema:metadata_template"
+      },
+      {
+        "from": "operation:post:/metadata/update.json",
+        "kind": "RETURNS",
+        "to": "schema:metadata_info"
+      },
+      {
+        "from": "operation:post:/rejects/add.json",
+        "kind": "ACCEPTS",
+        "to": "schema:rejects_add"
+      },
+      {
+        "from": "operation:post:/rejects/add.json",
+        "kind": "RETURNS",
+        "to": "schema:rejects_add-response"
+      },
+      {
+        "from": "operation:post:/rejects/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:rejects_delete"
+      },
+      {
+        "from": "operation:post:/rejects/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:rejects_delete-response"
+      },
+      {
+        "from": "operation:post:/rejects/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:rejects_list"
+      },
+      {
+        "from": "operation:post:/rejects/list.json",
+        "kind": "RETURNS",
+        "to": "schema:rejects_list-response"
+      },
+      {
+        "from": "operation:post:/senders/add-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/senders/add-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:sender_domain_info"
+      },
+      {
+        "from": "operation:post:/senders/check-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/senders/check-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:sender_domain_info"
+      },
+      {
+        "from": "operation:post:/senders/domains.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/senders/domains.json",
+        "kind": "RETURNS",
+        "to": "schema:senders_domains-response"
+      },
+      {
+        "from": "operation:post:/senders/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:sender_address"
+      },
+      {
+        "from": "operation:post:/senders/info.json",
+        "kind": "RETURNS",
+        "to": "schema:senders_info-response"
+      },
+      {
+        "from": "operation:post:/senders/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/senders/list.json",
+        "kind": "RETURNS",
+        "to": "schema:senders"
+      },
+      {
+        "from": "operation:post:/senders/time-series.json",
+        "kind": "ACCEPTS",
+        "to": "schema:sender_address"
+      },
+      {
+        "from": "operation:post:/senders/time-series.json",
+        "kind": "RETURNS",
+        "to": "schema:time-series"
+      },
+      {
+        "from": "operation:post:/senders/verify-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:senders_verify-domain"
+      },
+      {
+        "from": "operation:post:/senders/verify-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:senders_verify-domain-response"
+      },
+      {
+        "from": "operation:post:/subaccounts/add.json",
+        "kind": "ACCEPTS",
+        "to": "schema:subaccount_info"
+      },
+      {
+        "from": "operation:post:/subaccounts/add.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccount_info2"
+      },
+      {
+        "from": "operation:post:/subaccounts/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/subaccounts/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccount_info2"
+      },
+      {
+        "from": "operation:post:/subaccounts/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/subaccounts/info.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccounts_info-response"
+      },
+      {
+        "from": "operation:post:/subaccounts/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:url_key"
+      },
+      {
+        "from": "operation:post:/subaccounts/list.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccounts_list-response"
+      },
+      {
+        "from": "operation:post:/subaccounts/pause.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/subaccounts/pause.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccount_info2"
+      },
+      {
+        "from": "operation:post:/subaccounts/resume.json",
+        "kind": "ACCEPTS",
+        "to": "schema:id"
+      },
+      {
+        "from": "operation:post:/subaccounts/resume.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccount_info2"
+      },
+      {
+        "from": "operation:post:/subaccounts/update.json",
+        "kind": "ACCEPTS",
+        "to": "schema:subaccount_info"
+      },
+      {
+        "from": "operation:post:/subaccounts/update.json",
+        "kind": "RETURNS",
+        "to": "schema:subaccount_info2"
+      },
+      {
+        "from": "operation:post:/tags/all-time-series.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/tags/all-time-series.json",
+        "kind": "RETURNS",
+        "to": "schema:timeseries"
+      },
+      {
+        "from": "operation:post:/tags/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:tag_key"
+      },
+      {
+        "from": "operation:post:/tags/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:tags_delete-response"
+      },
+      {
+        "from": "operation:post:/tags/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:tag_key"
+      },
+      {
+        "from": "operation:post:/tags/info.json",
+        "kind": "RETURNS",
+        "to": "schema:tags_info-response"
+      },
+      {
+        "from": "operation:post:/tags/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/tags/list.json",
+        "kind": "RETURNS",
+        "to": "schema:tags_list-response"
+      },
+      {
+        "from": "operation:post:/tags/time-series.json",
+        "kind": "ACCEPTS",
+        "to": "schema:tag_key"
+      },
+      {
+        "from": "operation:post:/tags/time-series.json",
+        "kind": "RETURNS",
+        "to": "schema:timeseries"
+      },
+      {
+        "from": "operation:post:/templates/add.json",
+        "kind": "ACCEPTS",
+        "to": "schema:template"
+      },
+      {
+        "from": "operation:post:/templates/add.json",
+        "kind": "RETURNS",
+        "to": "schema:template_detailed"
+      },
+      {
+        "from": "operation:post:/templates/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:name"
+      },
+      {
+        "from": "operation:post:/templates/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:template_detailed"
+      },
+      {
+        "from": "operation:post:/templates/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:name"
+      },
+      {
+        "from": "operation:post:/templates/info.json",
+        "kind": "RETURNS",
+        "to": "schema:template_detailed"
+      },
+      {
+        "from": "operation:post:/templates/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:templates_list"
+      },
+      {
+        "from": "operation:post:/templates/list.json",
+        "kind": "RETURNS",
+        "to": "schema:templates_list-response"
+      },
+      {
+        "from": "operation:post:/templates/publish.json",
+        "kind": "ACCEPTS",
+        "to": "schema:name"
+      },
+      {
+        "from": "operation:post:/templates/publish.json",
+        "kind": "RETURNS",
+        "to": "schema:template_detailed"
+      },
+      {
+        "from": "operation:post:/templates/render.json",
+        "kind": "ACCEPTS",
+        "to": "schema:templates_render"
+      },
+      {
+        "from": "operation:post:/templates/render.json",
+        "kind": "RETURNS",
+        "to": "schema:templates_render-response"
+      },
+      {
+        "from": "operation:post:/templates/time-series.json",
+        "kind": "ACCEPTS",
+        "to": "schema:name"
+      },
+      {
+        "from": "operation:post:/templates/time-series.json",
+        "kind": "RETURNS",
+        "to": "schema:time-series"
+      },
+      {
+        "from": "operation:post:/templates/update.json",
+        "kind": "ACCEPTS",
+        "to": "schema:template"
+      },
+      {
+        "from": "operation:post:/templates/update.json",
+        "kind": "RETURNS",
+        "to": "schema:template_detailed"
+      },
+      {
+        "from": "operation:post:/urls/add-tracking-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/urls/add-tracking-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:tracking-domain-status"
+      },
+      {
+        "from": "operation:post:/urls/check-tracking-domain.json",
+        "kind": "ACCEPTS",
+        "to": "schema:domain"
+      },
+      {
+        "from": "operation:post:/urls/check-tracking-domain.json",
+        "kind": "RETURNS",
+        "to": "schema:tracking-domain-status"
+      },
+      {
+        "from": "operation:post:/urls/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/urls/list.json",
+        "kind": "RETURNS",
+        "to": "schema:url_infos"
+      },
+      {
+        "from": "operation:post:/urls/search.json",
+        "kind": "ACCEPTS",
+        "to": "schema:url_key"
+      },
+      {
+        "from": "operation:post:/urls/search.json",
+        "kind": "RETURNS",
+        "to": "schema:url_infos"
+      },
+      {
+        "from": "operation:post:/urls/time-series.json",
+        "kind": "ACCEPTS",
+        "to": "schema:urls_time-series"
+      },
+      {
+        "from": "operation:post:/urls/time-series.json",
+        "kind": "RETURNS",
+        "to": "schema:urls_time-series-response"
+      },
+      {
+        "from": "operation:post:/urls/tracking-domains.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/urls/tracking-domains.json",
+        "kind": "RETURNS",
+        "to": "schema:urls_tracking-domains-response"
+      },
+      {
+        "from": "operation:post:/users/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/users/info.json",
+        "kind": "RETURNS",
+        "to": "schema:users_info-response"
+      },
+      {
+        "from": "operation:post:/users/ping.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/users/ping2.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/users/ping2.json",
+        "kind": "RETURNS",
+        "to": "schema:users_ping2-response"
+      },
+      {
+        "from": "operation:post:/users/senders.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/users/senders.json",
+        "kind": "RETURNS",
+        "to": "schema:senders"
+      },
+      {
+        "from": "operation:post:/webhooks/add.json",
+        "kind": "ACCEPTS",
+        "to": "schema:webhooks_add"
+      },
+      {
+        "from": "operation:post:/webhooks/add.json",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:post:/webhooks/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:webhook_key"
+      },
+      {
+        "from": "operation:post:/webhooks/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:post:/webhooks/info.json",
+        "kind": "ACCEPTS",
+        "to": "schema:webhook_key"
+      },
+      {
+        "from": "operation:post:/webhooks/info.json",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:post:/webhooks/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:api_key"
+      },
+      {
+        "from": "operation:post:/webhooks/list.json",
+        "kind": "RETURNS",
+        "to": "schema:webhooks_list-response"
+      },
+      {
+        "from": "operation:post:/webhooks/update.json",
+        "kind": "ACCEPTS",
+        "to": "schema:webhooks_update"
+      },
+      {
+        "from": "operation:post:/webhooks/update.json",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:post:/whitelists/add.json",
+        "kind": "ACCEPTS",
+        "to": "schema:email"
+      },
+      {
+        "from": "operation:post:/whitelists/add.json",
+        "kind": "RETURNS",
+        "to": "schema:whitelists_add-response"
+      },
+      {
+        "from": "operation:post:/whitelists/delete.json",
+        "kind": "ACCEPTS",
+        "to": "schema:email"
+      },
+      {
+        "from": "operation:post:/whitelists/delete.json",
+        "kind": "RETURNS",
+        "to": "schema:whitelists_delete-response"
+      },
+      {
+        "from": "operation:post:/whitelists/list.json",
+        "kind": "ACCEPTS",
+        "to": "schema:email"
+      },
+      {
+        "from": "operation:post:/whitelists/list.json",
+        "kind": "RETURNS",
+        "to": "schema:whitelists_list-response"
       }
     ],
     "nodes": [
@@ -462,1468 +1357,2912 @@
       },
       {
         "deprecated": false,
+        "description": "Begins an export of your activity history.",
         "id": "operation:post:/exports/activity.json",
         "kind": "operation",
         "method": "post",
         "name": "post /exports/activity.json",
         "path": "/exports/activity.json",
         "pointer": "#/paths/~1exports~1activity.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "exports_activity"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "exports_satus"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns information about an export job.",
         "id": "operation:post:/exports/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /exports/info.json",
         "path": "/exports/info.json",
         "pointer": "#/paths/~1exports~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "exports_info-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns a list of your exports.",
         "id": "operation:post:/exports/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /exports/list.json",
         "path": "/exports/list.json",
         "pointer": "#/paths/~1exports~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "exports_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Begins an export of your rejection blacklist.",
         "id": "operation:post:/exports/rejects.json",
         "kind": "operation",
         "method": "post",
         "name": "post /exports/rejects.json",
         "path": "/exports/rejects.json",
         "pointer": "#/paths/~1exports~1rejects.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "notify_email"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "exports_satus"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Begins an export of your rejection whitelist.",
         "id": "operation:post:/exports/whitelist.json",
         "kind": "operation",
         "method": "post",
         "name": "post /exports/whitelist.json",
         "path": "/exports/whitelist.json",
         "pointer": "#/paths/~1exports~1whitelist.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "notify_email"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "exports_satus"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add an inbound domain to your account",
         "id": "operation:post:/inbound/add-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/add-domain.json",
         "path": "/inbound/add-domain.json",
         "pointer": "#/paths/~1inbound~1add-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add a new mailbox route to an inbound domain",
         "id": "operation:post:/inbound/add-route.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/add-route.json",
         "path": "/inbound/add-route.json",
         "pointer": "#/paths/~1inbound~1add-route.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "inbound_add-route"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "route"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Check the MX settings for an inbound domain.",
         "id": "operation:post:/inbound/check-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/check-domain.json",
         "path": "/inbound/check-domain.json",
         "pointer": "#/paths/~1inbound~1check-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Delete an inbound domain from the account.",
         "id": "operation:post:/inbound/delete-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/delete-domain.json",
         "path": "/inbound/delete-domain.json",
         "pointer": "#/paths/~1inbound~1delete-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Delete an existing inbound mailbox route",
         "id": "operation:post:/inbound/delete-route.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/delete-route.json",
         "path": "/inbound/delete-route.json",
         "pointer": "#/paths/~1inbound~1delete-route.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "route"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "List the domains that have been configured for inbound delivery",
         "id": "operation:post:/inbound/domains.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/domains.json",
         "path": "/inbound/domains.json",
         "pointer": "#/paths/~1inbound~1domains.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_domains-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "List the mailbox routes defined for an inbound domain",
         "id": "operation:post:/inbound/routes.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/routes.json",
         "path": "/inbound/routes.json",
         "pointer": "#/paths/~1inbound~1routes.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_routes-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Take a raw MIME document destined for a domain with inbound domains set up, and send it to the inbound hook exactly as if it had been sent over SMTP",
         "id": "operation:post:/inbound/send-raw.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/send-raw.json",
         "path": "/inbound/send-raw.json",
         "pointer": "#/paths/~1inbound~1send-raw.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "inbound_send-raw"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_send-raw-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Update the pattern or webhook of an existing inbound mailbox route.",
         "id": "operation:post:/inbound/update-route.json",
         "kind": "operation",
         "method": "post",
         "name": "post /inbound/update-route.json",
         "path": "/inbound/update-route.json",
         "pointer": "#/paths/~1inbound~1update-route.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "inbound_update-route"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "route"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Cancels the warmup process for a dedicated IP.",
         "id": "operation:post:/ips/cancel-warmup.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/cancel-warmup.json",
         "path": "/ips/cancel-warmup.json",
         "pointer": "#/paths/~1ips~1cancel-warmup.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ip"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ip_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Tests whether a domain name is valid for use as the custom reverse DNS for a dedicated IP.",
         "id": "operation:post:/ips/check-custom-dns.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/check-custom-dns.json",
         "path": "/ips/check-custom-dns.json",
         "pointer": "#/paths/~1ips~1check-custom-dns.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ip_domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_check-custom-dns-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Creates a pool and returns it.",
         "id": "operation:post:/ips/create-pool.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/create-pool.json",
         "path": "/ips/create-pool.json",
         "pointer": "#/paths/~1ips~1create-pool.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ips_pool-key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_pool"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Deletes a pool.",
         "id": "operation:post:/ips/delete-pool.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/delete-pool.json",
         "path": "/ips/delete-pool.json",
         "pointer": "#/paths/~1ips~1delete-pool.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ips_pool-key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_delete-pool-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Deletes a dedicated IP.",
         "id": "operation:post:/ips/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/delete.json",
         "path": "/ips/delete.json",
         "pointer": "#/paths/~1ips~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ip"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_delete-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Retrieves information about a single dedicated ip.",
         "id": "operation:post:/ips/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/info.json",
         "path": "/ips/info.json",
         "pointer": "#/paths/~1ips~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ip"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ip_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Lists your dedicated IP pools.",
         "id": "operation:post:/ips/list-pools.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/list-pools.json",
         "path": "/ips/list-pools.json",
         "pointer": "#/paths/~1ips~1list-pools.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_list-pools-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Lists your dedicated IPs.",
         "id": "operation:post:/ips/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/list.json",
         "path": "/ips/list.json",
         "pointer": "#/paths/~1ips~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Describes a single dedicated IP pool.",
         "id": "operation:post:/ips/pool-info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/pool-info.json",
         "path": "/ips/pool-info.json",
         "pointer": "#/paths/~1ips~1pool-info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ips_pool-key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_pool"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Requests an additional dedicated IP for your account.",
         "id": "operation:post:/ips/provision.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/provision.json",
         "path": "/ips/provision.json",
         "pointer": "#/paths/~1ips~1provision.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ips_provision"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ips_provision-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Configures the custom DNS name for a dedicated IP.",
         "id": "operation:post:/ips/set-custom-dns.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/set-custom-dns.json",
         "path": "/ips/set-custom-dns.json",
         "pointer": "#/paths/~1ips~1set-custom-dns.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ip_domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ip_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Moves a dedicated IP to a different pool.",
         "id": "operation:post:/ips/set-pool.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/set-pool.json",
         "path": "/ips/set-pool.json",
         "pointer": "#/paths/~1ips~1set-pool.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ips_set-pool"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ip_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Begins the warmup process for a dedicated IP.",
         "id": "operation:post:/ips/start-warmup.json",
         "kind": "operation",
         "method": "post",
         "name": "post /ips/start-warmup.json",
         "path": "/ips/start-warmup.json",
         "pointer": "#/paths/~1ips~1start-warmup.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ip"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ip_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Cancels a scheduled email.",
         "id": "operation:post:/messages/cancel-scheduled.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/cancel-scheduled.json",
         "path": "/messages/cancel-scheduled.json",
         "pointer": "#/paths/~1messages~1cancel-scheduled.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_cancel-scheduled"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedulingchange_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the full content of a recently sent message",
         "id": "operation:post:/messages/content.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/content.json",
         "path": "/messages/content.json",
         "pointer": "#/paths/~1messages~1content.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "messages_content-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the information for a single recently sent message",
         "id": "operation:post:/messages/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/info.json",
         "path": "/messages/info.json",
         "pointer": "#/paths/~1messages~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "messages_info-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Queries your scheduled emails by sender or recipient, or both.",
         "id": "operation:post:/messages/list-scheduled.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/list-scheduled.json",
         "path": "/messages/list-scheduled.json",
         "pointer": "#/paths/~1messages~1list-scheduled.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_list-scheduled"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "messages_list-scheduled-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Parse the full MIME document for an email message, returning the content of the message broken into its constituent pieces",
         "id": "operation:post:/messages/parse.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/parse.json",
         "path": "/messages/parse.json",
         "pointer": "#/paths/~1messages~1parse.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_parse"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "messages_parse-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Reschedules a scheduled email.",
         "id": "operation:post:/messages/reschedule.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/reschedule.json",
         "path": "/messages/reschedule.json",
         "pointer": "#/paths/~1messages~1reschedule.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_reschedule"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "schedulingchange_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Search the content of recently sent messages and return the aggregated hourly stats for matching messages",
         "id": "operation:post:/messages/search-time-series.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/search-time-series.json",
         "path": "/messages/search-time-series.json",
         "pointer": "#/paths/~1messages~1search-time-series.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_search-time-series"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "timeseries"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Search the content of recently sent messages and optionally narrow by date range, tags and senders.",
         "id": "operation:post:/messages/search.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/search.json",
         "path": "/messages/search.json",
         "pointer": "#/paths/~1messages~1search.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_search"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "messages_search-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Take a raw MIME document for a message, and send it exactly as if it were sent through Mandrill's SMTP servers",
         "id": "operation:post:/messages/send-raw.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/send-raw.json",
         "path": "/messages/send-raw.json",
         "pointer": "#/paths/~1messages~1send-raw.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_send-raw"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "message_send-status"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Send a new transactional message through Mandrill using a template",
         "id": "operation:post:/messages/send-template.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/send-template.json",
         "path": "/messages/send-template.json",
         "pointer": "#/paths/~1messages~1send-template.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_send-template"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "message_send-status"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Send a new transactional message through Mandrill",
         "id": "operation:post:/messages/send.json",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/send.json",
         "path": "/messages/send.json",
         "pointer": "#/paths/~1messages~1send.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "messages_send"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "message_send-status"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add a new custom metadata field to be indexed for the account.",
         "id": "operation:post:/metadata/add.json",
         "kind": "operation",
         "method": "post",
         "name": "post /metadata/add.json",
         "path": "/metadata/add.json",
         "pointer": "#/paths/~1metadata~1add.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "metadata_template"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "metadata_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Delete an existing custom metadata field.",
         "id": "operation:post:/metadata/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /metadata/delete.json",
         "path": "/metadata/delete.json",
         "pointer": "#/paths/~1metadata~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "name"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "metadata_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the list of custom metadata fields indexed for the account.",
         "id": "operation:post:/metadata/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /metadata/list.json",
         "path": "/metadata/list.json",
         "pointer": "#/paths/~1metadata~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "metadata_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Update an existing custom metadata field.",
         "id": "operation:post:/metadata/update.json",
         "kind": "operation",
         "method": "post",
         "name": "post /metadata/update.json",
         "path": "/metadata/update.json",
         "pointer": "#/paths/~1metadata~1update.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "metadata_template"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "metadata_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Adds an email to your email rejection blacklist.",
         "id": "operation:post:/rejects/add.json",
         "kind": "operation",
         "method": "post",
         "name": "post /rejects/add.json",
         "path": "/rejects/add.json",
         "pointer": "#/paths/~1rejects~1add.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "rejects_add"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "rejects_add-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Deletes an email rejection.",
         "id": "operation:post:/rejects/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /rejects/delete.json",
         "path": "/rejects/delete.json",
         "pointer": "#/paths/~1rejects~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "rejects_delete"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "rejects_delete-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Retrieves your email rejection blacklist.",
         "id": "operation:post:/rejects/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /rejects/list.json",
         "path": "/rejects/list.json",
         "pointer": "#/paths/~1rejects~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "rejects_list"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "rejects_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Adds a sender domain to your account.",
         "id": "operation:post:/senders/add-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/add-domain.json",
         "path": "/senders/add-domain.json",
         "pointer": "#/paths/~1senders~1add-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "sender_domain_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Checks the SPF and DKIM settings for a domain.",
         "id": "operation:post:/senders/check-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/check-domain.json",
         "path": "/senders/check-domain.json",
         "pointer": "#/paths/~1senders~1check-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "sender_domain_info"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns the sender domains that have been added to this account.",
         "id": "operation:post:/senders/domains.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/domains.json",
         "path": "/senders/domains.json",
         "pointer": "#/paths/~1senders~1domains.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "senders_domains-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return more detailed information about a single sender, including aggregates of recent stats",
         "id": "operation:post:/senders/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/info.json",
         "path": "/senders/info.json",
         "pointer": "#/paths/~1senders~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sender_address"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "senders_info-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the senders that have tried to use this account.",
         "id": "operation:post:/senders/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/list.json",
         "path": "/senders/list.json",
         "pointer": "#/paths/~1senders~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "senders"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the recent history (hourly stats for the last 30 days) for a sender",
         "id": "operation:post:/senders/time-series.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/time-series.json",
         "path": "/senders/time-series.json",
         "pointer": "#/paths/~1senders~1time-series.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "sender_address"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "time-series"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Sends a verification email in order to verify ownership of a domain.",
         "id": "operation:post:/senders/verify-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /senders/verify-domain.json",
         "path": "/senders/verify-domain.json",
         "pointer": "#/paths/~1senders~1verify-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "senders_verify-domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "senders_verify-domain-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add a new subaccount",
         "id": "operation:post:/subaccounts/add.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/add.json",
         "path": "/subaccounts/add.json",
         "pointer": "#/paths/~1subaccounts~1add.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "subaccount_info"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccount_info2"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Delete an existing subaccount.",
         "id": "operation:post:/subaccounts/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/delete.json",
         "path": "/subaccounts/delete.json",
         "pointer": "#/paths/~1subaccounts~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccount_info2"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Given the ID of an existing subaccount, return the data about it",
         "id": "operation:post:/subaccounts/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/info.json",
         "path": "/subaccounts/info.json",
         "pointer": "#/paths/~1subaccounts~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccounts_info-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the list of subaccounts defined for the account, optionally filtered by a prefix",
         "id": "operation:post:/subaccounts/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/list.json",
         "path": "/subaccounts/list.json",
         "pointer": "#/paths/~1subaccounts~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "url_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccounts_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Pause a subaccount's sending.",
         "id": "operation:post:/subaccounts/pause.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/pause.json",
         "path": "/subaccounts/pause.json",
         "pointer": "#/paths/~1subaccounts~1pause.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccount_info2"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Resume a paused subaccount's sending",
         "id": "operation:post:/subaccounts/resume.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/resume.json",
         "path": "/subaccounts/resume.json",
         "pointer": "#/paths/~1subaccounts~1resume.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "id"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccount_info2"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Update an existing subaccount",
         "id": "operation:post:/subaccounts/update.json",
         "kind": "operation",
         "method": "post",
         "name": "post /subaccounts/update.json",
         "path": "/subaccounts/update.json",
         "pointer": "#/paths/~1subaccounts~1update.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "subaccount_info"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subaccount_info2"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the recent history (hourly stats for the last 30 days) for all tags",
         "id": "operation:post:/tags/all-time-series.json",
         "kind": "operation",
         "method": "post",
         "name": "post /tags/all-time-series.json",
         "path": "/tags/all-time-series.json",
         "pointer": "#/paths/~1tags~1all-time-series.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "timeseries"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Deletes a tag permanently.",
         "id": "operation:post:/tags/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /tags/delete.json",
         "path": "/tags/delete.json",
         "pointer": "#/paths/~1tags~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "tag_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "tags_delete-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return more detailed information about a single tag, including aggregates of recent stats",
         "id": "operation:post:/tags/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /tags/info.json",
         "path": "/tags/info.json",
         "pointer": "#/paths/~1tags~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "tag_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "tags_info-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return all of the user-defined tag information",
         "id": "operation:post:/tags/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /tags/list.json",
         "path": "/tags/list.json",
         "pointer": "#/paths/~1tags~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "tags_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the recent history (hourly stats for the last 30 days) for a tag",
         "id": "operation:post:/tags/time-series.json",
         "kind": "operation",
         "method": "post",
         "name": "post /tags/time-series.json",
         "path": "/tags/time-series.json",
         "pointer": "#/paths/~1tags~1time-series.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "tag_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "timeseries"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add a new template",
         "id": "operation:post:/templates/add.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/add.json",
         "path": "/templates/add.json",
         "pointer": "#/paths/~1templates~1add.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "template"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "template_detailed"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Delete a template",
         "id": "operation:post:/templates/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/delete.json",
         "path": "/templates/delete.json",
         "pointer": "#/paths/~1templates~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "name"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "template_detailed"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the information for an existing template",
         "id": "operation:post:/templates/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/info.json",
         "path": "/templates/info.json",
         "pointer": "#/paths/~1templates~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "name"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "template_detailed"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return a list of all the templates available to this user",
         "id": "operation:post:/templates/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/list.json",
         "path": "/templates/list.json",
         "pointer": "#/paths/~1templates~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "templates_list"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "templates_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Publish the content for the template.",
         "id": "operation:post:/templates/publish.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/publish.json",
         "path": "/templates/publish.json",
         "pointer": "#/paths/~1templates~1publish.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "name"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "template_detailed"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Inject content and optionally merge fields into a template, returning the HTML that results",
         "id": "operation:post:/templates/render.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/render.json",
         "path": "/templates/render.json",
         "pointer": "#/paths/~1templates~1render.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "templates_render"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "templates_render-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the recent history (hourly stats for the last 30 days) for a template",
         "id": "operation:post:/templates/time-series.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/time-series.json",
         "path": "/templates/time-series.json",
         "pointer": "#/paths/~1templates~1time-series.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "name"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "time-series"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Update the code for an existing template.",
         "id": "operation:post:/templates/update.json",
         "kind": "operation",
         "method": "post",
         "name": "post /templates/update.json",
         "path": "/templates/update.json",
         "pointer": "#/paths/~1templates~1update.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "template"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "template_detailed"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add a tracking domain to your account",
         "id": "operation:post:/urls/add-tracking-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /urls/add-tracking-domain.json",
         "path": "/urls/add-tracking-domain.json",
         "pointer": "#/paths/~1urls~1add-tracking-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "tracking-domain-status"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Checks the CNAME settings for a tracking domain.",
         "id": "operation:post:/urls/check-tracking-domain.json",
         "kind": "operation",
         "method": "post",
         "name": "post /urls/check-tracking-domain.json",
         "path": "/urls/check-tracking-domain.json",
         "pointer": "#/paths/~1urls~1check-tracking-domain.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "domain"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "tracking-domain-status"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the 100 most clicked URLs",
         "id": "operation:post:/urls/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /urls/list.json",
         "path": "/urls/list.json",
         "pointer": "#/paths/~1urls~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "url_infos"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the 100 most clicked URLs that match the search query given",
         "id": "operation:post:/urls/search.json",
         "kind": "operation",
         "method": "post",
         "name": "post /urls/search.json",
         "path": "/urls/search.json",
         "pointer": "#/paths/~1urls~1search.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "url_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "url_infos"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the recent history (hourly stats for the last 30 days) for a url",
         "id": "operation:post:/urls/time-series.json",
         "kind": "operation",
         "method": "post",
         "name": "post /urls/time-series.json",
         "path": "/urls/time-series.json",
         "pointer": "#/paths/~1urls~1time-series.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "urls_time-series"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "urls_time-series-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the list of tracking domains set up for this account",
         "id": "operation:post:/urls/tracking-domains.json",
         "kind": "operation",
         "method": "post",
         "name": "post /urls/tracking-domains.json",
         "path": "/urls/tracking-domains.json",
         "pointer": "#/paths/~1urls~1tracking-domains.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "urls_tracking-domains-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the information about the API-connected user",
         "id": "operation:post:/users/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /users/info.json",
         "path": "/users/info.json",
         "pointer": "#/paths/~1users~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "users_info-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Validate an API key and respond to a ping",
         "id": "operation:post:/users/ping.json",
         "kind": "operation",
         "method": "post",
         "name": "post /users/ping.json",
         "path": "/users/ping.json",
         "pointer": "#/paths/~1users~1ping.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Validate an API key and respond to a ping (anal JSON parser version)",
         "id": "operation:post:/users/ping2.json",
         "kind": "operation",
         "method": "post",
         "name": "post /users/ping2.json",
         "path": "/users/ping2.json",
         "pointer": "#/paths/~1users~1ping2.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "users_ping2-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Return the senders that have tried to use this account, both verified and unverified",
         "id": "operation:post:/users/senders.json",
         "kind": "operation",
         "method": "post",
         "name": "post /users/senders.json",
         "path": "/users/senders.json",
         "pointer": "#/paths/~1users~1senders.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "senders"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Add a new webhook",
         "id": "operation:post:/webhooks/add.json",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/add.json",
         "path": "/webhooks/add.json",
         "pointer": "#/paths/~1webhooks~1add.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "webhooks_add"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Delete an existing webhook",
         "id": "operation:post:/webhooks/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/delete.json",
         "path": "/webhooks/delete.json",
         "pointer": "#/paths/~1webhooks~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "webhook_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Given the ID of an existing webhook, return the data about it",
         "id": "operation:post:/webhooks/info.json",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/info.json",
         "path": "/webhooks/info.json",
         "pointer": "#/paths/~1webhooks~1info.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "webhook_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get the list of all webhooks defined on the account",
         "id": "operation:post:/webhooks/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/list.json",
         "path": "/webhooks/list.json",
         "pointer": "#/paths/~1webhooks~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "api_key"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhooks_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Update an existing webhook",
         "id": "operation:post:/webhooks/update.json",
         "kind": "operation",
         "method": "post",
         "name": "post /webhooks/update.json",
         "path": "/webhooks/update.json",
         "pointer": "#/paths/~1webhooks~1update.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "webhooks_update"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Adds an email to your email rejection whitelist.",
         "id": "operation:post:/whitelists/add.json",
         "kind": "operation",
         "method": "post",
         "name": "post /whitelists/add.json",
         "path": "/whitelists/add.json",
         "pointer": "#/paths/~1whitelists~1add.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "email"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "whitelists_add-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Removes an email address from the whitelist.",
         "id": "operation:post:/whitelists/delete.json",
         "kind": "operation",
         "method": "post",
         "name": "post /whitelists/delete.json",
         "path": "/whitelists/delete.json",
         "pointer": "#/paths/~1whitelists~1delete.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "email"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "whitelists_delete-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Retrieves your email rejection whitelist.",
         "id": "operation:post:/whitelists/list.json",
         "kind": "operation",
         "method": "post",
         "name": "post /whitelists/list.json",
         "path": "/whitelists/list.json",
         "pointer": "#/paths/~1whitelists~1list.json/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "email"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "whitelists_list-response"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:api_key",
         "kind": "schema",
-        "name": "api_key"
+        "name": "api_key",
+        "type": "object"
       },
       {
         "id": "schema:domain",
         "kind": "schema",
-        "name": "domain"
+        "name": "domain",
+        "type": "object"
       },
       {
         "id": "schema:email",
         "kind": "schema",
-        "name": "email"
+        "name": "email",
+        "type": "object"
       },
       {
         "id": "schema:exports_activity",
         "kind": "schema",
-        "name": "exports_activity"
+        "name": "exports_activity",
+        "type": "object"
       },
       {
         "id": "schema:exports_info-response",
         "kind": "schema",
-        "name": "exports_info-response"
+        "name": "exports_info-response",
+        "type": "object"
       },
       {
         "id": "schema:exports_list-response",
         "kind": "schema",
-        "name": "exports_list-response"
+        "name": "exports_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:exports_satus",
         "kind": "schema",
-        "name": "exports_satus"
+        "name": "exports_satus",
+        "type": "object"
       },
       {
         "id": "schema:id",
         "kind": "schema",
-        "name": "id"
+        "name": "id",
+        "type": "object"
       },
       {
         "id": "schema:inbound_add-route",
         "kind": "schema",
-        "name": "inbound_add-route"
+        "name": "inbound_add-route",
+        "type": "object"
       },
       {
         "id": "schema:inbound_domains-response",
         "kind": "schema",
-        "name": "inbound_domains-response"
+        "name": "inbound_domains-response",
+        "type": "object[]"
       },
       {
         "id": "schema:inbound_info",
         "kind": "schema",
-        "name": "inbound_info"
+        "name": "inbound_info",
+        "type": "object"
       },
       {
         "id": "schema:inbound_routes-response",
         "kind": "schema",
-        "name": "inbound_routes-response"
+        "name": "inbound_routes-response",
+        "type": "object[]"
       },
       {
         "id": "schema:inbound_send-raw",
         "kind": "schema",
-        "name": "inbound_send-raw"
+        "name": "inbound_send-raw",
+        "type": "object"
       },
       {
         "id": "schema:inbound_send-raw-response",
         "kind": "schema",
-        "name": "inbound_send-raw-response"
+        "name": "inbound_send-raw-response",
+        "type": "object[]"
       },
       {
         "id": "schema:inbound_update-route",
         "kind": "schema",
-        "name": "inbound_update-route"
+        "name": "inbound_update-route",
+        "type": "object"
       },
       {
         "id": "schema:ip",
         "kind": "schema",
-        "name": "ip"
+        "name": "ip",
+        "type": "object"
       },
       {
         "id": "schema:ip_domain",
         "kind": "schema",
-        "name": "ip_domain"
+        "name": "ip_domain",
+        "type": "object"
       },
       {
         "id": "schema:ip_info",
         "kind": "schema",
-        "name": "ip_info"
+        "name": "ip_info",
+        "type": "object"
       },
       {
         "id": "schema:ips_check-custom-dns-response",
         "kind": "schema",
-        "name": "ips_check-custom-dns-response"
+        "name": "ips_check-custom-dns-response",
+        "type": "object"
       },
       {
         "id": "schema:ips_delete-pool-response",
         "kind": "schema",
-        "name": "ips_delete-pool-response"
+        "name": "ips_delete-pool-response",
+        "type": "object"
       },
       {
         "id": "schema:ips_delete-response",
         "kind": "schema",
-        "name": "ips_delete-response"
+        "name": "ips_delete-response",
+        "type": "object"
       },
       {
         "id": "schema:ips_list-pools-response",
         "kind": "schema",
-        "name": "ips_list-pools-response"
+        "name": "ips_list-pools-response",
+        "type": "object[]"
       },
       {
         "id": "schema:ips_list-response",
         "kind": "schema",
-        "name": "ips_list-response"
+        "name": "ips_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:ips_pool",
         "kind": "schema",
-        "name": "ips_pool"
+        "name": "ips_pool",
+        "type": "object"
       },
       {
         "id": "schema:ips_pool-key",
         "kind": "schema",
-        "name": "ips_pool-key"
+        "name": "ips_pool-key",
+        "type": "object"
       },
       {
         "id": "schema:ips_provision",
         "kind": "schema",
-        "name": "ips_provision"
+        "name": "ips_provision",
+        "type": "object"
       },
       {
         "id": "schema:ips_provision-response",
         "kind": "schema",
-        "name": "ips_provision-response"
+        "name": "ips_provision-response",
+        "type": "object"
       },
       {
         "id": "schema:ips_set-pool",
         "kind": "schema",
-        "name": "ips_set-pool"
+        "name": "ips_set-pool",
+        "type": "object"
       },
       {
         "id": "schema:message_send-status",
         "kind": "schema",
-        "name": "message_send-status"
+        "name": "message_send-status",
+        "type": "object[]"
       },
       {
         "id": "schema:messages_cancel-scheduled",
         "kind": "schema",
-        "name": "messages_cancel-scheduled"
+        "name": "messages_cancel-scheduled",
+        "type": "object"
       },
       {
         "id": "schema:messages_content-response",
         "kind": "schema",
-        "name": "messages_content-response"
+        "name": "messages_content-response",
+        "type": "object"
       },
       {
         "id": "schema:messages_info-response",
         "kind": "schema",
-        "name": "messages_info-response"
+        "name": "messages_info-response",
+        "type": "object"
       },
       {
         "id": "schema:messages_list-scheduled",
         "kind": "schema",
-        "name": "messages_list-scheduled"
+        "name": "messages_list-scheduled",
+        "type": "object"
       },
       {
         "id": "schema:messages_list-scheduled-response",
         "kind": "schema",
-        "name": "messages_list-scheduled-response"
+        "name": "messages_list-scheduled-response",
+        "type": "object[]"
       },
       {
         "id": "schema:messages_parse",
         "kind": "schema",
-        "name": "messages_parse"
+        "name": "messages_parse",
+        "type": "object"
       },
       {
         "id": "schema:messages_parse-response",
         "kind": "schema",
-        "name": "messages_parse-response"
+        "name": "messages_parse-response",
+        "type": "object"
       },
       {
         "id": "schema:messages_reschedule",
         "kind": "schema",
-        "name": "messages_reschedule"
+        "name": "messages_reschedule",
+        "type": "object"
       },
       {
         "id": "schema:messages_search",
         "kind": "schema",
-        "name": "messages_search"
+        "name": "messages_search",
+        "type": "object"
       },
       {
         "id": "schema:messages_search-response",
         "kind": "schema",
-        "name": "messages_search-response"
+        "name": "messages_search-response",
+        "type": "object[]"
       },
       {
         "id": "schema:messages_search-time-series",
         "kind": "schema",
-        "name": "messages_search-time-series"
+        "name": "messages_search-time-series",
+        "type": "object"
       },
       {
         "id": "schema:messages_send",
         "kind": "schema",
-        "name": "messages_send"
+        "name": "messages_send",
+        "type": "object"
       },
       {
         "id": "schema:messages_send-raw",
         "kind": "schema",
-        "name": "messages_send-raw"
+        "name": "messages_send-raw",
+        "type": "object"
       },
       {
         "id": "schema:messages_send-template",
         "kind": "schema",
-        "name": "messages_send-template"
+        "name": "messages_send-template",
+        "type": "object"
       },
       {
         "id": "schema:metadata_info",
         "kind": "schema",
-        "name": "metadata_info"
+        "name": "metadata_info",
+        "type": "object"
       },
       {
         "id": "schema:metadata_list-response",
         "kind": "schema",
-        "name": "metadata_list-response"
+        "name": "metadata_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:metadata_template",
         "kind": "schema",
-        "name": "metadata_template"
+        "name": "metadata_template",
+        "type": "object"
       },
       {
         "id": "schema:name",
         "kind": "schema",
-        "name": "name"
+        "name": "name",
+        "type": "object"
       },
       {
         "id": "schema:notify_email",
         "kind": "schema",
-        "name": "notify_email"
+        "name": "notify_email",
+        "type": "object"
       },
       {
         "id": "schema:rejects_add",
         "kind": "schema",
-        "name": "rejects_add"
+        "name": "rejects_add",
+        "type": "object"
       },
       {
         "id": "schema:rejects_add-response",
         "kind": "schema",
-        "name": "rejects_add-response"
+        "name": "rejects_add-response",
+        "type": "object"
       },
       {
         "id": "schema:rejects_delete",
         "kind": "schema",
-        "name": "rejects_delete"
+        "name": "rejects_delete",
+        "type": "object"
       },
       {
         "id": "schema:rejects_delete-response",
         "kind": "schema",
-        "name": "rejects_delete-response"
+        "name": "rejects_delete-response",
+        "type": "object"
       },
       {
         "id": "schema:rejects_list",
         "kind": "schema",
-        "name": "rejects_list"
+        "name": "rejects_list",
+        "type": "object"
       },
       {
         "id": "schema:rejects_list-response",
         "kind": "schema",
-        "name": "rejects_list-response"
+        "name": "rejects_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:route",
         "kind": "schema",
-        "name": "route"
+        "name": "route",
+        "type": "object"
       },
       {
         "id": "schema:schedulingchange_info",
         "kind": "schema",
-        "name": "schedulingchange_info"
+        "name": "schedulingchange_info",
+        "type": "object"
       },
       {
         "id": "schema:sender_address",
         "kind": "schema",
-        "name": "sender_address"
+        "name": "sender_address",
+        "type": "object"
       },
       {
         "id": "schema:sender_domain_info",
         "kind": "schema",
-        "name": "sender_domain_info"
+        "name": "sender_domain_info",
+        "type": "object"
       },
       {
         "id": "schema:senders",
         "kind": "schema",
-        "name": "senders"
+        "name": "senders",
+        "type": "object[]"
       },
       {
         "id": "schema:senders_domains-response",
         "kind": "schema",
-        "name": "senders_domains-response"
+        "name": "senders_domains-response",
+        "type": "object[]"
       },
       {
         "id": "schema:senders_info-response",
         "kind": "schema",
-        "name": "senders_info-response"
+        "name": "senders_info-response",
+        "type": "object"
       },
       {
         "id": "schema:senders_verify-domain",
         "kind": "schema",
-        "name": "senders_verify-domain"
+        "name": "senders_verify-domain",
+        "type": "object"
       },
       {
         "id": "schema:senders_verify-domain-response",
         "kind": "schema",
-        "name": "senders_verify-domain-response"
+        "name": "senders_verify-domain-response",
+        "type": "object"
       },
       {
         "id": "schema:subaccount_info",
         "kind": "schema",
-        "name": "subaccount_info"
+        "name": "subaccount_info",
+        "type": "object"
       },
       {
         "id": "schema:subaccount_info2",
         "kind": "schema",
-        "name": "subaccount_info2"
+        "name": "subaccount_info2",
+        "type": "object"
       },
       {
         "id": "schema:subaccounts_info-response",
         "kind": "schema",
-        "name": "subaccounts_info-response"
+        "name": "subaccounts_info-response",
+        "type": "object"
       },
       {
         "id": "schema:subaccounts_list-response",
         "kind": "schema",
-        "name": "subaccounts_list-response"
+        "name": "subaccounts_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:tag_key",
         "kind": "schema",
-        "name": "tag_key"
+        "name": "tag_key",
+        "type": "object"
       },
       {
         "id": "schema:tags_delete-response",
         "kind": "schema",
-        "name": "tags_delete-response"
+        "name": "tags_delete-response",
+        "type": "object"
       },
       {
         "id": "schema:tags_info-response",
         "kind": "schema",
-        "name": "tags_info-response"
+        "name": "tags_info-response",
+        "type": "object"
       },
       {
         "id": "schema:tags_list-response",
         "kind": "schema",
-        "name": "tags_list-response"
+        "name": "tags_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:template",
         "kind": "schema",
-        "name": "template"
+        "name": "template",
+        "type": "object"
       },
       {
         "id": "schema:template_detailed",
         "kind": "schema",
-        "name": "template_detailed"
+        "name": "template_detailed",
+        "type": "object"
       },
       {
         "id": "schema:templates_list",
         "kind": "schema",
-        "name": "templates_list"
+        "name": "templates_list",
+        "type": "object"
       },
       {
         "id": "schema:templates_list-response",
         "kind": "schema",
-        "name": "templates_list-response"
+        "name": "templates_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:templates_render",
         "kind": "schema",
-        "name": "templates_render"
+        "name": "templates_render",
+        "type": "object"
       },
       {
         "id": "schema:templates_render-response",
         "kind": "schema",
-        "name": "templates_render-response"
+        "name": "templates_render-response",
+        "type": "object"
       },
       {
         "id": "schema:time-series",
         "kind": "schema",
-        "name": "time-series"
+        "name": "time-series",
+        "type": "object[]"
       },
       {
         "id": "schema:timeseries",
         "kind": "schema",
-        "name": "timeseries"
+        "name": "timeseries",
+        "type": "object[]"
       },
       {
         "id": "schema:tracking-domain-status",
         "kind": "schema",
-        "name": "tracking-domain-status"
+        "name": "tracking-domain-status",
+        "type": "object"
       },
       {
         "id": "schema:url_infos",
         "kind": "schema",
-        "name": "url_infos"
+        "name": "url_infos",
+        "type": "object[]"
       },
       {
         "id": "schema:url_key",
         "kind": "schema",
-        "name": "url_key"
+        "name": "url_key",
+        "type": "object"
       },
       {
         "id": "schema:urls_time-series",
         "kind": "schema",
-        "name": "urls_time-series"
+        "name": "urls_time-series",
+        "type": "object"
       },
       {
         "id": "schema:urls_time-series-response",
         "kind": "schema",
-        "name": "urls_time-series-response"
+        "name": "urls_time-series-response",
+        "type": "object[]"
       },
       {
         "id": "schema:urls_tracking-domains-response",
         "kind": "schema",
-        "name": "urls_tracking-domains-response"
+        "name": "urls_tracking-domains-response",
+        "type": "object[]"
       },
       {
         "id": "schema:users_info-response",
         "kind": "schema",
-        "name": "users_info-response"
+        "name": "users_info-response",
+        "type": "object"
       },
       {
         "id": "schema:users_ping2-response",
         "kind": "schema",
-        "name": "users_ping2-response"
+        "name": "users_ping2-response",
+        "type": "object"
       },
       {
         "id": "schema:webhook",
         "kind": "schema",
-        "name": "webhook"
+        "name": "webhook",
+        "type": "object"
       },
       {
         "id": "schema:webhook_key",
         "kind": "schema",
-        "name": "webhook_key"
+        "name": "webhook_key",
+        "type": "object"
       },
       {
         "id": "schema:webhooks_add",
         "kind": "schema",
-        "name": "webhooks_add"
+        "name": "webhooks_add",
+        "type": "object"
       },
       {
         "id": "schema:webhooks_list-response",
         "kind": "schema",
-        "name": "webhooks_list-response"
+        "name": "webhooks_list-response",
+        "type": "object[]"
       },
       {
         "id": "schema:webhooks_update",
         "kind": "schema",
-        "name": "webhooks_update"
+        "name": "webhooks_update",
+        "type": "object"
       },
       {
         "id": "schema:whitelists_add-response",
         "kind": "schema",
-        "name": "whitelists_add-response"
+        "name": "whitelists_add-response",
+        "type": "object"
       },
       {
         "id": "schema:whitelists_delete-response",
         "kind": "schema",
-        "name": "whitelists_delete-response"
+        "name": "whitelists_delete-response",
+        "type": "object"
       },
       {
         "id": "schema:whitelists_list-response",
         "kind": "schema",
-        "name": "whitelists_list-response"
+        "name": "whitelists_list-response",
+        "type": "object[]"
       }
     ]
   },

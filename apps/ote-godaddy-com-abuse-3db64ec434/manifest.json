@@ -18,6 +18,36 @@
         "from": "ote-godaddy-com-abuse-3db64ec434",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/abuse/tickets/{ticketId}"
+      },
+      {
+        "from": "operation:get:/v1/abuse/tickets",
+        "kind": "RETURNS",
+        "to": "schema:AbuseTicketList"
+      },
+      {
+        "from": "operation:post:/v1/abuse/tickets",
+        "kind": "ACCEPTS",
+        "to": "schema:AbuseTicketCreate"
+      },
+      {
+        "from": "operation:post:/v1/abuse/tickets",
+        "kind": "RETURNS",
+        "to": "schema:AbuseTicketId"
+      },
+      {
+        "from": "operation:get:/v1/abuse/tickets/{ticketId}",
+        "kind": "RETURNS",
+        "to": "schema:AbuseTicket"
+      },
+      {
+        "from": "schema:AbuseTicketList",
+        "kind": "REFERENCES",
+        "to": "schema:Pagination"
+      },
+      {
+        "from": "schema:Error",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorField"
       }
     ],
     "nodes": [
@@ -31,10 +61,104 @@
         "kind": "operation",
         "method": "get",
         "name": "getTickets",
+        "parameters": [
+          {
+            "description": "The type of abuse.",
+            "enum": [
+              "A_RECORD",
+              "CHILD_ABUSE",
+              "CONTENT",
+              "FRAUD_WIRE",
+              "IP_BLOCK",
+              "MALWARE",
+              "NETWORK_ABUSE",
+              "PHISHING",
+              "SPAM"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Is this abuse ticket closed?",
+            "in": "query",
+            "name": "closed",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The domain name or ip address the abuse originated from",
+            "in": "query",
+            "name": "sourceDomainOrIp",
+            "required": false,
+            "type": "string:host-name-or-ip-address"
+          },
+          {
+            "description": "The brand/company the abuse is targeting.",
+            "in": "query",
+            "name": "target",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The earliest abuse ticket creation date to pull abuse tickets for",
+            "in": "query",
+            "name": "createdStart",
+            "required": false,
+            "type": "string:iso-datetime"
+          },
+          {
+            "description": "The latest abuse ticket creation date to pull abuse tickets for",
+            "in": "query",
+            "name": "createdEnd",
+            "required": false,
+            "type": "string:iso-datetime"
+          },
+          {
+            "default": 100,
+            "description": "Number of abuse ticket numbers to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:integer-positive"
+          },
+          {
+            "default": 0,
+            "description": "The earliest result set record number to pull abuse tickets for",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:integer-positive"
+          }
+        ],
         "path": "/v1/abuse/tickets",
         "pointer": "#/paths/~1v1~1abuse~1tickets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AbuseTicketList"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all abuse tickets ids that match user provided filters"
+        "summary": "List all abuse tickets ids that match user provided filters",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -44,8 +168,40 @@
         "name": "createTicket",
         "path": "/v1/abuse/tickets",
         "pointer": "#/paths/~1v1~1abuse~1tickets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AbuseTicketCreate"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "201",
+            "type": "AbuseTicketId"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new abuse ticket"
+        "summary": "Create a new abuse ticket",
+        "tags": [
+          "v1"
+        ]
       },
       {
         "deprecated": false,
@@ -53,45 +209,85 @@
         "kind": "operation",
         "method": "get",
         "name": "getTicketInfo",
+        "parameters": [
+          {
+            "description": "A unique abuse ticket identifier",
+            "in": "path",
+            "name": "ticketId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/abuse/tickets/{ticketId}",
         "pointer": "#/paths/~1v1~1abuse~1tickets~1{ticketId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AbuseTicket"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the abuse ticket data for a given ticket id"
+        "summary": "Return the abuse ticket data for a given ticket id",
+        "tags": [
+          "v1"
+        ]
       },
       {
+        "description": "The associated fields returned, given a unique abuse ticket id",
         "id": "schema:AbuseTicket",
         "kind": "schema",
-        "name": "AbuseTicket"
+        "name": "AbuseTicket",
+        "type": "object"
       },
       {
         "id": "schema:AbuseTicketCreate",
         "kind": "schema",
-        "name": "AbuseTicketCreate"
+        "name": "AbuseTicketCreate",
+        "type": "object"
       },
       {
+        "description": "The primary key of a newly created abuse ticket",
         "id": "schema:AbuseTicketId",
         "kind": "schema",
-        "name": "AbuseTicketId"
+        "name": "AbuseTicketId",
+        "type": "object"
       },
       {
         "id": "schema:AbuseTicketList",
         "kind": "schema",
-        "name": "AbuseTicketList"
+        "name": "AbuseTicketList",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:ErrorField",
         "kind": "schema",
-        "name": "ErrorField"
+        "name": "ErrorField",
+        "type": "object"
       },
       {
         "id": "schema:Pagination",
         "kind": "schema",
-        "name": "Pagination"
+        "name": "Pagination",
+        "type": "object"
       }
     ]
   },

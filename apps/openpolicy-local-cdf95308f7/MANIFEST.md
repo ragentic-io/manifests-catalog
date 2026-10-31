@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_github.com_open-policy-agent_op
 
 | | |
 | --- | --- |
-| Signed bundle | `b1b691f7c610a3bfcfd26872bbeeae4fdc08035034ad87e1984298e111e459df` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_github.com_open-policy-agent_op
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/` | postSimpleQuery | Execute a simple query |
-| GET | `/health` | getHealth | Health |
-| POST | `/v0/data/{path}` | getDocumentWithWebHook | Get a document (with webhook) |
-| POST | `/v1/compile` | postCompile | Compile |
-| GET | `/v1/config` | getConfig | Get configurations |
-| DELETE | `/v1/data/{path}` | deleteDocument | Delete a document |
-| GET | `/v1/data/{path}` | getDocument | Get a document |
-| PATCH | `/v1/data/{path}` | patchDocument | Update a document |
-| POST | `/v1/data/{path}` | getDocumentWithPath | Get a document (with input) |
-| PUT | `/v1/data/{path}` | putDocument | Create or overwrite a document |
-| GET | `/v1/policies` | getPolicies | List policies |
-| DELETE | `/v1/policies/{id}` | deletePolicyModule | Delete a policy module |
-| GET | `/v1/policies/{id}` | getPolicyModule | Get a policy module |
-| PUT | `/v1/policies/{id}` | putPolicyModule | Create or update a policy module |
-| GET | `/v1/query` | getQuery | Execute an ad-hoc query (simple) |
-| POST | `/v1/query` | postQuery | Execute an ad-hoc query (complex) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/` | postSimpleQuery | `pretty`, body*: queryInputSchema | — |  | Execute a simple query |
+| GET | `/health` | getHealth | `bundles`, `plugins` | — | yes | Health |
+| POST | `/v0/data/{path}` | getDocumentWithWebHook | `path`*, `pretty`, body*: webhookInputSchema | 200Result\|200Provenance\|200Metrics\|200Explanations |  | Get a document (with webhook) |
+| POST | `/v1/compile` | postCompile | `pretty`, `explain`, `metrics`, `instrument`, body: partialQuerySchema | 200Result\|200Metrics\|200Explanations |  | Compile |
+| GET | `/v1/config` | getConfig | `pretty` | 200SingleResult | yes | Get configurations |
+| GET | `/v1/data/{path}` | getDocument | `path`*, `input`, `pretty`, `provenance`, `explain`, `metrics`, `instrument` | 200Result\|200Provenance\|200Metrics\|200Explanations | yes | Get a document |
+| PUT | `/v1/data/{path}` | putDocument | `path`*, `If-None-Match`, body*: dataSchema | — |  | Create or overwrite a document |
+| POST | `/v1/data/{path}` | getDocumentWithPath | `path`*, `pretty`, `provenance`, `explain`, `metrics`, `instrument`, body*: inputSchema | 200Result\|200Provenance\|200Metrics\|200Explanations |  | Get a document (with input) |
+| DELETE | `/v1/data/{path}` | deleteDocument | `path`* | — |  | Delete a document |
+| PATCH | `/v1/data/{path}` | patchDocument | `path`*, body*: patchesSchema | — |  | Update a document |
+| GET | `/v1/policies` | getPolicies | `pretty` | 200Result | yes | List policies |
+| GET | `/v1/policies/{id}` | getPolicyModule | `id`*, `pretty` | 200Result | yes | Get a policy module |
+| PUT | `/v1/policies/{id}` | putPolicyModule | `id`*, `pretty`, `metrics`, body*: string | 200Result |  | Create or update a policy module |
+| DELETE | `/v1/policies/{id}` | deletePolicyModule | `id`*, `pretty` | 200Result\|200Provenance\|200Metrics\|200Explanations |  | Delete a policy module |
+| GET | `/v1/query` | getQuery | `q`*, `pretty`, `explain`, `metrics` | 200Result\|200Metrics\|200Explanations | yes | Execute an ad-hoc query (simple) |
+| POST | `/v1/query` | postQuery | `pretty`, `explain`, `metrics`, body*: qSchema | 200Result\|200Metrics\|200Explanations |  | Execute an ad-hoc query (complex) |

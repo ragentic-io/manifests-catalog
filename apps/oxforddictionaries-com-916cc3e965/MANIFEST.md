@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_OxfordWordsAPI_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `43704e1e7fac318bf72f178c9bedaa95eee4e99afe3a56efbfdca914da7a8b9c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_OxfordWordsAPI_prof
 
 36 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/domains/{source_domains_language}/{target_domains_language}` | get /domains/{source_domains_language}/{target_domains_language} | Lists available domains in a bilingual dataset |
-| GET | `/domains/{source_language}` | get /domains/{source_language} | Lists available domains in a monolingual dataset |
-| GET | `/entries/{source_language}/{word_id}/sentences` | get /entries/{source_language}/{word_id}/sentences | Retrieve corpus sentences for a given word |
-| GET | `/entries/{source_lang}/{word_id}` | get /entries/{source_lang}/{word_id} | Retrieve dictionary information for a given word |
-| GET | `/entries/{source_lang}/{word_id}/antonyms` | get /entries/{source_lang}/{word_id}/antonyms | Retrieve words that mean the opposite |
-| GET | `/entries/{source_lang}/{word_id}/regions={region}` | get /entries/{source_lang}/{word_id}/regions={region} | Specify GB or US dictionary for English entry search |
-| GET | `/entries/{source_lang}/{word_id}/synonyms` | get /entries/{source_lang}/{word_id}/synonyms | Retrieve words that are similar |
-| GET | `/entries/{source_lang}/{word_id}/synonyms;antonyms` | get /entries/{source_lang}/{word_id}/synonyms;antonyms | Retrieve synonyms and antonyms for a given word |
-| GET | `/entries/{source_lang}/{word_id}/{filters}` | get /entries/{source_lang}/{word_id}/{filters} | Apply filters to response |
-| GET | `/entries/{source_translation_language}/{word_id}/translations={target_translation_language}` | get /entries/{source_translation_language}/{word_id}/translations={target_translation_language} | Retrieve translation for a given word |
-| GET | `/filters` | get /filters | Lists available filters |
-| GET | `/filters/{endpoint}` | get /filters/{endpoint} | Lists available filters for specific endpoint |
-| GET | `/grammaticalFeatures/{source_language}` | get /grammaticalFeatures/{source_language} | Lists available grammatical features in a dataset |
-| GET | `/inflections/{source_lang}/{word_id}/{filters}` | get /inflections/{source_lang}/{word_id}/{filters} | Check a word exists in the dictionary and retrieve its root form |
-| GET | `/languages` | get /languages | Lists available dictionaries |
-| GET | `/lexicalcategories/{language}` | get /lexicalcategories/{language} | Lists available lexical categories in a dataset |
-| GET | `/regions/{source_language}` | get /regions/{source_language} | Lists available regions in a monolingual dataset |
-| GET | `/registers/{source_language}` | get /registers/{source_language} | Lists available registers in a monolingual dataset |
-| GET | `/registers/{source_register_language}/{target_register_language}` | get /registers/{source_register_language}/{target_register_language} | Lists available registers in a bilingual dataset |
-| GET | `/search/{source_lang}` | get /search/{source_lang} | Retrieve possible matches to input |
-| GET | `/search/{source_search_language}/translations={target_search_language}` | get /search/{source_search_language}/translations={target_search_language} | Retrieve possible translation matches to input |
-| GET | `/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/` | get /stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/ | Retrieve the frequency of ngrams (1-4) derived from a corpus |
-| GET | `/stats/frequency/word/{source_lang}/` | get /stats/frequency/word/{source_lang}/ | Retrieve the frequency of a word derived from a corpus. |
-| GET | `/stats/frequency/words/{source_lang}/` | get /stats/frequency/words/{source_lang}/ | Retrieve a list of frequencies of a word/words derived from a corpus. |
-| GET | `/wordlist/{source_lang}/{filters_advanced}` | get /wordlist/{source_lang}/{filters_advanced} | Retrieve list of words for category with advanced options |
-| GET | `/wordlist/{source_lang}/{filters_basic}` | get /wordlist/{source_lang}/{filters_basic} | Retrieve a list of words in a category |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/domains/{source_domains_language}/{target_domains_language}` | get /domains/{source_domains_language}/{target_domains_language} | `source_domains_language`*, `target_domains_language`*, `app_id`*, `app_key`* | UtilityLabels | yes | Lists available domains in a bilingual dataset |
+| GET | `/domains/{source_language}` | get /domains/{source_language} | `source_language`*, `app_id`*, `app_key`* | UtilityLabels | yes | Lists available domains in a monolingual dataset |
+| GET | `/entries/{source_language}/{word_id}/sentences` | get /entries/{source_language}/{word_id}/sentences | `source_language`*, `word_id`*, `app_id`*, `app_key`* | SentencesResults | yes | Retrieve corpus sentences for a given word |
+| GET | `/entries/{source_lang}/{word_id}` | get /entries/{source_lang}/{word_id} | `source_lang`*, `word_id`*, `app_id`*, `app_key`* | RetrieveEntry | yes | Retrieve dictionary information for a given word |
+| GET | `/entries/{source_lang}/{word_id}/antonyms` | get /entries/{source_lang}/{word_id}/antonyms | `source_lang`*, `word_id`*, `app_id`*, `app_key`* | Thesaurus | yes | Retrieve words that mean the opposite |
+| GET | `/entries/{source_lang}/{word_id}/regions={region}` | get /entries/{source_lang}/{word_id}/regions={region} | `source_lang`*, `word_id`*, `region`*, `app_id`*, `app_key`* | RetrieveEntry | yes | Specify GB or US dictionary for English entry search |
+| GET | `/entries/{source_lang}/{word_id}/synonyms` | get /entries/{source_lang}/{word_id}/synonyms | `source_lang`*, `word_id`*, `app_id`*, `app_key`* | Thesaurus | yes | Retrieve words that are similar |
+| GET | `/entries/{source_lang}/{word_id}/synonyms;antonyms` | get /entries/{source_lang}/{word_id}/synonyms;antonyms | `source_lang`*, `word_id`*, `app_id`*, `app_key`* | Thesaurus | yes | Retrieve synonyms and antonyms for a given word |
+| GET | `/entries/{source_lang}/{word_id}/{filters}` | get /entries/{source_lang}/{word_id}/{filters} | `source_lang`*, `word_id`*, `filters`*, `app_id`*, `app_key`* | RetrieveEntry | yes | Apply filters to response |
+| GET | `/entries/{source_translation_language}/{word_id}/translations={target_translation_language}` | get /entries/{source_translation_language}/{word_id}/translations={target_translation_language} | `source_translation_language`*, `word_id`*, `target_translation_language`*, `app_id`*, `app_key`* | RetrieveEntry | yes | Retrieve translation for a given word |
+| GET | `/filters` | get /filters | `app_id`*, `app_key`* | Filters | yes | Lists available filters |
+| GET | `/filters/{endpoint}` | get /filters/{endpoint} | `endpoint`*, `app_id`*, `app_key`* | Filters | yes | Lists available filters for specific endpoint |
+| GET | `/grammaticalFeatures/{source_language}` | get /grammaticalFeatures/{source_language} | `source_language`*, `app_id`*, `app_key`* | UtilityLabels | yes | Lists available grammatical features in a dataset |
+| GET | `/inflections/{source_lang}/{word_id}/{filters}` | get /inflections/{source_lang}/{word_id}/{filters} | `source_lang`*, `filters`*, `word_id`*, `app_id`*, `app_key`* | Lemmatron | yes | Check a word exists in the dictionary and retrieve its root form |
+| GET | `/languages` | get /languages | `sourceLanguage`, `targetLanguage`, `app_id`*, `app_key`* | Languages | yes | Lists available dictionaries |
+| GET | `/lexicalcategories/{language}` | get /lexicalcategories/{language} | `language`*, `app_id`*, `app_key`* | UtilityLabels | yes | Lists available lexical categories in a dataset |
+| GET | `/regions/{source_language}` | get /regions/{source_language} | `source_language`*, `app_id`*, `app_key`* | Regions | yes | Lists available regions in a monolingual dataset |
+| GET | `/registers/{source_language}` | get /registers/{source_language} | `source_language`*, `app_id`*, `app_key`* | UtilityLabels | yes | Lists available registers in a monolingual dataset |
+| GET | `/registers/{source_register_language}/{target_register_language}` | get /registers/{source_register_language}/{target_register_language} | `source_register_language`*, `target_register_language`*, `app_id`*, `app_key`* | UtilityLabels | yes | Lists available registers in a bilingual dataset |
+| GET | `/search/{source_lang}` | get /search/{source_lang} | `source_lang`*, `q`, `prefix`, `regions`, `limit`, `offset`, `app_id`*, `app_key`* | Wordlist | yes | Retrieve possible matches to input |
+| GET | `/search/{source_search_language}/translations={target_search_language}` | get /search/{source_search_language}/translations={target_search_language} | `source_search_language`*, `target_search_language`*, `q`, `prefix`, `regions`, `limit`, `offset`, `app_id`*, `app_key`* | Wordlist | yes | Retrieve possible translation matches to input |
+| GET | `/stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/` | get /stats/frequency/ngrams/{source_lang}/{corpus}/{ngram-size}/ | `source_lang`*, `corpus`*, `ngram-size`*, `tokens`, `contains`, `punctuation`, `format`, `minFrequency`, `maxFrequency`, `minDocumentFrequency`, `maxDocumentFrequency`, `collate`, `sort`, `offset`, `limit`, `app_id`*, `app_key`* | NgramsResult | yes | Retrieve the frequency of ngrams (1-4) derived from a corpus |
+| GET | `/stats/frequency/word/{source_lang}/` | get /stats/frequency/word/{source_lang}/ | `source_lang`*, `corpus`, `wordform`, `trueCase`, `lemma`, `lexicalCategory`, `app_id`*, `app_key`* | StatsWordResult | yes | Retrieve the frequency of a word derived from a corpus. |
+| GET | `/stats/frequency/words/{source_lang}/` | get /stats/frequency/words/{source_lang}/ | `source_lang`*, `corpus`, `wordform`, `trueCase`, `lemma`, `lexicalCategory`, `grammaticalFeatures`, `sort`, `collate`, `minFrequency`, `maxFrequency`, `minNormalizedFrequency`, `maxNormalizedFrequency`, `offset`, `limit`, `app_id`*, `app_key`* | StatsWordResultList | yes | Retrieve a list of frequencies of a word/words derived from a corpus. |
+| GET | `/wordlist/{source_lang}/{filters_advanced}` | get /wordlist/{source_lang}/{filters_advanced} | `source_lang`*, `filters_advanced`*, `exclude`, `exclude_senses`, `exclude_prime_senses`, `word_length`, `prefix`, `exact`, `limit`, `offset`, `app_id`*, `app_key`* | Wordlist | yes | Retrieve list of words for category with advanced options |
+| GET | `/wordlist/{source_lang}/{filters_basic}` | get /wordlist/{source_lang}/{filters_basic} | `source_lang`*, `filters_basic`*, `limit`, `offset`, `app_id`*, `app_key`* | Wordlist | yes | Retrieve a list of words in a category |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pandascore_co_apple-touch-icon.
 
 | | |
 | --- | --- |
-| Signed bundle | `690032e07ab7d74d39f77c00fe2517b048609549e3ec53d535ba4dcb48816e23` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,61 +34,63 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pandascore_co_apple-touch-icon.
 
 393 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/additions` | get_additions | List additions |
-| GET | `/changes` | get_changes | List changes |
-| GET | `/deletions` | get_deletions | List deletions |
-| GET | `/incidents` | get_incidents | List changes, additions and deletions |
-| GET | `/leagues` | get_leagues | List leagues |
-| GET | `/leagues/{league_id_or_slug}` | get_leagues_leagueIdOrSlug | Get a league |
-| GET | `/leagues/{league_id_or_slug}/matches` | get_leagues_leagueIdOrSlug_matches | Get matches for a league |
-| GET | `/leagues/{league_id_or_slug}/matches/past` | get_leagues_leagueIdOrSlug_matches_past | Get past matches for league |
-| GET | `/leagues/{league_id_or_slug}/matches/running` | get_leagues_leagueIdOrSlug_matches_running | Get running matches for league |
-| GET | `/leagues/{league_id_or_slug}/matches/upcoming` | get_leagues_leagueIdOrSlug_matches_upcoming | Get upcoming matches for league |
-| GET | `/leagues/{league_id_or_slug}/series` | get_leagues_leagueIdOrSlug_series | List series of a league |
-| GET | `/leagues/{league_id_or_slug}/tournaments` | get_leagues_leagueIdOrSlug_tournaments | Get tournaments for a league |
-| GET | `/lives` | get_lives | List lives matches |
-| GET | `/matches` | get_matches | List matches |
-| GET | `/matches/past` | get_matches_past | Get past matches |
-| GET | `/matches/running` | get_matches_running | Get running matches |
-| GET | `/matches/upcoming` | get_matches_upcoming | Get upcoming matches |
-| GET | `/matches/{match_id_or_slug}` | get_matches_matchIdOrSlug | Get a match |
-| GET | `/matches/{match_id_or_slug}/opponents` | get_matches_matchIdOrSlug_opponents | Get match's opponents |
-| GET | `/players` | get_players | List players |
-| GET | `/players/{player_id_or_slug}` | get_players_playerIdOrSlug | Get a player |
-| GET | `/players/{player_id_or_slug}/matches` | get_players_playerIdOrSlug_matches | Get matches for a player |
-| GET | `/series` | get_series | List series |
-| GET | `/series/past` | get_series_past | Get past series |
-| GET | `/series/running` | get_series_running | Get running series |
-| GET | `/series/upcoming` | get_series_upcoming | Get upcoming series |
-| GET | `/series/{serie_id_or_slug}` | get_series_serieIdOrSlug | Get a serie |
-| GET | `/series/{serie_id_or_slug}/matches` | get_series_serieIdOrSlug_matches | Get matches for a serie |
-| GET | `/series/{serie_id_or_slug}/matches/past` | get_series_serieIdOrSlug_matches_past | Get past matches for serie |
-| GET | `/series/{serie_id_or_slug}/matches/running` | get_series_serieIdOrSlug_matches_running | Get running matches for serie |
-| GET | `/series/{serie_id_or_slug}/matches/upcoming` | get_series_serieIdOrSlug_matches_upcoming | Get upcoming matches for serie |
-| GET | `/series/{serie_id_or_slug}/players` | get_series_serieIdOrSlug_players | Get players for a serie |
-| GET | `/series/{serie_id_or_slug}/tournaments` | get_series_serieIdOrSlug_tournaments | Get tournaments for a serie |
-| GET | `/teams` | get_teams | List teams |
-| GET | `/teams/{team_id_or_slug}` | get_teams_teamIdOrSlug | Get a team |
-| GET | `/teams/{team_id_or_slug}/leagues` | get_teams_teamIdOrSlug_leagues | Get leagues for a team |
-| GET | `/teams/{team_id_or_slug}/matches` | get_teams_teamIdOrSlug_matches | Get matches for team |
-| GET | `/teams/{team_id_or_slug}/series` | get_teams_teamIdOrSlug_series | Get series for a team |
-| GET | `/teams/{team_id_or_slug}/tournaments` | get_teams_teamIdOrSlug_tournaments | Get tournaments for a team |
-| GET | `/tournaments` | get_tournaments | List tournaments |
-| GET | `/tournaments/past` | get_tournaments_past | Get past tournaments |
-| GET | `/tournaments/running` | get_tournaments_running | Get running tournaments |
-| GET | `/tournaments/upcoming` | get_tournaments_upcoming | Get upcoming tournaments |
-| GET | `/tournaments/{tournament_id_or_slug}` | get_tournaments_tournamentIdOrSlug | Get a tournament |
-| GET | `/tournaments/{tournament_id_or_slug}/brackets` | get_tournaments_tournamentIdOrSlug_brackets | Get a tournament's brackets |
-| GET | `/tournaments/{tournament_id_or_slug}/matches` | get_tournaments_tournamentIdOrSlug_matches | Get matches for tournament |
-| GET | `/tournaments/{tournament_id_or_slug}/players` | get_tournaments_tournamentIdOrSlug_players | Get players for a tournament |
-| GET | `/tournaments/{tournament_id_or_slug}/rosters` | get_tournaments_tournamentIdOrSlug_rosters | Get rosters for a tournament |
-| GET | `/tournaments/{tournament_id_or_slug}/standings` | get_tournaments_tournamentIdOrSlug_standings | Get tournament standings |
-| GET | `/tournaments/{tournament_id_or_slug}/teams` | get_tournaments_tournamentIdOrSlug_teams | Get teams for a tournament |
-| GET | `/videogames` | get_videogames | List videogames |
-| GET | `/videogames/{videogame_id_or_slug}` | get_videogames_videogameIdOrSlug | Get a videogame |
-| GET | `/videogames/{videogame_id_or_slug}/leagues` | get_videogames_videogameIdOrSlug_leagues | — |
-| GET | `/videogames/{videogame_id_or_slug}/series` | get_videogames_videogameIdOrSlug_series | List series for a videogame |
-| GET | `/videogames/{videogame_id_or_slug}/tournaments` | get_videogames_videogameIdOrSlug_tournaments | Get tournaments for a videogame |
-| GET | `/videogames/{videogame_id_or_slug}/versions` | get_videogames_videogameIdOrSlug_versions | List videogame versions |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/additions` | get_additions | `page`, `per_page`, `type`, `since`, `videogame` | AdditionIncidents | yes | List additions |
+| GET | `/changes` | get_changes | `page`, `per_page`, `type`, `since`, `videogame` | ChangeIncidents | yes | List changes |
+| GET | `/deletions` | get_deletions | `page`, `per_page`, `type`, `since`, `videogame` | DeletionIncidents | yes | List deletions |
+| GET | `/incidents` | get_incidents | `page`, `per_page`, `type`, `since`, `videogame` | Incidents | yes | List changes, additions and deletions |
+| GET | `/leagues` | get_leagues | `search`, `sort`, `range`, `filter`, `page`, `per_page` | Leagues | yes | List leagues |
+| GET | `/leagues/{league_id_or_slug}` | get_leagues_leagueIdOrSlug | `league_id_or_slug`* | League | yes | Get a league |
+| GET | `/leagues/{league_id_or_slug}/matches` | get_leagues_leagueIdOrSlug_matches | `league_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get matches for a league |
+| GET | `/leagues/{league_id_or_slug}/matches/past` | get_leagues_leagueIdOrSlug_matches_past | `league_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get past matches for league |
+| GET | `/leagues/{league_id_or_slug}/matches/running` | get_leagues_leagueIdOrSlug_matches_running | `league_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get running matches for league |
+| GET | `/leagues/{league_id_or_slug}/matches/upcoming` | get_leagues_leagueIdOrSlug_matches_upcoming | `league_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get upcoming matches for league |
+| GET | `/leagues/{league_id_or_slug}/series` | get_leagues_leagueIdOrSlug_series | `league_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | List series of a league |
+| GET | `/leagues/{league_id_or_slug}/tournaments` | get_leagues_leagueIdOrSlug_tournaments | `league_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | Get tournaments for a league |
+| GET | `/lives` | get_lives | `page`, `per_page` | Lives | yes | List lives matches |
+| GET | `/matches` | get_matches | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | List matches |
+| GET | `/matches/past` | get_matches_past | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get past matches |
+| GET | `/matches/running` | get_matches_running | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get running matches |
+| GET | `/matches/upcoming` | get_matches_upcoming | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get upcoming matches |
+| GET | `/matches/{match_id_or_slug}` | get_matches_matchIdOrSlug | `match_id_or_slug`* | Match | yes | Get a match |
+| GET | `/matches/{match_id_or_slug}/opponents` | get_matches_matchIdOrSlug_opponents | `match_id_or_slug`* | MatchOpponentsObject | yes | Get match's opponents |
+| GET | `/players` | get_players | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Players | yes | List players |
+| GET | `/players/{player_id_or_slug}` | get_players_playerIdOrSlug | `player_id_or_slug`* | Player | yes | Get a player |
+| GET | `/players/{player_id_or_slug}/matches` | get_players_playerIdOrSlug_matches | `player_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get matches for a player |
+| GET | `/series` | get_series | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | List series |
+| GET | `/series/past` | get_series_past | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | Get past series |
+| GET | `/series/running` | get_series_running | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | Get running series |
+| GET | `/series/upcoming` | get_series_upcoming | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | Get upcoming series |
+| GET | `/series/{serie_id_or_slug}` | get_series_serieIdOrSlug | `serie_id_or_slug`* | Serie | yes | Get a serie |
+| GET | `/series/{serie_id_or_slug}/matches` | get_series_serieIdOrSlug_matches | `serie_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get matches for a serie |
+| GET | `/series/{serie_id_or_slug}/matches/past` | get_series_serieIdOrSlug_matches_past | `serie_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get past matches for serie |
+| GET | `/series/{serie_id_or_slug}/matches/running` | get_series_serieIdOrSlug_matches_running | `serie_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get running matches for serie |
+| GET | `/series/{serie_id_or_slug}/matches/upcoming` | get_series_serieIdOrSlug_matches_upcoming | `serie_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get upcoming matches for serie |
+| GET | `/series/{serie_id_or_slug}/players` | get_series_serieIdOrSlug_players | `filter`, `search`, `sort`, `range`, `page`, `per_page`, `serie_id_or_slug`* | Players | yes | Get players for a serie |
+| GET | `/series/{serie_id_or_slug}/tournaments` | get_series_serieIdOrSlug_tournaments | `serie_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | Get tournaments for a serie |
+| GET | `/teams` | get_teams | `filter`, `search`, `sort`, `range`, `page`, `per_page` | Teams | yes | List teams |
+| GET | `/teams/{team_id_or_slug}` | get_teams_teamIdOrSlug | `team_id_or_slug`* | Team | yes | Get a team |
+| GET | `/teams/{team_id_or_slug}/leagues` | get_teams_teamIdOrSlug_leagues | `team_id_or_slug`*, `search`, `sort`, `range`, `filter`, `page`, `per_page` | Leagues | yes | Get leagues for a team |
+| GET | `/teams/{team_id_or_slug}/matches` | get_teams_teamIdOrSlug_matches | `team_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get matches for team |
+| GET | `/teams/{team_id_or_slug}/series` | get_teams_teamIdOrSlug_series | `team_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | Get series for a team |
+| GET | `/teams/{team_id_or_slug}/tournaments` | get_teams_teamIdOrSlug_tournaments | `team_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | Get tournaments for a team |
+| GET | `/tournaments` | get_tournaments | `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | List tournaments |
+| GET | `/tournaments/past` | get_tournaments_past | `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | Get past tournaments |
+| GET | `/tournaments/running` | get_tournaments_running | `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | Get running tournaments |
+| GET | `/tournaments/upcoming` | get_tournaments_upcoming | `filter`, `search`, `sort`, `range`, `page`, `per_page` | ShortTournaments | yes | Get upcoming tournaments |
+| GET | `/tournaments/{tournament_id_or_slug}` | get_tournaments_tournamentIdOrSlug | `tournament_id_or_slug`* | Tournament | yes | Get a tournament |
+| GET | `/tournaments/{tournament_id_or_slug}/brackets` | get_tournaments_tournamentIdOrSlug_brackets | `tournament_id_or_slug`*, `filter`, `range`, `sort`, `search`, `page`, `per_page` | Brackets | yes | Get a tournament's brackets |
+| GET | `/tournaments/{tournament_id_or_slug}/matches` | get_tournaments_tournamentIdOrSlug_matches | `tournament_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Matches | yes | Get matches for tournament |
+| GET | `/tournaments/{tournament_id_or_slug}/players` | get_tournaments_tournamentIdOrSlug_players | `filter`, `search`, `sort`, `range`, `page`, `per_page`, `tournament_id_or_slug`* | Players | yes | Get players for a tournament |
+| GET | `/tournaments/{tournament_id_or_slug}/rosters` | get_tournaments_tournamentIdOrSlug_rosters | `tournament_id_or_slug`* | TournamentRosters | yes | Get rosters for a tournament |
+| GET | `/tournaments/{tournament_id_or_slug}/standings` | get_tournaments_tournamentIdOrSlug_standings | `tournament_id_or_slug`*, `page`, `per_page` | Standings | yes | Get tournament standings |
+| GET | `/tournaments/{tournament_id_or_slug}/teams` | get_tournaments_tournamentIdOrSlug_teams | `tournament_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Teams | yes | Get teams for a tournament |
+| GET | `/videogames` | get_videogames | `page`, `per_page` | Videogames | yes | List videogames |
+| GET | `/videogames/{videogame_id_or_slug}` | get_videogames_videogameIdOrSlug | `videogame_id_or_slug`* | Videogame | yes | Get a videogame |
+| GET | `/videogames/{videogame_id_or_slug}/leagues` | get_videogames_videogameIdOrSlug_leagues | `videogame_id_or_slug`*, `search`, `sort`, `range`, `filter`, `page`, `per_page` | Leagues | yes | — |
+| GET | `/videogames/{videogame_id_or_slug}/series` | get_videogames_videogameIdOrSlug_series | `videogame_id_or_slug`*, `filter`, `search`, `sort`, `range`, `page`, `per_page` | Series | yes | List series for a videogame |
+| GET | `/videogames/{videogame_id_or_slug}/tournaments` | get_videogames_videogameIdOrSlug_tournaments | `videogame_id_or_slug`*, `filter`, `range`, `sort`, `search`, `page`, `per_page` | ShortTournaments | yes | Get tournaments for a videogame |
+| GET | `/videogames/{videogame_id_or_slug}/versions` | get_videogames_videogameIdOrSlug_versions | `videogame_id_or_slug`*, `filter`, `range`, `sort`, `search`, `page`, `per_page` | ShortVideogameVersions | yes | List videogame versions |

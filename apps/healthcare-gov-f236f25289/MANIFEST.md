@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.healthcare.gov_images_logo.
 
 | | |
 | --- | --- |
-| Signed bundle | `6d0d2dc56cdbd4990ab7533fa88cf7d307f0fdd9b835411645bd0bd24fd4933c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.healthcare.gov_images_logo.
 
 11 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/articles{mediaTypeExtension}` | get /api/articles{mediaTypeExtension} | — |
-| GET | `/api/blog{mediaTypeExtension}` | get /api/blog{mediaTypeExtension} | — |
-| GET | `/api/glossary{mediaTypeExtension}` | get /api/glossary{mediaTypeExtension} | — |
-| GET | `/api/questions{mediaTypeExtension}` | get /api/questions{mediaTypeExtension} | — |
-| GET | `/api/states{mediaTypeExtension}` | get /api/states{mediaTypeExtension} | — |
-| GET | `/api/topics{mediaTypeExtension}` | get /api/topics{mediaTypeExtension} | — |
-| GET | `/blog/{pageName}{mediaTypeExtension}` | get /blog/{pageName}{mediaTypeExtension} | — |
-| GET | `/es/blog/{pageName}{mediaTypeExtension}` | get /es/blog/{pageName}{mediaTypeExtension} | — |
-| GET | `/es/glossary/{pageName}{mediaTypeExtension}` | get /es/glossary/{pageName}{mediaTypeExtension} | — |
-| GET | `/es/question/{pageName}{mediaTypeExtension}` | get /es/question/{pageName}{mediaTypeExtension} | — |
-| GET | `/es/{pageName}{mediaTypeExtension}` | get /es/{pageName}{mediaTypeExtension} | — |
-| GET | `/es/{stateName}{mediaTypeExtension}` | get /es/{stateName}{mediaTypeExtension} | — |
-| GET | `/glossary/{pageName}{mediaTypeExtension}` | get /glossary/{pageName}{mediaTypeExtension} | — |
-| GET | `/question/{pageName}{mediaTypeExtension}` | get /question/{pageName}{mediaTypeExtension} | — |
-| GET | `/{pageName}{mediaTypeExtension}` | get /{pageName}{mediaTypeExtension} | — |
-| GET | `/{stateName}{mediaTypeExtension}` | get /{stateName}{mediaTypeExtension} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/articles{mediaTypeExtension}` | get /api/articles{mediaTypeExtension} | `mediaTypeExtension`* | articlesList | yes | — |
+| GET | `/api/blog{mediaTypeExtension}` | get /api/blog{mediaTypeExtension} | `mediaTypeExtension`* | blogList | yes | — |
+| GET | `/api/glossary{mediaTypeExtension}` | get /api/glossary{mediaTypeExtension} | `mediaTypeExtension`* | glossaryList | yes | — |
+| GET | `/api/questions{mediaTypeExtension}` | get /api/questions{mediaTypeExtension} | `mediaTypeExtension`* | questionsList | yes | — |
+| GET | `/api/states{mediaTypeExtension}` | get /api/states{mediaTypeExtension} | `mediaTypeExtension`* | statesList | yes | — |
+| GET | `/api/topics{mediaTypeExtension}` | get /api/topics{mediaTypeExtension} | `mediaTypeExtension`* | topicsList | yes | — |
+| GET | `/blog/{pageName}{mediaTypeExtension}` | get /blog/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | blogPage | yes | — |
+| GET | `/es/blog/{pageName}{mediaTypeExtension}` | get /es/blog/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | blogPage | yes | — |
+| GET | `/es/glossary/{pageName}{mediaTypeExtension}` | get /es/glossary/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | glossaryPage | yes | — |
+| GET | `/es/question/{pageName}{mediaTypeExtension}` | get /es/question/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | questionPage | yes | — |
+| GET | `/es/{pageName}{mediaTypeExtension}` | get /es/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | page | yes | — |
+| GET | `/es/{stateName}{mediaTypeExtension}` | get /es/{stateName}{mediaTypeExtension} | `mediaTypeExtension`*, `stateName`* | statePage | yes | — |
+| GET | `/glossary/{pageName}{mediaTypeExtension}` | get /glossary/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | glossaryPage | yes | — |
+| GET | `/question/{pageName}{mediaTypeExtension}` | get /question/{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | questionPage | yes | — |
+| GET | `/{pageName}{mediaTypeExtension}` | get /{pageName}{mediaTypeExtension} | `mediaTypeExtension`*, `pageName`* | page | yes | — |
+| GET | `/{stateName}{mediaTypeExtension}` | get /{stateName}{mediaTypeExtension} | `mediaTypeExtension`*, `stateName`* | statePage | yes | — |

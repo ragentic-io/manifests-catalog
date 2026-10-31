@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_visualcrossing_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `9679f9fcacda5db517fa3fee1f96ab02f3f8cc52031e7caf63e31ffb71b6df11` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,10 +32,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_visualcrossing_prof
 
 ## Operations (5)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/VisualCrossingWebServices/rest/services/timeline/{location}` | get /VisualCrossingWebServices/rest/services/timeline/{location} | Historical and Forecast Weather API |
-| GET | `/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}` | get /VisualCrossingWebServices/rest/services/timeline/{location}/{startdate} | Historical and Forecast Weather API |
-| GET | `/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate}` | get /VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate} | Historical and Forecast Weather API |
-| GET | `/VisualCrossingWebServices/rest/services/weatherdata/forecast` | get /VisualCrossingWebServices/rest/services/weatherdata/forecast | Weather Forecast API |
-| GET | `/VisualCrossingWebServices/rest/services/weatherdata/history` | get /VisualCrossingWebServices/rest/services/weatherdata/history | Retrieves hourly or daily historical weather records. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/VisualCrossingWebServices/rest/services/timeline/{location}` | get /VisualCrossingWebServices/rest/services/timeline/{location} | `location`*, `contentType`, `unitGroup`, `include`, `lang`, `key`* | — | yes | Historical and Forecast Weather API |
+| GET | `/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}` | get /VisualCrossingWebServices/rest/services/timeline/{location}/{startdate} | `location`*, `startdate`*, `contentType`, `unitGroup`, `include`, `lang`, `key`* | — | yes | Historical and Forecast Weather API |
+| GET | `/VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate}` | get /VisualCrossingWebServices/rest/services/timeline/{location}/{startdate}/{enddate} | `location`*, `startdate`*, `enddate`*, `contentType`, `unitGroup`, `include`, `lang`, `key`* | — | yes | Historical and Forecast Weather API |
+| GET | `/VisualCrossingWebServices/rest/services/weatherdata/forecast` | get /VisualCrossingWebServices/rest/services/weatherdata/forecast | `sendAsDatasource`, `allowAsynch`, `shortColumnNames`, `locations`, `aggregateHours`, `contentType`, `unitGroup`, `key` | — | yes | Weather Forecast API |
+| GET | `/VisualCrossingWebServices/rest/services/weatherdata/history` | get /VisualCrossingWebServices/rest/services/weatherdata/history | `maxDistance`, `shortColumnNames`, `endDateTime`, `aggregateHours`, `collectStationContributions`, `startDateTime`, `maxStations`, `allowAsynch`, `locations`, `includeNormals`, `contentType`, `unitGroup`, `key` | — | yes | Retrieves hourly or daily historical weather records. |

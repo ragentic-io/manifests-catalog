@@ -22,12 +22,35 @@
       },
       {
         "deprecated": false,
+        "description": "Checks the user's emailed code is valid.",
         "id": "operation:post:/checkCode",
         "kind": "operation",
         "method": "post",
         "name": "post /checkCode",
         "path": "/checkCode",
         "pointer": "#/paths/~1checkCode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -37,12 +60,35 @@
       },
       {
         "deprecated": false,
+        "description": "This request send's a code to the given email address, which should be returned to check it is correct.",
         "id": "operation:post:/sendCode",
         "kind": "operation",
         "method": "post",
         "name": "post /sendCode",
         "path": "/sendCode",
         "pointer": "#/paths/~1sendCode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []

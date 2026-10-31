@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_56
 
 | | |
 | --- | --- |
-| Signed bundle | `cb1b13c423e0aba420544113031fa4a6c59d1fb85130bf9dbb6f7ae1e56c03cb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,139 +34,141 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_56
 
 869 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/App/ApiUsage/{applicationId}/` | App.GetApplicationApiUsage | — |
-| GET | `/App/FirstParty/` | App.GetBungieApplications | — |
-| GET | `/CommunityContent/Get/{sort}/{mediaFilter}/{page}/` | CommunityContent.GetCommunityContent | — |
-| GET | `/Content/GetContentById/{id}/{locale}/` | Content.GetContentById | — |
-| GET | `/Content/GetContentByTagAndType/{tag}/{type}/{locale}/` | Content.GetContentByTagAndType | — |
-| GET | `/Content/GetContentType/{type}/` | Content.GetContentType | — |
-| GET | `/Content/Rss/NewsArticles/{pageToken}/` | Content.RssNewsArticles | — |
-| GET | `/Content/Search/{locale}/` | Content.SearchContentWithText | — |
-| GET | `/Content/SearchContentByTagAndType/{tag}/{type}/{locale}/` | Content.SearchContentByTagAndType | — |
-| GET | `/Content/SearchHelpArticles/{searchtext}/{size}/` | Content.SearchHelpArticles | — |
-| POST | `/Destiny2/Actions/Items/EquipItem/` | Destiny2.EquipItem | — |
-| POST | `/Destiny2/Actions/Items/EquipItems/` | Destiny2.EquipItems | — |
-| POST | `/Destiny2/Actions/Items/InsertSocketPlug/` | Destiny2.InsertSocketPlug | — |
-| POST | `/Destiny2/Actions/Items/InsertSocketPlugFree/` | Destiny2.InsertSocketPlugFree | — |
-| POST | `/Destiny2/Actions/Items/PullFromPostmaster/` | Destiny2.PullFromPostmaster | — |
-| POST | `/Destiny2/Actions/Items/SetLockState/` | Destiny2.SetItemLockState | — |
-| POST | `/Destiny2/Actions/Items/SetTrackedState/` | Destiny2.SetQuestTrackedState | — |
-| POST | `/Destiny2/Actions/Items/TransferItem/` | Destiny2.TransferItem | — |
-| POST | `/Destiny2/Actions/Loadouts/ClearLoadout/` | Destiny2.ClearLoadout | — |
-| POST | `/Destiny2/Actions/Loadouts/EquipLoadout/` | Destiny2.EquipLoadout | — |
-| POST | `/Destiny2/Actions/Loadouts/SnapshotLoadout/` | Destiny2.SnapshotLoadout | — |
-| POST | `/Destiny2/Actions/Loadouts/UpdateLoadoutIdentifiers/` | Destiny2.UpdateLoadoutIdentifiers | — |
-| GET | `/Destiny2/Armory/Search/{type}/{searchTerm}/` | Destiny2.SearchDestinyEntities | — |
-| POST | `/Destiny2/Awa/AwaProvideAuthorizationResult/` | Destiny2.AwaProvideAuthorizationResult | — |
-| GET | `/Destiny2/Awa/GetActionToken/{correlationId}/` | Destiny2.AwaGetActionToken | — |
-| POST | `/Destiny2/Awa/Initialize/` | Destiny2.AwaInitializeRequest | — |
-| GET | `/Destiny2/Clan/ClanBannerDictionary/` | Destiny2.GetClanBannerSource | — |
-| GET | `/Destiny2/Clan/{groupId}/WeeklyRewardState/` | Destiny2.GetClanWeeklyRewardState | — |
-| GET | `/Destiny2/Manifest/` | Destiny2.GetDestinyManifest | — |
-| GET | `/Destiny2/Manifest/{entityType}/{hashIdentifier}/` | Destiny2.GetDestinyEntityDefinition | — |
-| GET | `/Destiny2/Milestones/` | Destiny2.GetPublicMilestones | — |
-| GET | `/Destiny2/Milestones/{milestoneHash}/Content/` | Destiny2.GetPublicMilestoneContent | — |
-| POST | `/Destiny2/SearchDestinyPlayerByBungieName/{membershipType}/` | Destiny2.SearchDestinyPlayerByBungieName | — |
-| GET | `/Destiny2/Stats/AggregateClanStats/{groupId}/` | Destiny2.GetClanAggregateStats | — |
-| GET | `/Destiny2/Stats/Definition/` | Destiny2.GetHistoricalStatsDefinition | — |
-| GET | `/Destiny2/Stats/Leaderboards/Clans/{groupId}/` | Destiny2.GetClanLeaderboards | — |
-| GET | `/Destiny2/Stats/Leaderboards/{membershipType}/{destinyMembershipId}/{characterId}/` | Destiny2.GetLeaderboardsForCharacter | — |
-| GET | `/Destiny2/Stats/PostGameCarnageReport/{activityId}/` | Destiny2.GetPostGameCarnageReport | — |
-| POST | `/Destiny2/Stats/PostGameCarnageReport/{activityId}/Report/` | Destiny2.ReportOffensivePostGameCarnageReportPlayer | — |
-| GET | `/Destiny2/Vendors/` | Destiny2.GetPublicVendors | — |
-| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/` | Destiny2.GetHistoricalStats | — |
-| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/` | Destiny2.GetActivityHistory | — |
-| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/` | Destiny2.GetDestinyAggregateActivityStats | — |
-| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/UniqueWeapons/` | Destiny2.GetUniqueWeaponHistory | — |
-| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Stats/` | Destiny2.GetHistoricalStatsForAccount | — |
-| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Stats/Leaderboards/` | Destiny2.GetLeaderboards | — |
-| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/` | Destiny2.GetProfile | — |
-| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/` | Destiny2.GetCharacter | — |
-| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Collectibles/{collectiblePresentationNodeHash}/` | Destiny2.GetCollectibleNodeDetails | — |
-| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/` | Destiny2.GetVendors | — |
-| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/` | Destiny2.GetVendor | — |
-| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Item/{itemInstanceId}/` | Destiny2.GetItem | — |
-| GET | `/Destiny2/{membershipType}/Profile/{membershipId}/LinkedProfiles/` | Destiny2.GetLinkedProfiles | — |
-| GET | `/Fireteam/Clan/{groupId}/ActiveCount/` | Fireteam.GetActivePrivateClanFireteamCount | — |
-| GET | `/Fireteam/Clan/{groupId}/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{publicOnly}/{page}/` | Fireteam.GetAvailableClanFireteams | — |
-| GET | `/Fireteam/Clan/{groupId}/My/{platform}/{includeClosed}/{page}/` | Fireteam.GetMyClanFireteams | — |
-| GET | `/Fireteam/Clan/{groupId}/Summary/{fireteamId}/` | Fireteam.GetClanFireteam | — |
-| GET | `/Fireteam/Search/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{page}/` | Fireteam.SearchPublicAvailableClanFireteams | — |
-| GET | `/Forum/GetCoreTopicsPaged/{page}/{sort}/{quickDate}/{categoryFilter}/` | Forum.GetCoreTopicsPaged | — |
-| GET | `/Forum/GetForumTagSuggestions/` | Forum.GetForumTagSuggestions | — |
-| GET | `/Forum/GetPostAndParent/{childPostId}/` | Forum.GetPostAndParent | — |
-| GET | `/Forum/GetPostAndParentAwaitingApproval/{childPostId}/` | Forum.GetPostAndParentAwaitingApproval | — |
-| GET | `/Forum/GetPostsThreadedPaged/{parentPostId}/{page}/{pageSize}/{replySize}/{getParentPost}/{rootThreadMode}/{sortMode}/` | Forum.GetPostsThreadedPaged | — |
-| GET | `/Forum/GetPostsThreadedPagedFromChild/{childPostId}/{page}/{pageSize}/{replySize}/{rootThreadMode}/{sortMode}/` | Forum.GetPostsThreadedPagedFromChild | — |
-| GET | `/Forum/GetTopicForContent/{contentId}/` | Forum.GetTopicForContent | — |
-| GET | `/Forum/GetTopicsPaged/{page}/{pageSize}/{group}/{sort}/{quickDate}/{categoryFilter}/` | Forum.GetTopicsPaged | — |
-| GET | `/Forum/Poll/{topicId}/` | Forum.GetPoll | — |
-| POST | `/Forum/Recruit/Summaries/` | Forum.GetRecruitmentThreadSummaries | — |
-| GET | `/GetAvailableLocales/` | .GetAvailableLocales | — |
-| GET | `/GlobalAlerts/` | .GetGlobalAlerts | — |
-| GET | `/GroupV2/GetAvailableAvatars/` | GroupV2.GetAvailableAvatars | — |
-| GET | `/GroupV2/GetAvailableThemes/` | GroupV2.GetAvailableThemes | — |
-| GET | `/GroupV2/GetUserClanInviteSetting/{mType}/` | GroupV2.GetUserClanInviteSetting | — |
-| GET | `/GroupV2/Name/{groupName}/{groupType}/` | GroupV2.GetGroupByName | — |
-| POST | `/GroupV2/NameV2/` | GroupV2.GetGroupByNameV2 | — |
-| POST | `/GroupV2/Recommended/{groupType}/{createDateRange}/` | GroupV2.GetRecommendedGroups | — |
-| GET | `/GroupV2/Recover/{membershipType}/{membershipId}/{groupType}/` | GroupV2.RecoverGroupForFounder | — |
-| POST | `/GroupV2/Search/` | GroupV2.GroupSearch | — |
-| GET | `/GroupV2/User/Potential/{membershipType}/{membershipId}/{filter}/{groupType}/` | GroupV2.GetPotentialGroupsForMember | — |
-| GET | `/GroupV2/User/{membershipType}/{membershipId}/{filter}/{groupType}/` | GroupV2.GetGroupsForMember | — |
-| GET | `/GroupV2/{groupId}/` | GroupV2.GetGroup | — |
-| POST | `/GroupV2/{groupId}/Admin/AbdicateFoundership/{membershipType}/{founderIdNew}/` | GroupV2.AbdicateFoundership | — |
-| GET | `/GroupV2/{groupId}/AdminsAndFounder/` | GroupV2.GetAdminsAndFounderOfGroup | — |
-| GET | `/GroupV2/{groupId}/Banned/` | GroupV2.GetBannedMembersOfGroup | — |
-| POST | `/GroupV2/{groupId}/Edit/` | GroupV2.EditGroup | — |
-| POST | `/GroupV2/{groupId}/EditClanBanner/` | GroupV2.EditClanBanner | — |
-| POST | `/GroupV2/{groupId}/EditFounderOptions/` | GroupV2.EditFounderOptions | — |
-| GET | `/GroupV2/{groupId}/Members/` | GroupV2.GetMembersOfGroup | — |
-| POST | `/GroupV2/{groupId}/Members/Approve/{membershipType}/{membershipId}/` | GroupV2.ApprovePending | — |
-| POST | `/GroupV2/{groupId}/Members/ApproveAll/` | GroupV2.ApproveAllPending | — |
-| POST | `/GroupV2/{groupId}/Members/ApproveList/` | GroupV2.ApprovePendingForList | — |
-| POST | `/GroupV2/{groupId}/Members/DenyAll/` | GroupV2.DenyAllPending | — |
-| POST | `/GroupV2/{groupId}/Members/DenyList/` | GroupV2.DenyPendingForList | — |
-| POST | `/GroupV2/{groupId}/Members/IndividualInvite/{membershipType}/{membershipId}/` | GroupV2.IndividualGroupInvite | — |
-| POST | `/GroupV2/{groupId}/Members/IndividualInviteCancel/{membershipType}/{membershipId}/` | GroupV2.IndividualGroupInviteCancel | — |
-| GET | `/GroupV2/{groupId}/Members/InvitedIndividuals/` | GroupV2.GetInvitedIndividuals | — |
-| GET | `/GroupV2/{groupId}/Members/Pending/` | GroupV2.GetPendingMemberships | — |
-| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/Ban/` | GroupV2.BanMember | — |
-| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/Kick/` | GroupV2.KickMember | — |
-| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/SetMembershipType/{memberType}/` | GroupV2.EditGroupMembership | — |
-| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/Unban/` | GroupV2.UnbanMember | — |
-| GET | `/GroupV2/{groupId}/OptionalConversations/` | GroupV2.GetGroupOptionalConversations | — |
-| POST | `/GroupV2/{groupId}/OptionalConversations/Add/` | GroupV2.AddOptionalConversation | — |
-| POST | `/GroupV2/{groupId}/OptionalConversations/Edit/{conversationId}/` | GroupV2.EditOptionalConversation | — |
-| GET | `/Settings/` | .GetCommonSettings | — |
-| GET | `/Social/Friends/` | Social.GetFriendList | — |
-| POST | `/Social/Friends/Add/{membershipId}/` | Social.IssueFriendRequest | — |
-| POST | `/Social/Friends/Remove/{membershipId}/` | Social.RemoveFriend | — |
-| GET | `/Social/Friends/Requests/` | Social.GetFriendRequestList | — |
-| POST | `/Social/Friends/Requests/Accept/{membershipId}/` | Social.AcceptFriendRequest | — |
-| POST | `/Social/Friends/Requests/Decline/{membershipId}/` | Social.DeclineFriendRequest | — |
-| POST | `/Social/Friends/Requests/Remove/{membershipId}/` | Social.RemoveFriendRequest | — |
-| GET | `/Social/PlatformFriends/{friendPlatform}/{page}/` | Social.GetPlatformFriendList | — |
-| POST | `/Tokens/Partner/ApplyMissingOffers/{partnerApplicationId}/{targetBnetMembershipId}/` | Tokens.ApplyMissingPartnerOffersWithoutClaim | — |
-| POST | `/Tokens/Partner/ClaimOffer/` | Tokens.ClaimPartnerOffer | — |
-| POST | `/Tokens/Partner/ForceDropsRepair/` | Tokens.ForceDropsRepair | — |
-| GET | `/Tokens/Partner/History/{partnerApplicationId}/{targetBnetMembershipId}/` | Tokens.GetPartnerOfferSkuHistory | — |
-| GET | `/Tokens/Partner/History/{targetBnetMembershipId}/Application/{partnerApplicationId}/` | Tokens.GetPartnerRewardHistory | — |
-| GET | `/Tokens/Rewards/BungieRewards/` | Tokens.GetBungieRewardsList | — |
-| GET | `/Tokens/Rewards/GetRewardsForPlatformUser/{membershipId}/{membershipType}/` | Tokens.GetBungieRewardsForPlatformUser | — |
-| GET | `/Tokens/Rewards/GetRewardsForUser/{membershipId}/` | Tokens.GetBungieRewardsForUser | — |
-| GET | `/Trending/Categories/` | Trending.GetTrendingCategories | — |
-| GET | `/Trending/Categories/{categoryId}/{pageNumber}/` | Trending.GetTrendingCategory | — |
-| GET | `/Trending/Details/{trendingEntryType}/{identifier}/` | Trending.GetTrendingEntryDetail | — |
-| GET | `/User/GetAvailableThemes/` | User.GetAvailableThemes | — |
-| GET | `/User/GetBungieNetUserById/{id}/` | User.GetBungieNetUserById | — |
-| GET | `/User/GetCredentialTypesForTargetAccount/{membershipId}/` | User.GetCredentialTypesForTargetAccount | — |
-| GET | `/User/GetMembershipFromHardLinkedCredential/{crType}/{credential}/` | User.GetMembershipFromHardLinkedCredential | — |
-| GET | `/User/GetMembershipsById/{membershipId}/{membershipType}/` | User.GetMembershipDataById | — |
-| GET | `/User/GetMembershipsForCurrentUser/` | User.GetMembershipDataForCurrentUser | — |
-| GET | `/User/GetSanitizedPlatformDisplayNames/{membershipId}/` | User.GetSanitizedPlatformDisplayNames | — |
-| POST | `/User/Search/GlobalName/{page}/` | User.SearchByGlobalNamePost | — |
-| GET | `/User/Search/Prefix/{displayNamePrefix}/{page}/` | User.SearchByGlobalNamePrefix | — |
-| GET | `/UserSystemOverrides/` | .GetUserSystemOverrides | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/App/ApiUsage/{applicationId}/` | App.GetApplicationApiUsage | `applicationId`*, `end`, `start` | object | yes | — |
+| GET | `/App/FirstParty/` | App.GetBungieApplications | — | object | yes | — |
+| GET | `/CommunityContent/Get/{sort}/{mediaFilter}/{page}/` | CommunityContent.GetCommunityContent | `mediaFilter`*, `page`*, `sort`* | object | yes | — |
+| GET | `/Content/GetContentById/{id}/{locale}/` | Content.GetContentById | `head`, `id`*, `locale`* | object | yes | — |
+| GET | `/Content/GetContentByTagAndType/{tag}/{type}/{locale}/` | Content.GetContentByTagAndType | `head`, `locale`*, `tag`*, `type`* | object | yes | — |
+| GET | `/Content/GetContentType/{type}/` | Content.GetContentType | `type`* | object | yes | — |
+| GET | `/Content/Rss/NewsArticles/{pageToken}/` | Content.RssNewsArticles | `categoryfilter`, `includebody`, `pageToken`* | object | yes | — |
+| GET | `/Content/Search/{locale}/` | Content.SearchContentWithText | `ctype`, `currentpage`, `head`, `locale`*, `searchtext`, `source`, `tag` | object | yes | — |
+| GET | `/Content/SearchContentByTagAndType/{tag}/{type}/{locale}/` | Content.SearchContentByTagAndType | `currentpage`, `head`, `itemsperpage`, `locale`*, `tag`*, `type`* | object | yes | — |
+| GET | `/Content/SearchHelpArticles/{searchtext}/{size}/` | Content.SearchHelpArticles | `searchtext`*, `size`* | object | yes | — |
+| POST | `/Destiny2/Actions/Items/EquipItem/` | Destiny2.EquipItem | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/EquipItems/` | Destiny2.EquipItems | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/InsertSocketPlug/` | Destiny2.InsertSocketPlug | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/InsertSocketPlugFree/` | Destiny2.InsertSocketPlugFree | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/PullFromPostmaster/` | Destiny2.PullFromPostmaster | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/SetLockState/` | Destiny2.SetItemLockState | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/SetTrackedState/` | Destiny2.SetQuestTrackedState | — | object |  | — |
+| POST | `/Destiny2/Actions/Items/TransferItem/` | Destiny2.TransferItem | — | object |  | — |
+| POST | `/Destiny2/Actions/Loadouts/ClearLoadout/` | Destiny2.ClearLoadout | — | object |  | — |
+| POST | `/Destiny2/Actions/Loadouts/EquipLoadout/` | Destiny2.EquipLoadout | — | object |  | — |
+| POST | `/Destiny2/Actions/Loadouts/SnapshotLoadout/` | Destiny2.SnapshotLoadout | — | object |  | — |
+| POST | `/Destiny2/Actions/Loadouts/UpdateLoadoutIdentifiers/` | Destiny2.UpdateLoadoutIdentifiers | — | object |  | — |
+| GET | `/Destiny2/Armory/Search/{type}/{searchTerm}/` | Destiny2.SearchDestinyEntities | `page`, `searchTerm`*, `type`* | object | yes | — |
+| POST | `/Destiny2/Awa/AwaProvideAuthorizationResult/` | Destiny2.AwaProvideAuthorizationResult | — | object |  | — |
+| GET | `/Destiny2/Awa/GetActionToken/{correlationId}/` | Destiny2.AwaGetActionToken | `correlationId`* | object | yes | — |
+| POST | `/Destiny2/Awa/Initialize/` | Destiny2.AwaInitializeRequest | — | object |  | — |
+| GET | `/Destiny2/Clan/ClanBannerDictionary/` | Destiny2.GetClanBannerSource | — | object | yes | — |
+| GET | `/Destiny2/Clan/{groupId}/WeeklyRewardState/` | Destiny2.GetClanWeeklyRewardState | `groupId`* | object | yes | — |
+| GET | `/Destiny2/Manifest/` | Destiny2.GetDestinyManifest | — | object | yes | — |
+| GET | `/Destiny2/Manifest/{entityType}/{hashIdentifier}/` | Destiny2.GetDestinyEntityDefinition | `entityType`*, `hashIdentifier`* | object | yes | — |
+| GET | `/Destiny2/Milestones/` | Destiny2.GetPublicMilestones | — | object | yes | — |
+| GET | `/Destiny2/Milestones/{milestoneHash}/Content/` | Destiny2.GetPublicMilestoneContent | `milestoneHash`* | object | yes | — |
+| POST | `/Destiny2/SearchDestinyPlayerByBungieName/{membershipType}/` | Destiny2.SearchDestinyPlayerByBungieName | `membershipType`* | object |  | — |
+| GET | `/Destiny2/Stats/AggregateClanStats/{groupId}/` | Destiny2.GetClanAggregateStats | `groupId`*, `modes` | object | yes | — |
+| GET | `/Destiny2/Stats/Definition/` | Destiny2.GetHistoricalStatsDefinition | — | object | yes | — |
+| GET | `/Destiny2/Stats/Leaderboards/Clans/{groupId}/` | Destiny2.GetClanLeaderboards | `groupId`*, `maxtop`, `modes`, `statid` | object | yes | — |
+| GET | `/Destiny2/Stats/Leaderboards/{membershipType}/{destinyMembershipId}/{characterId}/` | Destiny2.GetLeaderboardsForCharacter | `characterId`*, `destinyMembershipId`*, `maxtop`, `membershipType`*, `modes`, `statid` | object | yes | — |
+| GET | `/Destiny2/Stats/PostGameCarnageReport/{activityId}/` | Destiny2.GetPostGameCarnageReport | `activityId`* | object | yes | — |
+| POST | `/Destiny2/Stats/PostGameCarnageReport/{activityId}/Report/` | Destiny2.ReportOffensivePostGameCarnageReportPlayer | `activityId`* | object |  | — |
+| GET | `/Destiny2/Vendors/` | Destiny2.GetPublicVendors | `components` | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/` | Destiny2.GetHistoricalStats | `characterId`*, `dayend`, `daystart`, `destinyMembershipId`*, `groups`, `membershipType`*, `modes`, `periodType` | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/` | Destiny2.GetActivityHistory | `characterId`*, `count`, `destinyMembershipId`*, `membershipType`*, `mode`, `page` | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/` | Destiny2.GetDestinyAggregateActivityStats | `characterId`*, `destinyMembershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/UniqueWeapons/` | Destiny2.GetUniqueWeaponHistory | `characterId`*, `destinyMembershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Stats/` | Destiny2.GetHistoricalStatsForAccount | `destinyMembershipId`*, `groups`, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Account/{destinyMembershipId}/Stats/Leaderboards/` | Destiny2.GetLeaderboards | `destinyMembershipId`*, `maxtop`, `membershipType`*, `modes`, `statid` | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/` | Destiny2.GetProfile | `components`, `destinyMembershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/` | Destiny2.GetCharacter | `characterId`*, `components`, `destinyMembershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Collectibles/{collectiblePresentationNodeHash}/` | Destiny2.GetCollectibleNodeDetails | `characterId`*, `collectiblePresentationNodeHash`*, `components`, `destinyMembershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/` | Destiny2.GetVendors | `characterId`*, `components`, `destinyMembershipId`*, `filter`, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/` | Destiny2.GetVendor | `characterId`*, `components`, `destinyMembershipId`*, `membershipType`*, `vendorHash`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Item/{itemInstanceId}/` | Destiny2.GetItem | `components`, `destinyMembershipId`*, `itemInstanceId`*, `membershipType`* | object | yes | — |
+| GET | `/Destiny2/{membershipType}/Profile/{membershipId}/LinkedProfiles/` | Destiny2.GetLinkedProfiles | `getAllMemberships`, `membershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Fireteam/Clan/{groupId}/ActiveCount/` | Fireteam.GetActivePrivateClanFireteamCount | `groupId`* | object | yes | — |
+| GET | `/Fireteam/Clan/{groupId}/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{publicOnly}/{page}/` | Fireteam.GetAvailableClanFireteams | `activityType`*, `dateRange`*, `excludeImmediate`, `groupId`*, `langFilter`, `page`*, `platform`*, `publicOnly`*, `slotFilter`* | object | yes | — |
+| GET | `/Fireteam/Clan/{groupId}/My/{platform}/{includeClosed}/{page}/` | Fireteam.GetMyClanFireteams | `groupFilter`, `groupId`*, `includeClosed`*, `langFilter`, `page`*, `platform`* | object | yes | — |
+| GET | `/Fireteam/Clan/{groupId}/Summary/{fireteamId}/` | Fireteam.GetClanFireteam | `fireteamId`*, `groupId`* | object | yes | — |
+| GET | `/Fireteam/Search/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{page}/` | Fireteam.SearchPublicAvailableClanFireteams | `activityType`*, `dateRange`*, `excludeImmediate`, `langFilter`, `page`*, `platform`*, `slotFilter`* | object | yes | — |
+| GET | `/Forum/GetCoreTopicsPaged/{page}/{sort}/{quickDate}/{categoryFilter}/` | Forum.GetCoreTopicsPaged | `categoryFilter`*, `locales`, `page`*, `quickDate`*, `sort`* | object | yes | — |
+| GET | `/Forum/GetForumTagSuggestions/` | Forum.GetForumTagSuggestions | `partialtag` | object | yes | — |
+| GET | `/Forum/GetPostAndParent/{childPostId}/` | Forum.GetPostAndParent | `childPostId`*, `showbanned` | object | yes | — |
+| GET | `/Forum/GetPostAndParentAwaitingApproval/{childPostId}/` | Forum.GetPostAndParentAwaitingApproval | `childPostId`*, `showbanned` | object | yes | — |
+| GET | `/Forum/GetPostsThreadedPaged/{parentPostId}/{page}/{pageSize}/{replySize}/{getParentPost}/{rootThreadMode}/{sortMode}/` | Forum.GetPostsThreadedPaged | `getParentPost`*, `page`*, `pageSize`*, `parentPostId`*, `replySize`*, `rootThreadMode`*, `showbanned`, `sortMode`* | object | yes | — |
+| GET | `/Forum/GetPostsThreadedPagedFromChild/{childPostId}/{page}/{pageSize}/{replySize}/{rootThreadMode}/{sortMode}/` | Forum.GetPostsThreadedPagedFromChild | `childPostId`*, `page`*, `pageSize`*, `replySize`*, `rootThreadMode`*, `showbanned`, `sortMode`* | object | yes | — |
+| GET | `/Forum/GetTopicForContent/{contentId}/` | Forum.GetTopicForContent | `contentId`* | object | yes | — |
+| GET | `/Forum/GetTopicsPaged/{page}/{pageSize}/{group}/{sort}/{quickDate}/{categoryFilter}/` | Forum.GetTopicsPaged | `categoryFilter`*, `group`*, `locales`, `page`*, `pageSize`*, `quickDate`*, `sort`*, `tagstring` | object | yes | — |
+| GET | `/Forum/Poll/{topicId}/` | Forum.GetPoll | `topicId`* | object | yes | — |
+| POST | `/Forum/Recruit/Summaries/` | Forum.GetRecruitmentThreadSummaries | — | object |  | — |
+| GET | `/GetAvailableLocales/` | .GetAvailableLocales | — | object | yes | — |
+| GET | `/GlobalAlerts/` | .GetGlobalAlerts | `includestreaming` | object | yes | — |
+| GET | `/GroupV2/GetAvailableAvatars/` | GroupV2.GetAvailableAvatars | — | object | yes | — |
+| GET | `/GroupV2/GetAvailableThemes/` | GroupV2.GetAvailableThemes | — | object | yes | — |
+| GET | `/GroupV2/GetUserClanInviteSetting/{mType}/` | GroupV2.GetUserClanInviteSetting | `mType`* | object | yes | — |
+| GET | `/GroupV2/Name/{groupName}/{groupType}/` | GroupV2.GetGroupByName | `groupName`*, `groupType`* | object | yes | — |
+| POST | `/GroupV2/NameV2/` | GroupV2.GetGroupByNameV2 | — | object |  | — |
+| POST | `/GroupV2/Recommended/{groupType}/{createDateRange}/` | GroupV2.GetRecommendedGroups | `createDateRange`*, `groupType`* | object |  | — |
+| GET | `/GroupV2/Recover/{membershipType}/{membershipId}/{groupType}/` | GroupV2.RecoverGroupForFounder | `groupType`*, `membershipId`*, `membershipType`* | object | yes | — |
+| POST | `/GroupV2/Search/` | GroupV2.GroupSearch | — | object |  | — |
+| GET | `/GroupV2/User/Potential/{membershipType}/{membershipId}/{filter}/{groupType}/` | GroupV2.GetPotentialGroupsForMember | `filter`*, `groupType`*, `membershipId`*, `membershipType`* | object | yes | — |
+| GET | `/GroupV2/User/{membershipType}/{membershipId}/{filter}/{groupType}/` | GroupV2.GetGroupsForMember | `filter`*, `groupType`*, `membershipId`*, `membershipType`* | object | yes | — |
+| GET | `/GroupV2/{groupId}/` | GroupV2.GetGroup | `groupId`* | object | yes | — |
+| POST | `/GroupV2/{groupId}/Admin/AbdicateFoundership/{membershipType}/{founderIdNew}/` | GroupV2.AbdicateFoundership | `founderIdNew`*, `groupId`*, `membershipType`* | object |  | — |
+| GET | `/GroupV2/{groupId}/AdminsAndFounder/` | GroupV2.GetAdminsAndFounderOfGroup | `currentpage`*, `groupId`* | object | yes | — |
+| GET | `/GroupV2/{groupId}/Banned/` | GroupV2.GetBannedMembersOfGroup | `currentpage`*, `groupId`* | object | yes | — |
+| POST | `/GroupV2/{groupId}/Edit/` | GroupV2.EditGroup | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/EditClanBanner/` | GroupV2.EditClanBanner | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/EditFounderOptions/` | GroupV2.EditFounderOptions | `groupId`* | object |  | — |
+| GET | `/GroupV2/{groupId}/Members/` | GroupV2.GetMembersOfGroup | `currentpage`*, `groupId`*, `memberType`, `nameSearch` | object | yes | — |
+| POST | `/GroupV2/{groupId}/Members/Approve/{membershipType}/{membershipId}/` | GroupV2.ApprovePending | `groupId`*, `membershipId`*, `membershipType`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/ApproveAll/` | GroupV2.ApproveAllPending | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/ApproveList/` | GroupV2.ApprovePendingForList | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/DenyAll/` | GroupV2.DenyAllPending | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/DenyList/` | GroupV2.DenyPendingForList | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/IndividualInvite/{membershipType}/{membershipId}/` | GroupV2.IndividualGroupInvite | `groupId`*, `membershipId`*, `membershipType`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/IndividualInviteCancel/{membershipType}/{membershipId}/` | GroupV2.IndividualGroupInviteCancel | `groupId`*, `membershipId`*, `membershipType`* | object |  | — |
+| GET | `/GroupV2/{groupId}/Members/InvitedIndividuals/` | GroupV2.GetInvitedIndividuals | `currentpage`*, `groupId`* | object | yes | — |
+| GET | `/GroupV2/{groupId}/Members/Pending/` | GroupV2.GetPendingMemberships | `currentpage`*, `groupId`* | object | yes | — |
+| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/Ban/` | GroupV2.BanMember | `groupId`*, `membershipId`*, `membershipType`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/Kick/` | GroupV2.KickMember | `groupId`*, `membershipId`*, `membershipType`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/SetMembershipType/{memberType}/` | GroupV2.EditGroupMembership | `groupId`*, `membershipId`*, `membershipType`*, `memberType`* | object |  | — |
+| POST | `/GroupV2/{groupId}/Members/{membershipType}/{membershipId}/Unban/` | GroupV2.UnbanMember | `groupId`*, `membershipId`*, `membershipType`* | object |  | — |
+| GET | `/GroupV2/{groupId}/OptionalConversations/` | GroupV2.GetGroupOptionalConversations | `groupId`* | object | yes | — |
+| POST | `/GroupV2/{groupId}/OptionalConversations/Add/` | GroupV2.AddOptionalConversation | `groupId`* | object |  | — |
+| POST | `/GroupV2/{groupId}/OptionalConversations/Edit/{conversationId}/` | GroupV2.EditOptionalConversation | `conversationId`*, `groupId`* | object |  | — |
+| GET | `/Settings/` | .GetCommonSettings | — | object | yes | — |
+| GET | `/Social/Friends/` | Social.GetFriendList | — | object | yes | — |
+| POST | `/Social/Friends/Add/{membershipId}/` | Social.IssueFriendRequest | `membershipId`* | object |  | — |
+| POST | `/Social/Friends/Remove/{membershipId}/` | Social.RemoveFriend | `membershipId`* | object |  | — |
+| GET | `/Social/Friends/Requests/` | Social.GetFriendRequestList | — | object | yes | — |
+| POST | `/Social/Friends/Requests/Accept/{membershipId}/` | Social.AcceptFriendRequest | `membershipId`* | object |  | — |
+| POST | `/Social/Friends/Requests/Decline/{membershipId}/` | Social.DeclineFriendRequest | `membershipId`* | object |  | — |
+| POST | `/Social/Friends/Requests/Remove/{membershipId}/` | Social.RemoveFriendRequest | `membershipId`* | object |  | — |
+| GET | `/Social/PlatformFriends/{friendPlatform}/{page}/` | Social.GetPlatformFriendList | `friendPlatform`*, `page`* | object | yes | — |
+| POST | `/Tokens/Partner/ApplyMissingOffers/{partnerApplicationId}/{targetBnetMembershipId}/` | Tokens.ApplyMissingPartnerOffersWithoutClaim | `partnerApplicationId`*, `targetBnetMembershipId`* | object |  | — |
+| POST | `/Tokens/Partner/ClaimOffer/` | Tokens.ClaimPartnerOffer | — | object |  | — |
+| POST | `/Tokens/Partner/ForceDropsRepair/` | Tokens.ForceDropsRepair | — | object |  | — |
+| GET | `/Tokens/Partner/History/{partnerApplicationId}/{targetBnetMembershipId}/` | Tokens.GetPartnerOfferSkuHistory | `partnerApplicationId`*, `targetBnetMembershipId`* | object | yes | — |
+| GET | `/Tokens/Partner/History/{targetBnetMembershipId}/Application/{partnerApplicationId}/` | Tokens.GetPartnerRewardHistory | `partnerApplicationId`*, `targetBnetMembershipId`* | object | yes | — |
+| GET | `/Tokens/Rewards/BungieRewards/` | Tokens.GetBungieRewardsList | — | object | yes | — |
+| GET | `/Tokens/Rewards/GetRewardsForPlatformUser/{membershipId}/{membershipType}/` | Tokens.GetBungieRewardsForPlatformUser | `membershipId`*, `membershipType`* | object | yes | — |
+| GET | `/Tokens/Rewards/GetRewardsForUser/{membershipId}/` | Tokens.GetBungieRewardsForUser | `membershipId`* | object | yes | — |
+| GET | `/Trending/Categories/` | Trending.GetTrendingCategories | — | object | yes | — |
+| GET | `/Trending/Categories/{categoryId}/{pageNumber}/` | Trending.GetTrendingCategory | `categoryId`*, `pageNumber`* | object | yes | — |
+| GET | `/Trending/Details/{trendingEntryType}/{identifier}/` | Trending.GetTrendingEntryDetail | `identifier`*, `trendingEntryType`* | object | yes | — |
+| GET | `/User/GetAvailableThemes/` | User.GetAvailableThemes | — | object | yes | — |
+| GET | `/User/GetBungieNetUserById/{id}/` | User.GetBungieNetUserById | `id`* | object | yes | — |
+| GET | `/User/GetCredentialTypesForTargetAccount/{membershipId}/` | User.GetCredentialTypesForTargetAccount | `membershipId`* | object | yes | — |
+| GET | `/User/GetMembershipFromHardLinkedCredential/{crType}/{credential}/` | User.GetMembershipFromHardLinkedCredential | `credential`*, `crType`* | object | yes | — |
+| GET | `/User/GetMembershipsById/{membershipId}/{membershipType}/` | User.GetMembershipDataById | `membershipId`*, `membershipType`* | object | yes | — |
+| GET | `/User/GetMembershipsForCurrentUser/` | User.GetMembershipDataForCurrentUser | — | object | yes | — |
+| GET | `/User/GetSanitizedPlatformDisplayNames/{membershipId}/` | User.GetSanitizedPlatformDisplayNames | `membershipId`* | object | yes | — |
+| POST | `/User/Search/GlobalName/{page}/` | User.SearchByGlobalNamePost | `page`* | object |  | — |
+| GET | `/User/Search/Prefix/{displayNamePrefix}/{page}/` | User.SearchByGlobalNamePrefix | `displayNamePrefix`*, `page`* | object | yes | — |
+| GET | `/UserSystemOverrides/` | .GetUserSystemOverrides | — | object | yes | — |

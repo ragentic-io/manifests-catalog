@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_medicalcollege_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `3ce522e0d66331822f407cb650dff759441a0189a29fc7ba42966ea7846504c3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,105 +34,107 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_medicalcollege_prof
 
 24 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/agr/affectedGenomicModels/{taxonId}` | getAffectedGenomicModelsUsingGET | Get affected genomic models (rat strains with gene alleles) submitted by RGD to AGR by taxonId |
-| GET | `/agr/alleles/{taxonId}` | getAllelesForTaxonUsingGET | Get gene allele records submitted by RGD to AGR by taxonId |
-| GET | `/agr/expression/{taxonId}` | getExpressionForTaxonUsingGET | Get expression annotations submitted by RGD to AGR by taxonId |
-| GET | `/agr/phenotypes/{taxonId}` | getPhenotypesForTaxonUsingGET | Get phenotype annotations submitted by RGD to AGR by taxonId |
-| GET | `/agr/variants/{taxonId}` | getVariantsForTaxonUsingGET | Get basic variant records submitted by RGD to AGR by taxonId |
-| GET | `/agr/{taxonId}` | getGenesForLatestAssemblyUsingGET | Get gene records submitted by RGD to AGR by taxonId |
-| POST | `/annotations/` | getAnnotationsUsingPOST | Return a list of genes annotated to an ontology term |
-| GET | `/annotations/accId/{rgdId}` | getTermAccIdsUsingGET | Returns a list ontology term accession IDs annotated to an rgd object |
-| GET | `/annotations/count/{accId}/{includeChildren}` | getAnnotationCountByAccIdUsingGET | Returns annotation count for ontology accession ID |
-| GET | `/annotations/count/{accId}/{speciesTypeKey}/{includeChildren}` | getAnnotationCountByAccIdAndSpeciesUsingGET | Returns annotation count for ontology accession ID and speicies |
-| GET | `/annotations/count/{accId}/{speciesTypeKey}/{includeChildren}/{objectType}` | getAnnotationCountByAccIdAndObjectTypeUsingGET | Returns annotation count for ontology accession ID and object type |
-| GET | `/annotations/reference/{refRgdId}` | getAnnotsByRefrerenceUsingGET | Returns a list of annotations for a reference |
-| GET | `/annotations/rgdId/{rgdId}` | getAnnotationsByRgdIdUsingGET | Returns a list of annotations by RGD ID |
-| GET | `/annotations/rgdId/{rgdId}/{ontologyPrefix}` | getAnnotationsByRgdIdAndOntologyUsingGET | Returns a list of annotations by RGD ID and ontology prefix |
-| GET | `/annotations/{accId}/{rgdId}` | getAnnotationsByAccIdAndRgdIdUsingGET | Returns a list of annotations by RGD ID and ontology term accession ID |
-| GET | `/annotations/{accId}/{speciesTypeKey}/{includeChildren}` | getAnnotationsUsingGET | Returns a list annotations for an ontology term or a term and it's children |
-| POST | `/enrichment/annotatedGenes` | getEnrichmentDataUsingPOST | Return a list of genes annotated to the term.Genes are rgdids separated by comma.Species type is an integer value.term is the ontology |
-| POST | `/enrichment/data` | getEnrichmentDataUsingPOST_1 | Return a chart of ontology terms annotated to the genes.Genes are rgdids separated by comma.Species type is an integer value.Aspect is the Ontology group |
-| GET | `/genes/affyId/{affyId}/{speciesTypeKey}` | getGenesByAffyIdUsingGET | Return a list of genes for an affymetrix ID |
-| GET | `/genes/alias/{aliasSymbol}/{speciesTypeKey}` | getGenesByAliasSymbolUsingGET | Return a list of genes for an alias and species |
-| GET | `/genes/allele/{rgdId}` | getGeneAllelesUsingGET | Return a list of gene alleles |
-| POST | `/genes/annotation` | getAnnotatedGenesUsingPOST | Return a list of genes annotated to an ontology term |
-| GET | `/genes/annotation/{accId}` | getAllAnnotatedGenesUsingGET | Return a list of genes annotated to an ontology term |
-| GET | `/genes/annotation/{accId}/{speciesTypeKey}` | getGenesAnnotatedUsingGET | Return a list of genes annotated to an ontology term |
-| GET | `/genes/keyword/{keyword}/{speciesTypeKey}` | getGenesByKeywordUsingGET | Return a list of genes by keyword and species type key |
-| GET | `/genes/map/{mapKey}` | getGeneByMapKeyUsingGET | Return a list of all genes with position information for an assembly |
-| GET | `/genes/mapped/{chr}/{start}/{stop}/{mapKey}` | getMappedGenesByPositionUsingGET | Return a list of genes position and map key |
-| POST | `/genes/orthologs` | getOrthologsByListUsingPOST | Return a list of gene orthologs |
-| GET | `/genes/orthologs/{rgdId}` | getGeneOrthologsUsingGET | Return a list of gene orthologs |
-| GET | `/genes/region/{chr}/{start}/{stop}/{mapKey}` | getGenesInRegionUsingGET | Return a list of genes in region |
-| GET | `/genes/species/{speciesTypeKey}` | getGenesBySpeciesUsingGET | Return a list of all genes for a species in RGD |
-| GET | `/genes/{chr}/{start}/{stop}/{mapKey}` | getGenesByPositionUsingGET | Return a list of genes position and map key |
-| GET | `/genes/{rgdId}` | getGeneByRgdIdUsingGET | Get a gene record by RGD ID |
-| GET | `/genes/{symbol}/{speciesTypeKey}` | getGeneBySymbolUsingGET | Get a gene record by symbol and species type key |
-| GET | `/lookup/geneTypes` | getGeneTypesUsingGET | Returns a list of gene types avialable in RGD |
-| POST | `/lookup/id/map/EnsemblGene` | getEnsemblGeneMappingUsingPOST | Translate RGD IDs to Ensembl Gene IDs |
-| GET | `/lookup/id/map/EnsemblGene/{rgdId}` | getEnsemblGeneMappingUsingGET | Translate an RGD ID to an Ensembl Gene ID |
-| POST | `/lookup/id/map/EnsemblProtein` | getEnsemblProteinMappingUsingPOST | Translate RGD IDs to Ensembl Protein IDs |
-| GET | `/lookup/id/map/EnsemblProtein/{rgdId}` | getEnsemblProteinMappingUsingGET | Translate an RGD ID to an Ensembl Protein ID |
-| POST | `/lookup/id/map/EnsemblTranscript` | getEnsemblTranscriptMappingUsingPOST | Translate RGD IDs to Ensembl Transcript IDs |
-| GET | `/lookup/id/map/EnsemblTranscript/{rgdId}` | getEnsemblTranscriptMappingUsingGET | Translate an RGD ID to an Ensembl Transcript ID |
-| POST | `/lookup/id/map/GTEx` | getGTEXMappingUsingPOST | Translate RGD IDs to GTEx IDs |
-| GET | `/lookup/id/map/GTEx/{rgdId}` | getGTEXMappingUsingGET | Translate an RGD ID to an GTEx ID |
-| POST | `/lookup/id/map/GenBankNucleotide` | getGenBankNucleotideMappingUsingPOST | Translate RGD IDs to GenBank Nucleotide IDs |
-| GET | `/lookup/id/map/GenBankNucleotide/{rgdId}` | getGenBankNucleotideMappingUsingGET | Translate an RGD ID to a GenBank Nucleotide ID |
-| POST | `/lookup/id/map/GenBankProtein` | getGenBankProteinMappingUsingPOST | Translate RGD IDs to GenBank Protein IDs |
-| GET | `/lookup/id/map/GenBankProtein/{rgdId}` | getGenBankProteinMappingUsingGET | Translate an RGD ID to a GenBank Protein ID |
-| POST | `/lookup/id/map/HGNC` | getHGNCMappingUsingPOST | Translate RGD IDs to HGNC IDs |
-| GET | `/lookup/id/map/HGNC/{rgdId}` | getHGNCMappingUsingGET | Translate an RGD ID to an HGNC ID |
-| POST | `/lookup/id/map/MGI` | getMGIMappingUsingPOST | Translate RGD IDs to MGI IDs |
-| GET | `/lookup/id/map/MGI/{rgdId}` | getMGIMappingUsingGET | Translate an RGD ID to an MGI ID |
-| POST | `/lookup/id/map/NCBIGene` | getNCBIGeneMappingUsingPOST | Translate RGD IDs to NCBI Gene IDs |
-| GET | `/lookup/id/map/NCBIGene/{rgdId}` | getNCBIGeneMappingUsingGET | Translate an RGD ID to an NCBI Gene ID |
-| POST | `/lookup/id/map/UniProt` | getUniProtMappingUsingPOST | Translate RGD IDs to UniProt IDs |
-| GET | `/lookup/id/map/UniProt/{rgdId}` | getUniProtMappingUsingGET | Translate an RGD ID to a UniProt ID |
-| GET | `/lookup/maps/{speciesTypeKey}` | getMapsUsingGET | Return a list assembly maps for a species |
-| GET | `/lookup/speciesTypeKeys` | getSpeciesTypesUsingGET | Return a Map of species type keys available in RGD |
-| GET | `/lookup/standardUnit/{accId}` | getMapsUsingGET_1 | Return a standardUnit for an ontology if it exists |
-| GET | `/maps/chr/{chromosome}/{mapKey}` | getChromosomeByAssemblyUsingGET | Return a list of chromosomes |
-| GET | `/maps/chr/{mapKey}` | getChromosomesByAssemblyUsingGET | Return a list of chromosomes |
-| GET | `/maps/{speciesTypeKey}` | getMapsBySpeciesUsingGET | Return a list of assemblies |
-| GET | `/ontology/ont/{accId}` | getOntDagsUsingGET | Returns child and parent terms for Accession ID |
-| GET | `/ontology/term/{accId1}/{accId2}` | isDescendantOfUsingGET | Returns true or false for terms |
-| GET | `/ontology/term/{accId}` | getTermUsingGET | Returns term for Accession ID |
-| GET | `/pathways/diagrams/search/{searchString}` | searchPathwaysUsingGET | Return a list of pathways based on search term |
-| GET | `/pathways/diagramsForCategory/{category}` | getPathwaysWithDiagramsForCategoryUsingGET | Return a list of pathways based on category provided |
-| GET | `/phenotype/phenominer/chart/{speciesTypeKey}/{refRgdId}/{termString}` | getChartInfoUsingGET | Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms. Results will be all records that match all terms submitted. Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139). Species type is an integer value (3=rat, 4=chinchilla). Reference RGD ID for a study works like a filter. |
-| GET | `/phenotype/phenominer/chart/{speciesTypeKey}/{termString}` | getChartInfoUsingGET_1 | Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms. Results will be all records that match all terms submitted. Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139). Species type is an integer value (3=rat, 4=chinchilla) |
-| GET | `/qtls/mapped/{chr}/{start}/{stop}/{mapKey}` | getMappedQTLByPositionUsingGET | Returns a list QTL for given position and assembly map |
-| GET | `/qtls/{chr}/{start}/{stop}/{mapKey}` | getQtlListByPositionUsingGET | Returns a list QTL for given position and assembly map |
-| GET | `/qtls/{rgdId}` | getQTLByRgdIdUsingGET | Return a QTL for provided RGD ID |
-| GET | `/sslps/mapped/{chr}/{start}/{stop}/{mapKey}` | getMappedSSLPByPositionUsingGET | Returns a list SSLP for given position and assembly map |
-| GET | `/stats/count/activeObject/{speciesTypeKey}/{dateYYYYMMDD}` | getActiveObjectCountUsingGET | Count of active objects by type, for specified species and date |
-| GET | `/stats/count/geneType/{speciesTypeKey}/{dateYYYYMMDD}` | getGeneTypeCountUsingGET | Count of gene types, for specified species and date |
-| GET | `/stats/count/objectStatus/{speciesTypeKey}/{dateYYYYMMDD}` | getObjectStatusCountUsingGET | Count of objects with given status, for specified species and date |
-| GET | `/stats/count/objectWithRefSeq/{speciesTypeKey}/{dateYYYYMMDD}` | getObjectsWithRefSeqCountUsingGET | Count of objects with reference sequence(s), by object type, for specified species and date |
-| GET | `/stats/count/objectWithReference/{speciesTypeKey}/{dateYYYYMMDD}` | getObjectsWithReferenceCountUsingGET | Count of objects with reference, by object type, for specified species and date |
-| GET | `/stats/count/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateYYYYMMDD}` | getObjectsWithXDBsCountUsingGET | Count of objects with external database ids, by database id, for specified species, object type and date |
-| GET | `/stats/count/proteinInteraction/{speciesTypeKey}/{dateYYYYMMDD}` | getProteinInteractionCountUsingGET | Count of protein interactions, for specified species and date |
-| GET | `/stats/count/qtlInheritanceType/{speciesTypeKey}/{dateYYYYMMDD}` | getQtlInheritanceTypeCountUsingGET | Count of strains, by qtl inheritance type, for specified species and date |
-| GET | `/stats/count/retiredObject/{speciesTypeKey}/{dateYYYYMMDD}` | getRetiredObjectCountUsingGET | Count of retired objects by type, for specified species and date |
-| GET | `/stats/count/strainType/{speciesTypeKey}/{dateYYYYMMDD}` | getStrainTypeCountUsingGET | Count of strain types, for specified species and date |
-| GET | `/stats/count/withdrawnObject/{speciesTypeKey}/{dateYYYYMMDD}` | getWithdrawnObjectCountUsingGET | Count of withdrawn objects by type, for specified species and date |
-| GET | `/stats/count/xdb/{speciesTypeKey}/{dateYYYYMMDD}` | getXdbsCountUsingGET | Count of external database ids, for specied species and date |
-| GET | `/stats/diff/activeObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getActiveObjectDiffUsingGET | Count difference of active objects, by type, for specified species and date range |
-| GET | `/stats/diff/geneType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getGeneTypeDiffUsingGET | Count difference of gene types, for specified species and date range |
-| GET | `/stats/diff/objectStatus/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectStatusDiffUsingGET | Count difference of objects with given status, for specified species and date range |
-| GET | `/stats/diff/objectWithRefSeq/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectsWithRefSeqDiffUsingGET | Count difference of objects with reference sequence(s), by object type, for specified species and date range |
-| GET | `/stats/diff/objectWithReference/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectsWithReferenceDiffUsingGET | Count difference of objects with reference, by object type, for specified species and date range |
-| GET | `/stats/diff/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectsWithXDBsDiffUsingGET | Count difference of objects with external database ids, by database id, for specified species, object type and date range |
-| GET | `/stats/diff/proteinInteraction/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getProteinInteractionDiffUsingGET | Count difference of protein interactions, for specified species and date range |
-| GET | `/stats/diff/qtlInheritanceType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getQtlInheritanceTypeDiffUsingGET | Count difference of strains, by qtl inheritance type, for specified species and date range |
-| GET | `/stats/diff/retiredObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getRetiredObjectDiffUsingGET | Count difference of retired objects, by type, for specified species and date range |
-| GET | `/stats/diff/strainType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getStrainTypeDiffUsingGET | Count difference of strain types, for specified species and date range |
-| GET | `/stats/diff/withdrawnObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getWithdrawnObjectDiffUsingGET | Count difference of withdrawn objects, by type, for specified species and date range |
-| GET | `/stats/diff/xdb/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getXdbsDiffUsingGET | Count difference of external database ids, for specified species and date range |
-| GET | `/stats/term/{accId}/{filterAccId}` | getTermStatsUsingGET | getTermStats |
-| GET | `/strains/all` | getAllStrainsUsingGET | Return all active strains in RGD |
-| GET | `/strains/{chr}/{start}/{stop}/{mapKey}` | getStrainsByPositionUsingGET | Return all active strains by position |
-| GET | `/strains/{rgdId}` | getStrainByRgdIdUsingGET | Return a strain by RGD ID |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/agr/affectedGenomicModels/{taxonId}` | getAffectedGenomicModelsUsingGET | `taxonId`* | object | yes | Get affected genomic models (rat strains with gene alleles) submitted by RGD to AGR by taxonId |
+| GET | `/agr/alleles/{taxonId}` | getAllelesForTaxonUsingGET | `taxonId`* | object | yes | Get gene allele records submitted by RGD to AGR by taxonId |
+| GET | `/agr/expression/{taxonId}` | getExpressionForTaxonUsingGET | `taxonId`* | object | yes | Get expression annotations submitted by RGD to AGR by taxonId |
+| GET | `/agr/phenotypes/{taxonId}` | getPhenotypesForTaxonUsingGET | `taxonId`* | object | yes | Get phenotype annotations submitted by RGD to AGR by taxonId |
+| GET | `/agr/variants/{taxonId}` | getVariantsForTaxonUsingGET | `taxonId`* | object | yes | Get basic variant records submitted by RGD to AGR by taxonId |
+| GET | `/agr/{taxonId}` | getGenesForLatestAssemblyUsingGET | `taxonId`* | object | yes | Get gene records submitted by RGD to AGR by taxonId |
+| POST | `/annotations/` | getAnnotationsUsingPOST | body: AnnotationRequest | Annotation[] |  | Return a list of genes annotated to an ontology term |
+| GET | `/annotations/accId/{rgdId}` | getTermAccIdsUsingGET | `rgdId`* | MapPair[] | yes | Returns a list ontology term accession IDs annotated to an rgd object |
+| GET | `/annotations/count/{accId}/{includeChildren}` | getAnnotationCountByAccIdUsingGET | `accId`*, `includeChildren`* | integer:int32 | yes | Returns annotation count for ontology accession ID |
+| GET | `/annotations/count/{accId}/{speciesTypeKey}/{includeChildren}` | getAnnotationCountByAccIdAndSpeciesUsingGET | `accId`*, `speciesTypeKey`*, `includeChildren`* | integer:int32 | yes | Returns annotation count for ontology accession ID and speicies |
+| GET | `/annotations/count/{accId}/{speciesTypeKey}/{includeChildren}/{objectType}` | getAnnotationCountByAccIdAndObjectTypeUsingGET | `accId`*, `speciesTypeKey`*, `includeChildren`*, `objectType`* | integer:int32 | yes | Returns annotation count for ontology accession ID and object type |
+| GET | `/annotations/reference/{refRgdId}` | getAnnotsByRefrerenceUsingGET | `refRgdId`* | Annotation[] | yes | Returns a list of annotations for a reference |
+| GET | `/annotations/rgdId/{rgdId}` | getAnnotationsByRgdIdUsingGET | `rgdId`* | Annotation[] | yes | Returns a list of annotations by RGD ID |
+| GET | `/annotations/rgdId/{rgdId}/{ontologyPrefix}` | getAnnotationsByRgdIdAndOntologyUsingGET | `rgdId`*, `ontologyPrefix`* | Annotation[] | yes | Returns a list of annotations by RGD ID and ontology prefix |
+| GET | `/annotations/{accId}/{rgdId}` | getAnnotationsByAccIdAndRgdIdUsingGET | `accId`*, `rgdId`* | Annotation[] | yes | Returns a list of annotations by RGD ID and ontology term accession ID |
+| GET | `/annotations/{accId}/{speciesTypeKey}/{includeChildren}` | getAnnotationsUsingGET | `accId`*, `speciesTypeKey`*, `includeChildren`* | Annotation[] | yes | Returns a list annotations for an ontology term or a term and it's children |
+| POST | `/enrichment/annotatedGenes` | getEnrichmentDataUsingPOST | body*: EnrichmentGeneRequest | object |  | Return a list of genes annotated to the term.Genes are rgdids separated by comma.Species type is an integer value.term is the ontology |
+| POST | `/enrichment/data` | getEnrichmentDataUsingPOST_1 | body*: EnrichmentRequest | object |  | Return a chart of ontology terms annotated to the genes.Genes are rgdids separated by comma.Species type is an integer value.Aspect is the Ontology group |
+| GET | `/genes/affyId/{affyId}/{speciesTypeKey}` | getGenesByAffyIdUsingGET | `affyId`*, `speciesTypeKey`* | Gene[] | yes | Return a list of genes for an affymetrix ID |
+| GET | `/genes/alias/{aliasSymbol}/{speciesTypeKey}` | getGenesByAliasSymbolUsingGET | `aliasSymbol`*, `speciesTypeKey`* | Gene[] | yes | Return a list of genes for an alias and species |
+| GET | `/genes/allele/{rgdId}` | getGeneAllelesUsingGET | `rgdId`* | Gene[] | yes | Return a list of gene alleles |
+| POST | `/genes/annotation` | getAnnotatedGenesUsingPOST | body: AnnotatedGeneRequest | Gene[] |  | Return a list of genes annotated to an ontology term |
+| GET | `/genes/annotation/{accId}` | getAllAnnotatedGenesUsingGET | `accId`* | Gene[] | yes | Return a list of genes annotated to an ontology term |
+| GET | `/genes/annotation/{accId}/{speciesTypeKey}` | getGenesAnnotatedUsingGET | `accId`*, `speciesTypeKey`* | Gene[] | yes | Return a list of genes annotated to an ontology term |
+| GET | `/genes/keyword/{keyword}/{speciesTypeKey}` | getGenesByKeywordUsingGET | `keyword`*, `speciesTypeKey`* | Gene[] | yes | Return a list of genes by keyword and species type key |
+| GET | `/genes/map/{mapKey}` | getGeneByMapKeyUsingGET | `mapKey`* | MappedGene[] | yes | Return a list of all genes with position information for an assembly |
+| GET | `/genes/mapped/{chr}/{start}/{stop}/{mapKey}` | getMappedGenesByPositionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | MappedGene[] | yes | Return a list of genes position and map key |
+| POST | `/genes/orthologs` | getOrthologsByListUsingPOST | body*: OrthologRequest | object |  | Return a list of gene orthologs |
+| GET | `/genes/orthologs/{rgdId}` | getGeneOrthologsUsingGET | `rgdId`* | Gene[] | yes | Return a list of gene orthologs |
+| GET | `/genes/region/{chr}/{start}/{stop}/{mapKey}` | getGenesInRegionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | MappedGenePosition[] | yes | Return a list of genes in region |
+| GET | `/genes/species/{speciesTypeKey}` | getGenesBySpeciesUsingGET | `speciesTypeKey`* | Gene[] | yes | Return a list of all genes for a species in RGD |
+| GET | `/genes/{chr}/{start}/{stop}/{mapKey}` | getGenesByPositionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | Gene[] | yes | Return a list of genes position and map key |
+| GET | `/genes/{rgdId}` | getGeneByRgdIdUsingGET | `rgdId`* | Gene | yes | Get a gene record by RGD ID |
+| GET | `/genes/{symbol}/{speciesTypeKey}` | getGeneBySymbolUsingGET | `symbol`*, `speciesTypeKey`* | Gene | yes | Get a gene record by symbol and species type key |
+| GET | `/lookup/geneTypes` | getGeneTypesUsingGET | — | string[] | yes | Returns a list of gene types avialable in RGD |
+| POST | `/lookup/id/map/EnsemblGene` | getEnsemblGeneMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to Ensembl Gene IDs |
+| GET | `/lookup/id/map/EnsemblGene/{rgdId}` | getEnsemblGeneMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an Ensembl Gene ID |
+| POST | `/lookup/id/map/EnsemblProtein` | getEnsemblProteinMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to Ensembl Protein IDs |
+| GET | `/lookup/id/map/EnsemblProtein/{rgdId}` | getEnsemblProteinMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an Ensembl Protein ID |
+| POST | `/lookup/id/map/EnsemblTranscript` | getEnsemblTranscriptMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to Ensembl Transcript IDs |
+| GET | `/lookup/id/map/EnsemblTranscript/{rgdId}` | getEnsemblTranscriptMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an Ensembl Transcript ID |
+| POST | `/lookup/id/map/GTEx` | getGTEXMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to GTEx IDs |
+| GET | `/lookup/id/map/GTEx/{rgdId}` | getGTEXMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an GTEx ID |
+| POST | `/lookup/id/map/GenBankNucleotide` | getGenBankNucleotideMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to GenBank Nucleotide IDs |
+| GET | `/lookup/id/map/GenBankNucleotide/{rgdId}` | getGenBankNucleotideMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to a GenBank Nucleotide ID |
+| POST | `/lookup/id/map/GenBankProtein` | getGenBankProteinMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to GenBank Protein IDs |
+| GET | `/lookup/id/map/GenBankProtein/{rgdId}` | getGenBankProteinMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to a GenBank Protein ID |
+| POST | `/lookup/id/map/HGNC` | getHGNCMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to HGNC IDs |
+| GET | `/lookup/id/map/HGNC/{rgdId}` | getHGNCMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an HGNC ID |
+| POST | `/lookup/id/map/MGI` | getMGIMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to MGI IDs |
+| GET | `/lookup/id/map/MGI/{rgdId}` | getMGIMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an MGI ID |
+| POST | `/lookup/id/map/NCBIGene` | getNCBIGeneMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to NCBI Gene IDs |
+| GET | `/lookup/id/map/NCBIGene/{rgdId}` | getNCBIGeneMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to an NCBI Gene ID |
+| POST | `/lookup/id/map/UniProt` | getUniProtMappingUsingPOST | body: RGDIDListRequest | object |  | Translate RGD IDs to UniProt IDs |
+| GET | `/lookup/id/map/UniProt/{rgdId}` | getUniProtMappingUsingGET | `rgdId`* | object | yes | Translate an RGD ID to a UniProt ID |
+| GET | `/lookup/maps/{speciesTypeKey}` | getMapsUsingGET | `speciesTypeKey`* | Map[] | yes | Return a list assembly maps for a species |
+| GET | `/lookup/speciesTypeKeys` | getSpeciesTypesUsingGET | — | object | yes | Return a Map of species type keys available in RGD |
+| GET | `/lookup/standardUnit/{accId}` | getMapsUsingGET_1 | `accId`* | string | yes | Return a standardUnit for an ontology if it exists |
+| GET | `/maps/chr/{chromosome}/{mapKey}` | getChromosomeByAssemblyUsingGET | `chromosome`*, `mapKey`* | Chromosome | yes | Return a list of chromosomes |
+| GET | `/maps/chr/{mapKey}` | getChromosomesByAssemblyUsingGET | `mapKey`* | string[] | yes | Return a list of chromosomes |
+| GET | `/maps/{speciesTypeKey}` | getMapsBySpeciesUsingGET | `speciesTypeKey`* | Map[] | yes | Return a list of assemblies |
+| GET | `/ontology/ont/{accId}` | getOntDagsUsingGET | `accId`* | object | yes | Returns child and parent terms for Accession ID |
+| GET | `/ontology/term/{accId1}/{accId2}` | isDescendantOfUsingGET | `accId1`*, `accId2`* | boolean | yes | Returns true or false for terms |
+| GET | `/ontology/term/{accId}` | getTermUsingGET | `accId`* | Term | yes | Returns term for Accession ID |
+| GET | `/pathways/diagrams/search/{searchString}` | searchPathwaysUsingGET | `searchString`* | Pathway[] | yes | Return a list of pathways based on search term |
+| GET | `/pathways/diagramsForCategory/{category}` | getPathwaysWithDiagramsForCategoryUsingGET | `category`* | Pathway[] | yes | Return a list of pathways based on category provided |
+| GET | `/phenotype/phenominer/chart/{speciesTypeKey}/{refRgdId}/{termString}` | getChartInfoUsingGET | `speciesTypeKey`*, `refRgdId`*, `termString`* | object | yes | Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms. Results will be all records that match all terms submitted. Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139). Species type is an integer value (3=rat, 4=chinchilla). Reference RGD ID for a study works like a filter. |
+| GET | `/phenotype/phenominer/chart/{speciesTypeKey}/{termString}` | getChartInfoUsingGET_1 | `speciesTypeKey`*, `termString`* | object | yes | Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms. Results will be all records that match all terms submitted. Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139). Species type is an integer value (3=rat, 4=chinchilla) |
+| GET | `/qtls/mapped/{chr}/{start}/{stop}/{mapKey}` | getMappedQTLByPositionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | MappedQTL[] | yes | Returns a list QTL for given position and assembly map |
+| GET | `/qtls/{chr}/{start}/{stop}/{mapKey}` | getQtlListByPositionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | QTL[] | yes | Returns a list QTL for given position and assembly map |
+| GET | `/qtls/{rgdId}` | getQTLByRgdIdUsingGET | `rgdId`* | QTL | yes | Return a QTL for provided RGD ID |
+| GET | `/sslps/mapped/{chr}/{start}/{stop}/{mapKey}` | getMappedSSLPByPositionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | MappedSSLP[] | yes | Returns a list SSLP for given position and assembly map |
+| GET | `/stats/count/activeObject/{speciesTypeKey}/{dateYYYYMMDD}` | getActiveObjectCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of active objects by type, for specified species and date |
+| GET | `/stats/count/geneType/{speciesTypeKey}/{dateYYYYMMDD}` | getGeneTypeCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of gene types, for specified species and date |
+| GET | `/stats/count/objectStatus/{speciesTypeKey}/{dateYYYYMMDD}` | getObjectStatusCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of objects with given status, for specified species and date |
+| GET | `/stats/count/objectWithRefSeq/{speciesTypeKey}/{dateYYYYMMDD}` | getObjectsWithRefSeqCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of objects with reference sequence(s), by object type, for specified species and date |
+| GET | `/stats/count/objectWithReference/{speciesTypeKey}/{dateYYYYMMDD}` | getObjectsWithReferenceCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of objects with reference, by object type, for specified species and date |
+| GET | `/stats/count/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateYYYYMMDD}` | getObjectsWithXDBsCountUsingGET | `speciesTypeKey`*, `objectKey`*, `dateYYYYMMDD`* | object | yes | Count of objects with external database ids, by database id, for specified species, object type and date |
+| GET | `/stats/count/proteinInteraction/{speciesTypeKey}/{dateYYYYMMDD}` | getProteinInteractionCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of protein interactions, for specified species and date |
+| GET | `/stats/count/qtlInheritanceType/{speciesTypeKey}/{dateYYYYMMDD}` | getQtlInheritanceTypeCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of strains, by qtl inheritance type, for specified species and date |
+| GET | `/stats/count/retiredObject/{speciesTypeKey}/{dateYYYYMMDD}` | getRetiredObjectCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of retired objects by type, for specified species and date |
+| GET | `/stats/count/strainType/{speciesTypeKey}/{dateYYYYMMDD}` | getStrainTypeCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of strain types, for specified species and date |
+| GET | `/stats/count/withdrawnObject/{speciesTypeKey}/{dateYYYYMMDD}` | getWithdrawnObjectCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of withdrawn objects by type, for specified species and date |
+| GET | `/stats/count/xdb/{speciesTypeKey}/{dateYYYYMMDD}` | getXdbsCountUsingGET | `speciesTypeKey`*, `dateYYYYMMDD`* | object | yes | Count of external database ids, for specied species and date |
+| GET | `/stats/diff/activeObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getActiveObjectDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of active objects, by type, for specified species and date range |
+| GET | `/stats/diff/geneType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getGeneTypeDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of gene types, for specified species and date range |
+| GET | `/stats/diff/objectStatus/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectStatusDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of objects with given status, for specified species and date range |
+| GET | `/stats/diff/objectWithRefSeq/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectsWithRefSeqDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of objects with reference sequence(s), by object type, for specified species and date range |
+| GET | `/stats/diff/objectWithReference/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectsWithReferenceDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of objects with reference, by object type, for specified species and date range |
+| GET | `/stats/diff/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getObjectsWithXDBsDiffUsingGET | `speciesTypeKey`*, `objectKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of objects with external database ids, by database id, for specified species, object type and date range |
+| GET | `/stats/diff/proteinInteraction/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getProteinInteractionDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of protein interactions, for specified species and date range |
+| GET | `/stats/diff/qtlInheritanceType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getQtlInheritanceTypeDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of strains, by qtl inheritance type, for specified species and date range |
+| GET | `/stats/diff/retiredObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getRetiredObjectDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of retired objects, by type, for specified species and date range |
+| GET | `/stats/diff/strainType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getStrainTypeDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of strain types, for specified species and date range |
+| GET | `/stats/diff/withdrawnObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getWithdrawnObjectDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of withdrawn objects, by type, for specified species and date range |
+| GET | `/stats/diff/xdb/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}` | getXdbsDiffUsingGET | `speciesTypeKey`*, `dateFromYYYYMMDD`*, `dateToYYYYMMDD`* | object | yes | Count difference of external database ids, for specified species and date range |
+| GET | `/stats/term/{accId}/{filterAccId}` | getTermStatsUsingGET | `accId`*, `filterAccId`* | object | yes | getTermStats |
+| GET | `/strains/all` | getAllStrainsUsingGET | — | Strain[] | yes | Return all active strains in RGD |
+| GET | `/strains/{chr}/{start}/{stop}/{mapKey}` | getStrainsByPositionUsingGET | `chr`*, `start`*, `stop`*, `mapKey`* | Strain[] | yes | Return all active strains by position |
+| GET | `/strains/{rgdId}` | getStrainByRgdIdUsingGET | `rgdId`* | Strain | yes | Return a strain by RGD ID |

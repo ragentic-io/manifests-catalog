@@ -21,8 +21,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /latest/{base_currency}",
+        "parameters": [
+          {
+            "description": "**Base Currency**.",
+            "in": "path",
+            "name": "base_currency",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/latest/{base_currency}",
         "pointer": "#/paths/~1latest~1{base_currency}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Returns latest exchange rates in parameter-supplied base currency."
       }

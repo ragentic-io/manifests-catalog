@@ -38,6 +38,111 @@
         "from": "pdfbroker-io-5463dfcff3",
         "kind": "EXPOSES",
         "to": "operation:post:/api/pdf/xslfowithtransform"
+      },
+      {
+        "from": "operation:post:/api/pdf/pdfconcat",
+        "kind": "ACCEPTS",
+        "to": "schema:PdfConcatenationRequestDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/pdfconcat",
+        "kind": "RETURNS",
+        "to": "schema:PdfResponseDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/pdftoimage",
+        "kind": "ACCEPTS",
+        "to": "schema:PdfToImageRequestDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/pdftoimage",
+        "kind": "RETURNS",
+        "to": "schema:ImageResponseDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/pdfwritestring",
+        "kind": "ACCEPTS",
+        "to": "schema:PdfWriteStringRequestDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/pdfwritestring",
+        "kind": "RETURNS",
+        "to": "schema:PdfResponseDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/wkhtmltopdf",
+        "kind": "ACCEPTS",
+        "to": "schema:WkHtmlToPdfRequestDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/wkhtmltopdf",
+        "kind": "RETURNS",
+        "to": "schema:PdfResponseDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/xslfo",
+        "kind": "ACCEPTS",
+        "to": "schema:FoRequestDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/xslfo",
+        "kind": "RETURNS",
+        "to": "schema:PdfResponseDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/xslfowithtransform",
+        "kind": "ACCEPTS",
+        "to": "schema:FoTransformRequestDto"
+      },
+      {
+        "from": "operation:post:/api/pdf/xslfowithtransform",
+        "kind": "RETURNS",
+        "to": "schema:PdfResponseDto"
+      },
+      {
+        "from": "schema:FoRequestDto",
+        "kind": "REFERENCES",
+        "to": "schema:PdfMetadataDto"
+      },
+      {
+        "from": "schema:FoTransformRequestDto",
+        "kind": "REFERENCES",
+        "to": "schema:PdfMetadataDto"
+      },
+      {
+        "from": "schema:FontDto",
+        "kind": "REFERENCES",
+        "to": "schema:FontStyle"
+      },
+      {
+        "from": "schema:PdfToImageRequestDto",
+        "kind": "REFERENCES",
+        "to": "schema:PdfToImageOptions"
+      },
+      {
+        "from": "schema:PdfWriteStringOptions",
+        "kind": "REFERENCES",
+        "to": "schema:ColorDto"
+      },
+      {
+        "from": "schema:PdfWriteStringOptions",
+        "kind": "REFERENCES",
+        "to": "schema:FontDto"
+      },
+      {
+        "from": "schema:PdfWriteStringOptions",
+        "kind": "REFERENCES",
+        "to": "schema:XOriginPoint"
+      },
+      {
+        "from": "schema:PdfWriteStringOptions",
+        "kind": "REFERENCES",
+        "to": "schema:YOriginPoint"
+      },
+      {
+        "from": "schema:PdfWriteStringRequestDto",
+        "kind": "REFERENCES",
+        "to": "schema:PdfWriteStringOptions"
       }
     ],
     "nodes": [
@@ -53,6 +158,19 @@
         "name": "get /api/pdf",
         "path": "/api/pdf",
         "pointer": "#/paths/~1api~1pdf/get",
+        "responses": [
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -60,7 +178,10 @@
             ]
           }
         ],
-        "summary": "Basic method to verify api is up and running"
+        "summary": "Basic method to verify api is up and running",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
         "deprecated": false,
@@ -70,6 +191,31 @@
         "name": "post /api/pdf/pdfconcat",
         "path": "/api/pdf/pdfconcat",
         "pointer": "#/paths/~1api~1pdf~1pdfconcat/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PdfConcatenationRequestDto"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfResponseDto"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -77,7 +223,10 @@
             ]
           }
         ],
-        "summary": "Concatenate multiple pdf files into single pdf file.."
+        "summary": "Concatenate multiple pdf files into single pdf file..",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
         "deprecated": false,
@@ -87,6 +236,31 @@
         "name": "post /api/pdf/pdftoimage",
         "path": "/api/pdf/pdftoimage",
         "pointer": "#/paths/~1api~1pdf~1pdftoimage/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PdfToImageRequestDto"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageResponseDto"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -94,7 +268,10 @@
             ]
           }
         ],
-        "summary": "Generate an image of to provided pdf file"
+        "summary": "Generate an image of to provided pdf file",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
         "deprecated": false,
@@ -104,6 +281,31 @@
         "name": "post /api/pdf/pdfwritestring",
         "path": "/api/pdf/pdfwritestring",
         "pointer": "#/paths/~1api~1pdf~1pdfwritestring/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PdfWriteStringRequestDto"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfResponseDto"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -111,7 +313,10 @@
             ]
           }
         ],
-        "summary": "Write text on a page in a pdf document."
+        "summary": "Write text on a page in a pdf document.",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
         "deprecated": false,
@@ -121,6 +326,30 @@
         "name": "post /api/pdf/wkhtmltopdf",
         "path": "/api/pdf/wkhtmltopdf",
         "pointer": "#/paths/~1api~1pdf~1wkhtmltopdf/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "WkHtmlToPdfRequestDto"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfResponseDto"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -128,7 +357,10 @@
             ]
           }
         ],
-        "summary": "Generate pdf file from url using the excellent tool wkhtmltopdf."
+        "summary": "Generate pdf file from url using the excellent tool wkhtmltopdf.",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
         "deprecated": false,
@@ -138,6 +370,31 @@
         "name": "post /api/pdf/xslfo",
         "path": "/api/pdf/xslfo",
         "pointer": "#/paths/~1api~1pdf~1xslfo/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "FoRequestDto"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfResponseDto"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -145,7 +402,10 @@
             ]
           }
         ],
-        "summary": "Create pdf-file from complete XSL-FO document."
+        "summary": "Create pdf-file from complete XSL-FO document.",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
         "deprecated": false,
@@ -155,6 +415,31 @@
         "name": "post /api/pdf/xslfowithtransform",
         "path": "/api/pdf/xslfowithtransform",
         "pointer": "#/paths/~1api~1pdf~1xslfowithtransform/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "FoTransformRequestDto"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PdfResponseDto"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponseDto"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -162,92 +447,124 @@
             ]
           }
         ],
-        "summary": "Create pdf-file from transforming xml document with Xsl-Fo transform document."
+        "summary": "Create pdf-file from transforming xml document with Xsl-Fo transform document.",
+        "tags": [
+          "Pdf"
+        ]
       },
       {
+        "description": "Set color",
         "id": "schema:ColorDto",
         "kind": "schema",
-        "name": "ColorDto"
+        "name": "ColorDto",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponseDto",
         "kind": "schema",
-        "name": "ErrorResponseDto"
+        "name": "ErrorResponseDto",
+        "type": "object"
       },
       {
+        "description": "The basic request with the XSL-FO document as a Base64 encoded string with a set of resources provided with a name and the data of the resource as a Base64 enc…",
         "id": "schema:FoRequestDto",
         "kind": "schema",
-        "name": "FoRequestDto"
+        "name": "FoRequestDto",
+        "type": "object"
       },
       {
+        "description": "The XSL-FO transform document and xml data document as a Base64 encoded string with a set of resources provided with a name and the data of the resource as a B…",
         "id": "schema:FoTransformRequestDto",
         "kind": "schema",
-        "name": "FoTransformRequestDto"
+        "name": "FoTransformRequestDto",
+        "type": "object"
       },
       {
+        "description": "The Font dto object",
         "id": "schema:FontDto",
         "kind": "schema",
-        "name": "FontDto"
+        "name": "FontDto",
+        "type": "object"
       },
       {
+        "description": "Font style enum representing Regular, Bold, Italic, BoldItalic",
         "id": "schema:FontStyle",
         "kind": "schema",
-        "name": "FontStyle"
+        "name": "FontStyle",
+        "type": "integer:int32"
       },
       {
+        "description": "When setting the Accept-header in the request to \"application/json\" the image file will be return as Base64 encoded string.",
         "id": "schema:ImageResponseDto",
         "kind": "schema",
-        "name": "ImageResponseDto"
+        "name": "ImageResponseDto",
+        "type": "object"
       },
       {
+        "description": "Request to concatenate a list of Pdf documents to a single Pdf document.",
         "id": "schema:PdfConcatenationRequestDto",
         "kind": "schema",
-        "name": "PdfConcatenationRequestDto"
+        "name": "PdfConcatenationRequestDto",
+        "type": "object"
       },
       {
+        "description": "Enter meta data for pdf document",
         "id": "schema:PdfMetadataDto",
         "kind": "schema",
-        "name": "PdfMetadataDto"
+        "name": "PdfMetadataDto",
+        "type": "object"
       },
       {
+        "description": "When setting the Accept-header in the request to \"application/json\" the content of the pdf file will be return as Base64 encoded string.",
         "id": "schema:PdfResponseDto",
         "kind": "schema",
-        "name": "PdfResponseDto"
+        "name": "PdfResponseDto",
+        "type": "object"
       },
       {
         "id": "schema:PdfToImageOptions",
         "kind": "schema",
-        "name": "PdfToImageOptions"
+        "name": "PdfToImageOptions",
+        "type": "object"
       },
       {
         "id": "schema:PdfToImageRequestDto",
         "kind": "schema",
-        "name": "PdfToImageRequestDto"
+        "name": "PdfToImageRequestDto",
+        "type": "object"
       },
       {
+        "description": "Options for writing string in pdf page;",
         "id": "schema:PdfWriteStringOptions",
         "kind": "schema",
-        "name": "PdfWriteStringOptions"
+        "name": "PdfWriteStringOptions",
+        "type": "object"
       },
       {
+        "description": "The request dto object to write a string on pdf page",
         "id": "schema:PdfWriteStringRequestDto",
         "kind": "schema",
-        "name": "PdfWriteStringRequestDto"
+        "name": "PdfWriteStringRequestDto",
+        "type": "object"
       },
       {
+        "description": "WkHtmlToPdfRequestDto is the data transfer object for generating a pdf using wkhtmltopdf;",
         "id": "schema:WkHtmlToPdfRequestDto",
         "kind": "schema",
-        "name": "WkHtmlToPdfRequestDto"
+        "name": "WkHtmlToPdfRequestDto",
+        "type": "object"
       },
       {
         "id": "schema:XOriginPoint",
         "kind": "schema",
-        "name": "XOriginPoint"
+        "name": "XOriginPoint",
+        "type": "integer:int32"
       },
       {
         "id": "schema:YOriginPoint",
         "kind": "schema",
-        "name": "YOriginPoint"
+        "name": "YOriginPoint",
+        "type": "integer:int32"
       }
     ]
   },

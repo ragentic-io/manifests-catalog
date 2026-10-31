@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_portfoliooptimizer.io_assets_im
 
 | | |
 | --- | --- |
-| Signed bundle | `e1641a6e0ba12837cef70d7dd83a9b6fd8a380fc87ef1e233e9d08c0eea114fe` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,88 +32,90 @@ logo: "https://api.apis.guru/v2/cache/logo/https_portfoliooptimizer.io_assets_im
 
 ## Operations (83)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/assets/analysis/absorption-ratio` | post /assets/analysis/absorption-ratio | Absorption Ratio |
-| POST | `/assets/analysis/turbulence-index` | post /assets/analysis/turbulence-index | Turbulence Index |
-| POST | `/assets/correlation/matrix` | post /assets/correlation/matrix | Correlation Matrix |
-| POST | `/assets/correlation/matrix/bounds` | post /assets/correlation/matrix/bounds | Correlation Matrix Bounds |
-| POST | `/assets/correlation/matrix/denoised` | post /assets/correlation/matrix/denoised | Denoised Correlation Matrix |
-| POST | `/assets/correlation/matrix/distance` | post /assets/correlation/matrix/distance | Correlation Matrix Distance |
-| POST | `/assets/correlation/matrix/effective-rank` | post /assets/correlation/matrix/effective-rank | Correlation Matrix Effective Rank |
-| POST | `/assets/correlation/matrix/informativeness` | post /assets/correlation/matrix/informativeness | Correlation Matrix Informativeness |
-| POST | `/assets/correlation/matrix/nearest` | post /assets/correlation/matrix/nearest | Nearest Correlation Matrix |
-| POST | `/assets/correlation/matrix/random` | post /assets/correlation/matrix/random | Random Correlation Matrix |
-| POST | `/assets/correlation/matrix/shrinkage` | post /assets/correlation/matrix/shrinkage | Correlation Matrix Shrinkage |
-| POST | `/assets/correlation/matrix/theory-implied` | post /assets/correlation/matrix/theory-implied | Theory-Implied Correlation Matrix |
-| POST | `/assets/correlation/matrix/validation` | post /assets/correlation/matrix/validation | Correlation Matrix Validation |
-| POST | `/assets/covariance/matrix` | post /assets/covariance/matrix | Covariance Matrix |
-| POST | `/assets/covariance/matrix/effective-rank` | post /assets/covariance/matrix/effective-rank | Covariance Matrix Effective Rank |
-| POST | `/assets/covariance/matrix/exponentially-weighted` | post /assets/covariance/matrix/exponentially-weighted | Exponentially Weighted Covariance Matrix |
-| POST | `/assets/covariance/matrix/validation` | post /assets/covariance/matrix/validation | Covariance Matrix Validation |
-| POST | `/assets/kurtosis` | post /assets/kurtosis | Kurtosis |
-| POST | `/assets/prices/adjusted` | post /assets/prices/adjusted | Adjusted Prices |
-| POST | `/assets/prices/adjusted/forward` | post /assets/prices/adjusted/forward | Forward-Adjusted Prices |
-| POST | `/assets/returns` | post /assets/returns | Arithmetic Returns |
-| POST | `/assets/returns/average` | post /assets/returns/average | Arithmetic Average Return |
-| POST | `/assets/returns/simulation/bootstrap` | post /assets/returns/simulation/bootstrap | Bootstrap |
-| POST | `/assets/skewness` | post /assets/skewness | Skewness |
-| POST | `/assets/variance` | post /assets/variance | Variance |
-| POST | `/assets/volatility` | post /assets/volatility | Volatility |
-| POST | `/factors/residualization` | post /factors/residualization | Residualization |
-| POST | `/portfolio/analysis/alpha` | post /portfolio/analysis/alpha | Alpha |
-| POST | `/portfolio/analysis/beta` | post /portfolio/analysis/beta | Beta |
-| POST | `/portfolio/analysis/conditional-value-at-risk` | post /portfolio/analysis/conditional-value-at-risk | Conditional Value At Risk |
-| POST | `/portfolio/analysis/contributions/return` | post /portfolio/analysis/contributions/return | Return Contributions |
-| POST | `/portfolio/analysis/contributions/risk` | post /portfolio/analysis/contributions/risk | Risk Contributions |
-| POST | `/portfolio/analysis/correlation-spectrum` | post /portfolio/analysis/correlation-spectrum | Correlation Spectrum |
-| POST | `/portfolio/analysis/diversification-ratio` | post /portfolio/analysis/diversification-ratio | Diversification Ratio |
-| POST | `/portfolio/analysis/drawdowns` | post /portfolio/analysis/drawdowns | Drawdowns |
-| POST | `/portfolio/analysis/effective-number-of-bets` | post /portfolio/analysis/effective-number-of-bets | Effective Number of Bets |
-| POST | `/portfolio/analysis/factors/exposures` | post /portfolio/analysis/factors/exposures | Factor Exposures |
-| POST | `/portfolio/analysis/mean-variance/efficient-frontier` | post /portfolio/analysis/mean-variance/efficient-frontier | Mean-Variance Efficient Frontier |
-| POST | `/portfolio/analysis/mean-variance/minimum-variance-frontier` | post /portfolio/analysis/mean-variance/minimum-variance-frontier | Mean-Variance Minimum Variance Frontier |
-| POST | `/portfolio/analysis/return` | post /portfolio/analysis/return | Arithmetic Return |
-| POST | `/portfolio/analysis/returns/average` | post /portfolio/analysis/returns/average | Arithmetic Average Return |
-| POST | `/portfolio/analysis/sharpe-ratio` | post /portfolio/analysis/sharpe-ratio | Sharpe Ratio |
-| POST | `/portfolio/analysis/sharpe-ratio/bias-adjusted` | post /portfolio/analysis/sharpe-ratio/bias-adjusted | Bias-Adjusted Sharpe Ratio |
-| POST | `/portfolio/analysis/sharpe-ratio/confidence-interval` | post /portfolio/analysis/sharpe-ratio/confidence-interval | Sharpe Ratio Confidence Interval |
-| POST | `/portfolio/analysis/sharpe-ratio/probabilistic` | post /portfolio/analysis/sharpe-ratio/probabilistic | Probabilistic Sharpe Ratio |
-| POST | `/portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length` | post /portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length | Minimum Track Record Length |
-| POST | `/portfolio/analysis/tracking-error` | post /portfolio/analysis/tracking-error | Tracking Error |
-| POST | `/portfolio/analysis/ulcer-index` | post /portfolio/analysis/ulcer-index | Ulcer Index |
-| POST | `/portfolio/analysis/ulcer-performance-index` | post /portfolio/analysis/ulcer-performance-index | Ulcer Performance Index |
-| POST | `/portfolio/analysis/value-at-risk` | post /portfolio/analysis/value-at-risk | Value At Risk |
-| POST | `/portfolio/analysis/volatility` | post /portfolio/analysis/volatility | Volatility |
-| POST | `/portfolio/construction/investable` | post /portfolio/construction/investable | Investable Portfolio |
-| POST | `/portfolio/construction/mimicking` | post /portfolio/construction/mimicking | Mimicking Portfolio |
-| POST | `/portfolio/construction/random` | post /portfolio/construction/random | Random Portfolio |
-| POST | `/portfolio/optimization/equal-risk-contributions` | post /portfolio/optimization/equal-risk-contributions | Equal Risk Contributions Portfolio |
-| POST | `/portfolio/optimization/equal-sharpe-ratio-contributions` | post /portfolio/optimization/equal-sharpe-ratio-contributions | Equal Sharpe Ratio Contributions Portfolio |
-| POST | `/portfolio/optimization/equal-volatility-weighted` | post /portfolio/optimization/equal-volatility-weighted | Equal Volatility Weighted Portfolio |
-| POST | `/portfolio/optimization/equal-weighted` | post /portfolio/optimization/equal-weighted | Equal Weighted Portfolio |
-| POST | `/portfolio/optimization/hierarchical-risk-parity` | post /portfolio/optimization/hierarchical-risk-parity | Hierarchical Risk Parity Portfolio |
-| POST | `/portfolio/optimization/hierarchical-risk-parity/clustering-based` | post /portfolio/optimization/hierarchical-risk-parity/clustering-based | Hierarchical Clustering-Based Risk Parity Portfolio |
-| POST | `/portfolio/optimization/inverse-variance-weighted` | post /portfolio/optimization/inverse-variance-weighted | Inverse Variance Weighted Portfolio |
-| POST | `/portfolio/optimization/inverse-volatility-weighted` | post /portfolio/optimization/inverse-volatility-weighted | Inverse Volatility Weighted Portfolio |
-| POST | `/portfolio/optimization/market-capitalization-weighted` | post /portfolio/optimization/market-capitalization-weighted | Market Capitalization Weighted Portfolio |
-| POST | `/portfolio/optimization/maximum-decorrelation` | post /portfolio/optimization/maximum-decorrelation | Maximum Decorrelation Portfolio |
-| POST | `/portfolio/optimization/maximum-return` | post /portfolio/optimization/maximum-return | Maximum Return Portfolio |
-| POST | `/portfolio/optimization/maximum-return/diversified` | post /portfolio/optimization/maximum-return/diversified | Diversified Maximum Return Portfolio |
-| POST | `/portfolio/optimization/maximum-return/subset-resampling-based` | post /portfolio/optimization/maximum-return/subset-resampling-based | Subset Resampling-Based Maximum Return Portfolio |
-| POST | `/portfolio/optimization/maximum-sharpe-ratio` | post /portfolio/optimization/maximum-sharpe-ratio | Maximum Sharpe Ratio Portfolio |
-| POST | `/portfolio/optimization/maximum-sharpe-ratio/diversified` | post /portfolio/optimization/maximum-sharpe-ratio/diversified | Diversified Maximum Sharpe Ratio Portfolio |
-| POST | `/portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based` | post /portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based | Subset Resampling-Based Maximum Sharpe Ratio Portfolio |
-| POST | `/portfolio/optimization/maximum-ulcer-performance-index` | post /portfolio/optimization/maximum-ulcer-performance-index | Maximum Ulcer Performance Index Portfolio |
-| POST | `/portfolio/optimization/mean-variance-efficient` | post /portfolio/optimization/mean-variance-efficient | Mean-Variance Efficient Portfolio |
-| POST | `/portfolio/optimization/mean-variance-efficient/diversified` | post /portfolio/optimization/mean-variance-efficient/diversified | Diversified Mean-Variance Efficient Portfolio |
-| POST | `/portfolio/optimization/mean-variance-efficient/subset-resampling-based` | post /portfolio/optimization/mean-variance-efficient/subset-resampling-based | Subset Resampling-Based Mean-Variance Efficient Portfolio |
-| POST | `/portfolio/optimization/minimum-correlation` | post /portfolio/optimization/minimum-correlation | Minimum Correlation Portfolio |
-| POST | `/portfolio/optimization/minimum-ulcer-index` | post /portfolio/optimization/minimum-ulcer-index | Minimum Ulcer Index Portfolio |
-| POST | `/portfolio/optimization/minimum-variance` | post /portfolio/optimization/minimum-variance | Minimum Variance Portfolio |
-| POST | `/portfolio/optimization/minimum-variance/diversified` | post /portfolio/optimization/minimum-variance/diversified | Diversified Minimum Variance Portfolio |
-| POST | `/portfolio/optimization/minimum-variance/subset-resampling-based` | post /portfolio/optimization/minimum-variance/subset-resampling-based | Subset Resampling-Based Minimum Variance Portfolio |
-| POST | `/portfolio/optimization/most-diversified` | post /portfolio/optimization/most-diversified | Most Diversified Portfolio |
-| POST | `/portfolio/simulation/rebalancing/drift-weight` | post /portfolio/simulation/rebalancing/drift-weight | Drift-weight Portfolio Rebalancing |
-| POST | `/portfolio/simulation/rebalancing/fixed-weight` | post /portfolio/simulation/rebalancing/fixed-weight | Fixed-weight Portfolio Rebalancing |
-| POST | `/portfolio/simulation/rebalancing/random-weight` | post /portfolio/simulation/rebalancing/random-weight | Random-weight Portfolio Rebalancing |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/assets/analysis/absorption-ratio` | post /assets/analysis/absorption-ratio | body*: object | object |  | Absorption Ratio |
+| POST | `/assets/analysis/turbulence-index` | post /assets/analysis/turbulence-index | body*: object | object |  | Turbulence Index |
+| POST | `/assets/correlation/matrix` | post /assets/correlation/matrix | body*: object | object |  | Correlation Matrix |
+| POST | `/assets/correlation/matrix/bounds` | post /assets/correlation/matrix/bounds | body*: object | object |  | Correlation Matrix Bounds |
+| POST | `/assets/correlation/matrix/denoised` | post /assets/correlation/matrix/denoised | body*: object | object |  | Denoised Correlation Matrix |
+| POST | `/assets/correlation/matrix/distance` | post /assets/correlation/matrix/distance | body*: object | object |  | Correlation Matrix Distance |
+| POST | `/assets/correlation/matrix/effective-rank` | post /assets/correlation/matrix/effective-rank | body*: object | object |  | Correlation Matrix Effective Rank |
+| POST | `/assets/correlation/matrix/informativeness` | post /assets/correlation/matrix/informativeness | body*: object | object |  | Correlation Matrix Informativeness |
+| POST | `/assets/correlation/matrix/nearest` | post /assets/correlation/matrix/nearest | body*: object | object |  | Nearest Correlation Matrix |
+| POST | `/assets/correlation/matrix/random` | post /assets/correlation/matrix/random | body*: object | object |  | Random Correlation Matrix |
+| POST | `/assets/correlation/matrix/shrinkage` | post /assets/correlation/matrix/shrinkage | body*: object | object |  | Correlation Matrix Shrinkage |
+| POST | `/assets/correlation/matrix/theory-implied` | post /assets/correlation/matrix/theory-implied | body*: object | object |  | Theory-Implied Correlation Matrix |
+| POST | `/assets/correlation/matrix/validation` | post /assets/correlation/matrix/validation | body*: object | object |  | Correlation Matrix Validation |
+| POST | `/assets/covariance/matrix` | post /assets/covariance/matrix | body*: object | object |  | Covariance Matrix |
+| POST | `/assets/covariance/matrix/effective-rank` | post /assets/covariance/matrix/effective-rank | body*: object | object |  | Covariance Matrix Effective Rank |
+| POST | `/assets/covariance/matrix/exponentially-weighted` | post /assets/covariance/matrix/exponentially-weighted | body*: object | object |  | Exponentially Weighted Covariance Matrix |
+| POST | `/assets/covariance/matrix/validation` | post /assets/covariance/matrix/validation | body*: object | object |  | Covariance Matrix Validation |
+| POST | `/assets/kurtosis` | post /assets/kurtosis | body*: object | object |  | Kurtosis |
+| POST | `/assets/prices/adjusted` | post /assets/prices/adjusted | body*: object | object |  | Adjusted Prices |
+| POST | `/assets/prices/adjusted/forward` | post /assets/prices/adjusted/forward | body*: object | object |  | Forward-Adjusted Prices |
+| POST | `/assets/returns` | post /assets/returns | body*: object | object |  | Arithmetic Returns |
+| POST | `/assets/returns/average` | post /assets/returns/average | body*: object | object |  | Arithmetic Average Return |
+| POST | `/assets/returns/simulation/bootstrap` | post /assets/returns/simulation/bootstrap | body*: object | object |  | Bootstrap |
+| POST | `/assets/skewness` | post /assets/skewness | body*: object | object |  | Skewness |
+| POST | `/assets/variance` | post /assets/variance | body*: object | object |  | Variance |
+| POST | `/assets/volatility` | post /assets/volatility | body*: object | object |  | Volatility |
+| POST | `/factors/residualization` | post /factors/residualization | body*: object | object |  | Residualization |
+| POST | `/portfolio/analysis/alpha` | post /portfolio/analysis/alpha | body*: object | object |  | Alpha |
+| POST | `/portfolio/analysis/beta` | post /portfolio/analysis/beta | body*: object | object |  | Beta |
+| POST | `/portfolio/analysis/conditional-value-at-risk` | post /portfolio/analysis/conditional-value-at-risk | body*: object | object |  | Conditional Value At Risk |
+| POST | `/portfolio/analysis/contributions/return` | post /portfolio/analysis/contributions/return | body*: object | object |  | Return Contributions |
+| POST | `/portfolio/analysis/contributions/risk` | post /portfolio/analysis/contributions/risk | body*: object | object |  | Risk Contributions |
+| POST | `/portfolio/analysis/correlation-spectrum` | post /portfolio/analysis/correlation-spectrum | body*: object | object |  | Correlation Spectrum |
+| POST | `/portfolio/analysis/diversification-ratio` | post /portfolio/analysis/diversification-ratio | body*: object | object |  | Diversification Ratio |
+| POST | `/portfolio/analysis/drawdowns` | post /portfolio/analysis/drawdowns | body*: object | object |  | Drawdowns |
+| POST | `/portfolio/analysis/effective-number-of-bets` | post /portfolio/analysis/effective-number-of-bets | body*: object | object |  | Effective Number of Bets |
+| POST | `/portfolio/analysis/factors/exposures` | post /portfolio/analysis/factors/exposures | body*: object | object |  | Factor Exposures |
+| POST | `/portfolio/analysis/mean-variance/efficient-frontier` | post /portfolio/analysis/mean-variance/efficient-frontier | body*: object | object |  | Mean-Variance Efficient Frontier |
+| POST | `/portfolio/analysis/mean-variance/minimum-variance-frontier` | post /portfolio/analysis/mean-variance/minimum-variance-frontier | body*: object | object |  | Mean-Variance Minimum Variance Frontier |
+| POST | `/portfolio/analysis/return` | post /portfolio/analysis/return | body*: object | object |  | Arithmetic Return |
+| POST | `/portfolio/analysis/returns/average` | post /portfolio/analysis/returns/average | body*: object | object |  | Arithmetic Average Return |
+| POST | `/portfolio/analysis/sharpe-ratio` | post /portfolio/analysis/sharpe-ratio | body*: object | object |  | Sharpe Ratio |
+| POST | `/portfolio/analysis/sharpe-ratio/bias-adjusted` | post /portfolio/analysis/sharpe-ratio/bias-adjusted | body*: object | object |  | Bias-Adjusted Sharpe Ratio |
+| POST | `/portfolio/analysis/sharpe-ratio/confidence-interval` | post /portfolio/analysis/sharpe-ratio/confidence-interval | body*: object | object |  | Sharpe Ratio Confidence Interval |
+| POST | `/portfolio/analysis/sharpe-ratio/probabilistic` | post /portfolio/analysis/sharpe-ratio/probabilistic | body*: object | object |  | Probabilistic Sharpe Ratio |
+| POST | `/portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length` | post /portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length | body*: object | object |  | Minimum Track Record Length |
+| POST | `/portfolio/analysis/tracking-error` | post /portfolio/analysis/tracking-error | body*: object | object |  | Tracking Error |
+| POST | `/portfolio/analysis/ulcer-index` | post /portfolio/analysis/ulcer-index | body*: object | object |  | Ulcer Index |
+| POST | `/portfolio/analysis/ulcer-performance-index` | post /portfolio/analysis/ulcer-performance-index | body*: object | object |  | Ulcer Performance Index |
+| POST | `/portfolio/analysis/value-at-risk` | post /portfolio/analysis/value-at-risk | body*: object | object |  | Value At Risk |
+| POST | `/portfolio/analysis/volatility` | post /portfolio/analysis/volatility | body*: object | object |  | Volatility |
+| POST | `/portfolio/construction/investable` | post /portfolio/construction/investable | body*: object | object |  | Investable Portfolio |
+| POST | `/portfolio/construction/mimicking` | post /portfolio/construction/mimicking | body*: object | object |  | Mimicking Portfolio |
+| POST | `/portfolio/construction/random` | post /portfolio/construction/random | body*: object | object |  | Random Portfolio |
+| POST | `/portfolio/optimization/equal-risk-contributions` | post /portfolio/optimization/equal-risk-contributions | body*: object | object |  | Equal Risk Contributions Portfolio |
+| POST | `/portfolio/optimization/equal-sharpe-ratio-contributions` | post /portfolio/optimization/equal-sharpe-ratio-contributions | body*: object | object |  | Equal Sharpe Ratio Contributions Portfolio |
+| POST | `/portfolio/optimization/equal-volatility-weighted` | post /portfolio/optimization/equal-volatility-weighted | body*: object | object |  | Equal Volatility Weighted Portfolio |
+| POST | `/portfolio/optimization/equal-weighted` | post /portfolio/optimization/equal-weighted | body*: object | object |  | Equal Weighted Portfolio |
+| POST | `/portfolio/optimization/hierarchical-risk-parity` | post /portfolio/optimization/hierarchical-risk-parity | body*: object | object |  | Hierarchical Risk Parity Portfolio |
+| POST | `/portfolio/optimization/hierarchical-risk-parity/clustering-based` | post /portfolio/optimization/hierarchical-risk-parity/clustering-based | body*: object | object |  | Hierarchical Clustering-Based Risk Parity Portfolio |
+| POST | `/portfolio/optimization/inverse-variance-weighted` | post /portfolio/optimization/inverse-variance-weighted | body*: object | object |  | Inverse Variance Weighted Portfolio |
+| POST | `/portfolio/optimization/inverse-volatility-weighted` | post /portfolio/optimization/inverse-volatility-weighted | body*: object | object |  | Inverse Volatility Weighted Portfolio |
+| POST | `/portfolio/optimization/market-capitalization-weighted` | post /portfolio/optimization/market-capitalization-weighted | body*: object | object |  | Market Capitalization Weighted Portfolio |
+| POST | `/portfolio/optimization/maximum-decorrelation` | post /portfolio/optimization/maximum-decorrelation | body*: object | object |  | Maximum Decorrelation Portfolio |
+| POST | `/portfolio/optimization/maximum-return` | post /portfolio/optimization/maximum-return | body*: object | object |  | Maximum Return Portfolio |
+| POST | `/portfolio/optimization/maximum-return/diversified` | post /portfolio/optimization/maximum-return/diversified | body*: object | object |  | Diversified Maximum Return Portfolio |
+| POST | `/portfolio/optimization/maximum-return/subset-resampling-based` | post /portfolio/optimization/maximum-return/subset-resampling-based | body*: object | object |  | Subset Resampling-Based Maximum Return Portfolio |
+| POST | `/portfolio/optimization/maximum-sharpe-ratio` | post /portfolio/optimization/maximum-sharpe-ratio | body*: object | object |  | Maximum Sharpe Ratio Portfolio |
+| POST | `/portfolio/optimization/maximum-sharpe-ratio/diversified` | post /portfolio/optimization/maximum-sharpe-ratio/diversified | body*: object | object |  | Diversified Maximum Sharpe Ratio Portfolio |
+| POST | `/portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based` | post /portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based | body*: object | object |  | Subset Resampling-Based Maximum Sharpe Ratio Portfolio |
+| POST | `/portfolio/optimization/maximum-ulcer-performance-index` | post /portfolio/optimization/maximum-ulcer-performance-index | body*: object | object |  | Maximum Ulcer Performance Index Portfolio |
+| POST | `/portfolio/optimization/mean-variance-efficient` | post /portfolio/optimization/mean-variance-efficient | body*: object | object |  | Mean-Variance Efficient Portfolio |
+| POST | `/portfolio/optimization/mean-variance-efficient/diversified` | post /portfolio/optimization/mean-variance-efficient/diversified | body*: object | object |  | Diversified Mean-Variance Efficient Portfolio |
+| POST | `/portfolio/optimization/mean-variance-efficient/subset-resampling-based` | post /portfolio/optimization/mean-variance-efficient/subset-resampling-based | body*: object | object |  | Subset Resampling-Based Mean-Variance Efficient Portfolio |
+| POST | `/portfolio/optimization/minimum-correlation` | post /portfolio/optimization/minimum-correlation | body*: object | object |  | Minimum Correlation Portfolio |
+| POST | `/portfolio/optimization/minimum-ulcer-index` | post /portfolio/optimization/minimum-ulcer-index | body*: object | object |  | Minimum Ulcer Index Portfolio |
+| POST | `/portfolio/optimization/minimum-variance` | post /portfolio/optimization/minimum-variance | body*: object | object |  | Minimum Variance Portfolio |
+| POST | `/portfolio/optimization/minimum-variance/diversified` | post /portfolio/optimization/minimum-variance/diversified | body*: object | object |  | Diversified Minimum Variance Portfolio |
+| POST | `/portfolio/optimization/minimum-variance/subset-resampling-based` | post /portfolio/optimization/minimum-variance/subset-resampling-based | body*: object | object |  | Subset Resampling-Based Minimum Variance Portfolio |
+| POST | `/portfolio/optimization/most-diversified` | post /portfolio/optimization/most-diversified | body*: object | object |  | Most Diversified Portfolio |
+| POST | `/portfolio/simulation/rebalancing/drift-weight` | post /portfolio/simulation/rebalancing/drift-weight | body*: object | object |  | Drift-weight Portfolio Rebalancing |
+| POST | `/portfolio/simulation/rebalancing/fixed-weight` | post /portfolio/simulation/rebalancing/fixed-weight | body*: object | object |  | Fixed-weight Portfolio Rebalancing |
+| POST | `/portfolio/simulation/rebalancing/random-weight` | post /portfolio/simulation/rebalancing/random-weight | body*: object | object |  | Random-weight Portfolio Rebalancing |

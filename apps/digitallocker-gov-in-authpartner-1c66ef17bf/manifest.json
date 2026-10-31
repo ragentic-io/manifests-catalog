@@ -113,6 +113,121 @@
         "from": "digitallocker-gov-in-authpartner-1c66ef17bf",
         "kind": "EXPOSES",
         "to": "operation:post:/statistics/1/counts"
+      },
+      {
+        "from": "operation:post:/account/1/pushuri",
+        "kind": "ACCEPTS",
+        "to": "schema:PushUri"
+      },
+      {
+        "from": "operation:post:/account/2/verify",
+        "kind": "ACCEPTS",
+        "to": "schema:VerifyAccount"
+      },
+      {
+        "from": "operation:post:/account/2/verify",
+        "kind": "RETURNS",
+        "to": "schema:VerifyAccountResponse"
+      },
+      {
+        "from": "operation:post:/oauth2/1/code",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceAuthorizationCode"
+      },
+      {
+        "from": "operation:post:/oauth2/1/code",
+        "kind": "RETURNS",
+        "to": "schema:DeviceAuthorizationCodeResponse"
+      },
+      {
+        "from": "operation:post:/oauth2/1/file/upload",
+        "kind": "ACCEPTS",
+        "to": "schema:FileUpload"
+      },
+      {
+        "from": "operation:post:/oauth2/1/file/upload",
+        "kind": "RETURNS",
+        "to": "schema:FileUploadResponse"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/doctype",
+        "kind": "ACCEPTS",
+        "to": "schema:DocType"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/doctype",
+        "kind": "RETURNS",
+        "to": "schema:DocTypeResponse"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/issuers",
+        "kind": "ACCEPTS",
+        "to": "schema:Issuer"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/issuers",
+        "kind": "RETURNS",
+        "to": "schema:IssuerResponse"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/parameters",
+        "kind": "ACCEPTS",
+        "to": "schema:SearchParameters"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/parameters",
+        "kind": "RETURNS",
+        "to": "schema:SearchParametersResponse"
+      },
+      {
+        "from": "operation:post:/oauth2/1/pull/pulldocument",
+        "kind": "ACCEPTS",
+        "to": "schema:PullDocumentSchema"
+      },
+      {
+        "from": "operation:post:/oauth2/1/token",
+        "kind": "RETURNS",
+        "to": "schema:AccessResponse"
+      },
+      {
+        "from": "operation:get:/oauth2/1/xml/{uri}",
+        "kind": "RETURNS",
+        "to": "schema:XMLFormatSchema"
+      },
+      {
+        "from": "operation:get:/oauth2/2/xml/eaadhaar",
+        "kind": "RETURNS",
+        "to": "schema:EaadharXamlSchema"
+      },
+      {
+        "from": "operation:post:/signup/1/demoauthverify",
+        "kind": "ACCEPTS",
+        "to": "schema:DemoAuthVerify"
+      },
+      {
+        "from": "operation:post:/signup/1/demoauthverify",
+        "kind": "RETURNS",
+        "to": "schema:DemoAuthVerifyResponse"
+      },
+      {
+        "from": "operation:post:/signup/2/demoauth",
+        "kind": "ACCEPTS",
+        "to": "schema:DemoAuth"
+      },
+      {
+        "from": "operation:post:/signup/2/demoauth",
+        "kind": "RETURNS",
+        "to": "schema:DemoAuthResponse"
+      },
+      {
+        "from": "operation:post:/statistics/1/counts",
+        "kind": "ACCEPTS",
+        "to": "schema:GetStatistics"
+      },
+      {
+        "from": "operation:post:/statistics/1/counts",
+        "kind": "RETURNS",
+        "to": "schema:GetStatisticsResponse"
       }
     ],
     "nodes": [
@@ -122,590 +237,1334 @@
       },
       {
         "deprecated": false,
+        "description": "The API can use to push or delete a single URI into Digital Locker using DigiLocker Id acquired using Get User Details API.",
         "id": "operation:post:/account/1/pushuri",
         "kind": "operation",
         "method": "post",
         "name": "Push URI to Account id",
         "path": "/account/1/pushuri",
         "pointer": "#/paths/~1account~11~1pushuri/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PushUri"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Push URI to Account"
+        "summary": "Push URI to Account",
+        "tags": [
+          "DigiLocker Meta APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API can be used to verify whether a mobile number or Aadhaar number is already registered with DigiLocker.",
         "id": "operation:post:/account/2/verify",
         "kind": "operation",
         "method": "post",
         "name": "Verify Account id",
         "path": "/account/2/verify",
         "pointer": "#/paths/~1account~12~1verify/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "VerifyAccount"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerifyAccountResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Verify Account"
+        "summary": "Verify Account",
+        "tags": [
+          "DigiLocker Meta APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Call to this API starts authorization flow using OAuth 2.0 protocol.",
         "id": "operation:get:/oauth2/1/authorize",
         "kind": "operation",
         "method": "get",
         "name": "Get Authorization Code id",
+        "parameters": [
+          {
+            "description": "Provide the client id that was created during the application registration process on Partners Portal.",
+            "in": "query",
+            "name": "client_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Provide the grant type requested, either token or code.",
+            "in": "query",
+            "name": "response_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The URI to redirect the user after authorization has completed.",
+            "in": "query",
+            "name": "redirect_uri",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This is your application specific data that will be passed back to your application through redirect_uri.",
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unique random string called code verifier (code_verifier) is created by the client application for every authorization request.",
+            "in": "query",
+            "name": "Code_challenge",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies what method was used to encode a code_verifier to generate code_challenge parameter above.",
+            "in": "query",
+            "name": "Code_challenge_method",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If this parameter is provided its value will always be signup.",
+            "in": "query",
+            "name": "dl_flow",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Verified mobile number of the user.",
+            "in": "query",
+            "name": "Verified_mobile",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/oauth2/1/authorize",
         "pointer": "#/paths/~1oauth2~11~1authorize/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauthAuthorizeCode": []
           }
         ],
-        "summary": "Get Authorization Code"
+        "summary": "Get Authorization Code",
+        "tags": [
+          "Authorization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The client device calls the DigiLocker API to get the device code by providing the client_id issued to the device OEM and either the username or the mobile num…",
         "id": "operation:post:/oauth2/1/code",
         "kind": "operation",
         "method": "post",
         "name": "Get Device Code id",
         "path": "/oauth2/1/code",
         "pointer": "#/paths/~1oauth2~11~1code/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "DeviceAuthorizationCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeviceAuthorizationCodeResponse"
+          },
+          {
+            "status": "400",
+            "type": "ResponseOne|ResponseTwo|ResponseThree|ResponseFour"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "ResponseFive|ResponseSix"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Get Device Code"
+        "summary": "Get Device Code",
+        "tags": [
+          "Authorization API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API can be used to save/upload a file to uploaded documents in DigiLocker.",
         "id": "operation:post:/oauth2/1/file/upload",
         "kind": "operation",
         "method": "post",
         "name": "Upload File to Locker id",
+        "parameters": [
+          {
+            "description": "The destination path of the file in DigiLocker including filename.",
+            "in": "header",
+            "name": "path",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This is used to verify the integrity of the file data.",
+            "in": "header",
+            "name": "hmac",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/oauth2/1/file/upload",
         "pointer": "#/paths/~1oauth2~11~1file~1upload/post",
+        "request": {
+          "content_types": [
+            "application/octet-stream",
+            "image/jpeg",
+            "image/jpg",
+            "image/pdf",
+            "image/png"
+          ],
+          "required": false,
+          "type": "FileUpload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FileUploadResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Upload file to locker"
+        "summary": "Upload file to locker",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a file from URI.",
         "id": "operation:get:/oauth2/1/file/{uri}",
         "kind": "operation",
         "method": "get",
         "name": "Get File from URI id",
+        "parameters": [
+          {
+            "description": "This is the unique identifier of the document.",
+            "in": "path",
+            "name": "uri",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth2/1/file/{uri}",
         "pointer": "#/paths/~1oauth2~11~1file~1{uri}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "Response3|Response4|Response5|Response6"
+          },
+          {
+            "status": "503",
+            "type": "Response1|Response2"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get File from URI"
+        "summary": "Get File from URI",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of meta-data about documents or folders in user’s DigiLocker in a specific location.",
         "id": "operation:get:/oauth2/1/files/",
         "kind": "operation",
         "method": "get",
         "name": "Get List of Self Uploaded Documents",
         "path": "/oauth2/1/files/",
         "pointer": "#/paths/~1oauth2~11~1files~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get List of Self Uploaded Documents"
+        "summary": "Get List of Self Uploaded Documents",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of meta-data about issued documents in user’s DigiLocker.",
         "id": "operation:get:/oauth2/1/files/issued",
         "kind": "operation",
         "method": "get",
         "name": "Get List of issued Documents Version1 id",
         "path": "/oauth2/1/files/issued",
         "pointer": "#/paths/~1oauth2~11~1files~1issued/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "ResponseSix|ResponseSeven"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Issued Documents"
+        "summary": "Issued Documents",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of meta-data about documents or folders in user’s DigiLocker in a specific location.",
         "id": "operation:get:/oauth2/1/files/{id}",
         "kind": "operation",
         "method": "get",
         "name": "Get List of Self Uploaded Documents id",
+        "parameters": [
+          {
+            "description": "The id of the folder to list.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth2/1/files/{id}",
         "pointer": "#/paths/~1oauth2~11~1files~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get List of Self Uploaded Documents"
+        "summary": "Get List of Self Uploaded Documents",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of documents/certificates issued by an issuer organization registered with DigiLocker.",
         "id": "operation:post:/oauth2/1/pull/doctype",
         "kind": "operation",
         "method": "post",
         "name": "Get List of Documents Provided by an Issuer id",
         "path": "/oauth2/1/pull/doctype",
         "pointer": "#/paths/~1oauth2~11~1pull~1doctype/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "DocType"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocTypeResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Get List of Documents Provided by an Issuer"
+        "summary": "Get List of Documents Provided by an Issuer",
+        "tags": [
+          "DigiLocker Meta APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of issuers registered with DigiLocker.",
         "id": "operation:post:/oauth2/1/pull/issuers",
         "kind": "operation",
         "method": "post",
         "name": "Get List of Issuers id",
         "path": "/oauth2/1/pull/issuers",
         "pointer": "#/paths/~1oauth2~11~1pull~1issuers/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "Issuer"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "IssuerResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Get List of Issuers"
+        "summary": "Get List of Issuers",
+        "tags": [
+          "DigiLocker Meta APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of parameters required to search a document/certificate of an issuer organization registered with DigiLocker.",
         "id": "operation:post:/oauth2/1/pull/parameters",
         "kind": "operation",
         "method": "post",
         "name": "Get Search Parameters for a Document id",
         "path": "/oauth2/1/pull/parameters",
         "pointer": "#/paths/~1oauth2~11~1pull~1parameters/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "SearchParameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SearchParametersResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Get Search Parameters for a Document"
+        "summary": "Get Search Parameters for a Document",
+        "tags": [
+          "DigiLocker Meta APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API allows a client application to search a document/certificate from issuer’s repository using the parameters provided by a user.",
         "id": "operation:post:/oauth2/1/pull/pulldocument",
         "kind": "operation",
         "method": "post",
         "name": "Pull Document id",
         "path": "/oauth2/1/pull/pulldocument",
         "pointer": "#/paths/~1oauth2~11~1pull~1pulldocument/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "PullDocumentSchema"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Response13|ResponseSix"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "Response14|Response15|Response16|Response17|Response18"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Pull Document"
+        "summary": "Pull Document",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Client applications can revoke a previously obtained refresh or access token when it is no longer needed.",
         "id": "operation:post:/oauth2/1/revoke",
         "kind": "operation",
         "method": "post",
         "name": "get token revocation id",
         "path": "/oauth2/1/revoke",
         "pointer": "#/paths/~1oauth2~11~1revoke/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Revoke Token."
+        "summary": "Revoke Token.",
+        "tags": [
+          "Token Revocation API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint only applies to apps using the authorization code flow.",
         "id": "operation:post:/oauth2/1/token",
         "kind": "operation",
         "method": "post",
         "name": "getaccesstoken id",
         "path": "/oauth2/1/token",
         "pointer": "#/paths/~1oauth2~11~1token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccessResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get Access Token"
+        "summary": "Get Access Token",
+        "tags": [
+          "Authorization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Client applications can call this API to get the DigiLocker Id, name, date of birth and gender of the account holder.",
         "id": "operation:get:/oauth2/1/user",
         "kind": "operation",
         "method": "get",
         "name": "Account Detail API id",
         "path": "/oauth2/1/user",
         "pointer": "#/paths/~1oauth2~11~1user/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get User Details"
+        "summary": "Get User Details",
+        "tags": [
+          "Account Detail API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the certificate data in machine readable XML format for a URI.",
         "id": "operation:get:/oauth2/1/xml/{uri}",
         "kind": "operation",
         "method": "get",
         "name": "Get Certificate Data in XML Format from URI id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "uri",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth2/1/xml/{uri}",
         "pointer": "#/paths/~1oauth2~11~1xml~1{uri}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "XMLFormatSchema"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "Response3|Response4|Response5|Response6"
+          },
+          {
+            "status": "503",
+            "type": "Response1|Response2"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get Certificate Data in XML Format from URI"
+        "summary": "Get Certificate Data in XML Format from URI",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of meta-data about issued documents in user’s DigiLocker.",
         "id": "operation:get:/oauth2/2/files/issued",
         "kind": "operation",
         "method": "get",
         "name": "Get List of issued Documents id",
         "path": "/oauth2/2/files/issued",
         "pointer": "#/paths/~1oauth2~12~1files~1issued/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "ResponseSix|ResponseSeven"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Issued Documents"
+        "summary": "Issued Documents",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns e-Aadhaar data in XML format for the account.",
         "id": "operation:get:/oauth2/2/xml/eaadhaar",
         "kind": "operation",
         "method": "get",
         "name": "Get e-Aadhaar Data in XML Format id",
         "path": "/oauth2/2/xml/eaadhaar",
         "pointer": "#/paths/~1oauth2~12~1xml~1eaadhaar/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EaadharXamlSchema"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "Response3|Response4|Response5|Response6"
+          },
+          {
+            "status": "503",
+            "type": "Response1|Response2"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get e-Aadhaar Data in XML Format"
+        "summary": "Get e-Aadhaar Data in XML Format",
+        "tags": [
+          "File APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is used to verify the OTP sent by DigiLocker during the sign up API call above.",
         "id": "operation:post:/signup/1/demoauthverify",
         "kind": "operation",
         "method": "post",
         "name": "Verify OTP id",
         "path": "/signup/1/demoauthverify",
         "pointer": "#/paths/~1signup~11~1demoauthverify/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "DemoAuthVerify"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DemoAuthVerifyResponse"
+          },
+          {
+            "status": "400",
+            "type": "Response7|Response8|Response9"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Verify OTP"
+        "summary": "Verify OTP",
+        "tags": [
+          "DigiLocker Sign up APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is used to validate Aadhaar details and verify the mobile number by generating an OTP.",
         "id": "operation:post:/signup/2/demoauth",
         "kind": "operation",
         "method": "post",
         "name": "SIGN UP id",
         "path": "/signup/2/demoauth",
         "pointer": "#/paths/~1signup~12~1demoauth/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "DemoAuth"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DemoAuthResponse"
+          },
+          {
+            "status": "400",
+            "type": "Response10|Response11|Response12"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "SIGN UP"
+        "summary": "SIGN UP",
+        "tags": [
+          "DigiLocker Sign up APIs"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns DigiLocker statistics such as the count of users, authentic documents, issuers and requesters as on a specific date.",
         "id": "operation:post:/statistics/1/counts",
         "kind": "operation",
         "method": "post",
         "name": "Get Statistics id",
         "path": "/statistics/1/counts",
         "pointer": "#/paths/~1statistics~11~1counts/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "GetStatistics"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetStatisticsResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauthsecurity": []
           }
         ],
-        "summary": "Get Statistics"
+        "summary": "Get Statistics",
+        "tags": [
+          "DigiLocker Meta APIs"
+        ]
       },
       {
         "id": "schema:AccessResponse",
         "kind": "schema",
-        "name": "AccessResponse"
+        "name": "AccessResponse",
+        "type": "object"
       },
       {
         "id": "schema:AccessToken",
         "kind": "schema",
-        "name": "AccessToken"
+        "name": "AccessToken",
+        "type": "object"
       },
       {
         "id": "schema:AuthTokenResponse",
         "kind": "schema",
-        "name": "AuthTokenResponse"
+        "name": "AuthTokenResponse",
+        "type": "object"
       },
       {
         "id": "schema:DemoAuth",
         "kind": "schema",
-        "name": "DemoAuth"
+        "name": "DemoAuth",
+        "type": "object"
       },
       {
         "id": "schema:DemoAuthResponse",
         "kind": "schema",
-        "name": "DemoAuthResponse"
+        "name": "DemoAuthResponse",
+        "type": "object"
       },
       {
         "id": "schema:DemoAuthVerify",
         "kind": "schema",
-        "name": "DemoAuthVerify"
+        "name": "DemoAuthVerify",
+        "type": "object"
       },
       {
         "id": "schema:DemoAuthVerifyResponse",
         "kind": "schema",
-        "name": "DemoAuthVerifyResponse"
+        "name": "DemoAuthVerifyResponse",
+        "type": "object"
       },
       {
         "id": "schema:DeviceAccessToken",
         "kind": "schema",
-        "name": "DeviceAccessToken"
+        "name": "DeviceAccessToken",
+        "type": "object"
       },
       {
         "id": "schema:DeviceAuthorizationCode",
         "kind": "schema",
-        "name": "DeviceAuthorizationCode"
+        "name": "DeviceAuthorizationCode",
+        "type": "object"
       },
       {
         "id": "schema:DeviceAuthorizationCodeResponse",
         "kind": "schema",
-        "name": "DeviceAuthorizationCodeResponse"
+        "name": "DeviceAuthorizationCodeResponse",
+        "type": "object"
       },
       {
         "id": "schema:DocType",
         "kind": "schema",
-        "name": "DocType"
+        "name": "DocType",
+        "type": "object"
       },
       {
         "id": "schema:DocTypeResponse",
         "kind": "schema",
-        "name": "DocTypeResponse"
+        "name": "DocTypeResponse",
+        "type": "object"
       },
       {
         "id": "schema:EaadharXamlSchema",
         "kind": "schema",
-        "name": "EaadharXamlSchema"
+        "name": "EaadharXamlSchema",
+        "type": "object"
       },
       {
         "id": "schema:FileUpload",
         "kind": "schema",
-        "name": "FileUpload"
+        "name": "FileUpload",
+        "type": "object"
       },
       {
         "id": "schema:FileUploadResponse",
         "kind": "schema",
-        "name": "FileUploadResponse"
+        "name": "FileUploadResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetStatistics",
         "kind": "schema",
-        "name": "GetStatistics"
+        "name": "GetStatistics",
+        "type": "object"
       },
       {
         "id": "schema:GetStatisticsResponse",
         "kind": "schema",
-        "name": "GetStatisticsResponse"
+        "name": "GetStatisticsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Issuer",
         "kind": "schema",
-        "name": "Issuer"
+        "name": "Issuer",
+        "type": "object"
       },
       {
         "id": "schema:IssuerResponse",
         "kind": "schema",
-        "name": "IssuerResponse"
+        "name": "IssuerResponse",
+        "type": "object"
       },
       {
         "id": "schema:PullDocumentSchema",
         "kind": "schema",
-        "name": "PullDocumentSchema"
+        "name": "PullDocumentSchema",
+        "type": "object"
       },
       {
         "id": "schema:PushUri",
         "kind": "schema",
-        "name": "PushUri"
+        "name": "PushUri",
+        "type": "object"
       },
       {
         "id": "schema:RefreshAccessToken",
         "kind": "schema",
-        "name": "RefreshAccessToken"
+        "name": "RefreshAccessToken",
+        "type": "object"
       },
       {
         "id": "schema:RefreshToken",
         "kind": "schema",
-        "name": "RefreshToken"
+        "name": "RefreshToken",
+        "type": "object"
       },
       {
         "id": "schema:Response1",
         "kind": "schema",
-        "name": "Response1"
+        "name": "Response1",
+        "type": "object"
       },
       {
         "id": "schema:Response10",
         "kind": "schema",
-        "name": "Response10"
+        "name": "Response10",
+        "type": "object"
       },
       {
         "id": "schema:Response11",
         "kind": "schema",
-        "name": "Response11"
+        "name": "Response11",
+        "type": "object"
       },
       {
         "id": "schema:Response12",
         "kind": "schema",
-        "name": "Response12"
+        "name": "Response12",
+        "type": "object"
       },
       {
         "id": "schema:Response13",
         "kind": "schema",
-        "name": "Response13"
+        "name": "Response13",
+        "type": "object"
       },
       {
         "id": "schema:Response14",
         "kind": "schema",
-        "name": "Response14"
+        "name": "Response14",
+        "type": "object"
       },
       {
         "id": "schema:Response15",
         "kind": "schema",
-        "name": "Response15"
+        "name": "Response15",
+        "type": "object"
       },
       {
         "id": "schema:Response16",
         "kind": "schema",
-        "name": "Response16"
+        "name": "Response16",
+        "type": "object"
       },
       {
         "id": "schema:Response17",
         "kind": "schema",
-        "name": "Response17"
+        "name": "Response17",
+        "type": "object"
       },
       {
         "id": "schema:Response18",
         "kind": "schema",
-        "name": "Response18"
+        "name": "Response18",
+        "type": "object"
       },
       {
         "id": "schema:Response2",
         "kind": "schema",
-        "name": "Response2"
+        "name": "Response2",
+        "type": "object"
       },
       {
         "id": "schema:Response3",
         "kind": "schema",
-        "name": "Response3"
+        "name": "Response3",
+        "type": "object"
       },
       {
         "id": "schema:Response4",
         "kind": "schema",
-        "name": "Response4"
+        "name": "Response4",
+        "type": "object"
       },
       {
         "id": "schema:Response5",
         "kind": "schema",
-        "name": "Response5"
+        "name": "Response5",
+        "type": "object"
       },
       {
         "id": "schema:Response6",
         "kind": "schema",
-        "name": "Response6"
+        "name": "Response6",
+        "type": "object"
       },
       {
         "id": "schema:Response7",
         "kind": "schema",
-        "name": "Response7"
+        "name": "Response7",
+        "type": "object"
       },
       {
         "id": "schema:Response8",
         "kind": "schema",
-        "name": "Response8"
+        "name": "Response8",
+        "type": "object"
       },
       {
         "id": "schema:Response9",
         "kind": "schema",
-        "name": "Response9"
+        "name": "Response9",
+        "type": "object"
       },
       {
         "id": "schema:ResponseFive",
         "kind": "schema",
-        "name": "ResponseFive"
+        "name": "ResponseFive",
+        "type": "object"
       },
       {
         "id": "schema:ResponseFour",
         "kind": "schema",
-        "name": "ResponseFour"
+        "name": "ResponseFour",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOne",
         "kind": "schema",
-        "name": "ResponseOne"
+        "name": "ResponseOne",
+        "type": "object"
       },
       {
         "id": "schema:ResponseSeven",
         "kind": "schema",
-        "name": "ResponseSeven"
+        "name": "ResponseSeven",
+        "type": "object"
       },
       {
         "id": "schema:ResponseSix",
         "kind": "schema",
-        "name": "ResponseSix"
+        "name": "ResponseSix",
+        "type": "object"
       },
       {
         "id": "schema:ResponseThree",
         "kind": "schema",
-        "name": "ResponseThree"
+        "name": "ResponseThree",
+        "type": "object"
       },
       {
         "id": "schema:ResponseTwo",
         "kind": "schema",
-        "name": "ResponseTwo"
+        "name": "ResponseTwo",
+        "type": "object"
       },
       {
         "id": "schema:SearchParameters",
         "kind": "schema",
-        "name": "SearchParameters"
+        "name": "SearchParameters",
+        "type": "object"
       },
       {
         "id": "schema:SearchParametersResponse",
         "kind": "schema",
-        "name": "SearchParametersResponse"
+        "name": "SearchParametersResponse",
+        "type": "object[]"
       },
       {
         "id": "schema:VerifyAccount",
         "kind": "schema",
-        "name": "VerifyAccount"
+        "name": "VerifyAccount",
+        "type": "object"
       },
       {
         "id": "schema:VerifyAccountResponse",
         "kind": "schema",
-        "name": "VerifyAccountResponse"
+        "name": "VerifyAccountResponse",
+        "type": "object"
       },
       {
         "id": "schema:XMLFormatSchema",
         "kind": "schema",
-        "name": "XMLFormatSchema"
+        "name": "XMLFormatSchema",
+        "type": "object"
       }
     ]
   },

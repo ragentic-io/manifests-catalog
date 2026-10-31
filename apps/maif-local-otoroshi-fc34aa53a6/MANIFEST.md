@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_maif.github.io_otoroshi_assets_
 
 | | |
 | --- | --- |
-| Signed bundle | `d2ba3598677664be43a0d14a8fcefcb0c080259f7d4df9c9b4c3746b845ff100` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,107 +34,109 @@ logo: "https://api.apis.guru/v2/cache/logo/https_maif.github.io_otoroshi_assets_
 
 80 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/apikeys` | allApiKeys | Get all api keys |
-| GET | `/api/auths` | findAllGlobalAuthModules | Get all global auth. module configs |
-| POST | `/api/auths` | createGlobalAuthModule | Create one global auth. module config |
-| DELETE | `/api/auths/{id}` | deleteGlobalAuthModule | Delete one global auth. module config |
-| GET | `/api/auths/{id}` | findGlobalAuthModuleById | Get one global auth. module configs |
-| PATCH | `/api/auths/{id}` | patchGlobalAuthModule | Update one global auth. module config |
-| PUT | `/api/auths/{id}` | updateGlobalAuthModule | Update one global auth. module config |
-| GET | `/api/certificates` | allCerts | Get all certificates |
-| POST | `/api/certificates` | createCert | Create one certificate |
-| DELETE | `/api/certificates/{id}` | deleteCert | Delete one certificate by id |
-| GET | `/api/certificates/{id}` | oneCert | Get one certificate by id |
-| PATCH | `/api/certificates/{id}` | patchCert | Update one certificate by id |
-| PUT | `/api/certificates/{id}` | putCert | Update one certificate by id |
-| GET | `/api/client-validators` | findAllClientValidators | Get all validation authoritiess |
-| POST | `/api/client-validators` | createClientValidator | Create one validation authorities |
-| DELETE | `/api/client-validators/{id}` | deleteClientValidator | Delete one validation authorities by id |
-| GET | `/api/client-validators/{id}` | findClientValidatorById | Get one validation authorities by id |
-| PATCH | `/api/client-validators/{id}` | patchClientValidator | Update one validation authorities by id |
-| PUT | `/api/client-validators/{id}` | updateClientValidator | Update one validation authorities by id |
-| GET | `/api/data-exporter-configs` | findAllDataExporters | Get all data exporter configs |
-| POST | `/api/data-exporter-configs` | createDataExporterConfig | Create a new data exporter config |
-| DELETE | `/api/data-exporter-configs/_bulk` | deletebulkDataExporterConfig | Delete a data exporter config |
-| PATCH | `/api/data-exporter-configs/_bulk` | patchBulkDataExporterConfig | Update a data exporter configs with a diff |
-| POST | `/api/data-exporter-configs/_bulk` | createBulkDataExporterConfigs | Create a new data exporter configs |
-| PUT | `/api/data-exporter-configs/_bulk` | updateBulkDataExporterConfig | Update a data exporter configs |
-| GET | `/api/data-exporter-configs/_template` | DataExporterTemplate | Get all data exporter configs |
-| DELETE | `/api/data-exporter-configs/{dataExporterConfigId}` | deleteDataExporterConfig | Delete a data exporter config |
-| GET | `/api/data-exporter-configs/{dataExporterConfigId}` | findDataExporterConfigById | Get a data exporter config |
-| PATCH | `/api/data-exporter-configs/{dataExporterConfigId}` | patchDataExporterConfig | Update a data exporter config with a diff |
-| PUT | `/api/data-exporter-configs/{dataExporterConfigId}` | updateDataExporterConfig | Update a data exporter config |
-| GET | `/api/globalconfig` | globalConfig | Get the full configuration of Otoroshi |
-| PATCH | `/api/globalconfig` | patchGlobalConfig | Update the global configuration with a diff |
-| PUT | `/api/globalconfig` | putGlobalConfig | Update the global configuration |
-| GET | `/api/groups` | allServiceGroups | Get all service groups |
-| POST | `/api/groups` | createGroup | Create a new service group |
-| GET | `/api/groups/{groupId}/apikeys` | apiKeysFromGroup | Get all api keys for the group of a service |
-| POST | `/api/groups/{groupId}/apikeys` | createApiKeyFromGroup | Create a new api key for a group |
-| DELETE | `/api/groups/{groupId}/apikeys/{clientId}` | deleteApiKeyFromGroup | Delete an api key |
-| GET | `/api/groups/{groupId}/apikeys/{clientId}` | apiKeyFromGroup | Get an api key |
-| PATCH | `/api/groups/{groupId}/apikeys/{clientId}` | patchApiKeyFromGroup | Update an api key with a diff |
-| PUT | `/api/groups/{groupId}/apikeys/{clientId}` | updateApiKeyFromGroup | Update an api key |
-| DELETE | `/api/groups/{groupId}/apikeys/{clientId}/quotas` | resetApiKeyFromGroupQuotas | Reset the quota state of an api key |
-| GET | `/api/groups/{groupId}/apikeys/{clientId}/quotas` | apiKeyFromGroupQuotas | Get the quota state of an api key |
-| DELETE | `/api/groups/{serviceGroupId}` | deleteGroup | Delete a service group |
-| GET | `/api/groups/{serviceGroupId}` | serviceGroup | Get a service group |
-| PATCH | `/api/groups/{serviceGroupId}` | patchGroup | Update a service group with a diff |
-| PUT | `/api/groups/{serviceGroupId}` | updateGroup | Update a service group |
-| GET | `/api/groups/{serviceGroupId}/services` | serviceGroupServices | Get all services descriptor for a group |
-| POST | `/api/import` | fullImportFromFile | Import the full state of Otoroshi as a file |
-| GET | `/api/live` | globalLiveStats | Get global otoroshi stats |
-| GET | `/api/live/{id}` | serviceLiveStats | Get live feed of otoroshi stats |
-| GET | `/api/otoroshi.json` | fullExport | Export the full state of Otoroshi |
-| POST | `/api/otoroshi.json` | fullImport | Import the full state of Otoroshi |
-| GET | `/api/scripts` | findAllScripts | Get all scripts |
-| POST | `/api/scripts` | createScript | Create a new script |
-| POST | `/api/scripts/_compile` | compileScript | Compile a script |
-| DELETE | `/api/scripts/{scriptId}` | deleteScript | Delete a script |
-| GET | `/api/scripts/{scriptId}` | findScriptById | Get a script |
-| PATCH | `/api/scripts/{scriptId}` | patchScript | Update a script with a diff |
-| PUT | `/api/scripts/{scriptId}` | updateScript | Update a script |
-| GET | `/api/services` | allServices | Get all services |
-| POST | `/api/services` | createService | Create a new service descriptor |
-| DELETE | `/api/services/{serviceId}` | deleteService | Delete a service descriptor |
-| GET | `/api/services/{serviceId}` | service | Get a service descriptor |
-| PATCH | `/api/services/{serviceId}` | patchService | Update a service descriptor with a diff |
-| PUT | `/api/services/{serviceId}` | updateService | Update a service descriptor |
-| GET | `/api/services/{serviceId}/apikeys` | apiKeys | Get all api keys for the group of a service |
-| POST | `/api/services/{serviceId}/apikeys` | createApiKey | Create a new api key for a service |
-| DELETE | `/api/services/{serviceId}/apikeys/{clientId}` | deleteApiKey | Delete an api key |
-| GET | `/api/services/{serviceId}/apikeys/{clientId}` | apiKey | Get an api key |
-| PATCH | `/api/services/{serviceId}/apikeys/{clientId}` | patchApiKey | Update an api key with a diff |
-| PUT | `/api/services/{serviceId}/apikeys/{clientId}` | updateApiKey | Update an api key |
-| GET | `/api/services/{serviceId}/apikeys/{clientId}/group` | apiKeyGroup | Get the group of an api key |
-| DELETE | `/api/services/{serviceId}/apikeys/{clientId}/quotas` | resetApiKeyQuotas | Reset the quota state of an api key |
-| GET | `/api/services/{serviceId}/apikeys/{clientId}/quotas` | apiKeyQuotas | Get the quota state of an api key |
-| DELETE | `/api/services/{serviceId}/targets` | serviceDeleteTarget | Delete a service descriptor target |
-| GET | `/api/services/{serviceId}/targets` | serviceTargets | Get a service descriptor targets |
-| PATCH | `/api/services/{serviceId}/targets` | updateServiceTargets | Update a service descriptor targets |
-| POST | `/api/services/{serviceId}/targets` | serviceAddTarget | Add a target to a service descriptor |
-| DELETE | `/api/services/{serviceId}/template` | deleteServiceTemplate | Delete a service descriptor error template |
-| GET | `/api/services/{serviceId}/template` | serviceTemplate | Get a service descriptor error template |
-| POST | `/api/services/{serviceId}/template` | createServiceTemplate | Create a service descriptor error template |
-| PUT | `/api/services/{serviceId}/template` | updateServiceTemplate | Update an error template to a service descriptor |
-| POST | `/api/snowmonkey/_start` | startSnowMonkey | Start the Snow Monkey |
-| POST | `/api/snowmonkey/_stop` | stopSnowMonkey | Stop the Snow Monkey |
-| GET | `/api/snowmonkey/config` | getSnowMonkeyConfig | Get current Snow Monkey config |
-| PATCH | `/api/snowmonkey/config` | patchSnowMonkey | Update current Snow Monkey config |
-| PUT | `/api/snowmonkey/config` | updateSnowMonkey | Update current Snow Monkey config |
-| DELETE | `/api/snowmonkey/outages` | resetSnowMonkey | Reset Snow Monkey Outages for the day |
-| GET | `/api/snowmonkey/outages` | getSnowMonkeyOutages | Get all current Snow Monkey ourages |
-| GET | `/api/verifiers` | findAllGlobalJwtVerifiers | Get all global JWT verifiers |
-| POST | `/api/verifiers` | createGlobalJwtVerifier | Create one global JWT verifiers |
-| DELETE | `/api/verifiers/{verifierId}` | deleteGlobalJwtVerifier | Delete one global JWT verifiers |
-| GET | `/api/verifiers/{verifierId}` | findGlobalJwtVerifiersById | Get one global JWT verifiers |
-| PATCH | `/api/verifiers/{verifierId}` | patchGlobalJwtVerifier | Update one global JWT verifiers |
-| PUT | `/api/verifiers/{verifierId}` | updateGlobalJwtVerifier | Update one global JWT verifiers |
-| GET | `/health` | health | Return current Otoroshi health |
-| GET | `/lines` | allLines | Get all environments |
-| GET | `/lines/{line}/services` | servicesForALine | Get all services for an environment |
-| GET | `/new/apikey` | initiateApiKey | Get a template of an Otoroshi Api Key |
-| GET | `/new/group` | initiateServiceGroup | Get a template of an Otoroshi service group |
-| GET | `/new/service` | initiateService | Get a template of an Otoroshi service descriptor |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/apikeys` | allApiKeys | — | ApiKey[] | yes | Get all api keys |
+| GET | `/api/auths` | findAllGlobalAuthModules | — | LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig[] | yes | Get all global auth. module configs |
+| POST | `/api/auths` | createGlobalAuthModule | body: LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig | LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig |  | Create one global auth. module config |
+| GET | `/api/auths/{id}` | findGlobalAuthModuleById | `id`* | LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig | yes | Get one global auth. module configs |
+| PUT | `/api/auths/{id}` | updateGlobalAuthModule | `id`*, body: LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig | LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig |  | Update one global auth. module config |
+| DELETE | `/api/auths/{id}` | deleteGlobalAuthModule | `id`* | Deleted |  | Delete one global auth. module config |
+| PATCH | `/api/auths/{id}` | patchGlobalAuthModule | `id`*, body: Patch | LdapAuthModuleConfig\|InMemoryAuthModuleConfig\|GenericOauth2ModuleConfig |  | Update one global auth. module config |
+| GET | `/api/certificates` | allCerts | — | Certificate[] | yes | Get all certificates |
+| POST | `/api/certificates` | createCert | body: Certificate | Certificate |  | Create one certificate |
+| GET | `/api/certificates/{id}` | oneCert | `id`* | Certificate | yes | Get one certificate by id |
+| PUT | `/api/certificates/{id}` | putCert | `id`*, body: Certificate | Certificate |  | Update one certificate by id |
+| DELETE | `/api/certificates/{id}` | deleteCert | `id`* | Deleted |  | Delete one certificate by id |
+| PATCH | `/api/certificates/{id}` | patchCert | `id`*, body: Patch | Certificate |  | Update one certificate by id |
+| GET | `/api/client-validators` | findAllClientValidators | — | ValidationAuthority[] | yes | Get all validation authoritiess |
+| POST | `/api/client-validators` | createClientValidator | body: ValidationAuthority | ValidationAuthority |  | Create one validation authorities |
+| GET | `/api/client-validators/{id}` | findClientValidatorById | `id`* | ValidationAuthority | yes | Get one validation authorities by id |
+| PUT | `/api/client-validators/{id}` | updateClientValidator | `id`*, body: ValidationAuthority | ValidationAuthority |  | Update one validation authorities by id |
+| DELETE | `/api/client-validators/{id}` | deleteClientValidator | `id`* | Deleted |  | Delete one validation authorities by id |
+| PATCH | `/api/client-validators/{id}` | patchClientValidator | `id`*, body: Patch | ValidationAuthority |  | Update one validation authorities by id |
+| GET | `/api/data-exporter-configs` | findAllDataExporters | — | DataExporterConfig[] | yes | Get all data exporter configs |
+| POST | `/api/data-exporter-configs` | createDataExporterConfig | body: DataExporterConfig | DataExporterConfig |  | Create a new data exporter config |
+| PUT | `/api/data-exporter-configs/_bulk` | updateBulkDataExporterConfig | body: DataExporterConfig | object[] |  | Update a data exporter configs |
+| POST | `/api/data-exporter-configs/_bulk` | createBulkDataExporterConfigs | body: DataExporterConfig | object[] |  | Create a new data exporter configs |
+| DELETE | `/api/data-exporter-configs/_bulk` | deletebulkDataExporterConfig | body: Patch | object[] |  | Delete a data exporter config |
+| PATCH | `/api/data-exporter-configs/_bulk` | patchBulkDataExporterConfig | body: Patch | object[] |  | Update a data exporter configs with a diff |
+| GET | `/api/data-exporter-configs/_template` | DataExporterTemplate | `type` | DataExporterConfig | yes | Get all data exporter configs |
+| GET | `/api/data-exporter-configs/{dataExporterConfigId}` | findDataExporterConfigById | `dataExporterConfigId`* | DataExporterConfig | yes | Get a data exporter config |
+| PUT | `/api/data-exporter-configs/{dataExporterConfigId}` | updateDataExporterConfig | `dataExporterConfigId`*, body: DataExporterConfig | DataExporterConfig |  | Update a data exporter config |
+| DELETE | `/api/data-exporter-configs/{dataExporterConfigId}` | deleteDataExporterConfig | `dataExporterConfigId`* | Deleted |  | Delete a data exporter config |
+| PATCH | `/api/data-exporter-configs/{dataExporterConfigId}` | patchDataExporterConfig | `dataExporterConfigId`*, body: Patch | DataExporterConfig |  | Update a data exporter config with a diff |
+| GET | `/api/globalconfig` | globalConfig | — | GlobalConfig | yes | Get the full configuration of Otoroshi |
+| PUT | `/api/globalconfig` | putGlobalConfig | body: GlobalConfig | GlobalConfig |  | Update the global configuration |
+| PATCH | `/api/globalconfig` | patchGlobalConfig | body: Patch | GlobalConfig |  | Update the global configuration with a diff |
+| GET | `/api/groups` | allServiceGroups | — | Group[] | yes | Get all service groups |
+| POST | `/api/groups` | createGroup | body: Group | Group |  | Create a new service group |
+| GET | `/api/groups/{groupId}/apikeys` | apiKeysFromGroup | `groupId`* | ApiKey[] | yes | Get all api keys for the group of a service |
+| POST | `/api/groups/{groupId}/apikeys` | createApiKeyFromGroup | `groupId`*, body: ApiKey | ApiKey |  | Create a new api key for a group |
+| GET | `/api/groups/{groupId}/apikeys/{clientId}` | apiKeyFromGroup | `groupId`*, `clientId`* | ApiKey | yes | Get an api key |
+| PUT | `/api/groups/{groupId}/apikeys/{clientId}` | updateApiKeyFromGroup | `groupId`*, `clientId`*, body: ApiKey | ApiKey |  | Update an api key |
+| DELETE | `/api/groups/{groupId}/apikeys/{clientId}` | deleteApiKeyFromGroup | `groupId`*, `clientId`* | Deleted |  | Delete an api key |
+| PATCH | `/api/groups/{groupId}/apikeys/{clientId}` | patchApiKeyFromGroup | `groupId`*, `clientId`*, body: Patch | ApiKey |  | Update an api key with a diff |
+| GET | `/api/groups/{groupId}/apikeys/{clientId}/quotas` | apiKeyFromGroupQuotas | `groupId`*, `clientId`* | Quotas | yes | Get the quota state of an api key |
+| DELETE | `/api/groups/{groupId}/apikeys/{clientId}/quotas` | resetApiKeyFromGroupQuotas | `groupId`*, `clientId`* | Quotas |  | Reset the quota state of an api key |
+| GET | `/api/groups/{serviceGroupId}` | serviceGroup | `serviceGroupId`* | Group | yes | Get a service group |
+| PUT | `/api/groups/{serviceGroupId}` | updateGroup | `serviceGroupId`*, body: Group | Group |  | Update a service group |
+| DELETE | `/api/groups/{serviceGroupId}` | deleteGroup | `serviceGroupId`* | Deleted |  | Delete a service group |
+| PATCH | `/api/groups/{serviceGroupId}` | patchGroup | `serviceGroupId`*, body: Patch | Group |  | Update a service group with a diff |
+| GET | `/api/groups/{serviceGroupId}/services` | serviceGroupServices | `serviceGroupId`* | ApiKey[] | yes | Get all services descriptor for a group |
+| POST | `/api/import` | fullImportFromFile | body: ImportExport | Done |  | Import the full state of Otoroshi as a file |
+| GET | `/api/live` | globalLiveStats | — | Stats | yes | Get global otoroshi stats |
+| GET | `/api/live/{id}` | serviceLiveStats | `id`* | Stats | yes | Get live feed of otoroshi stats |
+| GET | `/api/otoroshi.json` | fullExport | — | ImportExport | yes | Export the full state of Otoroshi |
+| POST | `/api/otoroshi.json` | fullImport | body: ImportExport | Done |  | Import the full state of Otoroshi |
+| GET | `/api/scripts` | findAllScripts | — | Script[] | yes | Get all scripts |
+| POST | `/api/scripts` | createScript | body: Script | Script |  | Create a new script |
+| POST | `/api/scripts/_compile` | compileScript | body: Script | ScriptCompilationResult |  | Compile a script |
+| GET | `/api/scripts/{scriptId}` | findScriptById | `scriptId`* | Script | yes | Get a script |
+| PUT | `/api/scripts/{scriptId}` | updateScript | `scriptId`*, body: Script | Script |  | Update a script |
+| DELETE | `/api/scripts/{scriptId}` | deleteScript | `scriptId`* | Deleted |  | Delete a script |
+| PATCH | `/api/scripts/{scriptId}` | patchScript | `scriptId`*, body: Patch | Script |  | Update a script with a diff |
+| GET | `/api/services` | allServices | — | Service[] | yes | Get all services |
+| POST | `/api/services` | createService | body: Service | Service |  | Create a new service descriptor |
+| GET | `/api/services/{serviceId}` | service | `serviceId`* | Service | yes | Get a service descriptor |
+| PUT | `/api/services/{serviceId}` | updateService | `serviceId`*, body: Service | Service |  | Update a service descriptor |
+| DELETE | `/api/services/{serviceId}` | deleteService | `serviceId`* | Deleted |  | Delete a service descriptor |
+| PATCH | `/api/services/{serviceId}` | patchService | `serviceId`*, body: Patch | Service |  | Update a service descriptor with a diff |
+| GET | `/api/services/{serviceId}/apikeys` | apiKeys | `serviceId`* | ApiKey[] | yes | Get all api keys for the group of a service |
+| POST | `/api/services/{serviceId}/apikeys` | createApiKey | `serviceId`*, body: ApiKey | ApiKey |  | Create a new api key for a service |
+| GET | `/api/services/{serviceId}/apikeys/{clientId}` | apiKey | `serviceId`*, `clientId`* | ApiKey | yes | Get an api key |
+| PUT | `/api/services/{serviceId}/apikeys/{clientId}` | updateApiKey | `serviceId`*, `clientId`*, body: ApiKey | ApiKey |  | Update an api key |
+| DELETE | `/api/services/{serviceId}/apikeys/{clientId}` | deleteApiKey | `serviceId`*, `clientId`* | Deleted |  | Delete an api key |
+| PATCH | `/api/services/{serviceId}/apikeys/{clientId}` | patchApiKey | `serviceId`*, `clientId`*, body: Patch | ApiKey |  | Update an api key with a diff |
+| GET | `/api/services/{serviceId}/apikeys/{clientId}/group` | apiKeyGroup | `serviceId`*, `clientId`* | Group | yes | Get the group of an api key |
+| GET | `/api/services/{serviceId}/apikeys/{clientId}/quotas` | apiKeyQuotas | `serviceId`*, `clientId`* | Quotas | yes | Get the quota state of an api key |
+| DELETE | `/api/services/{serviceId}/apikeys/{clientId}/quotas` | resetApiKeyQuotas | `serviceId`*, `clientId`* | Quotas |  | Reset the quota state of an api key |
+| GET | `/api/services/{serviceId}/targets` | serviceTargets | `serviceId`* | Target[] | yes | Get a service descriptor targets |
+| POST | `/api/services/{serviceId}/targets` | serviceAddTarget | `serviceId`*, body: Target | Target[] |  | Add a target to a service descriptor |
+| DELETE | `/api/services/{serviceId}/targets` | serviceDeleteTarget | `serviceId`* | Target[] |  | Delete a service descriptor target |
+| PATCH | `/api/services/{serviceId}/targets` | updateServiceTargets | `serviceId`*, body: Patch | Target[] |  | Update a service descriptor targets |
+| GET | `/api/services/{serviceId}/template` | serviceTemplate | `serviceId`* | ErrorTemplate | yes | Get a service descriptor error template |
+| PUT | `/api/services/{serviceId}/template` | updateServiceTemplate | `serviceId`*, body: ErrorTemplate | ErrorTemplate |  | Update an error template to a service descriptor |
+| POST | `/api/services/{serviceId}/template` | createServiceTemplate | `serviceId`*, body: ErrorTemplate | ErrorTemplate |  | Create a service descriptor error template |
+| DELETE | `/api/services/{serviceId}/template` | deleteServiceTemplate | `serviceId`* | Deleted |  | Delete a service descriptor error template |
+| POST | `/api/snowmonkey/_start` | startSnowMonkey | — | Done |  | Start the Snow Monkey |
+| POST | `/api/snowmonkey/_stop` | stopSnowMonkey | — | Done |  | Stop the Snow Monkey |
+| GET | `/api/snowmonkey/config` | getSnowMonkeyConfig | — | SnowMonkeyConfig | yes | Get current Snow Monkey config |
+| PUT | `/api/snowmonkey/config` | updateSnowMonkey | body: Group | SnowMonkeyConfig |  | Update current Snow Monkey config |
+| PATCH | `/api/snowmonkey/config` | patchSnowMonkey | body: Group | SnowMonkeyConfig |  | Update current Snow Monkey config |
+| GET | `/api/snowmonkey/outages` | getSnowMonkeyOutages | — | Outage[] | yes | Get all current Snow Monkey ourages |
+| DELETE | `/api/snowmonkey/outages` | resetSnowMonkey | — | Done |  | Reset Snow Monkey Outages for the day |
+| GET | `/api/verifiers` | findAllGlobalJwtVerifiers | — | GlobalJwtVerifier[] | yes | Get all global JWT verifiers |
+| POST | `/api/verifiers` | createGlobalJwtVerifier | body: GlobalJwtVerifier | GlobalJwtVerifier |  | Create one global JWT verifiers |
+| GET | `/api/verifiers/{verifierId}` | findGlobalJwtVerifiersById | `verifierId`* | GlobalJwtVerifier | yes | Get one global JWT verifiers |
+| PUT | `/api/verifiers/{verifierId}` | updateGlobalJwtVerifier | `verifierId`*, body: GlobalJwtVerifier | GlobalJwtVerifier |  | Update one global JWT verifiers |
+| DELETE | `/api/verifiers/{verifierId}` | deleteGlobalJwtVerifier | `verifierId`* | Deleted |  | Delete one global JWT verifiers |
+| PATCH | `/api/verifiers/{verifierId}` | patchGlobalJwtVerifier | `verifierId`*, body: Patch | GlobalJwtVerifier |  | Update one global JWT verifiers |
+| GET | `/health` | health | — | OtoroshiHealth | yes | Return current Otoroshi health |
+| GET | `/lines` | allLines | — | Environment | yes | Get all environments |
+| GET | `/lines/{line}/services` | servicesForALine | `line`* | Service[] | yes | Get all services for an environment |
+| GET | `/new/apikey` | initiateApiKey | — | ApiKey | yes | Get a template of an Otoroshi Api Key |
+| GET | `/new/group` | initiateServiceGroup | — | Group | yes | Get a template of an Otoroshi service group |
+| GET | `/new/service` | initiateService | — | Service | yes | Get a template of an Otoroshi service descriptor |

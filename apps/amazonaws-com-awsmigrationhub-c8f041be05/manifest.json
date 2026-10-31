@@ -88,6 +88,681 @@
         "from": "amazonaws-com-awsmigrationhub-c8f041be05",
         "kind": "EXPOSES",
         "to": "operation:post:/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact",
+        "kind": "ACCEPTS",
+        "to": "schema:AssociateCreatedArtifactRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact",
+        "kind": "RETURNS",
+        "to": "schema:AssociateCreatedArtifactResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+        "kind": "ACCEPTS",
+        "to": "schema:AssociateDiscoveredResourceRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+        "kind": "RETURNS",
+        "to": "schema:AssociateDiscoveredResourceResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateProgressUpdateStreamRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream",
+        "kind": "RETURNS",
+        "to": "schema:CreateProgressUpdateStreamResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream",
+        "kind": "ACCEPTS",
+        "to": "schema:DeleteProgressUpdateStreamRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream",
+        "kind": "RETURNS",
+        "to": "schema:DeleteProgressUpdateStreamResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DescribeApplicationState",
+        "kind": "ACCEPTS",
+        "to": "schema:DescribeApplicationStateRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DescribeApplicationState",
+        "kind": "RETURNS",
+        "to": "schema:DescribeApplicationStateResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+        "kind": "ACCEPTS",
+        "to": "schema:DescribeMigrationTaskRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+        "kind": "RETURNS",
+        "to": "schema:DescribeMigrationTaskResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact",
+        "kind": "ACCEPTS",
+        "to": "schema:DisassociateCreatedArtifactRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact",
+        "kind": "RETURNS",
+        "to": "schema:DisassociateCreatedArtifactResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource",
+        "kind": "ACCEPTS",
+        "to": "schema:DisassociateDiscoveredResourceRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource",
+        "kind": "RETURNS",
+        "to": "schema:DisassociateDiscoveredResourceResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ImportMigrationTask",
+        "kind": "ACCEPTS",
+        "to": "schema:ImportMigrationTaskRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ImportMigrationTask",
+        "kind": "RETURNS",
+        "to": "schema:ImportMigrationTaskResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+        "kind": "ACCEPTS",
+        "to": "schema:ListApplicationStatesRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+        "kind": "RETURNS",
+        "to": "schema:ListApplicationStatesResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts",
+        "kind": "ACCEPTS",
+        "to": "schema:ListCreatedArtifactsRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts",
+        "kind": "RETURNS",
+        "to": "schema:ListCreatedArtifactsResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+        "kind": "ACCEPTS",
+        "to": "schema:ListDiscoveredResourcesRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+        "kind": "RETURNS",
+        "to": "schema:ListDiscoveredResourcesResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListMigrationTasks",
+        "kind": "ACCEPTS",
+        "to": "schema:ListMigrationTasksRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListMigrationTasks",
+        "kind": "RETURNS",
+        "to": "schema:ListMigrationTasksResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams",
+        "kind": "ACCEPTS",
+        "to": "schema:ListProgressUpdateStreamsRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams",
+        "kind": "RETURNS",
+        "to": "schema:ListProgressUpdateStreamsResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.NotifyApplicationState",
+        "kind": "ACCEPTS",
+        "to": "schema:NotifyApplicationStateRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.NotifyApplicationState",
+        "kind": "RETURNS",
+        "to": "schema:NotifyApplicationStateResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState",
+        "kind": "ACCEPTS",
+        "to": "schema:NotifyMigrationTaskStateRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState",
+        "kind": "RETURNS",
+        "to": "schema:NotifyMigrationTaskStateResult"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes",
+        "kind": "ACCEPTS",
+        "to": "schema:PutResourceAttributesRequest"
+      },
+      {
+        "from": "operation:post:/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes",
+        "kind": "RETURNS",
+        "to": "schema:PutResourceAttributesResult"
+      },
+      {
+        "from": "schema:ApplicationIds",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationId"
+      },
+      {
+        "from": "schema:ApplicationState",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationId"
+      },
+      {
+        "from": "schema:ApplicationState",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationStatus"
+      },
+      {
+        "from": "schema:ApplicationState",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateDateTime"
+      },
+      {
+        "from": "schema:ApplicationStateList",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationState"
+      },
+      {
+        "from": "schema:AssociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CreatedArtifact"
+      },
+      {
+        "from": "schema:AssociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:AssociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:AssociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:AssociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DiscoveredResource"
+      },
+      {
+        "from": "schema:AssociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:AssociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:AssociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:CreateProgressUpdateStreamRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:CreateProgressUpdateStreamRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:CreatedArtifact",
+        "kind": "REFERENCES",
+        "to": "schema:CreatedArtifactDescription"
+      },
+      {
+        "from": "schema:CreatedArtifact",
+        "kind": "REFERENCES",
+        "to": "schema:CreatedArtifactName"
+      },
+      {
+        "from": "schema:CreatedArtifactList",
+        "kind": "REFERENCES",
+        "to": "schema:CreatedArtifact"
+      },
+      {
+        "from": "schema:DeleteProgressUpdateStreamRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:DeleteProgressUpdateStreamRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:DescribeApplicationStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationId"
+      },
+      {
+        "from": "schema:DescribeApplicationStateResult",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationStatus"
+      },
+      {
+        "from": "schema:DescribeApplicationStateResult",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateDateTime"
+      },
+      {
+        "from": "schema:DescribeMigrationTaskRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:DescribeMigrationTaskRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:DescribeMigrationTaskResult",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTask"
+      },
+      {
+        "from": "schema:DisassociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CreatedArtifactName"
+      },
+      {
+        "from": "schema:DisassociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:DisassociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:DisassociateCreatedArtifactRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:DisassociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigurationId"
+      },
+      {
+        "from": "schema:DisassociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:DisassociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:DisassociateDiscoveredResourceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:DiscoveredResource",
+        "kind": "REFERENCES",
+        "to": "schema:ConfigurationId"
+      },
+      {
+        "from": "schema:DiscoveredResource",
+        "kind": "REFERENCES",
+        "to": "schema:DiscoveredResourceDescription"
+      },
+      {
+        "from": "schema:DiscoveredResourceList",
+        "kind": "REFERENCES",
+        "to": "schema:DiscoveredResource"
+      },
+      {
+        "from": "schema:ImportMigrationTaskRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:ImportMigrationTaskRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:ImportMigrationTaskRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:LatestResourceAttributeList",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceAttribute"
+      },
+      {
+        "from": "schema:ListApplicationStatesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationIds"
+      },
+      {
+        "from": "schema:ListApplicationStatesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MaxResults"
+      },
+      {
+        "from": "schema:ListApplicationStatesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListApplicationStatesResult",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationStateList"
+      },
+      {
+        "from": "schema:ListApplicationStatesResult",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListCreatedArtifactsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MaxResultsCreatedArtifacts"
+      },
+      {
+        "from": "schema:ListCreatedArtifactsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:ListCreatedArtifactsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:ListCreatedArtifactsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListCreatedArtifactsResult",
+        "kind": "REFERENCES",
+        "to": "schema:CreatedArtifactList"
+      },
+      {
+        "from": "schema:ListCreatedArtifactsResult",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListDiscoveredResourcesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MaxResultsResources"
+      },
+      {
+        "from": "schema:ListDiscoveredResourcesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:ListDiscoveredResourcesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:ListDiscoveredResourcesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListDiscoveredResourcesResult",
+        "kind": "REFERENCES",
+        "to": "schema:DiscoveredResourceList"
+      },
+      {
+        "from": "schema:ListDiscoveredResourcesResult",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListMigrationTasksRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MaxResults"
+      },
+      {
+        "from": "schema:ListMigrationTasksRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceName"
+      },
+      {
+        "from": "schema:ListMigrationTasksRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListMigrationTasksResult",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskSummaryList"
+      },
+      {
+        "from": "schema:ListMigrationTasksResult",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListProgressUpdateStreamsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MaxResults"
+      },
+      {
+        "from": "schema:ListProgressUpdateStreamsRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:ListProgressUpdateStreamsResult",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStreamSummaryList"
+      },
+      {
+        "from": "schema:ListProgressUpdateStreamsResult",
+        "kind": "REFERENCES",
+        "to": "schema:Token"
+      },
+      {
+        "from": "schema:MigrationTask",
+        "kind": "REFERENCES",
+        "to": "schema:LatestResourceAttributeList"
+      },
+      {
+        "from": "schema:MigrationTask",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:MigrationTask",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:MigrationTask",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:MigrationTask",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateDateTime"
+      },
+      {
+        "from": "schema:MigrationTaskSummary",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:MigrationTaskSummary",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressPercent"
+      },
+      {
+        "from": "schema:MigrationTaskSummary",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:MigrationTaskSummary",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:MigrationTaskSummary",
+        "kind": "REFERENCES",
+        "to": "schema:StatusDetail"
+      },
+      {
+        "from": "schema:MigrationTaskSummary",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateDateTime"
+      },
+      {
+        "from": "schema:MigrationTaskSummaryList",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskSummary"
+      },
+      {
+        "from": "schema:NotifyApplicationStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationId"
+      },
+      {
+        "from": "schema:NotifyApplicationStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationStatus"
+      },
+      {
+        "from": "schema:NotifyApplicationStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:NotifyApplicationStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateDateTime"
+      },
+      {
+        "from": "schema:NotifyMigrationTaskStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:NotifyMigrationTaskStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:NotifyMigrationTaskStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:NextUpdateSeconds"
+      },
+      {
+        "from": "schema:NotifyMigrationTaskStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:NotifyMigrationTaskStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Task"
+      },
+      {
+        "from": "schema:NotifyMigrationTaskStateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateDateTime"
+      },
+      {
+        "from": "schema:ProgressUpdateStreamSummary",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:ProgressUpdateStreamSummaryList",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStreamSummary"
+      },
+      {
+        "from": "schema:PutResourceAttributesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DryRun"
+      },
+      {
+        "from": "schema:PutResourceAttributesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:MigrationTaskName"
+      },
+      {
+        "from": "schema:PutResourceAttributesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressUpdateStream"
+      },
+      {
+        "from": "schema:PutResourceAttributesRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceAttributeList"
+      },
+      {
+        "from": "schema:ResourceAttribute",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceAttributeType"
+      },
+      {
+        "from": "schema:ResourceAttribute",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceAttributeValue"
+      },
+      {
+        "from": "schema:ResourceAttributeList",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceAttribute"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:ProgressPercent"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Task",
+        "kind": "REFERENCES",
+        "to": "schema:StatusDetail"
       }
     ],
     "nodes": [
@@ -97,12 +772,116 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Associates a created artifact of an AWS cloud resource, the target receiving the migration, with the migration task performed by a migration tool.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact",
         "kind": "operation",
         "method": "post",
         "name": "AssociateCreatedArtifact",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.AssociateCreatedArtifact"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssociateCreatedArtifactRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssociateCreatedArtifactResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -112,12 +891,120 @@
       },
       {
         "deprecated": false,
+        "description": "Associates a discovered resource ID from Application Discovery Service with a migration task.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
         "kind": "operation",
         "method": "post",
         "name": "AssociateDiscoveredResource",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.AssociateDiscoveredResource"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssociateDiscoveredResourceRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssociateDiscoveredResourceResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "PolicyErrorException"
+          },
+          {
+            "status": "488",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "489",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -127,12 +1014,112 @@
       },
       {
         "deprecated": false,
+        "description": "Creates a progress update stream which is an AWS resource used for access control as well as a namespace for migration task names that is implicitly linked to…",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream",
         "kind": "operation",
         "method": "post",
         "name": "CreateProgressUpdateStream",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.CreateProgressUpdateStream"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateProgressUpdateStreamRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateProgressUpdateStreamResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -142,12 +1129,116 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Deletes a progress update stream, including all of its tasks, which was previously created as an AWS resource used for access control.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream",
         "kind": "operation",
         "method": "post",
         "name": "DeleteProgressUpdateStream",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.DeleteProgressUpdateStream"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeleteProgressUpdateStreamRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteProgressUpdateStreamResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -157,12 +1248,112 @@
       },
       {
         "deprecated": false,
+        "description": "Gets the migration status of an application.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.DescribeApplicationState",
         "kind": "operation",
         "method": "post",
         "name": "DescribeApplicationState",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.DescribeApplicationState"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.DescribeApplicationState",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.DescribeApplicationState/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DescribeApplicationStateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DescribeApplicationStateResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "PolicyErrorException"
+          },
+          {
+            "status": "486",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "487",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -172,12 +1363,108 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves a list of all attributes associated with a specific migration task.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
         "kind": "operation",
         "method": "post",
         "name": "DescribeMigrationTask",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.DescribeMigrationTask"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DescribeMigrationTaskRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DescribeMigrationTaskResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "486",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -187,12 +1474,116 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Disassociates a created artifact of an AWS resource with a migration task performed by a migration tool that was previously associated.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact",
         "kind": "operation",
         "method": "post",
         "name": "DisassociateCreatedArtifact",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.DisassociateCreatedArtifact"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DisassociateCreatedArtifactRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DisassociateCreatedArtifactResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -202,12 +1593,116 @@
       },
       {
         "deprecated": false,
+        "description": "Disassociate an Application Discovery Service discovered resource from a migration task.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource",
         "kind": "operation",
         "method": "post",
         "name": "DisassociateDiscoveredResource",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.DisassociateDiscoveredResource"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DisassociateDiscoveredResourceRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DisassociateDiscoveredResourceResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -217,12 +1712,116 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Registers a new migration task which represents a server, database, etc., being migrated to AWS by a migration tool.</p> <p>This API is a prerequisite to ca…",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.ImportMigrationTask",
         "kind": "operation",
         "method": "post",
         "name": "ImportMigrationTask",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.ImportMigrationTask"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.ImportMigrationTask",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.ImportMigrationTask/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ImportMigrationTaskRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImportMigrationTaskResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -232,12 +1831,118 @@
       },
       {
         "deprecated": false,
+        "description": "Lists all the migration statuses for your applications.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
         "kind": "operation",
         "method": "post",
         "name": "ListApplicationStates",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination limit",
+            "in": "query",
+            "name": "MaxResults",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination token",
+            "in": "query",
+            "name": "NextToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.ListApplicationStates"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.ListApplicationStates/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListApplicationStatesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListApplicationStatesResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -247,12 +1952,122 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Lists the created artifacts attached to a given migration task in an update stream.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts",
         "kind": "operation",
         "method": "post",
         "name": "ListCreatedArtifacts",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination limit",
+            "in": "query",
+            "name": "MaxResults",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination token",
+            "in": "query",
+            "name": "NextToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.ListCreatedArtifacts"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListCreatedArtifactsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListCreatedArtifactsResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "486",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -262,12 +2077,122 @@
       },
       {
         "deprecated": false,
+        "description": "Lists discovered resources associated with the given <code>MigrationTask</code>.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
         "kind": "operation",
         "method": "post",
         "name": "ListDiscoveredResources",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination limit",
+            "in": "query",
+            "name": "MaxResults",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination token",
+            "in": "query",
+            "name": "NextToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.ListDiscoveredResources"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListDiscoveredResourcesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListDiscoveredResourcesResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "486",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -277,12 +2202,126 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Lists all, or filtered by resource name, migration tasks associated with the user account making this call.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListMigrationTasks",
         "kind": "operation",
         "method": "post",
         "name": "ListMigrationTasks",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination limit",
+            "in": "query",
+            "name": "MaxResults",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination token",
+            "in": "query",
+            "name": "NextToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.ListMigrationTasks"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.ListMigrationTasks",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.ListMigrationTasks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListMigrationTasksRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListMigrationTasksResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "PolicyErrorException"
+          },
+          {
+            "status": "486",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "487",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -292,12 +2331,118 @@
       },
       {
         "deprecated": false,
+        "description": "Lists progress update streams associated with the user account making this call.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams",
         "kind": "operation",
         "method": "post",
         "name": "ListProgressUpdateStreams",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination limit",
+            "in": "query",
+            "name": "MaxResults",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Pagination token",
+            "in": "query",
+            "name": "NextToken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.ListProgressUpdateStreams"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ListProgressUpdateStreamsRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListProgressUpdateStreamsResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "485",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -307,12 +2452,120 @@
       },
       {
         "deprecated": false,
+        "description": "Sets the migration state of an application.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.NotifyApplicationState",
         "kind": "operation",
         "method": "post",
         "name": "NotifyApplicationState",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.NotifyApplicationState"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.NotifyApplicationState",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.NotifyApplicationState/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NotifyApplicationStateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotifyApplicationStateResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "PolicyErrorException"
+          },
+          {
+            "status": "488",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "489",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -322,12 +2575,116 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Notifies Migration Hub of the current status, progress, or other detail regarding a migration task.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState",
         "kind": "operation",
         "method": "post",
         "name": "NotifyMigrationTaskState",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.NotifyMigrationTaskState"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NotifyMigrationTaskStateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotifyMigrationTaskStateResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -337,12 +2694,116 @@
       },
       {
         "deprecated": false,
+        "description": "<p>Provides identifying details of the resource being migrated so that it can be associated in the Application Discovery Service repository.",
         "id": "operation:post:/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes",
         "kind": "operation",
         "method": "post",
         "name": "PutResourceAttributes",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Amz-Content-Sha256",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Credential",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Security-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-Signature",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "X-Amz-SignedHeaders",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "AWSMigrationHub.PutResourceAttributes"
+            ],
+            "in": "header",
+            "name": "X-Amz-Target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/#X-Amz-Target=AWSMigrationHub.PutResourceAttributes",
         "pointer": "#/paths/~1#X-Amz-Target=AWSMigrationHub.PutResourceAttributes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PutResourceAttributesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PutResourceAttributesResult"
+          },
+          {
+            "status": "480",
+            "type": "AccessDeniedException"
+          },
+          {
+            "status": "481",
+            "type": "ThrottlingException"
+          },
+          {
+            "status": "482",
+            "type": "InternalServerError"
+          },
+          {
+            "status": "483",
+            "type": "ServiceUnavailableException"
+          },
+          {
+            "status": "484",
+            "type": "DryRunOperation"
+          },
+          {
+            "status": "485",
+            "type": "UnauthorizedOperation"
+          },
+          {
+            "status": "486",
+            "type": "InvalidInputException"
+          },
+          {
+            "status": "487",
+            "type": "ResourceNotFoundException"
+          },
+          {
+            "status": "488",
+            "type": "HomeRegionNotSetException"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "hmac": []
@@ -358,152 +2819,185 @@
       {
         "id": "schema:ApplicationId",
         "kind": "schema",
-        "name": "ApplicationId"
+        "name": "ApplicationId",
+        "type": "string"
       },
       {
         "id": "schema:ApplicationIds",
         "kind": "schema",
-        "name": "ApplicationIds"
+        "name": "ApplicationIds",
+        "type": "ApplicationId[]"
       },
       {
+        "description": "The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.",
         "id": "schema:ApplicationState",
         "kind": "schema",
-        "name": "ApplicationState"
+        "name": "ApplicationState",
+        "type": "object"
       },
       {
         "id": "schema:ApplicationStateList",
         "kind": "schema",
-        "name": "ApplicationStateList"
+        "name": "ApplicationStateList",
+        "type": "ApplicationState[]"
       },
       {
         "id": "schema:ApplicationStatus",
         "kind": "schema",
-        "name": "ApplicationStatus"
+        "name": "ApplicationStatus",
+        "type": "string"
       },
       {
         "id": "schema:AssociateCreatedArtifactRequest",
         "kind": "schema",
-        "name": "AssociateCreatedArtifactRequest"
+        "name": "AssociateCreatedArtifactRequest",
+        "type": "object"
       },
       {
         "id": "schema:AssociateCreatedArtifactResult",
         "kind": "schema",
-        "name": "AssociateCreatedArtifactResult"
+        "name": "AssociateCreatedArtifactResult",
+        "type": "object"
       },
       {
         "id": "schema:AssociateDiscoveredResourceRequest",
         "kind": "schema",
-        "name": "AssociateDiscoveredResourceRequest"
+        "name": "AssociateDiscoveredResourceRequest",
+        "type": "object"
       },
       {
         "id": "schema:AssociateDiscoveredResourceResult",
         "kind": "schema",
-        "name": "AssociateDiscoveredResourceResult"
+        "name": "AssociateDiscoveredResourceResult",
+        "type": "object"
       },
       {
         "id": "schema:ConfigurationId",
         "kind": "schema",
-        "name": "ConfigurationId"
+        "name": "ConfigurationId",
+        "type": "string"
       },
       {
         "id": "schema:CreateProgressUpdateStreamRequest",
         "kind": "schema",
-        "name": "CreateProgressUpdateStreamRequest"
+        "name": "CreateProgressUpdateStreamRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateProgressUpdateStreamResult",
         "kind": "schema",
-        "name": "CreateProgressUpdateStreamResult"
+        "name": "CreateProgressUpdateStreamResult",
+        "type": "object"
       },
       {
+        "description": "An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).",
         "id": "schema:CreatedArtifact",
         "kind": "schema",
-        "name": "CreatedArtifact"
+        "name": "CreatedArtifact",
+        "type": "object"
       },
       {
         "id": "schema:CreatedArtifactDescription",
         "kind": "schema",
-        "name": "CreatedArtifactDescription"
+        "name": "CreatedArtifactDescription",
+        "type": "string"
       },
       {
         "id": "schema:CreatedArtifactList",
         "kind": "schema",
-        "name": "CreatedArtifactList"
+        "name": "CreatedArtifactList",
+        "type": "CreatedArtifact[]"
       },
       {
         "id": "schema:CreatedArtifactName",
         "kind": "schema",
-        "name": "CreatedArtifactName"
+        "name": "CreatedArtifactName",
+        "type": "string"
       },
       {
         "id": "schema:DeleteProgressUpdateStreamRequest",
         "kind": "schema",
-        "name": "DeleteProgressUpdateStreamRequest"
+        "name": "DeleteProgressUpdateStreamRequest",
+        "type": "object"
       },
       {
         "id": "schema:DeleteProgressUpdateStreamResult",
         "kind": "schema",
-        "name": "DeleteProgressUpdateStreamResult"
+        "name": "DeleteProgressUpdateStreamResult",
+        "type": "object"
       },
       {
         "id": "schema:DescribeApplicationStateRequest",
         "kind": "schema",
-        "name": "DescribeApplicationStateRequest"
+        "name": "DescribeApplicationStateRequest",
+        "type": "object"
       },
       {
         "id": "schema:DescribeApplicationStateResult",
         "kind": "schema",
-        "name": "DescribeApplicationStateResult"
+        "name": "DescribeApplicationStateResult",
+        "type": "object"
       },
       {
         "id": "schema:DescribeMigrationTaskRequest",
         "kind": "schema",
-        "name": "DescribeMigrationTaskRequest"
+        "name": "DescribeMigrationTaskRequest",
+        "type": "object"
       },
       {
         "id": "schema:DescribeMigrationTaskResult",
         "kind": "schema",
-        "name": "DescribeMigrationTaskResult"
+        "name": "DescribeMigrationTaskResult",
+        "type": "object"
       },
       {
         "id": "schema:DisassociateCreatedArtifactRequest",
         "kind": "schema",
-        "name": "DisassociateCreatedArtifactRequest"
+        "name": "DisassociateCreatedArtifactRequest",
+        "type": "object"
       },
       {
         "id": "schema:DisassociateCreatedArtifactResult",
         "kind": "schema",
-        "name": "DisassociateCreatedArtifactResult"
+        "name": "DisassociateCreatedArtifactResult",
+        "type": "object"
       },
       {
         "id": "schema:DisassociateDiscoveredResourceRequest",
         "kind": "schema",
-        "name": "DisassociateDiscoveredResourceRequest"
+        "name": "DisassociateDiscoveredResourceRequest",
+        "type": "object"
       },
       {
         "id": "schema:DisassociateDiscoveredResourceResult",
         "kind": "schema",
-        "name": "DisassociateDiscoveredResourceResult"
+        "name": "DisassociateDiscoveredResourceResult",
+        "type": "object"
       },
       {
+        "description": "Object representing the on-premises resource being migrated.",
         "id": "schema:DiscoveredResource",
         "kind": "schema",
-        "name": "DiscoveredResource"
+        "name": "DiscoveredResource",
+        "type": "object"
       },
       {
         "id": "schema:DiscoveredResourceDescription",
         "kind": "schema",
-        "name": "DiscoveredResourceDescription"
+        "name": "DiscoveredResourceDescription",
+        "type": "string"
       },
       {
         "id": "schema:DiscoveredResourceList",
         "kind": "schema",
-        "name": "DiscoveredResourceList"
+        "name": "DiscoveredResourceList",
+        "type": "DiscoveredResource[]"
       },
       {
         "id": "schema:DryRun",
         "kind": "schema",
-        "name": "DryRun"
+        "name": "DryRun",
+        "type": "boolean"
       },
       {
         "id": "schema:DryRunOperation",
@@ -518,12 +3012,14 @@
       {
         "id": "schema:ImportMigrationTaskRequest",
         "kind": "schema",
-        "name": "ImportMigrationTaskRequest"
+        "name": "ImportMigrationTaskRequest",
+        "type": "object"
       },
       {
         "id": "schema:ImportMigrationTaskResult",
         "kind": "schema",
-        "name": "ImportMigrationTaskResult"
+        "name": "ImportMigrationTaskResult",
+        "type": "object"
       },
       {
         "id": "schema:InternalServerError",
@@ -538,117 +3034,142 @@
       {
         "id": "schema:LatestResourceAttributeList",
         "kind": "schema",
-        "name": "LatestResourceAttributeList"
+        "name": "LatestResourceAttributeList",
+        "type": "ResourceAttribute[]"
       },
       {
         "id": "schema:ListApplicationStatesRequest",
         "kind": "schema",
-        "name": "ListApplicationStatesRequest"
+        "name": "ListApplicationStatesRequest",
+        "type": "object"
       },
       {
         "id": "schema:ListApplicationStatesResult",
         "kind": "schema",
-        "name": "ListApplicationStatesResult"
+        "name": "ListApplicationStatesResult",
+        "type": "object"
       },
       {
         "id": "schema:ListCreatedArtifactsRequest",
         "kind": "schema",
-        "name": "ListCreatedArtifactsRequest"
+        "name": "ListCreatedArtifactsRequest",
+        "type": "object"
       },
       {
         "id": "schema:ListCreatedArtifactsResult",
         "kind": "schema",
-        "name": "ListCreatedArtifactsResult"
+        "name": "ListCreatedArtifactsResult",
+        "type": "object"
       },
       {
         "id": "schema:ListDiscoveredResourcesRequest",
         "kind": "schema",
-        "name": "ListDiscoveredResourcesRequest"
+        "name": "ListDiscoveredResourcesRequest",
+        "type": "object"
       },
       {
         "id": "schema:ListDiscoveredResourcesResult",
         "kind": "schema",
-        "name": "ListDiscoveredResourcesResult"
+        "name": "ListDiscoveredResourcesResult",
+        "type": "object"
       },
       {
         "id": "schema:ListMigrationTasksRequest",
         "kind": "schema",
-        "name": "ListMigrationTasksRequest"
+        "name": "ListMigrationTasksRequest",
+        "type": "object"
       },
       {
         "id": "schema:ListMigrationTasksResult",
         "kind": "schema",
-        "name": "ListMigrationTasksResult"
+        "name": "ListMigrationTasksResult",
+        "type": "object"
       },
       {
         "id": "schema:ListProgressUpdateStreamsRequest",
         "kind": "schema",
-        "name": "ListProgressUpdateStreamsRequest"
+        "name": "ListProgressUpdateStreamsRequest",
+        "type": "object"
       },
       {
         "id": "schema:ListProgressUpdateStreamsResult",
         "kind": "schema",
-        "name": "ListProgressUpdateStreamsResult"
+        "name": "ListProgressUpdateStreamsResult",
+        "type": "object"
       },
       {
         "id": "schema:MaxResults",
         "kind": "schema",
-        "name": "MaxResults"
+        "name": "MaxResults",
+        "type": "integer"
       },
       {
         "id": "schema:MaxResultsCreatedArtifacts",
         "kind": "schema",
-        "name": "MaxResultsCreatedArtifacts"
+        "name": "MaxResultsCreatedArtifacts",
+        "type": "integer"
       },
       {
         "id": "schema:MaxResultsResources",
         "kind": "schema",
-        "name": "MaxResultsResources"
+        "name": "MaxResultsResources",
+        "type": "integer"
       },
       {
+        "description": "Represents a migration task in a migration tool.",
         "id": "schema:MigrationTask",
         "kind": "schema",
-        "name": "MigrationTask"
+        "name": "MigrationTask",
+        "type": "object"
       },
       {
         "id": "schema:MigrationTaskName",
         "kind": "schema",
-        "name": "MigrationTaskName"
+        "name": "MigrationTaskName",
+        "type": "string"
       },
       {
+        "description": "MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>U…",
         "id": "schema:MigrationTaskSummary",
         "kind": "schema",
-        "name": "MigrationTaskSummary"
+        "name": "MigrationTaskSummary",
+        "type": "object"
       },
       {
         "id": "schema:MigrationTaskSummaryList",
         "kind": "schema",
-        "name": "MigrationTaskSummaryList"
+        "name": "MigrationTaskSummaryList",
+        "type": "MigrationTaskSummary[]"
       },
       {
         "id": "schema:NextUpdateSeconds",
         "kind": "schema",
-        "name": "NextUpdateSeconds"
+        "name": "NextUpdateSeconds",
+        "type": "integer"
       },
       {
         "id": "schema:NotifyApplicationStateRequest",
         "kind": "schema",
-        "name": "NotifyApplicationStateRequest"
+        "name": "NotifyApplicationStateRequest",
+        "type": "object"
       },
       {
         "id": "schema:NotifyApplicationStateResult",
         "kind": "schema",
-        "name": "NotifyApplicationStateResult"
+        "name": "NotifyApplicationStateResult",
+        "type": "object"
       },
       {
         "id": "schema:NotifyMigrationTaskStateRequest",
         "kind": "schema",
-        "name": "NotifyMigrationTaskStateRequest"
+        "name": "NotifyMigrationTaskStateRequest",
+        "type": "object"
       },
       {
         "id": "schema:NotifyMigrationTaskStateResult",
         "kind": "schema",
-        "name": "NotifyMigrationTaskStateResult"
+        "name": "NotifyMigrationTaskStateResult",
+        "type": "object"
       },
       {
         "id": "schema:PolicyErrorException",
@@ -658,57 +3179,70 @@
       {
         "id": "schema:ProgressPercent",
         "kind": "schema",
-        "name": "ProgressPercent"
+        "name": "ProgressPercent",
+        "type": "integer"
       },
       {
         "id": "schema:ProgressUpdateStream",
         "kind": "schema",
-        "name": "ProgressUpdateStream"
+        "name": "ProgressUpdateStream",
+        "type": "string"
       },
       {
+        "description": "Summary of the AWS resource used for access control that is implicitly linked to your AWS account.",
         "id": "schema:ProgressUpdateStreamSummary",
         "kind": "schema",
-        "name": "ProgressUpdateStreamSummary"
+        "name": "ProgressUpdateStreamSummary",
+        "type": "object"
       },
       {
         "id": "schema:ProgressUpdateStreamSummaryList",
         "kind": "schema",
-        "name": "ProgressUpdateStreamSummaryList"
+        "name": "ProgressUpdateStreamSummaryList",
+        "type": "ProgressUpdateStreamSummary[]"
       },
       {
         "id": "schema:PutResourceAttributesRequest",
         "kind": "schema",
-        "name": "PutResourceAttributesRequest"
+        "name": "PutResourceAttributesRequest",
+        "type": "object"
       },
       {
         "id": "schema:PutResourceAttributesResult",
         "kind": "schema",
-        "name": "PutResourceAttributesResult"
+        "name": "PutResourceAttributesResult",
+        "type": "object"
       },
       {
+        "description": "<p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</co…",
         "id": "schema:ResourceAttribute",
         "kind": "schema",
-        "name": "ResourceAttribute"
+        "name": "ResourceAttribute",
+        "type": "object"
       },
       {
         "id": "schema:ResourceAttributeList",
         "kind": "schema",
-        "name": "ResourceAttributeList"
+        "name": "ResourceAttributeList",
+        "type": "ResourceAttribute[]"
       },
       {
         "id": "schema:ResourceAttributeType",
         "kind": "schema",
-        "name": "ResourceAttributeType"
+        "name": "ResourceAttributeType",
+        "type": "string"
       },
       {
         "id": "schema:ResourceAttributeValue",
         "kind": "schema",
-        "name": "ResourceAttributeValue"
+        "name": "ResourceAttributeValue",
+        "type": "string"
       },
       {
         "id": "schema:ResourceName",
         "kind": "schema",
-        "name": "ResourceName"
+        "name": "ResourceName",
+        "type": "string"
       },
       {
         "id": "schema:ResourceNotFoundException",
@@ -723,17 +3257,21 @@
       {
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "string"
       },
       {
         "id": "schema:StatusDetail",
         "kind": "schema",
-        "name": "StatusDetail"
+        "name": "StatusDetail",
+        "type": "string"
       },
       {
+        "description": "Task object encapsulating task information.",
         "id": "schema:Task",
         "kind": "schema",
-        "name": "Task"
+        "name": "Task",
+        "type": "object"
       },
       {
         "id": "schema:ThrottlingException",
@@ -743,7 +3281,8 @@
       {
         "id": "schema:Token",
         "kind": "schema",
-        "name": "Token"
+        "name": "Token",
+        "type": "string"
       },
       {
         "id": "schema:UnauthorizedOperation",
@@ -753,7 +3292,8 @@
       {
         "id": "schema:UpdateDateTime",
         "kind": "schema",
-        "name": "UpdateDateTime"
+        "name": "UpdateDateTime",
+        "type": "string:date-time"
       }
     ]
   },
