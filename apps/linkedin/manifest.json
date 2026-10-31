@@ -1,0 +1,807 @@
+{
+  "a2ui": {
+    "messages": [
+      {
+        "createSurface": {
+          "catalogId": "https://a2ui.org/specification/v1_0/catalogs/basic/catalog.json",
+          "dataModel": {
+            "name": "linkedin",
+            "status": "Authorize the application to verify and save your connection.",
+            "workspace": ""
+          },
+          "metadata": {
+            "extensions": {
+              "io_ragentic_theme": {
+                "primaryColor": "#475569"
+              }
+            }
+          },
+          "sendDataModel": false,
+          "surfaceId": "setup-linkedin"
+        },
+        "version": "v1.0"
+      },
+      {
+        "updateComponents": {
+          "components": [
+            {
+              "children": [
+                "independent-label",
+                "title",
+                "independent-attribution",
+                "steps",
+                "connection-name",
+                "workspace",
+                "save",
+                "status",
+                "credentials"
+              ],
+              "component": "Column",
+              "id": "root"
+            },
+            {
+              "component": "Text",
+              "id": "independent-label",
+              "text": "Independent integration"
+            },
+            {
+              "component": "Text",
+              "id": "title",
+              "text": "## Connect LinkedIn"
+            },
+            {
+              "component": "Tabs",
+              "id": "steps",
+              "tabs": [
+                {
+                  "child": "step-0",
+                  "title": "1. Create a LinkedIn app"
+                },
+                {
+                  "child": "step-1",
+                  "title": "2. Authorize"
+                },
+                {
+                  "child": "step-2",
+                  "title": "3. Verify and save"
+                }
+              ]
+            },
+            {
+              "component": "TextField",
+              "id": "connection-name",
+              "label": "Connection name",
+              "value": {
+                "@path": "/name"
+              }
+            },
+            {
+              "component": "TextField",
+              "id": "workspace",
+              "label": "Workspace",
+              "value": {
+                "@path": "/workspace"
+              }
+            },
+            {
+              "component": "Text",
+              "id": "save-label",
+              "text": "Connect and save"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {
+                    "app": "linkedin",
+                    "name": {
+                      "@path": "/name"
+                    },
+                    "workspace": {
+                      "@path": "/workspace"
+                    }
+                  },
+                  "name": "registry_oauth"
+                }
+              },
+              "child": "save-label",
+              "component": "Button",
+              "id": "save",
+              "variant": "primary"
+            },
+            {
+              "component": "Text",
+              "id": "status",
+              "text": {
+                "@path": "/status"
+              }
+            },
+            {
+              "component": "Text",
+              "id": "credentials-label",
+              "text": "Manage credentials"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {},
+                  "name": "registry_credentials"
+                }
+              },
+              "child": "credentials-label",
+              "component": "Button",
+              "id": "credentials"
+            },
+            {
+              "children": [
+                "step-0-text",
+                "step-0-link-0",
+                "step-0-link-1"
+              ],
+              "component": "Column",
+              "id": "step-0"
+            },
+            {
+              "component": "Text",
+              "id": "step-0-text",
+              "text": "In the LinkedIn Developer Portal create an app associated with a LinkedIn Page you administer, then on the Products tab add the self-serve products Sign In with LinkedIn using OpenID Connect and Share on LinkedIn. Register the redirect URI https://graphx.ragentic.io/registry/oauth/callback in the app's Auth tab (Authorized redirect URLs). Your Ragentic operator installs the app's client ID (and secret) in Ragentic's OAuth registrations file; they never go in this form or in the catalog. Posting as an organization (Community Management API) needs LinkedIn's product approval and is not part of this connection."
+            },
+            {
+              "component": "Text",
+              "id": "step-0-link-0-label",
+              "text": "LinkedIn Developer Portal"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://www.linkedin.com/developers/apps"
+                  }
+                }
+              },
+              "child": "step-0-link-0-label",
+              "component": "Button",
+              "id": "step-0-link-0"
+            },
+            {
+              "component": "Text",
+              "id": "step-0-link-1-label",
+              "text": "Share on LinkedIn"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin"
+                  }
+                }
+              },
+              "child": "step-0-link-1-label",
+              "component": "Button",
+              "id": "step-0-link-1"
+            },
+            {
+              "children": [
+                "step-1-text",
+                "step-1-link-0"
+              ],
+              "component": "Column",
+              "id": "step-1"
+            },
+            {
+              "component": "Text",
+              "id": "step-1-text",
+              "text": "Connect opens LinkedIn to authorize openid, profile, email and w_member_social. Ragentic can then read your sign-in profile and create or delete posts as you. Self-serve tokens last 60 days and LinkedIn does not issue refresh tokens to self-serve apps, so reconnect when it expires."
+            },
+            {
+              "component": "Text",
+              "id": "step-1-link-0-label",
+              "text": "Authorization code flow"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+                  }
+                }
+              },
+              "child": "step-1-link-0-label",
+              "component": "Button",
+              "id": "step-1-link-0"
+            },
+            {
+              "children": [
+                "step-2-text",
+                "step-2-link-0"
+              ],
+              "component": "Column",
+              "id": "step-2"
+            },
+            {
+              "component": "Text",
+              "id": "step-2-text",
+              "text": "After you approve, Ragentic reads GET /v2/userinfo to confirm the member (it posts nothing), then saves the encrypted token. Requests send LinkedIn-Version 202610; daily rate limits are shown on your app's Analytics tab."
+            },
+            {
+              "component": "Text",
+              "id": "step-2-link-0-label",
+              "text": "Sign In with LinkedIn using OpenID Connect"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2"
+                  }
+                }
+              },
+              "child": "step-2-link-0-label",
+              "component": "Button",
+              "id": "step-2-link-0"
+            },
+            {
+              "component": "Text",
+              "id": "independent-attribution",
+              "text": "Independent connector for LinkedIn. Not affiliated with or endorsed by LinkedIn."
+            }
+          ],
+          "surfaceId": "setup-linkedin"
+        },
+        "version": "v1.0"
+      }
+    ],
+    "version": "v1.0"
+  },
+  "app": "linkedin",
+  "expires": 1801100824,
+  "graph": {
+    "edges": [
+      {
+        "from": "linkedin",
+        "kind": "EXPOSES",
+        "to": "operation:post:/rest/posts"
+      },
+      {
+        "from": "linkedin",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/rest/posts/{postUrn}"
+      },
+      {
+        "from": "linkedin",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v2/userinfo"
+      },
+      {
+        "from": "operation:post:/rest/posts",
+        "kind": "ACCEPTS",
+        "to": "schema:MemberPost"
+      },
+      {
+        "from": "operation:get:/v2/userinfo",
+        "kind": "RETURNS",
+        "to": "schema:UserInfo"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "linkedin",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "description": "Creates a post authored by the authenticated member (Share on LinkedIn, scope w_member_social).",
+        "id": "operation:post:/rest/posts",
+        "kind": "operation",
+        "method": "post",
+        "name": "createPost",
+        "path": "/rest/posts",
+        "pointer": "#/paths/~1rest~1posts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MemberPost"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "LinkedInOAuth": [
+              "w_member_social"
+            ]
+          }
+        ],
+        "summary": "Create a post as the signed-in member"
+      },
+      {
+        "deprecated": false,
+        "description": "Deletes a post by its URN (as returned in x-restli-id by createPost).",
+        "id": "operation:delete:/rest/posts/{postUrn}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePost",
+        "parameters": [
+          {
+            "description": "URL-encoded post URN, for example urn%3Ali%3Ashare%3A6844785523593134080",
+            "in": "path",
+            "name": "postUrn",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/rest/posts/{postUrn}",
+        "pointer": "#/paths/~1rest~1posts~1{postUrn}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "LinkedInOAuth": [
+              "w_member_social"
+            ]
+          }
+        ],
+        "summary": "Delete a post created by the signed-in member"
+      },
+      {
+        "deprecated": false,
+        "description": "Returns the OpenID Connect claims of the authenticated member.",
+        "id": "operation:get:/v2/userinfo",
+        "kind": "operation",
+        "method": "get",
+        "name": "getUserInfo",
+        "path": "/v2/userinfo",
+        "pointer": "#/paths/~1v2~1userinfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserInfo"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "LinkedInOAuth": [
+              "openid",
+              "profile"
+            ]
+          }
+        ],
+        "summary": "Get the signed-in member's OpenID Connect profile"
+      },
+      {
+        "id": "schema:MemberPost",
+        "kind": "schema",
+        "name": "MemberPost",
+        "type": "object"
+      },
+      {
+        "id": "schema:UserInfo",
+        "kind": "schema",
+        "name": "UserInfo",
+        "type": "object"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "linkedin"
+    },
+    "spec": {
+      "base": {
+        "endpoint": "https://api.linkedin.com",
+        "headers": {
+          "LinkedIn-Version": "202610",
+          "X-Restli-Protocol-Version": "2.0.0"
+        },
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "MemberPost": {
+                  "properties": {
+                    "author": {
+                      "description": "urn:li:person:{sub} of the authenticated member",
+                      "pattern": "^urn:li:person:[A-Za-z0-9_-]+$",
+                      "type": "string"
+                    },
+                    "commentary": {
+                      "description": "Post text. LinkedIn's little-text format reserves characters such as ( ) [ ] { } < > @ | ~ _ * which must be escaped with a backslash.",
+                      "maxLength": 3000,
+                      "type": "string"
+                    },
+                    "distribution": {
+                      "properties": {
+                        "feedDistribution": {
+                          "default": "MAIN_FEED",
+                          "enum": [
+                            "MAIN_FEED",
+                            "NONE"
+                          ],
+                          "type": "string"
+                        },
+                        "targetEntities": {
+                          "default": [],
+                          "items": {
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "thirdPartyDistributionChannels": {
+                          "default": [],
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "feedDistribution"
+                      ],
+                      "type": "object"
+                    },
+                    "isReshareDisabledByAuthor": {
+                      "default": false,
+                      "type": "boolean"
+                    },
+                    "lifecycleState": {
+                      "default": "PUBLISHED",
+                      "enum": [
+                        "PUBLISHED"
+                      ],
+                      "type": "string"
+                    },
+                    "visibility": {
+                      "default": "PUBLIC",
+                      "enum": [
+                        "PUBLIC",
+                        "CONNECTIONS",
+                        "LOGGED_IN"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "author",
+                    "commentary",
+                    "visibility",
+                    "distribution",
+                    "lifecycleState"
+                  ],
+                  "type": "object"
+                },
+                "UserInfo": {
+                  "properties": {
+                    "email": {
+                      "format": "email",
+                      "type": "string"
+                    },
+                    "email_verified": {
+                      "type": "boolean"
+                    },
+                    "family_name": {
+                      "type": "string"
+                    },
+                    "given_name": {
+                      "type": "string"
+                    },
+                    "locale": {
+                      "description": "Member locale. Documented as text (sample: en-US); an object {country, language} is also accepted so a response in that form still validates",
+                      "oneOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "properties": {
+                            "country": {
+                              "type": "string"
+                            },
+                            "language": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      ]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "picture": {
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "sub": {
+                      "description": "Member identifier; build the author URN as urn:li:person:{sub}",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "sub"
+                  ],
+                  "type": "object"
+                }
+              },
+              "securitySchemes": {
+                "LinkedInOAuth": {
+                  "description": "LinkedIn 3-legged OAuth 2.0 authorization code flow. Self-serve access tokens last 60 days; programmatic refresh tokens are only issued to approved partners, so members reconnect when the token expires.",
+                  "flows": {
+                    "authorizationCode": {
+                      "authorizationUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                      "scopes": {
+                        "email": "Primary email address",
+                        "openid": "Use OpenID Connect to sign in",
+                        "profile": "Name and photo",
+                        "w_member_social": "Create, modify and delete posts on behalf of the member"
+                      },
+                      "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken"
+                    }
+                  },
+                  "type": "oauth2"
+                }
+              }
+            },
+            "info": {
+              "description": "Minimal operation set for LinkedIn's self-serve products Sign In with LinkedIn using OpenID Connect and Share on LinkedIn, written by Ragentic from LinkedIn's public documentation (see x-ragentic-origins). This is NOT an official LinkedIn definition and is not endorsed by LinkedIn. Organization (company page) posting, reading posts and other Community Management features require LinkedIn product approval and are deliberately not included.",
+              "title": "LinkedIn member sign-in and posting (independent, hand-built)",
+              "version": "202610",
+              "x-ragentic-not-official": true,
+              "x-ragentic-origins": [
+                "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+                "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+                "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+                "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+                "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+              ]
+            },
+            "openapi": "3.0.3",
+            "paths": {
+              "/rest/posts": {
+                "post": {
+                  "description": "Creates a post authored by the authenticated member (Share on LinkedIn, scope w_member_social). `author` must be `urn:li:person:{sub}` where sub comes from getUserInfo. The connector sends the LinkedIn-Version and X-Restli-Protocol-Version headers. On success LinkedIn answers 201 with the new post URN in the x-restli-id response header and an empty body. Posting as an organization requires the Community Management API and is not supported by this definition.",
+                  "operationId": "createPost",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/MemberPost"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "201": {
+                      "description": "Post created; the post URN is in the x-restli-id header",
+                      "headers": {
+                        "x-restli-id": {
+                          "description": "URN of the created post, for example urn:li:share:{id} or urn:li:ugcPost:{id}",
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "401": {
+                      "description": "Missing, expired or revoked access token"
+                    },
+                    "403": {
+                      "description": "The token lacks w_member_social or author is not the authenticated member"
+                    },
+                    "422": {
+                      "description": "Invalid post content"
+                    }
+                  },
+                  "security": [
+                    {
+                      "LinkedInOAuth": [
+                        "w_member_social"
+                      ]
+                    }
+                  ],
+                  "summary": "Create a post as the signed-in member"
+                }
+              },
+              "/rest/posts/{postUrn}": {
+                "delete": {
+                  "description": "Deletes a post by its URN (as returned in x-restli-id by createPost). The URN must be URL-encoded in the path. Deletion is idempotent and answers 204.",
+                  "operationId": "deletePost",
+                  "parameters": [
+                    {
+                      "description": "URL-encoded post URN, for example urn%3Ali%3Ashare%3A6844785523593134080",
+                      "in": "path",
+                      "name": "postUrn",
+                      "required": true,
+                      "schema": {
+                        "pattern": "^urn(%3A|:)li(%3A|:)(share|ugcPost)(%3A|:)[0-9]+$",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "204": {
+                      "description": "Deleted (or already deleted)"
+                    },
+                    "401": {
+                      "description": "Missing, expired or revoked access token"
+                    },
+                    "403": {
+                      "description": "The post does not belong to the authenticated member"
+                    }
+                  },
+                  "security": [
+                    {
+                      "LinkedInOAuth": [
+                        "w_member_social"
+                      ]
+                    }
+                  ],
+                  "summary": "Delete a post created by the signed-in member"
+                }
+              },
+              "/v2/userinfo": {
+                "get": {
+                  "description": "Returns the OpenID Connect claims of the authenticated member. The `sub` claim is the member ID used to build the person URN `urn:li:person:{sub}` for createPost. Requires the openid and profile scopes; email and email_verified require the email scope.",
+                  "operationId": "getUserInfo",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/UserInfo"
+                          }
+                        }
+                      },
+                      "description": "OpenID Connect userinfo claims"
+                    },
+                    "401": {
+                      "description": "Missing, expired or revoked access token"
+                    }
+                  },
+                  "security": [
+                    {
+                      "LinkedInOAuth": [
+                        "openid",
+                        "profile"
+                      ]
+                    }
+                  ],
+                  "summary": "Get the signed-in member's OpenID Connect profile"
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://api.linkedin.com"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "description": "Connect a LinkedIn member account with an independent Ragentic integration: sign-in profile and member posts (self-serve products only). Not affiliated with or endorsed by LinkedIn.",
+      "status": "published",
+      "title": "LinkedIn"
+    }
+  },
+  "not_before": 1793404800,
+  "protocol": "openapi",
+  "provenance": {
+    "commit": null,
+    "fetched_at": "2026-10-31T18:00:29Z",
+    "license": null,
+    "normalization": "Hand-built OpenAPI 3.0 from LinkedIn's public documentation (origins); not an official LinkedIn definition. upstream_sha256 is the hash of drafts/linkedin/sources/origins.json.",
+    "origins": [
+      "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+      "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+      "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens"
+    ],
+    "repository": "ragentic-io/manifests-catalog",
+    "sha256": "c350331ef1b185b6fde376e8ca14bc55743ebae772a973109941cdc99ad56006",
+    "source_id": "ragentic-io/manifests-catalog:drafts/linkedin/definition.openapi.json",
+    "source_updated": null,
+    "upstream_sha256": "12be77f59a4ad4f0f33dad0154e11c7754fe12bd368f1691409f217f0aadd265",
+    "url": "https://github.com/ragentic-io/manifests-catalog/blob/main/drafts/linkedin/definition.openapi.json"
+  },
+  "readiness": "hand_built_definition_unsigned_draft",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [
+      "Hand-built definition, not official: compare each operation against the cited documentation before signing.",
+      "Requires Ragentic to accept the reviewed headers LinkedIn-Version and X-Restli-Protocol-Version (ragentic-io/ragentic PR on branch feat/social-connectors-catalog).",
+      "Ragentic always sends PKCE parameters; LinkedIn documents PKCE only for approved native clients. Confirm in a live authorization that the standard web flow ignores them.",
+      "Community Management API (organization posting, reading posts) requires LinkedIn product approval and is excluded."
+    ],
+    "rights": true,
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "rights": {
+    "brand": {
+      "attribution": "Independent connector for LinkedIn. Not affiliated with or endorsed by LinkedIn.",
+      "independent_integration": true,
+      "logo": null
+    },
+    "brand_policy_url": "https://brand.linkedin.com/policies",
+    "independent_attribution": "Independent connector for LinkedIn. Not affiliated with or endorsed by LinkedIn.",
+    "mark_policy": "Provider name in plain text only for identification; no provider logo, favicon, or brand color; independent attribution shown in setup.",
+    "source": {
+      "attribution": "Operation definition written by Ragentic from LinkedIn's public documentation",
+      "definition_url": "https://github.com/ragentic-io/manifests-catalog/blob/main/drafts/linkedin/definition.openapi.json",
+      "license_sha256": null,
+      "license_text": null,
+      "license_url": null,
+      "spdx": null,
+      "terms_note": "Not an official LinkedIn definition; no LinkedIn documentation text is reproduced. Use of the LinkedIn APIs is governed by the LinkedIn API Terms of Use.",
+      "terms_url": "https://www.linkedin.com/legal/l/api-terms-of-use"
+    }
+  },
+  "setup": {
+    "credential": {
+      "provider": {
+        "authorizationEndpoint": "https://www.linkedin.com/oauth/v2/authorization",
+        "clientAuthentication": "client_secret_post",
+        "scopes": [
+          "openid",
+          "profile",
+          "email",
+          "w_member_social"
+        ],
+        "tokenEndpoint": "https://www.linkedin.com/oauth/v2/accessToken"
+      },
+      "type": "oauth2_authorization_code"
+    },
+    "probe": {
+      "endpoint": "https://api.linkedin.com/v2/userinfo",
+      "identityPath": [
+        "sub"
+      ],
+      "method": "GET",
+      "protocol": "openapi"
+    }
+  },
+  "setup_verification": "not_live_verified",
+  "version": "202610"
+}
