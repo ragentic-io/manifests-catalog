@@ -1,0 +1,685 @@
+{
+  "a2ui": {},
+  "app": "callcontrol-com-65c8280166",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "callcontrol-com-65c8280166",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/2015-11-01/Complaints/{phoneNumber}"
+      },
+      {
+        "from": "callcontrol-com-65c8280166",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/2015-11-01/Enterprise/GetUser/{phoneNumber}"
+      },
+      {
+        "from": "callcontrol-com-65c8280166",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}"
+      },
+      {
+        "from": "callcontrol-com-65c8280166",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/2015-11-01/Enterprise/UpsertUser"
+      },
+      {
+        "from": "callcontrol-com-65c8280166",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/2015-11-01/Report"
+      },
+      {
+        "from": "callcontrol-com-65c8280166",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/2015-11-01/Reputation/{phoneNumber}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "callcontrol-com-65c8280166",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/2015-11-01/Complaints/{phoneNumber}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Complaints_Complaints",
+        "path": "/api/2015-11-01/Complaints/{phoneNumber}",
+        "pointer": "#/paths/~1api~12015-11-01~1Complaints~1{phoneNumber}/get",
+        "security": [],
+        "summary": "Complaints: Free service (with registration), providing community and government complaint lookup by phone number for up to 2,000 queries per month.  Details include number complaint rates from (FTC, FCC, IRS, Indiana Attorney  General) and key entity tag extractions from complaints."
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/2015-11-01/Enterprise/GetUser/{phoneNumber}",
+        "kind": "operation",
+        "method": "get",
+        "name": "EnterpriseApi_GetUser",
+        "path": "/api/2015-11-01/Enterprise/GetUser/{phoneNumber}",
+        "pointer": "#/paths/~1api~12015-11-01~1Enterprise~1GetUser~1{phoneNumber}/get",
+        "security": [],
+        "summary": "Enterprise  GET: GetUser\r\nReturns the current information from the user;  try 12066194123 as demo"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}",
+        "kind": "operation",
+        "method": "get",
+        "name": "EnterpriseApi_ShouldBlock",
+        "path": "/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}",
+        "pointer": "#/paths/~1api~12015-11-01~1Enterprise~1ShouldBlock~1{phoneNumber}~1{userPhoneNumber}/get",
+        "security": [],
+        "summary": "Enterprise  GET: ShouldBlock\r\nSimple Enteprise which returns a call block proceed decision."
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/2015-11-01/Enterprise/UpsertUser",
+        "kind": "operation",
+        "method": "post",
+        "name": "EnterpriseApi_UpsertUser",
+        "path": "/api/2015-11-01/Enterprise/UpsertUser",
+        "pointer": "#/paths/~1api~12015-11-01~1Enterprise~1UpsertUser/post",
+        "security": [],
+        "summary": "UpsertUser: insert or update all properties from a user\r\nPhoneNumber\r\nWhiteList (list of phone numbers to whitelist)\r\nBlackList (list of phone numbers to blacklist)\r\nQuietHourList (list of quiet hour objects)\r\nUseCommunityBlacklist (enable / disable community blacklist) default true\r\nBreakThroughQhWithMultipleCalls (break through quiet hours with two calls in 3 minutes)\r\nWhiteListBreaksQh (break through quiet hours for whitelist)"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/2015-11-01/Report",
+        "kind": "operation",
+        "method": "post",
+        "name": "Reputation_Report",
+        "path": "/api/2015-11-01/Report",
+        "pointer": "#/paths/~1api~12015-11-01~1Report/post",
+        "security": [],
+        "summary": "Report: report spam calls received to better tune our algorithms based upon spam calls you receive"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/2015-11-01/Reputation/{phoneNumber}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Reputation_Reputation",
+        "path": "/api/2015-11-01/Reputation/{phoneNumber}",
+        "pointer": "#/paths/~1api~12015-11-01~1Reputation~1{phoneNumber}/get",
+        "security": [],
+        "summary": "Reputation:\r\nPremium service which returns a reputation informaiton of a phone number via API."
+      },
+      {
+        "id": "schema:CallControlUser",
+        "kind": "schema",
+        "name": "CallControlUser"
+      },
+      {
+        "id": "schema:CallReport",
+        "kind": "schema",
+        "name": "CallReport"
+      },
+      {
+        "id": "schema:Complaints",
+        "kind": "schema",
+        "name": "Complaints"
+      },
+      {
+        "id": "schema:QuietHour",
+        "kind": "schema",
+        "name": "QuietHour"
+      },
+      {
+        "id": "schema:Reputation",
+        "kind": "schema",
+        "name": "Reputation"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "callcontrol-com-65c8280166"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "definitions": {
+              "CallControlUser": {
+                "properties": {
+                  "Age": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "BlackList": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "BlockBehavior": {
+                    "enum": [
+                      "allow",
+                      "voiceMail",
+                      "block"
+                    ],
+                    "type": "string"
+                  },
+                  "BreakThroughQhWithMultipleCalls": {
+                    "type": "boolean"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "FirstName": {
+                    "type": "string"
+                  },
+                  "Gender": {
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "type": "string"
+                  },
+                  "MiddleName": {
+                    "type": "string"
+                  },
+                  "PhoneNumbeRegion": {
+                    "type": "string"
+                  },
+                  "PhoneNumber": {
+                    "type": "string"
+                  },
+                  "QuietHourList": {
+                    "items": {
+                      "$ref": "#/definitions/QuietHour"
+                    },
+                    "type": "array"
+                  },
+                  "Salutation": {
+                    "type": "string"
+                  },
+                  "Suffix": {
+                    "type": "string"
+                  },
+                  "UseCommunityBlacklist": {
+                    "type": "boolean"
+                  },
+                  "WhiteList": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "WhiteListBreaksQh": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "CallReport": {
+                "description": "Call Report\r\nPhoneNumber, \r\nCaller name(optional), \r\nCall category(optional), \r\nComment or tags(free text) (optional), \r\nUnwanted call  - yes/no(optional),",
+                "properties": {
+                  "CallTime": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "CallerType": {
+                    "enum": [
+                      "Unknown",
+                      "Telemarketing",
+                      "Collection_Agency",
+                      "Political",
+                      "Surveyor",
+                      "Prank_Call",
+                      "Fund_Raiser",
+                      "Other_Commercial",
+                      "Scam",
+                      "VOIP",
+                      "Business",
+                      "Reminder_Notification_Call",
+                      "Junk_Fax",
+                      "Fax_Machine",
+                      "Spam_Text",
+                      "RoboCall",
+                      "NotSpam",
+                      "Callback"
+                    ],
+                    "type": "string"
+                  },
+                  "Comment": {
+                    "type": "string"
+                  },
+                  "IpAddress": {
+                    "type": "string"
+                  },
+                  "Latitude": {
+                    "format": "double",
+                    "type": "number"
+                  },
+                  "Longitude": {
+                    "format": "double",
+                    "type": "number"
+                  },
+                  "PhoneNumber": {
+                    "type": "string"
+                  },
+                  "ReportedCallerId": {
+                    "type": "string"
+                  },
+                  "ReportedCallerName": {
+                    "type": "string"
+                  },
+                  "Reporter": {
+                    "type": "string"
+                  },
+                  "UnwantedCall": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "Complaints": {
+                "description": "Free service (with registration) which serves Government Do Not Call data via API \r\nSearch via phone number returns available data, reported name, total complaints",
+                "properties": {
+                  "ComplaintsByEntity": {
+                    "additionalProperties": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "type": "object"
+                  },
+                  "LastComplaintDate": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "ReportedCallerName": {
+                    "description": "Reported Caller Name",
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "TotalNumberOfComplaints": {
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "QuietHour": {
+                "properties": {
+                  "DayOfWeekList": {
+                    "items": {
+                      "enum": [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "DurationMin": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "StartHourLocal": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "StartMinLocal": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "TimeZoneName": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "Reputation": {
+                "properties": {
+                  "CallType": {
+                    "readOnly": true,
+                    "type": "string"
+                  },
+                  "Confidence": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "IsSpam": {
+                    "type": "boolean"
+                  },
+                  "LastComplaintDate": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "ReportedCallerName": {
+                    "type": "string"
+                  },
+                  "Tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "host": "api.callcontrol.com",
+            "info": {
+              "contact": {
+                "email": "info@kedlin.com",
+                "name": "Call Control",
+                "url": "https://www.callcontrol.com/documentation"
+              },
+              "description": "API for blocking phone calls with Call Control. Data is from crowdsourced community blacklist from 12+ million users and government agencies (FTC, FCC, IRS) Try with api_key 'demo', hit explore above, and then try phone numbers 18008472911,13157244022,17275567300,18008276655,12061231234.",
+              "title": "Call Control API",
+              "version": "2015-11-01",
+              "x-apisguru-categories": [
+                "telecom"
+              ],
+              "x-logo": {
+                "backgroundColor": "#FFFFFF",
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_CallControlLLC_profile_image.jpeg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://www.callcontrol.com/js/swagger/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "callcontrol.com"
+            },
+            "paths": {
+              "/api/2015-11-01/Complaints/{phoneNumber}": {
+                "get": {
+                  "consumes": [],
+                  "deprecated": false,
+                  "description": "This is the main funciton to get data out of the call control reporting system<br />\r\n            Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 17275567300, 18008276655, and 12061231234 (last one not spam)",
+                  "operationId": "Complaints_Complaints",
+                  "parameters": [
+                    {
+                      "description": "phone number to search",
+                      "in": "path",
+                      "name": "phoneNumber",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "OK",
+                      "schema": {
+                        "$ref": "#/definitions/Complaints"
+                      }
+                    }
+                  },
+                  "summary": "Complaints: Free service (with registration), providing community and government complaint lookup by phone number for up to 2,000 queries per month.  Details include number complaint rates from (FTC, FCC, IRS, Indiana Attorney  General) and key entity tag extractions from complaints.",
+                  "tags": [
+                    "Complaints"
+                  ]
+                }
+              },
+              "/api/2015-11-01/Enterprise/GetUser/{phoneNumber}": {
+                "get": {
+                  "consumes": [],
+                  "deprecated": false,
+                  "description": "",
+                  "operationId": "EnterpriseApi_GetUser",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "phoneNumber",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "User Object",
+                      "schema": {
+                        "$ref": "#/definitions/CallControlUser"
+                      }
+                    },
+                    "400": {
+                      "description": "Bad request (invalid phone number)"
+                    }
+                  },
+                  "summary": "Enterprise  GET: GetUser\r\nReturns the current information from the user;  try 12066194123 as demo",
+                  "tags": [
+                    "EnterpriseApi"
+                  ]
+                }
+              },
+              "/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}": {
+                "get": {
+                  "consumes": [],
+                  "deprecated": false,
+                  "description": "This returns information required to perform basic call blocking behaviors\r\n            Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 17275567300, 18008276655, and 12061231234 (last one not spam)",
+                  "operationId": "EnterpriseApi_ShouldBlock",
+                  "parameters": [
+                    {
+                      "description": "phone number to search",
+                      "in": "path",
+                      "name": "phoneNumber",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "(OPTIONAL) phone number of user to look up block rules",
+                      "in": "path",
+                      "name": "userPhoneNumber",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "true(block) false (no block)",
+                      "schema": {
+                        "enum": [
+                          "allow",
+                          "voiceMail",
+                          "block"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "400": {
+                      "description": "Bad request (invalid phone number)"
+                    }
+                  },
+                  "summary": "Enterprise  GET: ShouldBlock\r\nSimple Enteprise which returns a call block proceed decision.",
+                  "tags": [
+                    "EnterpriseApi"
+                  ]
+                }
+              },
+              "/api/2015-11-01/Enterprise/UpsertUser": {
+                "post": {
+                  "consumes": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "deprecated": false,
+                  "operationId": "EnterpriseApi_UpsertUser",
+                  "parameters": [
+                    {
+                      "description": "[FromBody] User \r\n            <remarks>This returns information required to perform basic call blocking behaviors.  The demo key will return ok, but will not save the data.<br /></remarks>",
+                      "in": "body",
+                      "name": "user",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/CallControlUser"
+                      }
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Ok",
+                      "schema": {
+                        "type": "object"
+                      }
+                    },
+                    "400": {
+                      "description": "Bad request (eg. invalid phone nubmer)"
+                    }
+                  },
+                  "summary": "UpsertUser: insert or update all properties from a user\r\nPhoneNumber\r\nWhiteList (list of phone numbers to whitelist)\r\nBlackList (list of phone numbers to blacklist)\r\nQuietHourList (list of quiet hour objects)\r\nUseCommunityBlacklist (enable / disable community blacklist) default true\r\nBreakThroughQhWithMultipleCalls (break through quiet hours with two calls in 3 minutes)\r\nWhiteListBreaksQh (break through quiet hours for whitelist)",
+                  "tags": [
+                    "EnterpriseApi"
+                  ]
+                }
+              },
+              "/api/2015-11-01/Report": {
+                "post": {
+                  "consumes": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "deprecated": false,
+                  "description": "This returns information required to perform basic call blocking behaviors<br />\r\n            Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 17275567300, 18008276655, and 12061231234 (last one not spam)",
+                  "operationId": "Reputation_Report",
+                  "parameters": [
+                    {
+                      "description": "[FromBody] Call Report\r\n            PhoneNumber, \r\n            Caller name(optional), \r\n            Call category(optional), \r\n            Comment or tags(free text) (optional), \r\n            Unwanted call  - yes/no(optional),",
+                      "in": "body",
+                      "name": "callReport",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/CallReport"
+                      }
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "responses": {
+                    "400": {
+                      "description": "Bad request (eg. invalid phone nubmer)"
+                    }
+                  },
+                  "summary": "Report: report spam calls received to better tune our algorithms based upon spam calls you receive",
+                  "tags": [
+                    "Reputation"
+                  ]
+                }
+              },
+              "/api/2015-11-01/Reputation/{phoneNumber}": {
+                "get": {
+                  "consumes": [],
+                  "deprecated": false,
+                  "description": "This returns information required to perform basic call blocking behaviors<br />\r\n            Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 17275567300, 18008276655, and 12061231234 (last one not spam)",
+                  "operationId": "Reputation_Reputation",
+                  "parameters": [
+                    {
+                      "description": "phone number to search",
+                      "in": "path",
+                      "name": "phoneNumber",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Reputation information",
+                      "schema": {
+                        "$ref": "#/definitions/Reputation"
+                      }
+                    },
+                    "400": {
+                      "description": "Bad request (invalid phone number)"
+                    }
+                  },
+                  "summary": "Reputation:\r\nPremium service which returns a reputation informaiton of a phone number via API.",
+                  "tags": [
+                    "Reputation"
+                  ]
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "securityDefinitions": {
+              "apiKey": {
+                "description": "API Key Authentication",
+                "in": "header",
+                "name": "apiKey",
+                "type": "apiKey"
+              }
+            },
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Call Control API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:50.920566Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://www.callcontrol.com/js/swagger/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "edd0098421e21c0225eb1d38ae9c1fa4e3088e2b2513a3ddd7836ea144bcdedc",
+    "source_id": "callcontrol.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/callcontrol.com/2015-11-01/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2015-11-01"
+}

@@ -1,0 +1,4024 @@
+{
+  "a2ui": {
+    "messages": [
+      {
+        "createSurface": {
+          "catalogId": "https://a2ui.org/specification/v1_0/catalogs/basic/catalog.json",
+          "dataModel": {
+            "name": "govuk-pay",
+            "status": "Test the connection before saving.",
+            "workspace": ""
+          },
+          "metadata": {
+            "extensions": {
+              "io_ragentic_theme": {
+                "primaryColor": "#475569"
+              }
+            }
+          },
+          "sendDataModel": false,
+          "surfaceId": "setup-govuk-pay"
+        },
+        "version": "v1.0"
+      },
+      {
+        "updateComponents": {
+          "components": [
+            {
+              "children": [
+                "independent-label",
+                "title",
+                "independent-attribution",
+                "steps",
+                "connection-name",
+                "workspace",
+                "token",
+                "test",
+                "save",
+                "status",
+                "credentials"
+              ],
+              "component": "Column",
+              "id": "root"
+            },
+            {
+              "component": "Text",
+              "id": "independent-label",
+              "text": "Independent integration"
+            },
+            {
+              "component": "Text",
+              "id": "title",
+              "text": "## Connect GOV.UK Pay"
+            },
+            {
+              "component": "Tabs",
+              "id": "steps",
+              "tabs": [
+                {
+                  "child": "step-0",
+                  "title": "1. Open your service"
+                },
+                {
+                  "child": "step-1",
+                  "title": "2. Create an API key"
+                },
+                {
+                  "child": "step-2",
+                  "title": "3. Test and save"
+                }
+              ]
+            },
+            {
+              "component": "TextField",
+              "id": "connection-name",
+              "label": "Connection name",
+              "value": {
+                "@path": "/name"
+              }
+            },
+            {
+              "component": "TextField",
+              "id": "workspace",
+              "label": "Workspace",
+              "value": {
+                "@path": "/workspace"
+              }
+            },
+            {
+              "component": "TextField",
+              "id": "token",
+              "label": "GOV.UK Pay test or live API key",
+              "value": {
+                "@path": "/token"
+              },
+              "variant": "obscured"
+            },
+            {
+              "component": "Text",
+              "id": "test-label",
+              "text": "Test connection"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {
+                    "app": "govuk-pay",
+                    "name": {
+                      "@path": "/name"
+                    },
+                    "token": {
+                      "@path": "/token"
+                    },
+                    "workspace": {
+                      "@path": "/workspace"
+                    }
+                  },
+                  "name": "registry_test"
+                }
+              },
+              "child": "test-label",
+              "component": "Button",
+              "id": "test"
+            },
+            {
+              "component": "Text",
+              "id": "save-label",
+              "text": "Save connection"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {
+                    "app": "govuk-pay",
+                    "name": {
+                      "@path": "/name"
+                    },
+                    "token": {
+                      "@path": "/token"
+                    },
+                    "workspace": {
+                      "@path": "/workspace"
+                    }
+                  },
+                  "name": "registry_save"
+                }
+              },
+              "child": "save-label",
+              "component": "Button",
+              "id": "save",
+              "variant": "primary"
+            },
+            {
+              "component": "Text",
+              "id": "status",
+              "text": {
+                "@path": "/status"
+              }
+            },
+            {
+              "component": "Text",
+              "id": "credentials-label",
+              "text": "Manage credentials"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {},
+                  "name": "registry_credentials"
+                }
+              },
+              "child": "credentials-label",
+              "component": "Button",
+              "id": "credentials"
+            },
+            {
+              "children": [
+                "step-0-text",
+                "step-0-link-0"
+              ],
+              "component": "Column",
+              "id": "step-0"
+            },
+            {
+              "component": "Text",
+              "id": "step-0-text",
+              "text": "Sign in to GOV.UK Pay and select the government service to connect. This independent integration is for organisations eligible to use GOV.UK Pay."
+            },
+            {
+              "component": "Text",
+              "id": "step-0-link-0-label",
+              "text": "GOV.UK Pay"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://www.payments.service.gov.uk/using-govuk-pay/"
+                  }
+                }
+              },
+              "child": "step-0-link-0-label",
+              "component": "Button",
+              "id": "step-0-link-0"
+            },
+            {
+              "children": [
+                "step-1-text",
+                "step-1-link-0"
+              ],
+              "component": "Column",
+              "id": "step-1"
+            },
+            {
+              "component": "Text",
+              "id": "step-1-text",
+              "text": "Open Settings → Developers → API keys and create a key for this service. Use a test key for a not-live service. Keep the key secret; GOV.UK Pay sends it as Authorization: Bearer."
+            },
+            {
+              "component": "Text",
+              "id": "step-1-link-0-label",
+              "text": "Official quick start"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://docs.payments.service.gov.uk/quick_start_guide/"
+                  }
+                }
+              },
+              "child": "step-1-link-0-label",
+              "component": "Button",
+              "id": "step-1-link-0"
+            },
+            {
+              "children": [
+                "step-2-text",
+                "step-2-link-0"
+              ],
+              "component": "Column",
+              "id": "step-2"
+            },
+            {
+              "component": "Text",
+              "id": "step-2-text",
+              "text": "Test sends a read-only payment search with a fresh, server-generated 128-bit reference and display_size=1. It succeeds only if GOV.UK Pay returns zero matching payments; the server discards the response and never shows payment data. This confirms access to the service selected by the key, not a stable service identity. An unlikely reference collision can return at most one record and causes Test to fail. Save encrypts the key after a successful Test."
+            },
+            {
+              "component": "Text",
+              "id": "step-2-link-0-label",
+              "text": "Search payments reference"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://docs.payments.service.gov.uk/api_reference/search_payments_reference/"
+                  }
+                }
+              },
+              "child": "step-2-link-0-label",
+              "component": "Button",
+              "id": "step-2-link-0"
+            },
+            {
+              "component": "Text",
+              "id": "independent-attribution",
+              "text": "Independent connector for GOV.UK Pay. Not affiliated with or endorsed by GOV.UK Pay."
+            }
+          ],
+          "surfaceId": "setup-govuk-pay"
+        },
+        "version": "v1.0"
+      }
+    ],
+    "version": "v1.0"
+  },
+  "app": "govuk-pay",
+  "expires": 1801100824,
+  "graph": {
+    "edges": [
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/agreements"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/agreements"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/agreements/{agreementId}"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/agreements/{agreementId}/cancel"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/auth"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/disputes"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/payments"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/payments"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/payments/{paymentId}"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/payments/{paymentId}/cancel"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/payments/{paymentId}/capture"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/payments/{paymentId}/events"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/payments/{paymentId}/refunds"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:post:/v1/payments/{paymentId}/refunds"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/payments/{paymentId}/refunds/{refundId}"
+      },
+      {
+        "from": "govuk-pay",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/refunds"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "govuk-pay",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/agreements",
+        "kind": "operation",
+        "method": "get",
+        "name": "Search agreements",
+        "path": "/v1/agreements",
+        "pointer": "#/paths/~1v1~1agreements/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Search agreements for recurring payments"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/agreements",
+        "kind": "operation",
+        "method": "post",
+        "name": "Create an agreement",
+        "path": "/v1/agreements",
+        "pointer": "#/paths/~1v1~1agreements/post",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Create an agreement for recurring payments"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/agreements/{agreementId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get an agreement",
+        "path": "/v1/agreements/{agreementId}",
+        "pointer": "#/paths/~1v1~1agreements~1{agreementId}/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get information about a single agreement for recurring payments"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/agreements/{agreementId}/cancel",
+        "kind": "operation",
+        "method": "post",
+        "name": "Cancel an agreement",
+        "path": "/v1/agreements/{agreementId}/cancel",
+        "pointer": "#/paths/~1v1~1agreements~1{agreementId}~1cancel/post",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Cancel an agreement for recurring payments"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/auth",
+        "kind": "operation",
+        "method": "post",
+        "name": "Authorise a MOTO payment",
+        "path": "/v1/auth",
+        "pointer": "#/paths/~1v1~1auth/post",
+        "security": [],
+        "summary": "Send card details to authorise a MOTO payment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/disputes",
+        "kind": "operation",
+        "method": "get",
+        "name": "Search disputes",
+        "path": "/v1/disputes",
+        "pointer": "#/paths/~1v1~1disputes/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Search disputes"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/payments",
+        "kind": "operation",
+        "method": "get",
+        "name": "Search payments",
+        "path": "/v1/payments",
+        "pointer": "#/paths/~1v1~1payments/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Search payments"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/payments",
+        "kind": "operation",
+        "method": "post",
+        "name": "Create a payment",
+        "path": "/v1/payments",
+        "pointer": "#/paths/~1v1~1payments/post",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Create a payment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/payments/{paymentId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get a payment",
+        "path": "/v1/payments/{paymentId}",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get information about a single payment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/payments/{paymentId}/cancel",
+        "kind": "operation",
+        "method": "post",
+        "name": "Cancel a payment",
+        "path": "/v1/payments/{paymentId}/cancel",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}~1cancel/post",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Cancel payment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/payments/{paymentId}/capture",
+        "kind": "operation",
+        "method": "post",
+        "name": "Capture a payment",
+        "path": "/v1/payments/{paymentId}/capture",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}~1capture/post",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Take a delayed payment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/payments/{paymentId}/events",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get events for a payment",
+        "path": "/v1/payments/{paymentId}/events",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}~1events/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a payment's events"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/payments/{paymentId}/refunds",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get all refunds for a payment",
+        "path": "/v1/payments/{paymentId}/refunds",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get information about a payment’s refunds"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/v1/payments/{paymentId}/refunds",
+        "kind": "operation",
+        "method": "post",
+        "name": "Submit a refund for a payment",
+        "path": "/v1/payments/{paymentId}/refunds",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds/post",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Refund a payment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/payments/{paymentId}/refunds/{refundId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "Get a payment refund",
+        "path": "/v1/payments/{paymentId}/refunds/{refundId}",
+        "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds~1{refundId}/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Check the status of a refund"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/refunds",
+        "kind": "operation",
+        "method": "get",
+        "name": "Search refunds",
+        "path": "/v1/refunds",
+        "pointer": "#/paths/~1v1~1refunds/get",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Search refunds"
+      },
+      {
+        "id": "schema:Address",
+        "kind": "schema",
+        "name": "Address"
+      },
+      {
+        "id": "schema:Agreement",
+        "kind": "schema",
+        "name": "Agreement"
+      },
+      {
+        "id": "schema:AgreementSearchResults",
+        "kind": "schema",
+        "name": "AgreementSearchResults"
+      },
+      {
+        "id": "schema:AuthorisationRequest",
+        "kind": "schema",
+        "name": "AuthorisationRequest"
+      },
+      {
+        "id": "schema:AuthorisationSummary",
+        "kind": "schema",
+        "name": "AuthorisationSummary"
+      },
+      {
+        "id": "schema:CardDetails",
+        "kind": "schema",
+        "name": "CardDetails"
+      },
+      {
+        "id": "schema:CardDetailsFromResponse",
+        "kind": "schema",
+        "name": "CardDetailsFromResponse"
+      },
+      {
+        "id": "schema:CreateAgreementRequest",
+        "kind": "schema",
+        "name": "CreateAgreementRequest"
+      },
+      {
+        "id": "schema:CreateCardPaymentRequest",
+        "kind": "schema",
+        "name": "CreateCardPaymentRequest"
+      },
+      {
+        "id": "schema:CreatePaymentResult",
+        "kind": "schema",
+        "name": "CreatePaymentResult"
+      },
+      {
+        "id": "schema:DisputeDetailForSearch",
+        "kind": "schema",
+        "name": "DisputeDetailForSearch"
+      },
+      {
+        "id": "schema:DisputeLinksForSearch",
+        "kind": "schema",
+        "name": "DisputeLinksForSearch"
+      },
+      {
+        "id": "schema:DisputesSearchResults",
+        "kind": "schema",
+        "name": "DisputesSearchResults"
+      },
+      {
+        "id": "schema:EmbeddedRefunds",
+        "kind": "schema",
+        "name": "EmbeddedRefunds"
+      },
+      {
+        "id": "schema:ErrorResponse",
+        "kind": "schema",
+        "name": "ErrorResponse"
+      },
+      {
+        "id": "schema:Exemption",
+        "kind": "schema",
+        "name": "Exemption"
+      },
+      {
+        "id": "schema:ExternalMetadata",
+        "kind": "schema",
+        "name": "ExternalMetadata"
+      },
+      {
+        "id": "schema:Link",
+        "kind": "schema",
+        "name": "Link"
+      },
+      {
+        "id": "schema:Outcome",
+        "kind": "schema",
+        "name": "Outcome"
+      },
+      {
+        "id": "schema:PaymentDetailForSearch",
+        "kind": "schema",
+        "name": "PaymentDetailForSearch"
+      },
+      {
+        "id": "schema:PaymentEvent",
+        "kind": "schema",
+        "name": "PaymentEvent"
+      },
+      {
+        "id": "schema:PaymentEventLink",
+        "kind": "schema",
+        "name": "PaymentEventLink"
+      },
+      {
+        "id": "schema:PaymentEvents",
+        "kind": "schema",
+        "name": "PaymentEvents"
+      },
+      {
+        "id": "schema:PaymentInstrument",
+        "kind": "schema",
+        "name": "PaymentInstrument"
+      },
+      {
+        "id": "schema:PaymentLinks",
+        "kind": "schema",
+        "name": "PaymentLinks"
+      },
+      {
+        "id": "schema:PaymentLinksForEvents",
+        "kind": "schema",
+        "name": "PaymentLinksForEvents"
+      },
+      {
+        "id": "schema:PaymentLinksForSearch",
+        "kind": "schema",
+        "name": "PaymentLinksForSearch"
+      },
+      {
+        "id": "schema:PaymentRefundRequest",
+        "kind": "schema",
+        "name": "PaymentRefundRequest"
+      },
+      {
+        "id": "schema:PaymentSearchResults",
+        "kind": "schema",
+        "name": "PaymentSearchResults"
+      },
+      {
+        "id": "schema:PaymentSettlementSummary",
+        "kind": "schema",
+        "name": "PaymentSettlementSummary"
+      },
+      {
+        "id": "schema:PaymentState",
+        "kind": "schema",
+        "name": "PaymentState"
+      },
+      {
+        "id": "schema:PaymentWithAllLinks",
+        "kind": "schema",
+        "name": "PaymentWithAllLinks"
+      },
+      {
+        "id": "schema:PostLink",
+        "kind": "schema",
+        "name": "PostLink"
+      },
+      {
+        "id": "schema:PrefilledCardholderDetails",
+        "kind": "schema",
+        "name": "PrefilledCardholderDetails"
+      },
+      {
+        "id": "schema:Refund",
+        "kind": "schema",
+        "name": "Refund"
+      },
+      {
+        "id": "schema:RefundDetailForSearch",
+        "kind": "schema",
+        "name": "RefundDetailForSearch"
+      },
+      {
+        "id": "schema:RefundForSearchResult",
+        "kind": "schema",
+        "name": "RefundForSearchResult"
+      },
+      {
+        "id": "schema:RefundLinksForSearch",
+        "kind": "schema",
+        "name": "RefundLinksForSearch"
+      },
+      {
+        "id": "schema:RefundSearchResults",
+        "kind": "schema",
+        "name": "RefundSearchResults"
+      },
+      {
+        "id": "schema:RefundSettlementSummary",
+        "kind": "schema",
+        "name": "RefundSettlementSummary"
+      },
+      {
+        "id": "schema:RefundSummary",
+        "kind": "schema",
+        "name": "RefundSummary"
+      },
+      {
+        "id": "schema:RefundsResponse",
+        "kind": "schema",
+        "name": "RefundsResponse"
+      },
+      {
+        "id": "schema:RequestError",
+        "kind": "schema",
+        "name": "RequestError"
+      },
+      {
+        "id": "schema:SearchNavigationLinks",
+        "kind": "schema",
+        "name": "SearchNavigationLinks"
+      },
+      {
+        "id": "schema:SettlementSummary",
+        "kind": "schema",
+        "name": "SettlementSummary"
+      },
+      {
+        "id": "schema:ThreeDSecure",
+        "kind": "schema",
+        "name": "ThreeDSecure"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "govuk-pay"
+    },
+    "spec": {
+      "base": {
+        "endpoint": "https://publicapi.payments.service.gov.uk",
+        "headers": {},
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Address": {
+                  "description": "A structure representing the billing address of a card",
+                  "properties": {
+                    "city": {
+                      "description": "The paying user's city.",
+                      "example": "address city",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "country": {
+                      "description": "The paying user’s country, displayed as a 2-character ISO-3166-1-alpha-2 code.",
+                      "example": "GB",
+                      "type": "string"
+                    },
+                    "line1": {
+                      "description": "The first line of the paying user’s address.",
+                      "example": "address line 1",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "line2": {
+                      "description": "The second line of the paying user’s address.",
+                      "example": "address line 2",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "postcode": {
+                      "description": "The paying user's postcode.",
+                      "example": "AB1 2CD",
+                      "maxLength": 25,
+                      "minLength": 0,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Agreement": {
+                  "description": "Contains information about a user's agreement for recurring payments. An agreement represents an understanding between you and your paying user that you'll use their card to make ongoing payments for a service.",
+                  "properties": {
+                    "agreement_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this agreement when you created it.",
+                      "example": "cgc1ocvh0pt9fqs0ma67r42l58",
+                      "type": "string"
+                    },
+                    "cancelled_date": {
+                      "description": "The date and time this agreement was cancelled. This value uses Coordinated Universal Time (UTC) and ISO 8601 format – `YYYY-MM-DDThh:mm:ss.sssZ`.",
+                      "example": "2022-07-08T14:33:00.000Z",
+                      "type": "string"
+                    },
+                    "created_date": {
+                      "description": "The date and time you created this agreement. This value uses Coordinated Universal Time (UTC) and ISO 8601 format – `YYYY-MM-DDThh:mm:ss.sssZ`.",
+                      "example": "2022-07-08T14:33:00.000Z",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "The description you sent when creating this agreement.",
+                      "example": "Dorset Council 2022/23 council tax subscription.",
+                      "type": "string"
+                    },
+                    "payment_instrument": {
+                      "$ref": "#/components/schemas/PaymentInstrument"
+                    },
+                    "reference": {
+                      "description": "The reference you sent when creating this agreement.",
+                      "example": "CT-22-23-0001",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "The status of this agreement. You can [read more about the meanings of each agreement status.](https://docs.payments.service.gov.uk/recurring_payments/#understanding-agreement-status)",
+                      "enum": [
+                        "created",
+                        "active",
+                        "cancelled",
+                        "inactive"
+                      ],
+                      "type": "string"
+                    },
+                    "user_identifier": {
+                      "description": "The identifier you sent when creating this agreement. `user_identifier` helps you identify users in your records.",
+                      "example": "user-3fb81107-76b7-4910",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "AgreementSearchResults": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/SearchNavigationLinks"
+                    },
+                    "count": {
+                      "description": "Number of agreements on the current page of search results.",
+                      "example": 20,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "page": {
+                      "description": "The [page of agreements you’re viewing](https://docs.payments.service.gov.uk/api_reference/#pagination). To view other pages, make this request again using the `page` parameter.",
+                      "example": 1,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "results": {
+                      "description": "Contains agreements matching your search criteria.",
+                      "items": {
+                        "$ref": "#/components/schemas/Agreement"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "description": "Total number of agreements matching your search criteria.",
+                      "example": 100,
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "AuthorisationRequest": {
+                  "description": "Contains the user's payment information. This information will be sent to the payment service provider to authorise the payment.",
+                  "properties": {
+                    "card_number": {
+                      "description": "The full card number from the paying user's card.",
+                      "example": "4242424242424242",
+                      "maxLength": 19,
+                      "minLength": 12,
+                      "type": "string"
+                    },
+                    "cardholder_name": {
+                      "description": "The name on the paying user's card.",
+                      "example": "J. Citizen",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "cvc": {
+                      "description": "The card verification code (CVC) or card verification value (CVV) on the paying user's card.",
+                      "example": "123",
+                      "maxLength": 4,
+                      "minLength": 3,
+                      "type": "string"
+                    },
+                    "expiry_date": {
+                      "description": "The expiry date of the paying user's card. This value must be in `MM/YY` format.",
+                      "example": "09/22",
+                      "maxLength": 5,
+                      "minLength": 5,
+                      "type": "string"
+                    },
+                    "one_time_token": {
+                      "description": "This single use token authorises your request and matches it to a payment. GOV.UK Pay generated the `one_time_token` when the payment was created.",
+                      "example": "12345-edsfr-6789-gtyu",
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "card_number",
+                    "cardholder_name",
+                    "cvc",
+                    "expiry_date",
+                    "one_time_token"
+                  ],
+                  "type": "object"
+                },
+                "AuthorisationSummary": {
+                  "description": "Object containing information about the authentication of the payment.",
+                  "properties": {
+                    "three_d_secure": {
+                      "$ref": "#/components/schemas/ThreeDSecure"
+                    }
+                  },
+                  "type": "object"
+                },
+                "CardDetails": {
+                  "description": "A structure representing the payment card",
+                  "properties": {
+                    "billing_address": {
+                      "$ref": "#/components/schemas/Address"
+                    },
+                    "card_brand": {
+                      "description": "The brand of card the user paid with.",
+                      "example": "Visa",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "card_type": {
+                      "description": "The type of card the user paid with.`null` means your user paid with Google Pay or we did not recognise which type of card they paid with.",
+                      "enum": [
+                        "debit",
+                        "credit",
+                        "null"
+                      ],
+                      "example": "debit",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "cardholder_name": {
+                      "example": "Mr. Card holder",
+                      "type": "string"
+                    },
+                    "expiry_date": {
+                      "description": "The expiry date of the card the user paid with in `MM/YY` format.",
+                      "example": "04/24",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "first_digits_card_number": {
+                      "example": "123456",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "last_digits_card_number": {
+                      "example": "1234",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "wallet_type": {
+                      "description": "The digital wallet type that the user paid with",
+                      "enum": [
+                        "Apple Pay",
+                        "Google Pay"
+                      ],
+                      "example": "Apple Pay",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "CardDetailsFromResponse": {
+                  "properties": {
+                    "billing_address": {
+                      "$ref": "#/components/schemas/Address"
+                    },
+                    "card_brand": {
+                      "type": "string"
+                    },
+                    "card_type": {
+                      "type": "string"
+                    },
+                    "cardholder_name": {
+                      "type": "string"
+                    },
+                    "expiry_date": {
+                      "type": "string"
+                    },
+                    "first_digits_card_number": {
+                      "type": "string"
+                    },
+                    "last_digits_card_number": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "CreateAgreementRequest": {
+                  "description": "The Agreement Request Payload",
+                  "properties": {
+                    "description": {
+                      "description": "A human-readable description of the purpose of the agreement for recurring payments. We’ll show the description to your user when they make their first payment to activate this agreement. Limited to 255 characters.",
+                      "example": "Dorset Council 2022/23 council tax subscription.",
+                      "maxLength": 255,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "reference": {
+                      "description": "Associate a reference with this agreement to help you identify it. Limited to 255 characters.",
+                      "example": "CT-22-23-0001",
+                      "maxLength": 255,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "user_identifier": {
+                      "description": "Associate an identifier with the user who will enter into this agreement with your service.user_identifier is not unique – multiple agreements can have identical user_identifier values.You should not include personal data in user_identifier.",
+                      "example": "user-3fb81107-76b7-4910",
+                      "maxLength": 255,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "CreateCardPaymentRequest": {
+                  "description": "The create payment request body",
+                  "properties": {
+                    "agreement_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with a recurring payments agreement. Including `agreement_id` in your request tells the API to take this payment using the card details that are associated with this agreement. `agreement_id` must match an active agreement ID. You must set `authorisation_mode` to `agreement` for the API to accept `agreement_id`.",
+                      "example": "abcefghjklmnopqr1234567890",
+                      "maxLength": 26,
+                      "minLength": 26,
+                      "type": "string"
+                    },
+                    "agreement_payment_type": {
+                      "description": "When a standing order agreement transaction is initiated we have to include an initiated reason attribute.This can have a value of `instalment`, `recurring`, or `unscheduled`.We must have a `set_up_agreement` property or you set `authorisation_mode` to `agreement` for the API to accept the AgreementPaymentType.",
+                      "enum": [
+                        "instalment",
+                        "recurring",
+                        "unscheduled"
+                      ],
+                      "type": "string"
+                    },
+                    "amount": {
+                      "description": "Sets the amount the user will pay, in pence.",
+                      "example": 12000,
+                      "format": "int32",
+                      "maximum": 10000000,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "authorisation_mode": {
+                      "description": "Sets how you intend to authorise the payment. Defaults to `web`. Payments created with `web` mode follow the [standard GOV.UK Pay payment journey](https://docs.payments.service.gov.uk/payment_flow/). Paying users visit the `next_url` in the response to complete their payment. Payments created with `agreement` mode are authorised with an agreement for recurring payments. If you create an `agreement` payment, you must also send an active `agreement_id`. You must not send `return_url`, `email`, or `prefilled_cardholder_details` or your request will fail. Payments created with `moto_api` mode return an `auth_url_post` object and a `one_time_token`. You can use `auth_url_post` and `one_time_token` to send the paying user’s card details through the API and complete the payment. If you create a `moto_api` payment, do not send a `return_url` in your request.",
+                      "enum": [
+                        "web",
+                        "agreement",
+                        "moto_api"
+                      ],
+                      "type": "string"
+                    },
+                    "delayed_capture": {
+                      "description": "You can use this parameter to [delay taking a payment from the paying user’s bank account](https://docs.payments.service.gov.uk/delayed_capture/#delay-taking-a-payment). For example, you might want to do your own anti-fraud checks on payments, or check that users are eligible for your service. Defaults to `false`.",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "A human-readable description of the payment you’re creating. Paying users see this description on the payment pages. Service staff see the description in the GOV.UK Pay admin tool",
+                      "example": "New passport application",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "email": {
+                      "description": "email",
+                      "example": "Joe.Bogs@example.org",
+                      "type": "string"
+                    },
+                    "language": {
+                      "description": "[Sets the language of the user’s payment page](https://docs.payments.service.gov.uk/optional_features/welsh_language) with an ISO-6391 Alpha-2 code of a supported language.",
+                      "enum": [
+                        "en",
+                        "cy"
+                      ],
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "$ref": "#/components/schemas/ExternalMetadata"
+                    },
+                    "moto": {
+                      "description": "You can use this parameter to [designate a payment as a Mail Order / Telephone Order (MOTO) payment](https://docs.payments.service.gov.uk/moto_payments).",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "prefilled_cardholder_details": {
+                      "$ref": "#/components/schemas/PrefilledCardholderDetails"
+                    },
+                    "reference": {
+                      "description": "Associate a reference with this payment. `reference` is not unique - multiple payments can have identical `reference` values.",
+                      "example": "12345",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "return_url": {
+                      "description": "The URL [the paying user is directed to after their payment journey on GOV.UK Pay ends](https://docs.payments.service.gov.uk/making_payments/#choose-the-return-url-and-match-your-users-to-payments).",
+                      "example": "https://service-name.gov.uk/transactions/12345",
+                      "maxLength": 2000,
+                      "minLength": 0,
+                      "type": "string"
+                    },
+                    "set_up_agreement": {
+                      "description": "Use this parameter to set up an existing agreement for recurring payments. The `set_up_agreement` value you send must be a valid `agreement_id`.",
+                      "example": "abcefghjklmnopqr1234567890",
+                      "maxLength": 26,
+                      "minLength": 26,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "description",
+                    "reference",
+                    "return_url"
+                  ],
+                  "type": "object"
+                },
+                "CreatePaymentResult": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/PaymentLinks"
+                    },
+                    "amount": {
+                      "description": "The amount, in pence, the user has paid or will pay. `amount` will match the value you sent in the request body.",
+                      "example": 1200,
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "card_details": {
+                      "$ref": "#/components/schemas/CardDetailsFromResponse"
+                    },
+                    "created_date": {
+                      "description": "The date you created the payment.",
+                      "example": "2016-01-21T17:15:00.000Z",
+                      "type": "string"
+                    },
+                    "delayed_capture": {
+                      "description": "`delayed_capture` is `true` if you’re controlling [when GOV.UK Pay takes (‘captures’) the payment from the paying user’s bank account](https://docs.payments.service.gov.uk/delayed_capture).",
+                      "example": false,
+                      "readOnly": true,
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "The description you sent in the request body when creating this payment.",
+                      "example": "New passport application",
+                      "type": "string"
+                    },
+                    "email": {
+                      "description": "The paying user’s email address. The paying user’s email field will be prefilled with this value when they make their payment. `email` does not appear if you did not include it in the request body.",
+                      "example": "citizen@example.org",
+                      "type": "string"
+                    },
+                    "language": {
+                      "description": "The language of the user’s payment page.",
+                      "enum": [
+                        "en",
+                        "cy"
+                      ],
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "$ref": "#/components/schemas/ExternalMetadata"
+                    },
+                    "moto": {
+                      "description": "Indicates if this payment is a [Mail Order / Telephone Order (MOTO) payment](https://docs.payments.service.gov.uk/moto_payments).",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "type": "string"
+                    },
+                    "payment_provider": {
+                      "example": "worldpay",
+                      "type": "string"
+                    },
+                    "provider_id": {
+                      "description": "The reference number your payment service provider associated with the payment.",
+                      "example": "null",
+                      "type": "string"
+                    },
+                    "reference": {
+                      "description": "The reference number you associated with this payment.",
+                      "example": "12345",
+                      "type": "string"
+                    },
+                    "refund_summary": {
+                      "$ref": "#/components/schemas/RefundSummary"
+                    },
+                    "return_url": {
+                      "description": "The URL you direct the paying user to after their payment journey on GOV.UK Pay ends.",
+                      "example": "https://service-name.gov.uk/transactions/12345",
+                      "type": "string"
+                    },
+                    "settlement_summary": {
+                      "$ref": "#/components/schemas/PaymentSettlementSummary"
+                    },
+                    "state": {
+                      "$ref": "#/components/schemas/PaymentState"
+                    }
+                  },
+                  "type": "object"
+                },
+                "DisputeDetailForSearch": {
+                  "description": "Contains disputes matching your search criteria.",
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/DisputeLinksForSearch"
+                    },
+                    "amount": {
+                      "description": "The disputed amount in pence.",
+                      "example": 1200,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "created_date": {
+                      "description": "The date and time the user's bank told GOV.UK Pay about this dispute.",
+                      "example": "2022-07-28T16:43:00.000Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "dispute_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this dispute when the paying user disputed the payment.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "evidence_due_date": {
+                      "description": "The deadline for submitting your supporting evidence. This value uses Coordinated Universal Time (UTC) and ISO 8601 format",
+                      "example": "2022-07-28T16:43:00.000Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "fee": {
+                      "description": "The payment service provider’s dispute fee, in pence.",
+                      "example": 1200,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "net_amount": {
+                      "description": "The amount, in pence, your payment service provider will take for a lost dispute. 'net_amount' is deducted from your payout after you lose the dispute. For example, a 'net_amount' of '-1500' means your PSP will take £15.00 from your next payout into your bank account. 'net_amount' is always a negative value. 'net_amount' only appears if you lose the dispute.",
+                      "example": -2400,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "reason": {
+                      "description": "The reason the paying user gave for disputing this payment. Possible values are: 'credit_not_processed', 'duplicate', 'fraudulent', 'general', 'product_not_received', 'product_unacceptable', 'unrecognised', 'subscription_cancelled', >'other'",
+                      "example": "fraudulent",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "settlement_summary": {
+                      "$ref": "#/components/schemas/SettlementSummary"
+                    },
+                    "status": {
+                      "description": "The current status of the dispute. Possible values are: 'needs_response', 'won', 'lost', 'under_review'",
+                      "example": "under_review",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "DisputeLinksForSearch": {
+                  "description": "links for search dispute resource",
+                  "properties": {
+                    "payment": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "DisputesSearchResults": {
+                  "properties": {
+                    "count": {
+                      "description": "Number of disputes on the current page of search results.",
+                      "example": 20,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/SearchNavigationLinks"
+                    },
+                    "page": {
+                      "description": "The page of results you’re viewing. To view other pages, make this request again using the 'page' parameter.",
+                      "example": 1,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "results": {
+                      "description": "Contains disputes matching your search criteria.",
+                      "items": {
+                        "$ref": "#/components/schemas/DisputeDetailForSearch"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "description": "Number of total disputes matching your search criteria.",
+                      "example": 100,
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "EmbeddedRefunds": {
+                  "properties": {
+                    "refunds": {
+                      "items": {
+                        "$ref": "#/components/schemas/Refund"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ErrorResponse": {
+                  "description": "An error response",
+                  "properties": {
+                    "code": {
+                      "description": "A GOV.UK Pay API error code. You can [find out more about this code in our documentation](https://docs.payments.service.gov.uk/api_reference/#gov-uk-pay-api-error-codes).",
+                      "example": "P0900",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Additional details about the error",
+                      "example": "Too many requests",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Exemption": {
+                  "description": "A structure representing that 3DS exemption was requested and the outcome of the exemption, if applicable.",
+                  "properties": {
+                    "outcome": {
+                      "$ref": "#/components/schemas/Outcome"
+                    },
+                    "requested": {
+                      "description": "Indicates whether an exemption was requested for the given payment.",
+                      "example": true,
+                      "readOnly": true,
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "description": "Indicates the type of exemption. Only present for corporate exemption",
+                      "example": "corporate",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ExternalMetadata": {
+                  "example": "{\"property1\": \"value1\", \"property2\": \"value2\"}\"",
+                  "properties": {
+                    "metadata": {
+                      "additionalProperties": {
+                        "type": "object"
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "metadata"
+                  ],
+                  "type": "object"
+                },
+                "Link": {
+                  "description": "A link related to a payment",
+                  "properties": {
+                    "href": {
+                      "description": "A URL that lets you perform additional actions to this payment when combined with the associated `method`.",
+                      "example": "https://an.example.link/from/payment/platform",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "An API method that lets you perform additional actions to this paymentwhen combined with the associated `href`.",
+                      "example": "GET",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Outcome": {
+                  "description": "A structure representing the outcome of a 3DS exemption, if known.",
+                  "properties": {
+                    "result": {
+                      "description": "The outcome of the requested exemption",
+                      "example": "honoured",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "readOnly": true,
+                  "type": "object"
+                },
+                "PaymentDetailForSearch": {
+                  "description": "Contains payments matching your search criteria.",
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/PaymentLinksForSearch"
+                    },
+                    "agreement_payment_type": {
+                      "description": "When the customer initiates a standing order agreement transaction we have to include a customerInitiatedReason attribute. This can have a value of `instalment`, `recurring`, or `unscheduled`.",
+                      "enum": [
+                        "instalment",
+                        "recurring",
+                        "unscheduled"
+                      ],
+                      "type": "string"
+                    },
+                    "amount": {
+                      "description": "The description assigned to the payment when it was created.",
+                      "example": 1200,
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "authorisation_mode": {
+                      "description": "How the payment will be authorised. Payments created in `web` mode require the paying user to visit the `next_url` to complete the payment.",
+                      "enum": [
+                        "web",
+                        "moto_api",
+                        "external"
+                      ],
+                      "type": "string"
+                    },
+                    "authorisation_summary": {
+                      "$ref": "#/components/schemas/AuthorisationSummary"
+                    },
+                    "card_brand": {
+                      "deprecated": true,
+                      "description": "This attribute is deprecated. Please use `card_details.card_brand` instead.",
+                      "example": "Visa",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "card_details": {
+                      "$ref": "#/components/schemas/CardDetails"
+                    },
+                    "corporate_card_surcharge": {
+                      "description": "The [corporate card surcharge](https://docs.payments.service.gov.uk/corporate_card_surcharges/#add-corporate-card-fees) amount in pence.",
+                      "example": 250,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "created_date": {
+                      "example": "2016-01-21T17:15:00.000Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "delayed_capture": {
+                      "description": "`delayed_capture` is `true` if you’re [controlling how long it takes GOV.UK Pay to take (‘capture’) a payment](https://docs.payments.service.gov.uk/delayed_capture).",
+                      "example": false,
+                      "readOnly": true,
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "The description assigned to the payment when it was created.",
+                      "example": "Your Service Description",
+                      "type": "string"
+                    },
+                    "email": {
+                      "example": "The paying user’s email address.",
+                      "type": "string"
+                    },
+                    "exemption": {
+                      "$ref": "#/components/schemas/Exemption"
+                    },
+                    "fee": {
+                      "description": "The [payment service provider’s (PSP) transaction fee](https://docs.payments.service.gov.uk/reporting/#psp-fees), in pence. `fee` only appears when we have taken (‘captured’) the payment from the user or if their payment fails after they submitted their card details. `fee` will not appear if your PSP is Worldpay or you are using an API key from a test service.",
+                      "example": 5,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "language": {
+                      "description": "The ISO-6391 Alpha-2 code of the [language of the user's payment page](https://docs.payments.service.gov.uk/optional_features/welsh_language).",
+                      "enum": [
+                        "en",
+                        "cy"
+                      ],
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "$ref": "#/components/schemas/ExternalMetadata"
+                    },
+                    "moto": {
+                      "description": "Indicates if this payment is a [Mail Order / Telephone Order (MOTO) payment](https://docs.payments.service.gov.uk/moto_payments).",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "net_amount": {
+                      "description": "The amount, in pence, that will be paid into your bank account after your payment service provider takes the `fee`.",
+                      "example": 1195,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "payment_provider": {
+                      "description": "The payment service provider that processed this payment.",
+                      "example": "worldpay",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "provider_id": {
+                      "description": "The unique ID your payment service provider generated for this payment. This is not the same as the `payment_id`.",
+                      "example": "reference-from-payment-gateway",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "reference": {
+                      "description": "The reference associated with the payment when it was created. `reference` is not unique - multiple payments can have the same `reference` value.",
+                      "example": "your-reference",
+                      "type": "string"
+                    },
+                    "refund_summary": {
+                      "$ref": "#/components/schemas/RefundSummary"
+                    },
+                    "return_url": {
+                      "description": "The URL you direct the paying user to after their payment journey on GOV.UK Pay ends.",
+                      "example": "http://your.service.domain/your-reference",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "settlement_summary": {
+                      "$ref": "#/components/schemas/PaymentSettlementSummary"
+                    },
+                    "state": {
+                      "$ref": "#/components/schemas/PaymentState"
+                    },
+                    "total_amount": {
+                      "description": "Amount your user paid in pence, including corporate card fees. `total_amount` only appears if you [added a corporate card surcharge to the payment](https://docs.payments.service.gov.uk/corporate_card_surcharges/#add-corporate-card-fees).",
+                      "example": 1450,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentEvent": {
+                  "description": "A List of Payment Events information",
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/PaymentEventLink"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "state": {
+                      "$ref": "#/components/schemas/PaymentState"
+                    },
+                    "updated": {
+                      "description": "When this payment’s state changed. This value uses Coordinated Universal Time (UTC) and ISO-8601 format - `YYYY-MM-DDThh:mm:ss.SSSZ`.",
+                      "example": "2017-01-10T16:44:48.646Z",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentEventLink": {
+                  "description": "Resource link for a payment of a payment event",
+                  "properties": {
+                    "payment_url": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentEvents": {
+                  "description": "A List of Payment Events information",
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/PaymentLinksForEvents"
+                    },
+                    "events": {
+                      "items": {
+                        "$ref": "#/components/schemas/PaymentEvent"
+                      },
+                      "type": "array"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentInstrument": {
+                  "properties": {
+                    "CardDetails": {
+                      "$ref": "#/components/schemas/CardDetailsFromResponse"
+                    },
+                    "created_date": {
+                      "description": "The date and time you created this payment instrument. This value uses Coordinated Universal Time (UTC) and ISO 8601 format – `YYYY-MM-DDThh:mm:ss.sssZ`.",
+                      "example": "2022-07-08T14:33:00.000Z",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "The type of payment instrument.",
+                      "enum": [
+                        "card"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentLinks": {
+                  "description": "links for payment",
+                  "properties": {
+                    "auth_url_post": {
+                      "$ref": "#/components/schemas/PostLink"
+                    },
+                    "cancel": {
+                      "$ref": "#/components/schemas/PostLink"
+                    },
+                    "capture": {
+                      "$ref": "#/components/schemas/PostLink"
+                    },
+                    "events": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "next_url": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "next_url_post": {
+                      "$ref": "#/components/schemas/PostLink"
+                    },
+                    "refunds": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "self": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentLinksForEvents": {
+                  "description": "links for events resource",
+                  "properties": {
+                    "self": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentLinksForSearch": {
+                  "description": "links for search payment resource",
+                  "properties": {
+                    "cancel": {
+                      "$ref": "#/components/schemas/PostLink"
+                    },
+                    "capture": {
+                      "$ref": "#/components/schemas/PostLink"
+                    },
+                    "events": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "refunds": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "self": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentRefundRequest": {
+                  "description": "The Payment Refund Request Payload",
+                  "properties": {
+                    "amount": {
+                      "description": "The amount you want to [refund to your user](https://docs.payments.service.gov.uk/refunding_payments/) in pence.",
+                      "example": 150000,
+                      "format": "int32",
+                      "maximum": 10000000,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "refund_amount_available": {
+                      "description": "Amount in pence. Total amount still available before issuing the refund",
+                      "example": 200000,
+                      "format": "int32",
+                      "maximum": 10000000,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "amount"
+                  ],
+                  "type": "object"
+                },
+                "PaymentSearchResults": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/SearchNavigationLinks"
+                    },
+                    "count": {
+                      "description": "Number of payments on the current page of search results.",
+                      "example": 20,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "page": {
+                      "description": "The [page of results you’re viewing](https://docs.payments.service.gov.uk/api_reference/#pagination). To view other pages, make this request again using the `page` parameter.",
+                      "example": 1,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "results": {
+                      "description": "Contains payments matching your search criteria.",
+                      "items": {
+                        "$ref": "#/components/schemas/PaymentDetailForSearch"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "description": "Total number of payments matching your search criteria.",
+                      "example": 100,
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentSettlementSummary": {
+                  "description": "A structure representing information about a settlement",
+                  "properties": {
+                    "capture_submit_time": {
+                      "description": "The date and time GOV.UK Pay asked your payment service provider to take the payment from your user’s account. This value uses Coordinated Universal Time (UTC) and ISO 8601 format - `YYYY-MM-DDThh:mm:ss.SSSZ`",
+                      "example": "2016-01-21T17:15:00.000Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "captured_date": {
+                      "description": "The date your payment service provider took the payment from your user. This value uses ISO 8601 format - `YYYY-MM-DD`",
+                      "example": "2016-01-21",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "settled_date": {
+                      "description": "The date that the transaction was paid into the service's account.",
+                      "example": "2016-01-21",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentState": {
+                  "description": "A structure representing the current state of the payment in its lifecycle.",
+                  "properties": {
+                    "can_retry": {
+                      "description": "If `can_retry` is `true`, you can use this agreement to try to take another recurring payment. If `can_retry` is `false`, you cannot take another recurring payment with this agreement. `can_retry` only appears on failed payments that were attempted using an agreement for recurring payments.",
+                      "nullable": true,
+                      "readOnly": true,
+                      "type": "boolean"
+                    },
+                    "code": {
+                      "description": "An [API error code](https://docs.payments.service.gov.uk/api_reference/#gov-uk-pay-api-error-codes)that explains why the payment failed. `code` only appears if the payment failed.",
+                      "example": "P010",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "finished": {
+                      "description": "Indicates whether a payment journey is finished.",
+                      "readOnly": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "A description of what went wrong with this payment. `message` only appears if the payment failed.",
+                      "example": "User cancelled the payment",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Where the payment is in [the payment status lifecycle](https://docs.payments.service.gov.uk/api_reference/#payment-status-meanings).",
+                      "example": "created",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentWithAllLinks": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/PaymentLinks"
+                    },
+                    "agreement_payment_type": {
+                      "description": "When the customer initiates a standing order agreement transaction we have to include a customerInitiatedReason attribute. This can have a value of `instalment`, `recurring`, or `unscheduled`.",
+                      "enum": [
+                        "instalment",
+                        "recurring",
+                        "unscheduled"
+                      ],
+                      "type": "string"
+                    },
+                    "amount": {
+                      "description": "The description assigned to the payment when it was created.",
+                      "example": 1200,
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "authorisation_mode": {
+                      "description": "How the payment will be authorised. Payments created in `web` mode require the paying user to visit the `next_url` to complete the payment.",
+                      "enum": [
+                        "web",
+                        "moto_api",
+                        "external"
+                      ],
+                      "type": "string"
+                    },
+                    "authorisation_summary": {
+                      "$ref": "#/components/schemas/AuthorisationSummary"
+                    },
+                    "card_brand": {
+                      "deprecated": true,
+                      "description": "This attribute is deprecated. Please use `card_details.card_brand` instead.",
+                      "example": "Visa",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "card_details": {
+                      "$ref": "#/components/schemas/CardDetails"
+                    },
+                    "corporate_card_surcharge": {
+                      "description": "The [corporate card surcharge](https://docs.payments.service.gov.uk/corporate_card_surcharges/#add-corporate-card-fees) amount in pence.",
+                      "example": 250,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "created_date": {
+                      "example": "2016-01-21T17:15:00.000Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "delayed_capture": {
+                      "description": "`delayed_capture` is `true` if you’re [controlling how long it takes GOV.UK Pay to take (‘capture’) a payment](https://docs.payments.service.gov.uk/delayed_capture).",
+                      "example": false,
+                      "readOnly": true,
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "The description assigned to the payment when it was created.",
+                      "example": "Your Service Description",
+                      "type": "string"
+                    },
+                    "email": {
+                      "example": "The paying user’s email address.",
+                      "type": "string"
+                    },
+                    "exemption": {
+                      "$ref": "#/components/schemas/Exemption"
+                    },
+                    "fee": {
+                      "description": "The [payment service provider’s (PSP) transaction fee](https://docs.payments.service.gov.uk/reporting/#psp-fees), in pence. `fee` only appears when we have taken (‘captured’) the payment from the user or if their payment fails after they submitted their card details. `fee` will not appear if your PSP is Worldpay or you are using an API key from a test service.",
+                      "example": 5,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "language": {
+                      "description": "The ISO-6391 Alpha-2 code of the [language of the user's payment page](https://docs.payments.service.gov.uk/optional_features/welsh_language).",
+                      "enum": [
+                        "en",
+                        "cy"
+                      ],
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "$ref": "#/components/schemas/ExternalMetadata"
+                    },
+                    "moto": {
+                      "description": "Indicates if this payment is a [Mail Order / Telephone Order (MOTO) payment](https://docs.payments.service.gov.uk/moto_payments).",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "net_amount": {
+                      "description": "The amount, in pence, that will be paid into your bank account after your payment service provider takes the `fee`.",
+                      "example": 1195,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "payment_provider": {
+                      "description": "The payment service provider that processed this payment.",
+                      "example": "worldpay",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "provider_id": {
+                      "description": "The unique ID your payment service provider generated for this payment. This is not the same as the `payment_id`.",
+                      "example": "reference-from-payment-gateway",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "reference": {
+                      "description": "The reference associated with the payment when it was created. `reference` is not unique - multiple payments can have the same `reference` value.",
+                      "example": "your-reference",
+                      "type": "string"
+                    },
+                    "refund_summary": {
+                      "$ref": "#/components/schemas/RefundSummary"
+                    },
+                    "return_url": {
+                      "description": "The URL you direct the paying user to after their payment journey on GOV.UK Pay ends.",
+                      "example": "http://your.service.domain/your-reference",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "settlement_summary": {
+                      "$ref": "#/components/schemas/PaymentSettlementSummary"
+                    },
+                    "state": {
+                      "$ref": "#/components/schemas/PaymentState"
+                    },
+                    "total_amount": {
+                      "description": "Amount your user paid in pence, including corporate card fees. `total_amount` only appears if you [added a corporate card surcharge to the payment](https://docs.payments.service.gov.uk/corporate_card_surcharges/#add-corporate-card-fees).",
+                      "example": 1450,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PostLink": {
+                  "description": "A POST link related to a payment",
+                  "properties": {
+                    "href": {
+                      "description": "A URL that lets you perform additional actions to this payment when combined with the associated `method`.",
+                      "example": "https://an.example.link/from/payment/platform",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "method": {
+                      "example": "POST",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "params": {
+                      "additionalProperties": {
+                        "example": {
+                          "description": "This is a value for a parameter called description"
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "description": "This is a value for a parameter called description"
+                      },
+                      "type": "object"
+                    },
+                    "type": {
+                      "example": "application/x-www-form-urlencoded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PrefilledCardholderDetails": {
+                  "description": "prefilled_cardholder_details",
+                  "properties": {
+                    "billing_address": {
+                      "$ref": "#/components/schemas/Address"
+                    },
+                    "cardholder_name": {
+                      "description": "The cardholder name you prefilled when you created this payment.",
+                      "example": "J. Bogs",
+                      "maxLength": 255,
+                      "minLength": 0,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Refund": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/RefundLinksForSearch"
+                    },
+                    "amount": {
+                      "description": "The amount refunded to the user in pence.",
+                      "example": 120,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "created_date": {
+                      "description": "The date and time you created this refund. This value uses Coordinated Universal Time (UTC) and ISO 8601 format - `YYYY-MM-DDThh:mm:ss.SSSZ`.",
+                      "example": "2017-01-10T16:52:07.855Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "fee": {
+                      "description": "The fee, in pence, charged for processing the refund.",
+                      "example": 2,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "net_amount": {
+                      "description": "The net amount, in pence, associated with the refund, including any fee applicable.",
+                      "example": -122,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "refund_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this refund when you created it.",
+                      "example": "act4c33g40j3edfmi8jknab84x",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "settlement_summary": {
+                      "$ref": "#/components/schemas/RefundSettlementSummary"
+                    },
+                    "status": {
+                      "description": "The [status of the refund](https://docs.payments.service.gov.uk/refunding_payments/#checking-the-status-of-a-refund-status).",
+                      "enum": [
+                        "submitted",
+                        "success",
+                        "error"
+                      ],
+                      "example": "success",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RefundDetailForSearch": {
+                  "description": "Contains the refunds matching your search criteria.",
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/RefundLinksForSearch"
+                    },
+                    "amount": {
+                      "description": "The amount refunded to the user in pence.",
+                      "example": 120,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "created_date": {
+                      "description": "The date and time you created this refund. This value uses Coordinated Universal Time (UTC) and ISO 8601 format - `YYYY-MM-DDThh:mm:ss.SSSZ`.",
+                      "example": "2017-01-10T16:52:07.855Z",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "fee": {
+                      "description": "The fee, in pence, charged for processing the refund.",
+                      "example": 2,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "net_amount": {
+                      "description": "The net amount, in pence, associated with the refund, including any fee applicable.",
+                      "example": -122,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "refund_id": {
+                      "description": "The unique ID GOV.UK Pay automatically associated with this refund when you created it.",
+                      "example": "act4c33g40j3edfmi8jknab84x",
+                      "readOnly": true,
+                      "type": "string"
+                    },
+                    "settlement_summary": {
+                      "$ref": "#/components/schemas/RefundSettlementSummary"
+                    },
+                    "status": {
+                      "description": "The [status of the refund](https://docs.payments.service.gov.uk/refunding_payments/#checking-the-status-of-a-refund-status).",
+                      "enum": [
+                        "submitted",
+                        "success",
+                        "error"
+                      ],
+                      "example": "success",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RefundForSearchResult": {
+                  "properties": {
+                    "_embedded": {
+                      "$ref": "#/components/schemas/EmbeddedRefunds"
+                    },
+                    "_links": {
+                      "$ref": "#/components/schemas/RefundLinksForSearch"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RefundLinksForSearch": {
+                  "description": "links for search refunds resource",
+                  "properties": {
+                    "payment": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "self": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RefundSearchResults": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/SearchNavigationLinks"
+                    },
+                    "count": {
+                      "description": "Number of refunds on the current page of search results.",
+                      "example": 20,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "page": {
+                      "description": "The [page of results](payments.service.gov.uk/api_reference/#pagination) you’re viewing. To view other pages, make this request again using the `page` parameter.",
+                      "example": 1,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "results": {
+                      "description": "Contains the refunds matching your search criteria.",
+                      "items": {
+                        "$ref": "#/components/schemas/RefundDetailForSearch"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "description": "Number of refunds matching your search criteria.",
+                      "example": 100,
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RefundSettlementSummary": {
+                  "description": "A structure representing information about a settlement for refunds",
+                  "properties": {
+                    "settled_date": {
+                      "description": "The date Stripe took the refund from a payout to your bank account. `settled_date` only appears if Stripe has taken the refund. This value uses Coordinated Universal Time (UTC) and ISO 8601 format - `YYYY-MM-DD`.",
+                      "example": "2016-01-21",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "readOnly": true,
+                  "type": "object"
+                },
+                "RefundSummary": {
+                  "description": "A structure representing the refunds availability",
+                  "properties": {
+                    "amount_available": {
+                      "description": "How much you can refund to the user, in pence.",
+                      "example": 100,
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "amount_submitted": {
+                      "description": "How much you’ve already refunded to the user, in pence.",
+                      "format": "int64",
+                      "readOnly": true,
+                      "type": "integer"
+                    },
+                    "status": {
+                      "description": "Whether you can [refund the payment](https://docs.payments.service.gov.uk/refunding_payments/#checking-the-status-of-a-refund-status).",
+                      "example": "available",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RefundsResponse": {
+                  "properties": {
+                    "_links": {
+                      "$ref": "#/components/schemas/RefundLinksForSearch"
+                    },
+                    "payment_id": {
+                      "description": "The unique ID GOV.UK Pay associated with this payment when you created it.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RequestError": {
+                  "description": "A Request Error response",
+                  "properties": {
+                    "code": {
+                      "description": "An [API error code](https://docs.payments.service.gov.uk/api_reference/#gov-uk-pay-api-error-codes)that explains why the payment failed.<br><br>`code` only appears if the payment failed.",
+                      "example": "P0102",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Additional details about the error.",
+                      "example": "Invalid attribute value: amount. Must be less than or equal to 10000000",
+                      "type": "string"
+                    },
+                    "field": {
+                      "description": "The parameter in your request that's causing the error.",
+                      "example": "amount",
+                      "type": "string"
+                    },
+                    "header": {
+                      "description": "The header in your request that's causing the error.",
+                      "example": "Idempotency-Key",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "SearchNavigationLinks": {
+                  "description": "Links to navigate through pages of your search.",
+                  "properties": {
+                    "first_page": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "last_page": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "next_page": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "prev_page": {
+                      "$ref": "#/components/schemas/Link"
+                    },
+                    "self": {
+                      "$ref": "#/components/schemas/Link"
+                    }
+                  },
+                  "type": "object"
+                },
+                "SettlementSummary": {
+                  "description": "Contains information about when a lost dispute was settled. A dispute is settled when your payment service provider takes it from a payout to your bank account. 'settlement_summary' only appears if you lost the dispute.",
+                  "properties": {
+                    "settled_date": {
+                      "description": "The date your payment service provider took the disputed payment and dispute fee from a payout to your bank account. This value appears in ISO 8601 format - `YYYY-MM-DD`. `settled_date` only appears if you lost the dispute.",
+                      "example": "2022-07-28",
+                      "readOnly": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ThreeDSecure": {
+                  "description": "Object containing information about the 3D Secure authentication of the payment.",
+                  "properties": {
+                    "required": {
+                      "description": "Indicates if this payment was authorised with 3D Secure authentication. `required` is `true` if the payment required 3D Secure authentication.",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "securitySchemes": {
+                "BearerAuth": {
+                  "description": "GOV.UK Pay authenticates API calls with [OAuth2 HTTP bearer tokens](http://tools.ietf.org/html/rfc6750). You need to use an `\"Authorization\"` HTTP header to provide your API key, with a `\"Bearer\"` prefix. For example: `Authorization: Bearer {YOUR_API_KEY_HERE}`",
+                  "scheme": "bearer",
+                  "type": "http"
+                }
+              }
+            },
+            "info": {
+              "description": "The GOV.UK Pay REST API. Read [our documentation](https://docs.payments.service.gov.uk/) for more details.",
+              "title": "GOV.UK Pay API",
+              "version": "1.0.3"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/v1/agreements": {
+                "get": {
+                  "description": "You can use this endpoint to search for recurring payments agreements. The agreements are sorted by date, with the most recently-created agreements appearing first.",
+                  "operationId": "Search agreements",
+                  "parameters": [
+                    {
+                      "description": "Returns agreements with a `reference` that exactly matches the value you sent. This parameter is not case sensitive. A `reference` was associated with the agreement when that agreement was created.",
+                      "example": "CT-22-23-0001",
+                      "in": "query",
+                      "name": "reference",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns agreements in a matching `status`. `status` reflects where an agreement is in its lifecycle. You can [read more about the meanings of the different agreement status values](https://docs.payments.service.gov.uk/recurring_payments/#understanding-agreement-status).",
+                      "in": "query",
+                      "name": "status",
+                      "schema": {
+                        "enum": [
+                          "created",
+                          "active",
+                          "cancelled",
+                          "inactive"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns a specific page of results. Defaults to `1`. You can [read about search pagination](https://docs.payments.service.gov.uk/api_reference/#pagination)",
+                      "example": 1,
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The number of agreements returned per results page. Defaults to `500`. Maximum value is `500`. You can [read about search pagination](https://docs.payments.service.gov.uk/api_reference/#pagination)",
+                      "example": 50,
+                      "in": "query",
+                      "name": "display_size",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/AgreementSearchResults"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Your request failed. Check the `code` and `description` in the response to find out why your request failed."
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Search agreements for recurring payments",
+                  "tags": [
+                    "Agreements"
+                  ]
+                },
+                "post": {
+                  "description": "You can use this endpoint to create a new agreement.",
+                  "operationId": "Create an agreement",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/CreateAgreementRequest"
+                        }
+                      }
+                    },
+                    "description": "requestPayload",
+                    "required": true
+                  },
+                  "responses": {
+                    "201": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Agreement"
+                          }
+                        }
+                      },
+                      "description": "Created"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Bad request"
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Your request failed. Check the `code` and `description` in the response to find out why your request failed."
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Create an agreement for recurring payments",
+                  "tags": [
+                    "Agreements"
+                  ]
+                }
+              },
+              "/v1/agreements/{agreementId}": {
+                "get": {
+                  "description": "You can use this endpoint to get information about a single recurring payments agreement.",
+                  "operationId": "Get an agreement",
+                  "parameters": [
+                    {
+                      "description": "Returns the agreement with the matching `agreement_id`. GOV.UK Pay generated an `agreement_id` when you created the agreement.",
+                      "example": "cgc1ocvh0pt9fqs0ma67r42l58",
+                      "in": "path",
+                      "name": "agreementId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Agreement"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Get information about a single agreement for recurring payments",
+                  "tags": [
+                    "Agreements"
+                  ]
+                }
+              },
+              "/v1/agreements/{agreementId}/cancel": {
+                "post": {
+                  "description": "You can use this endpoint to cancel a recurring payments agreement in the `active` status.",
+                  "operationId": "Cancel an agreement",
+                  "parameters": [
+                    {
+                      "description": "The `agreement_id` of the agreement you are cancelling",
+                      "example": "cgc1ocvh0pt9fqs0ma67r42l58",
+                      "in": "path",
+                      "name": "agreementId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "204": {
+                      "description": "No Content"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Cancellation of agreement failed"
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Cancel an agreement for recurring payments",
+                  "tags": [
+                    "Agreements"
+                  ]
+                }
+              },
+              "/v1/auth": {
+                "post": {
+                  "description": "You can use this endpoint to [authorise payments](https://docs.payments.service.gov.uk/moto_payments/moto_send_card_details_api/) you have created with `authorisation_mode` set to `moto_api`.",
+                  "operationId": "Authorise a MOTO payment",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/AuthorisationRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "204": {
+                      "description": "Your authorisation request was successful."
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Your request is invalid. Check the `code` and `description` in the response to find out why your request failed."
+                    },
+                    "402": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "The `card_number` you sent is not a valid card number or you chose not to accept this card type. Check the `code` and `description` fields in the response to find out why your request failed."
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "A value you sent is invalid or missing. Check the `code` and `description` in the response to find out why your request failed."
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "There is something wrong with GOV.UK Pay. If there are no issues on our status page (https://payments.statuspage.io), you can contact us with your error code and we'll investigate."
+                    }
+                  },
+                  "summary": "Send card details to authorise a MOTO payment",
+                  "tags": [
+                    "Authorise card payments"
+                  ]
+                }
+              },
+              "/v1/disputes": {
+                "get": {
+                  "description": "You can use this endpoint to search disputes. A dispute is when [a paying user challenges a completed payment through their bank](https://docs.payments.service.gov.uk/disputes/).",
+                  "operationId": "Search disputes",
+                  "parameters": [
+                    {
+                      "description": "Returns disputes raised on or after the `from_date`. Date and time must be coordinated Universal Time (UTC) and ISO 8601 format to second-level accuracy - `YYYY-MM-DDThh:mm:ssZ`.",
+                      "example": "2015-08-13T12:35:00Z",
+                      "in": "query",
+                      "name": "from_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns disputes raised before the `to_date`. Date and time must be coordinated Universal Time (UTC) and ISO 8601 format to second-level accuracy - `YYYY-MM-DDThh:mm:ssZ`.",
+                      "example": "2015-08-13T12:35:00Z",
+                      "in": "query",
+                      "name": "to_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns disputes settled on or after the `from_settled_date`. Date must be in ISO 8601 format to date-level accuracy - `YYYY-MM-DD`. Disputes are settled when your payment service provider takes the disputed amount from a payout to your bank account.",
+                      "in": "query",
+                      "name": "from_settled_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns disputes settled before the `to_settled_date`. Date must be in ISO 8601 format to date-level accuracy - `YYYY-MM-DD`. Disputes are settled when your payment service provider takes the disputed amount from a payout to your bank account.",
+                      "in": "query",
+                      "name": "to_settled_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns disputes with a matching `status`. `status` reflects what stage of the dispute process a dispute is at. You can [read more about the meanings of the different status values](https://docs.payments.service.gov.uk/disputes/#dispute-status)",
+                      "example": "won",
+                      "in": "query",
+                      "name": "status",
+                      "schema": {
+                        "enum": [
+                          "needs_response",
+                          "under_review",
+                          "lost",
+                          "won"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns a specific page of results. Defaults to `1`.",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The number of disputes returned per results page. Defaults to `500`. Maximum value is `500`.",
+                      "in": "query",
+                      "name": "display_size",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/DisputesSearchResults"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Invalid parameters: from_date, to_date, from_settled_date, to_settled_date, status, display_size. See Public API documentation for the correct data formats"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Search disputes",
+                  "tags": [
+                    "Disputes"
+                  ]
+                }
+              },
+              "/v1/payments": {
+                "get": {
+                  "description": "You can use this endpoint to [search for payments you’ve previously created](https://docs.payments.service.gov.uk/reporting/#search-payments/). Payments are sorted by date, with the most recently-created payment appearing first.",
+                  "operationId": "Search payments",
+                  "parameters": [
+                    {
+                      "description": "Returns payments with `reference` values exactly matching your specified value.",
+                      "in": "query",
+                      "name": "reference",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments with matching `email` values. You can send full or partial email addresses. `email` is the paying user’s email address.",
+                      "in": "query",
+                      "name": "email",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments in a matching `state`. `state` reflects where a payment is in the [payment status lifecycle](https://docs.payments.service.gov.uk/api_reference/#payment-status-lifecycle).",
+                      "example": "success",
+                      "in": "query",
+                      "name": "state",
+                      "schema": {
+                        "enum": [
+                          "created",
+                          "started",
+                          "submitted",
+                          "success",
+                          "failed",
+                          "cancelled",
+                          "error"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments paid with a particular card brand.",
+                      "in": "query",
+                      "name": "card_brand",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments created on or after the `from_date`. Date and time must be coordinated Universal Time (UTC) and ISO 8601 format to second-level accuracy - `YYYY-MM-DDThh:mm:ssZ`.",
+                      "example": "2015-08-13T12:35:00Z",
+                      "in": "query",
+                      "name": "from_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments created before the `to_date`. Date and time must be coordinated Universal Time (UTC) and ISO 8601 format to second-level accuracy - `YYYY-MM-DDThh:mm:ssZ`.",
+                      "example": "2015-08-13T12:35:00Z",
+                      "in": "query",
+                      "name": "to_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns a [specific page of results](https://docs.payments.service.gov.uk/api_reference/#pagination). Defaults to `1`.",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The number of payments returned [per results page](https://docs.payments.service.gov.uk/api_reference/#pagination). Defaults to `500`. Maximum value is `500`.",
+                      "in": "query",
+                      "name": "display_size",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments paid with cards under this cardholder name.",
+                      "in": "query",
+                      "name": "cardholder_name",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments paid by cards beginning with the `first_digits_card_number` value. `first_digits_card_number` value must be 6 digits.",
+                      "in": "query",
+                      "name": "first_digits_card_number",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments paid by cards ending with the `last_digits_card_number` value. `last_digits_card_number` value must be 4 digits.",
+                      "in": "query",
+                      "name": "last_digits_card_number",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments settled on or after the `from_settled_date` value. You can only search by settled date if your payment service provider is Stripe. Date must be in ISO 8601 format to date-level accuracy - `YYYY-MM-DD`. Payments are settled when your payment service provider sends funds to your bank account.",
+                      "in": "query",
+                      "name": "from_settled_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments settled before the `to_settled_date` value. You can only search by settled date if your payment service provider is Stripe. Date must be in ISO 8601 format to date-level accuracy - `YYYY-MM-DD`. Payments are settled when your payment service provider sends funds to your bank account.",
+                      "in": "query",
+                      "name": "to_settled_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns payments that were authorised using the agreement with this `agreement_id`. Must be an exact match.",
+                      "example": "abcefghjklmnopqr1234567890",
+                      "in": "query",
+                      "name": "agreement_id",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/PaymentSearchResults"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Invalid parameters: from_date, to_date, status, display_size. See Public API documentation for the correct data formats"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Search payments",
+                  "tags": [
+                    "Card payments"
+                  ]
+                },
+                "post": {
+                  "description": "You can use this endpoint to [create a new payment](https://docs.payments.service.gov.uk/making_payments/).",
+                  "operationId": "Create a payment",
+                  "parameters": [
+                    {
+                      "in": "header",
+                      "name": "Idempotency-Key",
+                      "schema": {
+                        "nullable": true,
+                        "pattern": "^$|^[a-zA-Z0-9-]+$",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/CreateCardPaymentRequest"
+                        }
+                      }
+                    },
+                    "description": "requestPayload",
+                    "required": true
+                  },
+                  "responses": {
+                    "201": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/CreatePaymentResult"
+                          }
+                        }
+                      },
+                      "description": "Created"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Bad request"
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Your request failed. Check the `code` and `description` in the response to find out why your request failed."
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Create a payment",
+                  "tags": [
+                    "Card payments"
+                  ]
+                }
+              },
+              "/v1/payments/{paymentId}": {
+                "get": {
+                  "description": "You can use this endpoint to [get details about a single payment you’ve previously created](https://docs.payments.service.gov.uk/reporting/#get-information-about-a-single-payment).",
+                  "operationId": "Get a payment",
+                  "parameters": [
+                    {
+                      "description": "Returns the payment with the matching `payment_id`.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/PaymentWithAllLinks"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Get information about a single payment",
+                  "tags": [
+                    "Card payments"
+                  ]
+                }
+              },
+              "/v1/payments/{paymentId}/cancel": {
+                "post": {
+                  "description": "You can use this endpoint [to cancel an unfinished payment](https://docs.payments.service.gov.uk/making_payments/#cancel-a-payment-that-s-in-progress).",
+                  "operationId": "Cancel a payment",
+                  "parameters": [
+                    {
+                      "description": "The `payment_id` of the payment you’re cancelling.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "204": {
+                      "description": "No Content"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Cancellation of payment failed"
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "409": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Cancel payment",
+                  "tags": [
+                    "Card payments"
+                  ]
+                }
+              },
+              "/v1/payments/{paymentId}/capture": {
+                "post": {
+                  "description": "You can use this endpoint to [take (‘capture’) a delayed payment from the paying user’s bank account](https://docs.payments.service.gov.uk/delayed_capture/).",
+                  "operationId": "Capture a payment",
+                  "parameters": [
+                    {
+                      "description": "The `payment_id` of the payment you’re capturing.",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "204": {
+                      "description": "No Content"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Capture of payment failed"
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "409": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Take a delayed payment",
+                  "tags": [
+                    "Card payments"
+                  ]
+                }
+              },
+              "/v1/payments/{paymentId}/events": {
+                "get": {
+                  "description": "You can use this endpoint to [get a list of a payment’s events](https://docs.payments.service.gov.uk/reporting/#get-a-payment-s-events). A payment event is when a payment’s `state` changes, such as when the payment is created, or when the paying user submits their details.",
+                  "operationId": "Get events for a payment",
+                  "parameters": [
+                    {
+                      "description": "Payment identifier",
+                      "example": "hu20sqlact5260q2nanm0q8u93",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/PaymentEvents"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Get a payment's events",
+                  "tags": [
+                    "Card payments"
+                  ]
+                }
+              },
+              "/v1/payments/{paymentId}/refunds": {
+                "get": {
+                  "description": "You can use this endpoint to [get a list of refunds for a payment](https://docs.payments.service.gov.uk/refunding_payments/#get-all-refunds-for-a-single-payment).",
+                  "operationId": "Get all refunds for a payment",
+                  "parameters": [
+                    {
+                      "description": "The unique `payment_id` of the payment you want a list of refunds for.",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RefundForSearchResult"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Get information about a payment’s refunds",
+                  "tags": [
+                    "Refunding card payments"
+                  ]
+                },
+                "post": {
+                  "description": "You can use this endpoint to [fully or partially refund a payment](https://docs.payments.service.gov.uk/refunding_payments).",
+                  "operationId": "Submit a refund for a payment",
+                  "parameters": [
+                    {
+                      "description": "The unique `payment_id` of the payment you want to refund.",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/PaymentRefundRequest"
+                        }
+                      }
+                    },
+                    "description": "requestPayload",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Refund"
+                          }
+                        }
+                      },
+                      "description": "successful operation"
+                    },
+                    "202": {
+                      "description": "ACCEPTED"
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "412": {
+                      "description": "Refund amount available mismatch"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Refund a payment",
+                  "tags": [
+                    "Refunding card payments"
+                  ]
+                }
+              },
+              "/v1/payments/{paymentId}/refunds/{refundId}": {
+                "get": {
+                  "description": "You can use this endpoint to [get details about an individual refund](https://docs.payments.service.gov.uk/refunding_payments/#checking-the-status-of-a-refund).",
+                  "operationId": "Get a payment refund",
+                  "parameters": [
+                    {
+                      "description": "The unique `payment_id` of the payment you want to view a refund of.",
+                      "in": "path",
+                      "name": "paymentId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The unique `refund_id` of the refund you want to view. If one payment has multiple refunds, each refund has a different `refund_id`.",
+                      "in": "path",
+                      "name": "refundId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Refund"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Not found"
+                    },
+                    "429": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErrorResponse"
+                          }
+                        }
+                      },
+                      "description": "Too many requests"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Check the status of a refund",
+                  "tags": [
+                    "Refunding card payments"
+                  ]
+                }
+              },
+              "/v1/refunds": {
+                "get": {
+                  "description": "You can use this endpoint to [search refunds you’ve previously created](https://docs.payments.service.gov.uk/refunding_payments/#searching-refunds). The refunds are sorted by date, with the most recently created refunds appearing first.",
+                  "operationId": "Search refunds",
+                  "parameters": [
+                    {
+                      "description": "Returns refunds created on or after the `from_date`. Date and time must use Coordinated Universal Time (UTC) and ISO 8601 format to second-level accuracy - `YYYY-MM-DDThh:mm:ssZ`.",
+                      "example": "2015-08-13T12:35:00Z",
+                      "in": "query",
+                      "name": "from_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns refunds created before the `to_date`. Date and time must use Coordinated Universal Time (UTC) and ISO 8601 format to second-level accuracy - `YYYY-MM-DDThh:mm:ssZ`.",
+                      "example": "2015-08-13T12:35:00Z",
+                      "in": "query",
+                      "name": "to_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns refunds settled on or after the `from_settled_date` value. You can only use `from_settled_date` if your payment service provider is Stripe. Date must use ISO 8601 format to date-level accuracy - `YYYY-MM-DD`. Refunds are settled when Stripe takes the refund from your account balance.",
+                      "example": "2022-08-13",
+                      "in": "query",
+                      "name": "from_settled_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns refunds settled before the `to_settled_date` value. You can only use `to_settled_date` if your payment service provider is Stripe. Date must use ISO 8601 format to date-level accuracy - `YYYY-MM-DD`. Refunds are settled when Stripe takes the refund from your account balance.",
+                      "example": "2022-08-13",
+                      "in": "query",
+                      "name": "to_settled_date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Returns a [specific page of results](https://docs.payments.service.gov.uk/api_reference/#pagination). Defaults to `1`.",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The number of refunds returned [per results page](https://docs.payments.service.gov.uk/api_reference/#pagination). Defaults to `500`. Maximum value is `500`.",
+                      "in": "query",
+                      "name": "display_size",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RefundSearchResults"
+                          }
+                        }
+                      },
+                      "description": "OK - your request was successful."
+                    },
+                    "401": {
+                      "description": "Your API key is missing or invalid. Read more about [authenticating GOV.UK Pay API requests](https://docs.payments.service.gov.uk/api_reference/#authentication)"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Invalid parameters. See Public API documentation for the correct data formats"
+                    },
+                    "500": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/RequestError"
+                          }
+                        }
+                      },
+                      "description": "Downstream system error"
+                    }
+                  },
+                  "security": [
+                    {
+                      "BearerAuth": []
+                    }
+                  ],
+                  "summary": "Search refunds",
+                  "tags": [
+                    "Refunding card payments"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://publicapi.payments.service.gov.uk"
+              }
+            ],
+            "tags": [
+              {
+                "name": "Agreements"
+              },
+              {
+                "name": "Card payments"
+              },
+              {
+                "name": "Refunding card payments"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "description": "Connect to GOV.UK Pay with an independent Ragentic integration. Not affiliated with or endorsed by GOV.UK Pay.",
+      "status": "published",
+      "title": "GOV.UK Pay"
+    }
+  },
+  "not_before": 1793333406,
+  "protocol": "openapi",
+  "provenance": {
+    "commit": "889c806fbe05c6a7ba65af2e96f6190801d9c770",
+    "fetched_at": "2026-10-30T02:41:36.921946+00:00",
+    "license": {
+      "embedded_spec_license": null,
+      "name": "MIT",
+      "sha256": "bc36e2be229286f108934968d33930f9a121095a3af6252c476258bd98230562",
+      "url": "https://github.com/alphagov/pay-publicapi/blob/889c806fbe05c6a7ba65af2e96f6190801d9c770/LICENSE"
+    },
+    "origins": [
+      "https://raw.githubusercontent.com/alphagov/pay-publicapi/889c806fbe05c6a7ba65af2e96f6190801d9c770/openapi/publicapi_spec.json"
+    ],
+    "repository": "alphagov/pay-publicapi",
+    "sha256": "6dc4b2c91eb8fb165751a2c6861e407ea81a1ba865d184045c067e083b617648",
+    "source_id": "alphagov/pay-publicapi:openapi/publicapi_spec.json",
+    "source_updated": null,
+    "url": "https://raw.githubusercontent.com/alphagov/pay-publicapi/889c806fbe05c6a7ba65af2e96f6190801d9c770/openapi/publicapi_spec.json"
+  },
+  "readiness": "definition_imported",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "rights": {
+    "brand": {
+      "attribution": "Independent connector for GOV.UK Pay. Not affiliated with or endorsed by GOV.UK Pay.",
+      "independent_integration": true,
+      "logo": null
+    },
+    "brand_policy_url": "https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk",
+    "independent_attribution": "Independent connector for GOV.UK Pay. Not affiliated with or endorsed by GOV.UK Pay.",
+    "mark_policy": "Provider name in plain text only for identification; no provider logo, favicon, or brand color; independent attribution shown in setup.",
+    "source": {
+      "license_text": "The MIT License (MIT)\n\nCopyright (c) 2015 Crown Copyright (Government Digital Service)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n",
+      "license_url": "https://github.com/alphagov/pay-publicapi/blob/889c806fbe05c6a7ba65af2e96f6190801d9c770/LICENSE",
+      "spdx": "MIT"
+    },
+    "source_attribution": "The MIT License (MIT)",
+    "source_license": "MIT",
+    "source_license_sha256": "bc36e2be229286f108934968d33930f9a121095a3af6252c476258bd98230562",
+    "source_license_text": "The MIT License (MIT)\n\nCopyright (c) 2015 Crown Copyright (Government Digital Service)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n",
+    "source_license_url": "https://github.com/alphagov/pay-publicapi/blob/889c806fbe05c6a7ba65af2e96f6190801d9c770/LICENSE"
+  },
+  "setup": {
+    "credential": {
+      "type": "static_bearer"
+    },
+    "probe": {
+      "accessCheck": {
+        "equals": 0,
+        "path": [
+          "count"
+        ]
+      },
+      "endpoint": "https://publicapi.payments.service.gov.uk/v1/payments",
+      "expect": [
+        {
+          "equals": 0,
+          "path": [
+            "total"
+          ]
+        }
+      ],
+      "method": "GET",
+      "protocol": "openapi",
+      "queryPreset": "govuk_pay_empty_payment_search_v1"
+    }
+  },
+  "version": "1.0.3"
+}

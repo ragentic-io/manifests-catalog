@@ -1,0 +1,1468 @@
+{
+  "a2ui": {
+    "messages": [
+      {
+        "createSurface": {
+          "catalogId": "https://a2ui.org/specification/v1_0/catalogs/basic/catalog.json",
+          "dataModel": {
+            "name": "color-pizza-85d41d756d",
+            "status": "Test public API availability before saving.",
+            "workspace": ""
+          },
+          "metadata": {
+            "extensions": {
+              "io_ragentic_theme": {
+                "primaryColor": "#475569"
+              }
+            }
+          },
+          "sendDataModel": false,
+          "surfaceId": "setup-color-pizza-85d41d756d"
+        },
+        "version": "v1.0"
+      },
+      {
+        "updateComponents": {
+          "components": [
+            {
+              "children": [
+                "independent-label",
+                "attribution",
+                "title",
+                "steps",
+                "connection-name",
+                "workspace",
+                "test",
+                "save",
+                "status"
+              ],
+              "component": "Column",
+              "id": "root"
+            },
+            {
+              "component": "Text",
+              "id": "title",
+              "text": "## Connect Color Name API"
+            },
+            {
+              "component": "Tabs",
+              "id": "steps",
+              "tabs": [
+                {
+                  "child": "step-0",
+                  "title": "1. Review the public API"
+                },
+                {
+                  "child": "step-1",
+                  "title": "2. Test and save"
+                }
+              ]
+            },
+            {
+              "component": "TextField",
+              "id": "connection-name",
+              "label": "Connection name",
+              "value": {
+                "@path": "/name"
+              }
+            },
+            {
+              "component": "TextField",
+              "id": "workspace",
+              "label": "Workspace",
+              "value": {
+                "@path": "/workspace"
+              }
+            },
+            {
+              "component": "Text",
+              "id": "test-label",
+              "text": "Test connection"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {
+                    "app": "color-pizza-85d41d756d",
+                    "name": {
+                      "@path": "/name"
+                    },
+                    "workspace": {
+                      "@path": "/workspace"
+                    }
+                  },
+                  "name": "registry_test"
+                }
+              },
+              "child": "test-label",
+              "component": "Button",
+              "id": "test"
+            },
+            {
+              "component": "Text",
+              "id": "save-label",
+              "text": "Save connection"
+            },
+            {
+              "action": {
+                "event": {
+                  "context": {
+                    "app": "color-pizza-85d41d756d",
+                    "name": {
+                      "@path": "/name"
+                    },
+                    "workspace": {
+                      "@path": "/workspace"
+                    }
+                  },
+                  "name": "registry_save"
+                }
+              },
+              "child": "save-label",
+              "component": "Button",
+              "id": "save",
+              "variant": "primary"
+            },
+            {
+              "component": "Text",
+              "id": "status",
+              "text": {
+                "@path": "/status"
+              }
+            },
+            {
+              "children": [
+                "step-0-text",
+                "step-0-link-0"
+              ],
+              "component": "Column",
+              "id": "step-0"
+            },
+            {
+              "component": "Text",
+              "id": "step-0-text",
+              "text": "This public API does not require an account or credential. The availability test reads the documented API metadata at the fixed Color Name API host. It checks availability at test time, not an account or every operation."
+            },
+            {
+              "component": "Text",
+              "id": "step-0-link-0-label",
+              "text": "API documentation"
+            },
+            {
+              "action": {
+                "functionCall": {
+                  "@call": "openUrl",
+                  "args": {
+                    "url": "https://api.color.pizza/v1/docs/"
+                  }
+                }
+              },
+              "child": "step-0-link-0-label",
+              "component": "Button",
+              "id": "step-0-link-0"
+            },
+            {
+              "children": [
+                "step-1-text"
+              ],
+              "component": "Column",
+              "id": "step-1"
+            },
+            {
+              "component": "Text",
+              "id": "step-1-text",
+              "text": "Choose a connection name and workspace, test public API availability, then save the connection. No credential is stored."
+            },
+            {
+              "component": "Text",
+              "id": "independent-label",
+              "text": "Independent integration"
+            },
+            {
+              "component": "Text",
+              "id": "attribution",
+              "text": "Independent integration for Color Name API. Not affiliated with or endorsed by Color Name API."
+            }
+          ],
+          "surfaceId": "setup-color-pizza-85d41d756d"
+        },
+        "version": "v1.0"
+      }
+    ],
+    "version": "v1.0"
+  },
+  "app": "color-pizza-85d41d756d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/"
+      },
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/health"
+      },
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/"
+      },
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/docs/"
+      },
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/lists/"
+      },
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/names/"
+      },
+      {
+        "from": "color-pizza-85d41d756d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/swatch/"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "color-pizza-85d41d756d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/",
+        "kind": "operation",
+        "method": "get",
+        "name": "getApiMetadata",
+        "path": "/",
+        "pointer": "#/paths/~1/get",
+        "security": [],
+        "summary": "Get API metadata and discovery information"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/health",
+        "kind": "operation",
+        "method": "get",
+        "name": "healthCheck",
+        "path": "/health",
+        "pointer": "#/paths/~1health/get",
+        "security": [],
+        "summary": "Health check endpoint"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/",
+        "kind": "operation",
+        "method": "get",
+        "name": "getColorNames",
+        "path": "/v1/",
+        "pointer": "#/paths/~1v1~1/get",
+        "security": [],
+        "summary": "Get color names for specific hex values"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/docs/",
+        "kind": "operation",
+        "method": "get",
+        "name": "getDocumentation",
+        "path": "/v1/docs/",
+        "pointer": "#/paths/~1v1~1docs~1/get",
+        "security": [],
+        "summary": "Get API Documentation"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/lists/",
+        "kind": "operation",
+        "method": "get",
+        "name": "getColorLists",
+        "path": "/v1/lists/",
+        "pointer": "#/paths/~1v1~1lists~1/get",
+        "security": [],
+        "summary": "Get available color name lists"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/names/",
+        "kind": "operation",
+        "method": "get",
+        "name": "searchColorsByName",
+        "path": "/v1/names/",
+        "pointer": "#/paths/~1v1~1names~1/get",
+        "security": [],
+        "summary": "Search for colors by name"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/swatch/",
+        "kind": "operation",
+        "method": "get",
+        "name": "getColorSwatch",
+        "path": "/v1/swatch/",
+        "pointer": "#/paths/~1v1~1swatch~1/get",
+        "security": [],
+        "summary": "Generate a color swatch for any color"
+      },
+      {
+        "id": "schema:color",
+        "kind": "schema",
+        "name": "color"
+      },
+      {
+        "id": "schema:colorBasic",
+        "kind": "schema",
+        "name": "colorBasic"
+      },
+      {
+        "id": "schema:colorDescription",
+        "kind": "schema",
+        "name": "colorDescription"
+      },
+      {
+        "id": "schema:colorExtension",
+        "kind": "schema",
+        "name": "colorExtension"
+      },
+      {
+        "id": "schema:error",
+        "kind": "schema",
+        "name": "error"
+      },
+      {
+        "id": "schema:listDescription",
+        "kind": "schema",
+        "name": "listDescription"
+      },
+      {
+        "id": "schema:possibleLists",
+        "kind": "schema",
+        "name": "possibleLists"
+      },
+      {
+        "id": "schema:socketColorResponse",
+        "kind": "schema",
+        "name": "socketColorResponse"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "color-pizza-85d41d756d"
+    },
+    "spec": {
+      "base": {
+        "endpoint": "https://api.color.pizza/",
+        "endpointHosts": [
+          "api.color.pizza"
+        ],
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "color": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/colorBasic"
+                    },
+                    {
+                      "$ref": "#/components/schemas/colorExtension"
+                    }
+                  ],
+                  "title": "Color",
+                  "type": "object"
+                },
+                "colorBasic": {
+                  "properties": {
+                    "bestContrast": {
+                      "description": "The best contrasting color ('black' or 'white') for text on this color",
+                      "enum": [
+                        "black",
+                        "white"
+                      ],
+                      "type": "string"
+                    },
+                    "hex": {
+                      "description": "Hex value of the color (can differ from the requested hex value)",
+                      "pattern": "^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$",
+                      "type": "string"
+                    },
+                    "hsl": {
+                      "description": "HSL values. Saturation and lightness are percentages on a 0-100 scale (e.g., 50% as `50`).",
+                      "properties": {
+                        "h": {
+                          "maximum": 360,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "l": {
+                          "maximum": 100,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "s": {
+                          "maximum": 100,
+                          "minimum": 0,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "h",
+                        "s",
+                        "l"
+                      ],
+                      "title": "HSL",
+                      "type": "object"
+                    },
+                    "lab": {
+                      "description": "LAB values",
+                      "properties": {
+                        "a": {
+                          "maximum": 127,
+                          "minimum": -128,
+                          "type": "number"
+                        },
+                        "b": {
+                          "maximum": 127,
+                          "minimum": -128,
+                          "type": "number"
+                        },
+                        "l": {
+                          "maximum": 100,
+                          "minimum": 0,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "l",
+                        "a",
+                        "b"
+                      ],
+                      "title": "LAB",
+                      "type": "object"
+                    },
+                    "luminance": {
+                      "description": "Luminance value",
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "luminanceWCAG": {
+                      "description": "Luminance value according to WCAG",
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "name": {
+                      "description": "Name of the closest color relative to the hex value provided",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "rgb": {
+                      "description": "RGB values",
+                      "properties": {
+                        "b": {
+                          "maximum": 255,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "g": {
+                          "maximum": 255,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "r": {
+                          "maximum": 255,
+                          "minimum": 0,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "r",
+                        "g",
+                        "b"
+                      ],
+                      "title": "RGB",
+                      "type": "object"
+                    },
+                    "swatchImg": {
+                      "description": "SVG representation of the color",
+                      "properties": {
+                        "svg": {
+                          "description": "URL to SVG representation of the color without the name",
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "svgNamed": {
+                          "description": "URL to SVG representation of the color with the name",
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "svgNamed",
+                        "svg"
+                      ],
+                      "title": "SwatchImage",
+                      "type": "object"
+                    },
+                    "tagline": {
+                      "description": "A one-line description of the color name. Only on colors from the `default`, `bestOf`\nand `short` lists, and only for names that have one. The same taglines are shown on names.color.pizza.\n",
+                      "example": "Dark ocean depths where the siren songs are all minor keys.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "hex",
+                    "rgb",
+                    "hsl",
+                    "lab",
+                    "luminance",
+                    "luminanceWCAG",
+                    "swatchImg"
+                  ],
+                  "title": "ColorBasic",
+                  "type": "object"
+                },
+                "colorDescription": {
+                  "description": "Words describing the requested color (`requestedHex`, not the matched name), from\n[color-description](https://github.com/words/color-description). Only added when\n`description=true`. The dataset is English, and its meanings, effects and usage\nare subjective and written from a western perspective.\n",
+                  "properties": {
+                    "adjectives": {
+                      "description": "Adjectives, the best fit first; the rest are not ranked",
+                      "example": [
+                        "deep",
+                        "rich",
+                        "dark",
+                        "dim",
+                        "somber"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "effects": {
+                      "description": "Perceptual or behavioral effects",
+                      "example": [
+                        "calm",
+                        "reassure",
+                        "signal authority"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "meanings": {
+                      "description": "Symbolic associations",
+                      "example": [
+                        "trust",
+                        "responsibility",
+                        "honesty"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "nouns": {
+                      "description": "Color names, best fit first",
+                      "example": [
+                        "blue",
+                        "navy"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "temperature": {
+                      "description": "The closest correlated color temperature",
+                      "properties": {
+                        "descriptive": {
+                          "example": [
+                            "very cool"
+                          ],
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "value": {
+                          "description": "Temperature in Kelvin",
+                          "example": 10000,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "descriptive"
+                      ],
+                      "title": "ColorTemperature",
+                      "type": "object"
+                    },
+                    "usage": {
+                      "description": "Contexts, industries and themes the color fits",
+                      "example": [
+                        "security",
+                        "finance",
+                        "technology"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "nouns",
+                    "adjectives",
+                    "meanings",
+                    "effects",
+                    "usage",
+                    "temperature"
+                  ],
+                  "title": "ColorDescription",
+                  "type": "object"
+                },
+                "colorExtension": {
+                  "properties": {
+                    "description": {
+                      "$ref": "#/components/schemas/colorDescription"
+                    },
+                    "distance": {
+                      "description": "The distance between the requested hex value and the closest color (0 = exact match)",
+                      "type": "number"
+                    },
+                    "requestedHex": {
+                      "description": "The hex value that was requested by the user",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "distance",
+                    "requestedHex"
+                  ],
+                  "title": "ColorExtension",
+                  "type": "object"
+                },
+                "error": {
+                  "example": {
+                    "error": {
+                      "message": "Not Found",
+                      "status": 404
+                    }
+                  },
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "message": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "number"
+                        }
+                      },
+                      "title": "ErrorDetails",
+                      "type": "object"
+                    }
+                  },
+                  "title": "Error",
+                  "type": "object"
+                },
+                "listDescription": {
+                  "properties": {
+                    "colorCount": {
+                      "description": "Amount of colors in the list",
+                      "type": "integer"
+                    },
+                    "description": {
+                      "description": "A description of the color name list",
+                      "type": "string"
+                    },
+                    "key": {
+                      "description": "Reference key of the color name list in the API",
+                      "type": "string"
+                    },
+                    "license": {
+                      "description": "License of the given color name list",
+                      "type": "string"
+                    },
+                    "source": {
+                      "description": "URL to the source of the color name list",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "The title of the color name list",
+                      "type": "string"
+                    },
+                    "url": {
+                      "description": "API endpoint to get the colors of the list",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "possibleLists": {
+                  "description": "Predefined color lists. Names are case-sensitive.",
+                  "enum": [
+                    "default",
+                    "bestOf",
+                    "short",
+                    "wikipedia",
+                    "french",
+                    "spanish",
+                    "german",
+                    "ridgway",
+                    "risograph",
+                    "basic",
+                    "chineseTraditional",
+                    "html",
+                    "japaneseTraditional",
+                    "leCorbusier",
+                    "nbsIscc",
+                    "ntc",
+                    "osxcrayons",
+                    "ral",
+                    "sanzoWadaI",
+                    "thesaurus",
+                    "werner",
+                    "windows",
+                    "x11",
+                    "xkcd"
+                  ],
+                  "type": "string"
+                },
+                "socketColorResponse": {
+                  "properties": {
+                    "colors": {
+                      "items": {
+                        "$ref": "#/components/schemas/colorBasic"
+                      },
+                      "type": "array"
+                    },
+                    "list": {
+                      "$ref": "#/components/schemas/possibleLists"
+                    },
+                    "paletteTitle": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "externalDocs": {
+              "description": "HTML documentation for this API",
+              "url": "https://api.color.pizza/v1/docs/"
+            },
+            "info": {
+              "contact": {
+                "email": "color-name-api@elastiq.click",
+                "name": "meodai",
+                "url": "https://elastiq.ch/"
+              },
+              "description": "An API that provides names for colors based on their hex value.\n\nFeatures:\n- RESTful HTTP endpoints to search for colors by name or hex value\n- Real-time color data via Socket.io for instant updates\n- Optimized responses with gzip compression\n- Multiple curated color name lists to choose from\n- Custom referrer tracking via X-Referrer header\n",
+              "license": {
+                "name": "MIT",
+                "url": "https://github.com/meodai/color-name-api/blob/main/LICENSE"
+              },
+              "title": "Color Name API",
+              "version": "1.1.0"
+            },
+            "openapi": "3.0.3",
+            "paths": {
+              "/": {
+                "get": {
+                  "description": "Returns metadata about the API including available endpoints, version information,\nand links to documentation. This endpoint is useful for API discovery and provides\na quick overview of all available endpoints.\n",
+                  "operationId": "getApiMetadata",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "description": "API for getting human-friendly names for hex colors",
+                            "documentation": "/openapi.yaml",
+                            "endpoints": {
+                              "colors": "/v1/?values=ff0000,00ff00",
+                              "colorsByPath": "/v1/ff0000,00ff00",
+                              "docs": "/v1/docs/",
+                              "health": "/health",
+                              "lists": "/v1/lists/",
+                              "names": "/v1/names/:query",
+                              "swatch": "/v1/swatch/?color=ff0000&name=Red"
+                            },
+                            "name": "Color Name API",
+                            "source": "https://github.com/meodai/color-name-api",
+                            "version": "v1"
+                          },
+                          "schema": {
+                            "properties": {
+                              "description": {
+                                "example": "API for getting human-friendly names for hex colors",
+                                "type": "string"
+                              },
+                              "documentation": {
+                                "example": "/openapi.yaml",
+                                "type": "string"
+                              },
+                              "endpoints": {
+                                "properties": {
+                                  "colors": {
+                                    "example": "/v1/?values=ff0000,00ff00",
+                                    "type": "string"
+                                  },
+                                  "colorsByPath": {
+                                    "example": "/v1/ff0000,00ff00",
+                                    "type": "string"
+                                  },
+                                  "docs": {
+                                    "example": "/v1/docs/",
+                                    "type": "string"
+                                  },
+                                  "health": {
+                                    "example": "/health",
+                                    "type": "string"
+                                  },
+                                  "lists": {
+                                    "example": "/v1/lists/",
+                                    "type": "string"
+                                  },
+                                  "names": {
+                                    "example": "/v1/names/:query",
+                                    "type": "string"
+                                  },
+                                  "swatch": {
+                                    "example": "/v1/swatch/?color=ff0000&name=Red",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "name": {
+                                "example": "Color Name API",
+                                "type": "string"
+                              },
+                              "source": {
+                                "example": "https://github.com/meodai/color-name-api",
+                                "type": "string"
+                              },
+                              "version": {
+                                "example": "v1",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "OK - Returns API metadata"
+                    }
+                  },
+                  "summary": "Get API metadata and discovery information"
+                }
+              },
+              "/health": {
+                "get": {
+                  "description": "Returns the health status of the API. This endpoint is useful for monitoring,\nuptime checks, and load balancer health checks. Always returns a 200 status\nwhen the API is operational.\n",
+                  "operationId": "healthCheck",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "status": "ok",
+                            "timestamp": "2025-12-08T10:30:00.000Z"
+                          },
+                          "schema": {
+                            "properties": {
+                              "status": {
+                                "enum": [
+                                  "ok"
+                                ],
+                                "example": "ok",
+                                "type": "string"
+                              },
+                              "timestamp": {
+                                "example": "2025-12-08T10:30:00.000Z",
+                                "format": "date-time",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "OK - API is healthy and operational"
+                    }
+                  },
+                  "summary": "Health check endpoint"
+                }
+              },
+              "/v1/": {
+                "get": {
+                  "description": "Returns an array of colors from the specified list, with distance calculations \nto show how close each match is to the requested colors. When providing multiple \nvalues, the endpoint will find the closest match for each color.\n\nIf no colors are provided, returns all colors from the specified list.\n\nWhen the server has socket.io enabled, this endpoint will also emit a 'colors' event\nwith the same response data to all connected socket clients.\n",
+                  "operationId": "getColorNames",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "colors": [
+                              {
+                                "bestContrast": "white",
+                                "distance": 0,
+                                "hex": "#FF0000",
+                                "hsl": {
+                                  "h": 0,
+                                  "l": 50,
+                                  "s": 100
+                                },
+                                "lab": {
+                                  "a": 80.09,
+                                  "b": 67.2,
+                                  "l": 53.24
+                                },
+                                "luminance": 0.2126,
+                                "luminanceWCAG": 0.2126,
+                                "name": "Red",
+                                "requestedHex": "#FF0000",
+                                "rgb": {
+                                  "b": 0,
+                                  "g": 0,
+                                  "r": 255
+                                },
+                                "swatchImg": {
+                                  "svg": "/v1/swatch/?color=ff0000",
+                                  "svgNamed": "/v1/swatch/?color=ff0000&name=Red"
+                                },
+                                "tagline": "Stop sign, fire engine, Valentine heart: the boldest, most vivid red."
+                              }
+                            ],
+                            "paletteTitle": "Ruby Red"
+                          },
+                          "schema": {
+                            "properties": {
+                              "colors": {
+                                "items": {
+                                  "$ref": "#/components/schemas/color"
+                                },
+                                "type": "array"
+                              },
+                              "paletteTitle": {
+                                "description": "A creatively generated name for the color palette when multiple colors are requested",
+                                "type": "string"
+                              }
+                            },
+                            "title": "ColorResponse",
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "examples": {
+                            "invalidHex": {
+                              "summary": "Invalid hex value",
+                              "value": {
+                                "error": {
+                                  "message": "'xyz' is not a valid HEX color",
+                                  "status": 400
+                                }
+                              }
+                            },
+                            "invalidList": {
+                              "summary": "Invalid list key",
+                              "value": {
+                                "error": {
+                                  "message": "Invalid or missing list key: 'nonexistent'. Available keys are: default, bestOf, short, ...",
+                                  "status": 400
+                                }
+                              }
+                            }
+                          },
+                          "schema": {
+                            "$ref": "#/components/schemas/error"
+                          }
+                        }
+                      },
+                      "description": "BAD REQUEST - Invalid list key, invalid hex value or too many colors requested"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "error": {
+                              "availableCount": 1500,
+                              "message": "Too many colors requested in unique mode. Requested 1600 colors but only 1500 are available.",
+                              "requestedCount": 1600,
+                              "status": 422,
+                              "totalCount": 1500
+                            }
+                          },
+                          "schema": {
+                            "$ref": "#/components/schemas/error"
+                          }
+                        }
+                      },
+                      "description": "UNPROCESSABLE ENTITY - Requested more unique colors than available"
+                    }
+                  },
+                  "summary": "Get color names for specific hex values"
+                },
+                "parameters": [
+                  {
+                    "description": "The name of the color name list to use (case-sensitive)",
+                    "explode": false,
+                    "in": "query",
+                    "name": "list",
+                    "required": false,
+                    "schema": {
+                      "$ref": "#/components/schemas/possibleLists"
+                    },
+                    "style": "form"
+                  },
+                  {
+                    "description": "A comma-separated list of hex values (e.g., `FF0000,00FF00` do not include the `#`)",
+                    "in": "query",
+                    "name": "values",
+                    "required": false,
+                    "schema": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "description": "When true, ensures each color gets a unique name even when colors are similar",
+                    "in": "query",
+                    "name": "noduplicates",
+                    "required": false,
+                    "schema": {
+                      "type": "boolean"
+                    }
+                  },
+                  {
+                    "description": "When true, uses the 'bestOf' list automatically",
+                    "in": "query",
+                    "name": "goodnamesonly",
+                    "required": false,
+                    "schema": {
+                      "type": "boolean"
+                    }
+                  },
+                  {
+                    "description": "When true, adds a `description` object with words describing each requested color.\nIgnored when no `values` are given (full lists).\n",
+                    "in": "query",
+                    "name": "description",
+                    "required": false,
+                    "schema": {
+                      "type": "boolean"
+                    }
+                  },
+                  {
+                    "description": "Custom header for explicit referrer tracking. When provided, this value is used instead of \nstandard referrer headers and is included in socket.io event data. Useful for attribution\nand analytics, especially in environments where standard referrer headers might be stripped.\n",
+                    "example": "my-app-name",
+                    "in": "header",
+                    "name": "X-Referrer",
+                    "required": false,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "/v1/docs/": {
+                "get": {
+                  "description": "Serves the static HTML documentation page for the API.",
+                  "operationId": "getDocumentation",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "text/html": {
+                          "schema": {
+                            "format": "html",
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "OK - Returns the HTML documentation page."
+                    }
+                  },
+                  "summary": "Get API Documentation"
+                }
+              },
+              "/v1/lists/": {
+                "get": {
+                  "description": "Returns a list of available color name lists with descriptions and URLs to\nthe color list endpoints. If a specific list key is provided via the 'list' query parameter,\nonly the description for that list will be returned.\n",
+                  "operationId": "getColorLists",
+                  "parameters": [
+                    {
+                      "description": "The name of a specific color name list to retrieve details for",
+                      "explode": false,
+                      "in": "query",
+                      "name": "list",
+                      "required": false,
+                      "schema": {
+                        "$ref": "#/components/schemas/possibleLists"
+                      },
+                      "style": "form"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "oneOf": [
+                              {
+                                "properties": {
+                                  "availableColorNameLists": {
+                                    "description": "Array of all available list keys",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "listDescriptions": {
+                                    "description": "Object containing descriptions for each list",
+                                    "properties": {
+                                      "bestOf": {
+                                        "$ref": "#/components/schemas/listDescription"
+                                      },
+                                      "default": {
+                                        "$ref": "#/components/schemas/listDescription"
+                                      }
+                                    },
+                                    "title": "ListDescriptions",
+                                    "type": "object"
+                                  }
+                                },
+                                "title": "AllColorLists",
+                                "type": "object"
+                              },
+                              {
+                                "$ref": "#/components/schemas/listDescription"
+                              }
+                            ],
+                            "title": "ColorListsResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "error": {
+                              "message": "Invalid or missing list key: 'nonexistent'. Available keys are: default, bestOf, short, ...",
+                              "status": 400
+                            }
+                          },
+                          "schema": {
+                            "$ref": "#/components/schemas/error"
+                          }
+                        }
+                      },
+                      "description": "BAD REQUEST"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error"
+                          }
+                        }
+                      },
+                      "description": "NOT FOUND"
+                    }
+                  },
+                  "summary": "Get available color name lists"
+                }
+              },
+              "/v1/names/": {
+                "get": {
+                  "description": "Returns colors whose names contain the search string. The search is case-insensitive.\nThe search string must be at least 3 characters long.\n",
+                  "operationId": "searchColorsByName",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "colors": {
+                                "description": "Array of colors matching the search term",
+                                "items": {
+                                  "$ref": "#/components/schemas/colorBasic"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "title": "ColorNameSearchResponse",
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "error": {
+                              "message": "the color name you are looking for must be at least 3 characters long.",
+                              "status": 400
+                            }
+                          },
+                          "schema": {
+                            "$ref": "#/components/schemas/error"
+                          }
+                        }
+                      },
+                      "description": "BAD REQUEST - Search term shorter than 3 characters"
+                    }
+                  },
+                  "summary": "Search for colors by name"
+                },
+                "parameters": [
+                  {
+                    "description": "The search term to look for in color names (min 3 characters)",
+                    "explode": false,
+                    "in": "query",
+                    "name": "name",
+                    "required": false,
+                    "schema": {
+                      "minLength": 3,
+                      "type": "string"
+                    },
+                    "style": "form"
+                  },
+                  {
+                    "description": "The name of the color name list to search in",
+                    "explode": false,
+                    "in": "query",
+                    "name": "list",
+                    "required": false,
+                    "schema": {
+                      "$ref": "#/components/schemas/possibleLists"
+                    },
+                    "style": "form"
+                  }
+                ]
+              },
+              "/v1/swatch/": {
+                "get": {
+                  "description": "Generates an SVG swatch representation of a color. The swatch can include \nthe color name if provided. The SVG is designed to be visually appealing \nand readable across different backgrounds.\n",
+                  "operationId": "getColorSwatch",
+                  "parameters": [
+                    {
+                      "description": "The hex value of the color to retrieve without '#'",
+                      "explode": false,
+                      "in": "query",
+                      "name": "color",
+                      "required": true,
+                      "schema": {
+                        "pattern": "^([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$",
+                        "type": "string"
+                      },
+                      "style": "form"
+                    },
+                    {
+                      "description": "The name of the color to display on the swatch",
+                      "explode": false,
+                      "in": "query",
+                      "name": "name",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      },
+                      "style": "form"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "image/svg+xml": {
+                          "schema": {
+                            "format": "svg",
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "application/json": {
+                          "example": {
+                            "error": {
+                              "message": "A valid 3 or 6 digit hex color parameter (without #) is required.",
+                              "status": 400
+                            }
+                          },
+                          "schema": {
+                            "$ref": "#/components/schemas/error"
+                          }
+                        }
+                      },
+                      "description": "BAD REQUEST"
+                    }
+                  },
+                  "summary": "Generate a color swatch for any color"
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "Production server",
+                "url": "https://api.color.pizza/"
+              }
+            ],
+            "x-api-features": {
+              "caching": {
+                "description": "The API uses LRU caching for gzipped responses to improve performance\nfor frequently requested data.\n",
+                "supported": true
+              },
+              "compression": {
+                "gzip": {
+                  "description": "The API automatically detects if the client accepts gzip compression\nand will send compressed responses when possible.\n",
+                  "supported": true
+                }
+              },
+              "custom-headers": {
+                "x-referrer": {
+                  "description": "Custom header for explicit referrer tracking. When provided, this value is used instead of \nstandard referrer headers and is included in socket.io event data. Useful for attribution\nand analytics, especially in environments where standard referrer headers might be stripped.\n",
+                  "example": "my-app-name",
+                  "in": "header",
+                  "name": "X-Referrer",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "x-socket-io": {
+              "authentication": {
+                "required": false
+              },
+              "connection": {
+                "transports": [
+                  "websocket",
+                  "polling"
+                ],
+                "url": "{server_url}"
+              },
+              "cors": {
+                "enabled": true,
+                "origins": {
+                  "default": [
+                    "http://localhost:8080"
+                  ],
+                  "description": "Controlled via ALLOWED_SOCKET_ORIGINS environment variable"
+                }
+              },
+              "description": "This API supports real-time communication via Socket.io for receiving color data.\nSocket.io support is conditionally enabled based on server configuration.\n",
+              "events": [
+                {
+                  "description": "Emitted when new colors are requested through the HTTP API.\nThis allows clients to see color requests in real-time.\n",
+                  "direction": "server-to-client",
+                  "name": "colors",
+                  "payload": {
+                    "$ref": "#/components/schemas/socketColorResponse"
+                  }
+                }
+              ],
+              "version": "4.x"
+            }
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "description": "Independent integration for Color Name API. Not affiliated with or endorsed by Color Name API.",
+      "status": "published",
+      "title": "Color Name API"
+    }
+  },
+  "not_before": 1793382213,
+  "protocol": "openapi",
+  "provenance": {
+    "commit": "be43dde4d76f1873b48aff8e06345a7d3ec66525",
+    "fetched_at": "2026-10-29T21:20:05.262025+00:00",
+    "license": {
+      "name": "MIT",
+      "sha256": "944b14e9b547532657f8081b847fc22956665a6d6b9b818f8ee8b229e0fc5033",
+      "url": "https://raw.githubusercontent.com/meodai/color-name-api/be43dde4d76f1873b48aff8e06345a7d3ec66525/LICENSE"
+    },
+    "normalization": "YAML safe-load to compact JSON",
+    "origins": null,
+    "repository": "meodai/color-name-api",
+    "sha256": "41d32c7d73e8bf5756e6c6274383cb587d55655856a0a6873f180c66e8e47b55",
+    "source_id": "color.pizza",
+    "source_updated": "2026-10-24T14:23:44Z",
+    "upstream_sha256": "3901f3de41ff2648526ebd55554ffae1b8f46c1571d5cf6788637f5962fadb41",
+    "url": "https://raw.githubusercontent.com/meodai/color-name-api/be43dde4d76f1873b48aff8e06345a7d3ec66525/color-names-v1-OpenAPI.yml"
+  },
+  "readiness": "public_probe_verified_user_save_review_required",
+  "review_required": {
+    "authentication": false,
+    "branding": false,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": false,
+    "source_currency": false
+  },
+  "rights": {
+    "brand": {
+      "attribution": "Independent integration for Color Name API. Not affiliated with or endorsed by Color Name API.",
+      "independent_integration": true,
+      "logo": null
+    },
+    "independent_attribution": "Independent integration for Color Name API. Not affiliated with or endorsed by Color Name API.",
+    "mark_policy": "Provider name in plain text only; no provider logo or brand color.",
+    "source": {
+      "license_text": "MIT License\n\nCopyright (c) 2022 David Aerne\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "license_url": "https://raw.githubusercontent.com/meodai/color-name-api/be43dde4d76f1873b48aff8e06345a7d3ec66525/LICENSE",
+      "spdx": "MIT"
+    },
+    "source_license": "MIT",
+    "source_license_sha256": "944b14e9b547532657f8081b847fc22956665a6d6b9b818f8ee8b229e0fc5033",
+    "source_license_text": "MIT License\n\nCopyright (c) 2022 David Aerne\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+    "source_license_url": "https://raw.githubusercontent.com/meodai/color-name-api/be43dde4d76f1873b48aff8e06345a7d3ec66525/LICENSE"
+  },
+  "setup": {
+    "credential": {
+      "type": "none"
+    },
+    "probe": {
+      "accessCheck": {
+        "oneOf": [
+          "Color Name API"
+        ],
+        "path": [
+          "name"
+        ]
+      },
+      "endpoint": "https://api.color.pizza/",
+      "method": "GET",
+      "protocol": "openapi"
+    }
+  },
+  "version": "1.1.0"
+}

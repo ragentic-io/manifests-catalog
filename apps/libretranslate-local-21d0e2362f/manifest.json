@@ -1,0 +1,686 @@
+{
+  "a2ui": {},
+  "app": "libretranslate-local-21d0e2362f",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "libretranslate-local-21d0e2362f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/detect"
+      },
+      {
+        "from": "libretranslate-local-21d0e2362f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/frontend/settings"
+      },
+      {
+        "from": "libretranslate-local-21d0e2362f",
+        "kind": "EXPOSES",
+        "to": "operation:get:/languages"
+      },
+      {
+        "from": "libretranslate-local-21d0e2362f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/suggest"
+      },
+      {
+        "from": "libretranslate-local-21d0e2362f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/translate"
+      },
+      {
+        "from": "libretranslate-local-21d0e2362f",
+        "kind": "EXPOSES",
+        "to": "operation:post:/translate_file"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "libretranslate-local-21d0e2362f",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/detect",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /detect",
+        "path": "/detect",
+        "pointer": "#/paths/~1detect/post",
+        "security": [],
+        "summary": "Detect the language of a single text"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/frontend/settings",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /frontend/settings",
+        "path": "/frontend/settings",
+        "pointer": "#/paths/~1frontend~1settings/get",
+        "security": [],
+        "summary": "Retrieve frontend specific settings"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/languages",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /languages",
+        "path": "/languages",
+        "pointer": "#/paths/~1languages/get",
+        "security": [],
+        "summary": "Retrieve list of supported languages"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/suggest",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /suggest",
+        "path": "/suggest",
+        "pointer": "#/paths/~1suggest/post",
+        "security": [],
+        "summary": "Submit a suggestion to improve a translation"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/translate",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /translate",
+        "path": "/translate",
+        "pointer": "#/paths/~1translate/post",
+        "security": [],
+        "summary": "Translate text from a language to another"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/translate_file",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /translate_file",
+        "path": "/translate_file",
+        "pointer": "#/paths/~1translate_file/post",
+        "security": [],
+        "summary": "Translate file from a language to another"
+      },
+      {
+        "id": "schema:detections",
+        "kind": "schema",
+        "name": "detections"
+      },
+      {
+        "id": "schema:error-response",
+        "kind": "schema",
+        "name": "error-response"
+      },
+      {
+        "id": "schema:error-slow-down",
+        "kind": "schema",
+        "name": "error-slow-down"
+      },
+      {
+        "id": "schema:frontend-settings",
+        "kind": "schema",
+        "name": "frontend-settings"
+      },
+      {
+        "id": "schema:languages",
+        "kind": "schema",
+        "name": "languages"
+      },
+      {
+        "id": "schema:suggest-response",
+        "kind": "schema",
+        "name": "suggest-response"
+      },
+      {
+        "id": "schema:translate",
+        "kind": "schema",
+        "name": "translate"
+      },
+      {
+        "id": "schema:translate-file",
+        "kind": "schema",
+        "name": "translate-file"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "libretranslate-local-21d0e2362f"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "requestBodies": {
+                "postDetect": {
+                  "content": {
+                    "application/x-www-form-urlencoded": {
+                      "schema": {
+                        "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "schemas": {
+                "detections": {
+                  "items": {
+                    "properties": {
+                      "confidence": {
+                        "description": "Confidence value",
+                        "example": 0.6,
+                        "format": "float",
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "language": {
+                        "description": "Language code",
+                        "example": "en",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "error-response": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "error-slow-down": {
+                  "properties": {
+                    "error": {
+                      "description": "Reason for slow down",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "frontend-settings": {
+                  "properties": {
+                    "apiKeys": {
+                      "description": "Whether the API key database is enabled.",
+                      "type": "boolean"
+                    },
+                    "charLimit": {
+                      "description": "Character input limit for this language (-1 indicates no limit)",
+                      "type": "integer"
+                    },
+                    "frontendTimeout": {
+                      "description": "Frontend translation timeout",
+                      "type": "integer"
+                    },
+                    "keyRequired": {
+                      "description": "Whether an API key is required.",
+                      "type": "boolean"
+                    },
+                    "language": {
+                      "properties": {
+                        "source": {
+                          "properties": {
+                            "code": {
+                              "description": "Language code",
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Human-readable language name (in English)",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "target": {
+                          "properties": {
+                            "code": {
+                              "description": "Language code",
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Human-readable language name (in English)",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "suggestions": {
+                      "description": "Whether submitting suggestions is enabled.",
+                      "type": "boolean"
+                    },
+                    "supportedFilesFormat": {
+                      "description": "Supported files format",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                },
+                "languages": {
+                  "items": {
+                    "properties": {
+                      "code": {
+                        "description": "Language code",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Human-readable language name (in English)",
+                        "type": "string"
+                      },
+                      "targets": {
+                        "description": "Supported target language codes",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "suggest-response": {
+                  "properties": {
+                    "success": {
+                      "description": "Whether submission was successful",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "translate": {
+                  "properties": {
+                    "translatedText": {
+                      "description": "Translated text(s)",
+                      "oneOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "items": {},
+                          "type": "array"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "object"
+                },
+                "translate-file": {
+                  "properties": {
+                    "translatedFileUrl": {
+                      "description": "Translated file url",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "title": "LibreTranslate",
+              "version": "1.3.9",
+              "x-apisguru-categories": [
+                "text"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://libretranslate.com/spec",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "libretranslate.local"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/detect": {
+                "post": {
+                  "description": "",
+                  "requestBody": {
+                    "$ref": "#/components/requestBodies/postDetect"
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/detections"
+                          }
+                        }
+                      },
+                      "description": "Detections"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Invalid request"
+                    },
+                    "403": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Banned"
+                    },
+                    "429": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-slow-down"
+                          }
+                        }
+                      },
+                      "description": "Slow down"
+                    },
+                    "500": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Detection error"
+                    }
+                  },
+                  "summary": "Detect the language of a single text",
+                  "tags": [
+                    "translate"
+                  ]
+                }
+              },
+              "/frontend/settings": {
+                "get": {
+                  "description": "",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/frontend-settings"
+                          }
+                        }
+                      },
+                      "description": "frontend settings"
+                    }
+                  },
+                  "summary": "Retrieve frontend specific settings",
+                  "tags": [
+                    "frontend"
+                  ]
+                }
+              },
+              "/languages": {
+                "get": {
+                  "description": "",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/languages"
+                          }
+                        }
+                      },
+                      "description": "List of languages"
+                    }
+                  },
+                  "summary": "Retrieve list of supported languages",
+                  "tags": [
+                    "translate"
+                  ]
+                }
+              },
+              "/suggest": {
+                "post": {
+                  "description": "",
+                  "requestBody": {
+                    "content": {
+                      "application/x-www-form-urlencoded": {
+                        "schema": {
+                          "example": "es",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/suggest-response"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Not authorized"
+                    }
+                  },
+                  "summary": "Submit a suggestion to improve a translation",
+                  "tags": [
+                    "feedback"
+                  ]
+                }
+              },
+              "/translate": {
+                "post": {
+                  "description": "",
+                  "requestBody": {
+                    "$ref": "#/components/requestBodies/postDetect"
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/translate"
+                          }
+                        }
+                      },
+                      "description": "Translated text"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Invalid request"
+                    },
+                    "403": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Banned"
+                    },
+                    "429": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-slow-down"
+                          }
+                        }
+                      },
+                      "description": "Slow down"
+                    },
+                    "500": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Translation error"
+                    }
+                  },
+                  "summary": "Translate text from a language to another",
+                  "tags": [
+                    "translate"
+                  ]
+                }
+              },
+              "/translate_file": {
+                "post": {
+                  "description": "",
+                  "requestBody": {
+                    "content": {
+                      "multipart/form-data": {
+                        "schema": {
+                          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/translate-file"
+                          }
+                        }
+                      },
+                      "description": "Translated file"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Invalid request"
+                    },
+                    "403": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Banned"
+                    },
+                    "429": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-slow-down"
+                          }
+                        }
+                      },
+                      "description": "Slow down"
+                    },
+                    "500": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/error-response"
+                          }
+                        }
+                      },
+                      "description": "Translation error"
+                    }
+                  },
+                  "summary": "Translate file from a language to another",
+                  "tags": [
+                    "translate"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "http://libretranslate.local"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "LibreTranslate"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:42.467621Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://libretranslate.com/spec",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "757dcf3b297323e5fc4c6e661deabbeba72d06680f63c9769dce000e45f7a6fc",
+    "source_id": "libretranslate.local",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/libretranslate.local/1.3.9/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.3.9"
+}

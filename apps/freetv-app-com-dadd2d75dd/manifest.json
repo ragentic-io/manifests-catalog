@@ -1,0 +1,203 @@
+{
+  "a2ui": {},
+  "app": "freetv-app-com-dadd2d75dd",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "freetv-app-com-dadd2d75dd",
+        "kind": "EXPOSES",
+        "to": "operation:get:/services"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "freetv-app-com-dadd2d75dd",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/services",
+        "kind": "operation",
+        "method": "get",
+        "name": "getLatestNews",
+        "path": "/services",
+        "pointer": "#/paths/~1services/get",
+        "security": [],
+        "summary": "Query the latest news"
+      },
+      {
+        "id": "schema:ApiResponse",
+        "kind": "schema",
+        "name": "ApiResponse"
+      },
+      {
+        "id": "schema:NewsItem",
+        "kind": "schema",
+        "name": "NewsItem"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "freetv-app-com-dadd2d75dd"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "ApiResponse": {
+                  "properties": {
+                    "getLatestNewsForChatGPT": {
+                      "description": "The list of latest news.",
+                      "items": {
+                        "$ref": "#/components/schemas/NewsItem"
+                      },
+                      "title": "Result of Latest News",
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "getLatestNewsForChatGPT"
+                  ],
+                  "title": "ApiResponse",
+                  "type": "object"
+                },
+                "NewsItem": {
+                  "properties": {
+                    "created": {
+                      "title": "News Published Time",
+                      "type": "string"
+                    },
+                    "ref": {
+                      "title": "News Url",
+                      "type": "string"
+                    },
+                    "thumbnail": {
+                      "title": "News Thumbnail",
+                      "type": "string"
+                    },
+                    "title": {
+                      "title": "News Title",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "description": "A plugin that allows the user to obtain and summary latest news using ChatGPT. If you do not know the user's username, ask them first before making queries to the plugin. Otherwise, use the username \"global\".",
+              "title": "News Plugin",
+              "version": "v1",
+              "x-apisguru-categories": [
+                "media"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_acps-iaa_freetv_tv-landing_tv-logo.png"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://www.freetv-app.com/openapi.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "freetv-app.com"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/services": {
+                "get": {
+                  "description": "Get the current latest news to user",
+                  "operationId": "getLatestNews",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "mobile",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          1
+                        ],
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "funcs",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "getLatestNewsForChatGPT"
+                        ],
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ApiResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    }
+                  },
+                  "summary": "Query the latest news"
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://staging2.freetv-app.com"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "News Plugin"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:40.951560Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://www.freetv-app.com/openapi.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "7375d08c36b4b3613b4d0f826ccc435d813c551166e25aa0dcf4bb35f85b862b",
+    "source_id": "freetv-app.com",
+    "source_updated": "2023-04-02T17:28:14.389Z",
+    "url": "https://api.apis.guru/v2/specs/freetv-app.com/v1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v1"
+}

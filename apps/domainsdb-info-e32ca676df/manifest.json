@@ -1,0 +1,1529 @@
+{
+  "a2ui": {},
+  "app": "domainsdb-info-e32ca676df",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/search"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/tld/{zone_id}"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/tld/{zone_id}/download"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/tld/{zone_id}/search"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/updates/added"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/updates/added/download"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/updates/deleted"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/updates/deleted/download"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/domains/updates/list"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/info/api"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/info/stat/"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/info/stat/{zone}"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/info/tld/"
+      },
+      {
+        "from": "domainsdb-info-e32ca676df",
+        "kind": "EXPOSES",
+        "to": "operation:get:/info/tld/{zone}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "domainsdb-info-e32ca676df",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/search",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_search_domain_item",
+        "path": "/domains/search",
+        "pointer": "#/paths/~1domains~1search/get",
+        "security": [],
+        "summary": "Domains Database Search"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/tld/{zone_id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_tld_domain_item",
+        "path": "/domains/tld/{zone_id}",
+        "pointer": "#/paths/~1domains~1tld~1{zone_id}/get",
+        "security": [],
+        "summary": "Get TLD records"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/tld/{zone_id}/download",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/tld/{zone_id}/download",
+        "path": "/domains/tld/{zone_id}/download",
+        "pointer": "#/paths/~1domains~1tld~1{zone_id}~1download/get",
+        "security": [],
+        "summary": "Download Whole Dataset for TLD"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/tld/{zone_id}/search",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/tld/{zone_id}/search",
+        "path": "/domains/tld/{zone_id}/search",
+        "pointer": "#/paths/~1domains~1tld~1{zone_id}~1search/get",
+        "security": [],
+        "summary": "Domains Search for TLD"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/updates/added",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/updates/added",
+        "path": "/domains/updates/added",
+        "pointer": "#/paths/~1domains~1updates~1added/get",
+        "security": [],
+        "summary": "Get added domains, latest if date not specified"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/updates/added/download",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/updates/added/download",
+        "path": "/domains/updates/added/download",
+        "pointer": "#/paths/~1domains~1updates~1added~1download/get",
+        "security": [],
+        "summary": "Download added domains, latest if date not specified"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/updates/deleted",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/updates/deleted",
+        "path": "/domains/updates/deleted",
+        "pointer": "#/paths/~1domains~1updates~1deleted/get",
+        "security": [],
+        "summary": "Get deleted domains, latest if date not specified"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/updates/deleted/download",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/updates/deleted/download",
+        "path": "/domains/updates/deleted/download",
+        "pointer": "#/paths/~1domains~1updates~1deleted~1download/get",
+        "security": [],
+        "summary": "Download deleted domains, latest if date not specified"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/domains/updates/list",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /domains/updates/list",
+        "path": "/domains/updates/list",
+        "pointer": "#/paths/~1domains~1updates~1list/get",
+        "security": [],
+        "summary": "List of updates"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/info/api",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_api_info_item",
+        "path": "/info/api",
+        "pointer": "#/paths/~1info~1api/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/info/stat/",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_statistics_collection",
+        "path": "/info/stat/",
+        "pointer": "#/paths/~1info~1stat~1/get",
+        "security": [],
+        "summary": "Returns overall stagtistics"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/info/stat/{zone}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_statistics_item",
+        "path": "/info/stat/{zone}",
+        "pointer": "#/paths/~1info~1stat~1{zone}/get",
+        "security": [],
+        "summary": "Returns statistics for specific zone"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/info/tld/",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /info/tld/",
+        "path": "/info/tld/",
+        "pointer": "#/paths/~1info~1tld~1/get",
+        "security": [],
+        "summary": "Returns overall Tld info"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/info/tld/{zone}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /info/tld/{zone}",
+        "path": "/info/tld/{zone}",
+        "pointer": "#/paths/~1info~1tld~1{zone}/get",
+        "security": [],
+        "summary": "Returns statistics for specific zone"
+      },
+      {
+        "id": "schema:API_Key_Info",
+        "kind": "schema",
+        "name": "API_Key_Info"
+      },
+      {
+        "id": "schema:Domains",
+        "kind": "schema",
+        "name": "Domains"
+      },
+      {
+        "id": "schema:MX_records",
+        "kind": "schema",
+        "name": "MX_records"
+      },
+      {
+        "id": "schema:Response_Parameters",
+        "kind": "schema",
+        "name": "Response_Parameters"
+      },
+      {
+        "id": "schema:Search_Results",
+        "kind": "schema",
+        "name": "Search_Results"
+      },
+      {
+        "id": "schema:Update_model",
+        "kind": "schema",
+        "name": "Update_model"
+      },
+      {
+        "id": "schema:Zone_info",
+        "kind": "schema",
+        "name": "Zone_info"
+      },
+      {
+        "id": "schema:Zone_statistics",
+        "kind": "schema",
+        "name": "Zone_statistics"
+      },
+      {
+        "id": "schema:Zone_stats",
+        "kind": "schema",
+        "name": "Zone_stats"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "domainsdb-info-e32ca676df"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "responses": {
+                "MaskError": {
+                  "description": "When any error occurs on mask"
+                },
+                "ParseError": {
+                  "description": "When a mask can't be parsed"
+                }
+              },
+              "schemas": {
+                "API_Key_Info": {
+                  "properties": {
+                    "customer_email": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "customer_name": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "expires": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "item_id": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "item_name": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "license": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "license_limit": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "price_id": {
+                      "description": "State",
+                      "type": "string"
+                    },
+                    "success": {
+                      "description": "State",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Domains": {
+                  "properties": {
+                    "A": {
+                      "items": {
+                        "description": "A record",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "CNAME": {
+                      "items": {
+                        "description": "CNAME record",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "MX": {
+                      "items": {
+                        "$ref": "#/components/schemas/MX_records"
+                      },
+                      "type": "array"
+                    },
+                    "NS": {
+                      "items": {
+                        "description": "NS record",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "TXT": {
+                      "items": {
+                        "description": "TXT record",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "country": {
+                      "description": "Hosting Country",
+                      "type": "string"
+                    },
+                    "create_date": {
+                      "description": "Domain creation date",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "domain": {
+                      "description": "Domain name",
+                      "type": "string"
+                    },
+                    "isDead": {
+                      "description": "If Domain is Dead",
+                      "type": "string"
+                    },
+                    "update_date": {
+                      "description": "Domain last update date",
+                      "format": "date-time",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "MX_records": {
+                  "properties": {
+                    "exchange": {
+                      "description": "MX domain",
+                      "type": "string"
+                    },
+                    "priority": {
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Response_Parameters": {
+                  "properties": {
+                    "next_page": {
+                      "description": "Next page id",
+                      "type": "string"
+                    },
+                    "time": {
+                      "description": "Time took",
+                      "type": "string"
+                    },
+                    "total": {
+                      "description": "Total days reported",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "time"
+                  ],
+                  "type": "object"
+                },
+                "Search_Results": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Response_Parameters"
+                    },
+                    {
+                      "properties": {
+                        "domains": {
+                          "items": {
+                            "$ref": "#/components/schemas/Domains"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ]
+                },
+                "Update_model": {
+                  "properties": {
+                    "added": {
+                      "description": "Updates added list",
+                      "type": "string"
+                    },
+                    "added_download": {
+                      "description": "Download link for added",
+                      "type": "string"
+                    },
+                    "date": {
+                      "description": "Update date",
+                      "type": "string"
+                    },
+                    "deleted": {
+                      "description": "Updates deleted list",
+                      "type": "string"
+                    },
+                    "deleted_download": {
+                      "description": "Download link for deleted",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Zone_info": {
+                  "properties": {
+                    "description": {
+                      "items": {
+                        "description": "Sub TLDs included",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "in_bundles": {
+                      "items": {
+                        "description": "Sub TLDs included",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "includes": {
+                      "items": {
+                        "description": "Sub TLDs included",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "description": "TLD type",
+                      "type": "string"
+                    },
+                    "zone": {
+                      "description": "TLD name",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "zone"
+                  ],
+                  "type": "object"
+                },
+                "Zone_statistics": {
+                  "properties": {
+                    "date": {
+                      "description": "Report Date",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "dec": {
+                      "description": "Increase",
+                      "type": "integer"
+                    },
+                    "inc": {
+                      "description": "Decrease",
+                      "type": "integer"
+                    },
+                    "total": {
+                      "description": "Total number of records",
+                      "type": "integer"
+                    },
+                    "zone": {
+                      "description": "TLD name",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "dec",
+                    "inc",
+                    "total",
+                    "zone"
+                  ],
+                  "type": "object"
+                },
+                "Zone_stats": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Response_Parameters"
+                    },
+                    {
+                      "properties": {
+                        "statistics": {
+                          "items": {
+                            "$ref": "#/components/schemas/Zone_statistics"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            },
+            "info": {
+              "description": "Domains-Index database powered API",
+              "title": "Domains-Index API",
+              "version": "1.0",
+              "x-apisguru-categories": [
+                "hosting"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_769216960504532996_rctG95A0_400x400.jpg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://api.domains-index.com/v1/swagger.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "domainsdb.info"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/domains/search": {
+                "get": {
+                  "operationId": "get_search_domain_item",
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Domain includes",
+                      "in": "query",
+                      "name": "domain",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "In Zone",
+                      "in": "query",
+                      "name": "zone",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Hosting Country",
+                      "in": "query",
+                      "name": "country",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Dead or Not, default not",
+                      "in": "query",
+                      "name": "isDead",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "A record includes",
+                      "in": "query",
+                      "name": "A",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "NS record includes",
+                      "in": "query",
+                      "name": "NS",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "CNAME record includes",
+                      "in": "query",
+                      "name": "CNAME",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "MX record includes",
+                      "in": "query",
+                      "name": "MX",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "TXT record includes",
+                      "in": "query",
+                      "name": "TXT",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Search_Results"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "description": "api_key is not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Domains Database Search",
+                  "tags": [
+                    "domains/"
+                  ]
+                }
+              },
+              "/domains/tld/{zone_id}": {
+                "get": {
+                  "operationId": "get_tld_domain_item",
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Domain includes",
+                      "in": "query",
+                      "name": "domain",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Hosting Country",
+                      "in": "query",
+                      "name": "country",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Dead or Not, default not",
+                      "in": "query",
+                      "name": "isDead",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "A record includes",
+                      "in": "query",
+                      "name": "A",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "NS record includes",
+                      "in": "query",
+                      "name": "NS",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "CNAME record includes",
+                      "in": "query",
+                      "name": "CNAME",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "MX record includes",
+                      "in": "query",
+                      "name": "MX",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "TXT record includes",
+                      "in": "query",
+                      "name": "TXT",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Search_Results"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Get TLD records",
+                  "tags": [
+                    "domains/"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "zone_id",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "/domains/tld/{zone_id}/download": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Download Whole Dataset for TLD",
+                  "tags": [
+                    "domains/"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "zone_id",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "/domains/tld/{zone_id}/search": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Domain includes",
+                      "in": "query",
+                      "name": "domain",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Hosting Country",
+                      "in": "query",
+                      "name": "country",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Dead or Not, default not",
+                      "in": "query",
+                      "name": "isDead",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "A record includes",
+                      "in": "query",
+                      "name": "A",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "NS record includes",
+                      "in": "query",
+                      "name": "NS",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "CNAME record includes",
+                      "in": "query",
+                      "name": "CNAME",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "MX record includes",
+                      "in": "query",
+                      "name": "MX",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "TXT record includes",
+                      "in": "query",
+                      "name": "TXT",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Search_Results"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Domains Search for TLD",
+                  "tags": [
+                    "domains/"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "zone_id",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "/domains/updates/added": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Search_Results"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Get added domains, latest if date not specified",
+                  "tags": [
+                    "domains/"
+                  ]
+                }
+              },
+              "/domains/updates/added/download": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Download added domains, latest if date not specified",
+                  "tags": [
+                    "domains/"
+                  ]
+                }
+              },
+              "/domains/updates/deleted": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Search_Results"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Get deleted domains, latest if date not specified",
+                  "tags": [
+                    "domains/"
+                  ]
+                }
+              },
+              "/domains/updates/deleted/download": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Request date",
+                      "in": "query",
+                      "name": "date",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "Download deleted domains, latest if date not specified",
+                  "tags": [
+                    "domains/"
+                  ]
+                }
+              },
+              "/domains/updates/list": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Update_model"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "403": {
+                      "description": "No api_key or it's not valid"
+                    },
+                    "404": {
+                      "description": "Results not found"
+                    }
+                  },
+                  "summary": "List of updates",
+                  "tags": [
+                    "domains/"
+                  ]
+                }
+              },
+              "/info/api": {
+                "get": {
+                  "operationId": "get_api_info_item",
+                  "parameters": [
+                    {
+                      "description": "API key",
+                      "in": "query",
+                      "name": "api_key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/API_Key_Info"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "info/"
+                  ]
+                }
+              },
+              "/info/stat/": {
+                "get": {
+                  "operationId": "get_statistics_collection",
+                  "parameters": [
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/Zone_stats"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Returns overall stagtistics",
+                  "tags": [
+                    "info/"
+                  ]
+                }
+              },
+              "/info/stat/{zone}": {
+                "get": {
+                  "operationId": "get_statistics_item",
+                  "parameters": [
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Zone_stats"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "404": {
+                      "description": "Zone not found."
+                    }
+                  },
+                  "summary": "Returns statistics for specific zone",
+                  "tags": [
+                    "info/"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "zone",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "/info/tld/": {
+                "get": {
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/Zone_info"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Returns overall Tld info",
+                  "tags": [
+                    "info/"
+                  ]
+                }
+              },
+              "/info/tld/{zone}": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Search page to request",
+                      "in": "query",
+                      "name": "page",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Results per page",
+                      "in": "query",
+                      "name": "limit",
+                      "schema": {
+                        "default": 50,
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Zone_info"
+                          }
+                        }
+                      },
+                      "description": "Success"
+                    },
+                    "404": {
+                      "description": "Zone not found."
+                    }
+                  },
+                  "summary": "Returns statistics for specific zone",
+                  "tags": [
+                    "info/"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "zone",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            },
+            "servers": [
+              {
+                "url": "/v1"
+              }
+            ],
+            "tags": [
+              {
+                "description": "Default namespace",
+                "name": "default"
+              },
+              {
+                "description": "TLD Statistics",
+                "name": "info/"
+              },
+              {
+                "description": "Domains Database",
+                "name": "domains/"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Domains-Index API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.286836Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://api.domains-index.com/v1/swagger.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "98c0f020b93d59004067f93c466c45472827a3dbff4de22aa0ea711de9b51eec",
+    "source_id": "domainsdb.info",
+    "source_updated": "2021-01-18T09:19:53.944Z",
+    "url": "https://api.apis.guru/v2/specs/domainsdb.info/1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0"
+}

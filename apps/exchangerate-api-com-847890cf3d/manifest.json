@@ -1,0 +1,193 @@
+{
+  "a2ui": {},
+  "app": "exchangerate-api-com-847890cf3d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "exchangerate-api-com-847890cf3d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/latest/{base_currency}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "exchangerate-api-com-847890cf3d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/latest/{base_currency}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /latest/{base_currency}",
+        "path": "/latest/{base_currency}",
+        "pointer": "#/paths/~1latest~1{base_currency}/get",
+        "security": [],
+        "summary": "Returns latest exchange rates in parameter-supplied base currency."
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "exchangerate-api-com-847890cf3d"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "externalDocs": {
+              "description": "API Documentation",
+              "url": "https://www.exchangerate-api.com/docs/documentation"
+            },
+            "info": {
+              "description": "Fetch the latest currency exchange rates via API. ExchangeRate-API is free and unlimited.",
+              "termsOfService": "https://www.exchangerate-api.com/terms",
+              "title": "ExchangeRate-API",
+              "version": "4",
+              "x-apisguru-categories": [
+                "financial"
+              ],
+              "x-logo": {
+                "backgroundColor": "#FFFFFF",
+                "url": "https://api.apis.guru/v2/cache/logo/https_www.exchangerate-api.com_img_logo-cube-135px.png"
+              },
+              "x-origin": [
+                {
+                  "converter": {
+                    "url": "https://github.com/mermade/oas-kit",
+                    "version": "7.0.4"
+                  },
+                  "format": "openapi",
+                  "url": "https://www.exchangerate-api.com/openapi.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "exchangerate-api.com"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+              "/latest/{base_currency}": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "**Base Currency**. *Example: USD*. You an use any of the ISO 4217 currency codes we support. See https://www.exchangerate-api.com/docs/supported-currencies",
+                      "in": "path",
+                      "name": "base_currency",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "base": {
+                                "description": "The currency code you supplied as base in your request",
+                                "example": "USD",
+                                "type": "string"
+                              },
+                              "date": {
+                                "description": "The date these exchange rates are for",
+                                "type": "string"
+                              },
+                              "rates": {
+                                "additionalProperties": {
+                                  "format": "double",
+                                  "type": "number"
+                                },
+                                "description": "Each supported currency code in terms of the base currency",
+                                "type": "object"
+                              },
+                              "time_last_updated": {
+                                "description": "The epoch time this set of exchange rates was generated",
+                                "example": 1556293443,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "Successful response"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "error_type": {
+                                "type": "string"
+                              },
+                              "result": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "Currency code not supported"
+                    }
+                  },
+                  "summary": "Returns latest exchange rates in parameter-supplied base currency."
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "No authentication endpoint. Returns latest exchange rates and some metadata.",
+                "url": "https://api.exchangerate-api.com/v4"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "ExchangeRate-API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.848800Z",
+    "license": null,
+    "origins": [
+      {
+        "converter": {
+          "url": "https://github.com/mermade/oas-kit",
+          "version": "7.0.4"
+        },
+        "format": "openapi",
+        "url": "https://www.exchangerate-api.com/openapi.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "a69342b5210c50e246b716275e71654cf3f10714e03e24ca28c5c8fc255c8eae",
+    "source_id": "exchangerate-api.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/exchangerate-api.com/4/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "4"
+}

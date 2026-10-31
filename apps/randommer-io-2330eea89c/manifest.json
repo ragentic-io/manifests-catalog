@@ -1,0 +1,1562 @@
+{
+  "a2ui": {},
+  "app": "randommer-io-2330eea89c",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Card"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Card/Types"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Finance/Countries"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Finance/CryptoAddress"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Finance/CryptoAddress/Types"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Finance/Iban/{countryCode}"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/Finance/Vat/Validator"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Misc/Cultures"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Misc/Random-Address"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Name"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/Name/BrandName"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/Name/BusinessName"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Name/Cultures"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Name/Suggestions"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Phone/Countries"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Phone/Generate"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Phone/IMEI"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Phone/Validate"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/SocialNumber"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/SocialNumber"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/Text/Humanize"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Text/LoremIpsum"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/Text/Password"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/Text/Review"
+      },
+      {
+        "from": "randommer-io-2330eea89c",
+        "kind": "EXPOSES",
+        "to": "operation:post:/api/Text/Transform"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "randommer-io-2330eea89c",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Card",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Card",
+        "path": "/api/Card",
+        "pointer": "#/paths/~1api~1Card/get",
+        "security": [],
+        "summary": "Get Card"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Card/Types",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Card/Types",
+        "path": "/api/Card/Types",
+        "pointer": "#/paths/~1api~1Card~1Types/get",
+        "security": [],
+        "summary": "Get available card types"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Finance/Countries",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Finance/Countries",
+        "path": "/api/Finance/Countries",
+        "pointer": "#/paths/~1api~1Finance~1Countries/get",
+        "security": [],
+        "summary": "Get available countries"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Finance/CryptoAddress",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Finance/CryptoAddress",
+        "path": "/api/Finance/CryptoAddress",
+        "pointer": "#/paths/~1api~1Finance~1CryptoAddress/get",
+        "security": [],
+        "summary": "Get crypto address"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Finance/CryptoAddress/Types",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Finance/CryptoAddress/Types",
+        "path": "/api/Finance/CryptoAddress/Types",
+        "pointer": "#/paths/~1api~1Finance~1CryptoAddress~1Types/get",
+        "security": [],
+        "summary": "Get available crypto types"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Finance/Iban/{countryCode}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Finance/Iban/{countryCode}",
+        "path": "/api/Finance/Iban/{countryCode}",
+        "pointer": "#/paths/~1api~1Finance~1Iban~1{countryCode}/get",
+        "security": [],
+        "summary": "Get IBAN by countryCode"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Finance/Vat/Validator",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/Finance/Vat/Validator",
+        "path": "/api/Finance/Vat/Validator",
+        "pointer": "#/paths/~1api~1Finance~1Vat~1Validator/post",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Misc/Cultures",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Misc/Cultures",
+        "path": "/api/Misc/Cultures",
+        "pointer": "#/paths/~1api~1Misc~1Cultures/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Misc/Random-Address",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Misc/Random-Address",
+        "path": "/api/Misc/Random-Address",
+        "pointer": "#/paths/~1api~1Misc~1Random-Address/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Name",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Name",
+        "path": "/api/Name",
+        "pointer": "#/paths/~1api~1Name/get",
+        "security": [],
+        "summary": "Get name"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Name/BrandName",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/Name/BrandName",
+        "path": "/api/Name/BrandName",
+        "pointer": "#/paths/~1api~1Name~1BrandName/post",
+        "security": [],
+        "summary": "Generate brand name suggestions"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Name/BusinessName",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/Name/BusinessName",
+        "path": "/api/Name/BusinessName",
+        "pointer": "#/paths/~1api~1Name~1BusinessName/post",
+        "security": [],
+        "summary": "Get business names for a specific culture"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Name/Cultures",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Name/Cultures",
+        "path": "/api/Name/Cultures",
+        "pointer": "#/paths/~1api~1Name~1Cultures/get",
+        "security": [],
+        "summary": "Get available cultures"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Name/Suggestions",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Name/Suggestions",
+        "path": "/api/Name/Suggestions",
+        "pointer": "#/paths/~1api~1Name~1Suggestions/get",
+        "security": [],
+        "summary": "Get business name suggestions"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Phone/Countries",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Phone/Countries",
+        "path": "/api/Phone/Countries",
+        "pointer": "#/paths/~1api~1Phone~1Countries/get",
+        "security": [],
+        "summary": "Get available countries"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Phone/Generate",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Phone/Generate",
+        "path": "/api/Phone/Generate",
+        "pointer": "#/paths/~1api~1Phone~1Generate/get",
+        "security": [],
+        "summary": "Get bulk telephone numbers for a country"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Phone/IMEI",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Phone/IMEI",
+        "path": "/api/Phone/IMEI",
+        "pointer": "#/paths/~1api~1Phone~1IMEI/get",
+        "security": [],
+        "summary": "Get bulk imeis"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Phone/Validate",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Phone/Validate",
+        "path": "/api/Phone/Validate",
+        "pointer": "#/paths/~1api~1Phone~1Validate/get",
+        "security": [],
+        "summary": "Validate a phone number"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/SocialNumber",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/SocialNumber",
+        "path": "/api/SocialNumber",
+        "pointer": "#/paths/~1api~1SocialNumber/get",
+        "security": [],
+        "summary": "Generate a social security number"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/SocialNumber",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/SocialNumber",
+        "path": "/api/SocialNumber",
+        "pointer": "#/paths/~1api~1SocialNumber/post",
+        "security": [],
+        "summary": "Validate VAT/identity numbers"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Text/Humanize",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/Text/Humanize",
+        "path": "/api/Text/Humanize",
+        "pointer": "#/paths/~1api~1Text~1Humanize/post",
+        "security": [],
+        "summary": "Humanize text"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Text/LoremIpsum",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Text/LoremIpsum",
+        "path": "/api/Text/LoremIpsum",
+        "pointer": "#/paths/~1api~1Text~1LoremIpsum/get",
+        "security": [],
+        "summary": "Generate lorem ipsum"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/Text/Password",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/Text/Password",
+        "path": "/api/Text/Password",
+        "pointer": "#/paths/~1api~1Text~1Password/get",
+        "security": [],
+        "summary": "Generate password"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Text/Review",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/Text/Review",
+        "path": "/api/Text/Review",
+        "pointer": "#/paths/~1api~1Text~1Review/post",
+        "security": [],
+        "summary": "Get reviews (max quantity=500)"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Text/Transform",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/Text/Transform",
+        "path": "/api/Text/Transform",
+        "pointer": "#/paths/~1api~1Text~1Transform/post",
+        "security": [],
+        "summary": "Transform text"
+      },
+      {
+        "id": "schema:CaseType",
+        "kind": "schema",
+        "name": "CaseType"
+      },
+      {
+        "id": "schema:IdType",
+        "kind": "schema",
+        "name": "IdType"
+      },
+      {
+        "id": "schema:LoremType",
+        "kind": "schema",
+        "name": "LoremType"
+      },
+      {
+        "id": "schema:NameType",
+        "kind": "schema",
+        "name": "NameType"
+      },
+      {
+        "id": "schema:NumberValidation",
+        "kind": "schema",
+        "name": "NumberValidation"
+      },
+      {
+        "id": "schema:TextActionType",
+        "kind": "schema",
+        "name": "TextActionType"
+      },
+      {
+        "id": "schema:TextDto",
+        "kind": "schema",
+        "name": "TextDto"
+      },
+      {
+        "id": "schema:TextType",
+        "kind": "schema",
+        "name": "TextType"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "randommer-io-2330eea89c"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "CaseType": {
+                  "enum": [
+                    "LowerCase",
+                    "UpperCase",
+                    "SentenceCase",
+                    "TitleCase"
+                  ],
+                  "type": "string"
+                },
+                "IdType": {
+                  "enum": [
+                    "VAT",
+                    "SSN"
+                  ],
+                  "type": "string"
+                },
+                "LoremType": {
+                  "enum": [
+                    "normal",
+                    "business"
+                  ],
+                  "type": "string"
+                },
+                "NameType": {
+                  "enum": [
+                    "firstname",
+                    "surname",
+                    "fullname"
+                  ],
+                  "type": "string"
+                },
+                "NumberValidation": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "country": {
+                      "maxLength": 2,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "number": {
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "country",
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "TextActionType": {
+                  "enum": [
+                    "Transform",
+                    "Replace"
+                  ],
+                  "type": "string"
+                },
+                "TextDto": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "text": {
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TextType": {
+                  "enum": [
+                    "paragraphs",
+                    "words"
+                  ],
+                  "type": "string"
+                }
+              }
+            },
+            "info": {
+              "title": "Randommer API",
+              "version": "v1",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://randommer.io/api/docs/v1/swagger.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "randommer.io"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/api/Card": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "type",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get Card",
+                  "tags": [
+                    "Card"
+                  ]
+                }
+              },
+              "/api/Card/Types": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get available card types",
+                  "tags": [
+                    "Card"
+                  ]
+                }
+              },
+              "/api/Finance/Countries": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get available countries",
+                  "tags": [
+                    "Finance"
+                  ]
+                }
+              },
+              "/api/Finance/CryptoAddress": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "cryptoType",
+                      "schema": {
+                        "maxLength": 100,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get crypto address",
+                  "tags": [
+                    "Finance"
+                  ]
+                }
+              },
+              "/api/Finance/CryptoAddress/Types": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get available crypto types",
+                  "tags": [
+                    "Finance"
+                  ]
+                }
+              },
+              "/api/Finance/Iban/{countryCode}": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "path",
+                      "name": "countryCode",
+                      "required": true,
+                      "schema": {
+                        "maxLength": 2,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get IBAN by countryCode",
+                  "tags": [
+                    "Finance"
+                  ]
+                }
+              },
+              "/api/Finance/Vat/Validator": {
+                "post": {
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "country",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "vat",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "Finance"
+                  ]
+                }
+              },
+              "/api/Misc/Cultures": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "Misc"
+                  ]
+                }
+              },
+              "/api/Misc/Random-Address": {
+                "get": {
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "number",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 1000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "culture",
+                      "schema": {
+                        "default": "en",
+                        "maxLength": 100,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "tags": [
+                    "Misc"
+                  ]
+                }
+              },
+              "/api/Name": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "nameType",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/components/schemas/NameType"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "quantity",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 5000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get name",
+                  "tags": [
+                    "Name"
+                  ]
+                }
+              },
+              "/api/Name/BrandName": {
+                "post": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "startingWords",
+                      "required": true,
+                      "schema": {
+                        "maxLength": 100,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Generate brand name suggestions",
+                  "tags": [
+                    "Name"
+                  ]
+                }
+              },
+              "/api/Name/BusinessName": {
+                "post": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "number",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 1000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "cultureCode",
+                      "schema": {
+                        "default": "en_US",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get business names for a specific culture",
+                  "tags": [
+                    "Name"
+                  ]
+                }
+              },
+              "/api/Name/Cultures": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get available cultures",
+                  "tags": [
+                    "Name"
+                  ]
+                }
+              },
+              "/api/Name/Suggestions": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "startingWords",
+                      "required": true,
+                      "schema": {
+                        "maxLength": 100,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get business name suggestions",
+                  "tags": [
+                    "Name"
+                  ]
+                }
+              },
+              "/api/Phone/Countries": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get available countries",
+                  "tags": [
+                    "Phone"
+                  ]
+                }
+              },
+              "/api/Phone/Generate": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "CountryCode",
+                      "required": true,
+                      "schema": {
+                        "maxLength": 2,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "Quantity",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 1000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get bulk telephone numbers for a country",
+                  "tags": [
+                    "Phone"
+                  ]
+                }
+              },
+              "/api/Phone/IMEI": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "Quantity",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 1000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get bulk imeis",
+                  "tags": [
+                    "Phone"
+                  ]
+                }
+              },
+              "/api/Phone/Validate": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "telephone",
+                      "required": true,
+                      "schema": {
+                        "maxLength": 25,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "CountryCode",
+                      "schema": {
+                        "maxLength": 2,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Validate a phone number",
+                  "tags": [
+                    "Phone"
+                  ]
+                }
+              },
+              "/api/SocialNumber": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Generate a social security number",
+                  "tags": [
+                    "SocialNumber"
+                  ]
+                },
+                "post": {
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "idType",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/components/schemas/IdType"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/*+json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/NumberValidation"
+                        }
+                      },
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/NumberValidation"
+                        }
+                      },
+                      "application/json-patch+json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/NumberValidation"
+                        }
+                      },
+                      "text/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/NumberValidation"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Validate VAT/identity numbers",
+                  "tags": [
+                    "SocialNumber"
+                  ]
+                }
+              },
+              "/api/Text/Humanize": {
+                "post": {
+                  "parameters": [
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/*+json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      },
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      },
+                      "application/json-patch+json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      },
+                      "text/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      }
+                    },
+                    "description": "",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Humanize text",
+                  "tags": [
+                    "Text"
+                  ]
+                }
+              },
+              "/api/Text/LoremIpsum": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "loremType",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/components/schemas/LoremType"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "type",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/components/schemas/TextType"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "number",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 2147483647,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Generate lorem ipsum",
+                  "tags": [
+                    "Text"
+                  ]
+                }
+              },
+              "/api/Text/Password": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "length",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 250,
+                        "minimum": 3,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "hasDigits",
+                      "required": true,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "hasUppercase",
+                      "required": true,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "hasSpecial",
+                      "required": true,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Generate password",
+                  "tags": [
+                    "Text"
+                  ]
+                }
+              },
+              "/api/Text/Review": {
+                "post": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "product",
+                      "required": true,
+                      "schema": {
+                        "maxLength": 50,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "quantity",
+                      "required": true,
+                      "schema": {
+                        "format": "int32",
+                        "maximum": 500,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Get reviews (max quantity=500)",
+                  "tags": [
+                    "Text"
+                  ]
+                }
+              },
+              "/api/Text/Transform": {
+                "post": {
+                  "parameters": [
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "textActionType",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/components/schemas/TextActionType"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "caseType",
+                      "schema": {
+                        "$ref": "#/components/schemas/CaseType"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "find",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "",
+                      "in": "query",
+                      "name": "replace",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "Enter your key",
+                      "in": "header",
+                      "name": "X-Api-Key",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "application/*+json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      },
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      },
+                      "application/json-patch+json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      },
+                      "text/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/TextDto"
+                        }
+                      }
+                    },
+                    "description": "",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "description": "Success"
+                    }
+                  },
+                  "summary": "Transform text",
+                  "tags": [
+                    "Text"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Randommer API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:45.441385Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://randommer.io/api/docs/v1/swagger.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "aa6a97c470d7b8c0b361fde6e7a9934bc1655998c02974f9a78807aea0a4be8b",
+    "source_id": "randommer.io",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/randommer.io/v1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v1"
+}

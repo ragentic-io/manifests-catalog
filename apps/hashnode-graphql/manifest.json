@@ -1,0 +1,4685 @@
+{
+  "a2ui": {},
+  "app": "hashnode-graphql",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "me",
+        "to": "schema:MyUser"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "post",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "publication",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "user",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "tag",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "feed",
+        "to": "schema:FeedPostConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "scheduledPost",
+        "to": "schema:ScheduledPost"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "checkCustomDomainAvailability",
+        "to": "schema:CheckCustomDomainAvailabilityResult"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "checkSubdomainAvailability",
+        "to": "schema:CheckSubdomainAvailabilityResult"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "searchPostsOfPublication",
+        "to": "schema:SearchPostConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "topCommenters",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "documentationProject",
+        "to": "schema:DocumentationProject"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "username",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "bio",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "profilePicture",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "tagline",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "location",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "availableFor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "deactivated",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "dateJoined",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "followersCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "followingsCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "posts",
+        "to": "schema:PostConnection"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "publications",
+        "to": "schema:PublicationConnection"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "followers",
+        "to": "schema:UserConnection"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "follows",
+        "to": "schema:UserConnection"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "socialMediaLinks",
+        "to": "schema:SocialMediaLinks"
+      },
+      {
+        "from": "schema:User",
+        "kind": "FIELD",
+        "name": "badges",
+        "to": "schema:Badge"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "username",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "email",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "bio",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "profilePicture",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "tagline",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "location",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "availableFor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "dateJoined",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "publications",
+        "to": "schema:PublicationConnection"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "followers",
+        "to": "schema:UserConnection"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "follows",
+        "to": "schema:UserConnection"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "socialMediaLinks",
+        "to": "schema:SocialMediaLinks"
+      },
+      {
+        "from": "schema:MyUser",
+        "kind": "FIELD",
+        "name": "badges",
+        "to": "schema:Badge"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "twitter",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "github",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "linkedin",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "website",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "facebook",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "instagram",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "stackoverflow",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SocialMediaLinks",
+        "kind": "FIELD",
+        "name": "youtube",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Badge",
+        "kind": "FIELD",
+        "name": "image",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "proTeam",
+        "to": "schema:ProTeamFeature"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "newsletter",
+        "to": "schema:NewsletterFeature"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "viewCount",
+        "to": "schema:ViewCountFeature"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "readTime",
+        "to": "schema:ReadTimeFeature"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "textSelectionSharer",
+        "to": "schema:TextSelectionSharerFeature"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "gptBotCrawling",
+        "to": "schema:GPTBotCrawlingFeature"
+      },
+      {
+        "from": "schema:PublicationFeatures",
+        "kind": "FIELD",
+        "name": "headlessCMS",
+        "to": "schema:HeadlessCMSFeature"
+      },
+      {
+        "from": "schema:ProTeamFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:NewsletterFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ViewCountFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ReadTimeFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:TextSelectionSharerFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:GPTBotCrawlingFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationAeoSettings",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationAeoSettings",
+        "kind": "FIELD",
+        "name": "llmsTxtEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationAeoSettings",
+        "kind": "FIELD",
+        "name": "crawlers",
+        "to": "schema:AeoCrawlerSettings"
+      },
+      {
+        "from": "schema:AeoCrawlerSettings",
+        "kind": "FIELD",
+        "name": "gptBot",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AeoCrawlerSettings",
+        "kind": "FIELD",
+        "name": "claudeBot",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AeoCrawlerSettings",
+        "kind": "FIELD",
+        "name": "perplexityBot",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AeoCrawlerSettings",
+        "kind": "FIELD",
+        "name": "googleExtended",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AeoCrawlerSettings",
+        "kind": "FIELD",
+        "name": "ccBot",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:HeadlessCMSFeature",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:DomainInfo",
+        "kind": "FIELD",
+        "name": "hashnodeSubdomain",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DomainInfo",
+        "kind": "FIELD",
+        "name": "domain",
+        "to": "schema:Domain"
+      },
+      {
+        "from": "schema:DomainInfo",
+        "kind": "FIELD",
+        "name": "wwwPrefixedDomain",
+        "to": "schema:Domain"
+      },
+      {
+        "from": "schema:Domain",
+        "kind": "FIELD",
+        "name": "host",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Domain",
+        "kind": "FIELD",
+        "name": "ready",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:RedirectionRule",
+        "kind": "FIELD",
+        "name": "source",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:RedirectionRule",
+        "kind": "FIELD",
+        "name": "destination",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:RedirectionRule",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CustomRule",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CustomRule",
+        "kind": "FIELD",
+        "name": "path",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CustomRule",
+        "kind": "FIELD",
+        "name": "destination",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ImprintV2",
+        "kind": "FIELD",
+        "name": "html",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicMembers",
+        "kind": "FIELD",
+        "name": "totalDocuments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "displayTitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "url",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "canonicalURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "favicon",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "about",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "descriptionSEO",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "seo",
+        "to": "schema:SEO"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "post",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "redirectedPost",
+        "to": "schema:RedirectedPost"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "posts",
+        "to": "schema:PostConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "postsCount",
+        "to": "schema:PostConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "series",
+        "to": "schema:Series"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "seriesList",
+        "to": "schema:SeriesConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "staticPage",
+        "to": "schema:StaticPage"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "staticPages",
+        "to": "schema:StaticPageConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "members",
+        "to": "schema:PublicationMemberConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "publicMembers",
+        "to": "schema:PublicMembers"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "isGitHubBackupEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "isGithubAsSourceConnected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "invites",
+        "to": "schema:PublicationInvite"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "drafts",
+        "to": "schema:DraftConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "allDrafts",
+        "to": "schema:DraftConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "scheduledDrafts",
+        "to": "schema:DraftConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "submittedDrafts",
+        "to": "schema:DraftConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "allScheduledDrafts",
+        "to": "schema:DraftConnection"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "preferences",
+        "to": "schema:PublicationPreferences"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "integrations",
+        "to": "schema:PublicationIntegrations"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "links",
+        "to": "schema:PublicationLinks"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "isTeam",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "followersCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "pinnedPost",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "hasBadges",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "urlPattern",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "metaTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "ogMetaData",
+        "to": "schema:OpenGraphMetaData"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "features",
+        "to": "schema:PublicationFeatures"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "aeoSettings",
+        "to": "schema:PublicationAeoSettings"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "domainInfo",
+        "to": "schema:DomainInfo"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "isHeadless",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "headerColor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "redirectionRules",
+        "to": "schema:RedirectionRule"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "customRules",
+        "to": "schema:CustomRule"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "imprintV2",
+        "to": "schema:ImprintV2"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "totalRecommendedPublications",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "recommendedPublications",
+        "to": "schema:RecommendedPublicationEdge"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "allowContributorEdits",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Publication",
+        "kind": "FIELD",
+        "name": "widgets",
+        "to": "schema:Widget"
+      },
+      {
+        "from": "schema:Widget",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Widget",
+        "kind": "FIELD",
+        "name": "widgetId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Widget",
+        "kind": "FIELD",
+        "name": "content",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Widget",
+        "kind": "FIELD",
+        "name": "isPinned",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Widget",
+        "kind": "FIELD",
+        "name": "pinLocation",
+        "to": "schema:WidgetPinLocation"
+      },
+      {
+        "from": "schema:RecommendedPublicationEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:RedirectedPost",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:RedirectedPost",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "logo",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "darkMode",
+        "to": "schema:DarkModePreferences"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "navbarItems",
+        "to": "schema:PublicationNavbarItem"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "enabledPages",
+        "to": "schema:EnabledPages"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "layout",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "disableFooterBranding",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationPreferences",
+        "kind": "FIELD",
+        "name": "isSubscriptionModalDisabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:DarkModePreferences",
+        "kind": "FIELD",
+        "name": "enabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:DarkModePreferences",
+        "kind": "FIELD",
+        "name": "logo",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationNavbarItem",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PublicationNavbarItem",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationNavbarItem",
+        "kind": "FIELD",
+        "name": "label",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationNavbarItem",
+        "kind": "FIELD",
+        "name": "url",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationNavbarItem",
+        "kind": "FIELD",
+        "name": "series",
+        "to": "schema:Series"
+      },
+      {
+        "from": "schema:PublicationNavbarItem",
+        "kind": "FIELD",
+        "name": "page",
+        "to": "schema:StaticPage"
+      },
+      {
+        "from": "schema:EnabledPages",
+        "kind": "FIELD",
+        "name": "badges",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:EnabledPages",
+        "kind": "FIELD",
+        "name": "newsletter",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:EnabledPages",
+        "kind": "FIELD",
+        "name": "members",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "gaTrackingID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "fbPixelID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "hotjarSiteID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "matomoURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "matomoSiteID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "fathomSiteID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "fathomCustomDomainEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "fathomCustomDomain",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "plausibleAnalyticsEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "gTagManagerID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "wmPaymentPointer",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "koalaPublicKey",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "msClarityID",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationIntegrations",
+        "kind": "FIELD",
+        "name": "openPanelClientId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "twitter",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "github",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "linkedin",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "hashnode",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "website",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "instagram",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "youtube",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "dailydev",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "mastodon",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "facebook",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationLinks",
+        "kind": "FIELD",
+        "name": "bluesky",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationMember",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PublicationMember",
+        "kind": "FIELD",
+        "name": "user",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:PublicationMember",
+        "kind": "FIELD",
+        "name": "role",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OffsetPageInfo",
+        "kind": "FIELD",
+        "name": "hasNextPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:OffsetPageInfo",
+        "kind": "FIELD",
+        "name": "hasPreviousPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:OffsetPageInfo",
+        "kind": "FIELD",
+        "name": "nextPage",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:OffsetPageInfo",
+        "kind": "FIELD",
+        "name": "previousPage",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PublicationInvite",
+        "kind": "FIELD",
+        "name": "pendingInvites",
+        "to": "schema:PendingInviteConnection"
+      },
+      {
+        "from": "schema:PublicationInvite",
+        "kind": "FIELD",
+        "name": "roleBasedInvites",
+        "to": "schema:RoleBasedInviteConnection"
+      },
+      {
+        "from": "schema:PublicationInvite",
+        "kind": "FIELD",
+        "name": "areRoleBasedInviteLinksActive",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PendingInviteConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:PendingInvite"
+      },
+      {
+        "from": "schema:PendingInviteConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:OffsetPageInfo"
+      },
+      {
+        "from": "schema:PendingInviteConnection",
+        "kind": "FIELD",
+        "name": "totalDocuments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:RoleBasedInviteConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:RoleBasedInvite"
+      },
+      {
+        "from": "schema:RoleBasedInviteConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:OffsetPageInfo"
+      },
+      {
+        "from": "schema:RoleBasedInviteConnection",
+        "kind": "FIELD",
+        "name": "totalDocuments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PendingInvite",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PendingInvite",
+        "kind": "FIELD",
+        "name": "email",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PendingInvite",
+        "kind": "FIELD",
+        "name": "user",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:PendingInvite",
+        "kind": "FIELD",
+        "name": "role",
+        "to": "schema:UserPublicationRole"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "role",
+        "to": "schema:UserPublicationRole"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "isUnlimitedCapacity",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "usedCapacity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "capacity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "inviteLink",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:RoleBasedInvite",
+        "kind": "FIELD",
+        "name": "expiryDate",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "cuid",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "url",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "content",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "brief",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:CoverImage"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "coAuthors",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "publication",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "reactionCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "responseCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "replyCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "readTimeInMinutes",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "views",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "featured",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "publishedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "canonicalUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "hasLatexInPost",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "comments",
+        "to": "schema:CommentConnection"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "likedBy",
+        "to": "schema:UserConnection"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "series",
+        "to": "schema:Series"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "seo",
+        "to": "schema:SEO"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "ogMetaData",
+        "to": "schema:OpenGraphMetaData"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "features",
+        "to": "schema:PostFeatures"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "preferences",
+        "to": "schema:PostPreferences"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "FIELD",
+        "name": "faq",
+        "to": "schema:PostFaqItem"
+      },
+      {
+        "from": "schema:PostFaqItem",
+        "kind": "FIELD",
+        "name": "question",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PostFaqItem",
+        "kind": "FIELD",
+        "name": "answer",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Content",
+        "kind": "FIELD",
+        "name": "markdown",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Content",
+        "kind": "FIELD",
+        "name": "html",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Content",
+        "kind": "FIELD",
+        "name": "text",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImage",
+        "kind": "FIELD",
+        "name": "url",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImage",
+        "kind": "FIELD",
+        "name": "attribution",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImage",
+        "kind": "FIELD",
+        "name": "photographer",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImage",
+        "kind": "FIELD",
+        "name": "isPortrait",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CoverImage",
+        "kind": "FIELD",
+        "name": "isAttributionHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SEO",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SEO",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OpenGraphMetaData",
+        "kind": "FIELD",
+        "name": "image",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PostFeatures",
+        "kind": "FIELD",
+        "name": "tableOfContents",
+        "to": "schema:TableOfContents"
+      },
+      {
+        "from": "schema:TableOfContents",
+        "kind": "FIELD",
+        "name": "isEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:TableOfContents",
+        "kind": "FIELD",
+        "name": "items",
+        "to": "schema:TableOfContentsItem"
+      },
+      {
+        "from": "schema:TableOfContentsItem",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:TableOfContentsItem",
+        "kind": "FIELD",
+        "name": "level",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:TableOfContentsItem",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TableOfContentsItem",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TableOfContentsItem",
+        "kind": "FIELD",
+        "name": "parentId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PostPreferences",
+        "kind": "FIELD",
+        "name": "pinnedToBlog",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PostPreferences",
+        "kind": "FIELD",
+        "name": "disableComments",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PostPreferences",
+        "kind": "FIELD",
+        "name": "stickCoverToBottom",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PostPreferences",
+        "kind": "FIELD",
+        "name": "isDelisted",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "content",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:CoverImage"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "publishAs",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "settings",
+        "to": "schema:DraftSettings"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "scheduledDate",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "publication",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "series",
+        "to": "schema:Series"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "coAuthors",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "canonicalUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "seo",
+        "to": "schema:SEO"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "ogMetaData",
+        "to": "schema:OpenGraphMetaData"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "features",
+        "to": "schema:PostFeatures"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "isSubmittedForReview",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Draft",
+        "kind": "FIELD",
+        "name": "readTimeInMinutes",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:DraftSettings",
+        "kind": "FIELD",
+        "name": "enableTableOfContents",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:DraftSettings",
+        "kind": "FIELD",
+        "name": "disableComments",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:DraftSettings",
+        "kind": "FIELD",
+        "name": "stickCoverToBottom",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:DraftSettings",
+        "kind": "FIELD",
+        "name": "isDelisted",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "scheduledDate",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "publication",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:ScheduledPost",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "cuid",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Series",
+        "kind": "FIELD",
+        "name": "posts",
+        "to": "schema:PostConnection"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "logo",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "tagline",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "info",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "followersCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "postsCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "FIELD",
+        "name": "posts",
+        "to": "schema:PostConnection"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "FIELD",
+        "name": "content",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "FIELD",
+        "name": "dateAdded",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "FIELD",
+        "name": "replies",
+        "to": "schema:CommentConnection"
+      },
+      {
+        "from": "schema:Comment",
+        "kind": "FIELD",
+        "name": "totalReactions",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "content",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "hidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "ogMetaData",
+        "to": "schema:OpenGraphMetaData"
+      },
+      {
+        "from": "schema:StaticPage",
+        "kind": "FIELD",
+        "name": "seo",
+        "to": "schema:SEO"
+      },
+      {
+        "from": "schema:DocumentationProject",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:DocumentationProject",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DocumentationProject",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DocumentationProject",
+        "kind": "FIELD",
+        "name": "guides",
+        "to": "schema:GuideConnection"
+      },
+      {
+        "from": "schema:Guide",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Guide",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Guide",
+        "kind": "FIELD",
+        "name": "content",
+        "to": "schema:Content"
+      },
+      {
+        "from": "schema:PostConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:PostEdge"
+      },
+      {
+        "from": "schema:PostConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:PostConnection",
+        "kind": "FIELD",
+        "name": "totalDocuments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PostEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:PostEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FeedPostConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:PostEdge"
+      },
+      {
+        "from": "schema:FeedPostConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:PublicationConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:PublicationEdge"
+      },
+      {
+        "from": "schema:PublicationConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:PublicationEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "schema:PublicationEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UserConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:UserEdge"
+      },
+      {
+        "from": "schema:UserConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:UserEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:UserEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SeriesConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:SeriesEdge"
+      },
+      {
+        "from": "schema:SeriesConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:SeriesEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Series"
+      },
+      {
+        "from": "schema:SeriesEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StaticPageConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:StaticPageEdge"
+      },
+      {
+        "from": "schema:StaticPageConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:StaticPageEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:StaticPage"
+      },
+      {
+        "from": "schema:StaticPageEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublicationMemberConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:PublicationMemberEdge"
+      },
+      {
+        "from": "schema:PublicationMemberConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:PublicationMemberEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:PublicationMember"
+      },
+      {
+        "from": "schema:PublicationMemberEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DraftConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:DraftEdge"
+      },
+      {
+        "from": "schema:DraftConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:DraftConnection",
+        "kind": "FIELD",
+        "name": "totalDocuments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:DraftEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:DraftEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CommentConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:CommentEdge"
+      },
+      {
+        "from": "schema:CommentConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:CommentEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "schema:CommentEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchPostConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:PostEdge"
+      },
+      {
+        "from": "schema:SearchPostConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:GuideConnection",
+        "kind": "FIELD",
+        "name": "edges",
+        "to": "schema:GuideEdge"
+      },
+      {
+        "from": "schema:GuideConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:GuideEdge",
+        "kind": "FIELD",
+        "name": "node",
+        "to": "schema:Guide"
+      },
+      {
+        "from": "schema:GuideEdge",
+        "kind": "FIELD",
+        "name": "cursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "endCursor",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "hasNextPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "totalDocuments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:FeedFilter",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FeedFilter",
+        "kind": "FIELD",
+        "name": "excludeTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FeedFilter",
+        "kind": "FIELD",
+        "name": "publications",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:FeedFilter",
+        "kind": "FIELD",
+        "name": "excludePublications",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:PublicationPostConnectionFilter",
+        "kind": "FIELD",
+        "name": "tagSlugs",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "publicationId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "deletedOnly",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "authorIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "tagIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "time",
+        "to": "schema:TimeFilter"
+      },
+      {
+        "from": "schema:SearchPostsOfPublicationFilter",
+        "kind": "FIELD",
+        "name": "requiredTagsIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:TimeFilter",
+        "kind": "FIELD",
+        "name": "absolute",
+        "to": "schema:AbsoluteTimeRange"
+      },
+      {
+        "from": "schema:TimeFilter",
+        "kind": "FIELD",
+        "name": "relative",
+        "to": "schema:RelativeTimeRange"
+      },
+      {
+        "from": "schema:AbsoluteTimeRange",
+        "kind": "FIELD",
+        "name": "from",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:AbsoluteTimeRange",
+        "kind": "FIELD",
+        "name": "to",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:RelativeTimeRange",
+        "kind": "FIELD",
+        "name": "relative",
+        "to": "schema:TimePeriod"
+      },
+      {
+        "from": "schema:RelativeTimeRange",
+        "kind": "FIELD",
+        "name": "n",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CheckCustomDomainAvailabilityInput",
+        "kind": "FIELD",
+        "name": "domain",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "publishPost",
+        "to": "schema:PublishPostPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "updatePost",
+        "to": "schema:UpdatePostPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "removePost",
+        "to": "schema:RemovePostPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "createDraft",
+        "to": "schema:CreateDraftPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "updateDraft",
+        "to": "schema:UpdateDraftPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "publishDraft",
+        "to": "schema:PublishDraftPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "submitDraftForReview",
+        "to": "schema:SubmitDraftForReviewPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "rejectDraftSubmission",
+        "to": "schema:RejectDraftSubmissionPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "deleteDraft",
+        "to": "schema:DeleteDraftPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "createImageUploadURL",
+        "to": "schema:CreateImageUploadPayload"
+      },
+      {
+        "from": "schema:Mutation",
+        "kind": "FIELD",
+        "name": "confirmImageUpload",
+        "to": "schema:ConfirmImageUploadPayload"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "publicationId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "contentMarkdown",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:PublishPostTagInput"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "originalArticleURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "metaTitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "metaDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "ogImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "disableComments",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "isDelisted",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "enableToc",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "publishAs",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "coAuthors",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "seriesId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:PublishPostInput",
+        "kind": "FIELD",
+        "name": "publishedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:PublishPostTagInput",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PublishPostTagInput",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "contentMarkdown",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "coverImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:PublishPostTagInput"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "originalArticleURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "metaTitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "metaDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "ogImage",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "disableComments",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "isDelisted",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "enableToc",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "publishAs",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "coAuthors",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "seriesId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:UpdatePostInput",
+        "kind": "FIELD",
+        "name": "publishedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:RemovePostInput",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:CreateImageUploadInput",
+        "kind": "FIELD",
+        "name": "contentType",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateImageUploadPayload",
+        "kind": "FIELD",
+        "name": "presignedPut",
+        "to": "schema:PresignedPut"
+      },
+      {
+        "from": "schema:PresignedPut",
+        "kind": "FIELD",
+        "name": "url",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PresignedPut",
+        "kind": "FIELD",
+        "name": "cdnUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PresignedPut",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ConfirmImageUploadInput",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ConfirmImageUploadPayload",
+        "kind": "FIELD",
+        "name": "ok",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ConfirmImageUploadPayload",
+        "kind": "FIELD",
+        "name": "cdnUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateDraftSettingsInput",
+        "kind": "FIELD",
+        "name": "enableTableOfContent",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CreateDraftSettingsInput",
+        "kind": "FIELD",
+        "name": "delist",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CreateDraftSettingsInput",
+        "kind": "FIELD",
+        "name": "activateNewsletter",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CreateDraftSettingsInput",
+        "kind": "FIELD",
+        "name": "slugOverridden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:MetaTagsInput",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MetaTagsInput",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MetaTagsInput",
+        "kind": "FIELD",
+        "name": "image",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImageOptionsInput",
+        "kind": "FIELD",
+        "name": "coverImageURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImageOptionsInput",
+        "kind": "FIELD",
+        "name": "coverImageAttribution",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImageOptionsInput",
+        "kind": "FIELD",
+        "name": "coverImagePhotographer",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CoverImageOptionsInput",
+        "kind": "FIELD",
+        "name": "isCoverAttributionHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CoverImageOptionsInput",
+        "kind": "FIELD",
+        "name": "stickCoverToBottom",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "publicationId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "contentMarkdown",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:PublishPostTagInput"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "seriesId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "disableComments",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "originalArticleURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "publishedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "settings",
+        "to": "schema:CreateDraftSettingsInput"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "metaTags",
+        "to": "schema:MetaTagsInput"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "coverImageOptions",
+        "to": "schema:CoverImageOptionsInput"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "publishAs",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:CreateDraftInput",
+        "kind": "FIELD",
+        "name": "coAuthors",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "draftId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "contentMarkdown",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:PublishPostTagInput"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "seriesId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "disableComments",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "originalArticleURL",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "publishedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "settings",
+        "to": "schema:CreateDraftSettingsInput"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "metaTags",
+        "to": "schema:MetaTagsInput"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "coverImageOptions",
+        "to": "schema:CoverImageOptionsInput"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "publishAs",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:UpdateDraftInput",
+        "kind": "FIELD",
+        "name": "coAuthors",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "schema:PublishPostPayload",
+        "kind": "FIELD",
+        "name": "post",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:UpdatePostPayload",
+        "kind": "FIELD",
+        "name": "post",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:RemovePostPayload",
+        "kind": "FIELD",
+        "name": "post",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:CreateDraftPayload",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:UpdateDraftPayload",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:PublishDraftInput",
+        "kind": "FIELD",
+        "name": "draftId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PublishDraftPayload",
+        "kind": "FIELD",
+        "name": "post",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:SubmitDraftForReviewInput",
+        "kind": "FIELD",
+        "name": "draftId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SubmitDraftForReviewPayload",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:RejectDraftSubmissionInput",
+        "kind": "FIELD",
+        "name": "draftId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:RejectDraftSubmissionPayload",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:DeleteDraftInput",
+        "kind": "FIELD",
+        "name": "draftId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:DeleteDraftPayload",
+        "kind": "FIELD",
+        "name": "draft",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "schema:CheckCustomDomainAvailabilityResult",
+        "kind": "FIELD",
+        "name": "available",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CheckCustomDomainAvailabilityResult",
+        "kind": "FIELD",
+        "name": "message",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CheckSubdomainAvailabilityResult",
+        "kind": "FIELD",
+        "name": "available",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CheckSubdomainAvailabilityResult",
+        "kind": "FIELD",
+        "name": "message",
+        "to": "schema:String"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:publishPost"
+      },
+      {
+        "from": "operation:mutation:publishPost",
+        "kind": "RETURNS",
+        "to": "schema:PublishPostPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:updatePost"
+      },
+      {
+        "from": "operation:mutation:updatePost",
+        "kind": "RETURNS",
+        "to": "schema:UpdatePostPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:removePost"
+      },
+      {
+        "from": "operation:mutation:removePost",
+        "kind": "RETURNS",
+        "to": "schema:RemovePostPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:createDraft"
+      },
+      {
+        "from": "operation:mutation:createDraft",
+        "kind": "RETURNS",
+        "to": "schema:CreateDraftPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:updateDraft"
+      },
+      {
+        "from": "operation:mutation:updateDraft",
+        "kind": "RETURNS",
+        "to": "schema:UpdateDraftPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:publishDraft"
+      },
+      {
+        "from": "operation:mutation:publishDraft",
+        "kind": "RETURNS",
+        "to": "schema:PublishDraftPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:submitDraftForReview"
+      },
+      {
+        "from": "operation:mutation:submitDraftForReview",
+        "kind": "RETURNS",
+        "to": "schema:SubmitDraftForReviewPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:rejectDraftSubmission"
+      },
+      {
+        "from": "operation:mutation:rejectDraftSubmission",
+        "kind": "RETURNS",
+        "to": "schema:RejectDraftSubmissionPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:deleteDraft"
+      },
+      {
+        "from": "operation:mutation:deleteDraft",
+        "kind": "RETURNS",
+        "to": "schema:DeleteDraftPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:createImageUploadURL"
+      },
+      {
+        "from": "operation:mutation:createImageUploadURL",
+        "kind": "RETURNS",
+        "to": "schema:CreateImageUploadPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:mutation:confirmImageUpload"
+      },
+      {
+        "from": "operation:mutation:confirmImageUpload",
+        "kind": "RETURNS",
+        "to": "schema:ConfirmImageUploadPayload"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:me"
+      },
+      {
+        "from": "operation:query:me",
+        "kind": "RETURNS",
+        "to": "schema:MyUser"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:post"
+      },
+      {
+        "from": "operation:query:post",
+        "kind": "RETURNS",
+        "to": "schema:Post"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:publication"
+      },
+      {
+        "from": "operation:query:publication",
+        "kind": "RETURNS",
+        "to": "schema:Publication"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:user"
+      },
+      {
+        "from": "operation:query:user",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:tag"
+      },
+      {
+        "from": "operation:query:tag",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:feed"
+      },
+      {
+        "from": "operation:query:feed",
+        "kind": "RETURNS",
+        "to": "schema:FeedPostConnection"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:draft"
+      },
+      {
+        "from": "operation:query:draft",
+        "kind": "RETURNS",
+        "to": "schema:Draft"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:scheduledPost"
+      },
+      {
+        "from": "operation:query:scheduledPost",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledPost"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:checkCustomDomainAvailability"
+      },
+      {
+        "from": "operation:query:checkCustomDomainAvailability",
+        "kind": "RETURNS",
+        "to": "schema:CheckCustomDomainAvailabilityResult"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:checkSubdomainAvailability"
+      },
+      {
+        "from": "operation:query:checkSubdomainAvailability",
+        "kind": "RETURNS",
+        "to": "schema:CheckSubdomainAvailabilityResult"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:searchPostsOfPublication"
+      },
+      {
+        "from": "operation:query:searchPostsOfPublication",
+        "kind": "RETURNS",
+        "to": "schema:SearchPostConnection"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:topCommenters"
+      },
+      {
+        "from": "operation:query:topCommenters",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "hashnode-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:documentationProject"
+      },
+      {
+        "from": "operation:query:documentationProject",
+        "kind": "RETURNS",
+        "to": "schema:DocumentationProject"
+      },
+      {
+        "from": "operation:mutation:publishPost",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:PublishPostInput"
+      },
+      {
+        "from": "operation:mutation:updatePost",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:UpdatePostInput"
+      },
+      {
+        "from": "operation:mutation:removePost",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:RemovePostInput"
+      },
+      {
+        "from": "operation:mutation:createDraft",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:CreateDraftInput"
+      },
+      {
+        "from": "operation:mutation:updateDraft",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:UpdateDraftInput"
+      },
+      {
+        "from": "operation:mutation:publishDraft",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:PublishDraftInput"
+      },
+      {
+        "from": "operation:mutation:submitDraftForReview",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:SubmitDraftForReviewInput"
+      },
+      {
+        "from": "operation:mutation:rejectDraftSubmission",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:RejectDraftSubmissionInput"
+      },
+      {
+        "from": "operation:mutation:deleteDraft",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:DeleteDraftInput"
+      },
+      {
+        "from": "operation:mutation:createImageUploadURL",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:CreateImageUploadInput"
+      },
+      {
+        "from": "operation:mutation:confirmImageUpload",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:ConfirmImageUploadInput"
+      },
+      {
+        "from": "operation:query:post",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:publication",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "operation:query:publication",
+        "kind": "ACCEPTS",
+        "name": "host",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:user",
+        "kind": "ACCEPTS",
+        "name": "username",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:tag",
+        "kind": "ACCEPTS",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:feed",
+        "kind": "ACCEPTS",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:feed",
+        "kind": "ACCEPTS",
+        "name": "after",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:feed",
+        "kind": "ACCEPTS",
+        "name": "filter",
+        "to": "schema:FeedFilter"
+      },
+      {
+        "from": "operation:query:draft",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "operation:query:scheduledPost",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "operation:query:checkCustomDomainAvailability",
+        "kind": "ACCEPTS",
+        "name": "input",
+        "to": "schema:CheckCustomDomainAvailabilityInput"
+      },
+      {
+        "from": "operation:query:checkSubdomainAvailability",
+        "kind": "ACCEPTS",
+        "name": "subdomain",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchPostsOfPublication",
+        "kind": "ACCEPTS",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:searchPostsOfPublication",
+        "kind": "ACCEPTS",
+        "name": "after",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchPostsOfPublication",
+        "kind": "ACCEPTS",
+        "name": "sortBy",
+        "to": "schema:PostSortBy"
+      },
+      {
+        "from": "operation:query:searchPostsOfPublication",
+        "kind": "ACCEPTS",
+        "name": "filter",
+        "to": "schema:SearchPostsOfPublicationFilter"
+      },
+      {
+        "from": "operation:query:topCommenters",
+        "kind": "ACCEPTS",
+        "name": "publicationId",
+        "to": "schema:ObjectId"
+      },
+      {
+        "from": "operation:query:topCommenters",
+        "kind": "ACCEPTS",
+        "name": "limit",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:documentationProject",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:documentationProject",
+        "kind": "ACCEPTS",
+        "name": "host",
+        "to": "schema:String"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "hashnode-graphql",
+        "kind": "application"
+      },
+      {
+        "id": "schema:AbsoluteTimeRange",
+        "kind": "schema",
+        "name": "AbsoluteTimeRange"
+      },
+      {
+        "id": "schema:AeoCrawlerSettings",
+        "kind": "schema",
+        "name": "AeoCrawlerSettings"
+      },
+      {
+        "id": "schema:Badge",
+        "kind": "schema",
+        "name": "Badge"
+      },
+      {
+        "id": "schema:Boolean",
+        "kind": "schema",
+        "name": "Boolean"
+      },
+      {
+        "id": "schema:CheckCustomDomainAvailabilityInput",
+        "kind": "schema",
+        "name": "CheckCustomDomainAvailabilityInput"
+      },
+      {
+        "id": "schema:CheckCustomDomainAvailabilityResult",
+        "kind": "schema",
+        "name": "CheckCustomDomainAvailabilityResult"
+      },
+      {
+        "id": "schema:CheckSubdomainAvailabilityResult",
+        "kind": "schema",
+        "name": "CheckSubdomainAvailabilityResult"
+      },
+      {
+        "id": "schema:Comment",
+        "kind": "schema",
+        "name": "Comment"
+      },
+      {
+        "id": "schema:CommentConnection",
+        "kind": "schema",
+        "name": "CommentConnection"
+      },
+      {
+        "id": "schema:CommentEdge",
+        "kind": "schema",
+        "name": "CommentEdge"
+      },
+      {
+        "id": "schema:ConfirmImageUploadInput",
+        "kind": "schema",
+        "name": "ConfirmImageUploadInput"
+      },
+      {
+        "id": "schema:ConfirmImageUploadPayload",
+        "kind": "schema",
+        "name": "ConfirmImageUploadPayload"
+      },
+      {
+        "id": "schema:Content",
+        "kind": "schema",
+        "name": "Content"
+      },
+      {
+        "id": "schema:CoverImage",
+        "kind": "schema",
+        "name": "CoverImage"
+      },
+      {
+        "id": "schema:CoverImageOptionsInput",
+        "kind": "schema",
+        "name": "CoverImageOptionsInput"
+      },
+      {
+        "id": "schema:CreateDraftInput",
+        "kind": "schema",
+        "name": "CreateDraftInput"
+      },
+      {
+        "id": "schema:CreateDraftPayload",
+        "kind": "schema",
+        "name": "CreateDraftPayload"
+      },
+      {
+        "id": "schema:CreateDraftSettingsInput",
+        "kind": "schema",
+        "name": "CreateDraftSettingsInput"
+      },
+      {
+        "id": "schema:CreateImageUploadInput",
+        "kind": "schema",
+        "name": "CreateImageUploadInput"
+      },
+      {
+        "id": "schema:CreateImageUploadPayload",
+        "kind": "schema",
+        "name": "CreateImageUploadPayload"
+      },
+      {
+        "id": "schema:CustomRule",
+        "kind": "schema",
+        "name": "CustomRule"
+      },
+      {
+        "id": "schema:DarkModePreferences",
+        "kind": "schema",
+        "name": "DarkModePreferences"
+      },
+      {
+        "id": "schema:DateTime",
+        "kind": "schema",
+        "name": "DateTime"
+      },
+      {
+        "id": "schema:DeleteDraftInput",
+        "kind": "schema",
+        "name": "DeleteDraftInput"
+      },
+      {
+        "id": "schema:DeleteDraftPayload",
+        "kind": "schema",
+        "name": "DeleteDraftPayload"
+      },
+      {
+        "id": "schema:DocumentationProject",
+        "kind": "schema",
+        "name": "DocumentationProject"
+      },
+      {
+        "id": "schema:Domain",
+        "kind": "schema",
+        "name": "Domain"
+      },
+      {
+        "id": "schema:DomainInfo",
+        "kind": "schema",
+        "name": "DomainInfo"
+      },
+      {
+        "id": "schema:Draft",
+        "kind": "schema",
+        "name": "Draft"
+      },
+      {
+        "id": "schema:DraftConnection",
+        "kind": "schema",
+        "name": "DraftConnection"
+      },
+      {
+        "id": "schema:DraftEdge",
+        "kind": "schema",
+        "name": "DraftEdge"
+      },
+      {
+        "id": "schema:DraftSettings",
+        "kind": "schema",
+        "name": "DraftSettings"
+      },
+      {
+        "id": "schema:EnabledPages",
+        "kind": "schema",
+        "name": "EnabledPages"
+      },
+      {
+        "id": "schema:FeedFilter",
+        "kind": "schema",
+        "name": "FeedFilter"
+      },
+      {
+        "id": "schema:FeedPostConnection",
+        "kind": "schema",
+        "name": "FeedPostConnection"
+      },
+      {
+        "id": "schema:Float",
+        "kind": "schema",
+        "name": "Float"
+      },
+      {
+        "id": "schema:GPTBotCrawlingFeature",
+        "kind": "schema",
+        "name": "GPTBotCrawlingFeature"
+      },
+      {
+        "id": "schema:Guide",
+        "kind": "schema",
+        "name": "Guide"
+      },
+      {
+        "id": "schema:GuideConnection",
+        "kind": "schema",
+        "name": "GuideConnection"
+      },
+      {
+        "id": "schema:GuideEdge",
+        "kind": "schema",
+        "name": "GuideEdge"
+      },
+      {
+        "id": "schema:HeadlessCMSFeature",
+        "kind": "schema",
+        "name": "HeadlessCMSFeature"
+      },
+      {
+        "id": "schema:ID",
+        "kind": "schema",
+        "name": "ID"
+      },
+      {
+        "id": "schema:ImprintV2",
+        "kind": "schema",
+        "name": "ImprintV2"
+      },
+      {
+        "id": "schema:Int",
+        "kind": "schema",
+        "name": "Int"
+      },
+      {
+        "id": "schema:JSONObject",
+        "kind": "schema",
+        "name": "JSONObject"
+      },
+      {
+        "id": "schema:MetaTagsInput",
+        "kind": "schema",
+        "name": "MetaTagsInput"
+      },
+      {
+        "id": "schema:Mutation",
+        "kind": "schema",
+        "name": "Mutation"
+      },
+      {
+        "id": "schema:MyUser",
+        "kind": "schema",
+        "name": "MyUser"
+      },
+      {
+        "id": "schema:NewsletterFeature",
+        "kind": "schema",
+        "name": "NewsletterFeature"
+      },
+      {
+        "id": "schema:ObjectId",
+        "kind": "schema",
+        "name": "ObjectId"
+      },
+      {
+        "id": "schema:OffsetPageInfo",
+        "kind": "schema",
+        "name": "OffsetPageInfo"
+      },
+      {
+        "id": "schema:OpenGraphMetaData",
+        "kind": "schema",
+        "name": "OpenGraphMetaData"
+      },
+      {
+        "id": "schema:PageInfo",
+        "kind": "schema",
+        "name": "PageInfo"
+      },
+      {
+        "id": "schema:PendingInvite",
+        "kind": "schema",
+        "name": "PendingInvite"
+      },
+      {
+        "id": "schema:PendingInviteConnection",
+        "kind": "schema",
+        "name": "PendingInviteConnection"
+      },
+      {
+        "id": "schema:Post",
+        "kind": "schema",
+        "name": "Post"
+      },
+      {
+        "id": "schema:PostConnection",
+        "kind": "schema",
+        "name": "PostConnection"
+      },
+      {
+        "id": "schema:PostEdge",
+        "kind": "schema",
+        "name": "PostEdge"
+      },
+      {
+        "id": "schema:PostFaqItem",
+        "kind": "schema",
+        "name": "PostFaqItem"
+      },
+      {
+        "id": "schema:PostFeatures",
+        "kind": "schema",
+        "name": "PostFeatures"
+      },
+      {
+        "id": "schema:PostPreferences",
+        "kind": "schema",
+        "name": "PostPreferences"
+      },
+      {
+        "id": "schema:PostSortBy",
+        "kind": "schema",
+        "name": "PostSortBy"
+      },
+      {
+        "id": "schema:PresignedPut",
+        "kind": "schema",
+        "name": "PresignedPut"
+      },
+      {
+        "id": "schema:ProTeamFeature",
+        "kind": "schema",
+        "name": "ProTeamFeature"
+      },
+      {
+        "id": "schema:PublicMembers",
+        "kind": "schema",
+        "name": "PublicMembers"
+      },
+      {
+        "id": "schema:Publication",
+        "kind": "schema",
+        "name": "Publication"
+      },
+      {
+        "id": "schema:PublicationAeoSettings",
+        "kind": "schema",
+        "name": "PublicationAeoSettings"
+      },
+      {
+        "id": "schema:PublicationConnection",
+        "kind": "schema",
+        "name": "PublicationConnection"
+      },
+      {
+        "id": "schema:PublicationEdge",
+        "kind": "schema",
+        "name": "PublicationEdge"
+      },
+      {
+        "id": "schema:PublicationFeatures",
+        "kind": "schema",
+        "name": "PublicationFeatures"
+      },
+      {
+        "id": "schema:PublicationIntegrations",
+        "kind": "schema",
+        "name": "PublicationIntegrations"
+      },
+      {
+        "id": "schema:PublicationInvite",
+        "kind": "schema",
+        "name": "PublicationInvite"
+      },
+      {
+        "id": "schema:PublicationLinks",
+        "kind": "schema",
+        "name": "PublicationLinks"
+      },
+      {
+        "id": "schema:PublicationMember",
+        "kind": "schema",
+        "name": "PublicationMember"
+      },
+      {
+        "id": "schema:PublicationMemberConnection",
+        "kind": "schema",
+        "name": "PublicationMemberConnection"
+      },
+      {
+        "id": "schema:PublicationMemberEdge",
+        "kind": "schema",
+        "name": "PublicationMemberEdge"
+      },
+      {
+        "id": "schema:PublicationNavbarItem",
+        "kind": "schema",
+        "name": "PublicationNavbarItem"
+      },
+      {
+        "id": "schema:PublicationPostConnectionFilter",
+        "kind": "schema",
+        "name": "PublicationPostConnectionFilter"
+      },
+      {
+        "id": "schema:PublicationPreferences",
+        "kind": "schema",
+        "name": "PublicationPreferences"
+      },
+      {
+        "id": "schema:PublishDraftInput",
+        "kind": "schema",
+        "name": "PublishDraftInput"
+      },
+      {
+        "id": "schema:PublishDraftPayload",
+        "kind": "schema",
+        "name": "PublishDraftPayload"
+      },
+      {
+        "id": "schema:PublishPostInput",
+        "kind": "schema",
+        "name": "PublishPostInput"
+      },
+      {
+        "id": "schema:PublishPostPayload",
+        "kind": "schema",
+        "name": "PublishPostPayload"
+      },
+      {
+        "id": "schema:PublishPostTagInput",
+        "kind": "schema",
+        "name": "PublishPostTagInput"
+      },
+      {
+        "id": "schema:Query",
+        "kind": "schema",
+        "name": "Query"
+      },
+      {
+        "id": "schema:ReadTimeFeature",
+        "kind": "schema",
+        "name": "ReadTimeFeature"
+      },
+      {
+        "id": "schema:RecommendedPublicationEdge",
+        "kind": "schema",
+        "name": "RecommendedPublicationEdge"
+      },
+      {
+        "id": "schema:RedirectedPost",
+        "kind": "schema",
+        "name": "RedirectedPost"
+      },
+      {
+        "id": "schema:RedirectionRule",
+        "kind": "schema",
+        "name": "RedirectionRule"
+      },
+      {
+        "id": "schema:RejectDraftSubmissionInput",
+        "kind": "schema",
+        "name": "RejectDraftSubmissionInput"
+      },
+      {
+        "id": "schema:RejectDraftSubmissionPayload",
+        "kind": "schema",
+        "name": "RejectDraftSubmissionPayload"
+      },
+      {
+        "id": "schema:RelativeTimeRange",
+        "kind": "schema",
+        "name": "RelativeTimeRange"
+      },
+      {
+        "id": "schema:RemovePostInput",
+        "kind": "schema",
+        "name": "RemovePostInput"
+      },
+      {
+        "id": "schema:RemovePostPayload",
+        "kind": "schema",
+        "name": "RemovePostPayload"
+      },
+      {
+        "id": "schema:RoleBasedInvite",
+        "kind": "schema",
+        "name": "RoleBasedInvite"
+      },
+      {
+        "id": "schema:RoleBasedInviteConnection",
+        "kind": "schema",
+        "name": "RoleBasedInviteConnection"
+      },
+      {
+        "id": "schema:SEO",
+        "kind": "schema",
+        "name": "SEO"
+      },
+      {
+        "id": "schema:ScheduledPost",
+        "kind": "schema",
+        "name": "ScheduledPost"
+      },
+      {
+        "id": "schema:SearchPostConnection",
+        "kind": "schema",
+        "name": "SearchPostConnection"
+      },
+      {
+        "id": "schema:SearchPostsOfPublicationFilter",
+        "kind": "schema",
+        "name": "SearchPostsOfPublicationFilter"
+      },
+      {
+        "id": "schema:Series",
+        "kind": "schema",
+        "name": "Series"
+      },
+      {
+        "id": "schema:SeriesConnection",
+        "kind": "schema",
+        "name": "SeriesConnection"
+      },
+      {
+        "id": "schema:SeriesEdge",
+        "kind": "schema",
+        "name": "SeriesEdge"
+      },
+      {
+        "id": "schema:SocialMediaLinks",
+        "kind": "schema",
+        "name": "SocialMediaLinks"
+      },
+      {
+        "id": "schema:StaticPage",
+        "kind": "schema",
+        "name": "StaticPage"
+      },
+      {
+        "id": "schema:StaticPageConnection",
+        "kind": "schema",
+        "name": "StaticPageConnection"
+      },
+      {
+        "id": "schema:StaticPageEdge",
+        "kind": "schema",
+        "name": "StaticPageEdge"
+      },
+      {
+        "id": "schema:String",
+        "kind": "schema",
+        "name": "String"
+      },
+      {
+        "id": "schema:SubmitDraftForReviewInput",
+        "kind": "schema",
+        "name": "SubmitDraftForReviewInput"
+      },
+      {
+        "id": "schema:SubmitDraftForReviewPayload",
+        "kind": "schema",
+        "name": "SubmitDraftForReviewPayload"
+      },
+      {
+        "id": "schema:TableOfContents",
+        "kind": "schema",
+        "name": "TableOfContents"
+      },
+      {
+        "id": "schema:TableOfContentsItem",
+        "kind": "schema",
+        "name": "TableOfContentsItem"
+      },
+      {
+        "id": "schema:Tag",
+        "kind": "schema",
+        "name": "Tag"
+      },
+      {
+        "id": "schema:TextSelectionSharerFeature",
+        "kind": "schema",
+        "name": "TextSelectionSharerFeature"
+      },
+      {
+        "id": "schema:TimeFilter",
+        "kind": "schema",
+        "name": "TimeFilter"
+      },
+      {
+        "id": "schema:TimePeriod",
+        "kind": "schema",
+        "name": "TimePeriod"
+      },
+      {
+        "id": "schema:UpdateDraftInput",
+        "kind": "schema",
+        "name": "UpdateDraftInput"
+      },
+      {
+        "id": "schema:UpdateDraftPayload",
+        "kind": "schema",
+        "name": "UpdateDraftPayload"
+      },
+      {
+        "id": "schema:UpdatePostInput",
+        "kind": "schema",
+        "name": "UpdatePostInput"
+      },
+      {
+        "id": "schema:UpdatePostPayload",
+        "kind": "schema",
+        "name": "UpdatePostPayload"
+      },
+      {
+        "id": "schema:User",
+        "kind": "schema",
+        "name": "User"
+      },
+      {
+        "id": "schema:UserConnection",
+        "kind": "schema",
+        "name": "UserConnection"
+      },
+      {
+        "id": "schema:UserEdge",
+        "kind": "schema",
+        "name": "UserEdge"
+      },
+      {
+        "id": "schema:UserPublicationRole",
+        "kind": "schema",
+        "name": "UserPublicationRole"
+      },
+      {
+        "id": "schema:ViewCountFeature",
+        "kind": "schema",
+        "name": "ViewCountFeature"
+      },
+      {
+        "id": "schema:Widget",
+        "kind": "schema",
+        "name": "Widget"
+      },
+      {
+        "id": "schema:WidgetPinLocation",
+        "kind": "schema",
+        "name": "WidgetPinLocation"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "PublishPostInput!"
+          }
+        ],
+        "description": "Publish a new post to a publication. Requires authentication. Requires the\npublication to be on the Pro plan.",
+        "field": "publishPost",
+        "id": "operation:mutation:publishPost",
+        "kind": "operation",
+        "name": "mutation.publishPost",
+        "operation": "mutation",
+        "return_type": "PublishPostPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "UpdatePostInput!"
+          }
+        ],
+        "description": "Update an existing post. Requires authentication. Requires the publication\nto be on the Pro plan.",
+        "field": "updatePost",
+        "id": "operation:mutation:updatePost",
+        "kind": "operation",
+        "name": "mutation.updatePost",
+        "operation": "mutation",
+        "return_type": "UpdatePostPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "RemovePostInput!"
+          }
+        ],
+        "description": "Removes a post from your publication (soft delete). It disappears from\nfeeds and listings and its slug becomes available for reuse. Only the\npost's author or a publication admin can remove it. Requires an active\nPro plan and authentication.",
+        "field": "removePost",
+        "id": "operation:mutation:removePost",
+        "kind": "operation",
+        "name": "mutation.removePost",
+        "operation": "mutation",
+        "return_type": "RemovePostPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "CreateDraftInput!"
+          }
+        ],
+        "description": "Create a new draft on a publication without publishing it. Requires\nauthentication. Requires the publication to be on the Pro plan.",
+        "field": "createDraft",
+        "id": "operation:mutation:createDraft",
+        "kind": "operation",
+        "name": "mutation.createDraft",
+        "operation": "mutation",
+        "return_type": "CreateDraftPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "UpdateDraftInput!"
+          }
+        ],
+        "description": "Update an existing draft. Requires authentication. Requires the publication\nto be on the Pro plan.",
+        "field": "updateDraft",
+        "id": "operation:mutation:updateDraft",
+        "kind": "operation",
+        "name": "mutation.updateDraft",
+        "operation": "mutation",
+        "return_type": "UpdateDraftPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "PublishDraftInput!"
+          }
+        ],
+        "description": "Publish an existing draft as a post. The draft is soft-deleted once the post\nis created. Requires authentication. Requires the publication to be on the\nPro plan.",
+        "field": "publishDraft",
+        "id": "operation:mutation:publishDraft",
+        "kind": "operation",
+        "name": "mutation.publishDraft",
+        "operation": "mutation",
+        "return_type": "PublishDraftPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "SubmitDraftForReviewInput!"
+          }
+        ],
+        "description": "Submit a draft on a team publication for editor review. Requires\nauthentication. Requires the publication to be on the Pro plan.",
+        "field": "submitDraftForReview",
+        "id": "operation:mutation:submitDraftForReview",
+        "kind": "operation",
+        "name": "mutation.submitDraftForReview",
+        "operation": "mutation",
+        "return_type": "SubmitDraftForReviewPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "RejectDraftSubmissionInput!"
+          }
+        ],
+        "description": "Reject a draft that was previously submitted for review. Only publication\nowners and admins can reject. Requires authentication. Requires the\npublication to be on the Pro plan.",
+        "field": "rejectDraftSubmission",
+        "id": "operation:mutation:rejectDraftSubmission",
+        "kind": "operation",
+        "name": "mutation.rejectDraftSubmission",
+        "operation": "mutation",
+        "return_type": "RejectDraftSubmissionPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "DeleteDraftInput!"
+          }
+        ],
+        "description": "Delete a draft. The draft's author can delete their own draft; publication\nowners and admins can delete any draft in the publication. Requires\nauthentication. Requires the publication to be on the Pro plan.",
+        "field": "deleteDraft",
+        "id": "operation:mutation:deleteDraft",
+        "kind": "operation",
+        "name": "mutation.deleteDraft",
+        "operation": "mutation",
+        "return_type": "DeleteDraftPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "CreateImageUploadInput!"
+          }
+        ],
+        "description": "Returns a presigned URL for uploading an image to Hashnode's CDN. Requires\nauthentication and a Pro plan.",
+        "field": "createImageUploadURL",
+        "id": "operation:mutation:createImageUploadURL",
+        "kind": "operation",
+        "name": "mutation.createImageUploadURL",
+        "operation": "mutation",
+        "return_type": "CreateImageUploadPayload!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "ConfirmImageUploadInput!"
+          }
+        ],
+        "description": "Verifies a PUT-uploaded image (from presignedPut) is within the size limit,\ndeleting it if not. Call this after a successful PUT to presignedPut.url.\nRequires authentication.",
+        "field": "confirmImageUpload",
+        "id": "operation:mutation:confirmImageUpload",
+        "kind": "operation",
+        "name": "mutation.confirmImageUpload",
+        "operation": "mutation",
+        "return_type": "ConfirmImageUploadPayload!"
+      },
+      {
+        "arguments": [],
+        "description": "Returns the current authenticated user. Requires authentication.",
+        "field": "me",
+        "id": "operation:query:me",
+        "kind": "operation",
+        "name": "me",
+        "operation": "query",
+        "return_type": "MyUser"
+      },
+      {
+        "arguments": [
+          {
+            "name": "id",
+            "type": "ID!"
+          }
+        ],
+        "description": "Returns a post by ID. Requires the post's publication to be on the Pro plan.",
+        "field": "post",
+        "id": "operation:query:post",
+        "kind": "operation",
+        "name": "post",
+        "operation": "query",
+        "return_type": "Post"
+      },
+      {
+        "arguments": [
+          {
+            "name": "id",
+            "type": "ObjectId"
+          },
+          {
+            "name": "host",
+            "type": "String"
+          }
+        ],
+        "description": "Returns a publication by ID or host. Requires the publication to be on the\nPro plan.",
+        "field": "publication",
+        "id": "operation:query:publication",
+        "kind": "operation",
+        "name": "publication",
+        "operation": "query",
+        "return_type": "Publication"
+      },
+      {
+        "arguments": [
+          {
+            "name": "username",
+            "type": "String!"
+          }
+        ],
+        "description": "Returns a user by username",
+        "field": "user",
+        "id": "operation:query:user",
+        "kind": "operation",
+        "name": "user",
+        "operation": "query",
+        "return_type": "User"
+      },
+      {
+        "arguments": [
+          {
+            "name": "slug",
+            "type": "String!"
+          }
+        ],
+        "description": "Returns a tag by slug",
+        "field": "tag",
+        "id": "operation:query:tag",
+        "kind": "operation",
+        "name": "tag",
+        "operation": "query",
+        "return_type": "Tag"
+      },
+      {
+        "arguments": [
+          {
+            "name": "first",
+            "type": "Int!"
+          },
+          {
+            "name": "after",
+            "type": "String"
+          },
+          {
+            "name": "filter",
+            "type": "FeedFilter"
+          }
+        ],
+        "description": "Returns a paginated feed of posts",
+        "field": "feed",
+        "id": "operation:query:feed",
+        "kind": "operation",
+        "name": "feed",
+        "operation": "query",
+        "return_type": "FeedPostConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "id",
+            "type": "ObjectId!"
+          }
+        ],
+        "description": "Returns a draft by ID. Requires authentication and the draft's publication\nto be on the Pro plan.",
+        "field": "draft",
+        "id": "operation:query:draft",
+        "kind": "operation",
+        "name": "draft",
+        "operation": "query",
+        "return_type": "Draft"
+      },
+      {
+        "arguments": [
+          {
+            "name": "id",
+            "type": "ObjectId!"
+          }
+        ],
+        "description": "Returns a scheduled post. Requires authentication and the publication to be\non the Pro plan.",
+        "field": "scheduledPost",
+        "id": "operation:query:scheduledPost",
+        "kind": "operation",
+        "name": "scheduledPost",
+        "operation": "query",
+        "return_type": "ScheduledPost"
+      },
+      {
+        "arguments": [
+          {
+            "name": "input",
+            "type": "CheckCustomDomainAvailabilityInput!"
+          }
+        ],
+        "description": "Check if a custom domain is available",
+        "field": "checkCustomDomainAvailability",
+        "id": "operation:query:checkCustomDomainAvailability",
+        "kind": "operation",
+        "name": "checkCustomDomainAvailability",
+        "operation": "query",
+        "return_type": "CheckCustomDomainAvailabilityResult!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "subdomain",
+            "type": "String!"
+          }
+        ],
+        "description": "Check if a subdomain is available",
+        "field": "checkSubdomainAvailability",
+        "id": "operation:query:checkSubdomainAvailability",
+        "kind": "operation",
+        "name": "checkSubdomainAvailability",
+        "operation": "query",
+        "return_type": "CheckSubdomainAvailabilityResult!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "first",
+            "type": "Int!"
+          },
+          {
+            "name": "after",
+            "type": "String"
+          },
+          {
+            "name": "sortBy",
+            "type": "PostSortBy"
+          },
+          {
+            "name": "filter",
+            "type": "SearchPostsOfPublicationFilter!"
+          }
+        ],
+        "description": "Search posts within a publication. Needs at least one filter, such as a\nsearch query. Requires the publication to be on the Pro plan.",
+        "field": "searchPostsOfPublication",
+        "id": "operation:query:searchPostsOfPublication",
+        "kind": "operation",
+        "name": "searchPostsOfPublication",
+        "operation": "query",
+        "return_type": "SearchPostConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "publicationId",
+            "type": "ObjectId!"
+          },
+          {
+            "name": "limit",
+            "type": "Int"
+          }
+        ],
+        "description": "Returns the users who comment most on a publication's posts. Requires the\npublication to be on the Pro plan.",
+        "field": "topCommenters",
+        "id": "operation:query:topCommenters",
+        "kind": "operation",
+        "name": "topCommenters",
+        "operation": "query",
+        "return_type": "[User!]!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "id",
+            "type": "ID"
+          },
+          {
+            "name": "host",
+            "type": "String"
+          }
+        ],
+        "description": "Get documentation project by ID or host",
+        "field": "documentationProject",
+        "id": "operation:query:documentationProject",
+        "kind": "operation",
+        "name": "documentationProject",
+        "operation": "query",
+        "return_type": "DocumentationProject"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "hashnode-graphql"
+    },
+    "spec": {
+      "base": {
+        "protocol": "graphql",
+        "specification": {
+          "text": "scalar DateTime\n\nscalar ObjectId\n\n\"\"\"Arbitrary JSON object\"\"\"\nscalar JSONObject\n\ntype Query {\n  \"\"\"Returns the current authenticated user. Requires authentication.\"\"\"\n  me: MyUser\n\n  \"\"\"\n  Returns a post by ID. Requires the post's publication to be on the Pro plan.\n  \"\"\"\n  post(id: ID!): Post\n\n  \"\"\"\n  Returns a publication by ID or host. Requires the publication to be on the\n  Pro plan.\n  \"\"\"\n  publication(id: ObjectId, host: String): Publication\n\n  \"\"\"Returns a user by username\"\"\"\n  user(username: String!): User\n\n  \"\"\"Returns a tag by slug\"\"\"\n  tag(slug: String!): Tag\n\n  \"\"\"Returns a paginated feed of posts\"\"\"\n  feed(first: Int!, after: String, filter: FeedFilter): FeedPostConnection!\n\n  \"\"\"\n  Returns a draft by ID. Requires authentication and the draft's publication\n  to be on the Pro plan.\n  \"\"\"\n  draft(id: ObjectId!): Draft\n\n  \"\"\"\n  Returns a scheduled post. Requires authentication and the publication to be\n  on the Pro plan.\n  \"\"\"\n  scheduledPost(id: ObjectId!): ScheduledPost\n\n  \"\"\"Check if a custom domain is available\"\"\"\n  checkCustomDomainAvailability(input: CheckCustomDomainAvailabilityInput!): CheckCustomDomainAvailabilityResult!\n\n  \"\"\"Check if a subdomain is available\"\"\"\n  checkSubdomainAvailability(subdomain: String!): CheckSubdomainAvailabilityResult!\n\n  \"\"\"\n  Search posts within a publication. Needs at least one filter, such as a\n  search query. Requires the publication to be on the Pro plan.\n  \"\"\"\n  searchPostsOfPublication(first: Int!, after: String, sortBy: PostSortBy, filter: SearchPostsOfPublicationFilter!): SearchPostConnection!\n\n  \"\"\"\n  Returns the users who comment most on a publication's posts. Requires the\n  publication to be on the Pro plan.\n  \"\"\"\n  topCommenters(publicationId: ObjectId!, limit: Int): [User!]!\n\n  \"\"\"Get documentation project by ID or host\"\"\"\n  documentationProject(id: ID, host: String): DocumentationProject\n}\n\ntype User {\n  \"\"\"The ID of the user. It can be used to identify the user.\"\"\"\n  id: ID!\n\n  \"\"\"\n  The username of the user. It is unique and tied with user's profile URL.\n  Example - https://hashnode.com/@username\n  \"\"\"\n  username: String!\n\n  \"\"\"The name of the user.\"\"\"\n  name: String!\n\n  \"\"\"\n  The bio of the user. Visible in about me section of the user's profile.\n  \"\"\"\n  bio: Content\n\n  \"\"\"The URL to the profile picture of the user.\"\"\"\n  profilePicture: String\n  coverImage: String\n\n  \"\"\"The tagline of the user. Shown on the user's profile below the name.\"\"\"\n  tagline: String\n\n  \"\"\"The location of the user.\"\"\"\n  location: String\n\n  \"\"\"\n  The availability of the user based on tech stack and interests. Shown on the\n  \"I am available for\" section in user's profile.\n  \"\"\"\n  availableFor: String\n\n  \"\"\"Whether or not the user is deactivated.\"\"\"\n  deactivated: Boolean\n\n  \"\"\"The date the user joined Hashnode.\"\"\"\n  dateJoined: DateTime\n\n  \"\"\"\n  The number of users that follow the requested user. Visible in the user's\n  profile.\n  \"\"\"\n  followersCount: Int!\n\n  \"\"\"\n  The number of users that this user is following. Visible in the user's\n  profile.\n  \"\"\"\n  followingsCount: Int!\n  posts(first: Int!, after: String): PostConnection!\n\n  \"\"\"Publications owned by the user.\"\"\"\n  publications(first: Int!, after: String): PublicationConnection!\n\n  \"\"\"The users who are following this user\"\"\"\n  followers(first: Int!, after: String): UserConnection!\n\n  \"\"\"The users which this user is following\"\"\"\n  follows(first: Int!, after: String): UserConnection!\n\n  \"\"\"The social media links of the user. Shown on the user's profile.\"\"\"\n  socialMediaLinks: SocialMediaLinks\n\n  \"\"\"Returns a list of badges that the user has earned.\"\"\"\n  badges: [Badge!]!\n}\n\ntype MyUser {\n  \"\"\"The ID of the user. It can be used to identify the user.\"\"\"\n  id: ID!\n\n  \"\"\"\n  The username of the user. It is unique and tied with user's profile URL.\n  Example - https://hashnode.com/@username\n  \"\"\"\n  username: String!\n\n  \"\"\"The name of the user.\"\"\"\n  name: String!\n\n  \"\"\"Email address of the user.\"\"\"\n  email: String!\n\n  \"\"\"\n  The bio of the user. Visible in about me section of the user's profile.\n  \"\"\"\n  bio: Content\n\n  \"\"\"The URL to the profile picture of the user.\"\"\"\n  profilePicture: String\n  coverImage: String\n\n  \"\"\"The tagline of the user. Shown on the user's profile below the name.\"\"\"\n  tagline: String\n\n  \"\"\"The location of the user.\"\"\"\n  location: String\n\n  \"\"\"\n  The availability of the user based on tech stack and interests. Shown on the\n  \"I am available for\" section in user's profile.\n  \"\"\"\n  availableFor: String\n\n  \"\"\"The date the user joined Hashnode.\"\"\"\n  dateJoined: DateTime\n\n  \"\"\"Publications owned by the user.\"\"\"\n  publications(first: Int!, after: String): PublicationConnection!\n\n  \"\"\"The users who are following this user\"\"\"\n  followers(first: Int!, after: String): UserConnection!\n\n  \"\"\"The users which this user is following\"\"\"\n  follows(first: Int!, after: String): UserConnection!\n\n  \"\"\"The social media links of the user. Shown on the user's profile.\"\"\"\n  socialMediaLinks: SocialMediaLinks\n\n  \"\"\"\n  Returns a list of badges that the user has earned. Shown on blogs /badges\n  page.\n  \"\"\"\n  badges: [Badge!]!\n}\n\ntype SocialMediaLinks {\n  \"\"\"The user's Twitter profile.\"\"\"\n  twitter: String\n\n  \"\"\"The user's GitHub profile.\"\"\"\n  github: String\n\n  \"\"\"The user's LinkedIn profile.\"\"\"\n  linkedin: String\n\n  \"\"\"The user's website.\"\"\"\n  website: String\n\n  \"\"\"The user's Facebook profile.\"\"\"\n  facebook: String\n\n  \"\"\"The user's Instagram profile.\"\"\"\n  instagram: String\n\n  \"\"\"The user's StackOverflow profile.\"\"\"\n  stackoverflow: String\n\n  \"\"\"The user's YouTube profile.\"\"\"\n  youtube: String\n}\n\ntype Badge {\n  \"\"\"The ID of the badge.\"\"\"\n  id: ID!\n\n  \"\"\"The name of the badge.\"\"\"\n  name: String!\n\n  \"\"\"The description of the badge.\"\"\"\n  description: String\n\n  \"\"\"The image of the badge.\"\"\"\n  image: String!\n}\n\ntype PublicationFeatures {\n  \"\"\"Flag to denote if publication is a pro team's publication.\"\"\"\n  proTeam: ProTeamFeature\n\n  \"\"\"\n  Newsletter feature for the publication which adds a /newsletter route for\n  collecting subscribers and allows sending out newsletters.\n  \"\"\"\n  newsletter: NewsletterFeature\n\n  \"\"\"Show the view count for blog posts.\"\"\"\n  viewCount: ViewCountFeature\n\n  \"\"\"Show the read time for blog posts.\"\"\"\n  readTime: ReadTimeFeature\n\n  \"\"\"\n  Widget that shows up if a text on a blog post is selected. Allows for easy\n  sharing or copying of the selected text.\n  \"\"\"\n  textSelectionSharer: TextSelectionSharerFeature\n\n  \"\"\"GPT Bot crawler to index the publication.\"\"\"\n  gptBotCrawling: GPTBotCrawlingFeature\n\n  \"\"\"Headless CMS for the publication.\"\"\"\n  headlessCMS: HeadlessCMSFeature\n}\n\ntype ProTeamFeature {\n  \"\"\"A flag indicating if the Pro team feature is enabled or not.\"\"\"\n  isEnabled: Boolean!\n}\n\ntype NewsletterFeature {\n  \"\"\"A flag indicating if the newsletter feature is enabled or not.\"\"\"\n  isEnabled: Boolean!\n}\n\ntype ViewCountFeature {\n  \"\"\"A flag indicating if the view count feature is enabled or not.\"\"\"\n  isEnabled: Boolean!\n}\n\ntype ReadTimeFeature {\n  \"\"\"A flag indicating if the read time feature is enabled or not.\"\"\"\n  isEnabled: Boolean!\n}\n\ntype TextSelectionSharerFeature {\n  \"\"\"\n  A flag indicating if the text selection sharer feature is enabled or not.\n  \"\"\"\n  isEnabled: Boolean!\n}\n\ntype GPTBotCrawlingFeature {\n  \"\"\"A flag indicating if the GPT Bot Crawler feature is enabled or not.\"\"\"\n  isEnabled: Boolean!\n}\n\ntype PublicationAeoSettings {\n  isEnabled: Boolean!\n  llmsTxtEnabled: Boolean!\n  crawlers: AeoCrawlerSettings!\n}\n\ntype AeoCrawlerSettings {\n  gptBot: Boolean!\n  claudeBot: Boolean!\n  perplexityBot: Boolean!\n  googleExtended: Boolean!\n  ccBot: Boolean!\n}\n\ntype HeadlessCMSFeature {\n  \"\"\"A flag indicating if the Headless CMS feature is enabled or not.\"\"\"\n  isEnabled: Boolean!\n}\n\ntype DomainInfo {\n  \"\"\"\n  The subdomain of the publication on hashnode.dev. It will redirect to you\n  custom domain if it is present and ready.\n  \"\"\"\n  hashnodeSubdomain: String\n  domain: Domain\n  wwwPrefixedDomain: Domain\n}\n\ntype Domain {\n  host: String!\n  ready: Boolean!\n}\n\ntype RedirectionRule {\n  \"\"\"The source URL of the redirection rule.\"\"\"\n  source: String!\n  destination: String!\n  type: Int!\n}\n\ntype CustomRule {\n  type: Int!\n  path: String!\n  destination: String!\n}\n\ntype ImprintV2 {\n  html: String\n}\n\ntype PublicMembers {\n  totalDocuments: Int!\n}\n\ntype Publication {\n  \"\"\"The ID of the publication.\"\"\"\n  id: ID!\n\n  \"\"\"\n  The title of the publication. Title is used as logo if logo is not provided.\n  \"\"\"\n  title: String!\n\n  \"\"\"The title of the publication. Shown in blog home page.\"\"\"\n  displayTitle: String\n\n  \"\"\"\n  The domain of the publication. Used to access publication. Example\n  https://johndoe.com\n  \"\"\"\n  url: String\n\n  \"\"\"The canonical URL of the publication.\"\"\"\n  canonicalURL: String\n\n  \"\"\"The favicon of the publication. Used in browser tab.\"\"\"\n  favicon: String\n\n  \"\"\"The about section of the publication.\"\"\"\n  about: Content\n\n  \"\"\"The SEO description of the publication. Use seo.description instead.\"\"\"\n  descriptionSEO: String @deprecated(reason: \"Use seo.description\")\n\n  \"\"\"\n  SEO settings of the publication. Returns only explicitly set values,\n  with no fallback to the publication name or about text.\n  \"\"\"\n  seo: SEO\n\n  \"\"\"The author who owns the publication.\"\"\"\n  author: User!\n\n  \"\"\"Returns the post with the given slug.\"\"\"\n  post(slug: String!): Post\n  redirectedPost(slug: String!): RedirectedPost\n\n  \"\"\"\n  Returns the posts in the publication, newest first. Page size is capped at\n  100.\n  \"\"\"\n  posts(first: Int!, after: String, filter: PublicationPostConnectionFilter): PostConnection!\n\n  \"\"\"\n  Total number of published posts in the publication. Select totalDocuments,\n  and use first: 1.\n  \"\"\"\n  postsCount(first: Int!): PostConnection!\n\n  \"\"\"Returns series by slug in the publication.\"\"\"\n  series(slug: String!): Series\n\n  \"\"\"Returns the list of series in the publication.\"\"\"\n  seriesList(first: Int!, after: String): SeriesConnection!\n\n  \"\"\"Returns the static page with the given slug.\"\"\"\n  staticPage(slug: String!): StaticPage\n\n  \"\"\"Returns a list of static pages in the publication.\"\"\"\n  staticPages(first: Int!, after: String): StaticPageConnection!\n  \"\"\"\n  Members of the publication. Members who set their visibility to private are excluded.\n  \"\"\"\n  members(first: Int!, after: String): PublicationMemberConnection!\n  \"\"\"\n  Count of publicly visible members. Members who set their visibility to private are excluded.\n  \"\"\"\n  publicMembers(page: Int!, pageSize: Int!): PublicMembers!\n\n  \"\"\"\n  Returns true if GitHub backup is configured and active and false otherwise.\n  \"\"\"\n  isGitHubBackupEnabled: Boolean!\n\n  \"\"\"Returns whether the publication's GitHub source repo is connected.\"\"\"\n  isGithubAsSourceConnected: Boolean!\n\n  \"\"\"\n  Details of publication invites. Returns null if publication is not a team publication.\n  \"\"\"\n  invites: PublicationInvite\n\n  \"\"\"\n  Returns the drafts of the authenticated user in the publication. Page size\n  is capped at 50.\n  \"\"\"\n  drafts(first: Int!, after: String): DraftConnection!\n\n  \"\"\"\n  Returns the drafts of every author in the publication. Only the publication\n  owner and admins can read it. Page size is capped at 50.\n  \"\"\"\n  allDrafts(first: Int!, after: String): DraftConnection!\n\n  \"\"\"\n  Returns the scheduled drafts of the authenticated user in the publication.\n  Page size is capped at 50.\n  \"\"\"\n  scheduledDrafts(first: Int!, after: String): DraftConnection!\n\n  \"\"\"\n  Returns the drafts submitted for review in the publication. Only the\n  publication owner and admins can read it. Page size is capped at 50.\n  \"\"\"\n  submittedDrafts(first: Int!, after: String): DraftConnection!\n\n  \"\"\"\n  Returns the scheduled drafts of every author in the publication. Only the\n  publication owner and admins can read it. Page size is capped at 50.\n  \"\"\"\n  allScheduledDrafts(first: Int!, after: String): DraftConnection!\n  preferences: PublicationPreferences!\n\n  \"\"\"The integrations connected to the publication.\"\"\"\n  integrations: PublicationIntegrations\n\n  \"\"\"Links to the publication's social media profiles.\"\"\"\n  links: PublicationLinks\n\n  \"\"\"True if the publication is a team publication and false otherwise.\"\"\"\n  isTeam: Boolean!\n\n  \"\"\"Total number of followers of the publication.\"\"\"\n  followersCount: Int\n\n  \"\"\"Returns the pinned post of the publication.\"\"\"\n  pinnedPost: Post\n\n  \"\"\"Whether the publication has earned any badges or not.\"\"\"\n  hasBadges: Boolean\n  urlPattern: String\n\n  \"\"\"The meta tags associated with the publication.\"\"\"\n  metaTags: String\n\n  \"\"\"Information about the publication's Open Graph metadata i.e. image.\"\"\"\n  ogMetaData: OpenGraphMetaData\n\n  \"\"\"\n  Object containing information about beta features enabled for the\n  publication.\n  \"\"\"\n  features: PublicationFeatures!\n  aeoSettings: PublicationAeoSettings!\n\n  \"\"\"Domain information of the publication.\"\"\"\n  domainInfo: DomainInfo!\n\n  \"\"\"\n  A flag to indicate if the publication is using Headless CMS. This can be\n  used to check if the post redirect needs authentication.\n  \"\"\"\n  isHeadless: Boolean!\n\n  \"\"\"\n  Color code of the header color of the publication. Used to style header of\n  blog.\n  \"\"\"\n  headerColor: String\n\n  \"\"\"Configured redirection rules for the publication.\"\"\"\n  redirectionRules: [RedirectionRule!]!\n  customRules: [CustomRule!]!\n  imprintV2: ImprintV2\n\n  \"\"\"The total amount of recommended publications by this publication.\"\"\"\n  totalRecommendedPublications: Int!\n  recommendedPublications: [RecommendedPublicationEdge!]!\n\n  \"\"\"\n  Boolean flag indicating if the publication allows edits by contributors\n  \"\"\"\n  allowContributorEdits: Boolean!\n\n  \"\"\"\n  Active custom widgets for this publication. Pinned widgets render on\n  every article; others are embedded inline via %%[widgetId] tokens.\n  \"\"\"\n  widgets: [Widget!]!\n}\n\n\"\"\"\nA custom HTML widget an author can pin to all articles or embed inline. For example, newsletter signup forms, or a \"Buy me a coffee\" button.\n\"\"\"\ntype Widget {\n  \"\"\"The unique identifier of the widget\"\"\"\n  id: ID!\n\n  \"\"\"The author-defined slug used in %%[widgetId] embed tokens.\"\"\"\n  widgetId: String!\n\n  \"\"\"Content of the widget, can be a simple string or HTML\"\"\"\n  content: String!\n  isPinned: Boolean!\n  pinLocation: WidgetPinLocation\n}\n\nenum WidgetPinLocation {\n  top\n  bottom\n}\n\ntype RecommendedPublicationEdge {\n  \"\"\"The node holding the Publication information\"\"\"\n  node: Publication!\n}\n\ntype RedirectedPost {\n  id: ID!\n  slug: String!\n}\n\ntype PublicationPreferences {\n  logo: String\n  darkMode: DarkModePreferences\n  navbarItems: [PublicationNavbarItem!]!\n  enabledPages: EnabledPages!\n  layout: String\n  disableFooterBranding: Boolean\n  isSubscriptionModalDisabled: Boolean\n}\n\ntype DarkModePreferences {\n  \"\"\"A flag indicating if the dark mode is enabled for the publication.\"\"\"\n  enabled: Boolean!\n\n  \"\"\"The custom dark mode logo of the publication.\"\"\"\n  logo: String\n}\n\ntype PublicationNavbarItem {\n  \"\"\"The unique identifier of the navbar item.\"\"\"\n  id: ID!\n  type: String!\n\n  \"\"\"The label of the navbar item.\"\"\"\n  label: String!\n\n  \"\"\"The URL of the navbar item.\"\"\"\n  url: String\n\n  \"\"\"The series added to the navbar item.\"\"\"\n  series: Series\n\n  \"\"\"The static page added to the navbar item.\"\"\"\n  page: StaticPage\n}\n\ntype EnabledPages {\n  badges: Boolean!\n  newsletter: Boolean!\n  members: Boolean!\n}\n\ntype PublicationIntegrations {\n  \"\"\"Google Analytics Tracking ID for integration with Google Analytics.\"\"\"\n  gaTrackingID: String\n\n  \"\"\"FB Pixel ID for integration with Facebook Pixel.\"\"\"\n  fbPixelID: String\n\n  \"\"\"Hotjar Site ID for integration with Hotjar.\"\"\"\n  hotjarSiteID: String\n\n  \"\"\"Matomo URL for integration with Matomo Analytics.\"\"\"\n  matomoURL: String\n\n  \"\"\"Matomo Site ID for integration with Matomo Analytics.\"\"\"\n  matomoSiteID: String\n\n  \"\"\"Fathom Analytics Site ID for integration with Fathom Analytics.\"\"\"\n  fathomSiteID: String\n\n  \"\"\"\n  A flag indicating if the custom domain is enabled for integration with\n  Fathom Analytics.\n  \"\"\"\n  fathomCustomDomainEnabled: Boolean\n\n  \"\"\"Custom domain for integration with Fathom Analytics.\"\"\"\n  fathomCustomDomain: String\n\n  \"\"\"\n  A flag indicating if Plausible Analytics is enabled for the publication.\n  \"\"\"\n  plausibleAnalyticsEnabled: Boolean\n\n  \"\"\"Google Tag Manager ID for integration with Google Tag Manager.\"\"\"\n  gTagManagerID: String\n\n  \"\"\"\n  Web Monetization Payment Pointer for integration with Web Monetization.\n  \"\"\"\n  wmPaymentPointer: String\n\n  \"\"\"Koala Public Key for integration with Koala.\"\"\"\n  koalaPublicKey: String\n\n  \"\"\"MS Clarity ID for integration with Microsoft Clarity.\"\"\"\n  msClarityID: String\n  openPanelClientId: String\n}\n\ntype PublicationLinks {\n  \"\"\"Twitter URL of the publication.\"\"\"\n  twitter: String\n\n  \"\"\"GitHub URL of the publication.\"\"\"\n  github: String\n\n  \"\"\"LinkedIn URL of the publication.\"\"\"\n  linkedin: String\n\n  \"\"\"Hashnode profile of author of the publication.\"\"\"\n  hashnode: String\n\n  \"\"\"Website URL of the publication.\"\"\"\n  website: String\n\n  \"\"\"Instagram URL of the publication.\"\"\"\n  instagram: String\n\n  \"\"\"YouTube URL of the publication.\"\"\"\n  youtube: String\n\n  \"\"\"Daily.dev URL of the publication.\"\"\"\n  dailydev: String\n\n  \"\"\"Mastodon URL of the publication.\"\"\"\n  mastodon: String\n\n  \"\"\"Facebook URL of the publication.\"\"\"\n  facebook: String\n\n  \"\"\"Bluesky URL of the publication.\"\"\"\n  bluesky: String\n}\n\ntype PublicationMember {\n  \"\"\"The ID of the publication member.\"\"\"\n  id: ID!\n\n  \"\"\"The user who is a member of the publication.\"\"\"\n  user: User!\n  role: String!\n}\n\nenum UserPublicationRole {\n  \"\"\"Contributors can join the publication and contribute an article.\"\"\"\n  CONTRIBUTOR\n\n  \"\"\"\n  Editors can customize the blog and approve/reject posts; they can also manage members.\n  \"\"\"\n  EDITOR\n\n  \"\"\"The owner is the creator of the publication and can do all things.\"\"\"\n  OWNER\n}\n\ntype OffsetPageInfo {\n  \"\"\"Indicates if there are more pages.\"\"\"\n  hasNextPage: Boolean\n\n  \"\"\"Indicates if there are previous pages.\"\"\"\n  hasPreviousPage: Boolean\n\n  \"\"\"The page after the current page.\"\"\"\n  nextPage: Int\n\n  \"\"\"The page before the current page.\"\"\"\n  previousPage: Int\n}\n\n\"\"\"Contains the publication invite information.\"\"\"\ntype PublicationInvite {\n  pendingInvites(pageSize: Int!, page: Int!): PendingInviteConnection!\n\n  \"\"\"The paginated list of role based invites.\"\"\"\n  roleBasedInvites(pageSize: Int!, page: Int!): RoleBasedInviteConnection!\n\n  \"\"\"Signifies if invite links in role-based invites are active.\"\"\"\n  areRoleBasedInviteLinksActive: Boolean!\n}\n\ntype PendingInviteConnection {\n  \"\"\"A list of invites\"\"\"\n  nodes: [PendingInvite!]!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: OffsetPageInfo!\n\n  \"\"\"The total number of invites.\"\"\"\n  totalDocuments: Int!\n}\n\ntype RoleBasedInviteConnection {\n  \"\"\"A list of invites\"\"\"\n  nodes: [RoleBasedInvite!]!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: OffsetPageInfo!\n\n  \"\"\"The total number of invites.\"\"\"\n  totalDocuments: Int!\n}\n\n\"\"\"Contains the pending invite information.\"\"\"\ntype PendingInvite {\n  \"\"\"The ID of the pending invite.\"\"\"\n  id: ID!\n\n  \"\"\"The email of the user that was invited.\"\"\"\n  email: String\n\n  \"\"\"\n  Invited Hashnode user, returns null if the user is not a Hashnode user.\n  \"\"\"\n  user: User\n\n  \"\"\"The role assigned to the user in the publication.\"\"\"\n  role: UserPublicationRole!\n}\n\ntype RoleBasedInvite {\n  \"\"\"The ID of the role based invite.\"\"\"\n  id: ID!\n\n  \"\"\"The role assigned to the user in the publication.\"\"\"\n  role: UserPublicationRole!\n\n  \"\"\"Boolean that signifies if the invite has unlimited capacity.\"\"\"\n  isUnlimitedCapacity: Boolean\n\n  \"\"\"\n  The number of members that have already used the link to join the team.\n  \"\"\"\n  usedCapacity: Int\n\n  \"\"\"The capacity of how many members to be invited by the link.\"\"\"\n  capacity: Int\n\n  \"\"\"Invite link of the role based invite.\"\"\"\n  inviteLink: String\n\n  \"\"\"The date the invite was created.\"\"\"\n  createdAt: DateTime\n\n  \"\"\"The expiry date of the invite.\"\"\"\n  expiryDate: DateTime\n}\n\ntype Post {\n  \"\"\"The ID of the post. Used to uniquely identify the post.\"\"\"\n  id: ID!\n\n  \"\"\"A unique ID of the post.\"\"\"\n  cuid: String\n\n  \"\"\"The title of the post.\"\"\"\n  title: String!\n\n  \"\"\"\n  The subtitle of the post. Subtitle is a short description of the post which\n  is also used in SEO if meta tags are not provided.\n  \"\"\"\n  subtitle: String\n\n  \"\"\"\n  The slug of the post. Used as address of the post on blog. Example -\n  https://johndoe.com/my-post-slug\n  \"\"\"\n  slug: String!\n\n  \"\"\"\n  Complete URL of the post including the domain name. Example -\n  https://johndoe.com/my-post-slug\n  \"\"\"\n  url: String!\n\n  \"\"\"\n  Content of the post. Contains HTML and Markdown version of the post content.\n  \"\"\"\n  content: Content!\n\n  \"\"\"\n  Brief is a short plain-text description of the post, extracted from the\n  start of its content.\n  \"\"\"\n  brief: String!\n\n  \"\"\"\n  The cover image preference of the post. Contains cover image URL and other\n  details.\n  \"\"\"\n  coverImage: CoverImage\n\n  \"\"\"Returns the user details of the author of the post.\"\"\"\n  author: User!\n\n  \"\"\"\n  Returns the user details of the co-authors of the post. Hashnode users can\n  add up to 4 co-authors as collaborators to their posts. This functionality\n  is limited to teams publication.\n  \"\"\"\n  coAuthors: [User!]\n\n  \"\"\"The publication the post belongs to.\"\"\"\n  publication: Publication\n\n  \"\"\"\n  Returns list of tags added to the post. Contains tag id, name, slug, etc.\n  \"\"\"\n  tags: [Tag!]\n\n  \"\"\"The number of hearts on the post. Shows how many users liked the post.\"\"\"\n  reactionCount: Int!\n\n  \"\"\"The number of comments on the post.\"\"\"\n  responseCount: Int!\n\n  \"\"\"The number of replies on the post.\"\"\"\n  replyCount: Int!\n\n  \"\"\"The estimated time to read the post in minutes.\"\"\"\n  readTimeInMinutes: Int!\n\n  \"\"\"\n  The number of views on the post. Can be used to show the popularity of the\n  post.\n  \"\"\"\n  views: Int\n\n  \"\"\"Flag to indicate if the post is featured on Hashnode feed.\"\"\"\n  featured: Boolean\n\n  \"\"\"The date and time the post was published.\"\"\"\n  publishedAt: DateTime!\n\n  \"\"\"The date and time the post was last updated.\"\"\"\n  updatedAt: DateTime\n\n  \"\"\"Canonical URL set by author in case of republished posts.\"\"\"\n  canonicalUrl: String\n\n  \"\"\"\n  A flag to indicate if the post contains LaTeX. Latex is used to write\n  mathematical equations.\n  \"\"\"\n  hasLatexInPost: Boolean\n\n  \"\"\"A list of comments on the post.\"\"\"\n  comments(first: Int!, after: String): CommentConnection!\n\n  \"\"\"A list of users who liked the post.\"\"\"\n  likedBy(first: Int!, after: String): UserConnection!\n\n  \"\"\"Information of the series the post belongs to.\"\"\"\n  series: Series\n\n  \"\"\"\n  SEO information of the post. Contains title and description used in meta\n  tags.\n  \"\"\"\n  seo: SEO\n\n  \"\"\"\n  OG meta-data of the post. Contains image url used in open graph meta tags.\n  \"\"\"\n  ogMetaData: OpenGraphMetaData\n\n  \"\"\"Post feature-related fields.\"\"\"\n  features: PostFeatures!\n\n  \"\"\"\n  Preference settings for the post. Contains information about if the post is\n  pinned to blog, comments are disabled, etc.\n  \"\"\"\n  preferences: PostPreferences!\n  faq: [PostFaqItem!]!\n}\n\ntype PostFaqItem {\n  question: String!\n  answer: String!\n}\n\ntype Content {\n  \"\"\"The Markdown version of the content.\"\"\"\n  markdown: String!\n\n  \"\"\"The HTML version of the content.\"\"\"\n  html: String!\n\n  \"\"\"\n  The text version from sanitized html content. HTML tags are stripped and\n  only text is returned.\n  \"\"\"\n  text: String!\n}\n\ntype CoverImage {\n  url: String\n  attribution: String\n  photographer: String\n  isPortrait: Boolean\n  isAttributionHidden: Boolean\n}\n\ntype SEO {\n  \"\"\"The title used in og:title tag for SEO purposes.\"\"\"\n  title: String\n\n  \"\"\"The description used in og:description tag for SEO purposes.\"\"\"\n  description: String\n}\n\ntype OpenGraphMetaData {\n  \"\"\"The image used in og:image tag for SEO purposes.\"\"\"\n  image: String\n}\n\ntype PostFeatures {\n  tableOfContents: TableOfContents\n}\n\ntype TableOfContents {\n  isEnabled: Boolean!\n  items: [TableOfContentsItem!]!\n}\n\ntype TableOfContentsItem {\n  \"\"\"Unique identifier.\"\"\"\n  id: ID!\n\n  \"\"\"The level of nesting. Refers to the heading level in the post.\"\"\"\n  level: Int!\n\n  \"\"\"The slug of the referenced headline.\"\"\"\n  slug: String!\n\n  \"\"\"The title of the referenced headline.\"\"\"\n  title: String!\n\n  \"\"\"\n  ID of the TableOfContentsItem that is one level higher in the hierarchy.\n  null if this is a top level item.\n  \"\"\"\n  parentId: ID\n}\n\ntype PostPreferences {\n  \"\"\"\n  A flag to indicate if the post is pinned to blog. Pinned post is shown on\n  top of the blog.\n  \"\"\"\n  pinnedToBlog: Boolean!\n\n  \"\"\"A flag to indicate if the comments are disabled for the post.\"\"\"\n  disableComments: Boolean!\n\n  \"\"\"\n  A flag to indicate if the cover image is shown below title of the post.\n  Default position of cover is top of title.\n  \"\"\"\n  stickCoverToBottom: Boolean!\n\n  \"\"\"Whether or not the post is hidden from the Hashnode community.\"\"\"\n  isDelisted: Boolean!\n}\n\ntype Draft {\n  \"\"\"The ID of the draft.\"\"\"\n  id: ID!\n\n  \"\"\"\n  The title of the draft. It would become the title of the post when\n  published.\n  \"\"\"\n  title: String\n\n  \"\"\"\n  The subtitle of the draft. It would become the subtitle of the post when\n  published.\n  \"\"\"\n  subtitle: String\n\n  \"\"\"\n  The slug of the draft. If it is empty, the slug is generated from the title\n  when the draft is published.\n  \"\"\"\n  slug: String\n\n  \"\"\"Content of the draft in HTML and markdown\"\"\"\n  content: Content\n\n  \"\"\"The author of the draft.\"\"\"\n  author: User!\n\n  \"\"\"\n  The cover image preference of the draft. Contains cover image URL and other\n  details.\n  \"\"\"\n  coverImage: CoverImage\n\n  \"\"\"\n  Returns list of tags added to the draft. Contains tag id, name, slug, etc.\n  \"\"\"\n  tags: [Tag!]\n\n  \"\"\"\n  The user credited as the author of the post when the draft is published,\n  instead of the draft's author.\n  \"\"\"\n  publishAs: User\n  settings: DraftSettings\n\n  \"\"\"The date and time the draft was last updated.\"\"\"\n  updatedAt: DateTime!\n\n  \"\"\"The date the draft is scheduled to be published.\"\"\"\n  scheduledDate: DateTime\n\n  \"\"\"The publication the draft belongs to.\"\"\"\n  publication: Publication\n\n  \"\"\"The series the draft will belong to once published.\"\"\"\n  series: Series\n\n  \"\"\"Co-authors of the draft. Set via createDraft/updateDraft input.\"\"\"\n  coAuthors: [User!]\n\n  \"\"\"\n  Canonical URL for republished content, if the draft was imported from\n  an external source.\n  \"\"\"\n  canonicalUrl: String\n\n  \"\"\"SEO metadata for the resulting post.\"\"\"\n  seo: SEO\n\n  \"\"\"Open Graph metadata for the resulting post.\"\"\"\n  ogMetaData: OpenGraphMetaData\n\n  \"\"\"Draft feature flags (e.g. table of contents preference).\"\"\"\n  features: PostFeatures\n\n  \"\"\"Whether the draft has been submitted for review on a team publication.\"\"\"\n  isSubmittedForReview: Boolean\n\n  \"\"\"Estimated read time of the draft's content in minutes.\"\"\"\n  readTimeInMinutes: Int\n}\n\ntype DraftSettings {\n  \"\"\"\n  Deprecated. Use `Draft.features.tableOfContents.isEnabled` instead.\n  Kept for backward compatibility with existing API consumers.\n  \"\"\"\n  enableTableOfContents: Boolean! @deprecated(reason: \"Use Draft.features.tableOfContents.isEnabled instead\")\n\n  \"\"\"A flag to indicate if the comments are disabled for the post.\"\"\"\n  disableComments: Boolean!\n\n  \"\"\"\n  A flag to indicate if the cover image is shown below title of the post.\n  Default position of cover is top of title.\n  \"\"\"\n  stickCoverToBottom: Boolean!\n\n  \"\"\"Whether or not the post is hidden from the Hashnode community.\"\"\"\n  isDelisted: Boolean!\n}\n\ntype ScheduledPost {\n  \"\"\"The ID of the scheduled post.\"\"\"\n  id: ID!\n  title: String!\n  slug: String!\n\n  \"\"\"\n  The scheduled date for the post to be published. This is the date the post\n  will be published.\n  \"\"\"\n  scheduledDate: DateTime!\n\n  \"\"\"The user who authored the scheduled post.\"\"\"\n  author: User!\n\n  \"\"\"Returns the publication the post is scheduled for.\"\"\"\n  publication: Publication\n\n  \"\"\"Returns the draft associated with the scheduled post.\"\"\"\n  draft: Draft!\n}\n\ntype Series {\n  \"\"\"The ID of the series.\"\"\"\n  id: ID!\n\n  \"\"\"The name of the series. Shown in series page.\"\"\"\n  name: String!\n\n  \"\"\"\n  The slug of the series. Used to access series page. Example\n  https://johndoe.com/series/series-slug\n  \"\"\"\n  slug: String!\n\n  \"\"\"Unique identifier for the series.\"\"\"\n  cuid: String\n\n  \"\"\"\n  The description of the series. Contains markdown and html version of the\n  series's description.\n  \"\"\"\n  description: Content\n\n  \"\"\"The cover image of the series.\"\"\"\n  coverImage: String\n\n  \"\"\"Returns the user who is author of the series.\"\"\"\n  author: User!\n\n  \"\"\"Returns a list of posts in the series.\"\"\"\n  posts(first: Int!, after: String): PostConnection!\n}\n\ntype Tag {\n  \"\"\"The ID of the tag.\"\"\"\n  id: ID!\n\n  \"\"\"The name of the tag. Shown in tag page.\"\"\"\n  name: String!\n\n  \"\"\"\n  The slug of the tag. Used to access tags feed. Example\n  https://hashnode.com/tag/graphql\n  \"\"\"\n  slug: String!\n\n  \"\"\"The logo of the tag. Shown in tag page.\"\"\"\n  logo: String\n\n  \"\"\"The tagline of the tag.\"\"\"\n  tagline: String\n\n  \"\"\"Information about the tag.\"\"\"\n  info: String\n\n  \"\"\"Total number of users following this tag.\"\"\"\n  followersCount: Int!\n\n  \"\"\"Alltime usage count of this tag in posts.\"\"\"\n  postsCount: Int!\n\n  \"\"\"Paginated list of posts published under this tag\"\"\"\n  posts(first: Int!, after: String): PostConnection!\n}\n\ntype Comment {\n  \"\"\"The ID of the comment.\"\"\"\n  id: ID!\n\n  \"\"\"The content of the comment in markdown and html format.\"\"\"\n  content: Content!\n\n  \"\"\"The author of the comment.\"\"\"\n  author: User!\n\n  \"\"\"The date the comment was created.\"\"\"\n  dateAdded: DateTime!\n\n  \"\"\"Returns a list of replies to the comment.\"\"\"\n  replies(first: Int!, after: String): CommentConnection!\n\n  \"\"\"\n  Total number of reactions on the comment. Reactions are hearts added to any\n  comment.\n  \"\"\"\n  totalReactions: Int!\n}\n\ntype StaticPage {\n  \"\"\"The ID of the static page.\"\"\"\n  id: ID!\n\n  \"\"\"The title of the static page. Shown in nav bar.\"\"\"\n  title: String!\n\n  \"\"\"\n  The slug of the static page. Used to access static page. Example\n  https://johndoe.com/my-page.\n  \"\"\"\n  slug: String!\n\n  \"\"\"\n  Content of the static page. Contains markdown and html version of the static\n  page's content.\n  \"\"\"\n  content: Content!\n\n  \"\"\"\n  A flag to determine if the static page is hidden from public or not, this is\n  used to hide the page instead of deleting it.\n  \"\"\"\n  hidden: Boolean!\n\n  \"\"\"Information about the static page's Open Graph metadata i.e. image.\"\"\"\n  ogMetaData: OpenGraphMetaData\n\n  \"\"\"\n  Information about the static page's SEO metadata i.e. title and description.\n  \"\"\"\n  seo: SEO\n}\n\ntype DocumentationProject {\n  id: ID!\n  title: String!\n  slug: String!\n  guides(first: Int!, after: String): GuideConnection!\n}\n\ntype Guide {\n  id: ID!\n  title: String!\n  content: Content!\n}\n\ntype PostConnection {\n  edges: [PostEdge!]!\n  pageInfo: PageInfo!\n  totalDocuments: Int\n}\n\ntype PostEdge {\n  \"\"\"The node holding the Post information\"\"\"\n  node: Post!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\ntype FeedPostConnection {\n  \"\"\"A list of edges containing Post information\"\"\"\n  edges: [PostEdge!]!\n\n  \"\"\"Information for pagination in Post connection.\"\"\"\n  pageInfo: PageInfo!\n}\n\ntype PublicationConnection {\n  edges: [PublicationEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype PublicationEdge {\n  node: Publication!\n  cursor: String!\n}\n\ntype UserConnection {\n  edges: [UserEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype UserEdge {\n  \"\"\"The node containing User information\"\"\"\n  node: User!\n\n  \"\"\"The cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\ntype SeriesConnection {\n  \"\"\"A list of edges containing Series information\"\"\"\n  edges: [SeriesEdge!]!\n\n  \"\"\"Information for pagination in SeriesList connection.\"\"\"\n  pageInfo: PageInfo!\n}\n\ntype SeriesEdge {\n  \"\"\"The node holding the Series information\"\"\"\n  node: Series!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\ntype StaticPageConnection {\n  \"\"\"A list of edges containing nodes in the connection.\"\"\"\n  edges: [StaticPageEdge!]!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n}\n\ntype StaticPageEdge {\n  \"\"\"The node containing a static page.\"\"\"\n  node: StaticPage!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\ntype PublicationMemberConnection {\n  edges: [PublicationMemberEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype PublicationMemberEdge {\n  node: PublicationMember!\n  cursor: String!\n}\n\ntype DraftConnection {\n  \"\"\"A list of edges of drafts connection.\"\"\"\n  edges: [DraftEdge!]!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"The total number of documents in the connection.\"\"\"\n  totalDocuments: Int!\n}\n\ntype DraftEdge {\n  \"\"\"A node in the connection containing a draft.\"\"\"\n  node: Draft!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\ntype CommentConnection {\n  edges: [CommentEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype CommentEdge {\n  node: Comment!\n  cursor: String!\n}\n\ntype SearchPostConnection {\n  \"\"\"A list of edges containing Post information\"\"\"\n  edges: [PostEdge!]!\n\n  \"\"\"Information for pagination in Post connection.\"\"\"\n  pageInfo: PageInfo!\n}\n\ntype GuideConnection {\n  edges: [GuideEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype GuideEdge {\n  node: Guide!\n  cursor: String!\n}\n\ntype PageInfo {\n  \"\"\"\n  The cursor of the last item in the current page. Use it as the after input\n  to query the next page.\n  \"\"\"\n  endCursor: String\n\n  \"\"\"Indicates if there are more pages.\"\"\"\n  hasNextPage: Boolean!\n  totalDocuments: Int\n}\n\ninput FeedFilter {\n  tags: [String!]\n  excludeTags: [String!]\n  publications: [ObjectId!]\n  excludePublications: [ObjectId!]\n}\n\ninput PublicationPostConnectionFilter {\n  \"\"\"\n  Filtering by tag slugs and tag IDs will return posts that match either of\n  the filters. It is an \"OR\" filter and not an \"AND\" filter.\n  \"\"\"\n  tagSlugs: [String!]\n}\n\ninput SearchPostsOfPublicationFilter {\n  \"\"\"The query to be searched in post.\"\"\"\n  query: String\n\n  \"\"\"The ID of the publication to search from.\"\"\"\n  publicationId: ObjectId!\n\n  \"\"\"Only return posts that are deleted. Returns active posts by default.\"\"\"\n  deletedOnly: Boolean\n\n  \"\"\"Author IDs to filter by (OR match).\"\"\"\n  authorIds: [ID!]\n\n  \"\"\"Tag IDs to filter by (OR match).\"\"\"\n  tagIds: [ID!]\n\n  \"\"\"Filter based on time range.\"\"\"\n  time: TimeFilter\n\n  \"\"\"Tag IDs all of which must be present on the post (AND match).\"\"\"\n  requiredTagsIds: [ID!]\n}\n\nenum PostSortBy {\n  DATE_PUBLISHED_ASC\n  DATE_PUBLISHED_DESC\n}\n\ninput TimeFilter {\n  \"\"\"\n  Narrow the time range to a specific period. Can't be used with relative.\n  \"\"\"\n  absolute: AbsoluteTimeRange\n\n  \"\"\"\n  Narrow the time range to a specific period. Can't be used with absolute.\n  \"\"\"\n  relative: RelativeTimeRange\n}\n\ninput AbsoluteTimeRange {\n  \"\"\"\n  The start of the time range, inclusive. Defaults to the unix epoch start\n  (1970-01-01).\n  \"\"\"\n  from: DateTime\n\n  \"\"\"The end of the time range, inclusive. Defaults to the current date.\"\"\"\n  to: DateTime\n}\n\ninput RelativeTimeRange {\n  \"\"\"The type of time range to be used.\"\"\"\n  relative: TimePeriod!\n\n  \"\"\"The number of time periods to go back in time.\"\"\"\n  n: Int!\n}\n\nenum TimePeriod {\n  LAST_N_HOURS\n  LAST_N_DAYS\n  LAST_N_WEEKS\n  LAST_N_MONTHS\n  LAST_N_YEARS\n}\n\ninput CheckCustomDomainAvailabilityInput {\n  domain: String!\n}\n\ntype Mutation {\n  \"\"\"\n  Publish a new post to a publication. Requires authentication. Requires the\n  publication to be on the Pro plan.\n  \"\"\"\n  publishPost(input: PublishPostInput!): PublishPostPayload!\n\n  \"\"\"\n  Update an existing post. Requires authentication. Requires the publication\n  to be on the Pro plan.\n  \"\"\"\n  updatePost(input: UpdatePostInput!): UpdatePostPayload!\n\n  \"\"\"\n  Removes a post from your publication (soft delete). It disappears from\n  feeds and listings and its slug becomes available for reuse. Only the\n  post's author or a publication admin can remove it. Requires an active\n  Pro plan and authentication.\n  \"\"\"\n  removePost(input: RemovePostInput!): RemovePostPayload!\n\n  \"\"\"\n  Create a new draft on a publication without publishing it. Requires\n  authentication. Requires the publication to be on the Pro plan.\n  \"\"\"\n  createDraft(input: CreateDraftInput!): CreateDraftPayload!\n\n  \"\"\"\n  Update an existing draft. Requires authentication. Requires the publication\n  to be on the Pro plan.\n  \"\"\"\n  updateDraft(input: UpdateDraftInput!): UpdateDraftPayload!\n\n  \"\"\"\n  Publish an existing draft as a post. The draft is soft-deleted once the post\n  is created. Requires authentication. Requires the publication to be on the\n  Pro plan.\n  \"\"\"\n  publishDraft(input: PublishDraftInput!): PublishDraftPayload!\n\n  \"\"\"\n  Submit a draft on a team publication for editor review. Requires\n  authentication. Requires the publication to be on the Pro plan.\n  \"\"\"\n  submitDraftForReview(input: SubmitDraftForReviewInput!): SubmitDraftForReviewPayload!\n\n  \"\"\"\n  Reject a draft that was previously submitted for review. Only publication\n  owners and admins can reject. Requires authentication. Requires the\n  publication to be on the Pro plan.\n  \"\"\"\n  rejectDraftSubmission(input: RejectDraftSubmissionInput!): RejectDraftSubmissionPayload!\n\n  \"\"\"\n  Delete a draft. The draft's author can delete their own draft; publication\n  owners and admins can delete any draft in the publication. Requires\n  authentication. Requires the publication to be on the Pro plan.\n  \"\"\"\n  deleteDraft(input: DeleteDraftInput!): DeleteDraftPayload!\n\n  \"\"\"\n  Returns a presigned URL for uploading an image to Hashnode's CDN. Requires\n  authentication and a Pro plan.\n  \"\"\"\n  createImageUploadURL(input: CreateImageUploadInput!): CreateImageUploadPayload!\n\n  \"\"\"\n  Verifies a PUT-uploaded image (from presignedPut) is within the size limit,\n  deleting it if not. Call this after a successful PUT to presignedPut.url.\n  Requires authentication.\n  \"\"\"\n  confirmImageUpload(input: ConfirmImageUploadInput!): ConfirmImageUploadPayload!\n}\n\ninput PublishPostInput {\n  \"\"\"The publication ID to publish to.\"\"\"\n  publicationId: ObjectId!\n\n  \"\"\"Post title (required).\"\"\"\n  title: String!\n\n  \"\"\"Post subtitle (optional).\"\"\"\n  subtitle: String\n\n  \"\"\"Post content in markdown format (required).\"\"\"\n  contentMarkdown: String!\n\n  \"\"\"Cover image URL.\"\"\"\n  coverImage: String\n\n  \"\"\"Custom slug. If not provided, generated from title.\"\"\"\n  slug: String\n\n  \"\"\"Tags as slugs (max 15). New tags will be created automatically.\"\"\"\n  tags: [PublishPostTagInput!]\n\n  \"\"\"Canonical URL for republished articles.\"\"\"\n  originalArticleURL: String\n\n  \"\"\"SEO title override.\"\"\"\n  metaTitle: String\n\n  \"\"\"SEO description override.\"\"\"\n  metaDescription: String\n\n  \"\"\"Custom OG image URL.\"\"\"\n  ogImage: String\n\n  \"\"\"Disable comments on this post.\"\"\"\n  disableComments: Boolean\n\n  \"\"\"Whether to delist the post from feeds (still accessible via URL).\"\"\"\n  isDelisted: Boolean\n\n  \"\"\"Whether the resulting post should expose a table of contents.\"\"\"\n  enableToc: Boolean\n\n  \"\"\"\n  Publish on behalf of another user who is a member of the publication. Only for team publications.\n  \"\"\"\n  publishAs: ObjectId\n\n  \"\"\"IDs of co-authors (max 4). Must be members of the publication.\"\"\"\n  coAuthors: [ObjectId!]\n\n  \"\"\"Add the post to a series by ID.\"\"\"\n  seriesId: ObjectId\n\n  \"\"\"Backdate the post to a specific date.\"\"\"\n  publishedAt: DateTime\n}\n\ninput PublishPostTagInput {\n  \"\"\"Tag slug (required). Used to find or create the tag.\"\"\"\n  slug: String!\n\n  \"\"\"Tag name. Defaults to slug if not provided.\"\"\"\n  name: String\n}\n\ninput UpdatePostInput {\n  \"\"\"The post ID to update.\"\"\"\n  id: ID!\n\n  \"\"\"Updated title.\"\"\"\n  title: String\n\n  \"\"\"Updated subtitle.\"\"\"\n  subtitle: String\n\n  \"\"\"Updated content in markdown format.\"\"\"\n  contentMarkdown: String\n\n  \"\"\"Updated cover image URL.\"\"\"\n  coverImage: String\n\n  \"\"\"Updated slug.\"\"\"\n  slug: String\n\n  \"\"\"Updated tags as slugs (max 15).\"\"\"\n  tags: [PublishPostTagInput!]\n\n  \"\"\"Updated canonical URL.\"\"\"\n  originalArticleURL: String\n\n  \"\"\"Updated SEO title.\"\"\"\n  metaTitle: String\n\n  \"\"\"Updated SEO description.\"\"\"\n  metaDescription: String\n\n  \"\"\"Updated OG image URL.\"\"\"\n  ogImage: String\n\n  \"\"\"Disable comments on this post.\"\"\"\n  disableComments: Boolean\n\n  \"\"\"Whether to delist the post from feeds.\"\"\"\n  isDelisted: Boolean\n\n  \"\"\"Whether the post should expose a table of contents.\"\"\"\n  enableToc: Boolean\n\n  \"\"\"Change the author. Must be a member of the publication.\"\"\"\n  publishAs: ObjectId\n\n  \"\"\"Update co-authors (max 4). Must be members of the publication.\"\"\"\n  coAuthors: [ObjectId!]\n\n  \"\"\"Add or change the series. Must belong to the publication.\"\"\"\n  seriesId: ObjectId\n\n  \"\"\"Backdate the post.\"\"\"\n  publishedAt: DateTime\n}\n\ninput RemovePostInput {\n  \"\"\"The post ID to remove.\"\"\"\n  id: ID!\n}\n\ninput CreateImageUploadInput {\n  \"\"\"\n  The content type of the image. Must start with \"image/\". Example: \"image/png\".\n  \"\"\"\n  contentType: String!\n}\n\ntype CreateImageUploadPayload {\n  \"\"\"\n  PUT the raw image bytes directly to this URL. After a successful PUT,\n  call confirmImageUpload with the key.\n  \"\"\"\n  presignedPut: PresignedPut!\n}\n\ntype PresignedPut {\n  \"\"\"The URL to PUT the raw image bytes to.\"\"\"\n  url: String!\n\n  \"\"\"The public CDN URL the image will be available at once uploaded.\"\"\"\n  cdnUrl: String!\n\n  \"\"\"The object key. Pass this to confirmImageUpload after uploading.\"\"\"\n  key: String!\n}\n\ninput ConfirmImageUploadInput {\n  \"\"\"The key returned by createImageUploadURL's presignedPut field.\"\"\"\n  key: String!\n}\n\ntype ConfirmImageUploadPayload {\n  \"\"\"False if the image exceeded the size limit and was deleted.\"\"\"\n  ok: Boolean!\n  cdnUrl: String\n}\n\ninput CreateDraftSettingsInput {\n  \"\"\"Whether the resulting post should expose a table of contents.\"\"\"\n  enableTableOfContent: Boolean\n\n  \"\"\"\n  Whether to delist the resulting post from public feeds (still accessible via URL).\n  \"\"\"\n  delist: Boolean\n\n  \"\"\"Send a newsletter to subscribers when the resulting post is published.\"\"\"\n  activateNewsletter: Boolean\n\n  \"\"\"Whether the supplied slug overrides the slug generated from the title.\"\"\"\n  slugOverridden: Boolean\n}\n\ninput MetaTagsInput {\n  \"\"\"SEO title override.\"\"\"\n  title: String\n\n  \"\"\"SEO description override.\"\"\"\n  description: String\n\n  \"\"\"Open Graph image URL.\"\"\"\n  image: String\n}\n\ninput CoverImageOptionsInput {\n  \"\"\"Cover image URL.\"\"\"\n  coverImageURL: String\n\n  \"\"\"Attribution text for the cover image.\"\"\"\n  coverImageAttribution: String\n\n  \"\"\"Photographer credit for the cover image.\"\"\"\n  coverImagePhotographer: String\n\n  \"\"\"Whether the cover image attribution should be hidden.\"\"\"\n  isCoverAttributionHidden: Boolean\n\n  \"\"\"Whether the cover image is stuck to the bottom of the post header.\"\"\"\n  stickCoverToBottom: Boolean\n}\n\ninput CreateDraftInput {\n  \"\"\"The publication ID the draft belongs to.\"\"\"\n  publicationId: ObjectId!\n\n  \"\"\"Draft title.\"\"\"\n  title: String\n\n  \"\"\"Draft subtitle.\"\"\"\n  subtitle: String\n\n  \"\"\"Draft content in markdown format.\"\"\"\n  contentMarkdown: String\n\n  \"\"\"Custom slug. If not provided, generated from title when publishing.\"\"\"\n  slug: String\n\n  \"\"\"Tags as slugs (max 15). New tags will be created automatically.\"\"\"\n  tags: [PublishPostTagInput!]\n\n  \"\"\"Add the draft to a series by ID.\"\"\"\n  seriesId: ObjectId\n\n  \"\"\"Disable comments on the resulting post.\"\"\"\n  disableComments: Boolean\n\n  \"\"\"Canonical URL for republished articles.\"\"\"\n  originalArticleURL: String\n\n  \"\"\"\n  Date the resulting post should be published with. Used for backdating\n  when publishDraft runs.\n  \"\"\"\n  publishedAt: DateTime\n\n  \"\"\"\n  Settings for the resulting draft like table of contents and newsletter activation.\n  \"\"\"\n  settings: CreateDraftSettingsInput\n\n  \"\"\"SEO metadata for the resulting post.\"\"\"\n  metaTags: MetaTagsInput\n\n  \"\"\"Cover image options.\"\"\"\n  coverImageOptions: CoverImageOptionsInput\n\n  \"\"\"\n  Author override. Must be a member of the publication. Only for team publications.\n  \"\"\"\n  publishAs: ObjectId\n\n  \"\"\"Co-authors (max 4). Must be members of the publication.\"\"\"\n  coAuthors: [ObjectId!]\n}\n\ninput UpdateDraftInput {\n  \"\"\"The draft ID to update.\"\"\"\n  draftId: ID!\n\n  \"\"\"Updated title.\"\"\"\n  title: String\n\n  \"\"\"Updated subtitle.\"\"\"\n  subtitle: String\n\n  \"\"\"Updated content in markdown format.\"\"\"\n  contentMarkdown: String\n\n  \"\"\"Updated slug.\"\"\"\n  slug: String\n\n  \"\"\"Updated tags as slugs (max 15).\"\"\"\n  tags: [PublishPostTagInput!]\n\n  \"\"\"Add or change the series. Must belong to the publication.\"\"\"\n  seriesId: ObjectId\n\n  \"\"\"Disable comments on the resulting post.\"\"\"\n  disableComments: Boolean\n\n  \"\"\"Updated canonical URL.\"\"\"\n  originalArticleURL: String\n\n  \"\"\"Date the resulting post should be published with.\"\"\"\n  publishedAt: DateTime\n\n  \"\"\"Settings for the resulting draft.\"\"\"\n  settings: CreateDraftSettingsInput\n\n  \"\"\"SEO metadata for the resulting post.\"\"\"\n  metaTags: MetaTagsInput\n\n  \"\"\"Cover image options.\"\"\"\n  coverImageOptions: CoverImageOptionsInput\n\n  \"\"\"Change the author. Must be a member of the publication.\"\"\"\n  publishAs: ObjectId\n\n  \"\"\"Update co-authors (max 4). Must be members of the publication.\"\"\"\n  coAuthors: [ObjectId!]\n}\n\ntype PublishPostPayload {\n  post: Post!\n}\n\ntype UpdatePostPayload {\n  post: Post!\n}\n\ntype RemovePostPayload {\n  \"\"\"The removed post.\"\"\"\n  post: Post\n}\n\ntype CreateDraftPayload {\n  \"\"\"The newly created draft\"\"\"\n  draft: Draft!\n}\n\ntype UpdateDraftPayload {\n  draft: Draft!\n}\n\ninput PublishDraftInput {\n  \"\"\"The draft ID to publish.\"\"\"\n  draftId: ID!\n}\n\ntype PublishDraftPayload {\n  \"\"\"The newly created post based on the draft\"\"\"\n  post: Post!\n}\n\ninput SubmitDraftForReviewInput {\n  \"\"\"The draft ID to submit for review.\"\"\"\n  draftId: ID!\n}\n\ntype SubmitDraftForReviewPayload {\n  draft: Draft!\n}\n\ninput RejectDraftSubmissionInput {\n  \"\"\"The draft ID whose submission should be rejected.\"\"\"\n  draftId: ID!\n}\n\ntype RejectDraftSubmissionPayload {\n  draft: Draft!\n}\n\ninput DeleteDraftInput {\n  \"\"\"The draft ID to delete.\"\"\"\n  draftId: ID!\n}\n\ntype DeleteDraftPayload {\n  \"\"\"The deleted draft.\"\"\"\n  draft: Draft\n}\n\ntype CheckCustomDomainAvailabilityResult {\n  available: Boolean!\n  message: String\n}\n\ntype CheckSubdomainAvailabilityResult {\n  available: Boolean!\n  message: String\n}\n\n"
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Hashnode"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "graphql",
+  "provenance": {
+    "commit": "291402fbfd8bab56c4d87754a6a590f724822d78",
+    "fetched_at": "2026-10-29T23:21:55.816191+00:00",
+    "normalization": null,
+    "repository": "Hashnode/gql-skill",
+    "sha256": "e906945fe438f7318b34c03e665633422b4ec1608e7c83451af2011013e1d65b",
+    "source_id": "hashnode",
+    "url": "https://raw.githubusercontent.com/Hashnode/gql-skill/291402fbfd8bab56c4d87754a6a590f724822d78/skills/gql-api/references/schema.graphql"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2026-10-29-snapshot"
+}

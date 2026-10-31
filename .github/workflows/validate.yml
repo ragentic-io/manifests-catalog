@@ -1,0 +1,33 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install cryptography==44.0.0 pyyaml==6.0.2
+      # Only the signing job writes signed objects. Contributions from forks change sources only.
+      - name: Signed objects are untouched
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork
+        run: |
+          changed=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" \
+            | grep -E '^(index\.json|browse-index\.json|sources\.json|registry\.json|bundles/|browse-bundles/|tools/|\.github/)' || true)
+          if [ -n "$changed" ]; then
+            echo "::error::Pull requests from forks may change apps/ and docs only. Remove:"; echo "$changed"; exit 1
+          fi
+      - run: python tools/catalog.py validate
+      - name: Signing plan
+        run: python tools/catalog.py sign --dry-run

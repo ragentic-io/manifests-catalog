@@ -1,0 +1,2963 @@
+{
+  "a2ui": {},
+  "app": "tokenjay-app-db8a58094e",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/ageusd/info"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/cancelbabel/{boxId}"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/createbabel/{address}"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/babelfee/"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/babelfee/newoffer"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:post:/mosaik/babelfee/newoffer/doit"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:post:/mosaik/babelfee/newoffer/new-input"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/babelfee/notificationcheck"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/boxconsolidation/"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/boxconsolidation/consolidate/{p2pkaddress}"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/tokenburn"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/mosaik/tokenburn/get/{uuid}"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:post:/mosaik/tokenburn/prepare"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:post:/payment/addrequest"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/payment/state/{requestId}"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/peers/list"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sigrsv/exchange/"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sigrsv/exchange/{amount}/info"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sigrsv/price"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sigusd/exchange/"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sigusd/exchange/{amount}/info"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sigusd/price"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/tokens/check/{tokenId}/{tokenName}"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/tokens/listBlocked"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/tokens/listGenuine"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/tokens/prices/all"
+      },
+      {
+        "from": "tokenjay-app-db8a58094e",
+        "kind": "EXPOSES",
+        "to": "operation:get:/tokens/prices/{tokenId}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "tokenjay-app-db8a58094e",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/ageusd/info",
+        "kind": "operation",
+        "method": "get",
+        "name": "getAgeUsdInfo",
+        "path": "/ageusd/info",
+        "pointer": "#/paths/~1ageusd~1info/get",
+        "security": [],
+        "summary": "Returns state of AgeUSD at this moment"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/cancelbabel/{boxId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "ergoPayCreateBabelBox_1",
+        "path": "/cancelbabel/{boxId}",
+        "pointer": "#/paths/~1cancelbabel~1{boxId}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/createbabel/{address}",
+        "kind": "operation",
+        "method": "get",
+        "name": "ergoPayCreateBabelBox",
+        "path": "/createbabel/{address}",
+        "pointer": "#/paths/~1createbabel~1{address}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/babelfee/",
+        "kind": "operation",
+        "method": "get",
+        "name": "getBabelFeeOverview",
+        "path": "/mosaik/babelfee/",
+        "pointer": "#/paths/~1mosaik~1babelfee~1/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/babelfee/newoffer",
+        "kind": "operation",
+        "method": "get",
+        "name": "getBabelFeeNewOffer",
+        "path": "/mosaik/babelfee/newoffer",
+        "pointer": "#/paths/~1mosaik~1babelfee~1newoffer/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/mosaik/babelfee/newoffer/doit",
+        "kind": "operation",
+        "method": "post",
+        "name": "doCreateBabelBox",
+        "path": "/mosaik/babelfee/newoffer/doit",
+        "pointer": "#/paths/~1mosaik~1babelfee~1newoffer~1doit/post",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/mosaik/babelfee/newoffer/new-input",
+        "kind": "operation",
+        "method": "post",
+        "name": "replaceTokenAmountInputFields",
+        "path": "/mosaik/babelfee/newoffer/new-input",
+        "pointer": "#/paths/~1mosaik~1babelfee~1newoffer~1new-input/post",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/babelfee/notificationcheck",
+        "kind": "operation",
+        "method": "get",
+        "name": "checkForNotifications",
+        "path": "/mosaik/babelfee/notificationcheck",
+        "pointer": "#/paths/~1mosaik~1babelfee~1notificationcheck/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/boxconsolidation/",
+        "kind": "operation",
+        "method": "get",
+        "name": "mainApp_1",
+        "path": "/mosaik/boxconsolidation/",
+        "pointer": "#/paths/~1mosaik~1boxconsolidation~1/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/boxconsolidation/consolidate/{p2pkaddress}",
+        "kind": "operation",
+        "method": "get",
+        "name": "epConsolidate",
+        "path": "/mosaik/boxconsolidation/consolidate/{p2pkaddress}",
+        "pointer": "#/paths/~1mosaik~1boxconsolidation~1consolidate~1{p2pkaddress}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/tokenburn",
+        "kind": "operation",
+        "method": "get",
+        "name": "mainApp",
+        "path": "/mosaik/tokenburn",
+        "pointer": "#/paths/~1mosaik~1tokenburn/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/mosaik/tokenburn/get/{uuid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getBurningTransaction",
+        "path": "/mosaik/tokenburn/get/{uuid}",
+        "pointer": "#/paths/~1mosaik~1tokenburn~1get~1{uuid}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/mosaik/tokenburn/prepare",
+        "kind": "operation",
+        "method": "post",
+        "name": "prepareTransaction",
+        "path": "/mosaik/tokenburn/prepare",
+        "pointer": "#/paths/~1mosaik~1tokenburn~1prepare/post",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/payment/addrequest",
+        "kind": "operation",
+        "method": "post",
+        "name": "addPaymentRequest",
+        "path": "/payment/addrequest",
+        "pointer": "#/paths/~1payment~1addrequest/post",
+        "security": [],
+        "summary": "Creates a new payment request. Will return request id to check for transaction state and ergopay url to show the user as QR code"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/payment/state/{requestId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getPaymentState",
+        "path": "/payment/state/{requestId}",
+        "pointer": "#/paths/~1payment~1state~1{requestId}/get",
+        "security": [],
+        "summary": "Returns the state of a payment request. Please note that payment requests are purged after some time, so persist the state at your side when needed"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/peers/list",
+        "kind": "operation",
+        "method": "get",
+        "name": "getPeersList",
+        "path": "/peers/list",
+        "pointer": "#/paths/~1peers~1list/get",
+        "security": [],
+        "summary": "Lists known peers sorted by block height"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sigrsv/exchange/",
+        "kind": "operation",
+        "method": "get",
+        "name": "doSigmaRsvExchange",
+        "path": "/sigrsv/exchange/",
+        "pointer": "#/paths/~1sigrsv~1exchange~1/get",
+        "security": [],
+        "summary": "Builds ErgoPayRequest for SigRSV exchange"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sigrsv/exchange/{amount}/info",
+        "kind": "operation",
+        "method": "get",
+        "name": "calcSigmaRsvExchange",
+        "path": "/sigrsv/exchange/{amount}/info",
+        "pointer": "#/paths/~1sigrsv~1exchange~1{amount}~1info/get",
+        "security": [],
+        "summary": "Calculates SigRSV exchange"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sigrsv/price",
+        "kind": "operation",
+        "method": "get",
+        "name": "getSigmaRsvPrice",
+        "path": "/sigrsv/price",
+        "pointer": "#/paths/~1sigrsv~1price/get",
+        "security": [],
+        "summary": "Lists price and available volume for SigmaRSV"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sigusd/exchange/",
+        "kind": "operation",
+        "method": "get",
+        "name": "doSigmaUsdExchange",
+        "path": "/sigusd/exchange/",
+        "pointer": "#/paths/~1sigusd~1exchange~1/get",
+        "security": [],
+        "summary": "Builds ErgoPayRequest for SigUSD exchange"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sigusd/exchange/{amount}/info",
+        "kind": "operation",
+        "method": "get",
+        "name": "calcSigmaUsdExchange",
+        "path": "/sigusd/exchange/{amount}/info",
+        "pointer": "#/paths/~1sigusd~1exchange~1{amount}~1info/get",
+        "security": [],
+        "summary": "Calculates SigUSD exchange"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sigusd/price",
+        "kind": "operation",
+        "method": "get",
+        "name": "getSigmaUsdPrice",
+        "path": "/sigusd/price",
+        "pointer": "#/paths/~1sigusd~1price/get",
+        "security": [],
+        "summary": "Lists price and available volume for SigmaUSD"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/tokens/check/{tokenId}/{tokenName}",
+        "kind": "operation",
+        "method": "get",
+        "name": "checkToken",
+        "path": "/tokens/check/{tokenId}/{tokenName}",
+        "pointer": "#/paths/~1tokens~1check~1{tokenId}~1{tokenName}/get",
+        "security": [],
+        "summary": "Check a token verification"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/tokens/listBlocked",
+        "kind": "operation",
+        "method": "get",
+        "name": "listBlocked",
+        "path": "/tokens/listBlocked",
+        "pointer": "#/paths/~1tokens~1listBlocked/get",
+        "security": [],
+        "summary": "Lists all blocked tokens"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/tokens/listGenuine",
+        "kind": "operation",
+        "method": "get",
+        "name": "listGenuine",
+        "path": "/tokens/listGenuine",
+        "pointer": "#/paths/~1tokens~1listGenuine/get",
+        "security": [],
+        "summary": "Lists all genuine tokens known"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/tokens/prices/all",
+        "kind": "operation",
+        "method": "get",
+        "name": "getTokenPrices",
+        "path": "/tokens/prices/all",
+        "pointer": "#/paths/~1tokens~1prices~1all/get",
+        "security": [],
+        "summary": "Lists all token prices and available volume"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/tokens/prices/{tokenId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getTokenPrice",
+        "path": "/tokens/prices/{tokenId}",
+        "pointer": "#/paths/~1tokens~1prices~1{tokenId}/get",
+        "security": [],
+        "summary": "Lists price and available volume for a certain token"
+      },
+      {
+        "id": "schema:Action",
+        "kind": "schema",
+        "name": "Action"
+      },
+      {
+        "id": "schema:AddRequestResponse",
+        "kind": "schema",
+        "name": "AddRequestResponse"
+      },
+      {
+        "id": "schema:AgeUsdExchangeInfo",
+        "kind": "schema",
+        "name": "AgeUsdExchangeInfo"
+      },
+      {
+        "id": "schema:AgeUsdInfo",
+        "kind": "schema",
+        "name": "AgeUsdInfo"
+      },
+      {
+        "id": "schema:CheckResponse",
+        "kind": "schema",
+        "name": "CheckResponse"
+      },
+      {
+        "id": "schema:CreatePaymentRequest",
+        "kind": "schema",
+        "name": "CreatePaymentRequest"
+      },
+      {
+        "id": "schema:ErgoPayResponse",
+        "kind": "schema",
+        "name": "ErgoPayResponse"
+      },
+      {
+        "id": "schema:FetchActionResponse",
+        "kind": "schema",
+        "name": "FetchActionResponse"
+      },
+      {
+        "id": "schema:GenuineToken",
+        "kind": "schema",
+        "name": "GenuineToken"
+      },
+      {
+        "id": "schema:MosaikApp",
+        "kind": "schema",
+        "name": "MosaikApp"
+      },
+      {
+        "id": "schema:MosaikManifest",
+        "kind": "schema",
+        "name": "MosaikManifest"
+      },
+      {
+        "id": "schema:NodePeer",
+        "kind": "schema",
+        "name": "NodePeer"
+      },
+      {
+        "id": "schema:NotificationCheckResponse",
+        "kind": "schema",
+        "name": "NotificationCheckResponse"
+      },
+      {
+        "id": "schema:PaymentRequestStateResponse",
+        "kind": "schema",
+        "name": "PaymentRequestStateResponse"
+      },
+      {
+        "id": "schema:TokenPrice",
+        "kind": "schema",
+        "name": "TokenPrice"
+      },
+      {
+        "id": "schema:ViewElement",
+        "kind": "schema",
+        "name": "ViewElement"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "tokenjay-app-db8a58094e"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Action": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "AddRequestResponse": {
+                  "properties": {
+                    "ergoPayUrl": {
+                      "type": "string"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ergoPayUrl",
+                    "requestId"
+                  ],
+                  "type": "object"
+                },
+                "AgeUsdExchangeInfo": {
+                  "properties": {
+                    "bankFeeAmount": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "bankFeeDescription": {
+                      "type": "string"
+                    },
+                    "ergAmount": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "ergAmountDescription": {
+                      "type": "string"
+                    },
+                    "exchangeRate": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "jayFeeAmount": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "jayFeeDescription": {
+                      "type": "string"
+                    },
+                    "totalAmount": {
+                      "format": "int64",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "bankFeeAmount",
+                    "bankFeeDescription",
+                    "ergAmount",
+                    "ergAmountDescription",
+                    "exchangeRate",
+                    "jayFeeAmount",
+                    "jayFeeDescription",
+                    "totalAmount"
+                  ],
+                  "type": "object"
+                },
+                "AgeUsdInfo": {
+                  "properties": {
+                    "reserveRatio": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "sigRsvPrice": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "sigUsdPrice": {
+                      "format": "int64",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "reserveRatio",
+                    "sigRsvPrice",
+                    "sigUsdPrice"
+                  ],
+                  "type": "object"
+                },
+                "CheckResponse": {
+                  "properties": {
+                    "genuine": {
+                      "description": "Flag with 0 unknown, 1 verified, 2 suspicious, 3 blocked (see EIP-21)",
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "token": {
+                      "$ref": "#/components/schemas/GenuineToken"
+                    }
+                  },
+                  "required": [
+                    "genuine"
+                  ],
+                  "type": "object"
+                },
+                "CreatePaymentRequest": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "nanoErg": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "receiverAddress": {
+                      "type": "string"
+                    },
+                    "senderAddress": {
+                      "type": "string"
+                    },
+                    "tokenId": {
+                      "type": "string"
+                    },
+                    "tokenRawAmount": {
+                      "format": "int64",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "nanoErg",
+                    "receiverAddress"
+                  ],
+                  "type": "object"
+                },
+                "ErgoPayResponse": {
+                  "properties": {
+                    "address": {
+                      "type": "string"
+                    },
+                    "addresses": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "messageSeverity": {
+                      "enum": [
+                        "NONE",
+                        "INFORMATION",
+                        "WARNING",
+                        "ERROR"
+                      ],
+                      "type": "string"
+                    },
+                    "reducedTx": {
+                      "type": "string"
+                    },
+                    "reducedTxList": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "replyTo": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "FetchActionResponse": {
+                  "properties": {
+                    "action": {
+                      "$ref": "#/components/schemas/Action"
+                    },
+                    "appVersion": {
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "GenuineToken": {
+                  "properties": {
+                    "issuer": {
+                      "type": "string"
+                    },
+                    "tokenId": {
+                      "type": "string"
+                    },
+                    "tokenName": {
+                      "type": "string"
+                    },
+                    "uniqueName": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "tokenId",
+                    "tokenName",
+                    "uniqueName"
+                  ],
+                  "type": "object"
+                },
+                "MosaikApp": {
+                  "properties": {
+                    "actions": {
+                      "items": {
+                        "$ref": "#/components/schemas/Action"
+                      },
+                      "type": "array"
+                    },
+                    "manifest": {
+                      "$ref": "#/components/schemas/MosaikManifest"
+                    },
+                    "view": {
+                      "$ref": "#/components/schemas/ViewElement"
+                    }
+                  },
+                  "type": "object"
+                },
+                "MosaikManifest": {
+                  "properties": {
+                    "appDescription": {
+                      "type": "string"
+                    },
+                    "appName": {
+                      "type": "string"
+                    },
+                    "appVersion": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "cacheLifetime": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "errorReportUrl": {
+                      "type": "string"
+                    },
+                    "iconUrl": {
+                      "type": "string"
+                    },
+                    "notificationCheckUrl": {
+                      "type": "string"
+                    },
+                    "onAppLoadedAction": {
+                      "type": "string"
+                    },
+                    "onResizeAction": {
+                      "type": "string"
+                    },
+                    "targetCanvasDimension": {
+                      "enum": [
+                        "COMPACT_WIDTH",
+                        "MEDIUM_WIDTH",
+                        "FULL_WIDTH"
+                      ],
+                      "type": "string"
+                    },
+                    "targetMosaikVersion": {
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "NodePeer": {
+                  "properties": {
+                    "blockHeight": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "blockchainApi": {
+                      "type": "boolean"
+                    },
+                    "headerHeight": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "lastSeen": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "openRestApi": {
+                      "type": "boolean"
+                    },
+                    "responseTime": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "blockHeight",
+                    "blockchainApi",
+                    "headerHeight",
+                    "lastSeen",
+                    "name",
+                    "openRestApi",
+                    "responseTime",
+                    "url"
+                  ],
+                  "type": "object"
+                },
+                "NotificationCheckResponse": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "messageTs": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "nextCheck": {
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "PaymentRequestStateResponse": {
+                  "properties": {
+                    "paymentRequestState": {
+                      "enum": [
+                        "CREATED",
+                        "WAITING",
+                        "EXECUTED",
+                        "INVALID"
+                      ],
+                      "type": "string"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "txId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "paymentRequestState",
+                    "requestId"
+                  ],
+                  "type": "object"
+                },
+                "TokenPrice": {
+                  "properties": {
+                    "available": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "lastUpdated": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "price": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "tokenId": {
+                      "type": "string"
+                    },
+                    "volumeLastDay": {
+                      "format": "int64",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "available",
+                    "displayName",
+                    "lastUpdated",
+                    "price",
+                    "tokenId",
+                    "volumeLastDay"
+                  ],
+                  "type": "object"
+                },
+                "ViewElement": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "onClickAction": {
+                      "type": "string"
+                    },
+                    "onLongPressAction": {
+                      "type": "string"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "description": "Please see usage policies on tokenjay.app",
+              "termsOfService": "https://tokenjay.app/apidoc.html",
+              "title": "TokenJay API services",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "financial"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://api.tokenjay.app/api-docs",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "tokenjay.app"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/ageusd/info": {
+                "get": {
+                  "operationId": "getAgeUsdInfo",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/AgeUsdInfo"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Returns state of AgeUSD at this moment",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/cancelbabel/{boxId}": {
+                "get": {
+                  "operationId": "ergoPayCreateBabelBox_1",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "boxId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErgoPayResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-controller"
+                  ]
+                }
+              },
+              "/createbabel/{address}": {
+                "get": {
+                  "operationId": "ergoPayCreateBabelBox",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "address",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "tokenId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "ergAmount",
+                      "required": true,
+                      "schema": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "tokenAmount",
+                      "required": true,
+                      "schema": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErgoPayResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-new-offer-controller"
+                  ]
+                }
+              },
+              "/mosaik/babelfee/": {
+                "get": {
+                  "operationId": "getBabelFeeOverview",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/MosaikApp"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-controller"
+                  ]
+                }
+              },
+              "/mosaik/babelfee/newoffer": {
+                "get": {
+                  "operationId": "getBabelFeeNewOffer",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/MosaikApp"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-new-offer-controller"
+                  ]
+                }
+              },
+              "/mosaik/babelfee/newoffer/doit": {
+                "post": {
+                  "operationId": "doCreateBabelBox",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "additionalProperties": {
+                            "type": "object"
+                          },
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/FetchActionResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-new-offer-controller"
+                  ]
+                }
+              },
+              "/mosaik/babelfee/newoffer/new-input": {
+                "post": {
+                  "operationId": "replaceTokenAmountInputFields",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "additionalProperties": {
+                            "type": "object"
+                          },
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/FetchActionResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-new-offer-controller"
+                  ]
+                }
+              },
+              "/mosaik/babelfee/notificationcheck": {
+                "get": {
+                  "operationId": "checkForNotifications",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/NotificationCheckResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "babel-fee-controller"
+                  ]
+                }
+              },
+              "/mosaik/boxconsolidation/": {
+                "get": {
+                  "operationId": "mainApp_1",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/MosaikApp"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "box-consolidation-controller"
+                  ]
+                }
+              },
+              "/mosaik/boxconsolidation/consolidate/{p2pkaddress}": {
+                "get": {
+                  "operationId": "epConsolidate",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "p2pkaddress",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErgoPayResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "box-consolidation-controller"
+                  ]
+                }
+              },
+              "/mosaik/tokenburn": {
+                "get": {
+                  "operationId": "mainApp",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/MosaikApp"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "token-burn-controller"
+                  ]
+                }
+              },
+              "/mosaik/tokenburn/get/{uuid}": {
+                "get": {
+                  "operationId": "getBurningTransaction",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "uuid",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErgoPayResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "token-burn-controller"
+                  ]
+                }
+              },
+              "/mosaik/tokenburn/prepare": {
+                "post": {
+                  "operationId": "prepareTransaction",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "additionalProperties": {
+                            "type": "object"
+                          },
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/FetchActionResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "tags": [
+                    "token-burn-controller"
+                  ]
+                }
+              },
+              "/payment/addrequest": {
+                "post": {
+                  "operationId": "addPaymentRequest",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/CreatePaymentRequest"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/AddRequestResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Creates a new payment request. Will return request id to check for transaction state and ergopay url to show the user as QR code",
+                  "tags": [
+                    "paymentPortal"
+                  ]
+                }
+              },
+              "/payment/state/{requestId}": {
+                "get": {
+                  "operationId": "getPaymentState",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "requestId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/PaymentRequestStateResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Returns the state of a payment request. Please note that payment requests are purged after some time, so persist the state at your side when needed",
+                  "tags": [
+                    "paymentPortal"
+                  ]
+                }
+              },
+              "/peers/list": {
+                "get": {
+                  "operationId": "getPeersList",
+                  "parameters": [
+                    {
+                      "description": "Set to true to show unreachable peers in the list",
+                      "in": "query",
+                      "name": "unreachable",
+                      "required": false,
+                      "schema": {
+                        "default": false,
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "description": "Set to true to show peers not open to be connected",
+                      "in": "query",
+                      "name": "closedApi",
+                      "required": false,
+                      "schema": {
+                        "default": false,
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "limit",
+                      "required": false,
+                      "schema": {
+                        "default": 50,
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/NodePeer"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists known peers sorted by block height",
+                  "tags": [
+                    "peerDetection"
+                  ]
+                }
+              },
+              "/sigrsv/exchange/": {
+                "get": {
+                  "operationId": "doSigmaRsvExchange",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "amount",
+                      "required": true,
+                      "schema": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "address",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "checkRate",
+                      "required": false,
+                      "schema": {
+                        "default": 0,
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "executionFee",
+                      "required": false,
+                      "schema": {
+                        "default": 0,
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErgoPayResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Builds ErgoPayRequest for SigRSV exchange",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/sigrsv/exchange/{amount}/info": {
+                "get": {
+                  "operationId": "calcSigmaRsvExchange",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "amount",
+                      "required": true,
+                      "schema": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/AgeUsdExchangeInfo"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Calculates SigRSV exchange",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/sigrsv/price": {
+                "get": {
+                  "operationId": "getSigmaRsvPrice",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/TokenPrice"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists price and available volume for SigmaRSV",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/sigusd/exchange/": {
+                "get": {
+                  "operationId": "doSigmaUsdExchange",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "amount",
+                      "required": true,
+                      "schema": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "address",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "checkRate",
+                      "required": false,
+                      "schema": {
+                        "default": 0,
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "executionFee",
+                      "required": false,
+                      "schema": {
+                        "default": 0,
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ErgoPayResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Builds ErgoPayRequest for SigUSD exchange",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/sigusd/exchange/{amount}/info": {
+                "get": {
+                  "operationId": "calcSigmaUsdExchange",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "amount",
+                      "required": true,
+                      "schema": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/AgeUsdExchangeInfo"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Calculates SigUSD exchange",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/sigusd/price": {
+                "get": {
+                  "operationId": "getSigmaUsdPrice",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/TokenPrice"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists price and available volume for SigmaUSD",
+                  "tags": [
+                    "ageUsd"
+                  ]
+                }
+              },
+              "/tokens/check/{tokenId}/{tokenName}": {
+                "get": {
+                  "operationId": "checkToken",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "tokenId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "in": "path",
+                      "name": "tokenName",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/CheckResponse"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Check a token verification",
+                  "tags": [
+                    "tokenVerification"
+                  ]
+                }
+              },
+              "/tokens/listBlocked": {
+                "get": {
+                  "operationId": "listBlocked",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists all blocked tokens",
+                  "tags": [
+                    "tokenVerification"
+                  ]
+                }
+              },
+              "/tokens/listGenuine": {
+                "get": {
+                  "operationId": "listGenuine",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/GenuineToken"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists all genuine tokens known",
+                  "tags": [
+                    "tokenVerification"
+                  ]
+                }
+              },
+              "/tokens/prices/all": {
+                "get": {
+                  "operationId": "getTokenPrices",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "items": {
+                              "$ref": "#/components/schemas/TokenPrice"
+                            },
+                            "type": "array"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists all token prices and available volume",
+                  "tags": [
+                    "tokenPrices"
+                  ]
+                }
+              },
+              "/tokens/prices/{tokenId}": {
+                "get": {
+                  "operationId": "getTokenPrice",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "tokenId",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "$ref": "#/components/schemas/TokenPrice"
+                          }
+                        }
+                      },
+                      "description": "OK"
+                    },
+                    "400": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Bad Request"
+                    },
+                    "401": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Unauthorized"
+                    },
+                    "404": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Not Found"
+                    },
+                    "409": {
+                      "content": {
+                        "*/*": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Conflict"
+                    }
+                  },
+                  "summary": "Lists price and available volume for a certain token",
+                  "tags": [
+                    "tokenPrices"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://api.tokenjay.app/"
+              }
+            ],
+            "tags": [
+              {
+                "description": "Ergo Platform Genuine Tokens Verification",
+                "externalDocs": {
+                  "description": "EIP-21",
+                  "url": "https://github.com/ergoplatform/eips/blob/master/eip-0021.md"
+                },
+                "name": "tokenVerification"
+              },
+              {
+                "description": "Detecting nodes to use for submitting transactions",
+                "name": "peerDetection"
+              },
+              {
+                "description": "ErgoPay payment portal",
+                "name": "paymentPortal"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "TokenJay API services"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:47.088585Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://api.tokenjay.app/api-docs",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "86b496ce1950e6b3011701876ec900830c3d0a8b73677eedbf4713f3a9316fc4",
+    "source_id": "tokenjay.app",
+    "source_updated": "2023-03-24T16:34:40.079Z",
+    "url": "https://api.apis.guru/v2/specs/tokenjay.app/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

@@ -1,0 +1,204 @@
+{
+  "a2ui": {},
+  "app": "scideas-net-perfectpdf-d6d996ea76",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "scideas-net-perfectpdf-d6d996ea76",
+        "kind": "EXPOSES",
+        "to": "operation:post:/perfectpdf/api"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "scideas-net-perfectpdf-d6d996ea76",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/perfectpdf/api",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /perfectpdf/api",
+        "path": "/perfectpdf/api",
+        "pointer": "#/paths/~1perfectpdf~1api/post",
+        "security": [],
+        "summary": "Returns PDF document."
+      },
+      {
+        "id": "schema:error",
+        "kind": "schema",
+        "name": "error"
+      },
+      {
+        "id": "schema:inline_response_200",
+        "kind": "schema",
+        "name": "inline_response_200"
+      },
+      {
+        "id": "schema:perfectpdf_api_body",
+        "kind": "schema",
+        "name": "perfectpdf_api_body"
+      },
+      {
+        "id": "schema:result",
+        "kind": "schema",
+        "name": "result"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "scideas-net-perfectpdf-d6d996ea76"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "error": {
+                  "description": "an error message",
+                  "example": "Error: html empty",
+                  "type": "string"
+                },
+                "inline_response_200": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/error"
+                    },
+                    {
+                      "$ref": "#/components/schemas/result"
+                    }
+                  ]
+                },
+                "perfectpdf_api_body": {
+                  "properties": {
+                    "api_key": {
+                      "description": "api key",
+                      "example": "abc123",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "html/css markup",
+                      "example": "<!doctype html><html><head><meta charset=\"UTF-8\"><title>my title</title><script src=\"script.js\"></script></head><body><div>My PDF</div></body></html>",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "api_key",
+                    "html"
+                  ],
+                  "type": "object"
+                },
+                "result": {
+                  "description": "PDF document",
+                  "type": "string"
+                }
+              }
+            },
+            "externalDocs": {
+              "url": "https://services.scideas.net/perfectpdf"
+            },
+            "info": {
+              "contact": {
+                "email": "software@scideas.net",
+                "name": "scideas software",
+                "url": "https://scideas.net"
+              },
+              "description": "The perfectpdf api does one thing, perfectly: it converts html to pdf. The perfectpdf api uses headless Google Chrome to provide a low cost, high quality, simple to use service.",
+              "termsOfService": "https://scideas.net/terms",
+              "title": "perfectpdf api",
+              "version": "1.0",
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_scideas.net_media_logos_favicon_apple-touch-icon-57x57.png"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://services.scideas.net/perfectpdf/resources/openapi3.0.0-perfectpdf-1.0.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "scideas.net",
+              "x-serviceName": "perfectpdf"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/perfectpdf/api": {
+                "post": {
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/perfectpdf_api_body"
+                        }
+                      }
+                    },
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "text/html": {
+                          "schema": {
+                            "$ref": "#/components/schemas/inline_response_200"
+                          }
+                        }
+                      },
+                      "description": "Either a PDF document or an error message"
+                    }
+                  },
+                  "summary": "Returns PDF document."
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://services.scideas.net"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "perfectpdf api"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:45.676115Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://services.scideas.net/perfectpdf/resources/openapi3.0.0-perfectpdf-1.0.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "a6e0b0710ef0c56c46a3aae777ff2e8f8303b957fcd89046e2b0217941217c38",
+    "source_id": "scideas.net:perfectpdf",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/scideas.net/perfectpdf/1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0"
+}

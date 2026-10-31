@@ -1,0 +1,174 @@
+{
+  "a2ui": {},
+  "app": "mailboxvalidator-com-checker-3102385c42",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "mailboxvalidator-com-checker-3102385c42",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/email/free"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "mailboxvalidator-com-checker-3102385c42",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v1/email/free",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /v1/email/free",
+        "path": "/v1/email/free",
+        "pointer": "#/paths/~1v1~1email~1free/get",
+        "security": [],
+        "summary": null
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "mailboxvalidator-com-checker-3102385c42"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "contact": {
+                "x-twitter": "MailBoxV"
+              },
+              "description": "The MailboxValidator Free Email Checker checks if a single email address is from a free email provider and returns the results in either JSON or XML format. Refer to https://www.mailboxvalidator.com/api-email-freem for further information.",
+              "title": "MailboxValidator Free Email Checker",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "email"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_MailBoxV_profile_image.png"
+              },
+              "x-origin": [
+                {
+                  "converter": {
+                    "url": "https://github.com/mermade/oas-kit",
+                    "version": "7.0.4"
+                  },
+                  "format": "openapi",
+                  "url": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Free-Email-Checker/1.0.0",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "mailboxvalidator.com",
+              "x-serviceName": "checker"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/v1/email/free": {
+                "get": {
+                  "description": "The Free Email Checker API does validation on a single email address and returns if it is from a free email provider in either JSON or XML format.",
+                  "parameters": [
+                    {
+                      "description": "Return the result in json (default) or xml format.",
+                      "in": "query",
+                      "name": "format",
+                      "schema": {
+                        "enum": [
+                          "json",
+                          "xml"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "The email address to check if is from a free email provider.",
+                      "in": "query",
+                      "name": "email",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "description": "API key.",
+                      "in": "query",
+                      "name": "key",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json; charset=utf-8": {
+                          "examples": {
+                            "0": {
+                              "value": "{\"email_address\":\"\",\"is_free\":\"\",\"credits_available\":\"\",\"error_code\":\"\",\"error_message\":\"\"}"
+                            }
+                          },
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "free email checker response"
+                    }
+                  }
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://api.mailboxvalidator.com/"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "MailboxValidator Free Email Checker"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:55.990449Z",
+    "license": null,
+    "origins": [
+      {
+        "converter": {
+          "url": "https://github.com/mermade/oas-kit",
+          "version": "7.0.4"
+        },
+        "format": "openapi",
+        "url": "https://api.swaggerhub.com/apis/mailboxvalidator/MailboxValidator-Free-Email-Checker/1.0.0",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "4dc80f421b909359eac1e6aaee01bd711498332addd390be733e4931cb559a96",
+    "source_id": "mailboxvalidator.com:checker",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/mailboxvalidator.com/checker/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

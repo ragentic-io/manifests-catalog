@@ -1,0 +1,404 @@
+{
+  "a2ui": {},
+  "app": "inpe-br-dados-abertos-d92349b925",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "inpe-br-dados-abertos-d92349b925",
+        "kind": "EXPOSES",
+        "to": "operation:get:/auxiliar/estados"
+      },
+      {
+        "from": "inpe-br-dados-abertos-d92349b925",
+        "kind": "EXPOSES",
+        "to": "operation:get:/auxiliar/municipios"
+      },
+      {
+        "from": "inpe-br-dados-abertos-d92349b925",
+        "kind": "EXPOSES",
+        "to": "operation:get:/auxiliar/paises"
+      },
+      {
+        "from": "inpe-br-dados-abertos-d92349b925",
+        "kind": "EXPOSES",
+        "to": "operation:get:/auxiliar/satelites"
+      },
+      {
+        "from": "inpe-br-dados-abertos-d92349b925",
+        "kind": "EXPOSES",
+        "to": "operation:get:/focos/"
+      },
+      {
+        "from": "inpe-br-dados-abertos-d92349b925",
+        "kind": "EXPOSES",
+        "to": "operation:get:/focos/count"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "inpe-br-dados-abertos-d92349b925",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/auxiliar/estados",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_estados_auxiliar_resource",
+        "path": "/auxiliar/estados",
+        "pointer": "#/paths/~1auxiliar~1estados/get",
+        "security": [],
+        "summary": "Endpoint para retorno dos dados de estados utilizados na filtragem de focos"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/auxiliar/municipios",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_municipios_auxiliar_resource",
+        "path": "/auxiliar/municipios",
+        "pointer": "#/paths/~1auxiliar~1municipios/get",
+        "security": [],
+        "summary": "Endpoint para retorno dos dados de municípios utilizados na filtragem de focos"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/auxiliar/paises",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_paises_auxiliar_resource",
+        "path": "/auxiliar/paises",
+        "pointer": "#/paths/~1auxiliar~1paises/get",
+        "security": [],
+        "summary": "Endpoint para retorno dos dados de países utilizados na filtragem de focos"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/auxiliar/satelites",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_satelite_auxiliar_resource",
+        "path": "/auxiliar/satelites",
+        "pointer": "#/paths/~1auxiliar~1satelites/get",
+        "security": [],
+        "summary": "Endpoint para retorno dos dados de satélites utilizados na filtragem de focos"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/focos/",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_focos_resource",
+        "path": "/focos/",
+        "pointer": "#/paths/~1focos~1/get",
+        "security": [],
+        "summary": "Endpoint para retorno dos dados de focos de calor"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/focos/count",
+        "kind": "operation",
+        "method": "get",
+        "name": "get_focos_count_resource",
+        "path": "/focos/count",
+        "pointer": "#/paths/~1focos~1count/get",
+        "security": [],
+        "summary": "Endpoint para retorno da contagem dos focos de calor"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "inpe-br-dados-abertos-d92349b925"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/api",
+            "consumes": [
+              "application/json"
+            ],
+            "info": {
+              "description": "API de Dados Abertos com dados processados pelo grupo de monitoramento de Queimadas do INPE.",
+              "title": "Dados Abertos - API",
+              "version": "1.0",
+              "x-apisguru-categories": [
+                "location"
+              ],
+              "x-description-language": "br",
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "http://queimadas.dgi.inpe.br/queimadas/dados-abertos/api/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "inpe.br",
+              "x-serviceName": "dados-abertos"
+            },
+            "paths": {
+              "/auxiliar/estados": {
+                "get": {
+                  "operationId": "get_estados_auxiliar_resource",
+                  "parameters": [
+                    {
+                      "collectionFormat": "multi",
+                      "description": "Código do país pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "name": "pais_id",
+                      "type": "array"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso"
+                    },
+                    "400": {
+                      "description": "Erro de validação"
+                    }
+                  },
+                  "summary": "Endpoint para retorno dos dados de estados utilizados na filtragem de focos",
+                  "tags": [
+                    "auxiliar"
+                  ]
+                }
+              },
+              "/auxiliar/municipios": {
+                "get": {
+                  "operationId": "get_municipios_auxiliar_resource",
+                  "parameters": [
+                    {
+                      "description": "Código do país pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "pais_id",
+                      "required": true,
+                      "type": "integer"
+                    },
+                    {
+                      "collectionFormat": "multi",
+                      "description": "Código do estado pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "name": "estado_id",
+                      "type": "array"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso"
+                    },
+                    "400": {
+                      "description": "Erro de validação"
+                    }
+                  },
+                  "summary": "Endpoint para retorno dos dados de municípios utilizados na filtragem de focos",
+                  "tags": [
+                    "auxiliar"
+                  ]
+                }
+              },
+              "/auxiliar/paises": {
+                "get": {
+                  "operationId": "get_paises_auxiliar_resource",
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso"
+                    }
+                  },
+                  "summary": "Endpoint para retorno dos dados de países utilizados na filtragem de focos",
+                  "tags": [
+                    "auxiliar"
+                  ]
+                }
+              },
+              "/auxiliar/satelites": {
+                "get": {
+                  "operationId": "get_satelite_auxiliar_resource",
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso"
+                    }
+                  },
+                  "summary": "Endpoint para retorno dos dados de satélites utilizados na filtragem de focos",
+                  "tags": [
+                    "auxiliar"
+                  ]
+                }
+              },
+              "/focos/": {
+                "get": {
+                  "operationId": "get_focos_resource",
+                  "parameters": [
+                    {
+                      "description": "Código do país pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "pais_id",
+                      "type": "integer"
+                    },
+                    {
+                      "description": "Código do estado pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "estado_id",
+                      "type": "integer"
+                    },
+                    {
+                      "description": "Código do município pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "municipio_id",
+                      "type": "integer"
+                    },
+                    {
+                      "collectionFormat": "multi",
+                      "description": "Nome do satélte pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "satelite",
+                      "type": "array"
+                    },
+                    {
+                      "description": "An optional fields mask",
+                      "format": "mask",
+                      "in": "header",
+                      "name": "X-Fields",
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso"
+                    },
+                    "400": {
+                      "description": "Erro de validação"
+                    }
+                  },
+                  "summary": "Endpoint para retorno dos dados de focos de calor",
+                  "tags": [
+                    "focos"
+                  ]
+                }
+              },
+              "/focos/count": {
+                "get": {
+                  "operationId": "get_focos_count_resource",
+                  "parameters": [
+                    {
+                      "description": "Código do país pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "pais_id",
+                      "type": "integer"
+                    },
+                    {
+                      "description": "Código do estado pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "estado_id",
+                      "type": "integer"
+                    },
+                    {
+                      "description": "Código do município pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "name": "municipio_id",
+                      "type": "integer"
+                    },
+                    {
+                      "collectionFormat": "multi",
+                      "description": "Nome do satélte pelo qual será filtrado o resultado. Ver rotas auxiliares.",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "satelite",
+                      "type": "array"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso"
+                    },
+                    "400": {
+                      "description": "Erro de validação"
+                    }
+                  },
+                  "summary": "Endpoint para retorno da contagem dos focos de calor",
+                  "tags": [
+                    "focos"
+                  ]
+                }
+              }
+            },
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "MaskError": {
+                "description": "When any error occurs on mask"
+              },
+              "ParseError": {
+                "description": "When a mask can't be parsed"
+              }
+            },
+            "swagger": "2.0",
+            "tags": [
+              {
+                "description": "Focos de calor das últimas 24 horas detectados por todos os satélites",
+                "name": "focos"
+              },
+              {
+                "description": "Endpoints auxiliares",
+                "name": "auxiliar"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Dados Abertos - API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:54.695810Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "http://queimadas.dgi.inpe.br/queimadas/dados-abertos/api/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "c22b2613fc7eba9e0be4003af72b76daab29016e5374b9aafe559219951040f1",
+    "source_id": "inpe.br:dados-abertos",
+    "source_updated": "2021-07-19T09:27:57.385Z",
+    "url": "https://api.apis.guru/v2/specs/inpe.br/dados-abertos/1.0/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0"
+}

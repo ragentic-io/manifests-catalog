@@ -1,0 +1,375 @@
+{
+  "a2ui": {},
+  "app": "hodoflow-graphql",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "hasNextPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "hasPreviousPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "pageNumber",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "lastPage",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "limit",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "count",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PageOfFact",
+        "kind": "FIELD",
+        "name": "results",
+        "to": "schema:Fact"
+      },
+      {
+        "from": "schema:Fact",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Fact",
+        "kind": "FIELD",
+        "name": "dataModelId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Fact",
+        "kind": "FIELD",
+        "name": "entityId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Fact",
+        "kind": "FIELD",
+        "name": "observedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:Fact",
+        "kind": "FIELD",
+        "name": "data",
+        "to": "schema:Json"
+      },
+      {
+        "from": "schema:Fact",
+        "kind": "FIELD",
+        "name": "insertedAt",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "schema:RootQueryType",
+        "kind": "FIELD",
+        "name": "health",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:RootQueryType",
+        "kind": "FIELD",
+        "name": "dataQuery",
+        "to": "schema:PageOfFact"
+      },
+      {
+        "from": "hodoflow-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:health"
+      },
+      {
+        "from": "operation:query:health",
+        "kind": "RETURNS",
+        "to": "schema:String"
+      },
+      {
+        "from": "hodoflow-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:dataQuery"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "RETURNS",
+        "to": "schema:PageOfFact"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "limit",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "offset",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "dataModelSlug",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "joinDataModelSlug",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "joinType",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "joinFilters",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "joins",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "mode",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "timeAxis",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "since",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "until",
+        "to": "schema:DateTime"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "filters",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "sort",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:dataQuery",
+        "kind": "ACCEPTS",
+        "name": "sortDirection",
+        "to": "schema:String"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "hodoflow-graphql",
+        "kind": "application"
+      },
+      {
+        "id": "schema:Boolean",
+        "kind": "schema",
+        "name": "Boolean"
+      },
+      {
+        "id": "schema:DateTime",
+        "kind": "schema",
+        "name": "DateTime"
+      },
+      {
+        "id": "schema:Fact",
+        "kind": "schema",
+        "name": "Fact"
+      },
+      {
+        "id": "schema:Float",
+        "kind": "schema",
+        "name": "Float"
+      },
+      {
+        "id": "schema:ID",
+        "kind": "schema",
+        "name": "ID"
+      },
+      {
+        "id": "schema:Int",
+        "kind": "schema",
+        "name": "Int"
+      },
+      {
+        "id": "schema:Json",
+        "kind": "schema",
+        "name": "Json"
+      },
+      {
+        "id": "schema:PageOfFact",
+        "kind": "schema",
+        "name": "PageOfFact"
+      },
+      {
+        "id": "schema:RootQueryType",
+        "kind": "schema",
+        "name": "RootQueryType"
+      },
+      {
+        "id": "schema:String",
+        "kind": "schema",
+        "name": "String"
+      },
+      {
+        "arguments": [],
+        "description": "Liveness probe. Not backed by an Ash action; always returns \"ok\".",
+        "field": "health",
+        "id": "operation:query:health",
+        "kind": "operation",
+        "name": "health",
+        "operation": "query",
+        "return_type": "String"
+      },
+      {
+        "arguments": [
+          {
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "name": "offset",
+            "type": "Int"
+          },
+          {
+            "name": "dataModelSlug",
+            "type": "String!"
+          },
+          {
+            "name": "joinDataModelSlug",
+            "type": "String"
+          },
+          {
+            "name": "joinType",
+            "type": "String"
+          },
+          {
+            "name": "joinFilters",
+            "type": "String"
+          },
+          {
+            "name": "joins",
+            "type": "String"
+          },
+          {
+            "name": "mode",
+            "type": "String"
+          },
+          {
+            "name": "timeAxis",
+            "type": "String"
+          },
+          {
+            "name": "since",
+            "type": "DateTime"
+          },
+          {
+            "name": "until",
+            "type": "DateTime"
+          },
+          {
+            "name": "filters",
+            "type": "String"
+          },
+          {
+            "name": "sort",
+            "type": "String"
+          },
+          {
+            "name": "sortDirection",
+            "type": "String"
+          }
+        ],
+        "description": "Query harmonized facts for a DataModel (by slug) as a logical table.",
+        "field": "dataQuery",
+        "id": "operation:query:dataQuery",
+        "kind": "operation",
+        "name": "dataQuery",
+        "operation": "query",
+        "return_type": "PageOfFact"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "hodoflow-graphql"
+    },
+    "spec": {
+      "base": {
+        "protocol": "graphql",
+        "specification": {
+          "text": "# Hodoflow GraphQL API — schema version 2026-07-05\n# Generated from DashWeb.Api.GraphqlSchema — do not edit by hand (mix dash.api.docs).\n\nschema {\n  query: RootQueryType\n}\n\n\"A page of :fact\"\ntype PageOfFact {\n  \"Whether or not there is a next page\"\n  hasNextPage: Boolean!\n\n  \"Whether or not there is a previous page\"\n  hasPreviousPage: Boolean!\n\n  \"The number of the current page\"\n  pageNumber: Int!\n\n  \"The number of the last page\"\n  lastPage: Int!\n\n  \"The number of records per page\"\n  limit: Int!\n\n  \"Total count on all pages\"\n  count: Int\n\n  \"The records contained in the page\"\n  results: [Fact!]\n}\n\ntype Fact {\n  id: ID!\n\n  \"The DataModel blueprint this fact conforms to\"\n  dataModelId: ID!\n\n  \"Business entity identifier extracted from the DataModel's primary key field. Scoped by data_model_id.\"\n  entityId: String\n\n  \"When the underlying business event occurred (mappable by users via DataMapping)\"\n  observedAt: DateTime!\n\n  \"The harmonized business data matching DataModel field definitions\"\n  data: Json!\n\n  insertedAt: DateTime!\n}\n\ntype RootQueryType {\n  \"Liveness probe. Not backed by an Ash action; always returns \\\"ok\\\".\"\n  health: String\n\n  \"Query harmonized facts for a DataModel (by slug) as a logical table.\"\n  dataQuery(\n    \"Rows per page. Defaults to 50 and rejects values above 250.\"\n    limit: Int\n\n    \"Number of matching rows to skip. Defaults to 0.\"\n    offset: Int\n\n    \"Required data-model slug resolved inside the service account's workspace.\"\n    dataModelSlug: String!\n\n    \"A second DataModel to read alongside this one, matched on entity_id. Adds columns: an entity with no match comes back with the joined columns empty. Latest mode only.\"\n    joinDataModelSlug: String\n\n    \"What becomes of an entity with no match in the joined DataModel: left or inner. Defaults to left, which returns it with the joined columns empty. Inner leaves it out.\"\n    joinType: String\n\n    \"JSON array of {field, op, value} applied to the joined DataModel, in its own field names; same operators and same limit of at most 20. Narrows what counts as a match, so under inner an entity whose every record is filtered out is left out too.\"\n    joinFilters: String\n\n    \"JSON array of joins, each {data_model_slug, type, on, filters}: a DataModel to read alongside this one; left (default) or inner; on: {field, joined_field} naming a reference field on one side and the other model's primary key, or absent to match on entity_id; filters in the joined model's field names. At most 5; the join* arguments count as the first. Latest mode only.\"\n    joins: String\n\n    \"Query mode: latest or timeline. Defaults to latest, which returns one current row per entity.\"\n    mode: String\n\n    \"Time-window axis: observed_at or inserted_at. Defaults to observed_at.\"\n    timeAxis: String\n\n    \"Inclusive lower time bound. Timeline mode defaults to 90 days before until.\"\n    since: DateTime\n\n    \"Upper time bound. Timeline mode defaults to now and clamps spans to 366 days.\"\n    until: DateTime\n\n    \"JSON array of at most 20 {field, op, value} clauses. Fields must belong to the selected data model.\"\n    filters: String\n\n    \"Timeline sort field: observed_at, inserted_at, or entity_id. Defaults to observed_at.\"\n    sort: String\n\n    \"Sort direction: asc or desc. Defaults to desc.\"\n    sortDirection: String\n  ): PageOfFact\n}\n\n\"\"\"\nThe `Json` scalar type represents arbitrary json string data, represented as UTF-8\ncharacter sequences. The Json type is most often used to represent a free-form\nhuman-readable json string.\n\"\"\"\nscalar Json\n\n\"\"\"\nThe `DateTime` scalar type represents a date and time in the UTC\ntimezone. The DateTime appears in a JSON response as an ISO8601 formatted\nstring, including UTC timezone (\"Z\"). The parsed date and time string will\nbe converted to UTC if there is an offset.\n\"\"\"\nscalar DateTime\n"
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Hodoflow"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "graphql",
+  "provenance": {
+    "fetched_at": "2026-10-29T23:09:15.642724+00:00",
+    "sha256": "3954c8f5e196b85073cccf47f2e8eed8ab3c54cd12de60a5973f3228278e887c",
+    "source_id": "hodoflow",
+    "url": "https://developer.hodoflow.com/schema.graphql"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2026-10-29-snapshot"
+}

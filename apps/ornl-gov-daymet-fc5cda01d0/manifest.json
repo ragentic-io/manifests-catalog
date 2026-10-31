@@ -1,0 +1,474 @@
+{
+  "a2ui": {},
+  "app": "ornl-gov-daymet-fc5cda01d0",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "ornl-gov-daymet-fc5cda01d0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/data"
+      },
+      {
+        "from": "ornl-gov-daymet-fc5cda01d0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/preview"
+      },
+      {
+        "from": "ornl-gov-daymet-fc5cda01d0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/send/saveData"
+      },
+      {
+        "from": "ornl-gov-daymet-fc5cda01d0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/visualize"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ornl-gov-daymet-fc5cda01d0",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/data",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/data",
+        "path": "/api/data",
+        "pointer": "#/paths/~1api~1data/get",
+        "security": [],
+        "summary": "Download Daymet Data"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/preview",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /preview",
+        "path": "/preview",
+        "pointer": "#/paths/~1preview/get",
+        "security": [],
+        "summary": "Preview Daymet Data in a web browser"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/send/saveData",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /send/saveData",
+        "path": "/send/saveData",
+        "pointer": "#/paths/~1send~1saveData/get",
+        "security": [],
+        "summary": "Download Daymet Data"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/visualize",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /visualize",
+        "path": "/visualize",
+        "pointer": "#/paths/~1visualize/get",
+        "security": [],
+        "summary": "Visualize Daymet Data in a web browser"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "ornl-gov-daymet-fc5cda01d0"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/single-pixel",
+            "host": "daymet.ornl.gov",
+            "info": {
+              "contact": {
+                "x-twitter": "NASAEarthData"
+              },
+              "description": "Welcome to the Daymet Single Pixel Extraction Tool API. You can use this API to download daily surface data within the Daymet database in a `csv` or `json` format for a single point. This API allows users to query a single geographic point by latitude and longitude in decimal degrees. A routine is executed that translates the (lon, lat) coordinates into projected Daymet (x,y) Lambert Conformal Coordinates. These coordinates are used to access the Daymet database of daily interpolated surface weather variables. Daily data from the nearest 1 km x 1 km Daymet grid cell are extracted from the database.\n\nIf you would like to learn how to automate the download of multiple locations for the Daymet Single Pixel Extraction Tool, click [here](https://github.com/ornldaac/daymet-single-pixel-batch).",
+              "title": "Daymet Single Pixel Extraction Tool API",
+              "version": "1.0.2",
+              "x-apisguru-categories": [
+                "location"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_NASAEarthData_profile_image.jpeg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://daymet.ornl.gov/single-pixel/static/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "ornl.gov",
+              "x-serviceName": "daymet"
+            },
+            "paths": {
+              "/api/data": {
+                "get": {
+                  "description": "Returns a csv or json of the requested data to local machine",
+                  "parameters": [
+                    {
+                      "description": "Latitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lat",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Longitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lon",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Daymet Daily weather estimates.",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "vars",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on years [1980..2019].",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "years",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on dates (start date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "start",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Subset on dates (end date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "end",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Specify a format for data retrieval.",
+                      "enum": [
+                        "csv",
+                        "json"
+                      ],
+                      "in": "query",
+                      "name": "format",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/csv"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful Execution"
+                    },
+                    "default": {
+                      "description": "Unexpected Error"
+                    }
+                  },
+                  "summary": "Download Daymet Data"
+                }
+              },
+              "/preview": {
+                "get": {
+                  "description": "Returns a table to the browser displaying requested data",
+                  "parameters": [
+                    {
+                      "description": "Latitude component of location",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lat",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Longitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lon",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Daymet Daily weather estimates.",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "vars",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on years [1980..2019].",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "years",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on dates (start date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "start",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Subset on dates (end date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "end",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Specify a format for data retrieval.",
+                      "enum": [
+                        "csv",
+                        "json"
+                      ],
+                      "in": "query",
+                      "name": "format",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/html"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful Execution"
+                    },
+                    "default": {
+                      "description": "Unexpected Error"
+                    }
+                  },
+                  "summary": "Preview Daymet Data in a web browser"
+                }
+              },
+              "/send/saveData": {
+                "get": {
+                  "description": "Returns a csv or json of the requested data to local machine",
+                  "parameters": [
+                    {
+                      "description": "Latitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lat",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Longitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lon",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Daymet Daily weather estimates.",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "vars",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on years [1980..2019].",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "years",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on dates (start date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "start",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Subset on dates (end date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "end",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Specify a format for data retrieval.",
+                      "enum": [
+                        "csv",
+                        "json"
+                      ],
+                      "in": "query",
+                      "name": "format",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json",
+                    "text/csv"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful Execution"
+                    },
+                    "default": {
+                      "description": "Unexpected Error"
+                    }
+                  },
+                  "summary": "Download Daymet Data"
+                }
+              },
+              "/visualize": {
+                "get": {
+                  "description": "Returns plots to a web browser of requested data using Plotly",
+                  "parameters": [
+                    {
+                      "description": "Latitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lat",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Longitude component of location.",
+                      "format": "double",
+                      "in": "query",
+                      "name": "lon",
+                      "required": true,
+                      "type": "number"
+                    },
+                    {
+                      "description": "Daymet Daily weather estimates.",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "vars",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on years [1980..2019].",
+                      "in": "query",
+                      "items": {
+                        "type": "string"
+                      },
+                      "name": "years",
+                      "type": "array"
+                    },
+                    {
+                      "description": "Subset on dates (start date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "start",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Subset on dates (end date).",
+                      "format": "date",
+                      "in": "query",
+                      "name": "end",
+                      "type": "string"
+                    },
+                    {
+                      "description": "Specify a format for data retrieval.",
+                      "enum": [
+                        "csv",
+                        "json"
+                      ],
+                      "in": "query",
+                      "name": "format",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/html"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful Execution"
+                    },
+                    "default": {
+                      "description": "Unexpected Error"
+                    }
+                  },
+                  "summary": "Visualize Daymet Data in a web browser"
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Daymet Single Pixel Extraction Tool API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:58.080924Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://daymet.ornl.gov/single-pixel/static/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "cdfd5627f22c5f2ee09b2f95954a89cae30a2b956e304e9e0f1313fc35bce516",
+    "source_id": "ornl.gov:daymet",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/ornl.gov/daymet/1.0.2/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.2"
+}
