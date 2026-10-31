@@ -1,0 +1,42 @@
+name: Sign
+
+on:
+  push:
+    branches: [main]
+    paths: ["apps/**", "registry.json", "tools/catalog.py"]
+  schedule:
+    - cron: "17 6 * * *" # re-sign before signatures expire
+  workflow_dispatch:
+
+concurrency:
+  group: sign
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    # Holds MANIFESTS_SIGNING_KEY. Restrict its deployment branches to main.
+    environment: registry-signing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install cryptography==44.0.0 pyyaml==6.0.2
+      - run: python tools/catalog.py validate
+      - run: python tools/catalog.py sign
+        env:
+          MANIFESTS_SIGNING_KEY: ${{ secrets.MANIFESTS_SIGNING_KEY }}
+      - run: python tools/catalog.py validate --require-signed
+      - name: Commit signed objects
+        run: |
+          git add -A
+          if git diff --cached --quiet; then echo "Nothing to sign."; exit 0; fi
+          seq() { python -c "import json,base64,sys;p=json.load(open(sys.argv[1]))['payload'];print(json.loads(base64.urlsafe_b64decode(p+'='*(-len(p)%4)))['sequence'])" "$1"; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Sign catalog: index sequence $(seq index.json), browse sequence $(seq browse-index.json)"
+          git push
