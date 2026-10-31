@@ -304,6 +304,21 @@ def validate_secrets(r, p):
                 r.check(not pat.search(value), f"definition {'.'.join(map(str, path))} holds a secret-like example")
 
 
+def scopes_sorted(node):
+    """The document with every security requirement's scope list sorted."""
+    if isinstance(node, dict):
+        out = {k: scopes_sorted(v) for k, v in node.items()}
+        if isinstance(node.get("security"), list):
+            out["security"] = [
+                {k: sorted(v) if isinstance(v, list) else v for k, v in req.items()} if isinstance(req, dict) else req
+                for req in out["security"]
+            ]
+        return out
+    if isinstance(node, list):
+        return [scopes_sorted(v) for v in node]
+    return node
+
+
 def validate_provenance(r, app, p, doc, fetch):
     pv = p["provenance"]
     d = DRAFTS / app
@@ -320,8 +335,15 @@ def validate_provenance(r, app, p, doc, fetch):
         r.check(pv["origins"] == [src["url"]] and pv["url"] == src["url"], "X origins must be the pinned URL")
         if fetch:
             raw = urllib.request.urlopen(src["url"], timeout=60).read()
-            r.check(sha256(raw) == src["sha256"], f"upstream X definition changed: now {sha256(raw)}")
-            r.check(json.loads(raw) == doc, "upstream X definition differs from the embedded document")
+            if sha256(raw) == src["sha256"]:
+                r.check(json.loads(raw) == doc, "upstream X definition differs from the embedded document")
+            else:
+                # X serialises each operation's OAuth scope list in a different order on
+                # every request, so the byte hash only reproduces by chance. Accept the
+                # same document once those scope lists are sorted; anything else fails.
+                r.check(scopes_sorted(json.loads(raw)) == scopes_sorted(doc),
+                        f"upstream X definition changed: now {sha256(raw)}, and differs beyond scope order")
+                r.notes.append(f"upstream X bytes differ ({sha256(raw)}) only in security scope order")
     elif app == "bluesky":
         manifest_path = d / "sources/lexicons.json"
         lex = json.loads(manifest_path.read_text())
